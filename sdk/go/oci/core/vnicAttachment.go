@@ -23,36 +23,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVnicAttachment(ctx, "testVnicAttachment", &Core.VnicAttachmentArgs{
-// 			CreateVnicDetails: &core.VnicAttachmentCreateVnicDetailsArgs{
-// 				AssignPrivateDnsRecord: pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_private_dns_record),
-// 				AssignPublicIp:         pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_public_ip),
-// 				DefinedTags:            pulumi.Any(_var.Vnic_attachment_create_vnic_details_defined_tags),
-// 				DisplayName:            pulumi.Any(_var.Vnic_attachment_create_vnic_details_display_name),
-// 				FreeformTags:           pulumi.Any(_var.Vnic_attachment_create_vnic_details_freeform_tags),
-// 				HostnameLabel:          pulumi.Any(_var.Vnic_attachment_create_vnic_details_hostname_label),
-// 				NsgIds:                 pulumi.Any(_var.Vnic_attachment_create_vnic_details_nsg_ids),
-// 				PrivateIp:              pulumi.Any(_var.Vnic_attachment_create_vnic_details_private_ip),
-// 				SkipSourceDestCheck:    pulumi.Any(_var.Vnic_attachment_create_vnic_details_skip_source_dest_check),
-// 				SubnetId:               pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				VlanId:                 pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 			},
-// 			InstanceId:  pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			DisplayName: pulumi.Any(_var.Vnic_attachment_display_name),
-// 			NicIndex:    pulumi.Any(_var.Vnic_attachment_nic_index),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVnicAttachment(ctx, "testVnicAttachment", &Core.VnicAttachmentArgs{
+//				CreateVnicDetails: &core.VnicAttachmentCreateVnicDetailsArgs{
+//					AssignPrivateDnsRecord: pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_private_dns_record),
+//					AssignPublicIp:         pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_public_ip),
+//					DefinedTags:            pulumi.Any(_var.Vnic_attachment_create_vnic_details_defined_tags),
+//					DisplayName:            pulumi.Any(_var.Vnic_attachment_create_vnic_details_display_name),
+//					FreeformTags:           pulumi.Any(_var.Vnic_attachment_create_vnic_details_freeform_tags),
+//					HostnameLabel:          pulumi.Any(_var.Vnic_attachment_create_vnic_details_hostname_label),
+//					NsgIds:                 pulumi.Any(_var.Vnic_attachment_create_vnic_details_nsg_ids),
+//					PrivateIp:              pulumi.Any(_var.Vnic_attachment_create_vnic_details_private_ip),
+//					SkipSourceDestCheck:    pulumi.Any(_var.Vnic_attachment_create_vnic_details_skip_source_dest_check),
+//					SubnetId:               pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					VlanId:                 pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//				},
+//				InstanceId:  pulumi.Any(oci_core_instance.Test_instance.Id),
+//				DisplayName: pulumi.Any(_var.Vnic_attachment_display_name),
+//				NicIndex:    pulumi.Any(_var.Vnic_attachment_nic_index),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // VnicAttachments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
+//
+//	$ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
+//
 // ```
 type VnicAttachment struct {
 	pulumi.CustomResourceState
@@ -232,7 +237,7 @@ func (i *VnicAttachment) ToVnicAttachmentOutputWithContext(ctx context.Context) 
 // VnicAttachmentArrayInput is an input type that accepts VnicAttachmentArray and VnicAttachmentArrayOutput values.
 // You can construct a concrete instance of `VnicAttachmentArrayInput` via:
 //
-//          VnicAttachmentArray{ VnicAttachmentArgs{...} }
+//	VnicAttachmentArray{ VnicAttachmentArgs{...} }
 type VnicAttachmentArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +262,7 @@ func (i VnicAttachmentArray) ToVnicAttachmentArrayOutputWithContext(ctx context.
 // VnicAttachmentMapInput is an input type that accepts VnicAttachmentMap and VnicAttachmentMapOutput values.
 // You can construct a concrete instance of `VnicAttachmentMapInput` via:
 //
-//          VnicAttachmentMap{ "key": VnicAttachmentArgs{...} }
+//	VnicAttachmentMap{ "key": VnicAttachmentArgs{...} }
 type VnicAttachmentMapInput interface {
 	pulumi.Input
 

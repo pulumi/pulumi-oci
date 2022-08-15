@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetIpsecStatus(ctx, &core.GetIpsecStatusArgs{
-// 			IpsecId: oci_core_ipsec.Test_ipsec.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetIpsecStatus(ctx, &core.GetIpsecStatusArgs{
+//				IpsecId: oci_core_ipsec.Test_ipsec.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIpsecStatus(ctx *pulumi.Context, args *GetIpsecStatusArgs, opts ...pulumi.InvokeOption) (*GetIpsecStatusResult, error) {
 	var rv GetIpsecStatusResult

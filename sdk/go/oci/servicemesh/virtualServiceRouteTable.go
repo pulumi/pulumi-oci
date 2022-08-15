@@ -21,45 +21,48 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewVirtualServiceRouteTable(ctx, "testVirtualServiceRouteTable", &ServiceMesh.VirtualServiceRouteTableArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			RouteRules: servicemesh.VirtualServiceRouteTableRouteRuleArray{
-// 				&servicemesh.VirtualServiceRouteTableRouteRuleArgs{
-// 					Destinations: servicemesh.VirtualServiceRouteTableRouteRuleDestinationArray{
-// 						&servicemesh.VirtualServiceRouteTableRouteRuleDestinationArgs{
-// 							VirtualDeploymentId: pulumi.Any(oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id),
-// 							Weight:              pulumi.Any(_var.Virtual_service_route_table_route_rules_destinations_weight),
-// 							Port:                pulumi.Any(_var.Virtual_service_route_table_route_rules_destinations_port),
-// 						},
-// 					},
-// 					Type:     pulumi.Any(_var.Virtual_service_route_table_route_rules_type),
-// 					IsGrpc:   pulumi.Any(_var.Virtual_service_route_table_route_rules_is_grpc),
-// 					Path:     pulumi.Any(_var.Virtual_service_route_table_route_rules_path),
-// 					PathType: pulumi.Any(_var.Virtual_service_route_table_route_rules_path_type),
-// 				},
-// 			},
-// 			VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Virtual_service_route_table_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Priority: pulumi.Any(_var.Virtual_service_route_table_priority),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewVirtualServiceRouteTable(ctx, "testVirtualServiceRouteTable", &ServiceMesh.VirtualServiceRouteTableArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				RouteRules: servicemesh.VirtualServiceRouteTableRouteRuleArray{
+//					&servicemesh.VirtualServiceRouteTableRouteRuleArgs{
+//						Destinations: servicemesh.VirtualServiceRouteTableRouteRuleDestinationArray{
+//							&servicemesh.VirtualServiceRouteTableRouteRuleDestinationArgs{
+//								VirtualDeploymentId: pulumi.Any(oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id),
+//								Weight:              pulumi.Any(_var.Virtual_service_route_table_route_rules_destinations_weight),
+//								Port:                pulumi.Any(_var.Virtual_service_route_table_route_rules_destinations_port),
+//							},
+//						},
+//						Type:     pulumi.Any(_var.Virtual_service_route_table_route_rules_type),
+//						IsGrpc:   pulumi.Any(_var.Virtual_service_route_table_route_rules_is_grpc),
+//						Path:     pulumi.Any(_var.Virtual_service_route_table_route_rules_path),
+//						PathType: pulumi.Any(_var.Virtual_service_route_table_route_rules_path_type),
+//					},
+//				},
+//				VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Virtual_service_route_table_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Priority: pulumi.Any(_var.Virtual_service_route_table_priority),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -67,7 +70,9 @@ import (
 // VirtualServiceRouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
+//
+//	$ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
+//
 // ```
 type VirtualServiceRouteTable struct {
 	pulumi.CustomResourceState
@@ -264,7 +269,7 @@ func (i *VirtualServiceRouteTable) ToVirtualServiceRouteTableOutputWithContext(c
 // VirtualServiceRouteTableArrayInput is an input type that accepts VirtualServiceRouteTableArray and VirtualServiceRouteTableArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableArrayInput` via:
 //
-//          VirtualServiceRouteTableArray{ VirtualServiceRouteTableArgs{...} }
+//	VirtualServiceRouteTableArray{ VirtualServiceRouteTableArgs{...} }
 type VirtualServiceRouteTableArrayInput interface {
 	pulumi.Input
 
@@ -289,7 +294,7 @@ func (i VirtualServiceRouteTableArray) ToVirtualServiceRouteTableArrayOutputWith
 // VirtualServiceRouteTableMapInput is an input type that accepts VirtualServiceRouteTableMap and VirtualServiceRouteTableMapOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableMapInput` via:
 //
-//          VirtualServiceRouteTableMap{ "key": VirtualServiceRouteTableArgs{...} }
+//	VirtualServiceRouteTableMap{ "key": VirtualServiceRouteTableArgs{...} }
 type VirtualServiceRouteTableMapInput interface {
 	pulumi.Input
 

@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Limits.NewQuota(ctx, "testQuota", &Limits.QuotaArgs{
-// 			CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-// 			Description:   pulumi.Any(_var.Quota_description),
-// 			Statements:    pulumi.Any(_var.Quota_statements),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Locks: limits.QuotaLockArray{
-// 				&limits.QuotaLockArgs{
-// 					Type:              pulumi.Any(_var.Quota_locks_type),
-// 					Message:           pulumi.Any(_var.Quota_locks_message),
-// 					RelatedResourceId: pulumi.Any(oci_limits_related_resource.Test_related_resource.Id),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Limits.NewQuota(ctx, "testQuota", &Limits.QuotaArgs{
+//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//				Description:   pulumi.Any(_var.Quota_description),
+//				Statements:    pulumi.Any(_var.Quota_statements),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Locks: limits.QuotaLockArray{
+//					&limits.QuotaLockArgs{
+//						Type:              pulumi.Any(_var.Quota_locks_type),
+//						Message:           pulumi.Any(_var.Quota_locks_message),
+//						RelatedResourceId: pulumi.Any(oci_limits_related_resource.Test_related_resource.Id),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // Quotas can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Limits/quota:Quota test_quota "id"
+//
+//	$ pulumi import oci:Limits/quota:Quota test_quota "id"
+//
 // ```
 type Quota struct {
 	pulumi.CustomResourceState
@@ -233,7 +238,7 @@ func (i *Quota) ToQuotaOutputWithContext(ctx context.Context) QuotaOutput {
 // QuotaArrayInput is an input type that accepts QuotaArray and QuotaArrayOutput values.
 // You can construct a concrete instance of `QuotaArrayInput` via:
 //
-//          QuotaArray{ QuotaArgs{...} }
+//	QuotaArray{ QuotaArgs{...} }
 type QuotaArrayInput interface {
 	pulumi.Input
 
@@ -258,7 +263,7 @@ func (i QuotaArray) ToQuotaArrayOutputWithContext(ctx context.Context) QuotaArra
 // QuotaMapInput is an input type that accepts QuotaMap and QuotaMapOutput values.
 // You can construct a concrete instance of `QuotaMapInput` via:
 //
-//          QuotaMap{ "key": QuotaArgs{...} }
+//	QuotaMap{ "key": QuotaArgs{...} }
 type QuotaMapInput interface {
 	pulumi.Input
 

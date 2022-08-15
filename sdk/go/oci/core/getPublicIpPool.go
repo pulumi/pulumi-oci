@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPublicIpPool(ctx, &core.GetPublicIpPoolArgs{
-// 			PublicIpPoolId: oci_core_public_ip_pool.Test_public_ip_pool.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPublicIpPool(ctx, &core.GetPublicIpPoolArgs{
+//				PublicIpPoolId: oci_core_public_ip_pool.Test_public_ip_pool.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupPublicIpPool(ctx *pulumi.Context, args *LookupPublicIpPoolArgs, opts ...pulumi.InvokeOption) (*LookupPublicIpPoolResult, error) {
 	var rv LookupPublicIpPoolResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Bastion.GetBastion(ctx, &bastion.GetBastionArgs{
-// 			BastionId: oci_bastion_bastion.Test_bastion.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Bastion.GetBastion(ctx, &bastion.GetBastionArgs{
+//				BastionId: oci_bastion_bastion.Test_bastion.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBastion(ctx *pulumi.Context, args *LookupBastionArgs, opts ...pulumi.InvokeOption) (*LookupBastionResult, error) {
 	var rv LookupBastionResult

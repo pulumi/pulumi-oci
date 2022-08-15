@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ContainerEngine.GetClusterOption(ctx, &containerengine.GetClusterOptionArgs{
-// 			ClusterOptionId: oci_containerengine_cluster_option.Test_cluster_option.Id,
-// 			CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.GetClusterOption(ctx, &containerengine.GetClusterOptionArgs{
+//				ClusterOptionId: oci_containerengine_cluster_option.Test_cluster_option.Id,
+//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetClusterOption(ctx *pulumi.Context, args *GetClusterOptionArgs, opts ...pulumi.InvokeOption) (*GetClusterOptionResult, error) {
 	var rv GetClusterOptionResult

@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Functions.GetFunctions(ctx, &functions.GetFunctionsArgs{
-// 			ApplicationId: oci_functions_application.Test_application.Id,
-// 			DisplayName:   pulumi.StringRef(_var.Function_display_name),
-// 			Id:            pulumi.StringRef(_var.Function_id),
-// 			State:         pulumi.StringRef(_var.Function_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Functions.GetFunctions(ctx, &functions.GetFunctionsArgs{
+//				ApplicationId: oci_functions_application.Test_application.Id,
+//				DisplayName:   pulumi.StringRef(_var.Function_display_name),
+//				Id:            pulumi.StringRef(_var.Function_id),
+//				State:         pulumi.StringRef(_var.Function_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFunctions(ctx *pulumi.Context, args *GetFunctionsArgs, opts ...pulumi.InvokeOption) (*GetFunctionsResult, error) {
 	var rv GetFunctionsResult

@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPublicIpPools(ctx, &core.GetPublicIpPoolsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			ByoipRangeId:  pulumi.StringRef(oci_core_byoip_range.Test_byoip_range.Id),
-// 			DisplayName:   pulumi.StringRef(_var.Public_ip_pool_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPublicIpPools(ctx, &core.GetPublicIpPoolsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				ByoipRangeId:  pulumi.StringRef(oci_core_byoip_range.Test_byoip_range.Id),
+//				DisplayName:   pulumi.StringRef(_var.Public_ip_pool_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPublicIpPools(ctx *pulumi.Context, args *GetPublicIpPoolsArgs, opts ...pulumi.InvokeOption) (*GetPublicIpPoolsResult, error) {
 	var rv GetPublicIpPoolsResult

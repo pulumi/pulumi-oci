@@ -129,7 +129,7 @@ func (i *ShapeManagement) ToShapeManagementOutputWithContext(ctx context.Context
 // ShapeManagementArrayInput is an input type that accepts ShapeManagementArray and ShapeManagementArrayOutput values.
 // You can construct a concrete instance of `ShapeManagementArrayInput` via:
 //
-//          ShapeManagementArray{ ShapeManagementArgs{...} }
+//	ShapeManagementArray{ ShapeManagementArgs{...} }
 type ShapeManagementArrayInput interface {
 	pulumi.Input
 
@@ -154,7 +154,7 @@ func (i ShapeManagementArray) ToShapeManagementArrayOutputWithContext(ctx contex
 // ShapeManagementMapInput is an input type that accepts ShapeManagementMap and ShapeManagementMapOutput values.
 // You can construct a concrete instance of `ShapeManagementMapInput` via:
 //
-//          ShapeManagementMap{ "key": ShapeManagementArgs{...} }
+//	ShapeManagementMap{ "key": ShapeManagementArgs{...} }
 type ShapeManagementMapInput interface {
 	pulumi.Input
 

@@ -23,24 +23,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseGroups(ctx, &databasemanagement.GetManagedDatabaseGroupsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Managed_database_group_id),
-// 			Name:          pulumi.StringRef(_var.Managed_database_group_name),
-// 			State:         pulumi.StringRef(_var.Managed_database_group_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseGroups(ctx, &databasemanagement.GetManagedDatabaseGroupsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Managed_database_group_id),
+//				Name:          pulumi.StringRef(_var.Managed_database_group_name),
+//				State:         pulumi.StringRef(_var.Managed_database_group_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseGroups(ctx *pulumi.Context, args *GetManagedDatabaseGroupsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseGroupsResult, error) {
 	var rv GetManagedDatabaseGroupsResult

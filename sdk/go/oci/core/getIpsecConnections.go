@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetIpsecConnections(ctx, &core.GetIpsecConnectionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			CpeId:         pulumi.StringRef(oci_core_cpe.Test_cpe.Id),
-// 			DrgId:         pulumi.StringRef(oci_core_drg.Test_drg.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetIpsecConnections(ctx, &core.GetIpsecConnectionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				CpeId:         pulumi.StringRef(oci_core_cpe.Test_cpe.Id),
+//				DrgId:         pulumi.StringRef(oci_core_drg.Test_drg.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIpsecConnections(ctx *pulumi.Context, args *GetIpsecConnectionsArgs, opts ...pulumi.InvokeOption) (*GetIpsecConnectionsResult, error) {
 	var rv GetIpsecConnectionsResult

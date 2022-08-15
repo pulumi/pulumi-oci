@@ -24,7 +24,7 @@ type JobJobConfigurationDetails struct {
 // JobJobConfigurationDetailsInput is an input type that accepts JobJobConfigurationDetailsArgs and JobJobConfigurationDetailsOutput values.
 // You can construct a concrete instance of `JobJobConfigurationDetailsInput` via:
 //
-//          JobJobConfigurationDetailsArgs{...}
+//	JobJobConfigurationDetailsArgs{...}
 type JobJobConfigurationDetailsInput interface {
 	pulumi.Input
 
@@ -66,11 +66,11 @@ func (i JobJobConfigurationDetailsArgs) ToJobJobConfigurationDetailsPtrOutputWit
 // JobJobConfigurationDetailsPtrInput is an input type that accepts JobJobConfigurationDetailsArgs, JobJobConfigurationDetailsPtr and JobJobConfigurationDetailsPtrOutput values.
 // You can construct a concrete instance of `JobJobConfigurationDetailsPtrInput` via:
 //
-//          JobJobConfigurationDetailsArgs{...}
+//	        JobJobConfigurationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type JobJobConfigurationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -218,7 +218,7 @@ type JobJobInfrastructureConfigurationDetails struct {
 // JobJobInfrastructureConfigurationDetailsInput is an input type that accepts JobJobInfrastructureConfigurationDetailsArgs and JobJobInfrastructureConfigurationDetailsOutput values.
 // You can construct a concrete instance of `JobJobInfrastructureConfigurationDetailsInput` via:
 //
-//          JobJobInfrastructureConfigurationDetailsArgs{...}
+//	JobJobInfrastructureConfigurationDetailsArgs{...}
 type JobJobInfrastructureConfigurationDetailsInput interface {
 	pulumi.Input
 
@@ -260,11 +260,11 @@ func (i JobJobInfrastructureConfigurationDetailsArgs) ToJobJobInfrastructureConf
 // JobJobInfrastructureConfigurationDetailsPtrInput is an input type that accepts JobJobInfrastructureConfigurationDetailsArgs, JobJobInfrastructureConfigurationDetailsPtr and JobJobInfrastructureConfigurationDetailsPtrOutput values.
 // You can construct a concrete instance of `JobJobInfrastructureConfigurationDetailsPtrInput` via:
 //
-//          JobJobInfrastructureConfigurationDetailsArgs{...}
+//	        JobJobInfrastructureConfigurationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type JobJobInfrastructureConfigurationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -412,7 +412,7 @@ type JobJobLogConfigurationDetails struct {
 // JobJobLogConfigurationDetailsInput is an input type that accepts JobJobLogConfigurationDetailsArgs and JobJobLogConfigurationDetailsOutput values.
 // You can construct a concrete instance of `JobJobLogConfigurationDetailsInput` via:
 //
-//          JobJobLogConfigurationDetailsArgs{...}
+//	JobJobLogConfigurationDetailsArgs{...}
 type JobJobLogConfigurationDetailsInput interface {
 	pulumi.Input
 
@@ -454,11 +454,11 @@ func (i JobJobLogConfigurationDetailsArgs) ToJobJobLogConfigurationDetailsPtrOut
 // JobJobLogConfigurationDetailsPtrInput is an input type that accepts JobJobLogConfigurationDetailsArgs, JobJobLogConfigurationDetailsPtr and JobJobLogConfigurationDetailsPtrOutput values.
 // You can construct a concrete instance of `JobJobLogConfigurationDetailsPtrInput` via:
 //
-//          JobJobLogConfigurationDetailsArgs{...}
+//	        JobJobLogConfigurationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type JobJobLogConfigurationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -606,7 +606,7 @@ type JobRunJobConfigurationOverrideDetails struct {
 // JobRunJobConfigurationOverrideDetailsInput is an input type that accepts JobRunJobConfigurationOverrideDetailsArgs and JobRunJobConfigurationOverrideDetailsOutput values.
 // You can construct a concrete instance of `JobRunJobConfigurationOverrideDetailsInput` via:
 //
-//          JobRunJobConfigurationOverrideDetailsArgs{...}
+//	JobRunJobConfigurationOverrideDetailsArgs{...}
 type JobRunJobConfigurationOverrideDetailsInput interface {
 	pulumi.Input
 
@@ -648,11 +648,11 @@ func (i JobRunJobConfigurationOverrideDetailsArgs) ToJobRunJobConfigurationOverr
 // JobRunJobConfigurationOverrideDetailsPtrInput is an input type that accepts JobRunJobConfigurationOverrideDetailsArgs, JobRunJobConfigurationOverrideDetailsPtr and JobRunJobConfigurationOverrideDetailsPtrOutput values.
 // You can construct a concrete instance of `JobRunJobConfigurationOverrideDetailsPtrInput` via:
 //
-//          JobRunJobConfigurationOverrideDetailsArgs{...}
+//	        JobRunJobConfigurationOverrideDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type JobRunJobConfigurationOverrideDetailsPtrInput interface {
 	pulumi.Input
 
@@ -800,7 +800,7 @@ type JobRunJobInfrastructureConfigurationDetail struct {
 // JobRunJobInfrastructureConfigurationDetailInput is an input type that accepts JobRunJobInfrastructureConfigurationDetailArgs and JobRunJobInfrastructureConfigurationDetailOutput values.
 // You can construct a concrete instance of `JobRunJobInfrastructureConfigurationDetailInput` via:
 //
-//          JobRunJobInfrastructureConfigurationDetailArgs{...}
+//	JobRunJobInfrastructureConfigurationDetailArgs{...}
 type JobRunJobInfrastructureConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -834,7 +834,7 @@ func (i JobRunJobInfrastructureConfigurationDetailArgs) ToJobRunJobInfrastructur
 // JobRunJobInfrastructureConfigurationDetailArrayInput is an input type that accepts JobRunJobInfrastructureConfigurationDetailArray and JobRunJobInfrastructureConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `JobRunJobInfrastructureConfigurationDetailArrayInput` via:
 //
-//          JobRunJobInfrastructureConfigurationDetailArray{ JobRunJobInfrastructureConfigurationDetailArgs{...} }
+//	JobRunJobInfrastructureConfigurationDetailArray{ JobRunJobInfrastructureConfigurationDetailArgs{...} }
 type JobRunJobInfrastructureConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -924,7 +924,7 @@ type JobRunJobLogConfigurationOverrideDetails struct {
 // JobRunJobLogConfigurationOverrideDetailsInput is an input type that accepts JobRunJobLogConfigurationOverrideDetailsArgs and JobRunJobLogConfigurationOverrideDetailsOutput values.
 // You can construct a concrete instance of `JobRunJobLogConfigurationOverrideDetailsInput` via:
 //
-//          JobRunJobLogConfigurationOverrideDetailsArgs{...}
+//	JobRunJobLogConfigurationOverrideDetailsArgs{...}
 type JobRunJobLogConfigurationOverrideDetailsInput interface {
 	pulumi.Input
 
@@ -966,11 +966,11 @@ func (i JobRunJobLogConfigurationOverrideDetailsArgs) ToJobRunJobLogConfiguratio
 // JobRunJobLogConfigurationOverrideDetailsPtrInput is an input type that accepts JobRunJobLogConfigurationOverrideDetailsArgs, JobRunJobLogConfigurationOverrideDetailsPtr and JobRunJobLogConfigurationOverrideDetailsPtrOutput values.
 // You can construct a concrete instance of `JobRunJobLogConfigurationOverrideDetailsPtrInput` via:
 //
-//          JobRunJobLogConfigurationOverrideDetailsArgs{...}
+//	        JobRunJobLogConfigurationOverrideDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type JobRunJobLogConfigurationOverrideDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1114,7 +1114,7 @@ type JobRunLogDetail struct {
 // JobRunLogDetailInput is an input type that accepts JobRunLogDetailArgs and JobRunLogDetailOutput values.
 // You can construct a concrete instance of `JobRunLogDetailInput` via:
 //
-//          JobRunLogDetailArgs{...}
+//	JobRunLogDetailArgs{...}
 type JobRunLogDetailInput interface {
 	pulumi.Input
 
@@ -1144,7 +1144,7 @@ func (i JobRunLogDetailArgs) ToJobRunLogDetailOutputWithContext(ctx context.Cont
 // JobRunLogDetailArrayInput is an input type that accepts JobRunLogDetailArray and JobRunLogDetailArrayOutput values.
 // You can construct a concrete instance of `JobRunLogDetailArrayInput` via:
 //
-//          JobRunLogDetailArray{ JobRunLogDetailArgs{...} }
+//	JobRunLogDetailArray{ JobRunLogDetailArgs{...} }
 type JobRunLogDetailArrayInput interface {
 	pulumi.Input
 
@@ -1230,7 +1230,7 @@ type ModelCustomMetadataList struct {
 // ModelCustomMetadataListInput is an input type that accepts ModelCustomMetadataListArgs and ModelCustomMetadataListOutput values.
 // You can construct a concrete instance of `ModelCustomMetadataListInput` via:
 //
-//          ModelCustomMetadataListArgs{...}
+//	ModelCustomMetadataListArgs{...}
 type ModelCustomMetadataListInput interface {
 	pulumi.Input
 
@@ -1270,7 +1270,7 @@ func (i ModelCustomMetadataListArgs) ToModelCustomMetadataListOutputWithContext(
 // ModelCustomMetadataListArrayInput is an input type that accepts ModelCustomMetadataListArray and ModelCustomMetadataListArrayOutput values.
 // You can construct a concrete instance of `ModelCustomMetadataListArrayInput` via:
 //
-//          ModelCustomMetadataListArray{ ModelCustomMetadataListArgs{...} }
+//	ModelCustomMetadataListArray{ ModelCustomMetadataListArgs{...} }
 type ModelCustomMetadataListArrayInput interface {
 	pulumi.Input
 
@@ -1372,7 +1372,7 @@ type ModelDefinedMetadataList struct {
 // ModelDefinedMetadataListInput is an input type that accepts ModelDefinedMetadataListArgs and ModelDefinedMetadataListOutput values.
 // You can construct a concrete instance of `ModelDefinedMetadataListInput` via:
 //
-//          ModelDefinedMetadataListArgs{...}
+//	ModelDefinedMetadataListArgs{...}
 type ModelDefinedMetadataListInput interface {
 	pulumi.Input
 
@@ -1412,7 +1412,7 @@ func (i ModelDefinedMetadataListArgs) ToModelDefinedMetadataListOutputWithContex
 // ModelDefinedMetadataListArrayInput is an input type that accepts ModelDefinedMetadataListArray and ModelDefinedMetadataListArrayOutput values.
 // You can construct a concrete instance of `ModelDefinedMetadataListArrayInput` via:
 //
-//          ModelDefinedMetadataListArray{ ModelDefinedMetadataListArgs{...} }
+//	ModelDefinedMetadataListArray{ ModelDefinedMetadataListArgs{...} }
 type ModelDefinedMetadataListArrayInput interface {
 	pulumi.Input
 
@@ -1504,7 +1504,7 @@ type ModelDeploymentCategoryLogDetails struct {
 // ModelDeploymentCategoryLogDetailsInput is an input type that accepts ModelDeploymentCategoryLogDetailsArgs and ModelDeploymentCategoryLogDetailsOutput values.
 // You can construct a concrete instance of `ModelDeploymentCategoryLogDetailsInput` via:
 //
-//          ModelDeploymentCategoryLogDetailsArgs{...}
+//	ModelDeploymentCategoryLogDetailsArgs{...}
 type ModelDeploymentCategoryLogDetailsInput interface {
 	pulumi.Input
 
@@ -1542,11 +1542,11 @@ func (i ModelDeploymentCategoryLogDetailsArgs) ToModelDeploymentCategoryLogDetai
 // ModelDeploymentCategoryLogDetailsPtrInput is an input type that accepts ModelDeploymentCategoryLogDetailsArgs, ModelDeploymentCategoryLogDetailsPtr and ModelDeploymentCategoryLogDetailsPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentCategoryLogDetailsPtrInput` via:
 //
-//          ModelDeploymentCategoryLogDetailsArgs{...}
+//	        ModelDeploymentCategoryLogDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentCategoryLogDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1660,7 +1660,7 @@ type ModelDeploymentCategoryLogDetailsAccess struct {
 // ModelDeploymentCategoryLogDetailsAccessInput is an input type that accepts ModelDeploymentCategoryLogDetailsAccessArgs and ModelDeploymentCategoryLogDetailsAccessOutput values.
 // You can construct a concrete instance of `ModelDeploymentCategoryLogDetailsAccessInput` via:
 //
-//          ModelDeploymentCategoryLogDetailsAccessArgs{...}
+//	ModelDeploymentCategoryLogDetailsAccessArgs{...}
 type ModelDeploymentCategoryLogDetailsAccessInput interface {
 	pulumi.Input
 
@@ -1698,11 +1698,11 @@ func (i ModelDeploymentCategoryLogDetailsAccessArgs) ToModelDeploymentCategoryLo
 // ModelDeploymentCategoryLogDetailsAccessPtrInput is an input type that accepts ModelDeploymentCategoryLogDetailsAccessArgs, ModelDeploymentCategoryLogDetailsAccessPtr and ModelDeploymentCategoryLogDetailsAccessPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentCategoryLogDetailsAccessPtrInput` via:
 //
-//          ModelDeploymentCategoryLogDetailsAccessArgs{...}
+//	        ModelDeploymentCategoryLogDetailsAccessArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentCategoryLogDetailsAccessPtrInput interface {
 	pulumi.Input
 
@@ -1816,7 +1816,7 @@ type ModelDeploymentCategoryLogDetailsPredict struct {
 // ModelDeploymentCategoryLogDetailsPredictInput is an input type that accepts ModelDeploymentCategoryLogDetailsPredictArgs and ModelDeploymentCategoryLogDetailsPredictOutput values.
 // You can construct a concrete instance of `ModelDeploymentCategoryLogDetailsPredictInput` via:
 //
-//          ModelDeploymentCategoryLogDetailsPredictArgs{...}
+//	ModelDeploymentCategoryLogDetailsPredictArgs{...}
 type ModelDeploymentCategoryLogDetailsPredictInput interface {
 	pulumi.Input
 
@@ -1854,11 +1854,11 @@ func (i ModelDeploymentCategoryLogDetailsPredictArgs) ToModelDeploymentCategoryL
 // ModelDeploymentCategoryLogDetailsPredictPtrInput is an input type that accepts ModelDeploymentCategoryLogDetailsPredictArgs, ModelDeploymentCategoryLogDetailsPredictPtr and ModelDeploymentCategoryLogDetailsPredictPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentCategoryLogDetailsPredictPtrInput` via:
 //
-//          ModelDeploymentCategoryLogDetailsPredictArgs{...}
+//	        ModelDeploymentCategoryLogDetailsPredictArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentCategoryLogDetailsPredictPtrInput interface {
 	pulumi.Input
 
@@ -1972,7 +1972,7 @@ type ModelDeploymentModelDeploymentConfigurationDetails struct {
 // ModelDeploymentModelDeploymentConfigurationDetailsInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsArgs and ModelDeploymentModelDeploymentConfigurationDetailsOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsArgs{...}
+//	ModelDeploymentModelDeploymentConfigurationDetailsArgs{...}
 type ModelDeploymentModelDeploymentConfigurationDetailsInput interface {
 	pulumi.Input
 
@@ -2010,11 +2010,11 @@ func (i ModelDeploymentModelDeploymentConfigurationDetailsArgs) ToModelDeploymen
 // ModelDeploymentModelDeploymentConfigurationDetailsPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsArgs, ModelDeploymentModelDeploymentConfigurationDetailsPtr and ModelDeploymentModelDeploymentConfigurationDetailsPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsPtrInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsArgs{...}
+//	        ModelDeploymentModelDeploymentConfigurationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentModelDeploymentConfigurationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -2134,7 +2134,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{...}
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{...}
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInput interface {
 	pulumi.Input
 
@@ -2176,11 +2176,11 @@ func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs, ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtr and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{...}
+//	        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -2332,7 +2332,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{...}
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{...}
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationInput interface {
 	pulumi.Input
 
@@ -2370,11 +2370,11 @@ func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs, ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtr and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{...}
+//	        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -2492,7 +2492,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{...}
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{...}
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsInput interface {
 	pulumi.Input
 
@@ -2530,11 +2530,11 @@ func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs, ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtr and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{...}
+//	        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsPtrInput interface {
 	pulumi.Input
 
@@ -2652,7 +2652,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{...}
+//	ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{...}
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyInput interface {
 	pulumi.Input
 
@@ -2690,11 +2690,11 @@ func (i ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 // ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrInput is an input type that accepts ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs, ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtr and ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrOutput values.
 // You can construct a concrete instance of `ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrInput` via:
 //
-//          ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{...}
+//	        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrInput interface {
 	pulumi.Input
 
@@ -2816,7 +2816,7 @@ type NotebookSessionNotebookSessionConfigDetails struct {
 // NotebookSessionNotebookSessionConfigDetailsInput is an input type that accepts NotebookSessionNotebookSessionConfigDetailsArgs and NotebookSessionNotebookSessionConfigDetailsOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigDetailsInput` via:
 //
-//          NotebookSessionNotebookSessionConfigDetailsArgs{...}
+//	NotebookSessionNotebookSessionConfigDetailsArgs{...}
 type NotebookSessionNotebookSessionConfigDetailsInput interface {
 	pulumi.Input
 
@@ -2858,11 +2858,11 @@ func (i NotebookSessionNotebookSessionConfigDetailsArgs) ToNotebookSessionNotebo
 // NotebookSessionNotebookSessionConfigDetailsPtrInput is an input type that accepts NotebookSessionNotebookSessionConfigDetailsArgs, NotebookSessionNotebookSessionConfigDetailsPtr and NotebookSessionNotebookSessionConfigDetailsPtrOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigDetailsPtrInput` via:
 //
-//          NotebookSessionNotebookSessionConfigDetailsArgs{...}
+//	        NotebookSessionNotebookSessionConfigDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NotebookSessionNotebookSessionConfigDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3008,7 +3008,7 @@ type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetail
 // NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsInput is an input type that accepts NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs and NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsInput` via:
 //
-//          NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{...}
+//	NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{...}
 type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsInput interface {
 	pulumi.Input
 
@@ -3046,11 +3046,11 @@ func (i NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 // NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrInput is an input type that accepts NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs, NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtr and NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrInput` via:
 //
-//          NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{...}
+//	        NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3172,7 +3172,7 @@ type NotebookSessionNotebookSessionConfigurationDetails struct {
 // NotebookSessionNotebookSessionConfigurationDetailsInput is an input type that accepts NotebookSessionNotebookSessionConfigurationDetailsArgs and NotebookSessionNotebookSessionConfigurationDetailsOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigurationDetailsInput` via:
 //
-//          NotebookSessionNotebookSessionConfigurationDetailsArgs{...}
+//	NotebookSessionNotebookSessionConfigurationDetailsArgs{...}
 type NotebookSessionNotebookSessionConfigurationDetailsInput interface {
 	pulumi.Input
 
@@ -3214,11 +3214,11 @@ func (i NotebookSessionNotebookSessionConfigurationDetailsArgs) ToNotebookSessio
 // NotebookSessionNotebookSessionConfigurationDetailsPtrInput is an input type that accepts NotebookSessionNotebookSessionConfigurationDetailsArgs, NotebookSessionNotebookSessionConfigurationDetailsPtr and NotebookSessionNotebookSessionConfigurationDetailsPtrOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigurationDetailsPtrInput` via:
 //
-//          NotebookSessionNotebookSessionConfigurationDetailsArgs{...}
+//	        NotebookSessionNotebookSessionConfigurationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NotebookSessionNotebookSessionConfigurationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3364,7 +3364,7 @@ type NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfi
 // NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsInput is an input type that accepts NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs and NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsInput` via:
 //
-//          NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{...}
+//	NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{...}
 type NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsInput interface {
 	pulumi.Input
 
@@ -3402,11 +3402,11 @@ func (i NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeCo
 // NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrInput is an input type that accepts NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs, NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtr and NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput values.
 // You can construct a concrete instance of `NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrInput` via:
 //
-//          NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{...}
+//	        NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3514,6 +3514,404 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeCo
 	}).(pulumi.Float64PtrOutput)
 }
 
+type NotebookSessionNotebookSessionRuntimeConfigDetails struct {
+	// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables map[string]interface{} `pulumi:"customEnvironmentVariables"`
+	// (Updatable) Git configuration Details.
+	NotebookSessionGitConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+// NotebookSessionNotebookSessionRuntimeConfigDetailsInput is an input type that accepts NotebookSessionNotebookSessionRuntimeConfigDetailsArgs and NotebookSessionNotebookSessionRuntimeConfigDetailsOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionRuntimeConfigDetailsInput` via:
+//
+//	NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{...}
+type NotebookSessionNotebookSessionRuntimeConfigDetailsInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsOutput
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutputWithContext(context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsOutput
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsArgs struct {
+	// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables pulumi.MapInput `pulumi:"customEnvironmentVariables"`
+	// (Updatable) Git configuration Details.
+	NotebookSessionGitConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetails)(nil)).Elem()
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsOutput)
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsOutput).ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput is an input type that accepts NotebookSessionNotebookSessionRuntimeConfigDetailsArgs, NotebookSessionNotebookSessionRuntimeConfigDetailsPtr and NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput` via:
+//
+//	        NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput
+}
+
+type notebookSessionNotebookSessionRuntimeConfigDetailsPtrType NotebookSessionNotebookSessionRuntimeConfigDetailsArgs
+
+func NotebookSessionNotebookSessionRuntimeConfigDetailsPtr(v *NotebookSessionNotebookSessionRuntimeConfigDetailsArgs) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput {
+	return (*notebookSessionNotebookSessionRuntimeConfigDetailsPtrType)(v)
+}
+
+func (*notebookSessionNotebookSessionRuntimeConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NotebookSessionNotebookSessionRuntimeConfigDetails)(nil)).Elem()
+}
+
+func (i *notebookSessionNotebookSessionRuntimeConfigDetailsPtrType) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *notebookSessionNotebookSessionRuntimeConfigDetailsPtrType) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetails)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return o.ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NotebookSessionNotebookSessionRuntimeConfigDetails) *NotebookSessionNotebookSessionRuntimeConfigDetails {
+		return &v
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput)
+}
+
+// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) CustomEnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionRuntimeConfigDetails) map[string]interface{} {
+		return v.CustomEnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Git configuration Details.
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) NotebookSessionGitConfigDetails() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionRuntimeConfigDetails) *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails {
+		return v.NotebookSessionGitConfigDetails
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NotebookSessionNotebookSessionRuntimeConfigDetails)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) Elem() NotebookSessionNotebookSessionRuntimeConfigDetailsOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetails) NotebookSessionNotebookSessionRuntimeConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret NotebookSessionNotebookSessionRuntimeConfigDetails
+		return ret
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsOutput)
+}
+
+// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) CustomEnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetails) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.CustomEnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Git configuration Details.
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) NotebookSessionGitConfigDetails() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetails) *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails {
+		if v == nil {
+			return nil
+		}
+		return v.NotebookSessionGitConfigDetails
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails struct {
+	// (Updatable) A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections []NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+// NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsInput is an input type that accepts NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs and NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsInput` via:
+//
+//	NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{...}
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutputWithContext(context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs struct {
+	// (Updatable) A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayInput `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails)(nil)).Elem()
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput)
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput).ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(ctx)
+}
+
+// NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput is an input type that accepts NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs, NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtr and NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput` via:
+//
+//	        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput
+}
+
+type notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrType NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs
+
+func NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtr(v *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput {
+	return (*notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrType)(v)
+}
+
+func (*notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails)(nil)).Elem()
+}
+
+func (i *notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrType) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrType) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return o.ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails) *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails {
+		return &v
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput)
+}
+
+// (Updatable) A collection of Git repository configurations.
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput) NotebookSessionGitRepoConfigCollections() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails) []NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection {
+		return v.NotebookSessionGitRepoConfigCollections
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput) Elem() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails {
+		if v != nil {
+			return *v
+		}
+		var ret NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails
+		return ret
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput)
+}
+
+// (Updatable) A collection of Git repository configurations.
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput) NotebookSessionGitRepoConfigCollections() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails) []NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection {
+		if v == nil {
+			return nil
+		}
+		return v.NotebookSessionGitRepoConfigCollections
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection struct {
+	// (Updatable) The repository URL
+	Url string `pulumi:"url"`
+}
+
+// NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionInput is an input type that accepts NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs and NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionInput` via:
+//
+//	NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs{...}
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs struct {
+	// (Updatable) The repository URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+// NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayInput is an input type that accepts NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray and NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayInput` via:
+//
+//	NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray{ NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs{...} }
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput
+	ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray []NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionInput
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return i.ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+// (Updatable) The repository URL
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection) string {
+		return v.Url
+	}).(pulumi.StringOutput)
+}
+
+type NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput() NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput) ToNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput) Index(i pulumi.IntInput) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection {
+		return vs[0].([]NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
+	}).(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput)
+}
+
 type GetFastLaunchJobConfigsFastLaunchJobConfig struct {
 	// The number of cores associated with this fast launch job shape.
 	CoreCount int `pulumi:"coreCount"`
@@ -3532,7 +3930,7 @@ type GetFastLaunchJobConfigsFastLaunchJobConfig struct {
 // GetFastLaunchJobConfigsFastLaunchJobConfigInput is an input type that accepts GetFastLaunchJobConfigsFastLaunchJobConfigArgs and GetFastLaunchJobConfigsFastLaunchJobConfigOutput values.
 // You can construct a concrete instance of `GetFastLaunchJobConfigsFastLaunchJobConfigInput` via:
 //
-//          GetFastLaunchJobConfigsFastLaunchJobConfigArgs{...}
+//	GetFastLaunchJobConfigsFastLaunchJobConfigArgs{...}
 type GetFastLaunchJobConfigsFastLaunchJobConfigInput interface {
 	pulumi.Input
 
@@ -3570,7 +3968,7 @@ func (i GetFastLaunchJobConfigsFastLaunchJobConfigArgs) ToGetFastLaunchJobConfig
 // GetFastLaunchJobConfigsFastLaunchJobConfigArrayInput is an input type that accepts GetFastLaunchJobConfigsFastLaunchJobConfigArray and GetFastLaunchJobConfigsFastLaunchJobConfigArrayOutput values.
 // You can construct a concrete instance of `GetFastLaunchJobConfigsFastLaunchJobConfigArrayInput` via:
 //
-//          GetFastLaunchJobConfigsFastLaunchJobConfigArray{ GetFastLaunchJobConfigsFastLaunchJobConfigArgs{...} }
+//	GetFastLaunchJobConfigsFastLaunchJobConfigArray{ GetFastLaunchJobConfigsFastLaunchJobConfigArgs{...} }
 type GetFastLaunchJobConfigsFastLaunchJobConfigArrayInput interface {
 	pulumi.Input
 
@@ -3666,7 +4064,7 @@ type GetFastLaunchJobConfigsFilter struct {
 // GetFastLaunchJobConfigsFilterInput is an input type that accepts GetFastLaunchJobConfigsFilterArgs and GetFastLaunchJobConfigsFilterOutput values.
 // You can construct a concrete instance of `GetFastLaunchJobConfigsFilterInput` via:
 //
-//          GetFastLaunchJobConfigsFilterArgs{...}
+//	GetFastLaunchJobConfigsFilterArgs{...}
 type GetFastLaunchJobConfigsFilterInput interface {
 	pulumi.Input
 
@@ -3696,7 +4094,7 @@ func (i GetFastLaunchJobConfigsFilterArgs) ToGetFastLaunchJobConfigsFilterOutput
 // GetFastLaunchJobConfigsFilterArrayInput is an input type that accepts GetFastLaunchJobConfigsFilterArray and GetFastLaunchJobConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFastLaunchJobConfigsFilterArrayInput` via:
 //
-//          GetFastLaunchJobConfigsFilterArray{ GetFastLaunchJobConfigsFilterArgs{...} }
+//	GetFastLaunchJobConfigsFilterArray{ GetFastLaunchJobConfigsFilterArgs{...} }
 type GetFastLaunchJobConfigsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3779,7 +4177,7 @@ type GetJobJobConfigurationDetail struct {
 // GetJobJobConfigurationDetailInput is an input type that accepts GetJobJobConfigurationDetailArgs and GetJobJobConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobJobConfigurationDetailInput` via:
 //
-//          GetJobJobConfigurationDetailArgs{...}
+//	GetJobJobConfigurationDetailArgs{...}
 type GetJobJobConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -3813,7 +4211,7 @@ func (i GetJobJobConfigurationDetailArgs) ToGetJobJobConfigurationDetailOutputWi
 // GetJobJobConfigurationDetailArrayInput is an input type that accepts GetJobJobConfigurationDetailArray and GetJobJobConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobJobConfigurationDetailArrayInput` via:
 //
-//          GetJobJobConfigurationDetailArray{ GetJobJobConfigurationDetailArgs{...} }
+//	GetJobJobConfigurationDetailArray{ GetJobJobConfigurationDetailArgs{...} }
 type GetJobJobConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -3903,7 +4301,7 @@ type GetJobJobInfrastructureConfigurationDetail struct {
 // GetJobJobInfrastructureConfigurationDetailInput is an input type that accepts GetJobJobInfrastructureConfigurationDetailArgs and GetJobJobInfrastructureConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobJobInfrastructureConfigurationDetailInput` via:
 //
-//          GetJobJobInfrastructureConfigurationDetailArgs{...}
+//	GetJobJobInfrastructureConfigurationDetailArgs{...}
 type GetJobJobInfrastructureConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -3937,7 +4335,7 @@ func (i GetJobJobInfrastructureConfigurationDetailArgs) ToGetJobJobInfrastructur
 // GetJobJobInfrastructureConfigurationDetailArrayInput is an input type that accepts GetJobJobInfrastructureConfigurationDetailArray and GetJobJobInfrastructureConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobJobInfrastructureConfigurationDetailArrayInput` via:
 //
-//          GetJobJobInfrastructureConfigurationDetailArray{ GetJobJobInfrastructureConfigurationDetailArgs{...} }
+//	GetJobJobInfrastructureConfigurationDetailArray{ GetJobJobInfrastructureConfigurationDetailArgs{...} }
 type GetJobJobInfrastructureConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -4027,7 +4425,7 @@ type GetJobJobLogConfigurationDetail struct {
 // GetJobJobLogConfigurationDetailInput is an input type that accepts GetJobJobLogConfigurationDetailArgs and GetJobJobLogConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobJobLogConfigurationDetailInput` via:
 //
-//          GetJobJobLogConfigurationDetailArgs{...}
+//	GetJobJobLogConfigurationDetailArgs{...}
 type GetJobJobLogConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -4061,7 +4459,7 @@ func (i GetJobJobLogConfigurationDetailArgs) ToGetJobJobLogConfigurationDetailOu
 // GetJobJobLogConfigurationDetailArrayInput is an input type that accepts GetJobJobLogConfigurationDetailArray and GetJobJobLogConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobJobLogConfigurationDetailArrayInput` via:
 //
-//          GetJobJobLogConfigurationDetailArray{ GetJobJobLogConfigurationDetailArgs{...} }
+//	GetJobJobLogConfigurationDetailArray{ GetJobJobLogConfigurationDetailArgs{...} }
 type GetJobJobLogConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -4151,7 +4549,7 @@ type GetJobRunJobConfigurationOverrideDetail struct {
 // GetJobRunJobConfigurationOverrideDetailInput is an input type that accepts GetJobRunJobConfigurationOverrideDetailArgs and GetJobRunJobConfigurationOverrideDetailOutput values.
 // You can construct a concrete instance of `GetJobRunJobConfigurationOverrideDetailInput` via:
 //
-//          GetJobRunJobConfigurationOverrideDetailArgs{...}
+//	GetJobRunJobConfigurationOverrideDetailArgs{...}
 type GetJobRunJobConfigurationOverrideDetailInput interface {
 	pulumi.Input
 
@@ -4185,7 +4583,7 @@ func (i GetJobRunJobConfigurationOverrideDetailArgs) ToGetJobRunJobConfiguration
 // GetJobRunJobConfigurationOverrideDetailArrayInput is an input type that accepts GetJobRunJobConfigurationOverrideDetailArray and GetJobRunJobConfigurationOverrideDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunJobConfigurationOverrideDetailArrayInput` via:
 //
-//          GetJobRunJobConfigurationOverrideDetailArray{ GetJobRunJobConfigurationOverrideDetailArgs{...} }
+//	GetJobRunJobConfigurationOverrideDetailArray{ GetJobRunJobConfigurationOverrideDetailArgs{...} }
 type GetJobRunJobConfigurationOverrideDetailArrayInput interface {
 	pulumi.Input
 
@@ -4275,7 +4673,7 @@ type GetJobRunJobInfrastructureConfigurationDetail struct {
 // GetJobRunJobInfrastructureConfigurationDetailInput is an input type that accepts GetJobRunJobInfrastructureConfigurationDetailArgs and GetJobRunJobInfrastructureConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobRunJobInfrastructureConfigurationDetailInput` via:
 //
-//          GetJobRunJobInfrastructureConfigurationDetailArgs{...}
+//	GetJobRunJobInfrastructureConfigurationDetailArgs{...}
 type GetJobRunJobInfrastructureConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -4309,7 +4707,7 @@ func (i GetJobRunJobInfrastructureConfigurationDetailArgs) ToGetJobRunJobInfrast
 // GetJobRunJobInfrastructureConfigurationDetailArrayInput is an input type that accepts GetJobRunJobInfrastructureConfigurationDetailArray and GetJobRunJobInfrastructureConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunJobInfrastructureConfigurationDetailArrayInput` via:
 //
-//          GetJobRunJobInfrastructureConfigurationDetailArray{ GetJobRunJobInfrastructureConfigurationDetailArgs{...} }
+//	GetJobRunJobInfrastructureConfigurationDetailArray{ GetJobRunJobInfrastructureConfigurationDetailArgs{...} }
 type GetJobRunJobInfrastructureConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -4399,7 +4797,7 @@ type GetJobRunJobLogConfigurationOverrideDetail struct {
 // GetJobRunJobLogConfigurationOverrideDetailInput is an input type that accepts GetJobRunJobLogConfigurationOverrideDetailArgs and GetJobRunJobLogConfigurationOverrideDetailOutput values.
 // You can construct a concrete instance of `GetJobRunJobLogConfigurationOverrideDetailInput` via:
 //
-//          GetJobRunJobLogConfigurationOverrideDetailArgs{...}
+//	GetJobRunJobLogConfigurationOverrideDetailArgs{...}
 type GetJobRunJobLogConfigurationOverrideDetailInput interface {
 	pulumi.Input
 
@@ -4433,7 +4831,7 @@ func (i GetJobRunJobLogConfigurationOverrideDetailArgs) ToGetJobRunJobLogConfigu
 // GetJobRunJobLogConfigurationOverrideDetailArrayInput is an input type that accepts GetJobRunJobLogConfigurationOverrideDetailArray and GetJobRunJobLogConfigurationOverrideDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunJobLogConfigurationOverrideDetailArrayInput` via:
 //
-//          GetJobRunJobLogConfigurationOverrideDetailArray{ GetJobRunJobLogConfigurationOverrideDetailArgs{...} }
+//	GetJobRunJobLogConfigurationOverrideDetailArray{ GetJobRunJobLogConfigurationOverrideDetailArgs{...} }
 type GetJobRunJobLogConfigurationOverrideDetailArrayInput interface {
 	pulumi.Input
 
@@ -4519,7 +4917,7 @@ type GetJobRunLogDetail struct {
 // GetJobRunLogDetailInput is an input type that accepts GetJobRunLogDetailArgs and GetJobRunLogDetailOutput values.
 // You can construct a concrete instance of `GetJobRunLogDetailInput` via:
 //
-//          GetJobRunLogDetailArgs{...}
+//	GetJobRunLogDetailArgs{...}
 type GetJobRunLogDetailInput interface {
 	pulumi.Input
 
@@ -4549,7 +4947,7 @@ func (i GetJobRunLogDetailArgs) ToGetJobRunLogDetailOutputWithContext(ctx contex
 // GetJobRunLogDetailArrayInput is an input type that accepts GetJobRunLogDetailArray and GetJobRunLogDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunLogDetailArrayInput` via:
 //
-//          GetJobRunLogDetailArray{ GetJobRunLogDetailArgs{...} }
+//	GetJobRunLogDetailArray{ GetJobRunLogDetailArgs{...} }
 type GetJobRunLogDetailArrayInput interface {
 	pulumi.Input
 
@@ -4624,7 +5022,7 @@ type GetJobRunsFilter struct {
 // GetJobRunsFilterInput is an input type that accepts GetJobRunsFilterArgs and GetJobRunsFilterOutput values.
 // You can construct a concrete instance of `GetJobRunsFilterInput` via:
 //
-//          GetJobRunsFilterArgs{...}
+//	GetJobRunsFilterArgs{...}
 type GetJobRunsFilterInput interface {
 	pulumi.Input
 
@@ -4653,7 +5051,7 @@ func (i GetJobRunsFilterArgs) ToGetJobRunsFilterOutputWithContext(ctx context.Co
 // GetJobRunsFilterArrayInput is an input type that accepts GetJobRunsFilterArray and GetJobRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetJobRunsFilterArrayInput` via:
 //
-//          GetJobRunsFilterArray{ GetJobRunsFilterArgs{...} }
+//	GetJobRunsFilterArray{ GetJobRunsFilterArgs{...} }
 type GetJobRunsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4762,7 +5160,7 @@ type GetJobRunsJobRun struct {
 // GetJobRunsJobRunInput is an input type that accepts GetJobRunsJobRunArgs and GetJobRunsJobRunOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunInput` via:
 //
-//          GetJobRunsJobRunArgs{...}
+//	GetJobRunsJobRunArgs{...}
 type GetJobRunsJobRunInput interface {
 	pulumi.Input
 
@@ -4823,7 +5221,7 @@ func (i GetJobRunsJobRunArgs) ToGetJobRunsJobRunOutputWithContext(ctx context.Co
 // GetJobRunsJobRunArrayInput is an input type that accepts GetJobRunsJobRunArray and GetJobRunsJobRunArrayOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunArrayInput` via:
 //
-//          GetJobRunsJobRunArray{ GetJobRunsJobRunArgs{...} }
+//	GetJobRunsJobRunArray{ GetJobRunsJobRunArgs{...} }
 type GetJobRunsJobRunArrayInput interface {
 	pulumi.Input
 
@@ -4988,7 +5386,7 @@ type GetJobRunsJobRunJobConfigurationOverrideDetail struct {
 // GetJobRunsJobRunJobConfigurationOverrideDetailInput is an input type that accepts GetJobRunsJobRunJobConfigurationOverrideDetailArgs and GetJobRunsJobRunJobConfigurationOverrideDetailOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunJobConfigurationOverrideDetailInput` via:
 //
-//          GetJobRunsJobRunJobConfigurationOverrideDetailArgs{...}
+//	GetJobRunsJobRunJobConfigurationOverrideDetailArgs{...}
 type GetJobRunsJobRunJobConfigurationOverrideDetailInput interface {
 	pulumi.Input
 
@@ -5022,7 +5420,7 @@ func (i GetJobRunsJobRunJobConfigurationOverrideDetailArgs) ToGetJobRunsJobRunJo
 // GetJobRunsJobRunJobConfigurationOverrideDetailArrayInput is an input type that accepts GetJobRunsJobRunJobConfigurationOverrideDetailArray and GetJobRunsJobRunJobConfigurationOverrideDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunJobConfigurationOverrideDetailArrayInput` via:
 //
-//          GetJobRunsJobRunJobConfigurationOverrideDetailArray{ GetJobRunsJobRunJobConfigurationOverrideDetailArgs{...} }
+//	GetJobRunsJobRunJobConfigurationOverrideDetailArray{ GetJobRunsJobRunJobConfigurationOverrideDetailArgs{...} }
 type GetJobRunsJobRunJobConfigurationOverrideDetailArrayInput interface {
 	pulumi.Input
 
@@ -5114,7 +5512,7 @@ type GetJobRunsJobRunJobInfrastructureConfigurationDetail struct {
 // GetJobRunsJobRunJobInfrastructureConfigurationDetailInput is an input type that accepts GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs and GetJobRunsJobRunJobInfrastructureConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunJobInfrastructureConfigurationDetailInput` via:
 //
-//          GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs{...}
+//	GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs{...}
 type GetJobRunsJobRunJobInfrastructureConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -5148,7 +5546,7 @@ func (i GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs) ToGetJobRunsJo
 // GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayInput is an input type that accepts GetJobRunsJobRunJobInfrastructureConfigurationDetailArray and GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayInput` via:
 //
-//          GetJobRunsJobRunJobInfrastructureConfigurationDetailArray{ GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs{...} }
+//	GetJobRunsJobRunJobInfrastructureConfigurationDetailArray{ GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs{...} }
 type GetJobRunsJobRunJobInfrastructureConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -5238,7 +5636,7 @@ type GetJobRunsJobRunJobLogConfigurationOverrideDetail struct {
 // GetJobRunsJobRunJobLogConfigurationOverrideDetailInput is an input type that accepts GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs and GetJobRunsJobRunJobLogConfigurationOverrideDetailOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunJobLogConfigurationOverrideDetailInput` via:
 //
-//          GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs{...}
+//	GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs{...}
 type GetJobRunsJobRunJobLogConfigurationOverrideDetailInput interface {
 	pulumi.Input
 
@@ -5272,7 +5670,7 @@ func (i GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs) ToGetJobRunsJobRu
 // GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayInput is an input type that accepts GetJobRunsJobRunJobLogConfigurationOverrideDetailArray and GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayInput` via:
 //
-//          GetJobRunsJobRunJobLogConfigurationOverrideDetailArray{ GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs{...} }
+//	GetJobRunsJobRunJobLogConfigurationOverrideDetailArray{ GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs{...} }
 type GetJobRunsJobRunJobLogConfigurationOverrideDetailArrayInput interface {
 	pulumi.Input
 
@@ -5358,7 +5756,7 @@ type GetJobRunsJobRunLogDetail struct {
 // GetJobRunsJobRunLogDetailInput is an input type that accepts GetJobRunsJobRunLogDetailArgs and GetJobRunsJobRunLogDetailOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunLogDetailInput` via:
 //
-//          GetJobRunsJobRunLogDetailArgs{...}
+//	GetJobRunsJobRunLogDetailArgs{...}
 type GetJobRunsJobRunLogDetailInput interface {
 	pulumi.Input
 
@@ -5388,7 +5786,7 @@ func (i GetJobRunsJobRunLogDetailArgs) ToGetJobRunsJobRunLogDetailOutputWithCont
 // GetJobRunsJobRunLogDetailArrayInput is an input type that accepts GetJobRunsJobRunLogDetailArray and GetJobRunsJobRunLogDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobRunsJobRunLogDetailArrayInput` via:
 //
-//          GetJobRunsJobRunLogDetailArray{ GetJobRunsJobRunLogDetailArgs{...} }
+//	GetJobRunsJobRunLogDetailArray{ GetJobRunsJobRunLogDetailArgs{...} }
 type GetJobRunsJobRunLogDetailArrayInput interface {
 	pulumi.Input
 
@@ -5464,7 +5862,7 @@ type GetJobShapesFilter struct {
 // GetJobShapesFilterInput is an input type that accepts GetJobShapesFilterArgs and GetJobShapesFilterOutput values.
 // You can construct a concrete instance of `GetJobShapesFilterInput` via:
 //
-//          GetJobShapesFilterArgs{...}
+//	GetJobShapesFilterArgs{...}
 type GetJobShapesFilterInput interface {
 	pulumi.Input
 
@@ -5494,7 +5892,7 @@ func (i GetJobShapesFilterArgs) ToGetJobShapesFilterOutputWithContext(ctx contex
 // GetJobShapesFilterArrayInput is an input type that accepts GetJobShapesFilterArray and GetJobShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetJobShapesFilterArrayInput` via:
 //
-//          GetJobShapesFilterArray{ GetJobShapesFilterArgs{...} }
+//	GetJobShapesFilterArray{ GetJobShapesFilterArgs{...} }
 type GetJobShapesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5577,7 +5975,7 @@ type GetJobShapesJobShape struct {
 // GetJobShapesJobShapeInput is an input type that accepts GetJobShapesJobShapeArgs and GetJobShapesJobShapeOutput values.
 // You can construct a concrete instance of `GetJobShapesJobShapeInput` via:
 //
-//          GetJobShapesJobShapeArgs{...}
+//	GetJobShapesJobShapeArgs{...}
 type GetJobShapesJobShapeInput interface {
 	pulumi.Input
 
@@ -5611,7 +6009,7 @@ func (i GetJobShapesJobShapeArgs) ToGetJobShapesJobShapeOutputWithContext(ctx co
 // GetJobShapesJobShapeArrayInput is an input type that accepts GetJobShapesJobShapeArray and GetJobShapesJobShapeArrayOutput values.
 // You can construct a concrete instance of `GetJobShapesJobShapeArrayInput` via:
 //
-//          GetJobShapesJobShapeArray{ GetJobShapesJobShapeArgs{...} }
+//	GetJobShapesJobShapeArray{ GetJobShapesJobShapeArgs{...} }
 type GetJobShapesJobShapeArrayInput interface {
 	pulumi.Input
 
@@ -5696,7 +6094,7 @@ type GetJobsFilter struct {
 // GetJobsFilterInput is an input type that accepts GetJobsFilterArgs and GetJobsFilterOutput values.
 // You can construct a concrete instance of `GetJobsFilterInput` via:
 //
-//          GetJobsFilterArgs{...}
+//	GetJobsFilterArgs{...}
 type GetJobsFilterInput interface {
 	pulumi.Input
 
@@ -5725,7 +6123,7 @@ func (i GetJobsFilterArgs) ToGetJobsFilterOutputWithContext(ctx context.Context)
 // GetJobsFilterArrayInput is an input type that accepts GetJobsFilterArray and GetJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetJobsFilterArrayInput` via:
 //
-//          GetJobsFilterArray{ GetJobsFilterArgs{...} }
+//	GetJobsFilterArray{ GetJobsFilterArgs{...} }
 type GetJobsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5834,7 +6232,7 @@ type GetJobsJob struct {
 // GetJobsJobInput is an input type that accepts GetJobsJobArgs and GetJobsJobOutput values.
 // You can construct a concrete instance of `GetJobsJobInput` via:
 //
-//          GetJobsJobArgs{...}
+//	GetJobsJobArgs{...}
 type GetJobsJobInput interface {
 	pulumi.Input
 
@@ -5895,7 +6293,7 @@ func (i GetJobsJobArgs) ToGetJobsJobOutputWithContext(ctx context.Context) GetJo
 // GetJobsJobArrayInput is an input type that accepts GetJobsJobArray and GetJobsJobArrayOutput values.
 // You can construct a concrete instance of `GetJobsJobArrayInput` via:
 //
-//          GetJobsJobArray{ GetJobsJobArgs{...} }
+//	GetJobsJobArray{ GetJobsJobArgs{...} }
 type GetJobsJobArrayInput interface {
 	pulumi.Input
 
@@ -6065,7 +6463,7 @@ type GetJobsJobJobConfigurationDetail struct {
 // GetJobsJobJobConfigurationDetailInput is an input type that accepts GetJobsJobJobConfigurationDetailArgs and GetJobsJobJobConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobsJobJobConfigurationDetailInput` via:
 //
-//          GetJobsJobJobConfigurationDetailArgs{...}
+//	GetJobsJobJobConfigurationDetailArgs{...}
 type GetJobsJobJobConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -6099,7 +6497,7 @@ func (i GetJobsJobJobConfigurationDetailArgs) ToGetJobsJobJobConfigurationDetail
 // GetJobsJobJobConfigurationDetailArrayInput is an input type that accepts GetJobsJobJobConfigurationDetailArray and GetJobsJobJobConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobsJobJobConfigurationDetailArrayInput` via:
 //
-//          GetJobsJobJobConfigurationDetailArray{ GetJobsJobJobConfigurationDetailArgs{...} }
+//	GetJobsJobJobConfigurationDetailArray{ GetJobsJobJobConfigurationDetailArgs{...} }
 type GetJobsJobJobConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -6189,7 +6587,7 @@ type GetJobsJobJobInfrastructureConfigurationDetail struct {
 // GetJobsJobJobInfrastructureConfigurationDetailInput is an input type that accepts GetJobsJobJobInfrastructureConfigurationDetailArgs and GetJobsJobJobInfrastructureConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobsJobJobInfrastructureConfigurationDetailInput` via:
 //
-//          GetJobsJobJobInfrastructureConfigurationDetailArgs{...}
+//	GetJobsJobJobInfrastructureConfigurationDetailArgs{...}
 type GetJobsJobJobInfrastructureConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -6223,7 +6621,7 @@ func (i GetJobsJobJobInfrastructureConfigurationDetailArgs) ToGetJobsJobJobInfra
 // GetJobsJobJobInfrastructureConfigurationDetailArrayInput is an input type that accepts GetJobsJobJobInfrastructureConfigurationDetailArray and GetJobsJobJobInfrastructureConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobsJobJobInfrastructureConfigurationDetailArrayInput` via:
 //
-//          GetJobsJobJobInfrastructureConfigurationDetailArray{ GetJobsJobJobInfrastructureConfigurationDetailArgs{...} }
+//	GetJobsJobJobInfrastructureConfigurationDetailArray{ GetJobsJobJobInfrastructureConfigurationDetailArgs{...} }
 type GetJobsJobJobInfrastructureConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -6313,7 +6711,7 @@ type GetJobsJobJobLogConfigurationDetail struct {
 // GetJobsJobJobLogConfigurationDetailInput is an input type that accepts GetJobsJobJobLogConfigurationDetailArgs and GetJobsJobJobLogConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetJobsJobJobLogConfigurationDetailInput` via:
 //
-//          GetJobsJobJobLogConfigurationDetailArgs{...}
+//	GetJobsJobJobLogConfigurationDetailArgs{...}
 type GetJobsJobJobLogConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -6347,7 +6745,7 @@ func (i GetJobsJobJobLogConfigurationDetailArgs) ToGetJobsJobJobLogConfiguration
 // GetJobsJobJobLogConfigurationDetailArrayInput is an input type that accepts GetJobsJobJobLogConfigurationDetailArray and GetJobsJobJobLogConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobsJobJobLogConfigurationDetailArrayInput` via:
 //
-//          GetJobsJobJobLogConfigurationDetailArray{ GetJobsJobJobLogConfigurationDetailArgs{...} }
+//	GetJobsJobJobLogConfigurationDetailArray{ GetJobsJobJobLogConfigurationDetailArgs{...} }
 type GetJobsJobJobLogConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -6443,7 +6841,7 @@ type GetModelCustomMetadataList struct {
 // GetModelCustomMetadataListInput is an input type that accepts GetModelCustomMetadataListArgs and GetModelCustomMetadataListOutput values.
 // You can construct a concrete instance of `GetModelCustomMetadataListInput` via:
 //
-//          GetModelCustomMetadataListArgs{...}
+//	GetModelCustomMetadataListArgs{...}
 type GetModelCustomMetadataListInput interface {
 	pulumi.Input
 
@@ -6483,7 +6881,7 @@ func (i GetModelCustomMetadataListArgs) ToGetModelCustomMetadataListOutputWithCo
 // GetModelCustomMetadataListArrayInput is an input type that accepts GetModelCustomMetadataListArray and GetModelCustomMetadataListArrayOutput values.
 // You can construct a concrete instance of `GetModelCustomMetadataListArrayInput` via:
 //
-//          GetModelCustomMetadataListArray{ GetModelCustomMetadataListArgs{...} }
+//	GetModelCustomMetadataListArray{ GetModelCustomMetadataListArgs{...} }
 type GetModelCustomMetadataListArrayInput interface {
 	pulumi.Input
 
@@ -6585,7 +6983,7 @@ type GetModelDefinedMetadataList struct {
 // GetModelDefinedMetadataListInput is an input type that accepts GetModelDefinedMetadataListArgs and GetModelDefinedMetadataListOutput values.
 // You can construct a concrete instance of `GetModelDefinedMetadataListInput` via:
 //
-//          GetModelDefinedMetadataListArgs{...}
+//	GetModelDefinedMetadataListArgs{...}
 type GetModelDefinedMetadataListInput interface {
 	pulumi.Input
 
@@ -6625,7 +7023,7 @@ func (i GetModelDefinedMetadataListArgs) ToGetModelDefinedMetadataListOutputWith
 // GetModelDefinedMetadataListArrayInput is an input type that accepts GetModelDefinedMetadataListArray and GetModelDefinedMetadataListArrayOutput values.
 // You can construct a concrete instance of `GetModelDefinedMetadataListArrayInput` via:
 //
-//          GetModelDefinedMetadataListArray{ GetModelDefinedMetadataListArgs{...} }
+//	GetModelDefinedMetadataListArray{ GetModelDefinedMetadataListArgs{...} }
 type GetModelDefinedMetadataListArrayInput interface {
 	pulumi.Input
 
@@ -6717,7 +7115,7 @@ type GetModelDeploymentCategoryLogDetail struct {
 // GetModelDeploymentCategoryLogDetailInput is an input type that accepts GetModelDeploymentCategoryLogDetailArgs and GetModelDeploymentCategoryLogDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentCategoryLogDetailInput` via:
 //
-//          GetModelDeploymentCategoryLogDetailArgs{...}
+//	GetModelDeploymentCategoryLogDetailArgs{...}
 type GetModelDeploymentCategoryLogDetailInput interface {
 	pulumi.Input
 
@@ -6747,7 +7145,7 @@ func (i GetModelDeploymentCategoryLogDetailArgs) ToGetModelDeploymentCategoryLog
 // GetModelDeploymentCategoryLogDetailArrayInput is an input type that accepts GetModelDeploymentCategoryLogDetailArray and GetModelDeploymentCategoryLogDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentCategoryLogDetailArrayInput` via:
 //
-//          GetModelDeploymentCategoryLogDetailArray{ GetModelDeploymentCategoryLogDetailArgs{...} }
+//	GetModelDeploymentCategoryLogDetailArray{ GetModelDeploymentCategoryLogDetailArgs{...} }
 type GetModelDeploymentCategoryLogDetailArrayInput interface {
 	pulumi.Input
 
@@ -6827,7 +7225,7 @@ type GetModelDeploymentCategoryLogDetailAccess struct {
 // GetModelDeploymentCategoryLogDetailAccessInput is an input type that accepts GetModelDeploymentCategoryLogDetailAccessArgs and GetModelDeploymentCategoryLogDetailAccessOutput values.
 // You can construct a concrete instance of `GetModelDeploymentCategoryLogDetailAccessInput` via:
 //
-//          GetModelDeploymentCategoryLogDetailAccessArgs{...}
+//	GetModelDeploymentCategoryLogDetailAccessArgs{...}
 type GetModelDeploymentCategoryLogDetailAccessInput interface {
 	pulumi.Input
 
@@ -6857,7 +7255,7 @@ func (i GetModelDeploymentCategoryLogDetailAccessArgs) ToGetModelDeploymentCateg
 // GetModelDeploymentCategoryLogDetailAccessArrayInput is an input type that accepts GetModelDeploymentCategoryLogDetailAccessArray and GetModelDeploymentCategoryLogDetailAccessArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentCategoryLogDetailAccessArrayInput` via:
 //
-//          GetModelDeploymentCategoryLogDetailAccessArray{ GetModelDeploymentCategoryLogDetailAccessArgs{...} }
+//	GetModelDeploymentCategoryLogDetailAccessArray{ GetModelDeploymentCategoryLogDetailAccessArgs{...} }
 type GetModelDeploymentCategoryLogDetailAccessArrayInput interface {
 	pulumi.Input
 
@@ -6933,7 +7331,7 @@ type GetModelDeploymentCategoryLogDetailPredict struct {
 // GetModelDeploymentCategoryLogDetailPredictInput is an input type that accepts GetModelDeploymentCategoryLogDetailPredictArgs and GetModelDeploymentCategoryLogDetailPredictOutput values.
 // You can construct a concrete instance of `GetModelDeploymentCategoryLogDetailPredictInput` via:
 //
-//          GetModelDeploymentCategoryLogDetailPredictArgs{...}
+//	GetModelDeploymentCategoryLogDetailPredictArgs{...}
 type GetModelDeploymentCategoryLogDetailPredictInput interface {
 	pulumi.Input
 
@@ -6963,7 +7361,7 @@ func (i GetModelDeploymentCategoryLogDetailPredictArgs) ToGetModelDeploymentCate
 // GetModelDeploymentCategoryLogDetailPredictArrayInput is an input type that accepts GetModelDeploymentCategoryLogDetailPredictArray and GetModelDeploymentCategoryLogDetailPredictArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentCategoryLogDetailPredictArrayInput` via:
 //
-//          GetModelDeploymentCategoryLogDetailPredictArray{ GetModelDeploymentCategoryLogDetailPredictArgs{...} }
+//	GetModelDeploymentCategoryLogDetailPredictArray{ GetModelDeploymentCategoryLogDetailPredictArgs{...} }
 type GetModelDeploymentCategoryLogDetailPredictArrayInput interface {
 	pulumi.Input
 
@@ -7039,7 +7437,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetail struct {
 // GetModelDeploymentModelDeploymentConfigurationDetailInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailArgs and GetModelDeploymentModelDeploymentConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailArgs{...}
+//	GetModelDeploymentModelDeploymentConfigurationDetailArgs{...}
 type GetModelDeploymentModelDeploymentConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -7069,7 +7467,7 @@ func (i GetModelDeploymentModelDeploymentConfigurationDetailArgs) ToGetModelDepl
 // GetModelDeploymentModelDeploymentConfigurationDetailArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailArray and GetModelDeploymentModelDeploymentConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailArrayInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailArgs{...} }
+//	GetModelDeploymentModelDeploymentConfigurationDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailArgs{...} }
 type GetModelDeploymentModelDeploymentConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -7151,7 +7549,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...}
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...}
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -7185,7 +7583,7 @@ func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...} }
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...} }
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -7279,7 +7677,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...}
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...}
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput interface {
 	pulumi.Input
 
@@ -7309,7 +7707,7 @@ func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...} }
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...} }
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -7389,7 +7787,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...}
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...}
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailInput interface {
 	pulumi.Input
 
@@ -7419,7 +7817,7 @@ func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...} }
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...} }
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -7499,7 +7897,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...}
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...}
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput interface {
 	pulumi.Input
 
@@ -7529,7 +7927,7 @@ func (i GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 // GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput is an input type that accepts GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray and GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput` via:
 //
-//          GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...} }
+//	GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{ GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...} }
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -7609,7 +8007,7 @@ type GetModelDeploymentShapesFilter struct {
 // GetModelDeploymentShapesFilterInput is an input type that accepts GetModelDeploymentShapesFilterArgs and GetModelDeploymentShapesFilterOutput values.
 // You can construct a concrete instance of `GetModelDeploymentShapesFilterInput` via:
 //
-//          GetModelDeploymentShapesFilterArgs{...}
+//	GetModelDeploymentShapesFilterArgs{...}
 type GetModelDeploymentShapesFilterInput interface {
 	pulumi.Input
 
@@ -7639,7 +8037,7 @@ func (i GetModelDeploymentShapesFilterArgs) ToGetModelDeploymentShapesFilterOutp
 // GetModelDeploymentShapesFilterArrayInput is an input type that accepts GetModelDeploymentShapesFilterArray and GetModelDeploymentShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentShapesFilterArrayInput` via:
 //
-//          GetModelDeploymentShapesFilterArray{ GetModelDeploymentShapesFilterArgs{...} }
+//	GetModelDeploymentShapesFilterArray{ GetModelDeploymentShapesFilterArgs{...} }
 type GetModelDeploymentShapesFilterArrayInput interface {
 	pulumi.Input
 
@@ -7722,7 +8120,7 @@ type GetModelDeploymentShapesModelDeploymentShape struct {
 // GetModelDeploymentShapesModelDeploymentShapeInput is an input type that accepts GetModelDeploymentShapesModelDeploymentShapeArgs and GetModelDeploymentShapesModelDeploymentShapeOutput values.
 // You can construct a concrete instance of `GetModelDeploymentShapesModelDeploymentShapeInput` via:
 //
-//          GetModelDeploymentShapesModelDeploymentShapeArgs{...}
+//	GetModelDeploymentShapesModelDeploymentShapeArgs{...}
 type GetModelDeploymentShapesModelDeploymentShapeInput interface {
 	pulumi.Input
 
@@ -7756,7 +8154,7 @@ func (i GetModelDeploymentShapesModelDeploymentShapeArgs) ToGetModelDeploymentSh
 // GetModelDeploymentShapesModelDeploymentShapeArrayInput is an input type that accepts GetModelDeploymentShapesModelDeploymentShapeArray and GetModelDeploymentShapesModelDeploymentShapeArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentShapesModelDeploymentShapeArrayInput` via:
 //
-//          GetModelDeploymentShapesModelDeploymentShapeArray{ GetModelDeploymentShapesModelDeploymentShapeArgs{...} }
+//	GetModelDeploymentShapesModelDeploymentShapeArray{ GetModelDeploymentShapesModelDeploymentShapeArgs{...} }
 type GetModelDeploymentShapesModelDeploymentShapeArrayInput interface {
 	pulumi.Input
 
@@ -7841,7 +8239,7 @@ type GetModelDeploymentsFilter struct {
 // GetModelDeploymentsFilterInput is an input type that accepts GetModelDeploymentsFilterArgs and GetModelDeploymentsFilterOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsFilterInput` via:
 //
-//          GetModelDeploymentsFilterArgs{...}
+//	GetModelDeploymentsFilterArgs{...}
 type GetModelDeploymentsFilterInput interface {
 	pulumi.Input
 
@@ -7870,7 +8268,7 @@ func (i GetModelDeploymentsFilterArgs) ToGetModelDeploymentsFilterOutputWithCont
 // GetModelDeploymentsFilterArrayInput is an input type that accepts GetModelDeploymentsFilterArray and GetModelDeploymentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsFilterArrayInput` via:
 //
-//          GetModelDeploymentsFilterArray{ GetModelDeploymentsFilterArgs{...} }
+//	GetModelDeploymentsFilterArray{ GetModelDeploymentsFilterArgs{...} }
 type GetModelDeploymentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7972,7 +8370,7 @@ type GetModelDeploymentsModelDeployment struct {
 // GetModelDeploymentsModelDeploymentInput is an input type that accepts GetModelDeploymentsModelDeploymentArgs and GetModelDeploymentsModelDeploymentOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentInput` via:
 //
-//          GetModelDeploymentsModelDeploymentArgs{...}
+//	GetModelDeploymentsModelDeploymentArgs{...}
 type GetModelDeploymentsModelDeploymentInput interface {
 	pulumi.Input
 
@@ -8026,7 +8424,7 @@ func (i GetModelDeploymentsModelDeploymentArgs) ToGetModelDeploymentsModelDeploy
 // GetModelDeploymentsModelDeploymentArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentArray and GetModelDeploymentsModelDeploymentArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentArray{ GetModelDeploymentsModelDeploymentArgs{...} }
+//	GetModelDeploymentsModelDeploymentArray{ GetModelDeploymentsModelDeploymentArgs{...} }
 type GetModelDeploymentsModelDeploymentArrayInput interface {
 	pulumi.Input
 
@@ -8166,7 +8564,7 @@ type GetModelDeploymentsModelDeploymentCategoryLogDetail struct {
 // GetModelDeploymentsModelDeploymentCategoryLogDetailInput is an input type that accepts GetModelDeploymentsModelDeploymentCategoryLogDetailArgs and GetModelDeploymentsModelDeploymentCategoryLogDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentCategoryLogDetailInput` via:
 //
-//          GetModelDeploymentsModelDeploymentCategoryLogDetailArgs{...}
+//	GetModelDeploymentsModelDeploymentCategoryLogDetailArgs{...}
 type GetModelDeploymentsModelDeploymentCategoryLogDetailInput interface {
 	pulumi.Input
 
@@ -8196,7 +8594,7 @@ func (i GetModelDeploymentsModelDeploymentCategoryLogDetailArgs) ToGetModelDeplo
 // GetModelDeploymentsModelDeploymentCategoryLogDetailArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentCategoryLogDetailArray and GetModelDeploymentsModelDeploymentCategoryLogDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentCategoryLogDetailArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentCategoryLogDetailArray{ GetModelDeploymentsModelDeploymentCategoryLogDetailArgs{...} }
+//	GetModelDeploymentsModelDeploymentCategoryLogDetailArray{ GetModelDeploymentsModelDeploymentCategoryLogDetailArgs{...} }
 type GetModelDeploymentsModelDeploymentCategoryLogDetailArrayInput interface {
 	pulumi.Input
 
@@ -8276,7 +8674,7 @@ type GetModelDeploymentsModelDeploymentCategoryLogDetailAccess struct {
 // GetModelDeploymentsModelDeploymentCategoryLogDetailAccessInput is an input type that accepts GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs and GetModelDeploymentsModelDeploymentCategoryLogDetailAccessOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentCategoryLogDetailAccessInput` via:
 //
-//          GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs{...}
+//	GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs{...}
 type GetModelDeploymentsModelDeploymentCategoryLogDetailAccessInput interface {
 	pulumi.Input
 
@@ -8306,7 +8704,7 @@ func (i GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs) ToGetMode
 // GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArray and GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArray{ GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs{...} }
+//	GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArray{ GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs{...} }
 type GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArrayInput interface {
 	pulumi.Input
 
@@ -8382,7 +8780,7 @@ type GetModelDeploymentsModelDeploymentCategoryLogDetailPredict struct {
 // GetModelDeploymentsModelDeploymentCategoryLogDetailPredictInput is an input type that accepts GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs and GetModelDeploymentsModelDeploymentCategoryLogDetailPredictOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentCategoryLogDetailPredictInput` via:
 //
-//          GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs{...}
+//	GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs{...}
 type GetModelDeploymentsModelDeploymentCategoryLogDetailPredictInput interface {
 	pulumi.Input
 
@@ -8412,7 +8810,7 @@ func (i GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs) ToGetMod
 // GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArray and GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArray{ GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs{...} }
+//	GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArray{ GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs{...} }
 type GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArrayInput interface {
 	pulumi.Input
 
@@ -8488,7 +8886,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail struct
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs{...}
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs{...}
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -8518,7 +8916,7 @@ func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs{...} }
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs{...} }
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -8602,7 +9000,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...}
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...}
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -8636,7 +9034,7 @@ func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...} }
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs{...} }
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -8730,7 +9128,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...}
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...}
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationInput interface {
 	pulumi.Input
 
@@ -8760,7 +9158,7 @@ func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...} }
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs{...} }
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -8840,7 +9238,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...}
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...}
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailInput interface {
 	pulumi.Input
 
@@ -8870,7 +9268,7 @@ func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...} }
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs{...} }
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -8950,7 +9348,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...}
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...}
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyInput interface {
 	pulumi.Input
 
@@ -8980,7 +9378,7 @@ func (i GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 // GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput is an input type that accepts GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray and GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayOutput values.
 // You can construct a concrete instance of `GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput` via:
 //
-//          GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...} }
+//	GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArray{ GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs{...} }
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -9059,7 +9457,7 @@ type GetModelsFilter struct {
 // GetModelsFilterInput is an input type that accepts GetModelsFilterArgs and GetModelsFilterOutput values.
 // You can construct a concrete instance of `GetModelsFilterInput` via:
 //
-//          GetModelsFilterArgs{...}
+//	GetModelsFilterArgs{...}
 type GetModelsFilterInput interface {
 	pulumi.Input
 
@@ -9088,7 +9486,7 @@ func (i GetModelsFilterArgs) ToGetModelsFilterOutputWithContext(ctx context.Cont
 // GetModelsFilterArrayInput is an input type that accepts GetModelsFilterArray and GetModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetModelsFilterArrayInput` via:
 //
-//          GetModelsFilterArray{ GetModelsFilterArgs{...} }
+//	GetModelsFilterArray{ GetModelsFilterArgs{...} }
 type GetModelsFilterArrayInput interface {
 	pulumi.Input
 
@@ -9196,7 +9594,7 @@ type GetModelsModel struct {
 // GetModelsModelInput is an input type that accepts GetModelsModelArgs and GetModelsModelOutput values.
 // You can construct a concrete instance of `GetModelsModelInput` via:
 //
-//          GetModelsModelArgs{...}
+//	GetModelsModelArgs{...}
 type GetModelsModelInput interface {
 	pulumi.Input
 
@@ -9256,7 +9654,7 @@ func (i GetModelsModelArgs) ToGetModelsModelOutputWithContext(ctx context.Contex
 // GetModelsModelArrayInput is an input type that accepts GetModelsModelArray and GetModelsModelArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelArrayInput` via:
 //
-//          GetModelsModelArray{ GetModelsModelArgs{...} }
+//	GetModelsModelArray{ GetModelsModelArgs{...} }
 type GetModelsModelArrayInput interface {
 	pulumi.Input
 
@@ -9426,7 +9824,7 @@ type GetModelsModelCustomMetadataList struct {
 // GetModelsModelCustomMetadataListInput is an input type that accepts GetModelsModelCustomMetadataListArgs and GetModelsModelCustomMetadataListOutput values.
 // You can construct a concrete instance of `GetModelsModelCustomMetadataListInput` via:
 //
-//          GetModelsModelCustomMetadataListArgs{...}
+//	GetModelsModelCustomMetadataListArgs{...}
 type GetModelsModelCustomMetadataListInput interface {
 	pulumi.Input
 
@@ -9466,7 +9864,7 @@ func (i GetModelsModelCustomMetadataListArgs) ToGetModelsModelCustomMetadataList
 // GetModelsModelCustomMetadataListArrayInput is an input type that accepts GetModelsModelCustomMetadataListArray and GetModelsModelCustomMetadataListArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCustomMetadataListArrayInput` via:
 //
-//          GetModelsModelCustomMetadataListArray{ GetModelsModelCustomMetadataListArgs{...} }
+//	GetModelsModelCustomMetadataListArray{ GetModelsModelCustomMetadataListArgs{...} }
 type GetModelsModelCustomMetadataListArrayInput interface {
 	pulumi.Input
 
@@ -9568,7 +9966,7 @@ type GetModelsModelDefinedMetadataList struct {
 // GetModelsModelDefinedMetadataListInput is an input type that accepts GetModelsModelDefinedMetadataListArgs and GetModelsModelDefinedMetadataListOutput values.
 // You can construct a concrete instance of `GetModelsModelDefinedMetadataListInput` via:
 //
-//          GetModelsModelDefinedMetadataListArgs{...}
+//	GetModelsModelDefinedMetadataListArgs{...}
 type GetModelsModelDefinedMetadataListInput interface {
 	pulumi.Input
 
@@ -9608,7 +10006,7 @@ func (i GetModelsModelDefinedMetadataListArgs) ToGetModelsModelDefinedMetadataLi
 // GetModelsModelDefinedMetadataListArrayInput is an input type that accepts GetModelsModelDefinedMetadataListArray and GetModelsModelDefinedMetadataListArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelDefinedMetadataListArrayInput` via:
 //
-//          GetModelsModelDefinedMetadataListArray{ GetModelsModelDefinedMetadataListArgs{...} }
+//	GetModelsModelDefinedMetadataListArray{ GetModelsModelDefinedMetadataListArgs{...} }
 type GetModelsModelDefinedMetadataListArrayInput interface {
 	pulumi.Input
 
@@ -9704,7 +10102,7 @@ type GetNotebookSessionNotebookSessionConfigDetail struct {
 // GetNotebookSessionNotebookSessionConfigDetailInput is an input type that accepts GetNotebookSessionNotebookSessionConfigDetailArgs and GetNotebookSessionNotebookSessionConfigDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigDetailInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigDetailArgs{...}
+//	GetNotebookSessionNotebookSessionConfigDetailArgs{...}
 type GetNotebookSessionNotebookSessionConfigDetailInput interface {
 	pulumi.Input
 
@@ -9738,7 +10136,7 @@ func (i GetNotebookSessionNotebookSessionConfigDetailArgs) ToGetNotebookSessionN
 // GetNotebookSessionNotebookSessionConfigDetailArrayInput is an input type that accepts GetNotebookSessionNotebookSessionConfigDetailArray and GetNotebookSessionNotebookSessionConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigDetailArrayInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigDetailArray{ GetNotebookSessionNotebookSessionConfigDetailArgs{...} }
+//	GetNotebookSessionNotebookSessionConfigDetailArray{ GetNotebookSessionNotebookSessionConfigDetailArgs{...} }
 type GetNotebookSessionNotebookSessionConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -9826,7 +10224,7 @@ type GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDeta
 // GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...}
+//	GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...}
 type GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput interface {
 	pulumi.Input
 
@@ -9856,7 +10254,7 @@ func (i GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigD
 // GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...} }
+//	GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...} }
 type GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -9940,7 +10338,7 @@ type GetNotebookSessionNotebookSessionConfigurationDetail struct {
 // GetNotebookSessionNotebookSessionConfigurationDetailInput is an input type that accepts GetNotebookSessionNotebookSessionConfigurationDetailArgs and GetNotebookSessionNotebookSessionConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigurationDetailInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigurationDetailArgs{...}
+//	GetNotebookSessionNotebookSessionConfigurationDetailArgs{...}
 type GetNotebookSessionNotebookSessionConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -9974,7 +10372,7 @@ func (i GetNotebookSessionNotebookSessionConfigurationDetailArgs) ToGetNotebookS
 // GetNotebookSessionNotebookSessionConfigurationDetailArrayInput is an input type that accepts GetNotebookSessionNotebookSessionConfigurationDetailArray and GetNotebookSessionNotebookSessionConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigurationDetailArrayInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigurationDetailArray{ GetNotebookSessionNotebookSessionConfigurationDetailArgs{...} }
+//	GetNotebookSessionNotebookSessionConfigurationDetailArray{ GetNotebookSessionNotebookSessionConfigurationDetailArgs{...} }
 type GetNotebookSessionNotebookSessionConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -10062,7 +10460,7 @@ type GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCon
 // GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...}
+//	GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...}
 type GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput interface {
 	pulumi.Input
 
@@ -10092,7 +10490,7 @@ func (i GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShape
 // GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput` via:
 //
-//          GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...} }
+//	GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...} }
 type GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -10162,6 +10560,314 @@ func (o GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShape
 	}).(GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput)
 }
 
+type GetNotebookSessionNotebookSessionRuntimeConfigDetail struct {
+	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables map[string]interface{} `pulumi:"customEnvironmentVariables"`
+	// Git configuration Details.
+	NotebookSessionGitConfigDetails []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+// GetNotebookSessionNotebookSessionRuntimeConfigDetailInput is an input type that accepts GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs and GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionRuntimeConfigDetailInput` via:
+//
+//	GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...}
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs struct {
+	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables pulumi.MapInput `pulumi:"customEnvironmentVariables"`
+	// Git configuration Details.
+	NotebookSessionGitConfigDetails GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return i.ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
+}
+
+// GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput is an input type that accepts GetNotebookSessionNotebookSessionRuntimeConfigDetailArray and GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionNotebookSessionRuntimeConfigDetailArray{ GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...} }
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailArray []GetNotebookSessionNotebookSessionRuntimeConfigDetailInput
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return o
+}
+
+// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]interface{} {
+		return v.CustomEnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// Git configuration Details.
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) NotebookSessionGitConfigDetails() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionRuntimeConfigDetail) []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+		return v.NotebookSessionGitConfigDetails
+	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionNotebookSessionRuntimeConfigDetail {
+		return vs[0].([]GetNotebookSessionNotebookSessionRuntimeConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail struct {
+	// A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+// GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput is an input type that accepts GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs and GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput` via:
+//
+//	GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...}
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs struct {
+	// A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return i.ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
+}
+
+// GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput is an input type that accepts GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray and GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{ GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...} }
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return o
+}
+
+// A collection of Git repository configurations.
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) NotebookSessionGitRepoConfigCollections() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail) []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+		return v.NotebookSessionGitRepoConfigCollections
+	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+		return vs[0].([]GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection struct {
+	// The repository URL
+	Url string `pulumi:"url"`
+}
+
+// GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput is an input type that accepts GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs and GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput` via:
+//
+//	GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...}
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs struct {
+	// The repository URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return i.ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+// GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput is an input type that accepts GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray and GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput` via:
+//
+//	GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{ GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...} }
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
+	ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return i.ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+// The repository URL
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection) string {
+		return v.Url
+	}).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+		return vs[0].([]GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
+	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
 type GetNotebookSessionShapesFilter struct {
 	// The name of the notebook session shape.
 	Name   string   `pulumi:"name"`
@@ -10172,7 +10878,7 @@ type GetNotebookSessionShapesFilter struct {
 // GetNotebookSessionShapesFilterInput is an input type that accepts GetNotebookSessionShapesFilterArgs and GetNotebookSessionShapesFilterOutput values.
 // You can construct a concrete instance of `GetNotebookSessionShapesFilterInput` via:
 //
-//          GetNotebookSessionShapesFilterArgs{...}
+//	GetNotebookSessionShapesFilterArgs{...}
 type GetNotebookSessionShapesFilterInput interface {
 	pulumi.Input
 
@@ -10202,7 +10908,7 @@ func (i GetNotebookSessionShapesFilterArgs) ToGetNotebookSessionShapesFilterOutp
 // GetNotebookSessionShapesFilterArrayInput is an input type that accepts GetNotebookSessionShapesFilterArray and GetNotebookSessionShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionShapesFilterArrayInput` via:
 //
-//          GetNotebookSessionShapesFilterArray{ GetNotebookSessionShapesFilterArgs{...} }
+//	GetNotebookSessionShapesFilterArray{ GetNotebookSessionShapesFilterArgs{...} }
 type GetNotebookSessionShapesFilterArrayInput interface {
 	pulumi.Input
 
@@ -10285,7 +10991,7 @@ type GetNotebookSessionShapesNotebookSessionShape struct {
 // GetNotebookSessionShapesNotebookSessionShapeInput is an input type that accepts GetNotebookSessionShapesNotebookSessionShapeArgs and GetNotebookSessionShapesNotebookSessionShapeOutput values.
 // You can construct a concrete instance of `GetNotebookSessionShapesNotebookSessionShapeInput` via:
 //
-//          GetNotebookSessionShapesNotebookSessionShapeArgs{...}
+//	GetNotebookSessionShapesNotebookSessionShapeArgs{...}
 type GetNotebookSessionShapesNotebookSessionShapeInput interface {
 	pulumi.Input
 
@@ -10319,7 +11025,7 @@ func (i GetNotebookSessionShapesNotebookSessionShapeArgs) ToGetNotebookSessionSh
 // GetNotebookSessionShapesNotebookSessionShapeArrayInput is an input type that accepts GetNotebookSessionShapesNotebookSessionShapeArray and GetNotebookSessionShapesNotebookSessionShapeArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionShapesNotebookSessionShapeArrayInput` via:
 //
-//          GetNotebookSessionShapesNotebookSessionShapeArray{ GetNotebookSessionShapesNotebookSessionShapeArgs{...} }
+//	GetNotebookSessionShapesNotebookSessionShapeArray{ GetNotebookSessionShapesNotebookSessionShapeArgs{...} }
 type GetNotebookSessionShapesNotebookSessionShapeArrayInput interface {
 	pulumi.Input
 
@@ -10404,7 +11110,7 @@ type GetNotebookSessionsFilter struct {
 // GetNotebookSessionsFilterInput is an input type that accepts GetNotebookSessionsFilterArgs and GetNotebookSessionsFilterOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsFilterInput` via:
 //
-//          GetNotebookSessionsFilterArgs{...}
+//	GetNotebookSessionsFilterArgs{...}
 type GetNotebookSessionsFilterInput interface {
 	pulumi.Input
 
@@ -10433,7 +11139,7 @@ func (i GetNotebookSessionsFilterArgs) ToGetNotebookSessionsFilterOutputWithCont
 // GetNotebookSessionsFilterArrayInput is an input type that accepts GetNotebookSessionsFilterArray and GetNotebookSessionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsFilterArrayInput` via:
 //
-//          GetNotebookSessionsFilterArray{ GetNotebookSessionsFilterArgs{...} }
+//	GetNotebookSessionsFilterArray{ GetNotebookSessionsFilterArgs{...} }
 type GetNotebookSessionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -10520,6 +11226,8 @@ type GetNotebookSessionsNotebookSession struct {
 	NotebookSessionConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail `pulumi:"notebookSessionConfigDetails"`
 	// Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail `pulumi:"notebookSessionConfigurationDetails"`
+	// Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl string `pulumi:"notebookSessionUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -10533,7 +11241,7 @@ type GetNotebookSessionsNotebookSession struct {
 // GetNotebookSessionsNotebookSessionInput is an input type that accepts GetNotebookSessionsNotebookSessionArgs and GetNotebookSessionsNotebookSessionOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionInput` via:
 //
-//          GetNotebookSessionsNotebookSessionArgs{...}
+//	GetNotebookSessionsNotebookSessionArgs{...}
 type GetNotebookSessionsNotebookSessionInput interface {
 	pulumi.Input
 
@@ -10560,6 +11268,8 @@ type GetNotebookSessionsNotebookSessionArgs struct {
 	NotebookSessionConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput `pulumi:"notebookSessionConfigDetails"`
 	// Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput `pulumi:"notebookSessionConfigurationDetails"`
+	// Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringInput `pulumi:"notebookSessionUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -10585,7 +11295,7 @@ func (i GetNotebookSessionsNotebookSessionArgs) ToGetNotebookSessionsNotebookSes
 // GetNotebookSessionsNotebookSessionArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionArray and GetNotebookSessionsNotebookSessionArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionArrayInput` via:
 //
-//          GetNotebookSessionsNotebookSessionArray{ GetNotebookSessionsNotebookSessionArgs{...} }
+//	GetNotebookSessionsNotebookSessionArray{ GetNotebookSessionsNotebookSessionArgs{...} }
 type GetNotebookSessionsNotebookSessionArrayInput interface {
 	pulumi.Input
 
@@ -10670,6 +11380,13 @@ func (o GetNotebookSessionsNotebookSessionOutput) NotebookSessionConfigurationDe
 	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput)
 }
 
+// Notebook Session runtime configuration details.
+func (o GetNotebookSessionsNotebookSessionOutput) NotebookSessionRuntimeConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail {
+		return v.NotebookSessionRuntimeConfigDetails
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
+}
+
 // The URL to interact with the notebook session.
 func (o GetNotebookSessionsNotebookSessionOutput) NotebookSessionUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) string { return v.NotebookSessionUrl }).(pulumi.StringOutput)
@@ -10724,7 +11441,7 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail struct {
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...}
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...}
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailInput interface {
 	pulumi.Input
 
@@ -10758,7 +11475,7 @@ func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs) ToGet
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...} }
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs{...} }
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -10848,7 +11565,7 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessio
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...}
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...}
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput interface {
 	pulumi.Input
 
@@ -10878,7 +11595,7 @@ func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSes
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...} }
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{...} }
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -10962,7 +11679,7 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail struct
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...}
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...}
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailInput interface {
 	pulumi.Input
 
@@ -10996,7 +11713,7 @@ func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...} }
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs{...} }
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput interface {
 	pulumi.Input
 
@@ -11086,7 +11803,7 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNoteboo
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...}
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...}
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput interface {
 	pulumi.Input
 
@@ -11116,7 +11833,7 @@ func (i GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNote
 // GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput` via:
 //
-//          GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...} }
+//	GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{...} }
 type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput interface {
 	pulumi.Input
 
@@ -11186,6 +11903,314 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNote
 	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput)
 }
 
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail struct {
+	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables map[string]interface{} `pulumi:"customEnvironmentVariables"`
+	// Git configuration Details.
+	NotebookSessionGitConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs struct {
+	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+	CustomEnvironmentVariables pulumi.MapInput `pulumi:"customEnvironmentVariables"`
+	// Git configuration Details.
+	NotebookSessionGitConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput `pulumi:"notebookSessionGitConfigDetails"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return o
+}
+
+// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.MapOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]interface{} {
+		return v.CustomEnvironmentVariables
+	}).(pulumi.MapOutput)
+}
+
+// Git configuration Details.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) NotebookSessionGitConfigDetails() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+		return v.NotebookSessionGitConfigDetails
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail struct {
+	// A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs struct {
+	// A collection of Git repository configurations.
+	NotebookSessionGitRepoConfigCollections GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput `pulumi:"notebookSessionGitRepoConfigCollections"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return o
+}
+
+// A collection of Git repository configurations.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput) NotebookSessionGitRepoConfigCollections() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+		return v.NotebookSessionGitRepoConfigCollections
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection struct {
+	// The repository URL
+	Url string `pulumi:"url"`
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...}
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs struct {
+	// The repository URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
+// GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput is an input type that accepts GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray and GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput` via:
+//
+//	GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{ GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{...} }
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
+	ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return i.ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return o
+}
+
+// The repository URL
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection) string {
+		return v.Url
+	}).(pulumi.StringOutput)
+}
+
+type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)(nil)).Elem()
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput() GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) ToGetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutputWithContext(ctx context.Context) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+		return vs[0].([]GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection)[vs[1].(int)]
+	}).(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput)
+}
+
 type GetProjectsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -11195,7 +12220,7 @@ type GetProjectsFilter struct {
 // GetProjectsFilterInput is an input type that accepts GetProjectsFilterArgs and GetProjectsFilterOutput values.
 // You can construct a concrete instance of `GetProjectsFilterInput` via:
 //
-//          GetProjectsFilterArgs{...}
+//	GetProjectsFilterArgs{...}
 type GetProjectsFilterInput interface {
 	pulumi.Input
 
@@ -11224,7 +12249,7 @@ func (i GetProjectsFilterArgs) ToGetProjectsFilterOutputWithContext(ctx context.
 // GetProjectsFilterArrayInput is an input type that accepts GetProjectsFilterArray and GetProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProjectsFilterArrayInput` via:
 //
-//          GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
+//	GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
 type GetProjectsFilterArrayInput interface {
 	pulumi.Input
 
@@ -11316,7 +12341,7 @@ type GetProjectsProject struct {
 // GetProjectsProjectInput is an input type that accepts GetProjectsProjectArgs and GetProjectsProjectOutput values.
 // You can construct a concrete instance of `GetProjectsProjectInput` via:
 //
-//          GetProjectsProjectArgs{...}
+//	GetProjectsProjectArgs{...}
 type GetProjectsProjectInput interface {
 	pulumi.Input
 
@@ -11360,7 +12385,7 @@ func (i GetProjectsProjectArgs) ToGetProjectsProjectOutputWithContext(ctx contex
 // GetProjectsProjectArrayInput is an input type that accepts GetProjectsProjectArray and GetProjectsProjectArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectArrayInput` via:
 //
-//          GetProjectsProjectArray{ GetProjectsProjectArgs{...} }
+//	GetProjectsProjectArray{ GetProjectsProjectArgs{...} }
 type GetProjectsProjectArrayInput interface {
 	pulumi.Input
 
@@ -11504,6 +12529,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigurationDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFastLaunchJobConfigInput)(nil)).Elem(), GetFastLaunchJobConfigsFastLaunchJobConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFastLaunchJobConfigArrayInput)(nil)).Elem(), GetFastLaunchJobConfigsFastLaunchJobConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFastLaunchJobConfigsFilterInput)(nil)).Elem(), GetFastLaunchJobConfigsFilterArgs{})
@@ -11608,6 +12639,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionConfigurationDetailArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionShapesFilterInput)(nil)).Elem(), GetNotebookSessionShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionShapesFilterArrayInput)(nil)).Elem(), GetNotebookSessionShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionShapesNotebookSessionShapeInput)(nil)).Elem(), GetNotebookSessionShapesNotebookSessionShapeArgs{})
@@ -11624,6 +12661,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayInput)(nil)).Elem(), GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterInput)(nil)).Elem(), GetProjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterArrayInput)(nil)).Elem(), GetProjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectInput)(nil)).Elem(), GetProjectsProjectArgs{})
@@ -11670,6 +12713,12 @@ func init() {
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutput{})
+	pulumi.RegisterOutputType(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFastLaunchJobConfigOutput{})
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFastLaunchJobConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFastLaunchJobConfigsFilterOutput{})
@@ -11774,6 +12823,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionShapesNotebookSessionShapeOutput{})
@@ -11790,6 +12845,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectOutput{})

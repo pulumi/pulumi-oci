@@ -22,32 +22,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgents(ctx, &managementagent.GetManagementAgentsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Management_agent_access_level),
-// 			AvailabilityStatus:     pulumi.StringRef(_var.Management_agent_availability_status),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
-// 			HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
-// 			InstallType:            pulumi.StringRef(_var.Management_agent_install_type),
-// 			IsCustomerDeployed:     pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
-// 			PlatformTypes:          _var.Management_agent_platform_type,
-// 			PluginNames:            _var.Management_agent_plugin_name,
-// 			State:                  pulumi.StringRef(_var.Management_agent_state),
-// 			Versions:               _var.Management_agent_version,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgents(ctx, &managementagent.GetManagementAgentsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Management_agent_access_level),
+//				AvailabilityStatus:     pulumi.StringRef(_var.Management_agent_availability_status),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
+//				HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
+//				InstallType:            pulumi.StringRef(_var.Management_agent_install_type),
+//				IsCustomerDeployed:     pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
+//				PlatformTypes:          _var.Management_agent_platform_type,
+//				PluginNames:            _var.Management_agent_plugin_name,
+//				State:                  pulumi.StringRef(_var.Management_agent_state),
+//				Versions:               _var.Management_agent_version,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementAgents(ctx *pulumi.Context, args *GetManagementAgentsArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentsResult, error) {
 	var rv GetManagementAgentsResult

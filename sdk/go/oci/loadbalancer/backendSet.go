@@ -25,59 +25,64 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewBackendSet(ctx, "testBackendSet", &LoadBalancer.BackendSetArgs{
-// 			HealthChecker: &loadbalancer.BackendSetHealthCheckerArgs{
-// 				Protocol:          pulumi.Any(_var.Backend_set_health_checker_protocol),
-// 				IntervalMs:        pulumi.Any(_var.Backend_set_health_checker_interval_ms),
-// 				Port:              pulumi.Any(_var.Backend_set_health_checker_port),
-// 				ResponseBodyRegex: pulumi.Any(_var.Backend_set_health_checker_response_body_regex),
-// 				Retries:           pulumi.Any(_var.Backend_set_health_checker_retries),
-// 				ReturnCode:        pulumi.Any(_var.Backend_set_health_checker_return_code),
-// 				TimeoutInMillis:   pulumi.Any(_var.Backend_set_health_checker_timeout_in_millis),
-// 				UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
-// 			},
-// 			LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			Policy:         pulumi.Any(_var.Backend_set_policy),
-// 			LbCookieSessionPersistenceConfiguration: &loadbalancer.BackendSetLbCookieSessionPersistenceConfigurationArgs{
-// 				CookieName:      pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_cookie_name),
-// 				DisableFallback: pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_disable_fallback),
-// 				Domain:          pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_domain),
-// 				IsHttpOnly:      pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_is_http_only),
-// 				IsSecure:        pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_is_secure),
-// 				MaxAgeInSeconds: pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds),
-// 				Path:            pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_path),
-// 			},
-// 			SessionPersistenceConfiguration: &loadbalancer.BackendSetSessionPersistenceConfigurationArgs{
-// 				CookieName:      pulumi.Any(_var.Backend_set_session_persistence_configuration_cookie_name),
-// 				DisableFallback: pulumi.Any(_var.Backend_set_session_persistence_configuration_disable_fallback),
-// 			},
-// 			SslConfiguration: &loadbalancer.BackendSetSslConfigurationArgs{
-// 				CertificateIds:                 pulumi.Any(_var.Backend_set_ssl_configuration_certificate_ids),
-// 				CertificateName:                pulumi.Any(oci_load_balancer_certificate.Test_certificate.Name),
-// 				CipherSuiteName:                pulumi.Any(_var.Backend_set_ssl_configuration_cipher_suite_name),
-// 				Protocols:                      pulumi.Any(_var.Backend_set_ssl_configuration_protocols),
-// 				ServerOrderPreference:          pulumi.Any(_var.Backend_set_ssl_configuration_server_order_preference),
-// 				TrustedCertificateAuthorityIds: pulumi.Any(_var.Backend_set_ssl_configuration_trusted_certificate_authority_ids),
-// 				VerifyDepth:                    pulumi.Any(_var.Backend_set_ssl_configuration_verify_depth),
-// 				VerifyPeerCertificate:          pulumi.Any(_var.Backend_set_ssl_configuration_verify_peer_certificate),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewBackendSet(ctx, "testBackendSet", &LoadBalancer.BackendSetArgs{
+//				HealthChecker: &loadbalancer.BackendSetHealthCheckerArgs{
+//					Protocol:          pulumi.Any(_var.Backend_set_health_checker_protocol),
+//					IntervalMs:        pulumi.Any(_var.Backend_set_health_checker_interval_ms),
+//					Port:              pulumi.Any(_var.Backend_set_health_checker_port),
+//					ResponseBodyRegex: pulumi.Any(_var.Backend_set_health_checker_response_body_regex),
+//					Retries:           pulumi.Any(_var.Backend_set_health_checker_retries),
+//					ReturnCode:        pulumi.Any(_var.Backend_set_health_checker_return_code),
+//					TimeoutInMillis:   pulumi.Any(_var.Backend_set_health_checker_timeout_in_millis),
+//					UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
+//				},
+//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Policy:         pulumi.Any(_var.Backend_set_policy),
+//				LbCookieSessionPersistenceConfiguration: &loadbalancer.BackendSetLbCookieSessionPersistenceConfigurationArgs{
+//					CookieName:      pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_cookie_name),
+//					DisableFallback: pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_disable_fallback),
+//					Domain:          pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_domain),
+//					IsHttpOnly:      pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_is_http_only),
+//					IsSecure:        pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_is_secure),
+//					MaxAgeInSeconds: pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds),
+//					Path:            pulumi.Any(_var.Backend_set_lb_cookie_session_persistence_configuration_path),
+//				},
+//				SessionPersistenceConfiguration: &loadbalancer.BackendSetSessionPersistenceConfigurationArgs{
+//					CookieName:      pulumi.Any(_var.Backend_set_session_persistence_configuration_cookie_name),
+//					DisableFallback: pulumi.Any(_var.Backend_set_session_persistence_configuration_disable_fallback),
+//				},
+//				SslConfiguration: &loadbalancer.BackendSetSslConfigurationArgs{
+//					CertificateIds:                 pulumi.Any(_var.Backend_set_ssl_configuration_certificate_ids),
+//					CertificateName:                pulumi.Any(oci_load_balancer_certificate.Test_certificate.Name),
+//					CipherSuiteName:                pulumi.Any(_var.Backend_set_ssl_configuration_cipher_suite_name),
+//					Protocols:                      pulumi.Any(_var.Backend_set_ssl_configuration_protocols),
+//					ServerOrderPreference:          pulumi.Any(_var.Backend_set_ssl_configuration_server_order_preference),
+//					TrustedCertificateAuthorityIds: pulumi.Any(_var.Backend_set_ssl_configuration_trusted_certificate_authority_ids),
+//					VerifyDepth:                    pulumi.Any(_var.Backend_set_ssl_configuration_verify_depth),
+//					VerifyPeerCertificate:          pulumi.Any(_var.Backend_set_ssl_configuration_verify_peer_certificate),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
-//       (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
-//       attributes per backend set.
+//
+//	(LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+//	attributes per backend set.
+//
 // {{% /example %}}
 //
 // ## Import
@@ -85,7 +90,9 @@ import (
 // BackendSets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
+//
+//	$ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
+//
 // ```
 type BackendSet struct {
 	pulumi.CustomResourceState
@@ -248,7 +255,7 @@ func (i *BackendSet) ToBackendSetOutputWithContext(ctx context.Context) BackendS
 // BackendSetArrayInput is an input type that accepts BackendSetArray and BackendSetArrayOutput values.
 // You can construct a concrete instance of `BackendSetArrayInput` via:
 //
-//          BackendSetArray{ BackendSetArgs{...} }
+//	BackendSetArray{ BackendSetArgs{...} }
 type BackendSetArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +280,7 @@ func (i BackendSetArray) ToBackendSetArrayOutputWithContext(ctx context.Context)
 // BackendSetMapInput is an input type that accepts BackendSetMap and BackendSetMapOutput values.
 // You can construct a concrete instance of `BackendSetMapInput` via:
 //
-//          BackendSetMap{ "key": BackendSetArgs{...} }
+//	BackendSetMap{ "key": BackendSetArgs{...} }
 type BackendSetMapInput interface {
 	pulumi.Input
 

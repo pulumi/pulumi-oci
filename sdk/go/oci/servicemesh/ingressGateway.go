@@ -21,63 +21,66 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewIngressGateway(ctx, "testIngressGateway", &ServiceMesh.IngressGatewayArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Hosts: servicemesh.IngressGatewayHostArray{
-// 				&servicemesh.IngressGatewayHostArgs{
-// 					Listeners: servicemesh.IngressGatewayHostListenerArray{
-// 						&servicemesh.IngressGatewayHostListenerArgs{
-// 							Port:     pulumi.Any(_var.Ingress_gateway_hosts_listeners_port),
-// 							Protocol: pulumi.Any(_var.Ingress_gateway_hosts_listeners_protocol),
-// 							Tls: &servicemesh.IngressGatewayHostListenerTlsArgs{
-// 								Mode: pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_mode),
-// 								ClientValidation: &servicemesh.IngressGatewayHostListenerTlsClientValidationArgs{
-// 									SubjectAlternateNames: pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names),
-// 									TrustedCaBundle: &servicemesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{
-// 										Type:       pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type),
-// 										CaBundleId: pulumi.Any(oci_certificates_management_ca_bundle.Test_ca_bundle.Id),
-// 										SecretName: pulumi.Any(oci_vault_secret.Test_secret.Name),
-// 									},
-// 								},
-// 								ServerCertificate: &servicemesh.IngressGatewayHostListenerTlsServerCertificateArgs{
-// 									Type:          pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_server_certificate_type),
-// 									CertificateId: pulumi.Any(oci_certificates_management_certificate.Test_certificate.Id),
-// 									SecretName:    pulumi.Any(oci_vault_secret.Test_secret.Name),
-// 								},
-// 							},
-// 						},
-// 					},
-// 					Name:      pulumi.Any(_var.Ingress_gateway_hosts_name),
-// 					Hostnames: pulumi.Any(_var.Ingress_gateway_hosts_hostnames),
-// 				},
-// 			},
-// 			MeshId: pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
-// 			AccessLogging: &servicemesh.IngressGatewayAccessLoggingArgs{
-// 				IsEnabled: pulumi.Any(_var.Ingress_gateway_access_logging_is_enabled),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Ingress_gateway_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Mtls: &servicemesh.IngressGatewayMtlsArgs{
-// 				MaximumValidity: pulumi.Any(_var.Ingress_gateway_mtls_maximum_validity),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewIngressGateway(ctx, "testIngressGateway", &ServiceMesh.IngressGatewayArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Hosts: servicemesh.IngressGatewayHostArray{
+//					&servicemesh.IngressGatewayHostArgs{
+//						Listeners: servicemesh.IngressGatewayHostListenerArray{
+//							&servicemesh.IngressGatewayHostListenerArgs{
+//								Port:     pulumi.Any(_var.Ingress_gateway_hosts_listeners_port),
+//								Protocol: pulumi.Any(_var.Ingress_gateway_hosts_listeners_protocol),
+//								Tls: &servicemesh.IngressGatewayHostListenerTlsArgs{
+//									Mode: pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_mode),
+//									ClientValidation: &servicemesh.IngressGatewayHostListenerTlsClientValidationArgs{
+//										SubjectAlternateNames: pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names),
+//										TrustedCaBundle: &servicemesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{
+//											Type:       pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type),
+//											CaBundleId: pulumi.Any(oci_certificates_management_ca_bundle.Test_ca_bundle.Id),
+//											SecretName: pulumi.Any(oci_vault_secret.Test_secret.Name),
+//										},
+//									},
+//									ServerCertificate: &servicemesh.IngressGatewayHostListenerTlsServerCertificateArgs{
+//										Type:          pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_server_certificate_type),
+//										CertificateId: pulumi.Any(oci_certificates_management_certificate.Test_certificate.Id),
+//										SecretName:    pulumi.Any(oci_vault_secret.Test_secret.Name),
+//									},
+//								},
+//							},
+//						},
+//						Name:      pulumi.Any(_var.Ingress_gateway_hosts_name),
+//						Hostnames: pulumi.Any(_var.Ingress_gateway_hosts_hostnames),
+//					},
+//				},
+//				MeshId: pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//				AccessLogging: &servicemesh.IngressGatewayAccessLoggingArgs{
+//					IsEnabled: pulumi.Any(_var.Ingress_gateway_access_logging_is_enabled),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Ingress_gateway_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Mtls: &servicemesh.IngressGatewayMtlsArgs{
+//					MaximumValidity: pulumi.Any(_var.Ingress_gateway_mtls_maximum_validity),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -85,7 +88,9 @@ import (
 // IngressGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
+//
+//	$ pulumi import oci:ServiceMesh/ingressGateway:IngressGateway test_ingress_gateway "id"
+//
 // ```
 type IngressGateway struct {
 	pulumi.CustomResourceState
@@ -292,7 +297,7 @@ func (i *IngressGateway) ToIngressGatewayOutputWithContext(ctx context.Context) 
 // IngressGatewayArrayInput is an input type that accepts IngressGatewayArray and IngressGatewayArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayArrayInput` via:
 //
-//          IngressGatewayArray{ IngressGatewayArgs{...} }
+//	IngressGatewayArray{ IngressGatewayArgs{...} }
 type IngressGatewayArrayInput interface {
 	pulumi.Input
 
@@ -317,7 +322,7 @@ func (i IngressGatewayArray) ToIngressGatewayArrayOutputWithContext(ctx context.
 // IngressGatewayMapInput is an input type that accepts IngressGatewayMap and IngressGatewayMapOutput values.
 // You can construct a concrete instance of `IngressGatewayMapInput` via:
 //
-//          IngressGatewayMap{ "key": IngressGatewayArgs{...} }
+//	IngressGatewayMap{ "key": IngressGatewayArgs{...} }
 type IngressGatewayMapInput interface {
 	pulumi.Input
 

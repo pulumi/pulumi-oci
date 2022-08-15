@@ -20,7 +20,7 @@ type ContainerRepositoryReadme struct {
 // ContainerRepositoryReadmeInput is an input type that accepts ContainerRepositoryReadmeArgs and ContainerRepositoryReadmeOutput values.
 // You can construct a concrete instance of `ContainerRepositoryReadmeInput` via:
 //
-//          ContainerRepositoryReadmeArgs{...}
+//	ContainerRepositoryReadmeArgs{...}
 type ContainerRepositoryReadmeInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i ContainerRepositoryReadmeArgs) ToContainerRepositoryReadmePtrOutputWithC
 // ContainerRepositoryReadmePtrInput is an input type that accepts ContainerRepositoryReadmeArgs, ContainerRepositoryReadmePtr and ContainerRepositoryReadmePtrOutput values.
 // You can construct a concrete instance of `ContainerRepositoryReadmePtrInput` via:
 //
-//          ContainerRepositoryReadmeArgs{...}
+//	        ContainerRepositoryReadmeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ContainerRepositoryReadmePtrInput interface {
 	pulumi.Input
 
@@ -178,7 +178,7 @@ type GetContainerImageLayer struct {
 // GetContainerImageLayerInput is an input type that accepts GetContainerImageLayerArgs and GetContainerImageLayerOutput values.
 // You can construct a concrete instance of `GetContainerImageLayerInput` via:
 //
-//          GetContainerImageLayerArgs{...}
+//	GetContainerImageLayerArgs{...}
 type GetContainerImageLayerInput interface {
 	pulumi.Input
 
@@ -210,7 +210,7 @@ func (i GetContainerImageLayerArgs) ToGetContainerImageLayerOutputWithContext(ct
 // GetContainerImageLayerArrayInput is an input type that accepts GetContainerImageLayerArray and GetContainerImageLayerArrayOutput values.
 // You can construct a concrete instance of `GetContainerImageLayerArrayInput` via:
 //
-//          GetContainerImageLayerArray{ GetContainerImageLayerArgs{...} }
+//	GetContainerImageLayerArray{ GetContainerImageLayerArgs{...} }
 type GetContainerImageLayerArrayInput interface {
 	pulumi.Input
 
@@ -293,7 +293,7 @@ type GetContainerImageVersion struct {
 // GetContainerImageVersionInput is an input type that accepts GetContainerImageVersionArgs and GetContainerImageVersionOutput values.
 // You can construct a concrete instance of `GetContainerImageVersionInput` via:
 //
-//          GetContainerImageVersionArgs{...}
+//	GetContainerImageVersionArgs{...}
 type GetContainerImageVersionInput interface {
 	pulumi.Input
 
@@ -325,7 +325,7 @@ func (i GetContainerImageVersionArgs) ToGetContainerImageVersionOutputWithContex
 // GetContainerImageVersionArrayInput is an input type that accepts GetContainerImageVersionArray and GetContainerImageVersionArrayOutput values.
 // You can construct a concrete instance of `GetContainerImageVersionArrayInput` via:
 //
-//          GetContainerImageVersionArray{ GetContainerImageVersionArgs{...} }
+//	GetContainerImageVersionArray{ GetContainerImageVersionArgs{...} }
 type GetContainerImageVersionArrayInput interface {
 	pulumi.Input
 
@@ -404,7 +404,7 @@ type GetContainerImagesContainerImageCollection struct {
 // GetContainerImagesContainerImageCollectionInput is an input type that accepts GetContainerImagesContainerImageCollectionArgs and GetContainerImagesContainerImageCollectionOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionInput` via:
 //
-//          GetContainerImagesContainerImageCollectionArgs{...}
+//	GetContainerImagesContainerImageCollectionArgs{...}
 type GetContainerImagesContainerImageCollectionInput interface {
 	pulumi.Input
 
@@ -432,7 +432,7 @@ func (i GetContainerImagesContainerImageCollectionArgs) ToGetContainerImagesCont
 // GetContainerImagesContainerImageCollectionArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionArray and GetContainerImagesContainerImageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionArrayInput` via:
 //
-//          GetContainerImagesContainerImageCollectionArray{ GetContainerImagesContainerImageCollectionArgs{...} }
+//	GetContainerImagesContainerImageCollectionArray{ GetContainerImagesContainerImageCollectionArgs{...} }
 type GetContainerImagesContainerImageCollectionArrayInput interface {
 	pulumi.Input
 
@@ -536,7 +536,7 @@ type GetContainerImagesContainerImageCollectionItem struct {
 // GetContainerImagesContainerImageCollectionItemInput is an input type that accepts GetContainerImagesContainerImageCollectionItemArgs and GetContainerImagesContainerImageCollectionItemOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionItemInput` via:
 //
-//          GetContainerImagesContainerImageCollectionItemArgs{...}
+//	GetContainerImagesContainerImageCollectionItemArgs{...}
 type GetContainerImagesContainerImageCollectionItemInput interface {
 	pulumi.Input
 
@@ -594,7 +594,7 @@ func (i GetContainerImagesContainerImageCollectionItemArgs) ToGetContainerImages
 // GetContainerImagesContainerImageCollectionItemArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionItemArray and GetContainerImagesContainerImageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionItemArrayInput` via:
 //
-//          GetContainerImagesContainerImageCollectionItemArray{ GetContainerImagesContainerImageCollectionItemArgs{...} }
+//	GetContainerImagesContainerImageCollectionItemArray{ GetContainerImagesContainerImageCollectionItemArgs{...} }
 type GetContainerImagesContainerImageCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -746,7 +746,7 @@ type GetContainerImagesContainerImageCollectionItemLayer struct {
 // GetContainerImagesContainerImageCollectionItemLayerInput is an input type that accepts GetContainerImagesContainerImageCollectionItemLayerArgs and GetContainerImagesContainerImageCollectionItemLayerOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionItemLayerInput` via:
 //
-//          GetContainerImagesContainerImageCollectionItemLayerArgs{...}
+//	GetContainerImagesContainerImageCollectionItemLayerArgs{...}
 type GetContainerImagesContainerImageCollectionItemLayerInput interface {
 	pulumi.Input
 
@@ -778,7 +778,7 @@ func (i GetContainerImagesContainerImageCollectionItemLayerArgs) ToGetContainerI
 // GetContainerImagesContainerImageCollectionItemLayerArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionItemLayerArray and GetContainerImagesContainerImageCollectionItemLayerArrayOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionItemLayerArrayInput` via:
 //
-//          GetContainerImagesContainerImageCollectionItemLayerArray{ GetContainerImagesContainerImageCollectionItemLayerArgs{...} }
+//	GetContainerImagesContainerImageCollectionItemLayerArray{ GetContainerImagesContainerImageCollectionItemLayerArgs{...} }
 type GetContainerImagesContainerImageCollectionItemLayerArrayInput interface {
 	pulumi.Input
 
@@ -861,7 +861,7 @@ type GetContainerImagesContainerImageCollectionItemVersion struct {
 // GetContainerImagesContainerImageCollectionItemVersionInput is an input type that accepts GetContainerImagesContainerImageCollectionItemVersionArgs and GetContainerImagesContainerImageCollectionItemVersionOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionItemVersionInput` via:
 //
-//          GetContainerImagesContainerImageCollectionItemVersionArgs{...}
+//	GetContainerImagesContainerImageCollectionItemVersionArgs{...}
 type GetContainerImagesContainerImageCollectionItemVersionInput interface {
 	pulumi.Input
 
@@ -893,7 +893,7 @@ func (i GetContainerImagesContainerImageCollectionItemVersionArgs) ToGetContaine
 // GetContainerImagesContainerImageCollectionItemVersionArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionItemVersionArray and GetContainerImagesContainerImageCollectionItemVersionArrayOutput values.
 // You can construct a concrete instance of `GetContainerImagesContainerImageCollectionItemVersionArrayInput` via:
 //
-//          GetContainerImagesContainerImageCollectionItemVersionArray{ GetContainerImagesContainerImageCollectionItemVersionArgs{...} }
+//	GetContainerImagesContainerImageCollectionItemVersionArray{ GetContainerImagesContainerImageCollectionItemVersionArgs{...} }
 type GetContainerImagesContainerImageCollectionItemVersionArrayInput interface {
 	pulumi.Input
 
@@ -973,7 +973,7 @@ type GetContainerImagesFilter struct {
 // GetContainerImagesFilterInput is an input type that accepts GetContainerImagesFilterArgs and GetContainerImagesFilterOutput values.
 // You can construct a concrete instance of `GetContainerImagesFilterInput` via:
 //
-//          GetContainerImagesFilterArgs{...}
+//	GetContainerImagesFilterArgs{...}
 type GetContainerImagesFilterInput interface {
 	pulumi.Input
 
@@ -1002,7 +1002,7 @@ func (i GetContainerImagesFilterArgs) ToGetContainerImagesFilterOutputWithContex
 // GetContainerImagesFilterArrayInput is an input type that accepts GetContainerImagesFilterArray and GetContainerImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerImagesFilterArrayInput` via:
 //
-//          GetContainerImagesFilterArray{ GetContainerImagesFilterArgs{...} }
+//	GetContainerImagesFilterArray{ GetContainerImagesFilterArgs{...} }
 type GetContainerImagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1085,7 +1085,7 @@ type GetContainerRepositoriesContainerRepositoryCollection struct {
 // GetContainerRepositoriesContainerRepositoryCollectionInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionArgs and GetContainerRepositoriesContainerRepositoryCollectionOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesContainerRepositoryCollectionInput` via:
 //
-//          GetContainerRepositoriesContainerRepositoryCollectionArgs{...}
+//	GetContainerRepositoriesContainerRepositoryCollectionArgs{...}
 type GetContainerRepositoriesContainerRepositoryCollectionInput interface {
 	pulumi.Input
 
@@ -1120,7 +1120,7 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionArgs) ToGetContaine
 // GetContainerRepositoriesContainerRepositoryCollectionArrayInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionArray and GetContainerRepositoriesContainerRepositoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesContainerRepositoryCollectionArrayInput` via:
 //
-//          GetContainerRepositoriesContainerRepositoryCollectionArray{ GetContainerRepositoriesContainerRepositoryCollectionArgs{...} }
+//	GetContainerRepositoriesContainerRepositoryCollectionArray{ GetContainerRepositoriesContainerRepositoryCollectionArgs{...} }
 type GetContainerRepositoriesContainerRepositoryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1239,7 +1239,7 @@ type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 // GetContainerRepositoriesContainerRepositoryCollectionItemInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemArgs and GetContainerRepositoriesContainerRepositoryCollectionItemOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesContainerRepositoryCollectionItemInput` via:
 //
-//          GetContainerRepositoriesContainerRepositoryCollectionItemArgs{...}
+//	GetContainerRepositoriesContainerRepositoryCollectionItemArgs{...}
 type GetContainerRepositoriesContainerRepositoryCollectionItemInput interface {
 	pulumi.Input
 
@@ -1293,7 +1293,7 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionItemArgs) ToGetCont
 // GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemArray and GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput` via:
 //
-//          GetContainerRepositoriesContainerRepositoryCollectionItemArray{ GetContainerRepositoriesContainerRepositoryCollectionItemArgs{...} }
+//	GetContainerRepositoriesContainerRepositoryCollectionItemArray{ GetContainerRepositoriesContainerRepositoryCollectionItemArgs{...} }
 type GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1431,7 +1431,7 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemReadme struct {
 // GetContainerRepositoriesContainerRepositoryCollectionItemReadmeInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs and GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesContainerRepositoryCollectionItemReadmeInput` via:
 //
-//          GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs{...}
+//	GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs{...}
 type GetContainerRepositoriesContainerRepositoryCollectionItemReadmeInput interface {
 	pulumi.Input
 
@@ -1461,7 +1461,7 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs) ToG
 // GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArray and GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput` via:
 //
-//          GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArray{ GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs{...} }
+//	GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArray{ GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs{...} }
 type GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput interface {
 	pulumi.Input
 
@@ -1536,7 +1536,7 @@ type GetContainerRepositoriesFilter struct {
 // GetContainerRepositoriesFilterInput is an input type that accepts GetContainerRepositoriesFilterArgs and GetContainerRepositoriesFilterOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesFilterInput` via:
 //
-//          GetContainerRepositoriesFilterArgs{...}
+//	GetContainerRepositoriesFilterArgs{...}
 type GetContainerRepositoriesFilterInput interface {
 	pulumi.Input
 
@@ -1565,7 +1565,7 @@ func (i GetContainerRepositoriesFilterArgs) ToGetContainerRepositoriesFilterOutp
 // GetContainerRepositoriesFilterArrayInput is an input type that accepts GetContainerRepositoriesFilterArray and GetContainerRepositoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesFilterArrayInput` via:
 //
-//          GetContainerRepositoriesFilterArray{ GetContainerRepositoriesFilterArgs{...} }
+//	GetContainerRepositoriesFilterArray{ GetContainerRepositoriesFilterArgs{...} }
 type GetContainerRepositoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1643,7 +1643,7 @@ type GetContainerRepositoryReadme struct {
 // GetContainerRepositoryReadmeInput is an input type that accepts GetContainerRepositoryReadmeArgs and GetContainerRepositoryReadmeOutput values.
 // You can construct a concrete instance of `GetContainerRepositoryReadmeInput` via:
 //
-//          GetContainerRepositoryReadmeArgs{...}
+//	GetContainerRepositoryReadmeArgs{...}
 type GetContainerRepositoryReadmeInput interface {
 	pulumi.Input
 
@@ -1673,7 +1673,7 @@ func (i GetContainerRepositoryReadmeArgs) ToGetContainerRepositoryReadmeOutputWi
 // GetContainerRepositoryReadmeArrayInput is an input type that accepts GetContainerRepositoryReadmeArray and GetContainerRepositoryReadmeArrayOutput values.
 // You can construct a concrete instance of `GetContainerRepositoryReadmeArrayInput` via:
 //
-//          GetContainerRepositoryReadmeArray{ GetContainerRepositoryReadmeArgs{...} }
+//	GetContainerRepositoryReadmeArray{ GetContainerRepositoryReadmeArgs{...} }
 type GetContainerRepositoryReadmeArrayInput interface {
 	pulumi.Input
 
@@ -1747,7 +1747,7 @@ type GetContainerSignaturesContainerImageSignatureCollection struct {
 // GetContainerSignaturesContainerImageSignatureCollectionInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionArgs and GetContainerSignaturesContainerImageSignatureCollectionOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesContainerImageSignatureCollectionInput` via:
 //
-//          GetContainerSignaturesContainerImageSignatureCollectionArgs{...}
+//	GetContainerSignaturesContainerImageSignatureCollectionArgs{...}
 type GetContainerSignaturesContainerImageSignatureCollectionInput interface {
 	pulumi.Input
 
@@ -1775,7 +1775,7 @@ func (i GetContainerSignaturesContainerImageSignatureCollectionArgs) ToGetContai
 // GetContainerSignaturesContainerImageSignatureCollectionArrayInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionArray and GetContainerSignaturesContainerImageSignatureCollectionArrayOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesContainerImageSignatureCollectionArrayInput` via:
 //
-//          GetContainerSignaturesContainerImageSignatureCollectionArray{ GetContainerSignaturesContainerImageSignatureCollectionArgs{...} }
+//	GetContainerSignaturesContainerImageSignatureCollectionArray{ GetContainerSignaturesContainerImageSignatureCollectionArgs{...} }
 type GetContainerSignaturesContainerImageSignatureCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1869,7 +1869,7 @@ type GetContainerSignaturesContainerImageSignatureCollectionItem struct {
 // GetContainerSignaturesContainerImageSignatureCollectionItemInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionItemArgs and GetContainerSignaturesContainerImageSignatureCollectionItemOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesContainerImageSignatureCollectionItemInput` via:
 //
-//          GetContainerSignaturesContainerImageSignatureCollectionItemArgs{...}
+//	GetContainerSignaturesContainerImageSignatureCollectionItemArgs{...}
 type GetContainerSignaturesContainerImageSignatureCollectionItemInput interface {
 	pulumi.Input
 
@@ -1917,7 +1917,7 @@ func (i GetContainerSignaturesContainerImageSignatureCollectionItemArgs) ToGetCo
 // GetContainerSignaturesContainerImageSignatureCollectionItemArrayInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionItemArray and GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesContainerImageSignatureCollectionItemArrayInput` via:
 //
-//          GetContainerSignaturesContainerImageSignatureCollectionItemArray{ GetContainerSignaturesContainerImageSignatureCollectionItemArgs{...} }
+//	GetContainerSignaturesContainerImageSignatureCollectionItemArray{ GetContainerSignaturesContainerImageSignatureCollectionItemArgs{...} }
 type GetContainerSignaturesContainerImageSignatureCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2037,7 +2037,7 @@ type GetContainerSignaturesFilter struct {
 // GetContainerSignaturesFilterInput is an input type that accepts GetContainerSignaturesFilterArgs and GetContainerSignaturesFilterOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesFilterInput` via:
 //
-//          GetContainerSignaturesFilterArgs{...}
+//	GetContainerSignaturesFilterArgs{...}
 type GetContainerSignaturesFilterInput interface {
 	pulumi.Input
 
@@ -2066,7 +2066,7 @@ func (i GetContainerSignaturesFilterArgs) ToGetContainerSignaturesFilterOutputWi
 // GetContainerSignaturesFilterArrayInput is an input type that accepts GetContainerSignaturesFilterArray and GetContainerSignaturesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesFilterArrayInput` via:
 //
-//          GetContainerSignaturesFilterArray{ GetContainerSignaturesFilterArgs{...} }
+//	GetContainerSignaturesFilterArray{ GetContainerSignaturesFilterArgs{...} }
 type GetContainerSignaturesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2143,7 +2143,7 @@ type GetGenericArtifactsFilter struct {
 // GetGenericArtifactsFilterInput is an input type that accepts GetGenericArtifactsFilterArgs and GetGenericArtifactsFilterOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsFilterInput` via:
 //
-//          GetGenericArtifactsFilterArgs{...}
+//	GetGenericArtifactsFilterArgs{...}
 type GetGenericArtifactsFilterInput interface {
 	pulumi.Input
 
@@ -2172,7 +2172,7 @@ func (i GetGenericArtifactsFilterArgs) ToGetGenericArtifactsFilterOutputWithCont
 // GetGenericArtifactsFilterArrayInput is an input type that accepts GetGenericArtifactsFilterArray and GetGenericArtifactsFilterArrayOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsFilterArrayInput` via:
 //
-//          GetGenericArtifactsFilterArray{ GetGenericArtifactsFilterArgs{...} }
+//	GetGenericArtifactsFilterArray{ GetGenericArtifactsFilterArgs{...} }
 type GetGenericArtifactsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2247,7 +2247,7 @@ type GetGenericArtifactsGenericArtifactCollection struct {
 // GetGenericArtifactsGenericArtifactCollectionInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionArgs and GetGenericArtifactsGenericArtifactCollectionOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsGenericArtifactCollectionInput` via:
 //
-//          GetGenericArtifactsGenericArtifactCollectionArgs{...}
+//	GetGenericArtifactsGenericArtifactCollectionArgs{...}
 type GetGenericArtifactsGenericArtifactCollectionInput interface {
 	pulumi.Input
 
@@ -2274,7 +2274,7 @@ func (i GetGenericArtifactsGenericArtifactCollectionArgs) ToGetGenericArtifactsG
 // GetGenericArtifactsGenericArtifactCollectionArrayInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionArray and GetGenericArtifactsGenericArtifactCollectionArrayOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsGenericArtifactCollectionArrayInput` via:
 //
-//          GetGenericArtifactsGenericArtifactCollectionArray{ GetGenericArtifactsGenericArtifactCollectionArgs{...} }
+//	GetGenericArtifactsGenericArtifactCollectionArray{ GetGenericArtifactsGenericArtifactCollectionArgs{...} }
 type GetGenericArtifactsGenericArtifactCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2367,7 +2367,7 @@ type GetGenericArtifactsGenericArtifactCollectionItem struct {
 // GetGenericArtifactsGenericArtifactCollectionItemInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionItemArgs and GetGenericArtifactsGenericArtifactCollectionItemOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsGenericArtifactCollectionItemInput` via:
 //
-//          GetGenericArtifactsGenericArtifactCollectionItemArgs{...}
+//	GetGenericArtifactsGenericArtifactCollectionItemArgs{...}
 type GetGenericArtifactsGenericArtifactCollectionItemInput interface {
 	pulumi.Input
 
@@ -2418,7 +2418,7 @@ func (i GetGenericArtifactsGenericArtifactCollectionItemArgs) ToGetGenericArtifa
 // GetGenericArtifactsGenericArtifactCollectionItemArrayInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionItemArray and GetGenericArtifactsGenericArtifactCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsGenericArtifactCollectionItemArrayInput` via:
 //
-//          GetGenericArtifactsGenericArtifactCollectionItemArray{ GetGenericArtifactsGenericArtifactCollectionItemArgs{...} }
+//	GetGenericArtifactsGenericArtifactCollectionItemArray{ GetGenericArtifactsGenericArtifactCollectionItemArgs{...} }
 type GetGenericArtifactsGenericArtifactCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2547,7 +2547,7 @@ type GetRepositoriesFilter struct {
 // GetRepositoriesFilterInput is an input type that accepts GetRepositoriesFilterArgs and GetRepositoriesFilterOutput values.
 // You can construct a concrete instance of `GetRepositoriesFilterInput` via:
 //
-//          GetRepositoriesFilterArgs{...}
+//	GetRepositoriesFilterArgs{...}
 type GetRepositoriesFilterInput interface {
 	pulumi.Input
 
@@ -2576,7 +2576,7 @@ func (i GetRepositoriesFilterArgs) ToGetRepositoriesFilterOutputWithContext(ctx 
 // GetRepositoriesFilterArrayInput is an input type that accepts GetRepositoriesFilterArray and GetRepositoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesFilterArrayInput` via:
 //
-//          GetRepositoriesFilterArray{ GetRepositoriesFilterArgs{...} }
+//	GetRepositoriesFilterArray{ GetRepositoriesFilterArgs{...} }
 type GetRepositoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2651,7 +2651,7 @@ type GetRepositoriesRepositoryCollection struct {
 // GetRepositoriesRepositoryCollectionInput is an input type that accepts GetRepositoriesRepositoryCollectionArgs and GetRepositoriesRepositoryCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionInput` via:
 //
-//          GetRepositoriesRepositoryCollectionArgs{...}
+//	GetRepositoriesRepositoryCollectionArgs{...}
 type GetRepositoriesRepositoryCollectionInput interface {
 	pulumi.Input
 
@@ -2678,7 +2678,7 @@ func (i GetRepositoriesRepositoryCollectionArgs) ToGetRepositoriesRepositoryColl
 // GetRepositoriesRepositoryCollectionArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionArray and GetRepositoriesRepositoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionArrayInput` via:
 //
-//          GetRepositoriesRepositoryCollectionArray{ GetRepositoriesRepositoryCollectionArgs{...} }
+//	GetRepositoriesRepositoryCollectionArray{ GetRepositoriesRepositoryCollectionArgs{...} }
 type GetRepositoriesRepositoryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2764,7 +2764,7 @@ type GetRepositoriesRepositoryCollectionItem struct {
 // GetRepositoriesRepositoryCollectionItemInput is an input type that accepts GetRepositoriesRepositoryCollectionItemArgs and GetRepositoriesRepositoryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemArgs{...}
+//	GetRepositoriesRepositoryCollectionItemArgs{...}
 type GetRepositoriesRepositoryCollectionItemInput interface {
 	pulumi.Input
 
@@ -2810,7 +2810,7 @@ func (i GetRepositoriesRepositoryCollectionItemArgs) ToGetRepositoriesRepository
 // GetRepositoriesRepositoryCollectionItemArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemArray and GetRepositoriesRepositoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemArrayInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemArray{ GetRepositoriesRepositoryCollectionItemArgs{...} }
+//	GetRepositoriesRepositoryCollectionItemArray{ GetRepositoriesRepositoryCollectionItemArgs{...} }
 type GetRepositoriesRepositoryCollectionItemArrayInput interface {
 	pulumi.Input
 

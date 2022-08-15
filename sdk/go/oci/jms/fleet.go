@@ -15,43 +15,53 @@ import (
 //
 // Create a new Fleet using the information provided.
 //
+// `inventoryLog` is now a required parameter for CreateFleet API.
+// Update existing applications using this API
+// before July 15, 2022 to ensure the applications continue to work.
+// See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+// Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
+//
 // ## Example Usage
 //
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.NewFleet(ctx, "testFleet", &Jms.FleetArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Fleet_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Fleet_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			InventoryLog: &jms.FleetInventoryLogArgs{
-// 				LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 				LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
-// 			},
-// 			OperationLog: &jms.FleetOperationLogArgs{
-// 				LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 				LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.NewFleet(ctx, "testFleet", &Jms.FleetArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Fleet_display_name),
+//				InventoryLog: &jms.FleetInventoryLogArgs{
+//					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Fleet_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsAdvancedFeaturesEnabled: pulumi.Any(_var.Fleet_is_advanced_features_enabled),
+//				OperationLog: &jms.FleetOperationLogArgs{
+//					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +69,9 @@ import (
 // Fleets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
+//
+//	$ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
+//
 // ```
 type Fleet struct {
 	pulumi.CustomResourceState
@@ -84,6 +96,8 @@ type Fleet struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLogOutput `pulumi:"inventoryLog"`
+	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled pulumi.BoolOutput `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogOutput `pulumi:"operationLog"`
 	// The lifecycle state of the Fleet.
@@ -106,6 +120,9 @@ func NewFleet(ctx *pulumi.Context,
 	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
+	}
+	if args.InventoryLog == nil {
+		return nil, errors.New("invalid value for required argument 'InventoryLog'")
 	}
 	var resource Fleet
 	err := ctx.RegisterResource("oci:Jms/fleet:Fleet", name, args, &resource, opts...)
@@ -149,6 +166,8 @@ type fleetState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog *FleetInventoryLog `pulumi:"inventoryLog"`
+	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog *FleetOperationLog `pulumi:"operationLog"`
 	// The lifecycle state of the Fleet.
@@ -180,6 +199,8 @@ type FleetState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLogPtrInput
+	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogPtrInput
 	// The lifecycle state of the Fleet.
@@ -206,7 +227,9 @@ type fleetArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Custom Log for inventory or operation log.
-	InventoryLog *FleetInventoryLog `pulumi:"inventoryLog"`
+	InventoryLog FleetInventoryLog `pulumi:"inventoryLog"`
+	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog *FleetOperationLog `pulumi:"operationLog"`
 }
@@ -224,7 +247,9 @@ type FleetArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags pulumi.MapInput
 	// (Updatable) Custom Log for inventory or operation log.
-	InventoryLog FleetInventoryLogPtrInput
+	InventoryLog FleetInventoryLogInput
+	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogPtrInput
 }
@@ -255,7 +280,7 @@ func (i *Fleet) ToFleetOutputWithContext(ctx context.Context) FleetOutput {
 // FleetArrayInput is an input type that accepts FleetArray and FleetArrayOutput values.
 // You can construct a concrete instance of `FleetArrayInput` via:
 //
-//          FleetArray{ FleetArgs{...} }
+//	FleetArray{ FleetArgs{...} }
 type FleetArrayInput interface {
 	pulumi.Input
 
@@ -280,7 +305,7 @@ func (i FleetArray) ToFleetArrayOutputWithContext(ctx context.Context) FleetArra
 // FleetMapInput is an input type that accepts FleetMap and FleetMapOutput values.
 // You can construct a concrete instance of `FleetMapInput` via:
 //
-//          FleetMap{ "key": FleetArgs{...} }
+//	FleetMap{ "key": FleetArgs{...} }
 type FleetMapInput interface {
 	pulumi.Input
 

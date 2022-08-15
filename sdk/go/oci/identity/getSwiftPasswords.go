@@ -23,21 +23,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetSwiftPasswords(ctx, &identity.GetSwiftPasswordsArgs{
-// 			UserId: oci_identity_user.Test_user.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetSwiftPasswords(ctx, &identity.GetSwiftPasswordsArgs{
+//				UserId: oci_identity_user.Test_user.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSwiftPasswords(ctx *pulumi.Context, args *GetSwiftPasswordsArgs, opts ...pulumi.InvokeOption) (*GetSwiftPasswordsResult, error) {
 	var rv GetSwiftPasswordsResult

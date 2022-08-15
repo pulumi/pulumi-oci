@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Database
         ///         {
         ///             CompartmentId = @var.Compartment_id,
         ///             AvailabilityDomain = @var.Maintenance_run_availability_domain,
+        ///             MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
         ///             MaintenanceType = @var.Maintenance_run_maintenance_type,
         ///             State = @var.Maintenance_run_state,
         ///             TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
@@ -70,6 +71,7 @@ namespace Pulumi.Oci.Database
         ///         {
         ///             CompartmentId = @var.Compartment_id,
         ///             AvailabilityDomain = @var.Maintenance_run_availability_domain,
+        ///             MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
         ///             MaintenanceType = @var.Maintenance_run_maintenance_type,
         ///             State = @var.Maintenance_run_state,
         ///             TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
@@ -108,6 +110,12 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new List<Inputs.GetMaintenanceRunsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The sub-type of the maintenance run.
+        /// </summary>
+        [Input("maintenanceSubtype")]
+        public string? MaintenanceSubtype { get; set; }
 
         /// <summary>
         /// The maintenance type.
@@ -161,6 +169,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The sub-type of the maintenance run.
+        /// </summary>
+        [Input("maintenanceSubtype")]
+        public Input<string>? MaintenanceSubtype { get; set; }
+
+        /// <summary>
         /// The maintenance type.
         /// </summary>
         [Input("maintenanceType")]
@@ -208,6 +222,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMaintenanceRunsMaintenanceRunResult> MaintenanceRuns;
         /// <summary>
+        /// Maintenance sub-type.
+        /// </summary>
+        public readonly string? MaintenanceSubtype;
+        /// <summary>
         /// Maintenance type.
         /// </summary>
         public readonly string? MaintenanceType;
@@ -236,6 +254,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetMaintenanceRunsMaintenanceRunResult> maintenanceRuns,
 
+            string? maintenanceSubtype,
+
             string? maintenanceType,
 
             string? state,
@@ -249,6 +269,7 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             Id = id;
             MaintenanceRuns = maintenanceRuns;
+            MaintenanceSubtype = maintenanceSubtype;
             MaintenanceType = maintenanceType;
             State = state;
             TargetResourceId = targetResourceId;

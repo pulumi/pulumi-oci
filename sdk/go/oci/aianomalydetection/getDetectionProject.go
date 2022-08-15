@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
 //
-// Gets a Project by identifier
+// # Gets a Project by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.GetDetectionProject(ctx, &aianomalydetection.GetDetectionProjectArgs{
-// 			ProjectId: oci_ai_anomaly_detection_project.Test_project.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.GetDetectionProject(ctx, &aianomalydetection.GetDetectionProjectArgs{
+//				ProjectId: oci_ai_anomaly_detection_project.Test_project.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDetectionProject(ctx *pulumi.Context, args *GetDetectionProjectArgs, opts ...pulumi.InvokeOption) (*GetDetectionProjectResult, error) {
 	var rv GetDetectionProjectResult

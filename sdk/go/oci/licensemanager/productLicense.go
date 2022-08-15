@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.NewProductLicense(ctx, "testProductLicense", &LicenseManager.ProductLicenseArgs{
-// 			CompartmentId:  pulumi.Any(_var.Compartment_id),
-// 			DisplayName:    pulumi.Any(_var.Product_license_display_name),
-// 			IsVendorOracle: pulumi.Any(_var.Product_license_is_vendor_oracle),
-// 			LicenseUnit:    pulumi.Any(_var.Product_license_license_unit),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Images: licensemanager.ProductLicenseImageArray{
-// 				&licensemanager.ProductLicenseImageArgs{
-// 					ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
-// 					PackageVersion: pulumi.Any(_var.Product_license_images_package_version),
-// 				},
-// 			},
-// 			VendorName: pulumi.Any(_var.Product_license_vendor_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.NewProductLicense(ctx, "testProductLicense", &LicenseManager.ProductLicenseArgs{
+//				CompartmentId:  pulumi.Any(_var.Compartment_id),
+//				DisplayName:    pulumi.Any(_var.Product_license_display_name),
+//				IsVendorOracle: pulumi.Any(_var.Product_license_is_vendor_oracle),
+//				LicenseUnit:    pulumi.Any(_var.Product_license_license_unit),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Images: licensemanager.ProductLicenseImageArray{
+//					&licensemanager.ProductLicenseImageArgs{
+//						ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
+//						PackageVersion: pulumi.Any(_var.Product_license_images_package_version),
+//					},
+//				},
+//				VendorName: pulumi.Any(_var.Product_license_vendor_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // ProductLicenses can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
+//
+//	$ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
+//
 // ```
 type ProductLicense struct {
 	pulumi.CustomResourceState
@@ -301,7 +306,7 @@ func (i *ProductLicense) ToProductLicenseOutputWithContext(ctx context.Context) 
 // ProductLicenseArrayInput is an input type that accepts ProductLicenseArray and ProductLicenseArrayOutput values.
 // You can construct a concrete instance of `ProductLicenseArrayInput` via:
 //
-//          ProductLicenseArray{ ProductLicenseArgs{...} }
+//	ProductLicenseArray{ ProductLicenseArgs{...} }
 type ProductLicenseArrayInput interface {
 	pulumi.Input
 
@@ -326,7 +331,7 @@ func (i ProductLicenseArray) ToProductLicenseArrayOutputWithContext(ctx context.
 // ProductLicenseMapInput is an input type that accepts ProductLicenseMap and ProductLicenseMapOutput values.
 // You can construct a concrete instance of `ProductLicenseMapInput` via:
 //
-//          ProductLicenseMap{ "key": ProductLicenseArgs{...} }
+//	ProductLicenseMap{ "key": ProductLicenseArgs{...} }
 type ProductLicenseMapInput interface {
 	pulumi.Input
 

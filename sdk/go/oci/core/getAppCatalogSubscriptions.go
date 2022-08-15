@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetAppCatalogSubscriptions(ctx, &core.GetAppCatalogSubscriptionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			ListingId:     pulumi.StringRef(data.Oci_core_app_catalog_listing.Test_listing.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetAppCatalogSubscriptions(ctx, &core.GetAppCatalogSubscriptionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				ListingId:     pulumi.StringRef(data.Oci_core_app_catalog_listing.Test_listing.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAppCatalogSubscriptions(ctx *pulumi.Context, args *GetAppCatalogSubscriptionsArgs, opts ...pulumi.InvokeOption) (*GetAppCatalogSubscriptionsResult, error) {
 	var rv GetAppCatalogSubscriptionsResult

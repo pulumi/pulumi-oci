@@ -368,7 +368,6 @@ export namespace Adm {
          */
         isIgnored: boolean;
     }
-
 }
 
 export namespace AiAnomalyDetection {
@@ -1244,6 +1243,7 @@ export namespace AiAnomalyDetection {
          */
         std: number;
     }
+
 }
 
 export namespace AiVision {
@@ -1622,6 +1622,7 @@ export namespace AiVision {
          */
         object: string;
     }
+
 }
 
 export namespace Analytics {
@@ -1853,6 +1854,154 @@ export namespace Analytics {
     export interface GetAnalyticsInstancesFilter {
         /**
          * A filter to return only resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+}
+
+export namespace AnnouncementsService {
+    export interface AnnouncementSubscriptionFilterGroups {
+        /**
+         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         */
+        filters: outputs.AnnouncementsService.AnnouncementSubscriptionFilterGroupsFilter[];
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         */
+        name: string;
+    }
+
+    export interface AnnouncementSubscriptionFilterGroupsFilter {
+        /**
+         * The type of filter.
+         */
+        type: string;
+        /**
+         * The value of the filter.
+         */
+        value: string;
+    }
+
+    export interface AnnouncementSubscriptionsFilterGroupFilter {
+        /**
+         * (Updatable) The type of filter.
+         */
+        type: string;
+        /**
+         * (Updatable) The value of the filter.
+         */
+        value: string;
+    }
+
+    export interface GetAnnouncementSubscriptionFilterGroup {
+        /**
+         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+         */
+        filters: outputs.AnnouncementsService.GetAnnouncementSubscriptionFilterGroupFilter[];
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         */
+        name: string;
+    }
+
+    export interface GetAnnouncementSubscriptionFilterGroupFilter {
+        /**
+         * The type of filter.
+         */
+        type: string;
+        /**
+         * The value of the filter.
+         */
+        value: string;
+    }
+
+    export interface GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection {
+        items: outputs.AnnouncementsService.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem[];
+    }
+
+    export interface GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem {
+        /**
+         * The OCID of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A description of the announcement subscription. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
+         */
+        filterGroups: outputs.AnnouncementsService.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup[];
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The OCID of the announcement subscription.
+         */
+        id: string;
+        /**
+         * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
+         */
+        onsTopicId: string;
+        /**
+         * A filter to return only announcement subscriptions that match the given lifecycle state.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         */
+        timeCreated: string;
+        /**
+         * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup {
+        /**
+         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
+         */
+        filters: outputs.AnnouncementsService.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter[];
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         */
+        name: string;
+    }
+
+    export interface GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter {
+        /**
+         * The type of filter.
+         */
+        type: string;
+        /**
+         * The value of the filter.
+         */
+        value: string;
+    }
+
+    export interface GetAnnouncementSubscriptionsFilter {
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
          */
         name: string;
         regex?: boolean;
@@ -5756,6 +5905,7 @@ export namespace ApiGateway {
          */
         deploymentId: string;
     }
+
 }
 
 export namespace Apm {
@@ -6113,6 +6263,10 @@ export namespace ApmSynthetics {
          */
         configType: string;
         /**
+         * (Updatable) Dns settings.
+         */
+        dnsConfiguration: outputs.ApmSynthetics.ConfigConfigurationDnsConfiguration;
+        /**
          * (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
          */
         isCertificateValidationEnabled: boolean;
@@ -6164,6 +6318,17 @@ export namespace ApmSynthetics {
          * (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts: outputs.ApmSynthetics.ConfigConfigurationVerifyText[];
+    }
+
+    export interface ConfigConfigurationDnsConfiguration {
+        /**
+         * (Updatable) If isOverrideDns is true, then dns will be overridden.
+         */
+        isOverrideDns: boolean;
+        /**
+         * (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         */
+        overrideDnsIp: string;
     }
 
     export interface ConfigConfigurationNetworkConfiguration {
@@ -6300,7 +6465,7 @@ export namespace ApmSynthetics {
 
     export interface DedicatedVantagePointDvpStackDetails {
         /**
-         * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStackId: string;
         /**
@@ -6308,11 +6473,11 @@ export namespace ApmSynthetics {
          */
         dvpStackType: string;
         /**
-         * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStreamId: string;
         /**
-         * (Updatable) Version of DVP.
+         * (Updatable) Version of the dedicated vantage point.
          */
         dvpVersion: string;
     }
@@ -6338,7 +6503,7 @@ export namespace ApmSynthetics {
 
     export interface GetDedicatedVantagePointDvpStackDetail {
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStackId: string;
         /**
@@ -6346,11 +6511,11 @@ export namespace ApmSynthetics {
          */
         dvpStackType: string;
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStreamId: string;
         /**
-         * Version of DVP.
+         * Version of the dedicated vantage point.
          */
         dvpVersion: string;
     }
@@ -6392,7 +6557,7 @@ export namespace ApmSynthetics {
          */
         displayName: string;
         /**
-         * Details of DVP Stack.
+         * Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
          */
         dvpStackDetails: outputs.ApmSynthetics.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail[];
         /**
@@ -6431,7 +6596,7 @@ export namespace ApmSynthetics {
 
     export interface GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail {
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStackId: string;
         /**
@@ -6439,11 +6604,11 @@ export namespace ApmSynthetics {
          */
         dvpStackType: string;
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStreamId: string;
         /**
-         * Version of DVP.
+         * Version of the dedicated vantage point.
          */
         dvpVersion: string;
     }
@@ -6481,6 +6646,10 @@ export namespace ApmSynthetics {
          * Type of configuration.
          */
         configType: string;
+        /**
+         * Dns settings.
+         */
+        dnsConfigurations: outputs.ApmSynthetics.GetMonitorConfigurationDnsConfiguration[];
         /**
          * If certificate validation is enabled, then the call will fail in case of certification errors.
          */
@@ -6533,6 +6702,17 @@ export namespace ApmSynthetics {
          * Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts: outputs.ApmSynthetics.GetMonitorConfigurationVerifyText[];
+    }
+
+    export interface GetMonitorConfigurationDnsConfiguration {
+        /**
+         * If isOverrideDns is true, then dns will be overridden.
+         */
+        isOverrideDns: boolean;
+        /**
+         * Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         */
+        overrideDnsIp: string;
     }
 
     export interface GetMonitorConfigurationNetworkConfiguration {
@@ -6686,6 +6866,10 @@ export namespace ApmSynthetics {
          */
         apmDomainId: string;
         /**
+         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         */
+        batchIntervalInSeconds: number;
+        /**
          * Details of monitor configuration.
          */
         configurations: outputs.ApmSynthetics.GetMonitorsMonitorCollectionItemConfiguration[];
@@ -6706,6 +6890,10 @@ export namespace ApmSynthetics {
          */
         id: string;
         /**
+         * If isRunNow is enabled, then the monitor will run now.
+         */
+        isRunNow: boolean;
+        /**
          * If runOnce is enabled, then the monitor will run once.
          */
         isRunOnce: boolean;
@@ -6717,6 +6905,10 @@ export namespace ApmSynthetics {
          * Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
          */
         repeatIntervalInSeconds: number;
+        /**
+         * Scheduling policy on Vantage points.
+         */
+        schedulingPolicy: string;
         /**
          * A filter to return only monitors using scriptId.
          */
@@ -6764,6 +6956,10 @@ export namespace ApmSynthetics {
          * Type of configuration.
          */
         configType: string;
+        /**
+         * Dns settings.
+         */
+        dnsConfigurations: outputs.ApmSynthetics.GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration[];
         /**
          * If certificate validation is enabled, then the call will fail in case of certification errors.
          */
@@ -6816,6 +7012,17 @@ export namespace ApmSynthetics {
          * Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts: outputs.ApmSynthetics.GetMonitorsMonitorCollectionItemConfigurationVerifyText[];
+    }
+
+    export interface GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
+        /**
+         * If isOverrideDns is true, then dns will be overridden.
+         */
+        isOverrideDns: boolean;
+        /**
+         * Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         */
+        overrideDnsIp: string;
     }
 
     export interface GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration {
@@ -8923,6 +9130,7 @@ export namespace Bastion {
          */
         targetResourcePrivateIpAddress: string;
     }
+
 }
 
 export namespace BigDataService {
@@ -9273,6 +9481,9 @@ export namespace BigDataService {
     }
 
     export interface BdsInstanceClusterDetail {
+        /**
+         * The URL of Ambari
+         */
         ambariUrl: string;
         /**
          * Cloud SQL cell version
@@ -9314,6 +9525,10 @@ export namespace BigDataService {
          * The URL of the Jupyterhub.
          */
         jupyterHubUrl: string;
+        /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         */
+        odhVersion: string;
         /**
          * Oracle Linux version installed in the cluster
          */
@@ -10129,6 +10344,10 @@ export namespace BigDataService {
          */
         jupyterHubUrl: string;
         /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         */
+        odhVersion: string;
+        /**
          * Oracle Linux version installed in the cluster.
          */
         osVersion: string;
@@ -10339,6 +10558,44 @@ export namespace BigDataService {
          * The size of the volume in GBs.
          */
         volumeSizeInGbs: string;
+    }
+
+    export interface GetBdsInstancePatchHistoriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstancePatchHistoriesPatchHistory {
+        /**
+         * The status of the patch.
+         */
+        state: string;
+        /**
+         * The time when the patch history was last updated.
+         */
+        timeUpdated: string;
+        /**
+         * The version of the patch.
+         */
+        version: string;
+    }
+
+    export interface GetBdsInstancePatchesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstancePatchesPatch {
+        /**
+         * The time when the patch was released.
+         */
+        timeReleased: string;
+        /**
+         * The version of the patch.
+         */
+        version: string;
     }
 
     export interface GetBdsInstanceUtilNode {
@@ -10568,6 +10825,10 @@ export namespace BigDataService {
          * The URL of the Jupyterhub.
          */
         jupyterHubUrl: string;
+        /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         */
+        odhVersion: string;
         /**
          * Oracle Linux version installed in the cluster.
          */
@@ -11393,6 +11654,7 @@ export namespace Blockchain {
          */
         ocpuAllocationNumber: number;
     }
+
 }
 
 export namespace Budget {
@@ -19823,6 +20085,9 @@ export namespace Core {
          * The date and time the block volume replica was last synced from the source block volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         timeLastSynced: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+         */
         volumeGroupReplicaId: string;
     }
 
@@ -20048,6 +20313,9 @@ export namespace Core {
          * The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         timeLastSynced: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+         */
         volumeGroupReplicaId: string;
     }
 
@@ -27648,6 +27916,10 @@ export namespace Core {
 
     export interface GetVolumeGroupReplicaMemberReplica {
         /**
+         * Membership state of the volume replica in relation to the volume group replica.
+         */
+        membershipState: string;
+        /**
          * The volume replica ID.
          */
         volumeReplicaId: string;
@@ -27711,6 +27983,10 @@ export namespace Core {
     }
 
     export interface GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
+        /**
+         * Membership state of the volume replica in relation to the volume group replica.
+         */
+        membershipState: string;
         /**
          * The volume replica ID.
          */
@@ -42499,6 +42775,7 @@ export namespace DataSafe {
         targetId: string;
         userAssessmentId: string;
     }
+
 }
 
 export namespace DataScience {
@@ -43482,6 +43759,31 @@ export namespace DataScience {
         ocpus: number;
     }
 
+    export interface GetNotebookSessionNotebookSessionRuntimeConfigDetail {
+        /**
+         * Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+         */
+        customEnvironmentVariables: {[key: string]: any};
+        /**
+         * Git configuration Details.
+         */
+        notebookSessionGitConfigDetails: outputs.DataScience.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail[];
+    }
+
+    export interface GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+        /**
+         * A collection of Git repository configurations.
+         */
+        notebookSessionGitRepoConfigCollections: outputs.DataScience.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection[];
+    }
+
+    export interface GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+        /**
+         * The repository URL
+         */
+        url: string;
+    }
+
     export interface GetNotebookSessionShapesFilter {
         /**
          * The name of the notebook session shape.
@@ -43553,6 +43855,10 @@ export namespace DataScience {
          * Details for the notebook session configuration.
          */
         notebookSessionConfigurationDetails: outputs.DataScience.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail[];
+        /**
+         * Notebook Session runtime configuration details.
+         */
+        notebookSessionRuntimeConfigDetails: outputs.DataScience.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail[];
         /**
          * The URL to interact with the notebook session.
          */
@@ -43629,6 +43935,31 @@ export namespace DataScience {
          * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus: number;
+    }
+
+    export interface GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail {
+        /**
+         * Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+         */
+        customEnvironmentVariables: {[key: string]: any};
+        /**
+         * Git configuration Details.
+         */
+        notebookSessionGitConfigDetails: outputs.DataScience.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail[];
+    }
+
+    export interface GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
+        /**
+         * A collection of Git repository configurations.
+         */
+        notebookSessionGitRepoConfigCollections: outputs.DataScience.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection[];
+    }
+
+    export interface GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection {
+        /**
+         * The repository URL
+         */
+        url: string;
     }
 
     export interface GetProjectsFilter {
@@ -44005,6 +44336,31 @@ export namespace DataScience {
          * (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus: number;
+    }
+
+    export interface NotebookSessionNotebookSessionRuntimeConfigDetails {
+        /**
+         * (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+         */
+        customEnvironmentVariables: {[key: string]: any};
+        /**
+         * (Updatable) Git configuration Details.
+         */
+        notebookSessionGitConfigDetails: outputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails;
+    }
+
+    export interface NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails {
+        /**
+         * (Updatable) A collection of Git repository configurations.
+         */
+        notebookSessionGitRepoConfigCollections: outputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection[];
+    }
+
+    export interface NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection {
+        /**
+         * (Updatable) The repository URL
+         */
+        url: string;
     }
 }
 
@@ -49798,6 +50154,363 @@ export namespace Database {
         vpcUser: string;
     }
 
+    export interface GetDatabaseMaintenanceRunHistoriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
+        /**
+         * List of database server history details.
+         */
+        dbServersHistoryDetails: outputs.Database.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail[];
+        /**
+         * The OCID of the maintenance run.
+         */
+        id: string;
+        /**
+         * Details of a maintenance run.
+         */
+        maintenanceRunDetails: outputs.Database.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail[];
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail {
+        /**
+         * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         */
+        dbServerPatchingDetails: outputs.Database.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail[];
+        /**
+         * The user-friendly name for the maintenance run.
+         */
+        displayName: string;
+        /**
+         * The OCID of the maintenance run.
+         */
+        id: string;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+        /**
+         * Estimated time, in minutes, to patch one database server.
+         */
+        estimatedPatchDuration: number;
+        /**
+         * The status of the patching operation.
+         */
+        patchingStatus: string;
+        /**
+         * The time when the patching operation ended.
+         */
+        timePatchingEnded: string;
+        /**
+         * The time when the patching operation started.
+         */
+        timePatchingStarted: string;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail {
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId: string;
+        /**
+         * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+         */
+        currentCustomActionTimeoutInMins: number;
+        /**
+         * The name of the current infrastruture component that is getting patched.
+         */
+        currentPatchingComponent: string;
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+         */
+        customActionTimeoutInMins: number;
+        /**
+         * Description of the maintenance run.
+         */
+        description: string;
+        /**
+         * The user-friendly name for the maintenance run.
+         */
+        displayName: string;
+        /**
+         * The estimated start time of the next infrastruture component patching operation.
+         */
+        estimatedComponentPatchingStartTime: string;
+        /**
+         * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+         */
+        estimatedPatchingTimes: outputs.Database.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime[];
+        /**
+         * The OCID of the maintenance run.
+         */
+        id: string;
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         */
+        isCustomActionTimeoutEnabled: boolean;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Maintenance sub-type.
+         */
+        maintenanceSubtype: string;
+        /**
+         * The maintenance type.
+         */
+        maintenanceType: string;
+        /**
+         * Contain the patch failure count.
+         */
+        patchFailureCount: number;
+        /**
+         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         */
+        patchId: string;
+        /**
+         * The time when the patching operation ended.
+         */
+        patchingEndTime: string;
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
+        patchingMode: string;
+        /**
+         * The time when the patching operation started.
+         */
+        patchingStartTime: string;
+        /**
+         * The status of the patching operation.
+         */
+        patchingStatus: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+         */
+        peerMaintenanceRunId: string;
+        /**
+         * The state of the maintenance run history.
+         */
+        state: string;
+        /**
+         * The target software version for the database server patching operation.
+         */
+        targetDbServerVersion: string;
+        /**
+         * The target resource ID.
+         */
+        targetResourceId: string;
+        /**
+         * The type of the target resource.
+         */
+        targetResourceType: string;
+        /**
+         * The target Cell version that is to be patched to.
+         */
+        targetStorageServerVersion: string;
+        /**
+         * The date and time the maintenance run was completed.
+         */
+        timeEnded: string;
+        /**
+         * The date and time the maintenance run is scheduled to occur.
+         */
+        timeScheduled: string;
+        /**
+         * The date and time the maintenance run starts.
+         */
+        timeStarted: string;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+        /**
+         * The estimated time required in minutes for database server patching.
+         */
+        estimatedDbServerPatchingTime: number;
+        /**
+         * The estimated time required in minutes for network switch patching.
+         */
+        estimatedNetworkSwitchesPatchingTime: number;
+        /**
+         * The estimated time required in minutes for storage server patching.
+         */
+        estimatedStorageServerPatchingTime: number;
+        /**
+         * The estimated total time required in minutes for all patching operations.
+         */
+        totalEstimatedPatchingTime: number;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
+        /**
+         * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         */
+        dbServerPatchingDetails: outputs.Database.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail[];
+        /**
+         * The user-friendly name for the maintenance run.
+         */
+        displayName: string;
+        /**
+         * The OCID of the maintenance run.
+         */
+        id: string;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+        /**
+         * Estimated time, in minutes, to patch one database server.
+         */
+        estimatedPatchDuration: number;
+        /**
+         * The status of the patching operation.
+         */
+        patchingStatus: string;
+        /**
+         * The time when the patching operation ended.
+         */
+        timePatchingEnded: string;
+        /**
+         * The time when the patching operation started.
+         */
+        timePatchingStarted: string;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
+        /**
+         * The OCID of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+         */
+        currentCustomActionTimeoutInMins: number;
+        /**
+         * The name of the current infrastruture component that is getting patched.
+         */
+        currentPatchingComponent: string;
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+         */
+        customActionTimeoutInMins: number;
+        /**
+         * Description of the maintenance run.
+         */
+        description: string;
+        /**
+         * The user-friendly name for the maintenance run.
+         */
+        displayName: string;
+        /**
+         * The estimated start time of the next infrastruture component patching operation.
+         */
+        estimatedComponentPatchingStartTime: string;
+        /**
+         * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+         */
+        estimatedPatchingTimes: outputs.Database.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime[];
+        /**
+         * The OCID of the maintenance run.
+         */
+        id: string;
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         */
+        isCustomActionTimeoutEnabled: boolean;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Maintenance sub-type.
+         */
+        maintenanceSubtype: string;
+        /**
+         * Maintenance type.
+         */
+        maintenanceType: string;
+        /**
+         * Contain the patch failure count.
+         */
+        patchFailureCount: number;
+        /**
+         * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         */
+        patchId: string;
+        /**
+         * The time when the patching operation ended.
+         */
+        patchingEndTime: string;
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
+        patchingMode: string;
+        /**
+         * The time when the patching operation started.
+         */
+        patchingStartTime: string;
+        /**
+         * The status of the patching operation.
+         */
+        patchingStatus: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+         */
+        peerMaintenanceRunId: string;
+        /**
+         * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+         */
+        state: string;
+        /**
+         * The target software version for the database server patching operation.
+         */
+        targetDbServerVersion: string;
+        /**
+         * The ID of the target resource on which the maintenance run occurs.
+         */
+        targetResourceId: string;
+        /**
+         * The type of the target resource on which the maintenance run occurs.
+         */
+        targetResourceType: string;
+        /**
+         * The target Cell version that is to be patched to.
+         */
+        targetStorageServerVersion: string;
+        /**
+         * The date and time the maintenance run was completed.
+         */
+        timeEnded: string;
+        /**
+         * The date and time the maintenance run is scheduled to occur.
+         */
+        timeScheduled: string;
+        /**
+         * The date and time the maintenance run starts.
+         */
+        timeStarted: string;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+        /**
+         * The estimated time required in minutes for database server patching.
+         */
+        estimatedDbServerPatchingTime: number;
+        /**
+         * The estimated time required in minutes for network switch patching.
+         */
+        estimatedNetworkSwitchesPatchingTime: number;
+        /**
+         * The estimated time required in minutes for storage server patching.
+         */
+        estimatedStorageServerPatchingTime: number;
+        /**
+         * The estimated total time required in minutes for all patching operations.
+         */
+        totalEstimatedPatchingTime: number;
+    }
+
     export interface GetDatabasePdbConversionHistoryEntriesFilter {
         name: string;
         regex?: boolean;
@@ -51865,6 +52578,10 @@ export namespace Database {
          */
         memorySizeInGbs: number;
         /**
+         * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+         */
+        monthlyDbServerVersion: string;
+        /**
          * The netmask for the control plane network.
          */
         netmask: string;
@@ -52868,7 +53585,7 @@ export namespace Database {
         lifecycleDetails: string;
         maintenanceRunId: string;
         /**
-         * Maintenance sub-type.
+         * The sub-type of the maintenance run.
          */
         maintenanceSubtype: string;
         /**
@@ -53842,7 +54559,6 @@ export namespace Database {
          */
         dbServerId: string;
     }
-
 }
 
 export namespace DatabaseManagement {
@@ -54314,6 +55030,574 @@ export namespace DatabaseManagement {
          * The name of the Managed Database.
          */
         name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         */
+        compartmentId: string;
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         */
+        dbDeploymentType: string;
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         */
+        dbSubType: string;
+        /**
+         * The type of Oracle Database installation.
+         */
+        dbType: string;
+        /**
+         * The version of the Oracle Database.
+         */
+        dbVersion: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
+        id: string;
+        /**
+         * The name of the rule.
+         */
+        name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
+        /**
+         * The list of rules that were not adhered to by the Optimizer Statistics Collection.
+         */
+        rules: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule[];
+        /**
+         * A summary of the Optimizer Statistics Advisor execution.
+         */
+        summary: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule {
+        /**
+         * The description of the rule.
+         */
+        description: string;
+        /**
+         * The list of findings for the rule.
+         */
+        findings: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding[];
+        /**
+         * The name of the rule.
+         */
+        name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding {
+        /**
+         * The details of the schema or operation.
+         */
+        details: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail[];
+        /**
+         * The message of the rationale.
+         */
+        message: string;
+        /**
+         * The list of recommendations.
+         */
+        recommendations: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail {
+        /**
+         * The list of operation details.
+         */
+        operations: string[];
+        /**
+         * The names of the impacted database schemas and their objects.
+         */
+        schemas: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema {
+        /**
+         * The name of the rule.
+         */
+        name: string;
+        /**
+         * The names of schema objects.
+         */
+        objects: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation {
+        /**
+         * An example of the recommendation.
+         */
+        examples: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample[];
+        /**
+         * The message of the rationale.
+         */
+        message: string;
+        /**
+         * The rationale of the recommendation.
+         */
+        rationales: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample {
+        /**
+         * The list of examples for the recommendation.
+         */
+        lines: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine {
+        /**
+         * The comments about the operation.
+         */
+        comment: string;
+        /**
+         * The details of the example operation.
+         */
+        operation: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale {
+        /**
+         * The message of the rationale.
+         */
+        message: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter {
+        /**
+         * The name of the rule.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection {
+        items: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem {
+        /**
+         * The summary of the Managed Database resource.
+         */
+        databases: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase[];
+        /**
+         * The errors in the Optimizer Statistics Advisor execution, if any.
+         */
+        errorMessage: string;
+        /**
+         * The name of the Optimizer Statistics Advisor execution.
+         */
+        executionName: string;
+        /**
+         * The list of findings for the rule.
+         */
+        findings: number;
+        /**
+         * A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
+         */
+        reports: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport[];
+        /**
+         * The status of the Optimizer Statistics Advisor execution.
+         */
+        status: string;
+        /**
+         * The Optimizer Statistics Advisor execution status message, if any.
+         */
+        statusMessage: string;
+        /**
+         * The name of the Optimizer Statistics Advisor task.
+         */
+        taskName: string;
+        /**
+         * The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         */
+        timeEnd: string;
+        /**
+         * The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         */
+        timeStart: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         */
+        compartmentId: string;
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         */
+        dbDeploymentType: string;
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         */
+        dbSubType: string;
+        /**
+         * The type of Oracle Database installation.
+         */
+        dbType: string;
+        /**
+         * The version of the Oracle Database.
+         */
+        dbVersion: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         */
+        id: string;
+        /**
+         * The name of the rule.
+         */
+        name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport {
+        /**
+         * The list of rules that were not adhered to by the Optimizer Statistics Collection.
+         */
+        rules: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule[];
+        /**
+         * A summary of the Optimizer Statistics Advisor execution.
+         */
+        summary: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule {
+        /**
+         * The description of the rule.
+         */
+        description: string;
+        /**
+         * The list of findings for the rule.
+         */
+        findings: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding[];
+        /**
+         * The name of the rule.
+         */
+        name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding {
+        /**
+         * The details of the schema or operation.
+         */
+        details: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail[];
+        /**
+         * The message of the rationale.
+         */
+        message: string;
+        /**
+         * The list of recommendations.
+         */
+        recommendations: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail {
+        /**
+         * The list of operation details.
+         */
+        operations: string[];
+        /**
+         * The names of the impacted database schemas and their objects.
+         */
+        schemas: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema {
+        /**
+         * The name of the rule.
+         */
+        name: string;
+        /**
+         * The names of schema objects.
+         */
+        objects: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation {
+        /**
+         * An example of the recommendation.
+         */
+        examples: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample[];
+        /**
+         * The message of the rationale.
+         */
+        message: string;
+        /**
+         * The rationale of the recommendation.
+         */
+        rationales: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample {
+        /**
+         * The list of examples for the recommendation.
+         */
+        lines: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine {
+        /**
+         * The comments about the operation.
+         */
+        comment: string;
+        /**
+         * The details of the example operation.
+         */
+        operation: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale {
+        /**
+         * The message of the rationale.
+         */
+        message: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection {
+        /**
+         * The list of Optimizer Statistics Collection details.
+         */
+        items: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem {
+        /**
+         * The number of tasks or objects for which statistics gathering is completed.
+         */
+        completed: number;
+        /**
+         * The number of tasks or objects for which statistics gathering failed.
+         */
+        failed: number;
+        /**
+         * The optimizer statistics tasks grouped by type.
+         */
+        groupBy: string;
+        /**
+         * The number of tasks or objects for which statistics gathering is in progress.
+         */
+        inProgress: number;
+        /**
+         * The number of tasks or objects for which statistics are yet to be gathered.
+         */
+        pending: number;
+        /**
+         * The number of tasks or objects for which statistics gathering was skipped.
+         */
+        skipped: number;
+        /**
+         * Indicates the end of the hour as the statistics are aggregated per hour.
+         */
+        timeEnd: string;
+        /**
+         * Indicates the start of the hour as the statistics are aggregated per hour.
+         */
+        timeStart: string;
+        /**
+         * The number of tasks or objects for which statistics gathering timed out.
+         */
+        timedOut: number;
+        /**
+         * The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
+         */
+        total: number;
+        /**
+         * The number of tasks or objects for which the status of statistics gathering is unknown.
+         */
+        unknown: number;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         */
+        compartmentId: string;
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         */
+        dbDeploymentType: string;
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         */
+        dbSubType: string;
+        /**
+         * The type of Oracle Database installation.
+         */
+        dbType: string;
+        /**
+         * The version of the Oracle Database.
+         */
+        dbVersion: string;
+        /**
+         * The ID of the operation.
+         */
+        id: string;
+        /**
+         * The name of the Managed Database.
+         */
+        name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationTask {
+        /**
+         * The status of the Optimizer Statistics Collection task.
+         */
+        status: string;
+        /**
+         * The name of the target object for which statistics are gathered.
+         */
+        target: string;
+        /**
+         * The type of target object.
+         */
+        targetType: string;
+        /**
+         * The end time of the Optimizer Statistics Collection task.
+         */
+        timeEnd: string;
+        /**
+         * The start time of the Optimizer Statistics Collection task.
+         */
+        timeStart: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter {
+        /**
+         * The name of the Managed Database.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection {
+        items: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem {
+        /**
+         * The number of objects for which statistics collection is completed.
+         */
+        completedCount: number;
+        /**
+         * The summary of the Managed Database resource.
+         */
+        databases: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase[];
+        /**
+         * The time it takes to complete the operation (in seconds).
+         */
+        durationInSeconds: number;
+        /**
+         * The end time of the operation.
+         */
+        endTime: string;
+        /**
+         * The number of objects for which statistics collection failed.
+         */
+        failedCount: number;
+        /**
+         * The ID of the operation.
+         */
+        id: number;
+        /**
+         * The number of objects for which statistics collection is in progress.
+         */
+        inProgressCount: number;
+        /**
+         * The name of the job.
+         */
+        jobName: string;
+        /**
+         * The name of the operation.
+         */
+        operationName: string;
+        /**
+         * The start time of the operation.
+         */
+        startTime: string;
+        /**
+         * The status of the Optimizer Statistics Collection task.
+         */
+        status: string;
+        /**
+         * The name of the target object for which statistics are gathered.
+         */
+        target: string;
+        /**
+         * An array of Optimizer Statistics Collection task details.
+         */
+        tasks: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask[];
+        /**
+         * The number of objects for which statistics collection timed out.
+         */
+        timedOutCount: number;
+        /**
+         * The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
+         */
+        totalObjectsCount: number;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         */
+        compartmentId: string;
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         */
+        dbDeploymentType: string;
+        /**
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         */
+        dbSubType: string;
+        /**
+         * The type of Oracle Database installation.
+         */
+        dbType: string;
+        /**
+         * The version of the Oracle Database.
+         */
+        dbVersion: string;
+        /**
+         * The ID of the operation.
+         */
+        id: string;
+        /**
+         * The name of the Managed Database.
+         */
+        name: string;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask {
+        /**
+         * The status of the Optimizer Statistics Collection task.
+         */
+        status: string;
+        /**
+         * The name of the target object for which statistics are gathered.
+         */
+        target: string;
+        /**
+         * The type of target object.
+         */
+        targetType: string;
+        /**
+         * The end time of the Optimizer Statistics Collection task.
+         */
+        timeEnd: string;
+        /**
+         * The start time of the Optimizer Statistics Collection task.
+         */
+        timeStart: string;
     }
 
     export interface GetManagedDatabaseSqlTuningAdvisorTaskItem {
@@ -55058,6 +56342,34 @@ export namespace DatabaseManagement {
          * The number of SQL statements in the SQL tuning set.
          */
         statementCounts: number;
+    }
+
+    export interface GetManagedDatabaseTableStatisticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseTableStatisticsTableStatisticsCollection {
+        /**
+         * The list of table statistics statuses.
+         */
+        items: outputs.DatabaseManagement.GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem {
+        /**
+         * The number of objects aggregated by status category.
+         */
+        count: number;
+        /**
+         * The percentage of objects with a particular status.
+         */
+        percentage: number;
+        /**
+         * The valid status categories of table statistics.
+         */
+        type: string;
     }
 
     export interface GetManagedDatabaseUserConsumerGroupPrivilegeItem {
@@ -56026,6 +57338,7 @@ export namespace DatabaseManagement {
          */
         userName: string;
     }
+
 }
 
 export namespace DatabaseMigration {
@@ -58258,7 +59571,7 @@ export namespace DevOps {
          */
         branch: string;
         /**
-         * (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+         * (Updatable) Connection identifier pertinent to Bitbucket Server source provider
          */
         connectionId: string;
         /**
@@ -58295,6 +59608,21 @@ export namespace DevOps {
          * (Updatable) Name of the artifact specified in the build_spec.yaml file.
          */
         artifactName: string;
+    }
+
+    export interface BuildPipelineStagePrivateAccessConfig {
+        /**
+         * (Updatable) Network channel type.
+         */
+        networkChannelType: string;
+        /**
+         * (Updatable) An array of network security group OCIDs.
+         */
+        nsgIds: string[];
+        /**
+         * (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+         */
+        subnetId: string;
     }
 
     export interface BuildPipelineStageWaitCriteria {
@@ -58519,7 +59847,7 @@ export namespace DevOps {
          */
         events: string[];
         /**
-         * Attributes to filter DevOps code repository events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         includes: outputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterInclude[];
         /**
@@ -58552,6 +59880,17 @@ export namespace DevOps {
          * Repository URL.
          */
         repositoryUrl: string;
+    }
+
+    export interface ConnectionTlsVerifyConfig {
+        /**
+         * (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+         */
+        caCertificateBundleId: string;
+        /**
+         * (Updatable) The type of TLS verification.
+         */
+        tlsVerifyMode: string;
     }
 
     export interface DeployArtifactDeployArtifactSource {
@@ -59102,7 +60441,7 @@ export namespace DevOps {
          */
         branch: string;
         /**
-         * Connection identifier pertinent to Bitbucket Cloud source provider
+         * Connection identifier pertinent to Bitbucket Server source provider
          */
         connectionId: string;
         /**
@@ -59139,6 +60478,21 @@ export namespace DevOps {
          * Name of the artifact specified in the build_spec.yaml file.
          */
         artifactName: string;
+    }
+
+    export interface GetBuildPipelineStagePrivateAccessConfig {
+        /**
+         * Network channel type.
+         */
+        networkChannelType: string;
+        /**
+         * An array of network security group OCIDs.
+         */
+        nsgIds: string[];
+        /**
+         * The OCID of the subnet where VNIC resources will be created for private endpoint.
+         */
+        subnetId: string;
     }
 
     export interface GetBuildPipelineStageWaitCriteria {
@@ -59233,6 +60587,10 @@ export namespace DevOps {
          */
         primaryBuildSource: string;
         /**
+         * Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+         */
+        privateAccessConfig: outputs.DevOps.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig;
+        /**
          * The OCID of the DevOps project.
          */
         projectId: string;
@@ -59289,7 +60647,7 @@ export namespace DevOps {
          */
         branch: string;
         /**
-         * Connection identifier pertinent to Bitbucket Cloud source provider
+         * Connection identifier pertinent to Bitbucket Server source provider
          */
         connectionId: string;
         /**
@@ -59326,6 +60684,21 @@ export namespace DevOps {
          * Name of the artifact specified in the build_spec.yaml file.
          */
         artifactName: string;
+    }
+
+    export interface GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig {
+        /**
+         * Network channel type.
+         */
+        networkChannelType: string;
+        /**
+         * An array of network security group OCIDs.
+         */
+        nsgIds: string[];
+        /**
+         * The OCID of the subnet where VNIC resources will be created for private endpoint.
+         */
+        subnetId: string;
     }
 
     export interface GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria {
@@ -59652,7 +61025,7 @@ export namespace DevOps {
          */
         events: string[];
         /**
-         * Attributes to filter DevOps code repository events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         includes: outputs.DevOps.GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude[];
         /**
@@ -59838,7 +61211,7 @@ export namespace DevOps {
          */
         events: string[];
         /**
-         * Attributes to filter DevOps code repository events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         includes: outputs.DevOps.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude[];
         /**
@@ -59882,6 +61255,17 @@ export namespace DevOps {
         values: string[];
     }
 
+    export interface GetConnectionTlsVerifyConfig {
+        /**
+         * The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+         */
+        caCertificateBundleId: string;
+        /**
+         * The type of TLS verification.
+         */
+        tlsVerifyMode: string;
+    }
+
     export interface GetConnectionsConnectionCollection {
         items: outputs.DevOps.GetConnectionsConnectionCollectionItem[];
     }
@@ -59895,6 +61279,10 @@ export namespace DevOps {
          * OCID of personal Bitbucket Cloud AppPassword saved in secret store
          */
         appPassword: string;
+        /**
+         * The Base URL of the hosted BitbucketServer.
+         */
+        baseUrl: string;
         /**
          * The OCID of the compartment in which to list resources.
          */
@@ -59944,9 +61332,24 @@ export namespace DevOps {
          */
         timeUpdated: string;
         /**
+         * TLS configuration used by build service to verify TLS connection.
+         */
+        tlsVerifyConfigs: outputs.DevOps.GetConnectionsConnectionCollectionItemTlsVerifyConfig[];
+        /**
          * Public Bitbucket Cloud Username in plain text
          */
         username: string;
+    }
+
+    export interface GetConnectionsConnectionCollectionItemTlsVerifyConfig {
+        /**
+         * The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+         */
+        caCertificateBundleId: string;
+        /**
+         * The type of TLS verification.
+         */
+        tlsVerifyMode: string;
     }
 
     export interface GetConnectionsFilter {
@@ -60786,7 +62189,7 @@ export namespace DevOps {
          */
         definedTags: {[key: string]: any};
         /**
-         * Optional binary artifact OCID user may provide to this stage.
+         * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
          */
         deployArtifactId: string;
         /**
@@ -61738,7 +63141,7 @@ export namespace DevOps {
 
     export interface GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule {
         /**
-         * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+         * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
          */
         customSchedule: string;
         /**
@@ -62105,7 +63508,7 @@ export namespace DevOps {
 
     export interface GetRepositoryMirrorRepositoryConfigTriggerSchedule {
         /**
-         * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+         * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
          */
         customSchedule: string;
         /**
@@ -62267,7 +63670,7 @@ export namespace DevOps {
          */
         events: string[];
         /**
-         * Attributes to filter DevOps code repository events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         includes: outputs.DevOps.GetTriggerActionFilterInclude[];
         /**
@@ -62385,7 +63788,7 @@ export namespace DevOps {
          */
         events: string[];
         /**
-         * Attributes to filter DevOps code repository events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         includes: outputs.DevOps.GetTriggersTriggerCollectionItemActionFilterInclude[];
         /**
@@ -62429,7 +63832,7 @@ export namespace DevOps {
 
     export interface RepositoryMirrorRepositoryConfigTriggerSchedule {
         /**
-         * (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+         * (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
          */
         customSchedule: string;
         /**
@@ -62459,7 +63862,7 @@ export namespace DevOps {
          */
         events: string[];
         /**
-         * (Updatable) Attributes to filter DevOps code repository events.
+         * (Updatable) Attributes to filter GitLab self-hosted server events.
          */
         include: outputs.DevOps.TriggerActionFilterInclude;
         /**
@@ -62478,7 +63881,6 @@ export namespace DevOps {
          */
         headRef: string;
     }
-
 }
 
 export namespace Dns {
@@ -63551,6 +64953,7 @@ export namespace Dns {
          */
         hostname: string;
     }
+
 }
 
 export namespace EmWarehouse {
@@ -67443,11 +68846,16 @@ export namespace Identity {
          */
         canUseSmtpCredentials: boolean;
     }
+
 }
 
 export namespace Integration {
     export interface GetIntegrationInstanceAlternateCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias: string;
+        /**
          * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
          */
         certificateSecretId: string;
@@ -67459,10 +68867,38 @@ export namespace Integration {
          * A custom hostname to be used for the integration instance URL, in FQDN format.
          */
         hostname: string;
+    }
+
+    export interface GetIntegrationInstanceAttachment {
+        /**
+         * * If role == `PARENT`, the attached instance was created by this service instance
+         * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+         */
+        isImplicit: boolean;
+        /**
+         * The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+         */
+        targetId: string;
+        /**
+         * The dataplane instance URL of the attached instance
+         */
+        targetInstanceUrl: string;
+        /**
+         * The role of the target attachment.
+         */
+        targetRole: string;
+        /**
+         * The type of the target instance, such as "FUSION".
+         */
+        targetServiceType: string;
     }
 
     export interface GetIntegrationInstanceCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias: string;
+        /**
          * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
          */
         certificateSecretId: string;
@@ -67476,9 +68912,32 @@ export namespace Integration {
         hostname: string;
     }
 
+    export interface GetIntegrationInstanceIdcsInfo {
+        /**
+         * The IDCS application display name associated with the instance
+         */
+        idcsAppDisplayName: string;
+        /**
+         * The IDCS application ID associated with the instance
+         */
+        idcsAppId: string;
+        /**
+         * URL for the location of the IDCS Application (used by IDCS APIs)
+         */
+        idcsAppLocationUrl: string;
+        /**
+         * The IDCS application name associated with the instance
+         */
+        idcsAppName: string;
+        /**
+         * The URL used as the primary audience for integration flows in this instance type: string
+         */
+        instancePrimaryAudienceUrl: string;
+    }
+
     export interface GetIntegrationInstanceNetworkEndpointDetail {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedHttpIps: string[];
         /**
@@ -67497,7 +68956,7 @@ export namespace Integration {
 
     export interface GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedIps: string[];
         /**
@@ -67517,6 +68976,10 @@ export namespace Integration {
          * A list of alternate custom endpoints used for the integration instance URL.
          */
         alternateCustomEndpoints: outputs.Integration.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint[];
+        /**
+         * A list of associated attachments to other services
+         */
+        attachments: outputs.Integration.GetIntegrationInstancesIntegrationInstanceAttachment[];
         /**
          * The ID of the compartment in which to list resources.
          */
@@ -67546,6 +69009,10 @@ export namespace Integration {
          */
         id: string;
         idcsAt: string;
+        /**
+         * Information for IDCS access
+         */
+        idcsInfos: outputs.Integration.GetIntegrationInstancesIntegrationInstanceIdcsInfo[];
         /**
          * The Integration Instance URL.
          */
@@ -67594,6 +69061,10 @@ export namespace Integration {
 
     export interface GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias: string;
+        /**
          * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
          */
         certificateSecretId: string;
@@ -67605,10 +69076,38 @@ export namespace Integration {
          * A custom hostname to be used for the integration instance URL, in FQDN format.
          */
         hostname: string;
+    }
+
+    export interface GetIntegrationInstancesIntegrationInstanceAttachment {
+        /**
+         * * If role == `PARENT`, the attached instance was created by this service instance
+         * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+         */
+        isImplicit: boolean;
+        /**
+         * The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+         */
+        targetId: string;
+        /**
+         * The dataplane instance URL of the attached instance
+         */
+        targetInstanceUrl: string;
+        /**
+         * The role of the target attachment.
+         */
+        targetRole: string;
+        /**
+         * The type of the target instance, such as "FUSION".
+         */
+        targetServiceType: string;
     }
 
     export interface GetIntegrationInstancesIntegrationInstanceCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias: string;
+        /**
          * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
          */
         certificateSecretId: string;
@@ -67622,9 +69121,32 @@ export namespace Integration {
         hostname: string;
     }
 
+    export interface GetIntegrationInstancesIntegrationInstanceIdcsInfo {
+        /**
+         * The IDCS application display name associated with the instance
+         */
+        idcsAppDisplayName: string;
+        /**
+         * The IDCS application ID associated with the instance
+         */
+        idcsAppId: string;
+        /**
+         * URL for the location of the IDCS Application (used by IDCS APIs)
+         */
+        idcsAppLocationUrl: string;
+        /**
+         * The IDCS application name associated with the instance
+         */
+        idcsAppName: string;
+        /**
+         * The URL used as the primary audience for integration flows in this instance type: string
+         */
+        instancePrimaryAudienceUrl: string;
+    }
+
     export interface GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedHttpIps: string[];
         /**
@@ -67643,7 +69165,7 @@ export namespace Integration {
 
     export interface GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedIps: string[];
         /**
@@ -67654,6 +69176,10 @@ export namespace Integration {
 
     export interface IntegrationInstanceAlternateCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias: string;
+        /**
          * (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
          */
         certificateSecretId: string;
@@ -67665,10 +69191,38 @@ export namespace Integration {
          * (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
          */
         hostname: string;
+    }
+
+    export interface IntegrationInstanceAttachment {
+        /**
+         * * If role == `PARENT`, the attached instance was created by this service instance
+         * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+         */
+        isImplicit: boolean;
+        /**
+         * The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+         */
+        targetId: string;
+        /**
+         * The dataplane instance URL of the attached instance
+         */
+        targetInstanceUrl: string;
+        /**
+         * The role of the target attachment.
+         */
+        targetRole: string;
+        /**
+         * The type of the target instance, such as "FUSION".
+         */
+        targetServiceType: string;
     }
 
     export interface IntegrationInstanceCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias: string;
+        /**
          * (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
          */
         certificateSecretId: string;
@@ -67682,9 +69236,32 @@ export namespace Integration {
         hostname: string;
     }
 
+    export interface IntegrationInstanceIdcsInfo {
+        /**
+         * The IDCS application display name associated with the instance
+         */
+        idcsAppDisplayName: string;
+        /**
+         * The IDCS application ID associated with the instance
+         */
+        idcsAppId: string;
+        /**
+         * URL for the location of the IDCS Application (used by IDCS APIs)
+         */
+        idcsAppLocationUrl: string;
+        /**
+         * The IDCS application name associated with the instance
+         */
+        idcsAppName: string;
+        /**
+         * The URL used as the primary audience for integration flows in this instance type: string
+         */
+        instancePrimaryAudienceUrl: string;
+    }
+
     export interface IntegrationInstanceNetworkEndpointDetails {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedHttpIps: string[];
         /**
@@ -67703,7 +69280,7 @@ export namespace Integration {
 
     export interface IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedIps: string[];
         /**
@@ -67854,6 +69431,10 @@ export namespace Jms {
          */
         inventoryLogs: outputs.Jms.GetFleetsFleetCollectionItemInventoryLog[];
         /**
+         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         */
+        isAdvancedFeaturesEnabled: boolean;
+        /**
          * Custom Log for inventory or operation log.
          */
         operationLogs: outputs.Jms.GetFleetsFleetCollectionItemOperationLog[];
@@ -67976,6 +69557,10 @@ export namespace Jms {
          */
         family: string;
         /**
+         * Number of instances running the operating system
+         */
+        managedInstanceCount: number;
+        /**
          * The name of the operating system as provided by the Java system property os.name.
          */
         name: string;
@@ -68091,6 +69676,10 @@ export namespace Jms {
          */
         family: string;
         /**
+         * Number of instances running the operating system
+         */
+        managedInstanceCount: number;
+        /**
          * The name of the operating system as provided by the Java system property os.name.
          */
         name: string;
@@ -68098,6 +69687,218 @@ export namespace Jms {
          * The version of the operating system as provided by the Java system property os.version.
          */
         version: string;
+    }
+
+    export interface GetJavaFamiliesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJavaFamiliesJavaFamilyCollection {
+        items: outputs.Jms.GetJavaFamiliesJavaFamilyCollectionItem[];
+    }
+
+    export interface GetJavaFamiliesJavaFamilyCollectionItem {
+        /**
+         * The display name for the Java family.
+         */
+        displayName: string;
+        /**
+         * Link to access the documentation for the release.
+         */
+        docUrl: string;
+        /**
+         * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        endOfSupportLifeDate: string;
+        /**
+         * The version identifier for the Java family.
+         */
+        familyVersion: string;
+        /**
+         * This indicates the support category for the Java release family.
+         */
+        supportType: string;
+    }
+
+    export interface GetJavaReleaseArtifact {
+        /**
+         * Approximate compressed file size in bytes.
+         */
+        approximateFileSizeInBytes: string;
+        /**
+         * Product content type of this artifact.
+         */
+        artifactContentType: string;
+        /**
+         * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+         */
+        artifactDescription: string;
+        /**
+         * Unique identifier for the artifact.
+         */
+        artifactId: string;
+        /**
+         * SHA256 checksum of the artifact.
+         */
+        sha256: string;
+    }
+
+    export interface GetJavaReleaseFamilyDetail {
+        /**
+         * Commonly used name for the license type.
+         */
+        displayName: string;
+        /**
+         * Link to access the documentation for the release.
+         */
+        docUrl: string;
+        /**
+         * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        endOfSupportLifeDate: string;
+        /**
+         * Java release family identifier.
+         */
+        familyVersion: string;
+        /**
+         * This indicates the support category for the Java release family.
+         */
+        supportType: string;
+    }
+
+    export interface GetJavaReleaseLicenseDetail {
+        /**
+         * Commonly used name for the license type.
+         */
+        displayName: string;
+        /**
+         * License type for the Java version.
+         */
+        licenseType: string;
+        /**
+         * Publicly accessible license URL containing the detailed terms and conditions.
+         */
+        licenseUrl: string;
+    }
+
+    export interface GetJavaReleasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJavaReleasesJavaReleaseCollection {
+        items: outputs.Jms.GetJavaReleasesJavaReleaseCollectionItem[];
+    }
+
+    export interface GetJavaReleasesJavaReleaseCollectionItem {
+        /**
+         * List of Java artifacts.
+         */
+        artifacts: outputs.Jms.GetJavaReleasesJavaReleaseCollectionItemArtifact[];
+        /**
+         * Complete information of a specific Java release family.
+         */
+        familyDetails: outputs.Jms.GetJavaReleasesJavaReleaseCollectionItemFamilyDetail[];
+        /**
+         * The version identifier for the Java family.
+         */
+        familyVersion: string;
+        /**
+         * Information about a license type for Java.
+         */
+        licenseDetails: outputs.Jms.GetJavaReleasesJavaReleaseCollectionItemLicenseDetail[];
+        /**
+         * Java license type.
+         */
+        licenseType: string;
+        /**
+         * Parent Java release version identifier. This is applicable for BPR releases.
+         */
+        parentReleaseVersion: string;
+        /**
+         * The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        releaseDate: string;
+        /**
+         * Release notes associated with the Java version.
+         */
+        releaseNotesUrl: string;
+        /**
+         * Java release type.
+         */
+        releaseType: string;
+        /**
+         * Unique Java release version identifier
+         */
+        releaseVersion: string;
+        /**
+         * The security status of the Java version.
+         */
+        securityStatus: string;
+    }
+
+    export interface GetJavaReleasesJavaReleaseCollectionItemArtifact {
+        /**
+         * Approximate compressed file size in bytes.
+         */
+        approximateFileSizeInBytes: string;
+        /**
+         * Product content type of this artifact.
+         */
+        artifactContentType: string;
+        /**
+         * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+         */
+        artifactDescription: string;
+        /**
+         * Unique identifier for the artifact.
+         */
+        artifactId: string;
+        /**
+         * SHA256 checksum of the artifact.
+         */
+        sha256: string;
+    }
+
+    export interface GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
+        /**
+         * Commonly used name for the license type.
+         */
+        displayName: string;
+        /**
+         * Link to access the documentation for the release.
+         */
+        docUrl: string;
+        /**
+         * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        endOfSupportLifeDate: string;
+        /**
+         * The version identifier for the Java family.
+         */
+        familyVersion: string;
+        /**
+         * This indicates the support category for the Java release family.
+         */
+        supportType: string;
+    }
+
+    export interface GetJavaReleasesJavaReleaseCollectionItemLicenseDetail {
+        /**
+         * Commonly used name for the license type.
+         */
+        displayName: string;
+        /**
+         * Java license type.
+         */
+        licenseType: string;
+        /**
+         * Publicly accessible license URL containing the detailed terms and conditions.
+         */
+        licenseUrl: string;
     }
 
     export interface GetListJreUsageItem {
@@ -68118,6 +69919,10 @@ export namespace Jms {
          */
         approximatePendingWorkRequestCount: number;
         /**
+         * The number of days since this release has been under the security baseline.
+         */
+        daysUnderSecurityBaseline: number;
+        /**
          * The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
          */
         distribution: string;
@@ -68126,7 +69931,7 @@ export namespace Jms {
          */
         endOfSupportLifeDate: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
          */
         fleetId: string;
         /**
@@ -68134,7 +69939,7 @@ export namespace Jms {
          */
         id: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
          */
         managedInstanceId: string;
         /**
@@ -68184,6 +69989,10 @@ export namespace Jms {
          * The operating system type, such as Windows or Linux
          */
         family: string;
+        /**
+         * Number of instances running the operating system
+         */
+        managedInstanceCount: number;
         /**
          * The name of the operating system as provided by the Java system property os.name.
          */
@@ -68748,7 +70557,6 @@ export namespace Kms {
          */
         uri?: string;
     }
-
 }
 
 export namespace LicenseManager {
@@ -69126,6 +70934,7 @@ export namespace LicenseManager {
          */
         publisher: string;
     }
+
 }
 
 export namespace Limits {
@@ -69334,6 +71143,7 @@ export namespace Limits {
          */
         type: string;
     }
+
 }
 
 export namespace LoadBalancer {
@@ -71506,6 +73316,7 @@ export namespace LogAnalytics {
          */
         type: string;
     }
+
 }
 
 export namespace Logging {
@@ -73698,6 +75509,7 @@ export namespace Marketplace {
          */
         name: string;
     }
+
 }
 
 export namespace MeteringComputation {
@@ -74744,7 +76556,6 @@ export namespace MeteringComputation {
          */
         value: string;
     }
-
 }
 
 export namespace Monitoring {
@@ -77590,6 +79401,7 @@ export namespace Mysql {
          */
         sourceType: string;
     }
+
 }
 
 export namespace NetworkFirewall {
@@ -78285,7 +80097,6 @@ export namespace NetworkFirewall {
          */
         type: string;
     }
-
 }
 
 export namespace NetworkLoadBalancer {
@@ -78958,6 +80769,7 @@ export namespace NetworkLoadBalancer {
          */
         urlPath: string;
     }
+
 }
 
 export namespace Nosql {
@@ -79838,7 +81650,6 @@ export namespace ObjectStorage {
          */
         sourceVersionId?: string;
     }
-
 }
 
 export namespace Oce {
@@ -80388,6 +82199,7 @@ export namespace Ocvp {
          */
         systemName: string;
     }
+
 }
 
 export namespace Oda {
@@ -84115,6 +85927,197 @@ export namespace Ons {
 
 }
 
+export namespace Opensearch {
+    export interface GetOpensearchClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOpensearchClustersOpensearchClusterCollection {
+        items: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItem[];
+    }
+
+    export interface GetOpensearchClustersOpensearchClusterCollectionItem {
+        /**
+         * The availability domains to distribute the cluser nodes across.
+         */
+        availabilityDomains: string[];
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * The number of data nodes configured for the cluster.
+         */
+        dataNodeCount: number;
+        /**
+         * The bare metal shape for the cluster's data nodes.
+         */
+        dataNodeHostBareMetalShape: string;
+        /**
+         * The amount of memory in GB, for the cluster's data nodes.
+         */
+        dataNodeHostMemoryGb: number;
+        /**
+         * The number of OCPUs configured for the cluster's data nodes.
+         */
+        dataNodeHostOcpuCount: number;
+        /**
+         * The instance type for the cluster's data nodes.
+         */
+        dataNodeHostType: string;
+        /**
+         * The amount of storage in GB, to configure per node for the cluster's data nodes.
+         */
+        dataNodeStorageGb: number;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * The fully qualified domain name (FQDN) for the cluster's API endpoint.
+         */
+        fqdn: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * unique OpensearchCluster identifier
+         */
+        id: string;
+        /**
+         * Additional information about the current lifecycle state of the cluster.
+         */
+        lifecycleDetails: string;
+        /**
+         * The number of master nodes configured for the cluster.
+         */
+        masterNodeCount: number;
+        /**
+         * The bare metal shape for the cluster's master nodes.
+         */
+        masterNodeHostBareMetalShape: string;
+        /**
+         * The amount of memory in GB, for the cluster's master nodes.
+         */
+        masterNodeHostMemoryGb: number;
+        /**
+         * The number of OCPUs configured for cluster's master nodes.
+         */
+        masterNodeHostOcpuCount: number;
+        /**
+         * The instance type for the cluster's master nodes.
+         */
+        masterNodeHostType: string;
+        /**
+         * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
+         */
+        opendashboardFqdn: string;
+        /**
+         * The number of OpenSearch Dashboard nodes configured for the cluster.
+         */
+        opendashboardNodeCount: number;
+        /**
+         * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+         */
+        opendashboardNodeHostMemoryGb: number;
+        /**
+         * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+         */
+        opendashboardNodeHostOcpuCount: number;
+        /**
+         * The private IP address for the cluster's OpenSearch Dashboard.
+         */
+        opendashboardPrivateIp: string;
+        /**
+         * The fully qualified domain name (FQDN) for the cluster's API endpoint.
+         */
+        opensearchFqdn: string;
+        /**
+         * The cluster's private IP address.
+         */
+        opensearchPrivateIp: string;
+        /**
+         * The software version the cluster is running.
+         */
+        softwareVersion: string;
+        /**
+         * A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+         */
+        state: string;
+        /**
+         * The OCID for the compartment where the cluster's subnet is located.
+         */
+        subnetCompartmentId: string;
+        /**
+         * The OCID of the cluster's subnet.
+         */
+        subnetId: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The amount of time in milliseconds since the cluster was created.
+         */
+        timeCreated: string;
+        /**
+         * The amount of time in milliseconds since the cluster was updated.
+         */
+        timeDeleted: string;
+        /**
+         * The amount of time in milliseconds since the cluster was updated.
+         */
+        timeUpdated: string;
+        /**
+         * The size in GB of the cluster's total storage.
+         */
+        totalStorageGb: number;
+        /**
+         * The OCID for the compartment where the cluster's VCN is located.
+         */
+        vcnCompartmentId: string;
+        /**
+         * The OCID of the cluster's VCN.
+         */
+        vcnId: string;
+    }
+
+    export interface GetOpensearchVersionItem {
+        /**
+         * The version of OpenSearch.
+         */
+        version: string;
+    }
+
+    export interface GetOpensearchVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOpensearchVersionsOpensearchVersionsCollection {
+        /**
+         * A list of OpenSearch versions.
+         */
+        items: outputs.Opensearch.GetOpensearchVersionsOpensearchVersionsCollectionItem[];
+    }
+
+    export interface GetOpensearchVersionsOpensearchVersionsCollectionItem {
+        /**
+         * The version of OpenSearch.
+         */
+        version: string;
+    }
+
+}
+
 export namespace OperatorAccessControl {
     export interface GetAccessRequestHistoryItem {
         /**
@@ -84200,6 +86203,10 @@ export namespace OperatorAccessControl {
          * Whether the access request was automatically approved.
          */
         isAutoApproved: boolean;
+        /**
+         * more in detail about the lifeCycleState.
+         */
+        lifecycleDetails: string;
         /**
          * Additional message specific to the access request that can be specified by the approver at the time of approval.
          */
@@ -84409,6 +86416,10 @@ export namespace OperatorAccessControl {
          * If set indicates that the audit logs are being forwarded to the relevant remote logging server
          */
         isLogForwarded: boolean;
+        /**
+         * More in detail about the lifeCycleState.
+         */
+        lifecycleDetails: string;
         /**
          * The OCID of the operator control.
          */
@@ -85311,6 +87322,10 @@ export namespace Opsi {
          */
         compartmentId: string;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+         */
+        computeId: string;
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags: {[key: string]: any};
@@ -85343,7 +87358,8 @@ export namespace Opsi {
          */
         entitySource: string;
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+         * <<<<<<< ours
          */
         exadataInsightId: string;
         /**
@@ -85360,6 +87376,7 @@ export namespace Opsi {
         hostName: string;
         /**
          * Filter by one or more host types. Possible value is EXTERNAL-HOST.
+         * >>>>>>> theirs
          */
         hostType: string;
         /**
@@ -85410,6 +87427,106 @@ export namespace Opsi {
          * The time the host insight was updated. An RFC3339 formatted datetime string
          */
         timeUpdated: string;
+    }
+
+    export interface GetImportableAgentEntitiesItem {
+        /**
+         * Source of the importable agent entity.
+         */
+        entitySource: string;
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         */
+        hostName: string;
+        /**
+         * The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+         */
+        managementAgentDisplayName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         */
+        managementAgentId: string;
+        /**
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
+        platformType: string;
+    }
+
+    export interface GetImportableAgentEntityItem {
+        /**
+         * Source of the importable agent entity.
+         */
+        entitySource: string;
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         */
+        hostName: string;
+        /**
+         * The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+         */
+        managementAgentDisplayName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         */
+        managementAgentId: string;
+        /**
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
+        platformType: string;
+    }
+
+    export interface GetImportableComputeEntitiesItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+         */
+        computeDisplayName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+         */
+        computeId: string;
+        /**
+         * Source of the importable agent entity.
+         */
+        entitySource: string;
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         */
+        hostName: string;
+        /**
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
+        platformType: string;
+    }
+
+    export interface GetImportableComputeEntityItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+         */
+        computeDisplayName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+         */
+        computeId: string;
+        /**
+         * Source of the importable agent entity.
+         */
+        entitySource: string;
+        /**
+         * The host name. The host name is unique amongst the hosts managed by the same management agent.
+         */
+        hostName: string;
+        /**
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
+        platformType: string;
     }
 
     export interface GetOperationsInsightsPrivateEndpointsFilter {
@@ -86651,6 +88768,7 @@ export namespace Optimizer {
          */
         url: string;
     }
+
 }
 
 export namespace OsManagement {
@@ -87238,7 +89356,6 @@ export namespace OsManagement {
          */
         id: string;
     }
-
 }
 
 export namespace OspGateway {
@@ -93196,7 +95313,6 @@ export namespace StackMonitoring {
          */
         type: string;
     }
-
 }
 
 export namespace Streaming {
@@ -93502,6 +95618,7 @@ export namespace Streaming {
          */
         subnetId: string;
     }
+
 }
 
 export namespace UsageProxy {
@@ -94177,6 +96294,7 @@ export namespace VisualBuilder {
          */
         hostname: string;
     }
+
 }
 
 export namespace VnMonitoring {
@@ -100319,4 +102437,5 @@ export namespace Waf {
          */
         vcnId: string;
     }
+
 }

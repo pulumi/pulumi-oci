@@ -22,30 +22,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewPathRouteSet(ctx, "testPathRouteSet", &LoadBalancer.PathRouteSetArgs{
-// 			LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			PathRoutes: loadbalancer.PathRouteSetPathRouteArray{
-// 				&loadbalancer.PathRouteSetPathRouteArgs{
-// 					BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-// 					Path:           pulumi.Any(_var.Path_route_set_path_routes_path),
-// 					PathMatchType: &loadbalancer.PathRouteSetPathRoutePathMatchTypeArgs{
-// 						MatchType: pulumi.Any(_var.Path_route_set_path_routes_path_match_type_match_type),
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewPathRouteSet(ctx, "testPathRouteSet", &LoadBalancer.PathRouteSetArgs{
+//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				PathRoutes: loadbalancer.PathRouteSetPathRouteArray{
+//					&loadbalancer.PathRouteSetPathRouteArgs{
+//						BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
+//						Path:           pulumi.Any(_var.Path_route_set_path_routes_path),
+//						PathMatchType: &loadbalancer.PathRouteSetPathRoutePathMatchTypeArgs{
+//							MatchType: pulumi.Any(_var.Path_route_set_path_routes_path_match_type_match_type),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // PathRouteSets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+//
+//	$ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
+//
 // ```
 type PathRouteSet struct {
 	pulumi.CustomResourceState
@@ -170,7 +175,7 @@ func (i *PathRouteSet) ToPathRouteSetOutputWithContext(ctx context.Context) Path
 // PathRouteSetArrayInput is an input type that accepts PathRouteSetArray and PathRouteSetArrayOutput values.
 // You can construct a concrete instance of `PathRouteSetArrayInput` via:
 //
-//          PathRouteSetArray{ PathRouteSetArgs{...} }
+//	PathRouteSetArray{ PathRouteSetArgs{...} }
 type PathRouteSetArrayInput interface {
 	pulumi.Input
 
@@ -195,7 +200,7 @@ func (i PathRouteSetArray) ToPathRouteSetArrayOutputWithContext(ctx context.Cont
 // PathRouteSetMapInput is an input type that accepts PathRouteSetMap and PathRouteSetMapOutput values.
 // You can construct a concrete instance of `PathRouteSetMapInput` via:
 //
-//          PathRouteSetMap{ "key": PathRouteSetArgs{...} }
+//	PathRouteSetMap{ "key": PathRouteSetArgs{...} }
 type PathRouteSetMapInput interface {
 	pulumi.Input
 

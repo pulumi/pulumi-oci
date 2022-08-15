@@ -102,6 +102,7 @@ export * from "./getInstanceConfigurations";
 export * from "./getInstanceConsoleConnections";
 export * from "./getInstanceCredentials";
 export * from "./getInstanceDevices";
+export * from "./getInstanceMaintenanceReboot";
 export * from "./getInstanceMeasuredBootReport";
 export * from "./getInstancePool";
 export * from "./getInstancePoolInstances";

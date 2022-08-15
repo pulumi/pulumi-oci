@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetBootVolume(ctx, &core.GetBootVolumeArgs{
-// 			BootVolumeId: oci_core_boot_volume.Test_boot_volume.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetBootVolume(ctx, &core.GetBootVolumeArgs{
+//				BootVolumeId: oci_core_boot_volume.Test_boot_volume.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBootVolume(ctx *pulumi.Context, args *LookupBootVolumeArgs, opts ...pulumi.InvokeOption) (*LookupBootVolumeResult, error) {
 	var rv LookupBootVolumeResult

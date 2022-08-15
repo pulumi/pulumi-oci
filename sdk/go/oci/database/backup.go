@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewBackup(ctx, "testBackup", &Database.BackupArgs{
-// 			DatabaseId:  pulumi.Any(oci_database_database.Test_database.Id),
-// 			DisplayName: pulumi.Any(_var.Backup_display_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewBackup(ctx, "testBackup", &Database.BackupArgs{
+//				DatabaseId:  pulumi.Any(oci_database_database.Test_database.Id),
+//				DisplayName: pulumi.Any(_var.Backup_display_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // Backups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/backup:Backup test_backup "id"
+//
+//	$ pulumi import oci:Database/backup:Backup test_backup "id"
+//
 // ```
 type Backup struct {
 	pulumi.CustomResourceState
@@ -232,7 +237,7 @@ func (i *Backup) ToBackupOutputWithContext(ctx context.Context) BackupOutput {
 // BackupArrayInput is an input type that accepts BackupArray and BackupArrayOutput values.
 // You can construct a concrete instance of `BackupArrayInput` via:
 //
-//          BackupArray{ BackupArgs{...} }
+//	BackupArray{ BackupArgs{...} }
 type BackupArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +262,7 @@ func (i BackupArray) ToBackupArrayOutputWithContext(ctx context.Context) BackupA
 // BackupMapInput is an input type that accepts BackupMap and BackupMapOutput values.
 // You can construct a concrete instance of `BackupMapInput` via:
 //
-//          BackupMap{ "key": BackupArgs{...} }
+//	BackupMap{ "key": BackupArgs{...} }
 type BackupMapInput interface {
 	pulumi.Input
 

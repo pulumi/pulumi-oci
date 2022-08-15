@@ -25,36 +25,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewDiscoveryMod(ctx, "testDiscoveryJob", &DataSafe.DiscoveryModArgs{
-// 			CompartmentId:        pulumi.Any(_var.Compartment_id),
-// 			SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DiscoveryType: pulumi.Any(_var.Discovery_job_discovery_type),
-// 			DisplayName:   pulumi.Any(_var.Discovery_job_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Discovery_job_is_app_defined_relation_discovery_enabled),
-// 			IsIncludeAllSchemas:                  pulumi.Any(_var.Discovery_job_is_include_all_schemas),
-// 			IsIncludeAllSensitiveTypes:           pulumi.Any(_var.Discovery_job_is_include_all_sensitive_types),
-// 			IsSampleDataCollectionEnabled:        pulumi.Any(_var.Discovery_job_is_sample_data_collection_enabled),
-// 			SchemasForDiscoveries:                pulumi.Any(_var.Discovery_job_schemas_for_discovery),
-// 			SensitiveTypeIdsForDiscoveries:       pulumi.Any(_var.Discovery_job_sensitive_type_ids_for_discovery),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewDiscoveryMod(ctx, "testDiscoveryJob", &DataSafe.DiscoveryModArgs{
+//				CompartmentId:        pulumi.Any(_var.Compartment_id),
+//				SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DiscoveryType: pulumi.Any(_var.Discovery_job_discovery_type),
+//				DisplayName:   pulumi.Any(_var.Discovery_job_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Discovery_job_is_app_defined_relation_discovery_enabled),
+//				IsIncludeAllSchemas:                  pulumi.Any(_var.Discovery_job_is_include_all_schemas),
+//				IsIncludeAllSensitiveTypes:           pulumi.Any(_var.Discovery_job_is_include_all_sensitive_types),
+//				IsSampleDataCollectionEnabled:        pulumi.Any(_var.Discovery_job_is_sample_data_collection_enabled),
+//				SchemasForDiscoveries:                pulumi.Any(_var.Discovery_job_schemas_for_discovery),
+//				SensitiveTypeIdsForDiscoveries:       pulumi.Any(_var.Discovery_job_sensitive_type_ids_for_discovery),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // DiscoveryJobs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
+//
+//	$ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
+//
 // ```
 type DiscoveryMod struct {
 	pulumi.CustomResourceState
@@ -332,7 +337,7 @@ func (i *DiscoveryMod) ToDiscoveryModOutputWithContext(ctx context.Context) Disc
 // DiscoveryModArrayInput is an input type that accepts DiscoveryModArray and DiscoveryModArrayOutput values.
 // You can construct a concrete instance of `DiscoveryModArrayInput` via:
 //
-//          DiscoveryModArray{ DiscoveryModArgs{...} }
+//	DiscoveryModArray{ DiscoveryModArgs{...} }
 type DiscoveryModArrayInput interface {
 	pulumi.Input
 
@@ -357,7 +362,7 @@ func (i DiscoveryModArray) ToDiscoveryModArrayOutputWithContext(ctx context.Cont
 // DiscoveryModMapInput is an input type that accepts DiscoveryModMap and DiscoveryModMapOutput values.
 // You can construct a concrete instance of `DiscoveryModMapInput` via:
 //
-//          DiscoveryModMap{ "key": DiscoveryModArgs{...} }
+//	DiscoveryModMap{ "key": DiscoveryModArgs{...} }
 type DiscoveryModMapInput interface {
 	pulumi.Input
 

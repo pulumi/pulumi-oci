@@ -80,6 +80,10 @@ import com.pulumi.oci.Database.inputs.GetDataGuardAssociationPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
 import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
@@ -238,6 +242,8 @@ import com.pulumi.oci.Database.outputs.GetCloudVmClusterResult;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersResult;
 import com.pulumi.oci.Database.outputs.GetDataGuardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetDataGuardAssociationsResult;
+import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesResult;
+import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoryResult;
 import com.pulumi.oci.Database.outputs.GetDatabasePdbConversionHistoryEntriesResult;
 import com.pulumi.oci.Database.outputs.GetDatabasePdbConversionHistoryEntryResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseResult;
@@ -2063,6 +2069,94 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabase:getDatabase", TypeShape.of(GetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the maintenance run histories in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args) {
+        return getDatabaseMaintenanceRunHistories(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the maintenance run histories in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args) {
+        return getDatabaseMaintenanceRunHistoriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the maintenance run histories in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", TypeShape.of(GetDatabaseMaintenanceRunHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the maintenance run histories in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", TypeShape.of(GetDatabaseMaintenanceRunHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified maintenance run history.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args) {
+        return getDatabaseMaintenanceRunHistory(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified maintenance run history.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistoryPlain(GetDatabaseMaintenanceRunHistoryPlainArgs args) {
+        return getDatabaseMaintenanceRunHistoryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified maintenance run history.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", TypeShape.of(GetDatabaseMaintenanceRunHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified maintenance run history.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistoryPlain(GetDatabaseMaintenanceRunHistoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseMaintenanceRunHistory:getDatabaseMaintenanceRunHistory", TypeShape.of(GetDatabaseMaintenanceRunHistoryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.

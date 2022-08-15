@@ -20,7 +20,9 @@ import (
 // ManagedLists can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
+//
+//	$ pulumi import oci:CloudGuard/managedList:ManagedList test_managed_list "id"
+//
 // ```
 type ManagedList struct {
 	pulumi.CustomResourceState
@@ -226,7 +228,7 @@ func (i *ManagedList) ToManagedListOutputWithContext(ctx context.Context) Manage
 // ManagedListArrayInput is an input type that accepts ManagedListArray and ManagedListArrayOutput values.
 // You can construct a concrete instance of `ManagedListArrayInput` via:
 //
-//          ManagedListArray{ ManagedListArgs{...} }
+//	ManagedListArray{ ManagedListArgs{...} }
 type ManagedListArrayInput interface {
 	pulumi.Input
 
@@ -251,7 +253,7 @@ func (i ManagedListArray) ToManagedListArrayOutputWithContext(ctx context.Contex
 // ManagedListMapInput is an input type that accepts ManagedListMap and ManagedListMapOutput values.
 // You can construct a concrete instance of `ManagedListMapInput` via:
 //
-//          ManagedListMap{ "key": ManagedListArgs{...} }
+//	ManagedListMap{ "key": ManagedListArgs{...} }
 type ManagedListMapInput interface {
 	pulumi.Input
 

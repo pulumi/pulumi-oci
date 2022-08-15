@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVlans(ctx, &core.GetVlansArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Vlan_display_name),
-// 			State:         pulumi.StringRef(_var.Vlan_state),
-// 			VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVlans(ctx, &core.GetVlansArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Vlan_display_name),
+//				State:         pulumi.StringRef(_var.Vlan_state),
+//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVlans(ctx *pulumi.Context, args *GetVlansArgs, opts ...pulumi.InvokeOption) (*GetVlansResult, error) {
 	var rv GetVlansResult

@@ -21,7 +21,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_storage_count=None, admin_network_cidr=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, netmask=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_storage_count=None, admin_network_cidr=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, netmask=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -121,6 +121,9 @@ class GetExadataInfrastructureResult:
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if monthly_db_server_version and not isinstance(monthly_db_server_version, str):
+            raise TypeError("Expected argument 'monthly_db_server_version' to be a str")
+        pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
         if netmask and not isinstance(netmask, str):
             raise TypeError("Expected argument 'netmask' to be a str")
         pulumi.set(__self__, "netmask", netmask)
@@ -402,6 +405,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> str:
+        """
+        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "monthly_db_server_version")
+
+    @property
     @pulumi.getter
     def netmask(self) -> str:
         """
@@ -505,6 +516,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             max_db_node_storage_in_gbs=self.max_db_node_storage_in_gbs,
             max_memory_in_gbs=self.max_memory_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
+            monthly_db_server_version=self.monthly_db_server_version,
             netmask=self.netmask,
             ntp_servers=self.ntp_servers,
             shape=self.shape,
@@ -577,6 +589,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         max_db_node_storage_in_gbs=__ret__.max_db_node_storage_in_gbs,
         max_memory_in_gbs=__ret__.max_memory_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
+        monthly_db_server_version=__ret__.monthly_db_server_version,
         netmask=__ret__.netmask,
         ntp_servers=__ret__.ntp_servers,
         shape=__ret__.shape,

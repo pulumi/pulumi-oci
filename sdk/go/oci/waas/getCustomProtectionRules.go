@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.GetCustomProtectionRules(ctx, &waas.GetCustomProtectionRulesArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			DisplayNames:                    _var.Custom_protection_rule_display_names,
-// 			Ids:                             _var.Custom_protection_rule_ids,
-// 			States:                          _var.Custom_protection_rule_states,
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Custom_protection_rule_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Custom_protection_rule_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.GetCustomProtectionRules(ctx, &waas.GetCustomProtectionRulesArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				DisplayNames:                    _var.Custom_protection_rule_display_names,
+//				Ids:                             _var.Custom_protection_rule_ids,
+//				States:                          _var.Custom_protection_rule_states,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Custom_protection_rule_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Custom_protection_rule_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCustomProtectionRules(ctx *pulumi.Context, args *GetCustomProtectionRulesArgs, opts ...pulumi.InvokeOption) (*GetCustomProtectionRulesResult, error) {
 	var rv GetCustomProtectionRulesResult

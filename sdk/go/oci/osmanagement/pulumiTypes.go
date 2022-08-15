@@ -18,7 +18,7 @@ type ManagedInstanceAutonomouse struct {
 // ManagedInstanceAutonomouseInput is an input type that accepts ManagedInstanceAutonomouseArgs and ManagedInstanceAutonomouseOutput values.
 // You can construct a concrete instance of `ManagedInstanceAutonomouseInput` via:
 //
-//          ManagedInstanceAutonomouseArgs{...}
+//	ManagedInstanceAutonomouseArgs{...}
 type ManagedInstanceAutonomouseInput interface {
 	pulumi.Input
 
@@ -46,7 +46,7 @@ func (i ManagedInstanceAutonomouseArgs) ToManagedInstanceAutonomouseOutputWithCo
 // ManagedInstanceAutonomouseArrayInput is an input type that accepts ManagedInstanceAutonomouseArray and ManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceAutonomouseArrayInput` via:
 //
-//          ManagedInstanceAutonomouseArray{ ManagedInstanceAutonomouseArgs{...} }
+//	ManagedInstanceAutonomouseArray{ ManagedInstanceAutonomouseArgs{...} }
 type ManagedInstanceAutonomouseArrayInput interface {
 	pulumi.Input
 
@@ -117,7 +117,7 @@ type ManagedInstanceChildSoftwareSource struct {
 // ManagedInstanceChildSoftwareSourceInput is an input type that accepts ManagedInstanceChildSoftwareSourceArgs and ManagedInstanceChildSoftwareSourceOutput values.
 // You can construct a concrete instance of `ManagedInstanceChildSoftwareSourceInput` via:
 //
-//          ManagedInstanceChildSoftwareSourceArgs{...}
+//	ManagedInstanceChildSoftwareSourceArgs{...}
 type ManagedInstanceChildSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -147,7 +147,7 @@ func (i ManagedInstanceChildSoftwareSourceArgs) ToManagedInstanceChildSoftwareSo
 // ManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts ManagedInstanceChildSoftwareSourceArray and ManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceChildSoftwareSourceArrayInput` via:
 //
-//          ManagedInstanceChildSoftwareSourceArray{ ManagedInstanceChildSoftwareSourceArgs{...} }
+//	ManagedInstanceChildSoftwareSourceArray{ ManagedInstanceChildSoftwareSourceArgs{...} }
 type ManagedInstanceChildSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -223,7 +223,7 @@ type ManagedInstanceGroupManagedInstance struct {
 // ManagedInstanceGroupManagedInstanceInput is an input type that accepts ManagedInstanceGroupManagedInstanceArgs and ManagedInstanceGroupManagedInstanceOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupManagedInstanceInput` via:
 //
-//          ManagedInstanceGroupManagedInstanceArgs{...}
+//	ManagedInstanceGroupManagedInstanceArgs{...}
 type ManagedInstanceGroupManagedInstanceInput interface {
 	pulumi.Input
 
@@ -253,7 +253,7 @@ func (i ManagedInstanceGroupManagedInstanceArgs) ToManagedInstanceGroupManagedIn
 // ManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts ManagedInstanceGroupManagedInstanceArray and ManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupManagedInstanceArrayInput` via:
 //
-//          ManagedInstanceGroupManagedInstanceArray{ ManagedInstanceGroupManagedInstanceArgs{...} }
+//	ManagedInstanceGroupManagedInstanceArray{ ManagedInstanceGroupManagedInstanceArgs{...} }
 type ManagedInstanceGroupManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -329,7 +329,7 @@ type ManagedInstanceManagedInstanceGroup struct {
 // ManagedInstanceManagedInstanceGroupInput is an input type that accepts ManagedInstanceManagedInstanceGroupArgs and ManagedInstanceManagedInstanceGroupOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagedInstanceGroupInput` via:
 //
-//          ManagedInstanceManagedInstanceGroupArgs{...}
+//	ManagedInstanceManagedInstanceGroupArgs{...}
 type ManagedInstanceManagedInstanceGroupInput interface {
 	pulumi.Input
 
@@ -359,7 +359,7 @@ func (i ManagedInstanceManagedInstanceGroupArgs) ToManagedInstanceManagedInstanc
 // ManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceManagedInstanceGroupArray and ManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagedInstanceGroupArrayInput` via:
 //
-//          ManagedInstanceManagedInstanceGroupArray{ ManagedInstanceManagedInstanceGroupArgs{...} }
+//	ManagedInstanceManagedInstanceGroupArray{ ManagedInstanceManagedInstanceGroupArgs{...} }
 type ManagedInstanceManagedInstanceGroupArrayInput interface {
 	pulumi.Input
 
@@ -435,7 +435,7 @@ type ManagedInstanceManagementChildSoftwareSource struct {
 // ManagedInstanceManagementChildSoftwareSourceInput is an input type that accepts ManagedInstanceManagementChildSoftwareSourceArgs and ManagedInstanceManagementChildSoftwareSourceOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementChildSoftwareSourceInput` via:
 //
-//          ManagedInstanceManagementChildSoftwareSourceArgs{...}
+//	ManagedInstanceManagementChildSoftwareSourceArgs{...}
 type ManagedInstanceManagementChildSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -465,7 +465,7 @@ func (i ManagedInstanceManagementChildSoftwareSourceArgs) ToManagedInstanceManag
 // ManagedInstanceManagementChildSoftwareSourceArrayInput is an input type that accepts ManagedInstanceManagementChildSoftwareSourceArray and ManagedInstanceManagementChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementChildSoftwareSourceArrayInput` via:
 //
-//          ManagedInstanceManagementChildSoftwareSourceArray{ ManagedInstanceManagementChildSoftwareSourceArgs{...} }
+//	ManagedInstanceManagementChildSoftwareSourceArray{ ManagedInstanceManagementChildSoftwareSourceArgs{...} }
 type ManagedInstanceManagementChildSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -541,7 +541,7 @@ type ManagedInstanceManagementManagedInstanceGroup struct {
 // ManagedInstanceManagementManagedInstanceGroupInput is an input type that accepts ManagedInstanceManagementManagedInstanceGroupArgs and ManagedInstanceManagementManagedInstanceGroupOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementManagedInstanceGroupInput` via:
 //
-//          ManagedInstanceManagementManagedInstanceGroupArgs{...}
+//	ManagedInstanceManagementManagedInstanceGroupArgs{...}
 type ManagedInstanceManagementManagedInstanceGroupInput interface {
 	pulumi.Input
 
@@ -571,7 +571,7 @@ func (i ManagedInstanceManagementManagedInstanceGroupArgs) ToManagedInstanceMana
 // ManagedInstanceManagementManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceManagementManagedInstanceGroupArray and ManagedInstanceManagementManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementManagedInstanceGroupArrayInput` via:
 //
-//          ManagedInstanceManagementManagedInstanceGroupArray{ ManagedInstanceManagementManagedInstanceGroupArgs{...} }
+//	ManagedInstanceManagementManagedInstanceGroupArray{ ManagedInstanceManagementManagedInstanceGroupArgs{...} }
 type ManagedInstanceManagementManagedInstanceGroupArrayInput interface {
 	pulumi.Input
 
@@ -647,7 +647,7 @@ type ManagedInstanceManagementParentSoftwareSource struct {
 // ManagedInstanceManagementParentSoftwareSourceInput is an input type that accepts ManagedInstanceManagementParentSoftwareSourceArgs and ManagedInstanceManagementParentSoftwareSourceOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementParentSoftwareSourceInput` via:
 //
-//          ManagedInstanceManagementParentSoftwareSourceArgs{...}
+//	ManagedInstanceManagementParentSoftwareSourceArgs{...}
 type ManagedInstanceManagementParentSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -685,11 +685,11 @@ func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToManagedInstanceMana
 // ManagedInstanceManagementParentSoftwareSourcePtrInput is an input type that accepts ManagedInstanceManagementParentSoftwareSourceArgs, ManagedInstanceManagementParentSoftwareSourcePtr and ManagedInstanceManagementParentSoftwareSourcePtrOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementParentSoftwareSourcePtrInput` via:
 //
-//          ManagedInstanceManagementParentSoftwareSourceArgs{...}
+//	        ManagedInstanceManagementParentSoftwareSourceArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ManagedInstanceManagementParentSoftwareSourcePtrInput interface {
 	pulumi.Input
 
@@ -803,7 +803,7 @@ type ManagedInstanceParentSoftwareSource struct {
 // ManagedInstanceParentSoftwareSourceInput is an input type that accepts ManagedInstanceParentSoftwareSourceArgs and ManagedInstanceParentSoftwareSourceOutput values.
 // You can construct a concrete instance of `ManagedInstanceParentSoftwareSourceInput` via:
 //
-//          ManagedInstanceParentSoftwareSourceArgs{...}
+//	ManagedInstanceParentSoftwareSourceArgs{...}
 type ManagedInstanceParentSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -833,7 +833,7 @@ func (i ManagedInstanceParentSoftwareSourceArgs) ToManagedInstanceParentSoftware
 // ManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts ManagedInstanceParentSoftwareSourceArray and ManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceParentSoftwareSourceArrayInput` via:
 //
-//          ManagedInstanceParentSoftwareSourceArray{ ManagedInstanceParentSoftwareSourceArgs{...} }
+//	ManagedInstanceParentSoftwareSourceArray{ ManagedInstanceParentSoftwareSourceArgs{...} }
 type ManagedInstanceParentSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -909,7 +909,7 @@ type SoftwareSourceAssociatedManagedInstance struct {
 // SoftwareSourceAssociatedManagedInstanceInput is an input type that accepts SoftwareSourceAssociatedManagedInstanceArgs and SoftwareSourceAssociatedManagedInstanceOutput values.
 // You can construct a concrete instance of `SoftwareSourceAssociatedManagedInstanceInput` via:
 //
-//          SoftwareSourceAssociatedManagedInstanceArgs{...}
+//	SoftwareSourceAssociatedManagedInstanceArgs{...}
 type SoftwareSourceAssociatedManagedInstanceInput interface {
 	pulumi.Input
 
@@ -939,7 +939,7 @@ func (i SoftwareSourceAssociatedManagedInstanceArgs) ToSoftwareSourceAssociatedM
 // SoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts SoftwareSourceAssociatedManagedInstanceArray and SoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
-//          SoftwareSourceAssociatedManagedInstanceArray{ SoftwareSourceAssociatedManagedInstanceArgs{...} }
+//	SoftwareSourceAssociatedManagedInstanceArray{ SoftwareSourceAssociatedManagedInstanceArgs{...} }
 type SoftwareSourceAssociatedManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -1013,7 +1013,7 @@ type GetManagedInstanceAutonomouse struct {
 // GetManagedInstanceAutonomouseInput is an input type that accepts GetManagedInstanceAutonomouseArgs and GetManagedInstanceAutonomouseOutput values.
 // You can construct a concrete instance of `GetManagedInstanceAutonomouseInput` via:
 //
-//          GetManagedInstanceAutonomouseArgs{...}
+//	GetManagedInstanceAutonomouseArgs{...}
 type GetManagedInstanceAutonomouseInput interface {
 	pulumi.Input
 
@@ -1041,7 +1041,7 @@ func (i GetManagedInstanceAutonomouseArgs) ToGetManagedInstanceAutonomouseOutput
 // GetManagedInstanceAutonomouseArrayInput is an input type that accepts GetManagedInstanceAutonomouseArray and GetManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceAutonomouseArrayInput` via:
 //
-//          GetManagedInstanceAutonomouseArray{ GetManagedInstanceAutonomouseArgs{...} }
+//	GetManagedInstanceAutonomouseArray{ GetManagedInstanceAutonomouseArgs{...} }
 type GetManagedInstanceAutonomouseArrayInput interface {
 	pulumi.Input
 
@@ -1112,7 +1112,7 @@ type GetManagedInstanceChildSoftwareSource struct {
 // GetManagedInstanceChildSoftwareSourceInput is an input type that accepts GetManagedInstanceChildSoftwareSourceArgs and GetManagedInstanceChildSoftwareSourceOutput values.
 // You can construct a concrete instance of `GetManagedInstanceChildSoftwareSourceInput` via:
 //
-//          GetManagedInstanceChildSoftwareSourceArgs{...}
+//	GetManagedInstanceChildSoftwareSourceArgs{...}
 type GetManagedInstanceChildSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -1142,7 +1142,7 @@ func (i GetManagedInstanceChildSoftwareSourceArgs) ToGetManagedInstanceChildSoft
 // GetManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceChildSoftwareSourceArray and GetManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceChildSoftwareSourceArrayInput` via:
 //
-//          GetManagedInstanceChildSoftwareSourceArray{ GetManagedInstanceChildSoftwareSourceArgs{...} }
+//	GetManagedInstanceChildSoftwareSourceArray{ GetManagedInstanceChildSoftwareSourceArgs{...} }
 type GetManagedInstanceChildSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -1218,7 +1218,7 @@ type GetManagedInstanceGroupManagedInstance struct {
 // GetManagedInstanceGroupManagedInstanceInput is an input type that accepts GetManagedInstanceGroupManagedInstanceArgs and GetManagedInstanceGroupManagedInstanceOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupManagedInstanceInput` via:
 //
-//          GetManagedInstanceGroupManagedInstanceArgs{...}
+//	GetManagedInstanceGroupManagedInstanceArgs{...}
 type GetManagedInstanceGroupManagedInstanceInput interface {
 	pulumi.Input
 
@@ -1248,7 +1248,7 @@ func (i GetManagedInstanceGroupManagedInstanceArgs) ToGetManagedInstanceGroupMan
 // GetManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstanceArray and GetManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupManagedInstanceArrayInput` via:
 //
-//          GetManagedInstanceGroupManagedInstanceArray{ GetManagedInstanceGroupManagedInstanceArgs{...} }
+//	GetManagedInstanceGroupManagedInstanceArray{ GetManagedInstanceGroupManagedInstanceArgs{...} }
 type GetManagedInstanceGroupManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -1323,7 +1323,7 @@ type GetManagedInstanceGroupsFilter struct {
 // GetManagedInstanceGroupsFilterInput is an input type that accepts GetManagedInstanceGroupsFilterArgs and GetManagedInstanceGroupsFilterOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsFilterInput` via:
 //
-//          GetManagedInstanceGroupsFilterArgs{...}
+//	GetManagedInstanceGroupsFilterArgs{...}
 type GetManagedInstanceGroupsFilterInput interface {
 	pulumi.Input
 
@@ -1352,7 +1352,7 @@ func (i GetManagedInstanceGroupsFilterArgs) ToGetManagedInstanceGroupsFilterOutp
 // GetManagedInstanceGroupsFilterArrayInput is an input type that accepts GetManagedInstanceGroupsFilterArray and GetManagedInstanceGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsFilterArrayInput` via:
 //
-//          GetManagedInstanceGroupsFilterArray{ GetManagedInstanceGroupsFilterArgs{...} }
+//	GetManagedInstanceGroupsFilterArray{ GetManagedInstanceGroupsFilterArgs{...} }
 type GetManagedInstanceGroupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1445,7 +1445,7 @@ type GetManagedInstanceGroupsManagedInstanceGroup struct {
 // GetManagedInstanceGroupsManagedInstanceGroupInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupArgs and GetManagedInstanceGroupsManagedInstanceGroupOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupInput` via:
 //
-//          GetManagedInstanceGroupsManagedInstanceGroupArgs{...}
+//	GetManagedInstanceGroupsManagedInstanceGroupArgs{...}
 type GetManagedInstanceGroupsManagedInstanceGroupInput interface {
 	pulumi.Input
 
@@ -1490,7 +1490,7 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupArgs) ToGetManagedInstanceGr
 // GetManagedInstanceGroupsManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupArray and GetManagedInstanceGroupsManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupArrayInput` via:
 //
-//          GetManagedInstanceGroupsManagedInstanceGroupArray{ GetManagedInstanceGroupsManagedInstanceGroupArgs{...} }
+//	GetManagedInstanceGroupsManagedInstanceGroupArray{ GetManagedInstanceGroupsManagedInstanceGroupArgs{...} }
 type GetManagedInstanceGroupsManagedInstanceGroupArrayInput interface {
 	pulumi.Input
 
@@ -1607,7 +1607,7 @@ type GetManagedInstanceGroupsManagedInstanceGroupManagedInstance struct {
 // GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs and GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceInput` via:
 //
-//          GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs{...}
+//	GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs{...}
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceInput interface {
 	pulumi.Input
 
@@ -1637,7 +1637,7 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ToGetMa
 // GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray and GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput` via:
 //
-//          GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray{ GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs{...} }
+//	GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray{ GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs{...} }
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -1713,7 +1713,7 @@ type GetManagedInstanceManagedInstanceGroup struct {
 // GetManagedInstanceManagedInstanceGroupInput is an input type that accepts GetManagedInstanceManagedInstanceGroupArgs and GetManagedInstanceManagedInstanceGroupOutput values.
 // You can construct a concrete instance of `GetManagedInstanceManagedInstanceGroupInput` via:
 //
-//          GetManagedInstanceManagedInstanceGroupArgs{...}
+//	GetManagedInstanceManagedInstanceGroupArgs{...}
 type GetManagedInstanceManagedInstanceGroupInput interface {
 	pulumi.Input
 
@@ -1743,7 +1743,7 @@ func (i GetManagedInstanceManagedInstanceGroupArgs) ToGetManagedInstanceManagedI
 // GetManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceManagedInstanceGroupArray and GetManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceManagedInstanceGroupArrayInput` via:
 //
-//          GetManagedInstanceManagedInstanceGroupArray{ GetManagedInstanceManagedInstanceGroupArgs{...} }
+//	GetManagedInstanceManagedInstanceGroupArray{ GetManagedInstanceManagedInstanceGroupArgs{...} }
 type GetManagedInstanceManagedInstanceGroupArrayInput interface {
 	pulumi.Input
 
@@ -1818,7 +1818,7 @@ type GetManagedInstanceModuleStreamsFilter struct {
 // GetManagedInstanceModuleStreamsFilterInput is an input type that accepts GetManagedInstanceModuleStreamsFilterArgs and GetManagedInstanceModuleStreamsFilterOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsFilterInput` via:
 //
-//          GetManagedInstanceModuleStreamsFilterArgs{...}
+//	GetManagedInstanceModuleStreamsFilterArgs{...}
 type GetManagedInstanceModuleStreamsFilterInput interface {
 	pulumi.Input
 
@@ -1847,7 +1847,7 @@ func (i GetManagedInstanceModuleStreamsFilterArgs) ToGetManagedInstanceModuleStr
 // GetManagedInstanceModuleStreamsFilterArrayInput is an input type that accepts GetManagedInstanceModuleStreamsFilterArray and GetManagedInstanceModuleStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsFilterArrayInput` via:
 //
-//          GetManagedInstanceModuleStreamsFilterArray{ GetManagedInstanceModuleStreamsFilterArgs{...} }
+//	GetManagedInstanceModuleStreamsFilterArray{ GetManagedInstanceModuleStreamsFilterArgs{...} }
 type GetManagedInstanceModuleStreamsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1933,7 +1933,7 @@ type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance struct {
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput` via:
 //
-//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{...}
+//	GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{...}
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput interface {
 	pulumi.Input
 
@@ -1971,7 +1971,7 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToGetM
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput` via:
 //
-//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray{ GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{...} }
+//	GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray{ GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{...} }
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -2075,7 +2075,7 @@ type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile struct 
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput` via:
 //
-//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{...}
+//	GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{...}
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput interface {
 	pulumi.Input
 
@@ -2111,7 +2111,7 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs)
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput` via:
 //
-//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray{ GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{...} }
+//	GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray{ GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{...} }
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput interface {
 	pulumi.Input
 
@@ -2210,7 +2210,7 @@ type GetManagedInstanceParentSoftwareSource struct {
 // GetManagedInstanceParentSoftwareSourceInput is an input type that accepts GetManagedInstanceParentSoftwareSourceArgs and GetManagedInstanceParentSoftwareSourceOutput values.
 // You can construct a concrete instance of `GetManagedInstanceParentSoftwareSourceInput` via:
 //
-//          GetManagedInstanceParentSoftwareSourceArgs{...}
+//	GetManagedInstanceParentSoftwareSourceArgs{...}
 type GetManagedInstanceParentSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -2240,7 +2240,7 @@ func (i GetManagedInstanceParentSoftwareSourceArgs) ToGetManagedInstanceParentSo
 // GetManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceParentSoftwareSourceArray and GetManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceParentSoftwareSourceArrayInput` via:
 //
-//          GetManagedInstanceParentSoftwareSourceArray{ GetManagedInstanceParentSoftwareSourceArgs{...} }
+//	GetManagedInstanceParentSoftwareSourceArray{ GetManagedInstanceParentSoftwareSourceArgs{...} }
 type GetManagedInstanceParentSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -2315,7 +2315,7 @@ type GetManagedInstanceStreamProfileFilter struct {
 // GetManagedInstanceStreamProfileFilterInput is an input type that accepts GetManagedInstanceStreamProfileFilterArgs and GetManagedInstanceStreamProfileFilterOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileFilterInput` via:
 //
-//          GetManagedInstanceStreamProfileFilterArgs{...}
+//	GetManagedInstanceStreamProfileFilterArgs{...}
 type GetManagedInstanceStreamProfileFilterInput interface {
 	pulumi.Input
 
@@ -2344,7 +2344,7 @@ func (i GetManagedInstanceStreamProfileFilterArgs) ToGetManagedInstanceStreamPro
 // GetManagedInstanceStreamProfileFilterArrayInput is an input type that accepts GetManagedInstanceStreamProfileFilterArray and GetManagedInstanceStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileFilterArrayInput` via:
 //
-//          GetManagedInstanceStreamProfileFilterArray{ GetManagedInstanceStreamProfileFilterArgs{...} }
+//	GetManagedInstanceStreamProfileFilterArray{ GetManagedInstanceStreamProfileFilterArgs{...} }
 type GetManagedInstanceStreamProfileFilterArrayInput interface {
 	pulumi.Input
 
@@ -2428,7 +2428,7 @@ type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance struct 
 // GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput` via:
 //
-//          GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{...}
+//	GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{...}
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput interface {
 	pulumi.Input
 
@@ -2464,7 +2464,7 @@ func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs)
 // GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput` via:
 //
-//          GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray{ GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{...} }
+//	GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray{ GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{...} }
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -2563,7 +2563,7 @@ type GetManagedInstancesFilter struct {
 // GetManagedInstancesFilterInput is an input type that accepts GetManagedInstancesFilterArgs and GetManagedInstancesFilterOutput values.
 // You can construct a concrete instance of `GetManagedInstancesFilterInput` via:
 //
-//          GetManagedInstancesFilterArgs{...}
+//	GetManagedInstancesFilterArgs{...}
 type GetManagedInstancesFilterInput interface {
 	pulumi.Input
 
@@ -2593,7 +2593,7 @@ func (i GetManagedInstancesFilterArgs) ToGetManagedInstancesFilterOutputWithCont
 // GetManagedInstancesFilterArrayInput is an input type that accepts GetManagedInstancesFilterArray and GetManagedInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesFilterArrayInput` via:
 //
-//          GetManagedInstancesFilterArray{ GetManagedInstancesFilterArgs{...} }
+//	GetManagedInstancesFilterArray{ GetManagedInstancesFilterArgs{...} }
 type GetManagedInstancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2721,7 +2721,7 @@ type GetManagedInstancesManagedInstance struct {
 // GetManagedInstancesManagedInstanceInput is an input type that accepts GetManagedInstancesManagedInstanceArgs and GetManagedInstancesManagedInstanceOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceInput` via:
 //
-//          GetManagedInstancesManagedInstanceArgs{...}
+//	GetManagedInstancesManagedInstanceArgs{...}
 type GetManagedInstancesManagedInstanceInput interface {
 	pulumi.Input
 
@@ -2800,7 +2800,7 @@ func (i GetManagedInstancesManagedInstanceArgs) ToGetManagedInstancesManagedInst
 // GetManagedInstancesManagedInstanceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceArray and GetManagedInstancesManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceArrayInput` via:
 //
-//          GetManagedInstancesManagedInstanceArray{ GetManagedInstancesManagedInstanceArgs{...} }
+//	GetManagedInstancesManagedInstanceArray{ GetManagedInstancesManagedInstanceArgs{...} }
 type GetManagedInstancesManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -3006,7 +3006,7 @@ type GetManagedInstancesManagedInstanceAutonomouse struct {
 // GetManagedInstancesManagedInstanceAutonomouseInput is an input type that accepts GetManagedInstancesManagedInstanceAutonomouseArgs and GetManagedInstancesManagedInstanceAutonomouseOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceAutonomouseInput` via:
 //
-//          GetManagedInstancesManagedInstanceAutonomouseArgs{...}
+//	GetManagedInstancesManagedInstanceAutonomouseArgs{...}
 type GetManagedInstancesManagedInstanceAutonomouseInput interface {
 	pulumi.Input
 
@@ -3034,7 +3034,7 @@ func (i GetManagedInstancesManagedInstanceAutonomouseArgs) ToGetManagedInstances
 // GetManagedInstancesManagedInstanceAutonomouseArrayInput is an input type that accepts GetManagedInstancesManagedInstanceAutonomouseArray and GetManagedInstancesManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceAutonomouseArrayInput` via:
 //
-//          GetManagedInstancesManagedInstanceAutonomouseArray{ GetManagedInstancesManagedInstanceAutonomouseArgs{...} }
+//	GetManagedInstancesManagedInstanceAutonomouseArray{ GetManagedInstancesManagedInstanceAutonomouseArgs{...} }
 type GetManagedInstancesManagedInstanceAutonomouseArrayInput interface {
 	pulumi.Input
 
@@ -3105,7 +3105,7 @@ type GetManagedInstancesManagedInstanceChildSoftwareSource struct {
 // GetManagedInstancesManagedInstanceChildSoftwareSourceInput is an input type that accepts GetManagedInstancesManagedInstanceChildSoftwareSourceArgs and GetManagedInstancesManagedInstanceChildSoftwareSourceOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceChildSoftwareSourceInput` via:
 //
-//          GetManagedInstancesManagedInstanceChildSoftwareSourceArgs{...}
+//	GetManagedInstancesManagedInstanceChildSoftwareSourceArgs{...}
 type GetManagedInstancesManagedInstanceChildSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -3135,7 +3135,7 @@ func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ToGetManagedI
 // GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceChildSoftwareSourceArray and GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput` via:
 //
-//          GetManagedInstancesManagedInstanceChildSoftwareSourceArray{ GetManagedInstancesManagedInstanceChildSoftwareSourceArgs{...} }
+//	GetManagedInstancesManagedInstanceChildSoftwareSourceArray{ GetManagedInstancesManagedInstanceChildSoftwareSourceArgs{...} }
 type GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -3211,7 +3211,7 @@ type GetManagedInstancesManagedInstanceManagedInstanceGroup struct {
 // GetManagedInstancesManagedInstanceManagedInstanceGroupInput is an input type that accepts GetManagedInstancesManagedInstanceManagedInstanceGroupArgs and GetManagedInstancesManagedInstanceManagedInstanceGroupOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceManagedInstanceGroupInput` via:
 //
-//          GetManagedInstancesManagedInstanceManagedInstanceGroupArgs{...}
+//	GetManagedInstancesManagedInstanceManagedInstanceGroupArgs{...}
 type GetManagedInstancesManagedInstanceManagedInstanceGroupInput interface {
 	pulumi.Input
 
@@ -3241,7 +3241,7 @@ func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ToGetManaged
 // GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstancesManagedInstanceManagedInstanceGroupArray and GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput` via:
 //
-//          GetManagedInstancesManagedInstanceManagedInstanceGroupArray{ GetManagedInstancesManagedInstanceManagedInstanceGroupArgs{...} }
+//	GetManagedInstancesManagedInstanceManagedInstanceGroupArray{ GetManagedInstancesManagedInstanceManagedInstanceGroupArgs{...} }
 type GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput interface {
 	pulumi.Input
 
@@ -3317,7 +3317,7 @@ type GetManagedInstancesManagedInstanceParentSoftwareSource struct {
 // GetManagedInstancesManagedInstanceParentSoftwareSourceInput is an input type that accepts GetManagedInstancesManagedInstanceParentSoftwareSourceArgs and GetManagedInstancesManagedInstanceParentSoftwareSourceOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceParentSoftwareSourceInput` via:
 //
-//          GetManagedInstancesManagedInstanceParentSoftwareSourceArgs{...}
+//	GetManagedInstancesManagedInstanceParentSoftwareSourceArgs{...}
 type GetManagedInstancesManagedInstanceParentSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -3347,7 +3347,7 @@ func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ToGetManaged
 // GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceParentSoftwareSourceArray and GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput` via:
 //
-//          GetManagedInstancesManagedInstanceParentSoftwareSourceArray{ GetManagedInstancesManagedInstanceParentSoftwareSourceArgs{...} }
+//	GetManagedInstancesManagedInstanceParentSoftwareSourceArray{ GetManagedInstancesManagedInstanceParentSoftwareSourceArgs{...} }
 type GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -3423,7 +3423,7 @@ type GetSoftwareSourceAssociatedManagedInstance struct {
 // GetSoftwareSourceAssociatedManagedInstanceInput is an input type that accepts GetSoftwareSourceAssociatedManagedInstanceArgs and GetSoftwareSourceAssociatedManagedInstanceOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceAssociatedManagedInstanceInput` via:
 //
-//          GetSoftwareSourceAssociatedManagedInstanceArgs{...}
+//	GetSoftwareSourceAssociatedManagedInstanceArgs{...}
 type GetSoftwareSourceAssociatedManagedInstanceInput interface {
 	pulumi.Input
 
@@ -3453,7 +3453,7 @@ func (i GetSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoftwareSourceAssoc
 // GetSoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts GetSoftwareSourceAssociatedManagedInstanceArray and GetSoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
-//          GetSoftwareSourceAssociatedManagedInstanceArray{ GetSoftwareSourceAssociatedManagedInstanceArgs{...} }
+//	GetSoftwareSourceAssociatedManagedInstanceArray{ GetSoftwareSourceAssociatedManagedInstanceArgs{...} }
 type GetSoftwareSourceAssociatedManagedInstanceArrayInput interface {
 	pulumi.Input
 
@@ -3528,7 +3528,7 @@ type GetSoftwareSourceStreamProfileFilter struct {
 // GetSoftwareSourceStreamProfileFilterInput is an input type that accepts GetSoftwareSourceStreamProfileFilterArgs and GetSoftwareSourceStreamProfileFilterOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileFilterInput` via:
 //
-//          GetSoftwareSourceStreamProfileFilterArgs{...}
+//	GetSoftwareSourceStreamProfileFilterArgs{...}
 type GetSoftwareSourceStreamProfileFilterInput interface {
 	pulumi.Input
 
@@ -3557,7 +3557,7 @@ func (i GetSoftwareSourceStreamProfileFilterArgs) ToGetSoftwareSourceStreamProfi
 // GetSoftwareSourceStreamProfileFilterArrayInput is an input type that accepts GetSoftwareSourceStreamProfileFilterArray and GetSoftwareSourceStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileFilterArrayInput` via:
 //
-//          GetSoftwareSourceStreamProfileFilterArray{ GetSoftwareSourceStreamProfileFilterArgs{...} }
+//	GetSoftwareSourceStreamProfileFilterArray{ GetSoftwareSourceStreamProfileFilterArgs{...} }
 type GetSoftwareSourceStreamProfileFilterArrayInput interface {
 	pulumi.Input
 
@@ -3637,7 +3637,7 @@ type GetSoftwareSourceStreamProfileModuleStreamProfile struct {
 // GetSoftwareSourceStreamProfileModuleStreamProfileInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArgs and GetSoftwareSourceStreamProfileModuleStreamProfileOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileModuleStreamProfileInput` via:
 //
-//          GetSoftwareSourceStreamProfileModuleStreamProfileArgs{...}
+//	GetSoftwareSourceStreamProfileModuleStreamProfileArgs{...}
 type GetSoftwareSourceStreamProfileModuleStreamProfileInput interface {
 	pulumi.Input
 
@@ -3669,7 +3669,7 @@ func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToGetSoftwareSour
 // GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArray and GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput` via:
 //
-//          GetSoftwareSourceStreamProfileModuleStreamProfileArray{ GetSoftwareSourceStreamProfileModuleStreamProfileArgs{...} }
+//	GetSoftwareSourceStreamProfileModuleStreamProfileArray{ GetSoftwareSourceStreamProfileModuleStreamProfileArgs{...} }
 type GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput interface {
 	pulumi.Input
 
@@ -3749,7 +3749,7 @@ type GetSoftwareSourcesFilter struct {
 // GetSoftwareSourcesFilterInput is an input type that accepts GetSoftwareSourcesFilterArgs and GetSoftwareSourcesFilterOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesFilterInput` via:
 //
-//          GetSoftwareSourcesFilterArgs{...}
+//	GetSoftwareSourcesFilterArgs{...}
 type GetSoftwareSourcesFilterInput interface {
 	pulumi.Input
 
@@ -3778,7 +3778,7 @@ func (i GetSoftwareSourcesFilterArgs) ToGetSoftwareSourcesFilterOutputWithContex
 // GetSoftwareSourcesFilterArrayInput is an input type that accepts GetSoftwareSourcesFilterArray and GetSoftwareSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesFilterArrayInput` via:
 //
-//          GetSoftwareSourcesFilterArray{ GetSoftwareSourcesFilterArgs{...} }
+//	GetSoftwareSourcesFilterArray{ GetSoftwareSourcesFilterArgs{...} }
 type GetSoftwareSourcesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3896,7 +3896,7 @@ type GetSoftwareSourcesSoftwareSource struct {
 // GetSoftwareSourcesSoftwareSourceInput is an input type that accepts GetSoftwareSourcesSoftwareSourceArgs and GetSoftwareSourcesSoftwareSourceOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceInput` via:
 //
-//          GetSoftwareSourcesSoftwareSourceArgs{...}
+//	GetSoftwareSourcesSoftwareSourceArgs{...}
 type GetSoftwareSourcesSoftwareSourceInput interface {
 	pulumi.Input
 
@@ -3966,7 +3966,7 @@ func (i GetSoftwareSourcesSoftwareSourceArgs) ToGetSoftwareSourcesSoftwareSource
 // GetSoftwareSourcesSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceArray and GetSoftwareSourcesSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceArrayInput` via:
 //
-//          GetSoftwareSourcesSoftwareSourceArray{ GetSoftwareSourcesSoftwareSourceArgs{...} }
+//	GetSoftwareSourcesSoftwareSourceArray{ GetSoftwareSourcesSoftwareSourceArgs{...} }
 type GetSoftwareSourcesSoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -4144,7 +4144,7 @@ type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance struct {
 // GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceInput is an input type that accepts GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs and GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceInput` via:
 //
-//          GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs{...}
+//	GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs{...}
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceInput interface {
 	pulumi.Input
 
@@ -4174,7 +4174,7 @@ func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoft
 // GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray and GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
-//          GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray{ GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs{...} }
+//	GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray{ GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs{...} }
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput interface {
 	pulumi.Input
 

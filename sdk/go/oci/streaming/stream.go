@@ -25,28 +25,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Streaming.NewStream(ctx, "testStream", &Streaming.StreamArgs{
-// 			Partitions:    pulumi.Any(_var.Stream_partitions),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags:   pulumi.Any(_var.Stream_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			RetentionInHours: pulumi.Any(_var.Stream_retention_in_hours),
-// 			StreamPoolId:     pulumi.Any(oci_streaming_stream_pool.Test_stream_pool.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Streaming.NewStream(ctx, "testStream", &Streaming.StreamArgs{
+//				Partitions:    pulumi.Any(_var.Stream_partitions),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags:   pulumi.Any(_var.Stream_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				RetentionInHours: pulumi.Any(_var.Stream_retention_in_hours),
+//				StreamPoolId:     pulumi.Any(oci_streaming_stream_pool.Test_stream_pool.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // Streams can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Streaming/stream:Stream test_stream "id"
+//
+//	$ pulumi import oci:Streaming/stream:Stream test_stream "id"
+//
 // ```
 type Stream struct {
 	pulumi.CustomResourceState
@@ -229,7 +234,7 @@ func (i *Stream) ToStreamOutputWithContext(ctx context.Context) StreamOutput {
 // StreamArrayInput is an input type that accepts StreamArray and StreamArrayOutput values.
 // You can construct a concrete instance of `StreamArrayInput` via:
 //
-//          StreamArray{ StreamArgs{...} }
+//	StreamArray{ StreamArgs{...} }
 type StreamArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +259,7 @@ func (i StreamArray) ToStreamArrayOutputWithContext(ctx context.Context) StreamA
 // StreamMapInput is an input type that accepts StreamMap and StreamMapOutput values.
 // You can construct a concrete instance of `StreamMapInput` via:
 //
-//          StreamMap{ "key": StreamArgs{...} }
+//	StreamMap{ "key": StreamArgs{...} }
 type StreamMapInput interface {
 	pulumi.Input
 

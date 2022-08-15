@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult> AlternateCustomEndpoints;
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult> Attachments;
+        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -46,6 +50,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly string Id;
         public readonly string IdcsAt;
+        /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfoResult> IdcsInfos;
         /// <summary>
         /// The Integration Instance URL.
         /// </summary>
@@ -95,6 +103,8 @@ namespace Pulumi.Oci.Integration.Outputs
         private GetIntegrationInstancesIntegrationInstanceResult(
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult> alternateCustomEndpoints,
 
+            ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult> attachments,
+
             string compartmentId,
 
             string consumptionModel,
@@ -110,6 +120,8 @@ namespace Pulumi.Oci.Integration.Outputs
             string id,
 
             string idcsAt,
+
+            ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfoResult> idcsInfos,
 
             string instanceUrl,
 
@@ -134,6 +146,7 @@ namespace Pulumi.Oci.Integration.Outputs
             string timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
+            Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             CustomEndpoints = customEndpoints;
@@ -142,6 +155,7 @@ namespace Pulumi.Oci.Integration.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IdcsAt = idcsAt;
+            IdcsInfos = idcsInfos;
             InstanceUrl = instanceUrl;
             IntegrationInstanceType = integrationInstanceType;
             IsByol = isByol;

@@ -91,7 +91,7 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      */
     public readonly deployArtifactId!: pulumi.Output<string | undefined>;
     /**
@@ -444,7 +444,7 @@ export interface DeployStageState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      */
     deployArtifactId?: pulumi.Input<string>;
     /**
@@ -658,7 +658,7 @@ export interface DeployStageArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      */
     deployArtifactId?: pulumi.Input<string>;
     /**

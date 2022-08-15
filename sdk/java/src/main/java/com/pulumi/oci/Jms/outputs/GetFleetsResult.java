@@ -24,6 +24,7 @@ public final class GetFleetsResult {
      * 
      */
     private final @Nullable String displayName;
+    private final @Nullable String displayNameContains;
     private final @Nullable List<GetFleetsFilter> filters;
     /**
      * @return The list of fleet_collection.
@@ -45,12 +46,14 @@ public final class GetFleetsResult {
     private GetFleetsResult(
         @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
         @CustomType.Parameter("displayName") @Nullable String displayName,
+        @CustomType.Parameter("displayNameContains") @Nullable String displayNameContains,
         @CustomType.Parameter("filters") @Nullable List<GetFleetsFilter> filters,
         @CustomType.Parameter("fleetCollections") List<GetFleetsFleetCollection> fleetCollections,
         @CustomType.Parameter("id") @Nullable String id,
         @CustomType.Parameter("state") @Nullable String state) {
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.displayNameContains = displayNameContains;
         this.filters = filters;
         this.fleetCollections = fleetCollections;
         this.id = id;
@@ -70,6 +73,9 @@ public final class GetFleetsResult {
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+    public Optional<String> displayNameContains() {
+        return Optional.ofNullable(this.displayNameContains);
     }
     public List<GetFleetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -107,6 +113,7 @@ public final class GetFleetsResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
+        private @Nullable String displayNameContains;
         private @Nullable List<GetFleetsFilter> filters;
         private List<GetFleetsFleetCollection> fleetCollections;
         private @Nullable String id;
@@ -120,6 +127,7 @@ public final class GetFleetsResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
+    	      this.displayNameContains = defaults.displayNameContains;
     	      this.filters = defaults.filters;
     	      this.fleetCollections = defaults.fleetCollections;
     	      this.id = defaults.id;
@@ -132,6 +140,10 @@ public final class GetFleetsResult {
         }
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+        public Builder displayNameContains(@Nullable String displayNameContains) {
+            this.displayNameContains = displayNameContains;
             return this;
         }
         public Builder filters(@Nullable List<GetFleetsFilter> filters) {
@@ -156,7 +168,7 @@ public final class GetFleetsResult {
             this.state = state;
             return this;
         }        public GetFleetsResult build() {
-            return new GetFleetsResult(compartmentId, displayName, filters, fleetCollections, id, state);
+            return new GetFleetsResult(compartmentId, displayName, displayNameContains, filters, fleetCollections, id, state);
         }
     }
 }

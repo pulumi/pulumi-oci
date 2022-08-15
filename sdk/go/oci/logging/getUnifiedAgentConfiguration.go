@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.GetUnifiedAgentConfiguration(ctx, &logging.GetUnifiedAgentConfigurationArgs{
-// 			UnifiedAgentConfigurationId: oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.GetUnifiedAgentConfiguration(ctx, &logging.GetUnifiedAgentConfigurationArgs{
+//				UnifiedAgentConfigurationId: oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupUnifiedAgentConfiguration(ctx *pulumi.Context, args *LookupUnifiedAgentConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupUnifiedAgentConfigurationResult, error) {
 	var rv LookupUnifiedAgentConfigurationResult

@@ -17,22 +17,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewHostname(ctx, "testHostname", &LoadBalancer.HostnameArgs{
-// 			Hostname:       pulumi.Any(_var.Hostname_hostname),
-// 			LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewHostname(ctx, "testHostname", &LoadBalancer.HostnameArgs{
+//				Hostname:       pulumi.Any(_var.Hostname_hostname),
+//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -40,7 +43,9 @@ import (
 // Hostnames can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
+//
+//	$ pulumi import oci:LoadBalancer/hostname:Hostname test_hostname "loadBalancers/{loadBalancerId}/hostnames/{name}"
+//
 // ```
 type Hostname struct {
 	pulumi.CustomResourceState
@@ -157,7 +162,7 @@ func (i *Hostname) ToHostnameOutputWithContext(ctx context.Context) HostnameOutp
 // HostnameArrayInput is an input type that accepts HostnameArray and HostnameArrayOutput values.
 // You can construct a concrete instance of `HostnameArrayInput` via:
 //
-//          HostnameArray{ HostnameArgs{...} }
+//	HostnameArray{ HostnameArgs{...} }
 type HostnameArrayInput interface {
 	pulumi.Input
 
@@ -182,7 +187,7 @@ func (i HostnameArray) ToHostnameArrayOutputWithContext(ctx context.Context) Hos
 // HostnameMapInput is an input type that accepts HostnameMap and HostnameMapOutput values.
 // You can construct a concrete instance of `HostnameMapInput` via:
 //
-//          HostnameMap{ "key": HostnameArgs{...} }
+//	HostnameMap{ "key": HostnameArgs{...} }
 type HostnameMapInput interface {
 	pulumi.Input
 

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DevOps.ConnectionArgs;
 import com.pulumi.oci.DevOps.inputs.ConnectionState;
+import com.pulumi.oci.DevOps.outputs.ConnectionTlsVerifyConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
@@ -60,6 +61,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> appPassword() {
         return this.appPassword;
+    }
+    /**
+     * (Updatable) The Base URL of the hosted BitbucketServer.
+     * 
+     */
+    @Export(name="baseUrl", type=String.class, parameters={})
+    private Output<String> baseUrl;
+
+    /**
+     * @return (Updatable) The Base URL of the hosted BitbucketServer.
+     * 
+     */
+    public Output<String> baseUrl() {
+        return this.baseUrl;
     }
     /**
      * The OCID of the compartment containing the connection.
@@ -214,6 +229,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) TLS configuration used by build service to verify TLS connection.
+     * 
+     */
+    @Export(name="tlsVerifyConfig", type=ConnectionTlsVerifyConfig.class, parameters={})
+    private Output<ConnectionTlsVerifyConfig> tlsVerifyConfig;
+
+    /**
+     * @return (Updatable) TLS configuration used by build service to verify TLS connection.
+     * 
+     */
+    public Output<ConnectionTlsVerifyConfig> tlsVerifyConfig() {
+        return this.tlsVerifyConfig;
     }
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)

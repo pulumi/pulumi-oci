@@ -21,59 +21,62 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataFlow.NewApplication(ctx, "testApplication", &DataFlow.ApplicationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Application_display_name),
-// 			DriverShape:   pulumi.Any(_var.Application_driver_shape),
-// 			ExecutorShape: pulumi.Any(_var.Application_executor_shape),
-// 			FileUri:       pulumi.Any(_var.Application_file_uri),
-// 			Language:      pulumi.Any(_var.Application_language),
-// 			NumExecutors:  pulumi.Any(_var.Application_num_executors),
-// 			SparkVersion:  pulumi.Any(_var.Application_spark_version),
-// 			ArchiveUri:    pulumi.Any(_var.Application_archive_uri),
-// 			Arguments:     pulumi.Any(_var.Application_arguments),
-// 			ClassName:     pulumi.Any(_var.Application_class_name),
-// 			Configuration: pulumi.Any(_var.Application_configuration),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Application_description),
-// 			DriverShapeConfig: &dataflow.ApplicationDriverShapeConfigArgs{
-// 				MemoryInGbs: pulumi.Any(_var.Application_driver_shape_config_memory_in_gbs),
-// 				Ocpus:       pulumi.Any(_var.Application_driver_shape_config_ocpus),
-// 			},
-// 			Execute: pulumi.Any(_var.Application_execute),
-// 			ExecutorShapeConfig: &dataflow.ApplicationExecutorShapeConfigArgs{
-// 				MemoryInGbs: pulumi.Any(_var.Application_executor_shape_config_memory_in_gbs),
-// 				Ocpus:       pulumi.Any(_var.Application_executor_shape_config_ocpus),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			LogsBucketUri: pulumi.Any(_var.Application_logs_bucket_uri),
-// 			MetastoreId:   pulumi.Any(_var.Metastore_id),
-// 			Parameters: dataflow.ApplicationParameterArray{
-// 				&dataflow.ApplicationParameterArgs{
-// 					Name:  pulumi.Any(_var.Application_parameters_name),
-// 					Value: pulumi.Any(_var.Application_parameters_value),
-// 				},
-// 			},
-// 			PrivateEndpointId:  pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-// 			Type:               pulumi.Any(_var.Application_type),
-// 			WarehouseBucketUri: pulumi.Any(_var.Application_warehouse_bucket_uri),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataFlow.NewApplication(ctx, "testApplication", &DataFlow.ApplicationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Application_display_name),
+//				DriverShape:   pulumi.Any(_var.Application_driver_shape),
+//				ExecutorShape: pulumi.Any(_var.Application_executor_shape),
+//				FileUri:       pulumi.Any(_var.Application_file_uri),
+//				Language:      pulumi.Any(_var.Application_language),
+//				NumExecutors:  pulumi.Any(_var.Application_num_executors),
+//				SparkVersion:  pulumi.Any(_var.Application_spark_version),
+//				ArchiveUri:    pulumi.Any(_var.Application_archive_uri),
+//				Arguments:     pulumi.Any(_var.Application_arguments),
+//				ClassName:     pulumi.Any(_var.Application_class_name),
+//				Configuration: pulumi.Any(_var.Application_configuration),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Application_description),
+//				DriverShapeConfig: &dataflow.ApplicationDriverShapeConfigArgs{
+//					MemoryInGbs: pulumi.Any(_var.Application_driver_shape_config_memory_in_gbs),
+//					Ocpus:       pulumi.Any(_var.Application_driver_shape_config_ocpus),
+//				},
+//				Execute: pulumi.Any(_var.Application_execute),
+//				ExecutorShapeConfig: &dataflow.ApplicationExecutorShapeConfigArgs{
+//					MemoryInGbs: pulumi.Any(_var.Application_executor_shape_config_memory_in_gbs),
+//					Ocpus:       pulumi.Any(_var.Application_executor_shape_config_ocpus),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				LogsBucketUri: pulumi.Any(_var.Application_logs_bucket_uri),
+//				MetastoreId:   pulumi.Any(_var.Metastore_id),
+//				Parameters: dataflow.ApplicationParameterArray{
+//					&dataflow.ApplicationParameterArgs{
+//						Name:  pulumi.Any(_var.Application_parameters_name),
+//						Value: pulumi.Any(_var.Application_parameters_value),
+//					},
+//				},
+//				PrivateEndpointId:  pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//				Type:               pulumi.Any(_var.Application_type),
+//				WarehouseBucketUri: pulumi.Any(_var.Application_warehouse_bucket_uri),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -81,7 +84,9 @@ import (
 // Applications can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataFlow/application:Application test_application "id"
+//
+//	$ pulumi import oci:DataFlow/application:Application test_application "id"
+//
 // ```
 type Application struct {
 	pulumi.CustomResourceState
@@ -453,7 +458,7 @@ func (i *Application) ToApplicationOutputWithContext(ctx context.Context) Applic
 // ApplicationArrayInput is an input type that accepts ApplicationArray and ApplicationArrayOutput values.
 // You can construct a concrete instance of `ApplicationArrayInput` via:
 //
-//          ApplicationArray{ ApplicationArgs{...} }
+//	ApplicationArray{ ApplicationArgs{...} }
 type ApplicationArrayInput interface {
 	pulumi.Input
 
@@ -478,7 +483,7 @@ func (i ApplicationArray) ToApplicationArrayOutputWithContext(ctx context.Contex
 // ApplicationMapInput is an input type that accepts ApplicationMap and ApplicationMapOutput values.
 // You can construct a concrete instance of `ApplicationMapInput` via:
 //
-//          ApplicationMap{ "key": ApplicationArgs{...} }
+//	ApplicationMap{ "key": ApplicationArgs{...} }
 type ApplicationMapInput interface {
 	pulumi.Input
 

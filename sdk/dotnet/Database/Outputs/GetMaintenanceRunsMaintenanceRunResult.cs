@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string LifecycleDetails;
         public readonly string MaintenanceRunId;
         /// <summary>
-        /// Maintenance sub-type.
+        /// The sub-type of the maintenance run.
         /// </summary>
         public readonly string MaintenanceSubtype;
         /// <summary>

@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataIntegration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataIntegration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataIntegration.NewWorkspace(ctx, "testWorkspace", &DataIntegration.WorkspaceArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Workspace_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description:   pulumi.Any(_var.Workspace_description),
-// 			DnsServerIp:   pulumi.Any(_var.Workspace_dns_server_ip),
-// 			DnsServerZone: pulumi.Any(_var.Workspace_dns_server_zone),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsPrivateNetworkEnabled: pulumi.Any(_var.Workspace_is_private_network_enabled),
-// 			SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataIntegration.NewWorkspace(ctx, "testWorkspace", &DataIntegration.WorkspaceArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Workspace_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description:   pulumi.Any(_var.Workspace_description),
+//				DnsServerIp:   pulumi.Any(_var.Workspace_dns_server_ip),
+//				DnsServerZone: pulumi.Any(_var.Workspace_dns_server_zone),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsPrivateNetworkEnabled: pulumi.Any(_var.Workspace_is_private_network_enabled),
+//				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // Workspaces can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataIntegration/workspace:Workspace test_workspace "id"
+//
+//	$ pulumi import oci:DataIntegration/workspace:Workspace test_workspace "id"
+//
 // ```
 type Workspace struct {
 	pulumi.CustomResourceState
@@ -274,7 +279,7 @@ func (i *Workspace) ToWorkspaceOutputWithContext(ctx context.Context) WorkspaceO
 // WorkspaceArrayInput is an input type that accepts WorkspaceArray and WorkspaceArrayOutput values.
 // You can construct a concrete instance of `WorkspaceArrayInput` via:
 //
-//          WorkspaceArray{ WorkspaceArgs{...} }
+//	WorkspaceArray{ WorkspaceArgs{...} }
 type WorkspaceArrayInput interface {
 	pulumi.Input
 
@@ -299,7 +304,7 @@ func (i WorkspaceArray) ToWorkspaceArrayOutputWithContext(ctx context.Context) W
 // WorkspaceMapInput is an input type that accepts WorkspaceMap and WorkspaceMapOutput values.
 // You can construct a concrete instance of `WorkspaceMapInput` via:
 //
-//          WorkspaceMap{ "key": WorkspaceArgs{...} }
+//	WorkspaceMap{ "key": WorkspaceArgs{...} }
 type WorkspaceMapInput interface {
 	pulumi.Input
 

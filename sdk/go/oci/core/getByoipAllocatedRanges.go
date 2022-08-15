@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetByoipAllocatedRanges(ctx, &core.GetByoipAllocatedRangesArgs{
-// 			ByoipRangeId: oci_core_byoip_range.Test_byoip_range.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetByoipAllocatedRanges(ctx, &core.GetByoipAllocatedRangesArgs{
+//				ByoipRangeId: oci_core_byoip_range.Test_byoip_range.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetByoipAllocatedRanges(ctx *pulumi.Context, args *GetByoipAllocatedRangesArgs, opts ...pulumi.InvokeOption) (*GetByoipAllocatedRangesResult, error) {
 	var rv GetByoipAllocatedRangesResult

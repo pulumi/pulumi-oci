@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Analytics.GetAnalyticsInstances(ctx, &analytics.GetAnalyticsInstancesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			CapacityType:  pulumi.StringRef(_var.Analytics_instance_capacity_type),
-// 			FeatureSet:    pulumi.StringRef(_var.Analytics_instance_feature_set),
-// 			Name:          pulumi.StringRef(_var.Analytics_instance_name),
-// 			State:         pulumi.StringRef(_var.Analytics_instance_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Analytics.GetAnalyticsInstances(ctx, &analytics.GetAnalyticsInstancesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				CapacityType:  pulumi.StringRef(_var.Analytics_instance_capacity_type),
+//				FeatureSet:    pulumi.StringRef(_var.Analytics_instance_feature_set),
+//				Name:          pulumi.StringRef(_var.Analytics_instance_name),
+//				State:         pulumi.StringRef(_var.Analytics_instance_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAnalyticsInstances(ctx *pulumi.Context, args *GetAnalyticsInstancesArgs, opts ...pulumi.InvokeOption) (*GetAnalyticsInstancesResult, error) {
 	var rv GetAnalyticsInstancesResult

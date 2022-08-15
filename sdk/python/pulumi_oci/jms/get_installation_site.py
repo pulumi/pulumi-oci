@@ -21,7 +21,7 @@ class GetInstallationSiteResult:
     """
     A collection of values returned by getInstallationSite.
     """
-    def __init__(__self__, application_id=None, fleet_id=None, id=None, installation_path=None, items=None, jre_distribution=None, jre_security_status=None, jre_vendor=None, jre_version=None, managed_instance_id=None, os_families=None):
+    def __init__(__self__, application_id=None, fleet_id=None, id=None, installation_path=None, items=None, jre_distribution=None, jre_security_status=None, jre_vendor=None, jre_version=None, managed_instance_id=None, os_families=None, path_contains=None, time_end=None, time_start=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -55,6 +55,15 @@ class GetInstallationSiteResult:
         if os_families and not isinstance(os_families, list):
             raise TypeError("Expected argument 'os_families' to be a list")
         pulumi.set(__self__, "os_families", os_families)
+        if path_contains and not isinstance(path_contains, str):
+            raise TypeError("Expected argument 'path_contains' to be a str")
+        pulumi.set(__self__, "path_contains", path_contains)
+        if time_end and not isinstance(time_end, str):
+            raise TypeError("Expected argument 'time_end' to be a str")
+        pulumi.set(__self__, "time_end", time_end)
+        if time_start and not isinstance(time_start, str):
+            raise TypeError("Expected argument 'time_start' to be a str")
+        pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter(name="applicationId")
@@ -120,6 +129,21 @@ class GetInstallationSiteResult:
     def os_families(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "os_families")
 
+    @property
+    @pulumi.getter(name="pathContains")
+    def path_contains(self) -> Optional[str]:
+        return pulumi.get(self, "path_contains")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> Optional[str]:
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> Optional[str]:
+        return pulumi.get(self, "time_start")
+
 
 class AwaitableGetInstallationSiteResult(GetInstallationSiteResult):
     # pylint: disable=using-constant-test
@@ -137,7 +161,10 @@ class AwaitableGetInstallationSiteResult(GetInstallationSiteResult):
             jre_vendor=self.jre_vendor,
             jre_version=self.jre_version,
             managed_instance_id=self.managed_instance_id,
-            os_families=self.os_families)
+            os_families=self.os_families,
+            path_contains=self.path_contains,
+            time_end=self.time_end,
+            time_start=self.time_start)
 
 
 def get_installation_site(application_id: Optional[str] = None,
@@ -149,6 +176,9 @@ def get_installation_site(application_id: Optional[str] = None,
                           jre_version: Optional[str] = None,
                           managed_instance_id: Optional[str] = None,
                           os_families: Optional[Sequence[str]] = None,
+                          path_contains: Optional[str] = None,
+                          time_end: Optional[str] = None,
+                          time_start: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstallationSiteResult:
     """
     This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
@@ -169,7 +199,10 @@ def get_installation_site(application_id: Optional[str] = None,
         jre_vendor=var["fleet_installation_site_jre_vendor"],
         jre_version=var["fleet_installation_site_jre_version"],
         managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        os_families=var["fleet_installation_site_os_family"])
+        os_families=var["fleet_installation_site_os_family"],
+        path_contains=var["fleet_installation_site_path_contains"],
+        time_end=var["fleet_installation_site_time_end"],
+        time_start=var["fleet_installation_site_time_start"])
     ```
 
 
@@ -182,6 +215,9 @@ def get_installation_site(application_id: Optional[str] = None,
     :param str jre_version: The version of the related Java Runtime.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
     :param Sequence[str] os_families: The operating system type.
+    :param str path_contains: Filter the list with path contains the given value.
+    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
@@ -193,6 +229,9 @@ def get_installation_site(application_id: Optional[str] = None,
     __args__['jreVersion'] = jre_version
     __args__['managedInstanceId'] = managed_instance_id
     __args__['osFamilies'] = os_families
+    __args__['pathContains'] = path_contains
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -210,7 +249,10 @@ def get_installation_site(application_id: Optional[str] = None,
         jre_vendor=__ret__.jre_vendor,
         jre_version=__ret__.jre_version,
         managed_instance_id=__ret__.managed_instance_id,
-        os_families=__ret__.os_families)
+        os_families=__ret__.os_families,
+        path_contains=__ret__.path_contains,
+        time_end=__ret__.time_end,
+        time_start=__ret__.time_start)
 
 
 @_utilities.lift_output_func(get_installation_site)
@@ -223,6 +265,9 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
                                  jre_version: Optional[pulumi.Input[Optional[str]]] = None,
                                  managed_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  os_families: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                 path_contains: Optional[pulumi.Input[Optional[str]]] = None,
+                                 time_end: Optional[pulumi.Input[Optional[str]]] = None,
+                                 time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstallationSiteResult]:
     """
     This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
@@ -243,7 +288,10 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
         jre_vendor=var["fleet_installation_site_jre_vendor"],
         jre_version=var["fleet_installation_site_jre_version"],
         managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        os_families=var["fleet_installation_site_os_family"])
+        os_families=var["fleet_installation_site_os_family"],
+        path_contains=var["fleet_installation_site_path_contains"],
+        time_end=var["fleet_installation_site_time_end"],
+        time_start=var["fleet_installation_site_time_start"])
     ```
 
 
@@ -256,5 +304,8 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
     :param str jre_version: The version of the related Java Runtime.
     :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
     :param Sequence[str] os_families: The operating system type.
+    :param str path_contains: Filter the list with path contains the given value.
+    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
     ...

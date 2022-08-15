@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceManagerProxy"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceManagerProxy"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceManagerProxy.GetServiceEnvironments(ctx, &servicemanagerproxy.GetServiceEnvironmentsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			DisplayName:            pulumi.StringRef(_var.Service_environment_display_name),
-// 			ServiceEnvironmentId:   pulumi.StringRef(oci_service_manager_proxy_service_environment.Test_service_environment.Id),
-// 			ServiceEnvironmentType: pulumi.StringRef(_var.Service_environment_service_environment_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceManagerProxy.GetServiceEnvironments(ctx, &servicemanagerproxy.GetServiceEnvironmentsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				DisplayName:            pulumi.StringRef(_var.Service_environment_display_name),
+//				ServiceEnvironmentId:   pulumi.StringRef(oci_service_manager_proxy_service_environment.Test_service_environment.Id),
+//				ServiceEnvironmentType: pulumi.StringRef(_var.Service_environment_service_environment_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetServiceEnvironments(ctx *pulumi.Context, args *GetServiceEnvironmentsArgs, opts ...pulumi.InvokeOption) (*GetServiceEnvironmentsResult, error) {
 	var rv GetServiceEnvironmentsResult

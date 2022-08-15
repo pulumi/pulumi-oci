@@ -36,7 +36,7 @@ type GetPathAnalyzerTestDestinationEndpoint struct {
 // GetPathAnalyzerTestDestinationEndpointInput is an input type that accepts GetPathAnalyzerTestDestinationEndpointArgs and GetPathAnalyzerTestDestinationEndpointOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestDestinationEndpointInput` via:
 //
-//          GetPathAnalyzerTestDestinationEndpointArgs{...}
+//	GetPathAnalyzerTestDestinationEndpointArgs{...}
 type GetPathAnalyzerTestDestinationEndpointInput interface {
 	pulumi.Input
 
@@ -82,7 +82,7 @@ func (i GetPathAnalyzerTestDestinationEndpointArgs) ToGetPathAnalyzerTestDestina
 // GetPathAnalyzerTestDestinationEndpointArrayInput is an input type that accepts GetPathAnalyzerTestDestinationEndpointArray and GetPathAnalyzerTestDestinationEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestDestinationEndpointArrayInput` via:
 //
-//          GetPathAnalyzerTestDestinationEndpointArray{ GetPathAnalyzerTestDestinationEndpointArgs{...} }
+//	GetPathAnalyzerTestDestinationEndpointArray{ GetPathAnalyzerTestDestinationEndpointArgs{...} }
 type GetPathAnalyzerTestDestinationEndpointArrayInput interface {
 	pulumi.Input
 
@@ -204,7 +204,7 @@ type GetPathAnalyzerTestProtocolParameter struct {
 // GetPathAnalyzerTestProtocolParameterInput is an input type that accepts GetPathAnalyzerTestProtocolParameterArgs and GetPathAnalyzerTestProtocolParameterOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestProtocolParameterInput` via:
 //
-//          GetPathAnalyzerTestProtocolParameterArgs{...}
+//	GetPathAnalyzerTestProtocolParameterArgs{...}
 type GetPathAnalyzerTestProtocolParameterInput interface {
 	pulumi.Input
 
@@ -240,7 +240,7 @@ func (i GetPathAnalyzerTestProtocolParameterArgs) ToGetPathAnalyzerTestProtocolP
 // GetPathAnalyzerTestProtocolParameterArrayInput is an input type that accepts GetPathAnalyzerTestProtocolParameterArray and GetPathAnalyzerTestProtocolParameterArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestProtocolParameterArrayInput` via:
 //
-//          GetPathAnalyzerTestProtocolParameterArray{ GetPathAnalyzerTestProtocolParameterArgs{...} }
+//	GetPathAnalyzerTestProtocolParameterArray{ GetPathAnalyzerTestProtocolParameterArgs{...} }
 type GetPathAnalyzerTestProtocolParameterArrayInput interface {
 	pulumi.Input
 
@@ -329,7 +329,7 @@ type GetPathAnalyzerTestQueryOption struct {
 // GetPathAnalyzerTestQueryOptionInput is an input type that accepts GetPathAnalyzerTestQueryOptionArgs and GetPathAnalyzerTestQueryOptionOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestQueryOptionInput` via:
 //
-//          GetPathAnalyzerTestQueryOptionArgs{...}
+//	GetPathAnalyzerTestQueryOptionArgs{...}
 type GetPathAnalyzerTestQueryOptionInput interface {
 	pulumi.Input
 
@@ -357,7 +357,7 @@ func (i GetPathAnalyzerTestQueryOptionArgs) ToGetPathAnalyzerTestQueryOptionOutp
 // GetPathAnalyzerTestQueryOptionArrayInput is an input type that accepts GetPathAnalyzerTestQueryOptionArray and GetPathAnalyzerTestQueryOptionArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestQueryOptionArrayInput` via:
 //
-//          GetPathAnalyzerTestQueryOptionArray{ GetPathAnalyzerTestQueryOptionArgs{...} }
+//	GetPathAnalyzerTestQueryOptionArray{ GetPathAnalyzerTestQueryOptionArgs{...} }
 type GetPathAnalyzerTestQueryOptionArrayInput interface {
 	pulumi.Input
 
@@ -444,7 +444,7 @@ type GetPathAnalyzerTestSourceEndpoint struct {
 // GetPathAnalyzerTestSourceEndpointInput is an input type that accepts GetPathAnalyzerTestSourceEndpointArgs and GetPathAnalyzerTestSourceEndpointOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestSourceEndpointInput` via:
 //
-//          GetPathAnalyzerTestSourceEndpointArgs{...}
+//	GetPathAnalyzerTestSourceEndpointArgs{...}
 type GetPathAnalyzerTestSourceEndpointInput interface {
 	pulumi.Input
 
@@ -490,7 +490,7 @@ func (i GetPathAnalyzerTestSourceEndpointArgs) ToGetPathAnalyzerTestSourceEndpoi
 // GetPathAnalyzerTestSourceEndpointArrayInput is an input type that accepts GetPathAnalyzerTestSourceEndpointArray and GetPathAnalyzerTestSourceEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestSourceEndpointArrayInput` via:
 //
-//          GetPathAnalyzerTestSourceEndpointArray{ GetPathAnalyzerTestSourceEndpointArgs{...} }
+//	GetPathAnalyzerTestSourceEndpointArray{ GetPathAnalyzerTestSourceEndpointArgs{...} }
 type GetPathAnalyzerTestSourceEndpointArrayInput interface {
 	pulumi.Input
 
@@ -605,7 +605,7 @@ type GetPathAnalyzerTestsFilter struct {
 // GetPathAnalyzerTestsFilterInput is an input type that accepts GetPathAnalyzerTestsFilterArgs and GetPathAnalyzerTestsFilterOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsFilterInput` via:
 //
-//          GetPathAnalyzerTestsFilterArgs{...}
+//	GetPathAnalyzerTestsFilterArgs{...}
 type GetPathAnalyzerTestsFilterInput interface {
 	pulumi.Input
 
@@ -634,7 +634,7 @@ func (i GetPathAnalyzerTestsFilterArgs) ToGetPathAnalyzerTestsFilterOutputWithCo
 // GetPathAnalyzerTestsFilterArrayInput is an input type that accepts GetPathAnalyzerTestsFilterArray and GetPathAnalyzerTestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsFilterArrayInput` via:
 //
-//          GetPathAnalyzerTestsFilterArray{ GetPathAnalyzerTestsFilterArgs{...} }
+//	GetPathAnalyzerTestsFilterArray{ GetPathAnalyzerTestsFilterArgs{...} }
 type GetPathAnalyzerTestsFilterArrayInput interface {
 	pulumi.Input
 
@@ -709,7 +709,7 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollection struct {
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs and GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs{...}
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs{...}
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionInput interface {
 	pulumi.Input
 
@@ -736,7 +736,7 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs) ToGetPathAnalyzerTes
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs{...} }
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs{...} }
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayInput interface {
 	pulumi.Input
 
@@ -832,7 +832,7 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItem struct {
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs{...}
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs{...}
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemInput interface {
 	pulumi.Input
 
@@ -886,7 +886,7 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs) ToGetPathAnalyze
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs{...} }
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs{...} }
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1050,7 +1050,7 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint struc
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs{...}
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs{...}
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointInput interface {
 	pulumi.Input
 
@@ -1096,7 +1096,7 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArg
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs{...} }
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs{...} }
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayInput interface {
 	pulumi.Input
 
@@ -1228,7 +1228,7 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter struct 
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs{...}
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs{...}
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterInput interface {
 	pulumi.Input
 
@@ -1264,7 +1264,7 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs)
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs{...} }
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs{...} }
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayInput interface {
 	pulumi.Input
 
@@ -1355,7 +1355,7 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption struct {
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs{...}
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs{...}
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionInput interface {
 	pulumi.Input
 
@@ -1383,7 +1383,7 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs) ToGet
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs{...} }
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs{...} }
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayInput interface {
 	pulumi.Input
 
@@ -1472,7 +1472,7 @@ type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint struct {
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs{...}
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs{...}
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointInput interface {
 	pulumi.Input
 
@@ -1518,7 +1518,7 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs) To
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayInput` via:
 //
-//          GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs{...} }
+//	GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArray{ GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs{...} }
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayInput interface {
 	pulumi.Input
 
@@ -1653,7 +1653,7 @@ type PathAnalysiDestinationEndpoint struct {
 // PathAnalysiDestinationEndpointInput is an input type that accepts PathAnalysiDestinationEndpointArgs and PathAnalysiDestinationEndpointOutput values.
 // You can construct a concrete instance of `PathAnalysiDestinationEndpointInput` via:
 //
-//          PathAnalysiDestinationEndpointArgs{...}
+//	PathAnalysiDestinationEndpointArgs{...}
 type PathAnalysiDestinationEndpointInput interface {
 	pulumi.Input
 
@@ -1706,11 +1706,11 @@ func (i PathAnalysiDestinationEndpointArgs) ToPathAnalysiDestinationEndpointPtrO
 // PathAnalysiDestinationEndpointPtrInput is an input type that accepts PathAnalysiDestinationEndpointArgs, PathAnalysiDestinationEndpointPtr and PathAnalysiDestinationEndpointPtrOutput values.
 // You can construct a concrete instance of `PathAnalysiDestinationEndpointPtrInput` via:
 //
-//          PathAnalysiDestinationEndpointArgs{...}
+//	        PathAnalysiDestinationEndpointArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalysiDestinationEndpointPtrInput interface {
 	pulumi.Input
 
@@ -1948,7 +1948,7 @@ type PathAnalysiProtocolParameters struct {
 // PathAnalysiProtocolParametersInput is an input type that accepts PathAnalysiProtocolParametersArgs and PathAnalysiProtocolParametersOutput values.
 // You can construct a concrete instance of `PathAnalysiProtocolParametersInput` via:
 //
-//          PathAnalysiProtocolParametersArgs{...}
+//	PathAnalysiProtocolParametersArgs{...}
 type PathAnalysiProtocolParametersInput interface {
 	pulumi.Input
 
@@ -1992,11 +1992,11 @@ func (i PathAnalysiProtocolParametersArgs) ToPathAnalysiProtocolParametersPtrOut
 // PathAnalysiProtocolParametersPtrInput is an input type that accepts PathAnalysiProtocolParametersArgs, PathAnalysiProtocolParametersPtr and PathAnalysiProtocolParametersPtrOutput values.
 // You can construct a concrete instance of `PathAnalysiProtocolParametersPtrInput` via:
 //
-//          PathAnalysiProtocolParametersArgs{...}
+//	        PathAnalysiProtocolParametersArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalysiProtocolParametersPtrInput interface {
 	pulumi.Input
 
@@ -2153,7 +2153,7 @@ type PathAnalysiQueryOptions struct {
 // PathAnalysiQueryOptionsInput is an input type that accepts PathAnalysiQueryOptionsArgs and PathAnalysiQueryOptionsOutput values.
 // You can construct a concrete instance of `PathAnalysiQueryOptionsInput` via:
 //
-//          PathAnalysiQueryOptionsArgs{...}
+//	PathAnalysiQueryOptionsArgs{...}
 type PathAnalysiQueryOptionsInput interface {
 	pulumi.Input
 
@@ -2189,11 +2189,11 @@ func (i PathAnalysiQueryOptionsArgs) ToPathAnalysiQueryOptionsPtrOutputWithConte
 // PathAnalysiQueryOptionsPtrInput is an input type that accepts PathAnalysiQueryOptionsArgs, PathAnalysiQueryOptionsPtr and PathAnalysiQueryOptionsPtrOutput values.
 // You can construct a concrete instance of `PathAnalysiQueryOptionsPtrInput` via:
 //
-//          PathAnalysiQueryOptionsArgs{...}
+//	        PathAnalysiQueryOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalysiQueryOptionsPtrInput interface {
 	pulumi.Input
 
@@ -2307,7 +2307,7 @@ type PathAnalysiSourceEndpoint struct {
 // PathAnalysiSourceEndpointInput is an input type that accepts PathAnalysiSourceEndpointArgs and PathAnalysiSourceEndpointOutput values.
 // You can construct a concrete instance of `PathAnalysiSourceEndpointInput` via:
 //
-//          PathAnalysiSourceEndpointArgs{...}
+//	PathAnalysiSourceEndpointArgs{...}
 type PathAnalysiSourceEndpointInput interface {
 	pulumi.Input
 
@@ -2360,11 +2360,11 @@ func (i PathAnalysiSourceEndpointArgs) ToPathAnalysiSourceEndpointPtrOutputWithC
 // PathAnalysiSourceEndpointPtrInput is an input type that accepts PathAnalysiSourceEndpointArgs, PathAnalysiSourceEndpointPtr and PathAnalysiSourceEndpointPtrOutput values.
 // You can construct a concrete instance of `PathAnalysiSourceEndpointPtrInput` via:
 //
-//          PathAnalysiSourceEndpointArgs{...}
+//	        PathAnalysiSourceEndpointArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalysiSourceEndpointPtrInput interface {
 	pulumi.Input
 
@@ -2612,7 +2612,7 @@ type PathAnalyzerTestDestinationEndpoint struct {
 // PathAnalyzerTestDestinationEndpointInput is an input type that accepts PathAnalyzerTestDestinationEndpointArgs and PathAnalyzerTestDestinationEndpointOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestDestinationEndpointInput` via:
 //
-//          PathAnalyzerTestDestinationEndpointArgs{...}
+//	PathAnalyzerTestDestinationEndpointArgs{...}
 type PathAnalyzerTestDestinationEndpointInput interface {
 	pulumi.Input
 
@@ -2666,11 +2666,11 @@ func (i PathAnalyzerTestDestinationEndpointArgs) ToPathAnalyzerTestDestinationEn
 // PathAnalyzerTestDestinationEndpointPtrInput is an input type that accepts PathAnalyzerTestDestinationEndpointArgs, PathAnalyzerTestDestinationEndpointPtr and PathAnalyzerTestDestinationEndpointPtrOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestDestinationEndpointPtrInput` via:
 //
-//          PathAnalyzerTestDestinationEndpointArgs{...}
+//	        PathAnalyzerTestDestinationEndpointArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalyzerTestDestinationEndpointPtrInput interface {
 	pulumi.Input
 
@@ -2910,7 +2910,7 @@ type PathAnalyzerTestProtocolParameters struct {
 // PathAnalyzerTestProtocolParametersInput is an input type that accepts PathAnalyzerTestProtocolParametersArgs and PathAnalyzerTestProtocolParametersOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestProtocolParametersInput` via:
 //
-//          PathAnalyzerTestProtocolParametersArgs{...}
+//	PathAnalyzerTestProtocolParametersArgs{...}
 type PathAnalyzerTestProtocolParametersInput interface {
 	pulumi.Input
 
@@ -2954,11 +2954,11 @@ func (i PathAnalyzerTestProtocolParametersArgs) ToPathAnalyzerTestProtocolParame
 // PathAnalyzerTestProtocolParametersPtrInput is an input type that accepts PathAnalyzerTestProtocolParametersArgs, PathAnalyzerTestProtocolParametersPtr and PathAnalyzerTestProtocolParametersPtrOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestProtocolParametersPtrInput` via:
 //
-//          PathAnalyzerTestProtocolParametersArgs{...}
+//	        PathAnalyzerTestProtocolParametersArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalyzerTestProtocolParametersPtrInput interface {
 	pulumi.Input
 
@@ -3115,7 +3115,7 @@ type PathAnalyzerTestQueryOptions struct {
 // PathAnalyzerTestQueryOptionsInput is an input type that accepts PathAnalyzerTestQueryOptionsArgs and PathAnalyzerTestQueryOptionsOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestQueryOptionsInput` via:
 //
-//          PathAnalyzerTestQueryOptionsArgs{...}
+//	PathAnalyzerTestQueryOptionsArgs{...}
 type PathAnalyzerTestQueryOptionsInput interface {
 	pulumi.Input
 
@@ -3151,11 +3151,11 @@ func (i PathAnalyzerTestQueryOptionsArgs) ToPathAnalyzerTestQueryOptionsPtrOutpu
 // PathAnalyzerTestQueryOptionsPtrInput is an input type that accepts PathAnalyzerTestQueryOptionsArgs, PathAnalyzerTestQueryOptionsPtr and PathAnalyzerTestQueryOptionsPtrOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestQueryOptionsPtrInput` via:
 //
-//          PathAnalyzerTestQueryOptionsArgs{...}
+//	        PathAnalyzerTestQueryOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalyzerTestQueryOptionsPtrInput interface {
 	pulumi.Input
 
@@ -3270,7 +3270,7 @@ type PathAnalyzerTestSourceEndpoint struct {
 // PathAnalyzerTestSourceEndpointInput is an input type that accepts PathAnalyzerTestSourceEndpointArgs and PathAnalyzerTestSourceEndpointOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestSourceEndpointInput` via:
 //
-//          PathAnalyzerTestSourceEndpointArgs{...}
+//	PathAnalyzerTestSourceEndpointArgs{...}
 type PathAnalyzerTestSourceEndpointInput interface {
 	pulumi.Input
 
@@ -3324,11 +3324,11 @@ func (i PathAnalyzerTestSourceEndpointArgs) ToPathAnalyzerTestSourceEndpointPtrO
 // PathAnalyzerTestSourceEndpointPtrInput is an input type that accepts PathAnalyzerTestSourceEndpointArgs, PathAnalyzerTestSourceEndpointPtr and PathAnalyzerTestSourceEndpointPtrOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestSourceEndpointPtrInput` via:
 //
-//          PathAnalyzerTestSourceEndpointArgs{...}
+//	        PathAnalyzerTestSourceEndpointArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PathAnalyzerTestSourceEndpointPtrInput interface {
 	pulumi.Input
 

@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolumeBackup(ctx, "testVolumeBackup", &Core.VolumeBackupArgs{
-// 			VolumeId: pulumi.Any(oci_core_volume.Test_volume.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Volume_backup_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Type: pulumi.Any(_var.Volume_backup_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolumeBackup(ctx, "testVolumeBackup", &Core.VolumeBackupArgs{
+//				VolumeId: pulumi.Any(oci_core_volume.Test_volume.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Volume_backup_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Type: pulumi.Any(_var.Volume_backup_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // VolumeBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volumeBackup:VolumeBackup test_volume_backup "id"
+//
+//	$ pulumi import oci:Core/volumeBackup:VolumeBackup test_volume_backup "id"
+//
 // ```
 type VolumeBackup struct {
 	pulumi.CustomResourceState
@@ -287,7 +292,7 @@ func (i *VolumeBackup) ToVolumeBackupOutputWithContext(ctx context.Context) Volu
 // VolumeBackupArrayInput is an input type that accepts VolumeBackupArray and VolumeBackupArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupArrayInput` via:
 //
-//          VolumeBackupArray{ VolumeBackupArgs{...} }
+//	VolumeBackupArray{ VolumeBackupArgs{...} }
 type VolumeBackupArrayInput interface {
 	pulumi.Input
 
@@ -312,7 +317,7 @@ func (i VolumeBackupArray) ToVolumeBackupArrayOutputWithContext(ctx context.Cont
 // VolumeBackupMapInput is an input type that accepts VolumeBackupMap and VolumeBackupMapOutput values.
 // You can construct a concrete instance of `VolumeBackupMapInput` via:
 //
-//          VolumeBackupMap{ "key": VolumeBackupArgs{...} }
+//	VolumeBackupMap{ "key": VolumeBackupArgs{...} }
 type VolumeBackupMapInput interface {
 	pulumi.Input
 

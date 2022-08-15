@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Commitments in Oracle Cloud Infrastructure Onesubscription service.
 //
-// This list API returns all commitments for a particular Subscribed Service
+// # This list API returns all commitments for a particular Subscribed Service
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetCommitments(ctx, &onesubsription.GetCommitmentsArgs{
-// 			CompartmentId:       _var.Compartment_id,
-// 			SubscribedServiceId: oci_onesubscription_subscribed_service.Test_subscribed_service.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetCommitments(ctx, &onesubsription.GetCommitmentsArgs{
+//				CompartmentId:       _var.Compartment_id,
+//				SubscribedServiceId: oci_onesubscription_subscribed_service.Test_subscribed_service.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCommitments(ctx *pulumi.Context, args *GetCommitmentsArgs, opts ...pulumi.InvokeOption) (*GetCommitmentsResult, error) {
 	var rv GetCommitmentsResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.GetLogGroups(ctx, &logging.GetLogGroupsArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			DisplayName:              pulumi.StringRef(_var.Log_group_display_name),
-// 			IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Log_group_is_compartment_id_in_subtree),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.GetLogGroups(ctx, &logging.GetLogGroupsArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				DisplayName:              pulumi.StringRef(_var.Log_group_display_name),
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Log_group_is_compartment_id_in_subtree),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogGroups(ctx *pulumi.Context, args *GetLogGroupsArgs, opts ...pulumi.InvokeOption) (*GetLogGroupsResult, error) {
 	var rv GetLogGroupsResult

@@ -22,23 +22,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Limits.GetLimitDefinitions(ctx, &limits.GetLimitDefinitionsArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 			Name:          pulumi.StringRef(_var.Limit_definition_name),
-// 			ServiceName:   pulumi.StringRef(oci_limits_service.Test_service.Name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Limits.GetLimitDefinitions(ctx, &limits.GetLimitDefinitionsArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//				Name:          pulumi.StringRef(_var.Limit_definition_name),
+//				ServiceName:   pulumi.StringRef(oci_limits_service.Test_service.Name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLimitDefinitions(ctx *pulumi.Context, args *GetLimitDefinitionsArgs, opts ...pulumi.InvokeOption) (*GetLimitDefinitionsResult, error) {
 	var rv GetLimitDefinitionsResult

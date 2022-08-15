@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.GetVantagePoints(ctx, &healthchecks.GetVantagePointsArgs{
-// 			DisplayName: pulumi.StringRef(_var.Vantage_point_display_name),
-// 			Name:        pulumi.StringRef(_var.Vantage_point_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.GetVantagePoints(ctx, &healthchecks.GetVantagePointsArgs{
+//				DisplayName: pulumi.StringRef(_var.Vantage_point_display_name),
+//				Name:        pulumi.StringRef(_var.Vantage_point_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVantagePoints(ctx *pulumi.Context, args *GetVantagePointsArgs, opts ...pulumi.InvokeOption) (*GetVantagePointsResult, error) {
 	var rv GetVantagePointsResult

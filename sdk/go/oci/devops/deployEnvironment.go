@@ -21,47 +21,50 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewDeployEnvironment(ctx, "testDeployEnvironment", &DevOps.DeployEnvironmentArgs{
-// 			DeployEnvironmentType: pulumi.Any(_var.Deploy_environment_deploy_environment_type),
-// 			ProjectId:             pulumi.Any(oci_devops_project.Test_project.Id),
-// 			ClusterId:             pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
-// 			ComputeInstanceGroupSelectors: &devops.DeployEnvironmentComputeInstanceGroupSelectorsArgs{
-// 				Items: devops.DeployEnvironmentComputeInstanceGroupSelectorsItemArray{
-// 					&devops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{
-// 						SelectorType:       pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_selector_type),
-// 						ComputeInstanceIds: pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_compute_instance_ids),
-// 						Query:              pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_query),
-// 						Region:             pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_region),
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Deploy_environment_description),
-// 			DisplayName: pulumi.Any(_var.Deploy_environment_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			FunctionId: pulumi.Any(oci_functions_function.Test_function.Id),
-// 			NetworkChannel: &devops.DeployEnvironmentNetworkChannelArgs{
-// 				NetworkChannelType: pulumi.Any(_var.Deploy_environment_network_channel_network_channel_type),
-// 				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				NsgIds:             pulumi.Any(_var.Deploy_environment_network_channel_nsg_ids),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewDeployEnvironment(ctx, "testDeployEnvironment", &DevOps.DeployEnvironmentArgs{
+//				DeployEnvironmentType: pulumi.Any(_var.Deploy_environment_deploy_environment_type),
+//				ProjectId:             pulumi.Any(oci_devops_project.Test_project.Id),
+//				ClusterId:             pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
+//				ComputeInstanceGroupSelectors: &devops.DeployEnvironmentComputeInstanceGroupSelectorsArgs{
+//					Items: devops.DeployEnvironmentComputeInstanceGroupSelectorsItemArray{
+//						&devops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{
+//							SelectorType:       pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_selector_type),
+//							ComputeInstanceIds: pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_compute_instance_ids),
+//							Query:              pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_query),
+//							Region:             pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_region),
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Deploy_environment_description),
+//				DisplayName: pulumi.Any(_var.Deploy_environment_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				FunctionId: pulumi.Any(oci_functions_function.Test_function.Id),
+//				NetworkChannel: &devops.DeployEnvironmentNetworkChannelArgs{
+//					NetworkChannelType: pulumi.Any(_var.Deploy_environment_network_channel_network_channel_type),
+//					SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					NsgIds:             pulumi.Any(_var.Deploy_environment_network_channel_nsg_ids),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -69,7 +72,9 @@ import (
 // DeployEnvironments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
+//
+//	$ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
+//
 // ```
 type DeployEnvironment struct {
 	pulumi.CustomResourceState
@@ -289,7 +294,7 @@ func (i *DeployEnvironment) ToDeployEnvironmentOutputWithContext(ctx context.Con
 // DeployEnvironmentArrayInput is an input type that accepts DeployEnvironmentArray and DeployEnvironmentArrayOutput values.
 // You can construct a concrete instance of `DeployEnvironmentArrayInput` via:
 //
-//          DeployEnvironmentArray{ DeployEnvironmentArgs{...} }
+//	DeployEnvironmentArray{ DeployEnvironmentArgs{...} }
 type DeployEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -314,7 +319,7 @@ func (i DeployEnvironmentArray) ToDeployEnvironmentArrayOutputWithContext(ctx co
 // DeployEnvironmentMapInput is an input type that accepts DeployEnvironmentMap and DeployEnvironmentMapOutput values.
 // You can construct a concrete instance of `DeployEnvironmentMapInput` via:
 //
-//          DeployEnvironmentMap{ "key": DeployEnvironmentArgs{...} }
+//	DeployEnvironmentMap{ "key": DeployEnvironmentArgs{...} }
 type DeployEnvironmentMapInput interface {
 	pulumi.Input
 

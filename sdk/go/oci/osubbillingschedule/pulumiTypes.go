@@ -40,7 +40,7 @@ type GetBillingScheduleBillingSchedule struct {
 // GetBillingScheduleBillingScheduleInput is an input type that accepts GetBillingScheduleBillingScheduleArgs and GetBillingScheduleBillingScheduleOutput values.
 // You can construct a concrete instance of `GetBillingScheduleBillingScheduleInput` via:
 //
-//          GetBillingScheduleBillingScheduleArgs{...}
+//	GetBillingScheduleBillingScheduleArgs{...}
 type GetBillingScheduleBillingScheduleInput interface {
 	pulumi.Input
 
@@ -90,7 +90,7 @@ func (i GetBillingScheduleBillingScheduleArgs) ToGetBillingScheduleBillingSchedu
 // GetBillingScheduleBillingScheduleArrayInput is an input type that accepts GetBillingScheduleBillingScheduleArray and GetBillingScheduleBillingScheduleArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleBillingScheduleArrayInput` via:
 //
-//          GetBillingScheduleBillingScheduleArray{ GetBillingScheduleBillingScheduleArgs{...} }
+//	GetBillingScheduleBillingScheduleArray{ GetBillingScheduleBillingScheduleArgs{...} }
 type GetBillingScheduleBillingScheduleArrayInput interface {
 	pulumi.Input
 
@@ -218,7 +218,7 @@ type GetBillingScheduleBillingScheduleProduct struct {
 // GetBillingScheduleBillingScheduleProductInput is an input type that accepts GetBillingScheduleBillingScheduleProductArgs and GetBillingScheduleBillingScheduleProductOutput values.
 // You can construct a concrete instance of `GetBillingScheduleBillingScheduleProductInput` via:
 //
-//          GetBillingScheduleBillingScheduleProductArgs{...}
+//	GetBillingScheduleBillingScheduleProductArgs{...}
 type GetBillingScheduleBillingScheduleProductInput interface {
 	pulumi.Input
 
@@ -248,7 +248,7 @@ func (i GetBillingScheduleBillingScheduleProductArgs) ToGetBillingScheduleBillin
 // GetBillingScheduleBillingScheduleProductArrayInput is an input type that accepts GetBillingScheduleBillingScheduleProductArray and GetBillingScheduleBillingScheduleProductArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleBillingScheduleProductArrayInput` via:
 //
-//          GetBillingScheduleBillingScheduleProductArray{ GetBillingScheduleBillingScheduleProductArgs{...} }
+//	GetBillingScheduleBillingScheduleProductArray{ GetBillingScheduleBillingScheduleProductArgs{...} }
 type GetBillingScheduleBillingScheduleProductArrayInput interface {
 	pulumi.Input
 
@@ -324,7 +324,7 @@ type GetBillingScheduleFilter struct {
 // GetBillingScheduleFilterInput is an input type that accepts GetBillingScheduleFilterArgs and GetBillingScheduleFilterOutput values.
 // You can construct a concrete instance of `GetBillingScheduleFilterInput` via:
 //
-//          GetBillingScheduleFilterArgs{...}
+//	GetBillingScheduleFilterArgs{...}
 type GetBillingScheduleFilterInput interface {
 	pulumi.Input
 
@@ -354,7 +354,7 @@ func (i GetBillingScheduleFilterArgs) ToGetBillingScheduleFilterOutputWithContex
 // GetBillingScheduleFilterArrayInput is an input type that accepts GetBillingScheduleFilterArray and GetBillingScheduleFilterArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleFilterArrayInput` via:
 //
-//          GetBillingScheduleFilterArray{ GetBillingScheduleFilterArgs{...} }
+//	GetBillingScheduleFilterArray{ GetBillingScheduleFilterArgs{...} }
 type GetBillingScheduleFilterArrayInput interface {
 	pulumi.Input
 

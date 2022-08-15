@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/VisualBuilder"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/VisualBuilder"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := VisualBuilder.GetVbInstanceApplications(ctx, &visualbuilder.GetVbInstanceApplicationsArgs{
-// 			VbInstanceId: oci_visual_builder_vb_instance.Test_vb_instance.Id,
-// 			IdcsOpenId:   pulumi.StringRef("idcs_open_id_value"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := VisualBuilder.GetVbInstanceApplications(ctx, &visualbuilder.GetVbInstanceApplicationsArgs{
+//				VbInstanceId: oci_visual_builder_vb_instance.Test_vb_instance.Id,
+//				IdcsOpenId:   pulumi.StringRef("idcs_open_id_value"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVbInstanceApplications(ctx *pulumi.Context, args *GetVbInstanceApplicationsArgs, opts ...pulumi.InvokeOption) (*GetVbInstanceApplicationsResult, error) {
 	var rv GetVbInstanceApplicationsResult

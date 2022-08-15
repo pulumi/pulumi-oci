@@ -59,6 +59,20 @@ namespace Pulumi.Oci.DataScience
     ///                     Ocpus = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
     ///                 },
     ///             },
+    ///             NotebookSessionRuntimeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs
+    ///             {
+    ///                 CustomEnvironmentVariables = @var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+    ///                 NotebookSessionGitConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs
+    ///                 {
+    ///                     NotebookSessionGitRepoConfigCollections = 
+    ///                     {
+    ///                         new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs
+    ///                         {
+    ///                             Url = @var.Notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
     ///         });
     ///     }
     /// 
@@ -123,6 +137,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("notebookSessionConfigurationDetails")]
         public Output<Outputs.NotebookSessionNotebookSessionConfigurationDetails> NotebookSessionConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Notebook Session runtime configuration details.
+        /// </summary>
+        [Output("notebookSessionRuntimeConfigDetails")]
+        public Output<Outputs.NotebookSessionNotebookSessionRuntimeConfigDetails> NotebookSessionRuntimeConfigDetails { get; private set; } = null!;
 
         /// <summary>
         /// The URL to interact with the notebook session.
@@ -243,6 +263,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs>? NotebookSessionConfigurationDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) Notebook Session runtime configuration details.
+        /// </summary>
+        [Input("notebookSessionRuntimeConfigDetails")]
+        public Input<Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs>? NotebookSessionRuntimeConfigDetails { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
         /// </summary>
         [Input("projectId", required: true)]
@@ -320,6 +346,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("notebookSessionConfigurationDetails")]
         public Input<Inputs.NotebookSessionNotebookSessionConfigurationDetailsGetArgs>? NotebookSessionConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Notebook Session runtime configuration details.
+        /// </summary>
+        [Input("notebookSessionRuntimeConfigDetails")]
+        public Input<Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs>? NotebookSessionRuntimeConfigDetails { get; set; }
 
         /// <summary>
         /// The URL to interact with the notebook session.

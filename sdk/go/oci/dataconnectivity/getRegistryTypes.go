@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// This endpoint retrieves list of all the supported connector types
+// # This endpoint retrieves list of all the supported connector types
 //
 // ## Example Usage
 //
@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryTypes(ctx, &dataconnectivity.GetRegistryTypesArgs{
-// 			RegistryId: oci_data_connectivity_registry.Test_registry.Id,
-// 			Name:       pulumi.StringRef(_var.Registry_type_name),
-// 			Type:       pulumi.StringRef(_var.Registry_type_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryTypes(ctx, &dataconnectivity.GetRegistryTypesArgs{
+//				RegistryId: oci_data_connectivity_registry.Test_registry.Id,
+//				Name:       pulumi.StringRef(_var.Registry_type_name),
+//				Type:       pulumi.StringRef(_var.Registry_type_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRegistryTypes(ctx *pulumi.Context, args *GetRegistryTypesArgs, opts ...pulumi.InvokeOption) (*GetRegistryTypesResult, error) {
 	var rv GetRegistryTypesResult

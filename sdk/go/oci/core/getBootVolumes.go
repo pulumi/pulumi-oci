@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetBootVolumes(ctx, &core.GetBootVolumesArgs{
-// 			AvailabilityDomain: _var.Boot_volume_availability_domain,
-// 			CompartmentId:      _var.Compartment_id,
-// 			VolumeGroupId:      pulumi.StringRef(oci_core_volume_group.Test_volume_group.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetBootVolumes(ctx, &core.GetBootVolumesArgs{
+//				AvailabilityDomain: pulumi.StringRef(_var.Boot_volume_availability_domain),
+//				CompartmentId:      pulumi.StringRef(_var.Compartment_id),
+//				VolumeGroupId:      pulumi.StringRef(oci_core_volume_group.Test_volume_group.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBootVolumes(ctx *pulumi.Context, args *GetBootVolumesArgs, opts ...pulumi.InvokeOption) (*GetBootVolumesResult, error) {
 	var rv GetBootVolumesResult
@@ -50,9 +53,9 @@ func GetBootVolumes(ctx *pulumi.Context, args *GetBootVolumesArgs, opts ...pulum
 // A collection of arguments for invoking getBootVolumes.
 type GetBootVolumesArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string                 `pulumi:"compartmentId"`
+	CompartmentId *string                `pulumi:"compartmentId"`
 	Filters       []GetBootVolumesFilter `pulumi:"filters"`
 	// The OCID of the volume group.
 	VolumeGroupId *string `pulumi:"volumeGroupId"`
@@ -61,11 +64,11 @@ type GetBootVolumesArgs struct {
 // A collection of values returned by getBootVolumes.
 type GetBootVolumesResult struct {
 	// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The list of boot_volumes.
 	BootVolumes []GetBootVolumesBootVolume `pulumi:"bootVolumes"`
 	// The OCID of the compartment that contains the boot volume.
-	CompartmentId string                 `pulumi:"compartmentId"`
+	CompartmentId *string                `pulumi:"compartmentId"`
 	Filters       []GetBootVolumesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
@@ -89,9 +92,9 @@ func GetBootVolumesOutput(ctx *pulumi.Context, args GetBootVolumesOutputArgs, op
 // A collection of arguments for invoking getBootVolumes.
 type GetBootVolumesOutputArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput             `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput          `pulumi:"compartmentId"`
 	Filters       GetBootVolumesFilterArrayInput `pulumi:"filters"`
 	// The OCID of the volume group.
 	VolumeGroupId pulumi.StringPtrInput `pulumi:"volumeGroupId"`
@@ -117,8 +120,8 @@ func (o GetBootVolumesResultOutput) ToGetBootVolumesResultOutputWithContext(ctx 
 }
 
 // The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-func (o GetBootVolumesResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumesResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetBootVolumesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The list of boot_volumes.
@@ -127,8 +130,8 @@ func (o GetBootVolumesResultOutput) BootVolumes() GetBootVolumesBootVolumeArrayO
 }
 
 // The OCID of the compartment that contains the boot volume.
-func (o GetBootVolumesResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetBootVolumesResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBootVolumesResultOutput) Filters() GetBootVolumesFilterArrayOutput {

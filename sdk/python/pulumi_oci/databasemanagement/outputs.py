@@ -43,6 +43,39 @@ __all__ = [
     'GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult',
     'GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseResult',
     'GetManagedDatabaseManagedDatabaseGroupResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult',
+    'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult',
+    'GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult',
     'GetManagedDatabaseSqlTuningAdvisorTaskItemResult',
     'GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedResult',
     'GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalResult',
@@ -69,6 +102,9 @@ __all__ = [
     'GetManagedDatabaseSqlTuningSetsFilterResult',
     'GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult',
     'GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult',
+    'GetManagedDatabaseTableStatisticsFilterResult',
+    'GetManagedDatabaseTableStatisticsTableStatisticsCollectionResult',
+    'GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult',
     'GetManagedDatabaseUserConsumerGroupPrivilegeItemResult',
     'GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionResult',
     'GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemResult',
@@ -1784,6 +1820,1562 @@ class GetManagedDatabaseManagedDatabaseGroupResult(dict):
         The name of the Managed Database.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_deployment_type: str,
+                 db_sub_type: str,
+                 db_type: str,
+                 db_version: str,
+                 id: str,
+                 name: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        :param str db_deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param str db_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param str db_type: The type of Oracle Database installation.
+        :param str db_version: The version of the Oracle Database.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+        :param str name: The name of the rule.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_deployment_type", db_deployment_type)
+        pulumi.set(__self__, "db_sub_type", db_sub_type)
+        pulumi.set(__self__, "db_type", db_type)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbDeploymentType")
+    def db_deployment_type(self) -> str:
+        """
+        The infrastructure used to deploy the Oracle Database.
+        """
+        return pulumi.get(self, "db_deployment_type")
+
+    @property
+    @pulumi.getter(name="dbSubType")
+    def db_sub_type(self) -> str:
+        """
+        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "db_sub_type")
+
+    @property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "db_type")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        The version of the Oracle Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult'],
+                 summary: str):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs'] rules: The list of rules that were not adhered to by the Optimizer Statistics Collection.
+        :param str summary: A summary of the Optimizer Statistics Advisor execution.
+        """
+        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "summary", summary)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult']:
+        """
+        The list of rules that were not adhered to by the Optimizer Statistics Collection.
+        """
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        A summary of the Optimizer Statistics Advisor execution.
+        """
+        return pulumi.get(self, "summary")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 findings: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult'],
+                 name: str):
+        """
+        :param str description: The description of the rule.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs'] findings: The list of findings for the rule.
+        :param str name: The name of the rule.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the rule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def findings(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult']:
+        """
+        The list of findings for the rule.
+        """
+        return pulumi.get(self, "findings")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult(dict):
+    def __init__(__self__, *,
+                 details: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult'],
+                 message: str,
+                 recommendations: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs'] details: The details of the schema or operation.
+        :param str message: The message of the rationale.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs'] recommendations: The list of recommendations.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "recommendations", recommendations)
+
+    @property
+    @pulumi.getter
+    def details(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult']:
+        """
+        The details of the schema or operation.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The message of the rationale.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def recommendations(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult']:
+        """
+        The list of recommendations.
+        """
+        return pulumi.get(self, "recommendations")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult(dict):
+    def __init__(__self__, *,
+                 operations: Sequence[str],
+                 schemas: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult']):
+        """
+        :param Sequence[str] operations: The list of operation details.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs'] schemas: The names of the impacted database schemas and their objects.
+        """
+        pulumi.set(__self__, "operations", operations)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @property
+    @pulumi.getter
+    def operations(self) -> Sequence[str]:
+        """
+        The list of operation details.
+        """
+        return pulumi.get(self, "operations")
+
+    @property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult']:
+        """
+        The names of the impacted database schemas and their objects.
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 objects: Sequence[str]):
+        """
+        :param str name: The name of the rule.
+        :param Sequence[str] objects: The names of schema objects.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "objects", objects)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def objects(self) -> Sequence[str]:
+        """
+        The names of schema objects.
+        """
+        return pulumi.get(self, "objects")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult(dict):
+    def __init__(__self__, *,
+                 examples: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult'],
+                 message: str,
+                 rationales: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs'] examples: An example of the recommendation.
+        :param str message: The message of the rationale.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs'] rationales: The rationale of the recommendation.
+        """
+        pulumi.set(__self__, "examples", examples)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "rationales", rationales)
+
+    @property
+    @pulumi.getter
+    def examples(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult']:
+        """
+        An example of the recommendation.
+        """
+        return pulumi.get(self, "examples")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The message of the rationale.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def rationales(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult']:
+        """
+        The rationale of the recommendation.
+        """
+        return pulumi.get(self, "rationales")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult(dict):
+    def __init__(__self__, *,
+                 lines: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs'] lines: The list of examples for the recommendation.
+        """
+        pulumi.set(__self__, "lines", lines)
+
+    @property
+    @pulumi.getter
+    def lines(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult']:
+        """
+        The list of examples for the recommendation.
+        """
+        return pulumi.get(self, "lines")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult(dict):
+    def __init__(__self__, *,
+                 comment: str,
+                 operation: str):
+        """
+        :param str comment: The comments about the operation.
+        :param str operation: The details of the example operation.
+        """
+        pulumi.set(__self__, "comment", comment)
+        pulumi.set(__self__, "operation", operation)
+
+    @property
+    @pulumi.getter
+    def comment(self) -> str:
+        """
+        The comments about the operation.
+        """
+        return pulumi.get(self, "comment")
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        """
+        The details of the example operation.
+        """
+        return pulumi.get(self, "operation")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult(dict):
+    def __init__(__self__, *,
+                 message: str):
+        """
+        :param str message: The message of the rationale.
+        """
+        pulumi.set(__self__, "message", message)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The message of the rationale.
+        """
+        return pulumi.get(self, "message")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the rule.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 databases: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult'],
+                 error_message: str,
+                 execution_name: str,
+                 findings: int,
+                 reports: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult'],
+                 status: str,
+                 status_message: str,
+                 task_name: str,
+                 time_end: str,
+                 time_start: str):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs'] databases: The summary of the Managed Database resource.
+        :param str error_message: The errors in the Optimizer Statistics Advisor execution, if any.
+        :param str execution_name: The name of the Optimizer Statistics Advisor execution.
+        :param int findings: The list of findings for the rule.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs'] reports: A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
+        :param str status: The status of the Optimizer Statistics Advisor execution.
+        :param str status_message: The Optimizer Statistics Advisor execution status message, if any.
+        :param str task_name: The name of the Optimizer Statistics Advisor task.
+        :param str time_end: The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+        :param str time_start: The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+        """
+        pulumi.set(__self__, "databases", databases)
+        pulumi.set(__self__, "error_message", error_message)
+        pulumi.set(__self__, "execution_name", execution_name)
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "reports", reports)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "status_message", status_message)
+        pulumi.set(__self__, "task_name", task_name)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @property
+    @pulumi.getter
+    def databases(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult']:
+        """
+        The summary of the Managed Database resource.
+        """
+        return pulumi.get(self, "databases")
+
+    @property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> str:
+        """
+        The errors in the Optimizer Statistics Advisor execution, if any.
+        """
+        return pulumi.get(self, "error_message")
+
+    @property
+    @pulumi.getter(name="executionName")
+    def execution_name(self) -> str:
+        """
+        The name of the Optimizer Statistics Advisor execution.
+        """
+        return pulumi.get(self, "execution_name")
+
+    @property
+    @pulumi.getter
+    def findings(self) -> int:
+        """
+        The list of findings for the rule.
+        """
+        return pulumi.get(self, "findings")
+
+    @property
+    @pulumi.getter
+    def reports(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult']:
+        """
+        A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
+        """
+        return pulumi.get(self, "reports")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Optimizer Statistics Advisor execution.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="statusMessage")
+    def status_message(self) -> str:
+        """
+        The Optimizer Statistics Advisor execution status message, if any.
+        """
+        return pulumi.get(self, "status_message")
+
+    @property
+    @pulumi.getter(name="taskName")
+    def task_name(self) -> str:
+        """
+        The name of the Optimizer Statistics Advisor task.
+        """
+        return pulumi.get(self, "task_name")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        """
+        The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        """
+        The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+        """
+        return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_deployment_type: str,
+                 db_sub_type: str,
+                 db_type: str,
+                 db_version: str,
+                 id: str,
+                 name: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        :param str db_deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param str db_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param str db_type: The type of Oracle Database installation.
+        :param str db_version: The version of the Oracle Database.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+        :param str name: The name of the rule.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_deployment_type", db_deployment_type)
+        pulumi.set(__self__, "db_sub_type", db_sub_type)
+        pulumi.set(__self__, "db_type", db_type)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbDeploymentType")
+    def db_deployment_type(self) -> str:
+        """
+        The infrastructure used to deploy the Oracle Database.
+        """
+        return pulumi.get(self, "db_deployment_type")
+
+    @property
+    @pulumi.getter(name="dbSubType")
+    def db_sub_type(self) -> str:
+        """
+        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "db_sub_type")
+
+    @property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "db_type")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        The version of the Oracle Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult'],
+                 summary: str):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs'] rules: The list of rules that were not adhered to by the Optimizer Statistics Collection.
+        :param str summary: A summary of the Optimizer Statistics Advisor execution.
+        """
+        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "summary", summary)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult']:
+        """
+        The list of rules that were not adhered to by the Optimizer Statistics Collection.
+        """
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        A summary of the Optimizer Statistics Advisor execution.
+        """
+        return pulumi.get(self, "summary")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 findings: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult'],
+                 name: str):
+        """
+        :param str description: The description of the rule.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs'] findings: The list of findings for the rule.
+        :param str name: The name of the rule.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the rule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def findings(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult']:
+        """
+        The list of findings for the rule.
+        """
+        return pulumi.get(self, "findings")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult(dict):
+    def __init__(__self__, *,
+                 details: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult'],
+                 message: str,
+                 recommendations: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs'] details: The details of the schema or operation.
+        :param str message: The message of the rationale.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs'] recommendations: The list of recommendations.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "recommendations", recommendations)
+
+    @property
+    @pulumi.getter
+    def details(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult']:
+        """
+        The details of the schema or operation.
+        """
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The message of the rationale.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def recommendations(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult']:
+        """
+        The list of recommendations.
+        """
+        return pulumi.get(self, "recommendations")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult(dict):
+    def __init__(__self__, *,
+                 operations: Sequence[str],
+                 schemas: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult']):
+        """
+        :param Sequence[str] operations: The list of operation details.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs'] schemas: The names of the impacted database schemas and their objects.
+        """
+        pulumi.set(__self__, "operations", operations)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @property
+    @pulumi.getter
+    def operations(self) -> Sequence[str]:
+        """
+        The list of operation details.
+        """
+        return pulumi.get(self, "operations")
+
+    @property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult']:
+        """
+        The names of the impacted database schemas and their objects.
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 objects: Sequence[str]):
+        """
+        :param str name: The name of the rule.
+        :param Sequence[str] objects: The names of schema objects.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "objects", objects)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def objects(self) -> Sequence[str]:
+        """
+        The names of schema objects.
+        """
+        return pulumi.get(self, "objects")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult(dict):
+    def __init__(__self__, *,
+                 examples: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult'],
+                 message: str,
+                 rationales: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs'] examples: An example of the recommendation.
+        :param str message: The message of the rationale.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs'] rationales: The rationale of the recommendation.
+        """
+        pulumi.set(__self__, "examples", examples)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "rationales", rationales)
+
+    @property
+    @pulumi.getter
+    def examples(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult']:
+        """
+        An example of the recommendation.
+        """
+        return pulumi.get(self, "examples")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The message of the rationale.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter
+    def rationales(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult']:
+        """
+        The rationale of the recommendation.
+        """
+        return pulumi.get(self, "rationales")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult(dict):
+    def __init__(__self__, *,
+                 lines: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs'] lines: The list of examples for the recommendation.
+        """
+        pulumi.set(__self__, "lines", lines)
+
+    @property
+    @pulumi.getter
+    def lines(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult']:
+        """
+        The list of examples for the recommendation.
+        """
+        return pulumi.get(self, "lines")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult(dict):
+    def __init__(__self__, *,
+                 comment: str,
+                 operation: str):
+        """
+        :param str comment: The comments about the operation.
+        :param str operation: The details of the example operation.
+        """
+        pulumi.set(__self__, "comment", comment)
+        pulumi.set(__self__, "operation", operation)
+
+    @property
+    @pulumi.getter
+    def comment(self) -> str:
+        """
+        The comments about the operation.
+        """
+        return pulumi.get(self, "comment")
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        """
+        The details of the example operation.
+        """
+        return pulumi.get(self, "operation")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult(dict):
+    def __init__(__self__, *,
+                 message: str):
+        """
+        :param str message: The message of the rationale.
+        """
+        pulumi.set(__self__, "message", message)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        The message of the rationale.
+        """
+        return pulumi.get(self, "message")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs'] items: The list of Optimizer Statistics Collection details.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult']:
+        """
+        The list of Optimizer Statistics Collection details.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 completed: int,
+                 failed: int,
+                 group_by: str,
+                 in_progress: int,
+                 pending: int,
+                 skipped: int,
+                 time_end: str,
+                 time_start: str,
+                 timed_out: int,
+                 total: int,
+                 unknown: int):
+        """
+        :param int completed: The number of tasks or objects for which statistics gathering is completed.
+        :param int failed: The number of tasks or objects for which statistics gathering failed.
+        :param str group_by: The optimizer statistics tasks grouped by type.
+        :param int in_progress: The number of tasks or objects for which statistics gathering is in progress.
+        :param int pending: The number of tasks or objects for which statistics are yet to be gathered.
+        :param int skipped: The number of tasks or objects for which statistics gathering was skipped.
+        :param str time_end: Indicates the end of the hour as the statistics are aggregated per hour.
+        :param str time_start: Indicates the start of the hour as the statistics are aggregated per hour.
+        :param int timed_out: The number of tasks or objects for which statistics gathering timed out.
+        :param int total: The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
+        :param int unknown: The number of tasks or objects for which the status of statistics gathering is unknown.
+        """
+        pulumi.set(__self__, "completed", completed)
+        pulumi.set(__self__, "failed", failed)
+        pulumi.set(__self__, "group_by", group_by)
+        pulumi.set(__self__, "in_progress", in_progress)
+        pulumi.set(__self__, "pending", pending)
+        pulumi.set(__self__, "skipped", skipped)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "timed_out", timed_out)
+        pulumi.set(__self__, "total", total)
+        pulumi.set(__self__, "unknown", unknown)
+
+    @property
+    @pulumi.getter
+    def completed(self) -> int:
+        """
+        The number of tasks or objects for which statistics gathering is completed.
+        """
+        return pulumi.get(self, "completed")
+
+    @property
+    @pulumi.getter
+    def failed(self) -> int:
+        """
+        The number of tasks or objects for which statistics gathering failed.
+        """
+        return pulumi.get(self, "failed")
+
+    @property
+    @pulumi.getter(name="groupBy")
+    def group_by(self) -> str:
+        """
+        The optimizer statistics tasks grouped by type.
+        """
+        return pulumi.get(self, "group_by")
+
+    @property
+    @pulumi.getter(name="inProgress")
+    def in_progress(self) -> int:
+        """
+        The number of tasks or objects for which statistics gathering is in progress.
+        """
+        return pulumi.get(self, "in_progress")
+
+    @property
+    @pulumi.getter
+    def pending(self) -> int:
+        """
+        The number of tasks or objects for which statistics are yet to be gathered.
+        """
+        return pulumi.get(self, "pending")
+
+    @property
+    @pulumi.getter
+    def skipped(self) -> int:
+        """
+        The number of tasks or objects for which statistics gathering was skipped.
+        """
+        return pulumi.get(self, "skipped")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        """
+        Indicates the end of the hour as the statistics are aggregated per hour.
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        """
+        Indicates the start of the hour as the statistics are aggregated per hour.
+        """
+        return pulumi.get(self, "time_start")
+
+    @property
+    @pulumi.getter(name="timedOut")
+    def timed_out(self) -> int:
+        """
+        The number of tasks or objects for which statistics gathering timed out.
+        """
+        return pulumi.get(self, "timed_out")
+
+    @property
+    @pulumi.getter
+    def total(self) -> int:
+        """
+        The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
+        """
+        return pulumi.get(self, "total")
+
+    @property
+    @pulumi.getter
+    def unknown(self) -> int:
+        """
+        The number of tasks or objects for which the status of statistics gathering is unknown.
+        """
+        return pulumi.get(self, "unknown")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_deployment_type: str,
+                 db_sub_type: str,
+                 db_type: str,
+                 db_version: str,
+                 id: str,
+                 name: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        :param str db_deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param str db_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param str db_type: The type of Oracle Database installation.
+        :param str db_version: The version of the Oracle Database.
+        :param str id: The ID of the operation.
+        :param str name: The name of the Managed Database.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_deployment_type", db_deployment_type)
+        pulumi.set(__self__, "db_sub_type", db_sub_type)
+        pulumi.set(__self__, "db_type", db_type)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbDeploymentType")
+    def db_deployment_type(self) -> str:
+        """
+        The infrastructure used to deploy the Oracle Database.
+        """
+        return pulumi.get(self, "db_deployment_type")
+
+    @property
+    @pulumi.getter(name="dbSubType")
+    def db_sub_type(self) -> str:
+        """
+        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "db_sub_type")
+
+    @property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "db_type")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        The version of the Oracle Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ID of the operation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the Managed Database.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult(dict):
+    def __init__(__self__, *,
+                 status: str,
+                 target: str,
+                 target_type: str,
+                 time_end: str,
+                 time_start: str):
+        """
+        :param str status: The status of the Optimizer Statistics Collection task.
+        :param str target: The name of the target object for which statistics are gathered.
+        :param str target_type: The type of target object.
+        :param str time_end: The end time of the Optimizer Statistics Collection task.
+        :param str time_start: The start time of the Optimizer Statistics Collection task.
+        """
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "target_type", target_type)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        The name of the target object for which statistics are gathered.
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> str:
+        """
+        The type of target object.
+        """
+        return pulumi.get(self, "target_type")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        """
+        The end time of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        """
+        The start time of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the Managed Database.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the Managed Database.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 completed_count: int,
+                 databases: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult'],
+                 duration_in_seconds: float,
+                 end_time: str,
+                 failed_count: int,
+                 id: int,
+                 in_progress_count: int,
+                 job_name: str,
+                 operation_name: str,
+                 start_time: str,
+                 status: str,
+                 target: str,
+                 tasks: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult'],
+                 timed_out_count: int,
+                 total_objects_count: int):
+        """
+        :param int completed_count: The number of objects for which statistics collection is completed.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs'] databases: The summary of the Managed Database resource.
+        :param float duration_in_seconds: The time it takes to complete the operation (in seconds).
+        :param str end_time: The end time of the operation.
+        :param int failed_count: The number of objects for which statistics collection failed.
+        :param int id: The ID of the operation.
+        :param int in_progress_count: The number of objects for which statistics collection is in progress.
+        :param str job_name: The name of the job.
+        :param str operation_name: The name of the operation.
+        :param str start_time: The start time of the operation.
+        :param str status: The status of the Optimizer Statistics Collection task.
+        :param str target: The name of the target object for which statistics are gathered.
+        :param Sequence['GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs'] tasks: An array of Optimizer Statistics Collection task details.
+        :param int timed_out_count: The number of objects for which statistics collection timed out.
+        :param int total_objects_count: The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
+        """
+        pulumi.set(__self__, "completed_count", completed_count)
+        pulumi.set(__self__, "databases", databases)
+        pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "failed_count", failed_count)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "in_progress_count", in_progress_count)
+        pulumi.set(__self__, "job_name", job_name)
+        pulumi.set(__self__, "operation_name", operation_name)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "tasks", tasks)
+        pulumi.set(__self__, "timed_out_count", timed_out_count)
+        pulumi.set(__self__, "total_objects_count", total_objects_count)
+
+    @property
+    @pulumi.getter(name="completedCount")
+    def completed_count(self) -> int:
+        """
+        The number of objects for which statistics collection is completed.
+        """
+        return pulumi.get(self, "completed_count")
+
+    @property
+    @pulumi.getter
+    def databases(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult']:
+        """
+        The summary of the Managed Database resource.
+        """
+        return pulumi.get(self, "databases")
+
+    @property
+    @pulumi.getter(name="durationInSeconds")
+    def duration_in_seconds(self) -> float:
+        """
+        The time it takes to complete the operation (in seconds).
+        """
+        return pulumi.get(self, "duration_in_seconds")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        """
+        The end time of the operation.
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="failedCount")
+    def failed_count(self) -> int:
+        """
+        The number of objects for which statistics collection failed.
+        """
+        return pulumi.get(self, "failed_count")
+
+    @property
+    @pulumi.getter
+    def id(self) -> int:
+        """
+        The ID of the operation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="inProgressCount")
+    def in_progress_count(self) -> int:
+        """
+        The number of objects for which statistics collection is in progress.
+        """
+        return pulumi.get(self, "in_progress_count")
+
+    @property
+    @pulumi.getter(name="jobName")
+    def job_name(self) -> str:
+        """
+        The name of the job.
+        """
+        return pulumi.get(self, "job_name")
+
+    @property
+    @pulumi.getter(name="operationName")
+    def operation_name(self) -> str:
+        """
+        The name of the operation.
+        """
+        return pulumi.get(self, "operation_name")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        """
+        The start time of the operation.
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        The name of the target object for which statistics are gathered.
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def tasks(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult']:
+        """
+        An array of Optimizer Statistics Collection task details.
+        """
+        return pulumi.get(self, "tasks")
+
+    @property
+    @pulumi.getter(name="timedOutCount")
+    def timed_out_count(self) -> int:
+        """
+        The number of objects for which statistics collection timed out.
+        """
+        return pulumi.get(self, "timed_out_count")
+
+    @property
+    @pulumi.getter(name="totalObjectsCount")
+    def total_objects_count(self) -> int:
+        """
+        The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
+        """
+        return pulumi.get(self, "total_objects_count")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_deployment_type: str,
+                 db_sub_type: str,
+                 db_type: str,
+                 db_version: str,
+                 id: str,
+                 name: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        :param str db_deployment_type: The infrastructure used to deploy the Oracle Database.
+        :param str db_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param str db_type: The type of Oracle Database installation.
+        :param str db_version: The version of the Oracle Database.
+        :param str id: The ID of the operation.
+        :param str name: The name of the Managed Database.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_deployment_type", db_deployment_type)
+        pulumi.set(__self__, "db_sub_type", db_sub_type)
+        pulumi.set(__self__, "db_type", db_type)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbDeploymentType")
+    def db_deployment_type(self) -> str:
+        """
+        The infrastructure used to deploy the Oracle Database.
+        """
+        return pulumi.get(self, "db_deployment_type")
+
+    @property
+    @pulumi.getter(name="dbSubType")
+    def db_sub_type(self) -> str:
+        """
+        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "db_sub_type")
+
+    @property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "db_type")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        The version of the Oracle Database.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ID of the operation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the Managed Database.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult(dict):
+    def __init__(__self__, *,
+                 status: str,
+                 target: str,
+                 target_type: str,
+                 time_end: str,
+                 time_start: str):
+        """
+        :param str status: The status of the Optimizer Statistics Collection task.
+        :param str target: The name of the target object for which statistics are gathered.
+        :param str target_type: The type of target object.
+        :param str time_end: The end time of the Optimizer Statistics Collection task.
+        :param str time_start: The start time of the Optimizer Statistics Collection task.
+        """
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "target_type", target_type)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        """
+        The name of the target object for which statistics are gathered.
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> str:
+        """
+        The type of target object.
+        """
+        return pulumi.get(self, "target_type")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        """
+        The end time of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        """
+        The start time of the Optimizer Statistics Collection task.
+        """
+        return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
@@ -3840,6 +5432,91 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
         The number of SQL statements in the SQL tuning set.
         """
         return pulumi.get(self, "statement_counts")
+
+
+@pulumi.output_type
+class GetManagedDatabaseTableStatisticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseTableStatisticsTableStatisticsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs'] items: The list of table statistics statuses.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult']:
+        """
+        The list of table statistics statuses.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 count: int,
+                 percentage: float,
+                 type: str):
+        """
+        :param int count: The number of objects aggregated by status category.
+        :param float percentage: The percentage of objects with a particular status.
+        :param str type: The valid status categories of table statistics.
+        """
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "percentage", percentage)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        """
+        The number of objects aggregated by status category.
+        """
+        return pulumi.get(self, "count")
+
+    @property
+    @pulumi.getter
+    def percentage(self) -> float:
+        """
+        The percentage of objects with a particular status.
+        """
+        return pulumi.get(self, "percentage")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The valid status categories of table statistics.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

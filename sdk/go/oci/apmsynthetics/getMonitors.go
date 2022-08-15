@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.GetMonitors(ctx, &apmsynthetics.GetMonitorsArgs{
-// 			ApmDomainId:  oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-// 			DisplayName:  pulumi.StringRef(_var.Monitor_display_name),
-// 			MonitorType:  pulumi.StringRef(_var.Monitor_monitor_type),
-// 			ScriptId:     pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
-// 			Status:       pulumi.StringRef(_var.Monitor_status),
-// 			VantagePoint: pulumi.StringRef(_var.Monitor_vantage_point),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.GetMonitors(ctx, &apmsynthetics.GetMonitorsArgs{
+//				ApmDomainId:  oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+//				DisplayName:  pulumi.StringRef(_var.Monitor_display_name),
+//				MonitorType:  pulumi.StringRef(_var.Monitor_monitor_type),
+//				ScriptId:     pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
+//				Status:       pulumi.StringRef(_var.Monitor_status),
+//				VantagePoint: pulumi.StringRef(_var.Monitor_vantage_point),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMonitors(ctx *pulumi.Context, args *GetMonitorsArgs, opts ...pulumi.InvokeOption) (*GetMonitorsResult, error) {
 	var rv GetMonitorsResult

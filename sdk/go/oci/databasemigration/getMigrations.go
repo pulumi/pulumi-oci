@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseMigration.GetMigrations(ctx, &databasemigration.GetMigrationsArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			DisplayName:      pulumi.StringRef(_var.Migration_display_name),
-// 			LifecycleDetails: pulumi.StringRef(_var.Migration_lifecycle_details),
-// 			State:            pulumi.StringRef(_var.Migration_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseMigration.GetMigrations(ctx, &databasemigration.GetMigrationsArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				DisplayName:      pulumi.StringRef(_var.Migration_display_name),
+//				LifecycleDetails: pulumi.StringRef(_var.Migration_lifecycle_details),
+//				State:            pulumi.StringRef(_var.Migration_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMigrations(ctx *pulumi.Context, args *GetMigrationsArgs, opts ...pulumi.InvokeOption) (*GetMigrationsResult, error) {
 	var rv GetMigrationsResult

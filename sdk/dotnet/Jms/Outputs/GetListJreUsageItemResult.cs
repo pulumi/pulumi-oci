@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly int ApproximatePendingWorkRequestCount;
         /// <summary>
+        /// The number of days since this release has been under the security baseline.
+        /// </summary>
+        public readonly int DaysUnderSecurityBaseline;
+        /// <summary>
         /// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
         /// </summary>
         public readonly string Distribution;
@@ -38,7 +42,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string EndOfSupportLifeDate;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
         /// </summary>
         public readonly string FleetId;
         /// <summary>
@@ -46,7 +50,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
         /// </summary>
         public readonly string ManagedInstanceId;
         /// <summary>
@@ -96,6 +100,8 @@ namespace Pulumi.Oci.Jms.Outputs
 
             int approximatePendingWorkRequestCount,
 
+            int daysUnderSecurityBaseline,
+
             string distribution,
 
             string endOfSupportLifeDate,
@@ -128,6 +134,7 @@ namespace Pulumi.Oci.Jms.Outputs
             ApproximateInstallationCount = approximateInstallationCount;
             ApproximateManagedInstanceCount = approximateManagedInstanceCount;
             ApproximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
+            DaysUnderSecurityBaseline = daysUnderSecurityBaseline;
             Distribution = distribution;
             EndOfSupportLifeDate = endOfSupportLifeDate;
             FleetId = fleetId;

@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.GetControlAssignments(ctx, &operatoraccesscontrol.GetControlAssignmentsArgs{
-// 			CompartmentId:       _var.Compartment_id,
-// 			OperatorControlName: pulumi.StringRef(oci_operator_access_control_operator_control.Test_operator_control.Name),
-// 			ResourceName:        pulumi.StringRef(_var.Operator_control_assignment_resource_name),
-// 			ResourceType:        pulumi.StringRef(_var.Operator_control_assignment_resource_type),
-// 			State:               pulumi.StringRef(_var.Operator_control_assignment_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.GetControlAssignments(ctx, &operatoraccesscontrol.GetControlAssignmentsArgs{
+//				CompartmentId:       _var.Compartment_id,
+//				OperatorControlName: pulumi.StringRef(oci_operator_access_control_operator_control.Test_operator_control.Name),
+//				ResourceName:        pulumi.StringRef(_var.Operator_control_assignment_resource_name),
+//				ResourceType:        pulumi.StringRef(_var.Operator_control_assignment_resource_type),
+//				State:               pulumi.StringRef(_var.Operator_control_assignment_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetControlAssignments(ctx *pulumi.Context, args *GetControlAssignmentsArgs, opts ...pulumi.InvokeOption) (*GetControlAssignmentsResult, error) {
 	var rv GetControlAssignmentsResult

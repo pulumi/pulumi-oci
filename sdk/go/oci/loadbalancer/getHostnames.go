@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.GetHostnames(ctx, &loadbalancer.GetHostnamesArgs{
-// 			LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.GetHostnames(ctx, &loadbalancer.GetHostnamesArgs{
+//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetHostnames(ctx *pulumi.Context, args *GetHostnamesArgs, opts ...pulumi.InvokeOption) (*GetHostnamesResult, error) {
 	var rv GetHostnamesResult

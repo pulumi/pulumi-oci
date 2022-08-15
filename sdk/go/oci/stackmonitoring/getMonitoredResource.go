@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// Gets a monitored resource by identifier
+// # Gets a monitored resource by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.GetMonitoredResource(ctx, &stackmonitoring.GetMonitoredResourceArgs{
-// 			MonitoredResourceId: oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.GetMonitoredResource(ctx, &stackmonitoring.GetMonitoredResourceArgs{
+//				MonitoredResourceId: oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupMonitoredResource(ctx *pulumi.Context, args *LookupMonitoredResourceArgs, opts ...pulumi.InvokeOption) (*LookupMonitoredResourceResult, error) {
 	var rv LookupMonitoredResourceResult

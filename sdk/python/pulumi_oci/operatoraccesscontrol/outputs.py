@@ -138,6 +138,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_auto_approved: bool,
+                 lifecycle_details: str,
                  opctl_additional_message: str,
                  opctl_id: str,
                  opctl_name: str,
@@ -168,6 +169,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the access request.
         :param bool is_auto_approved: Whether the access request was automatically approved.
+        :param str lifecycle_details: more in detail about the lifeCycleState.
         :param str opctl_additional_message: Additional message specific to the access request that can be specified by the approver at the time of approval.
         :param str opctl_id: The OCID of the operator control governing the target resource.
         :param str opctl_name: Name of the Operator control governing the target resource.
@@ -198,6 +200,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_approved", is_auto_approved)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
         pulumi.set(__self__, "opctl_id", opctl_id)
         pulumi.set(__self__, "opctl_name", opctl_name)
@@ -311,6 +314,14 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         Whether the access request was automatically approved.
         """
         return pulumi.get(self, "is_auto_approved")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        more in detail about the lifeCycleState.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opctlAdditionalMessage")
@@ -741,6 +752,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
                  is_auto_approve_during_maintenance: bool,
                  is_enforced_always: bool,
                  is_log_forwarded: bool,
+                 lifecycle_details: str,
                  operator_control_id: str,
                  remote_syslog_server_address: str,
                  remote_syslog_server_ca_cert: str,
@@ -768,6 +780,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         :param bool is_auto_approve_during_maintenance: The boolean if true would autoApprove during maintenance.
         :param bool is_enforced_always: If set, then the target resource is always governed by the operator control.
         :param bool is_log_forwarded: If set indicates that the audit logs are being forwarded to the relevant remote logging server
+        :param str lifecycle_details: More in detail about the lifeCycleState.
         :param str operator_control_id: The OCID of the operator control.
         :param str remote_syslog_server_address: The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
         :param str remote_syslog_server_ca_cert: The CA certificate of the remote syslog server.
@@ -795,6 +808,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
         pulumi.set(__self__, "is_enforced_always", is_enforced_always)
         pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "operator_control_id", operator_control_id)
         pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
         pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
@@ -905,6 +919,14 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         If set indicates that the audit logs are being forwarded to the relevant remote logging server
         """
         return pulumi.get(self, "is_log_forwarded")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        More in detail about the lifeCycleState.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="operatorControlId")

@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewKeyStore(ctx, "testKeyStore", &Database.KeyStoreArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Key_store_display_name),
-// 			TypeDetails: &database.KeyStoreTypeDetailsArgs{
-// 				AdminUsername: pulumi.Any(_var.Key_store_type_details_admin_username),
-// 				ConnectionIps: pulumi.Any(_var.Key_store_type_details_connection_ips),
-// 				SecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				Type:          pulumi.Any(_var.Key_store_type_details_type),
-// 				VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			},
-// 			DefinedTags: pulumi.Any(_var.Key_store_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewKeyStore(ctx, "testKeyStore", &Database.KeyStoreArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Key_store_display_name),
+//				TypeDetails: &database.KeyStoreTypeDetailsArgs{
+//					AdminUsername: pulumi.Any(_var.Key_store_type_details_admin_username),
+//					ConnectionIps: pulumi.Any(_var.Key_store_type_details_connection_ips),
+//					SecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Type:          pulumi.Any(_var.Key_store_type_details_type),
+//					VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				},
+//				DefinedTags: pulumi.Any(_var.Key_store_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // KeyStores can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
+//
+//	$ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
+//
 // ```
 type KeyStore struct {
 	pulumi.CustomResourceState
@@ -216,7 +221,7 @@ func (i *KeyStore) ToKeyStoreOutputWithContext(ctx context.Context) KeyStoreOutp
 // KeyStoreArrayInput is an input type that accepts KeyStoreArray and KeyStoreArrayOutput values.
 // You can construct a concrete instance of `KeyStoreArrayInput` via:
 //
-//          KeyStoreArray{ KeyStoreArgs{...} }
+//	KeyStoreArray{ KeyStoreArgs{...} }
 type KeyStoreArrayInput interface {
 	pulumi.Input
 
@@ -241,7 +246,7 @@ func (i KeyStoreArray) ToKeyStoreArrayOutputWithContext(ctx context.Context) Key
 // KeyStoreMapInput is an input type that accepts KeyStoreMap and KeyStoreMapOutput values.
 // You can construct a concrete instance of `KeyStoreMapInput` via:
 //
-//          KeyStoreMap{ "key": KeyStoreArgs{...} }
+//	KeyStoreMap{ "key": KeyStoreArgs{...} }
 type KeyStoreMapInput interface {
 	pulumi.Input
 

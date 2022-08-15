@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetFastConnectProviderServiceKey(ctx, &core.GetFastConnectProviderServiceKeyArgs{
-// 			ProviderServiceId:      data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-// 			ProviderServiceKeyName: _var.Fast_connect_provider_service_key_provider_service_key_name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetFastConnectProviderServiceKey(ctx, &core.GetFastConnectProviderServiceKeyArgs{
+//				ProviderServiceId:      data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+//				ProviderServiceKeyName: _var.Fast_connect_provider_service_key_provider_service_key_name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFastConnectProviderServiceKey(ctx *pulumi.Context, args *GetFastConnectProviderServiceKeyArgs, opts ...pulumi.InvokeOption) (*GetFastConnectProviderServiceKeyResult, error) {
 	var rv GetFastConnectProviderServiceKeyResult

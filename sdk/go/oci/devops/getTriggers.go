@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetTriggers(ctx, &devops.GetTriggersArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Trigger_display_name),
-// 			Id:            pulumi.StringRef(_var.Trigger_id),
-// 			ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
-// 			State:         pulumi.StringRef(_var.Trigger_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetTriggers(ctx, &devops.GetTriggersArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:   pulumi.StringRef(_var.Trigger_display_name),
+//				Id:            pulumi.StringRef(_var.Trigger_id),
+//				ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
+//				State:         pulumi.StringRef(_var.Trigger_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTriggers(ctx *pulumi.Context, args *GetTriggersArgs, opts ...pulumi.InvokeOption) (*GetTriggersResult, error) {
 	var rv GetTriggersResult

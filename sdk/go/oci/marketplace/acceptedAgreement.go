@@ -22,32 +22,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.NewAcceptedAgreement(ctx, "testAcceptedAgreement", &Marketplace.AcceptedAgreementArgs{
-// 			AgreementId:    pulumi.Any(oci_marketplace_agreement.Test_agreement.Id),
-// 			CompartmentId:  pulumi.Any(_var.Compartment_id),
-// 			ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
-// 			PackageVersion: pulumi.Any(_var.Accepted_agreement_package_version),
-// 			Signature:      pulumi.Any(_var.Accepted_agreement_signature),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Accepted_agreement_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.NewAcceptedAgreement(ctx, "testAcceptedAgreement", &Marketplace.AcceptedAgreementArgs{
+//				AgreementId:    pulumi.Any(oci_marketplace_agreement.Test_agreement.Id),
+//				CompartmentId:  pulumi.Any(_var.Compartment_id),
+//				ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
+//				PackageVersion: pulumi.Any(_var.Accepted_agreement_package_version),
+//				Signature:      pulumi.Any(_var.Accepted_agreement_signature),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Accepted_agreement_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // AcceptedAgreements can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
+//
+//	$ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
+//
 // ```
 type AcceptedAgreement struct {
 	pulumi.CustomResourceState
@@ -234,7 +239,7 @@ func (i *AcceptedAgreement) ToAcceptedAgreementOutputWithContext(ctx context.Con
 // AcceptedAgreementArrayInput is an input type that accepts AcceptedAgreementArray and AcceptedAgreementArrayOutput values.
 // You can construct a concrete instance of `AcceptedAgreementArrayInput` via:
 //
-//          AcceptedAgreementArray{ AcceptedAgreementArgs{...} }
+//	AcceptedAgreementArray{ AcceptedAgreementArgs{...} }
 type AcceptedAgreementArrayInput interface {
 	pulumi.Input
 
@@ -259,7 +264,7 @@ func (i AcceptedAgreementArray) ToAcceptedAgreementArrayOutputWithContext(ctx co
 // AcceptedAgreementMapInput is an input type that accepts AcceptedAgreementMap and AcceptedAgreementMapOutput values.
 // You can construct a concrete instance of `AcceptedAgreementMapInput` via:
 //
-//          AcceptedAgreementMap{ "key": AcceptedAgreementArgs{...} }
+//	AcceptedAgreementMap{ "key": AcceptedAgreementArgs{...} }
 type AcceptedAgreementMapInput interface {
 	pulumi.Input
 

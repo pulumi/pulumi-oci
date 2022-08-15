@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetDiscoveryAnalytics(ctx, &datasafe.GetDiscoveryAnalyticsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Discovery_analytic_compartment_id_in_subtree),
-// 			GroupBy:                pulumi.StringRef(_var.Discovery_analytic_group_by),
-// 			SensitiveDataModelId:   pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-// 			TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetDiscoveryAnalytics(ctx, &datasafe.GetDiscoveryAnalyticsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Discovery_analytic_compartment_id_in_subtree),
+//				GroupBy:                pulumi.StringRef(_var.Discovery_analytic_group_by),
+//				SensitiveDataModelId:   pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDiscoveryAnalytics(ctx *pulumi.Context, args *GetDiscoveryAnalyticsArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryAnalyticsResult, error) {
 	var rv GetDiscoveryAnalyticsResult

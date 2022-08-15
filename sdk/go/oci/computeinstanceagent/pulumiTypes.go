@@ -20,7 +20,7 @@ type GetInstanceAgentPluginsFilter struct {
 // GetInstanceAgentPluginsFilterInput is an input type that accepts GetInstanceAgentPluginsFilterArgs and GetInstanceAgentPluginsFilterOutput values.
 // You can construct a concrete instance of `GetInstanceAgentPluginsFilterInput` via:
 //
-//          GetInstanceAgentPluginsFilterArgs{...}
+//	GetInstanceAgentPluginsFilterArgs{...}
 type GetInstanceAgentPluginsFilterInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i GetInstanceAgentPluginsFilterArgs) ToGetInstanceAgentPluginsFilterOutput
 // GetInstanceAgentPluginsFilterArrayInput is an input type that accepts GetInstanceAgentPluginsFilterArray and GetInstanceAgentPluginsFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAgentPluginsFilterArrayInput` via:
 //
-//          GetInstanceAgentPluginsFilterArray{ GetInstanceAgentPluginsFilterArgs{...} }
+//	GetInstanceAgentPluginsFilterArray{ GetInstanceAgentPluginsFilterArgs{...} }
 type GetInstanceAgentPluginsFilterArrayInput interface {
 	pulumi.Input
 
@@ -133,7 +133,7 @@ type GetInstanceAgentPluginsInstanceAgentPlugin struct {
 // GetInstanceAgentPluginsInstanceAgentPluginInput is an input type that accepts GetInstanceAgentPluginsInstanceAgentPluginArgs and GetInstanceAgentPluginsInstanceAgentPluginOutput values.
 // You can construct a concrete instance of `GetInstanceAgentPluginsInstanceAgentPluginInput` via:
 //
-//          GetInstanceAgentPluginsInstanceAgentPluginArgs{...}
+//	GetInstanceAgentPluginsInstanceAgentPluginArgs{...}
 type GetInstanceAgentPluginsInstanceAgentPluginInput interface {
 	pulumi.Input
 
@@ -167,7 +167,7 @@ func (i GetInstanceAgentPluginsInstanceAgentPluginArgs) ToGetInstanceAgentPlugin
 // GetInstanceAgentPluginsInstanceAgentPluginArrayInput is an input type that accepts GetInstanceAgentPluginsInstanceAgentPluginArray and GetInstanceAgentPluginsInstanceAgentPluginArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAgentPluginsInstanceAgentPluginArrayInput` via:
 //
-//          GetInstanceAgentPluginsInstanceAgentPluginArray{ GetInstanceAgentPluginsInstanceAgentPluginArgs{...} }
+//	GetInstanceAgentPluginsInstanceAgentPluginArray{ GetInstanceAgentPluginsInstanceAgentPluginArgs{...} }
 type GetInstanceAgentPluginsInstanceAgentPluginArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +257,7 @@ type GetInstanceAvailablePluginAvailablePlugin struct {
 // GetInstanceAvailablePluginAvailablePluginInput is an input type that accepts GetInstanceAvailablePluginAvailablePluginArgs and GetInstanceAvailablePluginAvailablePluginOutput values.
 // You can construct a concrete instance of `GetInstanceAvailablePluginAvailablePluginInput` via:
 //
-//          GetInstanceAvailablePluginAvailablePluginArgs{...}
+//	GetInstanceAvailablePluginAvailablePluginArgs{...}
 type GetInstanceAvailablePluginAvailablePluginInput interface {
 	pulumi.Input
 
@@ -291,7 +291,7 @@ func (i GetInstanceAvailablePluginAvailablePluginArgs) ToGetInstanceAvailablePlu
 // GetInstanceAvailablePluginAvailablePluginArrayInput is an input type that accepts GetInstanceAvailablePluginAvailablePluginArray and GetInstanceAvailablePluginAvailablePluginArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAvailablePluginAvailablePluginArrayInput` via:
 //
-//          GetInstanceAvailablePluginAvailablePluginArray{ GetInstanceAvailablePluginAvailablePluginArgs{...} }
+//	GetInstanceAvailablePluginAvailablePluginArray{ GetInstanceAvailablePluginAvailablePluginArgs{...} }
 type GetInstanceAvailablePluginAvailablePluginArrayInput interface {
 	pulumi.Input
 
@@ -377,7 +377,7 @@ type GetInstanceAvailablePluginFilter struct {
 // GetInstanceAvailablePluginFilterInput is an input type that accepts GetInstanceAvailablePluginFilterArgs and GetInstanceAvailablePluginFilterOutput values.
 // You can construct a concrete instance of `GetInstanceAvailablePluginFilterInput` via:
 //
-//          GetInstanceAvailablePluginFilterArgs{...}
+//	GetInstanceAvailablePluginFilterArgs{...}
 type GetInstanceAvailablePluginFilterInput interface {
 	pulumi.Input
 
@@ -407,7 +407,7 @@ func (i GetInstanceAvailablePluginFilterArgs) ToGetInstanceAvailablePluginFilter
 // GetInstanceAvailablePluginFilterArrayInput is an input type that accepts GetInstanceAvailablePluginFilterArray and GetInstanceAvailablePluginFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAvailablePluginFilterArrayInput` via:
 //
-//          GetInstanceAvailablePluginFilterArray{ GetInstanceAvailablePluginFilterArgs{...} }
+//	GetInstanceAvailablePluginFilterArray{ GetInstanceAvailablePluginFilterArgs{...} }
 type GetInstanceAvailablePluginFilterArrayInput interface {
 	pulumi.Input
 

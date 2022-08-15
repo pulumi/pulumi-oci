@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDatabaseSoftwareImage(ctx, &database.GetDatabaseSoftwareImageArgs{
-// 			DatabaseSoftwareImageId: oci_database_database_software_image.Test_database_software_image.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDatabaseSoftwareImage(ctx, &database.GetDatabaseSoftwareImageArgs{
+//				DatabaseSoftwareImageId: oci_database_database_software_image.Test_database_software_image.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDatabaseSoftwareImage(ctx *pulumi.Context, args *LookupDatabaseSoftwareImageArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseSoftwareImageResult, error) {
 	var rv LookupDatabaseSoftwareImageResult

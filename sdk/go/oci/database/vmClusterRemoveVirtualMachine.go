@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewVmClusterRemoveVirtualMachine(ctx, "testVmClusterRemoveVirtualMachine", &Database.VmClusterRemoveVirtualMachineArgs{
-// 			DbServers: database.VmClusterRemoveVirtualMachineDbServerArray{
-// 				&database.VmClusterRemoveVirtualMachineDbServerArgs{
-// 					DbServerId: pulumi.Any(oci_database_db_server.Test_db_server.Id),
-// 				},
-// 			},
-// 			VmClusterId: pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewVmClusterRemoveVirtualMachine(ctx, "testVmClusterRemoveVirtualMachine", &Database.VmClusterRemoveVirtualMachineArgs{
+//				DbServers: database.VmClusterRemoveVirtualMachineDbServerArray{
+//					&database.VmClusterRemoveVirtualMachineDbServerArgs{
+//						DbServerId: pulumi.Any(oci_database_db_server.Test_db_server.Id),
+//					},
+//				},
+//				VmClusterId: pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // VmClusterRemoveVirtualMachine can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
+//
+//	$ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
+//
 // ```
 type VmClusterRemoveVirtualMachine struct {
 	pulumi.CustomResourceState
@@ -290,7 +295,7 @@ func (i *VmClusterRemoveVirtualMachine) ToVmClusterRemoveVirtualMachineOutputWit
 // VmClusterRemoveVirtualMachineArrayInput is an input type that accepts VmClusterRemoveVirtualMachineArray and VmClusterRemoveVirtualMachineArrayOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineArrayInput` via:
 //
-//          VmClusterRemoveVirtualMachineArray{ VmClusterRemoveVirtualMachineArgs{...} }
+//	VmClusterRemoveVirtualMachineArray{ VmClusterRemoveVirtualMachineArgs{...} }
 type VmClusterRemoveVirtualMachineArrayInput interface {
 	pulumi.Input
 
@@ -315,7 +320,7 @@ func (i VmClusterRemoveVirtualMachineArray) ToVmClusterRemoveVirtualMachineArray
 // VmClusterRemoveVirtualMachineMapInput is an input type that accepts VmClusterRemoveVirtualMachineMap and VmClusterRemoveVirtualMachineMapOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineMapInput` via:
 //
-//          VmClusterRemoveVirtualMachineMap{ "key": VmClusterRemoveVirtualMachineArgs{...} }
+//	VmClusterRemoveVirtualMachineMap{ "key": VmClusterRemoveVirtualMachineArgs{...} }
 type VmClusterRemoveVirtualMachineMapInput interface {
 	pulumi.Input
 

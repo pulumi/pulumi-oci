@@ -33,6 +33,14 @@ import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
 import com.pulumi.oci.Opsi.inputs.GetHostInsightPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
 import com.pulumi.oci.Opsi.inputs.GetHostInsightsPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
+import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
@@ -60,6 +68,10 @@ import com.pulumi.oci.Opsi.outputs.GetExadataInsightResult;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsResult;
 import com.pulumi.oci.Opsi.outputs.GetHostInsightResult;
 import com.pulumi.oci.Opsi.outputs.GetHostInsightsResult;
+import com.pulumi.oci.Opsi.outputs.GetImportableAgentEntitiesResult;
+import com.pulumi.oci.Opsi.outputs.GetImportableAgentEntityResult;
+import com.pulumi.oci.Opsi.outputs.GetImportableComputeEntitiesResult;
+import com.pulumi.oci.Opsi.outputs.GetImportableComputeEntityResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointsResult;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseResourceUsageSummaryResult;
@@ -762,6 +774,262 @@ public final class OpsiFunctions {
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain(GetHostInsightsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getHostInsights:getHostInsights", TypeShape.of(GetHostInsightsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args) {
+        return getImportableAgentEntities(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableAgentEntitiesResult> getImportableAgentEntitiesPlain(GetImportableAgentEntitiesPlainArgs args) {
+        return getImportableAgentEntitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", TypeShape.of(GetImportableAgentEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableAgentEntitiesResult> getImportableAgentEntitiesPlain(GetImportableAgentEntitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", TypeShape.of(GetImportableAgentEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Importable Agent Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args) {
+        return getImportableAgentEntity(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Importable Agent Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args) {
+        return getImportableAgentEntityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Importable Agent Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableAgentEntity:getImportableAgentEntity", TypeShape.of(GetImportableAgentEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Importable Agent Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of agent entities available to add a new hostInsight.  An agent entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1.  The agent OCID is not already being used for an existing hostInsight.
+     *    2.  The agent availabilityStatus = &#39;ACTIVE&#39;
+     *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableAgentEntity:getImportableAgentEntity", TypeShape.of(GetImportableAgentEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args) {
+        return getImportableComputeEntities(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableComputeEntitiesResult> getImportableComputeEntitiesPlain(GetImportableComputeEntitiesPlainArgs args) {
+        return getImportableComputeEntitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", TypeShape.of(GetImportableComputeEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableComputeEntitiesResult> getImportableComputeEntitiesPlain(GetImportableComputeEntitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableComputeEntities:getImportableComputeEntities", TypeShape.of(GetImportableComputeEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args) {
+        return getImportableComputeEntity(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args) {
+        return getImportableComputeEntityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", TypeShape.of(GetImportableComputeEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is &#34;available&#34;
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = &#39;ACTIVE&#39;
+     *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getImportableComputeEntity:getImportableComputeEntity", TypeShape.of(GetImportableComputeEntityResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.

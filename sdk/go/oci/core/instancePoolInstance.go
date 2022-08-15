@@ -17,7 +17,7 @@ import (
 // that an instance must meet before you can attach it to a pool, see
 // [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
 //
-// Using this resource will impact the size of the instance pool, attach will increment the size of the pool
+// # Using this resource will impact the size of the instance pool, attach will increment the size of the pool
 //
 // ## Example Usage
 //
@@ -25,22 +25,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewInstancePoolInstance(ctx, "testInstancePoolInstance", &Core.InstancePoolInstanceArgs{
-// 			InstanceId:     pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			InstancePoolId: pulumi.Any(oci_core_instance_pool.Test_instance_pool.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewInstancePoolInstance(ctx, "testInstancePoolInstance", &Core.InstancePoolInstanceArgs{
+//				InstanceId:     pulumi.Any(oci_core_instance.Test_instance.Id),
+//				InstancePoolId: pulumi.Any(oci_core_instance_pool.Test_instance_pool.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // InstancePoolInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
+//
+//	$ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
+//
 // ```
 type InstancePoolInstance struct {
 	pulumi.CustomResourceState
@@ -222,7 +227,7 @@ func (i *InstancePoolInstance) ToInstancePoolInstanceOutputWithContext(ctx conte
 // InstancePoolInstanceArrayInput is an input type that accepts InstancePoolInstanceArray and InstancePoolInstanceArrayOutput values.
 // You can construct a concrete instance of `InstancePoolInstanceArrayInput` via:
 //
-//          InstancePoolInstanceArray{ InstancePoolInstanceArgs{...} }
+//	InstancePoolInstanceArray{ InstancePoolInstanceArgs{...} }
 type InstancePoolInstanceArrayInput interface {
 	pulumi.Input
 
@@ -247,7 +252,7 @@ func (i InstancePoolInstanceArray) ToInstancePoolInstanceArrayOutputWithContext(
 // InstancePoolInstanceMapInput is an input type that accepts InstancePoolInstanceMap and InstancePoolInstanceMapOutput values.
 // You can construct a concrete instance of `InstancePoolInstanceMapInput` via:
 //
-//          InstancePoolInstanceMap{ "key": InstancePoolInstanceArgs{...} }
+//	InstancePoolInstanceMap{ "key": InstancePoolInstanceArgs{...} }
 type InstancePoolInstanceMapInput interface {
 	pulumi.Input
 

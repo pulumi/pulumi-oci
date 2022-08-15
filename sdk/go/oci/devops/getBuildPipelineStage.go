@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetBuildPipelineStage(ctx, &devops.GetBuildPipelineStageArgs{
-// 			BuildPipelineStageId: oci_devops_build_pipeline_stage.Test_build_pipeline_stage.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetBuildPipelineStage(ctx, &devops.GetBuildPipelineStageArgs{
+//				BuildPipelineStageId: oci_devops_build_pipeline_stage.Test_build_pipeline_stage.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBuildPipelineStage(ctx *pulumi.Context, args *LookupBuildPipelineStageArgs, opts ...pulumi.InvokeOption) (*LookupBuildPipelineStageResult, error) {
 	var rv LookupBuildPipelineStageResult
@@ -88,6 +91,8 @@ type LookupBuildPipelineStageResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource string `pulumi:"primaryBuildSource"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfigs []GetBuildPipelineStagePrivateAccessConfig `pulumi:"privateAccessConfigs"`
 	// The OCID of the DevOps project.
 	ProjectId string `pulumi:"projectId"`
 	// Timeout for the build stage execution. Specify value in seconds.
@@ -235,6 +240,13 @@ func (o LookupBuildPipelineStageResultOutput) LifecycleDetails() pulumi.StringOu
 // Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
 func (o LookupBuildPipelineStageResultOutput) PrimaryBuildSource() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBuildPipelineStageResult) string { return v.PrimaryBuildSource }).(pulumi.StringOutput)
+}
+
+// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+func (o LookupBuildPipelineStageResultOutput) PrivateAccessConfigs() GetBuildPipelineStagePrivateAccessConfigArrayOutput {
+	return o.ApplyT(func(v LookupBuildPipelineStageResult) []GetBuildPipelineStagePrivateAccessConfig {
+		return v.PrivateAccessConfigs
+	}).(GetBuildPipelineStagePrivateAccessConfigArrayOutput)
 }
 
 // The OCID of the DevOps project.

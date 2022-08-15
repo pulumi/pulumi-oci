@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetContainerRepositories(ctx, &artifacts.GetContainerRepositoriesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_repository_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Container_repository_display_name),
-// 			IsPublic:               pulumi.BoolRef(_var.Container_repository_is_public),
-// 			RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
-// 			State:                  pulumi.StringRef(_var.Container_repository_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetContainerRepositories(ctx, &artifacts.GetContainerRepositoriesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_repository_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Container_repository_display_name),
+//				IsPublic:               pulumi.BoolRef(_var.Container_repository_is_public),
+//				RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
+//				State:                  pulumi.StringRef(_var.Container_repository_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetContainerRepositories(ctx *pulumi.Context, args *GetContainerRepositoriesArgs, opts ...pulumi.InvokeOption) (*GetContainerRepositoriesResult, error) {
 	var rv GetContainerRepositoriesResult

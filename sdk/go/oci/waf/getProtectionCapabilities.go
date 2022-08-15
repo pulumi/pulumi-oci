@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.GetProtectionCapabilities(ctx, &waf.GetProtectionCapabilitiesArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			DisplayName:      pulumi.StringRef(_var.Protection_capability_display_name),
-// 			GroupTags:        _var.Protection_capability_group_tag,
-// 			IsLatestVersions: _var.Protection_capability_is_latest_version,
-// 			Key:              pulumi.StringRef(_var.Protection_capability_key),
-// 			Type:             pulumi.StringRef(_var.Protection_capability_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.GetProtectionCapabilities(ctx, &waf.GetProtectionCapabilitiesArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				DisplayName:      pulumi.StringRef(_var.Protection_capability_display_name),
+//				GroupTags:        _var.Protection_capability_group_tag,
+//				IsLatestVersions: _var.Protection_capability_is_latest_version,
+//				Key:              pulumi.StringRef(_var.Protection_capability_key),
+//				Type:             pulumi.StringRef(_var.Protection_capability_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProtectionCapabilities(ctx *pulumi.Context, args *GetProtectionCapabilitiesArgs, opts ...pulumi.InvokeOption) (*GetProtectionCapabilitiesResult, error) {
 	var rv GetProtectionCapabilitiesResult

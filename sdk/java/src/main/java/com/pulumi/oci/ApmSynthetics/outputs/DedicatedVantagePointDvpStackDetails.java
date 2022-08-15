@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class DedicatedVantagePointDvpStackDetails {
     /**
-     * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     private final String dvpStackId;
@@ -20,12 +20,12 @@ public final class DedicatedVantagePointDvpStackDetails {
      */
     private final String dvpStackType;
     /**
-     * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     private final String dvpStreamId;
     /**
-     * @return (Updatable) Version of DVP.
+     * @return (Updatable) Version of the dedicated vantage point.
      * 
      */
     private final String dvpVersion;
@@ -43,7 +43,7 @@ public final class DedicatedVantagePointDvpStackDetails {
     }
 
     /**
-     * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     public String dvpStackId() {
@@ -57,14 +57,14 @@ public final class DedicatedVantagePointDvpStackDetails {
         return this.dvpStackType;
     }
     /**
-     * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     public String dvpStreamId() {
         return this.dvpStreamId;
     }
     /**
-     * @return (Updatable) Version of DVP.
+     * @return (Updatable) Version of the dedicated vantage point.
      * 
      */
     public String dvpVersion() {

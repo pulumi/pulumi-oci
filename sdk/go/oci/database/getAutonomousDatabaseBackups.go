@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousDatabaseBackups(ctx, &database.GetAutonomousDatabaseBackupsArgs{
-// 			AutonomousDatabaseId: pulumi.StringRef(oci_database_autonomous_database.Test_autonomous_database.Id),
-// 			CompartmentId:        pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:          pulumi.StringRef(_var.Autonomous_database_backup_display_name),
-// 			State:                pulumi.StringRef(_var.Autonomous_database_backup_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDatabaseBackups(ctx, &database.GetAutonomousDatabaseBackupsArgs{
+//				AutonomousDatabaseId: pulumi.StringRef(oci_database_autonomous_database.Test_autonomous_database.Id),
+//				CompartmentId:        pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:          pulumi.StringRef(_var.Autonomous_database_backup_display_name),
+//				State:                pulumi.StringRef(_var.Autonomous_database_backup_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousDatabaseBackups(ctx *pulumi.Context, args *GetAutonomousDatabaseBackupsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabaseBackupsResult, error) {
 	var rv GetAutonomousDatabaseBackupsResult

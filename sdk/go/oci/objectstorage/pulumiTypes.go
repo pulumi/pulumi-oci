@@ -28,7 +28,7 @@ type BucketRetentionRule struct {
 // BucketRetentionRuleInput is an input type that accepts BucketRetentionRuleArgs and BucketRetentionRuleOutput values.
 // You can construct a concrete instance of `BucketRetentionRuleInput` via:
 //
-//          BucketRetentionRuleArgs{...}
+//	BucketRetentionRuleArgs{...}
 type BucketRetentionRuleInput interface {
 	pulumi.Input
 
@@ -66,7 +66,7 @@ func (i BucketRetentionRuleArgs) ToBucketRetentionRuleOutputWithContext(ctx cont
 // BucketRetentionRuleArrayInput is an input type that accepts BucketRetentionRuleArray and BucketRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `BucketRetentionRuleArrayInput` via:
 //
-//          BucketRetentionRuleArray{ BucketRetentionRuleArgs{...} }
+//	BucketRetentionRuleArray{ BucketRetentionRuleArgs{...} }
 type BucketRetentionRuleArrayInput interface {
 	pulumi.Input
 
@@ -162,7 +162,7 @@ type BucketRetentionRuleDuration struct {
 // BucketRetentionRuleDurationInput is an input type that accepts BucketRetentionRuleDurationArgs and BucketRetentionRuleDurationOutput values.
 // You can construct a concrete instance of `BucketRetentionRuleDurationInput` via:
 //
-//          BucketRetentionRuleDurationArgs{...}
+//	BucketRetentionRuleDurationArgs{...}
 type BucketRetentionRuleDurationInput interface {
 	pulumi.Input
 
@@ -200,11 +200,11 @@ func (i BucketRetentionRuleDurationArgs) ToBucketRetentionRuleDurationPtrOutputW
 // BucketRetentionRuleDurationPtrInput is an input type that accepts BucketRetentionRuleDurationArgs, BucketRetentionRuleDurationPtr and BucketRetentionRuleDurationPtrOutput values.
 // You can construct a concrete instance of `BucketRetentionRuleDurationPtrInput` via:
 //
-//          BucketRetentionRuleDurationArgs{...}
+//	        BucketRetentionRuleDurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BucketRetentionRuleDurationPtrInput interface {
 	pulumi.Input
 
@@ -328,7 +328,7 @@ type ObjectLifecyclePolicyRule struct {
 // ObjectLifecyclePolicyRuleInput is an input type that accepts ObjectLifecyclePolicyRuleArgs and ObjectLifecyclePolicyRuleOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyRuleInput` via:
 //
-//          ObjectLifecyclePolicyRuleArgs{...}
+//	ObjectLifecyclePolicyRuleArgs{...}
 type ObjectLifecyclePolicyRuleInput interface {
 	pulumi.Input
 
@@ -368,7 +368,7 @@ func (i ObjectLifecyclePolicyRuleArgs) ToObjectLifecyclePolicyRuleOutputWithCont
 // ObjectLifecyclePolicyRuleArrayInput is an input type that accepts ObjectLifecyclePolicyRuleArray and ObjectLifecyclePolicyRuleArrayOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyRuleArrayInput` via:
 //
-//          ObjectLifecyclePolicyRuleArray{ ObjectLifecyclePolicyRuleArgs{...} }
+//	ObjectLifecyclePolicyRuleArray{ ObjectLifecyclePolicyRuleArgs{...} }
 type ObjectLifecyclePolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -473,7 +473,7 @@ type ObjectLifecyclePolicyRuleObjectNameFilter struct {
 // ObjectLifecyclePolicyRuleObjectNameFilterInput is an input type that accepts ObjectLifecyclePolicyRuleObjectNameFilterArgs and ObjectLifecyclePolicyRuleObjectNameFilterOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyRuleObjectNameFilterInput` via:
 //
-//          ObjectLifecyclePolicyRuleObjectNameFilterArgs{...}
+//	ObjectLifecyclePolicyRuleObjectNameFilterArgs{...}
 type ObjectLifecyclePolicyRuleObjectNameFilterInput interface {
 	pulumi.Input
 
@@ -513,11 +513,11 @@ func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToObjectLifecyclePolicyRu
 // ObjectLifecyclePolicyRuleObjectNameFilterPtrInput is an input type that accepts ObjectLifecyclePolicyRuleObjectNameFilterArgs, ObjectLifecyclePolicyRuleObjectNameFilterPtr and ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyRuleObjectNameFilterPtrInput` via:
 //
-//          ObjectLifecyclePolicyRuleObjectNameFilterArgs{...}
+//	        ObjectLifecyclePolicyRuleObjectNameFilterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ObjectLifecyclePolicyRuleObjectNameFilterPtrInput interface {
 	pulumi.Input
 
@@ -658,7 +658,7 @@ type StorageObjectSourceUriDetails struct {
 // StorageObjectSourceUriDetailsInput is an input type that accepts StorageObjectSourceUriDetailsArgs and StorageObjectSourceUriDetailsOutput values.
 // You can construct a concrete instance of `StorageObjectSourceUriDetailsInput` via:
 //
-//          StorageObjectSourceUriDetailsArgs{...}
+//	StorageObjectSourceUriDetailsArgs{...}
 type StorageObjectSourceUriDetailsInput interface {
 	pulumi.Input
 
@@ -708,11 +708,11 @@ func (i StorageObjectSourceUriDetailsArgs) ToStorageObjectSourceUriDetailsPtrOut
 // StorageObjectSourceUriDetailsPtrInput is an input type that accepts StorageObjectSourceUriDetailsArgs, StorageObjectSourceUriDetailsPtr and StorageObjectSourceUriDetailsPtrOutput values.
 // You can construct a concrete instance of `StorageObjectSourceUriDetailsPtrInput` via:
 //
-//          StorageObjectSourceUriDetailsArgs{...}
+//	        StorageObjectSourceUriDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type StorageObjectSourceUriDetailsPtrInput interface {
 	pulumi.Input
 
@@ -923,7 +923,7 @@ type GetBucketRetentionRule struct {
 // GetBucketRetentionRuleInput is an input type that accepts GetBucketRetentionRuleArgs and GetBucketRetentionRuleOutput values.
 // You can construct a concrete instance of `GetBucketRetentionRuleInput` via:
 //
-//          GetBucketRetentionRuleArgs{...}
+//	GetBucketRetentionRuleArgs{...}
 type GetBucketRetentionRuleInput interface {
 	pulumi.Input
 
@@ -960,7 +960,7 @@ func (i GetBucketRetentionRuleArgs) ToGetBucketRetentionRuleOutputWithContext(ct
 // GetBucketRetentionRuleArrayInput is an input type that accepts GetBucketRetentionRuleArray and GetBucketRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `GetBucketRetentionRuleArrayInput` via:
 //
-//          GetBucketRetentionRuleArray{ GetBucketRetentionRuleArgs{...} }
+//	GetBucketRetentionRuleArray{ GetBucketRetentionRuleArgs{...} }
 type GetBucketRetentionRuleArrayInput interface {
 	pulumi.Input
 
@@ -1055,7 +1055,7 @@ type GetBucketRetentionRuleDuration struct {
 // GetBucketRetentionRuleDurationInput is an input type that accepts GetBucketRetentionRuleDurationArgs and GetBucketRetentionRuleDurationOutput values.
 // You can construct a concrete instance of `GetBucketRetentionRuleDurationInput` via:
 //
-//          GetBucketRetentionRuleDurationArgs{...}
+//	GetBucketRetentionRuleDurationArgs{...}
 type GetBucketRetentionRuleDurationInput interface {
 	pulumi.Input
 
@@ -1085,7 +1085,7 @@ func (i GetBucketRetentionRuleDurationArgs) ToGetBucketRetentionRuleDurationOutp
 // GetBucketRetentionRuleDurationArrayInput is an input type that accepts GetBucketRetentionRuleDurationArray and GetBucketRetentionRuleDurationArrayOutput values.
 // You can construct a concrete instance of `GetBucketRetentionRuleDurationArrayInput` via:
 //
-//          GetBucketRetentionRuleDurationArray{ GetBucketRetentionRuleDurationArgs{...} }
+//	GetBucketRetentionRuleDurationArray{ GetBucketRetentionRuleDurationArgs{...} }
 type GetBucketRetentionRuleDurationArrayInput interface {
 	pulumi.Input
 
@@ -1200,7 +1200,7 @@ type GetBucketSummariesBucketSummary struct {
 // GetBucketSummariesBucketSummaryInput is an input type that accepts GetBucketSummariesBucketSummaryArgs and GetBucketSummariesBucketSummaryOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryInput` via:
 //
-//          GetBucketSummariesBucketSummaryArgs{...}
+//	GetBucketSummariesBucketSummaryArgs{...}
 type GetBucketSummariesBucketSummaryInput interface {
 	pulumi.Input
 
@@ -1269,7 +1269,7 @@ func (i GetBucketSummariesBucketSummaryArgs) ToGetBucketSummariesBucketSummaryOu
 // GetBucketSummariesBucketSummaryArrayInput is an input type that accepts GetBucketSummariesBucketSummaryArray and GetBucketSummariesBucketSummaryArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryArrayInput` via:
 //
-//          GetBucketSummariesBucketSummaryArray{ GetBucketSummariesBucketSummaryArgs{...} }
+//	GetBucketSummariesBucketSummaryArray{ GetBucketSummariesBucketSummaryArgs{...} }
 type GetBucketSummariesBucketSummaryArrayInput interface {
 	pulumi.Input
 
@@ -1452,7 +1452,7 @@ type GetBucketSummariesBucketSummaryRetentionRule struct {
 // GetBucketSummariesBucketSummaryRetentionRuleInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleArgs and GetBucketSummariesBucketSummaryRetentionRuleOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryRetentionRuleInput` via:
 //
-//          GetBucketSummariesBucketSummaryRetentionRuleArgs{...}
+//	GetBucketSummariesBucketSummaryRetentionRuleArgs{...}
 type GetBucketSummariesBucketSummaryRetentionRuleInput interface {
 	pulumi.Input
 
@@ -1485,7 +1485,7 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleArgs) ToGetBucketSummariesBu
 // GetBucketSummariesBucketSummaryRetentionRuleArrayInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleArray and GetBucketSummariesBucketSummaryRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryRetentionRuleArrayInput` via:
 //
-//          GetBucketSummariesBucketSummaryRetentionRuleArray{ GetBucketSummariesBucketSummaryRetentionRuleArgs{...} }
+//	GetBucketSummariesBucketSummaryRetentionRuleArray{ GetBucketSummariesBucketSummaryRetentionRuleArgs{...} }
 type GetBucketSummariesBucketSummaryRetentionRuleArrayInput interface {
 	pulumi.Input
 
@@ -1576,7 +1576,7 @@ type GetBucketSummariesBucketSummaryRetentionRuleDuration struct {
 // GetBucketSummariesBucketSummaryRetentionRuleDurationInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleDurationArgs and GetBucketSummariesBucketSummaryRetentionRuleDurationOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryRetentionRuleDurationInput` via:
 //
-//          GetBucketSummariesBucketSummaryRetentionRuleDurationArgs{...}
+//	GetBucketSummariesBucketSummaryRetentionRuleDurationArgs{...}
 type GetBucketSummariesBucketSummaryRetentionRuleDurationInput interface {
 	pulumi.Input
 
@@ -1604,7 +1604,7 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ToGetBucketSum
 // GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleDurationArray and GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput` via:
 //
-//          GetBucketSummariesBucketSummaryRetentionRuleDurationArray{ GetBucketSummariesBucketSummaryRetentionRuleDurationArgs{...} }
+//	GetBucketSummariesBucketSummaryRetentionRuleDurationArray{ GetBucketSummariesBucketSummaryRetentionRuleDurationArgs{...} }
 type GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput interface {
 	pulumi.Input
 
@@ -1678,7 +1678,7 @@ type GetBucketSummariesFilter struct {
 // GetBucketSummariesFilterInput is an input type that accepts GetBucketSummariesFilterArgs and GetBucketSummariesFilterOutput values.
 // You can construct a concrete instance of `GetBucketSummariesFilterInput` via:
 //
-//          GetBucketSummariesFilterArgs{...}
+//	GetBucketSummariesFilterArgs{...}
 type GetBucketSummariesFilterInput interface {
 	pulumi.Input
 
@@ -1708,7 +1708,7 @@ func (i GetBucketSummariesFilterArgs) ToGetBucketSummariesFilterOutputWithContex
 // GetBucketSummariesFilterArrayInput is an input type that accepts GetBucketSummariesFilterArray and GetBucketSummariesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesFilterArrayInput` via:
 //
-//          GetBucketSummariesFilterArray{ GetBucketSummariesFilterArgs{...} }
+//	GetBucketSummariesFilterArray{ GetBucketSummariesFilterArgs{...} }
 type GetBucketSummariesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1797,7 +1797,7 @@ type GetObjectLifecyclePolicyRule struct {
 // GetObjectLifecyclePolicyRuleInput is an input type that accepts GetObjectLifecyclePolicyRuleArgs and GetObjectLifecyclePolicyRuleOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleInput` via:
 //
-//          GetObjectLifecyclePolicyRuleArgs{...}
+//	GetObjectLifecyclePolicyRuleArgs{...}
 type GetObjectLifecyclePolicyRuleInput interface {
 	pulumi.Input
 
@@ -1837,7 +1837,7 @@ func (i GetObjectLifecyclePolicyRuleArgs) ToGetObjectLifecyclePolicyRuleOutputWi
 // GetObjectLifecyclePolicyRuleArrayInput is an input type that accepts GetObjectLifecyclePolicyRuleArray and GetObjectLifecyclePolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleArrayInput` via:
 //
-//          GetObjectLifecyclePolicyRuleArray{ GetObjectLifecyclePolicyRuleArgs{...} }
+//	GetObjectLifecyclePolicyRuleArray{ GetObjectLifecyclePolicyRuleArgs{...} }
 type GetObjectLifecyclePolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -1942,7 +1942,7 @@ type GetObjectLifecyclePolicyRuleObjectNameFilter struct {
 // GetObjectLifecyclePolicyRuleObjectNameFilterInput is an input type that accepts GetObjectLifecyclePolicyRuleObjectNameFilterArgs and GetObjectLifecyclePolicyRuleObjectNameFilterOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleObjectNameFilterInput` via:
 //
-//          GetObjectLifecyclePolicyRuleObjectNameFilterArgs{...}
+//	GetObjectLifecyclePolicyRuleObjectNameFilterArgs{...}
 type GetObjectLifecyclePolicyRuleObjectNameFilterInput interface {
 	pulumi.Input
 
@@ -1974,7 +1974,7 @@ func (i GetObjectLifecyclePolicyRuleObjectNameFilterArgs) ToGetObjectLifecyclePo
 // GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput is an input type that accepts GetObjectLifecyclePolicyRuleObjectNameFilterArray and GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput` via:
 //
-//          GetObjectLifecyclePolicyRuleObjectNameFilterArray{ GetObjectLifecyclePolicyRuleObjectNameFilterArgs{...} }
+//	GetObjectLifecyclePolicyRuleObjectNameFilterArray{ GetObjectLifecyclePolicyRuleObjectNameFilterArgs{...} }
 type GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput interface {
 	pulumi.Input
 
@@ -2055,7 +2055,7 @@ type GetObjectVersionsFilter struct {
 // GetObjectVersionsFilterInput is an input type that accepts GetObjectVersionsFilterArgs and GetObjectVersionsFilterOutput values.
 // You can construct a concrete instance of `GetObjectVersionsFilterInput` via:
 //
-//          GetObjectVersionsFilterArgs{...}
+//	GetObjectVersionsFilterArgs{...}
 type GetObjectVersionsFilterInput interface {
 	pulumi.Input
 
@@ -2085,7 +2085,7 @@ func (i GetObjectVersionsFilterArgs) ToGetObjectVersionsFilterOutputWithContext(
 // GetObjectVersionsFilterArrayInput is an input type that accepts GetObjectVersionsFilterArray and GetObjectVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectVersionsFilterArrayInput` via:
 //
-//          GetObjectVersionsFilterArray{ GetObjectVersionsFilterArgs{...} }
+//	GetObjectVersionsFilterArray{ GetObjectVersionsFilterArgs{...} }
 type GetObjectVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2180,7 +2180,7 @@ type GetObjectVersionsItem struct {
 // GetObjectVersionsItemInput is an input type that accepts GetObjectVersionsItemArgs and GetObjectVersionsItemOutput values.
 // You can construct a concrete instance of `GetObjectVersionsItemInput` via:
 //
-//          GetObjectVersionsItemArgs{...}
+//	GetObjectVersionsItemArgs{...}
 type GetObjectVersionsItemInput interface {
 	pulumi.Input
 
@@ -2226,7 +2226,7 @@ func (i GetObjectVersionsItemArgs) ToGetObjectVersionsItemOutputWithContext(ctx 
 // GetObjectVersionsItemArrayInput is an input type that accepts GetObjectVersionsItemArray and GetObjectVersionsItemArrayOutput values.
 // You can construct a concrete instance of `GetObjectVersionsItemArrayInput` via:
 //
-//          GetObjectVersionsItemArray{ GetObjectVersionsItemArgs{...} }
+//	GetObjectVersionsItemArray{ GetObjectVersionsItemArgs{...} }
 type GetObjectVersionsItemArrayInput interface {
 	pulumi.Input
 
@@ -2342,7 +2342,7 @@ type GetObjectsFilter struct {
 // GetObjectsFilterInput is an input type that accepts GetObjectsFilterArgs and GetObjectsFilterOutput values.
 // You can construct a concrete instance of `GetObjectsFilterInput` via:
 //
-//          GetObjectsFilterArgs{...}
+//	GetObjectsFilterArgs{...}
 type GetObjectsFilterInput interface {
 	pulumi.Input
 
@@ -2372,7 +2372,7 @@ func (i GetObjectsFilterArgs) ToGetObjectsFilterOutputWithContext(ctx context.Co
 // GetObjectsFilterArrayInput is an input type that accepts GetObjectsFilterArray and GetObjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectsFilterArrayInput` via:
 //
-//          GetObjectsFilterArray{ GetObjectsFilterArgs{...} }
+//	GetObjectsFilterArray{ GetObjectsFilterArgs{...} }
 type GetObjectsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2463,7 +2463,7 @@ type GetObjectsObject struct {
 // GetObjectsObjectInput is an input type that accepts GetObjectsObjectArgs and GetObjectsObjectOutput values.
 // You can construct a concrete instance of `GetObjectsObjectInput` via:
 //
-//          GetObjectsObjectArgs{...}
+//	GetObjectsObjectArgs{...}
 type GetObjectsObjectInput interface {
 	pulumi.Input
 
@@ -2505,7 +2505,7 @@ func (i GetObjectsObjectArgs) ToGetObjectsObjectOutputWithContext(ctx context.Co
 // GetObjectsObjectArrayInput is an input type that accepts GetObjectsObjectArray and GetObjectsObjectArrayOutput values.
 // You can construct a concrete instance of `GetObjectsObjectArrayInput` via:
 //
-//          GetObjectsObjectArray{ GetObjectsObjectArgs{...} }
+//	GetObjectsObjectArray{ GetObjectsObjectArgs{...} }
 type GetObjectsObjectArrayInput interface {
 	pulumi.Input
 
@@ -2611,7 +2611,7 @@ type GetPreauthrequestsFilter struct {
 // GetPreauthrequestsFilterInput is an input type that accepts GetPreauthrequestsFilterArgs and GetPreauthrequestsFilterOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsFilterInput` via:
 //
-//          GetPreauthrequestsFilterArgs{...}
+//	GetPreauthrequestsFilterArgs{...}
 type GetPreauthrequestsFilterInput interface {
 	pulumi.Input
 
@@ -2641,7 +2641,7 @@ func (i GetPreauthrequestsFilterArgs) ToGetPreauthrequestsFilterOutputWithContex
 // GetPreauthrequestsFilterArrayInput is an input type that accepts GetPreauthrequestsFilterArray and GetPreauthrequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsFilterArrayInput` via:
 //
-//          GetPreauthrequestsFilterArray{ GetPreauthrequestsFilterArgs{...} }
+//	GetPreauthrequestsFilterArray{ GetPreauthrequestsFilterArgs{...} }
 type GetPreauthrequestsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2741,7 +2741,7 @@ type GetPreauthrequestsPreauthenticatedRequest struct {
 // GetPreauthrequestsPreauthenticatedRequestInput is an input type that accepts GetPreauthrequestsPreauthenticatedRequestArgs and GetPreauthrequestsPreauthenticatedRequestOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsPreauthenticatedRequestInput` via:
 //
-//          GetPreauthrequestsPreauthenticatedRequestArgs{...}
+//	GetPreauthrequestsPreauthenticatedRequestArgs{...}
 type GetPreauthrequestsPreauthenticatedRequestInput interface {
 	pulumi.Input
 
@@ -2792,7 +2792,7 @@ func (i GetPreauthrequestsPreauthenticatedRequestArgs) ToGetPreauthrequestsPreau
 // GetPreauthrequestsPreauthenticatedRequestArrayInput is an input type that accepts GetPreauthrequestsPreauthenticatedRequestArray and GetPreauthrequestsPreauthenticatedRequestArrayOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsPreauthenticatedRequestArrayInput` via:
 //
-//          GetPreauthrequestsPreauthenticatedRequestArray{ GetPreauthrequestsPreauthenticatedRequestArgs{...} }
+//	GetPreauthrequestsPreauthenticatedRequestArray{ GetPreauthrequestsPreauthenticatedRequestArgs{...} }
 type GetPreauthrequestsPreauthenticatedRequestArrayInput interface {
 	pulumi.Input
 
@@ -2919,7 +2919,7 @@ type GetReplicationPoliciesFilter struct {
 // GetReplicationPoliciesFilterInput is an input type that accepts GetReplicationPoliciesFilterArgs and GetReplicationPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesFilterInput` via:
 //
-//          GetReplicationPoliciesFilterArgs{...}
+//	GetReplicationPoliciesFilterArgs{...}
 type GetReplicationPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -2949,7 +2949,7 @@ func (i GetReplicationPoliciesFilterArgs) ToGetReplicationPoliciesFilterOutputWi
 // GetReplicationPoliciesFilterArrayInput is an input type that accepts GetReplicationPoliciesFilterArray and GetReplicationPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesFilterArrayInput` via:
 //
-//          GetReplicationPoliciesFilterArray{ GetReplicationPoliciesFilterArgs{...} }
+//	GetReplicationPoliciesFilterArray{ GetReplicationPoliciesFilterArgs{...} }
 type GetReplicationPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3046,7 +3046,7 @@ type GetReplicationPoliciesReplicationPolicy struct {
 // GetReplicationPoliciesReplicationPolicyInput is an input type that accepts GetReplicationPoliciesReplicationPolicyArgs and GetReplicationPoliciesReplicationPolicyOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesReplicationPolicyInput` via:
 //
-//          GetReplicationPoliciesReplicationPolicyArgs{...}
+//	GetReplicationPoliciesReplicationPolicyArgs{...}
 type GetReplicationPoliciesReplicationPolicyInput interface {
 	pulumi.Input
 
@@ -3094,7 +3094,7 @@ func (i GetReplicationPoliciesReplicationPolicyArgs) ToGetReplicationPoliciesRep
 // GetReplicationPoliciesReplicationPolicyArrayInput is an input type that accepts GetReplicationPoliciesReplicationPolicyArray and GetReplicationPoliciesReplicationPolicyArrayOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesReplicationPolicyArrayInput` via:
 //
-//          GetReplicationPoliciesReplicationPolicyArray{ GetReplicationPoliciesReplicationPolicyArgs{...} }
+//	GetReplicationPoliciesReplicationPolicyArray{ GetReplicationPoliciesReplicationPolicyArgs{...} }
 type GetReplicationPoliciesReplicationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -3214,7 +3214,7 @@ type GetReplicationSourcesFilter struct {
 // GetReplicationSourcesFilterInput is an input type that accepts GetReplicationSourcesFilterArgs and GetReplicationSourcesFilterOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesFilterInput` via:
 //
-//          GetReplicationSourcesFilterArgs{...}
+//	GetReplicationSourcesFilterArgs{...}
 type GetReplicationSourcesFilterInput interface {
 	pulumi.Input
 
@@ -3243,7 +3243,7 @@ func (i GetReplicationSourcesFilterArgs) ToGetReplicationSourcesFilterOutputWith
 // GetReplicationSourcesFilterArrayInput is an input type that accepts GetReplicationSourcesFilterArray and GetReplicationSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesFilterArrayInput` via:
 //
-//          GetReplicationSourcesFilterArray{ GetReplicationSourcesFilterArgs{...} }
+//	GetReplicationSourcesFilterArray{ GetReplicationSourcesFilterArgs{...} }
 type GetReplicationSourcesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3323,7 +3323,7 @@ type GetReplicationSourcesReplicationSource struct {
 // GetReplicationSourcesReplicationSourceInput is an input type that accepts GetReplicationSourcesReplicationSourceArgs and GetReplicationSourcesReplicationSourceOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesReplicationSourceInput` via:
 //
-//          GetReplicationSourcesReplicationSourceArgs{...}
+//	GetReplicationSourcesReplicationSourceArgs{...}
 type GetReplicationSourcesReplicationSourceInput interface {
 	pulumi.Input
 
@@ -3355,7 +3355,7 @@ func (i GetReplicationSourcesReplicationSourceArgs) ToGetReplicationSourcesRepli
 // GetReplicationSourcesReplicationSourceArrayInput is an input type that accepts GetReplicationSourcesReplicationSourceArray and GetReplicationSourcesReplicationSourceArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesReplicationSourceArrayInput` via:
 //
-//          GetReplicationSourcesReplicationSourceArray{ GetReplicationSourcesReplicationSourceArgs{...} }
+//	GetReplicationSourcesReplicationSourceArray{ GetReplicationSourcesReplicationSourceArgs{...} }
 type GetReplicationSourcesReplicationSourceArrayInput interface {
 	pulumi.Input
 

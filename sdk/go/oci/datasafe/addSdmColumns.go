@@ -95,7 +95,7 @@ func (i *AddSdmColumns) ToAddSdmColumnsOutputWithContext(ctx context.Context) Ad
 // AddSdmColumnsArrayInput is an input type that accepts AddSdmColumnsArray and AddSdmColumnsArrayOutput values.
 // You can construct a concrete instance of `AddSdmColumnsArrayInput` via:
 //
-//          AddSdmColumnsArray{ AddSdmColumnsArgs{...} }
+//	AddSdmColumnsArray{ AddSdmColumnsArgs{...} }
 type AddSdmColumnsArrayInput interface {
 	pulumi.Input
 
@@ -120,7 +120,7 @@ func (i AddSdmColumnsArray) ToAddSdmColumnsArrayOutputWithContext(ctx context.Co
 // AddSdmColumnsMapInput is an input type that accepts AddSdmColumnsMap and AddSdmColumnsMapOutput values.
 // You can construct a concrete instance of `AddSdmColumnsMapInput` via:
 //
-//          AddSdmColumnsMap{ "key": AddSdmColumnsArgs{...} }
+//	AddSdmColumnsMap{ "key": AddSdmColumnsArgs{...} }
 type AddSdmColumnsMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVolumeGroupReplica(ctx, &core.GetVolumeGroupReplicaArgs{
-// 			VolumeGroupReplicaId: oci_core_volume_group_replica.Test_volume_group_replica.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVolumeGroupReplica(ctx, &core.GetVolumeGroupReplicaArgs{
+//				VolumeGroupReplicaId: oci_core_volume_group_replica.Test_volume_group_replica.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVolumeGroupReplica(ctx *pulumi.Context, args *GetVolumeGroupReplicaArgs, opts ...pulumi.InvokeOption) (*GetVolumeGroupReplicaResult, error) {
 	var rv GetVolumeGroupReplicaResult

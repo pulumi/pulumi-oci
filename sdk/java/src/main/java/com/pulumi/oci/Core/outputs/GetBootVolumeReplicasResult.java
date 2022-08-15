@@ -18,7 +18,7 @@ public final class GetBootVolumeReplicasResult {
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private final @Nullable String availabilityDomain;
     /**
      * @return The list of boot_volume_replicas.
      * 
@@ -28,7 +28,7 @@ public final class GetBootVolumeReplicasResult {
      * @return The OCID of the compartment that contains the boot volume replica.
      * 
      */
-    private final String compartmentId;
+    private final @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -45,16 +45,18 @@ public final class GetBootVolumeReplicasResult {
      * 
      */
     private final @Nullable String state;
+    private final @Nullable String volumeGroupReplicaId;
 
     @CustomType.Constructor
     private GetBootVolumeReplicasResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
+        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
         @CustomType.Parameter("bootVolumeReplicas") List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas,
-        @CustomType.Parameter("compartmentId") String compartmentId,
+        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
         @CustomType.Parameter("displayName") @Nullable String displayName,
         @CustomType.Parameter("filters") @Nullable List<GetBootVolumeReplicasFilter> filters,
         @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
+        @CustomType.Parameter("state") @Nullable String state,
+        @CustomType.Parameter("volumeGroupReplicaId") @Nullable String volumeGroupReplicaId) {
         this.availabilityDomain = availabilityDomain;
         this.bootVolumeReplicas = bootVolumeReplicas;
         this.compartmentId = compartmentId;
@@ -62,14 +64,15 @@ public final class GetBootVolumeReplicasResult {
         this.filters = filters;
         this.id = id;
         this.state = state;
+        this.volumeGroupReplicaId = volumeGroupReplicaId;
     }
 
     /**
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The list of boot_volume_replicas.
@@ -82,8 +85,8 @@ public final class GetBootVolumeReplicasResult {
      * @return The OCID of the compartment that contains the boot volume replica.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -109,6 +112,9 @@ public final class GetBootVolumeReplicasResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> volumeGroupReplicaId() {
+        return Optional.ofNullable(this.volumeGroupReplicaId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -119,13 +125,14 @@ public final class GetBootVolumeReplicasResult {
     }
 
     public static final class Builder {
-        private String availabilityDomain;
+        private @Nullable String availabilityDomain;
         private List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas;
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBootVolumeReplicasFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable String volumeGroupReplicaId;
 
         public Builder() {
     	      // Empty
@@ -140,10 +147,11 @@ public final class GetBootVolumeReplicasResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         public Builder bootVolumeReplicas(List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas) {
@@ -153,8 +161,8 @@ public final class GetBootVolumeReplicasResult {
         public Builder bootVolumeReplicas(GetBootVolumeReplicasBootVolumeReplica... bootVolumeReplicas) {
             return bootVolumeReplicas(List.of(bootVolumeReplicas));
         }
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         public Builder displayName(@Nullable String displayName) {
@@ -175,8 +183,12 @@ public final class GetBootVolumeReplicasResult {
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
+        }
+        public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
+            return this;
         }        public GetBootVolumeReplicasResult build() {
-            return new GetBootVolumeReplicasResult(availabilityDomain, bootVolumeReplicas, compartmentId, displayName, filters, id, state);
+            return new GetBootVolumeReplicasResult(availabilityDomain, bootVolumeReplicas, compartmentId, displayName, filters, id, state, volumeGroupReplicaId);
         }
     }
 }

@@ -12,6 +12,7 @@ import com.pulumi.oci.DevOps.inputs.BuildPipelineStageState;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageBuildSourceCollection;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageDeliverArtifactCollection;
+import com.pulumi.oci.DevOps.outputs.BuildPipelineStagePrivateAccessConfig;
 import com.pulumi.oci.DevOps.outputs.BuildPipelineStageWaitCriteria;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -262,6 +263,20 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      */
     public Output<String> primaryBuildSource() {
         return this.primaryBuildSource;
+    }
+    /**
+     * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+     * 
+     */
+    @Export(name="privateAccessConfig", type=BuildPipelineStagePrivateAccessConfig.class, parameters={})
+    private Output<BuildPipelineStagePrivateAccessConfig> privateAccessConfig;
+
+    /**
+     * @return (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+     * 
+     */
+    public Output<BuildPipelineStagePrivateAccessConfig> privateAccessConfig() {
+        return this.privateAccessConfig;
     }
     /**
      * The OCID of the DevOps project.

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetPreauthrequests(ctx, &objectstorage.GetPreauthrequestsArgs{
-// 			Bucket:           _var.Preauthenticated_request_bucket,
-// 			Namespace:        _var.Preauthenticated_request_namespace,
-// 			ObjectNamePrefix: pulumi.StringRef(_var.Preauthenticated_request_object_name_prefix),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetPreauthrequests(ctx, &objectstorage.GetPreauthrequestsArgs{
+//				Bucket:           _var.Preauthenticated_request_bucket,
+//				Namespace:        _var.Preauthenticated_request_namespace,
+//				ObjectNamePrefix: pulumi.StringRef(_var.Preauthenticated_request_object_name_prefix),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPreauthrequests(ctx *pulumi.Context, args *GetPreauthrequestsArgs, opts ...pulumi.InvokeOption) (*GetPreauthrequestsResult, error) {
 	var rv GetPreauthrequestsResult

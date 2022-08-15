@@ -23,25 +23,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetSubscriptions(ctx, &onesubsription.GetSubscriptionsArgs{
-// 			CompartmentId:        _var.Compartment_id,
-// 			BuyerEmail:           pulumi.StringRef(_var.Subscription_buyer_email),
-// 			IsCommitInfoRequired: pulumi.BoolRef(_var.Subscription_is_commit_info_required),
-// 			PlanNumber:           pulumi.StringRef(_var.Subscription_plan_number),
-// 			SubscriptionId:       pulumi.StringRef(oci_onesubscription_subscription.Test_subscription.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetSubscriptions(ctx, &onesubsription.GetSubscriptionsArgs{
+//				CompartmentId:        _var.Compartment_id,
+//				BuyerEmail:           pulumi.StringRef(_var.Subscription_buyer_email),
+//				IsCommitInfoRequired: pulumi.BoolRef(_var.Subscription_is_commit_info_required),
+//				PlanNumber:           pulumi.StringRef(_var.Subscription_plan_number),
+//				SubscriptionId:       pulumi.StringRef(oci_onesubscription_subscription.Test_subscription.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubscriptions(ctx *pulumi.Context, args *GetSubscriptionsArgs, opts ...pulumi.InvokeOption) (*GetSubscriptionsResult, error) {
 	var rv GetSubscriptionsResult

@@ -16,16 +16,18 @@ import (
 // Updates the recommendation that corresponds to the specified OCID.
 // Use this operation to implement the following actions:
 //
-//   * Postpone recommendation
-//   * Dismiss recommendation
-//   * Reactivate recommendation
+//   - Postpone recommendation
+//   - Dismiss recommendation
+//   - Reactivate recommendation
 //
 // ## Import
 //
 // Recommendations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
+//
+//	$ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
+//
 // ```
 type Recommendation struct {
 	pulumi.CustomResourceState
@@ -217,7 +219,7 @@ func (i *Recommendation) ToRecommendationOutputWithContext(ctx context.Context) 
 // RecommendationArrayInput is an input type that accepts RecommendationArray and RecommendationArrayOutput values.
 // You can construct a concrete instance of `RecommendationArrayInput` via:
 //
-//          RecommendationArray{ RecommendationArgs{...} }
+//	RecommendationArray{ RecommendationArgs{...} }
 type RecommendationArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +244,7 @@ func (i RecommendationArray) ToRecommendationArrayOutputWithContext(ctx context.
 // RecommendationMapInput is an input type that accepts RecommendationMap and RecommendationMapOutput values.
 // You can construct a concrete instance of `RecommendationMapInput` via:
 //
-//          RecommendationMap{ "key": RecommendationArgs{...} }
+//	RecommendationMap{ "key": RecommendationArgs{...} }
 type RecommendationMapInput interface {
 	pulumi.Input
 

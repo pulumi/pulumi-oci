@@ -23,29 +23,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetListUserGrants(ctx, &datasafe.GetListUserGrantsArgs{
-// 			UserAssessmentId:               oci_data_safe_user_assessment.Test_user_assessment.Id,
-// 			UserKey:                        _var.List_user_grant_user_key,
-// 			DepthLevel:                     pulumi.IntRef(_var.List_user_grant_depth_level),
-// 			DepthLevelGreaterThanOrEqualTo: pulumi.IntRef(_var.List_user_grant_depth_level_greater_than_or_equal_to),
-// 			DepthLevelLessThan:             pulumi.IntRef(_var.List_user_grant_depth_level_less_than),
-// 			GrantKey:                       pulumi.StringRef(_var.List_user_grant_grant_key),
-// 			GrantName:                      pulumi.StringRef(_var.List_user_grant_grant_name),
-// 			PrivilegeCategory:              pulumi.StringRef(_var.List_user_grant_privilege_category),
-// 			PrivilegeType:                  pulumi.StringRef(_var.List_user_grant_privilege_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetListUserGrants(ctx, &datasafe.GetListUserGrantsArgs{
+//				UserAssessmentId:               oci_data_safe_user_assessment.Test_user_assessment.Id,
+//				UserKey:                        _var.List_user_grant_user_key,
+//				DepthLevel:                     pulumi.IntRef(_var.List_user_grant_depth_level),
+//				DepthLevelGreaterThanOrEqualTo: pulumi.IntRef(_var.List_user_grant_depth_level_greater_than_or_equal_to),
+//				DepthLevelLessThan:             pulumi.IntRef(_var.List_user_grant_depth_level_less_than),
+//				GrantKey:                       pulumi.StringRef(_var.List_user_grant_grant_key),
+//				GrantName:                      pulumi.StringRef(_var.List_user_grant_grant_name),
+//				PrivilegeCategory:              pulumi.StringRef(_var.List_user_grant_privilege_category),
+//				PrivilegeType:                  pulumi.StringRef(_var.List_user_grant_privilege_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetListUserGrants(ctx *pulumi.Context, args *GetListUserGrantsArgs, opts ...pulumi.InvokeOption) (*GetListUserGrantsResult, error) {
 	var rv GetListUserGrantsResult

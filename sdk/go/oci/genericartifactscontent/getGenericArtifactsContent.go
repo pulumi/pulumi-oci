@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GenericArtifactsContent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GenericArtifactsContent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GenericArtifactsContent.GetGenericArtifactsContent(ctx, &genericartifactscontent.GetGenericArtifactsContentArgs{
-// 			ArtifactId: oci_generic_artifacts_content_artifact.Test_artifact.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GenericArtifactsContent.GetGenericArtifactsContent(ctx, &genericartifactscontent.GetGenericArtifactsContentArgs{
+//				ArtifactId: oci_generic_artifacts_content_artifact.Test_artifact.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetGenericArtifactsContent(ctx *pulumi.Context, args *GetGenericArtifactsContentArgs, opts ...pulumi.InvokeOption) (*GetGenericArtifactsContentResult, error) {
 	var rv GetGenericArtifactsContentResult

@@ -29,62 +29,65 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewCaptureFilter(ctx, "testCaptureFilter", &Core.CaptureFilterArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			FilterType:    pulumi.Any(_var.Capture_filter_filter_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Capture_filter_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			VtapCaptureFilterRules: core.CaptureFilterVtapCaptureFilterRuleArray{
-// 				&core.CaptureFilterVtapCaptureFilterRuleArgs{
-// 					TrafficDirection: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_traffic_direction),
-// 					DestinationCidr:  pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_destination_cidr),
-// 					IcmpOptions: &core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs{
-// 						Type: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_icmp_options_type),
-// 						Code: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_icmp_options_code),
-// 					},
-// 					Protocol:   pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_protocol),
-// 					RuleAction: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_rule_action),
-// 					SourceCidr: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_source_cidr),
-// 					TcpOptions: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs{
-// 						DestinationPortRange: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs{
-// 							Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max),
-// 							Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min),
-// 						},
-// 						SourcePortRange: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs{
-// 							Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max),
-// 							Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min),
-// 						},
-// 					},
-// 					UdpOptions: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs{
-// 						DestinationPortRange: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs{
-// 							Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max),
-// 							Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min),
-// 						},
-// 						SourcePortRange: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs{
-// 							Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max),
-// 							Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewCaptureFilter(ctx, "testCaptureFilter", &Core.CaptureFilterArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				FilterType:    pulumi.Any(_var.Capture_filter_filter_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Capture_filter_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				VtapCaptureFilterRules: core.CaptureFilterVtapCaptureFilterRuleArray{
+//					&core.CaptureFilterVtapCaptureFilterRuleArgs{
+//						TrafficDirection: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_traffic_direction),
+//						DestinationCidr:  pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_destination_cidr),
+//						IcmpOptions: &core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs{
+//							Type: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_icmp_options_type),
+//							Code: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_icmp_options_code),
+//						},
+//						Protocol:   pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_protocol),
+//						RuleAction: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_rule_action),
+//						SourceCidr: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_source_cidr),
+//						TcpOptions: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs{
+//							DestinationPortRange: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs{
+//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max),
+//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min),
+//							},
+//							SourcePortRange: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs{
+//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max),
+//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min),
+//							},
+//						},
+//						UdpOptions: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs{
+//							DestinationPortRange: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs{
+//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max),
+//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min),
+//							},
+//							SourcePortRange: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs{
+//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max),
+//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -92,7 +95,9 @@ import (
 // CaptureFilters can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
+//
+//	$ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
+//
 // ```
 type CaptureFilter struct {
 	pulumi.CustomResourceState
@@ -248,7 +253,7 @@ func (i *CaptureFilter) ToCaptureFilterOutputWithContext(ctx context.Context) Ca
 // CaptureFilterArrayInput is an input type that accepts CaptureFilterArray and CaptureFilterArrayOutput values.
 // You can construct a concrete instance of `CaptureFilterArrayInput` via:
 //
-//          CaptureFilterArray{ CaptureFilterArgs{...} }
+//	CaptureFilterArray{ CaptureFilterArgs{...} }
 type CaptureFilterArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +278,7 @@ func (i CaptureFilterArray) ToCaptureFilterArrayOutputWithContext(ctx context.Co
 // CaptureFilterMapInput is an input type that accepts CaptureFilterMap and CaptureFilterMapOutput values.
 // You can construct a concrete instance of `CaptureFilterMapInput` via:
 //
-//          CaptureFilterMap{ "key": CaptureFilterArgs{...} }
+//	CaptureFilterMap{ "key": CaptureFilterArgs{...} }
 type CaptureFilterMapInput interface {
 	pulumi.Input
 

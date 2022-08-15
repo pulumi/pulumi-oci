@@ -19,22 +19,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewAppCatalogListingResourceVersionAgreement(ctx, "testAppCatalogListingResourceVersionAgreement", &Core.AppCatalogListingResourceVersionAgreementArgs{
-// 			ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
-// 			ListingResourceVersion: pulumi.Any(_var.App_catalog_listing_resource_version_agreement_listing_resource_version),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewAppCatalogListingResourceVersionAgreement(ctx, "testAppCatalogListingResourceVersionAgreement", &Core.AppCatalogListingResourceVersionAgreementArgs{
+//				ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
+//				ListingResourceVersion: pulumi.Any(_var.App_catalog_listing_resource_version_agreement_listing_resource_version),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppCatalogListingResourceVersionAgreement struct {
 	pulumi.CustomResourceState
@@ -162,7 +165,7 @@ func (i *AppCatalogListingResourceVersionAgreement) ToAppCatalogListingResourceV
 // AppCatalogListingResourceVersionAgreementArrayInput is an input type that accepts AppCatalogListingResourceVersionAgreementArray and AppCatalogListingResourceVersionAgreementArrayOutput values.
 // You can construct a concrete instance of `AppCatalogListingResourceVersionAgreementArrayInput` via:
 //
-//          AppCatalogListingResourceVersionAgreementArray{ AppCatalogListingResourceVersionAgreementArgs{...} }
+//	AppCatalogListingResourceVersionAgreementArray{ AppCatalogListingResourceVersionAgreementArgs{...} }
 type AppCatalogListingResourceVersionAgreementArrayInput interface {
 	pulumi.Input
 
@@ -187,7 +190,7 @@ func (i AppCatalogListingResourceVersionAgreementArray) ToAppCatalogListingResou
 // AppCatalogListingResourceVersionAgreementMapInput is an input type that accepts AppCatalogListingResourceVersionAgreementMap and AppCatalogListingResourceVersionAgreementMapOutput values.
 // You can construct a concrete instance of `AppCatalogListingResourceVersionAgreementMapInput` via:
 //
-//          AppCatalogListingResourceVersionAgreementMap{ "key": AppCatalogListingResourceVersionAgreementArgs{...} }
+//	AppCatalogListingResourceVersionAgreementMap{ "key": AppCatalogListingResourceVersionAgreementArgs{...} }
 type AppCatalogListingResourceVersionAgreementMapInput interface {
 	pulumi.Input
 

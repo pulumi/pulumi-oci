@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
 //
-// Gets the specified instance pool
+// # Gets the specified instance pool
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetInstancePool(ctx, &core.GetInstancePoolArgs{
-// 			InstancePoolId: oci_core_instance_pool.Test_instance_pool.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetInstancePool(ctx, &core.GetInstancePoolArgs{
+//				InstancePoolId: oci_core_instance_pool.Test_instance_pool.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupInstancePool(ctx *pulumi.Context, args *LookupInstancePoolArgs, opts ...pulumi.InvokeOption) (*LookupInstancePoolResult, error) {
 	var rv LookupInstancePoolResult

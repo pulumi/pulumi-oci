@@ -20,7 +20,9 @@ import (
 // AutonomousDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
+//
+//	$ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
+//
 // ```
 type AutonomousDatabase struct {
 	pulumi.CustomResourceState
@@ -959,7 +961,7 @@ func (i *AutonomousDatabase) ToAutonomousDatabaseOutputWithContext(ctx context.C
 // AutonomousDatabaseArrayInput is an input type that accepts AutonomousDatabaseArray and AutonomousDatabaseArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseArrayInput` via:
 //
-//          AutonomousDatabaseArray{ AutonomousDatabaseArgs{...} }
+//	AutonomousDatabaseArray{ AutonomousDatabaseArgs{...} }
 type AutonomousDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -984,7 +986,7 @@ func (i AutonomousDatabaseArray) ToAutonomousDatabaseArrayOutputWithContext(ctx 
 // AutonomousDatabaseMapInput is an input type that accepts AutonomousDatabaseMap and AutonomousDatabaseMapOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseMapInput` via:
 //
-//          AutonomousDatabaseMap{ "key": AutonomousDatabaseArgs{...} }
+//	AutonomousDatabaseMap{ "key": AutonomousDatabaseArgs{...} }
 type AutonomousDatabaseMapInput interface {
 	pulumi.Input
 

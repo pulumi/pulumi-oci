@@ -114,7 +114,8 @@ namespace Pulumi.Oci.Opsi
         public string? EnterpriseManagerBridgeId { get; set; }
 
         /// <summary>
-        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("exadataInsightId")]
         public string? ExadataInsightId { get; set; }
@@ -132,6 +133,7 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public List<string> HostTypes
         {
@@ -195,7 +197,8 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? EnterpriseManagerBridgeId { get; set; }
 
         /// <summary>
-        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("exadataInsightId")]
         public Input<string>? ExadataInsightId { get; set; }
@@ -213,6 +216,7 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public InputList<string> HostTypes
         {

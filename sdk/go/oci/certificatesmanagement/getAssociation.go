@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetAssociation(ctx, &certificatesmanagement.GetAssociationArgs{
-// 			AssociationId: oci_certificates_management_association.Test_association.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetAssociation(ctx, &certificatesmanagement.GetAssociationArgs{
+//				AssociationId: oci_certificates_management_association.Test_association.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAssociation(ctx *pulumi.Context, args *GetAssociationArgs, opts ...pulumi.InvokeOption) (*GetAssociationResult, error) {
 	var rv GetAssociationResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.GetLicenseRecord(ctx, &licensemanager.GetLicenseRecordArgs{
-// 			LicenseRecordId: oci_license_manager_license_record.Test_license_record.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.GetLicenseRecord(ctx, &licensemanager.GetLicenseRecordArgs{
+//				LicenseRecordId: oci_license_manager_license_record.Test_license_record.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupLicenseRecord(ctx *pulumi.Context, args *LookupLicenseRecordArgs, opts ...pulumi.InvokeOption) (*LookupLicenseRecordResult, error) {
 	var rv LookupLicenseRecordResult

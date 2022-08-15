@@ -25,22 +25,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementDashboard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementDashboard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementDashboard.NewManagementDashboardsImport(ctx, "testManagementDashboardsImport", &ManagementDashboard.ManagementDashboardsImportArgs{
-// 			ImportDetails:     pulumi.Any(_var.Sample_import_details),
-// 			ImportDetailsFile: pulumi.Any(_var.Sample_import_details_file_path),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementDashboard.NewManagementDashboardsImport(ctx, "testManagementDashboardsImport", &ManagementDashboard.ManagementDashboardsImportArgs{
+//				ImportDetails:     pulumi.Any(_var.Sample_import_details),
+//				ImportDetailsFile: pulumi.Any(_var.Sample_import_details_file_path),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // ManagementDashboardsImport can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
+//
+//	$ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
+//
 // ```
 type ManagementDashboardsImport struct {
 	pulumi.CustomResourceState
@@ -141,7 +146,7 @@ func (i *ManagementDashboardsImport) ToManagementDashboardsImportOutputWithConte
 // ManagementDashboardsImportArrayInput is an input type that accepts ManagementDashboardsImportArray and ManagementDashboardsImportArrayOutput values.
 // You can construct a concrete instance of `ManagementDashboardsImportArrayInput` via:
 //
-//          ManagementDashboardsImportArray{ ManagementDashboardsImportArgs{...} }
+//	ManagementDashboardsImportArray{ ManagementDashboardsImportArgs{...} }
 type ManagementDashboardsImportArrayInput interface {
 	pulumi.Input
 
@@ -166,7 +171,7 @@ func (i ManagementDashboardsImportArray) ToManagementDashboardsImportArrayOutput
 // ManagementDashboardsImportMapInput is an input type that accepts ManagementDashboardsImportMap and ManagementDashboardsImportMapOutput values.
 // You can construct a concrete instance of `ManagementDashboardsImportMapInput` via:
 //
-//          ManagementDashboardsImportMap{ "key": ManagementDashboardsImportArgs{...} }
+//	ManagementDashboardsImportMap{ "key": ManagementDashboardsImportArgs{...} }
 type ManagementDashboardsImportMapInput interface {
 	pulumi.Input
 

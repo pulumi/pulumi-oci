@@ -20,7 +20,7 @@ type OdaInstanceRestrictedOperation struct {
 // OdaInstanceRestrictedOperationInput is an input type that accepts OdaInstanceRestrictedOperationArgs and OdaInstanceRestrictedOperationOutput values.
 // You can construct a concrete instance of `OdaInstanceRestrictedOperationInput` via:
 //
-//          OdaInstanceRestrictedOperationArgs{...}
+//	OdaInstanceRestrictedOperationArgs{...}
 type OdaInstanceRestrictedOperationInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i OdaInstanceRestrictedOperationArgs) ToOdaInstanceRestrictedOperationOutp
 // OdaInstanceRestrictedOperationArrayInput is an input type that accepts OdaInstanceRestrictedOperationArray and OdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `OdaInstanceRestrictedOperationArrayInput` via:
 //
-//          OdaInstanceRestrictedOperationArray{ OdaInstanceRestrictedOperationArgs{...} }
+//	OdaInstanceRestrictedOperationArray{ OdaInstanceRestrictedOperationArgs{...} }
 type OdaInstanceRestrictedOperationArrayInput interface {
 	pulumi.Input
 
@@ -126,7 +126,7 @@ type GetOdaInstanceRestrictedOperation struct {
 // GetOdaInstanceRestrictedOperationInput is an input type that accepts GetOdaInstanceRestrictedOperationArgs and GetOdaInstanceRestrictedOperationOutput values.
 // You can construct a concrete instance of `GetOdaInstanceRestrictedOperationInput` via:
 //
-//          GetOdaInstanceRestrictedOperationArgs{...}
+//	GetOdaInstanceRestrictedOperationArgs{...}
 type GetOdaInstanceRestrictedOperationInput interface {
 	pulumi.Input
 
@@ -156,7 +156,7 @@ func (i GetOdaInstanceRestrictedOperationArgs) ToGetOdaInstanceRestrictedOperati
 // GetOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstanceRestrictedOperationArray and GetOdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstanceRestrictedOperationArrayInput` via:
 //
-//          GetOdaInstanceRestrictedOperationArray{ GetOdaInstanceRestrictedOperationArgs{...} }
+//	GetOdaInstanceRestrictedOperationArray{ GetOdaInstanceRestrictedOperationArgs{...} }
 type GetOdaInstanceRestrictedOperationArrayInput interface {
 	pulumi.Input
 
@@ -231,7 +231,7 @@ type GetOdaInstancesFilter struct {
 // GetOdaInstancesFilterInput is an input type that accepts GetOdaInstancesFilterArgs and GetOdaInstancesFilterOutput values.
 // You can construct a concrete instance of `GetOdaInstancesFilterInput` via:
 //
-//          GetOdaInstancesFilterArgs{...}
+//	GetOdaInstancesFilterArgs{...}
 type GetOdaInstancesFilterInput interface {
 	pulumi.Input
 
@@ -260,7 +260,7 @@ func (i GetOdaInstancesFilterArgs) ToGetOdaInstancesFilterOutputWithContext(ctx 
 // GetOdaInstancesFilterArrayInput is an input type that accepts GetOdaInstancesFilterArray and GetOdaInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesFilterArrayInput` via:
 //
-//          GetOdaInstancesFilterArray{ GetOdaInstancesFilterArgs{...} }
+//	GetOdaInstancesFilterArray{ GetOdaInstancesFilterArgs{...} }
 type GetOdaInstancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -380,7 +380,7 @@ type GetOdaInstancesOdaInstance struct {
 // GetOdaInstancesOdaInstanceInput is an input type that accepts GetOdaInstancesOdaInstanceArgs and GetOdaInstancesOdaInstanceOutput values.
 // You can construct a concrete instance of `GetOdaInstancesOdaInstanceInput` via:
 //
-//          GetOdaInstancesOdaInstanceArgs{...}
+//	GetOdaInstancesOdaInstanceArgs{...}
 type GetOdaInstancesOdaInstanceInput interface {
 	pulumi.Input
 
@@ -452,7 +452,7 @@ func (i GetOdaInstancesOdaInstanceArgs) ToGetOdaInstancesOdaInstanceOutputWithCo
 // GetOdaInstancesOdaInstanceArrayInput is an input type that accepts GetOdaInstancesOdaInstanceArray and GetOdaInstancesOdaInstanceArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesOdaInstanceArrayInput` via:
 //
-//          GetOdaInstancesOdaInstanceArray{ GetOdaInstancesOdaInstanceArgs{...} }
+//	GetOdaInstancesOdaInstanceArray{ GetOdaInstancesOdaInstanceArgs{...} }
 type GetOdaInstancesOdaInstanceArrayInput interface {
 	pulumi.Input
 
@@ -635,7 +635,7 @@ type GetOdaInstancesOdaInstanceRestrictedOperation struct {
 // GetOdaInstancesOdaInstanceRestrictedOperationInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArgs and GetOdaInstancesOdaInstanceRestrictedOperationOutput values.
 // You can construct a concrete instance of `GetOdaInstancesOdaInstanceRestrictedOperationInput` via:
 //
-//          GetOdaInstancesOdaInstanceRestrictedOperationArgs{...}
+//	GetOdaInstancesOdaInstanceRestrictedOperationArgs{...}
 type GetOdaInstancesOdaInstanceRestrictedOperationInput interface {
 	pulumi.Input
 
@@ -665,7 +665,7 @@ func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToGetOdaInstancesOdaI
 // GetOdaInstancesOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArray and GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesOdaInstanceRestrictedOperationArrayInput` via:
 //
-//          GetOdaInstancesOdaInstanceRestrictedOperationArray{ GetOdaInstancesOdaInstanceRestrictedOperationArgs{...} }
+//	GetOdaInstancesOdaInstanceRestrictedOperationArray{ GetOdaInstancesOdaInstanceRestrictedOperationArgs{...} }
 type GetOdaInstancesOdaInstanceRestrictedOperationArrayInput interface {
 	pulumi.Input
 

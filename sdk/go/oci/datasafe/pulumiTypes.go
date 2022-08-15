@@ -24,7 +24,7 @@ type AuditPolicyAuditCondition struct {
 // AuditPolicyAuditConditionInput is an input type that accepts AuditPolicyAuditConditionArgs and AuditPolicyAuditConditionOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditConditionInput` via:
 //
-//          AuditPolicyAuditConditionArgs{...}
+//	AuditPolicyAuditConditionArgs{...}
 type AuditPolicyAuditConditionInput interface {
 	pulumi.Input
 
@@ -58,7 +58,7 @@ func (i AuditPolicyAuditConditionArgs) ToAuditPolicyAuditConditionOutputWithCont
 // AuditPolicyAuditConditionArrayInput is an input type that accepts AuditPolicyAuditConditionArray and AuditPolicyAuditConditionArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditConditionArrayInput` via:
 //
-//          AuditPolicyAuditConditionArray{ AuditPolicyAuditConditionArgs{...} }
+//	AuditPolicyAuditConditionArray{ AuditPolicyAuditConditionArgs{...} }
 type AuditPolicyAuditConditionArrayInput interface {
 	pulumi.Input
 
@@ -150,7 +150,7 @@ type AuditPolicyAuditConditionEnableCondition struct {
 // AuditPolicyAuditConditionEnableConditionInput is an input type that accepts AuditPolicyAuditConditionEnableConditionArgs and AuditPolicyAuditConditionEnableConditionOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditConditionEnableConditionInput` via:
 //
-//          AuditPolicyAuditConditionEnableConditionArgs{...}
+//	AuditPolicyAuditConditionEnableConditionArgs{...}
 type AuditPolicyAuditConditionEnableConditionInput interface {
 	pulumi.Input
 
@@ -184,7 +184,7 @@ func (i AuditPolicyAuditConditionEnableConditionArgs) ToAuditPolicyAuditConditio
 // AuditPolicyAuditConditionEnableConditionArrayInput is an input type that accepts AuditPolicyAuditConditionEnableConditionArray and AuditPolicyAuditConditionEnableConditionArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditConditionEnableConditionArrayInput` via:
 //
-//          AuditPolicyAuditConditionEnableConditionArray{ AuditPolicyAuditConditionEnableConditionArgs{...} }
+//	AuditPolicyAuditConditionEnableConditionArray{ AuditPolicyAuditConditionEnableConditionArgs{...} }
 type AuditPolicyAuditConditionEnableConditionArrayInput interface {
 	pulumi.Input
 
@@ -288,7 +288,7 @@ type AuditPolicyAuditSpecification struct {
 // AuditPolicyAuditSpecificationInput is an input type that accepts AuditPolicyAuditSpecificationArgs and AuditPolicyAuditSpecificationOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditSpecificationInput` via:
 //
-//          AuditPolicyAuditSpecificationArgs{...}
+//	AuditPolicyAuditSpecificationArgs{...}
 type AuditPolicyAuditSpecificationInput interface {
 	pulumi.Input
 
@@ -336,7 +336,7 @@ func (i AuditPolicyAuditSpecificationArgs) ToAuditPolicyAuditSpecificationOutput
 // AuditPolicyAuditSpecificationArrayInput is an input type that accepts AuditPolicyAuditSpecificationArray and AuditPolicyAuditSpecificationArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditSpecificationArrayInput` via:
 //
-//          AuditPolicyAuditSpecificationArray{ AuditPolicyAuditSpecificationArgs{...} }
+//	AuditPolicyAuditSpecificationArray{ AuditPolicyAuditSpecificationArgs{...} }
 type AuditPolicyAuditSpecificationArrayInput interface {
 	pulumi.Input
 
@@ -489,7 +489,7 @@ type AuditProfileAuditTrail struct {
 // AuditProfileAuditTrailInput is an input type that accepts AuditProfileAuditTrailArgs and AuditProfileAuditTrailOutput values.
 // You can construct a concrete instance of `AuditProfileAuditTrailInput` via:
 //
-//          AuditProfileAuditTrailArgs{...}
+//	AuditProfileAuditTrailArgs{...}
 type AuditProfileAuditTrailInput interface {
 	pulumi.Input
 
@@ -551,7 +551,7 @@ func (i AuditProfileAuditTrailArgs) ToAuditProfileAuditTrailOutputWithContext(ct
 // AuditProfileAuditTrailArrayInput is an input type that accepts AuditProfileAuditTrailArray and AuditProfileAuditTrailArrayOutput values.
 // You can construct a concrete instance of `AuditProfileAuditTrailArrayInput` via:
 //
-//          AuditProfileAuditTrailArray{ AuditProfileAuditTrailArgs{...} }
+//	AuditProfileAuditTrailArray{ AuditProfileAuditTrailArgs{...} }
 type AuditProfileAuditTrailArrayInput interface {
 	pulumi.Input
 
@@ -709,7 +709,7 @@ type DataSafeConfigurationGlobalSetting struct {
 // DataSafeConfigurationGlobalSettingInput is an input type that accepts DataSafeConfigurationGlobalSettingArgs and DataSafeConfigurationGlobalSettingOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationGlobalSettingInput` via:
 //
-//          DataSafeConfigurationGlobalSettingArgs{...}
+//	DataSafeConfigurationGlobalSettingArgs{...}
 type DataSafeConfigurationGlobalSettingInput interface {
 	pulumi.Input
 
@@ -741,7 +741,7 @@ func (i DataSafeConfigurationGlobalSettingArgs) ToDataSafeConfigurationGlobalSet
 // DataSafeConfigurationGlobalSettingArrayInput is an input type that accepts DataSafeConfigurationGlobalSettingArray and DataSafeConfigurationGlobalSettingArrayOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationGlobalSettingArrayInput` via:
 //
-//          DataSafeConfigurationGlobalSettingArray{ DataSafeConfigurationGlobalSettingArgs{...} }
+//	DataSafeConfigurationGlobalSettingArray{ DataSafeConfigurationGlobalSettingArgs{...} }
 type DataSafeConfigurationGlobalSettingArrayInput interface {
 	pulumi.Input
 
@@ -822,7 +822,7 @@ type DiscoveryJobsResultModifiedAttribute struct {
 // DiscoveryJobsResultModifiedAttributeInput is an input type that accepts DiscoveryJobsResultModifiedAttributeArgs and DiscoveryJobsResultModifiedAttributeOutput values.
 // You can construct a concrete instance of `DiscoveryJobsResultModifiedAttributeInput` via:
 //
-//          DiscoveryJobsResultModifiedAttributeArgs{...}
+//	DiscoveryJobsResultModifiedAttributeArgs{...}
 type DiscoveryJobsResultModifiedAttributeInput interface {
 	pulumi.Input
 
@@ -852,7 +852,7 @@ func (i DiscoveryJobsResultModifiedAttributeArgs) ToDiscoveryJobsResultModifiedA
 // DiscoveryJobsResultModifiedAttributeArrayInput is an input type that accepts DiscoveryJobsResultModifiedAttributeArray and DiscoveryJobsResultModifiedAttributeArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobsResultModifiedAttributeArrayInput` via:
 //
-//          DiscoveryJobsResultModifiedAttributeArray{ DiscoveryJobsResultModifiedAttributeArgs{...} }
+//	DiscoveryJobsResultModifiedAttributeArray{ DiscoveryJobsResultModifiedAttributeArgs{...} }
 type DiscoveryJobsResultModifiedAttributeArrayInput interface {
 	pulumi.Input
 
@@ -970,7 +970,7 @@ type LibraryMasingFormatFormatEntry struct {
 // LibraryMasingFormatFormatEntryInput is an input type that accepts LibraryMasingFormatFormatEntryArgs and LibraryMasingFormatFormatEntryOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatFormatEntryInput` via:
 //
-//          LibraryMasingFormatFormatEntryArgs{...}
+//	LibraryMasingFormatFormatEntryArgs{...}
 type LibraryMasingFormatFormatEntryInput interface {
 	pulumi.Input
 
@@ -1042,7 +1042,7 @@ func (i LibraryMasingFormatFormatEntryArgs) ToLibraryMasingFormatFormatEntryOutp
 // LibraryMasingFormatFormatEntryArrayInput is an input type that accepts LibraryMasingFormatFormatEntryArray and LibraryMasingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatFormatEntryArrayInput` via:
 //
-//          LibraryMasingFormatFormatEntryArray{ LibraryMasingFormatFormatEntryArgs{...} }
+//	LibraryMasingFormatFormatEntryArray{ LibraryMasingFormatFormatEntryArgs{...} }
 type LibraryMasingFormatFormatEntryArrayInput interface {
 	pulumi.Input
 
@@ -1225,7 +1225,7 @@ type MaskingPoliciesMaskingColumnMaskingFormat struct {
 // MaskingPoliciesMaskingColumnMaskingFormatInput is an input type that accepts MaskingPoliciesMaskingColumnMaskingFormatArgs and MaskingPoliciesMaskingColumnMaskingFormatOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMaskingFormatInput` via:
 //
-//          MaskingPoliciesMaskingColumnMaskingFormatArgs{...}
+//	MaskingPoliciesMaskingColumnMaskingFormatArgs{...}
 type MaskingPoliciesMaskingColumnMaskingFormatInput interface {
 	pulumi.Input
 
@@ -1257,7 +1257,7 @@ func (i MaskingPoliciesMaskingColumnMaskingFormatArgs) ToMaskingPoliciesMaskingC
 // MaskingPoliciesMaskingColumnMaskingFormatArrayInput is an input type that accepts MaskingPoliciesMaskingColumnMaskingFormatArray and MaskingPoliciesMaskingColumnMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMaskingFormatArrayInput` via:
 //
-//          MaskingPoliciesMaskingColumnMaskingFormatArray{ MaskingPoliciesMaskingColumnMaskingFormatArgs{...} }
+//	MaskingPoliciesMaskingColumnMaskingFormatArray{ MaskingPoliciesMaskingColumnMaskingFormatArgs{...} }
 type MaskingPoliciesMaskingColumnMaskingFormatArrayInput interface {
 	pulumi.Input
 
@@ -1382,7 +1382,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 // MaskingPoliciesMaskingColumnMaskingFormatFormatEntryInput is an input type that accepts MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs and MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMaskingFormatFormatEntryInput` via:
 //
-//          MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...}
+//	MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...}
 type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryInput interface {
 	pulumi.Input
 
@@ -1454,7 +1454,7 @@ func (i MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs) ToMaskingPolic
 // MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput is an input type that accepts MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray and MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput` via:
 //
-//          MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray{ MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...} }
+//	MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray{ MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...} }
 type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput interface {
 	pulumi.Input
 
@@ -1637,7 +1637,7 @@ type MaskingPolicyColumnSource struct {
 // MaskingPolicyColumnSourceInput is an input type that accepts MaskingPolicyColumnSourceArgs and MaskingPolicyColumnSourceOutput values.
 // You can construct a concrete instance of `MaskingPolicyColumnSourceInput` via:
 //
-//          MaskingPolicyColumnSourceArgs{...}
+//	MaskingPolicyColumnSourceArgs{...}
 type MaskingPolicyColumnSourceInput interface {
 	pulumi.Input
 
@@ -1669,7 +1669,7 @@ func (i MaskingPolicyColumnSourceArgs) ToMaskingPolicyColumnSourceOutputWithCont
 // MaskingPolicyColumnSourceArrayInput is an input type that accepts MaskingPolicyColumnSourceArray and MaskingPolicyColumnSourceArrayOutput values.
 // You can construct a concrete instance of `MaskingPolicyColumnSourceArrayInput` via:
 //
-//          MaskingPolicyColumnSourceArray{ MaskingPolicyColumnSourceArgs{...} }
+//	MaskingPolicyColumnSourceArray{ MaskingPolicyColumnSourceArgs{...} }
 type MaskingPolicyColumnSourceArrayInput interface {
 	pulumi.Input
 
@@ -1756,7 +1756,7 @@ type ReportDefinitionColumnFilter struct {
 // ReportDefinitionColumnFilterInput is an input type that accepts ReportDefinitionColumnFilterArgs and ReportDefinitionColumnFilterOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnFilterInput` via:
 //
-//          ReportDefinitionColumnFilterArgs{...}
+//	ReportDefinitionColumnFilterArgs{...}
 type ReportDefinitionColumnFilterInput interface {
 	pulumi.Input
 
@@ -1792,7 +1792,7 @@ func (i ReportDefinitionColumnFilterArgs) ToReportDefinitionColumnFilterOutputWi
 // ReportDefinitionColumnFilterArrayInput is an input type that accepts ReportDefinitionColumnFilterArray and ReportDefinitionColumnFilterArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnFilterArrayInput` via:
 //
-//          ReportDefinitionColumnFilterArray{ ReportDefinitionColumnFilterArgs{...} }
+//	ReportDefinitionColumnFilterArray{ ReportDefinitionColumnFilterArgs{...} }
 type ReportDefinitionColumnFilterArrayInput interface {
 	pulumi.Input
 
@@ -1889,7 +1889,7 @@ type ReportDefinitionColumnInfo struct {
 // ReportDefinitionColumnInfoInput is an input type that accepts ReportDefinitionColumnInfoArgs and ReportDefinitionColumnInfoOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnInfoInput` via:
 //
-//          ReportDefinitionColumnInfoArgs{...}
+//	ReportDefinitionColumnInfoArgs{...}
 type ReportDefinitionColumnInfoInput interface {
 	pulumi.Input
 
@@ -1925,7 +1925,7 @@ func (i ReportDefinitionColumnInfoArgs) ToReportDefinitionColumnInfoOutputWithCo
 // ReportDefinitionColumnInfoArrayInput is an input type that accepts ReportDefinitionColumnInfoArray and ReportDefinitionColumnInfoArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnInfoArrayInput` via:
 //
-//          ReportDefinitionColumnInfoArray{ ReportDefinitionColumnInfoArgs{...} }
+//	ReportDefinitionColumnInfoArray{ ReportDefinitionColumnInfoArgs{...} }
 type ReportDefinitionColumnInfoArrayInput interface {
 	pulumi.Input
 
@@ -2018,7 +2018,7 @@ type ReportDefinitionColumnSorting struct {
 // ReportDefinitionColumnSortingInput is an input type that accepts ReportDefinitionColumnSortingArgs and ReportDefinitionColumnSortingOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnSortingInput` via:
 //
-//          ReportDefinitionColumnSortingArgs{...}
+//	ReportDefinitionColumnSortingArgs{...}
 type ReportDefinitionColumnSortingInput interface {
 	pulumi.Input
 
@@ -2050,7 +2050,7 @@ func (i ReportDefinitionColumnSortingArgs) ToReportDefinitionColumnSortingOutput
 // ReportDefinitionColumnSortingArrayInput is an input type that accepts ReportDefinitionColumnSortingArray and ReportDefinitionColumnSortingArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnSortingArrayInput` via:
 //
-//          ReportDefinitionColumnSortingArray{ ReportDefinitionColumnSortingArgs{...} }
+//	ReportDefinitionColumnSortingArray{ ReportDefinitionColumnSortingArgs{...} }
 type ReportDefinitionColumnSortingArrayInput interface {
 	pulumi.Input
 
@@ -2139,7 +2139,7 @@ type ReportDefinitionSummary struct {
 // ReportDefinitionSummaryInput is an input type that accepts ReportDefinitionSummaryArgs and ReportDefinitionSummaryOutput values.
 // You can construct a concrete instance of `ReportDefinitionSummaryInput` via:
 //
-//          ReportDefinitionSummaryArgs{...}
+//	ReportDefinitionSummaryArgs{...}
 type ReportDefinitionSummaryInput interface {
 	pulumi.Input
 
@@ -2177,7 +2177,7 @@ func (i ReportDefinitionSummaryArgs) ToReportDefinitionSummaryOutputWithContext(
 // ReportDefinitionSummaryArrayInput is an input type that accepts ReportDefinitionSummaryArray and ReportDefinitionSummaryArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionSummaryArrayInput` via:
 //
-//          ReportDefinitionSummaryArray{ ReportDefinitionSummaryArgs{...} }
+//	ReportDefinitionSummaryArray{ ReportDefinitionSummaryArgs{...} }
 type ReportDefinitionSummaryArrayInput interface {
 	pulumi.Input
 
@@ -2283,7 +2283,7 @@ type SecurityAssessmentStatistic struct {
 // SecurityAssessmentStatisticInput is an input type that accepts SecurityAssessmentStatisticArgs and SecurityAssessmentStatisticOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticInput` via:
 //
-//          SecurityAssessmentStatisticArgs{...}
+//	SecurityAssessmentStatisticArgs{...}
 type SecurityAssessmentStatisticInput interface {
 	pulumi.Input
 
@@ -2323,7 +2323,7 @@ func (i SecurityAssessmentStatisticArgs) ToSecurityAssessmentStatisticOutputWith
 // SecurityAssessmentStatisticArrayInput is an input type that accepts SecurityAssessmentStatisticArray and SecurityAssessmentStatisticArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticArrayInput` via:
 //
-//          SecurityAssessmentStatisticArray{ SecurityAssessmentStatisticArgs{...} }
+//	SecurityAssessmentStatisticArray{ SecurityAssessmentStatisticArgs{...} }
 type SecurityAssessmentStatisticArrayInput interface {
 	pulumi.Input
 
@@ -2436,7 +2436,7 @@ type SecurityAssessmentStatisticAdvisory struct {
 // SecurityAssessmentStatisticAdvisoryInput is an input type that accepts SecurityAssessmentStatisticAdvisoryArgs and SecurityAssessmentStatisticAdvisoryOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticAdvisoryInput` via:
 //
-//          SecurityAssessmentStatisticAdvisoryArgs{...}
+//	SecurityAssessmentStatisticAdvisoryArgs{...}
 type SecurityAssessmentStatisticAdvisoryInput interface {
 	pulumi.Input
 
@@ -2478,7 +2478,7 @@ func (i SecurityAssessmentStatisticAdvisoryArgs) ToSecurityAssessmentStatisticAd
 // SecurityAssessmentStatisticAdvisoryArrayInput is an input type that accepts SecurityAssessmentStatisticAdvisoryArray and SecurityAssessmentStatisticAdvisoryArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticAdvisoryArrayInput` via:
 //
-//          SecurityAssessmentStatisticAdvisoryArray{ SecurityAssessmentStatisticAdvisoryArgs{...} }
+//	SecurityAssessmentStatisticAdvisoryArray{ SecurityAssessmentStatisticAdvisoryArgs{...} }
 type SecurityAssessmentStatisticAdvisoryArrayInput interface {
 	pulumi.Input
 
@@ -2596,7 +2596,7 @@ type SecurityAssessmentStatisticEvaluate struct {
 // SecurityAssessmentStatisticEvaluateInput is an input type that accepts SecurityAssessmentStatisticEvaluateArgs and SecurityAssessmentStatisticEvaluateOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticEvaluateInput` via:
 //
-//          SecurityAssessmentStatisticEvaluateArgs{...}
+//	SecurityAssessmentStatisticEvaluateArgs{...}
 type SecurityAssessmentStatisticEvaluateInput interface {
 	pulumi.Input
 
@@ -2638,7 +2638,7 @@ func (i SecurityAssessmentStatisticEvaluateArgs) ToSecurityAssessmentStatisticEv
 // SecurityAssessmentStatisticEvaluateArrayInput is an input type that accepts SecurityAssessmentStatisticEvaluateArray and SecurityAssessmentStatisticEvaluateArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticEvaluateArrayInput` via:
 //
-//          SecurityAssessmentStatisticEvaluateArray{ SecurityAssessmentStatisticEvaluateArgs{...} }
+//	SecurityAssessmentStatisticEvaluateArray{ SecurityAssessmentStatisticEvaluateArgs{...} }
 type SecurityAssessmentStatisticEvaluateArrayInput interface {
 	pulumi.Input
 
@@ -2756,7 +2756,7 @@ type SecurityAssessmentStatisticHighRisk struct {
 // SecurityAssessmentStatisticHighRiskInput is an input type that accepts SecurityAssessmentStatisticHighRiskArgs and SecurityAssessmentStatisticHighRiskOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticHighRiskInput` via:
 //
-//          SecurityAssessmentStatisticHighRiskArgs{...}
+//	SecurityAssessmentStatisticHighRiskArgs{...}
 type SecurityAssessmentStatisticHighRiskInput interface {
 	pulumi.Input
 
@@ -2798,7 +2798,7 @@ func (i SecurityAssessmentStatisticHighRiskArgs) ToSecurityAssessmentStatisticHi
 // SecurityAssessmentStatisticHighRiskArrayInput is an input type that accepts SecurityAssessmentStatisticHighRiskArray and SecurityAssessmentStatisticHighRiskArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticHighRiskArrayInput` via:
 //
-//          SecurityAssessmentStatisticHighRiskArray{ SecurityAssessmentStatisticHighRiskArgs{...} }
+//	SecurityAssessmentStatisticHighRiskArray{ SecurityAssessmentStatisticHighRiskArgs{...} }
 type SecurityAssessmentStatisticHighRiskArrayInput interface {
 	pulumi.Input
 
@@ -2916,7 +2916,7 @@ type SecurityAssessmentStatisticLowRisk struct {
 // SecurityAssessmentStatisticLowRiskInput is an input type that accepts SecurityAssessmentStatisticLowRiskArgs and SecurityAssessmentStatisticLowRiskOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticLowRiskInput` via:
 //
-//          SecurityAssessmentStatisticLowRiskArgs{...}
+//	SecurityAssessmentStatisticLowRiskArgs{...}
 type SecurityAssessmentStatisticLowRiskInput interface {
 	pulumi.Input
 
@@ -2958,7 +2958,7 @@ func (i SecurityAssessmentStatisticLowRiskArgs) ToSecurityAssessmentStatisticLow
 // SecurityAssessmentStatisticLowRiskArrayInput is an input type that accepts SecurityAssessmentStatisticLowRiskArray and SecurityAssessmentStatisticLowRiskArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticLowRiskArrayInput` via:
 //
-//          SecurityAssessmentStatisticLowRiskArray{ SecurityAssessmentStatisticLowRiskArgs{...} }
+//	SecurityAssessmentStatisticLowRiskArray{ SecurityAssessmentStatisticLowRiskArgs{...} }
 type SecurityAssessmentStatisticLowRiskArrayInput interface {
 	pulumi.Input
 
@@ -3076,7 +3076,7 @@ type SecurityAssessmentStatisticMediumRisk struct {
 // SecurityAssessmentStatisticMediumRiskInput is an input type that accepts SecurityAssessmentStatisticMediumRiskArgs and SecurityAssessmentStatisticMediumRiskOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticMediumRiskInput` via:
 //
-//          SecurityAssessmentStatisticMediumRiskArgs{...}
+//	SecurityAssessmentStatisticMediumRiskArgs{...}
 type SecurityAssessmentStatisticMediumRiskInput interface {
 	pulumi.Input
 
@@ -3118,7 +3118,7 @@ func (i SecurityAssessmentStatisticMediumRiskArgs) ToSecurityAssessmentStatistic
 // SecurityAssessmentStatisticMediumRiskArrayInput is an input type that accepts SecurityAssessmentStatisticMediumRiskArray and SecurityAssessmentStatisticMediumRiskArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticMediumRiskArrayInput` via:
 //
-//          SecurityAssessmentStatisticMediumRiskArray{ SecurityAssessmentStatisticMediumRiskArgs{...} }
+//	SecurityAssessmentStatisticMediumRiskArray{ SecurityAssessmentStatisticMediumRiskArgs{...} }
 type SecurityAssessmentStatisticMediumRiskArrayInput interface {
 	pulumi.Input
 
@@ -3236,7 +3236,7 @@ type SecurityAssessmentStatisticPass struct {
 // SecurityAssessmentStatisticPassInput is an input type that accepts SecurityAssessmentStatisticPassArgs and SecurityAssessmentStatisticPassOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticPassInput` via:
 //
-//          SecurityAssessmentStatisticPassArgs{...}
+//	SecurityAssessmentStatisticPassArgs{...}
 type SecurityAssessmentStatisticPassInput interface {
 	pulumi.Input
 
@@ -3278,7 +3278,7 @@ func (i SecurityAssessmentStatisticPassArgs) ToSecurityAssessmentStatisticPassOu
 // SecurityAssessmentStatisticPassArrayInput is an input type that accepts SecurityAssessmentStatisticPassArray and SecurityAssessmentStatisticPassArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticPassArrayInput` via:
 //
-//          SecurityAssessmentStatisticPassArray{ SecurityAssessmentStatisticPassArgs{...} }
+//	SecurityAssessmentStatisticPassArray{ SecurityAssessmentStatisticPassArgs{...} }
 type SecurityAssessmentStatisticPassArrayInput interface {
 	pulumi.Input
 
@@ -3388,7 +3388,7 @@ type TargetDatabaseConnectionOption struct {
 // TargetDatabaseConnectionOptionInput is an input type that accepts TargetDatabaseConnectionOptionArgs and TargetDatabaseConnectionOptionOutput values.
 // You can construct a concrete instance of `TargetDatabaseConnectionOptionInput` via:
 //
-//          TargetDatabaseConnectionOptionArgs{...}
+//	TargetDatabaseConnectionOptionArgs{...}
 type TargetDatabaseConnectionOptionInput interface {
 	pulumi.Input
 
@@ -3430,11 +3430,11 @@ func (i TargetDatabaseConnectionOptionArgs) ToTargetDatabaseConnectionOptionPtrO
 // TargetDatabaseConnectionOptionPtrInput is an input type that accepts TargetDatabaseConnectionOptionArgs, TargetDatabaseConnectionOptionPtr and TargetDatabaseConnectionOptionPtrOutput values.
 // You can construct a concrete instance of `TargetDatabaseConnectionOptionPtrInput` via:
 //
-//          TargetDatabaseConnectionOptionArgs{...}
+//	        TargetDatabaseConnectionOptionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TargetDatabaseConnectionOptionPtrInput interface {
 	pulumi.Input
 
@@ -3567,7 +3567,7 @@ type TargetDatabaseCredentials struct {
 // TargetDatabaseCredentialsInput is an input type that accepts TargetDatabaseCredentialsArgs and TargetDatabaseCredentialsOutput values.
 // You can construct a concrete instance of `TargetDatabaseCredentialsInput` via:
 //
-//          TargetDatabaseCredentialsArgs{...}
+//	TargetDatabaseCredentialsArgs{...}
 type TargetDatabaseCredentialsInput interface {
 	pulumi.Input
 
@@ -3605,11 +3605,11 @@ func (i TargetDatabaseCredentialsArgs) ToTargetDatabaseCredentialsPtrOutputWithC
 // TargetDatabaseCredentialsPtrInput is an input type that accepts TargetDatabaseCredentialsArgs, TargetDatabaseCredentialsPtr and TargetDatabaseCredentialsPtrOutput values.
 // You can construct a concrete instance of `TargetDatabaseCredentialsPtrInput` via:
 //
-//          TargetDatabaseCredentialsArgs{...}
+//	        TargetDatabaseCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TargetDatabaseCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -3737,7 +3737,7 @@ type TargetDatabaseDatabaseDetails struct {
 // TargetDatabaseDatabaseDetailsInput is an input type that accepts TargetDatabaseDatabaseDetailsArgs and TargetDatabaseDatabaseDetailsOutput values.
 // You can construct a concrete instance of `TargetDatabaseDatabaseDetailsInput` via:
 //
-//          TargetDatabaseDatabaseDetailsArgs{...}
+//	TargetDatabaseDatabaseDetailsArgs{...}
 type TargetDatabaseDatabaseDetailsInput interface {
 	pulumi.Input
 
@@ -3789,11 +3789,11 @@ func (i TargetDatabaseDatabaseDetailsArgs) ToTargetDatabaseDatabaseDetailsPtrOut
 // TargetDatabaseDatabaseDetailsPtrInput is an input type that accepts TargetDatabaseDatabaseDetailsArgs, TargetDatabaseDatabaseDetailsPtr and TargetDatabaseDatabaseDetailsPtrOutput values.
 // You can construct a concrete instance of `TargetDatabaseDatabaseDetailsPtrInput` via:
 //
-//          TargetDatabaseDatabaseDetailsArgs{...}
+//	        TargetDatabaseDatabaseDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TargetDatabaseDatabaseDetailsPtrInput interface {
 	pulumi.Input
 
@@ -4018,7 +4018,7 @@ type TargetDatabaseTlsConfig struct {
 // TargetDatabaseTlsConfigInput is an input type that accepts TargetDatabaseTlsConfigArgs and TargetDatabaseTlsConfigOutput values.
 // You can construct a concrete instance of `TargetDatabaseTlsConfigInput` via:
 //
-//          TargetDatabaseTlsConfigArgs{...}
+//	TargetDatabaseTlsConfigArgs{...}
 type TargetDatabaseTlsConfigInput interface {
 	pulumi.Input
 
@@ -4062,11 +4062,11 @@ func (i TargetDatabaseTlsConfigArgs) ToTargetDatabaseTlsConfigPtrOutputWithConte
 // TargetDatabaseTlsConfigPtrInput is an input type that accepts TargetDatabaseTlsConfigArgs, TargetDatabaseTlsConfigPtr and TargetDatabaseTlsConfigPtrOutput values.
 // You can construct a concrete instance of `TargetDatabaseTlsConfigPtrInput` via:
 //
-//          TargetDatabaseTlsConfigArgs{...}
+//	        TargetDatabaseTlsConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TargetDatabaseTlsConfigPtrInput interface {
 	pulumi.Input
 
@@ -4225,7 +4225,7 @@ type UserAssessmentIgnoredTarget struct {
 // UserAssessmentIgnoredTargetInput is an input type that accepts UserAssessmentIgnoredTargetArgs and UserAssessmentIgnoredTargetOutput values.
 // You can construct a concrete instance of `UserAssessmentIgnoredTargetInput` via:
 //
-//          UserAssessmentIgnoredTargetArgs{...}
+//	UserAssessmentIgnoredTargetArgs{...}
 type UserAssessmentIgnoredTargetInput interface {
 	pulumi.Input
 
@@ -4255,7 +4255,7 @@ func (i UserAssessmentIgnoredTargetArgs) ToUserAssessmentIgnoredTargetOutputWith
 // UserAssessmentIgnoredTargetArrayInput is an input type that accepts UserAssessmentIgnoredTargetArray and UserAssessmentIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `UserAssessmentIgnoredTargetArrayInput` via:
 //
-//          UserAssessmentIgnoredTargetArray{ UserAssessmentIgnoredTargetArgs{...} }
+//	UserAssessmentIgnoredTargetArray{ UserAssessmentIgnoredTargetArgs{...} }
 type UserAssessmentIgnoredTargetArrayInput interface {
 	pulumi.Input
 
@@ -4340,7 +4340,7 @@ type GetAlertAnalyticItem struct {
 // GetAlertAnalyticItemInput is an input type that accepts GetAlertAnalyticItemArgs and GetAlertAnalyticItemOutput values.
 // You can construct a concrete instance of `GetAlertAnalyticItemInput` via:
 //
-//          GetAlertAnalyticItemArgs{...}
+//	GetAlertAnalyticItemArgs{...}
 type GetAlertAnalyticItemInput interface {
 	pulumi.Input
 
@@ -4376,7 +4376,7 @@ func (i GetAlertAnalyticItemArgs) ToGetAlertAnalyticItemOutputWithContext(ctx co
 // GetAlertAnalyticItemArrayInput is an input type that accepts GetAlertAnalyticItemArray and GetAlertAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertAnalyticItemArrayInput` via:
 //
-//          GetAlertAnalyticItemArray{ GetAlertAnalyticItemArgs{...} }
+//	GetAlertAnalyticItemArray{ GetAlertAnalyticItemArgs{...} }
 type GetAlertAnalyticItemArrayInput interface {
 	pulumi.Input
 
@@ -4465,7 +4465,7 @@ type GetAlertAnalyticItemDimension struct {
 // GetAlertAnalyticItemDimensionInput is an input type that accepts GetAlertAnalyticItemDimensionArgs and GetAlertAnalyticItemDimensionOutput values.
 // You can construct a concrete instance of `GetAlertAnalyticItemDimensionInput` via:
 //
-//          GetAlertAnalyticItemDimensionArgs{...}
+//	GetAlertAnalyticItemDimensionArgs{...}
 type GetAlertAnalyticItemDimensionInput interface {
 	pulumi.Input
 
@@ -4493,7 +4493,7 @@ func (i GetAlertAnalyticItemDimensionArgs) ToGetAlertAnalyticItemDimensionOutput
 // GetAlertAnalyticItemDimensionArrayInput is an input type that accepts GetAlertAnalyticItemDimensionArray and GetAlertAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAlertAnalyticItemDimensionArrayInput` via:
 //
-//          GetAlertAnalyticItemDimensionArray{ GetAlertAnalyticItemDimensionArgs{...} }
+//	GetAlertAnalyticItemDimensionArray{ GetAlertAnalyticItemDimensionArgs{...} }
 type GetAlertAnalyticItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -4561,7 +4561,7 @@ type GetAlertPoliciesAlertPolicyCollection struct {
 // GetAlertPoliciesAlertPolicyCollectionInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionArgs and GetAlertPoliciesAlertPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionInput` via:
 //
-//          GetAlertPoliciesAlertPolicyCollectionArgs{...}
+//	GetAlertPoliciesAlertPolicyCollectionArgs{...}
 type GetAlertPoliciesAlertPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -4588,7 +4588,7 @@ func (i GetAlertPoliciesAlertPolicyCollectionArgs) ToGetAlertPoliciesAlertPolicy
 // GetAlertPoliciesAlertPolicyCollectionArrayInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionArray and GetAlertPoliciesAlertPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionArrayInput` via:
 //
-//          GetAlertPoliciesAlertPolicyCollectionArray{ GetAlertPoliciesAlertPolicyCollectionArgs{...} }
+//	GetAlertPoliciesAlertPolicyCollectionArray{ GetAlertPoliciesAlertPolicyCollectionArgs{...} }
 type GetAlertPoliciesAlertPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4682,7 +4682,7 @@ type GetAlertPoliciesAlertPolicyCollectionItem struct {
 // GetAlertPoliciesAlertPolicyCollectionItemInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionItemArgs and GetAlertPoliciesAlertPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionItemInput` via:
 //
-//          GetAlertPoliciesAlertPolicyCollectionItemArgs{...}
+//	GetAlertPoliciesAlertPolicyCollectionItemArgs{...}
 type GetAlertPoliciesAlertPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -4734,7 +4734,7 @@ func (i GetAlertPoliciesAlertPolicyCollectionItemArgs) ToGetAlertPoliciesAlertPo
 // GetAlertPoliciesAlertPolicyCollectionItemArrayInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionItemArray and GetAlertPoliciesAlertPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionItemArrayInput` via:
 //
-//          GetAlertPoliciesAlertPolicyCollectionItemArray{ GetAlertPoliciesAlertPolicyCollectionItemArgs{...} }
+//	GetAlertPoliciesAlertPolicyCollectionItemArray{ GetAlertPoliciesAlertPolicyCollectionItemArgs{...} }
 type GetAlertPoliciesAlertPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4864,7 +4864,7 @@ type GetAlertPoliciesFilter struct {
 // GetAlertPoliciesFilterInput is an input type that accepts GetAlertPoliciesFilterArgs and GetAlertPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesFilterInput` via:
 //
-//          GetAlertPoliciesFilterArgs{...}
+//	GetAlertPoliciesFilterArgs{...}
 type GetAlertPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -4893,7 +4893,7 @@ func (i GetAlertPoliciesFilterArgs) ToGetAlertPoliciesFilterOutputWithContext(ct
 // GetAlertPoliciesFilterArrayInput is an input type that accepts GetAlertPoliciesFilterArray and GetAlertPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesFilterArrayInput` via:
 //
-//          GetAlertPoliciesFilterArray{ GetAlertPoliciesFilterArgs{...} }
+//	GetAlertPoliciesFilterArray{ GetAlertPoliciesFilterArgs{...} }
 type GetAlertPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4973,7 +4973,7 @@ type GetAlertPolicyRuleItem struct {
 // GetAlertPolicyRuleItemInput is an input type that accepts GetAlertPolicyRuleItemArgs and GetAlertPolicyRuleItemOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRuleItemInput` via:
 //
-//          GetAlertPolicyRuleItemArgs{...}
+//	GetAlertPolicyRuleItemArgs{...}
 type GetAlertPolicyRuleItemInput interface {
 	pulumi.Input
 
@@ -5005,7 +5005,7 @@ func (i GetAlertPolicyRuleItemArgs) ToGetAlertPolicyRuleItemOutputWithContext(ct
 // GetAlertPolicyRuleItemArrayInput is an input type that accepts GetAlertPolicyRuleItemArray and GetAlertPolicyRuleItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRuleItemArrayInput` via:
 //
-//          GetAlertPolicyRuleItemArray{ GetAlertPolicyRuleItemArgs{...} }
+//	GetAlertPolicyRuleItemArray{ GetAlertPolicyRuleItemArgs{...} }
 type GetAlertPolicyRuleItemArrayInput interface {
 	pulumi.Input
 
@@ -5084,7 +5084,7 @@ type GetAlertPolicyRulesAlertPolicyRuleCollection struct {
 // GetAlertPolicyRulesAlertPolicyRuleCollectionInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionArgs and GetAlertPolicyRulesAlertPolicyRuleCollectionOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesAlertPolicyRuleCollectionInput` via:
 //
-//          GetAlertPolicyRulesAlertPolicyRuleCollectionArgs{...}
+//	GetAlertPolicyRulesAlertPolicyRuleCollectionArgs{...}
 type GetAlertPolicyRulesAlertPolicyRuleCollectionInput interface {
 	pulumi.Input
 
@@ -5112,7 +5112,7 @@ func (i GetAlertPolicyRulesAlertPolicyRuleCollectionArgs) ToGetAlertPolicyRulesA
 // GetAlertPolicyRulesAlertPolicyRuleCollectionArrayInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionArray and GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesAlertPolicyRuleCollectionArrayInput` via:
 //
-//          GetAlertPolicyRulesAlertPolicyRuleCollectionArray{ GetAlertPolicyRulesAlertPolicyRuleCollectionArgs{...} }
+//	GetAlertPolicyRulesAlertPolicyRuleCollectionArray{ GetAlertPolicyRulesAlertPolicyRuleCollectionArgs{...} }
 type GetAlertPolicyRulesAlertPolicyRuleCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5187,7 +5187,7 @@ type GetAlertPolicyRulesAlertPolicyRuleCollectionItem struct {
 // GetAlertPolicyRulesAlertPolicyRuleCollectionItemInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs and GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesAlertPolicyRuleCollectionItemInput` via:
 //
-//          GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs{...}
+//	GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs{...}
 type GetAlertPolicyRulesAlertPolicyRuleCollectionItemInput interface {
 	pulumi.Input
 
@@ -5219,7 +5219,7 @@ func (i GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs) ToGetAlertPolicyRu
 // GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionItemArray and GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayInput` via:
 //
-//          GetAlertPolicyRulesAlertPolicyRuleCollectionItemArray{ GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs{...} }
+//	GetAlertPolicyRulesAlertPolicyRuleCollectionItemArray{ GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs{...} }
 type GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5299,7 +5299,7 @@ type GetAlertPolicyRulesFilter struct {
 // GetAlertPolicyRulesFilterInput is an input type that accepts GetAlertPolicyRulesFilterArgs and GetAlertPolicyRulesFilterOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesFilterInput` via:
 //
-//          GetAlertPolicyRulesFilterArgs{...}
+//	GetAlertPolicyRulesFilterArgs{...}
 type GetAlertPolicyRulesFilterInput interface {
 	pulumi.Input
 
@@ -5328,7 +5328,7 @@ func (i GetAlertPolicyRulesFilterArgs) ToGetAlertPolicyRulesFilterOutputWithCont
 // GetAlertPolicyRulesFilterArrayInput is an input type that accepts GetAlertPolicyRulesFilterArray and GetAlertPolicyRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesFilterArrayInput` via:
 //
-//          GetAlertPolicyRulesFilterArray{ GetAlertPolicyRulesFilterArgs{...} }
+//	GetAlertPolicyRulesFilterArray{ GetAlertPolicyRulesFilterArgs{...} }
 type GetAlertPolicyRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5403,7 +5403,7 @@ type GetAlertsAlertCollection struct {
 // GetAlertsAlertCollectionInput is an input type that accepts GetAlertsAlertCollectionArgs and GetAlertsAlertCollectionOutput values.
 // You can construct a concrete instance of `GetAlertsAlertCollectionInput` via:
 //
-//          GetAlertsAlertCollectionArgs{...}
+//	GetAlertsAlertCollectionArgs{...}
 type GetAlertsAlertCollectionInput interface {
 	pulumi.Input
 
@@ -5430,7 +5430,7 @@ func (i GetAlertsAlertCollectionArgs) ToGetAlertsAlertCollectionOutputWithContex
 // GetAlertsAlertCollectionArrayInput is an input type that accepts GetAlertsAlertCollectionArray and GetAlertsAlertCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAlertsAlertCollectionArrayInput` via:
 //
-//          GetAlertsAlertCollectionArray{ GetAlertsAlertCollectionArgs{...} }
+//	GetAlertsAlertCollectionArray{ GetAlertsAlertCollectionArgs{...} }
 type GetAlertsAlertCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5541,7 +5541,7 @@ type GetAlertsAlertCollectionItem struct {
 // GetAlertsAlertCollectionItemInput is an input type that accepts GetAlertsAlertCollectionItemArgs and GetAlertsAlertCollectionItemOutput values.
 // You can construct a concrete instance of `GetAlertsAlertCollectionItemInput` via:
 //
-//          GetAlertsAlertCollectionItemArgs{...}
+//	GetAlertsAlertCollectionItemArgs{...}
 type GetAlertsAlertCollectionItemInput interface {
 	pulumi.Input
 
@@ -5612,7 +5612,7 @@ func (i GetAlertsAlertCollectionItemArgs) ToGetAlertsAlertCollectionItemOutputWi
 // GetAlertsAlertCollectionItemArrayInput is an input type that accepts GetAlertsAlertCollectionItemArray and GetAlertsAlertCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertsAlertCollectionItemArrayInput` via:
 //
-//          GetAlertsAlertCollectionItemArray{ GetAlertsAlertCollectionItemArgs{...} }
+//	GetAlertsAlertCollectionItemArray{ GetAlertsAlertCollectionItemArgs{...} }
 type GetAlertsAlertCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5791,7 +5791,7 @@ type GetAlertsFilter struct {
 // GetAlertsFilterInput is an input type that accepts GetAlertsFilterArgs and GetAlertsFilterOutput values.
 // You can construct a concrete instance of `GetAlertsFilterInput` via:
 //
-//          GetAlertsFilterArgs{...}
+//	GetAlertsFilterArgs{...}
 type GetAlertsFilterInput interface {
 	pulumi.Input
 
@@ -5820,7 +5820,7 @@ func (i GetAlertsFilterArgs) ToGetAlertsFilterOutputWithContext(ctx context.Cont
 // GetAlertsFilterArrayInput is an input type that accepts GetAlertsFilterArray and GetAlertsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertsFilterArrayInput` via:
 //
-//          GetAlertsFilterArray{ GetAlertsFilterArgs{...} }
+//	GetAlertsFilterArray{ GetAlertsFilterArgs{...} }
 type GetAlertsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5895,7 +5895,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection struct {
 // GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionInput is an input type that accepts GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs and GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionInput` via:
 //
-//          GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs{...}
+//	GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs{...}
 type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionInput interface {
 	pulumi.Input
 
@@ -5922,7 +5922,7 @@ func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs) ToGetAudit
 // GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayInput is an input type that accepts GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArray and GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayInput` via:
 //
-//          GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArray{ GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs{...} }
+//	GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArray{ GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs{...} }
 type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6024,7 +6024,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem struct {
 // GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemInput is an input type that accepts GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs and GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemInput` via:
 //
-//          GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs{...}
+//	GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs{...}
 type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemInput interface {
 	pulumi.Input
 
@@ -6084,7 +6084,7 @@ func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs) ToGetA
 // GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayInput is an input type that accepts GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArray and GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayInput` via:
 //
-//          GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArray{ GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs{...} }
+//	GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArray{ GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs{...} }
 type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6240,7 +6240,7 @@ type GetAuditArchiveRetrievalsFilter struct {
 // GetAuditArchiveRetrievalsFilterInput is an input type that accepts GetAuditArchiveRetrievalsFilterArgs and GetAuditArchiveRetrievalsFilterOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsFilterInput` via:
 //
-//          GetAuditArchiveRetrievalsFilterArgs{...}
+//	GetAuditArchiveRetrievalsFilterArgs{...}
 type GetAuditArchiveRetrievalsFilterInput interface {
 	pulumi.Input
 
@@ -6269,7 +6269,7 @@ func (i GetAuditArchiveRetrievalsFilterArgs) ToGetAuditArchiveRetrievalsFilterOu
 // GetAuditArchiveRetrievalsFilterArrayInput is an input type that accepts GetAuditArchiveRetrievalsFilterArray and GetAuditArchiveRetrievalsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsFilterArrayInput` via:
 //
-//          GetAuditArchiveRetrievalsFilterArray{ GetAuditArchiveRetrievalsFilterArgs{...} }
+//	GetAuditArchiveRetrievalsFilterArray{ GetAuditArchiveRetrievalsFilterArgs{...} }
 type GetAuditArchiveRetrievalsFilterArrayInput interface {
 	pulumi.Input
 
@@ -6355,7 +6355,7 @@ type GetAuditEventAnalyticItem struct {
 // GetAuditEventAnalyticItemInput is an input type that accepts GetAuditEventAnalyticItemArgs and GetAuditEventAnalyticItemOutput values.
 // You can construct a concrete instance of `GetAuditEventAnalyticItemInput` via:
 //
-//          GetAuditEventAnalyticItemArgs{...}
+//	GetAuditEventAnalyticItemArgs{...}
 type GetAuditEventAnalyticItemInput interface {
 	pulumi.Input
 
@@ -6393,7 +6393,7 @@ func (i GetAuditEventAnalyticItemArgs) ToGetAuditEventAnalyticItemOutputWithCont
 // GetAuditEventAnalyticItemArrayInput is an input type that accepts GetAuditEventAnalyticItemArray and GetAuditEventAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventAnalyticItemArrayInput` via:
 //
-//          GetAuditEventAnalyticItemArray{ GetAuditEventAnalyticItemArgs{...} }
+//	GetAuditEventAnalyticItemArray{ GetAuditEventAnalyticItemArgs{...} }
 type GetAuditEventAnalyticItemArrayInput interface {
 	pulumi.Input
 
@@ -6507,7 +6507,7 @@ type GetAuditEventAnalyticItemDimension struct {
 // GetAuditEventAnalyticItemDimensionInput is an input type that accepts GetAuditEventAnalyticItemDimensionArgs and GetAuditEventAnalyticItemDimensionOutput values.
 // You can construct a concrete instance of `GetAuditEventAnalyticItemDimensionInput` via:
 //
-//          GetAuditEventAnalyticItemDimensionArgs{...}
+//	GetAuditEventAnalyticItemDimensionArgs{...}
 type GetAuditEventAnalyticItemDimensionInput interface {
 	pulumi.Input
 
@@ -6555,7 +6555,7 @@ func (i GetAuditEventAnalyticItemDimensionArgs) ToGetAuditEventAnalyticItemDimen
 // GetAuditEventAnalyticItemDimensionArrayInput is an input type that accepts GetAuditEventAnalyticItemDimensionArray and GetAuditEventAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventAnalyticItemDimensionArrayInput` via:
 //
-//          GetAuditEventAnalyticItemDimensionArray{ GetAuditEventAnalyticItemDimensionArgs{...} }
+//	GetAuditEventAnalyticItemDimensionArray{ GetAuditEventAnalyticItemDimensionArgs{...} }
 type GetAuditEventAnalyticItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -6743,7 +6743,7 @@ type GetAuditEventItem struct {
 // GetAuditEventItemInput is an input type that accepts GetAuditEventItemArgs and GetAuditEventItemOutput values.
 // You can construct a concrete instance of `GetAuditEventItemInput` via:
 //
-//          GetAuditEventItemArgs{...}
+//	GetAuditEventItemArgs{...}
 type GetAuditEventItemInput interface {
 	pulumi.Input
 
@@ -6840,7 +6840,7 @@ func (i GetAuditEventItemArgs) ToGetAuditEventItemOutputWithContext(ctx context.
 // GetAuditEventItemArrayInput is an input type that accepts GetAuditEventItemArray and GetAuditEventItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventItemArrayInput` via:
 //
-//          GetAuditEventItemArray{ GetAuditEventItemArgs{...} }
+//	GetAuditEventItemArray{ GetAuditEventItemArgs{...} }
 type GetAuditEventItemArrayInput interface {
 	pulumi.Input
 
@@ -7077,7 +7077,7 @@ type GetAuditEventsAuditEventCollection struct {
 // GetAuditEventsAuditEventCollectionInput is an input type that accepts GetAuditEventsAuditEventCollectionArgs and GetAuditEventsAuditEventCollectionOutput values.
 // You can construct a concrete instance of `GetAuditEventsAuditEventCollectionInput` via:
 //
-//          GetAuditEventsAuditEventCollectionArgs{...}
+//	GetAuditEventsAuditEventCollectionArgs{...}
 type GetAuditEventsAuditEventCollectionInput interface {
 	pulumi.Input
 
@@ -7105,7 +7105,7 @@ func (i GetAuditEventsAuditEventCollectionArgs) ToGetAuditEventsAuditEventCollec
 // GetAuditEventsAuditEventCollectionArrayInput is an input type that accepts GetAuditEventsAuditEventCollectionArray and GetAuditEventsAuditEventCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventsAuditEventCollectionArrayInput` via:
 //
-//          GetAuditEventsAuditEventCollectionArray{ GetAuditEventsAuditEventCollectionArgs{...} }
+//	GetAuditEventsAuditEventCollectionArray{ GetAuditEventsAuditEventCollectionArgs{...} }
 type GetAuditEventsAuditEventCollectionArrayInput interface {
 	pulumi.Input
 
@@ -7243,7 +7243,7 @@ type GetAuditEventsAuditEventCollectionItem struct {
 // GetAuditEventsAuditEventCollectionItemInput is an input type that accepts GetAuditEventsAuditEventCollectionItemArgs and GetAuditEventsAuditEventCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditEventsAuditEventCollectionItemInput` via:
 //
-//          GetAuditEventsAuditEventCollectionItemArgs{...}
+//	GetAuditEventsAuditEventCollectionItemArgs{...}
 type GetAuditEventsAuditEventCollectionItemInput interface {
 	pulumi.Input
 
@@ -7340,7 +7340,7 @@ func (i GetAuditEventsAuditEventCollectionItemArgs) ToGetAuditEventsAuditEventCo
 // GetAuditEventsAuditEventCollectionItemArrayInput is an input type that accepts GetAuditEventsAuditEventCollectionItemArray and GetAuditEventsAuditEventCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventsAuditEventCollectionItemArrayInput` via:
 //
-//          GetAuditEventsAuditEventCollectionItemArray{ GetAuditEventsAuditEventCollectionItemArgs{...} }
+//	GetAuditEventsAuditEventCollectionItemArray{ GetAuditEventsAuditEventCollectionItemArgs{...} }
 type GetAuditEventsAuditEventCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -7578,7 +7578,7 @@ type GetAuditEventsFilter struct {
 // GetAuditEventsFilterInput is an input type that accepts GetAuditEventsFilterArgs and GetAuditEventsFilterOutput values.
 // You can construct a concrete instance of `GetAuditEventsFilterInput` via:
 //
-//          GetAuditEventsFilterArgs{...}
+//	GetAuditEventsFilterArgs{...}
 type GetAuditEventsFilterInput interface {
 	pulumi.Input
 
@@ -7607,7 +7607,7 @@ func (i GetAuditEventsFilterArgs) ToGetAuditEventsFilterOutputWithContext(ctx co
 // GetAuditEventsFilterArrayInput is an input type that accepts GetAuditEventsFilterArray and GetAuditEventsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventsFilterArrayInput` via:
 //
-//          GetAuditEventsFilterArray{ GetAuditEventsFilterArgs{...} }
+//	GetAuditEventsFilterArray{ GetAuditEventsFilterArgs{...} }
 type GetAuditEventsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7682,7 +7682,7 @@ type GetAuditPoliciesAuditPolicyCollection struct {
 // GetAuditPoliciesAuditPolicyCollectionInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionArgs and GetAuditPoliciesAuditPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionArgs{...}
+//	GetAuditPoliciesAuditPolicyCollectionArgs{...}
 type GetAuditPoliciesAuditPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -7709,7 +7709,7 @@ func (i GetAuditPoliciesAuditPolicyCollectionArgs) ToGetAuditPoliciesAuditPolicy
 // GetAuditPoliciesAuditPolicyCollectionArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionArray and GetAuditPoliciesAuditPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionArrayInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionArray{ GetAuditPoliciesAuditPolicyCollectionArgs{...} }
+//	GetAuditPoliciesAuditPolicyCollectionArray{ GetAuditPoliciesAuditPolicyCollectionArgs{...} }
 type GetAuditPoliciesAuditPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -7815,7 +7815,7 @@ type GetAuditPoliciesAuditPolicyCollectionItem struct {
 // GetAuditPoliciesAuditPolicyCollectionItemInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemArgs and GetAuditPoliciesAuditPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemArgs{...}
+//	GetAuditPoliciesAuditPolicyCollectionItemArgs{...}
 type GetAuditPoliciesAuditPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -7879,7 +7879,7 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemArgs) ToGetAuditPoliciesAuditPo
 // GetAuditPoliciesAuditPolicyCollectionItemArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemArray and GetAuditPoliciesAuditPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemArrayInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemArray{ GetAuditPoliciesAuditPolicyCollectionItemArgs{...} }
+//	GetAuditPoliciesAuditPolicyCollectionItemArray{ GetAuditPoliciesAuditPolicyCollectionItemArgs{...} }
 type GetAuditPoliciesAuditPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -8051,7 +8051,7 @@ type GetAuditPoliciesAuditPolicyCollectionItemAuditCondition struct {
 // GetAuditPoliciesAuditPolicyCollectionItemAuditConditionInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs and GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditConditionInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs{...}
+//	GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs{...}
 type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionInput interface {
 	pulumi.Input
 
@@ -8085,7 +8085,7 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs) ToGetAuditP
 // GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArray and GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArray{ GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs{...} }
+//	GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArray{ GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs{...} }
 type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayInput interface {
 	pulumi.Input
 
@@ -8181,7 +8181,7 @@ type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition stru
 // GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArgs and GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArgs{...}
+//	GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArgs{...}
 type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionInput interface {
 	pulumi.Input
 
@@ -8215,7 +8215,7 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionAr
 // GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArray and GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArray{ GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArgs{...} }
+//	GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArray{ GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArgs{...} }
 type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayInput interface {
 	pulumi.Input
 
@@ -8327,7 +8327,7 @@ type GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification struct {
 // GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs and GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs{...}
+//	GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs{...}
 type GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationInput interface {
 	pulumi.Input
 
@@ -8375,7 +8375,7 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs) ToGetAu
 // GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArray and GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayInput` via:
 //
-//          GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArray{ GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs{...} }
+//	GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArray{ GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs{...} }
 type GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayInput interface {
 	pulumi.Input
 
@@ -8503,7 +8503,7 @@ type GetAuditPoliciesFilter struct {
 // GetAuditPoliciesFilterInput is an input type that accepts GetAuditPoliciesFilterArgs and GetAuditPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesFilterInput` via:
 //
-//          GetAuditPoliciesFilterArgs{...}
+//	GetAuditPoliciesFilterArgs{...}
 type GetAuditPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -8532,7 +8532,7 @@ func (i GetAuditPoliciesFilterArgs) ToGetAuditPoliciesFilterOutputWithContext(ct
 // GetAuditPoliciesFilterArrayInput is an input type that accepts GetAuditPoliciesFilterArray and GetAuditPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesFilterArrayInput` via:
 //
-//          GetAuditPoliciesFilterArray{ GetAuditPoliciesFilterArgs{...} }
+//	GetAuditPoliciesFilterArray{ GetAuditPoliciesFilterArgs{...} }
 type GetAuditPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -8614,7 +8614,7 @@ type GetAuditPolicyAuditCondition struct {
 // GetAuditPolicyAuditConditionInput is an input type that accepts GetAuditPolicyAuditConditionArgs and GetAuditPolicyAuditConditionOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditConditionInput` via:
 //
-//          GetAuditPolicyAuditConditionArgs{...}
+//	GetAuditPolicyAuditConditionArgs{...}
 type GetAuditPolicyAuditConditionInput interface {
 	pulumi.Input
 
@@ -8648,7 +8648,7 @@ func (i GetAuditPolicyAuditConditionArgs) ToGetAuditPolicyAuditConditionOutputWi
 // GetAuditPolicyAuditConditionArrayInput is an input type that accepts GetAuditPolicyAuditConditionArray and GetAuditPolicyAuditConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditConditionArrayInput` via:
 //
-//          GetAuditPolicyAuditConditionArray{ GetAuditPolicyAuditConditionArgs{...} }
+//	GetAuditPolicyAuditConditionArray{ GetAuditPolicyAuditConditionArgs{...} }
 type GetAuditPolicyAuditConditionArrayInput interface {
 	pulumi.Input
 
@@ -8740,7 +8740,7 @@ type GetAuditPolicyAuditConditionEnableCondition struct {
 // GetAuditPolicyAuditConditionEnableConditionInput is an input type that accepts GetAuditPolicyAuditConditionEnableConditionArgs and GetAuditPolicyAuditConditionEnableConditionOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditConditionEnableConditionInput` via:
 //
-//          GetAuditPolicyAuditConditionEnableConditionArgs{...}
+//	GetAuditPolicyAuditConditionEnableConditionArgs{...}
 type GetAuditPolicyAuditConditionEnableConditionInput interface {
 	pulumi.Input
 
@@ -8774,7 +8774,7 @@ func (i GetAuditPolicyAuditConditionEnableConditionArgs) ToGetAuditPolicyAuditCo
 // GetAuditPolicyAuditConditionEnableConditionArrayInput is an input type that accepts GetAuditPolicyAuditConditionEnableConditionArray and GetAuditPolicyAuditConditionEnableConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditConditionEnableConditionArrayInput` via:
 //
-//          GetAuditPolicyAuditConditionEnableConditionArray{ GetAuditPolicyAuditConditionEnableConditionArgs{...} }
+//	GetAuditPolicyAuditConditionEnableConditionArray{ GetAuditPolicyAuditConditionEnableConditionArgs{...} }
 type GetAuditPolicyAuditConditionEnableConditionArrayInput interface {
 	pulumi.Input
 
@@ -8878,7 +8878,7 @@ type GetAuditPolicyAuditSpecification struct {
 // GetAuditPolicyAuditSpecificationInput is an input type that accepts GetAuditPolicyAuditSpecificationArgs and GetAuditPolicyAuditSpecificationOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditSpecificationInput` via:
 //
-//          GetAuditPolicyAuditSpecificationArgs{...}
+//	GetAuditPolicyAuditSpecificationArgs{...}
 type GetAuditPolicyAuditSpecificationInput interface {
 	pulumi.Input
 
@@ -8926,7 +8926,7 @@ func (i GetAuditPolicyAuditSpecificationArgs) ToGetAuditPolicyAuditSpecification
 // GetAuditPolicyAuditSpecificationArrayInput is an input type that accepts GetAuditPolicyAuditSpecificationArray and GetAuditPolicyAuditSpecificationArrayOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditSpecificationArrayInput` via:
 //
-//          GetAuditPolicyAuditSpecificationArray{ GetAuditPolicyAuditSpecificationArgs{...} }
+//	GetAuditPolicyAuditSpecificationArray{ GetAuditPolicyAuditSpecificationArgs{...} }
 type GetAuditPolicyAuditSpecificationArrayInput interface {
 	pulumi.Input
 
@@ -9047,7 +9047,7 @@ type GetAuditProfileAnalyticItem struct {
 // GetAuditProfileAnalyticItemInput is an input type that accepts GetAuditProfileAnalyticItemArgs and GetAuditProfileAnalyticItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileAnalyticItemInput` via:
 //
-//          GetAuditProfileAnalyticItemArgs{...}
+//	GetAuditProfileAnalyticItemArgs{...}
 type GetAuditProfileAnalyticItemInput interface {
 	pulumi.Input
 
@@ -9077,7 +9077,7 @@ func (i GetAuditProfileAnalyticItemArgs) ToGetAuditProfileAnalyticItemOutputWith
 // GetAuditProfileAnalyticItemArrayInput is an input type that accepts GetAuditProfileAnalyticItemArray and GetAuditProfileAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAnalyticItemArrayInput` via:
 //
-//          GetAuditProfileAnalyticItemArray{ GetAuditProfileAnalyticItemArgs{...} }
+//	GetAuditProfileAnalyticItemArray{ GetAuditProfileAnalyticItemArgs{...} }
 type GetAuditProfileAnalyticItemArrayInput interface {
 	pulumi.Input
 
@@ -9151,7 +9151,7 @@ type GetAuditProfileAnalyticItemDimension struct {
 // GetAuditProfileAnalyticItemDimensionInput is an input type that accepts GetAuditProfileAnalyticItemDimensionArgs and GetAuditProfileAnalyticItemDimensionOutput values.
 // You can construct a concrete instance of `GetAuditProfileAnalyticItemDimensionInput` via:
 //
-//          GetAuditProfileAnalyticItemDimensionArgs{...}
+//	GetAuditProfileAnalyticItemDimensionArgs{...}
 type GetAuditProfileAnalyticItemDimensionInput interface {
 	pulumi.Input
 
@@ -9179,7 +9179,7 @@ func (i GetAuditProfileAnalyticItemDimensionArgs) ToGetAuditProfileAnalyticItemD
 // GetAuditProfileAnalyticItemDimensionArrayInput is an input type that accepts GetAuditProfileAnalyticItemDimensionArray and GetAuditProfileAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAnalyticItemDimensionArrayInput` via:
 //
-//          GetAuditProfileAnalyticItemDimensionArray{ GetAuditProfileAnalyticItemDimensionArgs{...} }
+//	GetAuditProfileAnalyticItemDimensionArray{ GetAuditProfileAnalyticItemDimensionArgs{...} }
 type GetAuditProfileAnalyticItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -9282,7 +9282,7 @@ type GetAuditProfileAuditTrail struct {
 // GetAuditProfileAuditTrailInput is an input type that accepts GetAuditProfileAuditTrailArgs and GetAuditProfileAuditTrailOutput values.
 // You can construct a concrete instance of `GetAuditProfileAuditTrailInput` via:
 //
-//          GetAuditProfileAuditTrailArgs{...}
+//	GetAuditProfileAuditTrailArgs{...}
 type GetAuditProfileAuditTrailInput interface {
 	pulumi.Input
 
@@ -9344,7 +9344,7 @@ func (i GetAuditProfileAuditTrailArgs) ToGetAuditProfileAuditTrailOutputWithCont
 // GetAuditProfileAuditTrailArrayInput is an input type that accepts GetAuditProfileAuditTrailArray and GetAuditProfileAuditTrailArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAuditTrailArrayInput` via:
 //
-//          GetAuditProfileAuditTrailArray{ GetAuditProfileAuditTrailArgs{...} }
+//	GetAuditProfileAuditTrailArray{ GetAuditProfileAuditTrailArgs{...} }
 type GetAuditProfileAuditTrailArrayInput interface {
 	pulumi.Input
 
@@ -9504,7 +9504,7 @@ type GetAuditProfileAvailableAuditVolumeItem struct {
 // GetAuditProfileAvailableAuditVolumeItemInput is an input type that accepts GetAuditProfileAvailableAuditVolumeItemArgs and GetAuditProfileAvailableAuditVolumeItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumeItemInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumeItemArgs{...}
+//	GetAuditProfileAvailableAuditVolumeItemArgs{...}
 type GetAuditProfileAvailableAuditVolumeItemInput interface {
 	pulumi.Input
 
@@ -9538,7 +9538,7 @@ func (i GetAuditProfileAvailableAuditVolumeItemArgs) ToGetAuditProfileAvailableA
 // GetAuditProfileAvailableAuditVolumeItemArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumeItemArray and GetAuditProfileAvailableAuditVolumeItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumeItemArrayInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumeItemArray{ GetAuditProfileAvailableAuditVolumeItemArgs{...} }
+//	GetAuditProfileAvailableAuditVolumeItemArray{ GetAuditProfileAvailableAuditVolumeItemArgs{...} }
 type GetAuditProfileAvailableAuditVolumeItemArrayInput interface {
 	pulumi.Input
 
@@ -9622,7 +9622,7 @@ type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection struct {
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs{...}
+//	GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs{...}
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionInput interface {
 	pulumi.Input
 
@@ -9650,7 +9650,7 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs) 
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArray and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArray{ GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs{...} }
+//	GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArray{ GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs{...} }
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -9721,7 +9721,7 @@ type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem stru
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs{...}
+//	GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs{...}
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemInput interface {
 	pulumi.Input
 
@@ -9749,7 +9749,7 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemAr
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArray and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArray{ GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs{...} }
+//	GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArray{ GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs{...} }
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -9826,7 +9826,7 @@ type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem 
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs{...}
+//	GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs{...}
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -9860,7 +9860,7 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemIt
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArray and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArray{ GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs{...} }
+//	GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArray{ GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs{...} }
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -9953,7 +9953,7 @@ type GetAuditProfileAvailableAuditVolumesFilter struct {
 // GetAuditProfileAvailableAuditVolumesFilterInput is an input type that accepts GetAuditProfileAvailableAuditVolumesFilterArgs and GetAuditProfileAvailableAuditVolumesFilterOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesFilterInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesFilterArgs{...}
+//	GetAuditProfileAvailableAuditVolumesFilterArgs{...}
 type GetAuditProfileAvailableAuditVolumesFilterInput interface {
 	pulumi.Input
 
@@ -9982,7 +9982,7 @@ func (i GetAuditProfileAvailableAuditVolumesFilterArgs) ToGetAuditProfileAvailab
 // GetAuditProfileAvailableAuditVolumesFilterArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesFilterArray and GetAuditProfileAvailableAuditVolumesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesFilterArrayInput` via:
 //
-//          GetAuditProfileAvailableAuditVolumesFilterArray{ GetAuditProfileAvailableAuditVolumesFilterArgs{...} }
+//	GetAuditProfileAvailableAuditVolumesFilterArray{ GetAuditProfileAvailableAuditVolumesFilterArgs{...} }
 type GetAuditProfileAvailableAuditVolumesFilterArrayInput interface {
 	pulumi.Input
 
@@ -10064,7 +10064,7 @@ type GetAuditProfileCollectedAuditVolumeItem struct {
 // GetAuditProfileCollectedAuditVolumeItemInput is an input type that accepts GetAuditProfileCollectedAuditVolumeItemArgs and GetAuditProfileCollectedAuditVolumeItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumeItemInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumeItemArgs{...}
+//	GetAuditProfileCollectedAuditVolumeItemArgs{...}
 type GetAuditProfileCollectedAuditVolumeItemInput interface {
 	pulumi.Input
 
@@ -10098,7 +10098,7 @@ func (i GetAuditProfileCollectedAuditVolumeItemArgs) ToGetAuditProfileCollectedA
 // GetAuditProfileCollectedAuditVolumeItemArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumeItemArray and GetAuditProfileCollectedAuditVolumeItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumeItemArrayInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumeItemArray{ GetAuditProfileCollectedAuditVolumeItemArgs{...} }
+//	GetAuditProfileCollectedAuditVolumeItemArray{ GetAuditProfileCollectedAuditVolumeItemArgs{...} }
 type GetAuditProfileCollectedAuditVolumeItemArrayInput interface {
 	pulumi.Input
 
@@ -10182,7 +10182,7 @@ type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection struct {
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs{...}
+//	GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs{...}
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionInput interface {
 	pulumi.Input
 
@@ -10210,7 +10210,7 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs) 
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArray and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArray{ GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs{...} }
+//	GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArray{ GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs{...} }
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10281,7 +10281,7 @@ type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem stru
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs{...}
+//	GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs{...}
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemInput interface {
 	pulumi.Input
 
@@ -10309,7 +10309,7 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemAr
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArray and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArray{ GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs{...} }
+//	GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArray{ GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs{...} }
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10386,7 +10386,7 @@ type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem 
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs{...}
+//	GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs{...}
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -10420,7 +10420,7 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemIt
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArray and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArray{ GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs{...} }
+//	GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArray{ GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs{...} }
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -10513,7 +10513,7 @@ type GetAuditProfileCollectedAuditVolumesFilter struct {
 // GetAuditProfileCollectedAuditVolumesFilterInput is an input type that accepts GetAuditProfileCollectedAuditVolumesFilterArgs and GetAuditProfileCollectedAuditVolumesFilterOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesFilterInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesFilterArgs{...}
+//	GetAuditProfileCollectedAuditVolumesFilterArgs{...}
 type GetAuditProfileCollectedAuditVolumesFilterInput interface {
 	pulumi.Input
 
@@ -10542,7 +10542,7 @@ func (i GetAuditProfileCollectedAuditVolumesFilterArgs) ToGetAuditProfileCollect
 // GetAuditProfileCollectedAuditVolumesFilterArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesFilterArray and GetAuditProfileCollectedAuditVolumesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesFilterArrayInput` via:
 //
-//          GetAuditProfileCollectedAuditVolumesFilterArray{ GetAuditProfileCollectedAuditVolumesFilterArgs{...} }
+//	GetAuditProfileCollectedAuditVolumesFilterArray{ GetAuditProfileCollectedAuditVolumesFilterArgs{...} }
 type GetAuditProfileCollectedAuditVolumesFilterArrayInput interface {
 	pulumi.Input
 
@@ -10617,7 +10617,7 @@ type GetAuditProfilesAuditProfileCollection struct {
 // GetAuditProfilesAuditProfileCollectionInput is an input type that accepts GetAuditProfilesAuditProfileCollectionArgs and GetAuditProfilesAuditProfileCollectionOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionInput` via:
 //
-//          GetAuditProfilesAuditProfileCollectionArgs{...}
+//	GetAuditProfilesAuditProfileCollectionArgs{...}
 type GetAuditProfilesAuditProfileCollectionInput interface {
 	pulumi.Input
 
@@ -10644,7 +10644,7 @@ func (i GetAuditProfilesAuditProfileCollectionArgs) ToGetAuditProfilesAuditProfi
 // GetAuditProfilesAuditProfileCollectionArrayInput is an input type that accepts GetAuditProfilesAuditProfileCollectionArray and GetAuditProfilesAuditProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionArrayInput` via:
 //
-//          GetAuditProfilesAuditProfileCollectionArray{ GetAuditProfilesAuditProfileCollectionArgs{...} }
+//	GetAuditProfilesAuditProfileCollectionArray{ GetAuditProfilesAuditProfileCollectionArgs{...} }
 type GetAuditProfilesAuditProfileCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10751,7 +10751,7 @@ type GetAuditProfilesAuditProfileCollectionItem struct {
 // GetAuditProfilesAuditProfileCollectionItemInput is an input type that accepts GetAuditProfilesAuditProfileCollectionItemArgs and GetAuditProfilesAuditProfileCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionItemInput` via:
 //
-//          GetAuditProfilesAuditProfileCollectionItemArgs{...}
+//	GetAuditProfilesAuditProfileCollectionItemArgs{...}
 type GetAuditProfilesAuditProfileCollectionItemInput interface {
 	pulumi.Input
 
@@ -10816,7 +10816,7 @@ func (i GetAuditProfilesAuditProfileCollectionItemArgs) ToGetAuditProfilesAuditP
 // GetAuditProfilesAuditProfileCollectionItemArrayInput is an input type that accepts GetAuditProfilesAuditProfileCollectionItemArray and GetAuditProfilesAuditProfileCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionItemArrayInput` via:
 //
-//          GetAuditProfilesAuditProfileCollectionItemArray{ GetAuditProfilesAuditProfileCollectionItemArgs{...} }
+//	GetAuditProfilesAuditProfileCollectionItemArray{ GetAuditProfilesAuditProfileCollectionItemArgs{...} }
 type GetAuditProfilesAuditProfileCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11015,7 +11015,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 // GetAuditProfilesAuditProfileCollectionItemAuditTrailInput is an input type that accepts GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs and GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionItemAuditTrailInput` via:
 //
-//          GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs{...}
+//	GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs{...}
 type GetAuditProfilesAuditProfileCollectionItemAuditTrailInput interface {
 	pulumi.Input
 
@@ -11077,7 +11077,7 @@ func (i GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs) ToGetAuditProf
 // GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayInput is an input type that accepts GetAuditProfilesAuditProfileCollectionItemAuditTrailArray and GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayInput` via:
 //
-//          GetAuditProfilesAuditProfileCollectionItemAuditTrailArray{ GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs{...} }
+//	GetAuditProfilesAuditProfileCollectionItemAuditTrailArray{ GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs{...} }
 type GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayInput interface {
 	pulumi.Input
 
@@ -11238,7 +11238,7 @@ type GetAuditProfilesFilter struct {
 // GetAuditProfilesFilterInput is an input type that accepts GetAuditProfilesFilterArgs and GetAuditProfilesFilterOutput values.
 // You can construct a concrete instance of `GetAuditProfilesFilterInput` via:
 //
-//          GetAuditProfilesFilterArgs{...}
+//	GetAuditProfilesFilterArgs{...}
 type GetAuditProfilesFilterInput interface {
 	pulumi.Input
 
@@ -11267,7 +11267,7 @@ func (i GetAuditProfilesFilterArgs) ToGetAuditProfilesFilterOutputWithContext(ct
 // GetAuditProfilesFilterArrayInput is an input type that accepts GetAuditProfilesFilterArray and GetAuditProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesFilterArrayInput` via:
 //
-//          GetAuditProfilesFilterArray{ GetAuditProfilesFilterArgs{...} }
+//	GetAuditProfilesFilterArray{ GetAuditProfilesFilterArgs{...} }
 type GetAuditProfilesFilterArrayInput interface {
 	pulumi.Input
 
@@ -11345,7 +11345,7 @@ type GetAuditTrailAnalyticItem struct {
 // GetAuditTrailAnalyticItemInput is an input type that accepts GetAuditTrailAnalyticItemArgs and GetAuditTrailAnalyticItemOutput values.
 // You can construct a concrete instance of `GetAuditTrailAnalyticItemInput` via:
 //
-//          GetAuditTrailAnalyticItemArgs{...}
+//	GetAuditTrailAnalyticItemArgs{...}
 type GetAuditTrailAnalyticItemInput interface {
 	pulumi.Input
 
@@ -11375,7 +11375,7 @@ func (i GetAuditTrailAnalyticItemArgs) ToGetAuditTrailAnalyticItemOutputWithCont
 // GetAuditTrailAnalyticItemArrayInput is an input type that accepts GetAuditTrailAnalyticItemArray and GetAuditTrailAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailAnalyticItemArrayInput` via:
 //
-//          GetAuditTrailAnalyticItemArray{ GetAuditTrailAnalyticItemArgs{...} }
+//	GetAuditTrailAnalyticItemArray{ GetAuditTrailAnalyticItemArgs{...} }
 type GetAuditTrailAnalyticItemArrayInput interface {
 	pulumi.Input
 
@@ -11455,7 +11455,7 @@ type GetAuditTrailAnalyticItemDimension struct {
 // GetAuditTrailAnalyticItemDimensionInput is an input type that accepts GetAuditTrailAnalyticItemDimensionArgs and GetAuditTrailAnalyticItemDimensionOutput values.
 // You can construct a concrete instance of `GetAuditTrailAnalyticItemDimensionInput` via:
 //
-//          GetAuditTrailAnalyticItemDimensionArgs{...}
+//	GetAuditTrailAnalyticItemDimensionArgs{...}
 type GetAuditTrailAnalyticItemDimensionInput interface {
 	pulumi.Input
 
@@ -11489,7 +11489,7 @@ func (i GetAuditTrailAnalyticItemDimensionArgs) ToGetAuditTrailAnalyticItemDimen
 // GetAuditTrailAnalyticItemDimensionArrayInput is an input type that accepts GetAuditTrailAnalyticItemDimensionArray and GetAuditTrailAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailAnalyticItemDimensionArrayInput` via:
 //
-//          GetAuditTrailAnalyticItemDimensionArray{ GetAuditTrailAnalyticItemDimensionArgs{...} }
+//	GetAuditTrailAnalyticItemDimensionArray{ GetAuditTrailAnalyticItemDimensionArgs{...} }
 type GetAuditTrailAnalyticItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -11572,7 +11572,7 @@ type GetAuditTrailsAuditTrailCollection struct {
 // GetAuditTrailsAuditTrailCollectionInput is an input type that accepts GetAuditTrailsAuditTrailCollectionArgs and GetAuditTrailsAuditTrailCollectionOutput values.
 // You can construct a concrete instance of `GetAuditTrailsAuditTrailCollectionInput` via:
 //
-//          GetAuditTrailsAuditTrailCollectionArgs{...}
+//	GetAuditTrailsAuditTrailCollectionArgs{...}
 type GetAuditTrailsAuditTrailCollectionInput interface {
 	pulumi.Input
 
@@ -11599,7 +11599,7 @@ func (i GetAuditTrailsAuditTrailCollectionArgs) ToGetAuditTrailsAuditTrailCollec
 // GetAuditTrailsAuditTrailCollectionArrayInput is an input type that accepts GetAuditTrailsAuditTrailCollectionArray and GetAuditTrailsAuditTrailCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailsAuditTrailCollectionArrayInput` via:
 //
-//          GetAuditTrailsAuditTrailCollectionArray{ GetAuditTrailsAuditTrailCollectionArgs{...} }
+//	GetAuditTrailsAuditTrailCollectionArray{ GetAuditTrailsAuditTrailCollectionArgs{...} }
 type GetAuditTrailsAuditTrailCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11704,7 +11704,7 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 // GetAuditTrailsAuditTrailCollectionItemInput is an input type that accepts GetAuditTrailsAuditTrailCollectionItemArgs and GetAuditTrailsAuditTrailCollectionItemOutput values.
 // You can construct a concrete instance of `GetAuditTrailsAuditTrailCollectionItemInput` via:
 //
-//          GetAuditTrailsAuditTrailCollectionItemArgs{...}
+//	GetAuditTrailsAuditTrailCollectionItemArgs{...}
 type GetAuditTrailsAuditTrailCollectionItemInput interface {
 	pulumi.Input
 
@@ -11769,7 +11769,7 @@ func (i GetAuditTrailsAuditTrailCollectionItemArgs) ToGetAuditTrailsAuditTrailCo
 // GetAuditTrailsAuditTrailCollectionItemArrayInput is an input type that accepts GetAuditTrailsAuditTrailCollectionItemArray and GetAuditTrailsAuditTrailCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailsAuditTrailCollectionItemArrayInput` via:
 //
-//          GetAuditTrailsAuditTrailCollectionItemArray{ GetAuditTrailsAuditTrailCollectionItemArgs{...} }
+//	GetAuditTrailsAuditTrailCollectionItemArray{ GetAuditTrailsAuditTrailCollectionItemArgs{...} }
 type GetAuditTrailsAuditTrailCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11933,7 +11933,7 @@ type GetAuditTrailsFilter struct {
 // GetAuditTrailsFilterInput is an input type that accepts GetAuditTrailsFilterArgs and GetAuditTrailsFilterOutput values.
 // You can construct a concrete instance of `GetAuditTrailsFilterInput` via:
 //
-//          GetAuditTrailsFilterArgs{...}
+//	GetAuditTrailsFilterArgs{...}
 type GetAuditTrailsFilterInput interface {
 	pulumi.Input
 
@@ -11962,7 +11962,7 @@ func (i GetAuditTrailsFilterArgs) ToGetAuditTrailsFilterOutputWithContext(ctx co
 // GetAuditTrailsFilterArrayInput is an input type that accepts GetAuditTrailsFilterArray and GetAuditTrailsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailsFilterArrayInput` via:
 //
-//          GetAuditTrailsFilterArray{ GetAuditTrailsFilterArgs{...} }
+//	GetAuditTrailsFilterArray{ GetAuditTrailsFilterArgs{...} }
 type GetAuditTrailsFilterArrayInput interface {
 	pulumi.Input
 
@@ -12040,7 +12040,7 @@ type GetCompatibleFormatsForDataTypeFormatsForDataType struct {
 // GetCompatibleFormatsForDataTypeFormatsForDataTypeInput is an input type that accepts GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs and GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForDataTypeFormatsForDataTypeInput` via:
 //
-//          GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs{...}
+//	GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs{...}
 type GetCompatibleFormatsForDataTypeFormatsForDataTypeInput interface {
 	pulumi.Input
 
@@ -12070,7 +12070,7 @@ func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs) ToGetCompatibleFo
 // GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayInput is an input type that accepts GetCompatibleFormatsForDataTypeFormatsForDataTypeArray and GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayInput` via:
 //
-//          GetCompatibleFormatsForDataTypeFormatsForDataTypeArray{ GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs{...} }
+//	GetCompatibleFormatsForDataTypeFormatsForDataTypeArray{ GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs{...} }
 type GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayInput interface {
 	pulumi.Input
 
@@ -12150,7 +12150,7 @@ type GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat struct {
 // GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatInput is an input type that accepts GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs and GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatInput` via:
 //
-//          GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs{...}
+//	GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs{...}
 type GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatInput interface {
 	pulumi.Input
 
@@ -12182,7 +12182,7 @@ func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs) ToGe
 // GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayInput is an input type that accepts GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArray and GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayInput` via:
 //
-//          GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArray{ GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs{...} }
+//	GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArray{ GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs{...} }
 type GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayInput interface {
 	pulumi.Input
 
@@ -12263,7 +12263,7 @@ type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType struct {
 // GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeInput is an input type that accepts GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs and GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeInput` via:
 //
-//          GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs{...}
+//	GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs{...}
 type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeInput interface {
 	pulumi.Input
 
@@ -12293,7 +12293,7 @@ func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs) ToGetCo
 // GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayInput is an input type that accepts GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArray and GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayInput` via:
 //
-//          GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArray{ GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs{...} }
+//	GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArray{ GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs{...} }
 type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayInput interface {
 	pulumi.Input
 
@@ -12373,7 +12373,7 @@ type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat st
 // GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatInput is an input type that accepts GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs and GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatInput` via:
 //
-//          GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs{...}
+//	GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs{...}
 type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatInput interface {
 	pulumi.Input
 
@@ -12405,7 +12405,7 @@ func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat
 // GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayInput is an input type that accepts GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArray and GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayInput` via:
 //
-//          GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArray{ GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs{...} }
+//	GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArray{ GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs{...} }
 type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayInput interface {
 	pulumi.Input
 
@@ -12490,7 +12490,7 @@ type GetDataSafeConfigurationGlobalSetting struct {
 // GetDataSafeConfigurationGlobalSettingInput is an input type that accepts GetDataSafeConfigurationGlobalSettingArgs and GetDataSafeConfigurationGlobalSettingOutput values.
 // You can construct a concrete instance of `GetDataSafeConfigurationGlobalSettingInput` via:
 //
-//          GetDataSafeConfigurationGlobalSettingArgs{...}
+//	GetDataSafeConfigurationGlobalSettingArgs{...}
 type GetDataSafeConfigurationGlobalSettingInput interface {
 	pulumi.Input
 
@@ -12522,7 +12522,7 @@ func (i GetDataSafeConfigurationGlobalSettingArgs) ToGetDataSafeConfigurationGlo
 // GetDataSafeConfigurationGlobalSettingArrayInput is an input type that accepts GetDataSafeConfigurationGlobalSettingArray and GetDataSafeConfigurationGlobalSettingArrayOutput values.
 // You can construct a concrete instance of `GetDataSafeConfigurationGlobalSettingArrayInput` via:
 //
-//          GetDataSafeConfigurationGlobalSettingArray{ GetDataSafeConfigurationGlobalSettingArgs{...} }
+//	GetDataSafeConfigurationGlobalSettingArray{ GetDataSafeConfigurationGlobalSettingArgs{...} }
 type GetDataSafeConfigurationGlobalSettingArrayInput interface {
 	pulumi.Input
 
@@ -12629,7 +12629,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpoint struct {
 // GetDataSafePrivateEndpointsDataSafePrivateEndpointInput is an input type that accepts GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs and GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput values.
 // You can construct a concrete instance of `GetDataSafePrivateEndpointsDataSafePrivateEndpointInput` via:
 //
-//          GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs{...}
+//	GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs{...}
 type GetDataSafePrivateEndpointsDataSafePrivateEndpointInput interface {
 	pulumi.Input
 
@@ -12685,7 +12685,7 @@ func (i GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs) ToGetDataSafePri
 // GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput is an input type that accepts GetDataSafePrivateEndpointsDataSafePrivateEndpointArray and GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput` via:
 //
-//          GetDataSafePrivateEndpointsDataSafePrivateEndpointArray{ GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs{...} }
+//	GetDataSafePrivateEndpointsDataSafePrivateEndpointArray{ GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs{...} }
 type GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -12829,7 +12829,7 @@ type GetDataSafePrivateEndpointsFilter struct {
 // GetDataSafePrivateEndpointsFilterInput is an input type that accepts GetDataSafePrivateEndpointsFilterArgs and GetDataSafePrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetDataSafePrivateEndpointsFilterInput` via:
 //
-//          GetDataSafePrivateEndpointsFilterArgs{...}
+//	GetDataSafePrivateEndpointsFilterArgs{...}
 type GetDataSafePrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -12858,7 +12858,7 @@ func (i GetDataSafePrivateEndpointsFilterArgs) ToGetDataSafePrivateEndpointsFilt
 // GetDataSafePrivateEndpointsFilterArrayInput is an input type that accepts GetDataSafePrivateEndpointsFilterArray and GetDataSafePrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataSafePrivateEndpointsFilterArrayInput` via:
 //
-//          GetDataSafePrivateEndpointsFilterArray{ GetDataSafePrivateEndpointsFilterArgs{...} }
+//	GetDataSafePrivateEndpointsFilterArray{ GetDataSafePrivateEndpointsFilterArgs{...} }
 type GetDataSafePrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -12938,7 +12938,7 @@ type GetDiscoveryAnalyticItem struct {
 // GetDiscoveryAnalyticItemInput is an input type that accepts GetDiscoveryAnalyticItemArgs and GetDiscoveryAnalyticItemOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticItemInput` via:
 //
-//          GetDiscoveryAnalyticItemArgs{...}
+//	GetDiscoveryAnalyticItemArgs{...}
 type GetDiscoveryAnalyticItemInput interface {
 	pulumi.Input
 
@@ -12970,7 +12970,7 @@ func (i GetDiscoveryAnalyticItemArgs) ToGetDiscoveryAnalyticItemOutputWithContex
 // GetDiscoveryAnalyticItemArrayInput is an input type that accepts GetDiscoveryAnalyticItemArray and GetDiscoveryAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticItemArrayInput` via:
 //
-//          GetDiscoveryAnalyticItemArray{ GetDiscoveryAnalyticItemArgs{...} }
+//	GetDiscoveryAnalyticItemArray{ GetDiscoveryAnalyticItemArgs{...} }
 type GetDiscoveryAnalyticItemArrayInput interface {
 	pulumi.Input
 
@@ -13051,7 +13051,7 @@ type GetDiscoveryAnalyticItemDimension struct {
 // GetDiscoveryAnalyticItemDimensionInput is an input type that accepts GetDiscoveryAnalyticItemDimensionArgs and GetDiscoveryAnalyticItemDimensionOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticItemDimensionInput` via:
 //
-//          GetDiscoveryAnalyticItemDimensionArgs{...}
+//	GetDiscoveryAnalyticItemDimensionArgs{...}
 type GetDiscoveryAnalyticItemDimensionInput interface {
 	pulumi.Input
 
@@ -13081,7 +13081,7 @@ func (i GetDiscoveryAnalyticItemDimensionArgs) ToGetDiscoveryAnalyticItemDimensi
 // GetDiscoveryAnalyticItemDimensionArrayInput is an input type that accepts GetDiscoveryAnalyticItemDimensionArray and GetDiscoveryAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticItemDimensionArrayInput` via:
 //
-//          GetDiscoveryAnalyticItemDimensionArray{ GetDiscoveryAnalyticItemDimensionArgs{...} }
+//	GetDiscoveryAnalyticItemDimensionArray{ GetDiscoveryAnalyticItemDimensionArgs{...} }
 type GetDiscoveryAnalyticItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -13155,7 +13155,7 @@ type GetDiscoveryAnalyticsDiscoveryAnalyticsCollection struct {
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionInput` via:
 //
-//          GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs{...}
+//	GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs{...}
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionInput interface {
 	pulumi.Input
 
@@ -13183,7 +13183,7 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs) ToGetDiscoveryAna
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArray and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayInput` via:
 //
-//          GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArray{ GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs{...} }
+//	GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArray{ GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs{...} }
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayInput interface {
 	pulumi.Input
 
@@ -13258,7 +13258,7 @@ type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem struct {
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemInput` via:
 //
-//          GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs{...}
+//	GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs{...}
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemInput interface {
 	pulumi.Input
 
@@ -13290,7 +13290,7 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs) ToGetDiscover
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArray and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayInput` via:
 //
-//          GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArray{ GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs{...} }
+//	GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArray{ GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs{...} }
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -13373,7 +13373,7 @@ type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension struct {
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionInput` via:
 //
-//          GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs{...}
+//	GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs{...}
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionInput interface {
 	pulumi.Input
 
@@ -13403,7 +13403,7 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs) ToGe
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArray and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayInput` via:
 //
-//          GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArray{ GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs{...} }
+//	GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArray{ GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs{...} }
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -13480,7 +13480,7 @@ type GetDiscoveryAnalyticsFilter struct {
 // GetDiscoveryAnalyticsFilterInput is an input type that accepts GetDiscoveryAnalyticsFilterArgs and GetDiscoveryAnalyticsFilterOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsFilterInput` via:
 //
-//          GetDiscoveryAnalyticsFilterArgs{...}
+//	GetDiscoveryAnalyticsFilterArgs{...}
 type GetDiscoveryAnalyticsFilterInput interface {
 	pulumi.Input
 
@@ -13509,7 +13509,7 @@ func (i GetDiscoveryAnalyticsFilterArgs) ToGetDiscoveryAnalyticsFilterOutputWith
 // GetDiscoveryAnalyticsFilterArrayInput is an input type that accepts GetDiscoveryAnalyticsFilterArray and GetDiscoveryAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsFilterArrayInput` via:
 //
-//          GetDiscoveryAnalyticsFilterArray{ GetDiscoveryAnalyticsFilterArgs{...} }
+//	GetDiscoveryAnalyticsFilterArray{ GetDiscoveryAnalyticsFilterArgs{...} }
 type GetDiscoveryAnalyticsFilterArrayInput interface {
 	pulumi.Input
 
@@ -13587,7 +13587,7 @@ type GetDiscoveryJobsResultModifiedAttribute struct {
 // GetDiscoveryJobsResultModifiedAttributeInput is an input type that accepts GetDiscoveryJobsResultModifiedAttributeArgs and GetDiscoveryJobsResultModifiedAttributeOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultModifiedAttributeInput` via:
 //
-//          GetDiscoveryJobsResultModifiedAttributeArgs{...}
+//	GetDiscoveryJobsResultModifiedAttributeArgs{...}
 type GetDiscoveryJobsResultModifiedAttributeInput interface {
 	pulumi.Input
 
@@ -13617,7 +13617,7 @@ func (i GetDiscoveryJobsResultModifiedAttributeArgs) ToGetDiscoveryJobsResultMod
 // GetDiscoveryJobsResultModifiedAttributeArrayInput is an input type that accepts GetDiscoveryJobsResultModifiedAttributeArray and GetDiscoveryJobsResultModifiedAttributeArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultModifiedAttributeArrayInput` via:
 //
-//          GetDiscoveryJobsResultModifiedAttributeArray{ GetDiscoveryJobsResultModifiedAttributeArgs{...} }
+//	GetDiscoveryJobsResultModifiedAttributeArray{ GetDiscoveryJobsResultModifiedAttributeArgs{...} }
 type GetDiscoveryJobsResultModifiedAttributeArrayInput interface {
 	pulumi.Input
 
@@ -13690,7 +13690,7 @@ type GetDiscoveryJobsResultsDiscoveryJobResultCollection struct {
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs and GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionInput` via:
 //
-//          GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs{...}
+//	GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs{...}
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionInput interface {
 	pulumi.Input
 
@@ -13717,7 +13717,7 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs) ToGetDiscoveryJ
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionArray and GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayInput` via:
 //
-//          GetDiscoveryJobsResultsDiscoveryJobResultCollectionArray{ GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs{...} }
+//	GetDiscoveryJobsResultsDiscoveryJobResultCollectionArray{ GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs{...} }
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayInput interface {
 	pulumi.Input
 
@@ -13825,7 +13825,7 @@ type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem struct {
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs and GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemInput` via:
 //
-//          GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs{...}
+//	GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs{...}
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemInput interface {
 	pulumi.Input
 
@@ -13891,7 +13891,7 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs) ToGetDiscov
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArray and GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayInput` via:
 //
-//          GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArray{ GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs{...} }
+//	GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArray{ GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs{...} }
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -14065,7 +14065,7 @@ type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute st
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArgs and GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeInput` via:
 //
-//          GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArgs{...}
+//	GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArgs{...}
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeInput interface {
 	pulumi.Input
 
@@ -14095,7 +14095,7 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArray and GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayInput` via:
 //
-//          GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArray{ GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArgs{...} }
+//	GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArray{ GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArgs{...} }
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayInput interface {
 	pulumi.Input
 
@@ -14174,7 +14174,7 @@ type GetDiscoveryJobsResultsFilter struct {
 // GetDiscoveryJobsResultsFilterInput is an input type that accepts GetDiscoveryJobsResultsFilterArgs and GetDiscoveryJobsResultsFilterOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsFilterInput` via:
 //
-//          GetDiscoveryJobsResultsFilterArgs{...}
+//	GetDiscoveryJobsResultsFilterArgs{...}
 type GetDiscoveryJobsResultsFilterInput interface {
 	pulumi.Input
 
@@ -14203,7 +14203,7 @@ func (i GetDiscoveryJobsResultsFilterArgs) ToGetDiscoveryJobsResultsFilterOutput
 // GetDiscoveryJobsResultsFilterArrayInput is an input type that accepts GetDiscoveryJobsResultsFilterArray and GetDiscoveryJobsResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsFilterArrayInput` via:
 //
-//          GetDiscoveryJobsResultsFilterArray{ GetDiscoveryJobsResultsFilterArgs{...} }
+//	GetDiscoveryJobsResultsFilterArray{ GetDiscoveryJobsResultsFilterArgs{...} }
 type GetDiscoveryJobsResultsFilterArrayInput interface {
 	pulumi.Input
 
@@ -14323,7 +14323,7 @@ type GetLibraryMaskingFormatFormatEntry struct {
 // GetLibraryMaskingFormatFormatEntryInput is an input type that accepts GetLibraryMaskingFormatFormatEntryArgs and GetLibraryMaskingFormatFormatEntryOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatFormatEntryInput` via:
 //
-//          GetLibraryMaskingFormatFormatEntryArgs{...}
+//	GetLibraryMaskingFormatFormatEntryArgs{...}
 type GetLibraryMaskingFormatFormatEntryInput interface {
 	pulumi.Input
 
@@ -14395,7 +14395,7 @@ func (i GetLibraryMaskingFormatFormatEntryArgs) ToGetLibraryMaskingFormatFormatE
 // GetLibraryMaskingFormatFormatEntryArrayInput is an input type that accepts GetLibraryMaskingFormatFormatEntryArray and GetLibraryMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatFormatEntryArrayInput` via:
 //
-//          GetLibraryMaskingFormatFormatEntryArray{ GetLibraryMaskingFormatFormatEntryArgs{...} }
+//	GetLibraryMaskingFormatFormatEntryArray{ GetLibraryMaskingFormatFormatEntryArgs{...} }
 type GetLibraryMaskingFormatFormatEntryArrayInput interface {
 	pulumi.Input
 
@@ -14575,7 +14575,7 @@ type GetLibraryMaskingFormatsFilter struct {
 // GetLibraryMaskingFormatsFilterInput is an input type that accepts GetLibraryMaskingFormatsFilterArgs and GetLibraryMaskingFormatsFilterOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsFilterInput` via:
 //
-//          GetLibraryMaskingFormatsFilterArgs{...}
+//	GetLibraryMaskingFormatsFilterArgs{...}
 type GetLibraryMaskingFormatsFilterInput interface {
 	pulumi.Input
 
@@ -14604,7 +14604,7 @@ func (i GetLibraryMaskingFormatsFilterArgs) ToGetLibraryMaskingFormatsFilterOutp
 // GetLibraryMaskingFormatsFilterArrayInput is an input type that accepts GetLibraryMaskingFormatsFilterArray and GetLibraryMaskingFormatsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsFilterArrayInput` via:
 //
-//          GetLibraryMaskingFormatsFilterArray{ GetLibraryMaskingFormatsFilterArgs{...} }
+//	GetLibraryMaskingFormatsFilterArray{ GetLibraryMaskingFormatsFilterArgs{...} }
 type GetLibraryMaskingFormatsFilterArrayInput interface {
 	pulumi.Input
 
@@ -14679,7 +14679,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollection struct {
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionInput` via:
 //
-//          GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs{...}
+//	GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs{...}
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionInput interface {
 	pulumi.Input
 
@@ -14706,7 +14706,7 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs) ToGetLibrary
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArray and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayInput` via:
 //
-//          GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArray{ GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs{...} }
+//	GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArray{ GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs{...} }
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayInput interface {
 	pulumi.Input
 
@@ -14798,7 +14798,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem struct {
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemInput` via:
 //
-//          GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs{...}
+//	GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs{...}
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemInput interface {
 	pulumi.Input
 
@@ -14848,7 +14848,7 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs) ToGetLib
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArray and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayInput` via:
 //
-//          GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArray{ GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs{...} }
+//	GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArray{ GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs{...} }
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -15022,7 +15022,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry struc
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryInput` via:
 //
-//          GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs{...}
+//	GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs{...}
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryInput interface {
 	pulumi.Input
 
@@ -15094,7 +15094,7 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArg
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArray and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayInput` via:
 //
-//          GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArray{ GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs{...} }
+//	GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArray{ GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs{...} }
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayInput interface {
 	pulumi.Input
 
@@ -15312,7 +15312,7 @@ type GetListUserGrantsFilter struct {
 // GetListUserGrantsFilterInput is an input type that accepts GetListUserGrantsFilterArgs and GetListUserGrantsFilterOutput values.
 // You can construct a concrete instance of `GetListUserGrantsFilterInput` via:
 //
-//          GetListUserGrantsFilterArgs{...}
+//	GetListUserGrantsFilterArgs{...}
 type GetListUserGrantsFilterInput interface {
 	pulumi.Input
 
@@ -15341,7 +15341,7 @@ func (i GetListUserGrantsFilterArgs) ToGetListUserGrantsFilterOutputWithContext(
 // GetListUserGrantsFilterArrayInput is an input type that accepts GetListUserGrantsFilterArray and GetListUserGrantsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListUserGrantsFilterArrayInput` via:
 //
-//          GetListUserGrantsFilterArray{ GetListUserGrantsFilterArgs{...} }
+//	GetListUserGrantsFilterArray{ GetListUserGrantsFilterArgs{...} }
 type GetListUserGrantsFilterArrayInput interface {
 	pulumi.Input
 
@@ -15425,7 +15425,7 @@ type GetListUserGrantsGrant struct {
 // GetListUserGrantsGrantInput is an input type that accepts GetListUserGrantsGrantArgs and GetListUserGrantsGrantOutput values.
 // You can construct a concrete instance of `GetListUserGrantsGrantInput` via:
 //
-//          GetListUserGrantsGrantArgs{...}
+//	GetListUserGrantsGrantArgs{...}
 type GetListUserGrantsGrantInput interface {
 	pulumi.Input
 
@@ -15461,7 +15461,7 @@ func (i GetListUserGrantsGrantArgs) ToGetListUserGrantsGrantOutputWithContext(ct
 // GetListUserGrantsGrantArrayInput is an input type that accepts GetListUserGrantsGrantArray and GetListUserGrantsGrantArrayOutput values.
 // You can construct a concrete instance of `GetListUserGrantsGrantArrayInput` via:
 //
-//          GetListUserGrantsGrantArray{ GetListUserGrantsGrantArgs{...} }
+//	GetListUserGrantsGrantArray{ GetListUserGrantsGrantArgs{...} }
 type GetListUserGrantsGrantArrayInput interface {
 	pulumi.Input
 
@@ -15554,7 +15554,7 @@ type GetMaskingAnalyticItem struct {
 // GetMaskingAnalyticItemInput is an input type that accepts GetMaskingAnalyticItemArgs and GetMaskingAnalyticItemOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticItemInput` via:
 //
-//          GetMaskingAnalyticItemArgs{...}
+//	GetMaskingAnalyticItemArgs{...}
 type GetMaskingAnalyticItemInput interface {
 	pulumi.Input
 
@@ -15586,7 +15586,7 @@ func (i GetMaskingAnalyticItemArgs) ToGetMaskingAnalyticItemOutputWithContext(ct
 // GetMaskingAnalyticItemArrayInput is an input type that accepts GetMaskingAnalyticItemArray and GetMaskingAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticItemArrayInput` via:
 //
-//          GetMaskingAnalyticItemArray{ GetMaskingAnalyticItemArgs{...} }
+//	GetMaskingAnalyticItemArray{ GetMaskingAnalyticItemArgs{...} }
 type GetMaskingAnalyticItemArrayInput interface {
 	pulumi.Input
 
@@ -15667,7 +15667,7 @@ type GetMaskingAnalyticItemDimension struct {
 // GetMaskingAnalyticItemDimensionInput is an input type that accepts GetMaskingAnalyticItemDimensionArgs and GetMaskingAnalyticItemDimensionOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticItemDimensionInput` via:
 //
-//          GetMaskingAnalyticItemDimensionArgs{...}
+//	GetMaskingAnalyticItemDimensionArgs{...}
 type GetMaskingAnalyticItemDimensionInput interface {
 	pulumi.Input
 
@@ -15697,7 +15697,7 @@ func (i GetMaskingAnalyticItemDimensionArgs) ToGetMaskingAnalyticItemDimensionOu
 // GetMaskingAnalyticItemDimensionArrayInput is an input type that accepts GetMaskingAnalyticItemDimensionArray and GetMaskingAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticItemDimensionArrayInput` via:
 //
-//          GetMaskingAnalyticItemDimensionArray{ GetMaskingAnalyticItemDimensionArgs{...} }
+//	GetMaskingAnalyticItemDimensionArray{ GetMaskingAnalyticItemDimensionArgs{...} }
 type GetMaskingAnalyticItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -15772,7 +15772,7 @@ type GetMaskingAnalyticsFilter struct {
 // GetMaskingAnalyticsFilterInput is an input type that accepts GetMaskingAnalyticsFilterArgs and GetMaskingAnalyticsFilterOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsFilterInput` via:
 //
-//          GetMaskingAnalyticsFilterArgs{...}
+//	GetMaskingAnalyticsFilterArgs{...}
 type GetMaskingAnalyticsFilterInput interface {
 	pulumi.Input
 
@@ -15801,7 +15801,7 @@ func (i GetMaskingAnalyticsFilterArgs) ToGetMaskingAnalyticsFilterOutputWithCont
 // GetMaskingAnalyticsFilterArrayInput is an input type that accepts GetMaskingAnalyticsFilterArray and GetMaskingAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsFilterArrayInput` via:
 //
-//          GetMaskingAnalyticsFilterArray{ GetMaskingAnalyticsFilterArgs{...} }
+//	GetMaskingAnalyticsFilterArray{ GetMaskingAnalyticsFilterArgs{...} }
 type GetMaskingAnalyticsFilterArrayInput interface {
 	pulumi.Input
 
@@ -15877,7 +15877,7 @@ type GetMaskingAnalyticsMaskingAnalyticsCollection struct {
 // GetMaskingAnalyticsMaskingAnalyticsCollectionInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionArgs and GetMaskingAnalyticsMaskingAnalyticsCollectionOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionInput` via:
 //
-//          GetMaskingAnalyticsMaskingAnalyticsCollectionArgs{...}
+//	GetMaskingAnalyticsMaskingAnalyticsCollectionArgs{...}
 type GetMaskingAnalyticsMaskingAnalyticsCollectionInput interface {
 	pulumi.Input
 
@@ -15905,7 +15905,7 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionArgs) ToGetMaskingAnalytics
 // GetMaskingAnalyticsMaskingAnalyticsCollectionArrayInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionArray and GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionArrayInput` via:
 //
-//          GetMaskingAnalyticsMaskingAnalyticsCollectionArray{ GetMaskingAnalyticsMaskingAnalyticsCollectionArgs{...} }
+//	GetMaskingAnalyticsMaskingAnalyticsCollectionArray{ GetMaskingAnalyticsMaskingAnalyticsCollectionArgs{...} }
 type GetMaskingAnalyticsMaskingAnalyticsCollectionArrayInput interface {
 	pulumi.Input
 
@@ -15980,7 +15980,7 @@ type GetMaskingAnalyticsMaskingAnalyticsCollectionItem struct {
 // GetMaskingAnalyticsMaskingAnalyticsCollectionItemInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs and GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionItemInput` via:
 //
-//          GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs{...}
+//	GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs{...}
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemInput interface {
 	pulumi.Input
 
@@ -16012,7 +16012,7 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs) ToGetMaskingAnaly
 // GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionItemArray and GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayInput` via:
 //
-//          GetMaskingAnalyticsMaskingAnalyticsCollectionItemArray{ GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs{...} }
+//	GetMaskingAnalyticsMaskingAnalyticsCollectionItemArray{ GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs{...} }
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -16095,7 +16095,7 @@ type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension struct {
 // GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs and GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionInput` via:
 //
-//          GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs{...}
+//	GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs{...}
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionInput interface {
 	pulumi.Input
 
@@ -16125,7 +16125,7 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs) ToGetMas
 // GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArray and GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayInput` via:
 //
-//          GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArray{ GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs{...} }
+//	GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArray{ GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs{...} }
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -16200,7 +16200,7 @@ type GetMaskingPoliciesFilter struct {
 // GetMaskingPoliciesFilterInput is an input type that accepts GetMaskingPoliciesFilterArgs and GetMaskingPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesFilterInput` via:
 //
-//          GetMaskingPoliciesFilterArgs{...}
+//	GetMaskingPoliciesFilterArgs{...}
 type GetMaskingPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -16229,7 +16229,7 @@ func (i GetMaskingPoliciesFilterArgs) ToGetMaskingPoliciesFilterOutputWithContex
 // GetMaskingPoliciesFilterArrayInput is an input type that accepts GetMaskingPoliciesFilterArray and GetMaskingPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesFilterArrayInput` via:
 //
-//          GetMaskingPoliciesFilterArray{ GetMaskingPoliciesFilterArgs{...} }
+//	GetMaskingPoliciesFilterArray{ GetMaskingPoliciesFilterArgs{...} }
 type GetMaskingPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -16309,7 +16309,7 @@ type GetMaskingPoliciesMaskingColumnMaskingFormat struct {
 // GetMaskingPoliciesMaskingColumnMaskingFormatInput is an input type that accepts GetMaskingPoliciesMaskingColumnMaskingFormatArgs and GetMaskingPoliciesMaskingColumnMaskingFormatOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnMaskingFormatInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnMaskingFormatArgs{...}
+//	GetMaskingPoliciesMaskingColumnMaskingFormatArgs{...}
 type GetMaskingPoliciesMaskingColumnMaskingFormatInput interface {
 	pulumi.Input
 
@@ -16341,7 +16341,7 @@ func (i GetMaskingPoliciesMaskingColumnMaskingFormatArgs) ToGetMaskingPoliciesMa
 // GetMaskingPoliciesMaskingColumnMaskingFormatArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnMaskingFormatArray and GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnMaskingFormatArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnMaskingFormatArray{ GetMaskingPoliciesMaskingColumnMaskingFormatArgs{...} }
+//	GetMaskingPoliciesMaskingColumnMaskingFormatArray{ GetMaskingPoliciesMaskingColumnMaskingFormatArgs{...} }
 type GetMaskingPoliciesMaskingColumnMaskingFormatArrayInput interface {
 	pulumi.Input
 
@@ -16466,7 +16466,7 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 // GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryInput is an input type that accepts GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs and GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...}
+//	GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...}
 type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryInput interface {
 	pulumi.Input
 
@@ -16538,7 +16538,7 @@ func (i GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs) ToGetMaskin
 // GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray and GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray{ GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...} }
+//	GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray{ GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{...} }
 type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput interface {
 	pulumi.Input
 
@@ -16722,7 +16722,7 @@ type GetMaskingPoliciesMaskingColumnsFilter struct {
 // GetMaskingPoliciesMaskingColumnsFilterInput is an input type that accepts GetMaskingPoliciesMaskingColumnsFilterArgs and GetMaskingPoliciesMaskingColumnsFilterOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsFilterInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsFilterArgs{...}
+//	GetMaskingPoliciesMaskingColumnsFilterArgs{...}
 type GetMaskingPoliciesMaskingColumnsFilterInput interface {
 	pulumi.Input
 
@@ -16751,7 +16751,7 @@ func (i GetMaskingPoliciesMaskingColumnsFilterArgs) ToGetMaskingPoliciesMaskingC
 // GetMaskingPoliciesMaskingColumnsFilterArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsFilterArray and GetMaskingPoliciesMaskingColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsFilterArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsFilterArray{ GetMaskingPoliciesMaskingColumnsFilterArgs{...} }
+//	GetMaskingPoliciesMaskingColumnsFilterArray{ GetMaskingPoliciesMaskingColumnsFilterArgs{...} }
 type GetMaskingPoliciesMaskingColumnsFilterArrayInput interface {
 	pulumi.Input
 
@@ -16826,7 +16826,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollection struct {
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs{...}
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs{...}
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionInput interface {
 	pulumi.Input
 
@@ -16853,7 +16853,7 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs) ToGetMaskin
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs{...} }
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs{...} }
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayInput interface {
 	pulumi.Input
 
@@ -16953,7 +16953,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem struct {
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs{...}
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs{...}
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemInput interface {
 	pulumi.Input
 
@@ -17011,7 +17011,7 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs) ToGetMa
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs{...} }
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs{...} }
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -17163,7 +17163,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat st
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArgs and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArgs{...}
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArgs{...}
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatInput interface {
 	pulumi.Input
 
@@ -17195,7 +17195,7 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArgs{...} }
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArgs{...} }
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayInput interface {
 	pulumi.Input
 
@@ -17324,7 +17324,7 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs{...}
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs{...}
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryInput interface {
 	pulumi.Input
 
@@ -17396,7 +17396,7 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs{...} }
+//	GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArray{ GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs{...} }
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayInput interface {
 	pulumi.Input
 
@@ -17620,7 +17620,7 @@ type GetMaskingPoliciesMaskingPolicyCollection struct {
 // GetMaskingPoliciesMaskingPolicyCollectionInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionArgs and GetMaskingPoliciesMaskingPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionInput` via:
 //
-//          GetMaskingPoliciesMaskingPolicyCollectionArgs{...}
+//	GetMaskingPoliciesMaskingPolicyCollectionArgs{...}
 type GetMaskingPoliciesMaskingPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -17647,7 +17647,7 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionArgs) ToGetMaskingPoliciesMaski
 // GetMaskingPoliciesMaskingPolicyCollectionArrayInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionArray and GetMaskingPoliciesMaskingPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingPolicyCollectionArray{ GetMaskingPoliciesMaskingPolicyCollectionArgs{...} }
+//	GetMaskingPoliciesMaskingPolicyCollectionArray{ GetMaskingPoliciesMaskingPolicyCollectionArgs{...} }
 type GetMaskingPoliciesMaskingPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -17750,7 +17750,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 // GetMaskingPoliciesMaskingPolicyCollectionItemInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionItemArgs and GetMaskingPoliciesMaskingPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionItemInput` via:
 //
-//          GetMaskingPoliciesMaskingPolicyCollectionItemArgs{...}
+//	GetMaskingPoliciesMaskingPolicyCollectionItemArgs{...}
 type GetMaskingPoliciesMaskingPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -17811,7 +17811,7 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionItemArgs) ToGetMaskingPoliciesM
 // GetMaskingPoliciesMaskingPolicyCollectionItemArrayInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionItemArray and GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionItemArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingPolicyCollectionItemArray{ GetMaskingPoliciesMaskingPolicyCollectionItemArgs{...} }
+//	GetMaskingPoliciesMaskingPolicyCollectionItemArray{ GetMaskingPoliciesMaskingPolicyCollectionItemArgs{...} }
 type GetMaskingPoliciesMaskingPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -17970,7 +17970,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource struct {
 // GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs and GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceInput` via:
 //
-//          GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs{...}
+//	GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs{...}
 type GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceInput interface {
 	pulumi.Input
 
@@ -18002,7 +18002,7 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs) ToGetMask
 // GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray and GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput` via:
 //
-//          GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray{ GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs{...} }
+//	GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray{ GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs{...} }
 type GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput interface {
 	pulumi.Input
 
@@ -18087,7 +18087,7 @@ type GetMaskingPolicyColumnSource struct {
 // GetMaskingPolicyColumnSourceInput is an input type that accepts GetMaskingPolicyColumnSourceArgs and GetMaskingPolicyColumnSourceOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyColumnSourceInput` via:
 //
-//          GetMaskingPolicyColumnSourceArgs{...}
+//	GetMaskingPolicyColumnSourceArgs{...}
 type GetMaskingPolicyColumnSourceInput interface {
 	pulumi.Input
 
@@ -18119,7 +18119,7 @@ func (i GetMaskingPolicyColumnSourceArgs) ToGetMaskingPolicyColumnSourceOutputWi
 // GetMaskingPolicyColumnSourceArrayInput is an input type that accepts GetMaskingPolicyColumnSourceArray and GetMaskingPolicyColumnSourceArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyColumnSourceArrayInput` via:
 //
-//          GetMaskingPolicyColumnSourceArray{ GetMaskingPolicyColumnSourceArgs{...} }
+//	GetMaskingPolicyColumnSourceArray{ GetMaskingPolicyColumnSourceArgs{...} }
 type GetMaskingPolicyColumnSourceArrayInput interface {
 	pulumi.Input
 
@@ -18199,7 +18199,7 @@ type GetMaskingReportMaskedColumnsFilter struct {
 // GetMaskingReportMaskedColumnsFilterInput is an input type that accepts GetMaskingReportMaskedColumnsFilterArgs and GetMaskingReportMaskedColumnsFilterOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsFilterInput` via:
 //
-//          GetMaskingReportMaskedColumnsFilterArgs{...}
+//	GetMaskingReportMaskedColumnsFilterArgs{...}
 type GetMaskingReportMaskedColumnsFilterInput interface {
 	pulumi.Input
 
@@ -18228,7 +18228,7 @@ func (i GetMaskingReportMaskedColumnsFilterArgs) ToGetMaskingReportMaskedColumns
 // GetMaskingReportMaskedColumnsFilterArrayInput is an input type that accepts GetMaskingReportMaskedColumnsFilterArray and GetMaskingReportMaskedColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsFilterArrayInput` via:
 //
-//          GetMaskingReportMaskedColumnsFilterArray{ GetMaskingReportMaskedColumnsFilterArgs{...} }
+//	GetMaskingReportMaskedColumnsFilterArray{ GetMaskingReportMaskedColumnsFilterArgs{...} }
 type GetMaskingReportMaskedColumnsFilterArrayInput interface {
 	pulumi.Input
 
@@ -18304,7 +18304,7 @@ type GetMaskingReportMaskedColumnsMaskedColumnCollection struct {
 // GetMaskingReportMaskedColumnsMaskedColumnCollectionInput is an input type that accepts GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs and GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsMaskedColumnCollectionInput` via:
 //
-//          GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs{...}
+//	GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs{...}
 type GetMaskingReportMaskedColumnsMaskedColumnCollectionInput interface {
 	pulumi.Input
 
@@ -18332,7 +18332,7 @@ func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs) ToGetMaskingRep
 // GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayInput is an input type that accepts GetMaskingReportMaskedColumnsMaskedColumnCollectionArray and GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayInput` via:
 //
-//          GetMaskingReportMaskedColumnsMaskedColumnCollectionArray{ GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs{...} }
+//	GetMaskingReportMaskedColumnsMaskedColumnCollectionArray{ GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs{...} }
 type GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayInput interface {
 	pulumi.Input
 
@@ -18421,7 +18421,7 @@ type GetMaskingReportMaskedColumnsMaskedColumnCollectionItem struct {
 // GetMaskingReportMaskedColumnsMaskedColumnCollectionItemInput is an input type that accepts GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs and GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsMaskedColumnCollectionItemInput` via:
 //
-//          GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs{...}
+//	GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs{...}
 type GetMaskingReportMaskedColumnsMaskedColumnCollectionItemInput interface {
 	pulumi.Input
 
@@ -18467,7 +18467,7 @@ func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs) ToGetMaskin
 // GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayInput is an input type that accepts GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray and GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayInput` via:
 //
-//          GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray{ GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs{...} }
+//	GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray{ GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs{...} }
 type GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -18582,7 +18582,7 @@ type GetMaskingReportsFilter struct {
 // GetMaskingReportsFilterInput is an input type that accepts GetMaskingReportsFilterArgs and GetMaskingReportsFilterOutput values.
 // You can construct a concrete instance of `GetMaskingReportsFilterInput` via:
 //
-//          GetMaskingReportsFilterArgs{...}
+//	GetMaskingReportsFilterArgs{...}
 type GetMaskingReportsFilterInput interface {
 	pulumi.Input
 
@@ -18611,7 +18611,7 @@ func (i GetMaskingReportsFilterArgs) ToGetMaskingReportsFilterOutputWithContext(
 // GetMaskingReportsFilterArrayInput is an input type that accepts GetMaskingReportsFilterArray and GetMaskingReportsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsFilterArrayInput` via:
 //
-//          GetMaskingReportsFilterArray{ GetMaskingReportsFilterArgs{...} }
+//	GetMaskingReportsFilterArray{ GetMaskingReportsFilterArgs{...} }
 type GetMaskingReportsFilterArrayInput interface {
 	pulumi.Input
 
@@ -18705,7 +18705,7 @@ type GetMaskingReportsMaskedColumnItem struct {
 // GetMaskingReportsMaskedColumnItemInput is an input type that accepts GetMaskingReportsMaskedColumnItemArgs and GetMaskingReportsMaskedColumnItemOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskedColumnItemInput` via:
 //
-//          GetMaskingReportsMaskedColumnItemArgs{...}
+//	GetMaskingReportsMaskedColumnItemArgs{...}
 type GetMaskingReportsMaskedColumnItemInput interface {
 	pulumi.Input
 
@@ -18751,7 +18751,7 @@ func (i GetMaskingReportsMaskedColumnItemArgs) ToGetMaskingReportsMaskedColumnIt
 // GetMaskingReportsMaskedColumnItemArrayInput is an input type that accepts GetMaskingReportsMaskedColumnItemArray and GetMaskingReportsMaskedColumnItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskedColumnItemArrayInput` via:
 //
-//          GetMaskingReportsMaskedColumnItemArray{ GetMaskingReportsMaskedColumnItemArgs{...} }
+//	GetMaskingReportsMaskedColumnItemArray{ GetMaskingReportsMaskedColumnItemArgs{...} }
 type GetMaskingReportsMaskedColumnItemArrayInput interface {
 	pulumi.Input
 
@@ -18864,7 +18864,7 @@ type GetMaskingReportsMaskingReportCollection struct {
 // GetMaskingReportsMaskingReportCollectionInput is an input type that accepts GetMaskingReportsMaskingReportCollectionArgs and GetMaskingReportsMaskingReportCollectionOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskingReportCollectionInput` via:
 //
-//          GetMaskingReportsMaskingReportCollectionArgs{...}
+//	GetMaskingReportsMaskingReportCollectionArgs{...}
 type GetMaskingReportsMaskingReportCollectionInput interface {
 	pulumi.Input
 
@@ -18891,7 +18891,7 @@ func (i GetMaskingReportsMaskingReportCollectionArgs) ToGetMaskingReportsMasking
 // GetMaskingReportsMaskingReportCollectionArrayInput is an input type that accepts GetMaskingReportsMaskingReportCollectionArray and GetMaskingReportsMaskingReportCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskingReportCollectionArrayInput` via:
 //
-//          GetMaskingReportsMaskingReportCollectionArray{ GetMaskingReportsMaskingReportCollectionArgs{...} }
+//	GetMaskingReportsMaskingReportCollectionArray{ GetMaskingReportsMaskingReportCollectionArgs{...} }
 type GetMaskingReportsMaskingReportCollectionArrayInput interface {
 	pulumi.Input
 
@@ -18983,7 +18983,7 @@ type GetMaskingReportsMaskingReportCollectionItem struct {
 // GetMaskingReportsMaskingReportCollectionItemInput is an input type that accepts GetMaskingReportsMaskingReportCollectionItemArgs and GetMaskingReportsMaskingReportCollectionItemOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskingReportCollectionItemInput` via:
 //
-//          GetMaskingReportsMaskingReportCollectionItemArgs{...}
+//	GetMaskingReportsMaskingReportCollectionItemArgs{...}
 type GetMaskingReportsMaskingReportCollectionItemInput interface {
 	pulumi.Input
 
@@ -19033,7 +19033,7 @@ func (i GetMaskingReportsMaskingReportCollectionItemArgs) ToGetMaskingReportsMas
 // GetMaskingReportsMaskingReportCollectionItemArrayInput is an input type that accepts GetMaskingReportsMaskingReportCollectionItemArray and GetMaskingReportsMaskingReportCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskingReportCollectionItemArrayInput` via:
 //
-//          GetMaskingReportsMaskingReportCollectionItemArray{ GetMaskingReportsMaskingReportCollectionItemArgs{...} }
+//	GetMaskingReportsMaskingReportCollectionItemArray{ GetMaskingReportsMaskingReportCollectionItemArgs{...} }
 type GetMaskingReportsMaskingReportCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -19158,7 +19158,7 @@ type GetOnpremConnectorsFilter struct {
 // GetOnpremConnectorsFilterInput is an input type that accepts GetOnpremConnectorsFilterArgs and GetOnpremConnectorsFilterOutput values.
 // You can construct a concrete instance of `GetOnpremConnectorsFilterInput` via:
 //
-//          GetOnpremConnectorsFilterArgs{...}
+//	GetOnpremConnectorsFilterArgs{...}
 type GetOnpremConnectorsFilterInput interface {
 	pulumi.Input
 
@@ -19187,7 +19187,7 @@ func (i GetOnpremConnectorsFilterArgs) ToGetOnpremConnectorsFilterOutputWithCont
 // GetOnpremConnectorsFilterArrayInput is an input type that accepts GetOnpremConnectorsFilterArray and GetOnpremConnectorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOnpremConnectorsFilterArrayInput` via:
 //
-//          GetOnpremConnectorsFilterArray{ GetOnpremConnectorsFilterArgs{...} }
+//	GetOnpremConnectorsFilterArray{ GetOnpremConnectorsFilterArgs{...} }
 type GetOnpremConnectorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -19285,7 +19285,7 @@ type GetOnpremConnectorsOnPremConnector struct {
 // GetOnpremConnectorsOnPremConnectorInput is an input type that accepts GetOnpremConnectorsOnPremConnectorArgs and GetOnpremConnectorsOnPremConnectorOutput values.
 // You can construct a concrete instance of `GetOnpremConnectorsOnPremConnectorInput` via:
 //
-//          GetOnpremConnectorsOnPremConnectorArgs{...}
+//	GetOnpremConnectorsOnPremConnectorArgs{...}
 type GetOnpremConnectorsOnPremConnectorInput interface {
 	pulumi.Input
 
@@ -19335,7 +19335,7 @@ func (i GetOnpremConnectorsOnPremConnectorArgs) ToGetOnpremConnectorsOnPremConne
 // GetOnpremConnectorsOnPremConnectorArrayInput is an input type that accepts GetOnpremConnectorsOnPremConnectorArray and GetOnpremConnectorsOnPremConnectorArrayOutput values.
 // You can construct a concrete instance of `GetOnpremConnectorsOnPremConnectorArrayInput` via:
 //
-//          GetOnpremConnectorsOnPremConnectorArray{ GetOnpremConnectorsOnPremConnectorArgs{...} }
+//	GetOnpremConnectorsOnPremConnectorArray{ GetOnpremConnectorsOnPremConnectorArgs{...} }
 type GetOnpremConnectorsOnPremConnectorArrayInput interface {
 	pulumi.Input
 
@@ -19467,7 +19467,7 @@ type GetReportDefinitionColumnFilter struct {
 // GetReportDefinitionColumnFilterInput is an input type that accepts GetReportDefinitionColumnFilterArgs and GetReportDefinitionColumnFilterOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnFilterInput` via:
 //
-//          GetReportDefinitionColumnFilterArgs{...}
+//	GetReportDefinitionColumnFilterArgs{...}
 type GetReportDefinitionColumnFilterInput interface {
 	pulumi.Input
 
@@ -19503,7 +19503,7 @@ func (i GetReportDefinitionColumnFilterArgs) ToGetReportDefinitionColumnFilterOu
 // GetReportDefinitionColumnFilterArrayInput is an input type that accepts GetReportDefinitionColumnFilterArray and GetReportDefinitionColumnFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnFilterArrayInput` via:
 //
-//          GetReportDefinitionColumnFilterArray{ GetReportDefinitionColumnFilterArgs{...} }
+//	GetReportDefinitionColumnFilterArray{ GetReportDefinitionColumnFilterArgs{...} }
 type GetReportDefinitionColumnFilterArrayInput interface {
 	pulumi.Input
 
@@ -19600,7 +19600,7 @@ type GetReportDefinitionColumnInfo struct {
 // GetReportDefinitionColumnInfoInput is an input type that accepts GetReportDefinitionColumnInfoArgs and GetReportDefinitionColumnInfoOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnInfoInput` via:
 //
-//          GetReportDefinitionColumnInfoArgs{...}
+//	GetReportDefinitionColumnInfoArgs{...}
 type GetReportDefinitionColumnInfoInput interface {
 	pulumi.Input
 
@@ -19636,7 +19636,7 @@ func (i GetReportDefinitionColumnInfoArgs) ToGetReportDefinitionColumnInfoOutput
 // GetReportDefinitionColumnInfoArrayInput is an input type that accepts GetReportDefinitionColumnInfoArray and GetReportDefinitionColumnInfoArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnInfoArrayInput` via:
 //
-//          GetReportDefinitionColumnInfoArray{ GetReportDefinitionColumnInfoArgs{...} }
+//	GetReportDefinitionColumnInfoArray{ GetReportDefinitionColumnInfoArgs{...} }
 type GetReportDefinitionColumnInfoArrayInput interface {
 	pulumi.Input
 
@@ -19729,7 +19729,7 @@ type GetReportDefinitionColumnSorting struct {
 // GetReportDefinitionColumnSortingInput is an input type that accepts GetReportDefinitionColumnSortingArgs and GetReportDefinitionColumnSortingOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnSortingInput` via:
 //
-//          GetReportDefinitionColumnSortingArgs{...}
+//	GetReportDefinitionColumnSortingArgs{...}
 type GetReportDefinitionColumnSortingInput interface {
 	pulumi.Input
 
@@ -19761,7 +19761,7 @@ func (i GetReportDefinitionColumnSortingArgs) ToGetReportDefinitionColumnSorting
 // GetReportDefinitionColumnSortingArrayInput is an input type that accepts GetReportDefinitionColumnSortingArray and GetReportDefinitionColumnSortingArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnSortingArrayInput` via:
 //
-//          GetReportDefinitionColumnSortingArray{ GetReportDefinitionColumnSortingArgs{...} }
+//	GetReportDefinitionColumnSortingArray{ GetReportDefinitionColumnSortingArgs{...} }
 type GetReportDefinitionColumnSortingArrayInput interface {
 	pulumi.Input
 
@@ -19850,7 +19850,7 @@ type GetReportDefinitionSummary struct {
 // GetReportDefinitionSummaryInput is an input type that accepts GetReportDefinitionSummaryArgs and GetReportDefinitionSummaryOutput values.
 // You can construct a concrete instance of `GetReportDefinitionSummaryInput` via:
 //
-//          GetReportDefinitionSummaryArgs{...}
+//	GetReportDefinitionSummaryArgs{...}
 type GetReportDefinitionSummaryInput interface {
 	pulumi.Input
 
@@ -19888,7 +19888,7 @@ func (i GetReportDefinitionSummaryArgs) ToGetReportDefinitionSummaryOutputWithCo
 // GetReportDefinitionSummaryArrayInput is an input type that accepts GetReportDefinitionSummaryArray and GetReportDefinitionSummaryArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionSummaryArrayInput` via:
 //
-//          GetReportDefinitionSummaryArray{ GetReportDefinitionSummaryArgs{...} }
+//	GetReportDefinitionSummaryArray{ GetReportDefinitionSummaryArgs{...} }
 type GetReportDefinitionSummaryArrayInput interface {
 	pulumi.Input
 
@@ -19984,7 +19984,7 @@ type GetReportDefinitionsFilter struct {
 // GetReportDefinitionsFilterInput is an input type that accepts GetReportDefinitionsFilterArgs and GetReportDefinitionsFilterOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsFilterInput` via:
 //
-//          GetReportDefinitionsFilterArgs{...}
+//	GetReportDefinitionsFilterArgs{...}
 type GetReportDefinitionsFilterInput interface {
 	pulumi.Input
 
@@ -20014,7 +20014,7 @@ func (i GetReportDefinitionsFilterArgs) ToGetReportDefinitionsFilterOutputWithCo
 // GetReportDefinitionsFilterArrayInput is an input type that accepts GetReportDefinitionsFilterArray and GetReportDefinitionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsFilterArrayInput` via:
 //
-//          GetReportDefinitionsFilterArray{ GetReportDefinitionsFilterArgs{...} }
+//	GetReportDefinitionsFilterArray{ GetReportDefinitionsFilterArgs{...} }
 type GetReportDefinitionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -20090,7 +20090,7 @@ type GetReportDefinitionsReportDefinitionCollection struct {
 // GetReportDefinitionsReportDefinitionCollectionInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionArgs and GetReportDefinitionsReportDefinitionCollectionOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionArgs{...}
+//	GetReportDefinitionsReportDefinitionCollectionArgs{...}
 type GetReportDefinitionsReportDefinitionCollectionInput interface {
 	pulumi.Input
 
@@ -20117,7 +20117,7 @@ func (i GetReportDefinitionsReportDefinitionCollectionArgs) ToGetReportDefinitio
 // GetReportDefinitionsReportDefinitionCollectionArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionArray and GetReportDefinitionsReportDefinitionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionArrayInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionArray{ GetReportDefinitionsReportDefinitionCollectionArgs{...} }
+//	GetReportDefinitionsReportDefinitionCollectionArray{ GetReportDefinitionsReportDefinitionCollectionArgs{...} }
 type GetReportDefinitionsReportDefinitionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -20225,7 +20225,7 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 // GetReportDefinitionsReportDefinitionCollectionItemInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemArgs and GetReportDefinitionsReportDefinitionCollectionItemOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemArgs{...}
+//	GetReportDefinitionsReportDefinitionCollectionItemArgs{...}
 type GetReportDefinitionsReportDefinitionCollectionItemInput interface {
 	pulumi.Input
 
@@ -20291,7 +20291,7 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemArgs) ToGetReportDefin
 // GetReportDefinitionsReportDefinitionCollectionItemArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemArray and GetReportDefinitionsReportDefinitionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemArrayInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemArray{ GetReportDefinitionsReportDefinitionCollectionItemArgs{...} }
+//	GetReportDefinitionsReportDefinitionCollectionItemArray{ GetReportDefinitionsReportDefinitionCollectionItemArgs{...} }
 type GetReportDefinitionsReportDefinitionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -20475,7 +20475,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemColumnFilter struct {
 // GetReportDefinitionsReportDefinitionCollectionItemColumnFilterInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs and GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnFilterInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs{...}
+//	GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs{...}
 type GetReportDefinitionsReportDefinitionCollectionItemColumnFilterInput interface {
 	pulumi.Input
 
@@ -20511,7 +20511,7 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs) ToGe
 // GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArray and GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArray{ GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs{...} }
+//	GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArray{ GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs{...} }
 type GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayInput interface {
 	pulumi.Input
 
@@ -20608,7 +20608,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemColumnInfo struct {
 // GetReportDefinitionsReportDefinitionCollectionItemColumnInfoInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs and GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnInfoInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs{...}
+//	GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs{...}
 type GetReportDefinitionsReportDefinitionCollectionItemColumnInfoInput interface {
 	pulumi.Input
 
@@ -20644,7 +20644,7 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs) ToGetR
 // GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArray and GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArray{ GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs{...} }
+//	GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArray{ GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs{...} }
 type GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayInput interface {
 	pulumi.Input
 
@@ -20737,7 +20737,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemColumnSorting struct {
 // GetReportDefinitionsReportDefinitionCollectionItemColumnSortingInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs and GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnSortingInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs{...}
+//	GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs{...}
 type GetReportDefinitionsReportDefinitionCollectionItemColumnSortingInput interface {
 	pulumi.Input
 
@@ -20769,7 +20769,7 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs) ToG
 // GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArray and GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArray{ GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs{...} }
+//	GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArray{ GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs{...} }
 type GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput interface {
 	pulumi.Input
 
@@ -20858,7 +20858,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemSummary struct {
 // GetReportDefinitionsReportDefinitionCollectionItemSummaryInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs and GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemSummaryInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs{...}
+//	GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs{...}
 type GetReportDefinitionsReportDefinitionCollectionItemSummaryInput interface {
 	pulumi.Input
 
@@ -20896,7 +20896,7 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs) ToGetRepo
 // GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemSummaryArray and GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput` via:
 //
-//          GetReportDefinitionsReportDefinitionCollectionItemSummaryArray{ GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs{...} }
+//	GetReportDefinitionsReportDefinitionCollectionItemSummaryArray{ GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs{...} }
 type GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput interface {
 	pulumi.Input
 
@@ -20991,7 +20991,7 @@ type GetReportsFilter struct {
 // GetReportsFilterInput is an input type that accepts GetReportsFilterArgs and GetReportsFilterOutput values.
 // You can construct a concrete instance of `GetReportsFilterInput` via:
 //
-//          GetReportsFilterArgs{...}
+//	GetReportsFilterArgs{...}
 type GetReportsFilterInput interface {
 	pulumi.Input
 
@@ -21020,7 +21020,7 @@ func (i GetReportsFilterArgs) ToGetReportsFilterOutputWithContext(ctx context.Co
 // GetReportsFilterArrayInput is an input type that accepts GetReportsFilterArray and GetReportsFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportsFilterArrayInput` via:
 //
-//          GetReportsFilterArray{ GetReportsFilterArgs{...} }
+//	GetReportsFilterArray{ GetReportsFilterArgs{...} }
 type GetReportsFilterArrayInput interface {
 	pulumi.Input
 
@@ -21095,7 +21095,7 @@ type GetReportsReportCollection struct {
 // GetReportsReportCollectionInput is an input type that accepts GetReportsReportCollectionArgs and GetReportsReportCollectionOutput values.
 // You can construct a concrete instance of `GetReportsReportCollectionInput` via:
 //
-//          GetReportsReportCollectionArgs{...}
+//	GetReportsReportCollectionArgs{...}
 type GetReportsReportCollectionInput interface {
 	pulumi.Input
 
@@ -21122,7 +21122,7 @@ func (i GetReportsReportCollectionArgs) ToGetReportsReportCollectionOutputWithCo
 // GetReportsReportCollectionArrayInput is an input type that accepts GetReportsReportCollectionArray and GetReportsReportCollectionArrayOutput values.
 // You can construct a concrete instance of `GetReportsReportCollectionArrayInput` via:
 //
-//          GetReportsReportCollectionArray{ GetReportsReportCollectionArgs{...} }
+//	GetReportsReportCollectionArray{ GetReportsReportCollectionArgs{...} }
 type GetReportsReportCollectionArrayInput interface {
 	pulumi.Input
 
@@ -21210,7 +21210,7 @@ type GetReportsReportCollectionItem struct {
 // GetReportsReportCollectionItemInput is an input type that accepts GetReportsReportCollectionItemArgs and GetReportsReportCollectionItemOutput values.
 // You can construct a concrete instance of `GetReportsReportCollectionItemInput` via:
 //
-//          GetReportsReportCollectionItemArgs{...}
+//	GetReportsReportCollectionItemArgs{...}
 type GetReportsReportCollectionItemInput interface {
 	pulumi.Input
 
@@ -21258,7 +21258,7 @@ func (i GetReportsReportCollectionItemArgs) ToGetReportsReportCollectionItemOutp
 // GetReportsReportCollectionItemArrayInput is an input type that accepts GetReportsReportCollectionItemArray and GetReportsReportCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetReportsReportCollectionItemArrayInput` via:
 //
-//          GetReportsReportCollectionItemArray{ GetReportsReportCollectionItemArgs{...} }
+//	GetReportsReportCollectionItemArray{ GetReportsReportCollectionItemArgs{...} }
 type GetReportsReportCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -21393,7 +21393,7 @@ type GetSecurityAssessmentComparisonTarget struct {
 // GetSecurityAssessmentComparisonTargetInput is an input type that accepts GetSecurityAssessmentComparisonTargetArgs and GetSecurityAssessmentComparisonTargetOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetArgs{...}
+//	GetSecurityAssessmentComparisonTargetArgs{...}
 type GetSecurityAssessmentComparisonTargetInput interface {
 	pulumi.Input
 
@@ -21437,7 +21437,7 @@ func (i GetSecurityAssessmentComparisonTargetArgs) ToGetSecurityAssessmentCompar
 // GetSecurityAssessmentComparisonTargetArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetArray and GetSecurityAssessmentComparisonTargetArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetArray{ GetSecurityAssessmentComparisonTargetArgs{...} }
+//	GetSecurityAssessmentComparisonTargetArray{ GetSecurityAssessmentComparisonTargetArgs{...} }
 type GetSecurityAssessmentComparisonTargetArrayInput interface {
 	pulumi.Input
 
@@ -21570,7 +21570,7 @@ type GetSecurityAssessmentComparisonTargetAuditing struct {
 // GetSecurityAssessmentComparisonTargetAuditingInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingArgs and GetSecurityAssessmentComparisonTargetAuditingOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuditingArgs{...}
 type GetSecurityAssessmentComparisonTargetAuditingInput interface {
 	pulumi.Input
 
@@ -21608,7 +21608,7 @@ func (i GetSecurityAssessmentComparisonTargetAuditingArgs) ToGetSecurityAssessme
 // GetSecurityAssessmentComparisonTargetAuditingArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingArray and GetSecurityAssessmentComparisonTargetAuditingArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingArray{ GetSecurityAssessmentComparisonTargetAuditingArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuditingArray{ GetSecurityAssessmentComparisonTargetAuditingArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuditingArrayInput interface {
 	pulumi.Input
 
@@ -21718,7 +21718,7 @@ type GetSecurityAssessmentComparisonTargetAuditingBaseline struct {
 // GetSecurityAssessmentComparisonTargetAuditingBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingBaselineArgs and GetSecurityAssessmentComparisonTargetAuditingBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuditingBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetAuditingBaselineInput interface {
 	pulumi.Input
 
@@ -21758,7 +21758,7 @@ func (i GetSecurityAssessmentComparisonTargetAuditingBaselineArgs) ToGetSecurity
 // GetSecurityAssessmentComparisonTargetAuditingBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingBaselineArray and GetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingBaselineArray{ GetSecurityAssessmentComparisonTargetAuditingBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuditingBaselineArray{ GetSecurityAssessmentComparisonTargetAuditingBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuditingBaselineArrayInput interface {
 	pulumi.Input
 
@@ -21863,7 +21863,7 @@ type GetSecurityAssessmentComparisonTargetAuditingBaselineReference struct {
 // GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -21895,7 +21895,7 @@ func (i GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs) ToGe
 // GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArray and GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -21986,7 +21986,7 @@ type GetSecurityAssessmentComparisonTargetAuditingCurrent struct {
 // GetSecurityAssessmentComparisonTargetAuditingCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingCurrentArgs and GetSecurityAssessmentComparisonTargetAuditingCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuditingCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetAuditingCurrentInput interface {
 	pulumi.Input
 
@@ -22026,7 +22026,7 @@ func (i GetSecurityAssessmentComparisonTargetAuditingCurrentArgs) ToGetSecurityA
 // GetSecurityAssessmentComparisonTargetAuditingCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingCurrentArray and GetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingCurrentArray{ GetSecurityAssessmentComparisonTargetAuditingCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuditingCurrentArray{ GetSecurityAssessmentComparisonTargetAuditingCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuditingCurrentArrayInput interface {
 	pulumi.Input
 
@@ -22131,7 +22131,7 @@ type GetSecurityAssessmentComparisonTargetAuditingCurrentReference struct {
 // GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -22163,7 +22163,7 @@ func (i GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs) ToGet
 // GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArray and GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -22252,7 +22252,7 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControl struct {
 // GetSecurityAssessmentComparisonTargetAuthorizationControlInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlArgs and GetSecurityAssessmentComparisonTargetAuthorizationControlOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlArgs{...}
 type GetSecurityAssessmentComparisonTargetAuthorizationControlInput interface {
 	pulumi.Input
 
@@ -22290,7 +22290,7 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlArgs) ToGetSecu
 // GetSecurityAssessmentComparisonTargetAuthorizationControlArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlArray and GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuthorizationControlArrayInput interface {
 	pulumi.Input
 
@@ -22400,7 +22400,7 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline struct {
 // GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs and GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineInput interface {
 	pulumi.Input
 
@@ -22440,7 +22440,7 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs) T
 // GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArray and GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayInput interface {
 	pulumi.Input
 
@@ -22545,7 +22545,7 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference 
 // GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -22577,7 +22577,7 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 // GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArray and GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -22674,7 +22674,7 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent struct {
 // GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs and GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentInput interface {
 	pulumi.Input
 
@@ -22714,7 +22714,7 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs) To
 // GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArray and GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayInput interface {
 	pulumi.Input
 
@@ -22819,7 +22819,7 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference s
 // GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -22851,7 +22851,7 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenc
 // GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArray and GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -22944,7 +22944,7 @@ type GetSecurityAssessmentComparisonTargetDataEncryption struct {
 // GetSecurityAssessmentComparisonTargetDataEncryptionInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionArgs and GetSecurityAssessmentComparisonTargetDataEncryptionOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionArgs{...}
+//	GetSecurityAssessmentComparisonTargetDataEncryptionArgs{...}
 type GetSecurityAssessmentComparisonTargetDataEncryptionInput interface {
 	pulumi.Input
 
@@ -22982,7 +22982,7 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionArgs) ToGetSecurityAs
 // GetSecurityAssessmentComparisonTargetDataEncryptionArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionArray and GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionArray{ GetSecurityAssessmentComparisonTargetDataEncryptionArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDataEncryptionArray{ GetSecurityAssessmentComparisonTargetDataEncryptionArgs{...} }
 type GetSecurityAssessmentComparisonTargetDataEncryptionArrayInput interface {
 	pulumi.Input
 
@@ -23092,7 +23092,7 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionBaseline struct {
 // GetSecurityAssessmentComparisonTargetDataEncryptionBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs and GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineInput interface {
 	pulumi.Input
 
@@ -23132,7 +23132,7 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs) ToGetSe
 // GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArray and GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArray{ GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArray{ GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayInput interface {
 	pulumi.Input
 
@@ -23237,7 +23237,7 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference struct
 // GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -23269,7 +23269,7 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs
 // GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArray and GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -23360,7 +23360,7 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionCurrent struct {
 // GetSecurityAssessmentComparisonTargetDataEncryptionCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs and GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentInput interface {
 	pulumi.Input
 
@@ -23400,7 +23400,7 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs) ToGetSec
 // GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArray and GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArray{ GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArray{ GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayInput interface {
 	pulumi.Input
 
@@ -23505,7 +23505,7 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference struct 
 // GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -23537,7 +23537,7 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs)
 // GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray and GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -23626,7 +23626,7 @@ type GetSecurityAssessmentComparisonTargetDbConfiguration struct {
 // GetSecurityAssessmentComparisonTargetDbConfigurationInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationArgs and GetSecurityAssessmentComparisonTargetDbConfigurationOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationArgs{...}
+//	GetSecurityAssessmentComparisonTargetDbConfigurationArgs{...}
 type GetSecurityAssessmentComparisonTargetDbConfigurationInput interface {
 	pulumi.Input
 
@@ -23664,7 +23664,7 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationArgs) ToGetSecurityA
 // GetSecurityAssessmentComparisonTargetDbConfigurationArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationArray and GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationArray{ GetSecurityAssessmentComparisonTargetDbConfigurationArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDbConfigurationArray{ GetSecurityAssessmentComparisonTargetDbConfigurationArgs{...} }
 type GetSecurityAssessmentComparisonTargetDbConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -23774,7 +23774,7 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationBaseline struct {
 // GetSecurityAssessmentComparisonTargetDbConfigurationBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs and GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineInput interface {
 	pulumi.Input
 
@@ -23814,7 +23814,7 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs) ToGetS
 // GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArray and GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArray{ GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArray{ GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayInput interface {
 	pulumi.Input
 
@@ -23919,7 +23919,7 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference struc
 // GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -23951,7 +23951,7 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArg
 // GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArray and GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -24042,7 +24042,7 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationCurrent struct {
 // GetSecurityAssessmentComparisonTargetDbConfigurationCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs and GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentInput interface {
 	pulumi.Input
 
@@ -24082,7 +24082,7 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs) ToGetSe
 // GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArray and GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArray{ GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArray{ GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayInput interface {
 	pulumi.Input
 
@@ -24187,7 +24187,7 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference struct
 // GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -24219,7 +24219,7 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs
 // GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArray and GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -24308,7 +24308,7 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControl struct {
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs{...}
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs{...}
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlInput interface {
 	pulumi.Input
 
@@ -24346,7 +24346,7 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs) ToGet
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs{...} }
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs{...} }
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayInput interface {
 	pulumi.Input
 
@@ -24456,7 +24456,7 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline struc
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineInput interface {
 	pulumi.Input
 
@@ -24496,7 +24496,7 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArg
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayInput interface {
 	pulumi.Input
 
@@ -24605,7 +24605,7 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefere
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -24637,7 +24637,7 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -24734,7 +24734,7 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent struct
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentInput interface {
 	pulumi.Input
 
@@ -24774,7 +24774,7 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayInput interface {
 	pulumi.Input
 
@@ -24881,7 +24881,7 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferen
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -24913,7 +24913,7 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefe
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -25008,7 +25008,7 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRole struct {
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs{...}
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs{...}
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleInput interface {
 	pulumi.Input
 
@@ -25046,7 +25046,7 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs) ToGetSecurit
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs{...} }
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs{...} }
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayInput interface {
 	pulumi.Input
 
@@ -25156,7 +25156,7 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline struct {
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineInput interface {
 	pulumi.Input
 
@@ -25196,7 +25196,7 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs) ToGe
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayInput interface {
 	pulumi.Input
 
@@ -25301,7 +25301,7 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference str
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -25333,7 +25333,7 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceA
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -25424,7 +25424,7 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent struct {
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentInput interface {
 	pulumi.Input
 
@@ -25464,7 +25464,7 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs) ToGet
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayInput interface {
 	pulumi.Input
 
@@ -25569,7 +25569,7 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference stru
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -25601,7 +25601,7 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceAr
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -25690,7 +25690,7 @@ type GetSecurityAssessmentComparisonTargetUserAccount struct {
 // GetSecurityAssessmentComparisonTargetUserAccountInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountArgs and GetSecurityAssessmentComparisonTargetUserAccountOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountArgs{...}
+//	GetSecurityAssessmentComparisonTargetUserAccountArgs{...}
 type GetSecurityAssessmentComparisonTargetUserAccountInput interface {
 	pulumi.Input
 
@@ -25728,7 +25728,7 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountArgs) ToGetSecurityAsses
 // GetSecurityAssessmentComparisonTargetUserAccountArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountArray and GetSecurityAssessmentComparisonTargetUserAccountArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountArray{ GetSecurityAssessmentComparisonTargetUserAccountArgs{...} }
+//	GetSecurityAssessmentComparisonTargetUserAccountArray{ GetSecurityAssessmentComparisonTargetUserAccountArgs{...} }
 type GetSecurityAssessmentComparisonTargetUserAccountArrayInput interface {
 	pulumi.Input
 
@@ -25838,7 +25838,7 @@ type GetSecurityAssessmentComparisonTargetUserAccountBaseline struct {
 // GetSecurityAssessmentComparisonTargetUserAccountBaselineInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs and GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountBaselineInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs{...}
+//	GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs{...}
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineInput interface {
 	pulumi.Input
 
@@ -25878,7 +25878,7 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs) ToGetSecur
 // GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountBaselineArray and GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountBaselineArray{ GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs{...} }
+//	GetSecurityAssessmentComparisonTargetUserAccountBaselineArray{ GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs{...} }
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayInput interface {
 	pulumi.Input
 
@@ -25983,7 +25983,7 @@ type GetSecurityAssessmentComparisonTargetUserAccountBaselineReference struct {
 // GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs and GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceInput interface {
 	pulumi.Input
 
@@ -26015,7 +26015,7 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs) T
 // GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArray and GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArray{ GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayInput interface {
 	pulumi.Input
 
@@ -26106,7 +26106,7 @@ type GetSecurityAssessmentComparisonTargetUserAccountCurrent struct {
 // GetSecurityAssessmentComparisonTargetUserAccountCurrentInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs and GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountCurrentInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs{...}
+//	GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs{...}
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentInput interface {
 	pulumi.Input
 
@@ -26146,7 +26146,7 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs) ToGetSecuri
 // GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountCurrentArray and GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountCurrentArray{ GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs{...} }
+//	GetSecurityAssessmentComparisonTargetUserAccountCurrentArray{ GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs{...} }
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayInput interface {
 	pulumi.Input
 
@@ -26251,7 +26251,7 @@ type GetSecurityAssessmentComparisonTargetUserAccountCurrentReference struct {
 // GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs and GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs{...}
+//	GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs{...}
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceInput interface {
 	pulumi.Input
 
@@ -26283,7 +26283,7 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs) To
 // GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray and GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs{...} }
+//	GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray{ GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs{...} }
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput interface {
 	pulumi.Input
 
@@ -26363,7 +26363,7 @@ type GetSecurityAssessmentFindingFilter struct {
 // GetSecurityAssessmentFindingFilterInput is an input type that accepts GetSecurityAssessmentFindingFilterArgs and GetSecurityAssessmentFindingFilterOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFilterInput` via:
 //
-//          GetSecurityAssessmentFindingFilterArgs{...}
+//	GetSecurityAssessmentFindingFilterArgs{...}
 type GetSecurityAssessmentFindingFilterInput interface {
 	pulumi.Input
 
@@ -26392,7 +26392,7 @@ func (i GetSecurityAssessmentFindingFilterArgs) ToGetSecurityAssessmentFindingFi
 // GetSecurityAssessmentFindingFilterArrayInput is an input type that accepts GetSecurityAssessmentFindingFilterArray and GetSecurityAssessmentFindingFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFilterArrayInput` via:
 //
-//          GetSecurityAssessmentFindingFilterArray{ GetSecurityAssessmentFindingFilterArgs{...} }
+//	GetSecurityAssessmentFindingFilterArray{ GetSecurityAssessmentFindingFilterArgs{...} }
 type GetSecurityAssessmentFindingFilterArrayInput interface {
 	pulumi.Input
 
@@ -26475,7 +26475,7 @@ type GetSecurityAssessmentFindingFinding struct {
 // GetSecurityAssessmentFindingFindingInput is an input type that accepts GetSecurityAssessmentFindingFindingArgs and GetSecurityAssessmentFindingFindingOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFindingInput` via:
 //
-//          GetSecurityAssessmentFindingFindingArgs{...}
+//	GetSecurityAssessmentFindingFindingArgs{...}
 type GetSecurityAssessmentFindingFindingInput interface {
 	pulumi.Input
 
@@ -26510,7 +26510,7 @@ func (i GetSecurityAssessmentFindingFindingArgs) ToGetSecurityAssessmentFindingF
 // GetSecurityAssessmentFindingFindingArrayInput is an input type that accepts GetSecurityAssessmentFindingFindingArray and GetSecurityAssessmentFindingFindingArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFindingArrayInput` via:
 //
-//          GetSecurityAssessmentFindingFindingArray{ GetSecurityAssessmentFindingFindingArgs{...} }
+//	GetSecurityAssessmentFindingFindingArray{ GetSecurityAssessmentFindingFindingArgs{...} }
 type GetSecurityAssessmentFindingFindingArrayInput interface {
 	pulumi.Input
 
@@ -26613,7 +26613,7 @@ type GetSecurityAssessmentFindingFindingReference struct {
 // GetSecurityAssessmentFindingFindingReferenceInput is an input type that accepts GetSecurityAssessmentFindingFindingReferenceArgs and GetSecurityAssessmentFindingFindingReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFindingReferenceInput` via:
 //
-//          GetSecurityAssessmentFindingFindingReferenceArgs{...}
+//	GetSecurityAssessmentFindingFindingReferenceArgs{...}
 type GetSecurityAssessmentFindingFindingReferenceInput interface {
 	pulumi.Input
 
@@ -26642,7 +26642,7 @@ func (i GetSecurityAssessmentFindingFindingReferenceArgs) ToGetSecurityAssessmen
 // GetSecurityAssessmentFindingFindingReferenceArrayInput is an input type that accepts GetSecurityAssessmentFindingFindingReferenceArray and GetSecurityAssessmentFindingFindingReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFindingReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentFindingFindingReferenceArray{ GetSecurityAssessmentFindingFindingReferenceArgs{...} }
+//	GetSecurityAssessmentFindingFindingReferenceArray{ GetSecurityAssessmentFindingFindingReferenceArgs{...} }
 type GetSecurityAssessmentFindingFindingReferenceArrayInput interface {
 	pulumi.Input
 
@@ -26719,7 +26719,7 @@ type GetSecurityAssessmentFindingsFilter struct {
 // GetSecurityAssessmentFindingsFilterInput is an input type that accepts GetSecurityAssessmentFindingsFilterArgs and GetSecurityAssessmentFindingsFilterOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFilterInput` via:
 //
-//          GetSecurityAssessmentFindingsFilterArgs{...}
+//	GetSecurityAssessmentFindingsFilterArgs{...}
 type GetSecurityAssessmentFindingsFilterInput interface {
 	pulumi.Input
 
@@ -26748,7 +26748,7 @@ func (i GetSecurityAssessmentFindingsFilterArgs) ToGetSecurityAssessmentFindings
 // GetSecurityAssessmentFindingsFilterArrayInput is an input type that accepts GetSecurityAssessmentFindingsFilterArray and GetSecurityAssessmentFindingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFilterArrayInput` via:
 //
-//          GetSecurityAssessmentFindingsFilterArray{ GetSecurityAssessmentFindingsFilterArgs{...} }
+//	GetSecurityAssessmentFindingsFilterArray{ GetSecurityAssessmentFindingsFilterArgs{...} }
 type GetSecurityAssessmentFindingsFilterArrayInput interface {
 	pulumi.Input
 
@@ -26840,7 +26840,7 @@ type GetSecurityAssessmentFindingsFinding struct {
 // GetSecurityAssessmentFindingsFindingInput is an input type that accepts GetSecurityAssessmentFindingsFindingArgs and GetSecurityAssessmentFindingsFindingOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFindingInput` via:
 //
-//          GetSecurityAssessmentFindingsFindingArgs{...}
+//	GetSecurityAssessmentFindingsFindingArgs{...}
 type GetSecurityAssessmentFindingsFindingInput interface {
 	pulumi.Input
 
@@ -26884,7 +26884,7 @@ func (i GetSecurityAssessmentFindingsFindingArgs) ToGetSecurityAssessmentFinding
 // GetSecurityAssessmentFindingsFindingArrayInput is an input type that accepts GetSecurityAssessmentFindingsFindingArray and GetSecurityAssessmentFindingsFindingArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFindingArrayInput` via:
 //
-//          GetSecurityAssessmentFindingsFindingArray{ GetSecurityAssessmentFindingsFindingArgs{...} }
+//	GetSecurityAssessmentFindingsFindingArray{ GetSecurityAssessmentFindingsFindingArgs{...} }
 type GetSecurityAssessmentFindingsFindingArrayInput interface {
 	pulumi.Input
 
@@ -26999,7 +26999,7 @@ type GetSecurityAssessmentFindingsFindingReference struct {
 // GetSecurityAssessmentFindingsFindingReferenceInput is an input type that accepts GetSecurityAssessmentFindingsFindingReferenceArgs and GetSecurityAssessmentFindingsFindingReferenceOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFindingReferenceInput` via:
 //
-//          GetSecurityAssessmentFindingsFindingReferenceArgs{...}
+//	GetSecurityAssessmentFindingsFindingReferenceArgs{...}
 type GetSecurityAssessmentFindingsFindingReferenceInput interface {
 	pulumi.Input
 
@@ -27031,7 +27031,7 @@ func (i GetSecurityAssessmentFindingsFindingReferenceArgs) ToGetSecurityAssessme
 // GetSecurityAssessmentFindingsFindingReferenceArrayInput is an input type that accepts GetSecurityAssessmentFindingsFindingReferenceArray and GetSecurityAssessmentFindingsFindingReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFindingReferenceArrayInput` via:
 //
-//          GetSecurityAssessmentFindingsFindingReferenceArray{ GetSecurityAssessmentFindingsFindingReferenceArgs{...} }
+//	GetSecurityAssessmentFindingsFindingReferenceArray{ GetSecurityAssessmentFindingsFindingReferenceArgs{...} }
 type GetSecurityAssessmentFindingsFindingReferenceArrayInput interface {
 	pulumi.Input
 
@@ -27122,7 +27122,7 @@ type GetSecurityAssessmentStatistic struct {
 // GetSecurityAssessmentStatisticInput is an input type that accepts GetSecurityAssessmentStatisticArgs and GetSecurityAssessmentStatisticOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticInput` via:
 //
-//          GetSecurityAssessmentStatisticArgs{...}
+//	GetSecurityAssessmentStatisticArgs{...}
 type GetSecurityAssessmentStatisticInput interface {
 	pulumi.Input
 
@@ -27162,7 +27162,7 @@ func (i GetSecurityAssessmentStatisticArgs) ToGetSecurityAssessmentStatisticOutp
 // GetSecurityAssessmentStatisticArrayInput is an input type that accepts GetSecurityAssessmentStatisticArray and GetSecurityAssessmentStatisticArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticArray{ GetSecurityAssessmentStatisticArgs{...} }
+//	GetSecurityAssessmentStatisticArray{ GetSecurityAssessmentStatisticArgs{...} }
 type GetSecurityAssessmentStatisticArrayInput interface {
 	pulumi.Input
 
@@ -27277,7 +27277,7 @@ type GetSecurityAssessmentStatisticAdvisory struct {
 // GetSecurityAssessmentStatisticAdvisoryInput is an input type that accepts GetSecurityAssessmentStatisticAdvisoryArgs and GetSecurityAssessmentStatisticAdvisoryOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticAdvisoryInput` via:
 //
-//          GetSecurityAssessmentStatisticAdvisoryArgs{...}
+//	GetSecurityAssessmentStatisticAdvisoryArgs{...}
 type GetSecurityAssessmentStatisticAdvisoryInput interface {
 	pulumi.Input
 
@@ -27319,7 +27319,7 @@ func (i GetSecurityAssessmentStatisticAdvisoryArgs) ToGetSecurityAssessmentStati
 // GetSecurityAssessmentStatisticAdvisoryArrayInput is an input type that accepts GetSecurityAssessmentStatisticAdvisoryArray and GetSecurityAssessmentStatisticAdvisoryArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticAdvisoryArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticAdvisoryArray{ GetSecurityAssessmentStatisticAdvisoryArgs{...} }
+//	GetSecurityAssessmentStatisticAdvisoryArray{ GetSecurityAssessmentStatisticAdvisoryArgs{...} }
 type GetSecurityAssessmentStatisticAdvisoryArrayInput interface {
 	pulumi.Input
 
@@ -27437,7 +27437,7 @@ type GetSecurityAssessmentStatisticEvaluate struct {
 // GetSecurityAssessmentStatisticEvaluateInput is an input type that accepts GetSecurityAssessmentStatisticEvaluateArgs and GetSecurityAssessmentStatisticEvaluateOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticEvaluateInput` via:
 //
-//          GetSecurityAssessmentStatisticEvaluateArgs{...}
+//	GetSecurityAssessmentStatisticEvaluateArgs{...}
 type GetSecurityAssessmentStatisticEvaluateInput interface {
 	pulumi.Input
 
@@ -27479,7 +27479,7 @@ func (i GetSecurityAssessmentStatisticEvaluateArgs) ToGetSecurityAssessmentStati
 // GetSecurityAssessmentStatisticEvaluateArrayInput is an input type that accepts GetSecurityAssessmentStatisticEvaluateArray and GetSecurityAssessmentStatisticEvaluateArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticEvaluateArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticEvaluateArray{ GetSecurityAssessmentStatisticEvaluateArgs{...} }
+//	GetSecurityAssessmentStatisticEvaluateArray{ GetSecurityAssessmentStatisticEvaluateArgs{...} }
 type GetSecurityAssessmentStatisticEvaluateArrayInput interface {
 	pulumi.Input
 
@@ -27597,7 +27597,7 @@ type GetSecurityAssessmentStatisticHighRisk struct {
 // GetSecurityAssessmentStatisticHighRiskInput is an input type that accepts GetSecurityAssessmentStatisticHighRiskArgs and GetSecurityAssessmentStatisticHighRiskOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticHighRiskInput` via:
 //
-//          GetSecurityAssessmentStatisticHighRiskArgs{...}
+//	GetSecurityAssessmentStatisticHighRiskArgs{...}
 type GetSecurityAssessmentStatisticHighRiskInput interface {
 	pulumi.Input
 
@@ -27639,7 +27639,7 @@ func (i GetSecurityAssessmentStatisticHighRiskArgs) ToGetSecurityAssessmentStati
 // GetSecurityAssessmentStatisticHighRiskArrayInput is an input type that accepts GetSecurityAssessmentStatisticHighRiskArray and GetSecurityAssessmentStatisticHighRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticHighRiskArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticHighRiskArray{ GetSecurityAssessmentStatisticHighRiskArgs{...} }
+//	GetSecurityAssessmentStatisticHighRiskArray{ GetSecurityAssessmentStatisticHighRiskArgs{...} }
 type GetSecurityAssessmentStatisticHighRiskArrayInput interface {
 	pulumi.Input
 
@@ -27757,7 +27757,7 @@ type GetSecurityAssessmentStatisticLowRisk struct {
 // GetSecurityAssessmentStatisticLowRiskInput is an input type that accepts GetSecurityAssessmentStatisticLowRiskArgs and GetSecurityAssessmentStatisticLowRiskOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticLowRiskInput` via:
 //
-//          GetSecurityAssessmentStatisticLowRiskArgs{...}
+//	GetSecurityAssessmentStatisticLowRiskArgs{...}
 type GetSecurityAssessmentStatisticLowRiskInput interface {
 	pulumi.Input
 
@@ -27799,7 +27799,7 @@ func (i GetSecurityAssessmentStatisticLowRiskArgs) ToGetSecurityAssessmentStatis
 // GetSecurityAssessmentStatisticLowRiskArrayInput is an input type that accepts GetSecurityAssessmentStatisticLowRiskArray and GetSecurityAssessmentStatisticLowRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticLowRiskArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticLowRiskArray{ GetSecurityAssessmentStatisticLowRiskArgs{...} }
+//	GetSecurityAssessmentStatisticLowRiskArray{ GetSecurityAssessmentStatisticLowRiskArgs{...} }
 type GetSecurityAssessmentStatisticLowRiskArrayInput interface {
 	pulumi.Input
 
@@ -27917,7 +27917,7 @@ type GetSecurityAssessmentStatisticMediumRisk struct {
 // GetSecurityAssessmentStatisticMediumRiskInput is an input type that accepts GetSecurityAssessmentStatisticMediumRiskArgs and GetSecurityAssessmentStatisticMediumRiskOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticMediumRiskInput` via:
 //
-//          GetSecurityAssessmentStatisticMediumRiskArgs{...}
+//	GetSecurityAssessmentStatisticMediumRiskArgs{...}
 type GetSecurityAssessmentStatisticMediumRiskInput interface {
 	pulumi.Input
 
@@ -27959,7 +27959,7 @@ func (i GetSecurityAssessmentStatisticMediumRiskArgs) ToGetSecurityAssessmentSta
 // GetSecurityAssessmentStatisticMediumRiskArrayInput is an input type that accepts GetSecurityAssessmentStatisticMediumRiskArray and GetSecurityAssessmentStatisticMediumRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticMediumRiskArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticMediumRiskArray{ GetSecurityAssessmentStatisticMediumRiskArgs{...} }
+//	GetSecurityAssessmentStatisticMediumRiskArray{ GetSecurityAssessmentStatisticMediumRiskArgs{...} }
 type GetSecurityAssessmentStatisticMediumRiskArrayInput interface {
 	pulumi.Input
 
@@ -28077,7 +28077,7 @@ type GetSecurityAssessmentStatisticPass struct {
 // GetSecurityAssessmentStatisticPassInput is an input type that accepts GetSecurityAssessmentStatisticPassArgs and GetSecurityAssessmentStatisticPassOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticPassInput` via:
 //
-//          GetSecurityAssessmentStatisticPassArgs{...}
+//	GetSecurityAssessmentStatisticPassArgs{...}
 type GetSecurityAssessmentStatisticPassInput interface {
 	pulumi.Input
 
@@ -28119,7 +28119,7 @@ func (i GetSecurityAssessmentStatisticPassArgs) ToGetSecurityAssessmentStatistic
 // GetSecurityAssessmentStatisticPassArrayInput is an input type that accepts GetSecurityAssessmentStatisticPassArray and GetSecurityAssessmentStatisticPassArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticPassArrayInput` via:
 //
-//          GetSecurityAssessmentStatisticPassArray{ GetSecurityAssessmentStatisticPassArgs{...} }
+//	GetSecurityAssessmentStatisticPassArray{ GetSecurityAssessmentStatisticPassArgs{...} }
 type GetSecurityAssessmentStatisticPassArrayInput interface {
 	pulumi.Input
 
@@ -28224,7 +28224,7 @@ type GetSecurityAssessmentsFilter struct {
 // GetSecurityAssessmentsFilterInput is an input type that accepts GetSecurityAssessmentsFilterArgs and GetSecurityAssessmentsFilterOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsFilterInput` via:
 //
-//          GetSecurityAssessmentsFilterArgs{...}
+//	GetSecurityAssessmentsFilterArgs{...}
 type GetSecurityAssessmentsFilterInput interface {
 	pulumi.Input
 
@@ -28253,7 +28253,7 @@ func (i GetSecurityAssessmentsFilterArgs) ToGetSecurityAssessmentsFilterOutputWi
 // GetSecurityAssessmentsFilterArrayInput is an input type that accepts GetSecurityAssessmentsFilterArray and GetSecurityAssessmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsFilterArrayInput` via:
 //
-//          GetSecurityAssessmentsFilterArray{ GetSecurityAssessmentsFilterArgs{...} }
+//	GetSecurityAssessmentsFilterArray{ GetSecurityAssessmentsFilterArgs{...} }
 type GetSecurityAssessmentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -28377,7 +28377,7 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 // GetSecurityAssessmentsSecurityAssessmentInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentArgs and GetSecurityAssessmentsSecurityAssessmentOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentInput interface {
 	pulumi.Input
 
@@ -28453,7 +28453,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentArgs) ToGetSecurityAssessmentsSe
 // GetSecurityAssessmentsSecurityAssessmentArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentArray and GetSecurityAssessmentsSecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentArray{ GetSecurityAssessmentsSecurityAssessmentArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentArray{ GetSecurityAssessmentsSecurityAssessmentArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentArrayInput interface {
 	pulumi.Input
 
@@ -28656,7 +28656,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatistic struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticArgs and GetSecurityAssessmentsSecurityAssessmentStatisticOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticInput interface {
 	pulumi.Input
 
@@ -28696,7 +28696,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticArgs) ToGetSecurityAsse
 // GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticArray and GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticArray{ GetSecurityAssessmentsSecurityAssessmentStatisticArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticArray{ GetSecurityAssessmentsSecurityAssessmentStatisticArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput interface {
 	pulumi.Input
 
@@ -28821,7 +28821,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs and GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryInput interface {
 	pulumi.Input
 
@@ -28863,7 +28863,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs) ToGetSecu
 // GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray and GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray{ GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray{ GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput interface {
 	pulumi.Input
 
@@ -28993,7 +28993,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs and GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateInput interface {
 	pulumi.Input
 
@@ -29035,7 +29035,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs) ToGetSecu
 // GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray and GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray{ GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray{ GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput interface {
 	pulumi.Input
 
@@ -29165,7 +29165,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs and GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskInput interface {
 	pulumi.Input
 
@@ -29207,7 +29207,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs) ToGetSecu
 // GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArray and GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArray{ GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArray{ GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayInput interface {
 	pulumi.Input
 
@@ -29337,7 +29337,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs and GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskInput interface {
 	pulumi.Input
 
@@ -29379,7 +29379,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs) ToGetSecur
 // GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArray and GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArray{ GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArray{ GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayInput interface {
 	pulumi.Input
 
@@ -29509,7 +29509,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs and GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskInput interface {
 	pulumi.Input
 
@@ -29551,7 +29551,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs) ToGetSe
 // GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray and GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray{ GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray{ GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput interface {
 	pulumi.Input
 
@@ -29683,7 +29683,7 @@ type GetSecurityAssessmentsSecurityAssessmentStatisticPass struct {
 // GetSecurityAssessmentsSecurityAssessmentStatisticPassInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs and GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticPassInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{...}
+//	GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{...}
 type GetSecurityAssessmentsSecurityAssessmentStatisticPassInput interface {
 	pulumi.Input
 
@@ -29725,7 +29725,7 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs) ToGetSecurity
 // GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticPassArray and GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput` via:
 //
-//          GetSecurityAssessmentsSecurityAssessmentStatisticPassArray{ GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{...} }
+//	GetSecurityAssessmentsSecurityAssessmentStatisticPassArray{ GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{...} }
 type GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput interface {
 	pulumi.Input
 
@@ -29840,7 +29840,7 @@ type GetSensitiveDataModelsFilter struct {
 // GetSensitiveDataModelsFilterInput is an input type that accepts GetSensitiveDataModelsFilterArgs and GetSensitiveDataModelsFilterOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsFilterInput` via:
 //
-//          GetSensitiveDataModelsFilterArgs{...}
+//	GetSensitiveDataModelsFilterArgs{...}
 type GetSensitiveDataModelsFilterInput interface {
 	pulumi.Input
 
@@ -29869,7 +29869,7 @@ func (i GetSensitiveDataModelsFilterArgs) ToGetSensitiveDataModelsFilterOutputWi
 // GetSensitiveDataModelsFilterArrayInput is an input type that accepts GetSensitiveDataModelsFilterArray and GetSensitiveDataModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsFilterArrayInput` via:
 //
-//          GetSensitiveDataModelsFilterArray{ GetSensitiveDataModelsFilterArgs{...} }
+//	GetSensitiveDataModelsFilterArray{ GetSensitiveDataModelsFilterArgs{...} }
 type GetSensitiveDataModelsFilterArrayInput interface {
 	pulumi.Input
 
@@ -29946,7 +29946,7 @@ type GetSensitiveDataModelsSensitiveColumnsFilter struct {
 // GetSensitiveDataModelsSensitiveColumnsFilterInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsFilterArgs and GetSensitiveDataModelsSensitiveColumnsFilterOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsFilterInput` via:
 //
-//          GetSensitiveDataModelsSensitiveColumnsFilterArgs{...}
+//	GetSensitiveDataModelsSensitiveColumnsFilterArgs{...}
 type GetSensitiveDataModelsSensitiveColumnsFilterInput interface {
 	pulumi.Input
 
@@ -29975,7 +29975,7 @@ func (i GetSensitiveDataModelsSensitiveColumnsFilterArgs) ToGetSensitiveDataMode
 // GetSensitiveDataModelsSensitiveColumnsFilterArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsFilterArray and GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsFilterArrayInput` via:
 //
-//          GetSensitiveDataModelsSensitiveColumnsFilterArray{ GetSensitiveDataModelsSensitiveColumnsFilterArgs{...} }
+//	GetSensitiveDataModelsSensitiveColumnsFilterArray{ GetSensitiveDataModelsSensitiveColumnsFilterArgs{...} }
 type GetSensitiveDataModelsSensitiveColumnsFilterArrayInput interface {
 	pulumi.Input
 
@@ -30050,7 +30050,7 @@ type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection struct {
 // GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs and GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionInput` via:
 //
-//          GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs{...}
+//	GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs{...}
 type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionInput interface {
 	pulumi.Input
 
@@ -30077,7 +30077,7 @@ func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs) ToG
 // GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArray and GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayInput` via:
 //
-//          GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArray{ GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs{...} }
+//	GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArray{ GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs{...} }
 type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayInput interface {
 	pulumi.Input
 
@@ -30189,7 +30189,7 @@ type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem struct 
 // GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs and GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemInput` via:
 //
-//          GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs{...}
+//	GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs{...}
 type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemInput interface {
 	pulumi.Input
 
@@ -30259,7 +30259,7 @@ func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs)
 // GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray and GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayInput` via:
 //
-//          GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray{ GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs{...} }
+//	GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray{ GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs{...} }
 type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -30462,7 +30462,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollection struct {
 // GetSensitiveDataModelsSensitiveDataModelCollectionInput is an input type that accepts GetSensitiveDataModelsSensitiveDataModelCollectionArgs and GetSensitiveDataModelsSensitiveDataModelCollectionOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveDataModelCollectionInput` via:
 //
-//          GetSensitiveDataModelsSensitiveDataModelCollectionArgs{...}
+//	GetSensitiveDataModelsSensitiveDataModelCollectionArgs{...}
 type GetSensitiveDataModelsSensitiveDataModelCollectionInput interface {
 	pulumi.Input
 
@@ -30489,7 +30489,7 @@ func (i GetSensitiveDataModelsSensitiveDataModelCollectionArgs) ToGetSensitiveDa
 // GetSensitiveDataModelsSensitiveDataModelCollectionArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveDataModelCollectionArray and GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveDataModelCollectionArrayInput` via:
 //
-//          GetSensitiveDataModelsSensitiveDataModelCollectionArray{ GetSensitiveDataModelsSensitiveDataModelCollectionArgs{...} }
+//	GetSensitiveDataModelsSensitiveDataModelCollectionArray{ GetSensitiveDataModelsSensitiveDataModelCollectionArgs{...} }
 type GetSensitiveDataModelsSensitiveDataModelCollectionArrayInput interface {
 	pulumi.Input
 
@@ -30593,7 +30593,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 // GetSensitiveDataModelsSensitiveDataModelCollectionItemInput is an input type that accepts GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs and GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveDataModelCollectionItemInput` via:
 //
-//          GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs{...}
+//	GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs{...}
 type GetSensitiveDataModelsSensitiveDataModelCollectionItemInput interface {
 	pulumi.Input
 
@@ -30655,7 +30655,7 @@ func (i GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs) ToGetSensiti
 // GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveDataModelCollectionItemArray and GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput` via:
 //
-//          GetSensitiveDataModelsSensitiveDataModelCollectionItemArray{ GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs{...} }
+//	GetSensitiveDataModelsSensitiveDataModelCollectionItemArray{ GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs{...} }
 type GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -30826,7 +30826,7 @@ type GetSensitiveTypesFilter struct {
 // GetSensitiveTypesFilterInput is an input type that accepts GetSensitiveTypesFilterArgs and GetSensitiveTypesFilterOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesFilterInput` via:
 //
-//          GetSensitiveTypesFilterArgs{...}
+//	GetSensitiveTypesFilterArgs{...}
 type GetSensitiveTypesFilterInput interface {
 	pulumi.Input
 
@@ -30855,7 +30855,7 @@ func (i GetSensitiveTypesFilterArgs) ToGetSensitiveTypesFilterOutputWithContext(
 // GetSensitiveTypesFilterArrayInput is an input type that accepts GetSensitiveTypesFilterArray and GetSensitiveTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesFilterArrayInput` via:
 //
-//          GetSensitiveTypesFilterArray{ GetSensitiveTypesFilterArgs{...} }
+//	GetSensitiveTypesFilterArray{ GetSensitiveTypesFilterArgs{...} }
 type GetSensitiveTypesFilterArrayInput interface {
 	pulumi.Input
 
@@ -30930,7 +30930,7 @@ type GetSensitiveTypesSensitiveTypeCollection struct {
 // GetSensitiveTypesSensitiveTypeCollectionInput is an input type that accepts GetSensitiveTypesSensitiveTypeCollectionArgs and GetSensitiveTypesSensitiveTypeCollectionOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesSensitiveTypeCollectionInput` via:
 //
-//          GetSensitiveTypesSensitiveTypeCollectionArgs{...}
+//	GetSensitiveTypesSensitiveTypeCollectionArgs{...}
 type GetSensitiveTypesSensitiveTypeCollectionInput interface {
 	pulumi.Input
 
@@ -30957,7 +30957,7 @@ func (i GetSensitiveTypesSensitiveTypeCollectionArgs) ToGetSensitiveTypesSensiti
 // GetSensitiveTypesSensitiveTypeCollectionArrayInput is an input type that accepts GetSensitiveTypesSensitiveTypeCollectionArray and GetSensitiveTypesSensitiveTypeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesSensitiveTypeCollectionArrayInput` via:
 //
-//          GetSensitiveTypesSensitiveTypeCollectionArray{ GetSensitiveTypesSensitiveTypeCollectionArgs{...} }
+//	GetSensitiveTypesSensitiveTypeCollectionArray{ GetSensitiveTypesSensitiveTypeCollectionArgs{...} }
 type GetSensitiveTypesSensitiveTypeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -31063,7 +31063,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItem struct {
 // GetSensitiveTypesSensitiveTypeCollectionItemInput is an input type that accepts GetSensitiveTypesSensitiveTypeCollectionItemArgs and GetSensitiveTypesSensitiveTypeCollectionItemOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesSensitiveTypeCollectionItemInput` via:
 //
-//          GetSensitiveTypesSensitiveTypeCollectionItemArgs{...}
+//	GetSensitiveTypesSensitiveTypeCollectionItemArgs{...}
 type GetSensitiveTypesSensitiveTypeCollectionItemInput interface {
 	pulumi.Input
 
@@ -31127,7 +31127,7 @@ func (i GetSensitiveTypesSensitiveTypeCollectionItemArgs) ToGetSensitiveTypesSen
 // GetSensitiveTypesSensitiveTypeCollectionItemArrayInput is an input type that accepts GetSensitiveTypesSensitiveTypeCollectionItemArray and GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesSensitiveTypeCollectionItemArrayInput` via:
 //
-//          GetSensitiveTypesSensitiveTypeCollectionItemArray{ GetSensitiveTypesSensitiveTypeCollectionItemArgs{...} }
+//	GetSensitiveTypesSensitiveTypeCollectionItemArray{ GetSensitiveTypesSensitiveTypeCollectionItemArgs{...} }
 type GetSensitiveTypesSensitiveTypeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -31287,7 +31287,7 @@ type GetTargetAlertPolicyAssociationsFilter struct {
 // GetTargetAlertPolicyAssociationsFilterInput is an input type that accepts GetTargetAlertPolicyAssociationsFilterArgs and GetTargetAlertPolicyAssociationsFilterOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsFilterInput` via:
 //
-//          GetTargetAlertPolicyAssociationsFilterArgs{...}
+//	GetTargetAlertPolicyAssociationsFilterArgs{...}
 type GetTargetAlertPolicyAssociationsFilterInput interface {
 	pulumi.Input
 
@@ -31316,7 +31316,7 @@ func (i GetTargetAlertPolicyAssociationsFilterArgs) ToGetTargetAlertPolicyAssoci
 // GetTargetAlertPolicyAssociationsFilterArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsFilterArray and GetTargetAlertPolicyAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsFilterArrayInput` via:
 //
-//          GetTargetAlertPolicyAssociationsFilterArray{ GetTargetAlertPolicyAssociationsFilterArgs{...} }
+//	GetTargetAlertPolicyAssociationsFilterArray{ GetTargetAlertPolicyAssociationsFilterArgs{...} }
 type GetTargetAlertPolicyAssociationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -31391,7 +31391,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection stru
 // GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput` via:
 //
-//          GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{...}
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{...}
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput interface {
 	pulumi.Input
 
@@ -31418,7 +31418,7 @@ func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionAr
 // GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput` via:
 //
-//          GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray{ GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{...} }
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray{ GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{...} }
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -31512,7 +31512,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem 
 // GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput` via:
 //
-//          GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{...}
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{...}
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemInput interface {
 	pulumi.Input
 
@@ -31564,7 +31564,7 @@ func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 // GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput` via:
 //
-//          GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray{ GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{...} }
+//	GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray{ GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs{...} }
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -31723,7 +31723,7 @@ type GetTargetDatabaseConnectionOption struct {
 // GetTargetDatabaseConnectionOptionInput is an input type that accepts GetTargetDatabaseConnectionOptionArgs and GetTargetDatabaseConnectionOptionOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseConnectionOptionInput` via:
 //
-//          GetTargetDatabaseConnectionOptionArgs{...}
+//	GetTargetDatabaseConnectionOptionArgs{...}
 type GetTargetDatabaseConnectionOptionInput interface {
 	pulumi.Input
 
@@ -31757,7 +31757,7 @@ func (i GetTargetDatabaseConnectionOptionArgs) ToGetTargetDatabaseConnectionOpti
 // GetTargetDatabaseConnectionOptionArrayInput is an input type that accepts GetTargetDatabaseConnectionOptionArray and GetTargetDatabaseConnectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseConnectionOptionArrayInput` via:
 //
-//          GetTargetDatabaseConnectionOptionArray{ GetTargetDatabaseConnectionOptionArgs{...} }
+//	GetTargetDatabaseConnectionOptionArray{ GetTargetDatabaseConnectionOptionArgs{...} }
 type GetTargetDatabaseConnectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -31840,7 +31840,7 @@ type GetTargetDatabaseCredential struct {
 // GetTargetDatabaseCredentialInput is an input type that accepts GetTargetDatabaseCredentialArgs and GetTargetDatabaseCredentialOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseCredentialInput` via:
 //
-//          GetTargetDatabaseCredentialArgs{...}
+//	GetTargetDatabaseCredentialArgs{...}
 type GetTargetDatabaseCredentialInput interface {
 	pulumi.Input
 
@@ -31870,7 +31870,7 @@ func (i GetTargetDatabaseCredentialArgs) ToGetTargetDatabaseCredentialOutputWith
 // GetTargetDatabaseCredentialArrayInput is an input type that accepts GetTargetDatabaseCredentialArray and GetTargetDatabaseCredentialArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseCredentialArrayInput` via:
 //
-//          GetTargetDatabaseCredentialArray{ GetTargetDatabaseCredentialArgs{...} }
+//	GetTargetDatabaseCredentialArray{ GetTargetDatabaseCredentialArgs{...} }
 type GetTargetDatabaseCredentialArrayInput interface {
 	pulumi.Input
 
@@ -31960,7 +31960,7 @@ type GetTargetDatabaseDatabaseDetail struct {
 // GetTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabaseDatabaseDetailArgs and GetTargetDatabaseDatabaseDetailOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseDatabaseDetailInput` via:
 //
-//          GetTargetDatabaseDatabaseDetailArgs{...}
+//	GetTargetDatabaseDatabaseDetailArgs{...}
 type GetTargetDatabaseDatabaseDetailInput interface {
 	pulumi.Input
 
@@ -32004,7 +32004,7 @@ func (i GetTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabaseDatabaseDetailOu
 // GetTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabaseDatabaseDetailArray and GetTargetDatabaseDatabaseDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseDatabaseDetailArrayInput` via:
 //
-//          GetTargetDatabaseDatabaseDetailArray{ GetTargetDatabaseDatabaseDetailArgs{...} }
+//	GetTargetDatabaseDatabaseDetailArray{ GetTargetDatabaseDatabaseDetailArgs{...} }
 type GetTargetDatabaseDatabaseDetailArrayInput interface {
 	pulumi.Input
 
@@ -32114,7 +32114,7 @@ type GetTargetDatabaseRoleFilter struct {
 // GetTargetDatabaseRoleFilterInput is an input type that accepts GetTargetDatabaseRoleFilterArgs and GetTargetDatabaseRoleFilterOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRoleFilterInput` via:
 //
-//          GetTargetDatabaseRoleFilterArgs{...}
+//	GetTargetDatabaseRoleFilterArgs{...}
 type GetTargetDatabaseRoleFilterInput interface {
 	pulumi.Input
 
@@ -32143,7 +32143,7 @@ func (i GetTargetDatabaseRoleFilterArgs) ToGetTargetDatabaseRoleFilterOutputWith
 // GetTargetDatabaseRoleFilterArrayInput is an input type that accepts GetTargetDatabaseRoleFilterArray and GetTargetDatabaseRoleFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRoleFilterArrayInput` via:
 //
-//          GetTargetDatabaseRoleFilterArray{ GetTargetDatabaseRoleFilterArgs{...} }
+//	GetTargetDatabaseRoleFilterArray{ GetTargetDatabaseRoleFilterArgs{...} }
 type GetTargetDatabaseRoleFilterArrayInput interface {
 	pulumi.Input
 
@@ -32224,7 +32224,7 @@ type GetTargetDatabaseRoleRole struct {
 // GetTargetDatabaseRoleRoleInput is an input type that accepts GetTargetDatabaseRoleRoleArgs and GetTargetDatabaseRoleRoleOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRoleRoleInput` via:
 //
-//          GetTargetDatabaseRoleRoleArgs{...}
+//	GetTargetDatabaseRoleRoleArgs{...}
 type GetTargetDatabaseRoleRoleInput interface {
 	pulumi.Input
 
@@ -32257,7 +32257,7 @@ func (i GetTargetDatabaseRoleRoleArgs) ToGetTargetDatabaseRoleRoleOutputWithCont
 // GetTargetDatabaseRoleRoleArrayInput is an input type that accepts GetTargetDatabaseRoleRoleArray and GetTargetDatabaseRoleRoleArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRoleRoleArrayInput` via:
 //
-//          GetTargetDatabaseRoleRoleArray{ GetTargetDatabaseRoleRoleArgs{...} }
+//	GetTargetDatabaseRoleRoleArray{ GetTargetDatabaseRoleRoleArgs{...} }
 type GetTargetDatabaseRoleRoleArrayInput interface {
 	pulumi.Input
 
@@ -32350,7 +32350,7 @@ type GetTargetDatabaseRolesFilter struct {
 // GetTargetDatabaseRolesFilterInput is an input type that accepts GetTargetDatabaseRolesFilterArgs and GetTargetDatabaseRolesFilterOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRolesFilterInput` via:
 //
-//          GetTargetDatabaseRolesFilterArgs{...}
+//	GetTargetDatabaseRolesFilterArgs{...}
 type GetTargetDatabaseRolesFilterInput interface {
 	pulumi.Input
 
@@ -32379,7 +32379,7 @@ func (i GetTargetDatabaseRolesFilterArgs) ToGetTargetDatabaseRolesFilterOutputWi
 // GetTargetDatabaseRolesFilterArrayInput is an input type that accepts GetTargetDatabaseRolesFilterArray and GetTargetDatabaseRolesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRolesFilterArrayInput` via:
 //
-//          GetTargetDatabaseRolesFilterArray{ GetTargetDatabaseRolesFilterArgs{...} }
+//	GetTargetDatabaseRolesFilterArray{ GetTargetDatabaseRolesFilterArgs{...} }
 type GetTargetDatabaseRolesFilterArrayInput interface {
 	pulumi.Input
 
@@ -32467,7 +32467,7 @@ type GetTargetDatabaseRolesRole struct {
 // GetTargetDatabaseRolesRoleInput is an input type that accepts GetTargetDatabaseRolesRoleArgs and GetTargetDatabaseRolesRoleOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRolesRoleInput` via:
 //
-//          GetTargetDatabaseRolesRoleArgs{...}
+//	GetTargetDatabaseRolesRoleArgs{...}
 type GetTargetDatabaseRolesRoleInput interface {
 	pulumi.Input
 
@@ -32507,7 +32507,7 @@ func (i GetTargetDatabaseRolesRoleArgs) ToGetTargetDatabaseRolesRoleOutputWithCo
 // GetTargetDatabaseRolesRoleArrayInput is an input type that accepts GetTargetDatabaseRolesRoleArray and GetTargetDatabaseRolesRoleArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRolesRoleArrayInput` via:
 //
-//          GetTargetDatabaseRolesRoleArray{ GetTargetDatabaseRolesRoleArgs{...} }
+//	GetTargetDatabaseRolesRoleArray{ GetTargetDatabaseRolesRoleArgs{...} }
 type GetTargetDatabaseRolesRoleArrayInput interface {
 	pulumi.Input
 
@@ -32614,7 +32614,7 @@ type GetTargetDatabaseTlsConfig struct {
 // GetTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabaseTlsConfigArgs and GetTargetDatabaseTlsConfigOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseTlsConfigInput` via:
 //
-//          GetTargetDatabaseTlsConfigArgs{...}
+//	GetTargetDatabaseTlsConfigArgs{...}
 type GetTargetDatabaseTlsConfigInput interface {
 	pulumi.Input
 
@@ -32650,7 +32650,7 @@ func (i GetTargetDatabaseTlsConfigArgs) ToGetTargetDatabaseTlsConfigOutputWithCo
 // GetTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabaseTlsConfigArray and GetTargetDatabaseTlsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseTlsConfigArrayInput` via:
 //
-//          GetTargetDatabaseTlsConfigArray{ GetTargetDatabaseTlsConfigArgs{...} }
+//	GetTargetDatabaseTlsConfigArray{ GetTargetDatabaseTlsConfigArgs{...} }
 type GetTargetDatabaseTlsConfigArrayInput interface {
 	pulumi.Input
 
@@ -32753,7 +32753,7 @@ type GetTargetDatabasesColumnsColumn struct {
 // GetTargetDatabasesColumnsColumnInput is an input type that accepts GetTargetDatabasesColumnsColumnArgs and GetTargetDatabasesColumnsColumnOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesColumnsColumnInput` via:
 //
-//          GetTargetDatabasesColumnsColumnArgs{...}
+//	GetTargetDatabasesColumnsColumnArgs{...}
 type GetTargetDatabasesColumnsColumnInput interface {
 	pulumi.Input
 
@@ -32795,7 +32795,7 @@ func (i GetTargetDatabasesColumnsColumnArgs) ToGetTargetDatabasesColumnsColumnOu
 // GetTargetDatabasesColumnsColumnArrayInput is an input type that accepts GetTargetDatabasesColumnsColumnArray and GetTargetDatabasesColumnsColumnArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesColumnsColumnArrayInput` via:
 //
-//          GetTargetDatabasesColumnsColumnArray{ GetTargetDatabasesColumnsColumnArgs{...} }
+//	GetTargetDatabasesColumnsColumnArray{ GetTargetDatabasesColumnsColumnArgs{...} }
 type GetTargetDatabasesColumnsColumnArrayInput interface {
 	pulumi.Input
 
@@ -32900,7 +32900,7 @@ type GetTargetDatabasesColumnsFilter struct {
 // GetTargetDatabasesColumnsFilterInput is an input type that accepts GetTargetDatabasesColumnsFilterArgs and GetTargetDatabasesColumnsFilterOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesColumnsFilterInput` via:
 //
-//          GetTargetDatabasesColumnsFilterArgs{...}
+//	GetTargetDatabasesColumnsFilterArgs{...}
 type GetTargetDatabasesColumnsFilterInput interface {
 	pulumi.Input
 
@@ -32929,7 +32929,7 @@ func (i GetTargetDatabasesColumnsFilterArgs) ToGetTargetDatabasesColumnsFilterOu
 // GetTargetDatabasesColumnsFilterArrayInput is an input type that accepts GetTargetDatabasesColumnsFilterArray and GetTargetDatabasesColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesColumnsFilterArrayInput` via:
 //
-//          GetTargetDatabasesColumnsFilterArray{ GetTargetDatabasesColumnsFilterArgs{...} }
+//	GetTargetDatabasesColumnsFilterArray{ GetTargetDatabasesColumnsFilterArgs{...} }
 type GetTargetDatabasesColumnsFilterArrayInput interface {
 	pulumi.Input
 
@@ -33006,7 +33006,7 @@ type GetTargetDatabasesFilter struct {
 // GetTargetDatabasesFilterInput is an input type that accepts GetTargetDatabasesFilterArgs and GetTargetDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesFilterInput` via:
 //
-//          GetTargetDatabasesFilterArgs{...}
+//	GetTargetDatabasesFilterArgs{...}
 type GetTargetDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -33035,7 +33035,7 @@ func (i GetTargetDatabasesFilterArgs) ToGetTargetDatabasesFilterOutputWithContex
 // GetTargetDatabasesFilterArrayInput is an input type that accepts GetTargetDatabasesFilterArray and GetTargetDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesFilterArrayInput` via:
 //
-//          GetTargetDatabasesFilterArray{ GetTargetDatabasesFilterArgs{...} }
+//	GetTargetDatabasesFilterArray{ GetTargetDatabasesFilterArgs{...} }
 type GetTargetDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -33112,7 +33112,7 @@ type GetTargetDatabasesSchemasFilter struct {
 // GetTargetDatabasesSchemasFilterInput is an input type that accepts GetTargetDatabasesSchemasFilterArgs and GetTargetDatabasesSchemasFilterOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesSchemasFilterInput` via:
 //
-//          GetTargetDatabasesSchemasFilterArgs{...}
+//	GetTargetDatabasesSchemasFilterArgs{...}
 type GetTargetDatabasesSchemasFilterInput interface {
 	pulumi.Input
 
@@ -33141,7 +33141,7 @@ func (i GetTargetDatabasesSchemasFilterArgs) ToGetTargetDatabasesSchemasFilterOu
 // GetTargetDatabasesSchemasFilterArrayInput is an input type that accepts GetTargetDatabasesSchemasFilterArray and GetTargetDatabasesSchemasFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesSchemasFilterArrayInput` via:
 //
-//          GetTargetDatabasesSchemasFilterArray{ GetTargetDatabasesSchemasFilterArgs{...} }
+//	GetTargetDatabasesSchemasFilterArray{ GetTargetDatabasesSchemasFilterArgs{...} }
 type GetTargetDatabasesSchemasFilterArrayInput interface {
 	pulumi.Input
 
@@ -33219,7 +33219,7 @@ type GetTargetDatabasesSchemasSchema struct {
 // GetTargetDatabasesSchemasSchemaInput is an input type that accepts GetTargetDatabasesSchemasSchemaArgs and GetTargetDatabasesSchemasSchemaOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesSchemasSchemaInput` via:
 //
-//          GetTargetDatabasesSchemasSchemaArgs{...}
+//	GetTargetDatabasesSchemasSchemaArgs{...}
 type GetTargetDatabasesSchemasSchemaInput interface {
 	pulumi.Input
 
@@ -33249,7 +33249,7 @@ func (i GetTargetDatabasesSchemasSchemaArgs) ToGetTargetDatabasesSchemasSchemaOu
 // GetTargetDatabasesSchemasSchemaArrayInput is an input type that accepts GetTargetDatabasesSchemasSchemaArray and GetTargetDatabasesSchemasSchemaArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesSchemasSchemaArrayInput` via:
 //
-//          GetTargetDatabasesSchemasSchemaArray{ GetTargetDatabasesSchemasSchemaArgs{...} }
+//	GetTargetDatabasesSchemasSchemaArray{ GetTargetDatabasesSchemasSchemaArgs{...} }
 type GetTargetDatabasesSchemasSchemaArrayInput interface {
 	pulumi.Input
 
@@ -33324,7 +33324,7 @@ type GetTargetDatabasesTablesFilter struct {
 // GetTargetDatabasesTablesFilterInput is an input type that accepts GetTargetDatabasesTablesFilterArgs and GetTargetDatabasesTablesFilterOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTablesFilterInput` via:
 //
-//          GetTargetDatabasesTablesFilterArgs{...}
+//	GetTargetDatabasesTablesFilterArgs{...}
 type GetTargetDatabasesTablesFilterInput interface {
 	pulumi.Input
 
@@ -33353,7 +33353,7 @@ func (i GetTargetDatabasesTablesFilterArgs) ToGetTargetDatabasesTablesFilterOutp
 // GetTargetDatabasesTablesFilterArrayInput is an input type that accepts GetTargetDatabasesTablesFilterArray and GetTargetDatabasesTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTablesFilterArrayInput` via:
 //
-//          GetTargetDatabasesTablesFilterArray{ GetTargetDatabasesTablesFilterArgs{...} }
+//	GetTargetDatabasesTablesFilterArray{ GetTargetDatabasesTablesFilterArgs{...} }
 type GetTargetDatabasesTablesFilterArrayInput interface {
 	pulumi.Input
 
@@ -33431,7 +33431,7 @@ type GetTargetDatabasesTablesTable struct {
 // GetTargetDatabasesTablesTableInput is an input type that accepts GetTargetDatabasesTablesTableArgs and GetTargetDatabasesTablesTableOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTablesTableInput` via:
 //
-//          GetTargetDatabasesTablesTableArgs{...}
+//	GetTargetDatabasesTablesTableArgs{...}
 type GetTargetDatabasesTablesTableInput interface {
 	pulumi.Input
 
@@ -33461,7 +33461,7 @@ func (i GetTargetDatabasesTablesTableArgs) ToGetTargetDatabasesTablesTableOutput
 // GetTargetDatabasesTablesTableArrayInput is an input type that accepts GetTargetDatabasesTablesTableArray and GetTargetDatabasesTablesTableArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTablesTableArrayInput` via:
 //
-//          GetTargetDatabasesTablesTableArray{ GetTargetDatabasesTablesTableArgs{...} }
+//	GetTargetDatabasesTablesTableArray{ GetTargetDatabasesTablesTableArgs{...} }
 type GetTargetDatabasesTablesTableArrayInput interface {
 	pulumi.Input
 
@@ -33565,7 +33565,7 @@ type GetTargetDatabasesTargetDatabase struct {
 // GetTargetDatabasesTargetDatabaseInput is an input type that accepts GetTargetDatabasesTargetDatabaseArgs and GetTargetDatabasesTargetDatabaseOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseArgs{...}
+//	GetTargetDatabasesTargetDatabaseArgs{...}
 type GetTargetDatabasesTargetDatabaseInput interface {
 	pulumi.Input
 
@@ -33623,7 +33623,7 @@ func (i GetTargetDatabasesTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabase
 // GetTargetDatabasesTargetDatabaseArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseArray and GetTargetDatabasesTargetDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseArrayInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseArray{ GetTargetDatabasesTargetDatabaseArgs{...} }
+//	GetTargetDatabasesTargetDatabaseArray{ GetTargetDatabasesTargetDatabaseArgs{...} }
 type GetTargetDatabasesTargetDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -33781,7 +33781,7 @@ type GetTargetDatabasesTargetDatabaseConnectionOption struct {
 // GetTargetDatabasesTargetDatabaseConnectionOptionInput is an input type that accepts GetTargetDatabasesTargetDatabaseConnectionOptionArgs and GetTargetDatabasesTargetDatabaseConnectionOptionOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseConnectionOptionInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseConnectionOptionArgs{...}
+//	GetTargetDatabasesTargetDatabaseConnectionOptionArgs{...}
 type GetTargetDatabasesTargetDatabaseConnectionOptionInput interface {
 	pulumi.Input
 
@@ -33815,7 +33815,7 @@ func (i GetTargetDatabasesTargetDatabaseConnectionOptionArgs) ToGetTargetDatabas
 // GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseConnectionOptionArray and GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseConnectionOptionArray{ GetTargetDatabasesTargetDatabaseConnectionOptionArgs{...} }
+//	GetTargetDatabasesTargetDatabaseConnectionOptionArray{ GetTargetDatabasesTargetDatabaseConnectionOptionArgs{...} }
 type GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -33898,7 +33898,7 @@ type GetTargetDatabasesTargetDatabaseCredential struct {
 // GetTargetDatabasesTargetDatabaseCredentialInput is an input type that accepts GetTargetDatabasesTargetDatabaseCredentialArgs and GetTargetDatabasesTargetDatabaseCredentialOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseCredentialInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseCredentialArgs{...}
+//	GetTargetDatabasesTargetDatabaseCredentialArgs{...}
 type GetTargetDatabasesTargetDatabaseCredentialInput interface {
 	pulumi.Input
 
@@ -33928,7 +33928,7 @@ func (i GetTargetDatabasesTargetDatabaseCredentialArgs) ToGetTargetDatabasesTarg
 // GetTargetDatabasesTargetDatabaseCredentialArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseCredentialArray and GetTargetDatabasesTargetDatabaseCredentialArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseCredentialArrayInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseCredentialArray{ GetTargetDatabasesTargetDatabaseCredentialArgs{...} }
+//	GetTargetDatabasesTargetDatabaseCredentialArray{ GetTargetDatabasesTargetDatabaseCredentialArgs{...} }
 type GetTargetDatabasesTargetDatabaseCredentialArrayInput interface {
 	pulumi.Input
 
@@ -34018,7 +34018,7 @@ type GetTargetDatabasesTargetDatabaseDatabaseDetail struct {
 // GetTargetDatabasesTargetDatabaseDatabaseDetailInput is an input type that accepts GetTargetDatabasesTargetDatabaseDatabaseDetailArgs and GetTargetDatabasesTargetDatabaseDatabaseDetailOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseDatabaseDetailInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{...}
+//	GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{...}
 type GetTargetDatabasesTargetDatabaseDatabaseDetailInput interface {
 	pulumi.Input
 
@@ -34062,7 +34062,7 @@ func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabases
 // GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseDatabaseDetailArray and GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseDatabaseDetailArray{ GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{...} }
+//	GetTargetDatabasesTargetDatabaseDatabaseDetailArray{ GetTargetDatabasesTargetDatabaseDatabaseDetailArgs{...} }
 type GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput interface {
 	pulumi.Input
 
@@ -34179,7 +34179,7 @@ type GetTargetDatabasesTargetDatabaseTlsConfig struct {
 // GetTargetDatabasesTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabasesTargetDatabaseTlsConfigArgs and GetTargetDatabasesTargetDatabaseTlsConfigOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseTlsConfigInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseTlsConfigArgs{...}
+//	GetTargetDatabasesTargetDatabaseTlsConfigArgs{...}
 type GetTargetDatabasesTargetDatabaseTlsConfigInput interface {
 	pulumi.Input
 
@@ -34215,7 +34215,7 @@ func (i GetTargetDatabasesTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTarge
 // GetTargetDatabasesTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseTlsConfigArray and GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseTlsConfigArrayInput` via:
 //
-//          GetTargetDatabasesTargetDatabaseTlsConfigArray{ GetTargetDatabasesTargetDatabaseTlsConfigArgs{...} }
+//	GetTargetDatabasesTargetDatabaseTlsConfigArray{ GetTargetDatabasesTargetDatabaseTlsConfigArgs{...} }
 type GetTargetDatabasesTargetDatabaseTlsConfigArrayInput interface {
 	pulumi.Input
 
@@ -34305,7 +34305,7 @@ type GetUserAssessmentComparisonSummary struct {
 // GetUserAssessmentComparisonSummaryInput is an input type that accepts GetUserAssessmentComparisonSummaryArgs and GetUserAssessmentComparisonSummaryOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryInput` via:
 //
-//          GetUserAssessmentComparisonSummaryArgs{...}
+//	GetUserAssessmentComparisonSummaryArgs{...}
 type GetUserAssessmentComparisonSummaryInput interface {
 	pulumi.Input
 
@@ -34334,7 +34334,7 @@ func (i GetUserAssessmentComparisonSummaryArgs) ToGetUserAssessmentComparisonSum
 // GetUserAssessmentComparisonSummaryArrayInput is an input type that accepts GetUserAssessmentComparisonSummaryArray and GetUserAssessmentComparisonSummaryArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryArrayInput` via:
 //
-//          GetUserAssessmentComparisonSummaryArray{ GetUserAssessmentComparisonSummaryArgs{...} }
+//	GetUserAssessmentComparisonSummaryArray{ GetUserAssessmentComparisonSummaryArgs{...} }
 type GetUserAssessmentComparisonSummaryArrayInput interface {
 	pulumi.Input
 
@@ -34415,7 +34415,7 @@ type GetUserAssessmentComparisonSummaryBaseline struct {
 // GetUserAssessmentComparisonSummaryBaselineInput is an input type that accepts GetUserAssessmentComparisonSummaryBaselineArgs and GetUserAssessmentComparisonSummaryBaselineOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryBaselineInput` via:
 //
-//          GetUserAssessmentComparisonSummaryBaselineArgs{...}
+//	GetUserAssessmentComparisonSummaryBaselineArgs{...}
 type GetUserAssessmentComparisonSummaryBaselineInput interface {
 	pulumi.Input
 
@@ -34444,7 +34444,7 @@ func (i GetUserAssessmentComparisonSummaryBaselineArgs) ToGetUserAssessmentCompa
 // GetUserAssessmentComparisonSummaryBaselineArrayInput is an input type that accepts GetUserAssessmentComparisonSummaryBaselineArray and GetUserAssessmentComparisonSummaryBaselineArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryBaselineArrayInput` via:
 //
-//          GetUserAssessmentComparisonSummaryBaselineArray{ GetUserAssessmentComparisonSummaryBaselineArgs{...} }
+//	GetUserAssessmentComparisonSummaryBaselineArray{ GetUserAssessmentComparisonSummaryBaselineArgs{...} }
 type GetUserAssessmentComparisonSummaryBaselineArrayInput interface {
 	pulumi.Input
 
@@ -34518,7 +34518,7 @@ type GetUserAssessmentComparisonSummaryCurrent struct {
 // GetUserAssessmentComparisonSummaryCurrentInput is an input type that accepts GetUserAssessmentComparisonSummaryCurrentArgs and GetUserAssessmentComparisonSummaryCurrentOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryCurrentInput` via:
 //
-//          GetUserAssessmentComparisonSummaryCurrentArgs{...}
+//	GetUserAssessmentComparisonSummaryCurrentArgs{...}
 type GetUserAssessmentComparisonSummaryCurrentInput interface {
 	pulumi.Input
 
@@ -34547,7 +34547,7 @@ func (i GetUserAssessmentComparisonSummaryCurrentArgs) ToGetUserAssessmentCompar
 // GetUserAssessmentComparisonSummaryCurrentArrayInput is an input type that accepts GetUserAssessmentComparisonSummaryCurrentArray and GetUserAssessmentComparisonSummaryCurrentArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryCurrentArrayInput` via:
 //
-//          GetUserAssessmentComparisonSummaryCurrentArray{ GetUserAssessmentComparisonSummaryCurrentArgs{...} }
+//	GetUserAssessmentComparisonSummaryCurrentArray{ GetUserAssessmentComparisonSummaryCurrentArgs{...} }
 type GetUserAssessmentComparisonSummaryCurrentArrayInput interface {
 	pulumi.Input
 
@@ -34622,7 +34622,7 @@ type GetUserAssessmentIgnoredTarget struct {
 // GetUserAssessmentIgnoredTargetInput is an input type that accepts GetUserAssessmentIgnoredTargetArgs and GetUserAssessmentIgnoredTargetOutput values.
 // You can construct a concrete instance of `GetUserAssessmentIgnoredTargetInput` via:
 //
-//          GetUserAssessmentIgnoredTargetArgs{...}
+//	GetUserAssessmentIgnoredTargetArgs{...}
 type GetUserAssessmentIgnoredTargetInput interface {
 	pulumi.Input
 
@@ -34652,7 +34652,7 @@ func (i GetUserAssessmentIgnoredTargetArgs) ToGetUserAssessmentIgnoredTargetOutp
 // GetUserAssessmentIgnoredTargetArrayInput is an input type that accepts GetUserAssessmentIgnoredTargetArray and GetUserAssessmentIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentIgnoredTargetArrayInput` via:
 //
-//          GetUserAssessmentIgnoredTargetArray{ GetUserAssessmentIgnoredTargetArgs{...} }
+//	GetUserAssessmentIgnoredTargetArray{ GetUserAssessmentIgnoredTargetArgs{...} }
 type GetUserAssessmentIgnoredTargetArrayInput interface {
 	pulumi.Input
 
@@ -34730,7 +34730,7 @@ type GetUserAssessmentUserAnalyticsFilter struct {
 // GetUserAssessmentUserAnalyticsFilterInput is an input type that accepts GetUserAssessmentUserAnalyticsFilterArgs and GetUserAssessmentUserAnalyticsFilterOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsFilterInput` via:
 //
-//          GetUserAssessmentUserAnalyticsFilterArgs{...}
+//	GetUserAssessmentUserAnalyticsFilterArgs{...}
 type GetUserAssessmentUserAnalyticsFilterInput interface {
 	pulumi.Input
 
@@ -34759,7 +34759,7 @@ func (i GetUserAssessmentUserAnalyticsFilterArgs) ToGetUserAssessmentUserAnalyti
 // GetUserAssessmentUserAnalyticsFilterArrayInput is an input type that accepts GetUserAssessmentUserAnalyticsFilterArray and GetUserAssessmentUserAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsFilterArrayInput` via:
 //
-//          GetUserAssessmentUserAnalyticsFilterArray{ GetUserAssessmentUserAnalyticsFilterArgs{...} }
+//	GetUserAssessmentUserAnalyticsFilterArray{ GetUserAssessmentUserAnalyticsFilterArgs{...} }
 type GetUserAssessmentUserAnalyticsFilterArrayInput interface {
 	pulumi.Input
 
@@ -34835,7 +34835,7 @@ type GetUserAssessmentUserAnalyticsUserAggregation struct {
 // GetUserAssessmentUserAnalyticsUserAggregationInput is an input type that accepts GetUserAssessmentUserAnalyticsUserAggregationArgs and GetUserAssessmentUserAnalyticsUserAggregationOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsUserAggregationInput` via:
 //
-//          GetUserAssessmentUserAnalyticsUserAggregationArgs{...}
+//	GetUserAssessmentUserAnalyticsUserAggregationArgs{...}
 type GetUserAssessmentUserAnalyticsUserAggregationInput interface {
 	pulumi.Input
 
@@ -34863,7 +34863,7 @@ func (i GetUserAssessmentUserAnalyticsUserAggregationArgs) ToGetUserAssessmentUs
 // GetUserAssessmentUserAnalyticsUserAggregationArrayInput is an input type that accepts GetUserAssessmentUserAnalyticsUserAggregationArray and GetUserAssessmentUserAnalyticsUserAggregationArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsUserAggregationArrayInput` via:
 //
-//          GetUserAssessmentUserAnalyticsUserAggregationArray{ GetUserAssessmentUserAnalyticsUserAggregationArgs{...} }
+//	GetUserAssessmentUserAnalyticsUserAggregationArray{ GetUserAssessmentUserAnalyticsUserAggregationArgs{...} }
 type GetUserAssessmentUserAnalyticsUserAggregationArrayInput interface {
 	pulumi.Input
 
@@ -34932,7 +34932,7 @@ type GetUserAssessmentUserAnalyticsUserAggregationItem struct {
 // GetUserAssessmentUserAnalyticsUserAggregationItemInput is an input type that accepts GetUserAssessmentUserAnalyticsUserAggregationItemArgs and GetUserAssessmentUserAnalyticsUserAggregationItemOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsUserAggregationItemInput` via:
 //
-//          GetUserAssessmentUserAnalyticsUserAggregationItemArgs{...}
+//	GetUserAssessmentUserAnalyticsUserAggregationItemArgs{...}
 type GetUserAssessmentUserAnalyticsUserAggregationItemInput interface {
 	pulumi.Input
 
@@ -34958,7 +34958,7 @@ func (i GetUserAssessmentUserAnalyticsUserAggregationItemArgs) ToGetUserAssessme
 // GetUserAssessmentUserAnalyticsUserAggregationItemArrayInput is an input type that accepts GetUserAssessmentUserAnalyticsUserAggregationItemArray and GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsUserAggregationItemArrayInput` via:
 //
-//          GetUserAssessmentUserAnalyticsUserAggregationItemArray{ GetUserAssessmentUserAnalyticsUserAggregationItemArgs{...} }
+//	GetUserAssessmentUserAnalyticsUserAggregationItemArray{ GetUserAssessmentUserAnalyticsUserAggregationItemArgs{...} }
 type GetUserAssessmentUserAnalyticsUserAggregationItemArrayInput interface {
 	pulumi.Input
 
@@ -35023,7 +35023,7 @@ type GetUserAssessmentUsersFilter struct {
 // GetUserAssessmentUsersFilterInput is an input type that accepts GetUserAssessmentUsersFilterArgs and GetUserAssessmentUsersFilterOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUsersFilterInput` via:
 //
-//          GetUserAssessmentUsersFilterArgs{...}
+//	GetUserAssessmentUsersFilterArgs{...}
 type GetUserAssessmentUsersFilterInput interface {
 	pulumi.Input
 
@@ -35052,7 +35052,7 @@ func (i GetUserAssessmentUsersFilterArgs) ToGetUserAssessmentUsersFilterOutputWi
 // GetUserAssessmentUsersFilterArrayInput is an input type that accepts GetUserAssessmentUsersFilterArray and GetUserAssessmentUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUsersFilterArrayInput` via:
 //
-//          GetUserAssessmentUsersFilterArray{ GetUserAssessmentUsersFilterArgs{...} }
+//	GetUserAssessmentUsersFilterArray{ GetUserAssessmentUsersFilterArgs{...} }
 type GetUserAssessmentUsersFilterArrayInput interface {
 	pulumi.Input
 
@@ -35150,7 +35150,7 @@ type GetUserAssessmentUsersUser struct {
 // GetUserAssessmentUsersUserInput is an input type that accepts GetUserAssessmentUsersUserArgs and GetUserAssessmentUsersUserOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUsersUserInput` via:
 //
-//          GetUserAssessmentUsersUserArgs{...}
+//	GetUserAssessmentUsersUserArgs{...}
 type GetUserAssessmentUsersUserInput interface {
 	pulumi.Input
 
@@ -35200,7 +35200,7 @@ func (i GetUserAssessmentUsersUserArgs) ToGetUserAssessmentUsersUserOutputWithCo
 // GetUserAssessmentUsersUserArrayInput is an input type that accepts GetUserAssessmentUsersUserArray and GetUserAssessmentUsersUserArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUsersUserArrayInput` via:
 //
-//          GetUserAssessmentUsersUserArray{ GetUserAssessmentUsersUserArgs{...} }
+//	GetUserAssessmentUsersUserArray{ GetUserAssessmentUsersUserArgs{...} }
 type GetUserAssessmentUsersUserArrayInput interface {
 	pulumi.Input
 
@@ -35325,7 +35325,7 @@ type GetUserAssessmentsFilter struct {
 // GetUserAssessmentsFilterInput is an input type that accepts GetUserAssessmentsFilterArgs and GetUserAssessmentsFilterOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsFilterInput` via:
 //
-//          GetUserAssessmentsFilterArgs{...}
+//	GetUserAssessmentsFilterArgs{...}
 type GetUserAssessmentsFilterInput interface {
 	pulumi.Input
 
@@ -35354,7 +35354,7 @@ func (i GetUserAssessmentsFilterArgs) ToGetUserAssessmentsFilterOutputWithContex
 // GetUserAssessmentsFilterArrayInput is an input type that accepts GetUserAssessmentsFilterArray and GetUserAssessmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsFilterArrayInput` via:
 //
-//          GetUserAssessmentsFilterArray{ GetUserAssessmentsFilterArgs{...} }
+//	GetUserAssessmentsFilterArray{ GetUserAssessmentsFilterArgs{...} }
 type GetUserAssessmentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -35432,7 +35432,7 @@ type GetUserAssessmentsIgnoredTarget struct {
 // GetUserAssessmentsIgnoredTargetInput is an input type that accepts GetUserAssessmentsIgnoredTargetArgs and GetUserAssessmentsIgnoredTargetOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsIgnoredTargetInput` via:
 //
-//          GetUserAssessmentsIgnoredTargetArgs{...}
+//	GetUserAssessmentsIgnoredTargetArgs{...}
 type GetUserAssessmentsIgnoredTargetInput interface {
 	pulumi.Input
 
@@ -35462,7 +35462,7 @@ func (i GetUserAssessmentsIgnoredTargetArgs) ToGetUserAssessmentsIgnoredTargetOu
 // GetUserAssessmentsIgnoredTargetArrayInput is an input type that accepts GetUserAssessmentsIgnoredTargetArray and GetUserAssessmentsIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsIgnoredTargetArrayInput` via:
 //
-//          GetUserAssessmentsIgnoredTargetArray{ GetUserAssessmentsIgnoredTargetArgs{...} }
+//	GetUserAssessmentsIgnoredTargetArray{ GetUserAssessmentsIgnoredTargetArgs{...} }
 type GetUserAssessmentsIgnoredTargetArrayInput interface {
 	pulumi.Input
 
@@ -35583,7 +35583,7 @@ type GetUserAssessmentsUserAssessment struct {
 // GetUserAssessmentsUserAssessmentInput is an input type that accepts GetUserAssessmentsUserAssessmentArgs and GetUserAssessmentsUserAssessmentOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsUserAssessmentInput` via:
 //
-//          GetUserAssessmentsUserAssessmentArgs{...}
+//	GetUserAssessmentsUserAssessmentArgs{...}
 type GetUserAssessmentsUserAssessmentInput interface {
 	pulumi.Input
 
@@ -35655,7 +35655,7 @@ func (i GetUserAssessmentsUserAssessmentArgs) ToGetUserAssessmentsUserAssessment
 // GetUserAssessmentsUserAssessmentArrayInput is an input type that accepts GetUserAssessmentsUserAssessmentArray and GetUserAssessmentsUserAssessmentArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsUserAssessmentArrayInput` via:
 //
-//          GetUserAssessmentsUserAssessmentArray{ GetUserAssessmentsUserAssessmentArgs{...} }
+//	GetUserAssessmentsUserAssessmentArray{ GetUserAssessmentsUserAssessmentArgs{...} }
 type GetUserAssessmentsUserAssessmentArrayInput interface {
 	pulumi.Input
 
@@ -35838,7 +35838,7 @@ type GetUserAssessmentsUserAssessmentIgnoredTarget struct {
 // GetUserAssessmentsUserAssessmentIgnoredTargetInput is an input type that accepts GetUserAssessmentsUserAssessmentIgnoredTargetArgs and GetUserAssessmentsUserAssessmentIgnoredTargetOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsUserAssessmentIgnoredTargetInput` via:
 //
-//          GetUserAssessmentsUserAssessmentIgnoredTargetArgs{...}
+//	GetUserAssessmentsUserAssessmentIgnoredTargetArgs{...}
 type GetUserAssessmentsUserAssessmentIgnoredTargetInput interface {
 	pulumi.Input
 
@@ -35868,7 +35868,7 @@ func (i GetUserAssessmentsUserAssessmentIgnoredTargetArgs) ToGetUserAssessmentsU
 // GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput is an input type that accepts GetUserAssessmentsUserAssessmentIgnoredTargetArray and GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput` via:
 //
-//          GetUserAssessmentsUserAssessmentIgnoredTargetArray{ GetUserAssessmentsUserAssessmentIgnoredTargetArgs{...} }
+//	GetUserAssessmentsUserAssessmentIgnoredTargetArray{ GetUserAssessmentsUserAssessmentIgnoredTargetArgs{...} }
 type GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput interface {
 	pulumi.Input
 

@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewTargetAlertPolicyAssociation(ctx, "testTargetAlertPolicyAssociation", &DataSafe.TargetAlertPolicyAssociationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			IsEnabled:     pulumi.Any(_var.Target_alert_policy_association_is_enabled),
-// 			PolicyId:      pulumi.Any(oci_identity_policy.Test_policy.Id),
-// 			TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Target_alert_policy_association_description),
-// 			DisplayName: pulumi.Any(_var.Target_alert_policy_association_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewTargetAlertPolicyAssociation(ctx, "testTargetAlertPolicyAssociation", &DataSafe.TargetAlertPolicyAssociationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				IsEnabled:     pulumi.Any(_var.Target_alert_policy_association_is_enabled),
+//				PolicyId:      pulumi.Any(oci_identity_policy.Test_policy.Id),
+//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Target_alert_policy_association_description),
+//				DisplayName: pulumi.Any(_var.Target_alert_policy_association_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // TargetAlertPolicyAssociations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
+//
+//	$ pulumi import oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation test_target_alert_policy_association "id"
+//
 // ```
 type TargetAlertPolicyAssociation struct {
 	pulumi.CustomResourceState
@@ -248,7 +253,7 @@ func (i *TargetAlertPolicyAssociation) ToTargetAlertPolicyAssociationOutputWithC
 // TargetAlertPolicyAssociationArrayInput is an input type that accepts TargetAlertPolicyAssociationArray and TargetAlertPolicyAssociationArrayOutput values.
 // You can construct a concrete instance of `TargetAlertPolicyAssociationArrayInput` via:
 //
-//          TargetAlertPolicyAssociationArray{ TargetAlertPolicyAssociationArgs{...} }
+//	TargetAlertPolicyAssociationArray{ TargetAlertPolicyAssociationArgs{...} }
 type TargetAlertPolicyAssociationArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +278,7 @@ func (i TargetAlertPolicyAssociationArray) ToTargetAlertPolicyAssociationArrayOu
 // TargetAlertPolicyAssociationMapInput is an input type that accepts TargetAlertPolicyAssociationMap and TargetAlertPolicyAssociationMapOutput values.
 // You can construct a concrete instance of `TargetAlertPolicyAssociationMapInput` via:
 //
-//          TargetAlertPolicyAssociationMap{ "key": TargetAlertPolicyAssociationArgs{...} }
+//	TargetAlertPolicyAssociationMap{ "key": TargetAlertPolicyAssociationArgs{...} }
 type TargetAlertPolicyAssociationMapInput interface {
 	pulumi.Input
 

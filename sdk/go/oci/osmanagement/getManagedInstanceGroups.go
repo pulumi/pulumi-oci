@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.GetManagedInstanceGroups(ctx, &osmanagement.GetManagedInstanceGroupsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Managed_instance_group_display_name),
-// 			OsFamily:      pulumi.StringRef(_var.Managed_instance_group_os_family),
-// 			State:         pulumi.StringRef(_var.Managed_instance_group_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.GetManagedInstanceGroups(ctx, &osmanagement.GetManagedInstanceGroupsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Managed_instance_group_display_name),
+//				OsFamily:      pulumi.StringRef(_var.Managed_instance_group_os_family),
+//				State:         pulumi.StringRef(_var.Managed_instance_group_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedInstanceGroups(ctx *pulumi.Context, args *GetManagedInstanceGroupsArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceGroupsResult, error) {
 	var rv GetManagedInstanceGroupsResult

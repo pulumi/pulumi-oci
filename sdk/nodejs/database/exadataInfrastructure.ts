@@ -222,6 +222,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
     /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     */
+    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    /**
      * (Updatable) The netmask for the control plane network.
      */
     public readonly netmask!: pulumi.Output<string>;
@@ -298,6 +302,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
             resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
+            resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
             resourceInputs["netmask"] = state ? state.netmask : undefined;
             resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
@@ -380,6 +385,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maxDbNodeStorageInGbs"] = undefined /*out*/;
             resourceInputs["maxMemoryInGbs"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
+            resourceInputs["monthlyDbServerVersion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageServerVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -514,6 +520,10 @@ export interface ExadataInfrastructureState {
      * The memory allocated in GBs.
      */
     memorySizeInGbs?: pulumi.Input<number>;
+    /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     */
+    monthlyDbServerVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The netmask for the control plane network.
      */

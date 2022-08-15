@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.NewConnection(ctx, "testConnection", &DataCatalog.ConnectionArgs{
-// 			CatalogId:     pulumi.Any(oci_datacatalog_catalog.Test_catalog.Id),
-// 			DataAssetKey:  pulumi.Any(_var.Connection_data_asset_key),
-// 			DisplayName:   pulumi.Any(_var.Connection_display_name),
-// 			Properties:    pulumi.Any(_var.Connection_properties),
-// 			TypeKey:       pulumi.Any(_var.Connection_type_key),
-// 			Description:   pulumi.Any(_var.Connection_description),
-// 			EncProperties: pulumi.Any(_var.Connection_enc_properties),
-// 			IsDefault:     pulumi.Any(_var.Connection_is_default),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.NewConnection(ctx, "testConnection", &DataCatalog.ConnectionArgs{
+//				CatalogId:     pulumi.Any(oci_datacatalog_catalog.Test_catalog.Id),
+//				DataAssetKey:  pulumi.Any(_var.Connection_data_asset_key),
+//				DisplayName:   pulumi.Any(_var.Connection_display_name),
+//				Properties:    pulumi.Any(_var.Connection_properties),
+//				TypeKey:       pulumi.Any(_var.Connection_type_key),
+//				Description:   pulumi.Any(_var.Connection_description),
+//				EncProperties: pulumi.Any(_var.Connection_enc_properties),
+//				IsDefault:     pulumi.Any(_var.Connection_is_default),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Connections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
+//
+//	$ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
+//
 // ```
 type Connection struct {
 	pulumi.CustomResourceState
@@ -277,7 +282,7 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
-//          ConnectionArray{ ConnectionArgs{...} }
+//	ConnectionArray{ ConnectionArgs{...} }
 type ConnectionArrayInput interface {
 	pulumi.Input
 
@@ -302,7 +307,7 @@ func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context)
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
 // You can construct a concrete instance of `ConnectionMapInput` via:
 //
-//          ConnectionMap{ "key": ConnectionArgs{...} }
+//	ConnectionMap{ "key": ConnectionArgs{...} }
 type ConnectionMapInput interface {
 	pulumi.Input
 

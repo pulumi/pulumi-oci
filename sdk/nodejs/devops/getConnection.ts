@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -54,6 +55,10 @@ export interface GetConnectionResult {
      */
     readonly appPassword: string;
     /**
+     * The Base URL of the hosted BitbucketServer.
+     */
+    readonly baseUrl: string;
+    /**
      * The OCID of the compartment containing the connection.
      */
     readonly compartmentId: string;
@@ -102,6 +107,10 @@ export interface GetConnectionResult {
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     readonly timeUpdated: string;
+    /**
+     * TLS configuration used by build service to verify TLS connection.
+     */
+    readonly tlsVerifyConfigs: outputs.DevOps.GetConnectionTlsVerifyConfig[];
     /**
      * Public Bitbucket Cloud Username in plain text
      */

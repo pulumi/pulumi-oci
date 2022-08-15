@@ -46,6 +46,8 @@ __all__ = [
     'GetAutoScalingConfigurationsFilterArgs',
     'GetBdsInstanceApiKeysFilterArgs',
     'GetBdsInstanceMetastoreConfigsFilterArgs',
+    'GetBdsInstancePatchHistoriesFilterArgs',
+    'GetBdsInstancePatchesFilterArgs',
     'GetBdsInstancesFilterArgs',
 ]
 
@@ -1325,10 +1327,12 @@ class BdsInstanceClusterDetailArgs:
                  db_version: Optional[pulumi.Input[str]] = None,
                  hue_server_url: Optional[pulumi.Input[str]] = None,
                  jupyter_hub_url: Optional[pulumi.Input[str]] = None,
+                 odh_version: Optional[pulumi.Input[str]] = None,
                  os_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_refreshed: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] ambari_url: The URL of Ambari
         :param pulumi.Input[str] bd_cell_version: Cloud SQL cell version
         :param pulumi.Input[str] bda_version: BDA version installed in the cluster
         :param pulumi.Input[str] bdm_version: Big Data Manager version installed in the cluster
@@ -1339,6 +1343,7 @@ class BdsInstanceClusterDetailArgs:
         :param pulumi.Input[str] db_version: Query Server Database version
         :param pulumi.Input[str] hue_server_url: The URL of a Hue Server
         :param pulumi.Input[str] jupyter_hub_url: The URL of the Jupyterhub.
+        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
         :param pulumi.Input[str] os_version: Oracle Linux version installed in the cluster
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_refreshed: The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
@@ -1365,6 +1370,8 @@ class BdsInstanceClusterDetailArgs:
             pulumi.set(__self__, "hue_server_url", hue_server_url)
         if jupyter_hub_url is not None:
             pulumi.set(__self__, "jupyter_hub_url", jupyter_hub_url)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
         if os_version is not None:
             pulumi.set(__self__, "os_version", os_version)
         if time_created is not None:
@@ -1375,6 +1382,9 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="ambariUrl")
     def ambari_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of Ambari
+        """
         return pulumi.get(self, "ambari_url")
 
     @ambari_url.setter
@@ -1500,6 +1510,18 @@ class BdsInstanceClusterDetailArgs:
     @jupyter_hub_url.setter
     def jupyter_hub_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "jupyter_hub_url", value)
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        """
+        return pulumi.get(self, "odh_version")
+
+    @odh_version.setter
+    def odh_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "odh_version", value)
 
     @property
     @pulumi.getter(name="osVersion")
@@ -2447,6 +2469,84 @@ class GetBdsInstanceApiKeysFilterArgs:
 
 @pulumi.input_type
 class GetBdsInstanceMetastoreConfigsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetBdsInstancePatchHistoriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetBdsInstancePatchesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

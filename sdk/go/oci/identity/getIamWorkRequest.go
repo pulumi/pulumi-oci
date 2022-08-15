@@ -24,21 +24,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetIamWorkRequest(ctx, &identity.GetIamWorkRequestArgs{
-// 			IamWorkRequestId: oci_identity_iam_work_request.Test_iam_work_request.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetIamWorkRequest(ctx, &identity.GetIamWorkRequestArgs{
+//				IamWorkRequestId: oci_identity_iam_work_request.Test_iam_work_request.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIamWorkRequest(ctx *pulumi.Context, args *GetIamWorkRequestArgs, opts ...pulumi.InvokeOption) (*GetIamWorkRequestResult, error) {
 	var rv GetIamWorkRequestResult

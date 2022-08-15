@@ -26,35 +26,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewKey(ctx, "testKey", &Kms.KeyArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Key_display_name),
-// 			KeyShape: &kms.KeyKeyShapeArgs{
-// 				Algorithm: pulumi.Any(_var.Key_key_shape_algorithm),
-// 				Length:    pulumi.Any(_var.Key_key_shape_length),
-// 				CurveId:   pulumi.Any(oci_kms_curve.Test_curve.Id),
-// 			},
-// 			ManagementEndpoint: pulumi.Any(_var.Key_management_endpoint),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			ProtectionMode: pulumi.Any(_var.Key_protection_mode),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewKey(ctx, "testKey", &Kms.KeyArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Key_display_name),
+//				KeyShape: &kms.KeyKeyShapeArgs{
+//					Algorithm: pulumi.Any(_var.Key_key_shape_algorithm),
+//					Length:    pulumi.Any(_var.Key_key_shape_length),
+//					CurveId:   pulumi.Any(oci_kms_curve.Test_curve.Id),
+//				},
+//				ManagementEndpoint: pulumi.Any(_var.Key_management_endpoint),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ProtectionMode: pulumi.Any(_var.Key_protection_mode),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // Keys can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
+//
+//	$ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
+//
 // ```
 type Key struct {
 	pulumi.CustomResourceState
@@ -314,7 +319,7 @@ func (i *Key) ToKeyOutputWithContext(ctx context.Context) KeyOutput {
 // KeyArrayInput is an input type that accepts KeyArray and KeyArrayOutput values.
 // You can construct a concrete instance of `KeyArrayInput` via:
 //
-//          KeyArray{ KeyArgs{...} }
+//	KeyArray{ KeyArgs{...} }
 type KeyArrayInput interface {
 	pulumi.Input
 
@@ -339,7 +344,7 @@ func (i KeyArray) ToKeyArrayOutputWithContext(ctx context.Context) KeyArrayOutpu
 // KeyMapInput is an input type that accepts KeyMap and KeyMapOutput values.
 // You can construct a concrete instance of `KeyMapInput` via:
 //
-//          KeyMap{ "key": KeyArgs{...} }
+//	KeyMap{ "key": KeyArgs{...} }
 type KeyMapInput interface {
 	pulumi.Input
 

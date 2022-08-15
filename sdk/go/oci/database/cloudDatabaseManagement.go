@@ -24,33 +24,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewCloudDatabaseManagement(ctx, "test", &Database.CloudDatabaseManagementArgs{
-// 			DatabaseId:        pulumi.Any(oci_database_database.Test_database.Id),
-// 			ManagementType:    pulumi.Any(_var.Database_cloud_database_management_details_management_type),
-// 			PrivateEndPointId: pulumi.Any(_var.Database_cloud_database_management_details_private_end_point_id),
-// 			ServiceName:       pulumi.Any(_var.Database_cloud_database_management_details_service_name),
-// 			Credentialdetails: &database.CloudDatabaseManagementCredentialdetailsArgs{
-// 				UserName:         pulumi.Any(_var.Database_cloud_database_management_details_user_name),
-// 				PasswordSecretId: pulumi.Any(_var.Database_cloud_database_management_details_password_secret_id),
-// 			},
-// 			EnableManagement: pulumi.Any(_var.Database_cloud_database_management_details_enable_management),
-// 			Port:             pulumi.Any(_var.Cloud_database_management_port),
-// 			Protocol:         pulumi.Any(_var.Cloud_database_management_protocol),
-// 			Role:             pulumi.Any(_var.Cloud_database_management_role),
-// 			SslSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewCloudDatabaseManagement(ctx, "test", &Database.CloudDatabaseManagementArgs{
+//				DatabaseId:        pulumi.Any(oci_database_database.Test_database.Id),
+//				ManagementType:    pulumi.Any(_var.Database_cloud_database_management_details_management_type),
+//				PrivateEndPointId: pulumi.Any(_var.Database_cloud_database_management_details_private_end_point_id),
+//				ServiceName:       pulumi.Any(_var.Database_cloud_database_management_details_service_name),
+//				Credentialdetails: &database.CloudDatabaseManagementCredentialdetailsArgs{
+//					UserName:         pulumi.Any(_var.Database_cloud_database_management_details_user_name),
+//					PasswordSecretId: pulumi.Any(_var.Database_cloud_database_management_details_password_secret_id),
+//				},
+//				EnableManagement: pulumi.Any(_var.Database_cloud_database_management_details_enable_management),
+//				Port:             pulumi.Any(_var.Cloud_database_management_port),
+//				Protocol:         pulumi.Any(_var.Cloud_database_management_protocol),
+//				Role:             pulumi.Any(_var.Cloud_database_management_role),
+//				SslSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -260,7 +263,7 @@ func (i *CloudDatabaseManagement) ToCloudDatabaseManagementOutputWithContext(ctx
 // CloudDatabaseManagementArrayInput is an input type that accepts CloudDatabaseManagementArray and CloudDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `CloudDatabaseManagementArrayInput` via:
 //
-//          CloudDatabaseManagementArray{ CloudDatabaseManagementArgs{...} }
+//	CloudDatabaseManagementArray{ CloudDatabaseManagementArgs{...} }
 type CloudDatabaseManagementArrayInput interface {
 	pulumi.Input
 
@@ -285,7 +288,7 @@ func (i CloudDatabaseManagementArray) ToCloudDatabaseManagementArrayOutputWithCo
 // CloudDatabaseManagementMapInput is an input type that accepts CloudDatabaseManagementMap and CloudDatabaseManagementMapOutput values.
 // You can construct a concrete instance of `CloudDatabaseManagementMapInput` via:
 //
-//          CloudDatabaseManagementMap{ "key": CloudDatabaseManagementArgs{...} }
+//	CloudDatabaseManagementMap{ "key": CloudDatabaseManagementArgs{...} }
 type CloudDatabaseManagementMapInput interface {
 	pulumi.Input
 

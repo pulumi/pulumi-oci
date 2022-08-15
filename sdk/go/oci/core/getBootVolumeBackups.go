@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetBootVolumeBackups(ctx, &core.GetBootVolumeBackupsArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			BootVolumeId:             pulumi.StringRef(oci_core_boot_volume.Test_boot_volume.Id),
-// 			DisplayName:              pulumi.StringRef(_var.Boot_volume_backup_display_name),
-// 			SourceBootVolumeBackupId: pulumi.StringRef(oci_core_boot_volume_backup.Test_boot_volume_backup.Id),
-// 			State:                    pulumi.StringRef(_var.Boot_volume_backup_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetBootVolumeBackups(ctx, &core.GetBootVolumeBackupsArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				BootVolumeId:             pulumi.StringRef(oci_core_boot_volume.Test_boot_volume.Id),
+//				DisplayName:              pulumi.StringRef(_var.Boot_volume_backup_display_name),
+//				SourceBootVolumeBackupId: pulumi.StringRef(oci_core_boot_volume_backup.Test_boot_volume_backup.Id),
+//				State:                    pulumi.StringRef(_var.Boot_volume_backup_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBootVolumeBackups(ctx *pulumi.Context, args *GetBootVolumeBackupsArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeBackupsResult, error) {
 	var rv GetBootVolumeBackupsResult

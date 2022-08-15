@@ -28,51 +28,54 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDataGuardAssociation(ctx, "testDataGuardAssociation", &Database.DataGuardAssociationArgs{
-// 			CreationType:                 pulumi.Any(_var.Data_guard_association_creation_type),
-// 			DatabaseAdminPassword:        pulumi.Any(_var.Data_guard_association_database_admin_password),
-// 			DatabaseId:                   pulumi.Any(oci_database_database.Test_database.Id),
-// 			DeleteStandbyDbHomeOnDelete:  pulumi.Any(_var.Data_guard_association_delete_standby_db_home_on_delete),
-// 			ProtectionMode:               pulumi.Any(_var.Data_guard_association_protection_mode),
-// 			TransportType:                pulumi.Any(_var.Data_guard_association_transport_type),
-// 			AvailabilityDomain:           pulumi.Any(_var.Data_guard_association_availability_domain),
-// 			BackupNetworkNsgIds:          pulumi.Any(_var.Data_guard_association_backup_network_nsg_ids),
-// 			CpuCoreCount:                 pulumi.Any(_var.Data_guard_association_cpu_core_count),
-// 			DatabaseDefinedTags:          pulumi.Any(_var.Data_guard_association_database_defined_tags),
-// 			DatabaseFreeformTags:         pulumi.Any(_var.Data_guard_association_database_freeform_tags),
-// 			DatabaseSoftwareImageId:      pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
-// 			DbSystemDefinedTags:          pulumi.Any(_var.Data_guard_association_db_system_defined_tags),
-// 			DbSystemFreeformTags:         pulumi.Any(_var.Data_guard_association_db_system_freeform_tags),
-// 			DisplayName:                  pulumi.Any(_var.Data_guard_association_display_name),
-// 			FaultDomains:                 pulumi.Any(_var.Data_guard_association_fault_domains),
-// 			Hostname:                     pulumi.Any(_var.Data_guard_association_hostname),
-// 			IsActiveDataGuardEnabled:     pulumi.Any(_var.Data_guard_association_is_active_data_guard_enabled),
-// 			LicenseModel:                 pulumi.Any(_var.Data_guard_association_license_model),
-// 			NodeCount:                    pulumi.Any(_var.Data_guard_association_node_count),
-// 			NsgIds:                       pulumi.Any(_var.Data_guard_association_nsg_ids),
-// 			PeerDbHomeId:                 pulumi.Any(oci_database_db_home.Test_db_home.Id),
-// 			PeerDbSystemId:               pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 			PeerDbUniqueName:             pulumi.Any(_var.Data_guard_association_peer_db_unique_name),
-// 			PeerSidPrefix:                pulumi.Any(_var.Data_guard_association_peer_sid_prefix),
-// 			PeerVmClusterId:              pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
-// 			PrivateIp:                    pulumi.Any(_var.Data_guard_association_private_ip),
-// 			Shape:                        pulumi.Any(_var.Data_guard_association_shape),
-// 			StorageVolumePerformanceMode: pulumi.Any(_var.Data_guard_association_storage_volume_performance_mode),
-// 			SubnetId:                     pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			TimeZone:                     pulumi.Any(_var.Data_guard_association_time_zone),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDataGuardAssociation(ctx, "testDataGuardAssociation", &Database.DataGuardAssociationArgs{
+//				CreationType:                 pulumi.Any(_var.Data_guard_association_creation_type),
+//				DatabaseAdminPassword:        pulumi.Any(_var.Data_guard_association_database_admin_password),
+//				DatabaseId:                   pulumi.Any(oci_database_database.Test_database.Id),
+//				DeleteStandbyDbHomeOnDelete:  pulumi.Any(_var.Data_guard_association_delete_standby_db_home_on_delete),
+//				ProtectionMode:               pulumi.Any(_var.Data_guard_association_protection_mode),
+//				TransportType:                pulumi.Any(_var.Data_guard_association_transport_type),
+//				AvailabilityDomain:           pulumi.Any(_var.Data_guard_association_availability_domain),
+//				BackupNetworkNsgIds:          pulumi.Any(_var.Data_guard_association_backup_network_nsg_ids),
+//				CpuCoreCount:                 pulumi.Any(_var.Data_guard_association_cpu_core_count),
+//				DatabaseDefinedTags:          pulumi.Any(_var.Data_guard_association_database_defined_tags),
+//				DatabaseFreeformTags:         pulumi.Any(_var.Data_guard_association_database_freeform_tags),
+//				DatabaseSoftwareImageId:      pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
+//				DbSystemDefinedTags:          pulumi.Any(_var.Data_guard_association_db_system_defined_tags),
+//				DbSystemFreeformTags:         pulumi.Any(_var.Data_guard_association_db_system_freeform_tags),
+//				DisplayName:                  pulumi.Any(_var.Data_guard_association_display_name),
+//				FaultDomains:                 pulumi.Any(_var.Data_guard_association_fault_domains),
+//				Hostname:                     pulumi.Any(_var.Data_guard_association_hostname),
+//				IsActiveDataGuardEnabled:     pulumi.Any(_var.Data_guard_association_is_active_data_guard_enabled),
+//				LicenseModel:                 pulumi.Any(_var.Data_guard_association_license_model),
+//				NodeCount:                    pulumi.Any(_var.Data_guard_association_node_count),
+//				NsgIds:                       pulumi.Any(_var.Data_guard_association_nsg_ids),
+//				PeerDbHomeId:                 pulumi.Any(oci_database_db_home.Test_db_home.Id),
+//				PeerDbSystemId:               pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				PeerDbUniqueName:             pulumi.Any(_var.Data_guard_association_peer_db_unique_name),
+//				PeerSidPrefix:                pulumi.Any(_var.Data_guard_association_peer_sid_prefix),
+//				PeerVmClusterId:              pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//				PrivateIp:                    pulumi.Any(_var.Data_guard_association_private_ip),
+//				Shape:                        pulumi.Any(_var.Data_guard_association_shape),
+//				StorageVolumePerformanceMode: pulumi.Any(_var.Data_guard_association_storage_volume_performance_mode),
+//				SubnetId:                     pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				TimeZone:                     pulumi.Any(_var.Data_guard_association_time_zone),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -561,7 +564,7 @@ func (i *DataGuardAssociation) ToDataGuardAssociationOutputWithContext(ctx conte
 // DataGuardAssociationArrayInput is an input type that accepts DataGuardAssociationArray and DataGuardAssociationArrayOutput values.
 // You can construct a concrete instance of `DataGuardAssociationArrayInput` via:
 //
-//          DataGuardAssociationArray{ DataGuardAssociationArgs{...} }
+//	DataGuardAssociationArray{ DataGuardAssociationArgs{...} }
 type DataGuardAssociationArrayInput interface {
 	pulumi.Input
 
@@ -586,7 +589,7 @@ func (i DataGuardAssociationArray) ToDataGuardAssociationArrayOutputWithContext(
 // DataGuardAssociationMapInput is an input type that accepts DataGuardAssociationMap and DataGuardAssociationMapOutput values.
 // You can construct a concrete instance of `DataGuardAssociationMapInput` via:
 //
-//          DataGuardAssociationMap{ "key": DataGuardAssociationArgs{...} }
+//	DataGuardAssociationMap{ "key": DataGuardAssociationArgs{...} }
 type DataGuardAssociationMapInput interface {
 	pulumi.Input
 

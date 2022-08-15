@@ -35,15 +35,15 @@ public final class GetVolumesPlainArgs extends com.pulumi.resources.InvokeArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -144,7 +144,7 @@ public final class GetVolumesPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -192,7 +192,6 @@ public final class GetVolumesPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetVolumesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             return $;
         }
     }

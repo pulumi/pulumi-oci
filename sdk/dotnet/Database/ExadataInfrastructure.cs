@@ -285,6 +285,12 @@ namespace Pulumi.Oci.Database
         public Output<int> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        /// </summary>
+        [Output("monthlyDbServerVersion")]
+        public Output<string> MonthlyDbServerVersion { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The netmask for the control plane network.
         /// </summary>
         [Output("netmask")]
@@ -756,6 +762,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("memorySizeInGbs")]
         public Input<int>? MemorySizeInGbs { get; set; }
+
+        /// <summary>
+        /// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        /// </summary>
+        [Input("monthlyDbServerVersion")]
+        public Input<string>? MonthlyDbServerVersion { get; set; }
 
         /// <summary>
         /// (Updatable) The netmask for the control plane network.

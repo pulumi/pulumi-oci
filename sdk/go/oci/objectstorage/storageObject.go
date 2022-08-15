@@ -28,33 +28,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.NewStorageObject(ctx, "testObject", &ObjectStorage.StorageObjectArgs{
-// 			Bucket:                  pulumi.Any(_var.Object_bucket),
-// 			Content:                 pulumi.Any(_var.Object_content),
-// 			Namespace:               pulumi.Any(_var.Object_namespace),
-// 			Object:                  pulumi.Any(_var.Object_object),
-// 			CacheControl:            pulumi.Any(_var.Object_cache_control),
-// 			ContentDisposition:      pulumi.Any(_var.Object_content_disposition),
-// 			ContentEncoding:         pulumi.Any(_var.Object_content_encoding),
-// 			ContentLanguage:         pulumi.Any(_var.Object_content_language),
-// 			ContentType:             pulumi.Any(_var.Object_content_type),
-// 			DeleteAllObjectVersions: pulumi.Any(_var.Object_delete_all_object_versions),
-// 			Metadata:                pulumi.Any(_var.Object_metadata),
-// 			StorageTier:             pulumi.Any(_var.Object_storage_tier),
-// 			OpcSseKmsKeyId:          pulumi.Any(_var.Object_opc_sse_kms_key_id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.NewStorageObject(ctx, "testObject", &ObjectStorage.StorageObjectArgs{
+//				Bucket:                  pulumi.Any(_var.Object_bucket),
+//				Content:                 pulumi.Any(_var.Object_content),
+//				Namespace:               pulumi.Any(_var.Object_namespace),
+//				Object:                  pulumi.Any(_var.Object_object),
+//				CacheControl:            pulumi.Any(_var.Object_cache_control),
+//				ContentDisposition:      pulumi.Any(_var.Object_content_disposition),
+//				ContentEncoding:         pulumi.Any(_var.Object_content_encoding),
+//				ContentLanguage:         pulumi.Any(_var.Object_content_language),
+//				ContentType:             pulumi.Any(_var.Object_content_type),
+//				DeleteAllObjectVersions: pulumi.Any(_var.Object_delete_all_object_versions),
+//				Metadata:                pulumi.Any(_var.Object_metadata),
+//				StorageTier:             pulumi.Any(_var.Object_storage_tier),
+//				OpcSseKmsKeyId:          pulumi.Any(_var.Object_opc_sse_kms_key_id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // Objects can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
+//
+//	$ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
+//
 // ```
 type StorageObject struct {
 	pulumi.CustomResourceState
@@ -334,7 +339,7 @@ func (i *StorageObject) ToStorageObjectOutputWithContext(ctx context.Context) St
 // StorageObjectArrayInput is an input type that accepts StorageObjectArray and StorageObjectArrayOutput values.
 // You can construct a concrete instance of `StorageObjectArrayInput` via:
 //
-//          StorageObjectArray{ StorageObjectArgs{...} }
+//	StorageObjectArray{ StorageObjectArgs{...} }
 type StorageObjectArrayInput interface {
 	pulumi.Input
 
@@ -359,7 +364,7 @@ func (i StorageObjectArray) ToStorageObjectArrayOutputWithContext(ctx context.Co
 // StorageObjectMapInput is an input type that accepts StorageObjectMap and StorageObjectMapOutput values.
 // You can construct a concrete instance of `StorageObjectMapInput` via:
 //
-//          StorageObjectMap{ "key": StorageObjectArgs{...} }
+//	StorageObjectMap{ "key": StorageObjectArgs{...} }
 type StorageObjectMapInput interface {
 	pulumi.Input
 

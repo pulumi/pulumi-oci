@@ -19,14 +19,14 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
     public static final IntegrationInstanceNetworkEndpointDetailsArgs Empty = new IntegrationInstanceNetworkEndpointDetailsArgs();
 
     /**
-     * Source IP addresses or IP address ranges ingress rules.
+     * Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
     @Import(name="allowlistedHttpIps")
     private @Nullable Output<List<String>> allowlistedHttpIps;
 
     /**
-     * @return Source IP addresses or IP address ranges ingress rules.
+     * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
     public Optional<Output<List<String>>> allowlistedHttpIps() {
@@ -106,7 +106,7 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
         }
 
         /**
-         * @param allowlistedHttpIps Source IP addresses or IP address ranges ingress rules.
+         * @param allowlistedHttpIps Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
         }
 
         /**
-         * @param allowlistedHttpIps Source IP addresses or IP address ranges ingress rules.
+         * @param allowlistedHttpIps Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
         }
 
         /**
-         * @param allowlistedHttpIps Source IP addresses or IP address ranges ingress rules.
+         * @param allowlistedHttpIps Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
          * 
          * @return builder
          * 

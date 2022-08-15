@@ -103,7 +103,7 @@ func (i *MaskData) ToMaskDataOutputWithContext(ctx context.Context) MaskDataOutp
 // MaskDataArrayInput is an input type that accepts MaskDataArray and MaskDataArrayOutput values.
 // You can construct a concrete instance of `MaskDataArrayInput` via:
 //
-//          MaskDataArray{ MaskDataArgs{...} }
+//	MaskDataArray{ MaskDataArgs{...} }
 type MaskDataArrayInput interface {
 	pulumi.Input
 
@@ -128,7 +128,7 @@ func (i MaskDataArray) ToMaskDataArrayOutputWithContext(ctx context.Context) Mas
 // MaskDataMapInput is an input type that accepts MaskDataMap and MaskDataMapOutput values.
 // You can construct a concrete instance of `MaskDataMapInput` via:
 //
-//          MaskDataMap{ "key": MaskDataArgs{...} }
+//	MaskDataMap{ "key": MaskDataArgs{...} }
 type MaskDataMapInput interface {
 	pulumi.Input
 

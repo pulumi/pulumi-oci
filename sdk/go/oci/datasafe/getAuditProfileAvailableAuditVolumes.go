@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditProfileAvailableAuditVolumes(ctx, &datasafe.GetAuditProfileAvailableAuditVolumesArgs{
-// 			AuditProfileId:                  oci_data_safe_audit_profile.Test_audit_profile.Id,
-// 			WorkRequestId:                   oci_containerengine_work_request.Test_work_request.Id,
-// 			MonthInConsiderationGreaterThan: pulumi.StringRef(_var.Audit_profile_available_audit_volume_month_in_consideration_greater_than),
-// 			MonthInConsiderationLessThan:    pulumi.StringRef(_var.Audit_profile_available_audit_volume_month_in_consideration_less_than),
-// 			TrailLocation:                   pulumi.StringRef(_var.Audit_profile_available_audit_volume_trail_location),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditProfileAvailableAuditVolumes(ctx, &datasafe.GetAuditProfileAvailableAuditVolumesArgs{
+//				AuditProfileId:                  oci_data_safe_audit_profile.Test_audit_profile.Id,
+//				WorkRequestId:                   oci_containerengine_work_request.Test_work_request.Id,
+//				MonthInConsiderationGreaterThan: pulumi.StringRef(_var.Audit_profile_available_audit_volume_month_in_consideration_greater_than),
+//				MonthInConsiderationLessThan:    pulumi.StringRef(_var.Audit_profile_available_audit_volume_month_in_consideration_less_than),
+//				TrailLocation:                   pulumi.StringRef(_var.Audit_profile_available_audit_volume_trail_location),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAuditProfileAvailableAuditVolumes(ctx *pulumi.Context, args *GetAuditProfileAvailableAuditVolumesArgs, opts ...pulumi.InvokeOption) (*GetAuditProfileAvailableAuditVolumesResult, error) {
 	var rv GetAuditProfileAvailableAuditVolumesResult

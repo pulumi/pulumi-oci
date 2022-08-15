@@ -20,13 +20,17 @@ import (
 // HostInsights can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
+//
+//	$ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
+//
 // ```
 type HostInsight struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Compartment Identifier of host
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId pulumi.StringOutput `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -114,6 +118,8 @@ func GetHostInsight(ctx *pulumi.Context,
 type hostInsightState struct {
 	// (Updatable) Compartment Identifier of host
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId *string `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -167,6 +173,8 @@ type hostInsightState struct {
 type HostInsightState struct {
 	// (Updatable) Compartment Identifier of host
 	CompartmentId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// OPSI Enterprise Manager Bridge OCID
@@ -224,6 +232,8 @@ func (HostInsightState) ElementType() reflect.Type {
 type hostInsightArgs struct {
 	// (Updatable) Compartment Identifier of host
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId *string `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -248,6 +258,8 @@ type hostInsightArgs struct {
 type HostInsightArgs struct {
 	// (Updatable) Compartment Identifier of host
 	CompartmentId pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// OPSI Enterprise Manager Bridge OCID
@@ -294,7 +306,7 @@ func (i *HostInsight) ToHostInsightOutputWithContext(ctx context.Context) HostIn
 // HostInsightArrayInput is an input type that accepts HostInsightArray and HostInsightArrayOutput values.
 // You can construct a concrete instance of `HostInsightArrayInput` via:
 //
-//          HostInsightArray{ HostInsightArgs{...} }
+//	HostInsightArray{ HostInsightArgs{...} }
 type HostInsightArrayInput interface {
 	pulumi.Input
 
@@ -319,7 +331,7 @@ func (i HostInsightArray) ToHostInsightArrayOutputWithContext(ctx context.Contex
 // HostInsightMapInput is an input type that accepts HostInsightMap and HostInsightMapOutput values.
 // You can construct a concrete instance of `HostInsightMapInput` via:
 //
-//          HostInsightMap{ "key": HostInsightArgs{...} }
+//	HostInsightMap{ "key": HostInsightArgs{...} }
 type HostInsightMapInput interface {
 	pulumi.Input
 

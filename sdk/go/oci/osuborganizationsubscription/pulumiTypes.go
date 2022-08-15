@@ -20,7 +20,7 @@ type GetOrganizationSubscriptionsFilter struct {
 // GetOrganizationSubscriptionsFilterInput is an input type that accepts GetOrganizationSubscriptionsFilterArgs and GetOrganizationSubscriptionsFilterOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsFilterInput` via:
 //
-//          GetOrganizationSubscriptionsFilterArgs{...}
+//	GetOrganizationSubscriptionsFilterArgs{...}
 type GetOrganizationSubscriptionsFilterInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i GetOrganizationSubscriptionsFilterArgs) ToGetOrganizationSubscriptionsFi
 // GetOrganizationSubscriptionsFilterArrayInput is an input type that accepts GetOrganizationSubscriptionsFilterArray and GetOrganizationSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsFilterArrayInput` via:
 //
-//          GetOrganizationSubscriptionsFilterArray{ GetOrganizationSubscriptionsFilterArgs{...} }
+//	GetOrganizationSubscriptionsFilterArray{ GetOrganizationSubscriptionsFilterArgs{...} }
 type GetOrganizationSubscriptionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -141,7 +141,7 @@ type GetOrganizationSubscriptionsSubscription struct {
 // GetOrganizationSubscriptionsSubscriptionInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionArgs and GetOrganizationSubscriptionsSubscriptionOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsSubscriptionInput` via:
 //
-//          GetOrganizationSubscriptionsSubscriptionArgs{...}
+//	GetOrganizationSubscriptionsSubscriptionArgs{...}
 type GetOrganizationSubscriptionsSubscriptionInput interface {
 	pulumi.Input
 
@@ -183,7 +183,7 @@ func (i GetOrganizationSubscriptionsSubscriptionArgs) ToGetOrganizationSubscript
 // GetOrganizationSubscriptionsSubscriptionArrayInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionArray and GetOrganizationSubscriptionsSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsSubscriptionArrayInput` via:
 //
-//          GetOrganizationSubscriptionsSubscriptionArray{ GetOrganizationSubscriptionsSubscriptionArgs{...} }
+//	GetOrganizationSubscriptionsSubscriptionArray{ GetOrganizationSubscriptionsSubscriptionArgs{...} }
 type GetOrganizationSubscriptionsSubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -293,7 +293,7 @@ type GetOrganizationSubscriptionsSubscriptionCurrency struct {
 // GetOrganizationSubscriptionsSubscriptionCurrencyInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionCurrencyArgs and GetOrganizationSubscriptionsSubscriptionCurrencyOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsSubscriptionCurrencyInput` via:
 //
-//          GetOrganizationSubscriptionsSubscriptionCurrencyArgs{...}
+//	GetOrganizationSubscriptionsSubscriptionCurrencyArgs{...}
 type GetOrganizationSubscriptionsSubscriptionCurrencyInput interface {
 	pulumi.Input
 
@@ -325,7 +325,7 @@ func (i GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ToGetOrganizationS
 // GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionCurrencyArray and GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput` via:
 //
-//          GetOrganizationSubscriptionsSubscriptionCurrencyArray{ GetOrganizationSubscriptionsSubscriptionCurrencyArgs{...} }
+//	GetOrganizationSubscriptionsSubscriptionCurrencyArray{ GetOrganizationSubscriptionsSubscriptionCurrencyArgs{...} }
 type GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput interface {
 	pulumi.Input
 

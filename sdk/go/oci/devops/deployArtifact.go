@@ -21,41 +21,44 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewDeployArtifact(ctx, "testDeployArtifact", &DevOps.DeployArtifactArgs{
-// 			ArgumentSubstitutionMode: pulumi.Any(_var.Deploy_artifact_argument_substitution_mode),
-// 			DeployArtifactSource: &devops.DeployArtifactDeployArtifactSourceArgs{
-// 				DeployArtifactSourceType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type),
-// 				Base64encodedContent:     pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_base64encoded_content),
-// 				ChartUrl:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_chart_url),
-// 				DeployArtifactPath:       pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path),
-// 				DeployArtifactVersion:    pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version),
-// 				ImageDigest:              pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_digest),
-// 				ImageUri:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_uri),
-// 				RepositoryId:             pulumi.Any(oci_devops_repository.Test_repository.Id),
-// 			},
-// 			DeployArtifactType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_type),
-// 			ProjectId:          pulumi.Any(oci_devops_project.Test_project.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Deploy_artifact_description),
-// 			DisplayName: pulumi.Any(_var.Deploy_artifact_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewDeployArtifact(ctx, "testDeployArtifact", &DevOps.DeployArtifactArgs{
+//				ArgumentSubstitutionMode: pulumi.Any(_var.Deploy_artifact_argument_substitution_mode),
+//				DeployArtifactSource: &devops.DeployArtifactDeployArtifactSourceArgs{
+//					DeployArtifactSourceType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type),
+//					Base64encodedContent:     pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_base64encoded_content),
+//					ChartUrl:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_chart_url),
+//					DeployArtifactPath:       pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path),
+//					DeployArtifactVersion:    pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version),
+//					ImageDigest:              pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_digest),
+//					ImageUri:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_uri),
+//					RepositoryId:             pulumi.Any(oci_devops_repository.Test_repository.Id),
+//				},
+//				DeployArtifactType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_type),
+//				ProjectId:          pulumi.Any(oci_devops_project.Test_project.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Deploy_artifact_description),
+//				DisplayName: pulumi.Any(_var.Deploy_artifact_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -63,7 +66,9 @@ import (
 // DeployArtifacts can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
+//
+//	$ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
+//
 // ```
 type DeployArtifact struct {
 	pulumi.CustomResourceState
@@ -269,7 +274,7 @@ func (i *DeployArtifact) ToDeployArtifactOutputWithContext(ctx context.Context) 
 // DeployArtifactArrayInput is an input type that accepts DeployArtifactArray and DeployArtifactArrayOutput values.
 // You can construct a concrete instance of `DeployArtifactArrayInput` via:
 //
-//          DeployArtifactArray{ DeployArtifactArgs{...} }
+//	DeployArtifactArray{ DeployArtifactArgs{...} }
 type DeployArtifactArrayInput interface {
 	pulumi.Input
 
@@ -294,7 +299,7 @@ func (i DeployArtifactArray) ToDeployArtifactArrayOutputWithContext(ctx context.
 // DeployArtifactMapInput is an input type that accepts DeployArtifactMap and DeployArtifactMapOutput values.
 // You can construct a concrete instance of `DeployArtifactMapInput` via:
 //
-//          DeployArtifactMap{ "key": DeployArtifactArgs{...} }
+//	DeployArtifactMap{ "key": DeployArtifactArgs{...} }
 type DeployArtifactMapInput interface {
 	pulumi.Input
 

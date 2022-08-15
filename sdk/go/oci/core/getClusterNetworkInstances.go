@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetClusterNetworkInstances(ctx, &core.GetClusterNetworkInstancesArgs{
-// 			ClusterNetworkId: oci_core_cluster_network.Test_cluster_network.Id,
-// 			CompartmentId:    _var.Compartment_id,
-// 			DisplayName:      pulumi.StringRef(_var.Cluster_network_instance_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetClusterNetworkInstances(ctx, &core.GetClusterNetworkInstancesArgs{
+//				ClusterNetworkId: oci_core_cluster_network.Test_cluster_network.Id,
+//				CompartmentId:    _var.Compartment_id,
+//				DisplayName:      pulumi.StringRef(_var.Cluster_network_instance_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetClusterNetworkInstances(ctx *pulumi.Context, args *GetClusterNetworkInstancesArgs, opts ...pulumi.InvokeOption) (*GetClusterNetworkInstancesResult, error) {
 	var rv GetClusterNetworkInstancesResult

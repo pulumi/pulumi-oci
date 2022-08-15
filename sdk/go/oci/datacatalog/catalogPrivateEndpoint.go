@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.NewCatalogPrivateEndpoint(ctx, "testCatalogPrivateEndpoint", &DataCatalog.CatalogPrivateEndpointArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DnsZones:      pulumi.Any(_var.Catalog_private_endpoint_dns_zones),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Catalog_private_endpoint_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.NewCatalogPrivateEndpoint(ctx, "testCatalogPrivateEndpoint", &DataCatalog.CatalogPrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DnsZones:      pulumi.Any(_var.Catalog_private_endpoint_dns_zones),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Catalog_private_endpoint_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // CatalogPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
+//
+//	$ pulumi import oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint test_catalog_private_endpoint "id"
+//
 // ```
 type CatalogPrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -229,7 +234,7 @@ func (i *CatalogPrivateEndpoint) ToCatalogPrivateEndpointOutputWithContext(ctx c
 // CatalogPrivateEndpointArrayInput is an input type that accepts CatalogPrivateEndpointArray and CatalogPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `CatalogPrivateEndpointArrayInput` via:
 //
-//          CatalogPrivateEndpointArray{ CatalogPrivateEndpointArgs{...} }
+//	CatalogPrivateEndpointArray{ CatalogPrivateEndpointArgs{...} }
 type CatalogPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +259,7 @@ func (i CatalogPrivateEndpointArray) ToCatalogPrivateEndpointArrayOutputWithCont
 // CatalogPrivateEndpointMapInput is an input type that accepts CatalogPrivateEndpointMap and CatalogPrivateEndpointMapOutput values.
 // You can construct a concrete instance of `CatalogPrivateEndpointMapInput` via:
 //
-//          CatalogPrivateEndpointMap{ "key": CatalogPrivateEndpointArgs{...} }
+//	CatalogPrivateEndpointMap{ "key": CatalogPrivateEndpointArgs{...} }
 type CatalogPrivateEndpointMapInput interface {
 	pulumi.Input
 

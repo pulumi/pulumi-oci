@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetAccessPolicies(ctx, &servicemesh.GetAccessPoliciesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Access_policy_id),
-// 			MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
-// 			Name:          pulumi.StringRef(_var.Access_policy_name),
-// 			State:         pulumi.StringRef(_var.Access_policy_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetAccessPolicies(ctx, &servicemesh.GetAccessPoliciesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Access_policy_id),
+//				MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
+//				Name:          pulumi.StringRef(_var.Access_policy_name),
+//				State:         pulumi.StringRef(_var.Access_policy_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAccessPolicies(ctx *pulumi.Context, args *GetAccessPoliciesArgs, opts ...pulumi.InvokeOption) (*GetAccessPoliciesResult, error) {
 	var rv GetAccessPoliciesResult

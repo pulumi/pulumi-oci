@@ -23,34 +23,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewRrset(ctx, "testRrset", &Dns.RrsetArgs{
-// 			Domain:        pulumi.Any(_var.Rrset_domain),
-// 			Rtype:         pulumi.Any(_var.Rrset_rtype),
-// 			ZoneNameOrId:  pulumi.Any(oci_dns_zone.Test_zone.Id),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Items: dns.RrsetItemArray{
-// 				&dns.RrsetItemArgs{
-// 					Domain: pulumi.Any(_var.Rrset_items_domain),
-// 					Rdata:  pulumi.Any(_var.Rrset_items_rdata),
-// 					Rtype:  pulumi.Any(_var.Rrset_items_rtype),
-// 					Ttl:    pulumi.Any(_var.Rrset_items_ttl),
-// 				},
-// 			},
-// 			Scope:  pulumi.Any(_var.Rrset_scope),
-// 			ViewId: pulumi.Any(oci_dns_view.Test_view.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewRrset(ctx, "testRrset", &Dns.RrsetArgs{
+//				Domain:        pulumi.Any(_var.Rrset_domain),
+//				Rtype:         pulumi.Any(_var.Rrset_rtype),
+//				ZoneNameOrId:  pulumi.Any(oci_dns_zone.Test_zone.Id),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Items: dns.RrsetItemArray{
+//					&dns.RrsetItemArgs{
+//						Domain: pulumi.Any(_var.Rrset_items_domain),
+//						Rdata:  pulumi.Any(_var.Rrset_items_rdata),
+//						Rtype:  pulumi.Any(_var.Rrset_items_rtype),
+//						Ttl:    pulumi.Any(_var.Rrset_items_ttl),
+//					},
+//				},
+//				Scope:  pulumi.Any(_var.Rrset_scope),
+//				ViewId: pulumi.Any(oci_dns_view.Test_view.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,16 +61,20 @@ import (
 // For legacy Rrsets that were created without using `scope`, these Rrsets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
+//
+//	$ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}"
+//
 // ```
 //
-//  For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+//	For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
+//
+//	$ pulumi import oci:Dns/rrset:Rrset test_rrset "zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}"
+//
 // ```
 //
-//  skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+//	skip adding `{view_id}` at the end if Rrset was created without `view_id`.
 type Rrset struct {
 	pulumi.CustomResourceState
 
@@ -233,7 +240,7 @@ func (i *Rrset) ToRrsetOutputWithContext(ctx context.Context) RrsetOutput {
 // RrsetArrayInput is an input type that accepts RrsetArray and RrsetArrayOutput values.
 // You can construct a concrete instance of `RrsetArrayInput` via:
 //
-//          RrsetArray{ RrsetArgs{...} }
+//	RrsetArray{ RrsetArgs{...} }
 type RrsetArrayInput interface {
 	pulumi.Input
 
@@ -258,7 +265,7 @@ func (i RrsetArray) ToRrsetArrayOutputWithContext(ctx context.Context) RrsetArra
 // RrsetMapInput is an input type that accepts RrsetMap and RrsetMapOutput values.
 // You can construct a concrete instance of `RrsetMapInput` via:
 //
-//          RrsetMap{ "key": RrsetArgs{...} }
+//	RrsetMap{ "key": RrsetArgs{...} }
 type RrsetMapInput interface {
 	pulumi.Input
 

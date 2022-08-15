@@ -30,7 +30,7 @@ type ManagementAgentPluginList struct {
 // ManagementAgentPluginListInput is an input type that accepts ManagementAgentPluginListArgs and ManagementAgentPluginListOutput values.
 // You can construct a concrete instance of `ManagementAgentPluginListInput` via:
 //
-//          ManagementAgentPluginListArgs{...}
+//	ManagementAgentPluginListArgs{...}
 type ManagementAgentPluginListInput interface {
 	pulumi.Input
 
@@ -70,7 +70,7 @@ func (i ManagementAgentPluginListArgs) ToManagementAgentPluginListOutputWithCont
 // ManagementAgentPluginListArrayInput is an input type that accepts ManagementAgentPluginListArray and ManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentPluginListArrayInput` via:
 //
-//          ManagementAgentPluginListArray{ ManagementAgentPluginListArgs{...} }
+//	ManagementAgentPluginListArray{ ManagementAgentPluginListArgs{...} }
 type ManagementAgentPluginListArrayInput interface {
 	pulumi.Input
 
@@ -175,7 +175,7 @@ type GetManagementAgentAvailableHistoriesAvailabilityHistory struct {
 // GetManagementAgentAvailableHistoriesAvailabilityHistoryInput is an input type that accepts GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs and GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesAvailabilityHistoryInput` via:
 //
-//          GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs{...}
+//	GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs{...}
 type GetManagementAgentAvailableHistoriesAvailabilityHistoryInput interface {
 	pulumi.Input
 
@@ -209,7 +209,7 @@ func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ToGetManage
 // GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput is an input type that accepts GetManagementAgentAvailableHistoriesAvailabilityHistoryArray and GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput` via:
 //
-//          GetManagementAgentAvailableHistoriesAvailabilityHistoryArray{ GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs{...} }
+//	GetManagementAgentAvailableHistoriesAvailabilityHistoryArray{ GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs{...} }
 type GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +298,7 @@ type GetManagementAgentAvailableHistoriesFilter struct {
 // GetManagementAgentAvailableHistoriesFilterInput is an input type that accepts GetManagementAgentAvailableHistoriesFilterArgs and GetManagementAgentAvailableHistoriesFilterOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesFilterInput` via:
 //
-//          GetManagementAgentAvailableHistoriesFilterArgs{...}
+//	GetManagementAgentAvailableHistoriesFilterArgs{...}
 type GetManagementAgentAvailableHistoriesFilterInput interface {
 	pulumi.Input
 
@@ -327,7 +327,7 @@ func (i GetManagementAgentAvailableHistoriesFilterArgs) ToGetManagementAgentAvai
 // GetManagementAgentAvailableHistoriesFilterArrayInput is an input type that accepts GetManagementAgentAvailableHistoriesFilterArray and GetManagementAgentAvailableHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesFilterArrayInput` via:
 //
-//          GetManagementAgentAvailableHistoriesFilterArray{ GetManagementAgentAvailableHistoriesFilterArgs{...} }
+//	GetManagementAgentAvailableHistoriesFilterArray{ GetManagementAgentAvailableHistoriesFilterArgs{...} }
 type GetManagementAgentAvailableHistoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -405,7 +405,7 @@ type GetManagementAgentCountItem struct {
 // GetManagementAgentCountItemInput is an input type that accepts GetManagementAgentCountItemArgs and GetManagementAgentCountItemOutput values.
 // You can construct a concrete instance of `GetManagementAgentCountItemInput` via:
 //
-//          GetManagementAgentCountItemArgs{...}
+//	GetManagementAgentCountItemArgs{...}
 type GetManagementAgentCountItemInput interface {
 	pulumi.Input
 
@@ -435,7 +435,7 @@ func (i GetManagementAgentCountItemArgs) ToGetManagementAgentCountItemOutputWith
 // GetManagementAgentCountItemArrayInput is an input type that accepts GetManagementAgentCountItemArray and GetManagementAgentCountItemArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentCountItemArrayInput` via:
 //
-//          GetManagementAgentCountItemArray{ GetManagementAgentCountItemArgs{...} }
+//	GetManagementAgentCountItemArray{ GetManagementAgentCountItemArgs{...} }
 type GetManagementAgentCountItemArrayInput interface {
 	pulumi.Input
 
@@ -517,7 +517,7 @@ type GetManagementAgentCountItemDimension struct {
 // GetManagementAgentCountItemDimensionInput is an input type that accepts GetManagementAgentCountItemDimensionArgs and GetManagementAgentCountItemDimensionOutput values.
 // You can construct a concrete instance of `GetManagementAgentCountItemDimensionInput` via:
 //
-//          GetManagementAgentCountItemDimensionArgs{...}
+//	GetManagementAgentCountItemDimensionArgs{...}
 type GetManagementAgentCountItemDimensionInput interface {
 	pulumi.Input
 
@@ -553,7 +553,7 @@ func (i GetManagementAgentCountItemDimensionArgs) ToGetManagementAgentCountItemD
 // GetManagementAgentCountItemDimensionArrayInput is an input type that accepts GetManagementAgentCountItemDimensionArray and GetManagementAgentCountItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentCountItemDimensionArrayInput` via:
 //
-//          GetManagementAgentCountItemDimensionArray{ GetManagementAgentCountItemDimensionArgs{...} }
+//	GetManagementAgentCountItemDimensionArray{ GetManagementAgentCountItemDimensionArgs{...} }
 type GetManagementAgentCountItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -644,7 +644,7 @@ type GetManagementAgentImagesFilter struct {
 // GetManagementAgentImagesFilterInput is an input type that accepts GetManagementAgentImagesFilterArgs and GetManagementAgentImagesFilterOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesFilterInput` via:
 //
-//          GetManagementAgentImagesFilterArgs{...}
+//	GetManagementAgentImagesFilterArgs{...}
 type GetManagementAgentImagesFilterInput interface {
 	pulumi.Input
 
@@ -674,7 +674,7 @@ func (i GetManagementAgentImagesFilterArgs) ToGetManagementAgentImagesFilterOutp
 // GetManagementAgentImagesFilterArrayInput is an input type that accepts GetManagementAgentImagesFilterArray and GetManagementAgentImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesFilterArrayInput` via:
 //
-//          GetManagementAgentImagesFilterArray{ GetManagementAgentImagesFilterArgs{...} }
+//	GetManagementAgentImagesFilterArray{ GetManagementAgentImagesFilterArgs{...} }
 type GetManagementAgentImagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -769,7 +769,7 @@ type GetManagementAgentImagesManagementAgentImage struct {
 // GetManagementAgentImagesManagementAgentImageInput is an input type that accepts GetManagementAgentImagesManagementAgentImageArgs and GetManagementAgentImagesManagementAgentImageOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesManagementAgentImageInput` via:
 //
-//          GetManagementAgentImagesManagementAgentImageArgs{...}
+//	GetManagementAgentImagesManagementAgentImageArgs{...}
 type GetManagementAgentImagesManagementAgentImageInput interface {
 	pulumi.Input
 
@@ -815,7 +815,7 @@ func (i GetManagementAgentImagesManagementAgentImageArgs) ToGetManagementAgentIm
 // GetManagementAgentImagesManagementAgentImageArrayInput is an input type that accepts GetManagementAgentImagesManagementAgentImageArray and GetManagementAgentImagesManagementAgentImageArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesManagementAgentImageArrayInput` via:
 //
-//          GetManagementAgentImagesManagementAgentImageArray{ GetManagementAgentImagesManagementAgentImageArgs{...} }
+//	GetManagementAgentImagesManagementAgentImageArray{ GetManagementAgentImagesManagementAgentImageArgs{...} }
 type GetManagementAgentImagesManagementAgentImageArrayInput interface {
 	pulumi.Input
 
@@ -930,7 +930,7 @@ type GetManagementAgentInstallKeysFilter struct {
 // GetManagementAgentInstallKeysFilterInput is an input type that accepts GetManagementAgentInstallKeysFilterArgs and GetManagementAgentInstallKeysFilterOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysFilterInput` via:
 //
-//          GetManagementAgentInstallKeysFilterArgs{...}
+//	GetManagementAgentInstallKeysFilterArgs{...}
 type GetManagementAgentInstallKeysFilterInput interface {
 	pulumi.Input
 
@@ -959,7 +959,7 @@ func (i GetManagementAgentInstallKeysFilterArgs) ToGetManagementAgentInstallKeys
 // GetManagementAgentInstallKeysFilterArrayInput is an input type that accepts GetManagementAgentInstallKeysFilterArray and GetManagementAgentInstallKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysFilterArrayInput` via:
 //
-//          GetManagementAgentInstallKeysFilterArray{ GetManagementAgentInstallKeysFilterArgs{...} }
+//	GetManagementAgentInstallKeysFilterArray{ GetManagementAgentInstallKeysFilterArgs{...} }
 type GetManagementAgentInstallKeysFilterArrayInput interface {
 	pulumi.Input
 
@@ -1059,7 +1059,7 @@ type GetManagementAgentInstallKeysManagementAgentInstallKey struct {
 // GetManagementAgentInstallKeysManagementAgentInstallKeyInput is an input type that accepts GetManagementAgentInstallKeysManagementAgentInstallKeyArgs and GetManagementAgentInstallKeysManagementAgentInstallKeyOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysManagementAgentInstallKeyInput` via:
 //
-//          GetManagementAgentInstallKeysManagementAgentInstallKeyArgs{...}
+//	GetManagementAgentInstallKeysManagementAgentInstallKeyArgs{...}
 type GetManagementAgentInstallKeysManagementAgentInstallKeyInput interface {
 	pulumi.Input
 
@@ -1111,7 +1111,7 @@ func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ToGetManagem
 // GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput is an input type that accepts GetManagementAgentInstallKeysManagementAgentInstallKeyArray and GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput` via:
 //
-//          GetManagementAgentInstallKeysManagementAgentInstallKeyArray{ GetManagementAgentInstallKeysManagementAgentInstallKeyArgs{...} }
+//	GetManagementAgentInstallKeysManagementAgentInstallKeyArray{ GetManagementAgentInstallKeysManagementAgentInstallKeyArgs{...} }
 type GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput interface {
 	pulumi.Input
 
@@ -1242,7 +1242,7 @@ type GetManagementAgentPluginCountItem struct {
 // GetManagementAgentPluginCountItemInput is an input type that accepts GetManagementAgentPluginCountItemArgs and GetManagementAgentPluginCountItemOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginCountItemInput` via:
 //
-//          GetManagementAgentPluginCountItemArgs{...}
+//	GetManagementAgentPluginCountItemArgs{...}
 type GetManagementAgentPluginCountItemInput interface {
 	pulumi.Input
 
@@ -1272,7 +1272,7 @@ func (i GetManagementAgentPluginCountItemArgs) ToGetManagementAgentPluginCountIt
 // GetManagementAgentPluginCountItemArrayInput is an input type that accepts GetManagementAgentPluginCountItemArray and GetManagementAgentPluginCountItemArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginCountItemArrayInput` via:
 //
-//          GetManagementAgentPluginCountItemArray{ GetManagementAgentPluginCountItemArgs{...} }
+//	GetManagementAgentPluginCountItemArray{ GetManagementAgentPluginCountItemArgs{...} }
 type GetManagementAgentPluginCountItemArrayInput interface {
 	pulumi.Input
 
@@ -1350,7 +1350,7 @@ type GetManagementAgentPluginCountItemDimension struct {
 // GetManagementAgentPluginCountItemDimensionInput is an input type that accepts GetManagementAgentPluginCountItemDimensionArgs and GetManagementAgentPluginCountItemDimensionOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginCountItemDimensionInput` via:
 //
-//          GetManagementAgentPluginCountItemDimensionArgs{...}
+//	GetManagementAgentPluginCountItemDimensionArgs{...}
 type GetManagementAgentPluginCountItemDimensionInput interface {
 	pulumi.Input
 
@@ -1380,7 +1380,7 @@ func (i GetManagementAgentPluginCountItemDimensionArgs) ToGetManagementAgentPlug
 // GetManagementAgentPluginCountItemDimensionArrayInput is an input type that accepts GetManagementAgentPluginCountItemDimensionArray and GetManagementAgentPluginCountItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginCountItemDimensionArrayInput` via:
 //
-//          GetManagementAgentPluginCountItemDimensionArray{ GetManagementAgentPluginCountItemDimensionArgs{...} }
+//	GetManagementAgentPluginCountItemDimensionArray{ GetManagementAgentPluginCountItemDimensionArgs{...} }
 type GetManagementAgentPluginCountItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -1466,7 +1466,7 @@ type GetManagementAgentPluginList struct {
 // GetManagementAgentPluginListInput is an input type that accepts GetManagementAgentPluginListArgs and GetManagementAgentPluginListOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginListInput` via:
 //
-//          GetManagementAgentPluginListArgs{...}
+//	GetManagementAgentPluginListArgs{...}
 type GetManagementAgentPluginListInput interface {
 	pulumi.Input
 
@@ -1506,7 +1506,7 @@ func (i GetManagementAgentPluginListArgs) ToGetManagementAgentPluginListOutputWi
 // GetManagementAgentPluginListArrayInput is an input type that accepts GetManagementAgentPluginListArray and GetManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginListArrayInput` via:
 //
-//          GetManagementAgentPluginListArray{ GetManagementAgentPluginListArgs{...} }
+//	GetManagementAgentPluginListArray{ GetManagementAgentPluginListArgs{...} }
 type GetManagementAgentPluginListArrayInput interface {
 	pulumi.Input
 
@@ -1607,7 +1607,7 @@ type GetManagementAgentPluginsFilter struct {
 // GetManagementAgentPluginsFilterInput is an input type that accepts GetManagementAgentPluginsFilterArgs and GetManagementAgentPluginsFilterOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsFilterInput` via:
 //
-//          GetManagementAgentPluginsFilterArgs{...}
+//	GetManagementAgentPluginsFilterArgs{...}
 type GetManagementAgentPluginsFilterInput interface {
 	pulumi.Input
 
@@ -1637,7 +1637,7 @@ func (i GetManagementAgentPluginsFilterArgs) ToGetManagementAgentPluginsFilterOu
 // GetManagementAgentPluginsFilterArrayInput is an input type that accepts GetManagementAgentPluginsFilterArray and GetManagementAgentPluginsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsFilterArrayInput` via:
 //
-//          GetManagementAgentPluginsFilterArray{ GetManagementAgentPluginsFilterArgs{...} }
+//	GetManagementAgentPluginsFilterArray{ GetManagementAgentPluginsFilterArgs{...} }
 type GetManagementAgentPluginsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1728,7 +1728,7 @@ type GetManagementAgentPluginsManagementAgentPlugin struct {
 // GetManagementAgentPluginsManagementAgentPluginInput is an input type that accepts GetManagementAgentPluginsManagementAgentPluginArgs and GetManagementAgentPluginsManagementAgentPluginOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsManagementAgentPluginInput` via:
 //
-//          GetManagementAgentPluginsManagementAgentPluginArgs{...}
+//	GetManagementAgentPluginsManagementAgentPluginArgs{...}
 type GetManagementAgentPluginsManagementAgentPluginInput interface {
 	pulumi.Input
 
@@ -1770,7 +1770,7 @@ func (i GetManagementAgentPluginsManagementAgentPluginArgs) ToGetManagementAgent
 // GetManagementAgentPluginsManagementAgentPluginArrayInput is an input type that accepts GetManagementAgentPluginsManagementAgentPluginArray and GetManagementAgentPluginsManagementAgentPluginArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsManagementAgentPluginArrayInput` via:
 //
-//          GetManagementAgentPluginsManagementAgentPluginArray{ GetManagementAgentPluginsManagementAgentPluginArgs{...} }
+//	GetManagementAgentPluginsManagementAgentPluginArray{ GetManagementAgentPluginsManagementAgentPluginArgs{...} }
 type GetManagementAgentPluginsManagementAgentPluginArrayInput interface {
 	pulumi.Input
 
@@ -1875,7 +1875,7 @@ type GetManagementAgentsFilter struct {
 // GetManagementAgentsFilterInput is an input type that accepts GetManagementAgentsFilterArgs and GetManagementAgentsFilterOutput values.
 // You can construct a concrete instance of `GetManagementAgentsFilterInput` via:
 //
-//          GetManagementAgentsFilterArgs{...}
+//	GetManagementAgentsFilterArgs{...}
 type GetManagementAgentsFilterInput interface {
 	pulumi.Input
 
@@ -1904,7 +1904,7 @@ func (i GetManagementAgentsFilterArgs) ToGetManagementAgentsFilterOutputWithCont
 // GetManagementAgentsFilterArrayInput is an input type that accepts GetManagementAgentsFilterArray and GetManagementAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsFilterArrayInput` via:
 //
-//          GetManagementAgentsFilterArray{ GetManagementAgentsFilterArgs{...} }
+//	GetManagementAgentsFilterArray{ GetManagementAgentsFilterArgs{...} }
 type GetManagementAgentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2028,7 +2028,7 @@ type GetManagementAgentsManagementAgent struct {
 // GetManagementAgentsManagementAgentInput is an input type that accepts GetManagementAgentsManagementAgentArgs and GetManagementAgentsManagementAgentOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentInput` via:
 //
-//          GetManagementAgentsManagementAgentArgs{...}
+//	GetManagementAgentsManagementAgentArgs{...}
 type GetManagementAgentsManagementAgentInput interface {
 	pulumi.Input
 
@@ -2104,7 +2104,7 @@ func (i GetManagementAgentsManagementAgentArgs) ToGetManagementAgentsManagementA
 // GetManagementAgentsManagementAgentArrayInput is an input type that accepts GetManagementAgentsManagementAgentArray and GetManagementAgentsManagementAgentArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentArrayInput` via:
 //
-//          GetManagementAgentsManagementAgentArray{ GetManagementAgentsManagementAgentArgs{...} }
+//	GetManagementAgentsManagementAgentArray{ GetManagementAgentsManagementAgentArgs{...} }
 type GetManagementAgentsManagementAgentArrayInput interface {
 	pulumi.Input
 
@@ -2310,7 +2310,7 @@ type GetManagementAgentsManagementAgentPluginList struct {
 // GetManagementAgentsManagementAgentPluginListInput is an input type that accepts GetManagementAgentsManagementAgentPluginListArgs and GetManagementAgentsManagementAgentPluginListOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentPluginListInput` via:
 //
-//          GetManagementAgentsManagementAgentPluginListArgs{...}
+//	GetManagementAgentsManagementAgentPluginListArgs{...}
 type GetManagementAgentsManagementAgentPluginListInput interface {
 	pulumi.Input
 
@@ -2350,7 +2350,7 @@ func (i GetManagementAgentsManagementAgentPluginListArgs) ToGetManagementAgentsM
 // GetManagementAgentsManagementAgentPluginListArrayInput is an input type that accepts GetManagementAgentsManagementAgentPluginListArray and GetManagementAgentsManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentPluginListArrayInput` via:
 //
-//          GetManagementAgentsManagementAgentPluginListArray{ GetManagementAgentsManagementAgentPluginListArgs{...} }
+//	GetManagementAgentsManagementAgentPluginListArray{ GetManagementAgentsManagementAgentPluginListArgs{...} }
 type GetManagementAgentsManagementAgentPluginListArrayInput interface {
 	pulumi.Input
 

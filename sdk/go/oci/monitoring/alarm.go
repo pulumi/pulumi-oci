@@ -26,48 +26,51 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Monitoring.NewAlarm(ctx, "testAlarm", &Monitoring.AlarmArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Destinations: pulumi.StringArray{
-// 				pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
-// 			},
-// 			DisplayName:         pulumi.Any(_var.Alarm_display_name),
-// 			IsEnabled:           pulumi.Any(_var.Alarm_is_enabled),
-// 			MetricCompartmentId: pulumi.Any(_var.Alarm_metric_compartment_id),
-// 			Namespace:           pulumi.Any(_var.Alarm_namespace),
-// 			Query:               pulumi.Any(_var.Alarm_query),
-// 			Severity:            pulumi.Any(_var.Alarm_severity),
-// 			Body:                pulumi.Any(_var.Alarm_body),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			MessageFormat:                pulumi.Any(_var.Alarm_message_format),
-// 			MetricCompartmentIdInSubtree: pulumi.Any(_var.Alarm_metric_compartment_id_in_subtree),
-// 			PendingDuration:              pulumi.Any(_var.Alarm_pending_duration),
-// 			RepeatNotificationDuration:   pulumi.Any(_var.Alarm_repeat_notification_duration),
-// 			Resolution:                   pulumi.Any(_var.Alarm_resolution),
-// 			ResourceGroup:                pulumi.Any(_var.Alarm_resource_group),
-// 			Suppression: &monitoring.AlarmSuppressionArgs{
-// 				TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
-// 				TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
-// 				Description:       pulumi.Any(_var.Alarm_suppression_description),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Monitoring.NewAlarm(ctx, "testAlarm", &Monitoring.AlarmArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Destinations: pulumi.StringArray{
+//					pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//				},
+//				DisplayName:         pulumi.Any(_var.Alarm_display_name),
+//				IsEnabled:           pulumi.Any(_var.Alarm_is_enabled),
+//				MetricCompartmentId: pulumi.Any(_var.Alarm_metric_compartment_id),
+//				Namespace:           pulumi.Any(_var.Alarm_namespace),
+//				Query:               pulumi.Any(_var.Alarm_query),
+//				Severity:            pulumi.Any(_var.Alarm_severity),
+//				Body:                pulumi.Any(_var.Alarm_body),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				MessageFormat:                pulumi.Any(_var.Alarm_message_format),
+//				MetricCompartmentIdInSubtree: pulumi.Any(_var.Alarm_metric_compartment_id_in_subtree),
+//				PendingDuration:              pulumi.Any(_var.Alarm_pending_duration),
+//				RepeatNotificationDuration:   pulumi.Any(_var.Alarm_repeat_notification_duration),
+//				Resolution:                   pulumi.Any(_var.Alarm_resolution),
+//				ResourceGroup:                pulumi.Any(_var.Alarm_resource_group),
+//				Suppression: &monitoring.AlarmSuppressionArgs{
+//					TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
+//					TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
+//					Description:       pulumi.Any(_var.Alarm_suppression_description),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -75,7 +78,9 @@ import (
 // Alarms can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
+//
+//	$ pulumi import oci:Monitoring/alarm:Alarm test_alarm "id"
+//
 // ```
 type Alarm struct {
 	pulumi.CustomResourceState
@@ -375,7 +380,7 @@ func (i *Alarm) ToAlarmOutputWithContext(ctx context.Context) AlarmOutput {
 // AlarmArrayInput is an input type that accepts AlarmArray and AlarmArrayOutput values.
 // You can construct a concrete instance of `AlarmArrayInput` via:
 //
-//          AlarmArray{ AlarmArgs{...} }
+//	AlarmArray{ AlarmArgs{...} }
 type AlarmArrayInput interface {
 	pulumi.Input
 
@@ -400,7 +405,7 @@ func (i AlarmArray) ToAlarmArrayOutputWithContext(ctx context.Context) AlarmArra
 // AlarmMapInput is an input type that accepts AlarmMap and AlarmMapOutput values.
 // You can construct a concrete instance of `AlarmMapInput` via:
 //
-//          AlarmMap{ "key": AlarmArgs{...} }
+//	AlarmMap{ "key": AlarmArgs{...} }
 type AlarmMapInput interface {
 	pulumi.Input
 

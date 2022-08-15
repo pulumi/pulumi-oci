@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetDomains(ctx, &identity.GetDomainsArgs{
-// 			CompartmentId:   _var.Compartment_id,
-// 			DisplayName:     pulumi.StringRef(_var.Domain_display_name),
-// 			HomeRegionUrl:   pulumi.StringRef(_var.Domain_home_region_url),
-// 			IsHiddenOnLogin: pulumi.BoolRef(_var.Domain_is_hidden_on_login),
-// 			LicenseType:     pulumi.StringRef(_var.Domain_license_type),
-// 			Name:            pulumi.StringRef(_var.Domain_name),
-// 			State:           pulumi.StringRef(_var.Domain_state),
-// 			Type:            pulumi.StringRef(_var.Domain_type),
-// 			Url:             pulumi.StringRef(_var.Domain_url),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetDomains(ctx, &identity.GetDomainsArgs{
+//				CompartmentId:   _var.Compartment_id,
+//				DisplayName:     pulumi.StringRef(_var.Domain_display_name),
+//				HomeRegionUrl:   pulumi.StringRef(_var.Domain_home_region_url),
+//				IsHiddenOnLogin: pulumi.BoolRef(_var.Domain_is_hidden_on_login),
+//				LicenseType:     pulumi.StringRef(_var.Domain_license_type),
+//				Name:            pulumi.StringRef(_var.Domain_name),
+//				State:           pulumi.StringRef(_var.Domain_state),
+//				Type:            pulumi.StringRef(_var.Domain_type),
+//				Url:             pulumi.StringRef(_var.Domain_url),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDomains(ctx *pulumi.Context, args *GetDomainsArgs, opts ...pulumi.InvokeOption) (*GetDomainsResult, error) {
 	var rv GetDomainsResult

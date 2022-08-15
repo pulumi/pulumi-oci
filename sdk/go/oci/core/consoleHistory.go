@@ -19,17 +19,17 @@ import (
 // The `CaptureConsoleHistory` operation works with the other console history operations
 // as described below.
 //
-// 1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
-//    most recent console history. This call returns a `ConsoleHistory`
-//    object. The object will have a state of REQUESTED.
-// 2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with
-//    the identifier of the console history metadata. The state of the
-//    `ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and
-//    then SUCCEEDED (or FAILED).
-// 3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
-//    metadata).
-// 4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
-//    and the console history data.
+//  1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
+//     most recent console history. This call returns a `ConsoleHistory`
+//     object. The object will have a state of REQUESTED.
+//  2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with
+//     the identifier of the console history metadata. The state of the
+//     `ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and
+//     then SUCCEEDED (or FAILED).
+//  3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
+//     metadata).
+//  4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
+//     and the console history data.
 //
 // ## Example Usage
 //
@@ -37,28 +37,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewConsoleHistory(ctx, "testConsoleHistory", &Core.ConsoleHistoryArgs{
-// 			InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Console_history_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewConsoleHistory(ctx, "testConsoleHistory", &Core.ConsoleHistoryArgs{
+//				InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Console_history_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -66,7 +69,9 @@ import (
 // ConsoleHistories can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/consoleHistory:ConsoleHistory test_console_history "id"
+//
+//	$ pulumi import oci:Core/consoleHistory:ConsoleHistory test_console_history "id"
+//
 // ```
 type ConsoleHistory struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *ConsoleHistory) ToConsoleHistoryOutputWithContext(ctx context.Context) 
 // ConsoleHistoryArrayInput is an input type that accepts ConsoleHistoryArray and ConsoleHistoryArrayOutput values.
 // You can construct a concrete instance of `ConsoleHistoryArrayInput` via:
 //
-//          ConsoleHistoryArray{ ConsoleHistoryArgs{...} }
+//	ConsoleHistoryArray{ ConsoleHistoryArgs{...} }
 type ConsoleHistoryArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i ConsoleHistoryArray) ToConsoleHistoryArrayOutputWithContext(ctx context.
 // ConsoleHistoryMapInput is an input type that accepts ConsoleHistoryMap and ConsoleHistoryMapOutput values.
 // You can construct a concrete instance of `ConsoleHistoryMapInput` via:
 //
-//          ConsoleHistoryMap{ "key": ConsoleHistoryArgs{...} }
+//	ConsoleHistoryMap{ "key": ConsoleHistoryArgs{...} }
 type ConsoleHistoryMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.GetControlAssignment(ctx, &operatoraccesscontrol.GetControlAssignmentArgs{
-// 			OperatorControlAssignmentId: oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.GetControlAssignment(ctx, &operatoraccesscontrol.GetControlAssignmentArgs{
+//				OperatorControlAssignmentId: oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetControlAssignment(ctx *pulumi.Context, args *GetControlAssignmentArgs, opts ...pulumi.InvokeOption) (*GetControlAssignmentResult, error) {
 	var rv GetControlAssignmentResult
@@ -76,7 +79,9 @@ type GetControlAssignmentResult struct {
 	// If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
-	IsLogForwarded              bool   `pulumi:"isLogForwarded"`
+	IsLogForwarded bool `pulumi:"isLogForwarded"`
+	// More in detail about the lifeCycleState.
+	LifecycleDetails            string `pulumi:"lifecycleDetails"`
 	OperatorControlAssignmentId string `pulumi:"operatorControlAssignmentId"`
 	// The OCID of the operator control.
 	OperatorControlId string `pulumi:"operatorControlId"`
@@ -204,6 +209,11 @@ func (o GetControlAssignmentResultOutput) IsEnforcedAlways() pulumi.BoolOutput {
 // If set indicates that the audit logs are being forwarded to the relevant remote logging server
 func (o GetControlAssignmentResultOutput) IsLogForwarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentResult) bool { return v.IsLogForwarded }).(pulumi.BoolOutput)
+}
+
+// More in detail about the lifeCycleState.
+func (o GetControlAssignmentResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 func (o GetControlAssignmentResultOutput) OperatorControlAssignmentId() pulumi.StringOutput {

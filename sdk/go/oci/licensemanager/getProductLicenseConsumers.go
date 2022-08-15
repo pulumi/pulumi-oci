@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.GetProductLicenseConsumers(ctx, &licensemanager.GetProductLicenseConsumersArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			ProductLicenseId:         oci_license_manager_product_license.Test_product_license.Id,
-// 			IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Product_license_consumer_is_compartment_id_in_subtree),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.GetProductLicenseConsumers(ctx, &licensemanager.GetProductLicenseConsumersArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				ProductLicenseId:         oci_license_manager_product_license.Test_product_license.Id,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Product_license_consumer_is_compartment_id_in_subtree),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProductLicenseConsumers(ctx *pulumi.Context, args *GetProductLicenseConsumersArgs, opts ...pulumi.InvokeOption) (*GetProductLicenseConsumersResult, error) {
 	var rv GetProductLicenseConsumersResult

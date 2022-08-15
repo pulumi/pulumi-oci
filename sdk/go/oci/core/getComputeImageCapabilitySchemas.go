@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeImageCapabilitySchemas(ctx, &core.GetComputeImageCapabilitySchemasArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Compute_image_capability_schema_display_name),
-// 			ImageId:       pulumi.StringRef(oci_core_image.Test_image.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeImageCapabilitySchemas(ctx, &core.GetComputeImageCapabilitySchemasArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:   pulumi.StringRef(_var.Compute_image_capability_schema_display_name),
+//				ImageId:       pulumi.StringRef(oci_core_image.Test_image.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetComputeImageCapabilitySchemas(ctx *pulumi.Context, args *GetComputeImageCapabilitySchemasArgs, opts ...pulumi.InvokeOption) (*GetComputeImageCapabilitySchemasResult, error) {
 	var rv GetComputeImageCapabilitySchemasResult

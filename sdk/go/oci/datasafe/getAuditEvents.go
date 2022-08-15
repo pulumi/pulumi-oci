@@ -32,24 +32,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditEvents(ctx, &datasafe.GetAuditEventsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Audit_event_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_event_compartment_id_in_subtree),
-// 			ScimQuery:              pulumi.StringRef(_var.Audit_event_scim_query),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditEvents(ctx, &datasafe.GetAuditEventsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Audit_event_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_event_compartment_id_in_subtree),
+//				ScimQuery:              pulumi.StringRef(_var.Audit_event_scim_query),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAuditEvents(ctx *pulumi.Context, args *GetAuditEventsArgs, opts ...pulumi.InvokeOption) (*GetAuditEventsResult, error) {
 	var rv GetAuditEventsResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetDeployStage(ctx, &devops.GetDeployStageArgs{
-// 			DeployStageId: oci_devops_deploy_stage.Test_deploy_stage.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetDeployStage(ctx, &devops.GetDeployStageArgs{
+//				DeployStageId: oci_devops_deploy_stage.Test_deploy_stage.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDeployStage(ctx *pulumi.Context, args *LookupDeployStageArgs, opts ...pulumi.InvokeOption) (*LookupDeployStageResult, error) {
 	var rv LookupDeployStageResult
@@ -75,7 +78,7 @@ type LookupDeployStageResult struct {
 	Config map[string]interface{} `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Optional binary artifact OCID user may provide to this stage.
+	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId string `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
 	DeployArtifactIds []string `pulumi:"deployArtifactIds"`
@@ -257,7 +260,7 @@ func (o LookupDeployStageResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Optional binary artifact OCID user may provide to this stage.
+// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 func (o LookupDeployStageResultOutput) DeployArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeployArtifactId }).(pulumi.StringOutput)
 }

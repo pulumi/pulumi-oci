@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationRequestHeaderArgs;
@@ -35,6 +36,21 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> configType() {
         return Optional.ofNullable(this.configType);
+    }
+
+    /**
+     * (Updatable) Dns settings.
+     * 
+     */
+    @Import(name="dnsConfiguration")
+    private @Nullable Output<ConfigConfigurationDnsConfigurationArgs> dnsConfiguration;
+
+    /**
+     * @return (Updatable) Dns settings.
+     * 
+     */
+    public Optional<Output<ConfigConfigurationDnsConfigurationArgs>> dnsConfiguration() {
+        return Optional.ofNullable(this.dnsConfiguration);
     }
 
     /**
@@ -236,6 +252,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
 
     private ConfigConfigurationArgs(ConfigConfigurationArgs $) {
         this.configType = $.configType;
+        this.dnsConfiguration = $.dnsConfiguration;
         this.isCertificateValidationEnabled = $.isCertificateValidationEnabled;
         this.isFailureRetried = $.isFailureRetried;
         this.isRedirectionEnabled = $.isRedirectionEnabled;
@@ -288,6 +305,27 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
          */
         public Builder configType(String configType) {
             return configType(Output.of(configType));
+        }
+
+        /**
+         * @param dnsConfiguration (Updatable) Dns settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsConfiguration(@Nullable Output<ConfigConfigurationDnsConfigurationArgs> dnsConfiguration) {
+            $.dnsConfiguration = dnsConfiguration;
+            return this;
+        }
+
+        /**
+         * @param dnsConfiguration (Updatable) Dns settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsConfiguration(ConfigConfigurationDnsConfigurationArgs dnsConfiguration) {
+            return dnsConfiguration(Output.of(dnsConfiguration));
         }
 
         /**

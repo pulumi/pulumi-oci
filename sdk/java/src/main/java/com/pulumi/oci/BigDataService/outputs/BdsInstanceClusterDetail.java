@@ -11,6 +11,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class BdsInstanceClusterDetail {
+    /**
+     * @return The URL of Ambari
+     * 
+     */
     private final @Nullable String ambariUrl;
     /**
      * @return Cloud SQL cell version
@@ -63,6 +67,11 @@ public final class BdsInstanceClusterDetail {
      */
     private final @Nullable String jupyterHubUrl;
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * 
+     */
+    private final @Nullable String odhVersion;
+    /**
      * @return Oracle Linux version installed in the cluster
      * 
      */
@@ -91,6 +100,7 @@ public final class BdsInstanceClusterDetail {
         @CustomType.Parameter("dbVersion") @Nullable String dbVersion,
         @CustomType.Parameter("hueServerUrl") @Nullable String hueServerUrl,
         @CustomType.Parameter("jupyterHubUrl") @Nullable String jupyterHubUrl,
+        @CustomType.Parameter("odhVersion") @Nullable String odhVersion,
         @CustomType.Parameter("osVersion") @Nullable String osVersion,
         @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
         @CustomType.Parameter("timeRefreshed") @Nullable String timeRefreshed) {
@@ -105,11 +115,16 @@ public final class BdsInstanceClusterDetail {
         this.dbVersion = dbVersion;
         this.hueServerUrl = hueServerUrl;
         this.jupyterHubUrl = jupyterHubUrl;
+        this.odhVersion = odhVersion;
         this.osVersion = osVersion;
         this.timeCreated = timeCreated;
         this.timeRefreshed = timeRefreshed;
     }
 
+    /**
+     * @return The URL of Ambari
+     * 
+     */
     public Optional<String> ambariUrl() {
         return Optional.ofNullable(this.ambariUrl);
     }
@@ -184,6 +199,13 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.jupyterHubUrl);
     }
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * 
+     */
+    public Optional<String> odhVersion() {
+        return Optional.ofNullable(this.odhVersion);
+    }
+    /**
      * @return Oracle Linux version installed in the cluster
      * 
      */
@@ -225,6 +247,7 @@ public final class BdsInstanceClusterDetail {
         private @Nullable String dbVersion;
         private @Nullable String hueServerUrl;
         private @Nullable String jupyterHubUrl;
+        private @Nullable String odhVersion;
         private @Nullable String osVersion;
         private @Nullable String timeCreated;
         private @Nullable String timeRefreshed;
@@ -246,6 +269,7 @@ public final class BdsInstanceClusterDetail {
     	      this.dbVersion = defaults.dbVersion;
     	      this.hueServerUrl = defaults.hueServerUrl;
     	      this.jupyterHubUrl = defaults.jupyterHubUrl;
+    	      this.odhVersion = defaults.odhVersion;
     	      this.osVersion = defaults.osVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeRefreshed = defaults.timeRefreshed;
@@ -295,6 +319,10 @@ public final class BdsInstanceClusterDetail {
             this.jupyterHubUrl = jupyterHubUrl;
             return this;
         }
+        public Builder odhVersion(@Nullable String odhVersion) {
+            this.odhVersion = odhVersion;
+            return this;
+        }
         public Builder osVersion(@Nullable String osVersion) {
             this.osVersion = osVersion;
             return this;
@@ -307,7 +335,7 @@ public final class BdsInstanceClusterDetail {
             this.timeRefreshed = timeRefreshed;
             return this;
         }        public BdsInstanceClusterDetail build() {
-            return new BdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, jupyterHubUrl, osVersion, timeCreated, timeRefreshed);
+            return new BdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, jupyterHubUrl, odhVersion, osVersion, timeCreated, timeRefreshed);
         }
     }
 }

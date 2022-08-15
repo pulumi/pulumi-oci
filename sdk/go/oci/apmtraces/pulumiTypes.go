@@ -19,7 +19,7 @@ type GetQueryQuickPicksFilter struct {
 // GetQueryQuickPicksFilterInput is an input type that accepts GetQueryQuickPicksFilterArgs and GetQueryQuickPicksFilterOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksFilterInput` via:
 //
-//          GetQueryQuickPicksFilterArgs{...}
+//	GetQueryQuickPicksFilterArgs{...}
 type GetQueryQuickPicksFilterInput interface {
 	pulumi.Input
 
@@ -48,7 +48,7 @@ func (i GetQueryQuickPicksFilterArgs) ToGetQueryQuickPicksFilterOutputWithContex
 // GetQueryQuickPicksFilterArrayInput is an input type that accepts GetQueryQuickPicksFilterArray and GetQueryQuickPicksFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksFilterArrayInput` via:
 //
-//          GetQueryQuickPicksFilterArray{ GetQueryQuickPicksFilterArgs{...} }
+//	GetQueryQuickPicksFilterArray{ GetQueryQuickPicksFilterArgs{...} }
 type GetQueryQuickPicksFilterArrayInput interface {
 	pulumi.Input
 
@@ -126,7 +126,7 @@ type GetQueryQuickPicksQuickPick struct {
 // GetQueryQuickPicksQuickPickInput is an input type that accepts GetQueryQuickPicksQuickPickArgs and GetQueryQuickPicksQuickPickOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksQuickPickInput` via:
 //
-//          GetQueryQuickPicksQuickPickArgs{...}
+//	GetQueryQuickPicksQuickPickArgs{...}
 type GetQueryQuickPicksQuickPickInput interface {
 	pulumi.Input
 
@@ -156,7 +156,7 @@ func (i GetQueryQuickPicksQuickPickArgs) ToGetQueryQuickPicksQuickPickOutputWith
 // GetQueryQuickPicksQuickPickArrayInput is an input type that accepts GetQueryQuickPicksQuickPickArray and GetQueryQuickPicksQuickPickArrayOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksQuickPickArrayInput` via:
 //
-//          GetQueryQuickPicksQuickPickArray{ GetQueryQuickPicksQuickPickArgs{...} }
+//	GetQueryQuickPicksQuickPickArray{ GetQueryQuickPicksQuickPickArgs{...} }
 type GetQueryQuickPicksQuickPickArrayInput interface {
 	pulumi.Input
 
@@ -232,7 +232,7 @@ type GetTraceAggregatedSnapshotDataDetail struct {
 // GetTraceAggregatedSnapshotDataDetailInput is an input type that accepts GetTraceAggregatedSnapshotDataDetailArgs and GetTraceAggregatedSnapshotDataDetailOutput values.
 // You can construct a concrete instance of `GetTraceAggregatedSnapshotDataDetailInput` via:
 //
-//          GetTraceAggregatedSnapshotDataDetailArgs{...}
+//	GetTraceAggregatedSnapshotDataDetailArgs{...}
 type GetTraceAggregatedSnapshotDataDetailInput interface {
 	pulumi.Input
 
@@ -262,7 +262,7 @@ func (i GetTraceAggregatedSnapshotDataDetailArgs) ToGetTraceAggregatedSnapshotDa
 // GetTraceAggregatedSnapshotDataDetailArrayInput is an input type that accepts GetTraceAggregatedSnapshotDataDetailArray and GetTraceAggregatedSnapshotDataDetailArrayOutput values.
 // You can construct a concrete instance of `GetTraceAggregatedSnapshotDataDetailArrayInput` via:
 //
-//          GetTraceAggregatedSnapshotDataDetailArray{ GetTraceAggregatedSnapshotDataDetailArgs{...} }
+//	GetTraceAggregatedSnapshotDataDetailArray{ GetTraceAggregatedSnapshotDataDetailArgs{...} }
 type GetTraceAggregatedSnapshotDataDetailArrayInput interface {
 	pulumi.Input
 
@@ -340,7 +340,7 @@ type GetTraceServiceSummary struct {
 // GetTraceServiceSummaryInput is an input type that accepts GetTraceServiceSummaryArgs and GetTraceServiceSummaryOutput values.
 // You can construct a concrete instance of `GetTraceServiceSummaryInput` via:
 //
-//          GetTraceServiceSummaryArgs{...}
+//	GetTraceServiceSummaryArgs{...}
 type GetTraceServiceSummaryInput interface {
 	pulumi.Input
 
@@ -372,7 +372,7 @@ func (i GetTraceServiceSummaryArgs) ToGetTraceServiceSummaryOutputWithContext(ct
 // GetTraceServiceSummaryArrayInput is an input type that accepts GetTraceServiceSummaryArray and GetTraceServiceSummaryArrayOutput values.
 // You can construct a concrete instance of `GetTraceServiceSummaryArrayInput` via:
 //
-//          GetTraceServiceSummaryArray{ GetTraceServiceSummaryArgs{...} }
+//	GetTraceServiceSummaryArray{ GetTraceServiceSummaryArgs{...} }
 type GetTraceServiceSummaryArrayInput interface {
 	pulumi.Input
 
@@ -453,7 +453,7 @@ type GetTraceSnapshotDataTraceSnapshotDetail struct {
 // GetTraceSnapshotDataTraceSnapshotDetailInput is an input type that accepts GetTraceSnapshotDataTraceSnapshotDetailArgs and GetTraceSnapshotDataTraceSnapshotDetailOutput values.
 // You can construct a concrete instance of `GetTraceSnapshotDataTraceSnapshotDetailInput` via:
 //
-//          GetTraceSnapshotDataTraceSnapshotDetailArgs{...}
+//	GetTraceSnapshotDataTraceSnapshotDetailArgs{...}
 type GetTraceSnapshotDataTraceSnapshotDetailInput interface {
 	pulumi.Input
 
@@ -483,7 +483,7 @@ func (i GetTraceSnapshotDataTraceSnapshotDetailArgs) ToGetTraceSnapshotDataTrace
 // GetTraceSnapshotDataTraceSnapshotDetailArrayInput is an input type that accepts GetTraceSnapshotDataTraceSnapshotDetailArray and GetTraceSnapshotDataTraceSnapshotDetailArrayOutput values.
 // You can construct a concrete instance of `GetTraceSnapshotDataTraceSnapshotDetailArrayInput` via:
 //
-//          GetTraceSnapshotDataTraceSnapshotDetailArray{ GetTraceSnapshotDataTraceSnapshotDetailArgs{...} }
+//	GetTraceSnapshotDataTraceSnapshotDetailArray{ GetTraceSnapshotDataTraceSnapshotDetailArgs{...} }
 type GetTraceSnapshotDataTraceSnapshotDetailArrayInput interface {
 	pulumi.Input
 
@@ -579,7 +579,7 @@ type GetTraceSpan struct {
 // GetTraceSpanInput is an input type that accepts GetTraceSpanArgs and GetTraceSpanOutput values.
 // You can construct a concrete instance of `GetTraceSpanInput` via:
 //
-//          GetTraceSpanArgs{...}
+//	GetTraceSpanArgs{...}
 type GetTraceSpanInput interface {
 	pulumi.Input
 
@@ -629,7 +629,7 @@ func (i GetTraceSpanArgs) ToGetTraceSpanOutputWithContext(ctx context.Context) G
 // GetTraceSpanArrayInput is an input type that accepts GetTraceSpanArray and GetTraceSpanArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanArrayInput` via:
 //
-//          GetTraceSpanArray{ GetTraceSpanArgs{...} }
+//	GetTraceSpanArray{ GetTraceSpanArgs{...} }
 type GetTraceSpanArrayInput interface {
 	pulumi.Input
 
@@ -755,7 +755,7 @@ type GetTraceSpanLog struct {
 // GetTraceSpanLogInput is an input type that accepts GetTraceSpanLogArgs and GetTraceSpanLogOutput values.
 // You can construct a concrete instance of `GetTraceSpanLogInput` via:
 //
-//          GetTraceSpanLogArgs{...}
+//	GetTraceSpanLogArgs{...}
 type GetTraceSpanLogInput interface {
 	pulumi.Input
 
@@ -785,7 +785,7 @@ func (i GetTraceSpanLogArgs) ToGetTraceSpanLogOutputWithContext(ctx context.Cont
 // GetTraceSpanLogArrayInput is an input type that accepts GetTraceSpanLogArray and GetTraceSpanLogArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanLogArrayInput` via:
 //
-//          GetTraceSpanLogArray{ GetTraceSpanLogArgs{...} }
+//	GetTraceSpanLogArray{ GetTraceSpanLogArgs{...} }
 type GetTraceSpanLogArrayInput interface {
 	pulumi.Input
 
@@ -861,7 +861,7 @@ type GetTraceSpanLogSpanLog struct {
 // GetTraceSpanLogSpanLogInput is an input type that accepts GetTraceSpanLogSpanLogArgs and GetTraceSpanLogSpanLogOutput values.
 // You can construct a concrete instance of `GetTraceSpanLogSpanLogInput` via:
 //
-//          GetTraceSpanLogSpanLogArgs{...}
+//	GetTraceSpanLogSpanLogArgs{...}
 type GetTraceSpanLogSpanLogInput interface {
 	pulumi.Input
 
@@ -891,7 +891,7 @@ func (i GetTraceSpanLogSpanLogArgs) ToGetTraceSpanLogSpanLogOutputWithContext(ct
 // GetTraceSpanLogSpanLogArrayInput is an input type that accepts GetTraceSpanLogSpanLogArray and GetTraceSpanLogSpanLogArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanLogSpanLogArrayInput` via:
 //
-//          GetTraceSpanLogSpanLogArray{ GetTraceSpanLogSpanLogArgs{...} }
+//	GetTraceSpanLogSpanLogArray{ GetTraceSpanLogSpanLogArgs{...} }
 type GetTraceSpanLogSpanLogArrayInput interface {
 	pulumi.Input
 
@@ -995,7 +995,7 @@ type GetTraceSpanSummary struct {
 // GetTraceSpanSummaryInput is an input type that accepts GetTraceSpanSummaryArgs and GetTraceSpanSummaryOutput values.
 // You can construct a concrete instance of `GetTraceSpanSummaryInput` via:
 //
-//          GetTraceSpanSummaryArgs{...}
+//	GetTraceSpanSummaryArgs{...}
 type GetTraceSpanSummaryInput interface {
 	pulumi.Input
 
@@ -1053,7 +1053,7 @@ func (i GetTraceSpanSummaryArgs) ToGetTraceSpanSummaryOutputWithContext(ctx cont
 // GetTraceSpanSummaryArrayInput is an input type that accepts GetTraceSpanSummaryArray and GetTraceSpanSummaryArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanSummaryArrayInput` via:
 //
-//          GetTraceSpanSummaryArray{ GetTraceSpanSummaryArgs{...} }
+//	GetTraceSpanSummaryArray{ GetTraceSpanSummaryArgs{...} }
 type GetTraceSpanSummaryArrayInput interface {
 	pulumi.Input
 
@@ -1201,7 +1201,7 @@ type GetTraceSpanSummaryServiceSummary struct {
 // GetTraceSpanSummaryServiceSummaryInput is an input type that accepts GetTraceSpanSummaryServiceSummaryArgs and GetTraceSpanSummaryServiceSummaryOutput values.
 // You can construct a concrete instance of `GetTraceSpanSummaryServiceSummaryInput` via:
 //
-//          GetTraceSpanSummaryServiceSummaryArgs{...}
+//	GetTraceSpanSummaryServiceSummaryArgs{...}
 type GetTraceSpanSummaryServiceSummaryInput interface {
 	pulumi.Input
 
@@ -1233,7 +1233,7 @@ func (i GetTraceSpanSummaryServiceSummaryArgs) ToGetTraceSpanSummaryServiceSumma
 // GetTraceSpanSummaryServiceSummaryArrayInput is an input type that accepts GetTraceSpanSummaryServiceSummaryArray and GetTraceSpanSummaryServiceSummaryArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanSummaryServiceSummaryArrayInput` via:
 //
-//          GetTraceSpanSummaryServiceSummaryArray{ GetTraceSpanSummaryServiceSummaryArgs{...} }
+//	GetTraceSpanSummaryServiceSummaryArray{ GetTraceSpanSummaryServiceSummaryArgs{...} }
 type GetTraceSpanSummaryServiceSummaryArrayInput interface {
 	pulumi.Input
 
@@ -1314,7 +1314,7 @@ type GetTraceSpanTag struct {
 // GetTraceSpanTagInput is an input type that accepts GetTraceSpanTagArgs and GetTraceSpanTagOutput values.
 // You can construct a concrete instance of `GetTraceSpanTagInput` via:
 //
-//          GetTraceSpanTagArgs{...}
+//	GetTraceSpanTagArgs{...}
 type GetTraceSpanTagInput interface {
 	pulumi.Input
 
@@ -1344,7 +1344,7 @@ func (i GetTraceSpanTagArgs) ToGetTraceSpanTagOutputWithContext(ctx context.Cont
 // GetTraceSpanTagArrayInput is an input type that accepts GetTraceSpanTagArray and GetTraceSpanTagArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanTagArrayInput` via:
 //
-//          GetTraceSpanTagArray{ GetTraceSpanTagArgs{...} }
+//	GetTraceSpanTagArray{ GetTraceSpanTagArgs{...} }
 type GetTraceSpanTagArrayInput interface {
 	pulumi.Input
 

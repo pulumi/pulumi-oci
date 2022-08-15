@@ -20,7 +20,7 @@ type LogConfiguration struct {
 // LogConfigurationInput is an input type that accepts LogConfigurationArgs and LogConfigurationOutput values.
 // You can construct a concrete instance of `LogConfigurationInput` via:
 //
-//          LogConfigurationArgs{...}
+//	LogConfigurationArgs{...}
 type LogConfigurationInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i LogConfigurationArgs) ToLogConfigurationPtrOutputWithContext(ctx context
 // LogConfigurationPtrInput is an input type that accepts LogConfigurationArgs, LogConfigurationPtr and LogConfigurationPtrOutput values.
 // You can construct a concrete instance of `LogConfigurationPtrInput` via:
 //
-//          LogConfigurationArgs{...}
+//	        LogConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type LogConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -181,7 +181,7 @@ type LogConfigurationSource struct {
 // LogConfigurationSourceInput is an input type that accepts LogConfigurationSourceArgs and LogConfigurationSourceOutput values.
 // You can construct a concrete instance of `LogConfigurationSourceInput` via:
 //
-//          LogConfigurationSourceArgs{...}
+//	LogConfigurationSourceArgs{...}
 type LogConfigurationSourceInput interface {
 	pulumi.Input
 
@@ -224,11 +224,11 @@ func (i LogConfigurationSourceArgs) ToLogConfigurationSourcePtrOutputWithContext
 // LogConfigurationSourcePtrInput is an input type that accepts LogConfigurationSourceArgs, LogConfigurationSourcePtr and LogConfigurationSourcePtrOutput values.
 // You can construct a concrete instance of `LogConfigurationSourcePtrInput` via:
 //
-//          LogConfigurationSourceArgs{...}
+//	        LogConfigurationSourceArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type LogConfigurationSourcePtrInput interface {
 	pulumi.Input
 
@@ -372,7 +372,7 @@ type UnifiedAgentConfigurationGroupAssociation struct {
 // UnifiedAgentConfigurationGroupAssociationInput is an input type that accepts UnifiedAgentConfigurationGroupAssociationArgs and UnifiedAgentConfigurationGroupAssociationOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationGroupAssociationInput` via:
 //
-//          UnifiedAgentConfigurationGroupAssociationArgs{...}
+//	UnifiedAgentConfigurationGroupAssociationArgs{...}
 type UnifiedAgentConfigurationGroupAssociationInput interface {
 	pulumi.Input
 
@@ -408,11 +408,11 @@ func (i UnifiedAgentConfigurationGroupAssociationArgs) ToUnifiedAgentConfigurati
 // UnifiedAgentConfigurationGroupAssociationPtrInput is an input type that accepts UnifiedAgentConfigurationGroupAssociationArgs, UnifiedAgentConfigurationGroupAssociationPtr and UnifiedAgentConfigurationGroupAssociationPtrOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationGroupAssociationPtrInput` via:
 //
-//          UnifiedAgentConfigurationGroupAssociationArgs{...}
+//	        UnifiedAgentConfigurationGroupAssociationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type UnifiedAgentConfigurationGroupAssociationPtrInput interface {
 	pulumi.Input
 
@@ -513,7 +513,7 @@ type UnifiedAgentConfigurationServiceConfiguration struct {
 // UnifiedAgentConfigurationServiceConfigurationInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationArgs and UnifiedAgentConfigurationServiceConfigurationOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationArgs{...}
+//	UnifiedAgentConfigurationServiceConfigurationArgs{...}
 type UnifiedAgentConfigurationServiceConfigurationInput interface {
 	pulumi.Input
 
@@ -553,11 +553,11 @@ func (i UnifiedAgentConfigurationServiceConfigurationArgs) ToUnifiedAgentConfigu
 // UnifiedAgentConfigurationServiceConfigurationPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationArgs, UnifiedAgentConfigurationServiceConfigurationPtr and UnifiedAgentConfigurationServiceConfigurationPtrOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationPtrInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationArgs{...}
+//	        UnifiedAgentConfigurationServiceConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type UnifiedAgentConfigurationServiceConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -688,7 +688,7 @@ type UnifiedAgentConfigurationServiceConfigurationDestination struct {
 // UnifiedAgentConfigurationServiceConfigurationDestinationInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationDestinationArgs and UnifiedAgentConfigurationServiceConfigurationDestinationOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationDestinationInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationDestinationArgs{...}
+//	UnifiedAgentConfigurationServiceConfigurationDestinationArgs{...}
 type UnifiedAgentConfigurationServiceConfigurationDestinationInput interface {
 	pulumi.Input
 
@@ -724,11 +724,11 @@ func (i UnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToUnifiedA
 // UnifiedAgentConfigurationServiceConfigurationDestinationPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationDestinationArgs, UnifiedAgentConfigurationServiceConfigurationDestinationPtr and UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationDestinationPtrInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationDestinationArgs{...}
+//	        UnifiedAgentConfigurationServiceConfigurationDestinationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type UnifiedAgentConfigurationServiceConfigurationDestinationPtrInput interface {
 	pulumi.Input
 
@@ -833,7 +833,7 @@ type UnifiedAgentConfigurationServiceConfigurationSource struct {
 // UnifiedAgentConfigurationServiceConfigurationSourceInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceArgs and UnifiedAgentConfigurationServiceConfigurationSourceOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationSourceArgs{...}
+//	UnifiedAgentConfigurationServiceConfigurationSourceArgs{...}
 type UnifiedAgentConfigurationServiceConfigurationSourceInput interface {
 	pulumi.Input
 
@@ -869,7 +869,7 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceArgs) ToUnifiedAgentC
 // UnifiedAgentConfigurationServiceConfigurationSourceArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceArray and UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceArrayInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationSourceArray{ UnifiedAgentConfigurationServiceConfigurationSourceArgs{...} }
+//	UnifiedAgentConfigurationServiceConfigurationSourceArray{ UnifiedAgentConfigurationServiceConfigurationSourceArgs{...} }
 type UnifiedAgentConfigurationServiceConfigurationSourceArrayInput interface {
 	pulumi.Input
 
@@ -1008,7 +1008,7 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 // UnifiedAgentConfigurationServiceConfigurationSourceParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserArgs and UnifiedAgentConfigurationServiceConfigurationSourceParserOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...}
+//	UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...}
 type UnifiedAgentConfigurationServiceConfigurationSourceParserInput interface {
 	pulumi.Input
 
@@ -1092,11 +1092,11 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToUnified
 // UnifiedAgentConfigurationServiceConfigurationSourceParserPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserArgs, UnifiedAgentConfigurationServiceConfigurationSourceParserPtr and UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserPtrInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...}
+//	        UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type UnifiedAgentConfigurationServiceConfigurationSourceParserPtrInput interface {
 	pulumi.Input
 
@@ -1571,7 +1571,7 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserPattern struct {
 // UnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs and UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...}
+//	UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...}
 type UnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput interface {
 	pulumi.Input
 
@@ -1607,7 +1607,7 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs) To
 // UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray and UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput` via:
 //
-//          UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{ UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...} }
+//	UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{ UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...} }
 type UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput interface {
 	pulumi.Input
 
@@ -1704,7 +1704,7 @@ type GetLogConfiguration struct {
 // GetLogConfigurationInput is an input type that accepts GetLogConfigurationArgs and GetLogConfigurationOutput values.
 // You can construct a concrete instance of `GetLogConfigurationInput` via:
 //
-//          GetLogConfigurationArgs{...}
+//	GetLogConfigurationArgs{...}
 type GetLogConfigurationInput interface {
 	pulumi.Input
 
@@ -1734,7 +1734,7 @@ func (i GetLogConfigurationArgs) ToGetLogConfigurationOutputWithContext(ctx cont
 // GetLogConfigurationArrayInput is an input type that accepts GetLogConfigurationArray and GetLogConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetLogConfigurationArrayInput` via:
 //
-//          GetLogConfigurationArray{ GetLogConfigurationArgs{...} }
+//	GetLogConfigurationArray{ GetLogConfigurationArgs{...} }
 type GetLogConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -1815,7 +1815,7 @@ type GetLogConfigurationSource struct {
 // GetLogConfigurationSourceInput is an input type that accepts GetLogConfigurationSourceArgs and GetLogConfigurationSourceOutput values.
 // You can construct a concrete instance of `GetLogConfigurationSourceInput` via:
 //
-//          GetLogConfigurationSourceArgs{...}
+//	GetLogConfigurationSourceArgs{...}
 type GetLogConfigurationSourceInput interface {
 	pulumi.Input
 
@@ -1850,7 +1850,7 @@ func (i GetLogConfigurationSourceArgs) ToGetLogConfigurationSourceOutputWithCont
 // GetLogConfigurationSourceArrayInput is an input type that accepts GetLogConfigurationSourceArray and GetLogConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `GetLogConfigurationSourceArrayInput` via:
 //
-//          GetLogConfigurationSourceArray{ GetLogConfigurationSourceArgs{...} }
+//	GetLogConfigurationSourceArray{ GetLogConfigurationSourceArgs{...} }
 type GetLogConfigurationSourceArrayInput interface {
 	pulumi.Input
 
@@ -1936,7 +1936,7 @@ type GetLogGroupsFilter struct {
 // GetLogGroupsFilterInput is an input type that accepts GetLogGroupsFilterArgs and GetLogGroupsFilterOutput values.
 // You can construct a concrete instance of `GetLogGroupsFilterInput` via:
 //
-//          GetLogGroupsFilterArgs{...}
+//	GetLogGroupsFilterArgs{...}
 type GetLogGroupsFilterInput interface {
 	pulumi.Input
 
@@ -1965,7 +1965,7 @@ func (i GetLogGroupsFilterArgs) ToGetLogGroupsFilterOutputWithContext(ctx contex
 // GetLogGroupsFilterArrayInput is an input type that accepts GetLogGroupsFilterArray and GetLogGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogGroupsFilterArrayInput` via:
 //
-//          GetLogGroupsFilterArray{ GetLogGroupsFilterArgs{...} }
+//	GetLogGroupsFilterArray{ GetLogGroupsFilterArgs{...} }
 type GetLogGroupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2057,7 +2057,7 @@ type GetLogGroupsLogGroup struct {
 // GetLogGroupsLogGroupInput is an input type that accepts GetLogGroupsLogGroupArgs and GetLogGroupsLogGroupOutput values.
 // You can construct a concrete instance of `GetLogGroupsLogGroupInput` via:
 //
-//          GetLogGroupsLogGroupArgs{...}
+//	GetLogGroupsLogGroupArgs{...}
 type GetLogGroupsLogGroupInput interface {
 	pulumi.Input
 
@@ -2101,7 +2101,7 @@ func (i GetLogGroupsLogGroupArgs) ToGetLogGroupsLogGroupOutputWithContext(ctx co
 // GetLogGroupsLogGroupArrayInput is an input type that accepts GetLogGroupsLogGroupArray and GetLogGroupsLogGroupArrayOutput values.
 // You can construct a concrete instance of `GetLogGroupsLogGroupArrayInput` via:
 //
-//          GetLogGroupsLogGroupArray{ GetLogGroupsLogGroupArgs{...} }
+//	GetLogGroupsLogGroupArray{ GetLogGroupsLogGroupArgs{...} }
 type GetLogGroupsLogGroupArrayInput interface {
 	pulumi.Input
 
@@ -2212,7 +2212,7 @@ type GetLogSavedSearchesFilter struct {
 // GetLogSavedSearchesFilterInput is an input type that accepts GetLogSavedSearchesFilterArgs and GetLogSavedSearchesFilterOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesFilterInput` via:
 //
-//          GetLogSavedSearchesFilterArgs{...}
+//	GetLogSavedSearchesFilterArgs{...}
 type GetLogSavedSearchesFilterInput interface {
 	pulumi.Input
 
@@ -2242,7 +2242,7 @@ func (i GetLogSavedSearchesFilterArgs) ToGetLogSavedSearchesFilterOutputWithCont
 // GetLogSavedSearchesFilterArrayInput is an input type that accepts GetLogSavedSearchesFilterArray and GetLogSavedSearchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesFilterArrayInput` via:
 //
-//          GetLogSavedSearchesFilterArray{ GetLogSavedSearchesFilterArgs{...} }
+//	GetLogSavedSearchesFilterArray{ GetLogSavedSearchesFilterArgs{...} }
 type GetLogSavedSearchesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2318,7 +2318,7 @@ type GetLogSavedSearchesLogSavedSearchSummaryCollection struct {
 // GetLogSavedSearchesLogSavedSearchSummaryCollectionInput is an input type that accepts GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs and GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesLogSavedSearchSummaryCollectionInput` via:
 //
-//          GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs{...}
+//	GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs{...}
 type GetLogSavedSearchesLogSavedSearchSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -2345,7 +2345,7 @@ func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs) ToGetLogSavedSea
 // GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayInput is an input type that accepts GetLogSavedSearchesLogSavedSearchSummaryCollectionArray and GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayInput` via:
 //
-//          GetLogSavedSearchesLogSavedSearchSummaryCollectionArray{ GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs{...} }
+//	GetLogSavedSearchesLogSavedSearchSummaryCollectionArray{ GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs{...} }
 type GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2433,7 +2433,7 @@ type GetLogSavedSearchesLogSavedSearchSummaryCollectionItem struct {
 // GetLogSavedSearchesLogSavedSearchSummaryCollectionItemInput is an input type that accepts GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs and GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesLogSavedSearchSummaryCollectionItemInput` via:
 //
-//          GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs{...}
+//	GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs{...}
 type GetLogSavedSearchesLogSavedSearchSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -2479,7 +2479,7 @@ func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs) ToGetLogSave
 // GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayInput is an input type that accepts GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArray and GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayInput` via:
 //
-//          GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArray{ GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs{...} }
+//	GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArray{ GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs{...} }
 type GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2598,7 +2598,7 @@ type GetLogsFilter struct {
 // GetLogsFilterInput is an input type that accepts GetLogsFilterArgs and GetLogsFilterOutput values.
 // You can construct a concrete instance of `GetLogsFilterInput` via:
 //
-//          GetLogsFilterArgs{...}
+//	GetLogsFilterArgs{...}
 type GetLogsFilterInput interface {
 	pulumi.Input
 
@@ -2627,7 +2627,7 @@ func (i GetLogsFilterArgs) ToGetLogsFilterOutputWithContext(ctx context.Context)
 // GetLogsFilterArrayInput is an input type that accepts GetLogsFilterArray and GetLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogsFilterArrayInput` via:
 //
-//          GetLogsFilterArray{ GetLogsFilterArgs{...} }
+//	GetLogsFilterArray{ GetLogsFilterArgs{...} }
 type GetLogsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2729,7 +2729,7 @@ type GetLogsLog struct {
 // GetLogsLogInput is an input type that accepts GetLogsLogArgs and GetLogsLogOutput values.
 // You can construct a concrete instance of `GetLogsLogInput` via:
 //
-//          GetLogsLogArgs{...}
+//	GetLogsLogArgs{...}
 type GetLogsLogInput interface {
 	pulumi.Input
 
@@ -2783,7 +2783,7 @@ func (i GetLogsLogArgs) ToGetLogsLogOutputWithContext(ctx context.Context) GetLo
 // GetLogsLogArrayInput is an input type that accepts GetLogsLogArray and GetLogsLogArrayOutput values.
 // You can construct a concrete instance of `GetLogsLogArrayInput` via:
 //
-//          GetLogsLogArray{ GetLogsLogArgs{...} }
+//	GetLogsLogArray{ GetLogsLogArgs{...} }
 type GetLogsLogArrayInput interface {
 	pulumi.Input
 
@@ -2919,7 +2919,7 @@ type GetLogsLogConfiguration struct {
 // GetLogsLogConfigurationInput is an input type that accepts GetLogsLogConfigurationArgs and GetLogsLogConfigurationOutput values.
 // You can construct a concrete instance of `GetLogsLogConfigurationInput` via:
 //
-//          GetLogsLogConfigurationArgs{...}
+//	GetLogsLogConfigurationArgs{...}
 type GetLogsLogConfigurationInput interface {
 	pulumi.Input
 
@@ -2949,7 +2949,7 @@ func (i GetLogsLogConfigurationArgs) ToGetLogsLogConfigurationOutputWithContext(
 // GetLogsLogConfigurationArrayInput is an input type that accepts GetLogsLogConfigurationArray and GetLogsLogConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetLogsLogConfigurationArrayInput` via:
 //
-//          GetLogsLogConfigurationArray{ GetLogsLogConfigurationArgs{...} }
+//	GetLogsLogConfigurationArray{ GetLogsLogConfigurationArgs{...} }
 type GetLogsLogConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3030,7 +3030,7 @@ type GetLogsLogConfigurationSource struct {
 // GetLogsLogConfigurationSourceInput is an input type that accepts GetLogsLogConfigurationSourceArgs and GetLogsLogConfigurationSourceOutput values.
 // You can construct a concrete instance of `GetLogsLogConfigurationSourceInput` via:
 //
-//          GetLogsLogConfigurationSourceArgs{...}
+//	GetLogsLogConfigurationSourceArgs{...}
 type GetLogsLogConfigurationSourceInput interface {
 	pulumi.Input
 
@@ -3065,7 +3065,7 @@ func (i GetLogsLogConfigurationSourceArgs) ToGetLogsLogConfigurationSourceOutput
 // GetLogsLogConfigurationSourceArrayInput is an input type that accepts GetLogsLogConfigurationSourceArray and GetLogsLogConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `GetLogsLogConfigurationSourceArrayInput` via:
 //
-//          GetLogsLogConfigurationSourceArray{ GetLogsLogConfigurationSourceArgs{...} }
+//	GetLogsLogConfigurationSourceArray{ GetLogsLogConfigurationSourceArgs{...} }
 type GetLogsLogConfigurationSourceArrayInput interface {
 	pulumi.Input
 
@@ -3150,7 +3150,7 @@ type GetUnifiedAgentConfigurationGroupAssociation struct {
 // GetUnifiedAgentConfigurationGroupAssociationInput is an input type that accepts GetUnifiedAgentConfigurationGroupAssociationArgs and GetUnifiedAgentConfigurationGroupAssociationOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationGroupAssociationInput` via:
 //
-//          GetUnifiedAgentConfigurationGroupAssociationArgs{...}
+//	GetUnifiedAgentConfigurationGroupAssociationArgs{...}
 type GetUnifiedAgentConfigurationGroupAssociationInput interface {
 	pulumi.Input
 
@@ -3178,7 +3178,7 @@ func (i GetUnifiedAgentConfigurationGroupAssociationArgs) ToGetUnifiedAgentConfi
 // GetUnifiedAgentConfigurationGroupAssociationArrayInput is an input type that accepts GetUnifiedAgentConfigurationGroupAssociationArray and GetUnifiedAgentConfigurationGroupAssociationArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationGroupAssociationArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationGroupAssociationArray{ GetUnifiedAgentConfigurationGroupAssociationArgs{...} }
+//	GetUnifiedAgentConfigurationGroupAssociationArray{ GetUnifiedAgentConfigurationGroupAssociationArgs{...} }
 type GetUnifiedAgentConfigurationGroupAssociationArrayInput interface {
 	pulumi.Input
 
@@ -3250,7 +3250,7 @@ type GetUnifiedAgentConfigurationServiceConfiguration struct {
 // GetUnifiedAgentConfigurationServiceConfigurationInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationArgs and GetUnifiedAgentConfigurationServiceConfigurationOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationArgs{...}
+//	GetUnifiedAgentConfigurationServiceConfigurationArgs{...}
 type GetUnifiedAgentConfigurationServiceConfigurationInput interface {
 	pulumi.Input
 
@@ -3281,7 +3281,7 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationArgs) ToGetUnifiedAgentC
 // GetUnifiedAgentConfigurationServiceConfigurationArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationArray and GetUnifiedAgentConfigurationServiceConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationArray{ GetUnifiedAgentConfigurationServiceConfigurationArgs{...} }
+//	GetUnifiedAgentConfigurationServiceConfigurationArray{ GetUnifiedAgentConfigurationServiceConfigurationArgs{...} }
 type GetUnifiedAgentConfigurationServiceConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3363,7 +3363,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationDestination struct {
 // GetUnifiedAgentConfigurationServiceConfigurationDestinationInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs and GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationDestinationInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs{...}
+//	GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs{...}
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationInput interface {
 	pulumi.Input
 
@@ -3391,7 +3391,7 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToGetUn
 // GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationDestinationArray and GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationDestinationArray{ GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs{...} }
+//	GetUnifiedAgentConfigurationServiceConfigurationDestinationArray{ GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs{...} }
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput interface {
 	pulumi.Input
 
@@ -3466,7 +3466,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationSource struct {
 // GetUnifiedAgentConfigurationServiceConfigurationSourceInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationSourceArgs{...}
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceArgs{...}
 type GetUnifiedAgentConfigurationServiceConfigurationSourceInput interface {
 	pulumi.Input
 
@@ -3500,7 +3500,7 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceArgs) ToGetUnified
 // GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceArray and GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationSourceArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceArgs{...} }
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceArgs{...} }
 type GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput interface {
 	pulumi.Input
 
@@ -3620,7 +3620,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...}
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...}
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput interface {
 	pulumi.Input
 
@@ -3679,7 +3679,7 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToGetU
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...} }
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs{...} }
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput interface {
 	pulumi.Input
 
@@ -3873,7 +3873,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern struct 
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...}
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...}
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput interface {
 	pulumi.Input
 
@@ -3909,7 +3909,7 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs)
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...} }
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{...} }
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput interface {
 	pulumi.Input
 
@@ -4006,7 +4006,7 @@ type GetUnifiedAgentConfigurationsFilter struct {
 // GetUnifiedAgentConfigurationsFilterInput is an input type that accepts GetUnifiedAgentConfigurationsFilterArgs and GetUnifiedAgentConfigurationsFilterOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsFilterInput` via:
 //
-//          GetUnifiedAgentConfigurationsFilterArgs{...}
+//	GetUnifiedAgentConfigurationsFilterArgs{...}
 type GetUnifiedAgentConfigurationsFilterInput interface {
 	pulumi.Input
 
@@ -4036,7 +4036,7 @@ func (i GetUnifiedAgentConfigurationsFilterArgs) ToGetUnifiedAgentConfigurations
 // GetUnifiedAgentConfigurationsFilterArrayInput is an input type that accepts GetUnifiedAgentConfigurationsFilterArray and GetUnifiedAgentConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsFilterArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationsFilterArray{ GetUnifiedAgentConfigurationsFilterArgs{...} }
+//	GetUnifiedAgentConfigurationsFilterArray{ GetUnifiedAgentConfigurationsFilterArgs{...} }
 type GetUnifiedAgentConfigurationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4112,7 +4112,7 @@ type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection struct {
 // GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionInput is an input type that accepts GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs and GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionInput` via:
 //
-//          GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs{...}
+//	GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs{...}
 type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionInput interface {
 	pulumi.Input
 
@@ -4139,7 +4139,7 @@ func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs) To
 // GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayInput is an input type that accepts GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArray and GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArray{ GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs{...} }
+//	GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArray{ GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs{...} }
 type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4231,7 +4231,7 @@ type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem struct
 // GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemInput is an input type that accepts GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs and GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemInput` via:
 //
-//          GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs{...}
+//	GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs{...}
 type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemInput interface {
 	pulumi.Input
 
@@ -4281,7 +4281,7 @@ func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs
 // GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayInput is an input type that accepts GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArray and GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayInput` via:
 //
-//          GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArray{ GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs{...} }
+//	GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArray{ GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs{...} }
 type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayInput interface {
 	pulumi.Input
 

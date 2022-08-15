@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.NewAppFirewall(ctx, "testWebAppFirewall", &Waf.AppFirewallArgs{
-// 			BackendType:            pulumi.Any(_var.Web_app_firewall_backend_type),
-// 			CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 			LoadBalancerId:         pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			WebAppFirewallPolicyId: pulumi.Any(oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Web_app_firewall_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			SystemTags: pulumi.Any(_var.Web_app_firewall_system_tags),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.NewAppFirewall(ctx, "testWebAppFirewall", &Waf.AppFirewallArgs{
+//				BackendType:            pulumi.Any(_var.Web_app_firewall_backend_type),
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				LoadBalancerId:         pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				WebAppFirewallPolicyId: pulumi.Any(oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Web_app_firewall_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				SystemTags: pulumi.Any(_var.Web_app_firewall_system_tags),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // WebAppFirewalls can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
+//
+//	$ pulumi import oci:Waf/appFirewall:AppFirewall test_web_app_firewall "id"
+//
 // ```
 type AppFirewall struct {
 	pulumi.CustomResourceState
@@ -248,7 +253,7 @@ func (i *AppFirewall) ToAppFirewallOutputWithContext(ctx context.Context) AppFir
 // AppFirewallArrayInput is an input type that accepts AppFirewallArray and AppFirewallArrayOutput values.
 // You can construct a concrete instance of `AppFirewallArrayInput` via:
 //
-//          AppFirewallArray{ AppFirewallArgs{...} }
+//	AppFirewallArray{ AppFirewallArgs{...} }
 type AppFirewallArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +278,7 @@ func (i AppFirewallArray) ToAppFirewallArrayOutputWithContext(ctx context.Contex
 // AppFirewallMapInput is an input type that accepts AppFirewallMap and AppFirewallMapOutput values.
 // You can construct a concrete instance of `AppFirewallMapInput` via:
 //
-//          AppFirewallMap{ "key": AppFirewallArgs{...} }
+//	AppFirewallMap{ "key": AppFirewallArgs{...} }
 type AppFirewallMapInput interface {
 	pulumi.Input
 

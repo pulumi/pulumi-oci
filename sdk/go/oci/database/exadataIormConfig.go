@@ -28,28 +28,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExadataIormConfig(ctx, "testExadataIormConfig", &Database.ExadataIormConfigArgs{
-// 			DbPlans: database.ExadataIormConfigDbPlanArray{
-// 				&database.ExadataIormConfigDbPlanArgs{
-// 					DbName: pulumi.Any(_var.Exadata_iorm_config_db_plans_db_name),
-// 					Share:  pulumi.Any(_var.Exadata_iorm_config_db_plans_share),
-// 				},
-// 			},
-// 			DbSystemId: pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 			Objective:  pulumi.String("AUTO"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExadataIormConfig(ctx, "testExadataIormConfig", &Database.ExadataIormConfigArgs{
+//				DbPlans: database.ExadataIormConfigDbPlanArray{
+//					&database.ExadataIormConfigDbPlanArgs{
+//						DbName: pulumi.Any(_var.Exadata_iorm_config_db_plans_db_name),
+//						Share:  pulumi.Any(_var.Exadata_iorm_config_db_plans_share),
+//					},
+//				},
+//				DbSystemId: pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				Objective:  pulumi.String("AUTO"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -179,7 +182,7 @@ func (i *ExadataIormConfig) ToExadataIormConfigOutputWithContext(ctx context.Con
 // ExadataIormConfigArrayInput is an input type that accepts ExadataIormConfigArray and ExadataIormConfigArrayOutput values.
 // You can construct a concrete instance of `ExadataIormConfigArrayInput` via:
 //
-//          ExadataIormConfigArray{ ExadataIormConfigArgs{...} }
+//	ExadataIormConfigArray{ ExadataIormConfigArgs{...} }
 type ExadataIormConfigArrayInput interface {
 	pulumi.Input
 
@@ -204,7 +207,7 @@ func (i ExadataIormConfigArray) ToExadataIormConfigArrayOutputWithContext(ctx co
 // ExadataIormConfigMapInput is an input type that accepts ExadataIormConfigMap and ExadataIormConfigMapOutput values.
 // You can construct a concrete instance of `ExadataIormConfigMapInput` via:
 //
-//          ExadataIormConfigMap{ "key": ExadataIormConfigArgs{...} }
+//	ExadataIormConfigMap{ "key": ExadataIormConfigArgs{...} }
 type ExadataIormConfigMapInput interface {
 	pulumi.Input
 

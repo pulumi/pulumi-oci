@@ -30,6 +30,7 @@ namespace Pulumi.Oci.DevOps
     ///             ProjectId = oci_devops_project.Test_project.Id,
     ///             AccessToken = @var.Connection_access_token,
     ///             AppPassword = @var.Connection_app_password,
+    ///             BaseUrl = @var.Connection_base_url,
     ///             DefinedTags = 
     ///             {
     ///                 { "foo-namespace.bar-key", "value" },
@@ -39,6 +40,11 @@ namespace Pulumi.Oci.DevOps
     ///             FreeformTags = 
     ///             {
     ///                 { "bar-key", "value" },
+    ///             },
+    ///             TlsVerifyConfig = new Oci.DevOps.Inputs.ConnectionTlsVerifyConfigArgs
+    ///             {
+    ///                 CaCertificateBundleId = oci_devops_ca_certificate_bundle.Test_ca_certificate_bundle.Id,
+    ///                 TlsVerifyMode = @var.Connection_tls_verify_config_tls_verify_mode,
     ///             },
     ///             Username = @var.Connection_username,
     ///         });
@@ -69,6 +75,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("appPassword")]
         public Output<string> AppPassword { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The Base URL of the hosted BitbucketServer.
+        /// </summary>
+        [Output("baseUrl")]
+        public Output<string> BaseUrl { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment containing the connection.
@@ -137,6 +149,12 @@ namespace Pulumi.Oci.DevOps
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) TLS configuration used by build service to verify TLS connection.
+        /// </summary>
+        [Output("tlsVerifyConfig")]
+        public Output<Outputs.ConnectionTlsVerifyConfig> TlsVerifyConfig { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
         /// </summary>
         [Output("username")]
@@ -201,6 +219,12 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? AppPassword { get; set; }
 
         /// <summary>
+        /// (Updatable) The Base URL of the hosted BitbucketServer.
+        /// </summary>
+        [Input("baseUrl")]
+        public Input<string>? BaseUrl { get; set; }
+
+        /// <summary>
         /// (Updatable) The type of connection.
         /// </summary>
         [Input("connectionType", required: true)]
@@ -249,6 +273,12 @@ namespace Pulumi.Oci.DevOps
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) TLS configuration used by build service to verify TLS connection.
+        /// </summary>
+        [Input("tlsVerifyConfig")]
+        public Input<Inputs.ConnectionTlsVerifyConfigArgs>? TlsVerifyConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
         /// </summary>
         [Input("username")]
@@ -272,6 +302,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("appPassword")]
         public Input<string>? AppPassword { get; set; }
+
+        /// <summary>
+        /// (Updatable) The Base URL of the hosted BitbucketServer.
+        /// </summary>
+        [Input("baseUrl")]
+        public Input<string>? BaseUrl { get; set; }
 
         /// <summary>
         /// The OCID of the compartment containing the connection.
@@ -356,6 +392,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) TLS configuration used by build service to verify TLS connection.
+        /// </summary>
+        [Input("tlsVerifyConfig")]
+        public Input<Inputs.ConnectionTlsVerifyConfigGetArgs>? TlsVerifyConfig { get; set; }
 
         /// <summary>
         /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)

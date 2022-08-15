@@ -21,41 +21,44 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := MeteringComputation.NewUsage(ctx, "testUsage", &MeteringComputation.UsageArgs{
-// 			Granularity:      pulumi.Any(_var.Usage_granularity),
-// 			TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
-// 			TimeUsageEnded:   pulumi.Any(_var.Usage_time_usage_ended),
-// 			TimeUsageStarted: pulumi.Any(_var.Usage_time_usage_started),
-// 			CompartmentDepth: pulumi.Any(_var.Usage_compartment_depth),
-// 			Filter:           pulumi.Any(_var.Usage_filter),
-// 			Forecast: &meteringcomputation.UsageForecastArgs{
-// 				TimeForecastEnded:   pulumi.Any(_var.Usage_forecast_time_forecast_ended),
-// 				ForecastType:        pulumi.Any(_var.Usage_forecast_forecast_type),
-// 				TimeForecastStarted: pulumi.Any(_var.Usage_forecast_time_forecast_started),
-// 			},
-// 			GroupBies: pulumi.Any(_var.Usage_group_by),
-// 			GroupByTags: meteringcomputation.UsageGroupByTagArray{
-// 				&meteringcomputation.UsageGroupByTagArgs{
-// 					Key:       pulumi.Any(_var.Usage_group_by_tag_key),
-// 					Namespace: pulumi.Any(_var.Usage_group_by_tag_namespace),
-// 					Value:     pulumi.Any(_var.Usage_group_by_tag_value),
-// 				},
-// 			},
-// 			IsAggregateByTime: pulumi.Any(_var.Usage_is_aggregate_by_time),
-// 			QueryType:         pulumi.Any(_var.Usage_query_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := MeteringComputation.NewUsage(ctx, "testUsage", &MeteringComputation.UsageArgs{
+//				Granularity:      pulumi.Any(_var.Usage_granularity),
+//				TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
+//				TimeUsageEnded:   pulumi.Any(_var.Usage_time_usage_ended),
+//				TimeUsageStarted: pulumi.Any(_var.Usage_time_usage_started),
+//				CompartmentDepth: pulumi.Any(_var.Usage_compartment_depth),
+//				Filter:           pulumi.Any(_var.Usage_filter),
+//				Forecast: &meteringcomputation.UsageForecastArgs{
+//					TimeForecastEnded:   pulumi.Any(_var.Usage_forecast_time_forecast_ended),
+//					ForecastType:        pulumi.Any(_var.Usage_forecast_forecast_type),
+//					TimeForecastStarted: pulumi.Any(_var.Usage_forecast_time_forecast_started),
+//				},
+//				GroupBies: pulumi.Any(_var.Usage_group_by),
+//				GroupByTags: meteringcomputation.UsageGroupByTagArray{
+//					&meteringcomputation.UsageGroupByTagArgs{
+//						Key:       pulumi.Any(_var.Usage_group_by_tag_key),
+//						Namespace: pulumi.Any(_var.Usage_group_by_tag_namespace),
+//						Value:     pulumi.Any(_var.Usage_group_by_tag_value),
+//					},
+//				},
+//				IsAggregateByTime: pulumi.Any(_var.Usage_is_aggregate_by_time),
+//				QueryType:         pulumi.Any(_var.Usage_query_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -265,7 +268,7 @@ func (i *Usage) ToUsageOutputWithContext(ctx context.Context) UsageOutput {
 // UsageArrayInput is an input type that accepts UsageArray and UsageArrayOutput values.
 // You can construct a concrete instance of `UsageArrayInput` via:
 //
-//          UsageArray{ UsageArgs{...} }
+//	UsageArray{ UsageArgs{...} }
 type UsageArrayInput interface {
 	pulumi.Input
 
@@ -290,7 +293,7 @@ func (i UsageArray) ToUsageArrayOutputWithContext(ctx context.Context) UsageArra
 // UsageMapInput is an input type that accepts UsageMap and UsageMapOutput values.
 // You can construct a concrete instance of `UsageMapInput` via:
 //
-//          UsageMap{ "key": UsageArgs{...} }
+//	UsageMap{ "key": UsageArgs{...} }
 type UsageMapInput interface {
 	pulumi.Input
 

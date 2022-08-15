@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousCharacterSets(ctx, &database.GetAutonomousCharacterSetsArgs{
-// 			CharacterSetType: pulumi.StringRef(_var.Autonomous_database_character_set_character_set_type),
-// 			IsShared:         pulumi.BoolRef(_var.Autonomous_database_character_set_is_shared),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousCharacterSets(ctx, &database.GetAutonomousCharacterSetsArgs{
+//				CharacterSetType: pulumi.StringRef(_var.Autonomous_database_character_set_character_set_type),
+//				IsShared:         pulumi.BoolRef(_var.Autonomous_database_character_set_is_shared),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousCharacterSets(ctx *pulumi.Context, args *GetAutonomousCharacterSetsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousCharacterSetsResult, error) {
 	var rv GetAutonomousCharacterSetsResult

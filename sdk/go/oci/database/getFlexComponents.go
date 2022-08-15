@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetFlexComponents(ctx, &database.GetFlexComponentsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Name:          pulumi.StringRef(_var.Flex_component_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetFlexComponents(ctx, &database.GetFlexComponentsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Name:          pulumi.StringRef(_var.Flex_component_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFlexComponents(ctx *pulumi.Context, args *GetFlexComponentsArgs, opts ...pulumi.InvokeOption) (*GetFlexComponentsResult, error) {
 	var rv GetFlexComponentsResult

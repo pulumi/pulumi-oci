@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetSmtpCredentials(ctx, &identity.GetSmtpCredentialsArgs{
-// 			UserId: oci_identity_user.Test_user.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetSmtpCredentials(ctx, &identity.GetSmtpCredentialsArgs{
+//				UserId: oci_identity_user.Test_user.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSmtpCredentials(ctx *pulumi.Context, args *GetSmtpCredentialsArgs, opts ...pulumi.InvokeOption) (*GetSmtpCredentialsResult, error) {
 	var rv GetSmtpCredentialsResult

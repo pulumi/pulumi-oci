@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetDataSafePrivateEndpoints(ctx, &datasafe.GetDataSafePrivateEndpointsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Data_safe_private_endpoint_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Data_safe_private_endpoint_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Data_safe_private_endpoint_display_name),
-// 			State:                  pulumi.StringRef(_var.Data_safe_private_endpoint_state),
-// 			VcnId:                  pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetDataSafePrivateEndpoints(ctx, &datasafe.GetDataSafePrivateEndpointsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Data_safe_private_endpoint_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Data_safe_private_endpoint_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Data_safe_private_endpoint_display_name),
+//				State:                  pulumi.StringRef(_var.Data_safe_private_endpoint_state),
+//				VcnId:                  pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDataSafePrivateEndpoints(ctx *pulumi.Context, args *GetDataSafePrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetDataSafePrivateEndpointsResult, error) {
 	var rv GetDataSafePrivateEndpointsResult

@@ -267,6 +267,16 @@ __all__ = [
     'GetDatabaseDatabaseManagementConfigResult',
     'GetDatabaseDbBackupConfigResult',
     'GetDatabaseDbBackupConfigBackupDestinationDetailResult',
+    'GetDatabaseMaintenanceRunHistoriesFilterResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
+    'GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult',
+    'GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult',
+    'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult',
+    'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
     'GetDatabasePdbConversionHistoryEntriesFilterResult',
     'GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult',
     'GetDatabaseSoftwareImagesDatabaseSoftwareImageResult',
@@ -19487,6 +19497,987 @@ class GetDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult(dict):
+    def __init__(__self__, *,
+                 db_servers_history_details: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult'],
+                 id: str,
+                 maintenance_run_details: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult']):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs'] db_servers_history_details: List of database server history details.
+        :param str id: The OCID of the maintenance run.
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs'] maintenance_run_details: Details of a maintenance run.
+        """
+        pulumi.set(__self__, "db_servers_history_details", db_servers_history_details)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "maintenance_run_details", maintenance_run_details)
+
+    @property
+    @pulumi.getter(name="dbServersHistoryDetails")
+    def db_servers_history_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult']:
+        """
+        List of database server history details.
+        """
+        return pulumi.get(self, "db_servers_history_details")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="maintenanceRunDetails")
+    def maintenance_run_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult']:
+        """
+        Details of a maintenance run.
+        """
+        return pulumi.get(self, "maintenance_run_details")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult(dict):
+    def __init__(__self__, *,
+                 db_server_patching_details: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult'],
+                 display_name: str,
+                 id: str):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs'] db_server_patching_details: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param str id: The OCID of the maintenance run.
+        """
+        pulumi.set(__self__, "db_server_patching_details", db_server_patching_details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="dbServerPatchingDetails")
+    def db_server_patching_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult']:
+        """
+        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        """
+        return pulumi.get(self, "db_server_patching_details")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult(dict):
+    def __init__(__self__, *,
+                 estimated_patch_duration: int,
+                 patching_status: str,
+                 time_patching_ended: str,
+                 time_patching_started: str):
+        """
+        :param int estimated_patch_duration: Estimated time, in minutes, to patch one database server.
+        :param str patching_status: The status of the patching operation.
+        :param str time_patching_ended: The time when the patching operation ended.
+        :param str time_patching_started: The time when the patching operation started.
+        """
+        pulumi.set(__self__, "estimated_patch_duration", estimated_patch_duration)
+        pulumi.set(__self__, "patching_status", patching_status)
+        pulumi.set(__self__, "time_patching_ended", time_patching_ended)
+        pulumi.set(__self__, "time_patching_started", time_patching_started)
+
+    @property
+    @pulumi.getter(name="estimatedPatchDuration")
+    def estimated_patch_duration(self) -> int:
+        """
+        Estimated time, in minutes, to patch one database server.
+        """
+        return pulumi.get(self, "estimated_patch_duration")
+
+    @property
+    @pulumi.getter(name="patchingStatus")
+    def patching_status(self) -> str:
+        """
+        The status of the patching operation.
+        """
+        return pulumi.get(self, "patching_status")
+
+    @property
+    @pulumi.getter(name="timePatchingEnded")
+    def time_patching_ended(self) -> str:
+        """
+        The time when the patching operation ended.
+        """
+        return pulumi.get(self, "time_patching_ended")
+
+    @property
+    @pulumi.getter(name="timePatchingStarted")
+    def time_patching_started(self) -> str:
+        """
+        The time when the patching operation started.
+        """
+        return pulumi.get(self, "time_patching_started")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 current_custom_action_timeout_in_mins: int,
+                 current_patching_component: str,
+                 custom_action_timeout_in_mins: int,
+                 description: str,
+                 display_name: str,
+                 estimated_component_patching_start_time: str,
+                 estimated_patching_times: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult'],
+                 id: str,
+                 is_custom_action_timeout_enabled: bool,
+                 lifecycle_details: str,
+                 maintenance_subtype: str,
+                 maintenance_type: str,
+                 patch_failure_count: int,
+                 patch_id: str,
+                 patching_end_time: str,
+                 patching_mode: str,
+                 patching_start_time: str,
+                 patching_status: str,
+                 peer_maintenance_run_id: str,
+                 state: str,
+                 target_db_server_version: str,
+                 target_resource_id: str,
+                 target_resource_type: str,
+                 target_storage_server_version: str,
+                 time_ended: str,
+                 time_scheduled: str,
+                 time_started: str):
+        """
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+        :param str current_patching_component: The name of the current infrastruture component that is getting patched.
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param str description: Description of the maintenance run.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs'] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+        :param str id: The OCID of the maintenance run.
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str maintenance_subtype: Maintenance sub-type.
+        :param str maintenance_type: The maintenance type.
+        :param int patch_failure_count: Contain the patch failure count.
+        :param str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param str patching_end_time: The time when the patching operation ended.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str patching_start_time: The time when the patching operation started.
+        :param str patching_status: The status of the patching operation.
+        :param str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param str state: The state of the maintenance run history.
+        :param str target_db_server_version: The target software version for the database server patching operation.
+        :param str target_resource_id: The target resource ID.
+        :param str target_resource_type: The type of the target resource.
+        :param str target_storage_server_version: The target Cell version that is to be patched to.
+        :param str time_ended: The date and time the maintenance run was completed.
+        :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
+        :param str time_started: The date and time the maintenance run starts.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
+        pulumi.set(__self__, "current_patching_component", current_patching_component)
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_component_patching_start_time", estimated_component_patching_start_time)
+        pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
+        pulumi.set(__self__, "maintenance_type", maintenance_type)
+        pulumi.set(__self__, "patch_failure_count", patch_failure_count)
+        pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patching_end_time", patching_end_time)
+        pulumi.set(__self__, "patching_mode", patching_mode)
+        pulumi.set(__self__, "patching_start_time", patching_start_time)
+        pulumi.set(__self__, "patching_status", patching_status)
+        pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_db_server_version", target_db_server_version)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "target_resource_type", target_resource_type)
+        pulumi.set(__self__, "target_storage_server_version", target_storage_server_version)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="currentCustomActionTimeoutInMins")
+    def current_custom_action_timeout_in_mins(self) -> int:
+        """
+        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+        """
+        return pulumi.get(self, "current_custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="currentPatchingComponent")
+    def current_patching_component(self) -> str:
+        """
+        The name of the current infrastruture component that is getting patched.
+        """
+        return pulumi.get(self, "current_patching_component")
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the maintenance run.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedComponentPatchingStartTime")
+    def estimated_component_patching_start_time(self) -> str:
+        """
+        The estimated start time of the next infrastruture component patching operation.
+        """
+        return pulumi.get(self, "estimated_component_patching_start_time")
+
+    @property
+    @pulumi.getter(name="estimatedPatchingTimes")
+    def estimated_patching_times(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult']:
+        """
+        The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+        """
+        return pulumi.get(self, "estimated_patching_times")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maintenanceSubtype")
+    def maintenance_subtype(self) -> str:
+        """
+        Maintenance sub-type.
+        """
+        return pulumi.get(self, "maintenance_subtype")
+
+    @property
+    @pulumi.getter(name="maintenanceType")
+    def maintenance_type(self) -> str:
+        """
+        The maintenance type.
+        """
+        return pulumi.get(self, "maintenance_type")
+
+    @property
+    @pulumi.getter(name="patchFailureCount")
+    def patch_failure_count(self) -> int:
+        """
+        Contain the patch failure count.
+        """
+        return pulumi.get(self, "patch_failure_count")
+
+    @property
+    @pulumi.getter(name="patchId")
+    def patch_id(self) -> str:
+        """
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        """
+        return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchingEndTime")
+    def patching_end_time(self) -> str:
+        """
+        The time when the patching operation ended.
+        """
+        return pulumi.get(self, "patching_end_time")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter(name="patchingStartTime")
+    def patching_start_time(self) -> str:
+        """
+        The time when the patching operation started.
+        """
+        return pulumi.get(self, "patching_start_time")
+
+    @property
+    @pulumi.getter(name="patchingStatus")
+    def patching_status(self) -> str:
+        """
+        The status of the patching operation.
+        """
+        return pulumi.get(self, "patching_status")
+
+    @property
+    @pulumi.getter(name="peerMaintenanceRunId")
+    def peer_maintenance_run_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        """
+        return pulumi.get(self, "peer_maintenance_run_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the maintenance run history.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetDbServerVersion")
+    def target_db_server_version(self) -> str:
+        """
+        The target software version for the database server patching operation.
+        """
+        return pulumi.get(self, "target_db_server_version")
+
+    @property
+    @pulumi.getter(name="targetResourceId")
+    def target_resource_id(self) -> str:
+        """
+        The target resource ID.
+        """
+        return pulumi.get(self, "target_resource_id")
+
+    @property
+    @pulumi.getter(name="targetResourceType")
+    def target_resource_type(self) -> str:
+        """
+        The type of the target resource.
+        """
+        return pulumi.get(self, "target_resource_type")
+
+    @property
+    @pulumi.getter(name="targetStorageServerVersion")
+    def target_storage_server_version(self) -> str:
+        """
+        The target Cell version that is to be patched to.
+        """
+        return pulumi.get(self, "target_storage_server_version")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The date and time the maintenance run was completed.
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> str:
+        """
+        The date and time the maintenance run is scheduled to occur.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the maintenance run starts.
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult(dict):
+    def __init__(__self__, *,
+                 estimated_db_server_patching_time: int,
+                 estimated_network_switches_patching_time: int,
+                 estimated_storage_server_patching_time: int,
+                 total_estimated_patching_time: int):
+        """
+        :param int estimated_db_server_patching_time: The estimated time required in minutes for database server patching.
+        :param int estimated_network_switches_patching_time: The estimated time required in minutes for network switch patching.
+        :param int estimated_storage_server_patching_time: The estimated time required in minutes for storage server patching.
+        :param int total_estimated_patching_time: The estimated total time required in minutes for all patching operations.
+        """
+        pulumi.set(__self__, "estimated_db_server_patching_time", estimated_db_server_patching_time)
+        pulumi.set(__self__, "estimated_network_switches_patching_time", estimated_network_switches_patching_time)
+        pulumi.set(__self__, "estimated_storage_server_patching_time", estimated_storage_server_patching_time)
+        pulumi.set(__self__, "total_estimated_patching_time", total_estimated_patching_time)
+
+    @property
+    @pulumi.getter(name="estimatedDbServerPatchingTime")
+    def estimated_db_server_patching_time(self) -> int:
+        """
+        The estimated time required in minutes for database server patching.
+        """
+        return pulumi.get(self, "estimated_db_server_patching_time")
+
+    @property
+    @pulumi.getter(name="estimatedNetworkSwitchesPatchingTime")
+    def estimated_network_switches_patching_time(self) -> int:
+        """
+        The estimated time required in minutes for network switch patching.
+        """
+        return pulumi.get(self, "estimated_network_switches_patching_time")
+
+    @property
+    @pulumi.getter(name="estimatedStorageServerPatchingTime")
+    def estimated_storage_server_patching_time(self) -> int:
+        """
+        The estimated time required in minutes for storage server patching.
+        """
+        return pulumi.get(self, "estimated_storage_server_patching_time")
+
+    @property
+    @pulumi.getter(name="totalEstimatedPatchingTime")
+    def total_estimated_patching_time(self) -> int:
+        """
+        The estimated total time required in minutes for all patching operations.
+        """
+        return pulumi.get(self, "total_estimated_patching_time")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult(dict):
+    def __init__(__self__, *,
+                 db_server_patching_details: Sequence['outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult'],
+                 display_name: str,
+                 id: str):
+        """
+        :param Sequence['GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs'] db_server_patching_details: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param str id: The OCID of the maintenance run.
+        """
+        pulumi.set(__self__, "db_server_patching_details", db_server_patching_details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="dbServerPatchingDetails")
+    def db_server_patching_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult']:
+        """
+        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        """
+        return pulumi.get(self, "db_server_patching_details")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult(dict):
+    def __init__(__self__, *,
+                 estimated_patch_duration: int,
+                 patching_status: str,
+                 time_patching_ended: str,
+                 time_patching_started: str):
+        """
+        :param int estimated_patch_duration: Estimated time, in minutes, to patch one database server.
+        :param str patching_status: The status of the patching operation.
+        :param str time_patching_ended: The time when the patching operation ended.
+        :param str time_patching_started: The time when the patching operation started.
+        """
+        pulumi.set(__self__, "estimated_patch_duration", estimated_patch_duration)
+        pulumi.set(__self__, "patching_status", patching_status)
+        pulumi.set(__self__, "time_patching_ended", time_patching_ended)
+        pulumi.set(__self__, "time_patching_started", time_patching_started)
+
+    @property
+    @pulumi.getter(name="estimatedPatchDuration")
+    def estimated_patch_duration(self) -> int:
+        """
+        Estimated time, in minutes, to patch one database server.
+        """
+        return pulumi.get(self, "estimated_patch_duration")
+
+    @property
+    @pulumi.getter(name="patchingStatus")
+    def patching_status(self) -> str:
+        """
+        The status of the patching operation.
+        """
+        return pulumi.get(self, "patching_status")
+
+    @property
+    @pulumi.getter(name="timePatchingEnded")
+    def time_patching_ended(self) -> str:
+        """
+        The time when the patching operation ended.
+        """
+        return pulumi.get(self, "time_patching_ended")
+
+    @property
+    @pulumi.getter(name="timePatchingStarted")
+    def time_patching_started(self) -> str:
+        """
+        The time when the patching operation started.
+        """
+        return pulumi.get(self, "time_patching_started")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 current_custom_action_timeout_in_mins: int,
+                 current_patching_component: str,
+                 custom_action_timeout_in_mins: int,
+                 description: str,
+                 display_name: str,
+                 estimated_component_patching_start_time: str,
+                 estimated_patching_times: Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult'],
+                 id: str,
+                 is_custom_action_timeout_enabled: bool,
+                 lifecycle_details: str,
+                 maintenance_subtype: str,
+                 maintenance_type: str,
+                 patch_failure_count: int,
+                 patch_id: str,
+                 patching_end_time: str,
+                 patching_mode: str,
+                 patching_start_time: str,
+                 patching_status: str,
+                 peer_maintenance_run_id: str,
+                 state: str,
+                 target_db_server_version: str,
+                 target_resource_id: str,
+                 target_resource_type: str,
+                 target_storage_server_version: str,
+                 time_ended: str,
+                 time_scheduled: str,
+                 time_started: str):
+        """
+        :param str compartment_id: The OCID of the compartment.
+        :param int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+        :param str current_patching_component: The name of the current infrastruture component that is getting patched.
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        :param str description: Description of the maintenance run.
+        :param str display_name: The user-friendly name for the maintenance run.
+        :param str estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
+        :param Sequence['GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs'] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+        :param str id: The OCID of the maintenance run.
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str maintenance_subtype: Maintenance sub-type.
+        :param str maintenance_type: Maintenance type.
+        :param int patch_failure_count: Contain the patch failure count.
+        :param str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param str patching_end_time: The time when the patching operation ended.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str patching_start_time: The time when the patching operation started.
+        :param str patching_status: The status of the patching operation.
+        :param str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        :param str state: The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        :param str target_db_server_version: The target software version for the database server patching operation.
+        :param str target_resource_id: The ID of the target resource on which the maintenance run occurs.
+        :param str target_resource_type: The type of the target resource on which the maintenance run occurs.
+        :param str target_storage_server_version: The target Cell version that is to be patched to.
+        :param str time_ended: The date and time the maintenance run was completed.
+        :param str time_scheduled: The date and time the maintenance run is scheduled to occur.
+        :param str time_started: The date and time the maintenance run starts.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
+        pulumi.set(__self__, "current_patching_component", current_patching_component)
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "estimated_component_patching_start_time", estimated_component_patching_start_time)
+        pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
+        pulumi.set(__self__, "maintenance_type", maintenance_type)
+        pulumi.set(__self__, "patch_failure_count", patch_failure_count)
+        pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patching_end_time", patching_end_time)
+        pulumi.set(__self__, "patching_mode", patching_mode)
+        pulumi.set(__self__, "patching_start_time", patching_start_time)
+        pulumi.set(__self__, "patching_status", patching_status)
+        pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_db_server_version", target_db_server_version)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "target_resource_type", target_resource_type)
+        pulumi.set(__self__, "target_storage_server_version", target_storage_server_version)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="currentCustomActionTimeoutInMins")
+    def current_custom_action_timeout_in_mins(self) -> int:
+        """
+        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+        """
+        return pulumi.get(self, "current_custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="currentPatchingComponent")
+    def current_patching_component(self) -> str:
+        """
+        The name of the current infrastruture component that is getting patched.
+        """
+        return pulumi.get(self, "current_patching_component")
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the maintenance run.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The user-friendly name for the maintenance run.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="estimatedComponentPatchingStartTime")
+    def estimated_component_patching_start_time(self) -> str:
+        """
+        The estimated start time of the next infrastruture component patching operation.
+        """
+        return pulumi.get(self, "estimated_component_patching_start_time")
+
+    @property
+    @pulumi.getter(name="estimatedPatchingTimes")
+    def estimated_patching_times(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult']:
+        """
+        The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+        """
+        return pulumi.get(self, "estimated_patching_times")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the maintenance run.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maintenanceSubtype")
+    def maintenance_subtype(self) -> str:
+        """
+        Maintenance sub-type.
+        """
+        return pulumi.get(self, "maintenance_subtype")
+
+    @property
+    @pulumi.getter(name="maintenanceType")
+    def maintenance_type(self) -> str:
+        """
+        Maintenance type.
+        """
+        return pulumi.get(self, "maintenance_type")
+
+    @property
+    @pulumi.getter(name="patchFailureCount")
+    def patch_failure_count(self) -> int:
+        """
+        Contain the patch failure count.
+        """
+        return pulumi.get(self, "patch_failure_count")
+
+    @property
+    @pulumi.getter(name="patchId")
+    def patch_id(self) -> str:
+        """
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        """
+        return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchingEndTime")
+    def patching_end_time(self) -> str:
+        """
+        The time when the patching operation ended.
+        """
+        return pulumi.get(self, "patching_end_time")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter(name="patchingStartTime")
+    def patching_start_time(self) -> str:
+        """
+        The time when the patching operation started.
+        """
+        return pulumi.get(self, "patching_start_time")
+
+    @property
+    @pulumi.getter(name="patchingStatus")
+    def patching_status(self) -> str:
+        """
+        The status of the patching operation.
+        """
+        return pulumi.get(self, "patching_status")
+
+    @property
+    @pulumi.getter(name="peerMaintenanceRunId")
+    def peer_maintenance_run_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+        """
+        return pulumi.get(self, "peer_maintenance_run_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetDbServerVersion")
+    def target_db_server_version(self) -> str:
+        """
+        The target software version for the database server patching operation.
+        """
+        return pulumi.get(self, "target_db_server_version")
+
+    @property
+    @pulumi.getter(name="targetResourceId")
+    def target_resource_id(self) -> str:
+        """
+        The ID of the target resource on which the maintenance run occurs.
+        """
+        return pulumi.get(self, "target_resource_id")
+
+    @property
+    @pulumi.getter(name="targetResourceType")
+    def target_resource_type(self) -> str:
+        """
+        The type of the target resource on which the maintenance run occurs.
+        """
+        return pulumi.get(self, "target_resource_type")
+
+    @property
+    @pulumi.getter(name="targetStorageServerVersion")
+    def target_storage_server_version(self) -> str:
+        """
+        The target Cell version that is to be patched to.
+        """
+        return pulumi.get(self, "target_storage_server_version")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The date and time the maintenance run was completed.
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> str:
+        """
+        The date and time the maintenance run is scheduled to occur.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time the maintenance run starts.
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult(dict):
+    def __init__(__self__, *,
+                 estimated_db_server_patching_time: int,
+                 estimated_network_switches_patching_time: int,
+                 estimated_storage_server_patching_time: int,
+                 total_estimated_patching_time: int):
+        """
+        :param int estimated_db_server_patching_time: The estimated time required in minutes for database server patching.
+        :param int estimated_network_switches_patching_time: The estimated time required in minutes for network switch patching.
+        :param int estimated_storage_server_patching_time: The estimated time required in minutes for storage server patching.
+        :param int total_estimated_patching_time: The estimated total time required in minutes for all patching operations.
+        """
+        pulumi.set(__self__, "estimated_db_server_patching_time", estimated_db_server_patching_time)
+        pulumi.set(__self__, "estimated_network_switches_patching_time", estimated_network_switches_patching_time)
+        pulumi.set(__self__, "estimated_storage_server_patching_time", estimated_storage_server_patching_time)
+        pulumi.set(__self__, "total_estimated_patching_time", total_estimated_patching_time)
+
+    @property
+    @pulumi.getter(name="estimatedDbServerPatchingTime")
+    def estimated_db_server_patching_time(self) -> int:
+        """
+        The estimated time required in minutes for database server patching.
+        """
+        return pulumi.get(self, "estimated_db_server_patching_time")
+
+    @property
+    @pulumi.getter(name="estimatedNetworkSwitchesPatchingTime")
+    def estimated_network_switches_patching_time(self) -> int:
+        """
+        The estimated time required in minutes for network switch patching.
+        """
+        return pulumi.get(self, "estimated_network_switches_patching_time")
+
+    @property
+    @pulumi.getter(name="estimatedStorageServerPatchingTime")
+    def estimated_storage_server_patching_time(self) -> int:
+        """
+        The estimated time required in minutes for storage server patching.
+        """
+        return pulumi.get(self, "estimated_storage_server_patching_time")
+
+    @property
+    @pulumi.getter(name="totalEstimatedPatchingTime")
+    def total_estimated_patching_time(self) -> int:
+        """
+        The estimated total time required in minutes for all patching operations.
+        """
+        return pulumi.get(self, "total_estimated_patching_time")
+
+
+@pulumi.output_type
 class GetDatabasePdbConversionHistoryEntriesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -25412,6 +26403,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  max_db_node_storage_in_gbs: int,
                  max_memory_in_gbs: int,
                  memory_size_in_gbs: int,
+                 monthly_db_server_version: str,
                  netmask: str,
                  ntp_servers: Sequence[str],
                  shape: str,
@@ -25451,6 +26443,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param int max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param int max_memory_in_gbs: The total memory available in GBs.
         :param int memory_size_in_gbs: The memory allocated in GBs.
+        :param str monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param str netmask: The netmask for the control plane network.
         :param Sequence[str] ntp_servers: The list of NTP server IP addresses. Maximum of 3 allowed.
         :param str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -25492,6 +26485,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
         pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
         pulumi.set(__self__, "netmask", netmask)
         pulumi.set(__self__, "ntp_servers", ntp_servers)
         pulumi.set(__self__, "shape", shape)
@@ -25750,6 +26744,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The memory allocated in GBs.
         """
         return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> str:
+        """
+        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "monthly_db_server_version")
 
     @property
     @pulumi.getter
@@ -28437,7 +29439,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str maintenance_subtype: Maintenance sub-type.
+        :param str maintenance_subtype: The sub-type of the maintenance run.
         :param str maintenance_type: The maintenance type.
         :param int patch_failure_count: Contain the patch failure count.
         :param str patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
@@ -28600,7 +29602,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
     @pulumi.getter(name="maintenanceSubtype")
     def maintenance_subtype(self) -> str:
         """
-        Maintenance sub-type.
+        The sub-type of the maintenance run.
         """
         return pulumi.get(self, "maintenance_subtype")
 

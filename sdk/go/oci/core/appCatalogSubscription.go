@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewAppCatalogSubscription(ctx, "testAppCatalogSubscription", &Core.AppCatalogSubscriptionArgs{
-// 			CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 			ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
-// 			ListingResourceVersion: pulumi.Any(_var.App_catalog_subscription_listing_resource_version),
-// 			OracleTermsOfUseLink:   pulumi.Any(_var.App_catalog_subscription_oracle_terms_of_use_link),
-// 			Signature:              pulumi.Any(_var.App_catalog_subscription_signature),
-// 			TimeRetrieved:          pulumi.Any(_var.App_catalog_subscription_time_retrieved),
-// 			EulaLink:               pulumi.Any(_var.App_catalog_subscription_eula_link),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewAppCatalogSubscription(ctx, "testAppCatalogSubscription", &Core.AppCatalogSubscriptionArgs{
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
+//				ListingResourceVersion: pulumi.Any(_var.App_catalog_subscription_listing_resource_version),
+//				OracleTermsOfUseLink:   pulumi.Any(_var.App_catalog_subscription_oracle_terms_of_use_link),
+//				Signature:              pulumi.Any(_var.App_catalog_subscription_signature),
+//				TimeRetrieved:          pulumi.Any(_var.App_catalog_subscription_time_retrieved),
+//				EulaLink:               pulumi.Any(_var.App_catalog_subscription_eula_link),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -49,7 +52,9 @@ import (
 // AppCatalogSubscriptions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
+//
+//	$ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
+//
 // ```
 type AppCatalogSubscription struct {
 	pulumi.CustomResourceState
@@ -245,7 +250,7 @@ func (i *AppCatalogSubscription) ToAppCatalogSubscriptionOutputWithContext(ctx c
 // AppCatalogSubscriptionArrayInput is an input type that accepts AppCatalogSubscriptionArray and AppCatalogSubscriptionArrayOutput values.
 // You can construct a concrete instance of `AppCatalogSubscriptionArrayInput` via:
 //
-//          AppCatalogSubscriptionArray{ AppCatalogSubscriptionArgs{...} }
+//	AppCatalogSubscriptionArray{ AppCatalogSubscriptionArgs{...} }
 type AppCatalogSubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -270,7 +275,7 @@ func (i AppCatalogSubscriptionArray) ToAppCatalogSubscriptionArrayOutputWithCont
 // AppCatalogSubscriptionMapInput is an input type that accepts AppCatalogSubscriptionMap and AppCatalogSubscriptionMapOutput values.
 // You can construct a concrete instance of `AppCatalogSubscriptionMapInput` via:
 //
-//          AppCatalogSubscriptionMap{ "key": AppCatalogSubscriptionArgs{...} }
+//	AppCatalogSubscriptionMap{ "key": AppCatalogSubscriptionArgs{...} }
 type AppCatalogSubscriptionMapInput interface {
 	pulumi.Input
 

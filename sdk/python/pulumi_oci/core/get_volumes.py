@@ -58,7 +58,7 @@ class GetVolumesResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
+    def compartment_id(self) -> Optional[str]:
         """
         The OCID of the compartment that contains the volume.
         """
@@ -144,8 +144,8 @@ def get_volumes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(compartment_id=var["compartment_id"],
-        availability_domain=var["volume_availability_domain"],
+    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
+        compartment_id=var["compartment_id"],
         display_name=var["volume_display_name"],
         state=var["volume_state"],
         volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
@@ -184,7 +184,7 @@ def get_volumes(availability_domain: Optional[str] = None,
 
 @_utilities.lift_output_func(get_volumes)
 def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
-                       compartment_id: Optional[pulumi.Input[str]] = None,
+                       compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumesFilterArgs']]]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -201,8 +201,8 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(compartment_id=var["compartment_id"],
-        availability_domain=var["volume_availability_domain"],
+    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
+        compartment_id=var["compartment_id"],
         display_name=var["volume_display_name"],
         state=var["volume_state"],
         volume_group_id=oci_core_volume_group["test_volume_group"]["id"])

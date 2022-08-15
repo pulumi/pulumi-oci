@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.GetAiPrivateEndpoints(ctx, &aianomalydetection.GetAiPrivateEndpointsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Ai_private_endpoint_display_name),
-// 			Id:            pulumi.StringRef(_var.Ai_private_endpoint_id),
-// 			State:         pulumi.StringRef(_var.Ai_private_endpoint_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.GetAiPrivateEndpoints(ctx, &aianomalydetection.GetAiPrivateEndpointsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Ai_private_endpoint_display_name),
+//				Id:            pulumi.StringRef(_var.Ai_private_endpoint_id),
+//				State:         pulumi.StringRef(_var.Ai_private_endpoint_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAiPrivateEndpoints(ctx *pulumi.Context, args *GetAiPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetAiPrivateEndpointsResult, error) {
 	var rv GetAiPrivateEndpointsResult

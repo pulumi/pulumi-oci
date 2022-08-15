@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.GetLicenseMetric(ctx, &licensemanager.GetLicenseMetricArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			IsCompartmentIdInSubtree: pulumi.BoolRef(_var.License_metric_is_compartment_id_in_subtree),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.GetLicenseMetric(ctx, &licensemanager.GetLicenseMetricArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.License_metric_is_compartment_id_in_subtree),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLicenseMetric(ctx *pulumi.Context, args *GetLicenseMetricArgs, opts ...pulumi.InvokeOption) (*GetLicenseMetricResult, error) {
 	var rv GetLicenseMetricResult

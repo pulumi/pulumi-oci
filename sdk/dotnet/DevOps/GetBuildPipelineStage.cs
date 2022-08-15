@@ -175,6 +175,10 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string PrimaryBuildSource;
         /// <summary>
+        /// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBuildPipelineStagePrivateAccessConfigResult> PrivateAccessConfigs;
+        /// <summary>
         /// The OCID of the DevOps project.
         /// </summary>
         public readonly string ProjectId;
@@ -241,6 +245,8 @@ namespace Pulumi.Oci.DevOps
 
             string primaryBuildSource,
 
+            ImmutableArray<Outputs.GetBuildPipelineStagePrivateAccessConfigResult> privateAccessConfigs,
+
             string projectId,
 
             int stageExecutionTimeoutInSeconds,
@@ -273,6 +279,7 @@ namespace Pulumi.Oci.DevOps
             IsPassAllParametersEnabled = isPassAllParametersEnabled;
             LifecycleDetails = lifecycleDetails;
             PrimaryBuildSource = primaryBuildSource;
+            PrivateAccessConfigs = privateAccessConfigs;
             ProjectId = projectId;
             StageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
             State = state;

@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.GetMountTargets(ctx, &filestorage.GetMountTargetsArgs{
-// 			AvailabilityDomain: _var.Mount_target_availability_domain,
-// 			CompartmentId:      _var.Compartment_id,
-// 			DisplayName:        pulumi.StringRef(_var.Mount_target_display_name),
-// 			ExportSetId:        pulumi.StringRef(oci_file_storage_export_set.Test_export_set.Id),
-// 			Id:                 pulumi.StringRef(_var.Mount_target_id),
-// 			State:              pulumi.StringRef(_var.Mount_target_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.GetMountTargets(ctx, &filestorage.GetMountTargetsArgs{
+//				AvailabilityDomain: _var.Mount_target_availability_domain,
+//				CompartmentId:      _var.Compartment_id,
+//				DisplayName:        pulumi.StringRef(_var.Mount_target_display_name),
+//				ExportSetId:        pulumi.StringRef(oci_file_storage_export_set.Test_export_set.Id),
+//				Id:                 pulumi.StringRef(_var.Mount_target_id),
+//				State:              pulumi.StringRef(_var.Mount_target_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMountTargets(ctx *pulumi.Context, args *GetMountTargetsArgs, opts ...pulumi.InvokeOption) (*GetMountTargetsResult, error) {
 	var rv GetMountTargetsResult

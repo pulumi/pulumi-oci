@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetIpsecConnectionTunnel(ctx, &core.GetIpsecConnectionTunnelArgs{
-// 			IpsecId:  oci_core_ipsec.Test_ipsec.Id,
-// 			TunnelId: data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetIpsecConnectionTunnel(ctx, &core.GetIpsecConnectionTunnelArgs{
+//				IpsecId:  oci_core_ipsec.Test_ipsec.Id,
+//				TunnelId: data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIpsecConnectionTunnel(ctx *pulumi.Context, args *GetIpsecConnectionTunnelArgs, opts ...pulumi.InvokeOption) (*GetIpsecConnectionTunnelResult, error) {
 	var rv GetIpsecConnectionTunnelResult

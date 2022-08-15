@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetCatalogPrivateEndpoint(ctx, &datacatalog.GetCatalogPrivateEndpointArgs{
-// 			CatalogPrivateEndpointId: oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetCatalogPrivateEndpoint(ctx, &datacatalog.GetCatalogPrivateEndpointArgs{
+//				CatalogPrivateEndpointId: oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCatalogPrivateEndpoint(ctx *pulumi.Context, args *LookupCatalogPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupCatalogPrivateEndpointResult, error) {
 	var rv LookupCatalogPrivateEndpointResult

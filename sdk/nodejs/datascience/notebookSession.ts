@@ -44,6 +44,14 @@ import * as utilities from "../utilities";
  *             ocpus: _var.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
  *         },
  *     },
+ *     notebookSessionRuntimeConfigDetails: {
+ *         customEnvironmentVariables: _var.notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+ *         notebookSessionGitConfigDetails: {
+ *             notebookSessionGitRepoConfigCollections: [{
+ *                 url: _var.notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
+ *             }],
+ *         },
+ *     },
  * });
  * ```
  *
@@ -116,6 +124,10 @@ export class NotebookSession extends pulumi.CustomResource {
      */
     public readonly notebookSessionConfigurationDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails>;
     /**
+     * (Updatable) Notebook Session runtime configuration details.
+     */
+    public readonly notebookSessionRuntimeConfigDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    /**
      * The URL to interact with the notebook session.
      */
     public /*out*/ readonly notebookSessionUrl!: pulumi.Output<string>;
@@ -153,6 +165,7 @@ export class NotebookSession extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["notebookSessionConfigDetails"] = state ? state.notebookSessionConfigDetails : undefined;
             resourceInputs["notebookSessionConfigurationDetails"] = state ? state.notebookSessionConfigurationDetails : undefined;
+            resourceInputs["notebookSessionRuntimeConfigDetails"] = state ? state.notebookSessionRuntimeConfigDetails : undefined;
             resourceInputs["notebookSessionUrl"] = state ? state.notebookSessionUrl : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -171,6 +184,7 @@ export class NotebookSession extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["notebookSessionConfigDetails"] = args ? args.notebookSessionConfigDetails : undefined;
             resourceInputs["notebookSessionConfigurationDetails"] = args ? args.notebookSessionConfigurationDetails : undefined;
+            resourceInputs["notebookSessionRuntimeConfigDetails"] = args ? args.notebookSessionRuntimeConfigDetails : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -220,6 +234,10 @@ export interface NotebookSessionState {
      */
     notebookSessionConfigurationDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails>;
     /**
+     * (Updatable) Notebook Session runtime configuration details.
+     */
+    notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    /**
      * The URL to interact with the notebook session.
      */
     notebookSessionUrl?: pulumi.Input<string>;
@@ -265,6 +283,10 @@ export interface NotebookSessionArgs {
      * (Updatable) Details for the notebook session configuration.
      */
     notebookSessionConfigurationDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails>;
+    /**
+     * (Updatable) Notebook Session runtime configuration details.
+     */
+    notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      */

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.GetAddressList(ctx, &waas.GetAddressListArgs{
-// 			AddressListId: oci_waas_address_list.Test_address_list.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.GetAddressList(ctx, &waas.GetAddressListArgs{
+//				AddressListId: oci_waas_address_list.Test_address_list.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAddressList(ctx *pulumi.Context, args *LookupAddressListArgs, opts ...pulumi.InvokeOption) (*LookupAddressListResult, error) {
 	var rv LookupAddressListResult

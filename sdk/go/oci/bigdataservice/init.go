@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BdsInstanceApiKey{}
 	case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
 		r = &BdsInstanceMetastoreConfig{}
+	case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
+		r = &BdsInstancePatchAction{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -60,6 +62,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"BigDataService/bdsInstanceMetastoreConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstancePatchAction",
 		&module{version},
 	)
 }

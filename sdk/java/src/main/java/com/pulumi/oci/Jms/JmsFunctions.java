@@ -17,6 +17,14 @@ import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaFamiliesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaFamilyPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaReleasePlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaReleasesPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
 import com.pulumi.oci.Jms.inputs.GetListJreUsagePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
@@ -26,6 +34,10 @@ import com.pulumi.oci.Jms.outputs.GetFleetResult;
 import com.pulumi.oci.Jms.outputs.GetFleetsResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesResult;
+import com.pulumi.oci.Jms.outputs.GetJavaFamiliesResult;
+import com.pulumi.oci.Jms.outputs.GetJavaFamilyResult;
+import com.pulumi.oci.Jms.outputs.GetJavaReleaseResult;
+import com.pulumi.oci.Jms.outputs.GetJavaReleasesResult;
 import com.pulumi.oci.Jms.outputs.GetListJreUsageResult;
 import com.pulumi.oci.Jms.outputs.GetSummarizeResourceInventoryResult;
 import com.pulumi.oci.Utilities;
@@ -279,6 +291,232 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetInstallationSitesResult> getInstallationSitesPlain(GetInstallationSitesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getInstallationSites:getInstallationSites", TypeShape.of(GetInstallationSitesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaFamiliesResult> getJavaFamilies() {
+        return getJavaFamilies(GetJavaFamiliesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain() {
+        return getJavaFamiliesPlain(GetJavaFamiliesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaFamiliesResult> getJavaFamilies(GetJavaFamiliesArgs args) {
+        return getJavaFamilies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain(GetJavaFamiliesPlainArgs args) {
+        return getJavaFamiliesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaFamiliesResult> getJavaFamilies(GetJavaFamiliesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaFamilies:getJavaFamilies", TypeShape.of(GetJavaFamiliesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain(GetJavaFamiliesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaFamilies:getJavaFamilies", TypeShape.of(GetJavaFamiliesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns details of a Java release family based on specified version.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaFamilyResult> getJavaFamily(GetJavaFamilyArgs args) {
+        return getJavaFamily(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns details of a Java release family based on specified version.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaFamilyResult> getJavaFamilyPlain(GetJavaFamilyPlainArgs args) {
+        return getJavaFamilyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns details of a Java release family based on specified version.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaFamilyResult> getJavaFamily(GetJavaFamilyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaFamily:getJavaFamily", TypeShape.of(GetJavaFamilyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns details of a Java release family based on specified version.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaFamilyResult> getJavaFamilyPlain(GetJavaFamilyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaFamily:getJavaFamily", TypeShape.of(GetJavaFamilyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns detail of a Java release.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaReleaseResult> getJavaRelease(GetJavaReleaseArgs args) {
+        return getJavaRelease(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns detail of a Java release.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaReleaseResult> getJavaReleasePlain(GetJavaReleasePlainArgs args) {
+        return getJavaReleasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns detail of a Java release.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaReleaseResult> getJavaRelease(GetJavaReleaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaRelease:getJavaRelease", TypeShape.of(GetJavaReleaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns detail of a Java release.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaReleaseResult> getJavaReleasePlain(GetJavaReleasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaRelease:getJavaRelease", TypeShape.of(GetJavaReleaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of Java releases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaReleasesResult> getJavaReleases() {
+        return getJavaReleases(GetJavaReleasesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of Java releases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain() {
+        return getJavaReleasesPlain(GetJavaReleasesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of Java releases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaReleasesResult> getJavaReleases(GetJavaReleasesArgs args) {
+        return getJavaReleases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of Java releases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args) {
+        return getJavaReleasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of Java releases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetJavaReleasesResult> getJavaReleases(GetJavaReleasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaReleases:getJavaReleases", TypeShape.of(GetJavaReleasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of Java releases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaReleases:getJavaReleases", TypeShape.of(GetJavaReleasesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.

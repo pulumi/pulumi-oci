@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.NewAddressList(ctx, "testAddressList", &Waas.AddressListArgs{
-// 			Addresses:     pulumi.Any(_var.Address_list_addresses),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Address_list_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.NewAddressList(ctx, "testAddressList", &Waas.AddressListArgs{
+//				Addresses:     pulumi.Any(_var.Address_list_addresses),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Address_list_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // AddressLists can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
+//
+//	$ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
+//
 // ```
 type AddressList struct {
 	pulumi.CustomResourceState
@@ -206,7 +211,7 @@ func (i *AddressList) ToAddressListOutputWithContext(ctx context.Context) Addres
 // AddressListArrayInput is an input type that accepts AddressListArray and AddressListArrayOutput values.
 // You can construct a concrete instance of `AddressListArrayInput` via:
 //
-//          AddressListArray{ AddressListArgs{...} }
+//	AddressListArray{ AddressListArgs{...} }
 type AddressListArrayInput interface {
 	pulumi.Input
 
@@ -231,7 +236,7 @@ func (i AddressListArray) ToAddressListArrayOutputWithContext(ctx context.Contex
 // AddressListMapInput is an input type that accepts AddressListMap and AddressListMapOutput values.
 // You can construct a concrete instance of `AddressListMapInput` via:
 //
-//          AddressListMap{ "key": AddressListArgs{...} }
+//	AddressListMap{ "key": AddressListArgs{...} }
 type AddressListMapInput interface {
 	pulumi.Input
 

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataIntegration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataIntegration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataIntegration.GetWorkspaces(ctx, &dataintegration.GetWorkspacesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Name:          pulumi.StringRef(_var.Workspace_name),
-// 			State:         pulumi.StringRef(_var.Workspace_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataIntegration.GetWorkspaces(ctx, &dataintegration.GetWorkspacesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Name:          pulumi.StringRef(_var.Workspace_name),
+//				State:         pulumi.StringRef(_var.Workspace_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetWorkspaces(ctx *pulumi.Context, args *GetWorkspacesArgs, opts ...pulumi.InvokeOption) (*GetWorkspacesResult, error) {
 	var rv GetWorkspacesResult

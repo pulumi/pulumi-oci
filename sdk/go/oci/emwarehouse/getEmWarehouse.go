@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Em Warehouse resource in Oracle Cloud Infrastructure Em Warehouse service.
 //
-// Gets a EmWarehouse by identifier
+// # Gets a EmWarehouse by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EmWarehouse.GetEmWarehouse(ctx, &emwarehouse.GetEmWarehouseArgs{
-// 			EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := EmWarehouse.GetEmWarehouse(ctx, &emwarehouse.GetEmWarehouseArgs{
+//				EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupEmWarehouse(ctx *pulumi.Context, args *LookupEmWarehouseArgs, opts ...pulumi.InvokeOption) (*LookupEmWarehouseResult, error) {
 	var rv LookupEmWarehouseResult

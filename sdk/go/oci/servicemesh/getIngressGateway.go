@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetIngressGateway(ctx, &servicemesh.GetIngressGatewayArgs{
-// 			IngressGatewayId: oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetIngressGateway(ctx, &servicemesh.GetIngressGatewayArgs{
+//				IngressGatewayId: oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupIngressGateway(ctx *pulumi.Context, args *LookupIngressGatewayArgs, opts ...pulumi.InvokeOption) (*LookupIngressGatewayResult, error) {
 	var rv LookupIngressGatewayResult

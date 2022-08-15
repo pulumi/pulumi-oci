@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetNetworkSecurityGroupSecurityRules(ctx, &core.GetNetworkSecurityGroupSecurityRulesArgs{
-// 			NetworkSecurityGroupId: oci_core_network_security_group.Test_network_security_group.Id,
-// 			Direction:              pulumi.StringRef(_var.Network_security_group_security_rule_direction),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetNetworkSecurityGroupSecurityRules(ctx, &core.GetNetworkSecurityGroupSecurityRulesArgs{
+//				NetworkSecurityGroupId: oci_core_network_security_group.Test_network_security_group.Id,
+//				Direction:              pulumi.StringRef(_var.Network_security_group_security_rule_direction),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkSecurityGroupSecurityRules(ctx *pulumi.Context, args *GetNetworkSecurityGroupSecurityRulesArgs, opts ...pulumi.InvokeOption) (*GetNetworkSecurityGroupSecurityRulesResult, error) {
 	var rv GetNetworkSecurityGroupSecurityRulesResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.GetManagedInstances(ctx, &osmanagement.GetManagedInstancesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Managed_instance_display_name),
-// 			OsFamily:      pulumi.StringRef(_var.Managed_instance_os_family),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.GetManagedInstances(ctx, &osmanagement.GetManagedInstancesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Managed_instance_display_name),
+//				OsFamily:      pulumi.StringRef(_var.Managed_instance_os_family),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedInstances(ctx *pulumi.Context, args *GetManagedInstancesArgs, opts ...pulumi.InvokeOption) (*GetManagedInstancesResult, error) {
 	var rv GetManagedInstancesResult

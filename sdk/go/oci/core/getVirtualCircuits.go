@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVirtualCircuits(ctx, &core.GetVirtualCircuitsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Virtual_circuit_display_name),
-// 			State:         pulumi.StringRef(_var.Virtual_circuit_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVirtualCircuits(ctx, &core.GetVirtualCircuitsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Virtual_circuit_display_name),
+//				State:         pulumi.StringRef(_var.Virtual_circuit_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVirtualCircuits(ctx *pulumi.Context, args *GetVirtualCircuitsArgs, opts ...pulumi.InvokeOption) (*GetVirtualCircuitsResult, error) {
 	var rv GetVirtualCircuitsResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetTagNamespaces(ctx, &identity.GetTagNamespacesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			IncludeSubcompartments: pulumi.BoolRef(_var.Tag_namespace_include_subcompartments),
-// 			State:                  pulumi.StringRef(_var.Tag_namespace_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetTagNamespaces(ctx, &identity.GetTagNamespacesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				IncludeSubcompartments: pulumi.BoolRef(_var.Tag_namespace_include_subcompartments),
+//				State:                  pulumi.StringRef(_var.Tag_namespace_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTagNamespaces(ctx *pulumi.Context, args *GetTagNamespacesArgs, opts ...pulumi.InvokeOption) (*GetTagNamespacesResult, error) {
 	var rv GetTagNamespacesResult

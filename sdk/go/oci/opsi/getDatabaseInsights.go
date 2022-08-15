@@ -21,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetDatabaseInsights(ctx, &opsi.GetDatabaseInsightsArgs{
-// 			CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-// 			CompartmentIdInSubtree:    pulumi.BoolRef(_var.Database_insight_compartment_id_in_subtree),
-// 			DatabaseIds:               oci_database_database.Test_database.Id,
-// 			DatabaseTypes:             _var.Database_insight_database_type,
-// 			EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-// 			ExadataInsightId:          pulumi.StringRef(oci_opsi_exadata_insight.Test_exadata_insight.Id),
-// 			Fields:                    _var.Database_insight_fields,
-// 			Id:                        pulumi.StringRef(_var.Database_insight_id),
-// 			OpsiPrivateEndpointId:     pulumi.StringRef(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-// 			States:                    _var.Database_insight_state,
-// 			Statuses:                  _var.Database_insight_status,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetDatabaseInsights(ctx, &opsi.GetDatabaseInsightsArgs{
+//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
+//				CompartmentIdInSubtree:    pulumi.BoolRef(_var.Database_insight_compartment_id_in_subtree),
+//				DatabaseIds:               oci_database_database.Test_database.Id,
+//				DatabaseTypes:             _var.Database_insight_database_type,
+//				EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
+//				ExadataInsightId:          pulumi.StringRef(oci_opsi_exadata_insight.Test_exadata_insight.Id),
+//				Fields:                    _var.Database_insight_fields,
+//				Id:                        pulumi.StringRef(_var.Database_insight_id),
+//				OpsiPrivateEndpointId:     pulumi.StringRef(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//				States:                    _var.Database_insight_state,
+//				Statuses:                  _var.Database_insight_status,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabaseInsights(ctx *pulumi.Context, args *GetDatabaseInsightsArgs, opts ...pulumi.InvokeOption) (*GetDatabaseInsightsResult, error) {
 	var rv GetDatabaseInsightsResult

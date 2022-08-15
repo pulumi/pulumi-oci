@@ -19,6 +19,12 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<string>? ConfigType { get; set; }
 
         /// <summary>
+        /// (Updatable) Dns settings.
+        /// </summary>
+        [Input("dnsConfiguration")]
+        public Input<Inputs.ConfigConfigurationDnsConfigurationArgs>? DnsConfiguration { get; set; }
+
+        /// <summary>
         /// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         /// </summary>
         [Input("isCertificateValidationEnabled")]

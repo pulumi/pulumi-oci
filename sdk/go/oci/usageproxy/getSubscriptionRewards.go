@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/UsageProxy"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/UsageProxy"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := UsageProxy.GetSubscriptionRewards(ctx, &usageproxy.GetSubscriptionRewardsArgs{
-// 			SubscriptionId: oci_ons_subscription.Test_subscription.Id,
-// 			TenancyId:      oci_identity_tenancy.Test_tenancy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := UsageProxy.GetSubscriptionRewards(ctx, &usageproxy.GetSubscriptionRewardsArgs{
+//				SubscriptionId: oci_ons_subscription.Test_subscription.Id,
+//				TenancyId:      oci_identity_tenancy.Test_tenancy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubscriptionRewards(ctx *pulumi.Context, args *GetSubscriptionRewardsArgs, opts ...pulumi.InvokeOption) (*GetSubscriptionRewardsResult, error) {
 	var rv GetSubscriptionRewardsResult

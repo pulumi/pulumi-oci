@@ -24,29 +24,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.NewHttpProbe(ctx, "testHttpProbe", &HealthChecks.HttpProbeArgs{
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			Protocol:          pulumi.Any(_var.Http_probe_protocol),
-// 			Targets:           pulumi.Any(_var.Http_probe_targets),
-// 			Headers:           pulumi.Any(_var.Http_probe_headers),
-// 			Method:            pulumi.Any(_var.Http_probe_method),
-// 			Path:              pulumi.Any(_var.Http_probe_path),
-// 			Port:              pulumi.Any(_var.Http_probe_port),
-// 			TimeoutInSeconds:  pulumi.Any(_var.Http_probe_timeout_in_seconds),
-// 			VantagePointNames: pulumi.Any(_var.Http_probe_vantage_point_names),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.NewHttpProbe(ctx, "testHttpProbe", &HealthChecks.HttpProbeArgs{
+//				CompartmentId:     pulumi.Any(_var.Compartment_id),
+//				Protocol:          pulumi.Any(_var.Http_probe_protocol),
+//				Targets:           pulumi.Any(_var.Http_probe_targets),
+//				Headers:           pulumi.Any(_var.Http_probe_headers),
+//				Method:            pulumi.Any(_var.Http_probe_method),
+//				Path:              pulumi.Any(_var.Http_probe_path),
+//				Port:              pulumi.Any(_var.Http_probe_port),
+//				TimeoutInSeconds:  pulumi.Any(_var.Http_probe_timeout_in_seconds),
+//				VantagePointNames: pulumi.Any(_var.Http_probe_vantage_point_names),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // HttpProbes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
+//
+//	$ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
+//
 // ```
 type HttpProbe struct {
 	pulumi.CustomResourceState
@@ -249,7 +254,7 @@ func (i *HttpProbe) ToHttpProbeOutputWithContext(ctx context.Context) HttpProbeO
 // HttpProbeArrayInput is an input type that accepts HttpProbeArray and HttpProbeArrayOutput values.
 // You can construct a concrete instance of `HttpProbeArrayInput` via:
 //
-//          HttpProbeArray{ HttpProbeArgs{...} }
+//	HttpProbeArray{ HttpProbeArgs{...} }
 type HttpProbeArrayInput interface {
 	pulumi.Input
 
@@ -274,7 +279,7 @@ func (i HttpProbeArray) ToHttpProbeArrayOutputWithContext(ctx context.Context) H
 // HttpProbeMapInput is an input type that accepts HttpProbeMap and HttpProbeMapOutput values.
 // You can construct a concrete instance of `HttpProbeMapInput` via:
 //
-//          HttpProbeMap{ "key": HttpProbeArgs{...} }
+//	HttpProbeMap{ "key": HttpProbeArgs{...} }
 type HttpProbeMapInput interface {
 	pulumi.Input
 

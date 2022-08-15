@@ -28,6 +28,12 @@ namespace Pulumi.Oci.Nosql
     ///         {
     ///             CompartmentId = @var.Compartment_id,
     ///             DdlStatement = @var.Table_ddl_statement,
+    ///             DefinedTags = @var.Table_defined_tags,
+    ///             FreeformTags = 
+    ///             {
+    ///                 { "bar-key", "value" },
+    ///             },
+    ///             IsAutoReclaimable = @var.Table_is_auto_reclaimable,
     ///             TableLimits = new Oci.Nosql.Inputs.TableTableLimitsArgs
     ///             {
     ///                 MaxReadUnits = @var.Table_table_limits_max_read_units,
@@ -35,12 +41,6 @@ namespace Pulumi.Oci.Nosql
     ///                 MaxWriteUnits = @var.Table_table_limits_max_write_units,
     ///                 CapacityMode = @var.Table_table_limits_capacity_mode,
     ///             },
-    ///             DefinedTags = @var.Table_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsAutoReclaimable = @var.Table_is_auto_reclaimable,
     ///         });
     ///     }
     /// 
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Nosql
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Throughput and storage limits configuration of a table.
+        /// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         /// </summary>
         [Output("tableLimits")]
         public Output<Outputs.TableTableLimits> TableLimits { get; private set; } = null!;
@@ -237,10 +237,10 @@ namespace Pulumi.Oci.Nosql
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) Throughput and storage limits configuration of a table.
+        /// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         /// </summary>
-        [Input("tableLimits", required: true)]
-        public Input<Inputs.TableTableLimitsArgs> TableLimits { get; set; } = null!;
+        [Input("tableLimits")]
+        public Input<Inputs.TableTableLimitsArgs>? TableLimits { get; set; }
 
         public TableArgs()
         {
@@ -334,7 +334,7 @@ namespace Pulumi.Oci.Nosql
         }
 
         /// <summary>
-        /// (Updatable) Throughput and storage limits configuration of a table.
+        /// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         /// </summary>
         [Input("tableLimits")]
         public Input<Inputs.TableTableLimitsGetArgs>? TableLimits { get; set; }

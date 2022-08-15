@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
  *     compartmentId: _var.compartment_id,
  *     availabilityDomain: _var.maintenance_run_availability_domain,
+ *     maintenanceSubtype: _var.maintenance_run_maintenance_subtype,
  *     maintenanceType: _var.maintenance_run_maintenance_type,
  *     state: _var.maintenance_run_state,
  *     targetResourceId: oci_database_target_resource.test_target_resource.id,
@@ -36,6 +37,7 @@ export function getMaintenanceRuns(args: GetMaintenanceRunsArgs, opts?: pulumi.I
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "maintenanceSubtype": args.maintenanceSubtype,
         "maintenanceType": args.maintenanceType,
         "state": args.state,
         "targetResourceId": args.targetResourceId,
@@ -56,6 +58,10 @@ export interface GetMaintenanceRunsArgs {
      */
     compartmentId: string;
     filters?: inputs.Database.GetMaintenanceRunsFilter[];
+    /**
+     * The sub-type of the maintenance run.
+     */
+    maintenanceSubtype?: string;
     /**
      * The maintenance type.
      */
@@ -93,6 +99,10 @@ export interface GetMaintenanceRunsResult {
      */
     readonly maintenanceRuns: outputs.Database.GetMaintenanceRunsMaintenanceRun[];
     /**
+     * Maintenance sub-type.
+     */
+    readonly maintenanceSubtype?: string;
+    /**
      * Maintenance type.
      */
     readonly maintenanceType?: string;
@@ -127,6 +137,10 @@ export interface GetMaintenanceRunsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetMaintenanceRunsFilterArgs>[]>;
+    /**
+     * The sub-type of the maintenance run.
+     */
+    maintenanceSubtype?: pulumi.Input<string>;
     /**
      * The maintenance type.
      */

@@ -73,7 +73,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
     private final String lifecycleDetails;
     private final String maintenanceRunId;
     /**
-     * @return Maintenance sub-type.
+     * @return The sub-type of the maintenance run.
      * 
      */
     private final String maintenanceSubtype;
@@ -316,7 +316,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
         return this.maintenanceRunId;
     }
     /**
-     * @return Maintenance sub-type.
+     * @return The sub-type of the maintenance run.
      * 
      */
     public String maintenanceSubtype() {

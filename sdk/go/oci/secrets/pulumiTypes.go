@@ -20,7 +20,7 @@ type GetSecretbundleSecretBundleContent struct {
 // GetSecretbundleSecretBundleContentInput is an input type that accepts GetSecretbundleSecretBundleContentArgs and GetSecretbundleSecretBundleContentOutput values.
 // You can construct a concrete instance of `GetSecretbundleSecretBundleContentInput` via:
 //
-//          GetSecretbundleSecretBundleContentArgs{...}
+//	GetSecretbundleSecretBundleContentArgs{...}
 type GetSecretbundleSecretBundleContentInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i GetSecretbundleSecretBundleContentArgs) ToGetSecretbundleSecretBundleCon
 // GetSecretbundleSecretBundleContentArrayInput is an input type that accepts GetSecretbundleSecretBundleContentArray and GetSecretbundleSecretBundleContentArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleSecretBundleContentArrayInput` via:
 //
-//          GetSecretbundleSecretBundleContentArray{ GetSecretbundleSecretBundleContentArgs{...} }
+//	GetSecretbundleSecretBundleContentArray{ GetSecretbundleSecretBundleContentArgs{...} }
 type GetSecretbundleSecretBundleContentArrayInput interface {
 	pulumi.Input
 
@@ -125,7 +125,7 @@ type GetSecretbundleVersionsFilter struct {
 // GetSecretbundleVersionsFilterInput is an input type that accepts GetSecretbundleVersionsFilterArgs and GetSecretbundleVersionsFilterOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsFilterInput` via:
 //
-//          GetSecretbundleVersionsFilterArgs{...}
+//	GetSecretbundleVersionsFilterArgs{...}
 type GetSecretbundleVersionsFilterInput interface {
 	pulumi.Input
 
@@ -154,7 +154,7 @@ func (i GetSecretbundleVersionsFilterArgs) ToGetSecretbundleVersionsFilterOutput
 // GetSecretbundleVersionsFilterArrayInput is an input type that accepts GetSecretbundleVersionsFilterArray and GetSecretbundleVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsFilterArrayInput` via:
 //
-//          GetSecretbundleVersionsFilterArray{ GetSecretbundleVersionsFilterArgs{...} }
+//	GetSecretbundleVersionsFilterArray{ GetSecretbundleVersionsFilterArgs{...} }
 type GetSecretbundleVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +242,7 @@ type GetSecretbundleVersionsSecretBundleVersion struct {
 // GetSecretbundleVersionsSecretBundleVersionInput is an input type that accepts GetSecretbundleVersionsSecretBundleVersionArgs and GetSecretbundleVersionsSecretBundleVersionOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsSecretBundleVersionInput` via:
 //
-//          GetSecretbundleVersionsSecretBundleVersionArgs{...}
+//	GetSecretbundleVersionsSecretBundleVersionArgs{...}
 type GetSecretbundleVersionsSecretBundleVersionInput interface {
 	pulumi.Input
 
@@ -282,7 +282,7 @@ func (i GetSecretbundleVersionsSecretBundleVersionArgs) ToGetSecretbundleVersion
 // GetSecretbundleVersionsSecretBundleVersionArrayInput is an input type that accepts GetSecretbundleVersionsSecretBundleVersionArray and GetSecretbundleVersionsSecretBundleVersionArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsSecretBundleVersionArrayInput` via:
 //
-//          GetSecretbundleVersionsSecretBundleVersionArray{ GetSecretbundleVersionsSecretBundleVersionArgs{...} }
+//	GetSecretbundleVersionsSecretBundleVersionArray{ GetSecretbundleVersionsSecretBundleVersionArgs{...} }
 type GetSecretbundleVersionsSecretBundleVersionArrayInput interface {
 	pulumi.Input
 

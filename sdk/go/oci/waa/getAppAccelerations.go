@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waa.GetAppAccelerations(ctx, &waa.GetAppAccelerationsArgs{
-// 			CompartmentId:              _var.Compartment_id,
-// 			DisplayName:                pulumi.StringRef(_var.Web_app_acceleration_display_name),
-// 			Id:                         pulumi.StringRef(_var.Web_app_acceleration_id),
-// 			States:                     _var.Web_app_acceleration_state,
-// 			WebAppAccelerationPolicyId: pulumi.StringRef(oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waa.GetAppAccelerations(ctx, &waa.GetAppAccelerationsArgs{
+//				CompartmentId:              _var.Compartment_id,
+//				DisplayName:                pulumi.StringRef(_var.Web_app_acceleration_display_name),
+//				Id:                         pulumi.StringRef(_var.Web_app_acceleration_id),
+//				States:                     _var.Web_app_acceleration_state,
+//				WebAppAccelerationPolicyId: pulumi.StringRef(oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAppAccelerations(ctx *pulumi.Context, args *GetAppAccelerationsArgs, opts ...pulumi.InvokeOption) (*GetAppAccelerationsResult, error) {
 	var rv GetAppAccelerationsResult

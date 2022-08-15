@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAlertAnalytic(ctx, &datasafe.GetAlertAnalyticArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Alert_analytic_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Alert_analytic_compartment_id_in_subtree),
-// 			GroupBies:              _var.Alert_analytic_group_by,
-// 			QueryTimeZone:          pulumi.StringRef(_var.Alert_analytic_query_time_zone),
-// 			ScimQuery:              pulumi.StringRef(_var.Alert_analytic_scim_query),
-// 			SummaryFields:          _var.Alert_analytic_summary_field,
-// 			TimeEnded:              pulumi.StringRef(_var.Alert_analytic_time_ended),
-// 			TimeStarted:            pulumi.StringRef(_var.Alert_analytic_time_started),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAlertAnalytic(ctx, &datasafe.GetAlertAnalyticArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Alert_analytic_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Alert_analytic_compartment_id_in_subtree),
+//				GroupBies:              _var.Alert_analytic_group_by,
+//				QueryTimeZone:          pulumi.StringRef(_var.Alert_analytic_query_time_zone),
+//				ScimQuery:              pulumi.StringRef(_var.Alert_analytic_scim_query),
+//				SummaryFields:          _var.Alert_analytic_summary_field,
+//				TimeEnded:              pulumi.StringRef(_var.Alert_analytic_time_ended),
+//				TimeStarted:            pulumi.StringRef(_var.Alert_analytic_time_started),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAlertAnalytic(ctx *pulumi.Context, args *GetAlertAnalyticArgs, opts ...pulumi.InvokeOption) (*GetAlertAnalyticResult, error) {
 	var rv GetAlertAnalyticResult

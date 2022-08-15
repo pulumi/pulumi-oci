@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetNetworkSource(ctx, &identity.GetNetworkSourceArgs{
-// 			NetworkSourceId: oci_identity_network_source.Test_network_source.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetNetworkSource(ctx, &identity.GetNetworkSourceArgs{
+//				NetworkSourceId: oci_identity_network_source.Test_network_source.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNetworkSource(ctx *pulumi.Context, args *LookupNetworkSourceArgs, opts ...pulumi.InvokeOption) (*LookupNetworkSourceResult, error) {
 	var rv LookupNetworkSourceResult

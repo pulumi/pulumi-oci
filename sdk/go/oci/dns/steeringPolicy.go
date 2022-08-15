@@ -22,63 +22,66 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewSteeringPolicy(ctx, "testSteeringPolicy", &Dns.SteeringPolicyArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Steering_policy_display_name),
-// 			Template:      pulumi.Any(_var.Steering_policy_template),
-// 			Answers: dns.SteeringPolicyAnswerArray{
-// 				&dns.SteeringPolicyAnswerArgs{
-// 					Name:       pulumi.Any(_var.Steering_policy_answers_name),
-// 					Rdata:      pulumi.Any(_var.Steering_policy_answers_rdata),
-// 					Rtype:      pulumi.Any(_var.Steering_policy_answers_rtype),
-// 					IsDisabled: pulumi.Any(_var.Steering_policy_answers_is_disabled),
-// 					Pool:       pulumi.Any(_var.Steering_policy_answers_pool),
-// 				},
-// 			},
-// 			DefinedTags:          pulumi.Any(_var.Steering_policy_defined_tags),
-// 			FreeformTags:         pulumi.Any(_var.Steering_policy_freeform_tags),
-// 			HealthCheckMonitorId: pulumi.Any(oci_health_checks_http_monitor.Test_http_monitor.Id),
-// 			Rules: dns.SteeringPolicyRuleArray{
-// 				&dns.SteeringPolicyRuleArgs{
-// 					RuleType: pulumi.Any(_var.Steering_policy_rules_rule_type),
-// 					Cases: dns.SteeringPolicyRuleCaseArray{
-// 						&dns.SteeringPolicyRuleCaseArgs{
-// 							AnswerDatas: dns.SteeringPolicyRuleCaseAnswerDataArray{
-// 								&dns.SteeringPolicyRuleCaseAnswerDataArgs{
-// 									AnswerCondition: pulumi.Any(_var.Steering_policy_rules_cases_answer_data_answer_condition),
-// 									ShouldKeep:      pulumi.Any(_var.Steering_policy_rules_cases_answer_data_should_keep),
-// 									Value:           pulumi.Any(_var.Steering_policy_rules_cases_answer_data_value),
-// 								},
-// 							},
-// 							CaseCondition: pulumi.Any(_var.Steering_policy_rules_cases_case_condition),
-// 							Count:         pulumi.Any(_var.Steering_policy_rules_cases_count),
-// 						},
-// 					},
-// 					DefaultAnswerDatas: dns.SteeringPolicyRuleDefaultAnswerDataArray{
-// 						&dns.SteeringPolicyRuleDefaultAnswerDataArgs{
-// 							AnswerCondition: pulumi.Any(_var.Steering_policy_rules_default_answer_data_answer_condition),
-// 							ShouldKeep:      pulumi.Any(_var.Steering_policy_rules_default_answer_data_should_keep),
-// 							Value:           pulumi.Any(_var.Steering_policy_rules_default_answer_data_value),
-// 						},
-// 					},
-// 					DefaultCount: pulumi.Any(_var.Steering_policy_rules_default_count),
-// 					Description:  pulumi.Any(_var.Steering_policy_rules_description),
-// 				},
-// 			},
-// 			Ttl: pulumi.Any(_var.Steering_policy_ttl),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewSteeringPolicy(ctx, "testSteeringPolicy", &Dns.SteeringPolicyArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Steering_policy_display_name),
+//				Template:      pulumi.Any(_var.Steering_policy_template),
+//				Answers: dns.SteeringPolicyAnswerArray{
+//					&dns.SteeringPolicyAnswerArgs{
+//						Name:       pulumi.Any(_var.Steering_policy_answers_name),
+//						Rdata:      pulumi.Any(_var.Steering_policy_answers_rdata),
+//						Rtype:      pulumi.Any(_var.Steering_policy_answers_rtype),
+//						IsDisabled: pulumi.Any(_var.Steering_policy_answers_is_disabled),
+//						Pool:       pulumi.Any(_var.Steering_policy_answers_pool),
+//					},
+//				},
+//				DefinedTags:          pulumi.Any(_var.Steering_policy_defined_tags),
+//				FreeformTags:         pulumi.Any(_var.Steering_policy_freeform_tags),
+//				HealthCheckMonitorId: pulumi.Any(oci_health_checks_http_monitor.Test_http_monitor.Id),
+//				Rules: dns.SteeringPolicyRuleArray{
+//					&dns.SteeringPolicyRuleArgs{
+//						RuleType: pulumi.Any(_var.Steering_policy_rules_rule_type),
+//						Cases: dns.SteeringPolicyRuleCaseArray{
+//							&dns.SteeringPolicyRuleCaseArgs{
+//								AnswerDatas: dns.SteeringPolicyRuleCaseAnswerDataArray{
+//									&dns.SteeringPolicyRuleCaseAnswerDataArgs{
+//										AnswerCondition: pulumi.Any(_var.Steering_policy_rules_cases_answer_data_answer_condition),
+//										ShouldKeep:      pulumi.Any(_var.Steering_policy_rules_cases_answer_data_should_keep),
+//										Value:           pulumi.Any(_var.Steering_policy_rules_cases_answer_data_value),
+//									},
+//								},
+//								CaseCondition: pulumi.Any(_var.Steering_policy_rules_cases_case_condition),
+//								Count:         pulumi.Any(_var.Steering_policy_rules_cases_count),
+//							},
+//						},
+//						DefaultAnswerDatas: dns.SteeringPolicyRuleDefaultAnswerDataArray{
+//							&dns.SteeringPolicyRuleDefaultAnswerDataArgs{
+//								AnswerCondition: pulumi.Any(_var.Steering_policy_rules_default_answer_data_answer_condition),
+//								ShouldKeep:      pulumi.Any(_var.Steering_policy_rules_default_answer_data_should_keep),
+//								Value:           pulumi.Any(_var.Steering_policy_rules_default_answer_data_value),
+//							},
+//						},
+//						DefaultCount: pulumi.Any(_var.Steering_policy_rules_default_count),
+//						Description:  pulumi.Any(_var.Steering_policy_rules_description),
+//					},
+//				},
+//				Ttl: pulumi.Any(_var.Steering_policy_ttl),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -86,7 +89,9 @@ import (
 // SteeringPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
+//
+//	$ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
+//
 // ```
 type SteeringPolicy struct {
 	pulumi.CustomResourceState
@@ -281,7 +286,7 @@ func (i *SteeringPolicy) ToSteeringPolicyOutputWithContext(ctx context.Context) 
 // SteeringPolicyArrayInput is an input type that accepts SteeringPolicyArray and SteeringPolicyArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyArrayInput` via:
 //
-//          SteeringPolicyArray{ SteeringPolicyArgs{...} }
+//	SteeringPolicyArray{ SteeringPolicyArgs{...} }
 type SteeringPolicyArrayInput interface {
 	pulumi.Input
 
@@ -306,7 +311,7 @@ func (i SteeringPolicyArray) ToSteeringPolicyArrayOutputWithContext(ctx context.
 // SteeringPolicyMapInput is an input type that accepts SteeringPolicyMap and SteeringPolicyMapOutput values.
 // You can construct a concrete instance of `SteeringPolicyMapInput` via:
 //
-//          SteeringPolicyMap{ "key": SteeringPolicyArgs{...} }
+//	SteeringPolicyMap{ "key": SteeringPolicyArgs{...} }
 type SteeringPolicyMapInput interface {
 	pulumi.Input
 

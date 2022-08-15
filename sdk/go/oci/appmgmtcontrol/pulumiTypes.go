@@ -19,7 +19,7 @@ type GetMonitoredInstancesFilter struct {
 // GetMonitoredInstancesFilterInput is an input type that accepts GetMonitoredInstancesFilterArgs and GetMonitoredInstancesFilterOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesFilterInput` via:
 //
-//          GetMonitoredInstancesFilterArgs{...}
+//	GetMonitoredInstancesFilterArgs{...}
 type GetMonitoredInstancesFilterInput interface {
 	pulumi.Input
 
@@ -48,7 +48,7 @@ func (i GetMonitoredInstancesFilterArgs) ToGetMonitoredInstancesFilterOutputWith
 // GetMonitoredInstancesFilterArrayInput is an input type that accepts GetMonitoredInstancesFilterArray and GetMonitoredInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesFilterArrayInput` via:
 //
-//          GetMonitoredInstancesFilterArray{ GetMonitoredInstancesFilterArgs{...} }
+//	GetMonitoredInstancesFilterArray{ GetMonitoredInstancesFilterArgs{...} }
 type GetMonitoredInstancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -123,7 +123,7 @@ type GetMonitoredInstancesMonitoredInstanceCollection struct {
 // GetMonitoredInstancesMonitoredInstanceCollectionInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionArgs and GetMonitoredInstancesMonitoredInstanceCollectionOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionInput` via:
 //
-//          GetMonitoredInstancesMonitoredInstanceCollectionArgs{...}
+//	GetMonitoredInstancesMonitoredInstanceCollectionArgs{...}
 type GetMonitoredInstancesMonitoredInstanceCollectionInput interface {
 	pulumi.Input
 
@@ -150,7 +150,7 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionArgs) ToGetMonitoredInst
 // GetMonitoredInstancesMonitoredInstanceCollectionArrayInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionArray and GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionArrayInput` via:
 //
-//          GetMonitoredInstancesMonitoredInstanceCollectionArray{ GetMonitoredInstancesMonitoredInstanceCollectionArgs{...} }
+//	GetMonitoredInstancesMonitoredInstanceCollectionArray{ GetMonitoredInstancesMonitoredInstanceCollectionArgs{...} }
 type GetMonitoredInstancesMonitoredInstanceCollectionArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +236,7 @@ type GetMonitoredInstancesMonitoredInstanceCollectionItem struct {
 // GetMonitoredInstancesMonitoredInstanceCollectionItemInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionItemArgs and GetMonitoredInstancesMonitoredInstanceCollectionItemOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionItemInput` via:
 //
-//          GetMonitoredInstancesMonitoredInstanceCollectionItemArgs{...}
+//	GetMonitoredInstancesMonitoredInstanceCollectionItemArgs{...}
 type GetMonitoredInstancesMonitoredInstanceCollectionItemInput interface {
 	pulumi.Input
 
@@ -280,7 +280,7 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ToGetMonitored
 // GetMonitoredInstancesMonitoredInstanceCollectionItemArrayInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionItemArray and GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionItemArrayInput` via:
 //
-//          GetMonitoredInstancesMonitoredInstanceCollectionItemArray{ GetMonitoredInstancesMonitoredInstanceCollectionItemArgs{...} }
+//	GetMonitoredInstancesMonitoredInstanceCollectionItemArray{ GetMonitoredInstancesMonitoredInstanceCollectionItemArgs{...} }
 type GetMonitoredInstancesMonitoredInstanceCollectionItemArrayInput interface {
 	pulumi.Input
 

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetAppCatalogListingResourceVersion(ctx, &core.GetAppCatalogListingResourceVersionArgs{
-// 			ListingId:       data.Oci_core_app_catalog_listing.Test_listing.Id,
-// 			ResourceVersion: _var.App_catalog_listing_resource_version_resource_version,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetAppCatalogListingResourceVersion(ctx, &core.GetAppCatalogListingResourceVersionArgs{
+//				ListingId:       data.Oci_core_app_catalog_listing.Test_listing.Id,
+//				ResourceVersion: _var.App_catalog_listing_resource_version_resource_version,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAppCatalogListingResourceVersion(ctx *pulumi.Context, args *GetAppCatalogListingResourceVersionArgs, opts ...pulumi.InvokeOption) (*GetAppCatalogListingResourceVersionResult, error) {
 	var rv GetAppCatalogListingResourceVersionResult

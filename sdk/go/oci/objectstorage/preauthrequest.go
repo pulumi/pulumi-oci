@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.NewPreauthrequest(ctx, "testPreauthenticatedRequest", &ObjectStorage.PreauthrequestArgs{
-// 			AccessType:          pulumi.Any(_var.Preauthenticated_request_access_type),
-// 			Bucket:              pulumi.Any(_var.Preauthenticated_request_bucket),
-// 			Namespace:           pulumi.Any(_var.Preauthenticated_request_namespace),
-// 			TimeExpires:         pulumi.Any(_var.Preauthenticated_request_time_expires),
-// 			BucketListingAction: pulumi.Any(_var.Preauthenticated_request_bucket_listing_action),
-// 			Object:              pulumi.Any(_var.Preauthenticated_request_object),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.NewPreauthrequest(ctx, "testPreauthenticatedRequest", &ObjectStorage.PreauthrequestArgs{
+//				AccessType:          pulumi.Any(_var.Preauthenticated_request_access_type),
+//				Bucket:              pulumi.Any(_var.Preauthenticated_request_bucket),
+//				Namespace:           pulumi.Any(_var.Preauthenticated_request_namespace),
+//				TimeExpires:         pulumi.Any(_var.Preauthenticated_request_time_expires),
+//				BucketListingAction: pulumi.Any(_var.Preauthenticated_request_bucket_listing_action),
+//				Object:              pulumi.Any(_var.Preauthenticated_request_object),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // PreauthenticatedRequests can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
+//
+//	$ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
+//
 // ```
 type Preauthrequest struct {
 	pulumi.CustomResourceState
@@ -246,7 +251,7 @@ func (i *Preauthrequest) ToPreauthrequestOutputWithContext(ctx context.Context) 
 // PreauthrequestArrayInput is an input type that accepts PreauthrequestArray and PreauthrequestArrayOutput values.
 // You can construct a concrete instance of `PreauthrequestArrayInput` via:
 //
-//          PreauthrequestArray{ PreauthrequestArgs{...} }
+//	PreauthrequestArray{ PreauthrequestArgs{...} }
 type PreauthrequestArrayInput interface {
 	pulumi.Input
 
@@ -271,7 +276,7 @@ func (i PreauthrequestArray) ToPreauthrequestArrayOutputWithContext(ctx context.
 // PreauthrequestMapInput is an input type that accepts PreauthrequestMap and PreauthrequestMapOutput values.
 // You can construct a concrete instance of `PreauthrequestMapInput` via:
 //
-//          PreauthrequestMap{ "key": PreauthrequestArgs{...} }
+//	PreauthrequestMap{ "key": PreauthrequestArgs{...} }
 type PreauthrequestMapInput interface {
 	pulumi.Input
 

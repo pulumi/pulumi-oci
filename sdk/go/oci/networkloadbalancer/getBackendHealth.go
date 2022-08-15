@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.GetBackendHealth(ctx, &networkloadbalancer.GetBackendHealthArgs{
-// 			BackendName:           oci_network_load_balancer_backend.Test_backend.Name,
-// 			BackendSetName:        oci_network_load_balancer_backend_set.Test_backend_set.Name,
-// 			NetworkLoadBalancerId: oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.GetBackendHealth(ctx, &networkloadbalancer.GetBackendHealthArgs{
+//				BackendName:           oci_network_load_balancer_backend.Test_backend.Name,
+//				BackendSetName:        oci_network_load_balancer_backend_set.Test_backend_set.Name,
+//				NetworkLoadBalancerId: oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBackendHealth(ctx *pulumi.Context, args *GetBackendHealthArgs, opts ...pulumi.InvokeOption) (*GetBackendHealthResult, error) {
 	var rv GetBackendHealthResult

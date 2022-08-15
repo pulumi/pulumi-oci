@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.GetDedicatedVantagePoint(ctx, &apmsynthetics.GetDedicatedVantagePointArgs{
-// 			ApmDomainId:             oci_apm_apm_domain.Test_apm_domain.Id,
-// 			DedicatedVantagePointId: oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.GetDedicatedVantagePoint(ctx, &apmsynthetics.GetDedicatedVantagePointArgs{
+//				ApmDomainId:             oci_apm_apm_domain.Test_apm_domain.Id,
+//				DedicatedVantagePointId: oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDedicatedVantagePoint(ctx *pulumi.Context, args *LookupDedicatedVantagePointArgs, opts ...pulumi.InvokeOption) (*LookupDedicatedVantagePointResult, error) {
 	var rv LookupDedicatedVantagePointResult
@@ -62,7 +65,7 @@ type LookupDedicatedVantagePointResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// Details of DVP Stack.
+	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails []GetDedicatedVantagePointDvpStackDetail `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -140,7 +143,7 @@ func (o LookupDedicatedVantagePointResultOutput) DisplayName() pulumi.StringOutp
 	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Details of DVP Stack.
+// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 func (o LookupDedicatedVantagePointResultOutput) DvpStackDetails() GetDedicatedVantagePointDvpStackDetailArrayOutput {
 	return o.ApplyT(func(v LookupDedicatedVantagePointResult) []GetDedicatedVantagePointDvpStackDetail {
 		return v.DvpStackDetails

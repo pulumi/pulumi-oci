@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetVirtualServiceRouteTable(ctx, &servicemesh.GetVirtualServiceRouteTableArgs{
-// 			VirtualServiceRouteTableId: oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetVirtualServiceRouteTable(ctx, &servicemesh.GetVirtualServiceRouteTableArgs{
+//				VirtualServiceRouteTableId: oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupVirtualServiceRouteTable(ctx *pulumi.Context, args *LookupVirtualServiceRouteTableArgs, opts ...pulumi.InvokeOption) (*LookupVirtualServiceRouteTableResult, error) {
 	var rv LookupVirtualServiceRouteTableResult

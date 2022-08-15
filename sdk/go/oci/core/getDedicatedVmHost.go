@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDedicatedVmHost(ctx, &core.GetDedicatedVmHostArgs{
-// 			DedicatedVmHostId: oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDedicatedVmHost(ctx, &core.GetDedicatedVmHostArgs{
+//				DedicatedVmHostId: oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDedicatedVmHost(ctx *pulumi.Context, args *LookupDedicatedVmHostArgs, opts ...pulumi.InvokeOption) (*LookupDedicatedVmHostResult, error) {
 	var rv LookupDedicatedVmHostResult

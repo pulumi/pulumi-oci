@@ -21,47 +21,60 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.NewNotebookSession(ctx, "testNotebookSession", &DataScience.NotebookSessionArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Notebook_session_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NotebookSessionConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsArgs{
-// 				Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_config_details_shape),
-// 				BlockStorageSizeInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_block_storage_size_in_gbs),
-// 				NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{
-// 					MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs),
-// 					Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus),
-// 				},
-// 				SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			},
-// 			NotebookSessionConfigurationDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsArgs{
-// 				Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_shape),
-// 				SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				BlockStorageSizeInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs),
-// 				NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{
-// 					MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs),
-// 					Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.NewNotebookSession(ctx, "testNotebookSession", &DataScience.NotebookSessionArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Notebook_session_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NotebookSessionConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsArgs{
+//					Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_config_details_shape),
+//					BlockStorageSizeInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_block_storage_size_in_gbs),
+//					NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{
+//						MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs),
+//						Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus),
+//					},
+//					SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				},
+//				NotebookSessionConfigurationDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsArgs{
+//					Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_shape),
+//					SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					BlockStorageSizeInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs),
+//					NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{
+//						MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs),
+//						Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus),
+//					},
+//				},
+//				NotebookSessionRuntimeConfigDetails: &datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{
+//					CustomEnvironmentVariables: pulumi.Any(_var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables),
+//					NotebookSessionGitConfigDetails: &datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{
+//						NotebookSessionGitRepoConfigCollections: datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray{
+//							&datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs{
+//								Url: pulumi.Any(_var.Notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -69,7 +82,9 @@ import (
 // NotebookSessions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
+//
+//	$ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
+//
 // ```
 type NotebookSession struct {
 	pulumi.CustomResourceState
@@ -90,6 +105,8 @@ type NotebookSession struct {
 	NotebookSessionConfigDetails NotebookSessionNotebookSessionConfigDetailsOutput `pulumi:"notebookSessionConfigDetails"`
 	// (Updatable) Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsOutput `pulumi:"notebookSessionConfigurationDetails"`
+	// (Updatable) Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsOutput `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringOutput `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -151,6 +168,8 @@ type notebookSessionState struct {
 	NotebookSessionConfigDetails *NotebookSessionNotebookSessionConfigDetails `pulumi:"notebookSessionConfigDetails"`
 	// (Updatable) Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails *NotebookSessionNotebookSessionConfigurationDetails `pulumi:"notebookSessionConfigurationDetails"`
+	// (Updatable) Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetails `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl *string `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -178,6 +197,8 @@ type NotebookSessionState struct {
 	NotebookSessionConfigDetails NotebookSessionNotebookSessionConfigDetailsPtrInput
 	// (Updatable) Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsPtrInput
+	// (Updatable) Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -205,6 +226,8 @@ type notebookSessionArgs struct {
 	NotebookSessionConfigDetails *NotebookSessionNotebookSessionConfigDetails `pulumi:"notebookSessionConfigDetails"`
 	// (Updatable) Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails *NotebookSessionNotebookSessionConfigurationDetails `pulumi:"notebookSessionConfigurationDetails"`
+	// (Updatable) Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetails `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
 	ProjectId string `pulumi:"projectId"`
 	// The state of the notebook session.
@@ -225,6 +248,8 @@ type NotebookSessionArgs struct {
 	NotebookSessionConfigDetails NotebookSessionNotebookSessionConfigDetailsPtrInput
 	// (Updatable) Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails NotebookSessionNotebookSessionConfigurationDetailsPtrInput
+	// (Updatable) Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
 	ProjectId pulumi.StringInput
 	// The state of the notebook session.
@@ -257,7 +282,7 @@ func (i *NotebookSession) ToNotebookSessionOutputWithContext(ctx context.Context
 // NotebookSessionArrayInput is an input type that accepts NotebookSessionArray and NotebookSessionArrayOutput values.
 // You can construct a concrete instance of `NotebookSessionArrayInput` via:
 //
-//          NotebookSessionArray{ NotebookSessionArgs{...} }
+//	NotebookSessionArray{ NotebookSessionArgs{...} }
 type NotebookSessionArrayInput interface {
 	pulumi.Input
 
@@ -282,7 +307,7 @@ func (i NotebookSessionArray) ToNotebookSessionArrayOutputWithContext(ctx contex
 // NotebookSessionMapInput is an input type that accepts NotebookSessionMap and NotebookSessionMapOutput values.
 // You can construct a concrete instance of `NotebookSessionMapInput` via:
 //
-//          NotebookSessionMap{ "key": NotebookSessionArgs{...} }
+//	NotebookSessionMap{ "key": NotebookSessionArgs{...} }
 type NotebookSessionMapInput interface {
 	pulumi.Input
 

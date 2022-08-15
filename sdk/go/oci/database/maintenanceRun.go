@@ -20,7 +20,9 @@ import (
 // MaintenanceRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
+//
+//	$ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
+//
 // ```
 type MaintenanceRun struct {
 	pulumi.CustomResourceState
@@ -327,7 +329,7 @@ func (i *MaintenanceRun) ToMaintenanceRunOutputWithContext(ctx context.Context) 
 // MaintenanceRunArrayInput is an input type that accepts MaintenanceRunArray and MaintenanceRunArrayOutput values.
 // You can construct a concrete instance of `MaintenanceRunArrayInput` via:
 //
-//          MaintenanceRunArray{ MaintenanceRunArgs{...} }
+//	MaintenanceRunArray{ MaintenanceRunArgs{...} }
 type MaintenanceRunArrayInput interface {
 	pulumi.Input
 
@@ -352,7 +354,7 @@ func (i MaintenanceRunArray) ToMaintenanceRunArrayOutputWithContext(ctx context.
 // MaintenanceRunMapInput is an input type that accepts MaintenanceRunMap and MaintenanceRunMapOutput values.
 // You can construct a concrete instance of `MaintenanceRunMapInput` via:
 //
-//          MaintenanceRunMap{ "key": MaintenanceRunArgs{...} }
+//	MaintenanceRunMap{ "key": MaintenanceRunArgs{...} }
 type MaintenanceRunMapInput interface {
 	pulumi.Input
 

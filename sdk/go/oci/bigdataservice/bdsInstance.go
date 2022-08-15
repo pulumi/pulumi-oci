@@ -21,75 +21,78 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.NewBdsInstance(ctx, "testBdsInstance", &BigDataService.BdsInstanceArgs{
-// 			ClusterAdminPassword: pulumi.Any(_var.Bds_instance_cluster_admin_password),
-// 			ClusterPublicKey:     pulumi.Any(_var.Bds_instance_cluster_public_key),
-// 			ClusterVersion:       pulumi.Any(_var.Bds_instance_cluster_version),
-// 			CompartmentId:        pulumi.Any(_var.Compartment_id),
-// 			DisplayName:          pulumi.Any(_var.Bds_instance_display_name),
-// 			IsHighAvailability:   pulumi.Any(_var.Bds_instance_is_high_availability),
-// 			IsSecure:             pulumi.Any(_var.Bds_instance_is_secure),
-// 			MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
-// 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-// 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-// 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-// 				ShapeConfig: &bigdataservice.BdsInstanceMasterNodeShapeConfigArgs{
-// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-// 				},
-// 			},
-// 			UtilNode: &bigdataservice.BdsInstanceUtilNodeArgs{
-// 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-// 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-// 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-// 				ShapeConfig: &bigdataservice.BdsInstanceUtilNodeShapeConfigArgs{
-// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-// 				},
-// 			},
-// 			WorkerNode: &bigdataservice.BdsInstanceWorkerNodeArgs{
-// 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-// 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-// 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-// 				ShapeConfig: &bigdataservice.BdsInstanceWorkerNodeShapeConfigArgs{
-// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-// 				},
-// 			},
-// 			ComputeOnlyWorkerNode: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeArgs{
-// 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
-// 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
-// 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
-// 				ShapeConfig: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{
-// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
-// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
-// 				},
-// 			},
-// 			BootstrapScriptUrl: pulumi.Any(_var.Bds_instance_bootstrap_script_url),
-// 			DefinedTags:        pulumi.Any(_var.Bds_instance_defined_tags),
-// 			FreeformTags:       pulumi.Any(_var.Bds_instance_freeform_tags),
-// 			KerberosRealmName:  pulumi.Any(_var.Bds_instance_kerberos_realm_name),
-// 			NetworkConfig: &bigdataservice.BdsInstanceNetworkConfigArgs{
-// 				CidrBlock:            pulumi.Any(_var.Bds_instance_network_config_cidr_block),
-// 				IsNatGatewayRequired: pulumi.Any(_var.Bds_instance_network_config_is_nat_gateway_required),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.NewBdsInstance(ctx, "testBdsInstance", &BigDataService.BdsInstanceArgs{
+//				ClusterAdminPassword: pulumi.Any(_var.Bds_instance_cluster_admin_password),
+//				ClusterPublicKey:     pulumi.Any(_var.Bds_instance_cluster_public_key),
+//				ClusterVersion:       pulumi.Any(_var.Bds_instance_cluster_version),
+//				CompartmentId:        pulumi.Any(_var.Compartment_id),
+//				DisplayName:          pulumi.Any(_var.Bds_instance_display_name),
+//				IsHighAvailability:   pulumi.Any(_var.Bds_instance_is_high_availability),
+//				IsSecure:             pulumi.Any(_var.Bds_instance_is_secure),
+//				MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
+//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
+//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
+//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					ShapeConfig: &bigdataservice.BdsInstanceMasterNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+//					},
+//				},
+//				UtilNode: &bigdataservice.BdsInstanceUtilNodeArgs{
+//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
+//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
+//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					ShapeConfig: &bigdataservice.BdsInstanceUtilNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+//					},
+//				},
+//				WorkerNode: &bigdataservice.BdsInstanceWorkerNodeArgs{
+//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
+//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
+//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					ShapeConfig: &bigdataservice.BdsInstanceWorkerNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+//					},
+//				},
+//				ComputeOnlyWorkerNode: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeArgs{
+//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
+//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
+//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					ShapeConfig: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+//					},
+//				},
+//				BootstrapScriptUrl: pulumi.Any(_var.Bds_instance_bootstrap_script_url),
+//				DefinedTags:        pulumi.Any(_var.Bds_instance_defined_tags),
+//				FreeformTags:       pulumi.Any(_var.Bds_instance_freeform_tags),
+//				KerberosRealmName:  pulumi.Any(_var.Bds_instance_kerberos_realm_name),
+//				NetworkConfig: &bigdataservice.BdsInstanceNetworkConfigArgs{
+//					CidrBlock:            pulumi.Any(_var.Bds_instance_network_config_cidr_block),
+//					IsNatGatewayRequired: pulumi.Any(_var.Bds_instance_network_config_is_nat_gateway_required),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -97,7 +100,9 @@ import (
 // BdsInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
+//
+//	$ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
+//
 // ```
 type BdsInstance struct {
 	pulumi.CustomResourceState
@@ -417,7 +422,7 @@ func (i *BdsInstance) ToBdsInstanceOutputWithContext(ctx context.Context) BdsIns
 // BdsInstanceArrayInput is an input type that accepts BdsInstanceArray and BdsInstanceArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceArrayInput` via:
 //
-//          BdsInstanceArray{ BdsInstanceArgs{...} }
+//	BdsInstanceArray{ BdsInstanceArgs{...} }
 type BdsInstanceArrayInput interface {
 	pulumi.Input
 
@@ -442,7 +447,7 @@ func (i BdsInstanceArray) ToBdsInstanceArrayOutputWithContext(ctx context.Contex
 // BdsInstanceMapInput is an input type that accepts BdsInstanceMap and BdsInstanceMapOutput values.
 // You can construct a concrete instance of `BdsInstanceMapInput` via:
 //
-//          BdsInstanceMap{ "key": BdsInstanceArgs{...} }
+//	BdsInstanceMap{ "key": BdsInstanceArgs{...} }
 type BdsInstanceMapInput interface {
 	pulumi.Input
 

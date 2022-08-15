@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a Target identified by targetId
+// # Returns a Target identified by targetId
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetGuardTarget(ctx, &cloudguard.GetGuardTargetArgs{
-// 			TargetId: oci_cloud_guard_target.Test_target.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetGuardTarget(ctx, &cloudguard.GetGuardTargetArgs{
+//				TargetId: oci_cloud_guard_target.Test_target.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetGuardTarget(ctx *pulumi.Context, args *GetGuardTargetArgs, opts ...pulumi.InvokeOption) (*GetGuardTargetResult, error) {
 	var rv GetGuardTargetResult

@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewPublicIpPool(ctx, "testPublicIpPool", &Core.PublicIpPoolArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Public_ip_pool_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewPublicIpPool(ctx, "testPublicIpPool", &Core.PublicIpPoolArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Public_ip_pool_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // PublicIpPools can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/publicIpPool:PublicIpPool test_public_ip_pool "id"
+//
+//	$ pulumi import oci:Core/publicIpPool:PublicIpPool test_public_ip_pool "id"
+//
 // ```
 type PublicIpPool struct {
 	pulumi.CustomResourceState
@@ -189,7 +194,7 @@ func (i *PublicIpPool) ToPublicIpPoolOutputWithContext(ctx context.Context) Publ
 // PublicIpPoolArrayInput is an input type that accepts PublicIpPoolArray and PublicIpPoolArrayOutput values.
 // You can construct a concrete instance of `PublicIpPoolArrayInput` via:
 //
-//          PublicIpPoolArray{ PublicIpPoolArgs{...} }
+//	PublicIpPoolArray{ PublicIpPoolArgs{...} }
 type PublicIpPoolArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +219,7 @@ func (i PublicIpPoolArray) ToPublicIpPoolArrayOutputWithContext(ctx context.Cont
 // PublicIpPoolMapInput is an input type that accepts PublicIpPoolMap and PublicIpPoolMapOutput values.
 // You can construct a concrete instance of `PublicIpPoolMapInput` via:
 //
-//          PublicIpPoolMap{ "key": PublicIpPoolArgs{...} }
+//	PublicIpPoolMap{ "key": PublicIpPoolArgs{...} }
 type PublicIpPoolMapInput interface {
 	pulumi.Input
 

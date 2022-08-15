@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetTsigKey(ctx, &dns.GetTsigKeyArgs{
-// 			TsigKeyId: oci_dns_tsig_key.Test_tsig_key.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetTsigKey(ctx, &dns.GetTsigKeyArgs{
+//				TsigKeyId: oci_dns_tsig_key.Test_tsig_key.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupTsigKey(ctx *pulumi.Context, args *LookupTsigKeyArgs, opts ...pulumi.InvokeOption) (*LookupTsigKeyResult, error) {
 	var rv LookupTsigKeyResult

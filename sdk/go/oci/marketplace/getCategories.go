@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetCategories(ctx, &marketplace.GetCategoriesArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetCategories(ctx, &marketplace.GetCategoriesArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCategories(ctx *pulumi.Context, args *GetCategoriesArgs, opts ...pulumi.InvokeOption) (*GetCategoriesResult, error) {
 	var rv GetCategoriesResult

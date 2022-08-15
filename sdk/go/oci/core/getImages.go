@@ -30,28 +30,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetImages(ctx, &core.GetImagesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			DisplayName:            pulumi.StringRef(_var.Image_display_name),
-// 			OperatingSystem:        pulumi.StringRef(_var.Image_operating_system),
-// 			OperatingSystemVersion: pulumi.StringRef(_var.Image_operating_system_version),
-// 			Shape:                  pulumi.StringRef(_var.Image_shape),
-// 			State:                  pulumi.StringRef(_var.Image_state),
-// 			SortBy:                 pulumi.StringRef(_var.Image_sort_by),
-// 			SortOrder:              pulumi.StringRef(_var.Image_sort_order),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetImages(ctx, &core.GetImagesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				DisplayName:            pulumi.StringRef(_var.Image_display_name),
+//				OperatingSystem:        pulumi.StringRef(_var.Image_operating_system),
+//				OperatingSystemVersion: pulumi.StringRef(_var.Image_operating_system_version),
+//				Shape:                  pulumi.StringRef(_var.Image_shape),
+//				State:                  pulumi.StringRef(_var.Image_state),
+//				SortBy:                 pulumi.StringRef(_var.Image_sort_by),
+//				SortOrder:              pulumi.StringRef(_var.Image_sort_order),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetImages(ctx *pulumi.Context, args *GetImagesArgs, opts ...pulumi.InvokeOption) (*GetImagesResult, error) {
 	var rv GetImagesResult

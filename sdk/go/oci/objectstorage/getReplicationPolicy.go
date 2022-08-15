@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetReplicationPolicy(ctx, &objectstorage.GetReplicationPolicyArgs{
-// 			Bucket:        _var.Replication_policy_bucket,
-// 			Namespace:     _var.Replication_policy_namespace,
-// 			ReplicationId: oci_objectstorage_replication.Test_replication.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetReplicationPolicy(ctx, &objectstorage.GetReplicationPolicyArgs{
+//				Bucket:        _var.Replication_policy_bucket,
+//				Namespace:     _var.Replication_policy_namespace,
+//				ReplicationId: oci_objectstorage_replication.Test_replication.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupReplicationPolicy(ctx *pulumi.Context, args *LookupReplicationPolicyArgs, opts ...pulumi.InvokeOption) (*LookupReplicationPolicyResult, error) {
 	var rv LookupReplicationPolicyResult

@@ -21,45 +21,48 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewTrigger(ctx, "testTrigger", &DevOps.TriggerArgs{
-// 			Actions: devops.TriggerActionArray{
-// 				&devops.TriggerActionArgs{
-// 					BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
-// 					Type:            pulumi.Any(_var.Trigger_actions_type),
-// 					Filter: &devops.TriggerActionFilterArgs{
-// 						TriggerSource: pulumi.Any(_var.Trigger_actions_filter_trigger_source),
-// 						Events:        pulumi.Any(_var.Trigger_actions_filter_events),
-// 						Include: &devops.TriggerActionFilterIncludeArgs{
-// 							BaseRef: pulumi.Any(_var.Trigger_actions_filter_include_base_ref),
-// 							HeadRef: pulumi.Any(_var.Trigger_actions_filter_include_head_ref),
-// 						},
-// 					},
-// 				},
-// 			},
-// 			ProjectId:     pulumi.Any(oci_devops_project.Test_project.Id),
-// 			TriggerSource: pulumi.Any(_var.Trigger_trigger_source),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Trigger_description),
-// 			DisplayName: pulumi.Any(_var.Trigger_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewTrigger(ctx, "testTrigger", &DevOps.TriggerArgs{
+//				Actions: devops.TriggerActionArray{
+//					&devops.TriggerActionArgs{
+//						BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
+//						Type:            pulumi.Any(_var.Trigger_actions_type),
+//						Filter: &devops.TriggerActionFilterArgs{
+//							TriggerSource: pulumi.Any(_var.Trigger_actions_filter_trigger_source),
+//							Events:        pulumi.Any(_var.Trigger_actions_filter_events),
+//							Include: &devops.TriggerActionFilterIncludeArgs{
+//								BaseRef: pulumi.Any(_var.Trigger_actions_filter_include_base_ref),
+//								HeadRef: pulumi.Any(_var.Trigger_actions_filter_include_head_ref),
+//							},
+//						},
+//					},
+//				},
+//				ProjectId:     pulumi.Any(oci_devops_project.Test_project.Id),
+//				TriggerSource: pulumi.Any(_var.Trigger_trigger_source),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Trigger_description),
+//				DisplayName: pulumi.Any(_var.Trigger_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -67,7 +70,9 @@ import (
 // Triggers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
+//
+//	$ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
+//
 // ```
 type Trigger struct {
 	pulumi.CustomResourceState
@@ -276,7 +281,7 @@ func (i *Trigger) ToTriggerOutputWithContext(ctx context.Context) TriggerOutput 
 // TriggerArrayInput is an input type that accepts TriggerArray and TriggerArrayOutput values.
 // You can construct a concrete instance of `TriggerArrayInput` via:
 //
-//          TriggerArray{ TriggerArgs{...} }
+//	TriggerArray{ TriggerArgs{...} }
 type TriggerArrayInput interface {
 	pulumi.Input
 
@@ -301,7 +306,7 @@ func (i TriggerArray) ToTriggerArrayOutputWithContext(ctx context.Context) Trigg
 // TriggerMapInput is an input type that accepts TriggerMap and TriggerMapOutput values.
 // You can construct a concrete instance of `TriggerMapInput` via:
 //
-//          TriggerMap{ "key": TriggerArgs{...} }
+//	TriggerMap{ "key": TriggerArgs{...} }
 type TriggerMapInput interface {
 	pulumi.Input
 

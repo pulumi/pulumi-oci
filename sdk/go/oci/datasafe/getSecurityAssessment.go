@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSecurityAssessment(ctx, &datasafe.GetSecurityAssessmentArgs{
-// 			SecurityAssessmentId: oci_data_safe_security_assessment.Test_security_assessment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSecurityAssessment(ctx, &datasafe.GetSecurityAssessmentArgs{
+//				SecurityAssessmentId: oci_data_safe_security_assessment.Test_security_assessment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSecurityAssessment(ctx *pulumi.Context, args *LookupSecurityAssessmentArgs, opts ...pulumi.InvokeOption) (*LookupSecurityAssessmentResult, error) {
 	var rv LookupSecurityAssessmentResult

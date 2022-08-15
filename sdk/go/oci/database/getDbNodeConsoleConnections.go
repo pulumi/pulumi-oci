@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbNodeConsoleConnections(ctx, &database.GetDbNodeConsoleConnectionsArgs{
-// 			DbNodeId: oci_database_db_node.Test_db_node.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbNodeConsoleConnections(ctx, &database.GetDbNodeConsoleConnectionsArgs{
+//				DbNodeId: oci_database_db_node.Test_db_node.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbNodeConsoleConnections(ctx *pulumi.Context, args *GetDbNodeConsoleConnectionsArgs, opts ...pulumi.InvokeOption) (*GetDbNodeConsoleConnectionsResult, error) {
 	var rv GetDbNodeConsoleConnectionsResult

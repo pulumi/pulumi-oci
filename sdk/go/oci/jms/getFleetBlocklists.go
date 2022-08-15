@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.GetFleetBlocklists(ctx, &jms.GetFleetBlocklistsArgs{
-// 			FleetId:           oci_jms_fleet.Test_fleet.Id,
-// 			ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-// 			Operation:         pulumi.StringRef(_var.Fleet_blocklist_operation),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.GetFleetBlocklists(ctx, &jms.GetFleetBlocklistsArgs{
+//				FleetId:           oci_jms_fleet.Test_fleet.Id,
+//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
+//				Operation:         pulumi.StringRef(_var.Fleet_blocklist_operation),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFleetBlocklists(ctx *pulumi.Context, args *GetFleetBlocklistsArgs, opts ...pulumi.InvokeOption) (*GetFleetBlocklistsResult, error) {
 	var rv GetFleetBlocklistsResult

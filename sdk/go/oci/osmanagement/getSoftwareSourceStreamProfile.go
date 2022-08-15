@@ -32,25 +32,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.GetSoftwareSourceStreamProfile(ctx, &osmanagement.GetSoftwareSourceStreamProfileArgs{
-// 			SoftwareSourceId: _var.Software_source.Id,
-// 			CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-// 			ModuleName:       pulumi.StringRef(_var.Software_source_module_name),
-// 			ProfileName:      pulumi.StringRef(_var.Software_source_module_stream_profile_name),
-// 			StreamName:       pulumi.StringRef(_var.Software_source_module_stream_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.GetSoftwareSourceStreamProfile(ctx, &osmanagement.GetSoftwareSourceStreamProfileArgs{
+//				SoftwareSourceId: _var.Software_source.Id,
+//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
+//				ModuleName:       pulumi.StringRef(_var.Software_source_module_name),
+//				ProfileName:      pulumi.StringRef(_var.Software_source_module_stream_profile_name),
+//				StreamName:       pulumi.StringRef(_var.Software_source_module_stream_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSoftwareSourceStreamProfile(ctx *pulumi.Context, args *GetSoftwareSourceStreamProfileArgs, opts ...pulumi.InvokeOption) (*GetSoftwareSourceStreamProfileResult, error) {
 	var rv GetSoftwareSourceStreamProfileResult

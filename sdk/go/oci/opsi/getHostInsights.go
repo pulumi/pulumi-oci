@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetHostInsights(ctx, &opsi.GetHostInsightsArgs{
-// 			CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-// 			CompartmentIdInSubtree:    pulumi.BoolRef(_var.Host_insight_compartment_id_in_subtree),
-// 			EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-// 			ExadataInsightId:          pulumi.StringRef(oci_opsi_exadata_insight.Test_exadata_insight.Id),
-// 			HostTypes:                 _var.Host_insight_host_type,
-// 			Id:                        pulumi.StringRef(_var.Host_insight_id),
-// 			States:                    _var.Host_insight_state,
-// 			Statuses:                  _var.Host_insight_status,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetHostInsights(ctx, &opsi.GetHostInsightsArgs{
+//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
+//				CompartmentIdInSubtree:    pulumi.BoolRef(_var.Host_insight_compartment_id_in_subtree),
+//				EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
+//				ExadataInsightId:          pulumi.StringRef(oci_opsi_exadata_insight.Test_exadata_insight.Id),
+//				HostTypes:                 _var.Host_insight_host_type,
+//				Id:                        pulumi.StringRef(_var.Host_insight_id),
+//				States:                    _var.Host_insight_state,
+//				Statuses:                  _var.Host_insight_status,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetHostInsights(ctx *pulumi.Context, args *GetHostInsightsArgs, opts ...pulumi.InvokeOption) (*GetHostInsightsResult, error) {
 	var rv GetHostInsightsResult
@@ -62,9 +65,11 @@ type GetHostInsightsArgs struct {
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+	// <<<<<<< ours
 	ExadataInsightId *string                 `pulumi:"exadataInsightId"`
 	Filters          []GetHostInsightsFilter `pulumi:"filters"`
 	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+	// > > > > > > > theirs
 	HostTypes []string `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id *string `pulumi:"id"`
@@ -118,9 +123,11 @@ type GetHostInsightsOutputArgs struct {
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId pulumi.StringPtrInput `pulumi:"enterpriseManagerBridgeId"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+	// <<<<<<< ours
 	ExadataInsightId pulumi.StringPtrInput           `pulumi:"exadataInsightId"`
 	Filters          GetHostInsightsFilterArrayInput `pulumi:"filters"`
 	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+	// > > > > > > > theirs
 	HostTypes pulumi.StringArrayInput `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringPtrInput `pulumi:"id"`

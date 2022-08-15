@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewCloudAutonomousVmCluster(ctx, "testCloudAutonomousVmCluster", &Database.CloudAutonomousVmClusterArgs{
-// 			CloudExadataInfrastructureId: pulumi.Any(oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id),
-// 			CompartmentId:                pulumi.Any(_var.Compartment_id),
-// 			DisplayName:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_display_name),
-// 			SubnetId:                     pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			ClusterTimeZone:              pulumi.Any(_var.Cloud_autonomous_vm_cluster_cluster_time_zone),
-// 			DefinedTags:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_defined_tags),
-// 			Description:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			LicenseModel: pulumi.Any(_var.Cloud_autonomous_vm_cluster_license_model),
-// 			NsgIds:       pulumi.Any(_var.Cloud_autonomous_vm_cluster_nsg_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewCloudAutonomousVmCluster(ctx, "testCloudAutonomousVmCluster", &Database.CloudAutonomousVmClusterArgs{
+//				CloudExadataInfrastructureId: pulumi.Any(oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id),
+//				CompartmentId:                pulumi.Any(_var.Compartment_id),
+//				DisplayName:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_display_name),
+//				SubnetId:                     pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				ClusterTimeZone:              pulumi.Any(_var.Cloud_autonomous_vm_cluster_cluster_time_zone),
+//				DefinedTags:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_defined_tags),
+//				Description:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				LicenseModel: pulumi.Any(_var.Cloud_autonomous_vm_cluster_license_model),
+//				NsgIds:       pulumi.Any(_var.Cloud_autonomous_vm_cluster_nsg_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // CloudAutonomousVmClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
+//
+//	$ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
+//
 // ```
 type CloudAutonomousVmCluster struct {
 	pulumi.CustomResourceState
@@ -409,7 +414,7 @@ func (i *CloudAutonomousVmCluster) ToCloudAutonomousVmClusterOutputWithContext(c
 // CloudAutonomousVmClusterArrayInput is an input type that accepts CloudAutonomousVmClusterArray and CloudAutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `CloudAutonomousVmClusterArrayInput` via:
 //
-//          CloudAutonomousVmClusterArray{ CloudAutonomousVmClusterArgs{...} }
+//	CloudAutonomousVmClusterArray{ CloudAutonomousVmClusterArgs{...} }
 type CloudAutonomousVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -434,7 +439,7 @@ func (i CloudAutonomousVmClusterArray) ToCloudAutonomousVmClusterArrayOutputWith
 // CloudAutonomousVmClusterMapInput is an input type that accepts CloudAutonomousVmClusterMap and CloudAutonomousVmClusterMapOutput values.
 // You can construct a concrete instance of `CloudAutonomousVmClusterMapInput` via:
 //
-//          CloudAutonomousVmClusterMap{ "key": CloudAutonomousVmClusterArgs{...} }
+//	CloudAutonomousVmClusterMap{ "key": CloudAutonomousVmClusterArgs{...} }
 type CloudAutonomousVmClusterMapInput interface {
 	pulumi.Input
 

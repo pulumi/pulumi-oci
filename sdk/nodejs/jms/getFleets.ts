@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testFleets = oci.Jms.getFleets({
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.fleet_display_name,
+ *     displayNameContains: _var.fleet_display_name_contains,
  *     id: _var.fleet_id,
  *     state: _var.fleet_state,
  * });
@@ -35,6 +36,7 @@ export function getFleets(args?: GetFleetsArgs, opts?: pulumi.InvokeOptions): Pr
     return pulumi.runtime.invoke("oci:Jms/getFleets:getFleets", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
+        "displayNameContains": args.displayNameContains,
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
@@ -53,6 +55,10 @@ export interface GetFleetsArgs {
      * The display name.
      */
     displayName?: string;
+    /**
+     * Filter the list with displayName contains the given value.
+     */
+    displayNameContains?: string;
     filters?: inputs.Jms.GetFleetsFilter[];
     /**
      * The ID of the Fleet.
@@ -76,6 +82,7 @@ export interface GetFleetsResult {
      * The name of the Fleet.
      */
     readonly displayName?: string;
+    readonly displayNameContains?: string;
     readonly filters?: outputs.Jms.GetFleetsFilter[];
     /**
      * The list of fleet_collection.
@@ -107,6 +114,10 @@ export interface GetFleetsOutputArgs {
      * The display name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Filter the list with displayName contains the given value.
+     */
+    displayNameContains?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetsFilterArgs>[]>;
     /**
      * The ID of the Fleet.

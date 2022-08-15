@@ -22,29 +22,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.NewLogGroup(ctx, "testLogGroup", &Logging.LogGroupArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Log_group_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Log_group_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.NewLogGroup(ctx, "testLogGroup", &Logging.LogGroupArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Log_group_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Log_group_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // LogGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Logging/logGroup:LogGroup test_log_group "id"
+//
+//	$ pulumi import oci:Logging/logGroup:LogGroup test_log_group "id"
+//
 // ```
 type LogGroup struct {
 	pulumi.CustomResourceState
@@ -204,7 +209,7 @@ func (i *LogGroup) ToLogGroupOutputWithContext(ctx context.Context) LogGroupOutp
 // LogGroupArrayInput is an input type that accepts LogGroupArray and LogGroupArrayOutput values.
 // You can construct a concrete instance of `LogGroupArrayInput` via:
 //
-//          LogGroupArray{ LogGroupArgs{...} }
+//	LogGroupArray{ LogGroupArgs{...} }
 type LogGroupArrayInput interface {
 	pulumi.Input
 
@@ -229,7 +234,7 @@ func (i LogGroupArray) ToLogGroupArrayOutputWithContext(ctx context.Context) Log
 // LogGroupMapInput is an input type that accepts LogGroupMap and LogGroupMapOutput values.
 // You can construct a concrete instance of `LogGroupMapInput` via:
 //
-//          LogGroupMap{ "key": LogGroupArgs{...} }
+//	LogGroupMap{ "key": LogGroupArgs{...} }
 type LogGroupMapInput interface {
 	pulumi.Input
 

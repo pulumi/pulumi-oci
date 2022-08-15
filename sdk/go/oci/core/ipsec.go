@@ -35,8 +35,8 @@ import (
 // After creating the IPSec connection, you need to configure your on-premises router
 // with tunnel-specific information. For tunnel status and the required configuration information, see:
 //
-//   * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
-//   * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
+//   - [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
+//   - [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
 //
 // For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
 // (that is, the pre-shared key). For more information, see
@@ -48,33 +48,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewIpsec(ctx, "testIpSecConnection", &Core.IpsecArgs{
-// 			CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 			CpeId:                  pulumi.Any(oci_core_cpe.Test_cpe.Id),
-// 			DrgId:                  pulumi.Any(oci_core_drg.Test_drg.Id),
-// 			StaticRoutes:           pulumi.Any(_var.Ip_sec_connection_static_routes),
-// 			CpeLocalIdentifier:     pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier),
-// 			CpeLocalIdentifierType: pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Ip_sec_connection_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewIpsec(ctx, "testIpSecConnection", &Core.IpsecArgs{
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				CpeId:                  pulumi.Any(oci_core_cpe.Test_cpe.Id),
+//				DrgId:                  pulumi.Any(oci_core_drg.Test_drg.Id),
+//				StaticRoutes:           pulumi.Any(_var.Ip_sec_connection_static_routes),
+//				CpeLocalIdentifier:     pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier),
+//				CpeLocalIdentifierType: pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Ip_sec_connection_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -82,7 +85,9 @@ import (
 // IpSecConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
+//
+//	$ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
+//
 // ```
 type Ipsec struct {
 	pulumi.CustomResourceState
@@ -274,7 +279,7 @@ func (i *Ipsec) ToIpsecOutputWithContext(ctx context.Context) IpsecOutput {
 // IpsecArrayInput is an input type that accepts IpsecArray and IpsecArrayOutput values.
 // You can construct a concrete instance of `IpsecArrayInput` via:
 //
-//          IpsecArray{ IpsecArgs{...} }
+//	IpsecArray{ IpsecArgs{...} }
 type IpsecArrayInput interface {
 	pulumi.Input
 
@@ -299,7 +304,7 @@ func (i IpsecArray) ToIpsecArrayOutputWithContext(ctx context.Context) IpsecArra
 // IpsecMapInput is an input type that accepts IpsecMap and IpsecMapOutput values.
 // You can construct a concrete instance of `IpsecMapInput` via:
 //
-//          IpsecMap{ "key": IpsecArgs{...} }
+//	IpsecMap{ "key": IpsecArgs{...} }
 type IpsecMapInput interface {
 	pulumi.Input
 

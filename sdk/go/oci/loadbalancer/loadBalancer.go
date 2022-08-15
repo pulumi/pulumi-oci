@@ -48,42 +48,45 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewLoadBalancer(ctx, "testLoadBalancer", &LoadBalancer.LoadBalancerArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Load_balancer_display_name),
-// 			Shape:         pulumi.Any(_var.Load_balancer_shape),
-// 			SubnetIds:     pulumi.Any(_var.Load_balancer_subnet_ids),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IpMode:                  pulumi.Any(_var.Load_balancer_ip_mode),
-// 			IsPrivate:               pulumi.Any(_var.Load_balancer_is_private),
-// 			NetworkSecurityGroupIds: pulumi.Any(_var.Load_balancer_network_security_group_ids),
-// 			ReservedIps: loadbalancer.LoadBalancerReservedIpArray{
-// 				&loadbalancer.LoadBalancerReservedIpArgs{
-// 					Id: pulumi.Any(_var.Load_balancer_reserved_ips_id),
-// 				},
-// 			},
-// 			ShapeDetails: &loadbalancer.LoadBalancerShapeDetailsArgs{
-// 				MaximumBandwidthInMbps: pulumi.Any(_var.Load_balancer_shape_details_maximum_bandwidth_in_mbps),
-// 				MinimumBandwidthInMbps: pulumi.Any(_var.Load_balancer_shape_details_minimum_bandwidth_in_mbps),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewLoadBalancer(ctx, "testLoadBalancer", &LoadBalancer.LoadBalancerArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Load_balancer_display_name),
+//				Shape:         pulumi.Any(_var.Load_balancer_shape),
+//				SubnetIds:     pulumi.Any(_var.Load_balancer_subnet_ids),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IpMode:                  pulumi.Any(_var.Load_balancer_ip_mode),
+//				IsPrivate:               pulumi.Any(_var.Load_balancer_is_private),
+//				NetworkSecurityGroupIds: pulumi.Any(_var.Load_balancer_network_security_group_ids),
+//				ReservedIps: loadbalancer.LoadBalancerReservedIpArray{
+//					&loadbalancer.LoadBalancerReservedIpArgs{
+//						Id: pulumi.Any(_var.Load_balancer_reserved_ips_id),
+//					},
+//				},
+//				ShapeDetails: &loadbalancer.LoadBalancerShapeDetailsArgs{
+//					MaximumBandwidthInMbps: pulumi.Any(_var.Load_balancer_shape_details_maximum_bandwidth_in_mbps),
+//					MinimumBandwidthInMbps: pulumi.Any(_var.Load_balancer_shape_details_minimum_bandwidth_in_mbps),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -91,7 +94,9 @@ import (
 // LoadBalancers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
+//
+//	$ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
+//
 // ```
 type LoadBalancer struct {
 	pulumi.CustomResourceState
@@ -327,7 +332,7 @@ func (i *LoadBalancer) ToLoadBalancerOutputWithContext(ctx context.Context) Load
 // LoadBalancerArrayInput is an input type that accepts LoadBalancerArray and LoadBalancerArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerArrayInput` via:
 //
-//          LoadBalancerArray{ LoadBalancerArgs{...} }
+//	LoadBalancerArray{ LoadBalancerArgs{...} }
 type LoadBalancerArrayInput interface {
 	pulumi.Input
 
@@ -352,7 +357,7 @@ func (i LoadBalancerArray) ToLoadBalancerArrayOutputWithContext(ctx context.Cont
 // LoadBalancerMapInput is an input type that accepts LoadBalancerMap and LoadBalancerMapOutput values.
 // You can construct a concrete instance of `LoadBalancerMapInput` via:
 //
-//          LoadBalancerMap{ "key": LoadBalancerArgs{...} }
+//	LoadBalancerMap{ "key": LoadBalancerArgs{...} }
 type LoadBalancerMapInput interface {
 	pulumi.Input
 

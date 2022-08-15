@@ -23,26 +23,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewUserCapabilitiesManagement(ctx, "testUserCapabilitiesManagement", &Identity.UserCapabilitiesManagementArgs{
-// 			UserId:                   pulumi.Any(oci_identity_user.User1.Id),
-// 			CanUseApiKeys:            pulumi.Bool(true),
-// 			CanUseAuthTokens:         pulumi.Bool(true),
-// 			CanUseConsolePassword:    pulumi.Bool(false),
-// 			CanUseCustomerSecretKeys: pulumi.Bool(true),
-// 			CanUseSmtpCredentials:    pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewUserCapabilitiesManagement(ctx, "testUserCapabilitiesManagement", &Identity.UserCapabilitiesManagementArgs{
+//				UserId:                   pulumi.Any(oci_identity_user.User1.Id),
+//				CanUseApiKeys:            pulumi.Bool(true),
+//				CanUseAuthTokens:         pulumi.Bool(true),
+//				CanUseConsolePassword:    pulumi.Bool(false),
+//				CanUseCustomerSecretKeys: pulumi.Bool(true),
+//				CanUseSmtpCredentials:    pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Users can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
+//
+//	$ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
+//
 // ```
 type UserCapabilitiesManagement struct {
 	pulumi.CustomResourceState
@@ -191,7 +196,7 @@ func (i *UserCapabilitiesManagement) ToUserCapabilitiesManagementOutputWithConte
 // UserCapabilitiesManagementArrayInput is an input type that accepts UserCapabilitiesManagementArray and UserCapabilitiesManagementArrayOutput values.
 // You can construct a concrete instance of `UserCapabilitiesManagementArrayInput` via:
 //
-//          UserCapabilitiesManagementArray{ UserCapabilitiesManagementArgs{...} }
+//	UserCapabilitiesManagementArray{ UserCapabilitiesManagementArgs{...} }
 type UserCapabilitiesManagementArrayInput interface {
 	pulumi.Input
 
@@ -216,7 +221,7 @@ func (i UserCapabilitiesManagementArray) ToUserCapabilitiesManagementArrayOutput
 // UserCapabilitiesManagementMapInput is an input type that accepts UserCapabilitiesManagementMap and UserCapabilitiesManagementMapOutput values.
 // You can construct a concrete instance of `UserCapabilitiesManagementMapInput` via:
 //
-//          UserCapabilitiesManagementMap{ "key": UserCapabilitiesManagementArgs{...} }
+//	UserCapabilitiesManagementMap{ "key": UserCapabilitiesManagementArgs{...} }
 type UserCapabilitiesManagementMapInput interface {
 	pulumi.Input
 

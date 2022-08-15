@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
 //
-// Gets information about an OSN identified by the specific id
+// # Gets information about an OSN identified by the specific id
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.GetOsn(ctx, &blockchain.GetOsnArgs{
-// 			BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-// 			OsnId:                oci_blockchain_osn.Test_osn.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.GetOsn(ctx, &blockchain.GetOsnArgs{
+//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+//				OsnId:                oci_blockchain_osn.Test_osn.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupOsn(ctx *pulumi.Context, args *LookupOsnArgs, opts ...pulumi.InvokeOption) (*LookupOsnResult, error) {
 	var rv LookupOsnResult

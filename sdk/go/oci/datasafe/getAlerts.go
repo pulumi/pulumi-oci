@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAlerts(ctx, &datasafe.GetAlertsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Alert_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Alert_compartment_id_in_subtree),
-// 			Fields:                 _var.Alert_field,
-// 			Id:                     pulumi.StringRef(_var.Alert_id),
-// 			ScimQuery:              pulumi.StringRef(_var.Alert_scim_query),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAlerts(ctx, &datasafe.GetAlertsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Alert_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Alert_compartment_id_in_subtree),
+//				Fields:                 _var.Alert_field,
+//				Id:                     pulumi.StringRef(_var.Alert_id),
+//				ScimQuery:              pulumi.StringRef(_var.Alert_scim_query),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAlerts(ctx *pulumi.Context, args *GetAlertsArgs, opts ...pulumi.InvokeOption) (*GetAlertsResult, error) {
 	var rv GetAlertsResult

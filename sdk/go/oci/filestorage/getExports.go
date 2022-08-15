@@ -22,25 +22,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.GetExports(ctx, &filestorage.GetExportsArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			ExportSetId:   pulumi.StringRef(oci_file_storage_export_set.Test_export_set.Id),
-// 			FileSystemId:  pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
-// 			Id:            pulumi.StringRef(_var.Export_id),
-// 			State:         pulumi.StringRef(_var.Export_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.GetExports(ctx, &filestorage.GetExportsArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				ExportSetId:   pulumi.StringRef(oci_file_storage_export_set.Test_export_set.Id),
+//				FileSystemId:  pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
+//				Id:            pulumi.StringRef(_var.Export_id),
+//				State:         pulumi.StringRef(_var.Export_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExports(ctx *pulumi.Context, args *GetExportsArgs, opts ...pulumi.InvokeOption) (*GetExportsResult, error) {
 	var rv GetExportsResult

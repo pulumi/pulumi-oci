@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Nosql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Nosql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Nosql.GetIndexes(ctx, &nosql.GetIndexesArgs{
-// 			TableNameOrId: oci_nosql_table_name_or.Test_table_name_or.Id,
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			Name:          pulumi.StringRef(_var.Index_name),
-// 			State:         pulumi.StringRef(_var.Index_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Nosql.GetIndexes(ctx, &nosql.GetIndexesArgs{
+//				TableNameOrId: oci_nosql_table_name_or.Test_table_name_or.Id,
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				Name:          pulumi.StringRef(_var.Index_name),
+//				State:         pulumi.StringRef(_var.Index_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIndexes(ctx *pulumi.Context, args *GetIndexesArgs, opts ...pulumi.InvokeOption) (*GetIndexesResult, error) {
 	var rv GetIndexesResult

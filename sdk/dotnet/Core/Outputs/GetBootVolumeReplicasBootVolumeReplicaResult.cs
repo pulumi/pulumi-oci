@@ -61,6 +61,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeLastSynced;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+        /// </summary>
         public readonly string VolumeGroupReplicaId;
 
         [OutputConstructor]

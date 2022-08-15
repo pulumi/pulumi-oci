@@ -18,7 +18,7 @@ type RuleActions struct {
 // RuleActionsInput is an input type that accepts RuleActionsArgs and RuleActionsOutput values.
 // You can construct a concrete instance of `RuleActionsInput` via:
 //
-//          RuleActionsArgs{...}
+//	RuleActionsArgs{...}
 type RuleActionsInput interface {
 	pulumi.Input
 
@@ -54,11 +54,11 @@ func (i RuleActionsArgs) ToRuleActionsPtrOutputWithContext(ctx context.Context) 
 // RuleActionsPtrInput is an input type that accepts RuleActionsArgs, RuleActionsPtr and RuleActionsPtrOutput values.
 // You can construct a concrete instance of `RuleActionsPtrInput` via:
 //
-//          RuleActionsArgs{...}
+//	        RuleActionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RuleActionsPtrInput interface {
 	pulumi.Input
 
@@ -174,7 +174,7 @@ type RuleActionsAction struct {
 // RuleActionsActionInput is an input type that accepts RuleActionsActionArgs and RuleActionsActionOutput values.
 // You can construct a concrete instance of `RuleActionsActionInput` via:
 //
-//          RuleActionsActionArgs{...}
+//	RuleActionsActionArgs{...}
 type RuleActionsActionInput interface {
 	pulumi.Input
 
@@ -221,7 +221,7 @@ func (i RuleActionsActionArgs) ToRuleActionsActionOutputWithContext(ctx context.
 // RuleActionsActionArrayInput is an input type that accepts RuleActionsActionArray and RuleActionsActionArrayOutput values.
 // You can construct a concrete instance of `RuleActionsActionArrayInput` via:
 //
-//          RuleActionsActionArray{ RuleActionsActionArgs{...} }
+//	RuleActionsActionArray{ RuleActionsActionArgs{...} }
 type RuleActionsActionArrayInput interface {
 	pulumi.Input
 
@@ -333,7 +333,7 @@ type GetRuleAction struct {
 // GetRuleActionInput is an input type that accepts GetRuleActionArgs and GetRuleActionOutput values.
 // You can construct a concrete instance of `GetRuleActionInput` via:
 //
-//          GetRuleActionArgs{...}
+//	GetRuleActionArgs{...}
 type GetRuleActionInput interface {
 	pulumi.Input
 
@@ -361,7 +361,7 @@ func (i GetRuleActionArgs) ToGetRuleActionOutputWithContext(ctx context.Context)
 // GetRuleActionArrayInput is an input type that accepts GetRuleActionArray and GetRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetRuleActionArrayInput` via:
 //
-//          GetRuleActionArray{ GetRuleActionArgs{...} }
+//	GetRuleActionArray{ GetRuleActionArgs{...} }
 type GetRuleActionArrayInput interface {
 	pulumi.Input
 
@@ -449,7 +449,7 @@ type GetRuleActionAction struct {
 // GetRuleActionActionInput is an input type that accepts GetRuleActionActionArgs and GetRuleActionActionOutput values.
 // You can construct a concrete instance of `GetRuleActionActionInput` via:
 //
-//          GetRuleActionActionArgs{...}
+//	GetRuleActionActionArgs{...}
 type GetRuleActionActionInput interface {
 	pulumi.Input
 
@@ -496,7 +496,7 @@ func (i GetRuleActionActionArgs) ToGetRuleActionActionOutputWithContext(ctx cont
 // GetRuleActionActionArrayInput is an input type that accepts GetRuleActionActionArray and GetRuleActionActionArrayOutput values.
 // You can construct a concrete instance of `GetRuleActionActionArrayInput` via:
 //
-//          GetRuleActionActionArray{ GetRuleActionActionArgs{...} }
+//	GetRuleActionActionArray{ GetRuleActionActionArgs{...} }
 type GetRuleActionActionArrayInput interface {
 	pulumi.Input
 
@@ -609,7 +609,7 @@ type GetRulesFilter struct {
 // GetRulesFilterInput is an input type that accepts GetRulesFilterArgs and GetRulesFilterOutput values.
 // You can construct a concrete instance of `GetRulesFilterInput` via:
 //
-//          GetRulesFilterArgs{...}
+//	GetRulesFilterArgs{...}
 type GetRulesFilterInput interface {
 	pulumi.Input
 
@@ -638,7 +638,7 @@ func (i GetRulesFilterArgs) ToGetRulesFilterOutputWithContext(ctx context.Contex
 // GetRulesFilterArrayInput is an input type that accepts GetRulesFilterArray and GetRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRulesFilterArrayInput` via:
 //
-//          GetRulesFilterArray{ GetRulesFilterArgs{...} }
+//	GetRulesFilterArray{ GetRulesFilterArgs{...} }
 type GetRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -737,7 +737,7 @@ type GetRulesRule struct {
 // GetRulesRuleInput is an input type that accepts GetRulesRuleArgs and GetRulesRuleOutput values.
 // You can construct a concrete instance of `GetRulesRuleInput` via:
 //
-//          GetRulesRuleArgs{...}
+//	GetRulesRuleArgs{...}
 type GetRulesRuleInput interface {
 	pulumi.Input
 
@@ -788,7 +788,7 @@ func (i GetRulesRuleArgs) ToGetRulesRuleOutputWithContext(ctx context.Context) G
 // GetRulesRuleArrayInput is an input type that accepts GetRulesRuleArray and GetRulesRuleArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleArrayInput` via:
 //
-//          GetRulesRuleArray{ GetRulesRuleArgs{...} }
+//	GetRulesRuleArray{ GetRulesRuleArgs{...} }
 type GetRulesRuleArrayInput interface {
 	pulumi.Input
 
@@ -913,7 +913,7 @@ type GetRulesRuleAction struct {
 // GetRulesRuleActionInput is an input type that accepts GetRulesRuleActionArgs and GetRulesRuleActionOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionInput` via:
 //
-//          GetRulesRuleActionArgs{...}
+//	GetRulesRuleActionArgs{...}
 type GetRulesRuleActionInput interface {
 	pulumi.Input
 
@@ -941,7 +941,7 @@ func (i GetRulesRuleActionArgs) ToGetRulesRuleActionOutputWithContext(ctx contex
 // GetRulesRuleActionArrayInput is an input type that accepts GetRulesRuleActionArray and GetRulesRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionArrayInput` via:
 //
-//          GetRulesRuleActionArray{ GetRulesRuleActionArgs{...} }
+//	GetRulesRuleActionArray{ GetRulesRuleActionArgs{...} }
 type GetRulesRuleActionArrayInput interface {
 	pulumi.Input
 
@@ -1029,7 +1029,7 @@ type GetRulesRuleActionAction struct {
 // GetRulesRuleActionActionInput is an input type that accepts GetRulesRuleActionActionArgs and GetRulesRuleActionActionOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionActionInput` via:
 //
-//          GetRulesRuleActionActionArgs{...}
+//	GetRulesRuleActionActionArgs{...}
 type GetRulesRuleActionActionInput interface {
 	pulumi.Input
 
@@ -1076,7 +1076,7 @@ func (i GetRulesRuleActionActionArgs) ToGetRulesRuleActionActionOutputWithContex
 // GetRulesRuleActionActionArrayInput is an input type that accepts GetRulesRuleActionActionArray and GetRulesRuleActionActionArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionActionArrayInput` via:
 //
-//          GetRulesRuleActionActionArray{ GetRulesRuleActionActionArgs{...} }
+//	GetRulesRuleActionActionArray{ GetRulesRuleActionActionArgs{...} }
 type GetRulesRuleActionActionArrayInput interface {
 	pulumi.Input
 

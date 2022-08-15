@@ -22,7 +22,7 @@ type GetServiceEnvironmentServiceDefinition struct {
 // GetServiceEnvironmentServiceDefinitionInput is an input type that accepts GetServiceEnvironmentServiceDefinitionArgs and GetServiceEnvironmentServiceDefinitionOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentServiceDefinitionInput` via:
 //
-//          GetServiceEnvironmentServiceDefinitionArgs{...}
+//	GetServiceEnvironmentServiceDefinitionArgs{...}
 type GetServiceEnvironmentServiceDefinitionInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i GetServiceEnvironmentServiceDefinitionArgs) ToGetServiceEnvironmentServi
 // GetServiceEnvironmentServiceDefinitionArrayInput is an input type that accepts GetServiceEnvironmentServiceDefinitionArray and GetServiceEnvironmentServiceDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentServiceDefinitionArrayInput` via:
 //
-//          GetServiceEnvironmentServiceDefinitionArray{ GetServiceEnvironmentServiceDefinitionArgs{...} }
+//	GetServiceEnvironmentServiceDefinitionArray{ GetServiceEnvironmentServiceDefinitionArgs{...} }
 type GetServiceEnvironmentServiceDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -137,7 +137,7 @@ type GetServiceEnvironmentServiceEnvironmentEndpoint struct {
 // GetServiceEnvironmentServiceEnvironmentEndpointInput is an input type that accepts GetServiceEnvironmentServiceEnvironmentEndpointArgs and GetServiceEnvironmentServiceEnvironmentEndpointOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentServiceEnvironmentEndpointInput` via:
 //
-//          GetServiceEnvironmentServiceEnvironmentEndpointArgs{...}
+//	GetServiceEnvironmentServiceEnvironmentEndpointArgs{...}
 type GetServiceEnvironmentServiceEnvironmentEndpointInput interface {
 	pulumi.Input
 
@@ -169,7 +169,7 @@ func (i GetServiceEnvironmentServiceEnvironmentEndpointArgs) ToGetServiceEnviron
 // GetServiceEnvironmentServiceEnvironmentEndpointArrayInput is an input type that accepts GetServiceEnvironmentServiceEnvironmentEndpointArray and GetServiceEnvironmentServiceEnvironmentEndpointArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentServiceEnvironmentEndpointArrayInput` via:
 //
-//          GetServiceEnvironmentServiceEnvironmentEndpointArray{ GetServiceEnvironmentServiceEnvironmentEndpointArgs{...} }
+//	GetServiceEnvironmentServiceEnvironmentEndpointArray{ GetServiceEnvironmentServiceEnvironmentEndpointArgs{...} }
 type GetServiceEnvironmentServiceEnvironmentEndpointArrayInput interface {
 	pulumi.Input
 
@@ -249,7 +249,7 @@ type GetServiceEnvironmentsFilter struct {
 // GetServiceEnvironmentsFilterInput is an input type that accepts GetServiceEnvironmentsFilterArgs and GetServiceEnvironmentsFilterOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsFilterInput` via:
 //
-//          GetServiceEnvironmentsFilterArgs{...}
+//	GetServiceEnvironmentsFilterArgs{...}
 type GetServiceEnvironmentsFilterInput interface {
 	pulumi.Input
 
@@ -278,7 +278,7 @@ func (i GetServiceEnvironmentsFilterArgs) ToGetServiceEnvironmentsFilterOutputWi
 // GetServiceEnvironmentsFilterArrayInput is an input type that accepts GetServiceEnvironmentsFilterArray and GetServiceEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsFilterArrayInput` via:
 //
-//          GetServiceEnvironmentsFilterArray{ GetServiceEnvironmentsFilterArgs{...} }
+//	GetServiceEnvironmentsFilterArray{ GetServiceEnvironmentsFilterArgs{...} }
 type GetServiceEnvironmentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -353,7 +353,7 @@ type GetServiceEnvironmentsServiceEnvironmentCollection struct {
 // GetServiceEnvironmentsServiceEnvironmentCollectionInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionArgs and GetServiceEnvironmentsServiceEnvironmentCollectionOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionArgs{...}
+//	GetServiceEnvironmentsServiceEnvironmentCollectionArgs{...}
 type GetServiceEnvironmentsServiceEnvironmentCollectionInput interface {
 	pulumi.Input
 
@@ -380,7 +380,7 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionArgs) ToGetServiceEnvi
 // GetServiceEnvironmentsServiceEnvironmentCollectionArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionArray and GetServiceEnvironmentsServiceEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionArrayInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionArray{ GetServiceEnvironmentsServiceEnvironmentCollectionArgs{...} }
+//	GetServiceEnvironmentsServiceEnvironmentCollectionArray{ GetServiceEnvironmentsServiceEnvironmentCollectionArgs{...} }
 type GetServiceEnvironmentsServiceEnvironmentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -464,7 +464,7 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItem struct {
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs and GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionItemInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs{...}
+//	GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs{...}
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemInput interface {
 	pulumi.Input
 
@@ -506,7 +506,7 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs) ToGetService
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemArray and GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionItemArray{ GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs{...} }
+//	GetServiceEnvironmentsServiceEnvironmentCollectionItemArray{ GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs{...} }
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -625,7 +625,7 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition str
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs{...}
+//	GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs{...}
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionInput interface {
 	pulumi.Input
 
@@ -657,7 +657,7 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionA
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArray and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArray{ GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs{...} }
+//	GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArray{ GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs{...} }
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -744,7 +744,7 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEnd
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs{...}
+//	GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs{...}
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointInput interface {
 	pulumi.Input
 
@@ -776,7 +776,7 @@ func (i GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironment
 // GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayInput is an input type that accepts GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArray and GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayOutput values.
 // You can construct a concrete instance of `GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayInput` via:
 //
-//          GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArray{ GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs{...} }
+//	GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArray{ GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs{...} }
 type GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArrayInput interface {
 	pulumi.Input
 

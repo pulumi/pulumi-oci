@@ -23,13 +23,17 @@ import (
 // For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
+//
+//	$ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
+//
 // ```
 //
-//  For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
+//	For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
+//
+//	$ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
+//
 // ```
 type Resolver struct {
 	pulumi.CustomResourceState
@@ -241,7 +245,7 @@ func (i *Resolver) ToResolverOutputWithContext(ctx context.Context) ResolverOutp
 // ResolverArrayInput is an input type that accepts ResolverArray and ResolverArrayOutput values.
 // You can construct a concrete instance of `ResolverArrayInput` via:
 //
-//          ResolverArray{ ResolverArgs{...} }
+//	ResolverArray{ ResolverArgs{...} }
 type ResolverArrayInput interface {
 	pulumi.Input
 
@@ -266,7 +270,7 @@ func (i ResolverArray) ToResolverArrayOutputWithContext(ctx context.Context) Res
 // ResolverMapInput is an input type that accepts ResolverMap and ResolverMapOutput values.
 // You can construct a concrete instance of `ResolverMapInput` via:
 //
-//          ResolverMap{ "key": ResolverArgs{...} }
+//	ResolverMap{ "key": ResolverArgs{...} }
 type ResolverMapInput interface {
 	pulumi.Input
 

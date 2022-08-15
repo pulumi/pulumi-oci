@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalContainerDatabasesStackMonitoring(ctx, "testExternalcontainerdatabasesStackMonitoring", &Database.ExternalContainerDatabasesStackMonitoringArgs{
-// 			ExternalContainerDatabaseId: pulumi.Any(oci_database_external_container_database.Test_external_container_database.Id),
-// 			ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-// 			EnableStackMonitoring:       pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalContainerDatabasesStackMonitoring(ctx, "testExternalcontainerdatabasesStackMonitoring", &Database.ExternalContainerDatabasesStackMonitoringArgs{
+//				ExternalContainerDatabaseId: pulumi.Any(oci_database_external_container_database.Test_external_container_database.Id),
+//				ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
+//				EnableStackMonitoring:       pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -158,7 +161,7 @@ func (i *ExternalContainerDatabasesStackMonitoring) ToExternalContainerDatabases
 // ExternalContainerDatabasesStackMonitoringArrayInput is an input type that accepts ExternalContainerDatabasesStackMonitoringArray and ExternalContainerDatabasesStackMonitoringArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabasesStackMonitoringArrayInput` via:
 //
-//          ExternalContainerDatabasesStackMonitoringArray{ ExternalContainerDatabasesStackMonitoringArgs{...} }
+//	ExternalContainerDatabasesStackMonitoringArray{ ExternalContainerDatabasesStackMonitoringArgs{...} }
 type ExternalContainerDatabasesStackMonitoringArrayInput interface {
 	pulumi.Input
 
@@ -183,7 +186,7 @@ func (i ExternalContainerDatabasesStackMonitoringArray) ToExternalContainerDatab
 // ExternalContainerDatabasesStackMonitoringMapInput is an input type that accepts ExternalContainerDatabasesStackMonitoringMap and ExternalContainerDatabasesStackMonitoringMapOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabasesStackMonitoringMapInput` via:
 //
-//          ExternalContainerDatabasesStackMonitoringMap{ "key": ExternalContainerDatabasesStackMonitoringArgs{...} }
+//	ExternalContainerDatabasesStackMonitoringMap{ "key": ExternalContainerDatabasesStackMonitoringArgs{...} }
 type ExternalContainerDatabasesStackMonitoringMapInput interface {
 	pulumi.Input
 

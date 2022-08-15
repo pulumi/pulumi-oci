@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetIngressGateways(ctx, &servicemesh.GetIngressGatewaysArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Ingress_gateway_id),
-// 			MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
-// 			Name:          pulumi.StringRef(_var.Ingress_gateway_name),
-// 			State:         pulumi.StringRef(_var.Ingress_gateway_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetIngressGateways(ctx, &servicemesh.GetIngressGatewaysArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Ingress_gateway_id),
+//				MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
+//				Name:          pulumi.StringRef(_var.Ingress_gateway_name),
+//				State:         pulumi.StringRef(_var.Ingress_gateway_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIngressGateways(ctx *pulumi.Context, args *GetIngressGatewaysArgs, opts ...pulumi.InvokeOption) (*GetIngressGatewaysResult, error) {
 	var rv GetIngressGatewaysResult

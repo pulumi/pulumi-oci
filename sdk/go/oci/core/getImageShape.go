@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetImageShape(ctx, &core.GetImageShapeArgs{
-// 			ImageId:   oci_core_image.Test_image.Id,
-// 			ShapeName: oci_core_shape.Test_shape.Name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetImageShape(ctx, &core.GetImageShapeArgs{
+//				ImageId:   oci_core_image.Test_image.Id,
+//				ShapeName: oci_core_shape.Test_shape.Name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetImageShape(ctx *pulumi.Context, args *GetImageShapeArgs, opts ...pulumi.InvokeOption) (*GetImageShapeResult, error) {
 	var rv GetImageShapeResult

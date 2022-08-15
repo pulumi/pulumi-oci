@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ContainerEngine.GetWorkRequestLogEntries(ctx, &containerengine.GetWorkRequestLogEntriesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			WorkRequestId: oci_containerengine_work_request.Test_work_request.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.GetWorkRequestLogEntries(ctx, &containerengine.GetWorkRequestLogEntriesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				WorkRequestId: oci_containerengine_work_request.Test_work_request.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetWorkRequestLogEntries(ctx *pulumi.Context, args *GetWorkRequestLogEntriesArgs, opts ...pulumi.InvokeOption) (*GetWorkRequestLogEntriesResult, error) {
 	var rv GetWorkRequestLogEntriesResult

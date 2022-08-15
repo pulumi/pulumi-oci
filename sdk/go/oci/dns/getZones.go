@@ -23,30 +23,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetZones(ctx, &dns.GetZonesArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			Name:                            pulumi.StringRef(_var.Zone_name),
-// 			NameContains:                    pulumi.StringRef(_var.Zone_name_contains),
-// 			Scope:                           pulumi.StringRef(_var.Zone_scope),
-// 			State:                           pulumi.StringRef(_var.Zone_state),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Zone_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Zone_time_created_less_than),
-// 			TsigKeyId:                       pulumi.StringRef(oci_dns_tsig_key.Test_tsig_key.Id),
-// 			ViewId:                          pulumi.StringRef(oci_dns_view.Test_view.Id),
-// 			ZoneType:                        pulumi.StringRef(_var.Zone_zone_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetZones(ctx, &dns.GetZonesArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				Name:                            pulumi.StringRef(_var.Zone_name),
+//				NameContains:                    pulumi.StringRef(_var.Zone_name_contains),
+//				Scope:                           pulumi.StringRef(_var.Zone_scope),
+//				State:                           pulumi.StringRef(_var.Zone_state),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Zone_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Zone_time_created_less_than),
+//				TsigKeyId:                       pulumi.StringRef(oci_dns_tsig_key.Test_tsig_key.Id),
+//				ViewId:                          pulumi.StringRef(oci_dns_view.Test_view.Id),
+//				ZoneType:                        pulumi.StringRef(_var.Zone_zone_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetZones(ctx *pulumi.Context, args *GetZonesArgs, opts ...pulumi.InvokeOption) (*GetZonesResult, error) {
 	var rv GetZonesResult

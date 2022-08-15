@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ResourceManager.GetPrivateEndpoints(ctx, &resourcemanager.GetPrivateEndpointsArgs{
-// 			CompartmentId:     pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:       pulumi.StringRef(_var.Private_endpoint_display_name),
-// 			PrivateEndpointId: pulumi.StringRef(oci_resourcemanager_private_endpoint.Test_private_endpoint.Id),
-// 			VcnId:             pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ResourceManager.GetPrivateEndpoints(ctx, &resourcemanager.GetPrivateEndpointsArgs{
+//				CompartmentId:     pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:       pulumi.StringRef(_var.Private_endpoint_display_name),
+//				PrivateEndpointId: pulumi.StringRef(oci_resourcemanager_private_endpoint.Test_private_endpoint.Id),
+//				VcnId:             pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPrivateEndpoints(ctx *pulumi.Context, args *GetPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetPrivateEndpointsResult, error) {
 	var rv GetPrivateEndpointsResult

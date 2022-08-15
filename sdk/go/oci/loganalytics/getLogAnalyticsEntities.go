@@ -20,32 +20,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsEntities(ctx, &loganalytics.GetLogAnalyticsEntitiesArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			Namespace:                _var.Log_analytics_entity_namespace,
-// 			CloudResourceId:          pulumi.StringRef(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
-// 			EntityTypeNames:          _var.Log_analytics_entity_entity_type_name,
-// 			Hostname:                 pulumi.StringRef(_var.Log_analytics_entity_hostname),
-// 			HostnameContains:         pulumi.StringRef(_var.Log_analytics_entity_hostname_contains),
-// 			IsManagementAgentIdNull:  pulumi.StringRef(_var.Log_analytics_entity_is_management_agent_id_null),
-// 			LifecycleDetailsContains: pulumi.StringRef(_var.Log_analytics_entity_lifecycle_details_contains),
-// 			Name:                     pulumi.StringRef(_var.Log_analytics_entity_name),
-// 			NameContains:             pulumi.StringRef(_var.Log_analytics_entity_name_contains),
-// 			SourceId:                 pulumi.StringRef(oci_log_analytics_source.Test_source.Id),
-// 			State:                    pulumi.StringRef(_var.Log_analytics_entity_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsEntities(ctx, &loganalytics.GetLogAnalyticsEntitiesArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				Namespace:                _var.Log_analytics_entity_namespace,
+//				CloudResourceId:          pulumi.StringRef(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
+//				EntityTypeNames:          _var.Log_analytics_entity_entity_type_name,
+//				Hostname:                 pulumi.StringRef(_var.Log_analytics_entity_hostname),
+//				HostnameContains:         pulumi.StringRef(_var.Log_analytics_entity_hostname_contains),
+//				IsManagementAgentIdNull:  pulumi.StringRef(_var.Log_analytics_entity_is_management_agent_id_null),
+//				LifecycleDetailsContains: pulumi.StringRef(_var.Log_analytics_entity_lifecycle_details_contains),
+//				Name:                     pulumi.StringRef(_var.Log_analytics_entity_name),
+//				NameContains:             pulumi.StringRef(_var.Log_analytics_entity_name_contains),
+//				SourceId:                 pulumi.StringRef(oci_log_analytics_source.Test_source.Id),
+//				State:                    pulumi.StringRef(_var.Log_analytics_entity_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsEntities(ctx *pulumi.Context, args *GetLogAnalyticsEntitiesArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsEntitiesResult, error) {
 	var rv GetLogAnalyticsEntitiesResult

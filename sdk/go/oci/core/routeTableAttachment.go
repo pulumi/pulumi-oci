@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewRouteTableAttachment(ctx, "testRouteTableAttachment", &Core.RouteTableAttachmentArgs{
-// 			SubnetId:     pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewRouteTableAttachment(ctx, "testRouteTableAttachment", &Core.RouteTableAttachmentArgs{
+//				SubnetId:     pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // Route Table Attachment can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
+//
+//	$ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
+//
 // ```
 type RouteTableAttachment struct {
 	pulumi.CustomResourceState
@@ -148,7 +153,7 @@ func (i *RouteTableAttachment) ToRouteTableAttachmentOutputWithContext(ctx conte
 // RouteTableAttachmentArrayInput is an input type that accepts RouteTableAttachmentArray and RouteTableAttachmentArrayOutput values.
 // You can construct a concrete instance of `RouteTableAttachmentArrayInput` via:
 //
-//          RouteTableAttachmentArray{ RouteTableAttachmentArgs{...} }
+//	RouteTableAttachmentArray{ RouteTableAttachmentArgs{...} }
 type RouteTableAttachmentArrayInput interface {
 	pulumi.Input
 
@@ -173,7 +178,7 @@ func (i RouteTableAttachmentArray) ToRouteTableAttachmentArrayOutputWithContext(
 // RouteTableAttachmentMapInput is an input type that accepts RouteTableAttachmentMap and RouteTableAttachmentMapOutput values.
 // You can construct a concrete instance of `RouteTableAttachmentMapInput` via:
 //
-//          RouteTableAttachmentMap{ "key": RouteTableAttachmentArgs{...} }
+//	RouteTableAttachmentMap{ "key": RouteTableAttachmentArgs{...} }
 type RouteTableAttachmentMapInput interface {
 	pulumi.Input
 

@@ -35,7 +35,9 @@ import (
 // DhcpOptions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/dhcpOptions:DhcpOptions test_dhcp_options "id"
+//
+//	$ pulumi import oci:Core/dhcpOptions:DhcpOptions test_dhcp_options "id"
+//
 // ```
 type DhcpOptions struct {
 	pulumi.CustomResourceState
@@ -204,7 +206,7 @@ func (i *DhcpOptions) ToDhcpOptionsOutputWithContext(ctx context.Context) DhcpOp
 // DhcpOptionsArrayInput is an input type that accepts DhcpOptionsArray and DhcpOptionsArrayOutput values.
 // You can construct a concrete instance of `DhcpOptionsArrayInput` via:
 //
-//          DhcpOptionsArray{ DhcpOptionsArgs{...} }
+//	DhcpOptionsArray{ DhcpOptionsArgs{...} }
 type DhcpOptionsArrayInput interface {
 	pulumi.Input
 
@@ -229,7 +231,7 @@ func (i DhcpOptionsArray) ToDhcpOptionsArrayOutputWithContext(ctx context.Contex
 // DhcpOptionsMapInput is an input type that accepts DhcpOptionsMap and DhcpOptionsMapOutput values.
 // You can construct a concrete instance of `DhcpOptionsMapInput` via:
 //
-//          DhcpOptionsMap{ "key": DhcpOptionsArgs{...} }
+//	DhcpOptionsMap{ "key": DhcpOptionsArgs{...} }
 type DhcpOptionsMapInput interface {
 	pulumi.Input
 

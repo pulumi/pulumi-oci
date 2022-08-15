@@ -37,31 +37,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewNetworkSource(ctx, "testNetworkSource", &Identity.NetworkSourceArgs{
-// 			CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-// 			Description:   pulumi.Any(_var.Network_source_description),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			PublicSourceLists:  pulumi.Any(_var.Network_source_public_source_list),
-// 			Services:           pulumi.Any(_var.Network_source_services),
-// 			VirtualSourceLists: pulumi.Any(_var.Network_source_virtual_source_list),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewNetworkSource(ctx, "testNetworkSource", &Identity.NetworkSourceArgs{
+//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//				Description:   pulumi.Any(_var.Network_source_description),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				PublicSourceLists:  pulumi.Any(_var.Network_source_public_source_list),
+//				Services:           pulumi.Any(_var.Network_source_services),
+//				VirtualSourceLists: pulumi.Any(_var.Network_source_virtual_source_list),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -69,7 +72,9 @@ import (
 // NetworkSources can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/networkSource:NetworkSource test_network_source "id"
+//
+//	$ pulumi import oci:Identity/networkSource:NetworkSource test_network_source "id"
+//
 // ```
 type NetworkSource struct {
 	pulumi.CustomResourceState
@@ -251,7 +256,7 @@ func (i *NetworkSource) ToNetworkSourceOutputWithContext(ctx context.Context) Ne
 // NetworkSourceArrayInput is an input type that accepts NetworkSourceArray and NetworkSourceArrayOutput values.
 // You can construct a concrete instance of `NetworkSourceArrayInput` via:
 //
-//          NetworkSourceArray{ NetworkSourceArgs{...} }
+//	NetworkSourceArray{ NetworkSourceArgs{...} }
 type NetworkSourceArrayInput interface {
 	pulumi.Input
 
@@ -276,7 +281,7 @@ func (i NetworkSourceArray) ToNetworkSourceArrayOutputWithContext(ctx context.Co
 // NetworkSourceMapInput is an input type that accepts NetworkSourceMap and NetworkSourceMapOutput values.
 // You can construct a concrete instance of `NetworkSourceMapInput` via:
 //
-//          NetworkSourceMap{ "key": NetworkSourceArgs{...} }
+//	NetworkSourceMap{ "key": NetworkSourceArgs{...} }
 type NetworkSourceMapInput interface {
 	pulumi.Input
 

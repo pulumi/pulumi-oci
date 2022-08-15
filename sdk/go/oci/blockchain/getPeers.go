@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
 //
-// List Blockchain Platform Peers
+// # List Blockchain Platform Peers
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.GetPeers(ctx, &blockchain.GetPeersArgs{
-// 			BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-// 			DisplayName:          pulumi.StringRef(_var.Peer_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.GetPeers(ctx, &blockchain.GetPeersArgs{
+//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+//				DisplayName:          pulumi.StringRef(_var.Peer_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPeers(ctx *pulumi.Context, args *GetPeersArgs, opts ...pulumi.InvokeOption) (*GetPeersResult, error) {
 	var rv GetPeersResult

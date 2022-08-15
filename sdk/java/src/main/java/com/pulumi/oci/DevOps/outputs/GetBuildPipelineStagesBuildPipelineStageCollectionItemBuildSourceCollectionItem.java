@@ -15,7 +15,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
      */
     private final String branch;
     /**
-     * @return Connection identifier pertinent to Bitbucket Cloud source provider
+     * @return Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
     private final String connectionId;
@@ -64,7 +64,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
         return this.branch;
     }
     /**
-     * @return Connection identifier pertinent to Bitbucket Cloud source provider
+     * @return Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
     public String connectionId() {

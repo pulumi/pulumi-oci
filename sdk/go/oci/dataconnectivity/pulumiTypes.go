@@ -20,7 +20,7 @@ type RegistryConnectionConnectionProperty struct {
 // RegistryConnectionConnectionPropertyInput is an input type that accepts RegistryConnectionConnectionPropertyArgs and RegistryConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `RegistryConnectionConnectionPropertyInput` via:
 //
-//          RegistryConnectionConnectionPropertyArgs{...}
+//	RegistryConnectionConnectionPropertyArgs{...}
 type RegistryConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i RegistryConnectionConnectionPropertyArgs) ToRegistryConnectionConnection
 // RegistryConnectionConnectionPropertyArrayInput is an input type that accepts RegistryConnectionConnectionPropertyArray and RegistryConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `RegistryConnectionConnectionPropertyArrayInput` via:
 //
-//          RegistryConnectionConnectionPropertyArray{ RegistryConnectionConnectionPropertyArgs{...} }
+//	RegistryConnectionConnectionPropertyArray{ RegistryConnectionConnectionPropertyArgs{...} }
 type RegistryConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -148,7 +148,7 @@ type RegistryConnectionMetadata struct {
 // RegistryConnectionMetadataInput is an input type that accepts RegistryConnectionMetadataArgs and RegistryConnectionMetadataOutput values.
 // You can construct a concrete instance of `RegistryConnectionMetadataInput` via:
 //
-//          RegistryConnectionMetadataArgs{...}
+//	RegistryConnectionMetadataArgs{...}
 type RegistryConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -208,11 +208,11 @@ func (i RegistryConnectionMetadataArgs) ToRegistryConnectionMetadataPtrOutputWit
 // RegistryConnectionMetadataPtrInput is an input type that accepts RegistryConnectionMetadataArgs, RegistryConnectionMetadataPtr and RegistryConnectionMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionMetadataPtrInput` via:
 //
-//          RegistryConnectionMetadataArgs{...}
+//	        RegistryConnectionMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionMetadataPtrInput interface {
 	pulumi.Input
 
@@ -497,7 +497,7 @@ type RegistryConnectionMetadataAggregator struct {
 // RegistryConnectionMetadataAggregatorInput is an input type that accepts RegistryConnectionMetadataAggregatorArgs and RegistryConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryConnectionMetadataAggregatorInput` via:
 //
-//          RegistryConnectionMetadataAggregatorArgs{...}
+//	RegistryConnectionMetadataAggregatorArgs{...}
 type RegistryConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -541,11 +541,11 @@ func (i RegistryConnectionMetadataAggregatorArgs) ToRegistryConnectionMetadataAg
 // RegistryConnectionMetadataAggregatorPtrInput is an input type that accepts RegistryConnectionMetadataAggregatorArgs, RegistryConnectionMetadataAggregatorPtr and RegistryConnectionMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionMetadataAggregatorPtrInput` via:
 //
-//          RegistryConnectionMetadataAggregatorArgs{...}
+//	        RegistryConnectionMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -728,7 +728,7 @@ type RegistryConnectionPrimarySchema struct {
 // RegistryConnectionPrimarySchemaInput is an input type that accepts RegistryConnectionPrimarySchemaArgs and RegistryConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaInput` via:
 //
-//          RegistryConnectionPrimarySchemaArgs{...}
+//	RegistryConnectionPrimarySchemaArgs{...}
 type RegistryConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -790,11 +790,11 @@ func (i RegistryConnectionPrimarySchemaArgs) ToRegistryConnectionPrimarySchemaPt
 // RegistryConnectionPrimarySchemaPtrInput is an input type that accepts RegistryConnectionPrimarySchemaArgs, RegistryConnectionPrimarySchemaPtr and RegistryConnectionPrimarySchemaPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaPtrInput` via:
 //
-//          RegistryConnectionPrimarySchemaArgs{...}
+//	        RegistryConnectionPrimarySchemaArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionPrimarySchemaPtrInput interface {
 	pulumi.Input
 
@@ -1110,7 +1110,7 @@ type RegistryConnectionPrimarySchemaMetadata struct {
 // RegistryConnectionPrimarySchemaMetadataInput is an input type that accepts RegistryConnectionPrimarySchemaMetadataArgs and RegistryConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaMetadataInput` via:
 //
-//          RegistryConnectionPrimarySchemaMetadataArgs{...}
+//	RegistryConnectionPrimarySchemaMetadataArgs{...}
 type RegistryConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -1170,11 +1170,11 @@ func (i RegistryConnectionPrimarySchemaMetadataArgs) ToRegistryConnectionPrimary
 // RegistryConnectionPrimarySchemaMetadataPtrInput is an input type that accepts RegistryConnectionPrimarySchemaMetadataArgs, RegistryConnectionPrimarySchemaMetadataPtr and RegistryConnectionPrimarySchemaMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaMetadataPtrInput` via:
 //
-//          RegistryConnectionPrimarySchemaMetadataArgs{...}
+//	        RegistryConnectionPrimarySchemaMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionPrimarySchemaMetadataPtrInput interface {
 	pulumi.Input
 
@@ -1461,7 +1461,7 @@ type RegistryConnectionPrimarySchemaMetadataAggregator struct {
 // RegistryConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts RegistryConnectionPrimarySchemaMetadataAggregatorArgs and RegistryConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          RegistryConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	RegistryConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type RegistryConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -1505,11 +1505,11 @@ func (i RegistryConnectionPrimarySchemaMetadataAggregatorArgs) ToRegistryConnect
 // RegistryConnectionPrimarySchemaMetadataAggregatorPtrInput is an input type that accepts RegistryConnectionPrimarySchemaMetadataAggregatorArgs, RegistryConnectionPrimarySchemaMetadataAggregatorPtr and RegistryConnectionPrimarySchemaMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaMetadataAggregatorPtrInput` via:
 //
-//          RegistryConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	        RegistryConnectionPrimarySchemaMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionPrimarySchemaMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -1666,7 +1666,7 @@ type RegistryConnectionPrimarySchemaParentRef struct {
 // RegistryConnectionPrimarySchemaParentRefInput is an input type that accepts RegistryConnectionPrimarySchemaParentRefArgs and RegistryConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaParentRefInput` via:
 //
-//          RegistryConnectionPrimarySchemaParentRefArgs{...}
+//	RegistryConnectionPrimarySchemaParentRefArgs{...}
 type RegistryConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -1702,11 +1702,11 @@ func (i RegistryConnectionPrimarySchemaParentRefArgs) ToRegistryConnectionPrimar
 // RegistryConnectionPrimarySchemaParentRefPtrInput is an input type that accepts RegistryConnectionPrimarySchemaParentRefArgs, RegistryConnectionPrimarySchemaParentRefPtr and RegistryConnectionPrimarySchemaParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionPrimarySchemaParentRefPtrInput` via:
 //
-//          RegistryConnectionPrimarySchemaParentRefArgs{...}
+//	        RegistryConnectionPrimarySchemaParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionPrimarySchemaParentRefPtrInput interface {
 	pulumi.Input
 
@@ -1823,7 +1823,7 @@ type RegistryConnectionRegistryMetadata struct {
 // RegistryConnectionRegistryMetadataInput is an input type that accepts RegistryConnectionRegistryMetadataArgs and RegistryConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `RegistryConnectionRegistryMetadataInput` via:
 //
-//          RegistryConnectionRegistryMetadataArgs{...}
+//	RegistryConnectionRegistryMetadataArgs{...}
 type RegistryConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -1879,11 +1879,11 @@ func (i RegistryConnectionRegistryMetadataArgs) ToRegistryConnectionRegistryMeta
 // RegistryConnectionRegistryMetadataPtrInput is an input type that accepts RegistryConnectionRegistryMetadataArgs, RegistryConnectionRegistryMetadataPtr and RegistryConnectionRegistryMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryConnectionRegistryMetadataPtrInput` via:
 //
-//          RegistryConnectionRegistryMetadataArgs{...}
+//	        RegistryConnectionRegistryMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryConnectionRegistryMetadataPtrInput interface {
 	pulumi.Input
 
@@ -2158,7 +2158,7 @@ type RegistryDataAssetDefaultConnection struct {
 // RegistryDataAssetDefaultConnectionInput is an input type that accepts RegistryDataAssetDefaultConnectionArgs and RegistryDataAssetDefaultConnectionOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionInput` via:
 //
-//          RegistryDataAssetDefaultConnectionArgs{...}
+//	RegistryDataAssetDefaultConnectionArgs{...}
 type RegistryDataAssetDefaultConnectionInput interface {
 	pulumi.Input
 
@@ -2222,11 +2222,11 @@ func (i RegistryDataAssetDefaultConnectionArgs) ToRegistryDataAssetDefaultConnec
 // RegistryDataAssetDefaultConnectionPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionArgs, RegistryDataAssetDefaultConnectionPtr and RegistryDataAssetDefaultConnectionPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionArgs{...}
+//	        RegistryDataAssetDefaultConnectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionPtrInput interface {
 	pulumi.Input
 
@@ -2543,7 +2543,7 @@ type RegistryDataAssetDefaultConnectionConnectionProperty struct {
 // RegistryDataAssetDefaultConnectionConnectionPropertyInput is an input type that accepts RegistryDataAssetDefaultConnectionConnectionPropertyArgs and RegistryDataAssetDefaultConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionConnectionPropertyInput` via:
 //
-//          RegistryDataAssetDefaultConnectionConnectionPropertyArgs{...}
+//	RegistryDataAssetDefaultConnectionConnectionPropertyArgs{...}
 type RegistryDataAssetDefaultConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -2573,7 +2573,7 @@ func (i RegistryDataAssetDefaultConnectionConnectionPropertyArgs) ToRegistryData
 // RegistryDataAssetDefaultConnectionConnectionPropertyArrayInput is an input type that accepts RegistryDataAssetDefaultConnectionConnectionPropertyArray and RegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionConnectionPropertyArrayInput` via:
 //
-//          RegistryDataAssetDefaultConnectionConnectionPropertyArray{ RegistryDataAssetDefaultConnectionConnectionPropertyArgs{...} }
+//	RegistryDataAssetDefaultConnectionConnectionPropertyArray{ RegistryDataAssetDefaultConnectionConnectionPropertyArgs{...} }
 type RegistryDataAssetDefaultConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -2671,7 +2671,7 @@ type RegistryDataAssetDefaultConnectionMetadata struct {
 // RegistryDataAssetDefaultConnectionMetadataInput is an input type that accepts RegistryDataAssetDefaultConnectionMetadataArgs and RegistryDataAssetDefaultConnectionMetadataOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionMetadataInput` via:
 //
-//          RegistryDataAssetDefaultConnectionMetadataArgs{...}
+//	RegistryDataAssetDefaultConnectionMetadataArgs{...}
 type RegistryDataAssetDefaultConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -2731,11 +2731,11 @@ func (i RegistryDataAssetDefaultConnectionMetadataArgs) ToRegistryDataAssetDefau
 // RegistryDataAssetDefaultConnectionMetadataPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionMetadataArgs, RegistryDataAssetDefaultConnectionMetadataPtr and RegistryDataAssetDefaultConnectionMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionMetadataPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionMetadataArgs{...}
+//	        RegistryDataAssetDefaultConnectionMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionMetadataPtrInput interface {
 	pulumi.Input
 
@@ -3022,7 +3022,7 @@ type RegistryDataAssetDefaultConnectionMetadataAggregator struct {
 // RegistryDataAssetDefaultConnectionMetadataAggregatorInput is an input type that accepts RegistryDataAssetDefaultConnectionMetadataAggregatorArgs and RegistryDataAssetDefaultConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionMetadataAggregatorInput` via:
 //
-//          RegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	RegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 type RegistryDataAssetDefaultConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -3066,11 +3066,11 @@ func (i RegistryDataAssetDefaultConnectionMetadataAggregatorArgs) ToRegistryData
 // RegistryDataAssetDefaultConnectionMetadataAggregatorPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionMetadataAggregatorArgs, RegistryDataAssetDefaultConnectionMetadataAggregatorPtr and RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionMetadataAggregatorPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	        RegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -3253,7 +3253,7 @@ type RegistryDataAssetDefaultConnectionPrimarySchema struct {
 // RegistryDataAssetDefaultConnectionPrimarySchemaInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaArgs and RegistryDataAssetDefaultConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	RegistryDataAssetDefaultConnectionPrimarySchemaArgs{...}
 type RegistryDataAssetDefaultConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -3315,11 +3315,11 @@ func (i RegistryDataAssetDefaultConnectionPrimarySchemaArgs) ToRegistryDataAsset
 // RegistryDataAssetDefaultConnectionPrimarySchemaPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaArgs, RegistryDataAssetDefaultConnectionPrimarySchemaPtr and RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	        RegistryDataAssetDefaultConnectionPrimarySchemaArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionPrimarySchemaPtrInput interface {
 	pulumi.Input
 
@@ -3639,7 +3639,7 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 // RegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs and RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -3699,11 +3699,11 @@ func (i RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs) ToRegistryD
 // RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs, RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtr and RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	        RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput interface {
 	pulumi.Input
 
@@ -3992,7 +3992,7 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct {
 // RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs and RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -4036,11 +4036,11 @@ func (i RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs) T
 // RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs, RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtr and RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	        RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -4199,7 +4199,7 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaParentRef struct {
 // RegistryDataAssetDefaultConnectionPrimarySchemaParentRefInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs and RegistryDataAssetDefaultConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaParentRefInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 type RegistryDataAssetDefaultConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -4235,11 +4235,11 @@ func (i RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs) ToRegistry
 // RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs, RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtr and RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	        RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput interface {
 	pulumi.Input
 
@@ -4356,7 +4356,7 @@ type RegistryDataAssetDefaultConnectionRegistryMetadata struct {
 // RegistryDataAssetDefaultConnectionRegistryMetadataInput is an input type that accepts RegistryDataAssetDefaultConnectionRegistryMetadataArgs and RegistryDataAssetDefaultConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionRegistryMetadataInput` via:
 //
-//          RegistryDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	RegistryDataAssetDefaultConnectionRegistryMetadataArgs{...}
 type RegistryDataAssetDefaultConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -4412,11 +4412,11 @@ func (i RegistryDataAssetDefaultConnectionRegistryMetadataArgs) ToRegistryDataAs
 // RegistryDataAssetDefaultConnectionRegistryMetadataPtrInput is an input type that accepts RegistryDataAssetDefaultConnectionRegistryMetadataArgs, RegistryDataAssetDefaultConnectionRegistryMetadataPtr and RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetDefaultConnectionRegistryMetadataPtrInput` via:
 //
-//          RegistryDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	        RegistryDataAssetDefaultConnectionRegistryMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetDefaultConnectionRegistryMetadataPtrInput interface {
 	pulumi.Input
 
@@ -4687,7 +4687,7 @@ type RegistryDataAssetMetadata struct {
 // RegistryDataAssetMetadataInput is an input type that accepts RegistryDataAssetMetadataArgs and RegistryDataAssetMetadataOutput values.
 // You can construct a concrete instance of `RegistryDataAssetMetadataInput` via:
 //
-//          RegistryDataAssetMetadataArgs{...}
+//	RegistryDataAssetMetadataArgs{...}
 type RegistryDataAssetMetadataInput interface {
 	pulumi.Input
 
@@ -4747,11 +4747,11 @@ func (i RegistryDataAssetMetadataArgs) ToRegistryDataAssetMetadataPtrOutputWithC
 // RegistryDataAssetMetadataPtrInput is an input type that accepts RegistryDataAssetMetadataArgs, RegistryDataAssetMetadataPtr and RegistryDataAssetMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetMetadataPtrInput` via:
 //
-//          RegistryDataAssetMetadataArgs{...}
+//	        RegistryDataAssetMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetMetadataPtrInput interface {
 	pulumi.Input
 
@@ -5036,7 +5036,7 @@ type RegistryDataAssetMetadataAggregator struct {
 // RegistryDataAssetMetadataAggregatorInput is an input type that accepts RegistryDataAssetMetadataAggregatorArgs and RegistryDataAssetMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryDataAssetMetadataAggregatorInput` via:
 //
-//          RegistryDataAssetMetadataAggregatorArgs{...}
+//	RegistryDataAssetMetadataAggregatorArgs{...}
 type RegistryDataAssetMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -5080,11 +5080,11 @@ func (i RegistryDataAssetMetadataAggregatorArgs) ToRegistryDataAssetMetadataAggr
 // RegistryDataAssetMetadataAggregatorPtrInput is an input type that accepts RegistryDataAssetMetadataAggregatorArgs, RegistryDataAssetMetadataAggregatorPtr and RegistryDataAssetMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetMetadataAggregatorPtrInput` via:
 //
-//          RegistryDataAssetMetadataAggregatorArgs{...}
+//	        RegistryDataAssetMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -5263,7 +5263,7 @@ type RegistryDataAssetNativeTypeSystem struct {
 // RegistryDataAssetNativeTypeSystemInput is an input type that accepts RegistryDataAssetNativeTypeSystemArgs and RegistryDataAssetNativeTypeSystemOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemArgs{...}
+//	RegistryDataAssetNativeTypeSystemArgs{...}
 type RegistryDataAssetNativeTypeSystemInput interface {
 	pulumi.Input
 
@@ -5321,11 +5321,11 @@ func (i RegistryDataAssetNativeTypeSystemArgs) ToRegistryDataAssetNativeTypeSyst
 // RegistryDataAssetNativeTypeSystemPtrInput is an input type that accepts RegistryDataAssetNativeTypeSystemArgs, RegistryDataAssetNativeTypeSystemPtr and RegistryDataAssetNativeTypeSystemPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemPtrInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemArgs{...}
+//	        RegistryDataAssetNativeTypeSystemArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetNativeTypeSystemPtrInput interface {
 	pulumi.Input
 
@@ -5589,7 +5589,7 @@ type RegistryDataAssetNativeTypeSystemParentRef struct {
 // RegistryDataAssetNativeTypeSystemParentRefInput is an input type that accepts RegistryDataAssetNativeTypeSystemParentRefArgs and RegistryDataAssetNativeTypeSystemParentRefOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemParentRefInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemParentRefArgs{...}
+//	RegistryDataAssetNativeTypeSystemParentRefArgs{...}
 type RegistryDataAssetNativeTypeSystemParentRefInput interface {
 	pulumi.Input
 
@@ -5625,11 +5625,11 @@ func (i RegistryDataAssetNativeTypeSystemParentRefArgs) ToRegistryDataAssetNativ
 // RegistryDataAssetNativeTypeSystemParentRefPtrInput is an input type that accepts RegistryDataAssetNativeTypeSystemParentRefArgs, RegistryDataAssetNativeTypeSystemParentRefPtr and RegistryDataAssetNativeTypeSystemParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemParentRefPtrInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemParentRefArgs{...}
+//	        RegistryDataAssetNativeTypeSystemParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetNativeTypeSystemParentRefPtrInput interface {
 	pulumi.Input
 
@@ -5744,7 +5744,7 @@ type RegistryDataAssetNativeTypeSystemType struct {
 // RegistryDataAssetNativeTypeSystemTypeInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeArgs and RegistryDataAssetNativeTypeSystemTypeOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeArgs{...}
+//	RegistryDataAssetNativeTypeSystemTypeArgs{...}
 type RegistryDataAssetNativeTypeSystemTypeInput interface {
 	pulumi.Input
 
@@ -5790,7 +5790,7 @@ func (i RegistryDataAssetNativeTypeSystemTypeArgs) ToRegistryDataAssetNativeType
 // RegistryDataAssetNativeTypeSystemTypeArrayInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeArray and RegistryDataAssetNativeTypeSystemTypeArrayOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeArrayInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeArray{ RegistryDataAssetNativeTypeSystemTypeArgs{...} }
+//	RegistryDataAssetNativeTypeSystemTypeArray{ RegistryDataAssetNativeTypeSystemTypeArgs{...} }
 type RegistryDataAssetNativeTypeSystemTypeArrayInput interface {
 	pulumi.Input
 
@@ -5922,7 +5922,7 @@ type RegistryDataAssetNativeTypeSystemTypeConfigDefinition struct {
 // RegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs and RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 	pulumi.Input
 
@@ -5972,11 +5972,11 @@ func (i RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs) ToRegistryDat
 // RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs, RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtr and RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	        RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput interface {
 	pulumi.Input
 
@@ -6182,7 +6182,7 @@ type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef struct {
 // RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs and RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput interface {
 	pulumi.Input
 
@@ -6218,11 +6218,11 @@ func (i RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs) ToRe
 // RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs, RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtr and RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	        RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput interface {
 	pulumi.Input
 
@@ -6319,7 +6319,7 @@ type RegistryDataAssetNativeTypeSystemTypeParentRef struct {
 // RegistryDataAssetNativeTypeSystemTypeParentRefInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeParentRefArgs and RegistryDataAssetNativeTypeSystemTypeParentRefOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeParentRefInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	RegistryDataAssetNativeTypeSystemTypeParentRefArgs{...}
 type RegistryDataAssetNativeTypeSystemTypeParentRefInput interface {
 	pulumi.Input
 
@@ -6355,11 +6355,11 @@ func (i RegistryDataAssetNativeTypeSystemTypeParentRefArgs) ToRegistryDataAssetN
 // RegistryDataAssetNativeTypeSystemTypeParentRefPtrInput is an input type that accepts RegistryDataAssetNativeTypeSystemTypeParentRefArgs, RegistryDataAssetNativeTypeSystemTypeParentRefPtr and RegistryDataAssetNativeTypeSystemTypeParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetNativeTypeSystemTypeParentRefPtrInput` via:
 //
-//          RegistryDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	        RegistryDataAssetNativeTypeSystemTypeParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetNativeTypeSystemTypeParentRefPtrInput interface {
 	pulumi.Input
 
@@ -6476,7 +6476,7 @@ type RegistryDataAssetRegistryMetadata struct {
 // RegistryDataAssetRegistryMetadataInput is an input type that accepts RegistryDataAssetRegistryMetadataArgs and RegistryDataAssetRegistryMetadataOutput values.
 // You can construct a concrete instance of `RegistryDataAssetRegistryMetadataInput` via:
 //
-//          RegistryDataAssetRegistryMetadataArgs{...}
+//	RegistryDataAssetRegistryMetadataArgs{...}
 type RegistryDataAssetRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -6532,11 +6532,11 @@ func (i RegistryDataAssetRegistryMetadataArgs) ToRegistryDataAssetRegistryMetada
 // RegistryDataAssetRegistryMetadataPtrInput is an input type that accepts RegistryDataAssetRegistryMetadataArgs, RegistryDataAssetRegistryMetadataPtr and RegistryDataAssetRegistryMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryDataAssetRegistryMetadataPtrInput` via:
 //
-//          RegistryDataAssetRegistryMetadataArgs{...}
+//	        RegistryDataAssetRegistryMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryDataAssetRegistryMetadataPtrInput interface {
 	pulumi.Input
 
@@ -6813,7 +6813,7 @@ type RegistryFolderDataAsset struct {
 // RegistryFolderDataAssetInput is an input type that accepts RegistryFolderDataAssetArgs and RegistryFolderDataAssetOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetInput` via:
 //
-//          RegistryFolderDataAssetArgs{...}
+//	RegistryFolderDataAssetArgs{...}
 type RegistryFolderDataAssetInput interface {
 	pulumi.Input
 
@@ -6871,7 +6871,7 @@ func (i RegistryFolderDataAssetArgs) ToRegistryFolderDataAssetOutputWithContext(
 // RegistryFolderDataAssetArrayInput is an input type that accepts RegistryFolderDataAssetArray and RegistryFolderDataAssetArrayOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetArrayInput` via:
 //
-//          RegistryFolderDataAssetArray{ RegistryFolderDataAssetArgs{...} }
+//	RegistryFolderDataAssetArray{ RegistryFolderDataAssetArgs{...} }
 type RegistryFolderDataAssetArrayInput interface {
 	pulumi.Input
 
@@ -7043,7 +7043,7 @@ type RegistryFolderDataAssetDefaultConnection struct {
 // RegistryFolderDataAssetDefaultConnectionInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionArgs and RegistryFolderDataAssetDefaultConnectionOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionArgs{...}
 type RegistryFolderDataAssetDefaultConnectionInput interface {
 	pulumi.Input
 
@@ -7107,11 +7107,11 @@ func (i RegistryFolderDataAssetDefaultConnectionArgs) ToRegistryFolderDataAssetD
 // RegistryFolderDataAssetDefaultConnectionPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionArgs, RegistryFolderDataAssetDefaultConnectionPtr and RegistryFolderDataAssetDefaultConnectionPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionPtrInput interface {
 	pulumi.Input
 
@@ -7428,7 +7428,7 @@ type RegistryFolderDataAssetDefaultConnectionConnectionProperty struct {
 // RegistryFolderDataAssetDefaultConnectionConnectionPropertyInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs and RegistryFolderDataAssetDefaultConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionConnectionPropertyInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...}
 type RegistryFolderDataAssetDefaultConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -7458,7 +7458,7 @@ func (i RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs) ToRegist
 // RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionConnectionPropertyArray and RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionConnectionPropertyArray{ RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...} }
+//	RegistryFolderDataAssetDefaultConnectionConnectionPropertyArray{ RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...} }
 type RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -7556,7 +7556,7 @@ type RegistryFolderDataAssetDefaultConnectionMetadata struct {
 // RegistryFolderDataAssetDefaultConnectionMetadataInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionMetadataArgs and RegistryFolderDataAssetDefaultConnectionMetadataOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionMetadataInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionMetadataArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionMetadataArgs{...}
 type RegistryFolderDataAssetDefaultConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -7616,11 +7616,11 @@ func (i RegistryFolderDataAssetDefaultConnectionMetadataArgs) ToRegistryFolderDa
 // RegistryFolderDataAssetDefaultConnectionMetadataPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionMetadataArgs, RegistryFolderDataAssetDefaultConnectionMetadataPtr and RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionMetadataPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionMetadataArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionMetadataPtrInput interface {
 	pulumi.Input
 
@@ -7907,7 +7907,7 @@ type RegistryFolderDataAssetDefaultConnectionMetadataAggregator struct {
 // RegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs and RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 type RegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -7951,11 +7951,11 @@ func (i RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs) ToRegist
 // RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs, RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtr and RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -8138,7 +8138,7 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchema struct {
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs and RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...}
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -8200,11 +8200,11 @@ func (i RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs) ToRegistryFol
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs, RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtr and RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrInput interface {
 	pulumi.Input
 
@@ -8524,7 +8524,7 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs and RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -8584,11 +8584,11 @@ func (i RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs) ToReg
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs, RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtr and RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput interface {
 	pulumi.Input
 
@@ -8877,7 +8877,7 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator str
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs and RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -8921,11 +8921,11 @@ func (i RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorA
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs, RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtr and RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -9086,7 +9086,7 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef struct {
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs and RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -9122,11 +9122,11 @@ func (i RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs) ToRe
 // RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs, RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtr and RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput interface {
 	pulumi.Input
 
@@ -9243,7 +9243,7 @@ type RegistryFolderDataAssetDefaultConnectionRegistryMetadata struct {
 // RegistryFolderDataAssetDefaultConnectionRegistryMetadataInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs and RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionRegistryMetadataInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...}
 type RegistryFolderDataAssetDefaultConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -9299,11 +9299,11 @@ func (i RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs) ToRegistry
 // RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrInput is an input type that accepts RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs, RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtr and RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrInput` via:
 //
-//          RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	        RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrInput interface {
 	pulumi.Input
 
@@ -9574,7 +9574,7 @@ type RegistryFolderDataAssetMetadata struct {
 // RegistryFolderDataAssetMetadataInput is an input type that accepts RegistryFolderDataAssetMetadataArgs and RegistryFolderDataAssetMetadataOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetMetadataInput` via:
 //
-//          RegistryFolderDataAssetMetadataArgs{...}
+//	RegistryFolderDataAssetMetadataArgs{...}
 type RegistryFolderDataAssetMetadataInput interface {
 	pulumi.Input
 
@@ -9634,11 +9634,11 @@ func (i RegistryFolderDataAssetMetadataArgs) ToRegistryFolderDataAssetMetadataPt
 // RegistryFolderDataAssetMetadataPtrInput is an input type that accepts RegistryFolderDataAssetMetadataArgs, RegistryFolderDataAssetMetadataPtr and RegistryFolderDataAssetMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetMetadataPtrInput` via:
 //
-//          RegistryFolderDataAssetMetadataArgs{...}
+//	        RegistryFolderDataAssetMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetMetadataPtrInput interface {
 	pulumi.Input
 
@@ -9925,7 +9925,7 @@ type RegistryFolderDataAssetMetadataAggregator struct {
 // RegistryFolderDataAssetMetadataAggregatorInput is an input type that accepts RegistryFolderDataAssetMetadataAggregatorArgs and RegistryFolderDataAssetMetadataAggregatorOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetMetadataAggregatorInput` via:
 //
-//          RegistryFolderDataAssetMetadataAggregatorArgs{...}
+//	RegistryFolderDataAssetMetadataAggregatorArgs{...}
 type RegistryFolderDataAssetMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -9969,11 +9969,11 @@ func (i RegistryFolderDataAssetMetadataAggregatorArgs) ToRegistryFolderDataAsset
 // RegistryFolderDataAssetMetadataAggregatorPtrInput is an input type that accepts RegistryFolderDataAssetMetadataAggregatorArgs, RegistryFolderDataAssetMetadataAggregatorPtr and RegistryFolderDataAssetMetadataAggregatorPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetMetadataAggregatorPtrInput` via:
 //
-//          RegistryFolderDataAssetMetadataAggregatorArgs{...}
+//	        RegistryFolderDataAssetMetadataAggregatorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetMetadataAggregatorPtrInput interface {
 	pulumi.Input
 
@@ -10152,7 +10152,7 @@ type RegistryFolderDataAssetNativeTypeSystem struct {
 // RegistryFolderDataAssetNativeTypeSystemInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemArgs and RegistryFolderDataAssetNativeTypeSystemOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemArgs{...}
+//	RegistryFolderDataAssetNativeTypeSystemArgs{...}
 type RegistryFolderDataAssetNativeTypeSystemInput interface {
 	pulumi.Input
 
@@ -10210,11 +10210,11 @@ func (i RegistryFolderDataAssetNativeTypeSystemArgs) ToRegistryFolderDataAssetNa
 // RegistryFolderDataAssetNativeTypeSystemPtrInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemArgs, RegistryFolderDataAssetNativeTypeSystemPtr and RegistryFolderDataAssetNativeTypeSystemPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemPtrInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemArgs{...}
+//	        RegistryFolderDataAssetNativeTypeSystemArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetNativeTypeSystemPtrInput interface {
 	pulumi.Input
 
@@ -10480,7 +10480,7 @@ type RegistryFolderDataAssetNativeTypeSystemParentRef struct {
 // RegistryFolderDataAssetNativeTypeSystemParentRefInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemParentRefArgs and RegistryFolderDataAssetNativeTypeSystemParentRefOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemParentRefInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemParentRefArgs{...}
+//	RegistryFolderDataAssetNativeTypeSystemParentRefArgs{...}
 type RegistryFolderDataAssetNativeTypeSystemParentRefInput interface {
 	pulumi.Input
 
@@ -10516,11 +10516,11 @@ func (i RegistryFolderDataAssetNativeTypeSystemParentRefArgs) ToRegistryFolderDa
 // RegistryFolderDataAssetNativeTypeSystemParentRefPtrInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemParentRefArgs, RegistryFolderDataAssetNativeTypeSystemParentRefPtr and RegistryFolderDataAssetNativeTypeSystemParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemParentRefPtrInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemParentRefArgs{...}
+//	        RegistryFolderDataAssetNativeTypeSystemParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetNativeTypeSystemParentRefPtrInput interface {
 	pulumi.Input
 
@@ -10635,7 +10635,7 @@ type RegistryFolderDataAssetNativeTypeSystemType struct {
 // RegistryFolderDataAssetNativeTypeSystemTypeInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeArgs and RegistryFolderDataAssetNativeTypeSystemTypeOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeArgs{...}
+//	RegistryFolderDataAssetNativeTypeSystemTypeArgs{...}
 type RegistryFolderDataAssetNativeTypeSystemTypeInput interface {
 	pulumi.Input
 
@@ -10681,7 +10681,7 @@ func (i RegistryFolderDataAssetNativeTypeSystemTypeArgs) ToRegistryFolderDataAss
 // RegistryFolderDataAssetNativeTypeSystemTypeArrayInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeArray and RegistryFolderDataAssetNativeTypeSystemTypeArrayOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeArrayInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeArray{ RegistryFolderDataAssetNativeTypeSystemTypeArgs{...} }
+//	RegistryFolderDataAssetNativeTypeSystemTypeArray{ RegistryFolderDataAssetNativeTypeSystemTypeArgs{...} }
 type RegistryFolderDataAssetNativeTypeSystemTypeArrayInput interface {
 	pulumi.Input
 
@@ -10813,7 +10813,7 @@ type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition struct {
 // RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs and RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 	pulumi.Input
 
@@ -10863,11 +10863,11 @@ func (i RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs) ToRegis
 // RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs, RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtr and RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	        RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput interface {
 	pulumi.Input
 
@@ -11073,7 +11073,7 @@ type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef struct
 // RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs and RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput interface {
 	pulumi.Input
 
@@ -11109,11 +11109,11 @@ func (i RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs
 // RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs, RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtr and RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	        RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput interface {
 	pulumi.Input
 
@@ -11210,7 +11210,7 @@ type RegistryFolderDataAssetNativeTypeSystemTypeParentRef struct {
 // RegistryFolderDataAssetNativeTypeSystemTypeParentRefInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs and RegistryFolderDataAssetNativeTypeSystemTypeParentRefOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeParentRefInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...}
 type RegistryFolderDataAssetNativeTypeSystemTypeParentRefInput interface {
 	pulumi.Input
 
@@ -11246,11 +11246,11 @@ func (i RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs) ToRegistryFold
 // RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrInput is an input type that accepts RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs, RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtr and RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrInput` via:
 //
-//          RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	        RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrInput interface {
 	pulumi.Input
 
@@ -11367,7 +11367,7 @@ type RegistryFolderDataAssetRegistryMetadata struct {
 // RegistryFolderDataAssetRegistryMetadataInput is an input type that accepts RegistryFolderDataAssetRegistryMetadataArgs and RegistryFolderDataAssetRegistryMetadataOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetRegistryMetadataInput` via:
 //
-//          RegistryFolderDataAssetRegistryMetadataArgs{...}
+//	RegistryFolderDataAssetRegistryMetadataArgs{...}
 type RegistryFolderDataAssetRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -11423,11 +11423,11 @@ func (i RegistryFolderDataAssetRegistryMetadataArgs) ToRegistryFolderDataAssetRe
 // RegistryFolderDataAssetRegistryMetadataPtrInput is an input type that accepts RegistryFolderDataAssetRegistryMetadataArgs, RegistryFolderDataAssetRegistryMetadataPtr and RegistryFolderDataAssetRegistryMetadataPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderDataAssetRegistryMetadataPtrInput` via:
 //
-//          RegistryFolderDataAssetRegistryMetadataArgs{...}
+//	        RegistryFolderDataAssetRegistryMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderDataAssetRegistryMetadataPtrInput interface {
 	pulumi.Input
 
@@ -11674,7 +11674,7 @@ type RegistryFolderParentRef struct {
 // RegistryFolderParentRefInput is an input type that accepts RegistryFolderParentRefArgs and RegistryFolderParentRefOutput values.
 // You can construct a concrete instance of `RegistryFolderParentRefInput` via:
 //
-//          RegistryFolderParentRefArgs{...}
+//	RegistryFolderParentRefArgs{...}
 type RegistryFolderParentRefInput interface {
 	pulumi.Input
 
@@ -11710,11 +11710,11 @@ func (i RegistryFolderParentRefArgs) ToRegistryFolderParentRefPtrOutputWithConte
 // RegistryFolderParentRefPtrInput is an input type that accepts RegistryFolderParentRefArgs, RegistryFolderParentRefPtr and RegistryFolderParentRefPtrOutput values.
 // You can construct a concrete instance of `RegistryFolderParentRefPtrInput` via:
 //
-//          RegistryFolderParentRefArgs{...}
+//	        RegistryFolderParentRefArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RegistryFolderParentRefPtrInput interface {
 	pulumi.Input
 
@@ -11813,7 +11813,7 @@ type GetRegistriesFilter struct {
 // GetRegistriesFilterInput is an input type that accepts GetRegistriesFilterArgs and GetRegistriesFilterOutput values.
 // You can construct a concrete instance of `GetRegistriesFilterInput` via:
 //
-//          GetRegistriesFilterArgs{...}
+//	GetRegistriesFilterArgs{...}
 type GetRegistriesFilterInput interface {
 	pulumi.Input
 
@@ -11843,7 +11843,7 @@ func (i GetRegistriesFilterArgs) ToGetRegistriesFilterOutputWithContext(ctx cont
 // GetRegistriesFilterArrayInput is an input type that accepts GetRegistriesFilterArray and GetRegistriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegistriesFilterArrayInput` via:
 //
-//          GetRegistriesFilterArray{ GetRegistriesFilterArgs{...} }
+//	GetRegistriesFilterArray{ GetRegistriesFilterArgs{...} }
 type GetRegistriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -11919,7 +11919,7 @@ type GetRegistriesRegistrySummaryCollection struct {
 // GetRegistriesRegistrySummaryCollectionInput is an input type that accepts GetRegistriesRegistrySummaryCollectionArgs and GetRegistriesRegistrySummaryCollectionOutput values.
 // You can construct a concrete instance of `GetRegistriesRegistrySummaryCollectionInput` via:
 //
-//          GetRegistriesRegistrySummaryCollectionArgs{...}
+//	GetRegistriesRegistrySummaryCollectionArgs{...}
 type GetRegistriesRegistrySummaryCollectionInput interface {
 	pulumi.Input
 
@@ -11946,7 +11946,7 @@ func (i GetRegistriesRegistrySummaryCollectionArgs) ToGetRegistriesRegistrySumma
 // GetRegistriesRegistrySummaryCollectionArrayInput is an input type that accepts GetRegistriesRegistrySummaryCollectionArray and GetRegistriesRegistrySummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistriesRegistrySummaryCollectionArrayInput` via:
 //
-//          GetRegistriesRegistrySummaryCollectionArray{ GetRegistriesRegistrySummaryCollectionArgs{...} }
+//	GetRegistriesRegistrySummaryCollectionArray{ GetRegistriesRegistrySummaryCollectionArgs{...} }
 type GetRegistriesRegistrySummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -12036,7 +12036,7 @@ type GetRegistriesRegistrySummaryCollectionItem struct {
 // GetRegistriesRegistrySummaryCollectionItemInput is an input type that accepts GetRegistriesRegistrySummaryCollectionItemArgs and GetRegistriesRegistrySummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRegistriesRegistrySummaryCollectionItemInput` via:
 //
-//          GetRegistriesRegistrySummaryCollectionItemArgs{...}
+//	GetRegistriesRegistrySummaryCollectionItemArgs{...}
 type GetRegistriesRegistrySummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -12084,7 +12084,7 @@ func (i GetRegistriesRegistrySummaryCollectionItemArgs) ToGetRegistriesRegistryS
 // GetRegistriesRegistrySummaryCollectionItemArrayInput is an input type that accepts GetRegistriesRegistrySummaryCollectionItemArray and GetRegistriesRegistrySummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRegistriesRegistrySummaryCollectionItemArrayInput` via:
 //
-//          GetRegistriesRegistrySummaryCollectionItemArray{ GetRegistriesRegistrySummaryCollectionItemArgs{...} }
+//	GetRegistriesRegistrySummaryCollectionItemArray{ GetRegistriesRegistrySummaryCollectionItemArgs{...} }
 type GetRegistriesRegistrySummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -12205,7 +12205,7 @@ type GetRegistryConnectionConnectionProperty struct {
 // GetRegistryConnectionConnectionPropertyInput is an input type that accepts GetRegistryConnectionConnectionPropertyArgs and GetRegistryConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionConnectionPropertyInput` via:
 //
-//          GetRegistryConnectionConnectionPropertyArgs{...}
+//	GetRegistryConnectionConnectionPropertyArgs{...}
 type GetRegistryConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -12235,7 +12235,7 @@ func (i GetRegistryConnectionConnectionPropertyArgs) ToGetRegistryConnectionConn
 // GetRegistryConnectionConnectionPropertyArrayInput is an input type that accepts GetRegistryConnectionConnectionPropertyArray and GetRegistryConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionConnectionPropertyArrayInput` via:
 //
-//          GetRegistryConnectionConnectionPropertyArray{ GetRegistryConnectionConnectionPropertyArgs{...} }
+//	GetRegistryConnectionConnectionPropertyArray{ GetRegistryConnectionConnectionPropertyArgs{...} }
 type GetRegistryConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -12333,7 +12333,7 @@ type GetRegistryConnectionMetadata struct {
 // GetRegistryConnectionMetadataInput is an input type that accepts GetRegistryConnectionMetadataArgs and GetRegistryConnectionMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionMetadataInput` via:
 //
-//          GetRegistryConnectionMetadataArgs{...}
+//	GetRegistryConnectionMetadataArgs{...}
 type GetRegistryConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -12385,7 +12385,7 @@ func (i GetRegistryConnectionMetadataArgs) ToGetRegistryConnectionMetadataOutput
 // GetRegistryConnectionMetadataArrayInput is an input type that accepts GetRegistryConnectionMetadataArray and GetRegistryConnectionMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionMetadataArrayInput` via:
 //
-//          GetRegistryConnectionMetadataArray{ GetRegistryConnectionMetadataArgs{...} }
+//	GetRegistryConnectionMetadataArray{ GetRegistryConnectionMetadataArgs{...} }
 type GetRegistryConnectionMetadataArrayInput interface {
 	pulumi.Input
 
@@ -12522,7 +12522,7 @@ type GetRegistryConnectionMetadataAggregator struct {
 // GetRegistryConnectionMetadataAggregatorInput is an input type that accepts GetRegistryConnectionMetadataAggregatorArgs and GetRegistryConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionMetadataAggregatorInput` via:
 //
-//          GetRegistryConnectionMetadataAggregatorArgs{...}
+//	GetRegistryConnectionMetadataAggregatorArgs{...}
 type GetRegistryConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -12558,7 +12558,7 @@ func (i GetRegistryConnectionMetadataAggregatorArgs) ToGetRegistryConnectionMeta
 // GetRegistryConnectionMetadataAggregatorArrayInput is an input type that accepts GetRegistryConnectionMetadataAggregatorArray and GetRegistryConnectionMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryConnectionMetadataAggregatorArray{ GetRegistryConnectionMetadataAggregatorArgs{...} }
+//	GetRegistryConnectionMetadataAggregatorArray{ GetRegistryConnectionMetadataAggregatorArgs{...} }
 type GetRegistryConnectionMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -12673,7 +12673,7 @@ type GetRegistryConnectionPrimarySchema struct {
 // GetRegistryConnectionPrimarySchemaInput is an input type that accepts GetRegistryConnectionPrimarySchemaArgs and GetRegistryConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaArgs{...}
+//	GetRegistryConnectionPrimarySchemaArgs{...}
 type GetRegistryConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -12727,7 +12727,7 @@ func (i GetRegistryConnectionPrimarySchemaArgs) ToGetRegistryConnectionPrimarySc
 // GetRegistryConnectionPrimarySchemaArrayInput is an input type that accepts GetRegistryConnectionPrimarySchemaArray and GetRegistryConnectionPrimarySchemaArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaArrayInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaArray{ GetRegistryConnectionPrimarySchemaArgs{...} }
+//	GetRegistryConnectionPrimarySchemaArray{ GetRegistryConnectionPrimarySchemaArgs{...} }
 type GetRegistryConnectionPrimarySchemaArrayInput interface {
 	pulumi.Input
 
@@ -12889,7 +12889,7 @@ type GetRegistryConnectionPrimarySchemaMetadata struct {
 // GetRegistryConnectionPrimarySchemaMetadataInput is an input type that accepts GetRegistryConnectionPrimarySchemaMetadataArgs and GetRegistryConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaMetadataInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaMetadataArgs{...}
+//	GetRegistryConnectionPrimarySchemaMetadataArgs{...}
 type GetRegistryConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -12941,7 +12941,7 @@ func (i GetRegistryConnectionPrimarySchemaMetadataArgs) ToGetRegistryConnectionP
 // GetRegistryConnectionPrimarySchemaMetadataArrayInput is an input type that accepts GetRegistryConnectionPrimarySchemaMetadataArray and GetRegistryConnectionPrimarySchemaMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaMetadataArrayInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaMetadataArray{ GetRegistryConnectionPrimarySchemaMetadataArgs{...} }
+//	GetRegistryConnectionPrimarySchemaMetadataArray{ GetRegistryConnectionPrimarySchemaMetadataArgs{...} }
 type GetRegistryConnectionPrimarySchemaMetadataArrayInput interface {
 	pulumi.Input
 
@@ -13080,7 +13080,7 @@ type GetRegistryConnectionPrimarySchemaMetadataAggregator struct {
 // GetRegistryConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs and GetRegistryConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type GetRegistryConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -13116,7 +13116,7 @@ func (i GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs) ToGetRegistryC
 // GetRegistryConnectionPrimarySchemaMetadataAggregatorArrayInput is an input type that accepts GetRegistryConnectionPrimarySchemaMetadataAggregatorArray and GetRegistryConnectionPrimarySchemaMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaMetadataAggregatorArray{ GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs{...} }
+//	GetRegistryConnectionPrimarySchemaMetadataAggregatorArray{ GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs{...} }
 type GetRegistryConnectionPrimarySchemaMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -13205,7 +13205,7 @@ type GetRegistryConnectionPrimarySchemaParentRef struct {
 // GetRegistryConnectionPrimarySchemaParentRefInput is an input type that accepts GetRegistryConnectionPrimarySchemaParentRefArgs and GetRegistryConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaParentRefInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaParentRefArgs{...}
+//	GetRegistryConnectionPrimarySchemaParentRefArgs{...}
 type GetRegistryConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -13233,7 +13233,7 @@ func (i GetRegistryConnectionPrimarySchemaParentRefArgs) ToGetRegistryConnection
 // GetRegistryConnectionPrimarySchemaParentRefArrayInput is an input type that accepts GetRegistryConnectionPrimarySchemaParentRefArray and GetRegistryConnectionPrimarySchemaParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionPrimarySchemaParentRefArrayInput` via:
 //
-//          GetRegistryConnectionPrimarySchemaParentRefArray{ GetRegistryConnectionPrimarySchemaParentRefArgs{...} }
+//	GetRegistryConnectionPrimarySchemaParentRefArray{ GetRegistryConnectionPrimarySchemaParentRefArgs{...} }
 type GetRegistryConnectionPrimarySchemaParentRefArrayInput interface {
 	pulumi.Input
 
@@ -13322,7 +13322,7 @@ type GetRegistryConnectionRegistryMetadata struct {
 // GetRegistryConnectionRegistryMetadataInput is an input type that accepts GetRegistryConnectionRegistryMetadataArgs and GetRegistryConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionRegistryMetadataInput` via:
 //
-//          GetRegistryConnectionRegistryMetadataArgs{...}
+//	GetRegistryConnectionRegistryMetadataArgs{...}
 type GetRegistryConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -13370,7 +13370,7 @@ func (i GetRegistryConnectionRegistryMetadataArgs) ToGetRegistryConnectionRegist
 // GetRegistryConnectionRegistryMetadataArrayInput is an input type that accepts GetRegistryConnectionRegistryMetadataArray and GetRegistryConnectionRegistryMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionRegistryMetadataArrayInput` via:
 //
-//          GetRegistryConnectionRegistryMetadataArray{ GetRegistryConnectionRegistryMetadataArgs{...} }
+//	GetRegistryConnectionRegistryMetadataArray{ GetRegistryConnectionRegistryMetadataArgs{...} }
 type GetRegistryConnectionRegistryMetadataArrayInput interface {
 	pulumi.Input
 
@@ -13488,7 +13488,7 @@ type GetRegistryConnectionsConnectionSummaryCollection struct {
 // GetRegistryConnectionsConnectionSummaryCollectionInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionArgs and GetRegistryConnectionsConnectionSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -13515,7 +13515,7 @@ func (i GetRegistryConnectionsConnectionSummaryCollectionArgs) ToGetRegistryConn
 // GetRegistryConnectionsConnectionSummaryCollectionArrayInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionArray and GetRegistryConnectionsConnectionSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionArrayInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionArray{ GetRegistryConnectionsConnectionSummaryCollectionArgs{...} }
+//	GetRegistryConnectionsConnectionSummaryCollectionArray{ GetRegistryConnectionsConnectionSummaryCollectionArgs{...} }
 type GetRegistryConnectionsConnectionSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -13615,7 +13615,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItem struct {
 // GetRegistryConnectionsConnectionSummaryCollectionItemInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemArgs and GetRegistryConnectionsConnectionSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -13673,7 +13673,7 @@ func (i GetRegistryConnectionsConnectionSummaryCollectionItemArgs) ToGetRegistry
 // GetRegistryConnectionsConnectionSummaryCollectionItemArrayInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemArray and GetRegistryConnectionsConnectionSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemArrayInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemArray{ GetRegistryConnectionsConnectionSummaryCollectionItemArgs{...} }
+//	GetRegistryConnectionsConnectionSummaryCollectionItemArray{ GetRegistryConnectionsConnectionSummaryCollectionItemArgs{...} }
 type GetRegistryConnectionsConnectionSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -13829,7 +13829,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty str
 // GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs and GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -13859,7 +13859,7 @@ func (i GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyA
 // GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArrayInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArray and GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArrayInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArray{ GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs{...} }
+//	GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArray{ GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs{...} }
 type GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -13957,7 +13957,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemMetadata struct {
 // GetRegistryConnectionsConnectionSummaryCollectionItemMetadataInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs and GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemMetadataInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemMetadataInput interface {
 	pulumi.Input
 
@@ -14105,7 +14105,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregator str
 // GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorArgs and GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -14215,7 +14215,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema struct {
 // GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs and GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -14398,7 +14398,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata 
 // GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataArgs and GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -14568,7 +14568,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataA
 // GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorArgs and GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -14658,7 +14658,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef
 // GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefArgs and GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -14732,7 +14732,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata struc
 // GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataArgs and GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataInput` via:
 //
-//          GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataArgs{...}
+//	GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataArgs{...}
 type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -14876,7 +14876,7 @@ type GetRegistryConnectionsFilter struct {
 // GetRegistryConnectionsFilterInput is an input type that accepts GetRegistryConnectionsFilterArgs and GetRegistryConnectionsFilterOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsFilterInput` via:
 //
-//          GetRegistryConnectionsFilterArgs{...}
+//	GetRegistryConnectionsFilterArgs{...}
 type GetRegistryConnectionsFilterInput interface {
 	pulumi.Input
 
@@ -14906,7 +14906,7 @@ func (i GetRegistryConnectionsFilterArgs) ToGetRegistryConnectionsFilterOutputWi
 // GetRegistryConnectionsFilterArrayInput is an input type that accepts GetRegistryConnectionsFilterArray and GetRegistryConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegistryConnectionsFilterArrayInput` via:
 //
-//          GetRegistryConnectionsFilterArray{ GetRegistryConnectionsFilterArgs{...} }
+//	GetRegistryConnectionsFilterArray{ GetRegistryConnectionsFilterArgs{...} }
 type GetRegistryConnectionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -15011,7 +15011,7 @@ type GetRegistryDataAssetDefaultConnection struct {
 // GetRegistryDataAssetDefaultConnectionInput is an input type that accepts GetRegistryDataAssetDefaultConnectionArgs and GetRegistryDataAssetDefaultConnectionOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionArgs{...}
+//	GetRegistryDataAssetDefaultConnectionArgs{...}
 type GetRegistryDataAssetDefaultConnectionInput interface {
 	pulumi.Input
 
@@ -15067,7 +15067,7 @@ func (i GetRegistryDataAssetDefaultConnectionArgs) ToGetRegistryDataAssetDefault
 // GetRegistryDataAssetDefaultConnectionArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionArray and GetRegistryDataAssetDefaultConnectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionArray{ GetRegistryDataAssetDefaultConnectionArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionArray{ GetRegistryDataAssetDefaultConnectionArgs{...} }
 type GetRegistryDataAssetDefaultConnectionArrayInput interface {
 	pulumi.Input
 
@@ -15216,7 +15216,7 @@ type GetRegistryDataAssetDefaultConnectionConnectionProperty struct {
 // GetRegistryDataAssetDefaultConnectionConnectionPropertyInput is an input type that accepts GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs and GetRegistryDataAssetDefaultConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionConnectionPropertyInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs{...}
+//	GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs{...}
 type GetRegistryDataAssetDefaultConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -15246,7 +15246,7 @@ func (i GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs) ToGetRegist
 // GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionConnectionPropertyArray and GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionConnectionPropertyArray{ GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionConnectionPropertyArray{ GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs{...} }
 type GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -15344,7 +15344,7 @@ type GetRegistryDataAssetDefaultConnectionMetadata struct {
 // GetRegistryDataAssetDefaultConnectionMetadataInput is an input type that accepts GetRegistryDataAssetDefaultConnectionMetadataArgs and GetRegistryDataAssetDefaultConnectionMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionMetadataInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionMetadataArgs{...}
+//	GetRegistryDataAssetDefaultConnectionMetadataArgs{...}
 type GetRegistryDataAssetDefaultConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -15396,7 +15396,7 @@ func (i GetRegistryDataAssetDefaultConnectionMetadataArgs) ToGetRegistryDataAsse
 // GetRegistryDataAssetDefaultConnectionMetadataArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionMetadataArray and GetRegistryDataAssetDefaultConnectionMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionMetadataArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionMetadataArray{ GetRegistryDataAssetDefaultConnectionMetadataArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionMetadataArray{ GetRegistryDataAssetDefaultConnectionMetadataArgs{...} }
 type GetRegistryDataAssetDefaultConnectionMetadataArrayInput interface {
 	pulumi.Input
 
@@ -15535,7 +15535,7 @@ type GetRegistryDataAssetDefaultConnectionMetadataAggregator struct {
 // GetRegistryDataAssetDefaultConnectionMetadataAggregatorInput is an input type that accepts GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs and GetRegistryDataAssetDefaultConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionMetadataAggregatorInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 type GetRegistryDataAssetDefaultConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -15571,7 +15571,7 @@ func (i GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs) ToGetRegist
 // GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionMetadataAggregatorArray and GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionMetadataAggregatorArray{ GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionMetadataAggregatorArray{ GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs{...} }
 type GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -15686,7 +15686,7 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchema struct {
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs and GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs{...}
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -15740,7 +15740,7 @@ func (i GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs) ToGetRegistryDat
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaArray and GetRegistryDataAssetDefaultConnectionPrimarySchemaArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs{...} }
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaArrayInput interface {
 	pulumi.Input
 
@@ -15902,7 +15902,7 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs and GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -15954,7 +15954,7 @@ func (i GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs) ToGetReg
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArray and GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...} }
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput interface {
 	pulumi.Input
 
@@ -16095,7 +16095,7 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs and GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -16131,7 +16131,7 @@ func (i GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArray and GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...} }
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -16224,7 +16224,7 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRef struct {
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs and GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -16252,7 +16252,7 @@ func (i GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs) ToGetRe
 // GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArray and GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArray{ GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...} }
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput interface {
 	pulumi.Input
 
@@ -16341,7 +16341,7 @@ type GetRegistryDataAssetDefaultConnectionRegistryMetadata struct {
 // GetRegistryDataAssetDefaultConnectionRegistryMetadataInput is an input type that accepts GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs and GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionRegistryMetadataInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs{...}
 type GetRegistryDataAssetDefaultConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -16389,7 +16389,7 @@ func (i GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs) ToGetRegistry
 // GetRegistryDataAssetDefaultConnectionRegistryMetadataArrayInput is an input type that accepts GetRegistryDataAssetDefaultConnectionRegistryMetadataArray and GetRegistryDataAssetDefaultConnectionRegistryMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetDefaultConnectionRegistryMetadataArrayInput` via:
 //
-//          GetRegistryDataAssetDefaultConnectionRegistryMetadataArray{ GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs{...} }
+//	GetRegistryDataAssetDefaultConnectionRegistryMetadataArray{ GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs{...} }
 type GetRegistryDataAssetDefaultConnectionRegistryMetadataArrayInput interface {
 	pulumi.Input
 
@@ -16532,7 +16532,7 @@ type GetRegistryDataAssetMetadata struct {
 // GetRegistryDataAssetMetadataInput is an input type that accepts GetRegistryDataAssetMetadataArgs and GetRegistryDataAssetMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetMetadataInput` via:
 //
-//          GetRegistryDataAssetMetadataArgs{...}
+//	GetRegistryDataAssetMetadataArgs{...}
 type GetRegistryDataAssetMetadataInput interface {
 	pulumi.Input
 
@@ -16584,7 +16584,7 @@ func (i GetRegistryDataAssetMetadataArgs) ToGetRegistryDataAssetMetadataOutputWi
 // GetRegistryDataAssetMetadataArrayInput is an input type that accepts GetRegistryDataAssetMetadataArray and GetRegistryDataAssetMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetMetadataArrayInput` via:
 //
-//          GetRegistryDataAssetMetadataArray{ GetRegistryDataAssetMetadataArgs{...} }
+//	GetRegistryDataAssetMetadataArray{ GetRegistryDataAssetMetadataArgs{...} }
 type GetRegistryDataAssetMetadataArrayInput interface {
 	pulumi.Input
 
@@ -16721,7 +16721,7 @@ type GetRegistryDataAssetMetadataAggregator struct {
 // GetRegistryDataAssetMetadataAggregatorInput is an input type that accepts GetRegistryDataAssetMetadataAggregatorArgs and GetRegistryDataAssetMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetMetadataAggregatorInput` via:
 //
-//          GetRegistryDataAssetMetadataAggregatorArgs{...}
+//	GetRegistryDataAssetMetadataAggregatorArgs{...}
 type GetRegistryDataAssetMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -16757,7 +16757,7 @@ func (i GetRegistryDataAssetMetadataAggregatorArgs) ToGetRegistryDataAssetMetada
 // GetRegistryDataAssetMetadataAggregatorArrayInput is an input type that accepts GetRegistryDataAssetMetadataAggregatorArray and GetRegistryDataAssetMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryDataAssetMetadataAggregatorArray{ GetRegistryDataAssetMetadataAggregatorArgs{...} }
+//	GetRegistryDataAssetMetadataAggregatorArray{ GetRegistryDataAssetMetadataAggregatorArgs{...} }
 type GetRegistryDataAssetMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -16868,7 +16868,7 @@ type GetRegistryDataAssetNativeTypeSystem struct {
 // GetRegistryDataAssetNativeTypeSystemInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemArgs and GetRegistryDataAssetNativeTypeSystemOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemArgs{...}
+//	GetRegistryDataAssetNativeTypeSystemArgs{...}
 type GetRegistryDataAssetNativeTypeSystemInput interface {
 	pulumi.Input
 
@@ -16918,7 +16918,7 @@ func (i GetRegistryDataAssetNativeTypeSystemArgs) ToGetRegistryDataAssetNativeTy
 // GetRegistryDataAssetNativeTypeSystemArrayInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemArray and GetRegistryDataAssetNativeTypeSystemArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemArrayInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemArray{ GetRegistryDataAssetNativeTypeSystemArgs{...} }
+//	GetRegistryDataAssetNativeTypeSystemArray{ GetRegistryDataAssetNativeTypeSystemArgs{...} }
 type GetRegistryDataAssetNativeTypeSystemArrayInput interface {
 	pulumi.Input
 
@@ -17046,7 +17046,7 @@ type GetRegistryDataAssetNativeTypeSystemParentRef struct {
 // GetRegistryDataAssetNativeTypeSystemParentRefInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemParentRefArgs and GetRegistryDataAssetNativeTypeSystemParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemParentRefInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemParentRefArgs{...}
+//	GetRegistryDataAssetNativeTypeSystemParentRefArgs{...}
 type GetRegistryDataAssetNativeTypeSystemParentRefInput interface {
 	pulumi.Input
 
@@ -17074,7 +17074,7 @@ func (i GetRegistryDataAssetNativeTypeSystemParentRefArgs) ToGetRegistryDataAsse
 // GetRegistryDataAssetNativeTypeSystemParentRefArrayInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemParentRefArray and GetRegistryDataAssetNativeTypeSystemParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemParentRefArrayInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemParentRefArray{ GetRegistryDataAssetNativeTypeSystemParentRefArgs{...} }
+//	GetRegistryDataAssetNativeTypeSystemParentRefArray{ GetRegistryDataAssetNativeTypeSystemParentRefArgs{...} }
 type GetRegistryDataAssetNativeTypeSystemParentRefArrayInput interface {
 	pulumi.Input
 
@@ -17161,7 +17161,7 @@ type GetRegistryDataAssetNativeTypeSystemType struct {
 // GetRegistryDataAssetNativeTypeSystemTypeInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeArgs and GetRegistryDataAssetNativeTypeSystemTypeOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeArgs{...}
+//	GetRegistryDataAssetNativeTypeSystemTypeArgs{...}
 type GetRegistryDataAssetNativeTypeSystemTypeInput interface {
 	pulumi.Input
 
@@ -17207,7 +17207,7 @@ func (i GetRegistryDataAssetNativeTypeSystemTypeArgs) ToGetRegistryDataAssetNati
 // GetRegistryDataAssetNativeTypeSystemTypeArrayInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeArray and GetRegistryDataAssetNativeTypeSystemTypeArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeArrayInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeArray{ GetRegistryDataAssetNativeTypeSystemTypeArgs{...} }
+//	GetRegistryDataAssetNativeTypeSystemTypeArray{ GetRegistryDataAssetNativeTypeSystemTypeArgs{...} }
 type GetRegistryDataAssetNativeTypeSystemTypeArrayInput interface {
 	pulumi.Input
 
@@ -17339,7 +17339,7 @@ type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition struct {
 // GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs and GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 	pulumi.Input
 
@@ -17381,7 +17381,7 @@ func (i GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs) ToGetRegis
 // GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArray and GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArray{ GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...} }
+//	GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArray{ GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...} }
 type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -17489,7 +17489,7 @@ type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef struct {
 // GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs and GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput interface {
 	pulumi.Input
 
@@ -17517,7 +17517,7 @@ func (i GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs) T
 // GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArray and GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArray{ GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...} }
+//	GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArray{ GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...} }
 type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput interface {
 	pulumi.Input
 
@@ -17586,7 +17586,7 @@ type GetRegistryDataAssetNativeTypeSystemTypeParentRef struct {
 // GetRegistryDataAssetNativeTypeSystemTypeParentRefInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs and GetRegistryDataAssetNativeTypeSystemTypeParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeParentRefInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs{...}
 type GetRegistryDataAssetNativeTypeSystemTypeParentRefInput interface {
 	pulumi.Input
 
@@ -17614,7 +17614,7 @@ func (i GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs) ToGetRegistryData
 // GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayInput is an input type that accepts GetRegistryDataAssetNativeTypeSystemTypeParentRefArray and GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayInput` via:
 //
-//          GetRegistryDataAssetNativeTypeSystemTypeParentRefArray{ GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs{...} }
+//	GetRegistryDataAssetNativeTypeSystemTypeParentRefArray{ GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs{...} }
 type GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayInput interface {
 	pulumi.Input
 
@@ -17703,7 +17703,7 @@ type GetRegistryDataAssetRegistryMetadata struct {
 // GetRegistryDataAssetRegistryMetadataInput is an input type that accepts GetRegistryDataAssetRegistryMetadataArgs and GetRegistryDataAssetRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetRegistryMetadataInput` via:
 //
-//          GetRegistryDataAssetRegistryMetadataArgs{...}
+//	GetRegistryDataAssetRegistryMetadataArgs{...}
 type GetRegistryDataAssetRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -17751,7 +17751,7 @@ func (i GetRegistryDataAssetRegistryMetadataArgs) ToGetRegistryDataAssetRegistry
 // GetRegistryDataAssetRegistryMetadataArrayInput is an input type that accepts GetRegistryDataAssetRegistryMetadataArray and GetRegistryDataAssetRegistryMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetRegistryMetadataArrayInput` via:
 //
-//          GetRegistryDataAssetRegistryMetadataArray{ GetRegistryDataAssetRegistryMetadataArgs{...} }
+//	GetRegistryDataAssetRegistryMetadataArray{ GetRegistryDataAssetRegistryMetadataArgs{...} }
 type GetRegistryDataAssetRegistryMetadataArrayInput interface {
 	pulumi.Input
 
@@ -17869,7 +17869,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollection struct {
 // GetRegistryDataAssetsDataAssetSummaryCollectionInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionArgs and GetRegistryDataAssetsDataAssetSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -17896,7 +17896,7 @@ func (i GetRegistryDataAssetsDataAssetSummaryCollectionArgs) ToGetRegistryDataAs
 // GetRegistryDataAssetsDataAssetSummaryCollectionArrayInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionArray and GetRegistryDataAssetsDataAssetSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionArrayInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionArray{ GetRegistryDataAssetsDataAssetSummaryCollectionArgs{...} }
+//	GetRegistryDataAssetsDataAssetSummaryCollectionArray{ GetRegistryDataAssetsDataAssetSummaryCollectionArgs{...} }
 type GetRegistryDataAssetsDataAssetSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -18000,7 +18000,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItem struct {
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -18062,7 +18062,7 @@ func (i GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs) ToGetRegistryDa
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemArrayInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemArray and GetRegistryDataAssetsDataAssetSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemArrayInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemArray{ GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs{...} }
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemArray{ GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs{...} }
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -18256,7 +18256,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection struct
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionInput interface {
 	pulumi.Input
 
@@ -18430,7 +18430,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnect
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -18460,7 +18460,7 @@ func (i GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConn
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArray and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArray{ GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs{...} }
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArray{ GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs{...} }
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -18562,7 +18562,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadat
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -18732,7 +18732,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadat
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -18848,7 +18848,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -19043,7 +19043,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -19213,7 +19213,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -19303,7 +19303,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -19377,7 +19377,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistr
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -19545,7 +19545,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata struct {
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataInput interface {
 	pulumi.Input
 
@@ -19693,7 +19693,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator struc
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -19799,7 +19799,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem struct 
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemInput interface {
 	pulumi.Input
 
@@ -19944,7 +19944,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRe
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefInput interface {
 	pulumi.Input
 
@@ -20016,7 +20016,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType str
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeInput interface {
 	pulumi.Input
 
@@ -20062,7 +20062,7 @@ func (i GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeA
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArrayInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArray and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArrayInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArray{ GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs{...} }
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArray{ GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs{...} }
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArrayInput interface {
 	pulumi.Input
 
@@ -20206,7 +20206,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConf
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionInput interface {
 	pulumi.Input
 
@@ -20323,7 +20323,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConf
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefInput interface {
 	pulumi.Input
 
@@ -20377,7 +20377,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypePare
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefInput interface {
 	pulumi.Input
 
@@ -20451,7 +20451,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata struct 
 // GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataArgs and GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataInput` via:
 //
-//          GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataArgs{...}
+//	GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataArgs{...}
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -20591,7 +20591,7 @@ type GetRegistryDataAssetsFilter struct {
 // GetRegistryDataAssetsFilterInput is an input type that accepts GetRegistryDataAssetsFilterArgs and GetRegistryDataAssetsFilterOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsFilterInput` via:
 //
-//          GetRegistryDataAssetsFilterArgs{...}
+//	GetRegistryDataAssetsFilterArgs{...}
 type GetRegistryDataAssetsFilterInput interface {
 	pulumi.Input
 
@@ -20621,7 +20621,7 @@ func (i GetRegistryDataAssetsFilterArgs) ToGetRegistryDataAssetsFilterOutputWith
 // GetRegistryDataAssetsFilterArrayInput is an input type that accepts GetRegistryDataAssetsFilterArray and GetRegistryDataAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegistryDataAssetsFilterArrayInput` via:
 //
-//          GetRegistryDataAssetsFilterArray{ GetRegistryDataAssetsFilterArgs{...} }
+//	GetRegistryDataAssetsFilterArray{ GetRegistryDataAssetsFilterArgs{...} }
 type GetRegistryDataAssetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -20728,7 +20728,7 @@ type GetRegistryFolderDataAsset struct {
 // GetRegistryFolderDataAssetInput is an input type that accepts GetRegistryFolderDataAssetArgs and GetRegistryFolderDataAssetOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetInput` via:
 //
-//          GetRegistryFolderDataAssetArgs{...}
+//	GetRegistryFolderDataAssetArgs{...}
 type GetRegistryFolderDataAssetInput interface {
 	pulumi.Input
 
@@ -20786,7 +20786,7 @@ func (i GetRegistryFolderDataAssetArgs) ToGetRegistryFolderDataAssetOutputWithCo
 // GetRegistryFolderDataAssetArrayInput is an input type that accepts GetRegistryFolderDataAssetArray and GetRegistryFolderDataAssetArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetArrayInput` via:
 //
-//          GetRegistryFolderDataAssetArray{ GetRegistryFolderDataAssetArgs{...} }
+//	GetRegistryFolderDataAssetArray{ GetRegistryFolderDataAssetArgs{...} }
 type GetRegistryFolderDataAssetArrayInput interface {
 	pulumi.Input
 
@@ -20964,7 +20964,7 @@ type GetRegistryFolderDataAssetDefaultConnection struct {
 // GetRegistryFolderDataAssetDefaultConnectionInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionArgs and GetRegistryFolderDataAssetDefaultConnectionOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionInput interface {
 	pulumi.Input
 
@@ -21020,7 +21020,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionArgs) ToGetRegistryFolderData
 // GetRegistryFolderDataAssetDefaultConnectionArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionArray and GetRegistryFolderDataAssetDefaultConnectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionArray{ GetRegistryFolderDataAssetDefaultConnectionArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionArray{ GetRegistryFolderDataAssetDefaultConnectionArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionArrayInput interface {
 	pulumi.Input
 
@@ -21169,7 +21169,7 @@ type GetRegistryFolderDataAssetDefaultConnectionConnectionProperty struct {
 // GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs and GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -21199,7 +21199,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs) ToGet
 // GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArray and GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArray{ GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArray{ GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -21297,7 +21297,7 @@ type GetRegistryFolderDataAssetDefaultConnectionMetadata struct {
 // GetRegistryFolderDataAssetDefaultConnectionMetadataInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionMetadataArgs and GetRegistryFolderDataAssetDefaultConnectionMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionMetadataInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionMetadataArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionMetadataArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -21349,7 +21349,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionMetadataArgs) ToGetRegistryFo
 // GetRegistryFolderDataAssetDefaultConnectionMetadataArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionMetadataArray and GetRegistryFolderDataAssetDefaultConnectionMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionMetadataArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionMetadataArray{ GetRegistryFolderDataAssetDefaultConnectionMetadataArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionMetadataArray{ GetRegistryFolderDataAssetDefaultConnectionMetadataArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionMetadataArrayInput interface {
 	pulumi.Input
 
@@ -21490,7 +21490,7 @@ type GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator struct {
 // GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs and GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -21526,7 +21526,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs) ToGet
 // GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArray and GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArray{ GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArray{ GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -21641,7 +21641,7 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchema struct {
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -21695,7 +21695,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs) ToGetRegis
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArray and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArrayInput interface {
 	pulumi.Input
 
@@ -21857,7 +21857,7 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -21909,7 +21909,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs) To
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArray and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput interface {
 	pulumi.Input
 
@@ -22058,7 +22058,7 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator 
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -22094,7 +22094,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregat
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArray and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -22193,7 +22193,7 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef struct {
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -22221,7 +22221,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs) T
 // GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArray and GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArray{ GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput interface {
 	pulumi.Input
 
@@ -22310,7 +22310,7 @@ type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata struct {
 // GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs and GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...}
 type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -22358,7 +22358,7 @@ func (i GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs) ToGetRe
 // GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArrayInput is an input type that accepts GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArray and GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArrayInput` via:
 //
-//          GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArray{ GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...} }
+//	GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArray{ GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs{...} }
 type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArrayInput interface {
 	pulumi.Input
 
@@ -22501,7 +22501,7 @@ type GetRegistryFolderDataAssetMetadata struct {
 // GetRegistryFolderDataAssetMetadataInput is an input type that accepts GetRegistryFolderDataAssetMetadataArgs and GetRegistryFolderDataAssetMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetMetadataInput` via:
 //
-//          GetRegistryFolderDataAssetMetadataArgs{...}
+//	GetRegistryFolderDataAssetMetadataArgs{...}
 type GetRegistryFolderDataAssetMetadataInput interface {
 	pulumi.Input
 
@@ -22553,7 +22553,7 @@ func (i GetRegistryFolderDataAssetMetadataArgs) ToGetRegistryFolderDataAssetMeta
 // GetRegistryFolderDataAssetMetadataArrayInput is an input type that accepts GetRegistryFolderDataAssetMetadataArray and GetRegistryFolderDataAssetMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetMetadataArrayInput` via:
 //
-//          GetRegistryFolderDataAssetMetadataArray{ GetRegistryFolderDataAssetMetadataArgs{...} }
+//	GetRegistryFolderDataAssetMetadataArray{ GetRegistryFolderDataAssetMetadataArgs{...} }
 type GetRegistryFolderDataAssetMetadataArrayInput interface {
 	pulumi.Input
 
@@ -22692,7 +22692,7 @@ type GetRegistryFolderDataAssetMetadataAggregator struct {
 // GetRegistryFolderDataAssetMetadataAggregatorInput is an input type that accepts GetRegistryFolderDataAssetMetadataAggregatorArgs and GetRegistryFolderDataAssetMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetMetadataAggregatorInput` via:
 //
-//          GetRegistryFolderDataAssetMetadataAggregatorArgs{...}
+//	GetRegistryFolderDataAssetMetadataAggregatorArgs{...}
 type GetRegistryFolderDataAssetMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -22728,7 +22728,7 @@ func (i GetRegistryFolderDataAssetMetadataAggregatorArgs) ToGetRegistryFolderDat
 // GetRegistryFolderDataAssetMetadataAggregatorArrayInput is an input type that accepts GetRegistryFolderDataAssetMetadataAggregatorArray and GetRegistryFolderDataAssetMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetMetadataAggregatorArrayInput` via:
 //
-//          GetRegistryFolderDataAssetMetadataAggregatorArray{ GetRegistryFolderDataAssetMetadataAggregatorArgs{...} }
+//	GetRegistryFolderDataAssetMetadataAggregatorArray{ GetRegistryFolderDataAssetMetadataAggregatorArgs{...} }
 type GetRegistryFolderDataAssetMetadataAggregatorArrayInput interface {
 	pulumi.Input
 
@@ -22839,7 +22839,7 @@ type GetRegistryFolderDataAssetNativeTypeSystem struct {
 // GetRegistryFolderDataAssetNativeTypeSystemInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemArgs and GetRegistryFolderDataAssetNativeTypeSystemOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemArgs{...}
+//	GetRegistryFolderDataAssetNativeTypeSystemArgs{...}
 type GetRegistryFolderDataAssetNativeTypeSystemInput interface {
 	pulumi.Input
 
@@ -22889,7 +22889,7 @@ func (i GetRegistryFolderDataAssetNativeTypeSystemArgs) ToGetRegistryFolderDataA
 // GetRegistryFolderDataAssetNativeTypeSystemArrayInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemArray and GetRegistryFolderDataAssetNativeTypeSystemArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemArrayInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemArray{ GetRegistryFolderDataAssetNativeTypeSystemArgs{...} }
+//	GetRegistryFolderDataAssetNativeTypeSystemArray{ GetRegistryFolderDataAssetNativeTypeSystemArgs{...} }
 type GetRegistryFolderDataAssetNativeTypeSystemArrayInput interface {
 	pulumi.Input
 
@@ -23017,7 +23017,7 @@ type GetRegistryFolderDataAssetNativeTypeSystemParentRef struct {
 // GetRegistryFolderDataAssetNativeTypeSystemParentRefInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs and GetRegistryFolderDataAssetNativeTypeSystemParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemParentRefInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs{...}
+//	GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs{...}
 type GetRegistryFolderDataAssetNativeTypeSystemParentRefInput interface {
 	pulumi.Input
 
@@ -23045,7 +23045,7 @@ func (i GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs) ToGetRegistryFo
 // GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemParentRefArray and GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemParentRefArray{ GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs{...} }
+//	GetRegistryFolderDataAssetNativeTypeSystemParentRefArray{ GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs{...} }
 type GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayInput interface {
 	pulumi.Input
 
@@ -23132,7 +23132,7 @@ type GetRegistryFolderDataAssetNativeTypeSystemType struct {
 // GetRegistryFolderDataAssetNativeTypeSystemTypeInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeArgs and GetRegistryFolderDataAssetNativeTypeSystemTypeOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeArgs{...}
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeArgs{...}
 type GetRegistryFolderDataAssetNativeTypeSystemTypeInput interface {
 	pulumi.Input
 
@@ -23178,7 +23178,7 @@ func (i GetRegistryFolderDataAssetNativeTypeSystemTypeArgs) ToGetRegistryFolderD
 // GetRegistryFolderDataAssetNativeTypeSystemTypeArrayInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeArray and GetRegistryFolderDataAssetNativeTypeSystemTypeArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeArrayInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeArgs{...} }
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeArgs{...} }
 type GetRegistryFolderDataAssetNativeTypeSystemTypeArrayInput interface {
 	pulumi.Input
 
@@ -23310,7 +23310,7 @@ type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition struct {
 // GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs and GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 	pulumi.Input
 
@@ -23352,7 +23352,7 @@ func (i GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs) ToGe
 // GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArray and GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...} }
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...} }
 type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -23460,7 +23460,7 @@ type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef str
 // GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs and GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput interface {
 	pulumi.Input
 
@@ -23488,7 +23488,7 @@ func (i GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefA
 // GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArray and GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...} }
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...} }
 type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput interface {
 	pulumi.Input
 
@@ -23559,7 +23559,7 @@ type GetRegistryFolderDataAssetNativeTypeSystemTypeParentRef struct {
 // GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs and GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...}
 type GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefInput interface {
 	pulumi.Input
 
@@ -23587,7 +23587,7 @@ func (i GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs) ToGetRegist
 // GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayInput is an input type that accepts GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArray and GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayInput` via:
 //
-//          GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...} }
+//	GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArray{ GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs{...} }
 type GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayInput interface {
 	pulumi.Input
 
@@ -23676,7 +23676,7 @@ type GetRegistryFolderDataAssetRegistryMetadata struct {
 // GetRegistryFolderDataAssetRegistryMetadataInput is an input type that accepts GetRegistryFolderDataAssetRegistryMetadataArgs and GetRegistryFolderDataAssetRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetRegistryMetadataInput` via:
 //
-//          GetRegistryFolderDataAssetRegistryMetadataArgs{...}
+//	GetRegistryFolderDataAssetRegistryMetadataArgs{...}
 type GetRegistryFolderDataAssetRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -23724,7 +23724,7 @@ func (i GetRegistryFolderDataAssetRegistryMetadataArgs) ToGetRegistryFolderDataA
 // GetRegistryFolderDataAssetRegistryMetadataArrayInput is an input type that accepts GetRegistryFolderDataAssetRegistryMetadataArray and GetRegistryFolderDataAssetRegistryMetadataArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderDataAssetRegistryMetadataArrayInput` via:
 //
-//          GetRegistryFolderDataAssetRegistryMetadataArray{ GetRegistryFolderDataAssetRegistryMetadataArgs{...} }
+//	GetRegistryFolderDataAssetRegistryMetadataArray{ GetRegistryFolderDataAssetRegistryMetadataArgs{...} }
 type GetRegistryFolderDataAssetRegistryMetadataArrayInput interface {
 	pulumi.Input
 
@@ -23843,7 +23843,7 @@ type GetRegistryFolderParentRef struct {
 // GetRegistryFolderParentRefInput is an input type that accepts GetRegistryFolderParentRefArgs and GetRegistryFolderParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFolderParentRefInput` via:
 //
-//          GetRegistryFolderParentRefArgs{...}
+//	GetRegistryFolderParentRefArgs{...}
 type GetRegistryFolderParentRefInput interface {
 	pulumi.Input
 
@@ -23871,7 +23871,7 @@ func (i GetRegistryFolderParentRefArgs) ToGetRegistryFolderParentRefOutputWithCo
 // GetRegistryFolderParentRefArrayInput is an input type that accepts GetRegistryFolderParentRefArray and GetRegistryFolderParentRefArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFolderParentRefArrayInput` via:
 //
-//          GetRegistryFolderParentRefArray{ GetRegistryFolderParentRefArgs{...} }
+//	GetRegistryFolderParentRefArray{ GetRegistryFolderParentRefArgs{...} }
 type GetRegistryFolderParentRefArrayInput interface {
 	pulumi.Input
 
@@ -23942,7 +23942,7 @@ type GetRegistryFoldersFilter struct {
 // GetRegistryFoldersFilterInput is an input type that accepts GetRegistryFoldersFilterArgs and GetRegistryFoldersFilterOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFilterInput` via:
 //
-//          GetRegistryFoldersFilterArgs{...}
+//	GetRegistryFoldersFilterArgs{...}
 type GetRegistryFoldersFilterInput interface {
 	pulumi.Input
 
@@ -23972,7 +23972,7 @@ func (i GetRegistryFoldersFilterArgs) ToGetRegistryFoldersFilterOutputWithContex
 // GetRegistryFoldersFilterArrayInput is an input type that accepts GetRegistryFoldersFilterArray and GetRegistryFoldersFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFilterArrayInput` via:
 //
-//          GetRegistryFoldersFilterArray{ GetRegistryFoldersFilterArgs{...} }
+//	GetRegistryFoldersFilterArray{ GetRegistryFoldersFilterArgs{...} }
 type GetRegistryFoldersFilterArrayInput interface {
 	pulumi.Input
 
@@ -24048,7 +24048,7 @@ type GetRegistryFoldersFolderSummaryCollection struct {
 // GetRegistryFoldersFolderSummaryCollectionInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionArgs and GetRegistryFoldersFolderSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -24075,7 +24075,7 @@ func (i GetRegistryFoldersFolderSummaryCollectionArgs) ToGetRegistryFoldersFolde
 // GetRegistryFoldersFolderSummaryCollectionArrayInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionArray and GetRegistryFoldersFolderSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionArrayInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionArray{ GetRegistryFoldersFolderSummaryCollectionArgs{...} }
+//	GetRegistryFoldersFolderSummaryCollectionArray{ GetRegistryFoldersFolderSummaryCollectionArgs{...} }
 type GetRegistryFoldersFolderSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -24165,7 +24165,7 @@ type GetRegistryFoldersFolderSummaryCollectionItem struct {
 // GetRegistryFoldersFolderSummaryCollectionItemInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemArgs and GetRegistryFoldersFolderSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -24213,7 +24213,7 @@ func (i GetRegistryFoldersFolderSummaryCollectionItemArgs) ToGetRegistryFoldersF
 // GetRegistryFoldersFolderSummaryCollectionItemArrayInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemArray and GetRegistryFoldersFolderSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemArrayInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemArray{ GetRegistryFoldersFolderSummaryCollectionItemArgs{...} }
+//	GetRegistryFoldersFolderSummaryCollectionItemArray{ GetRegistryFoldersFolderSummaryCollectionItemArgs{...} }
 type GetRegistryFoldersFolderSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -24366,7 +24366,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAsset struct {
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetInput interface {
 	pulumi.Input
 
@@ -24424,7 +24424,7 @@ func (i GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs) ToGetRegistr
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetArray and GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetArray{ GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs{...} }
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetArray{ GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs{...} }
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayInput interface {
 	pulumi.Input
 
@@ -24608,7 +24608,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection str
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionInput interface {
 	pulumi.Input
 
@@ -24784,7 +24784,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConn
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyInput interface {
 	pulumi.Input
 
@@ -24814,7 +24814,7 @@ func (i GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionC
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArray and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArray{ GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs{...} }
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArray{ GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs{...} }
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -24916,7 +24916,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMeta
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataInput interface {
 	pulumi.Input
 
@@ -25086,7 +25086,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMeta
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -25202,7 +25202,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaInput interface {
 	pulumi.Input
 
@@ -25397,7 +25397,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 	pulumi.Input
 
@@ -25567,7 +25567,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -25657,7 +25657,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefInput interface {
 	pulumi.Input
 
@@ -25731,7 +25731,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegi
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -25899,7 +25899,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata struct {
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataInput interface {
 	pulumi.Input
 
@@ -26047,7 +26047,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator st
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorInput interface {
 	pulumi.Input
 
@@ -26153,7 +26153,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem stru
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemInput interface {
 	pulumi.Input
 
@@ -26302,7 +26302,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParen
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefInput interface {
 	pulumi.Input
 
@@ -26374,7 +26374,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType 
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeInput interface {
 	pulumi.Input
 
@@ -26420,7 +26420,7 @@ func (i GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArrayInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArray and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArrayOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArrayInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArray{ GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs{...} }
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArray{ GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs{...} }
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArrayInput interface {
 	pulumi.Input
 
@@ -26568,7 +26568,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeC
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 	pulumi.Input
 
@@ -26685,7 +26685,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeC
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput interface {
 	pulumi.Input
 
@@ -26739,7 +26739,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeP
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefInput interface {
 	pulumi.Input
 
@@ -26813,7 +26813,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata stru
 // GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataArgs and GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataInput interface {
 	pulumi.Input
 
@@ -26955,7 +26955,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemParentRef struct {
 // GetRegistryFoldersFolderSummaryCollectionItemParentRefInput is an input type that accepts GetRegistryFoldersFolderSummaryCollectionItemParentRefArgs and GetRegistryFoldersFolderSummaryCollectionItemParentRefOutput values.
 // You can construct a concrete instance of `GetRegistryFoldersFolderSummaryCollectionItemParentRefInput` via:
 //
-//          GetRegistryFoldersFolderSummaryCollectionItemParentRefArgs{...}
+//	GetRegistryFoldersFolderSummaryCollectionItemParentRefArgs{...}
 type GetRegistryFoldersFolderSummaryCollectionItemParentRefInput interface {
 	pulumi.Input
 
@@ -27019,7 +27019,7 @@ type GetRegistryTypeDataAssetAttribute struct {
 // GetRegistryTypeDataAssetAttributeInput is an input type that accepts GetRegistryTypeDataAssetAttributeArgs and GetRegistryTypeDataAssetAttributeOutput values.
 // You can construct a concrete instance of `GetRegistryTypeDataAssetAttributeInput` via:
 //
-//          GetRegistryTypeDataAssetAttributeArgs{...}
+//	GetRegistryTypeDataAssetAttributeArgs{...}
 type GetRegistryTypeDataAssetAttributeInput interface {
 	pulumi.Input
 
@@ -27059,7 +27059,7 @@ func (i GetRegistryTypeDataAssetAttributeArgs) ToGetRegistryTypeDataAssetAttribu
 // GetRegistryTypeDataAssetAttributeArrayInput is an input type that accepts GetRegistryTypeDataAssetAttributeArray and GetRegistryTypeDataAssetAttributeArrayOutput values.
 // You can construct a concrete instance of `GetRegistryTypeDataAssetAttributeArrayInput` via:
 //
-//          GetRegistryTypeDataAssetAttributeArray{ GetRegistryTypeDataAssetAttributeArgs{...} }
+//	GetRegistryTypeDataAssetAttributeArray{ GetRegistryTypeDataAssetAttributeArgs{...} }
 type GetRegistryTypeDataAssetAttributeArrayInput interface {
 	pulumi.Input
 
@@ -27160,7 +27160,7 @@ type GetRegistryTypesFilter struct {
 // GetRegistryTypesFilterInput is an input type that accepts GetRegistryTypesFilterArgs and GetRegistryTypesFilterOutput values.
 // You can construct a concrete instance of `GetRegistryTypesFilterInput` via:
 //
-//          GetRegistryTypesFilterArgs{...}
+//	GetRegistryTypesFilterArgs{...}
 type GetRegistryTypesFilterInput interface {
 	pulumi.Input
 
@@ -27190,7 +27190,7 @@ func (i GetRegistryTypesFilterArgs) ToGetRegistryTypesFilterOutputWithContext(ct
 // GetRegistryTypesFilterArrayInput is an input type that accepts GetRegistryTypesFilterArray and GetRegistryTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegistryTypesFilterArrayInput` via:
 //
-//          GetRegistryTypesFilterArray{ GetRegistryTypesFilterArgs{...} }
+//	GetRegistryTypesFilterArray{ GetRegistryTypesFilterArgs{...} }
 type GetRegistryTypesFilterArrayInput interface {
 	pulumi.Input
 
@@ -27266,7 +27266,7 @@ type GetRegistryTypesTypesSummaryCollection struct {
 // GetRegistryTypesTypesSummaryCollectionInput is an input type that accepts GetRegistryTypesTypesSummaryCollectionArgs and GetRegistryTypesTypesSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetRegistryTypesTypesSummaryCollectionInput` via:
 //
-//          GetRegistryTypesTypesSummaryCollectionArgs{...}
+//	GetRegistryTypesTypesSummaryCollectionArgs{...}
 type GetRegistryTypesTypesSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -27293,7 +27293,7 @@ func (i GetRegistryTypesTypesSummaryCollectionArgs) ToGetRegistryTypesTypesSumma
 // GetRegistryTypesTypesSummaryCollectionArrayInput is an input type that accepts GetRegistryTypesTypesSummaryCollectionArray and GetRegistryTypesTypesSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRegistryTypesTypesSummaryCollectionArrayInput` via:
 //
-//          GetRegistryTypesTypesSummaryCollectionArray{ GetRegistryTypesTypesSummaryCollectionArgs{...} }
+//	GetRegistryTypesTypesSummaryCollectionArray{ GetRegistryTypesTypesSummaryCollectionArgs{...} }
 type GetRegistryTypesTypesSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -27369,7 +27369,7 @@ type GetRegistryTypesTypesSummaryCollectionItem struct {
 // GetRegistryTypesTypesSummaryCollectionItemInput is an input type that accepts GetRegistryTypesTypesSummaryCollectionItemArgs and GetRegistryTypesTypesSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRegistryTypesTypesSummaryCollectionItemInput` via:
 //
-//          GetRegistryTypesTypesSummaryCollectionItemArgs{...}
+//	GetRegistryTypesTypesSummaryCollectionItemArgs{...}
 type GetRegistryTypesTypesSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -27403,7 +27403,7 @@ func (i GetRegistryTypesTypesSummaryCollectionItemArgs) ToGetRegistryTypesTypesS
 // GetRegistryTypesTypesSummaryCollectionItemArrayInput is an input type that accepts GetRegistryTypesTypesSummaryCollectionItemArray and GetRegistryTypesTypesSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRegistryTypesTypesSummaryCollectionItemArrayInput` via:
 //
-//          GetRegistryTypesTypesSummaryCollectionItemArray{ GetRegistryTypesTypesSummaryCollectionItemArgs{...} }
+//	GetRegistryTypesTypesSummaryCollectionItemArray{ GetRegistryTypesTypesSummaryCollectionItemArgs{...} }
 type GetRegistryTypesTypesSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -27506,7 +27506,7 @@ type GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute struct {
 // GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeInput is an input type that accepts GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs and GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput values.
 // You can construct a concrete instance of `GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeInput` via:
 //
-//          GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs{...}
+//	GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs{...}
 type GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeInput interface {
 	pulumi.Input
 
@@ -27546,7 +27546,7 @@ func (i GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs) ToGetR
 // GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArrayInput is an input type that accepts GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArray and GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArrayOutput values.
 // You can construct a concrete instance of `GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArrayInput` via:
 //
-//          GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArray{ GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs{...} }
+//	GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArray{ GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs{...} }
 type GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArrayInput interface {
 	pulumi.Input
 

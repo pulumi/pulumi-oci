@@ -21,7 +21,7 @@ class GetBuildPipelineStageResult:
     """
     A collection of values returned by getBuildPipelineStage.
     """
-    def __init__(__self__, build_pipeline_id=None, build_pipeline_stage_id=None, build_pipeline_stage_predecessor_collections=None, build_pipeline_stage_type=None, build_source_collections=None, build_spec_file=None, compartment_id=None, defined_tags=None, deliver_artifact_collections=None, deploy_pipeline_id=None, description=None, display_name=None, freeform_tags=None, id=None, image=None, is_pass_all_parameters_enabled=None, lifecycle_details=None, primary_build_source=None, project_id=None, stage_execution_timeout_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, wait_criterias=None):
+    def __init__(__self__, build_pipeline_id=None, build_pipeline_stage_id=None, build_pipeline_stage_predecessor_collections=None, build_pipeline_stage_type=None, build_source_collections=None, build_spec_file=None, compartment_id=None, defined_tags=None, deliver_artifact_collections=None, deploy_pipeline_id=None, description=None, display_name=None, freeform_tags=None, id=None, image=None, is_pass_all_parameters_enabled=None, lifecycle_details=None, primary_build_source=None, private_access_configs=None, project_id=None, stage_execution_timeout_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, wait_criterias=None):
         if build_pipeline_id and not isinstance(build_pipeline_id, str):
             raise TypeError("Expected argument 'build_pipeline_id' to be a str")
         pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
@@ -76,6 +76,9 @@ class GetBuildPipelineStageResult:
         if primary_build_source and not isinstance(primary_build_source, str):
             raise TypeError("Expected argument 'primary_build_source' to be a str")
         pulumi.set(__self__, "primary_build_source", primary_build_source)
+        if private_access_configs and not isinstance(private_access_configs, list):
+            raise TypeError("Expected argument 'private_access_configs' to be a list")
+        pulumi.set(__self__, "private_access_configs", private_access_configs)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
@@ -240,6 +243,14 @@ class GetBuildPipelineStageResult:
         return pulumi.get(self, "primary_build_source")
 
     @property
+    @pulumi.getter(name="privateAccessConfigs")
+    def private_access_configs(self) -> Sequence['outputs.GetBuildPipelineStagePrivateAccessConfigResult']:
+        """
+        Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "private_access_configs")
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
@@ -320,6 +331,7 @@ class AwaitableGetBuildPipelineStageResult(GetBuildPipelineStageResult):
             is_pass_all_parameters_enabled=self.is_pass_all_parameters_enabled,
             lifecycle_details=self.lifecycle_details,
             primary_build_source=self.primary_build_source,
+            private_access_configs=self.private_access_configs,
             project_id=self.project_id,
             stage_execution_timeout_in_seconds=self.stage_execution_timeout_in_seconds,
             state=self.state,
@@ -375,6 +387,7 @@ def get_build_pipeline_stage(build_pipeline_stage_id: Optional[str] = None,
         is_pass_all_parameters_enabled=__ret__.is_pass_all_parameters_enabled,
         lifecycle_details=__ret__.lifecycle_details,
         primary_build_source=__ret__.primary_build_source,
+        private_access_configs=__ret__.private_access_configs,
         project_id=__ret__.project_id,
         stage_execution_timeout_in_seconds=__ret__.stage_execution_timeout_in_seconds,
         state=__ret__.state,

@@ -22,45 +22,48 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.NewBucket(ctx, "testBucket", &ObjectStorage.BucketArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Namespace:     pulumi.Any(_var.Bucket_namespace),
-// 			AccessType:    pulumi.Any(_var.Bucket_access_type),
-// 			AutoTiering:   pulumi.Any(_var.Bucket_auto_tiering),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			KmsKeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
-// 			Metadata:            pulumi.Any(_var.Bucket_metadata),
-// 			ObjectEventsEnabled: pulumi.Any(_var.Bucket_object_events_enabled),
-// 			StorageTier:         pulumi.Any(_var.Bucket_storage_tier),
-// 			RetentionRules: objectstorage.BucketRetentionRuleArray{
-// 				&objectstorage.BucketRetentionRuleArgs{
-// 					DisplayName: pulumi.Any(_var.Retention_rule_display_name),
-// 					Duration: &objectstorage.BucketRetentionRuleDurationArgs{
-// 						TimeAmount: pulumi.Any(_var.Retention_rule_duration_time_amount),
-// 						TimeUnit:   pulumi.Any(_var.Retention_rule_duration_time_unit),
-// 					},
-// 					TimeRuleLocked: pulumi.Any(_var.Retention_rule_time_rule_locked),
-// 				},
-// 			},
-// 			Versioning: pulumi.Any(_var.Bucket_versioning),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.NewBucket(ctx, "testBucket", &ObjectStorage.BucketArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Namespace:     pulumi.Any(_var.Bucket_namespace),
+//				AccessType:    pulumi.Any(_var.Bucket_access_type),
+//				AutoTiering:   pulumi.Any(_var.Bucket_auto_tiering),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				KmsKeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
+//				Metadata:            pulumi.Any(_var.Bucket_metadata),
+//				ObjectEventsEnabled: pulumi.Any(_var.Bucket_object_events_enabled),
+//				StorageTier:         pulumi.Any(_var.Bucket_storage_tier),
+//				RetentionRules: objectstorage.BucketRetentionRuleArray{
+//					&objectstorage.BucketRetentionRuleArgs{
+//						DisplayName: pulumi.Any(_var.Retention_rule_display_name),
+//						Duration: &objectstorage.BucketRetentionRuleDurationArgs{
+//							TimeAmount: pulumi.Any(_var.Retention_rule_duration_time_amount),
+//							TimeUnit:   pulumi.Any(_var.Retention_rule_duration_time_unit),
+//						},
+//						TimeRuleLocked: pulumi.Any(_var.Retention_rule_time_rule_locked),
+//					},
+//				},
+//				Versioning: pulumi.Any(_var.Bucket_versioning),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -68,7 +71,9 @@ import (
 // Buckets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
+//
+//	$ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
+//
 // ```
 type Bucket struct {
 	pulumi.CustomResourceState
@@ -336,7 +341,7 @@ func (i *Bucket) ToBucketOutputWithContext(ctx context.Context) BucketOutput {
 // BucketArrayInput is an input type that accepts BucketArray and BucketArrayOutput values.
 // You can construct a concrete instance of `BucketArrayInput` via:
 //
-//          BucketArray{ BucketArgs{...} }
+//	BucketArray{ BucketArgs{...} }
 type BucketArrayInput interface {
 	pulumi.Input
 
@@ -361,7 +366,7 @@ func (i BucketArray) ToBucketArrayOutputWithContext(ctx context.Context) BucketA
 // BucketMapInput is an input type that accepts BucketMap and BucketMapOutput values.
 // You can construct a concrete instance of `BucketMapInput` via:
 //
-//          BucketMap{ "key": BucketArgs{...} }
+//	BucketMap{ "key": BucketArgs{...} }
 type BucketMapInput interface {
 	pulumi.Input
 

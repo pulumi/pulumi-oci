@@ -24,22 +24,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.NewSuppression(ctx, "testSuppression", &Email.SuppressionArgs{
-// 			CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-// 			EmailAddress:  pulumi.Any(_var.Suppression_email_address),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.NewSuppression(ctx, "testSuppression", &Email.SuppressionArgs{
+//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//				EmailAddress:  pulumi.Any(_var.Suppression_email_address),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // Suppressions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Email/suppression:Suppression test_suppression "id"
+//
+//	$ pulumi import oci:Email/suppression:Suppression test_suppression "id"
+//
 // ```
 type Suppression struct {
 	pulumi.CustomResourceState
@@ -187,7 +192,7 @@ func (i *Suppression) ToSuppressionOutputWithContext(ctx context.Context) Suppre
 // SuppressionArrayInput is an input type that accepts SuppressionArray and SuppressionArrayOutput values.
 // You can construct a concrete instance of `SuppressionArrayInput` via:
 //
-//          SuppressionArray{ SuppressionArgs{...} }
+//	SuppressionArray{ SuppressionArgs{...} }
 type SuppressionArrayInput interface {
 	pulumi.Input
 
@@ -212,7 +217,7 @@ func (i SuppressionArray) ToSuppressionArrayOutputWithContext(ctx context.Contex
 // SuppressionMapInput is an input type that accepts SuppressionMap and SuppressionMapOutput values.
 // You can construct a concrete instance of `SuppressionMapInput` via:
 //
-//          SuppressionMap{ "key": SuppressionArgs{...} }
+//	SuppressionMap{ "key": SuppressionArgs{...} }
 type SuppressionMapInput interface {
 	pulumi.Input
 

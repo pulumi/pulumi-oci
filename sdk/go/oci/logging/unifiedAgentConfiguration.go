@@ -21,82 +21,85 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.NewUnifiedAgentConfiguration(ctx, "testUnifiedAgentConfiguration", &Logging.UnifiedAgentConfigurationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			IsEnabled:     pulumi.Any(_var.Unified_agent_configuration_is_enabled),
-// 			Description:   pulumi.Any(_var.Unified_agent_configuration_description),
-// 			DisplayName:   pulumi.Any(_var.Unified_agent_configuration_display_name),
-// 			ServiceConfiguration: &logging.UnifiedAgentConfigurationServiceConfigurationArgs{
-// 				ConfigurationType: pulumi.Any(_var.Unified_agent_configuration_service_configuration_configuration_type),
-// 				Destination: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs{
-// 					LogObjectId: pulumi.Any(oci_objectstorage_object.Test_object.Id),
-// 				},
-// 				Sources: logging.UnifiedAgentConfigurationServiceConfigurationSourceArray{
-// 					&logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs{
-// 						SourceType: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_source_type),
-// 						Channels:   pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_channels),
-// 						Name:       pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_name),
-// 						Parser: &logging.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{
-// 							ParserType:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_parser_type),
-// 							Delimiter:               pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_delimiter),
-// 							Expression:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_expression),
-// 							FieldTimeKey:            pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_field_time_key),
-// 							Formats:                 pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_format),
-// 							FormatFirstline:         pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_format_firstline),
-// 							GrokFailureKey:          pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_grok_failure_key),
-// 							GrokNameKey:             pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_grok_name_key),
-// 							IsEstimateCurrentEvent:  pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event),
-// 							IsKeepTimeKey:           pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key),
-// 							IsNullEmptyString:       pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string),
-// 							IsSupportColonlessIdent: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident),
-// 							IsWithPriority:          pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_with_priority),
-// 							Keys:                    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_keys),
-// 							MessageFormat:           pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_message_format),
-// 							MessageKey:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_message_key),
-// 							MultiLineStartRegexp:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp),
-// 							NullValuePattern:        pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_null_value_pattern),
-// 							Patterns: logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{
-// 								&logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{
-// 									FieldTimeFormat: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format),
-// 									FieldTimeKey:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key),
-// 									FieldTimeZone:   pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone),
-// 									Name:            pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_name),
-// 									Pattern:         pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_pattern),
-// 								},
-// 							},
-// 							Rfc5424timeFormat:     pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format),
-// 							SyslogParserType:      pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type),
-// 							TimeFormat:            pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_time_format),
-// 							TimeType:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_time_type),
-// 							TimeoutInMilliseconds: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds),
-// 							Types:                 pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_types),
-// 						},
-// 						Paths: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_paths),
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			GroupAssociation: &logging.UnifiedAgentConfigurationGroupAssociationArgs{
-// 				GroupLists: pulumi.Any(_var.Unified_agent_configuration_group_association_group_list),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.NewUnifiedAgentConfiguration(ctx, "testUnifiedAgentConfiguration", &Logging.UnifiedAgentConfigurationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				IsEnabled:     pulumi.Any(_var.Unified_agent_configuration_is_enabled),
+//				Description:   pulumi.Any(_var.Unified_agent_configuration_description),
+//				DisplayName:   pulumi.Any(_var.Unified_agent_configuration_display_name),
+//				ServiceConfiguration: &logging.UnifiedAgentConfigurationServiceConfigurationArgs{
+//					ConfigurationType: pulumi.Any(_var.Unified_agent_configuration_service_configuration_configuration_type),
+//					Destination: &logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs{
+//						LogObjectId: pulumi.Any(oci_objectstorage_object.Test_object.Id),
+//					},
+//					Sources: logging.UnifiedAgentConfigurationServiceConfigurationSourceArray{
+//						&logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs{
+//							SourceType: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_source_type),
+//							Channels:   pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_channels),
+//							Name:       pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_name),
+//							Parser: &logging.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{
+//								ParserType:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_parser_type),
+//								Delimiter:               pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_delimiter),
+//								Expression:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_expression),
+//								FieldTimeKey:            pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_field_time_key),
+//								Formats:                 pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_format),
+//								FormatFirstline:         pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_format_firstline),
+//								GrokFailureKey:          pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_grok_failure_key),
+//								GrokNameKey:             pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_grok_name_key),
+//								IsEstimateCurrentEvent:  pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event),
+//								IsKeepTimeKey:           pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key),
+//								IsNullEmptyString:       pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string),
+//								IsSupportColonlessIdent: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident),
+//								IsWithPriority:          pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_is_with_priority),
+//								Keys:                    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_keys),
+//								MessageFormat:           pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_message_format),
+//								MessageKey:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_message_key),
+//								MultiLineStartRegexp:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp),
+//								NullValuePattern:        pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_null_value_pattern),
+//								Patterns: logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{
+//									&logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{
+//										FieldTimeFormat: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format),
+//										FieldTimeKey:    pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key),
+//										FieldTimeZone:   pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone),
+//										Name:            pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_name),
+//										Pattern:         pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_patterns_pattern),
+//									},
+//								},
+//								Rfc5424timeFormat:     pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format),
+//								SyslogParserType:      pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type),
+//								TimeFormat:            pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_time_format),
+//								TimeType:              pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_time_type),
+//								TimeoutInMilliseconds: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds),
+//								Types:                 pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_parser_types),
+//							},
+//							Paths: pulumi.Any(_var.Unified_agent_configuration_service_configuration_sources_paths),
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				GroupAssociation: &logging.UnifiedAgentConfigurationGroupAssociationArgs{
+//					GroupLists: pulumi.Any(_var.Unified_agent_configuration_group_association_group_list),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -104,7 +107,9 @@ import (
 // UnifiedAgentConfigurations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
+//
+//	$ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
+//
 // ```
 type UnifiedAgentConfiguration struct {
 	pulumi.CustomResourceState
@@ -295,7 +300,7 @@ func (i *UnifiedAgentConfiguration) ToUnifiedAgentConfigurationOutputWithContext
 // UnifiedAgentConfigurationArrayInput is an input type that accepts UnifiedAgentConfigurationArray and UnifiedAgentConfigurationArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationArrayInput` via:
 //
-//          UnifiedAgentConfigurationArray{ UnifiedAgentConfigurationArgs{...} }
+//	UnifiedAgentConfigurationArray{ UnifiedAgentConfigurationArgs{...} }
 type UnifiedAgentConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -320,7 +325,7 @@ func (i UnifiedAgentConfigurationArray) ToUnifiedAgentConfigurationArrayOutputWi
 // UnifiedAgentConfigurationMapInput is an input type that accepts UnifiedAgentConfigurationMap and UnifiedAgentConfigurationMapOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationMapInput` via:
 //
-//          UnifiedAgentConfigurationMap{ "key": UnifiedAgentConfigurationArgs{...} }
+//	UnifiedAgentConfigurationMap{ "key": UnifiedAgentConfigurationArgs{...} }
 type UnifiedAgentConfigurationMapInput interface {
 	pulumi.Input
 

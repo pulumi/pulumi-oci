@@ -76,6 +76,11 @@ public final class GetAccessRequestResult {
      */
     private final Boolean isAutoApproved;
     /**
+     * @return more in detail about the lifeCycleState.
+     * 
+     */
+    private final String lifecycleDetails;
+    /**
      * @return Additional message specific to the access request that can be specified by the approver at the time of approval.
      * 
      */
@@ -176,6 +181,7 @@ public final class GetAccessRequestResult {
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("isAutoApproved") Boolean isAutoApproved,
+        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("opctlAdditionalMessage") String opctlAdditionalMessage,
         @CustomType.Parameter("opctlId") String opctlId,
         @CustomType.Parameter("opctlName") String opctlName,
@@ -206,6 +212,7 @@ public final class GetAccessRequestResult {
         this.freeformTags = freeformTags;
         this.id = id;
         this.isAutoApproved = isAutoApproved;
+        this.lifecycleDetails = lifecycleDetails;
         this.opctlAdditionalMessage = opctlAdditionalMessage;
         this.opctlId = opctlId;
         this.opctlName = opctlName;
@@ -311,6 +318,13 @@ public final class GetAccessRequestResult {
      */
     public Boolean isAutoApproved() {
         return this.isAutoApproved;
+    }
+    /**
+     * @return more in detail about the lifeCycleState.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * @return Additional message specific to the access request that can be specified by the approver at the time of approval.
@@ -454,6 +468,7 @@ public final class GetAccessRequestResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAutoApproved;
+        private String lifecycleDetails;
         private String opctlAdditionalMessage;
         private String opctlId;
         private String opctlName;
@@ -491,6 +506,7 @@ public final class GetAccessRequestResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutoApproved = defaults.isAutoApproved;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.opctlAdditionalMessage = defaults.opctlAdditionalMessage;
     	      this.opctlId = defaults.opctlId;
     	      this.opctlName = defaults.opctlName;
@@ -568,6 +584,10 @@ public final class GetAccessRequestResult {
             this.isAutoApproved = Objects.requireNonNull(isAutoApproved);
             return this;
         }
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
         public Builder opctlAdditionalMessage(String opctlAdditionalMessage) {
             this.opctlAdditionalMessage = Objects.requireNonNull(opctlAdditionalMessage);
             return this;
@@ -639,7 +659,7 @@ public final class GetAccessRequestResult {
         public Builder workflowIds(String... workflowIds) {
             return workflowIds(List.of(workflowIds));
         }        public GetAccessRequestResult build() {
-            return new GetAccessRequestResult(accessReasonSummary, accessRequestId, actionRequestsLists, approverComment, auditTypes, closureComment, compartmentId, definedTags, duration, extendDuration, freeformTags, id, isAutoApproved, opctlAdditionalMessage, opctlId, opctlName, operatorId, reason, requestId, resourceId, resourceName, resourceType, severity, state, systemMessage, timeOfCreation, timeOfModification, timeOfUserCreation, userId, workflowIds);
+            return new GetAccessRequestResult(accessReasonSummary, accessRequestId, actionRequestsLists, approverComment, auditTypes, closureComment, compartmentId, definedTags, duration, extendDuration, freeformTags, id, isAutoApproved, lifecycleDetails, opctlAdditionalMessage, opctlId, opctlName, operatorId, reason, requestId, resourceId, resourceName, resourceType, severity, state, systemMessage, timeOfCreation, timeOfModification, timeOfUserCreation, userId, workflowIds);
         }
     }
 }

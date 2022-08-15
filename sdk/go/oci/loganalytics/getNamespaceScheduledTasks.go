@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetNamespaceScheduledTasks(ctx, &loganalytics.GetNamespaceScheduledTasksArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Namespace:     _var.Namespace_scheduled_task_namespace,
-// 			DisplayName:   pulumi.StringRef(_var.Namespace_scheduled_task_display_name),
-// 			TaskType:      _var.Namespace_scheduled_task_task_type,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetNamespaceScheduledTasks(ctx, &loganalytics.GetNamespaceScheduledTasksArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Namespace:     _var.Namespace_scheduled_task_namespace,
+//				DisplayName:   pulumi.StringRef(_var.Namespace_scheduled_task_display_name),
+//				TaskType:      _var.Namespace_scheduled_task_task_type,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNamespaceScheduledTasks(ctx *pulumi.Context, args *GetNamespaceScheduledTasksArgs, opts ...pulumi.InvokeOption) (*GetNamespaceScheduledTasksResult, error) {
 	var rv GetNamespaceScheduledTasksResult

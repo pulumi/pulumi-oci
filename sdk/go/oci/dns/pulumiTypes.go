@@ -18,7 +18,7 @@ type ResolverAttachedView struct {
 // ResolverAttachedViewInput is an input type that accepts ResolverAttachedViewArgs and ResolverAttachedViewOutput values.
 // You can construct a concrete instance of `ResolverAttachedViewInput` via:
 //
-//          ResolverAttachedViewArgs{...}
+//	ResolverAttachedViewArgs{...}
 type ResolverAttachedViewInput interface {
 	pulumi.Input
 
@@ -46,7 +46,7 @@ func (i ResolverAttachedViewArgs) ToResolverAttachedViewOutputWithContext(ctx co
 // ResolverAttachedViewArrayInput is an input type that accepts ResolverAttachedViewArray and ResolverAttachedViewArrayOutput values.
 // You can construct a concrete instance of `ResolverAttachedViewArrayInput` via:
 //
-//          ResolverAttachedViewArray{ ResolverAttachedViewArgs{...} }
+//	ResolverAttachedViewArray{ ResolverAttachedViewArgs{...} }
 type ResolverAttachedViewArrayInput interface {
 	pulumi.Input
 
@@ -137,7 +137,7 @@ type ResolverEndpointType struct {
 // ResolverEndpointTypeInput is an input type that accepts ResolverEndpointTypeArgs and ResolverEndpointTypeOutput values.
 // You can construct a concrete instance of `ResolverEndpointTypeInput` via:
 //
-//          ResolverEndpointTypeArgs{...}
+//	ResolverEndpointTypeArgs{...}
 type ResolverEndpointTypeInput interface {
 	pulumi.Input
 
@@ -187,7 +187,7 @@ func (i ResolverEndpointTypeArgs) ToResolverEndpointTypeOutputWithContext(ctx co
 // ResolverEndpointTypeArrayInput is an input type that accepts ResolverEndpointTypeArray and ResolverEndpointTypeArrayOutput values.
 // You can construct a concrete instance of `ResolverEndpointTypeArrayInput` via:
 //
-//          ResolverEndpointTypeArray{ ResolverEndpointTypeArgs{...} }
+//	ResolverEndpointTypeArray{ ResolverEndpointTypeArgs{...} }
 type ResolverEndpointTypeArrayInput interface {
 	pulumi.Input
 
@@ -319,7 +319,7 @@ type ResolverRule struct {
 // ResolverRuleInput is an input type that accepts ResolverRuleArgs and ResolverRuleOutput values.
 // You can construct a concrete instance of `ResolverRuleInput` via:
 //
-//          ResolverRuleArgs{...}
+//	ResolverRuleArgs{...}
 type ResolverRuleInput interface {
 	pulumi.Input
 
@@ -355,7 +355,7 @@ func (i ResolverRuleArgs) ToResolverRuleOutputWithContext(ctx context.Context) R
 // ResolverRuleArrayInput is an input type that accepts ResolverRuleArray and ResolverRuleArrayOutput values.
 // You can construct a concrete instance of `ResolverRuleArrayInput` via:
 //
-//          ResolverRuleArray{ ResolverRuleArgs{...} }
+//	ResolverRuleArray{ ResolverRuleArgs{...} }
 type ResolverRuleArrayInput interface {
 	pulumi.Input
 
@@ -456,7 +456,7 @@ type RrsetItem struct {
 // RrsetItemInput is an input type that accepts RrsetItemArgs and RrsetItemOutput values.
 // You can construct a concrete instance of `RrsetItemInput` via:
 //
-//          RrsetItemArgs{...}
+//	RrsetItemArgs{...}
 type RrsetItemInput interface {
 	pulumi.Input
 
@@ -496,7 +496,7 @@ func (i RrsetItemArgs) ToRrsetItemOutputWithContext(ctx context.Context) RrsetIt
 // RrsetItemArrayInput is an input type that accepts RrsetItemArray and RrsetItemArrayOutput values.
 // You can construct a concrete instance of `RrsetItemArrayInput` via:
 //
-//          RrsetItemArray{ RrsetItemArgs{...} }
+//	RrsetItemArray{ RrsetItemArgs{...} }
 type RrsetItemArrayInput interface {
 	pulumi.Input
 
@@ -603,7 +603,7 @@ type SteeringPolicyAnswer struct {
 // SteeringPolicyAnswerInput is an input type that accepts SteeringPolicyAnswerArgs and SteeringPolicyAnswerOutput values.
 // You can construct a concrete instance of `SteeringPolicyAnswerInput` via:
 //
-//          SteeringPolicyAnswerArgs{...}
+//	SteeringPolicyAnswerArgs{...}
 type SteeringPolicyAnswerInput interface {
 	pulumi.Input
 
@@ -639,7 +639,7 @@ func (i SteeringPolicyAnswerArgs) ToSteeringPolicyAnswerOutputWithContext(ctx co
 // SteeringPolicyAnswerArrayInput is an input type that accepts SteeringPolicyAnswerArray and SteeringPolicyAnswerArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyAnswerArrayInput` via:
 //
-//          SteeringPolicyAnswerArray{ SteeringPolicyAnswerArgs{...} }
+//	SteeringPolicyAnswerArray{ SteeringPolicyAnswerArgs{...} }
 type SteeringPolicyAnswerArrayInput interface {
 	pulumi.Input
 
@@ -736,7 +736,7 @@ type SteeringPolicyRule struct {
 // SteeringPolicyRuleInput is an input type that accepts SteeringPolicyRuleArgs and SteeringPolicyRuleOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleInput` via:
 //
-//          SteeringPolicyRuleArgs{...}
+//	SteeringPolicyRuleArgs{...}
 type SteeringPolicyRuleInput interface {
 	pulumi.Input
 
@@ -772,7 +772,7 @@ func (i SteeringPolicyRuleArgs) ToSteeringPolicyRuleOutputWithContext(ctx contex
 // SteeringPolicyRuleArrayInput is an input type that accepts SteeringPolicyRuleArray and SteeringPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleArrayInput` via:
 //
-//          SteeringPolicyRuleArray{ SteeringPolicyRuleArgs{...} }
+//	SteeringPolicyRuleArray{ SteeringPolicyRuleArgs{...} }
 type SteeringPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -865,7 +865,7 @@ type SteeringPolicyRuleCase struct {
 // SteeringPolicyRuleCaseInput is an input type that accepts SteeringPolicyRuleCaseArgs and SteeringPolicyRuleCaseOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleCaseInput` via:
 //
-//          SteeringPolicyRuleCaseArgs{...}
+//	SteeringPolicyRuleCaseArgs{...}
 type SteeringPolicyRuleCaseInput interface {
 	pulumi.Input
 
@@ -897,7 +897,7 @@ func (i SteeringPolicyRuleCaseArgs) ToSteeringPolicyRuleCaseOutputWithContext(ct
 // SteeringPolicyRuleCaseArrayInput is an input type that accepts SteeringPolicyRuleCaseArray and SteeringPolicyRuleCaseArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleCaseArrayInput` via:
 //
-//          SteeringPolicyRuleCaseArray{ SteeringPolicyRuleCaseArgs{...} }
+//	SteeringPolicyRuleCaseArray{ SteeringPolicyRuleCaseArgs{...} }
 type SteeringPolicyRuleCaseArrayInput interface {
 	pulumi.Input
 
@@ -980,7 +980,7 @@ type SteeringPolicyRuleCaseAnswerData struct {
 // SteeringPolicyRuleCaseAnswerDataInput is an input type that accepts SteeringPolicyRuleCaseAnswerDataArgs and SteeringPolicyRuleCaseAnswerDataOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleCaseAnswerDataInput` via:
 //
-//          SteeringPolicyRuleCaseAnswerDataArgs{...}
+//	SteeringPolicyRuleCaseAnswerDataArgs{...}
 type SteeringPolicyRuleCaseAnswerDataInput interface {
 	pulumi.Input
 
@@ -1012,7 +1012,7 @@ func (i SteeringPolicyRuleCaseAnswerDataArgs) ToSteeringPolicyRuleCaseAnswerData
 // SteeringPolicyRuleCaseAnswerDataArrayInput is an input type that accepts SteeringPolicyRuleCaseAnswerDataArray and SteeringPolicyRuleCaseAnswerDataArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleCaseAnswerDataArrayInput` via:
 //
-//          SteeringPolicyRuleCaseAnswerDataArray{ SteeringPolicyRuleCaseAnswerDataArgs{...} }
+//	SteeringPolicyRuleCaseAnswerDataArray{ SteeringPolicyRuleCaseAnswerDataArgs{...} }
 type SteeringPolicyRuleCaseAnswerDataArrayInput interface {
 	pulumi.Input
 
@@ -1095,7 +1095,7 @@ type SteeringPolicyRuleDefaultAnswerData struct {
 // SteeringPolicyRuleDefaultAnswerDataInput is an input type that accepts SteeringPolicyRuleDefaultAnswerDataArgs and SteeringPolicyRuleDefaultAnswerDataOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleDefaultAnswerDataInput` via:
 //
-//          SteeringPolicyRuleDefaultAnswerDataArgs{...}
+//	SteeringPolicyRuleDefaultAnswerDataArgs{...}
 type SteeringPolicyRuleDefaultAnswerDataInput interface {
 	pulumi.Input
 
@@ -1127,7 +1127,7 @@ func (i SteeringPolicyRuleDefaultAnswerDataArgs) ToSteeringPolicyRuleDefaultAnsw
 // SteeringPolicyRuleDefaultAnswerDataArrayInput is an input type that accepts SteeringPolicyRuleDefaultAnswerDataArray and SteeringPolicyRuleDefaultAnswerDataArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyRuleDefaultAnswerDataArrayInput` via:
 //
-//          SteeringPolicyRuleDefaultAnswerDataArray{ SteeringPolicyRuleDefaultAnswerDataArgs{...} }
+//	SteeringPolicyRuleDefaultAnswerDataArray{ SteeringPolicyRuleDefaultAnswerDataArgs{...} }
 type SteeringPolicyRuleDefaultAnswerDataArrayInput interface {
 	pulumi.Input
 
@@ -1210,7 +1210,7 @@ type ZoneExternalMaster struct {
 // ZoneExternalMasterInput is an input type that accepts ZoneExternalMasterArgs and ZoneExternalMasterOutput values.
 // You can construct a concrete instance of `ZoneExternalMasterInput` via:
 //
-//          ZoneExternalMasterArgs{...}
+//	ZoneExternalMasterArgs{...}
 type ZoneExternalMasterInput interface {
 	pulumi.Input
 
@@ -1242,7 +1242,7 @@ func (i ZoneExternalMasterArgs) ToZoneExternalMasterOutputWithContext(ctx contex
 // ZoneExternalMasterArrayInput is an input type that accepts ZoneExternalMasterArray and ZoneExternalMasterArrayOutput values.
 // You can construct a concrete instance of `ZoneExternalMasterArrayInput` via:
 //
-//          ZoneExternalMasterArray{ ZoneExternalMasterArgs{...} }
+//	ZoneExternalMasterArray{ ZoneExternalMasterArgs{...} }
 type ZoneExternalMasterArrayInput interface {
 	pulumi.Input
 
@@ -1321,7 +1321,7 @@ type ZoneNameserver struct {
 // ZoneNameserverInput is an input type that accepts ZoneNameserverArgs and ZoneNameserverOutput values.
 // You can construct a concrete instance of `ZoneNameserverInput` via:
 //
-//          ZoneNameserverArgs{...}
+//	ZoneNameserverArgs{...}
 type ZoneNameserverInput interface {
 	pulumi.Input
 
@@ -1349,7 +1349,7 @@ func (i ZoneNameserverArgs) ToZoneNameserverOutputWithContext(ctx context.Contex
 // ZoneNameserverArrayInput is an input type that accepts ZoneNameserverArray and ZoneNameserverArrayOutput values.
 // You can construct a concrete instance of `ZoneNameserverArrayInput` via:
 //
-//          ZoneNameserverArray{ ZoneNameserverArgs{...} }
+//	ZoneNameserverArray{ ZoneNameserverArgs{...} }
 type ZoneNameserverArrayInput interface {
 	pulumi.Input
 
@@ -1419,7 +1419,7 @@ type GetRecordsFilter struct {
 // GetRecordsFilterInput is an input type that accepts GetRecordsFilterArgs and GetRecordsFilterOutput values.
 // You can construct a concrete instance of `GetRecordsFilterInput` via:
 //
-//          GetRecordsFilterArgs{...}
+//	GetRecordsFilterArgs{...}
 type GetRecordsFilterInput interface {
 	pulumi.Input
 
@@ -1448,7 +1448,7 @@ func (i GetRecordsFilterArgs) ToGetRecordsFilterOutputWithContext(ctx context.Co
 // GetRecordsFilterArrayInput is an input type that accepts GetRecordsFilterArray and GetRecordsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecordsFilterArrayInput` via:
 //
-//          GetRecordsFilterArray{ GetRecordsFilterArgs{...} }
+//	GetRecordsFilterArray{ GetRecordsFilterArgs{...} }
 type GetRecordsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1546,7 +1546,7 @@ type GetRecordsRecord struct {
 // GetRecordsRecordInput is an input type that accepts GetRecordsRecordArgs and GetRecordsRecordOutput values.
 // You can construct a concrete instance of `GetRecordsRecordInput` via:
 //
-//          GetRecordsRecordArgs{...}
+//	GetRecordsRecordArgs{...}
 type GetRecordsRecordInput interface {
 	pulumi.Input
 
@@ -1596,7 +1596,7 @@ func (i GetRecordsRecordArgs) ToGetRecordsRecordOutputWithContext(ctx context.Co
 // GetRecordsRecordArrayInput is an input type that accepts GetRecordsRecordArray and GetRecordsRecordArrayOutput values.
 // You can construct a concrete instance of `GetRecordsRecordArrayInput` via:
 //
-//          GetRecordsRecordArray{ GetRecordsRecordArgs{...} }
+//	GetRecordsRecordArray{ GetRecordsRecordArgs{...} }
 type GetRecordsRecordArrayInput interface {
 	pulumi.Input
 
@@ -1711,7 +1711,7 @@ type GetResolverAttachedView struct {
 // GetResolverAttachedViewInput is an input type that accepts GetResolverAttachedViewArgs and GetResolverAttachedViewOutput values.
 // You can construct a concrete instance of `GetResolverAttachedViewInput` via:
 //
-//          GetResolverAttachedViewArgs{...}
+//	GetResolverAttachedViewArgs{...}
 type GetResolverAttachedViewInput interface {
 	pulumi.Input
 
@@ -1739,7 +1739,7 @@ func (i GetResolverAttachedViewArgs) ToGetResolverAttachedViewOutputWithContext(
 // GetResolverAttachedViewArrayInput is an input type that accepts GetResolverAttachedViewArray and GetResolverAttachedViewArrayOutput values.
 // You can construct a concrete instance of `GetResolverAttachedViewArrayInput` via:
 //
-//          GetResolverAttachedViewArray{ GetResolverAttachedViewArgs{...} }
+//	GetResolverAttachedViewArray{ GetResolverAttachedViewArgs{...} }
 type GetResolverAttachedViewArrayInput interface {
 	pulumi.Input
 
@@ -1830,7 +1830,7 @@ type GetResolverEndpointType struct {
 // GetResolverEndpointTypeInput is an input type that accepts GetResolverEndpointTypeArgs and GetResolverEndpointTypeOutput values.
 // You can construct a concrete instance of `GetResolverEndpointTypeInput` via:
 //
-//          GetResolverEndpointTypeArgs{...}
+//	GetResolverEndpointTypeArgs{...}
 type GetResolverEndpointTypeInput interface {
 	pulumi.Input
 
@@ -1880,7 +1880,7 @@ func (i GetResolverEndpointTypeArgs) ToGetResolverEndpointTypeOutputWithContext(
 // GetResolverEndpointTypeArrayInput is an input type that accepts GetResolverEndpointTypeArray and GetResolverEndpointTypeArrayOutput values.
 // You can construct a concrete instance of `GetResolverEndpointTypeArrayInput` via:
 //
-//          GetResolverEndpointTypeArray{ GetResolverEndpointTypeArgs{...} }
+//	GetResolverEndpointTypeArray{ GetResolverEndpointTypeArgs{...} }
 type GetResolverEndpointTypeArrayInput interface {
 	pulumi.Input
 
@@ -2006,7 +2006,7 @@ type GetResolverEndpointsFilter struct {
 // GetResolverEndpointsFilterInput is an input type that accepts GetResolverEndpointsFilterArgs and GetResolverEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetResolverEndpointsFilterInput` via:
 //
-//          GetResolverEndpointsFilterArgs{...}
+//	GetResolverEndpointsFilterArgs{...}
 type GetResolverEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -2036,7 +2036,7 @@ func (i GetResolverEndpointsFilterArgs) ToGetResolverEndpointsFilterOutputWithCo
 // GetResolverEndpointsFilterArrayInput is an input type that accepts GetResolverEndpointsFilterArray and GetResolverEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetResolverEndpointsFilterArrayInput` via:
 //
-//          GetResolverEndpointsFilterArray{ GetResolverEndpointsFilterArgs{...} }
+//	GetResolverEndpointsFilterArray{ GetResolverEndpointsFilterArgs{...} }
 type GetResolverEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2141,7 +2141,7 @@ type GetResolverEndpointsResolverEndpoint struct {
 // GetResolverEndpointsResolverEndpointInput is an input type that accepts GetResolverEndpointsResolverEndpointArgs and GetResolverEndpointsResolverEndpointOutput values.
 // You can construct a concrete instance of `GetResolverEndpointsResolverEndpointInput` via:
 //
-//          GetResolverEndpointsResolverEndpointArgs{...}
+//	GetResolverEndpointsResolverEndpointArgs{...}
 type GetResolverEndpointsResolverEndpointInput interface {
 	pulumi.Input
 
@@ -2197,7 +2197,7 @@ func (i GetResolverEndpointsResolverEndpointArgs) ToGetResolverEndpointsResolver
 // GetResolverEndpointsResolverEndpointArrayInput is an input type that accepts GetResolverEndpointsResolverEndpointArray and GetResolverEndpointsResolverEndpointArrayOutput values.
 // You can construct a concrete instance of `GetResolverEndpointsResolverEndpointArrayInput` via:
 //
-//          GetResolverEndpointsResolverEndpointArray{ GetResolverEndpointsResolverEndpointArgs{...} }
+//	GetResolverEndpointsResolverEndpointArray{ GetResolverEndpointsResolverEndpointArgs{...} }
 type GetResolverEndpointsResolverEndpointArrayInput interface {
 	pulumi.Input
 
@@ -2344,7 +2344,7 @@ type GetResolverRule struct {
 // GetResolverRuleInput is an input type that accepts GetResolverRuleArgs and GetResolverRuleOutput values.
 // You can construct a concrete instance of `GetResolverRuleInput` via:
 //
-//          GetResolverRuleArgs{...}
+//	GetResolverRuleArgs{...}
 type GetResolverRuleInput interface {
 	pulumi.Input
 
@@ -2380,7 +2380,7 @@ func (i GetResolverRuleArgs) ToGetResolverRuleOutputWithContext(ctx context.Cont
 // GetResolverRuleArrayInput is an input type that accepts GetResolverRuleArray and GetResolverRuleArrayOutput values.
 // You can construct a concrete instance of `GetResolverRuleArrayInput` via:
 //
-//          GetResolverRuleArray{ GetResolverRuleArgs{...} }
+//	GetResolverRuleArray{ GetResolverRuleArgs{...} }
 type GetResolverRuleArrayInput interface {
 	pulumi.Input
 
@@ -2470,7 +2470,7 @@ type GetResolversFilter struct {
 // GetResolversFilterInput is an input type that accepts GetResolversFilterArgs and GetResolversFilterOutput values.
 // You can construct a concrete instance of `GetResolversFilterInput` via:
 //
-//          GetResolversFilterArgs{...}
+//	GetResolversFilterArgs{...}
 type GetResolversFilterInput interface {
 	pulumi.Input
 
@@ -2499,7 +2499,7 @@ func (i GetResolversFilterArgs) ToGetResolversFilterOutputWithContext(ctx contex
 // GetResolversFilterArrayInput is an input type that accepts GetResolversFilterArray and GetResolversFilterArrayOutput values.
 // You can construct a concrete instance of `GetResolversFilterArrayInput` via:
 //
-//          GetResolversFilterArray{ GetResolversFilterArgs{...} }
+//	GetResolversFilterArray{ GetResolversFilterArgs{...} }
 type GetResolversFilterArrayInput interface {
 	pulumi.Input
 
@@ -2603,7 +2603,7 @@ type GetResolversResolver struct {
 // GetResolversResolverInput is an input type that accepts GetResolversResolverArgs and GetResolversResolverOutput values.
 // You can construct a concrete instance of `GetResolversResolverInput` via:
 //
-//          GetResolversResolverArgs{...}
+//	GetResolversResolverArgs{...}
 type GetResolversResolverInput interface {
 	pulumi.Input
 
@@ -2659,7 +2659,7 @@ func (i GetResolversResolverArgs) ToGetResolversResolverOutputWithContext(ctx co
 // GetResolversResolverArrayInput is an input type that accepts GetResolversResolverArray and GetResolversResolverArrayOutput values.
 // You can construct a concrete instance of `GetResolversResolverArrayInput` via:
 //
-//          GetResolversResolverArray{ GetResolversResolverArgs{...} }
+//	GetResolversResolverArray{ GetResolversResolverArgs{...} }
 type GetResolversResolverArrayInput interface {
 	pulumi.Input
 
@@ -2803,7 +2803,7 @@ type GetResolversResolverAttachedView struct {
 // GetResolversResolverAttachedViewInput is an input type that accepts GetResolversResolverAttachedViewArgs and GetResolversResolverAttachedViewOutput values.
 // You can construct a concrete instance of `GetResolversResolverAttachedViewInput` via:
 //
-//          GetResolversResolverAttachedViewArgs{...}
+//	GetResolversResolverAttachedViewArgs{...}
 type GetResolversResolverAttachedViewInput interface {
 	pulumi.Input
 
@@ -2830,7 +2830,7 @@ func (i GetResolversResolverAttachedViewArgs) ToGetResolversResolverAttachedView
 // GetResolversResolverAttachedViewArrayInput is an input type that accepts GetResolversResolverAttachedViewArray and GetResolversResolverAttachedViewArrayOutput values.
 // You can construct a concrete instance of `GetResolversResolverAttachedViewArrayInput` via:
 //
-//          GetResolversResolverAttachedViewArray{ GetResolversResolverAttachedViewArgs{...} }
+//	GetResolversResolverAttachedViewArray{ GetResolversResolverAttachedViewArgs{...} }
 type GetResolversResolverAttachedViewArrayInput interface {
 	pulumi.Input
 
@@ -2913,7 +2913,7 @@ type GetResolversResolverEndpoint struct {
 // GetResolversResolverEndpointInput is an input type that accepts GetResolversResolverEndpointArgs and GetResolversResolverEndpointOutput values.
 // You can construct a concrete instance of `GetResolversResolverEndpointInput` via:
 //
-//          GetResolversResolverEndpointArgs{...}
+//	GetResolversResolverEndpointArgs{...}
 type GetResolversResolverEndpointInput interface {
 	pulumi.Input
 
@@ -2956,7 +2956,7 @@ func (i GetResolversResolverEndpointArgs) ToGetResolversResolverEndpointOutputWi
 // GetResolversResolverEndpointArrayInput is an input type that accepts GetResolversResolverEndpointArray and GetResolversResolverEndpointArrayOutput values.
 // You can construct a concrete instance of `GetResolversResolverEndpointArrayInput` via:
 //
-//          GetResolversResolverEndpointArray{ GetResolversResolverEndpointArgs{...} }
+//	GetResolversResolverEndpointArray{ GetResolversResolverEndpointArgs{...} }
 type GetResolversResolverEndpointArrayInput interface {
 	pulumi.Input
 
@@ -3076,7 +3076,7 @@ type GetResolversResolverRule struct {
 // GetResolversResolverRuleInput is an input type that accepts GetResolversResolverRuleArgs and GetResolversResolverRuleOutput values.
 // You can construct a concrete instance of `GetResolversResolverRuleInput` via:
 //
-//          GetResolversResolverRuleArgs{...}
+//	GetResolversResolverRuleArgs{...}
 type GetResolversResolverRuleInput interface {
 	pulumi.Input
 
@@ -3107,7 +3107,7 @@ func (i GetResolversResolverRuleArgs) ToGetResolversResolverRuleOutputWithContex
 // GetResolversResolverRuleArrayInput is an input type that accepts GetResolversResolverRuleArray and GetResolversResolverRuleArrayOutput values.
 // You can construct a concrete instance of `GetResolversResolverRuleArrayInput` via:
 //
-//          GetResolversResolverRuleArray{ GetResolversResolverRuleArgs{...} }
+//	GetResolversResolverRuleArray{ GetResolversResolverRuleArgs{...} }
 type GetResolversResolverRuleArrayInput interface {
 	pulumi.Input
 
@@ -3203,7 +3203,7 @@ type GetRrsetItem struct {
 // GetRrsetItemInput is an input type that accepts GetRrsetItemArgs and GetRrsetItemOutput values.
 // You can construct a concrete instance of `GetRrsetItemInput` via:
 //
-//          GetRrsetItemArgs{...}
+//	GetRrsetItemArgs{...}
 type GetRrsetItemInput interface {
 	pulumi.Input
 
@@ -3243,7 +3243,7 @@ func (i GetRrsetItemArgs) ToGetRrsetItemOutputWithContext(ctx context.Context) G
 // GetRrsetItemArrayInput is an input type that accepts GetRrsetItemArray and GetRrsetItemArrayOutput values.
 // You can construct a concrete instance of `GetRrsetItemArrayInput` via:
 //
-//          GetRrsetItemArray{ GetRrsetItemArgs{...} }
+//	GetRrsetItemArray{ GetRrsetItemArgs{...} }
 type GetRrsetItemArrayInput interface {
 	pulumi.Input
 
@@ -3344,7 +3344,7 @@ type GetSteeringPoliciesFilter struct {
 // GetSteeringPoliciesFilterInput is an input type that accepts GetSteeringPoliciesFilterArgs and GetSteeringPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesFilterInput` via:
 //
-//          GetSteeringPoliciesFilterArgs{...}
+//	GetSteeringPoliciesFilterArgs{...}
 type GetSteeringPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -3374,7 +3374,7 @@ func (i GetSteeringPoliciesFilterArgs) ToGetSteeringPoliciesFilterOutputWithCont
 // GetSteeringPoliciesFilterArrayInput is an input type that accepts GetSteeringPoliciesFilterArray and GetSteeringPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesFilterArrayInput` via:
 //
-//          GetSteeringPoliciesFilterArray{ GetSteeringPoliciesFilterArgs{...} }
+//	GetSteeringPoliciesFilterArray{ GetSteeringPoliciesFilterArgs{...} }
 type GetSteeringPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3475,7 +3475,7 @@ type GetSteeringPoliciesSteeringPolicy struct {
 // GetSteeringPoliciesSteeringPolicyInput is an input type that accepts GetSteeringPoliciesSteeringPolicyArgs and GetSteeringPoliciesSteeringPolicyOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyArgs{...}
+//	GetSteeringPoliciesSteeringPolicyArgs{...}
 type GetSteeringPoliciesSteeringPolicyInput interface {
 	pulumi.Input
 
@@ -3527,7 +3527,7 @@ func (i GetSteeringPoliciesSteeringPolicyArgs) ToGetSteeringPoliciesSteeringPoli
 // GetSteeringPoliciesSteeringPolicyArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyArray and GetSteeringPoliciesSteeringPolicyArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyArrayInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyArray{ GetSteeringPoliciesSteeringPolicyArgs{...} }
+//	GetSteeringPoliciesSteeringPolicyArray{ GetSteeringPoliciesSteeringPolicyArgs{...} }
 type GetSteeringPoliciesSteeringPolicyArrayInput interface {
 	pulumi.Input
 
@@ -3664,7 +3664,7 @@ type GetSteeringPoliciesSteeringPolicyAnswer struct {
 // GetSteeringPoliciesSteeringPolicyAnswerInput is an input type that accepts GetSteeringPoliciesSteeringPolicyAnswerArgs and GetSteeringPoliciesSteeringPolicyAnswerOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyAnswerInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyAnswerArgs{...}
+//	GetSteeringPoliciesSteeringPolicyAnswerArgs{...}
 type GetSteeringPoliciesSteeringPolicyAnswerInput interface {
 	pulumi.Input
 
@@ -3700,7 +3700,7 @@ func (i GetSteeringPoliciesSteeringPolicyAnswerArgs) ToGetSteeringPoliciesSteeri
 // GetSteeringPoliciesSteeringPolicyAnswerArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyAnswerArray and GetSteeringPoliciesSteeringPolicyAnswerArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyAnswerArrayInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyAnswerArray{ GetSteeringPoliciesSteeringPolicyAnswerArgs{...} }
+//	GetSteeringPoliciesSteeringPolicyAnswerArray{ GetSteeringPoliciesSteeringPolicyAnswerArgs{...} }
 type GetSteeringPoliciesSteeringPolicyAnswerArrayInput interface {
 	pulumi.Input
 
@@ -3797,7 +3797,7 @@ type GetSteeringPoliciesSteeringPolicyRule struct {
 // GetSteeringPoliciesSteeringPolicyRuleInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleArgs and GetSteeringPoliciesSteeringPolicyRuleOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleArgs{...}
+//	GetSteeringPoliciesSteeringPolicyRuleArgs{...}
 type GetSteeringPoliciesSteeringPolicyRuleInput interface {
 	pulumi.Input
 
@@ -3833,7 +3833,7 @@ func (i GetSteeringPoliciesSteeringPolicyRuleArgs) ToGetSteeringPoliciesSteering
 // GetSteeringPoliciesSteeringPolicyRuleArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleArray and GetSteeringPoliciesSteeringPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleArrayInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleArray{ GetSteeringPoliciesSteeringPolicyRuleArgs{...} }
+//	GetSteeringPoliciesSteeringPolicyRuleArray{ GetSteeringPoliciesSteeringPolicyRuleArgs{...} }
 type GetSteeringPoliciesSteeringPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -3930,7 +3930,7 @@ type GetSteeringPoliciesSteeringPolicyRuleCase struct {
 // GetSteeringPoliciesSteeringPolicyRuleCaseInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseArgs and GetSteeringPoliciesSteeringPolicyRuleCaseOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleCaseInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleCaseArgs{...}
+//	GetSteeringPoliciesSteeringPolicyRuleCaseArgs{...}
 type GetSteeringPoliciesSteeringPolicyRuleCaseInput interface {
 	pulumi.Input
 
@@ -3962,7 +3962,7 @@ func (i GetSteeringPoliciesSteeringPolicyRuleCaseArgs) ToGetSteeringPoliciesStee
 // GetSteeringPoliciesSteeringPolicyRuleCaseArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseArray and GetSteeringPoliciesSteeringPolicyRuleCaseArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleCaseArrayInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleCaseArray{ GetSteeringPoliciesSteeringPolicyRuleCaseArgs{...} }
+//	GetSteeringPoliciesSteeringPolicyRuleCaseArray{ GetSteeringPoliciesSteeringPolicyRuleCaseArgs{...} }
 type GetSteeringPoliciesSteeringPolicyRuleCaseArrayInput interface {
 	pulumi.Input
 
@@ -4047,7 +4047,7 @@ type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData struct {
 // GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs and GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs{...}
+//	GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs{...}
 type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataInput interface {
 	pulumi.Input
 
@@ -4079,7 +4079,7 @@ func (i GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs) ToGetSteeringPo
 // GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArray and GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArray{ GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs{...} }
+//	GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArray{ GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs{...} }
 type GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayInput interface {
 	pulumi.Input
 
@@ -4162,7 +4162,7 @@ type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerData struct {
 // GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs and GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs{...}
+//	GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs{...}
 type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataInput interface {
 	pulumi.Input
 
@@ -4194,7 +4194,7 @@ func (i GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs) ToGetSteerin
 // GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayInput is an input type that accepts GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArray and GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayInput` via:
 //
-//          GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArray{ GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs{...} }
+//	GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArray{ GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs{...} }
 type GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArrayInput interface {
 	pulumi.Input
 
@@ -4281,7 +4281,7 @@ type GetSteeringPolicyAnswer struct {
 // GetSteeringPolicyAnswerInput is an input type that accepts GetSteeringPolicyAnswerArgs and GetSteeringPolicyAnswerOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAnswerInput` via:
 //
-//          GetSteeringPolicyAnswerArgs{...}
+//	GetSteeringPolicyAnswerArgs{...}
 type GetSteeringPolicyAnswerInput interface {
 	pulumi.Input
 
@@ -4317,7 +4317,7 @@ func (i GetSteeringPolicyAnswerArgs) ToGetSteeringPolicyAnswerOutputWithContext(
 // GetSteeringPolicyAnswerArrayInput is an input type that accepts GetSteeringPolicyAnswerArray and GetSteeringPolicyAnswerArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAnswerArrayInput` via:
 //
-//          GetSteeringPolicyAnswerArray{ GetSteeringPolicyAnswerArgs{...} }
+//	GetSteeringPolicyAnswerArray{ GetSteeringPolicyAnswerArgs{...} }
 type GetSteeringPolicyAnswerArrayInput interface {
 	pulumi.Input
 
@@ -4407,7 +4407,7 @@ type GetSteeringPolicyAttachmentsFilter struct {
 // GetSteeringPolicyAttachmentsFilterInput is an input type that accepts GetSteeringPolicyAttachmentsFilterArgs and GetSteeringPolicyAttachmentsFilterOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAttachmentsFilterInput` via:
 //
-//          GetSteeringPolicyAttachmentsFilterArgs{...}
+//	GetSteeringPolicyAttachmentsFilterArgs{...}
 type GetSteeringPolicyAttachmentsFilterInput interface {
 	pulumi.Input
 
@@ -4436,7 +4436,7 @@ func (i GetSteeringPolicyAttachmentsFilterArgs) ToGetSteeringPolicyAttachmentsFi
 // GetSteeringPolicyAttachmentsFilterArrayInput is an input type that accepts GetSteeringPolicyAttachmentsFilterArray and GetSteeringPolicyAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAttachmentsFilterArrayInput` via:
 //
-//          GetSteeringPolicyAttachmentsFilterArray{ GetSteeringPolicyAttachmentsFilterArgs{...} }
+//	GetSteeringPolicyAttachmentsFilterArray{ GetSteeringPolicyAttachmentsFilterArgs{...} }
 type GetSteeringPolicyAttachmentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4530,7 +4530,7 @@ type GetSteeringPolicyAttachmentsSteeringPolicyAttachment struct {
 // GetSteeringPolicyAttachmentsSteeringPolicyAttachmentInput is an input type that accepts GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs and GetSteeringPolicyAttachmentsSteeringPolicyAttachmentOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAttachmentsSteeringPolicyAttachmentInput` via:
 //
-//          GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs{...}
+//	GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs{...}
 type GetSteeringPolicyAttachmentsSteeringPolicyAttachmentInput interface {
 	pulumi.Input
 
@@ -4576,7 +4576,7 @@ func (i GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs) ToGetSteeringP
 // GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayInput is an input type that accepts GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArray and GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayInput` via:
 //
-//          GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArray{ GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs{...} }
+//	GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArray{ GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArgs{...} }
 type GetSteeringPolicyAttachmentsSteeringPolicyAttachmentArrayInput interface {
 	pulumi.Input
 
@@ -4698,7 +4698,7 @@ type GetSteeringPolicyRule struct {
 // GetSteeringPolicyRuleInput is an input type that accepts GetSteeringPolicyRuleArgs and GetSteeringPolicyRuleOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleInput` via:
 //
-//          GetSteeringPolicyRuleArgs{...}
+//	GetSteeringPolicyRuleArgs{...}
 type GetSteeringPolicyRuleInput interface {
 	pulumi.Input
 
@@ -4734,7 +4734,7 @@ func (i GetSteeringPolicyRuleArgs) ToGetSteeringPolicyRuleOutputWithContext(ctx 
 // GetSteeringPolicyRuleArrayInput is an input type that accepts GetSteeringPolicyRuleArray and GetSteeringPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleArrayInput` via:
 //
-//          GetSteeringPolicyRuleArray{ GetSteeringPolicyRuleArgs{...} }
+//	GetSteeringPolicyRuleArray{ GetSteeringPolicyRuleArgs{...} }
 type GetSteeringPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -4827,7 +4827,7 @@ type GetSteeringPolicyRuleCase struct {
 // GetSteeringPolicyRuleCaseInput is an input type that accepts GetSteeringPolicyRuleCaseArgs and GetSteeringPolicyRuleCaseOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleCaseInput` via:
 //
-//          GetSteeringPolicyRuleCaseArgs{...}
+//	GetSteeringPolicyRuleCaseArgs{...}
 type GetSteeringPolicyRuleCaseInput interface {
 	pulumi.Input
 
@@ -4859,7 +4859,7 @@ func (i GetSteeringPolicyRuleCaseArgs) ToGetSteeringPolicyRuleCaseOutputWithCont
 // GetSteeringPolicyRuleCaseArrayInput is an input type that accepts GetSteeringPolicyRuleCaseArray and GetSteeringPolicyRuleCaseArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleCaseArrayInput` via:
 //
-//          GetSteeringPolicyRuleCaseArray{ GetSteeringPolicyRuleCaseArgs{...} }
+//	GetSteeringPolicyRuleCaseArray{ GetSteeringPolicyRuleCaseArgs{...} }
 type GetSteeringPolicyRuleCaseArrayInput interface {
 	pulumi.Input
 
@@ -4942,7 +4942,7 @@ type GetSteeringPolicyRuleCaseAnswerData struct {
 // GetSteeringPolicyRuleCaseAnswerDataInput is an input type that accepts GetSteeringPolicyRuleCaseAnswerDataArgs and GetSteeringPolicyRuleCaseAnswerDataOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleCaseAnswerDataInput` via:
 //
-//          GetSteeringPolicyRuleCaseAnswerDataArgs{...}
+//	GetSteeringPolicyRuleCaseAnswerDataArgs{...}
 type GetSteeringPolicyRuleCaseAnswerDataInput interface {
 	pulumi.Input
 
@@ -4974,7 +4974,7 @@ func (i GetSteeringPolicyRuleCaseAnswerDataArgs) ToGetSteeringPolicyRuleCaseAnsw
 // GetSteeringPolicyRuleCaseAnswerDataArrayInput is an input type that accepts GetSteeringPolicyRuleCaseAnswerDataArray and GetSteeringPolicyRuleCaseAnswerDataArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleCaseAnswerDataArrayInput` via:
 //
-//          GetSteeringPolicyRuleCaseAnswerDataArray{ GetSteeringPolicyRuleCaseAnswerDataArgs{...} }
+//	GetSteeringPolicyRuleCaseAnswerDataArray{ GetSteeringPolicyRuleCaseAnswerDataArgs{...} }
 type GetSteeringPolicyRuleCaseAnswerDataArrayInput interface {
 	pulumi.Input
 
@@ -5057,7 +5057,7 @@ type GetSteeringPolicyRuleDefaultAnswerData struct {
 // GetSteeringPolicyRuleDefaultAnswerDataInput is an input type that accepts GetSteeringPolicyRuleDefaultAnswerDataArgs and GetSteeringPolicyRuleDefaultAnswerDataOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleDefaultAnswerDataInput` via:
 //
-//          GetSteeringPolicyRuleDefaultAnswerDataArgs{...}
+//	GetSteeringPolicyRuleDefaultAnswerDataArgs{...}
 type GetSteeringPolicyRuleDefaultAnswerDataInput interface {
 	pulumi.Input
 
@@ -5089,7 +5089,7 @@ func (i GetSteeringPolicyRuleDefaultAnswerDataArgs) ToGetSteeringPolicyRuleDefau
 // GetSteeringPolicyRuleDefaultAnswerDataArrayInput is an input type that accepts GetSteeringPolicyRuleDefaultAnswerDataArray and GetSteeringPolicyRuleDefaultAnswerDataArrayOutput values.
 // You can construct a concrete instance of `GetSteeringPolicyRuleDefaultAnswerDataArrayInput` via:
 //
-//          GetSteeringPolicyRuleDefaultAnswerDataArray{ GetSteeringPolicyRuleDefaultAnswerDataArgs{...} }
+//	GetSteeringPolicyRuleDefaultAnswerDataArray{ GetSteeringPolicyRuleDefaultAnswerDataArgs{...} }
 type GetSteeringPolicyRuleDefaultAnswerDataArrayInput interface {
 	pulumi.Input
 
@@ -5170,7 +5170,7 @@ type GetTsigKeysFilter struct {
 // GetTsigKeysFilterInput is an input type that accepts GetTsigKeysFilterArgs and GetTsigKeysFilterOutput values.
 // You can construct a concrete instance of `GetTsigKeysFilterInput` via:
 //
-//          GetTsigKeysFilterArgs{...}
+//	GetTsigKeysFilterArgs{...}
 type GetTsigKeysFilterInput interface {
 	pulumi.Input
 
@@ -5200,7 +5200,7 @@ func (i GetTsigKeysFilterArgs) ToGetTsigKeysFilterOutputWithContext(ctx context.
 // GetTsigKeysFilterArrayInput is an input type that accepts GetTsigKeysFilterArray and GetTsigKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetTsigKeysFilterArrayInput` via:
 //
-//          GetTsigKeysFilterArray{ GetTsigKeysFilterArgs{...} }
+//	GetTsigKeysFilterArray{ GetTsigKeysFilterArgs{...} }
 type GetTsigKeysFilterArrayInput interface {
 	pulumi.Input
 
@@ -5297,7 +5297,7 @@ type GetTsigKeysTsigKey struct {
 // GetTsigKeysTsigKeyInput is an input type that accepts GetTsigKeysTsigKeyArgs and GetTsigKeysTsigKeyOutput values.
 // You can construct a concrete instance of `GetTsigKeysTsigKeyInput` via:
 //
-//          GetTsigKeysTsigKeyArgs{...}
+//	GetTsigKeysTsigKeyArgs{...}
 type GetTsigKeysTsigKeyInput interface {
 	pulumi.Input
 
@@ -5345,7 +5345,7 @@ func (i GetTsigKeysTsigKeyArgs) ToGetTsigKeysTsigKeyOutputWithContext(ctx contex
 // GetTsigKeysTsigKeyArrayInput is an input type that accepts GetTsigKeysTsigKeyArray and GetTsigKeysTsigKeyArrayOutput values.
 // You can construct a concrete instance of `GetTsigKeysTsigKeyArrayInput` via:
 //
-//          GetTsigKeysTsigKeyArray{ GetTsigKeysTsigKeyArgs{...} }
+//	GetTsigKeysTsigKeyArray{ GetTsigKeysTsigKeyArgs{...} }
 type GetTsigKeysTsigKeyArrayInput interface {
 	pulumi.Input
 
@@ -5465,7 +5465,7 @@ type GetViewsFilter struct {
 // GetViewsFilterInput is an input type that accepts GetViewsFilterArgs and GetViewsFilterOutput values.
 // You can construct a concrete instance of `GetViewsFilterInput` via:
 //
-//          GetViewsFilterArgs{...}
+//	GetViewsFilterArgs{...}
 type GetViewsFilterInput interface {
 	pulumi.Input
 
@@ -5494,7 +5494,7 @@ func (i GetViewsFilterArgs) ToGetViewsFilterOutputWithContext(ctx context.Contex
 // GetViewsFilterArrayInput is an input type that accepts GetViewsFilterArray and GetViewsFilterArrayOutput values.
 // You can construct a concrete instance of `GetViewsFilterArrayInput` via:
 //
-//          GetViewsFilterArray{ GetViewsFilterArgs{...} }
+//	GetViewsFilterArray{ GetViewsFilterArgs{...} }
 type GetViewsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5590,7 +5590,7 @@ type GetViewsView struct {
 // GetViewsViewInput is an input type that accepts GetViewsViewArgs and GetViewsViewOutput values.
 // You can construct a concrete instance of `GetViewsViewInput` via:
 //
-//          GetViewsViewArgs{...}
+//	GetViewsViewArgs{...}
 type GetViewsViewInput interface {
 	pulumi.Input
 
@@ -5638,7 +5638,7 @@ func (i GetViewsViewArgs) ToGetViewsViewOutputWithContext(ctx context.Context) G
 // GetViewsViewArrayInput is an input type that accepts GetViewsViewArray and GetViewsViewArrayOutput values.
 // You can construct a concrete instance of `GetViewsViewArrayInput` via:
 //
-//          GetViewsViewArray{ GetViewsViewArgs{...} }
+//	GetViewsViewArray{ GetViewsViewArgs{...} }
 type GetViewsViewArrayInput interface {
 	pulumi.Input
 
@@ -5759,7 +5759,7 @@ type GetZonesFilter struct {
 // GetZonesFilterInput is an input type that accepts GetZonesFilterArgs and GetZonesFilterOutput values.
 // You can construct a concrete instance of `GetZonesFilterInput` via:
 //
-//          GetZonesFilterArgs{...}
+//	GetZonesFilterArgs{...}
 type GetZonesFilterInput interface {
 	pulumi.Input
 
@@ -5789,7 +5789,7 @@ func (i GetZonesFilterArgs) ToGetZonesFilterOutputWithContext(ctx context.Contex
 // GetZonesFilterArrayInput is an input type that accepts GetZonesFilterArray and GetZonesFilterArrayOutput values.
 // You can construct a concrete instance of `GetZonesFilterArrayInput` via:
 //
-//          GetZonesFilterArray{ GetZonesFilterArgs{...} }
+//	GetZonesFilterArray{ GetZonesFilterArgs{...} }
 type GetZonesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5897,7 +5897,7 @@ type GetZonesZone struct {
 // GetZonesZoneInput is an input type that accepts GetZonesZoneArgs and GetZonesZoneOutput values.
 // You can construct a concrete instance of `GetZonesZoneInput` via:
 //
-//          GetZonesZoneArgs{...}
+//	GetZonesZoneArgs{...}
 type GetZonesZoneInput interface {
 	pulumi.Input
 
@@ -5956,7 +5956,7 @@ func (i GetZonesZoneArgs) ToGetZonesZoneOutputWithContext(ctx context.Context) G
 // GetZonesZoneArrayInput is an input type that accepts GetZonesZoneArray and GetZonesZoneArrayOutput values.
 // You can construct a concrete instance of `GetZonesZoneArrayInput` via:
 //
-//          GetZonesZoneArray{ GetZonesZoneArgs{...} }
+//	GetZonesZoneArray{ GetZonesZoneArgs{...} }
 type GetZonesZoneArrayInput interface {
 	pulumi.Input
 
@@ -6105,7 +6105,7 @@ type GetZonesZoneExternalMaster struct {
 // GetZonesZoneExternalMasterInput is an input type that accepts GetZonesZoneExternalMasterArgs and GetZonesZoneExternalMasterOutput values.
 // You can construct a concrete instance of `GetZonesZoneExternalMasterInput` via:
 //
-//          GetZonesZoneExternalMasterArgs{...}
+//	GetZonesZoneExternalMasterArgs{...}
 type GetZonesZoneExternalMasterInput interface {
 	pulumi.Input
 
@@ -6137,7 +6137,7 @@ func (i GetZonesZoneExternalMasterArgs) ToGetZonesZoneExternalMasterOutputWithCo
 // GetZonesZoneExternalMasterArrayInput is an input type that accepts GetZonesZoneExternalMasterArray and GetZonesZoneExternalMasterArrayOutput values.
 // You can construct a concrete instance of `GetZonesZoneExternalMasterArrayInput` via:
 //
-//          GetZonesZoneExternalMasterArray{ GetZonesZoneExternalMasterArgs{...} }
+//	GetZonesZoneExternalMasterArray{ GetZonesZoneExternalMasterArgs{...} }
 type GetZonesZoneExternalMasterArrayInput interface {
 	pulumi.Input
 
@@ -6216,7 +6216,7 @@ type GetZonesZoneNameserver struct {
 // GetZonesZoneNameserverInput is an input type that accepts GetZonesZoneNameserverArgs and GetZonesZoneNameserverOutput values.
 // You can construct a concrete instance of `GetZonesZoneNameserverInput` via:
 //
-//          GetZonesZoneNameserverArgs{...}
+//	GetZonesZoneNameserverArgs{...}
 type GetZonesZoneNameserverInput interface {
 	pulumi.Input
 
@@ -6244,7 +6244,7 @@ func (i GetZonesZoneNameserverArgs) ToGetZonesZoneNameserverOutputWithContext(ct
 // GetZonesZoneNameserverArrayInput is an input type that accepts GetZonesZoneNameserverArray and GetZonesZoneNameserverArrayOutput values.
 // You can construct a concrete instance of `GetZonesZoneNameserverArrayInput` via:
 //
-//          GetZonesZoneNameserverArray{ GetZonesZoneNameserverArgs{...} }
+//	GetZonesZoneNameserverArray{ GetZonesZoneNameserverArgs{...} }
 type GetZonesZoneNameserverArrayInput interface {
 	pulumi.Input
 

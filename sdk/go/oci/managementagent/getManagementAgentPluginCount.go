@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgentPluginCount(ctx, &managementagent.GetManagementAgentPluginCountArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			GroupBy:       _var.Management_agent_plugin_count_group_by,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgentPluginCount(ctx, &managementagent.GetManagementAgentPluginCountArgs{
+//				CompartmentId: _var.Compartment_id,
+//				GroupBy:       _var.Management_agent_plugin_count_group_by,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementAgentPluginCount(ctx *pulumi.Context, args *GetManagementAgentPluginCountArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentPluginCountResult, error) {
 	var rv GetManagementAgentPluginCountResult

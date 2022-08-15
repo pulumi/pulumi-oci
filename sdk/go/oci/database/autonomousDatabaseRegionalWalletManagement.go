@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousDatabaseRegionalWalletManagement(ctx, "testAutonomousDatabaseRegionalWalletManagement", &Database.AutonomousDatabaseRegionalWalletManagementArgs{
-// 			GracePeriod:  pulumi.Any(_var.Autonomous_database_regional_wallet_management_grace_period),
-// 			ShouldRotate: pulumi.Any(_var.Autonomous_database_regional_wallet_management_should_rotate),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousDatabaseRegionalWalletManagement(ctx, "testAutonomousDatabaseRegionalWalletManagement", &Database.AutonomousDatabaseRegionalWalletManagementArgs{
+//				GracePeriod:  pulumi.Any(_var.Autonomous_database_regional_wallet_management_grace_period),
+//				ShouldRotate: pulumi.Any(_var.Autonomous_database_regional_wallet_management_should_rotate),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -149,7 +152,7 @@ func (i *AutonomousDatabaseRegionalWalletManagement) ToAutonomousDatabaseRegiona
 // AutonomousDatabaseRegionalWalletManagementArrayInput is an input type that accepts AutonomousDatabaseRegionalWalletManagementArray and AutonomousDatabaseRegionalWalletManagementArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseRegionalWalletManagementArrayInput` via:
 //
-//          AutonomousDatabaseRegionalWalletManagementArray{ AutonomousDatabaseRegionalWalletManagementArgs{...} }
+//	AutonomousDatabaseRegionalWalletManagementArray{ AutonomousDatabaseRegionalWalletManagementArgs{...} }
 type AutonomousDatabaseRegionalWalletManagementArrayInput interface {
 	pulumi.Input
 
@@ -174,7 +177,7 @@ func (i AutonomousDatabaseRegionalWalletManagementArray) ToAutonomousDatabaseReg
 // AutonomousDatabaseRegionalWalletManagementMapInput is an input type that accepts AutonomousDatabaseRegionalWalletManagementMap and AutonomousDatabaseRegionalWalletManagementMapOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseRegionalWalletManagementMapInput` via:
 //
-//          AutonomousDatabaseRegionalWalletManagementMap{ "key": AutonomousDatabaseRegionalWalletManagementArgs{...} }
+//	AutonomousDatabaseRegionalWalletManagementMap{ "key": AutonomousDatabaseRegionalWalletManagementArgs{...} }
 type AutonomousDatabaseRegionalWalletManagementMapInput interface {
 	pulumi.Input
 

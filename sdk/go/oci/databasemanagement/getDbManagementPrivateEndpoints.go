@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetDbManagementPrivateEndpoints(ctx, &databasemanagement.GetDbManagementPrivateEndpointsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			IsCluster:     pulumi.BoolRef(_var.Db_management_private_endpoint_is_cluster),
-// 			Name:          pulumi.StringRef(_var.Db_management_private_endpoint_name),
-// 			State:         pulumi.StringRef(_var.Db_management_private_endpoint_state),
-// 			VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetDbManagementPrivateEndpoints(ctx, &databasemanagement.GetDbManagementPrivateEndpointsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				IsCluster:     pulumi.BoolRef(_var.Db_management_private_endpoint_is_cluster),
+//				Name:          pulumi.StringRef(_var.Db_management_private_endpoint_name),
+//				State:         pulumi.StringRef(_var.Db_management_private_endpoint_state),
+//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbManagementPrivateEndpoints(ctx *pulumi.Context, args *GetDbManagementPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetDbManagementPrivateEndpointsResult, error) {
 	var rv GetDbManagementPrivateEndpointsResult

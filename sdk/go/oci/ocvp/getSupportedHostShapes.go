@@ -16,23 +16,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.GetSupportedHostShapes(ctx, &ocvp.GetSupportedHostShapesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Name:          pulumi.StringRef(_var.Supported_host_shape_name),
-// 			SddcType:      pulumi.StringRef(_var.Supported_host_shape_sddc_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.GetSupportedHostShapes(ctx, &ocvp.GetSupportedHostShapesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Name:          pulumi.StringRef(_var.Supported_host_shape_name),
+//				SddcType:      pulumi.StringRef(_var.Supported_host_shape_sddc_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSupportedHostShapes(ctx *pulumi.Context, args *GetSupportedHostShapesArgs, opts ...pulumi.InvokeOption) (*GetSupportedHostShapesResult, error) {
 	var rv GetSupportedHostShapesResult

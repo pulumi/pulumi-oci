@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceCatalog.GetPrivateApplications(ctx, &servicecatalog.GetPrivateApplicationsArgs{
-// 			CompartmentId:        _var.Compartment_id,
-// 			DisplayName:          pulumi.StringRef(_var.Private_application_display_name),
-// 			PrivateApplicationId: pulumi.StringRef(oci_service_catalog_private_application.Test_private_application.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceCatalog.GetPrivateApplications(ctx, &servicecatalog.GetPrivateApplicationsArgs{
+//				CompartmentId:        _var.Compartment_id,
+//				DisplayName:          pulumi.StringRef(_var.Private_application_display_name),
+//				PrivateApplicationId: pulumi.StringRef(oci_service_catalog_private_application.Test_private_application.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPrivateApplications(ctx *pulumi.Context, args *GetPrivateApplicationsArgs, opts ...pulumi.InvokeOption) (*GetPrivateApplicationsResult, error) {
 	var rv GetPrivateApplicationsResult

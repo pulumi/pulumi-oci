@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
 //
-// Gets a OceInstance by identifier
+// # Gets a OceInstance by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oce"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oce"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Oce.GetOceInstance(ctx, &oce.GetOceInstanceArgs{
-// 			OceInstanceId: oci_oce_oce_instance.Test_oce_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Oce.GetOceInstance(ctx, &oce.GetOceInstanceArgs{
+//				OceInstanceId: oci_oce_oce_instance.Test_oce_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOceInstance(ctx *pulumi.Context, args *GetOceInstanceArgs, opts ...pulumi.InvokeOption) (*GetOceInstanceResult, error) {
 	var rv GetOceInstanceResult

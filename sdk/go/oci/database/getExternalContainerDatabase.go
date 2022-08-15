@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetExternalContainerDatabase(ctx, &database.GetExternalContainerDatabaseArgs{
-// 			ExternalContainerDatabaseId: oci_database_external_container_database.Test_external_container_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetExternalContainerDatabase(ctx, &database.GetExternalContainerDatabaseArgs{
+//				ExternalContainerDatabaseId: oci_database_external_container_database.Test_external_container_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupExternalContainerDatabase(ctx *pulumi.Context, args *LookupExternalContainerDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupExternalContainerDatabaseResult, error) {
 	var rv LookupExternalContainerDatabaseResult

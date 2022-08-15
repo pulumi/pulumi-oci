@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs{
-// 			ExecutionId:            oci_database_management_execution.Test_execution.Id,
-// 			ManagedDatabaseId:      oci_database_management_managed_database.Test_managed_database.Id,
-// 			SqlObjectId:            oci_objectstorage_object.Test_object.Id,
-// 			SqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs{
+//				ExecutionId:            oci_database_management_execution.Test_execution.Id,
+//				ManagedDatabaseId:      oci_database_management_managed_database.Test_managed_database.Id,
+//				SqlObjectId:            oci_objectstorage_object.Test_object.Id,
+//				SqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(ctx *pulumi.Context, args *GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult, error) {
 	var rv GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult

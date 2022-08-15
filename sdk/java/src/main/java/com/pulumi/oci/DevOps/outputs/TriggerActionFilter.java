@@ -19,7 +19,7 @@ public final class TriggerActionFilter {
      */
     private final @Nullable List<String> events;
     /**
-     * @return (Updatable) Attributes to filter DevOps code repository events.
+     * @return (Updatable) Attributes to filter GitLab self-hosted server events.
      * 
      */
     private final @Nullable TriggerActionFilterInclude include;
@@ -47,7 +47,7 @@ public final class TriggerActionFilter {
         return this.events == null ? List.of() : this.events;
     }
     /**
-     * @return (Updatable) Attributes to filter DevOps code repository events.
+     * @return (Updatable) Attributes to filter GitLab self-hosted server events.
      * 
      */
     public Optional<TriggerActionFilterInclude> include() {

@@ -21,61 +21,64 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmConfig"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmConfig"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmConfig.NewConfig(ctx, "testConfig", &ApmConfig.ConfigArgs{
-// 			ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
-// 			ConfigType:  pulumi.Any(_var.Config_config_type),
-// 			DisplayName: pulumi.Any(_var.Config_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Config_description),
-// 			Dimensions: apmconfig.ConfigDimensionArray{
-// 				&apmconfig.ConfigDimensionArgs{
-// 					Name:        pulumi.Any(_var.Config_dimensions_name),
-// 					ValueSource: pulumi.Any(_var.Config_dimensions_value_source),
-// 				},
-// 			},
-// 			FilterId:   pulumi.Any(oci_apm_config_filter.Test_filter.Id),
-// 			FilterText: pulumi.Any(_var.Config_filter_text),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Group: pulumi.Any(_var.Config_group),
-// 			Metrics: apmconfig.ConfigMetricArray{
-// 				&apmconfig.ConfigMetricArgs{
-// 					Description: pulumi.Any(_var.Config_metrics_description),
-// 					Name:        pulumi.Any(_var.Config_metrics_name),
-// 					Unit:        pulumi.Any(_var.Config_metrics_unit),
-// 					ValueSource: pulumi.Any(_var.Config_metrics_value_source),
-// 				},
-// 			},
-// 			Namespace: pulumi.Any(_var.Config_namespace),
-// 			OpcDryRun: pulumi.Any(_var.Config_opc_dry_run),
-// 			Options:   pulumi.Any(_var.Config_options),
-// 			Rules: apmconfig.ConfigRuleArray{
-// 				&apmconfig.ConfigRuleArgs{
-// 					DisplayName:            pulumi.Any(_var.Config_rules_display_name),
-// 					FilterText:             pulumi.Any(_var.Config_rules_filter_text),
-// 					IsApplyToErrorSpans:    pulumi.Any(_var.Config_rules_is_apply_to_error_spans),
-// 					IsEnabled:              pulumi.Any(_var.Config_rules_is_enabled),
-// 					Priority:               pulumi.Any(_var.Config_rules_priority),
-// 					SatisfiedResponseTime:  pulumi.Any(_var.Config_rules_satisfied_response_time),
-// 					ToleratingResponseTime: pulumi.Any(_var.Config_rules_tolerating_response_time),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmConfig.NewConfig(ctx, "testConfig", &ApmConfig.ConfigArgs{
+//				ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
+//				ConfigType:  pulumi.Any(_var.Config_config_type),
+//				DisplayName: pulumi.Any(_var.Config_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Config_description),
+//				Dimensions: apmconfig.ConfigDimensionArray{
+//					&apmconfig.ConfigDimensionArgs{
+//						Name:        pulumi.Any(_var.Config_dimensions_name),
+//						ValueSource: pulumi.Any(_var.Config_dimensions_value_source),
+//					},
+//				},
+//				FilterId:   pulumi.Any(oci_apm_config_filter.Test_filter.Id),
+//				FilterText: pulumi.Any(_var.Config_filter_text),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Group: pulumi.Any(_var.Config_group),
+//				Metrics: apmconfig.ConfigMetricArray{
+//					&apmconfig.ConfigMetricArgs{
+//						Description: pulumi.Any(_var.Config_metrics_description),
+//						Name:        pulumi.Any(_var.Config_metrics_name),
+//						Unit:        pulumi.Any(_var.Config_metrics_unit),
+//						ValueSource: pulumi.Any(_var.Config_metrics_value_source),
+//					},
+//				},
+//				Namespace: pulumi.Any(_var.Config_namespace),
+//				OpcDryRun: pulumi.Any(_var.Config_opc_dry_run),
+//				Options:   pulumi.Any(_var.Config_options),
+//				Rules: apmconfig.ConfigRuleArray{
+//					&apmconfig.ConfigRuleArgs{
+//						DisplayName:            pulumi.Any(_var.Config_rules_display_name),
+//						FilterText:             pulumi.Any(_var.Config_rules_filter_text),
+//						IsApplyToErrorSpans:    pulumi.Any(_var.Config_rules_is_apply_to_error_spans),
+//						IsEnabled:              pulumi.Any(_var.Config_rules_is_enabled),
+//						Priority:               pulumi.Any(_var.Config_rules_priority),
+//						SatisfiedResponseTime:  pulumi.Any(_var.Config_rules_satisfied_response_time),
+//						ToleratingResponseTime: pulumi.Any(_var.Config_rules_tolerating_response_time),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -83,7 +86,9 @@ import (
 // Configs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
+//
+//	$ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
+//
 // ```
 type Config struct {
 	pulumi.CustomResourceState
@@ -332,7 +337,7 @@ func (i *Config) ToConfigOutputWithContext(ctx context.Context) ConfigOutput {
 // ConfigArrayInput is an input type that accepts ConfigArray and ConfigArrayOutput values.
 // You can construct a concrete instance of `ConfigArrayInput` via:
 //
-//          ConfigArray{ ConfigArgs{...} }
+//	ConfigArray{ ConfigArgs{...} }
 type ConfigArrayInput interface {
 	pulumi.Input
 
@@ -357,7 +362,7 @@ func (i ConfigArray) ToConfigArrayOutputWithContext(ctx context.Context) ConfigA
 // ConfigMapInput is an input type that accepts ConfigMap and ConfigMapOutput values.
 // You can construct a concrete instance of `ConfigMapInput` via:
 //
-//          ConfigMap{ "key": ConfigArgs{...} }
+//	ConfigMap{ "key": ConfigArgs{...} }
 type ConfigMapInput interface {
 	pulumi.Input
 

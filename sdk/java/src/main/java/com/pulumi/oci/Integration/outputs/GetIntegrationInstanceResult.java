@@ -5,7 +5,9 @@ package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceAlternateCustomEndpoint;
+import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceAttachment;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceCustomEndpoint;
+import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceIdcsInfo;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceNetworkEndpointDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -22,6 +24,11 @@ public final class GetIntegrationInstanceResult {
      * 
      */
     private final List<GetIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    private final List<GetIntegrationInstanceAttachment> attachments;
     /**
      * @return Compartment Identifier.
      * 
@@ -58,6 +65,11 @@ public final class GetIntegrationInstanceResult {
      */
     private final String id;
     private final String idcsAt;
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    private final List<GetIntegrationInstanceIdcsInfo> idcsInfos;
     /**
      * @return The Integration Instance URL.
      * 
@@ -118,6 +130,7 @@ public final class GetIntegrationInstanceResult {
     @CustomType.Constructor
     private GetIntegrationInstanceResult(
         @CustomType.Parameter("alternateCustomEndpoints") List<GetIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints,
+        @CustomType.Parameter("attachments") List<GetIntegrationInstanceAttachment> attachments,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("consumptionModel") String consumptionModel,
         @CustomType.Parameter("customEndpoints") List<GetIntegrationInstanceCustomEndpoint> customEndpoints,
@@ -126,6 +139,7 @@ public final class GetIntegrationInstanceResult {
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("idcsAt") String idcsAt,
+        @CustomType.Parameter("idcsInfos") List<GetIntegrationInstanceIdcsInfo> idcsInfos,
         @CustomType.Parameter("instanceUrl") String instanceUrl,
         @CustomType.Parameter("integrationInstanceId") String integrationInstanceId,
         @CustomType.Parameter("integrationInstanceType") String integrationInstanceType,
@@ -139,6 +153,7 @@ public final class GetIntegrationInstanceResult {
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated) {
         this.alternateCustomEndpoints = alternateCustomEndpoints;
+        this.attachments = attachments;
         this.compartmentId = compartmentId;
         this.consumptionModel = consumptionModel;
         this.customEndpoints = customEndpoints;
@@ -147,6 +162,7 @@ public final class GetIntegrationInstanceResult {
         this.freeformTags = freeformTags;
         this.id = id;
         this.idcsAt = idcsAt;
+        this.idcsInfos = idcsInfos;
         this.instanceUrl = instanceUrl;
         this.integrationInstanceId = integrationInstanceId;
         this.integrationInstanceType = integrationInstanceType;
@@ -167,6 +183,13 @@ public final class GetIntegrationInstanceResult {
      */
     public List<GetIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints() {
         return this.alternateCustomEndpoints;
+    }
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public List<GetIntegrationInstanceAttachment> attachments() {
+        return this.attachments;
     }
     /**
      * @return Compartment Identifier.
@@ -219,6 +242,13 @@ public final class GetIntegrationInstanceResult {
     }
     public String idcsAt() {
         return this.idcsAt;
+    }
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    public List<GetIntegrationInstanceIdcsInfo> idcsInfos() {
+        return this.idcsInfos;
     }
     /**
      * @return The Integration Instance URL.
@@ -311,6 +341,7 @@ public final class GetIntegrationInstanceResult {
 
     public static final class Builder {
         private List<GetIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+        private List<GetIntegrationInstanceAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
         private List<GetIntegrationInstanceCustomEndpoint> customEndpoints;
@@ -319,6 +350,7 @@ public final class GetIntegrationInstanceResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String idcsAt;
+        private List<GetIntegrationInstanceIdcsInfo> idcsInfos;
         private String instanceUrl;
         private String integrationInstanceId;
         private String integrationInstanceType;
@@ -339,6 +371,7 @@ public final class GetIntegrationInstanceResult {
         public Builder(GetIntegrationInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
+    	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
     	      this.customEndpoints = defaults.customEndpoints;
@@ -347,6 +380,7 @@ public final class GetIntegrationInstanceResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.idcsAt = defaults.idcsAt;
+    	      this.idcsInfos = defaults.idcsInfos;
     	      this.instanceUrl = defaults.instanceUrl;
     	      this.integrationInstanceId = defaults.integrationInstanceId;
     	      this.integrationInstanceType = defaults.integrationInstanceType;
@@ -367,6 +401,13 @@ public final class GetIntegrationInstanceResult {
         }
         public Builder alternateCustomEndpoints(GetIntegrationInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+        public Builder attachments(List<GetIntegrationInstanceAttachment> attachments) {
+            this.attachments = Objects.requireNonNull(attachments);
+            return this;
+        }
+        public Builder attachments(GetIntegrationInstanceAttachment... attachments) {
+            return attachments(List.of(attachments));
         }
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -402,6 +443,13 @@ public final class GetIntegrationInstanceResult {
         public Builder idcsAt(String idcsAt) {
             this.idcsAt = Objects.requireNonNull(idcsAt);
             return this;
+        }
+        public Builder idcsInfos(List<GetIntegrationInstanceIdcsInfo> idcsInfos) {
+            this.idcsInfos = Objects.requireNonNull(idcsInfos);
+            return this;
+        }
+        public Builder idcsInfos(GetIntegrationInstanceIdcsInfo... idcsInfos) {
+            return idcsInfos(List.of(idcsInfos));
         }
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = Objects.requireNonNull(instanceUrl);
@@ -454,7 +502,7 @@ public final class GetIntegrationInstanceResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetIntegrationInstanceResult build() {
-            return new GetIntegrationInstanceResult(alternateCustomEndpoints, compartmentId, consumptionModel, customEndpoints, definedTags, displayName, freeformTags, id, idcsAt, instanceUrl, integrationInstanceId, integrationInstanceType, isByol, isFileServerEnabled, isVisualBuilderEnabled, messagePacks, networkEndpointDetails, state, stateMessage, timeCreated, timeUpdated);
+            return new GetIntegrationInstanceResult(alternateCustomEndpoints, attachments, compartmentId, consumptionModel, customEndpoints, definedTags, displayName, freeformTags, id, idcsAt, idcsInfos, instanceUrl, integrationInstanceId, integrationInstanceType, isByol, isFileServerEnabled, isVisualBuilderEnabled, messagePacks, networkEndpointDetails, state, stateMessage, timeCreated, timeUpdated);
         }
     }
 }

@@ -27,22 +27,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewKeyVersion(ctx, "testKeyVersion", &Kms.KeyVersionArgs{
-// 			KeyId:              pulumi.Any(oci_kms_key.Test_key.Id),
-// 			ManagementEndpoint: pulumi.Any(_var.Key_version_management_endpoint),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewKeyVersion(ctx, "testKeyVersion", &Kms.KeyVersionArgs{
+//				KeyId:              pulumi.Any(oci_kms_key.Test_key.Id),
+//				ManagementEndpoint: pulumi.Any(_var.Key_version_management_endpoint),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // KeyVersions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
+//
+//	$ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
+//
 // ```
 type KeyVersion struct {
 	pulumi.CustomResourceState
@@ -218,7 +223,7 @@ func (i *KeyVersion) ToKeyVersionOutputWithContext(ctx context.Context) KeyVersi
 // KeyVersionArrayInput is an input type that accepts KeyVersionArray and KeyVersionArrayOutput values.
 // You can construct a concrete instance of `KeyVersionArrayInput` via:
 //
-//          KeyVersionArray{ KeyVersionArgs{...} }
+//	KeyVersionArray{ KeyVersionArgs{...} }
 type KeyVersionArrayInput interface {
 	pulumi.Input
 
@@ -243,7 +248,7 @@ func (i KeyVersionArray) ToKeyVersionArrayOutputWithContext(ctx context.Context)
 // KeyVersionMapInput is an input type that accepts KeyVersionMap and KeyVersionMapOutput values.
 // You can construct a concrete instance of `KeyVersionMapInput` via:
 //
-//          KeyVersionMap{ "key": KeyVersionArgs{...} }
+//	KeyVersionMap{ "key": KeyVersionArgs{...} }
 type KeyVersionMapInput interface {
 	pulumi.Input
 

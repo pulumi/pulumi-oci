@@ -33,14 +33,14 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Attributes to filter DevOps code repository events.
+     * (Updatable) Attributes to filter GitLab self-hosted server events.
      * 
      */
     @Import(name="include")
     private @Nullable Output<TriggerActionFilterIncludeArgs> include;
 
     /**
-     * @return (Updatable) Attributes to filter DevOps code repository events.
+     * @return (Updatable) Attributes to filter GitLab self-hosted server events.
      * 
      */
     public Optional<Output<TriggerActionFilterIncludeArgs>> include() {
@@ -120,7 +120,7 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param include (Updatable) Attributes to filter DevOps code repository events.
+         * @param include (Updatable) Attributes to filter GitLab self-hosted server events.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param include (Updatable) Attributes to filter DevOps code repository events.
+         * @param include (Updatable) Attributes to filter GitLab self-hosted server events.
          * 
          * @return builder
          * 

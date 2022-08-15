@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.GetAccessRequest(ctx, &operatoraccesscontrol.GetAccessRequestArgs{
-// 			AccessRequestId: oci_operator_access_control_access_request.Test_access_request.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.GetAccessRequest(ctx, &operatoraccesscontrol.GetAccessRequestArgs{
+//				AccessRequestId: oci_operator_access_control_access_request.Test_access_request.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAccessRequest(ctx *pulumi.Context, args *GetAccessRequestArgs, opts ...pulumi.InvokeOption) (*GetAccessRequestResult, error) {
 	var rv GetAccessRequestResult
@@ -78,6 +81,8 @@ type GetAccessRequestResult struct {
 	Id string `pulumi:"id"`
 	// Whether the access request was automatically approved.
 	IsAutoApproved bool `pulumi:"isAutoApproved"`
+	// more in detail about the lifeCycleState.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
 	OpctlAdditionalMessage string `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
@@ -214,6 +219,11 @@ func (o GetAccessRequestResultOutput) Id() pulumi.StringOutput {
 // Whether the access request was automatically approved.
 func (o GetAccessRequestResultOutput) IsAutoApproved() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAccessRequestResult) bool { return v.IsAutoApproved }).(pulumi.BoolOutput)
+}
+
+// more in detail about the lifeCycleState.
+func (o GetAccessRequestResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Additional message specific to the access request that can be specified by the approver at the time of approval.

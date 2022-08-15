@@ -20,33 +20,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetConnections(ctx, &datacatalog.GetConnectionsArgs{
-// 			CatalogId:           oci_datacatalog_catalog.Test_catalog.Id,
-// 			DataAssetKey:        _var.Connection_data_asset_key,
-// 			CreatedById:         pulumi.StringRef(oci_datacatalog_created_by.Test_created_by.Id),
-// 			DisplayName:         pulumi.StringRef(_var.Connection_display_name),
-// 			DisplayNameContains: pulumi.StringRef(_var.Connection_display_name_contains),
-// 			ExternalKey:         pulumi.StringRef(_var.Connection_external_key),
-// 			Fields:              _var.Connection_fields,
-// 			IsDefault:           pulumi.BoolRef(_var.Connection_is_default),
-// 			State:               pulumi.StringRef(_var.Connection_state),
-// 			TimeCreated:         pulumi.StringRef(_var.Connection_time_created),
-// 			TimeStatusUpdated:   pulumi.StringRef(_var.Connection_time_status_updated),
-// 			TimeUpdated:         pulumi.StringRef(_var.Connection_time_updated),
-// 			UpdatedById:         pulumi.StringRef(oci_datacatalog_updated_by.Test_updated_by.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetConnections(ctx, &datacatalog.GetConnectionsArgs{
+//				CatalogId:           oci_datacatalog_catalog.Test_catalog.Id,
+//				DataAssetKey:        _var.Connection_data_asset_key,
+//				CreatedById:         pulumi.StringRef(oci_datacatalog_created_by.Test_created_by.Id),
+//				DisplayName:         pulumi.StringRef(_var.Connection_display_name),
+//				DisplayNameContains: pulumi.StringRef(_var.Connection_display_name_contains),
+//				ExternalKey:         pulumi.StringRef(_var.Connection_external_key),
+//				Fields:              _var.Connection_fields,
+//				IsDefault:           pulumi.BoolRef(_var.Connection_is_default),
+//				State:               pulumi.StringRef(_var.Connection_state),
+//				TimeCreated:         pulumi.StringRef(_var.Connection_time_created),
+//				TimeStatusUpdated:   pulumi.StringRef(_var.Connection_time_status_updated),
+//				TimeUpdated:         pulumi.StringRef(_var.Connection_time_updated),
+//				UpdatedById:         pulumi.StringRef(oci_datacatalog_updated_by.Test_updated_by.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetConnections(ctx *pulumi.Context, args *GetConnectionsArgs, opts ...pulumi.InvokeOption) (*GetConnectionsResult, error) {
 	var rv GetConnectionsResult

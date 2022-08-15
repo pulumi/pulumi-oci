@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Vault"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Vault"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Vault.GetSecretVersion(ctx, &vault.GetSecretVersionArgs{
-// 			SecretId:            oci_vault_secret.Test_secret.Id,
-// 			SecretVersionNumber: _var.Secret_version_secret_version_number,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Vault.GetSecretVersion(ctx, &vault.GetSecretVersionArgs{
+//				SecretId:            oci_vault_secret.Test_secret.Id,
+//				SecretVersionNumber: _var.Secret_version_secret_version_number,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecretVersion(ctx *pulumi.Context, args *GetSecretVersionArgs, opts ...pulumi.InvokeOption) (*GetSecretVersionResult, error) {
 	var rv GetSecretVersionResult

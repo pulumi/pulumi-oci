@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetCrossConnects(ctx, &core.GetCrossConnectsArgs{
-// 			CompartmentId:       _var.Compartment_id,
-// 			CrossConnectGroupId: pulumi.StringRef(oci_core_cross_connect_group.Test_cross_connect_group.Id),
-// 			DisplayName:         pulumi.StringRef(_var.Cross_connect_display_name),
-// 			State:               pulumi.StringRef(_var.Cross_connect_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetCrossConnects(ctx, &core.GetCrossConnectsArgs{
+//				CompartmentId:       _var.Compartment_id,
+//				CrossConnectGroupId: pulumi.StringRef(oci_core_cross_connect_group.Test_cross_connect_group.Id),
+//				DisplayName:         pulumi.StringRef(_var.Cross_connect_display_name),
+//				State:               pulumi.StringRef(_var.Cross_connect_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCrossConnects(ctx *pulumi.Context, args *GetCrossConnectsArgs, opts ...pulumi.InvokeOption) (*GetCrossConnectsResult, error) {
 	var rv GetCrossConnectsResult

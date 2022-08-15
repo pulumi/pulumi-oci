@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDbSystemsUpgrade(ctx, "testDbSystemsUpgrade", &Database.DbSystemsUpgradeArgs{
-// 			Action:                              pulumi.Any(_var.Db_systems_upgrade_action),
-// 			DbSystemId:                          pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 			IsSnapshotRetentionDaysForceUpdated: pulumi.Any(_var.Db_systems_upgrade_is_snapshot_retention_days_force_updated),
-// 			NewGiVersion:                        pulumi.Any(_var.Db_systems_upgrade_new_gi_version),
-// 			SnapshotRetentionPeriodInDays:       pulumi.Any(_var.Db_systems_upgrade_snapshot_retention_period_in_days),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDbSystemsUpgrade(ctx, "testDbSystemsUpgrade", &Database.DbSystemsUpgradeArgs{
+//				Action:                              pulumi.Any(_var.Db_systems_upgrade_action),
+//				DbSystemId:                          pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				IsSnapshotRetentionDaysForceUpdated: pulumi.Any(_var.Db_systems_upgrade_is_snapshot_retention_days_force_updated),
+//				NewGiVersion:                        pulumi.Any(_var.Db_systems_upgrade_new_gi_version),
+//				SnapshotRetentionPeriodInDays:       pulumi.Any(_var.Db_systems_upgrade_snapshot_retention_period_in_days),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -450,7 +453,7 @@ func (i *DbSystemsUpgrade) ToDbSystemsUpgradeOutputWithContext(ctx context.Conte
 // DbSystemsUpgradeArrayInput is an input type that accepts DbSystemsUpgradeArray and DbSystemsUpgradeArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeArrayInput` via:
 //
-//          DbSystemsUpgradeArray{ DbSystemsUpgradeArgs{...} }
+//	DbSystemsUpgradeArray{ DbSystemsUpgradeArgs{...} }
 type DbSystemsUpgradeArrayInput interface {
 	pulumi.Input
 
@@ -475,7 +478,7 @@ func (i DbSystemsUpgradeArray) ToDbSystemsUpgradeArrayOutputWithContext(ctx cont
 // DbSystemsUpgradeMapInput is an input type that accepts DbSystemsUpgradeMap and DbSystemsUpgradeMapOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMapInput` via:
 //
-//          DbSystemsUpgradeMap{ "key": DbSystemsUpgradeArgs{...} }
+//	DbSystemsUpgradeMap{ "key": DbSystemsUpgradeArgs{...} }
 type DbSystemsUpgradeMapInput interface {
 	pulumi.Input
 

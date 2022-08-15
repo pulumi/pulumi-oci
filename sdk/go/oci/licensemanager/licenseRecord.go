@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.NewLicenseRecord(ctx, "testLicenseRecord", &LicenseManager.LicenseRecordArgs{
-// 			DisplayName:      pulumi.Any(_var.License_record_display_name),
-// 			IsPerpetual:      pulumi.Any(_var.License_record_is_perpetual),
-// 			IsUnlimited:      pulumi.Any(_var.License_record_is_unlimited),
-// 			ProductLicenseId: pulumi.Any(oci_license_manager_product_license.Test_product_license.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			ExpirationDate: pulumi.Any(_var.License_record_expiration_date),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			LicenseCount:   pulumi.Any(_var.License_record_license_count),
-// 			ProductId:      pulumi.Any(oci_license_manager_product.Test_product.Id),
-// 			SupportEndDate: pulumi.Any(_var.License_record_support_end_date),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.NewLicenseRecord(ctx, "testLicenseRecord", &LicenseManager.LicenseRecordArgs{
+//				DisplayName:      pulumi.Any(_var.License_record_display_name),
+//				IsPerpetual:      pulumi.Any(_var.License_record_is_perpetual),
+//				IsUnlimited:      pulumi.Any(_var.License_record_is_unlimited),
+//				ProductLicenseId: pulumi.Any(oci_license_manager_product_license.Test_product_license.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				ExpirationDate: pulumi.Any(_var.License_record_expiration_date),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				LicenseCount:   pulumi.Any(_var.License_record_license_count),
+//				ProductId:      pulumi.Any(oci_license_manager_product.Test_product.Id),
+//				SupportEndDate: pulumi.Any(_var.License_record_support_end_date),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // LicenseRecords can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
+//
+//	$ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
+//
 // ```
 type LicenseRecord struct {
 	pulumi.CustomResourceState
@@ -288,7 +293,7 @@ func (i *LicenseRecord) ToLicenseRecordOutputWithContext(ctx context.Context) Li
 // LicenseRecordArrayInput is an input type that accepts LicenseRecordArray and LicenseRecordArrayOutput values.
 // You can construct a concrete instance of `LicenseRecordArrayInput` via:
 //
-//          LicenseRecordArray{ LicenseRecordArgs{...} }
+//	LicenseRecordArray{ LicenseRecordArgs{...} }
 type LicenseRecordArrayInput interface {
 	pulumi.Input
 
@@ -313,7 +318,7 @@ func (i LicenseRecordArray) ToLicenseRecordArrayOutputWithContext(ctx context.Co
 // LicenseRecordMapInput is an input type that accepts LicenseRecordMap and LicenseRecordMapOutput values.
 // You can construct a concrete instance of `LicenseRecordMapInput` via:
 //
-//          LicenseRecordMap{ "key": LicenseRecordArgs{...} }
+//	LicenseRecordMap{ "key": LicenseRecordArgs{...} }
 type LicenseRecordMapInput interface {
 	pulumi.Input
 

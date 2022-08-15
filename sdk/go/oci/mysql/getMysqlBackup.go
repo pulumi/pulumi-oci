@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
 //
-// Get information about the specified Backup
+// # Get information about the specified Backup
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetMysqlBackup(ctx, &mysql.GetMysqlBackupArgs{
-// 			BackupId: oci_mysql_mysql_backup.Test_backup.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetMysqlBackup(ctx, &mysql.GetMysqlBackupArgs{
+//				BackupId: oci_mysql_mysql_backup.Test_backup.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupMysqlBackup(ctx *pulumi.Context, args *LookupMysqlBackupArgs, opts ...pulumi.InvokeOption) (*LookupMysqlBackupResult, error) {
 	var rv LookupMysqlBackupResult

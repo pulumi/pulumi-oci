@@ -259,6 +259,7 @@ class IntegrationInstanceArgs:
 class _IntegrationInstanceState:
     def __init__(__self__, *,
                  alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
+                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
@@ -266,6 +267,7 @@ class _IntegrationInstanceState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
+                 idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]] = None,
                  instance_url: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
                  is_byol: Optional[pulumi.Input[bool]] = None,
@@ -280,6 +282,7 @@ class _IntegrationInstanceState:
         """
         Input properties used for looking up and filtering IntegrationInstance resources.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
@@ -287,6 +290,7 @@ class _IntegrationInstanceState:
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
+        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
@@ -301,6 +305,8 @@ class _IntegrationInstanceState:
         """
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if consumption_model is not None:
@@ -315,6 +321,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
             pulumi.set(__self__, "idcs_at", idcs_at)
+        if idcs_infos is not None:
+            pulumi.set(__self__, "idcs_infos", idcs_infos)
         if instance_url is not None:
             pulumi.set(__self__, "instance_url", instance_url)
         if integration_instance_type is not None:
@@ -349,6 +357,18 @@ class _IntegrationInstanceState:
     @alternate_custom_endpoints.setter
     def alternate_custom_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]]):
         pulumi.set(self, "alternate_custom_endpoints", value)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]]:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
+
+    @attachments.setter
+    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]]):
+        pulumi.set(self, "attachments", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -433,6 +453,18 @@ class _IntegrationInstanceState:
     @idcs_at.setter
     def idcs_at(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "idcs_at", value)
+
+    @property
+    @pulumi.getter(name="idcsInfos")
+    def idcs_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]]:
+        """
+        Information for IDCS access
+        """
+        return pulumi.get(self, "idcs_infos")
+
+    @idcs_infos.setter
+    def idcs_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]]):
+        pulumi.set(self, "idcs_infos", value)
 
     @property
     @pulumi.getter(name="instanceUrl")
@@ -789,6 +821,8 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["message_packs"] = message_packs
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state
+            __props__.__dict__["attachments"] = None
+            __props__.__dict__["idcs_infos"] = None
             __props__.__dict__["instance_url"] = None
             __props__.__dict__["state_message"] = None
             __props__.__dict__["time_created"] = None
@@ -804,6 +838,7 @@ class IntegrationInstance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]]] = None,
+            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAttachmentArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             consumption_model: Optional[pulumi.Input[str]] = None,
             custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
@@ -811,6 +846,7 @@ class IntegrationInstance(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             idcs_at: Optional[pulumi.Input[str]] = None,
+            idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]]] = None,
             instance_url: Optional[pulumi.Input[str]] = None,
             integration_instance_type: Optional[pulumi.Input[str]] = None,
             is_byol: Optional[pulumi.Input[bool]] = None,
@@ -830,6 +866,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceAttachmentArgs']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
@@ -837,6 +874,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
@@ -854,6 +892,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__ = _IntegrationInstanceState.__new__(_IntegrationInstanceState)
 
         __props__.__dict__["alternate_custom_endpoints"] = alternate_custom_endpoints
+        __props__.__dict__["attachments"] = attachments
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
         __props__.__dict__["custom_endpoint"] = custom_endpoint
@@ -861,6 +900,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_at"] = idcs_at
+        __props__.__dict__["idcs_infos"] = idcs_infos
         __props__.__dict__["instance_url"] = instance_url
         __props__.__dict__["integration_instance_type"] = integration_instance_type
         __props__.__dict__["is_byol"] = is_byol
@@ -881,6 +921,14 @@ class IntegrationInstance(pulumi.CustomResource):
         (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         """
         return pulumi.get(self, "alternate_custom_endpoints")
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceAttachment']]:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -937,6 +985,14 @@ class IntegrationInstance(pulumi.CustomResource):
         (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         """
         return pulumi.get(self, "idcs_at")
+
+    @property
+    @pulumi.getter(name="idcsInfos")
+    def idcs_infos(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceIdcsInfo']]:
+        """
+        Information for IDCS access
+        """
+        return pulumi.get(self, "idcs_infos")
 
     @property
     @pulumi.getter(name="instanceUrl")

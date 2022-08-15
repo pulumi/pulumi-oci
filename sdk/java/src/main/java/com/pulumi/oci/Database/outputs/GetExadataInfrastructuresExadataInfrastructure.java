@@ -170,6 +170,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     private final Integer memorySizeInGbs;
     /**
+     * @return The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * 
+     */
+    private final String monthlyDbServerVersion;
+    /**
      * @return The netmask for the control plane network.
      * 
      */
@@ -244,6 +249,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         @CustomType.Parameter("maxDbNodeStorageInGbs") Integer maxDbNodeStorageInGbs,
         @CustomType.Parameter("maxMemoryInGbs") Integer maxMemoryInGbs,
         @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
+        @CustomType.Parameter("monthlyDbServerVersion") String monthlyDbServerVersion,
         @CustomType.Parameter("netmask") String netmask,
         @CustomType.Parameter("ntpServers") List<String> ntpServers,
         @CustomType.Parameter("shape") String shape,
@@ -284,6 +290,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
         this.maxMemoryInGbs = maxMemoryInGbs;
         this.memorySizeInGbs = memorySizeInGbs;
+        this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.netmask = netmask;
         this.ntpServers = ntpServers;
         this.shape = shape;
@@ -511,6 +518,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         return this.memorySizeInGbs;
     }
     /**
+     * @return The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * 
+     */
+    public String monthlyDbServerVersion() {
+        return this.monthlyDbServerVersion;
+    }
+    /**
      * @return The netmask for the control plane network.
      * 
      */
@@ -608,6 +622,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private Integer maxDbNodeStorageInGbs;
         private Integer maxMemoryInGbs;
         private Integer memorySizeInGbs;
+        private String monthlyDbServerVersion;
         private String netmask;
         private List<String> ntpServers;
         private String shape;
@@ -655,6 +670,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.maxDbNodeStorageInGbs = defaults.maxDbNodeStorageInGbs;
     	      this.maxMemoryInGbs = defaults.maxMemoryInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
+    	      this.monthlyDbServerVersion = defaults.monthlyDbServerVersion;
     	      this.netmask = defaults.netmask;
     	      this.ntpServers = defaults.ntpServers;
     	      this.shape = defaults.shape;
@@ -802,6 +818,10 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
+            this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
+            return this;
+        }
         public Builder netmask(String netmask) {
             this.netmask = Objects.requireNonNull(netmask);
             return this;
@@ -837,7 +857,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExadataInfrastructuresExadataInfrastructure build() {
-            return new GetExadataInfrastructuresExadataInfrastructure(activatedStorageCount, activationFile, additionalStorageCount, adminNetworkCidr, cloudControlPlaneServer1, cloudControlPlaneServer2, compartmentId, computeCount, contacts, corporateProxy, cpusEnabled, createAsync, csiNumber, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServerVersion, definedTags, displayName, dnsServers, freeformTags, gateway, id, infiniBandNetworkCidr, isCpsOfflineReportEnabled, lifecycleDetails, maintenanceSloStatus, maintenanceWindows, maxCpuCount, maxDataStorageInTbs, maxDbNodeStorageInGbs, maxMemoryInGbs, memorySizeInGbs, netmask, ntpServers, shape, state, storageCount, storageServerVersion, timeCreated, timeZone);
+            return new GetExadataInfrastructuresExadataInfrastructure(activatedStorageCount, activationFile, additionalStorageCount, adminNetworkCidr, cloudControlPlaneServer1, cloudControlPlaneServer2, compartmentId, computeCount, contacts, corporateProxy, cpusEnabled, createAsync, csiNumber, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServerVersion, definedTags, displayName, dnsServers, freeformTags, gateway, id, infiniBandNetworkCidr, isCpsOfflineReportEnabled, lifecycleDetails, maintenanceSloStatus, maintenanceWindows, maxCpuCount, maxDataStorageInTbs, maxDbNodeStorageInGbs, maxMemoryInGbs, memorySizeInGbs, monthlyDbServerVersion, netmask, ntpServers, shape, state, storageCount, storageServerVersion, timeCreated, timeZone);
         }
     }
 }

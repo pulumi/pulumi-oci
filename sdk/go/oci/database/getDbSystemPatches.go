@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbSystemPatches(ctx, &database.GetDbSystemPatchesArgs{
-// 			DbSystemId: oci_database_db_system.Test_db_system.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbSystemPatches(ctx, &database.GetDbSystemPatchesArgs{
+//				DbSystemId: oci_database_db_system.Test_db_system.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbSystemPatches(ctx *pulumi.Context, args *GetDbSystemPatchesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemPatchesResult, error) {
 	var rv GetDbSystemPatchesResult

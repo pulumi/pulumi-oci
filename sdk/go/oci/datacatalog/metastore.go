@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.NewMetastore(ctx, "testMetastore", &DataCatalog.MetastoreArgs{
-// 			CompartmentId:                pulumi.Any(_var.Compartment_id),
-// 			DefaultExternalTableLocation: pulumi.Any(_var.Metastore_default_external_table_location),
-// 			DefaultManagedTableLocation:  pulumi.Any(_var.Metastore_default_managed_table_location),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Metastore_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.NewMetastore(ctx, "testMetastore", &DataCatalog.MetastoreArgs{
+//				CompartmentId:                pulumi.Any(_var.Compartment_id),
+//				DefaultExternalTableLocation: pulumi.Any(_var.Metastore_default_external_table_location),
+//				DefaultManagedTableLocation:  pulumi.Any(_var.Metastore_default_managed_table_location),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Metastore_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // Metastores can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
+//
+//	$ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
+//
 // ```
 type Metastore struct {
 	pulumi.CustomResourceState
@@ -223,7 +228,7 @@ func (i *Metastore) ToMetastoreOutputWithContext(ctx context.Context) MetastoreO
 // MetastoreArrayInput is an input type that accepts MetastoreArray and MetastoreArrayOutput values.
 // You can construct a concrete instance of `MetastoreArrayInput` via:
 //
-//          MetastoreArray{ MetastoreArgs{...} }
+//	MetastoreArray{ MetastoreArgs{...} }
 type MetastoreArrayInput interface {
 	pulumi.Input
 
@@ -248,7 +253,7 @@ func (i MetastoreArray) ToMetastoreArrayOutputWithContext(ctx context.Context) M
 // MetastoreMapInput is an input type that accepts MetastoreMap and MetastoreMapOutput values.
 // You can construct a concrete instance of `MetastoreMapInput` via:
 //
-//          MetastoreMap{ "key": MetastoreArgs{...} }
+//	MetastoreMap{ "key": MetastoreArgs{...} }
 type MetastoreMapInput interface {
 	pulumi.Input
 

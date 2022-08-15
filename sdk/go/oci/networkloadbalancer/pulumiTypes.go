@@ -32,7 +32,7 @@ type BackendSetBackend struct {
 // BackendSetBackendInput is an input type that accepts BackendSetBackendArgs and BackendSetBackendOutput values.
 // You can construct a concrete instance of `BackendSetBackendInput` via:
 //
-//          BackendSetBackendArgs{...}
+//	BackendSetBackendArgs{...}
 type BackendSetBackendInput interface {
 	pulumi.Input
 
@@ -74,7 +74,7 @@ func (i BackendSetBackendArgs) ToBackendSetBackendOutputWithContext(ctx context.
 // BackendSetBackendArrayInput is an input type that accepts BackendSetBackendArray and BackendSetBackendArrayOutput values.
 // You can construct a concrete instance of `BackendSetBackendArrayInput` via:
 //
-//          BackendSetBackendArray{ BackendSetBackendArgs{...} }
+//	BackendSetBackendArray{ BackendSetBackendArgs{...} }
 type BackendSetBackendArrayInput interface {
 	pulumi.Input
 
@@ -196,7 +196,7 @@ type BackendSetHealthChecker struct {
 // BackendSetHealthCheckerInput is an input type that accepts BackendSetHealthCheckerArgs and BackendSetHealthCheckerOutput values.
 // You can construct a concrete instance of `BackendSetHealthCheckerInput` via:
 //
-//          BackendSetHealthCheckerArgs{...}
+//	BackendSetHealthCheckerArgs{...}
 type BackendSetHealthCheckerInput interface {
 	pulumi.Input
 
@@ -250,11 +250,11 @@ func (i BackendSetHealthCheckerArgs) ToBackendSetHealthCheckerPtrOutputWithConte
 // BackendSetHealthCheckerPtrInput is an input type that accepts BackendSetHealthCheckerArgs, BackendSetHealthCheckerPtr and BackendSetHealthCheckerPtrOutput values.
 // You can construct a concrete instance of `BackendSetHealthCheckerPtrInput` via:
 //
-//          BackendSetHealthCheckerArgs{...}
+//	        BackendSetHealthCheckerArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BackendSetHealthCheckerPtrInput interface {
 	pulumi.Input
 
@@ -492,7 +492,7 @@ type NetworkLoadBalancerIpAddress struct {
 // NetworkLoadBalancerIpAddressInput is an input type that accepts NetworkLoadBalancerIpAddressArgs and NetworkLoadBalancerIpAddressOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerIpAddressInput` via:
 //
-//          NetworkLoadBalancerIpAddressArgs{...}
+//	NetworkLoadBalancerIpAddressArgs{...}
 type NetworkLoadBalancerIpAddressInput interface {
 	pulumi.Input
 
@@ -526,7 +526,7 @@ func (i NetworkLoadBalancerIpAddressArgs) ToNetworkLoadBalancerIpAddressOutputWi
 // NetworkLoadBalancerIpAddressArrayInput is an input type that accepts NetworkLoadBalancerIpAddressArray and NetworkLoadBalancerIpAddressArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerIpAddressArrayInput` via:
 //
-//          NetworkLoadBalancerIpAddressArray{ NetworkLoadBalancerIpAddressArgs{...} }
+//	NetworkLoadBalancerIpAddressArray{ NetworkLoadBalancerIpAddressArgs{...} }
 type NetworkLoadBalancerIpAddressArrayInput interface {
 	pulumi.Input
 
@@ -610,7 +610,7 @@ type NetworkLoadBalancerIpAddressReservedIp struct {
 // NetworkLoadBalancerIpAddressReservedIpInput is an input type that accepts NetworkLoadBalancerIpAddressReservedIpArgs and NetworkLoadBalancerIpAddressReservedIpOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerIpAddressReservedIpInput` via:
 //
-//          NetworkLoadBalancerIpAddressReservedIpArgs{...}
+//	NetworkLoadBalancerIpAddressReservedIpArgs{...}
 type NetworkLoadBalancerIpAddressReservedIpInput interface {
 	pulumi.Input
 
@@ -638,7 +638,7 @@ func (i NetworkLoadBalancerIpAddressReservedIpArgs) ToNetworkLoadBalancerIpAddre
 // NetworkLoadBalancerIpAddressReservedIpArrayInput is an input type that accepts NetworkLoadBalancerIpAddressReservedIpArray and NetworkLoadBalancerIpAddressReservedIpArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerIpAddressReservedIpArrayInput` via:
 //
-//          NetworkLoadBalancerIpAddressReservedIpArray{ NetworkLoadBalancerIpAddressReservedIpArgs{...} }
+//	NetworkLoadBalancerIpAddressReservedIpArray{ NetworkLoadBalancerIpAddressReservedIpArgs{...} }
 type NetworkLoadBalancerIpAddressReservedIpArrayInput interface {
 	pulumi.Input
 
@@ -707,7 +707,7 @@ type NetworkLoadBalancerReservedIp struct {
 // NetworkLoadBalancerReservedIpInput is an input type that accepts NetworkLoadBalancerReservedIpArgs and NetworkLoadBalancerReservedIpOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerReservedIpInput` via:
 //
-//          NetworkLoadBalancerReservedIpArgs{...}
+//	NetworkLoadBalancerReservedIpArgs{...}
 type NetworkLoadBalancerReservedIpInput interface {
 	pulumi.Input
 
@@ -735,7 +735,7 @@ func (i NetworkLoadBalancerReservedIpArgs) ToNetworkLoadBalancerReservedIpOutput
 // NetworkLoadBalancerReservedIpArrayInput is an input type that accepts NetworkLoadBalancerReservedIpArray and NetworkLoadBalancerReservedIpArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerReservedIpArrayInput` via:
 //
-//          NetworkLoadBalancerReservedIpArray{ NetworkLoadBalancerReservedIpArgs{...} }
+//	NetworkLoadBalancerReservedIpArray{ NetworkLoadBalancerReservedIpArgs{...} }
 type NetworkLoadBalancerReservedIpArrayInput interface {
 	pulumi.Input
 
@@ -818,7 +818,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
 // NetworkLoadBalancersBackendSetsUnifiedBackendInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedBackendArgs and NetworkLoadBalancersBackendSetsUnifiedBackendOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedBackendInput` via:
 //
-//          NetworkLoadBalancersBackendSetsUnifiedBackendArgs{...}
+//	NetworkLoadBalancersBackendSetsUnifiedBackendArgs{...}
 type NetworkLoadBalancersBackendSetsUnifiedBackendInput interface {
 	pulumi.Input
 
@@ -860,7 +860,7 @@ func (i NetworkLoadBalancersBackendSetsUnifiedBackendArgs) ToNetworkLoadBalancer
 // NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedBackendArray and NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput` via:
 //
-//          NetworkLoadBalancersBackendSetsUnifiedBackendArray{ NetworkLoadBalancersBackendSetsUnifiedBackendArgs{...} }
+//	NetworkLoadBalancersBackendSetsUnifiedBackendArray{ NetworkLoadBalancersBackendSetsUnifiedBackendArgs{...} }
 type NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput interface {
 	pulumi.Input
 
@@ -982,7 +982,7 @@ type NetworkLoadBalancersBackendSetsUnifiedHealthChecker struct {
 // NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs and NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput` via:
 //
-//          NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{...}
+//	NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{...}
 type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput interface {
 	pulumi.Input
 
@@ -1036,11 +1036,11 @@ func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBa
 // NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs, NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtr and NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput` via:
 //
-//          NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{...}
+//	        NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput interface {
 	pulumi.Input
 
@@ -1274,7 +1274,7 @@ type GetBackendHealthHealthCheckResult struct {
 // GetBackendHealthHealthCheckResultInput is an input type that accepts GetBackendHealthHealthCheckResultArgs and GetBackendHealthHealthCheckResultOutput values.
 // You can construct a concrete instance of `GetBackendHealthHealthCheckResultInput` via:
 //
-//          GetBackendHealthHealthCheckResultArgs{...}
+//	GetBackendHealthHealthCheckResultArgs{...}
 type GetBackendHealthHealthCheckResultInput interface {
 	pulumi.Input
 
@@ -1304,7 +1304,7 @@ func (i GetBackendHealthHealthCheckResultArgs) ToGetBackendHealthHealthCheckResu
 // GetBackendHealthHealthCheckResultArrayInput is an input type that accepts GetBackendHealthHealthCheckResultArray and GetBackendHealthHealthCheckResultArrayOutput values.
 // You can construct a concrete instance of `GetBackendHealthHealthCheckResultArrayInput` via:
 //
-//          GetBackendHealthHealthCheckResultArray{ GetBackendHealthHealthCheckResultArgs{...} }
+//	GetBackendHealthHealthCheckResultArray{ GetBackendHealthHealthCheckResultArgs{...} }
 type GetBackendHealthHealthCheckResultArrayInput interface {
 	pulumi.Input
 
@@ -1392,7 +1392,7 @@ type GetBackendSetBackend struct {
 // GetBackendSetBackendInput is an input type that accepts GetBackendSetBackendArgs and GetBackendSetBackendOutput values.
 // You can construct a concrete instance of `GetBackendSetBackendInput` via:
 //
-//          GetBackendSetBackendArgs{...}
+//	GetBackendSetBackendArgs{...}
 type GetBackendSetBackendInput interface {
 	pulumi.Input
 
@@ -1434,7 +1434,7 @@ func (i GetBackendSetBackendArgs) ToGetBackendSetBackendOutputWithContext(ctx co
 // GetBackendSetBackendArrayInput is an input type that accepts GetBackendSetBackendArray and GetBackendSetBackendArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetBackendArrayInput` via:
 //
-//          GetBackendSetBackendArray{ GetBackendSetBackendArgs{...} }
+//	GetBackendSetBackendArray{ GetBackendSetBackendArgs{...} }
 type GetBackendSetBackendArrayInput interface {
 	pulumi.Input
 
@@ -1556,7 +1556,7 @@ type GetBackendSetHealthChecker struct {
 // GetBackendSetHealthCheckerInput is an input type that accepts GetBackendSetHealthCheckerArgs and GetBackendSetHealthCheckerOutput values.
 // You can construct a concrete instance of `GetBackendSetHealthCheckerInput` via:
 //
-//          GetBackendSetHealthCheckerArgs{...}
+//	GetBackendSetHealthCheckerArgs{...}
 type GetBackendSetHealthCheckerInput interface {
 	pulumi.Input
 
@@ -1602,7 +1602,7 @@ func (i GetBackendSetHealthCheckerArgs) ToGetBackendSetHealthCheckerOutputWithCo
 // GetBackendSetHealthCheckerArrayInput is an input type that accepts GetBackendSetHealthCheckerArray and GetBackendSetHealthCheckerArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetHealthCheckerArrayInput` via:
 //
-//          GetBackendSetHealthCheckerArray{ GetBackendSetHealthCheckerArgs{...} }
+//	GetBackendSetHealthCheckerArray{ GetBackendSetHealthCheckerArgs{...} }
 type GetBackendSetHealthCheckerArrayInput interface {
 	pulumi.Input
 
@@ -1715,7 +1715,7 @@ type GetBackendSetsBackendSetCollection struct {
 // GetBackendSetsBackendSetCollectionInput is an input type that accepts GetBackendSetsBackendSetCollectionArgs and GetBackendSetsBackendSetCollectionOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionInput` via:
 //
-//          GetBackendSetsBackendSetCollectionArgs{...}
+//	GetBackendSetsBackendSetCollectionArgs{...}
 type GetBackendSetsBackendSetCollectionInput interface {
 	pulumi.Input
 
@@ -1742,7 +1742,7 @@ func (i GetBackendSetsBackendSetCollectionArgs) ToGetBackendSetsBackendSetCollec
 // GetBackendSetsBackendSetCollectionArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionArray and GetBackendSetsBackendSetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionArrayInput` via:
 //
-//          GetBackendSetsBackendSetCollectionArray{ GetBackendSetsBackendSetCollectionArgs{...} }
+//	GetBackendSetsBackendSetCollectionArray{ GetBackendSetsBackendSetCollectionArgs{...} }
 type GetBackendSetsBackendSetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1823,7 +1823,7 @@ type GetBackendSetsBackendSetCollectionItem struct {
 // GetBackendSetsBackendSetCollectionItemInput is an input type that accepts GetBackendSetsBackendSetCollectionItemArgs and GetBackendSetsBackendSetCollectionItemOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemInput` via:
 //
-//          GetBackendSetsBackendSetCollectionItemArgs{...}
+//	GetBackendSetsBackendSetCollectionItemArgs{...}
 type GetBackendSetsBackendSetCollectionItemInput interface {
 	pulumi.Input
 
@@ -1864,7 +1864,7 @@ func (i GetBackendSetsBackendSetCollectionItemArgs) ToGetBackendSetsBackendSetCo
 // GetBackendSetsBackendSetCollectionItemArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemArray and GetBackendSetsBackendSetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemArrayInput` via:
 //
-//          GetBackendSetsBackendSetCollectionItemArray{ GetBackendSetsBackendSetCollectionItemArgs{...} }
+//	GetBackendSetsBackendSetCollectionItemArray{ GetBackendSetsBackendSetCollectionItemArgs{...} }
 type GetBackendSetsBackendSetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1985,7 +1985,7 @@ type GetBackendSetsBackendSetCollectionItemBackend struct {
 // GetBackendSetsBackendSetCollectionItemBackendInput is an input type that accepts GetBackendSetsBackendSetCollectionItemBackendArgs and GetBackendSetsBackendSetCollectionItemBackendOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemBackendInput` via:
 //
-//          GetBackendSetsBackendSetCollectionItemBackendArgs{...}
+//	GetBackendSetsBackendSetCollectionItemBackendArgs{...}
 type GetBackendSetsBackendSetCollectionItemBackendInput interface {
 	pulumi.Input
 
@@ -2027,7 +2027,7 @@ func (i GetBackendSetsBackendSetCollectionItemBackendArgs) ToGetBackendSetsBacke
 // GetBackendSetsBackendSetCollectionItemBackendArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemBackendArray and GetBackendSetsBackendSetCollectionItemBackendArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemBackendArrayInput` via:
 //
-//          GetBackendSetsBackendSetCollectionItemBackendArray{ GetBackendSetsBackendSetCollectionItemBackendArgs{...} }
+//	GetBackendSetsBackendSetCollectionItemBackendArray{ GetBackendSetsBackendSetCollectionItemBackendArgs{...} }
 type GetBackendSetsBackendSetCollectionItemBackendArrayInput interface {
 	pulumi.Input
 
@@ -2149,7 +2149,7 @@ type GetBackendSetsBackendSetCollectionItemHealthChecker struct {
 // GetBackendSetsBackendSetCollectionItemHealthCheckerInput is an input type that accepts GetBackendSetsBackendSetCollectionItemHealthCheckerArgs and GetBackendSetsBackendSetCollectionItemHealthCheckerOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemHealthCheckerInput` via:
 //
-//          GetBackendSetsBackendSetCollectionItemHealthCheckerArgs{...}
+//	GetBackendSetsBackendSetCollectionItemHealthCheckerArgs{...}
 type GetBackendSetsBackendSetCollectionItemHealthCheckerInput interface {
 	pulumi.Input
 
@@ -2195,7 +2195,7 @@ func (i GetBackendSetsBackendSetCollectionItemHealthCheckerArgs) ToGetBackendSet
 // GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemHealthCheckerArray and GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput` via:
 //
-//          GetBackendSetsBackendSetCollectionItemHealthCheckerArray{ GetBackendSetsBackendSetCollectionItemHealthCheckerArgs{...} }
+//	GetBackendSetsBackendSetCollectionItemHealthCheckerArray{ GetBackendSetsBackendSetCollectionItemHealthCheckerArgs{...} }
 type GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput interface {
 	pulumi.Input
 
@@ -2311,7 +2311,7 @@ type GetBackendSetsFilter struct {
 // GetBackendSetsFilterInput is an input type that accepts GetBackendSetsFilterArgs and GetBackendSetsFilterOutput values.
 // You can construct a concrete instance of `GetBackendSetsFilterInput` via:
 //
-//          GetBackendSetsFilterArgs{...}
+//	GetBackendSetsFilterArgs{...}
 type GetBackendSetsFilterInput interface {
 	pulumi.Input
 
@@ -2341,7 +2341,7 @@ func (i GetBackendSetsFilterArgs) ToGetBackendSetsFilterOutputWithContext(ctx co
 // GetBackendSetsFilterArrayInput is an input type that accepts GetBackendSetsFilterArray and GetBackendSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsFilterArrayInput` via:
 //
-//          GetBackendSetsFilterArray{ GetBackendSetsFilterArgs{...} }
+//	GetBackendSetsFilterArray{ GetBackendSetsFilterArgs{...} }
 type GetBackendSetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2417,7 +2417,7 @@ type GetBackendsBackendCollection struct {
 // GetBackendsBackendCollectionInput is an input type that accepts GetBackendsBackendCollectionArgs and GetBackendsBackendCollectionOutput values.
 // You can construct a concrete instance of `GetBackendsBackendCollectionInput` via:
 //
-//          GetBackendsBackendCollectionArgs{...}
+//	GetBackendsBackendCollectionArgs{...}
 type GetBackendsBackendCollectionInput interface {
 	pulumi.Input
 
@@ -2444,7 +2444,7 @@ func (i GetBackendsBackendCollectionArgs) ToGetBackendsBackendCollectionOutputWi
 // GetBackendsBackendCollectionArrayInput is an input type that accepts GetBackendsBackendCollectionArray and GetBackendsBackendCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBackendsBackendCollectionArrayInput` via:
 //
-//          GetBackendsBackendCollectionArray{ GetBackendsBackendCollectionArgs{...} }
+//	GetBackendsBackendCollectionArray{ GetBackendsBackendCollectionArgs{...} }
 type GetBackendsBackendCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2531,7 +2531,7 @@ type GetBackendsBackendCollectionItem struct {
 // GetBackendsBackendCollectionItemInput is an input type that accepts GetBackendsBackendCollectionItemArgs and GetBackendsBackendCollectionItemOutput values.
 // You can construct a concrete instance of `GetBackendsBackendCollectionItemInput` via:
 //
-//          GetBackendsBackendCollectionItemArgs{...}
+//	GetBackendsBackendCollectionItemArgs{...}
 type GetBackendsBackendCollectionItemInput interface {
 	pulumi.Input
 
@@ -2578,7 +2578,7 @@ func (i GetBackendsBackendCollectionItemArgs) ToGetBackendsBackendCollectionItem
 // GetBackendsBackendCollectionItemArrayInput is an input type that accepts GetBackendsBackendCollectionItemArray and GetBackendsBackendCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBackendsBackendCollectionItemArrayInput` via:
 //
-//          GetBackendsBackendCollectionItemArray{ GetBackendsBackendCollectionItemArgs{...} }
+//	GetBackendsBackendCollectionItemArray{ GetBackendsBackendCollectionItemArgs{...} }
 type GetBackendsBackendCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2698,7 +2698,7 @@ type GetBackendsFilter struct {
 // GetBackendsFilterInput is an input type that accepts GetBackendsFilterArgs and GetBackendsFilterOutput values.
 // You can construct a concrete instance of `GetBackendsFilterInput` via:
 //
-//          GetBackendsFilterArgs{...}
+//	GetBackendsFilterArgs{...}
 type GetBackendsFilterInput interface {
 	pulumi.Input
 
@@ -2728,7 +2728,7 @@ func (i GetBackendsFilterArgs) ToGetBackendsFilterOutputWithContext(ctx context.
 // GetBackendsFilterArrayInput is an input type that accepts GetBackendsFilterArray and GetBackendsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackendsFilterArrayInput` via:
 //
-//          GetBackendsFilterArray{ GetBackendsFilterArgs{...} }
+//	GetBackendsFilterArray{ GetBackendsFilterArgs{...} }
 type GetBackendsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2807,7 +2807,7 @@ type GetListenersFilter struct {
 // GetListenersFilterInput is an input type that accepts GetListenersFilterArgs and GetListenersFilterOutput values.
 // You can construct a concrete instance of `GetListenersFilterInput` via:
 //
-//          GetListenersFilterArgs{...}
+//	GetListenersFilterArgs{...}
 type GetListenersFilterInput interface {
 	pulumi.Input
 
@@ -2837,7 +2837,7 @@ func (i GetListenersFilterArgs) ToGetListenersFilterOutputWithContext(ctx contex
 // GetListenersFilterArrayInput is an input type that accepts GetListenersFilterArray and GetListenersFilterArrayOutput values.
 // You can construct a concrete instance of `GetListenersFilterArrayInput` via:
 //
-//          GetListenersFilterArray{ GetListenersFilterArgs{...} }
+//	GetListenersFilterArray{ GetListenersFilterArgs{...} }
 type GetListenersFilterArrayInput interface {
 	pulumi.Input
 
@@ -2913,7 +2913,7 @@ type GetListenersListenerCollection struct {
 // GetListenersListenerCollectionInput is an input type that accepts GetListenersListenerCollectionArgs and GetListenersListenerCollectionOutput values.
 // You can construct a concrete instance of `GetListenersListenerCollectionInput` via:
 //
-//          GetListenersListenerCollectionArgs{...}
+//	GetListenersListenerCollectionArgs{...}
 type GetListenersListenerCollectionInput interface {
 	pulumi.Input
 
@@ -2940,7 +2940,7 @@ func (i GetListenersListenerCollectionArgs) ToGetListenersListenerCollectionOutp
 // GetListenersListenerCollectionArrayInput is an input type that accepts GetListenersListenerCollectionArray and GetListenersListenerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetListenersListenerCollectionArrayInput` via:
 //
-//          GetListenersListenerCollectionArray{ GetListenersListenerCollectionArgs{...} }
+//	GetListenersListenerCollectionArray{ GetListenersListenerCollectionArgs{...} }
 type GetListenersListenerCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3019,7 +3019,7 @@ type GetListenersListenerCollectionItem struct {
 // GetListenersListenerCollectionItemInput is an input type that accepts GetListenersListenerCollectionItemArgs and GetListenersListenerCollectionItemOutput values.
 // You can construct a concrete instance of `GetListenersListenerCollectionItemInput` via:
 //
-//          GetListenersListenerCollectionItemArgs{...}
+//	GetListenersListenerCollectionItemArgs{...}
 type GetListenersListenerCollectionItemInput interface {
 	pulumi.Input
 
@@ -3058,7 +3058,7 @@ func (i GetListenersListenerCollectionItemArgs) ToGetListenersListenerCollection
 // GetListenersListenerCollectionItemArrayInput is an input type that accepts GetListenersListenerCollectionItemArray and GetListenersListenerCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetListenersListenerCollectionItemArrayInput` via:
 //
-//          GetListenersListenerCollectionItemArray{ GetListenersListenerCollectionItemArgs{...} }
+//	GetListenersListenerCollectionItemArray{ GetListenersListenerCollectionItemArgs{...} }
 type GetListenersListenerCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3162,7 +3162,7 @@ type GetNetworkLoadBalancerIpAddress struct {
 // GetNetworkLoadBalancerIpAddressInput is an input type that accepts GetNetworkLoadBalancerIpAddressArgs and GetNetworkLoadBalancerIpAddressOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancerIpAddressInput` via:
 //
-//          GetNetworkLoadBalancerIpAddressArgs{...}
+//	GetNetworkLoadBalancerIpAddressArgs{...}
 type GetNetworkLoadBalancerIpAddressInput interface {
 	pulumi.Input
 
@@ -3196,7 +3196,7 @@ func (i GetNetworkLoadBalancerIpAddressArgs) ToGetNetworkLoadBalancerIpAddressOu
 // GetNetworkLoadBalancerIpAddressArrayInput is an input type that accepts GetNetworkLoadBalancerIpAddressArray and GetNetworkLoadBalancerIpAddressArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancerIpAddressArrayInput` via:
 //
-//          GetNetworkLoadBalancerIpAddressArray{ GetNetworkLoadBalancerIpAddressArgs{...} }
+//	GetNetworkLoadBalancerIpAddressArray{ GetNetworkLoadBalancerIpAddressArgs{...} }
 type GetNetworkLoadBalancerIpAddressArrayInput interface {
 	pulumi.Input
 
@@ -3282,7 +3282,7 @@ type GetNetworkLoadBalancerIpAddressReservedIp struct {
 // GetNetworkLoadBalancerIpAddressReservedIpInput is an input type that accepts GetNetworkLoadBalancerIpAddressReservedIpArgs and GetNetworkLoadBalancerIpAddressReservedIpOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancerIpAddressReservedIpInput` via:
 //
-//          GetNetworkLoadBalancerIpAddressReservedIpArgs{...}
+//	GetNetworkLoadBalancerIpAddressReservedIpArgs{...}
 type GetNetworkLoadBalancerIpAddressReservedIpInput interface {
 	pulumi.Input
 
@@ -3310,7 +3310,7 @@ func (i GetNetworkLoadBalancerIpAddressReservedIpArgs) ToGetNetworkLoadBalancerI
 // GetNetworkLoadBalancerIpAddressReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancerIpAddressReservedIpArray and GetNetworkLoadBalancerIpAddressReservedIpArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancerIpAddressReservedIpArrayInput` via:
 //
-//          GetNetworkLoadBalancerIpAddressReservedIpArray{ GetNetworkLoadBalancerIpAddressReservedIpArgs{...} }
+//	GetNetworkLoadBalancerIpAddressReservedIpArray{ GetNetworkLoadBalancerIpAddressReservedIpArgs{...} }
 type GetNetworkLoadBalancerIpAddressReservedIpArrayInput interface {
 	pulumi.Input
 
@@ -3379,7 +3379,7 @@ type GetNetworkLoadBalancerReservedIp struct {
 // GetNetworkLoadBalancerReservedIpInput is an input type that accepts GetNetworkLoadBalancerReservedIpArgs and GetNetworkLoadBalancerReservedIpOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancerReservedIpInput` via:
 //
-//          GetNetworkLoadBalancerReservedIpArgs{...}
+//	GetNetworkLoadBalancerReservedIpArgs{...}
 type GetNetworkLoadBalancerReservedIpInput interface {
 	pulumi.Input
 
@@ -3407,7 +3407,7 @@ func (i GetNetworkLoadBalancerReservedIpArgs) ToGetNetworkLoadBalancerReservedIp
 // GetNetworkLoadBalancerReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancerReservedIpArray and GetNetworkLoadBalancerReservedIpArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancerReservedIpArrayInput` via:
 //
-//          GetNetworkLoadBalancerReservedIpArray{ GetNetworkLoadBalancerReservedIpArgs{...} }
+//	GetNetworkLoadBalancerReservedIpArray{ GetNetworkLoadBalancerReservedIpArgs{...} }
 type GetNetworkLoadBalancerReservedIpArrayInput interface {
 	pulumi.Input
 
@@ -3477,7 +3477,7 @@ type GetNetworkLoadBalancersFilter struct {
 // GetNetworkLoadBalancersFilterInput is an input type that accepts GetNetworkLoadBalancersFilterArgs and GetNetworkLoadBalancersFilterOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersFilterInput` via:
 //
-//          GetNetworkLoadBalancersFilterArgs{...}
+//	GetNetworkLoadBalancersFilterArgs{...}
 type GetNetworkLoadBalancersFilterInput interface {
 	pulumi.Input
 
@@ -3506,7 +3506,7 @@ func (i GetNetworkLoadBalancersFilterArgs) ToGetNetworkLoadBalancersFilterOutput
 // GetNetworkLoadBalancersFilterArrayInput is an input type that accepts GetNetworkLoadBalancersFilterArray and GetNetworkLoadBalancersFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersFilterArrayInput` via:
 //
-//          GetNetworkLoadBalancersFilterArray{ GetNetworkLoadBalancersFilterArgs{...} }
+//	GetNetworkLoadBalancersFilterArray{ GetNetworkLoadBalancersFilterArgs{...} }
 type GetNetworkLoadBalancersFilterArrayInput interface {
 	pulumi.Input
 
@@ -3581,7 +3581,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollection struct {
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs{...}
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs{...}
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionInput interface {
 	pulumi.Input
 
@@ -3608,7 +3608,7 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs) ToGetNetworkLo
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs{...} }
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs{...} }
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3709,7 +3709,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem struct {
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs{...}
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs{...}
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemInput interface {
 	pulumi.Input
 
@@ -3768,7 +3768,7 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs) ToGetNetwo
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs{...} }
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs{...} }
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3937,7 +3937,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress struct {
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs{...}
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs{...}
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressInput interface {
 	pulumi.Input
 
@@ -3972,7 +3972,7 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs) T
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs{...} }
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs{...} }
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayInput interface {
 	pulumi.Input
 
@@ -4059,7 +4059,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs{...}
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs{...}
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpInput interface {
 	pulumi.Input
 
@@ -4087,7 +4087,7 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs{...} }
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs{...} }
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayInput interface {
 	pulumi.Input
 
@@ -4158,7 +4158,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp struct {
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs{...}
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs{...}
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpInput interface {
 	pulumi.Input
 
@@ -4186,7 +4186,7 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs) 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayInput` via:
 //
-//          GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs{...} }
+//	GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArray{ GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs{...} }
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayInput interface {
 	pulumi.Input
 
@@ -4256,7 +4256,7 @@ type GetNetworkLoadBalancersPoliciesFilter struct {
 // GetNetworkLoadBalancersPoliciesFilterInput is an input type that accepts GetNetworkLoadBalancersPoliciesFilterArgs and GetNetworkLoadBalancersPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersPoliciesFilterInput` via:
 //
-//          GetNetworkLoadBalancersPoliciesFilterArgs{...}
+//	GetNetworkLoadBalancersPoliciesFilterArgs{...}
 type GetNetworkLoadBalancersPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -4285,7 +4285,7 @@ func (i GetNetworkLoadBalancersPoliciesFilterArgs) ToGetNetworkLoadBalancersPoli
 // GetNetworkLoadBalancersPoliciesFilterArrayInput is an input type that accepts GetNetworkLoadBalancersPoliciesFilterArray and GetNetworkLoadBalancersPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersPoliciesFilterArrayInput` via:
 //
-//          GetNetworkLoadBalancersPoliciesFilterArray{ GetNetworkLoadBalancersPoliciesFilterArgs{...} }
+//	GetNetworkLoadBalancersPoliciesFilterArray{ GetNetworkLoadBalancersPoliciesFilterArgs{...} }
 type GetNetworkLoadBalancersPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4361,7 +4361,7 @@ type GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection struct 
 // GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionInput is an input type that accepts GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs and GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionInput` via:
 //
-//          GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs{...}
+//	GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs{...}
 type GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -4389,7 +4389,7 @@ func (i GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs)
 // GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayInput is an input type that accepts GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray and GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayInput` via:
 //
-//          GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray{ GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs{...} }
+//	GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray{ GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs{...} }
 type GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4459,7 +4459,7 @@ type GetNetworkLoadBalancersProtocolsFilter struct {
 // GetNetworkLoadBalancersProtocolsFilterInput is an input type that accepts GetNetworkLoadBalancersProtocolsFilterArgs and GetNetworkLoadBalancersProtocolsFilterOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersProtocolsFilterInput` via:
 //
-//          GetNetworkLoadBalancersProtocolsFilterArgs{...}
+//	GetNetworkLoadBalancersProtocolsFilterArgs{...}
 type GetNetworkLoadBalancersProtocolsFilterInput interface {
 	pulumi.Input
 
@@ -4488,7 +4488,7 @@ func (i GetNetworkLoadBalancersProtocolsFilterArgs) ToGetNetworkLoadBalancersPro
 // GetNetworkLoadBalancersProtocolsFilterArrayInput is an input type that accepts GetNetworkLoadBalancersProtocolsFilterArray and GetNetworkLoadBalancersProtocolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersProtocolsFilterArrayInput` via:
 //
-//          GetNetworkLoadBalancersProtocolsFilterArray{ GetNetworkLoadBalancersProtocolsFilterArgs{...} }
+//	GetNetworkLoadBalancersProtocolsFilterArray{ GetNetworkLoadBalancersProtocolsFilterArgs{...} }
 type GetNetworkLoadBalancersProtocolsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4564,7 +4564,7 @@ type GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection stru
 // GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionInput is an input type that accepts GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArgs and GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionInput` via:
 //
-//          GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArgs{...}
+//	GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArgs{...}
 type GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionInput interface {
 	pulumi.Input
 
@@ -4592,7 +4592,7 @@ func (i GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionAr
 // GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayInput is an input type that accepts GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArray and GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayInput` via:
 //
-//          GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArray{ GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArgs{...} }
+//	GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArray{ GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArgs{...} }
 type GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayInput interface {
 	pulumi.Input
 

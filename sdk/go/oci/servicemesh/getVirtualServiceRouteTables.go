@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetVirtualServiceRouteTables(ctx, &servicemesh.GetVirtualServiceRouteTablesArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			Id:               pulumi.StringRef(_var.Virtual_service_route_table_id),
-// 			Name:             pulumi.StringRef(_var.Virtual_service_route_table_name),
-// 			State:            pulumi.StringRef(_var.Virtual_service_route_table_state),
-// 			VirtualServiceId: pulumi.StringRef(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetVirtualServiceRouteTables(ctx, &servicemesh.GetVirtualServiceRouteTablesArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				Id:               pulumi.StringRef(_var.Virtual_service_route_table_id),
+//				Name:             pulumi.StringRef(_var.Virtual_service_route_table_name),
+//				State:            pulumi.StringRef(_var.Virtual_service_route_table_state),
+//				VirtualServiceId: pulumi.StringRef(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVirtualServiceRouteTables(ctx *pulumi.Context, args *GetVirtualServiceRouteTablesArgs, opts ...pulumi.InvokeOption) (*GetVirtualServiceRouteTablesResult, error) {
 	var rv GetVirtualServiceRouteTablesResult

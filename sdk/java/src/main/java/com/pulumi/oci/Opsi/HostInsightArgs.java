@@ -33,6 +33,21 @@ public final class HostInsightArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * 
+     */
+    @Import(name="computeId")
+    private @Nullable Output<String> computeId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * 
+     */
+    public Optional<Output<String>> computeId() {
+        return Optional.ofNullable(this.computeId);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -171,6 +186,7 @@ public final class HostInsightArgs extends com.pulumi.resources.ResourceArgs {
 
     private HostInsightArgs(HostInsightArgs $) {
         this.compartmentId = $.compartmentId;
+        this.computeId = $.computeId;
         this.definedTags = $.definedTags;
         this.enterpriseManagerBridgeId = $.enterpriseManagerBridgeId;
         this.enterpriseManagerEntityIdentifier = $.enterpriseManagerEntityIdentifier;
@@ -219,6 +235,27 @@ public final class HostInsightArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeId(@Nullable Output<String> computeId) {
+            $.computeId = computeId;
+            return this;
+        }
+
+        /**
+         * @param computeId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeId(String computeId) {
+            return computeId(Output.of(computeId));
         }
 
         /**

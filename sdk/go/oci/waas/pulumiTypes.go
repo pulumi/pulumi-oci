@@ -22,7 +22,7 @@ type CertificateExtension struct {
 // CertificateExtensionInput is an input type that accepts CertificateExtensionArgs and CertificateExtensionOutput values.
 // You can construct a concrete instance of `CertificateExtensionInput` via:
 //
-//          CertificateExtensionArgs{...}
+//	CertificateExtensionArgs{...}
 type CertificateExtensionInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i CertificateExtensionArgs) ToCertificateExtensionOutputWithContext(ctx co
 // CertificateExtensionArrayInput is an input type that accepts CertificateExtensionArray and CertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `CertificateExtensionArrayInput` via:
 //
-//          CertificateExtensionArray{ CertificateExtensionArgs{...} }
+//	CertificateExtensionArray{ CertificateExtensionArgs{...} }
 type CertificateExtensionArrayInput interface {
 	pulumi.Input
 
@@ -145,7 +145,7 @@ type CertificateIssuerName struct {
 // CertificateIssuerNameInput is an input type that accepts CertificateIssuerNameArgs and CertificateIssuerNameOutput values.
 // You can construct a concrete instance of `CertificateIssuerNameInput` via:
 //
-//          CertificateIssuerNameArgs{...}
+//	CertificateIssuerNameArgs{...}
 type CertificateIssuerNameInput interface {
 	pulumi.Input
 
@@ -185,7 +185,7 @@ func (i CertificateIssuerNameArgs) ToCertificateIssuerNameOutputWithContext(ctx 
 // CertificateIssuerNameArrayInput is an input type that accepts CertificateIssuerNameArray and CertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `CertificateIssuerNameArrayInput` via:
 //
-//          CertificateIssuerNameArray{ CertificateIssuerNameArgs{...} }
+//	CertificateIssuerNameArray{ CertificateIssuerNameArgs{...} }
 type CertificateIssuerNameArrayInput interface {
 	pulumi.Input
 
@@ -288,7 +288,7 @@ type CertificatePublicKeyInfo struct {
 // CertificatePublicKeyInfoInput is an input type that accepts CertificatePublicKeyInfoArgs and CertificatePublicKeyInfoOutput values.
 // You can construct a concrete instance of `CertificatePublicKeyInfoInput` via:
 //
-//          CertificatePublicKeyInfoArgs{...}
+//	CertificatePublicKeyInfoArgs{...}
 type CertificatePublicKeyInfoInput interface {
 	pulumi.Input
 
@@ -320,7 +320,7 @@ func (i CertificatePublicKeyInfoArgs) ToCertificatePublicKeyInfoOutputWithContex
 // CertificatePublicKeyInfoArrayInput is an input type that accepts CertificatePublicKeyInfoArray and CertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `CertificatePublicKeyInfoArrayInput` via:
 //
-//          CertificatePublicKeyInfoArray{ CertificatePublicKeyInfoArgs{...} }
+//	CertificatePublicKeyInfoArray{ CertificatePublicKeyInfoArgs{...} }
 type CertificatePublicKeyInfoArrayInput interface {
 	pulumi.Input
 
@@ -411,7 +411,7 @@ type CertificateSubjectName struct {
 // CertificateSubjectNameInput is an input type that accepts CertificateSubjectNameArgs and CertificateSubjectNameOutput values.
 // You can construct a concrete instance of `CertificateSubjectNameInput` via:
 //
-//          CertificateSubjectNameArgs{...}
+//	CertificateSubjectNameArgs{...}
 type CertificateSubjectNameInput interface {
 	pulumi.Input
 
@@ -451,7 +451,7 @@ func (i CertificateSubjectNameArgs) ToCertificateSubjectNameOutputWithContext(ct
 // CertificateSubjectNameArrayInput is an input type that accepts CertificateSubjectNameArray and CertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `CertificateSubjectNameArrayInput` via:
 //
-//          CertificateSubjectNameArray{ CertificateSubjectNameArgs{...} }
+//	CertificateSubjectNameArray{ CertificateSubjectNameArgs{...} }
 type CertificateSubjectNameArrayInput interface {
 	pulumi.Input
 
@@ -558,7 +558,7 @@ type HttpRedirectTarget struct {
 // HttpRedirectTargetInput is an input type that accepts HttpRedirectTargetArgs and HttpRedirectTargetOutput values.
 // You can construct a concrete instance of `HttpRedirectTargetInput` via:
 //
-//          HttpRedirectTargetArgs{...}
+//	HttpRedirectTargetArgs{...}
 type HttpRedirectTargetInput interface {
 	pulumi.Input
 
@@ -602,11 +602,11 @@ func (i HttpRedirectTargetArgs) ToHttpRedirectTargetPtrOutputWithContext(ctx con
 // HttpRedirectTargetPtrInput is an input type that accepts HttpRedirectTargetArgs, HttpRedirectTargetPtr and HttpRedirectTargetPtrOutput values.
 // You can construct a concrete instance of `HttpRedirectTargetPtrInput` via:
 //
-//          HttpRedirectTargetArgs{...}
+//	        HttpRedirectTargetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type HttpRedirectTargetPtrInput interface {
 	pulumi.Input
 
@@ -770,7 +770,7 @@ type PolicyOrigin struct {
 // PolicyOriginInput is an input type that accepts PolicyOriginArgs and PolicyOriginOutput values.
 // You can construct a concrete instance of `PolicyOriginInput` via:
 //
-//          PolicyOriginArgs{...}
+//	PolicyOriginArgs{...}
 type PolicyOriginInput interface {
 	pulumi.Input
 
@@ -805,7 +805,7 @@ func (i PolicyOriginArgs) ToPolicyOriginOutputWithContext(ctx context.Context) P
 // PolicyOriginArrayInput is an input type that accepts PolicyOriginArray and PolicyOriginArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginArrayInput` via:
 //
-//          PolicyOriginArray{ PolicyOriginArgs{...} }
+//	PolicyOriginArray{ PolicyOriginArgs{...} }
 type PolicyOriginArrayInput interface {
 	pulumi.Input
 
@@ -895,7 +895,7 @@ type PolicyOriginCustomHeader struct {
 // PolicyOriginCustomHeaderInput is an input type that accepts PolicyOriginCustomHeaderArgs and PolicyOriginCustomHeaderOutput values.
 // You can construct a concrete instance of `PolicyOriginCustomHeaderInput` via:
 //
-//          PolicyOriginCustomHeaderArgs{...}
+//	PolicyOriginCustomHeaderArgs{...}
 type PolicyOriginCustomHeaderInput interface {
 	pulumi.Input
 
@@ -925,7 +925,7 @@ func (i PolicyOriginCustomHeaderArgs) ToPolicyOriginCustomHeaderOutputWithContex
 // PolicyOriginCustomHeaderArrayInput is an input type that accepts PolicyOriginCustomHeaderArray and PolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginCustomHeaderArrayInput` via:
 //
-//          PolicyOriginCustomHeaderArray{ PolicyOriginCustomHeaderArgs{...} }
+//	PolicyOriginCustomHeaderArray{ PolicyOriginCustomHeaderArgs{...} }
 type PolicyOriginCustomHeaderArrayInput interface {
 	pulumi.Input
 
@@ -999,7 +999,7 @@ type PolicyOriginGroup struct {
 // PolicyOriginGroupInput is an input type that accepts PolicyOriginGroupArgs and PolicyOriginGroupOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupInput` via:
 //
-//          PolicyOriginGroupArgs{...}
+//	PolicyOriginGroupArgs{...}
 type PolicyOriginGroupInput interface {
 	pulumi.Input
 
@@ -1027,7 +1027,7 @@ func (i PolicyOriginGroupArgs) ToPolicyOriginGroupOutputWithContext(ctx context.
 // PolicyOriginGroupArrayInput is an input type that accepts PolicyOriginGroupArray and PolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupArrayInput` via:
 //
-//          PolicyOriginGroupArray{ PolicyOriginGroupArgs{...} }
+//	PolicyOriginGroupArray{ PolicyOriginGroupArgs{...} }
 type PolicyOriginGroupArrayInput interface {
 	pulumi.Input
 
@@ -1100,7 +1100,7 @@ type PolicyOriginGroupOriginGroup struct {
 // PolicyOriginGroupOriginGroupInput is an input type that accepts PolicyOriginGroupOriginGroupArgs and PolicyOriginGroupOriginGroupOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupOriginGroupInput` via:
 //
-//          PolicyOriginGroupOriginGroupArgs{...}
+//	PolicyOriginGroupOriginGroupArgs{...}
 type PolicyOriginGroupOriginGroupInput interface {
 	pulumi.Input
 
@@ -1129,7 +1129,7 @@ func (i PolicyOriginGroupOriginGroupArgs) ToPolicyOriginGroupOriginGroupOutputWi
 // PolicyOriginGroupOriginGroupArrayInput is an input type that accepts PolicyOriginGroupOriginGroupArray and PolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupOriginGroupArrayInput` via:
 //
-//          PolicyOriginGroupOriginGroupArray{ PolicyOriginGroupOriginGroupArgs{...} }
+//	PolicyOriginGroupOriginGroupArray{ PolicyOriginGroupOriginGroupArgs{...} }
 type PolicyOriginGroupOriginGroupArrayInput interface {
 	pulumi.Input
 
@@ -1233,7 +1233,7 @@ type PolicyPolicyConfig struct {
 // PolicyPolicyConfigInput is an input type that accepts PolicyPolicyConfigArgs and PolicyPolicyConfigOutput values.
 // You can construct a concrete instance of `PolicyPolicyConfigInput` via:
 //
-//          PolicyPolicyConfigArgs{...}
+//	PolicyPolicyConfigArgs{...}
 type PolicyPolicyConfigInput interface {
 	pulumi.Input
 
@@ -1300,11 +1300,11 @@ func (i PolicyPolicyConfigArgs) ToPolicyPolicyConfigPtrOutputWithContext(ctx con
 // PolicyPolicyConfigPtrInput is an input type that accepts PolicyPolicyConfigArgs, PolicyPolicyConfigPtr and PolicyPolicyConfigPtrOutput values.
 // You can construct a concrete instance of `PolicyPolicyConfigPtrInput` via:
 //
-//          PolicyPolicyConfigArgs{...}
+//	        PolicyPolicyConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyPolicyConfigPtrInput interface {
 	pulumi.Input
 
@@ -1633,7 +1633,7 @@ type PolicyPolicyConfigHealthChecks struct {
 // PolicyPolicyConfigHealthChecksInput is an input type that accepts PolicyPolicyConfigHealthChecksArgs and PolicyPolicyConfigHealthChecksOutput values.
 // You can construct a concrete instance of `PolicyPolicyConfigHealthChecksInput` via:
 //
-//          PolicyPolicyConfigHealthChecksArgs{...}
+//	PolicyPolicyConfigHealthChecksArgs{...}
 type PolicyPolicyConfigHealthChecksInput interface {
 	pulumi.Input
 
@@ -1696,11 +1696,11 @@ func (i PolicyPolicyConfigHealthChecksArgs) ToPolicyPolicyConfigHealthChecksPtrO
 // PolicyPolicyConfigHealthChecksPtrInput is an input type that accepts PolicyPolicyConfigHealthChecksArgs, PolicyPolicyConfigHealthChecksPtr and PolicyPolicyConfigHealthChecksPtrOutput values.
 // You can construct a concrete instance of `PolicyPolicyConfigHealthChecksPtrInput` via:
 //
-//          PolicyPolicyConfigHealthChecksArgs{...}
+//	        PolicyPolicyConfigHealthChecksArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyPolicyConfigHealthChecksPtrInput interface {
 	pulumi.Input
 
@@ -1970,7 +1970,7 @@ type PolicyPolicyConfigLoadBalancingMethod struct {
 // PolicyPolicyConfigLoadBalancingMethodInput is an input type that accepts PolicyPolicyConfigLoadBalancingMethodArgs and PolicyPolicyConfigLoadBalancingMethodOutput values.
 // You can construct a concrete instance of `PolicyPolicyConfigLoadBalancingMethodInput` via:
 //
-//          PolicyPolicyConfigLoadBalancingMethodArgs{...}
+//	PolicyPolicyConfigLoadBalancingMethodArgs{...}
 type PolicyPolicyConfigLoadBalancingMethodInput interface {
 	pulumi.Input
 
@@ -2015,11 +2015,11 @@ func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToPolicyPolicyConfigLoadBalan
 // PolicyPolicyConfigLoadBalancingMethodPtrInput is an input type that accepts PolicyPolicyConfigLoadBalancingMethodArgs, PolicyPolicyConfigLoadBalancingMethodPtr and PolicyPolicyConfigLoadBalancingMethodPtrOutput values.
 // You can construct a concrete instance of `PolicyPolicyConfigLoadBalancingMethodPtrInput` via:
 //
-//          PolicyPolicyConfigLoadBalancingMethodArgs{...}
+//	        PolicyPolicyConfigLoadBalancingMethodArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyPolicyConfigLoadBalancingMethodPtrInput interface {
 	pulumi.Input
 
@@ -2189,7 +2189,7 @@ type PolicyWafConfig struct {
 // PolicyWafConfigInput is an input type that accepts PolicyWafConfigArgs and PolicyWafConfigOutput values.
 // You can construct a concrete instance of `PolicyWafConfigInput` via:
 //
-//          PolicyWafConfigArgs{...}
+//	PolicyWafConfigArgs{...}
 type PolicyWafConfigInput interface {
 	pulumi.Input
 
@@ -2247,11 +2247,11 @@ func (i PolicyWafConfigArgs) ToPolicyWafConfigPtrOutputWithContext(ctx context.C
 // PolicyWafConfigPtrInput is an input type that accepts PolicyWafConfigArgs, PolicyWafConfigPtr and PolicyWafConfigPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigPtrInput` via:
 //
-//          PolicyWafConfigArgs{...}
+//	        PolicyWafConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigPtrInput interface {
 	pulumi.Input
 
@@ -2551,7 +2551,7 @@ type PolicyWafConfigAccessRule struct {
 // PolicyWafConfigAccessRuleInput is an input type that accepts PolicyWafConfigAccessRuleArgs and PolicyWafConfigAccessRuleOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleInput` via:
 //
-//          PolicyWafConfigAccessRuleArgs{...}
+//	PolicyWafConfigAccessRuleArgs{...}
 type PolicyWafConfigAccessRuleInput interface {
 	pulumi.Input
 
@@ -2615,7 +2615,7 @@ func (i PolicyWafConfigAccessRuleArgs) ToPolicyWafConfigAccessRuleOutputWithCont
 // PolicyWafConfigAccessRuleArrayInput is an input type that accepts PolicyWafConfigAccessRuleArray and PolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleArrayInput` via:
 //
-//          PolicyWafConfigAccessRuleArray{ PolicyWafConfigAccessRuleArgs{...} }
+//	PolicyWafConfigAccessRuleArray{ PolicyWafConfigAccessRuleArgs{...} }
 type PolicyWafConfigAccessRuleArrayInput interface {
 	pulumi.Input
 
@@ -2787,7 +2787,7 @@ type PolicyWafConfigAccessRuleCriteria struct {
 // PolicyWafConfigAccessRuleCriteriaInput is an input type that accepts PolicyWafConfigAccessRuleCriteriaArgs and PolicyWafConfigAccessRuleCriteriaOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleCriteriaInput` via:
 //
-//          PolicyWafConfigAccessRuleCriteriaArgs{...}
+//	PolicyWafConfigAccessRuleCriteriaArgs{...}
 type PolicyWafConfigAccessRuleCriteriaInput interface {
 	pulumi.Input
 
@@ -2835,7 +2835,7 @@ func (i PolicyWafConfigAccessRuleCriteriaArgs) ToPolicyWafConfigAccessRuleCriter
 // PolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts PolicyWafConfigAccessRuleCriteriaArray and PolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
-//          PolicyWafConfigAccessRuleCriteriaArray{ PolicyWafConfigAccessRuleCriteriaArgs{...} }
+//	PolicyWafConfigAccessRuleCriteriaArray{ PolicyWafConfigAccessRuleCriteriaArgs{...} }
 type PolicyWafConfigAccessRuleCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -2934,7 +2934,7 @@ type PolicyWafConfigAccessRuleResponseHeaderManipulation struct {
 // PolicyWafConfigAccessRuleResponseHeaderManipulationInput is an input type that accepts PolicyWafConfigAccessRuleResponseHeaderManipulationArgs and PolicyWafConfigAccessRuleResponseHeaderManipulationOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleResponseHeaderManipulationInput` via:
 //
-//          PolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...}
+//	PolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...}
 type PolicyWafConfigAccessRuleResponseHeaderManipulationInput interface {
 	pulumi.Input
 
@@ -2966,7 +2966,7 @@ func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToPolicyWafConf
 // PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts PolicyWafConfigAccessRuleResponseHeaderManipulationArray and PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
-//          PolicyWafConfigAccessRuleResponseHeaderManipulationArray{ PolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...} }
+//	PolicyWafConfigAccessRuleResponseHeaderManipulationArray{ PolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...} }
 type PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput interface {
 	pulumi.Input
 
@@ -3051,7 +3051,7 @@ type PolicyWafConfigAddressRateLimiting struct {
 // PolicyWafConfigAddressRateLimitingInput is an input type that accepts PolicyWafConfigAddressRateLimitingArgs and PolicyWafConfigAddressRateLimitingOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAddressRateLimitingInput` via:
 //
-//          PolicyWafConfigAddressRateLimitingArgs{...}
+//	PolicyWafConfigAddressRateLimitingArgs{...}
 type PolicyWafConfigAddressRateLimitingInput interface {
 	pulumi.Input
 
@@ -3093,11 +3093,11 @@ func (i PolicyWafConfigAddressRateLimitingArgs) ToPolicyWafConfigAddressRateLimi
 // PolicyWafConfigAddressRateLimitingPtrInput is an input type that accepts PolicyWafConfigAddressRateLimitingArgs, PolicyWafConfigAddressRateLimitingPtr and PolicyWafConfigAddressRateLimitingPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAddressRateLimitingPtrInput` via:
 //
-//          PolicyWafConfigAddressRateLimitingArgs{...}
+//	        PolicyWafConfigAddressRateLimitingArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigAddressRateLimitingPtrInput interface {
 	pulumi.Input
 
@@ -3251,7 +3251,7 @@ type PolicyWafConfigCachingRule struct {
 // PolicyWafConfigCachingRuleInput is an input type that accepts PolicyWafConfigCachingRuleArgs and PolicyWafConfigCachingRuleOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleInput` via:
 //
-//          PolicyWafConfigCachingRuleArgs{...}
+//	PolicyWafConfigCachingRuleArgs{...}
 type PolicyWafConfigCachingRuleInput interface {
 	pulumi.Input
 
@@ -3291,7 +3291,7 @@ func (i PolicyWafConfigCachingRuleArgs) ToPolicyWafConfigCachingRuleOutputWithCo
 // PolicyWafConfigCachingRuleArrayInput is an input type that accepts PolicyWafConfigCachingRuleArray and PolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleArrayInput` via:
 //
-//          PolicyWafConfigCachingRuleArray{ PolicyWafConfigCachingRuleArgs{...} }
+//	PolicyWafConfigCachingRuleArray{ PolicyWafConfigCachingRuleArgs{...} }
 type PolicyWafConfigCachingRuleArrayInput interface {
 	pulumi.Input
 
@@ -3408,7 +3408,7 @@ type PolicyWafConfigCachingRuleCriteria struct {
 // PolicyWafConfigCachingRuleCriteriaInput is an input type that accepts PolicyWafConfigCachingRuleCriteriaArgs and PolicyWafConfigCachingRuleCriteriaOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleCriteriaInput` via:
 //
-//          PolicyWafConfigCachingRuleCriteriaArgs{...}
+//	PolicyWafConfigCachingRuleCriteriaArgs{...}
 type PolicyWafConfigCachingRuleCriteriaInput interface {
 	pulumi.Input
 
@@ -3454,7 +3454,7 @@ func (i PolicyWafConfigCachingRuleCriteriaArgs) ToPolicyWafConfigCachingRuleCrit
 // PolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts PolicyWafConfigCachingRuleCriteriaArray and PolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
-//          PolicyWafConfigCachingRuleCriteriaArray{ PolicyWafConfigCachingRuleCriteriaArgs{...} }
+//	PolicyWafConfigCachingRuleCriteriaArray{ PolicyWafConfigCachingRuleCriteriaArgs{...} }
 type PolicyWafConfigCachingRuleCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -3556,7 +3556,7 @@ type PolicyWafConfigCaptcha struct {
 // PolicyWafConfigCaptchaInput is an input type that accepts PolicyWafConfigCaptchaArgs and PolicyWafConfigCaptchaOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCaptchaInput` via:
 //
-//          PolicyWafConfigCaptchaArgs{...}
+//	PolicyWafConfigCaptchaArgs{...}
 type PolicyWafConfigCaptchaInput interface {
 	pulumi.Input
 
@@ -3596,7 +3596,7 @@ func (i PolicyWafConfigCaptchaArgs) ToPolicyWafConfigCaptchaOutputWithContext(ct
 // PolicyWafConfigCaptchaArrayInput is an input type that accepts PolicyWafConfigCaptchaArray and PolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCaptchaArrayInput` via:
 //
-//          PolicyWafConfigCaptchaArray{ PolicyWafConfigCaptchaArgs{...} }
+//	PolicyWafConfigCaptchaArray{ PolicyWafConfigCaptchaArgs{...} }
 type PolicyWafConfigCaptchaArrayInput interface {
 	pulumi.Input
 
@@ -3699,7 +3699,7 @@ type PolicyWafConfigCustomProtectionRule struct {
 // PolicyWafConfigCustomProtectionRuleInput is an input type that accepts PolicyWafConfigCustomProtectionRuleArgs and PolicyWafConfigCustomProtectionRuleOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleInput` via:
 //
-//          PolicyWafConfigCustomProtectionRuleArgs{...}
+//	PolicyWafConfigCustomProtectionRuleArgs{...}
 type PolicyWafConfigCustomProtectionRuleInput interface {
 	pulumi.Input
 
@@ -3731,7 +3731,7 @@ func (i PolicyWafConfigCustomProtectionRuleArgs) ToPolicyWafConfigCustomProtecti
 // PolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts PolicyWafConfigCustomProtectionRuleArray and PolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
-//          PolicyWafConfigCustomProtectionRuleArray{ PolicyWafConfigCustomProtectionRuleArgs{...} }
+//	PolicyWafConfigCustomProtectionRuleArray{ PolicyWafConfigCustomProtectionRuleArgs{...} }
 type PolicyWafConfigCustomProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -3814,7 +3814,7 @@ type PolicyWafConfigCustomProtectionRuleExclusion struct {
 // PolicyWafConfigCustomProtectionRuleExclusionInput is an input type that accepts PolicyWafConfigCustomProtectionRuleExclusionArgs and PolicyWafConfigCustomProtectionRuleExclusionOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleExclusionInput` via:
 //
-//          PolicyWafConfigCustomProtectionRuleExclusionArgs{...}
+//	PolicyWafConfigCustomProtectionRuleExclusionArgs{...}
 type PolicyWafConfigCustomProtectionRuleExclusionInput interface {
 	pulumi.Input
 
@@ -3844,7 +3844,7 @@ func (i PolicyWafConfigCustomProtectionRuleExclusionArgs) ToPolicyWafConfigCusto
 // PolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts PolicyWafConfigCustomProtectionRuleExclusionArray and PolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
-//          PolicyWafConfigCustomProtectionRuleExclusionArray{ PolicyWafConfigCustomProtectionRuleExclusionArgs{...} }
+//	PolicyWafConfigCustomProtectionRuleExclusionArray{ PolicyWafConfigCustomProtectionRuleExclusionArgs{...} }
 type PolicyWafConfigCustomProtectionRuleExclusionArrayInput interface {
 	pulumi.Input
 
@@ -3932,7 +3932,7 @@ type PolicyWafConfigDeviceFingerprintChallenge struct {
 // PolicyWafConfigDeviceFingerprintChallengeInput is an input type that accepts PolicyWafConfigDeviceFingerprintChallengeArgs and PolicyWafConfigDeviceFingerprintChallengeOutput values.
 // You can construct a concrete instance of `PolicyWafConfigDeviceFingerprintChallengeInput` via:
 //
-//          PolicyWafConfigDeviceFingerprintChallengeArgs{...}
+//	PolicyWafConfigDeviceFingerprintChallengeArgs{...}
 type PolicyWafConfigDeviceFingerprintChallengeInput interface {
 	pulumi.Input
 
@@ -3982,11 +3982,11 @@ func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToPolicyWafConfigDeviceFi
 // PolicyWafConfigDeviceFingerprintChallengePtrInput is an input type that accepts PolicyWafConfigDeviceFingerprintChallengeArgs, PolicyWafConfigDeviceFingerprintChallengePtr and PolicyWafConfigDeviceFingerprintChallengePtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigDeviceFingerprintChallengePtrInput` via:
 //
-//          PolicyWafConfigDeviceFingerprintChallengeArgs{...}
+//	        PolicyWafConfigDeviceFingerprintChallengeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigDeviceFingerprintChallengePtrInput interface {
 	pulumi.Input
 
@@ -4206,7 +4206,7 @@ type PolicyWafConfigDeviceFingerprintChallengeChallengeSettings struct {
 // PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput is an input type that accepts PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs and PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput values.
 // You can construct a concrete instance of `PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput` via:
 //
-//          PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
+//	PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
 type PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput interface {
 	pulumi.Input
 
@@ -4258,11 +4258,11 @@ func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToPolicy
 // PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput is an input type that accepts PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs, PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtr and PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput` via:
 //
-//          PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
+//	        PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput interface {
 	pulumi.Input
 
@@ -4505,7 +4505,7 @@ type PolicyWafConfigHumanInteractionChallenge struct {
 // PolicyWafConfigHumanInteractionChallengeInput is an input type that accepts PolicyWafConfigHumanInteractionChallengeArgs and PolicyWafConfigHumanInteractionChallengeOutput values.
 // You can construct a concrete instance of `PolicyWafConfigHumanInteractionChallengeInput` via:
 //
-//          PolicyWafConfigHumanInteractionChallengeArgs{...}
+//	PolicyWafConfigHumanInteractionChallengeArgs{...}
 type PolicyWafConfigHumanInteractionChallengeInput interface {
 	pulumi.Input
 
@@ -4559,11 +4559,11 @@ func (i PolicyWafConfigHumanInteractionChallengeArgs) ToPolicyWafConfigHumanInte
 // PolicyWafConfigHumanInteractionChallengePtrInput is an input type that accepts PolicyWafConfigHumanInteractionChallengeArgs, PolicyWafConfigHumanInteractionChallengePtr and PolicyWafConfigHumanInteractionChallengePtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigHumanInteractionChallengePtrInput` via:
 //
-//          PolicyWafConfigHumanInteractionChallengeArgs{...}
+//	        PolicyWafConfigHumanInteractionChallengeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigHumanInteractionChallengePtrInput interface {
 	pulumi.Input
 
@@ -4815,7 +4815,7 @@ type PolicyWafConfigHumanInteractionChallengeChallengeSettings struct {
 // PolicyWafConfigHumanInteractionChallengeChallengeSettingsInput is an input type that accepts PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs and PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput values.
 // You can construct a concrete instance of `PolicyWafConfigHumanInteractionChallengeChallengeSettingsInput` via:
 //
-//          PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
+//	PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
 type PolicyWafConfigHumanInteractionChallengeChallengeSettingsInput interface {
 	pulumi.Input
 
@@ -4867,11 +4867,11 @@ func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToPolicyW
 // PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput is an input type that accepts PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs, PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtr and PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput` via:
 //
-//          PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
+//	        PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput interface {
 	pulumi.Input
 
@@ -5094,7 +5094,7 @@ type PolicyWafConfigHumanInteractionChallengeSetHttpHeader struct {
 // PolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput is an input type that accepts PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs and PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput values.
 // You can construct a concrete instance of `PolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput` via:
 //
-//          PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
+//	PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
 type PolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput interface {
 	pulumi.Input
 
@@ -5132,11 +5132,11 @@ func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToPolicyWafCo
 // PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput is an input type that accepts PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs, PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtr and PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput` via:
 //
-//          PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
+//	        PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput interface {
 	pulumi.Input
 
@@ -5264,7 +5264,7 @@ type PolicyWafConfigJsChallenge struct {
 // PolicyWafConfigJsChallengeInput is an input type that accepts PolicyWafConfigJsChallengeArgs and PolicyWafConfigJsChallengeOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeInput` via:
 //
-//          PolicyWafConfigJsChallengeArgs{...}
+//	PolicyWafConfigJsChallengeArgs{...}
 type PolicyWafConfigJsChallengeInput interface {
 	pulumi.Input
 
@@ -5316,11 +5316,11 @@ func (i PolicyWafConfigJsChallengeArgs) ToPolicyWafConfigJsChallengePtrOutputWit
 // PolicyWafConfigJsChallengePtrInput is an input type that accepts PolicyWafConfigJsChallengeArgs, PolicyWafConfigJsChallengePtr and PolicyWafConfigJsChallengePtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengePtrInput` via:
 //
-//          PolicyWafConfigJsChallengeArgs{...}
+//	        PolicyWafConfigJsChallengeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigJsChallengePtrInput interface {
 	pulumi.Input
 
@@ -5555,7 +5555,7 @@ type PolicyWafConfigJsChallengeChallengeSettings struct {
 // PolicyWafConfigJsChallengeChallengeSettingsInput is an input type that accepts PolicyWafConfigJsChallengeChallengeSettingsArgs and PolicyWafConfigJsChallengeChallengeSettingsOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeChallengeSettingsInput` via:
 //
-//          PolicyWafConfigJsChallengeChallengeSettingsArgs{...}
+//	PolicyWafConfigJsChallengeChallengeSettingsArgs{...}
 type PolicyWafConfigJsChallengeChallengeSettingsInput interface {
 	pulumi.Input
 
@@ -5607,11 +5607,11 @@ func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToPolicyWafConfigJsChal
 // PolicyWafConfigJsChallengeChallengeSettingsPtrInput is an input type that accepts PolicyWafConfigJsChallengeChallengeSettingsArgs, PolicyWafConfigJsChallengeChallengeSettingsPtr and PolicyWafConfigJsChallengeChallengeSettingsPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeChallengeSettingsPtrInput` via:
 //
-//          PolicyWafConfigJsChallengeChallengeSettingsArgs{...}
+//	        PolicyWafConfigJsChallengeChallengeSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigJsChallengeChallengeSettingsPtrInput interface {
 	pulumi.Input
 
@@ -5848,7 +5848,7 @@ type PolicyWafConfigJsChallengeCriteria struct {
 // PolicyWafConfigJsChallengeCriteriaInput is an input type that accepts PolicyWafConfigJsChallengeCriteriaArgs and PolicyWafConfigJsChallengeCriteriaOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeCriteriaInput` via:
 //
-//          PolicyWafConfigJsChallengeCriteriaArgs{...}
+//	PolicyWafConfigJsChallengeCriteriaArgs{...}
 type PolicyWafConfigJsChallengeCriteriaInput interface {
 	pulumi.Input
 
@@ -5896,7 +5896,7 @@ func (i PolicyWafConfigJsChallengeCriteriaArgs) ToPolicyWafConfigJsChallengeCrit
 // PolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts PolicyWafConfigJsChallengeCriteriaArray and PolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
-//          PolicyWafConfigJsChallengeCriteriaArray{ PolicyWafConfigJsChallengeCriteriaArgs{...} }
+//	PolicyWafConfigJsChallengeCriteriaArray{ PolicyWafConfigJsChallengeCriteriaArgs{...} }
 type PolicyWafConfigJsChallengeCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -5993,7 +5993,7 @@ type PolicyWafConfigJsChallengeSetHttpHeader struct {
 // PolicyWafConfigJsChallengeSetHttpHeaderInput is an input type that accepts PolicyWafConfigJsChallengeSetHttpHeaderArgs and PolicyWafConfigJsChallengeSetHttpHeaderOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeSetHttpHeaderInput` via:
 //
-//          PolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
+//	PolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
 type PolicyWafConfigJsChallengeSetHttpHeaderInput interface {
 	pulumi.Input
 
@@ -6031,11 +6031,11 @@ func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToPolicyWafConfigJsChalleng
 // PolicyWafConfigJsChallengeSetHttpHeaderPtrInput is an input type that accepts PolicyWafConfigJsChallengeSetHttpHeaderArgs, PolicyWafConfigJsChallengeSetHttpHeaderPtr and PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeSetHttpHeaderPtrInput` via:
 //
-//          PolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
+//	        PolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigJsChallengeSetHttpHeaderPtrInput interface {
 	pulumi.Input
 
@@ -6171,7 +6171,7 @@ type PolicyWafConfigProtectionSettings struct {
 // PolicyWafConfigProtectionSettingsInput is an input type that accepts PolicyWafConfigProtectionSettingsArgs and PolicyWafConfigProtectionSettingsOutput values.
 // You can construct a concrete instance of `PolicyWafConfigProtectionSettingsInput` via:
 //
-//          PolicyWafConfigProtectionSettingsArgs{...}
+//	PolicyWafConfigProtectionSettingsArgs{...}
 type PolicyWafConfigProtectionSettingsInput interface {
 	pulumi.Input
 
@@ -6231,11 +6231,11 @@ func (i PolicyWafConfigProtectionSettingsArgs) ToPolicyWafConfigProtectionSettin
 // PolicyWafConfigProtectionSettingsPtrInput is an input type that accepts PolicyWafConfigProtectionSettingsArgs, PolicyWafConfigProtectionSettingsPtr and PolicyWafConfigProtectionSettingsPtrOutput values.
 // You can construct a concrete instance of `PolicyWafConfigProtectionSettingsPtrInput` via:
 //
-//          PolicyWafConfigProtectionSettingsArgs{...}
+//	        PolicyWafConfigProtectionSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PolicyWafConfigProtectionSettingsPtrInput interface {
 	pulumi.Input
 
@@ -6516,7 +6516,7 @@ type PolicyWafConfigWhitelist struct {
 // PolicyWafConfigWhitelistInput is an input type that accepts PolicyWafConfigWhitelistArgs and PolicyWafConfigWhitelistOutput values.
 // You can construct a concrete instance of `PolicyWafConfigWhitelistInput` via:
 //
-//          PolicyWafConfigWhitelistArgs{...}
+//	PolicyWafConfigWhitelistArgs{...}
 type PolicyWafConfigWhitelistInput interface {
 	pulumi.Input
 
@@ -6548,7 +6548,7 @@ func (i PolicyWafConfigWhitelistArgs) ToPolicyWafConfigWhitelistOutputWithContex
 // PolicyWafConfigWhitelistArrayInput is an input type that accepts PolicyWafConfigWhitelistArray and PolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigWhitelistArrayInput` via:
 //
-//          PolicyWafConfigWhitelistArray{ PolicyWafConfigWhitelistArgs{...} }
+//	PolicyWafConfigWhitelistArray{ PolicyWafConfigWhitelistArgs{...} }
 type PolicyWafConfigWhitelistArrayInput interface {
 	pulumi.Input
 
@@ -6629,7 +6629,7 @@ type ProtectionRuleExclusion struct {
 // ProtectionRuleExclusionInput is an input type that accepts ProtectionRuleExclusionArgs and ProtectionRuleExclusionOutput values.
 // You can construct a concrete instance of `ProtectionRuleExclusionInput` via:
 //
-//          ProtectionRuleExclusionArgs{...}
+//	ProtectionRuleExclusionArgs{...}
 type ProtectionRuleExclusionInput interface {
 	pulumi.Input
 
@@ -6659,7 +6659,7 @@ func (i ProtectionRuleExclusionArgs) ToProtectionRuleExclusionOutputWithContext(
 // ProtectionRuleExclusionArrayInput is an input type that accepts ProtectionRuleExclusionArray and ProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleExclusionArrayInput` via:
 //
-//          ProtectionRuleExclusionArray{ ProtectionRuleExclusionArgs{...} }
+//	ProtectionRuleExclusionArray{ ProtectionRuleExclusionArgs{...} }
 type ProtectionRuleExclusionArrayInput interface {
 	pulumi.Input
 
@@ -6749,7 +6749,7 @@ type GetAddressListsAddressList struct {
 // GetAddressListsAddressListInput is an input type that accepts GetAddressListsAddressListArgs and GetAddressListsAddressListOutput values.
 // You can construct a concrete instance of `GetAddressListsAddressListInput` via:
 //
-//          GetAddressListsAddressListArgs{...}
+//	GetAddressListsAddressListArgs{...}
 type GetAddressListsAddressListInput interface {
 	pulumi.Input
 
@@ -6793,7 +6793,7 @@ func (i GetAddressListsAddressListArgs) ToGetAddressListsAddressListOutputWithCo
 // GetAddressListsAddressListArrayInput is an input type that accepts GetAddressListsAddressListArray and GetAddressListsAddressListArrayOutput values.
 // You can construct a concrete instance of `GetAddressListsAddressListArrayInput` via:
 //
-//          GetAddressListsAddressListArray{ GetAddressListsAddressListArgs{...} }
+//	GetAddressListsAddressListArray{ GetAddressListsAddressListArgs{...} }
 type GetAddressListsAddressListArrayInput interface {
 	pulumi.Input
 
@@ -6903,7 +6903,7 @@ type GetAddressListsFilter struct {
 // GetAddressListsFilterInput is an input type that accepts GetAddressListsFilterArgs and GetAddressListsFilterOutput values.
 // You can construct a concrete instance of `GetAddressListsFilterInput` via:
 //
-//          GetAddressListsFilterArgs{...}
+//	GetAddressListsFilterArgs{...}
 type GetAddressListsFilterInput interface {
 	pulumi.Input
 
@@ -6932,7 +6932,7 @@ func (i GetAddressListsFilterArgs) ToGetAddressListsFilterOutputWithContext(ctx 
 // GetAddressListsFilterArrayInput is an input type that accepts GetAddressListsFilterArray and GetAddressListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddressListsFilterArrayInput` via:
 //
-//          GetAddressListsFilterArray{ GetAddressListsFilterArgs{...} }
+//	GetAddressListsFilterArray{ GetAddressListsFilterArgs{...} }
 type GetAddressListsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7012,7 +7012,7 @@ type GetCertificateExtension struct {
 // GetCertificateExtensionInput is an input type that accepts GetCertificateExtensionArgs and GetCertificateExtensionOutput values.
 // You can construct a concrete instance of `GetCertificateExtensionInput` via:
 //
-//          GetCertificateExtensionArgs{...}
+//	GetCertificateExtensionArgs{...}
 type GetCertificateExtensionInput interface {
 	pulumi.Input
 
@@ -7044,7 +7044,7 @@ func (i GetCertificateExtensionArgs) ToGetCertificateExtensionOutputWithContext(
 // GetCertificateExtensionArrayInput is an input type that accepts GetCertificateExtensionArray and GetCertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateExtensionArrayInput` via:
 //
-//          GetCertificateExtensionArray{ GetCertificateExtensionArgs{...} }
+//	GetCertificateExtensionArray{ GetCertificateExtensionArgs{...} }
 type GetCertificateExtensionArrayInput interface {
 	pulumi.Input
 
@@ -7135,7 +7135,7 @@ type GetCertificateIssuerName struct {
 // GetCertificateIssuerNameInput is an input type that accepts GetCertificateIssuerNameArgs and GetCertificateIssuerNameOutput values.
 // You can construct a concrete instance of `GetCertificateIssuerNameInput` via:
 //
-//          GetCertificateIssuerNameArgs{...}
+//	GetCertificateIssuerNameArgs{...}
 type GetCertificateIssuerNameInput interface {
 	pulumi.Input
 
@@ -7175,7 +7175,7 @@ func (i GetCertificateIssuerNameArgs) ToGetCertificateIssuerNameOutputWithContex
 // GetCertificateIssuerNameArrayInput is an input type that accepts GetCertificateIssuerNameArray and GetCertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateIssuerNameArrayInput` via:
 //
-//          GetCertificateIssuerNameArray{ GetCertificateIssuerNameArgs{...} }
+//	GetCertificateIssuerNameArray{ GetCertificateIssuerNameArgs{...} }
 type GetCertificateIssuerNameArrayInput interface {
 	pulumi.Input
 
@@ -7278,7 +7278,7 @@ type GetCertificatePublicKeyInfo struct {
 // GetCertificatePublicKeyInfoInput is an input type that accepts GetCertificatePublicKeyInfoArgs and GetCertificatePublicKeyInfoOutput values.
 // You can construct a concrete instance of `GetCertificatePublicKeyInfoInput` via:
 //
-//          GetCertificatePublicKeyInfoArgs{...}
+//	GetCertificatePublicKeyInfoArgs{...}
 type GetCertificatePublicKeyInfoInput interface {
 	pulumi.Input
 
@@ -7310,7 +7310,7 @@ func (i GetCertificatePublicKeyInfoArgs) ToGetCertificatePublicKeyInfoOutputWith
 // GetCertificatePublicKeyInfoArrayInput is an input type that accepts GetCertificatePublicKeyInfoArray and GetCertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `GetCertificatePublicKeyInfoArrayInput` via:
 //
-//          GetCertificatePublicKeyInfoArray{ GetCertificatePublicKeyInfoArgs{...} }
+//	GetCertificatePublicKeyInfoArray{ GetCertificatePublicKeyInfoArgs{...} }
 type GetCertificatePublicKeyInfoArrayInput interface {
 	pulumi.Input
 
@@ -7401,7 +7401,7 @@ type GetCertificateSubjectName struct {
 // GetCertificateSubjectNameInput is an input type that accepts GetCertificateSubjectNameArgs and GetCertificateSubjectNameOutput values.
 // You can construct a concrete instance of `GetCertificateSubjectNameInput` via:
 //
-//          GetCertificateSubjectNameArgs{...}
+//	GetCertificateSubjectNameArgs{...}
 type GetCertificateSubjectNameInput interface {
 	pulumi.Input
 
@@ -7441,7 +7441,7 @@ func (i GetCertificateSubjectNameArgs) ToGetCertificateSubjectNameOutputWithCont
 // GetCertificateSubjectNameArrayInput is an input type that accepts GetCertificateSubjectNameArray and GetCertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateSubjectNameArrayInput` via:
 //
-//          GetCertificateSubjectNameArray{ GetCertificateSubjectNameArgs{...} }
+//	GetCertificateSubjectNameArray{ GetCertificateSubjectNameArgs{...} }
 type GetCertificateSubjectNameArrayInput interface {
 	pulumi.Input
 
@@ -7576,7 +7576,7 @@ type GetCertificatesCertificate struct {
 // GetCertificatesCertificateInput is an input type that accepts GetCertificatesCertificateArgs and GetCertificatesCertificateOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateInput` via:
 //
-//          GetCertificatesCertificateArgs{...}
+//	GetCertificatesCertificateArgs{...}
 type GetCertificatesCertificateInput interface {
 	pulumi.Input
 
@@ -7640,7 +7640,7 @@ func (i GetCertificatesCertificateArgs) ToGetCertificatesCertificateOutputWithCo
 // GetCertificatesCertificateArrayInput is an input type that accepts GetCertificatesCertificateArray and GetCertificatesCertificateArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateArrayInput` via:
 //
-//          GetCertificatesCertificateArray{ GetCertificatesCertificateArgs{...} }
+//	GetCertificatesCertificateArray{ GetCertificatesCertificateArgs{...} }
 type GetCertificatesCertificateArrayInput interface {
 	pulumi.Input
 
@@ -7806,7 +7806,7 @@ type GetCertificatesCertificateExtension struct {
 // GetCertificatesCertificateExtensionInput is an input type that accepts GetCertificatesCertificateExtensionArgs and GetCertificatesCertificateExtensionOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateExtensionInput` via:
 //
-//          GetCertificatesCertificateExtensionArgs{...}
+//	GetCertificatesCertificateExtensionArgs{...}
 type GetCertificatesCertificateExtensionInput interface {
 	pulumi.Input
 
@@ -7838,7 +7838,7 @@ func (i GetCertificatesCertificateExtensionArgs) ToGetCertificatesCertificateExt
 // GetCertificatesCertificateExtensionArrayInput is an input type that accepts GetCertificatesCertificateExtensionArray and GetCertificatesCertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateExtensionArrayInput` via:
 //
-//          GetCertificatesCertificateExtensionArray{ GetCertificatesCertificateExtensionArgs{...} }
+//	GetCertificatesCertificateExtensionArray{ GetCertificatesCertificateExtensionArgs{...} }
 type GetCertificatesCertificateExtensionArrayInput interface {
 	pulumi.Input
 
@@ -7929,7 +7929,7 @@ type GetCertificatesCertificateIssuerName struct {
 // GetCertificatesCertificateIssuerNameInput is an input type that accepts GetCertificatesCertificateIssuerNameArgs and GetCertificatesCertificateIssuerNameOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateIssuerNameInput` via:
 //
-//          GetCertificatesCertificateIssuerNameArgs{...}
+//	GetCertificatesCertificateIssuerNameArgs{...}
 type GetCertificatesCertificateIssuerNameInput interface {
 	pulumi.Input
 
@@ -7969,7 +7969,7 @@ func (i GetCertificatesCertificateIssuerNameArgs) ToGetCertificatesCertificateIs
 // GetCertificatesCertificateIssuerNameArrayInput is an input type that accepts GetCertificatesCertificateIssuerNameArray and GetCertificatesCertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateIssuerNameArrayInput` via:
 //
-//          GetCertificatesCertificateIssuerNameArray{ GetCertificatesCertificateIssuerNameArgs{...} }
+//	GetCertificatesCertificateIssuerNameArray{ GetCertificatesCertificateIssuerNameArgs{...} }
 type GetCertificatesCertificateIssuerNameArrayInput interface {
 	pulumi.Input
 
@@ -8072,7 +8072,7 @@ type GetCertificatesCertificatePublicKeyInfo struct {
 // GetCertificatesCertificatePublicKeyInfoInput is an input type that accepts GetCertificatesCertificatePublicKeyInfoArgs and GetCertificatesCertificatePublicKeyInfoOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificatePublicKeyInfoInput` via:
 //
-//          GetCertificatesCertificatePublicKeyInfoArgs{...}
+//	GetCertificatesCertificatePublicKeyInfoArgs{...}
 type GetCertificatesCertificatePublicKeyInfoInput interface {
 	pulumi.Input
 
@@ -8104,7 +8104,7 @@ func (i GetCertificatesCertificatePublicKeyInfoArgs) ToGetCertificatesCertificat
 // GetCertificatesCertificatePublicKeyInfoArrayInput is an input type that accepts GetCertificatesCertificatePublicKeyInfoArray and GetCertificatesCertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificatePublicKeyInfoArrayInput` via:
 //
-//          GetCertificatesCertificatePublicKeyInfoArray{ GetCertificatesCertificatePublicKeyInfoArgs{...} }
+//	GetCertificatesCertificatePublicKeyInfoArray{ GetCertificatesCertificatePublicKeyInfoArgs{...} }
 type GetCertificatesCertificatePublicKeyInfoArrayInput interface {
 	pulumi.Input
 
@@ -8195,7 +8195,7 @@ type GetCertificatesCertificateSubjectName struct {
 // GetCertificatesCertificateSubjectNameInput is an input type that accepts GetCertificatesCertificateSubjectNameArgs and GetCertificatesCertificateSubjectNameOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateSubjectNameInput` via:
 //
-//          GetCertificatesCertificateSubjectNameArgs{...}
+//	GetCertificatesCertificateSubjectNameArgs{...}
 type GetCertificatesCertificateSubjectNameInput interface {
 	pulumi.Input
 
@@ -8235,7 +8235,7 @@ func (i GetCertificatesCertificateSubjectNameArgs) ToGetCertificatesCertificateS
 // GetCertificatesCertificateSubjectNameArrayInput is an input type that accepts GetCertificatesCertificateSubjectNameArray and GetCertificatesCertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateSubjectNameArrayInput` via:
 //
-//          GetCertificatesCertificateSubjectNameArray{ GetCertificatesCertificateSubjectNameArgs{...} }
+//	GetCertificatesCertificateSubjectNameArray{ GetCertificatesCertificateSubjectNameArgs{...} }
 type GetCertificatesCertificateSubjectNameArrayInput interface {
 	pulumi.Input
 
@@ -8336,7 +8336,7 @@ type GetCertificatesFilter struct {
 // GetCertificatesFilterInput is an input type that accepts GetCertificatesFilterArgs and GetCertificatesFilterOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterInput` via:
 //
-//          GetCertificatesFilterArgs{...}
+//	GetCertificatesFilterArgs{...}
 type GetCertificatesFilterInput interface {
 	pulumi.Input
 
@@ -8366,7 +8366,7 @@ func (i GetCertificatesFilterArgs) ToGetCertificatesFilterOutputWithContext(ctx 
 // GetCertificatesFilterArrayInput is an input type that accepts GetCertificatesFilterArray and GetCertificatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterArrayInput` via:
 //
-//          GetCertificatesFilterArray{ GetCertificatesFilterArgs{...} }
+//	GetCertificatesFilterArray{ GetCertificatesFilterArgs{...} }
 type GetCertificatesFilterArrayInput interface {
 	pulumi.Input
 
@@ -8461,7 +8461,7 @@ type GetCustomProtectionRulesCustomProtectionRule struct {
 // GetCustomProtectionRulesCustomProtectionRuleInput is an input type that accepts GetCustomProtectionRulesCustomProtectionRuleArgs and GetCustomProtectionRulesCustomProtectionRuleOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesCustomProtectionRuleInput` via:
 //
-//          GetCustomProtectionRulesCustomProtectionRuleArgs{...}
+//	GetCustomProtectionRulesCustomProtectionRuleArgs{...}
 type GetCustomProtectionRulesCustomProtectionRuleInput interface {
 	pulumi.Input
 
@@ -8507,7 +8507,7 @@ func (i GetCustomProtectionRulesCustomProtectionRuleArgs) ToGetCustomProtectionR
 // GetCustomProtectionRulesCustomProtectionRuleArrayInput is an input type that accepts GetCustomProtectionRulesCustomProtectionRuleArray and GetCustomProtectionRulesCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesCustomProtectionRuleArrayInput` via:
 //
-//          GetCustomProtectionRulesCustomProtectionRuleArray{ GetCustomProtectionRulesCustomProtectionRuleArgs{...} }
+//	GetCustomProtectionRulesCustomProtectionRuleArray{ GetCustomProtectionRulesCustomProtectionRuleArgs{...} }
 type GetCustomProtectionRulesCustomProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -8622,7 +8622,7 @@ type GetCustomProtectionRulesFilter struct {
 // GetCustomProtectionRulesFilterInput is an input type that accepts GetCustomProtectionRulesFilterArgs and GetCustomProtectionRulesFilterOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesFilterInput` via:
 //
-//          GetCustomProtectionRulesFilterArgs{...}
+//	GetCustomProtectionRulesFilterArgs{...}
 type GetCustomProtectionRulesFilterInput interface {
 	pulumi.Input
 
@@ -8651,7 +8651,7 @@ func (i GetCustomProtectionRulesFilterArgs) ToGetCustomProtectionRulesFilterOutp
 // GetCustomProtectionRulesFilterArrayInput is an input type that accepts GetCustomProtectionRulesFilterArray and GetCustomProtectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesFilterArrayInput` via:
 //
-//          GetCustomProtectionRulesFilterArray{ GetCustomProtectionRulesFilterArgs{...} }
+//	GetCustomProtectionRulesFilterArray{ GetCustomProtectionRulesFilterArgs{...} }
 type GetCustomProtectionRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -8731,7 +8731,7 @@ type GetEdgeSubnetsEdgeSubnet struct {
 // GetEdgeSubnetsEdgeSubnetInput is an input type that accepts GetEdgeSubnetsEdgeSubnetArgs and GetEdgeSubnetsEdgeSubnetOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsEdgeSubnetInput` via:
 //
-//          GetEdgeSubnetsEdgeSubnetArgs{...}
+//	GetEdgeSubnetsEdgeSubnetArgs{...}
 type GetEdgeSubnetsEdgeSubnetInput interface {
 	pulumi.Input
 
@@ -8763,7 +8763,7 @@ func (i GetEdgeSubnetsEdgeSubnetArgs) ToGetEdgeSubnetsEdgeSubnetOutputWithContex
 // GetEdgeSubnetsEdgeSubnetArrayInput is an input type that accepts GetEdgeSubnetsEdgeSubnetArray and GetEdgeSubnetsEdgeSubnetArrayOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsEdgeSubnetArrayInput` via:
 //
-//          GetEdgeSubnetsEdgeSubnetArray{ GetEdgeSubnetsEdgeSubnetArgs{...} }
+//	GetEdgeSubnetsEdgeSubnetArray{ GetEdgeSubnetsEdgeSubnetArgs{...} }
 type GetEdgeSubnetsEdgeSubnetArrayInput interface {
 	pulumi.Input
 
@@ -8843,7 +8843,7 @@ type GetEdgeSubnetsFilter struct {
 // GetEdgeSubnetsFilterInput is an input type that accepts GetEdgeSubnetsFilterArgs and GetEdgeSubnetsFilterOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsFilterInput` via:
 //
-//          GetEdgeSubnetsFilterArgs{...}
+//	GetEdgeSubnetsFilterArgs{...}
 type GetEdgeSubnetsFilterInput interface {
 	pulumi.Input
 
@@ -8872,7 +8872,7 @@ func (i GetEdgeSubnetsFilterArgs) ToGetEdgeSubnetsFilterOutputWithContext(ctx co
 // GetEdgeSubnetsFilterArrayInput is an input type that accepts GetEdgeSubnetsFilterArray and GetEdgeSubnetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsFilterArrayInput` via:
 //
-//          GetEdgeSubnetsFilterArray{ GetEdgeSubnetsFilterArgs{...} }
+//	GetEdgeSubnetsFilterArray{ GetEdgeSubnetsFilterArgs{...} }
 type GetEdgeSubnetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -8956,7 +8956,7 @@ type GetHttpRedirectTarget struct {
 // GetHttpRedirectTargetInput is an input type that accepts GetHttpRedirectTargetArgs and GetHttpRedirectTargetOutput values.
 // You can construct a concrete instance of `GetHttpRedirectTargetInput` via:
 //
-//          GetHttpRedirectTargetArgs{...}
+//	GetHttpRedirectTargetArgs{...}
 type GetHttpRedirectTargetInput interface {
 	pulumi.Input
 
@@ -8992,7 +8992,7 @@ func (i GetHttpRedirectTargetArgs) ToGetHttpRedirectTargetOutputWithContext(ctx 
 // GetHttpRedirectTargetArrayInput is an input type that accepts GetHttpRedirectTargetArray and GetHttpRedirectTargetArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectTargetArrayInput` via:
 //
-//          GetHttpRedirectTargetArray{ GetHttpRedirectTargetArgs{...} }
+//	GetHttpRedirectTargetArray{ GetHttpRedirectTargetArgs{...} }
 type GetHttpRedirectTargetArrayInput interface {
 	pulumi.Input
 
@@ -9082,7 +9082,7 @@ type GetHttpRedirectsFilter struct {
 // GetHttpRedirectsFilterInput is an input type that accepts GetHttpRedirectsFilterArgs and GetHttpRedirectsFilterOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsFilterInput` via:
 //
-//          GetHttpRedirectsFilterArgs{...}
+//	GetHttpRedirectsFilterArgs{...}
 type GetHttpRedirectsFilterInput interface {
 	pulumi.Input
 
@@ -9111,7 +9111,7 @@ func (i GetHttpRedirectsFilterArgs) ToGetHttpRedirectsFilterOutputWithContext(ct
 // GetHttpRedirectsFilterArrayInput is an input type that accepts GetHttpRedirectsFilterArray and GetHttpRedirectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsFilterArrayInput` via:
 //
-//          GetHttpRedirectsFilterArray{ GetHttpRedirectsFilterArgs{...} }
+//	GetHttpRedirectsFilterArray{ GetHttpRedirectsFilterArgs{...} }
 type GetHttpRedirectsFilterArrayInput interface {
 	pulumi.Input
 
@@ -9205,7 +9205,7 @@ type GetHttpRedirectsHttpRedirect struct {
 // GetHttpRedirectsHttpRedirectInput is an input type that accepts GetHttpRedirectsHttpRedirectArgs and GetHttpRedirectsHttpRedirectOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsHttpRedirectInput` via:
 //
-//          GetHttpRedirectsHttpRedirectArgs{...}
+//	GetHttpRedirectsHttpRedirectArgs{...}
 type GetHttpRedirectsHttpRedirectInput interface {
 	pulumi.Input
 
@@ -9251,7 +9251,7 @@ func (i GetHttpRedirectsHttpRedirectArgs) ToGetHttpRedirectsHttpRedirectOutputWi
 // GetHttpRedirectsHttpRedirectArrayInput is an input type that accepts GetHttpRedirectsHttpRedirectArray and GetHttpRedirectsHttpRedirectArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsHttpRedirectArrayInput` via:
 //
-//          GetHttpRedirectsHttpRedirectArray{ GetHttpRedirectsHttpRedirectArgs{...} }
+//	GetHttpRedirectsHttpRedirectArray{ GetHttpRedirectsHttpRedirectArgs{...} }
 type GetHttpRedirectsHttpRedirectArrayInput interface {
 	pulumi.Input
 
@@ -9373,7 +9373,7 @@ type GetHttpRedirectsHttpRedirectTarget struct {
 // GetHttpRedirectsHttpRedirectTargetInput is an input type that accepts GetHttpRedirectsHttpRedirectTargetArgs and GetHttpRedirectsHttpRedirectTargetOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsHttpRedirectTargetInput` via:
 //
-//          GetHttpRedirectsHttpRedirectTargetArgs{...}
+//	GetHttpRedirectsHttpRedirectTargetArgs{...}
 type GetHttpRedirectsHttpRedirectTargetInput interface {
 	pulumi.Input
 
@@ -9409,7 +9409,7 @@ func (i GetHttpRedirectsHttpRedirectTargetArgs) ToGetHttpRedirectsHttpRedirectTa
 // GetHttpRedirectsHttpRedirectTargetArrayInput is an input type that accepts GetHttpRedirectsHttpRedirectTargetArray and GetHttpRedirectsHttpRedirectTargetArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsHttpRedirectTargetArrayInput` via:
 //
-//          GetHttpRedirectsHttpRedirectTargetArray{ GetHttpRedirectsHttpRedirectTargetArgs{...} }
+//	GetHttpRedirectsHttpRedirectTargetArray{ GetHttpRedirectsHttpRedirectTargetArgs{...} }
 type GetHttpRedirectsHttpRedirectTargetArrayInput interface {
 	pulumi.Input
 
@@ -9500,7 +9500,7 @@ type GetProtectionRuleExclusion struct {
 // GetProtectionRuleExclusionInput is an input type that accepts GetProtectionRuleExclusionArgs and GetProtectionRuleExclusionOutput values.
 // You can construct a concrete instance of `GetProtectionRuleExclusionInput` via:
 //
-//          GetProtectionRuleExclusionArgs{...}
+//	GetProtectionRuleExclusionArgs{...}
 type GetProtectionRuleExclusionInput interface {
 	pulumi.Input
 
@@ -9530,7 +9530,7 @@ func (i GetProtectionRuleExclusionArgs) ToGetProtectionRuleExclusionOutputWithCo
 // GetProtectionRuleExclusionArrayInput is an input type that accepts GetProtectionRuleExclusionArray and GetProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRuleExclusionArrayInput` via:
 //
-//          GetProtectionRuleExclusionArray{ GetProtectionRuleExclusionArgs{...} }
+//	GetProtectionRuleExclusionArray{ GetProtectionRuleExclusionArgs{...} }
 type GetProtectionRuleExclusionArrayInput interface {
 	pulumi.Input
 
@@ -9606,7 +9606,7 @@ type GetProtectionRulesFilter struct {
 // GetProtectionRulesFilterInput is an input type that accepts GetProtectionRulesFilterArgs and GetProtectionRulesFilterOutput values.
 // You can construct a concrete instance of `GetProtectionRulesFilterInput` via:
 //
-//          GetProtectionRulesFilterArgs{...}
+//	GetProtectionRulesFilterArgs{...}
 type GetProtectionRulesFilterInput interface {
 	pulumi.Input
 
@@ -9636,7 +9636,7 @@ func (i GetProtectionRulesFilterArgs) ToGetProtectionRulesFilterOutputWithContex
 // GetProtectionRulesFilterArrayInput is an input type that accepts GetProtectionRulesFilterArray and GetProtectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesFilterArrayInput` via:
 //
-//          GetProtectionRulesFilterArray{ GetProtectionRulesFilterArgs{...} }
+//	GetProtectionRulesFilterArray{ GetProtectionRulesFilterArgs{...} }
 type GetProtectionRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -9727,7 +9727,7 @@ type GetProtectionRulesProtectionRule struct {
 // GetProtectionRulesProtectionRuleInput is an input type that accepts GetProtectionRulesProtectionRuleArgs and GetProtectionRulesProtectionRuleOutput values.
 // You can construct a concrete instance of `GetProtectionRulesProtectionRuleInput` via:
 //
-//          GetProtectionRulesProtectionRuleArgs{...}
+//	GetProtectionRulesProtectionRuleArgs{...}
 type GetProtectionRulesProtectionRuleInput interface {
 	pulumi.Input
 
@@ -9769,7 +9769,7 @@ func (i GetProtectionRulesProtectionRuleArgs) ToGetProtectionRulesProtectionRule
 // GetProtectionRulesProtectionRuleArrayInput is an input type that accepts GetProtectionRulesProtectionRuleArray and GetProtectionRulesProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesProtectionRuleArrayInput` via:
 //
-//          GetProtectionRulesProtectionRuleArray{ GetProtectionRulesProtectionRuleArgs{...} }
+//	GetProtectionRulesProtectionRuleArray{ GetProtectionRulesProtectionRuleArgs{...} }
 type GetProtectionRulesProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -9877,7 +9877,7 @@ type GetProtectionRulesProtectionRuleExclusion struct {
 // GetProtectionRulesProtectionRuleExclusionInput is an input type that accepts GetProtectionRulesProtectionRuleExclusionArgs and GetProtectionRulesProtectionRuleExclusionOutput values.
 // You can construct a concrete instance of `GetProtectionRulesProtectionRuleExclusionInput` via:
 //
-//          GetProtectionRulesProtectionRuleExclusionArgs{...}
+//	GetProtectionRulesProtectionRuleExclusionArgs{...}
 type GetProtectionRulesProtectionRuleExclusionInput interface {
 	pulumi.Input
 
@@ -9907,7 +9907,7 @@ func (i GetProtectionRulesProtectionRuleExclusionArgs) ToGetProtectionRulesProte
 // GetProtectionRulesProtectionRuleExclusionArrayInput is an input type that accepts GetProtectionRulesProtectionRuleExclusionArray and GetProtectionRulesProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesProtectionRuleExclusionArrayInput` via:
 //
-//          GetProtectionRulesProtectionRuleExclusionArray{ GetProtectionRulesProtectionRuleExclusionArgs{...} }
+//	GetProtectionRulesProtectionRuleExclusionArray{ GetProtectionRulesProtectionRuleExclusionArgs{...} }
 type GetProtectionRulesProtectionRuleExclusionArrayInput interface {
 	pulumi.Input
 
@@ -9983,7 +9983,7 @@ type GetWaasPoliciesFilter struct {
 // GetWaasPoliciesFilterInput is an input type that accepts GetWaasPoliciesFilterArgs and GetWaasPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesFilterInput` via:
 //
-//          GetWaasPoliciesFilterArgs{...}
+//	GetWaasPoliciesFilterArgs{...}
 type GetWaasPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -10013,7 +10013,7 @@ func (i GetWaasPoliciesFilterArgs) ToGetWaasPoliciesFilterOutputWithContext(ctx 
 // GetWaasPoliciesFilterArrayInput is an input type that accepts GetWaasPoliciesFilterArray and GetWaasPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesFilterArrayInput` via:
 //
-//          GetWaasPoliciesFilterArray{ GetWaasPoliciesFilterArgs{...} }
+//	GetWaasPoliciesFilterArray{ GetWaasPoliciesFilterArgs{...} }
 type GetWaasPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -10116,7 +10116,7 @@ type GetWaasPoliciesWaasPolicy struct {
 // GetWaasPoliciesWaasPolicyInput is an input type that accepts GetWaasPoliciesWaasPolicyArgs and GetWaasPoliciesWaasPolicyOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyInput` via:
 //
-//          GetWaasPoliciesWaasPolicyArgs{...}
+//	GetWaasPoliciesWaasPolicyArgs{...}
 type GetWaasPoliciesWaasPolicyInput interface {
 	pulumi.Input
 
@@ -10170,7 +10170,7 @@ func (i GetWaasPoliciesWaasPolicyArgs) ToGetWaasPoliciesWaasPolicyOutputWithCont
 // GetWaasPoliciesWaasPolicyArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyArray and GetWaasPoliciesWaasPolicyArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyArray{ GetWaasPoliciesWaasPolicyArgs{...} }
+//	GetWaasPoliciesWaasPolicyArray{ GetWaasPoliciesWaasPolicyArgs{...} }
 type GetWaasPoliciesWaasPolicyArrayInput interface {
 	pulumi.Input
 
@@ -10311,7 +10311,7 @@ type GetWaasPoliciesWaasPolicyOrigin struct {
 // GetWaasPoliciesWaasPolicyOriginInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginArgs and GetWaasPoliciesWaasPolicyOriginOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginArgs{...}
+//	GetWaasPoliciesWaasPolicyOriginArgs{...}
 type GetWaasPoliciesWaasPolicyOriginInput interface {
 	pulumi.Input
 
@@ -10346,7 +10346,7 @@ func (i GetWaasPoliciesWaasPolicyOriginArgs) ToGetWaasPoliciesWaasPolicyOriginOu
 // GetWaasPoliciesWaasPolicyOriginArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginArray and GetWaasPoliciesWaasPolicyOriginArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginArray{ GetWaasPoliciesWaasPolicyOriginArgs{...} }
+//	GetWaasPoliciesWaasPolicyOriginArray{ GetWaasPoliciesWaasPolicyOriginArgs{...} }
 type GetWaasPoliciesWaasPolicyOriginArrayInput interface {
 	pulumi.Input
 
@@ -10438,7 +10438,7 @@ type GetWaasPoliciesWaasPolicyOriginCustomHeader struct {
 // GetWaasPoliciesWaasPolicyOriginCustomHeaderInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs and GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginCustomHeaderInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs{...}
+//	GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs{...}
 type GetWaasPoliciesWaasPolicyOriginCustomHeaderInput interface {
 	pulumi.Input
 
@@ -10468,7 +10468,7 @@ func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ToGetWaasPoliciesWaasPo
 // GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginCustomHeaderArray and GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginCustomHeaderArray{ GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs{...} }
+//	GetWaasPoliciesWaasPolicyOriginCustomHeaderArray{ GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs{...} }
 type GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput interface {
 	pulumi.Input
 
@@ -10542,7 +10542,7 @@ type GetWaasPoliciesWaasPolicyOriginGroup struct {
 // GetWaasPoliciesWaasPolicyOriginGroupInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupArgs and GetWaasPoliciesWaasPolicyOriginGroupOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginGroupInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginGroupArgs{...}
+//	GetWaasPoliciesWaasPolicyOriginGroupArgs{...}
 type GetWaasPoliciesWaasPolicyOriginGroupInput interface {
 	pulumi.Input
 
@@ -10570,7 +10570,7 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupArgs) ToGetWaasPoliciesWaasPolicyOri
 // GetWaasPoliciesWaasPolicyOriginGroupArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupArray and GetWaasPoliciesWaasPolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginGroupArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginGroupArray{ GetWaasPoliciesWaasPolicyOriginGroupArgs{...} }
+//	GetWaasPoliciesWaasPolicyOriginGroupArray{ GetWaasPoliciesWaasPolicyOriginGroupArgs{...} }
 type GetWaasPoliciesWaasPolicyOriginGroupArrayInput interface {
 	pulumi.Input
 
@@ -10645,7 +10645,7 @@ type GetWaasPoliciesWaasPolicyOriginGroupOriginGroup struct {
 // GetWaasPoliciesWaasPolicyOriginGroupOriginGroupInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs and GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginGroupOriginGroupInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs{...}
+//	GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs{...}
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupInput interface {
 	pulumi.Input
 
@@ -10674,7 +10674,7 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPoliciesWa
 // GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray and GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray{ GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs{...} }
+//	GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray{ GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs{...} }
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput interface {
 	pulumi.Input
 
@@ -10778,7 +10778,7 @@ type GetWaasPoliciesWaasPolicyPolicyConfig struct {
 // GetWaasPoliciesWaasPolicyPolicyConfigInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigArgs and GetWaasPoliciesWaasPolicyPolicyConfigOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigInput` via:
 //
-//          GetWaasPoliciesWaasPolicyPolicyConfigArgs{...}
+//	GetWaasPoliciesWaasPolicyPolicyConfigArgs{...}
 type GetWaasPoliciesWaasPolicyPolicyConfigInput interface {
 	pulumi.Input
 
@@ -10837,7 +10837,7 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigArgs) ToGetWaasPoliciesWaasPolicyPo
 // GetWaasPoliciesWaasPolicyPolicyConfigArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigArray and GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyPolicyConfigArray{ GetWaasPoliciesWaasPolicyPolicyConfigArgs{...} }
+//	GetWaasPoliciesWaasPolicyPolicyConfigArray{ GetWaasPoliciesWaasPolicyPolicyConfigArgs{...} }
 type GetWaasPoliciesWaasPolicyPolicyConfigArrayInput interface {
 	pulumi.Input
 
@@ -11007,7 +11007,7 @@ type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck struct {
 // GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs and GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckInput` via:
 //
-//          GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs{...}
+//	GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs{...}
 type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckInput interface {
 	pulumi.Input
 
@@ -11062,7 +11062,7 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ToGetWaasPoliciesW
 // GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray and GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray{ GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs{...} }
+//	GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray{ GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs{...} }
 type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput interface {
 	pulumi.Input
 
@@ -11197,7 +11197,7 @@ type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod struct {
 // GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs and GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodInput` via:
 //
-//          GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs{...}
+//	GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs{...}
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodInput interface {
 	pulumi.Input
 
@@ -11234,7 +11234,7 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasP
 // GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray and GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray{ GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs{...} }
+//	GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray{ GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs{...} }
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput interface {
 	pulumi.Input
 
@@ -11343,7 +11343,7 @@ type GetWaasPoliciesWaasPolicyWafConfig struct {
 // GetWaasPoliciesWaasPolicyWafConfigInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigArgs and GetWaasPoliciesWaasPolicyWafConfigOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigInput interface {
 	pulumi.Input
 
@@ -11393,7 +11393,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigArgs) ToGetWaasPoliciesWaasPolicyWafCo
 // GetWaasPoliciesWaasPolicyWafConfigArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigArray and GetWaasPoliciesWaasPolicyWafConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigArray{ GetWaasPoliciesWaasPolicyWafConfigArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigArray{ GetWaasPoliciesWaasPolicyWafConfigArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigArrayInput interface {
 	pulumi.Input
 
@@ -11573,7 +11573,7 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRule struct {
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs and GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleInput interface {
 	pulumi.Input
 
@@ -11637,7 +11637,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPoliciesWaasP
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray{ GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray{ GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayInput interface {
 	pulumi.Input
 
@@ -11811,7 +11811,7 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria struct {
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs and GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaInput interface {
 	pulumi.Input
 
@@ -11859,7 +11859,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolic
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray{ GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray{ GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -11958,7 +11958,7 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation stru
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs and GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput interface {
 	pulumi.Input
 
@@ -11990,7 +11990,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray{ GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray{ GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput interface {
 	pulumi.Input
 
@@ -12075,7 +12075,7 @@ type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting struct {
 // GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs and GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingInput interface {
 	pulumi.Input
 
@@ -12109,7 +12109,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPoli
 // GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray and GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray{ GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray{ GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayInput interface {
 	pulumi.Input
 
@@ -12205,7 +12205,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCachingRule struct {
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs and GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCachingRuleInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleInput interface {
 	pulumi.Input
 
@@ -12245,7 +12245,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPoliciesWaas
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray and GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray{ GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray{ GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayInput interface {
 	pulumi.Input
 
@@ -12364,7 +12364,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria struct {
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs and GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaInput interface {
 	pulumi.Input
 
@@ -12410,7 +12410,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPoli
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray{ GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray{ GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -12512,7 +12512,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCaptcha struct {
 // GetWaasPoliciesWaasPolicyWafConfigCaptchaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs and GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCaptchaInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigCaptchaInput interface {
 	pulumi.Input
 
@@ -12552,7 +12552,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ToGetWaasPoliciesWaasPoli
 // GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCaptchaArray and GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCaptchaArray{ GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigCaptchaArray{ GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayInput interface {
 	pulumi.Input
 
@@ -12655,7 +12655,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule struct {
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleInput interface {
 	pulumi.Input
 
@@ -12687,7 +12687,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPol
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray{ GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray{ GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -12770,7 +12770,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion struct {
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionInput interface {
 	pulumi.Input
 
@@ -12800,7 +12800,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToG
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray{ GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray{ GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput interface {
 	pulumi.Input
 
@@ -12888,7 +12888,7 @@ type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge struct {
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeInput interface {
 	pulumi.Input
 
@@ -12930,7 +12930,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetW
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray{ GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray{ GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayInput interface {
 	pulumi.Input
 
@@ -13058,7 +13058,7 @@ type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettin
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingInput interface {
 	pulumi.Input
 
@@ -13102,7 +13102,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray{ GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray{ GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput interface {
 	pulumi.Input
 
@@ -13247,7 +13247,7 @@ type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge struct {
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeInput interface {
 	pulumi.Input
 
@@ -13293,7 +13293,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWa
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray{ GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray{ GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayInput interface {
 	pulumi.Input
 
@@ -13433,7 +13433,7 @@ type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingInput interface {
 	pulumi.Input
 
@@ -13477,7 +13477,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray{ GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray{ GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput interface {
 	pulumi.Input
 
@@ -13606,7 +13606,7 @@ type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader st
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput interface {
 	pulumi.Input
 
@@ -13636,7 +13636,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray{ GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray{ GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput interface {
 	pulumi.Input
 
@@ -13728,7 +13728,7 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallenge struct {
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeInput interface {
 	pulumi.Input
 
@@ -13772,7 +13772,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPoliciesWaas
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput interface {
 	pulumi.Input
 
@@ -13903,7 +13903,7 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting struct {
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingInput interface {
 	pulumi.Input
 
@@ -13947,7 +13947,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ToGet
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput interface {
 	pulumi.Input
 
@@ -14084,7 +14084,7 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria struct {
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaInput interface {
 	pulumi.Input
 
@@ -14132,7 +14132,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPoli
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -14229,7 +14229,7 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader struct {
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderInput interface {
 	pulumi.Input
 
@@ -14259,7 +14259,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaa
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray{ GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput interface {
 	pulumi.Input
 
@@ -14357,7 +14357,7 @@ type GetWaasPoliciesWaasPolicyWafConfigProtectionSetting struct {
 // GetWaasPoliciesWaasPolicyWafConfigProtectionSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs and GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigProtectionSettingInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigProtectionSettingInput interface {
 	pulumi.Input
 
@@ -14409,7 +14409,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ToGetWaasPolici
 // GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray and GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray{ GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray{ GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayInput interface {
 	pulumi.Input
 
@@ -14544,7 +14544,7 @@ type GetWaasPoliciesWaasPolicyWafConfigWhitelist struct {
 // GetWaasPoliciesWaasPolicyWafConfigWhitelistInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs and GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigWhitelistInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs{...}
+//	GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs{...}
 type GetWaasPoliciesWaasPolicyWafConfigWhitelistInput interface {
 	pulumi.Input
 
@@ -14576,7 +14576,7 @@ func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ToGetWaasPoliciesWaasPo
 // GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigWhitelistArray and GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayInput` via:
 //
-//          GetWaasPoliciesWaasPolicyWafConfigWhitelistArray{ GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs{...} }
+//	GetWaasPoliciesWaasPolicyWafConfigWhitelistArray{ GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs{...} }
 type GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayInput interface {
 	pulumi.Input
 
@@ -14662,7 +14662,7 @@ type GetWaasPolicyOrigin struct {
 // GetWaasPolicyOriginInput is an input type that accepts GetWaasPolicyOriginArgs and GetWaasPolicyOriginOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginInput` via:
 //
-//          GetWaasPolicyOriginArgs{...}
+//	GetWaasPolicyOriginArgs{...}
 type GetWaasPolicyOriginInput interface {
 	pulumi.Input
 
@@ -14697,7 +14697,7 @@ func (i GetWaasPolicyOriginArgs) ToGetWaasPolicyOriginOutputWithContext(ctx cont
 // GetWaasPolicyOriginArrayInput is an input type that accepts GetWaasPolicyOriginArray and GetWaasPolicyOriginArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginArrayInput` via:
 //
-//          GetWaasPolicyOriginArray{ GetWaasPolicyOriginArgs{...} }
+//	GetWaasPolicyOriginArray{ GetWaasPolicyOriginArgs{...} }
 type GetWaasPolicyOriginArrayInput interface {
 	pulumi.Input
 
@@ -14787,7 +14787,7 @@ type GetWaasPolicyOriginCustomHeader struct {
 // GetWaasPolicyOriginCustomHeaderInput is an input type that accepts GetWaasPolicyOriginCustomHeaderArgs and GetWaasPolicyOriginCustomHeaderOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginCustomHeaderInput` via:
 //
-//          GetWaasPolicyOriginCustomHeaderArgs{...}
+//	GetWaasPolicyOriginCustomHeaderArgs{...}
 type GetWaasPolicyOriginCustomHeaderInput interface {
 	pulumi.Input
 
@@ -14817,7 +14817,7 @@ func (i GetWaasPolicyOriginCustomHeaderArgs) ToGetWaasPolicyOriginCustomHeaderOu
 // GetWaasPolicyOriginCustomHeaderArrayInput is an input type that accepts GetWaasPolicyOriginCustomHeaderArray and GetWaasPolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginCustomHeaderArrayInput` via:
 //
-//          GetWaasPolicyOriginCustomHeaderArray{ GetWaasPolicyOriginCustomHeaderArgs{...} }
+//	GetWaasPolicyOriginCustomHeaderArray{ GetWaasPolicyOriginCustomHeaderArgs{...} }
 type GetWaasPolicyOriginCustomHeaderArrayInput interface {
 	pulumi.Input
 
@@ -14891,7 +14891,7 @@ type GetWaasPolicyOriginGroup struct {
 // GetWaasPolicyOriginGroupInput is an input type that accepts GetWaasPolicyOriginGroupArgs and GetWaasPolicyOriginGroupOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginGroupInput` via:
 //
-//          GetWaasPolicyOriginGroupArgs{...}
+//	GetWaasPolicyOriginGroupArgs{...}
 type GetWaasPolicyOriginGroupInput interface {
 	pulumi.Input
 
@@ -14919,7 +14919,7 @@ func (i GetWaasPolicyOriginGroupArgs) ToGetWaasPolicyOriginGroupOutputWithContex
 // GetWaasPolicyOriginGroupArrayInput is an input type that accepts GetWaasPolicyOriginGroupArray and GetWaasPolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginGroupArrayInput` via:
 //
-//          GetWaasPolicyOriginGroupArray{ GetWaasPolicyOriginGroupArgs{...} }
+//	GetWaasPolicyOriginGroupArray{ GetWaasPolicyOriginGroupArgs{...} }
 type GetWaasPolicyOriginGroupArrayInput interface {
 	pulumi.Input
 
@@ -14992,7 +14992,7 @@ type GetWaasPolicyOriginGroupOriginGroup struct {
 // GetWaasPolicyOriginGroupOriginGroupInput is an input type that accepts GetWaasPolicyOriginGroupOriginGroupArgs and GetWaasPolicyOriginGroupOriginGroupOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginGroupOriginGroupInput` via:
 //
-//          GetWaasPolicyOriginGroupOriginGroupArgs{...}
+//	GetWaasPolicyOriginGroupOriginGroupArgs{...}
 type GetWaasPolicyOriginGroupOriginGroupInput interface {
 	pulumi.Input
 
@@ -15021,7 +15021,7 @@ func (i GetWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPolicyOriginGroupOrigi
 // GetWaasPolicyOriginGroupOriginGroupArrayInput is an input type that accepts GetWaasPolicyOriginGroupOriginGroupArray and GetWaasPolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginGroupOriginGroupArrayInput` via:
 //
-//          GetWaasPolicyOriginGroupOriginGroupArray{ GetWaasPolicyOriginGroupOriginGroupArgs{...} }
+//	GetWaasPolicyOriginGroupOriginGroupArray{ GetWaasPolicyOriginGroupOriginGroupArgs{...} }
 type GetWaasPolicyOriginGroupOriginGroupArrayInput interface {
 	pulumi.Input
 
@@ -15125,7 +15125,7 @@ type GetWaasPolicyPolicyConfig struct {
 // GetWaasPolicyPolicyConfigInput is an input type that accepts GetWaasPolicyPolicyConfigArgs and GetWaasPolicyPolicyConfigOutput values.
 // You can construct a concrete instance of `GetWaasPolicyPolicyConfigInput` via:
 //
-//          GetWaasPolicyPolicyConfigArgs{...}
+//	GetWaasPolicyPolicyConfigArgs{...}
 type GetWaasPolicyPolicyConfigInput interface {
 	pulumi.Input
 
@@ -15184,7 +15184,7 @@ func (i GetWaasPolicyPolicyConfigArgs) ToGetWaasPolicyPolicyConfigOutputWithCont
 // GetWaasPolicyPolicyConfigArrayInput is an input type that accepts GetWaasPolicyPolicyConfigArray and GetWaasPolicyPolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyPolicyConfigArrayInput` via:
 //
-//          GetWaasPolicyPolicyConfigArray{ GetWaasPolicyPolicyConfigArgs{...} }
+//	GetWaasPolicyPolicyConfigArray{ GetWaasPolicyPolicyConfigArgs{...} }
 type GetWaasPolicyPolicyConfigArrayInput interface {
 	pulumi.Input
 
@@ -15352,7 +15352,7 @@ type GetWaasPolicyPolicyConfigHealthChecks struct {
 // GetWaasPolicyPolicyConfigHealthChecksInput is an input type that accepts GetWaasPolicyPolicyConfigHealthChecksArgs and GetWaasPolicyPolicyConfigHealthChecksOutput values.
 // You can construct a concrete instance of `GetWaasPolicyPolicyConfigHealthChecksInput` via:
 //
-//          GetWaasPolicyPolicyConfigHealthChecksArgs{...}
+//	GetWaasPolicyPolicyConfigHealthChecksArgs{...}
 type GetWaasPolicyPolicyConfigHealthChecksInput interface {
 	pulumi.Input
 
@@ -15497,7 +15497,7 @@ type GetWaasPolicyPolicyConfigLoadBalancingMethod struct {
 // GetWaasPolicyPolicyConfigLoadBalancingMethodInput is an input type that accepts GetWaasPolicyPolicyConfigLoadBalancingMethodArgs and GetWaasPolicyPolicyConfigLoadBalancingMethodOutput values.
 // You can construct a concrete instance of `GetWaasPolicyPolicyConfigLoadBalancingMethodInput` via:
 //
-//          GetWaasPolicyPolicyConfigLoadBalancingMethodArgs{...}
+//	GetWaasPolicyPolicyConfigLoadBalancingMethodArgs{...}
 type GetWaasPolicyPolicyConfigLoadBalancingMethodInput interface {
 	pulumi.Input
 
@@ -15598,7 +15598,7 @@ type GetWaasPolicyWafConfig struct {
 // GetWaasPolicyWafConfigInput is an input type that accepts GetWaasPolicyWafConfigArgs and GetWaasPolicyWafConfigOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigInput` via:
 //
-//          GetWaasPolicyWafConfigArgs{...}
+//	GetWaasPolicyWafConfigArgs{...}
 type GetWaasPolicyWafConfigInput interface {
 	pulumi.Input
 
@@ -15648,7 +15648,7 @@ func (i GetWaasPolicyWafConfigArgs) ToGetWaasPolicyWafConfigOutputWithContext(ct
 // GetWaasPolicyWafConfigArrayInput is an input type that accepts GetWaasPolicyWafConfigArray and GetWaasPolicyWafConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigArrayInput` via:
 //
-//          GetWaasPolicyWafConfigArray{ GetWaasPolicyWafConfigArgs{...} }
+//	GetWaasPolicyWafConfigArray{ GetWaasPolicyWafConfigArgs{...} }
 type GetWaasPolicyWafConfigArrayInput interface {
 	pulumi.Input
 
@@ -15814,7 +15814,7 @@ type GetWaasPolicyWafConfigAccessRule struct {
 // GetWaasPolicyWafConfigAccessRuleInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleArgs and GetWaasPolicyWafConfigAccessRuleOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleInput` via:
 //
-//          GetWaasPolicyWafConfigAccessRuleArgs{...}
+//	GetWaasPolicyWafConfigAccessRuleArgs{...}
 type GetWaasPolicyWafConfigAccessRuleInput interface {
 	pulumi.Input
 
@@ -15878,7 +15878,7 @@ func (i GetWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPolicyWafConfigAccessRule
 // GetWaasPolicyWafConfigAccessRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleArray and GetWaasPolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleArrayInput` via:
 //
-//          GetWaasPolicyWafConfigAccessRuleArray{ GetWaasPolicyWafConfigAccessRuleArgs{...} }
+//	GetWaasPolicyWafConfigAccessRuleArray{ GetWaasPolicyWafConfigAccessRuleArgs{...} }
 type GetWaasPolicyWafConfigAccessRuleArrayInput interface {
 	pulumi.Input
 
@@ -16052,7 +16052,7 @@ type GetWaasPolicyWafConfigAccessRuleCriteria struct {
 // GetWaasPolicyWafConfigAccessRuleCriteriaInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleCriteriaArgs and GetWaasPolicyWafConfigAccessRuleCriteriaOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleCriteriaInput` via:
 //
-//          GetWaasPolicyWafConfigAccessRuleCriteriaArgs{...}
+//	GetWaasPolicyWafConfigAccessRuleCriteriaArgs{...}
 type GetWaasPolicyWafConfigAccessRuleCriteriaInput interface {
 	pulumi.Input
 
@@ -16100,7 +16100,7 @@ func (i GetWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolicyWafConfigAc
 // GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleCriteriaArray and GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
-//          GetWaasPolicyWafConfigAccessRuleCriteriaArray{ GetWaasPolicyWafConfigAccessRuleCriteriaArgs{...} }
+//	GetWaasPolicyWafConfigAccessRuleCriteriaArray{ GetWaasPolicyWafConfigAccessRuleCriteriaArgs{...} }
 type GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -16199,7 +16199,7 @@ type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation struct {
 // GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs and GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput` via:
 //
-//          GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...}
+//	GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...}
 type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput interface {
 	pulumi.Input
 
@@ -16231,7 +16231,7 @@ func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToGetWaa
 // GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray and GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
-//          GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray{ GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...} }
+//	GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray{ GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{...} }
 type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput interface {
 	pulumi.Input
 
@@ -16316,7 +16316,7 @@ type GetWaasPolicyWafConfigAddressRateLimiting struct {
 // GetWaasPolicyWafConfigAddressRateLimitingInput is an input type that accepts GetWaasPolicyWafConfigAddressRateLimitingArgs and GetWaasPolicyWafConfigAddressRateLimitingOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAddressRateLimitingInput` via:
 //
-//          GetWaasPolicyWafConfigAddressRateLimitingArgs{...}
+//	GetWaasPolicyWafConfigAddressRateLimitingArgs{...}
 type GetWaasPolicyWafConfigAddressRateLimitingInput interface {
 	pulumi.Input
 
@@ -16401,7 +16401,7 @@ type GetWaasPolicyWafConfigCachingRule struct {
 // GetWaasPolicyWafConfigCachingRuleInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleArgs and GetWaasPolicyWafConfigCachingRuleOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleInput` via:
 //
-//          GetWaasPolicyWafConfigCachingRuleArgs{...}
+//	GetWaasPolicyWafConfigCachingRuleArgs{...}
 type GetWaasPolicyWafConfigCachingRuleInput interface {
 	pulumi.Input
 
@@ -16441,7 +16441,7 @@ func (i GetWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPolicyWafConfigCachingRu
 // GetWaasPolicyWafConfigCachingRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleArray and GetWaasPolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleArrayInput` via:
 //
-//          GetWaasPolicyWafConfigCachingRuleArray{ GetWaasPolicyWafConfigCachingRuleArgs{...} }
+//	GetWaasPolicyWafConfigCachingRuleArray{ GetWaasPolicyWafConfigCachingRuleArgs{...} }
 type GetWaasPolicyWafConfigCachingRuleArrayInput interface {
 	pulumi.Input
 
@@ -16560,7 +16560,7 @@ type GetWaasPolicyWafConfigCachingRuleCriteria struct {
 // GetWaasPolicyWafConfigCachingRuleCriteriaInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleCriteriaArgs and GetWaasPolicyWafConfigCachingRuleCriteriaOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleCriteriaInput` via:
 //
-//          GetWaasPolicyWafConfigCachingRuleCriteriaArgs{...}
+//	GetWaasPolicyWafConfigCachingRuleCriteriaArgs{...}
 type GetWaasPolicyWafConfigCachingRuleCriteriaInput interface {
 	pulumi.Input
 
@@ -16606,7 +16606,7 @@ func (i GetWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPolicyWafConfigC
 // GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleCriteriaArray and GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
-//          GetWaasPolicyWafConfigCachingRuleCriteriaArray{ GetWaasPolicyWafConfigCachingRuleCriteriaArgs{...} }
+//	GetWaasPolicyWafConfigCachingRuleCriteriaArray{ GetWaasPolicyWafConfigCachingRuleCriteriaArgs{...} }
 type GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -16708,7 +16708,7 @@ type GetWaasPolicyWafConfigCaptcha struct {
 // GetWaasPolicyWafConfigCaptchaInput is an input type that accepts GetWaasPolicyWafConfigCaptchaArgs and GetWaasPolicyWafConfigCaptchaOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCaptchaInput` via:
 //
-//          GetWaasPolicyWafConfigCaptchaArgs{...}
+//	GetWaasPolicyWafConfigCaptchaArgs{...}
 type GetWaasPolicyWafConfigCaptchaInput interface {
 	pulumi.Input
 
@@ -16748,7 +16748,7 @@ func (i GetWaasPolicyWafConfigCaptchaArgs) ToGetWaasPolicyWafConfigCaptchaOutput
 // GetWaasPolicyWafConfigCaptchaArrayInput is an input type that accepts GetWaasPolicyWafConfigCaptchaArray and GetWaasPolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCaptchaArrayInput` via:
 //
-//          GetWaasPolicyWafConfigCaptchaArray{ GetWaasPolicyWafConfigCaptchaArgs{...} }
+//	GetWaasPolicyWafConfigCaptchaArray{ GetWaasPolicyWafConfigCaptchaArgs{...} }
 type GetWaasPolicyWafConfigCaptchaArrayInput interface {
 	pulumi.Input
 
@@ -16851,7 +16851,7 @@ type GetWaasPolicyWafConfigCustomProtectionRule struct {
 // GetWaasPolicyWafConfigCustomProtectionRuleInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleArgs and GetWaasPolicyWafConfigCustomProtectionRuleOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCustomProtectionRuleInput` via:
 //
-//          GetWaasPolicyWafConfigCustomProtectionRuleArgs{...}
+//	GetWaasPolicyWafConfigCustomProtectionRuleArgs{...}
 type GetWaasPolicyWafConfigCustomProtectionRuleInput interface {
 	pulumi.Input
 
@@ -16883,7 +16883,7 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPolicyWafConfig
 // GetWaasPolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleArray and GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
-//          GetWaasPolicyWafConfigCustomProtectionRuleArray{ GetWaasPolicyWafConfigCustomProtectionRuleArgs{...} }
+//	GetWaasPolicyWafConfigCustomProtectionRuleArray{ GetWaasPolicyWafConfigCustomProtectionRuleArgs{...} }
 type GetWaasPolicyWafConfigCustomProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -16966,7 +16966,7 @@ type GetWaasPolicyWafConfigCustomProtectionRuleExclusion struct {
 // GetWaasPolicyWafConfigCustomProtectionRuleExclusionInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs and GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCustomProtectionRuleExclusionInput` via:
 //
-//          GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...}
+//	GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...}
 type GetWaasPolicyWafConfigCustomProtectionRuleExclusionInput interface {
 	pulumi.Input
 
@@ -16996,7 +16996,7 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToGetWaasPolicy
 // GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray and GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
-//          GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray{ GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...} }
+//	GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray{ GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{...} }
 type GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput interface {
 	pulumi.Input
 
@@ -17084,7 +17084,7 @@ type GetWaasPolicyWafConfigDeviceFingerprintChallenge struct {
 // GetWaasPolicyWafConfigDeviceFingerprintChallengeInput is an input type that accepts GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs and GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigDeviceFingerprintChallengeInput` via:
 //
-//          GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...}
+//	GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...}
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeInput interface {
 	pulumi.Input
 
@@ -17207,7 +17207,7 @@ type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings struct {
 // GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput is an input type that accepts GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs and GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput` via:
 //
-//          GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
+//	GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput interface {
 	pulumi.Input
 
@@ -17349,7 +17349,7 @@ type GetWaasPolicyWafConfigHumanInteractionChallenge struct {
 // GetWaasPolicyWafConfigHumanInteractionChallengeInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeArgs and GetWaasPolicyWafConfigHumanInteractionChallengeOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigHumanInteractionChallengeInput` via:
 //
-//          GetWaasPolicyWafConfigHumanInteractionChallengeArgs{...}
+//	GetWaasPolicyWafConfigHumanInteractionChallengeArgs{...}
 type GetWaasPolicyWafConfigHumanInteractionChallengeInput interface {
 	pulumi.Input
 
@@ -17486,7 +17486,7 @@ type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings struct {
 // GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs and GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput` via:
 //
-//          GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
+//	GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
 type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput interface {
 	pulumi.Input
 
@@ -17610,7 +17610,7 @@ type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader struct {
 // GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs and GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput` via:
 //
-//          GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
+//	GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
 type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput interface {
 	pulumi.Input
 
@@ -17685,7 +17685,7 @@ type GetWaasPolicyWafConfigJsChallenge struct {
 // GetWaasPolicyWafConfigJsChallengeInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeArgs and GetWaasPolicyWafConfigJsChallengeOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeInput` via:
 //
-//          GetWaasPolicyWafConfigJsChallengeArgs{...}
+//	GetWaasPolicyWafConfigJsChallengeArgs{...}
 type GetWaasPolicyWafConfigJsChallengeInput interface {
 	pulumi.Input
 
@@ -17815,7 +17815,7 @@ type GetWaasPolicyWafConfigJsChallengeChallengeSettings struct {
 // GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs and GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput` via:
 //
-//          GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs{...}
+//	GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs{...}
 type GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput interface {
 	pulumi.Input
 
@@ -17943,7 +17943,7 @@ type GetWaasPolicyWafConfigJsChallengeCriteria struct {
 // GetWaasPolicyWafConfigJsChallengeCriteriaInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeCriteriaArgs and GetWaasPolicyWafConfigJsChallengeCriteriaOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeCriteriaInput` via:
 //
-//          GetWaasPolicyWafConfigJsChallengeCriteriaArgs{...}
+//	GetWaasPolicyWafConfigJsChallengeCriteriaArgs{...}
 type GetWaasPolicyWafConfigJsChallengeCriteriaInput interface {
 	pulumi.Input
 
@@ -17991,7 +17991,7 @@ func (i GetWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPolicyWafConfigJ
 // GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeCriteriaArray and GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
-//          GetWaasPolicyWafConfigJsChallengeCriteriaArray{ GetWaasPolicyWafConfigJsChallengeCriteriaArgs{...} }
+//	GetWaasPolicyWafConfigJsChallengeCriteriaArray{ GetWaasPolicyWafConfigJsChallengeCriteriaArgs{...} }
 type GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -18088,7 +18088,7 @@ type GetWaasPolicyWafConfigJsChallengeSetHttpHeader struct {
 // GetWaasPolicyWafConfigJsChallengeSetHttpHeaderInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs and GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeSetHttpHeaderInput` via:
 //
-//          GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
+//	GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
 type GetWaasPolicyWafConfigJsChallengeSetHttpHeaderInput interface {
 	pulumi.Input
 
@@ -18171,7 +18171,7 @@ type GetWaasPolicyWafConfigProtectionSettings struct {
 // GetWaasPolicyWafConfigProtectionSettingsInput is an input type that accepts GetWaasPolicyWafConfigProtectionSettingsArgs and GetWaasPolicyWafConfigProtectionSettingsOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigProtectionSettingsInput` via:
 //
-//          GetWaasPolicyWafConfigProtectionSettingsArgs{...}
+//	GetWaasPolicyWafConfigProtectionSettingsArgs{...}
 type GetWaasPolicyWafConfigProtectionSettingsInput interface {
 	pulumi.Input
 
@@ -18311,7 +18311,7 @@ type GetWaasPolicyWafConfigWhitelist struct {
 // GetWaasPolicyWafConfigWhitelistInput is an input type that accepts GetWaasPolicyWafConfigWhitelistArgs and GetWaasPolicyWafConfigWhitelistOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigWhitelistInput` via:
 //
-//          GetWaasPolicyWafConfigWhitelistArgs{...}
+//	GetWaasPolicyWafConfigWhitelistArgs{...}
 type GetWaasPolicyWafConfigWhitelistInput interface {
 	pulumi.Input
 
@@ -18343,7 +18343,7 @@ func (i GetWaasPolicyWafConfigWhitelistArgs) ToGetWaasPolicyWafConfigWhitelistOu
 // GetWaasPolicyWafConfigWhitelistArrayInput is an input type that accepts GetWaasPolicyWafConfigWhitelistArray and GetWaasPolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigWhitelistArrayInput` via:
 //
-//          GetWaasPolicyWafConfigWhitelistArray{ GetWaasPolicyWafConfigWhitelistArgs{...} }
+//	GetWaasPolicyWafConfigWhitelistArray{ GetWaasPolicyWafConfigWhitelistArgs{...} }
 type GetWaasPolicyWafConfigWhitelistArrayInput interface {
 	pulumi.Input
 

@@ -23,25 +23,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Streaming.GetStreams(ctx, &streaming.GetStreamsArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			Id:            pulumi.StringRef(_var.Stream_id),
-// 			Name:          pulumi.StringRef(_var.Stream_name),
-// 			State:         pulumi.StringRef(_var.Stream_state),
-// 			StreamPoolId:  pulumi.StringRef(oci_streaming_stream_pool.Test_stream_pool.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Streaming.GetStreams(ctx, &streaming.GetStreamsArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				Id:            pulumi.StringRef(_var.Stream_id),
+//				Name:          pulumi.StringRef(_var.Stream_name),
+//				State:         pulumi.StringRef(_var.Stream_state),
+//				StreamPoolId:  pulumi.StringRef(oci_streaming_stream_pool.Test_stream_pool.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetStreams(ctx *pulumi.Context, args *GetStreamsArgs, opts ...pulumi.InvokeOption) (*GetStreamsResult, error) {
 	var rv GetStreamsResult

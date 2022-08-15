@@ -25,28 +25,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDrgAttachments(ctx, &core.GetDrgAttachmentsArgs{
-// 			CompartmentId:   _var.Compartment_id,
-// 			AttachmentType:  pulumi.StringRef(_var.Drg_attachment_attachment_type),
-// 			DisplayName:     pulumi.StringRef(_var.Drg_attachment_display_name),
-// 			DrgId:           pulumi.StringRef(oci_core_drg.Test_drg.Id),
-// 			DrgRouteTableId: pulumi.StringRef(oci_core_drg_route_table.Test_drg_route_table.Id),
-// 			NetworkId:       pulumi.StringRef(oci_core_network.Test_network.Id),
-// 			State:           pulumi.StringRef(_var.Drg_attachment_state),
-// 			VcnId:           pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDrgAttachments(ctx, &core.GetDrgAttachmentsArgs{
+//				CompartmentId:   _var.Compartment_id,
+//				AttachmentType:  pulumi.StringRef(_var.Drg_attachment_attachment_type),
+//				DisplayName:     pulumi.StringRef(_var.Drg_attachment_display_name),
+//				DrgId:           pulumi.StringRef(oci_core_drg.Test_drg.Id),
+//				DrgRouteTableId: pulumi.StringRef(oci_core_drg_route_table.Test_drg_route_table.Id),
+//				NetworkId:       pulumi.StringRef(oci_core_network.Test_network.Id),
+//				State:           pulumi.StringRef(_var.Drg_attachment_state),
+//				VcnId:           pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDrgAttachments(ctx *pulumi.Context, args *GetDrgAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetDrgAttachmentsResult, error) {
 	var rv GetDrgAttachmentsResult

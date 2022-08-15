@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
 //
-// Gets a NetworkFirewall by identifier
+// # Gets a NetworkFirewall by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkFirewall.GetNetworkFirewall(ctx, &networkfirewall.GetNetworkFirewallArgs{
-// 			NetworkFirewallId: oci_network_firewall_network_firewall.Test_network_firewall.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkFirewall.GetNetworkFirewall(ctx, &networkfirewall.GetNetworkFirewallArgs{
+//				NetworkFirewallId: oci_network_firewall_network_firewall.Test_network_firewall.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNetworkFirewall(ctx *pulumi.Context, args *LookupNetworkFirewallArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallResult, error) {
 	var rv LookupNetworkFirewallResult

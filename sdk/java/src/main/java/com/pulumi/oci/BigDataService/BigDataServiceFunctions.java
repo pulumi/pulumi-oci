@@ -20,6 +20,10 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesPlainArgs;
@@ -29,6 +33,8 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeyResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeysResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigsResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchHistoriesResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesResult;
 import com.pulumi.oci.Utilities;
@@ -310,6 +316,94 @@ public final class BigDataServiceFunctions {
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", TypeShape.of(GetBdsInstanceMetastoreConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List the patch history of this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args) {
+        return getBdsInstancePatchHistories(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List the patch history of this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistoriesPlain(GetBdsInstancePatchHistoriesPlainArgs args) {
+        return getBdsInstancePatchHistoriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List the patch history of this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", TypeShape.of(GetBdsInstancePatchHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List the patch history of this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistoriesPlain(GetBdsInstancePatchHistoriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", TypeShape.of(GetBdsInstancePatchHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available patches for this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args) {
+        return getBdsInstancePatches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available patches for this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args) {
+        return getBdsInstancePatchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available patches for this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", TypeShape.of(GetBdsInstancePatchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available patches for this cluster.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstancePatches:getBdsInstancePatches", TypeShape.of(GetBdsInstancePatchesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.

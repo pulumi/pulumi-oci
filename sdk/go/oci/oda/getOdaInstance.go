@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oda"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oda"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Oda.GetOdaInstance(ctx, &oda.GetOdaInstanceArgs{
-// 			OdaInstanceId: oci_oda_oda_instance.Test_oda_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Oda.GetOdaInstance(ctx, &oda.GetOdaInstanceArgs{
+//				OdaInstanceId: oci_oda_oda_instance.Test_oda_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupOdaInstance(ctx *pulumi.Context, args *LookupOdaInstanceArgs, opts ...pulumi.InvokeOption) (*LookupOdaInstanceResult, error) {
 	var rv LookupOdaInstanceResult

@@ -92,7 +92,7 @@ class GetDedicatedVantagePointResult:
     @pulumi.getter(name="dvpStackDetails")
     def dvp_stack_details(self) -> Sequence['outputs.GetDedicatedVantagePointDvpStackDetailResult']:
         """
-        Details of DVP Stack.
+        Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         """
         return pulumi.get(self, "dvp_stack_details")
 

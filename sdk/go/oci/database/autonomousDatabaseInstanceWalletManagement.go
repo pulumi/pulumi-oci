@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousDatabaseInstanceWalletManagement(ctx, "testAutonomousDatabaseInstanceWalletManagement", &Database.AutonomousDatabaseInstanceWalletManagementArgs{
-// 			AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-// 			GracePeriod:          pulumi.Any(_var.Autonomous_database_instance_wallet_management_grace_period),
-// 			ShouldRotate:         pulumi.Any(_var.Autonomous_database_instance_wallet_management_should_rotate),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousDatabaseInstanceWalletManagement(ctx, "testAutonomousDatabaseInstanceWalletManagement", &Database.AutonomousDatabaseInstanceWalletManagementArgs{
+//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
+//				GracePeriod:          pulumi.Any(_var.Autonomous_database_instance_wallet_management_grace_period),
+//				ShouldRotate:         pulumi.Any(_var.Autonomous_database_instance_wallet_management_should_rotate),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -164,7 +167,7 @@ func (i *AutonomousDatabaseInstanceWalletManagement) ToAutonomousDatabaseInstanc
 // AutonomousDatabaseInstanceWalletManagementArrayInput is an input type that accepts AutonomousDatabaseInstanceWalletManagementArray and AutonomousDatabaseInstanceWalletManagementArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseInstanceWalletManagementArrayInput` via:
 //
-//          AutonomousDatabaseInstanceWalletManagementArray{ AutonomousDatabaseInstanceWalletManagementArgs{...} }
+//	AutonomousDatabaseInstanceWalletManagementArray{ AutonomousDatabaseInstanceWalletManagementArgs{...} }
 type AutonomousDatabaseInstanceWalletManagementArrayInput interface {
 	pulumi.Input
 
@@ -189,7 +192,7 @@ func (i AutonomousDatabaseInstanceWalletManagementArray) ToAutonomousDatabaseIns
 // AutonomousDatabaseInstanceWalletManagementMapInput is an input type that accepts AutonomousDatabaseInstanceWalletManagementMap and AutonomousDatabaseInstanceWalletManagementMapOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseInstanceWalletManagementMapInput` via:
 //
-//          AutonomousDatabaseInstanceWalletManagementMap{ "key": AutonomousDatabaseInstanceWalletManagementArgs{...} }
+//	AutonomousDatabaseInstanceWalletManagementMap{ "key": AutonomousDatabaseInstanceWalletManagementArgs{...} }
 type AutonomousDatabaseInstanceWalletManagementMapInput interface {
 	pulumi.Input
 

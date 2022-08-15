@@ -93,6 +93,10 @@ export interface GetControlAssignmentResult {
      * If set indicates that the audit logs are being forwarded to the relevant remote logging server
      */
     readonly isLogForwarded: boolean;
+    /**
+     * More in detail about the lifeCycleState.
+     */
+    readonly lifecycleDetails: string;
     readonly operatorControlAssignmentId: string;
     /**
      * The OCID of the operator control.

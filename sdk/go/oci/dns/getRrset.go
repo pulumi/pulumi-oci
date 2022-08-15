@@ -23,26 +23,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetRrset(ctx, &dns.GetRrsetArgs{
-// 			Domain:        _var.Rrset_domain,
-// 			Rtype:         _var.Rrset_rtype,
-// 			ZoneNameOrId:  oci_dns_zone.Test_zone.Id,
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			Scope:         pulumi.StringRef(_var.Rrset_scope),
-// 			ViewId:        pulumi.StringRef(oci_dns_view.Test_view.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetRrset(ctx, &dns.GetRrsetArgs{
+//				Domain:        _var.Rrset_domain,
+//				Rtype:         _var.Rrset_rtype,
+//				ZoneNameOrId:  oci_dns_zone.Test_zone.Id,
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				Scope:         pulumi.StringRef(_var.Rrset_scope),
+//				ViewId:        pulumi.StringRef(oci_dns_view.Test_view.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupRrset(ctx *pulumi.Context, args *LookupRrsetArgs, opts ...pulumi.InvokeOption) (*LookupRrsetResult, error) {
 	var rv LookupRrsetResult

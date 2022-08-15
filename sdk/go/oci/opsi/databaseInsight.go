@@ -16,7 +16,9 @@ import (
 // DatabaseInsights can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
+//
+//	$ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
+//
 // ```
 type DatabaseInsight struct {
 	pulumi.CustomResourceState
@@ -368,7 +370,7 @@ func (i *DatabaseInsight) ToDatabaseInsightOutputWithContext(ctx context.Context
 // DatabaseInsightArrayInput is an input type that accepts DatabaseInsightArray and DatabaseInsightArrayOutput values.
 // You can construct a concrete instance of `DatabaseInsightArrayInput` via:
 //
-//          DatabaseInsightArray{ DatabaseInsightArgs{...} }
+//	DatabaseInsightArray{ DatabaseInsightArgs{...} }
 type DatabaseInsightArrayInput interface {
 	pulumi.Input
 
@@ -393,7 +395,7 @@ func (i DatabaseInsightArray) ToDatabaseInsightArrayOutputWithContext(ctx contex
 // DatabaseInsightMapInput is an input type that accepts DatabaseInsightMap and DatabaseInsightMapOutput values.
 // You can construct a concrete instance of `DatabaseInsightMapInput` via:
 //
-//          DatabaseInsightMap{ "key": DatabaseInsightArgs{...} }
+//	DatabaseInsightMap{ "key": DatabaseInsightArgs{...} }
 type DatabaseInsightMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ons.GetNotificationTopic(ctx, &ons.GetNotificationTopicArgs{
-// 			TopicId: oci_ons_notification_topic.Test_notification_topic.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ons.GetNotificationTopic(ctx, &ons.GetNotificationTopicArgs{
+//				TopicId: oci_ons_notification_topic.Test_notification_topic.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNotificationTopic(ctx *pulumi.Context, args *LookupNotificationTopicArgs, opts ...pulumi.InvokeOption) (*LookupNotificationTopicResult, error) {
 	var rv LookupNotificationTopicResult

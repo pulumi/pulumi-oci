@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewSensitiveDataModelsSensitiveColumn(ctx, "testSensitiveDataModelsSensitiveColumn", &DataSafe.SensitiveDataModelsSensitiveColumnArgs{
-// 			ColumnName:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_column_name),
-// 			Object:                    pulumi.Any(_var.Sensitive_data_models_sensitive_column_object),
-// 			SchemaName:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_schema_name),
-// 			SensitiveDataModelId:      pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-// 			AppDefinedChildColumnKeys: pulumi.Any(_var.Sensitive_data_models_sensitive_column_app_defined_child_column_keys),
-// 			AppName:                   pulumi.Any(_var.Sensitive_data_models_sensitive_column_app_name),
-// 			DataType:                  pulumi.Any(_var.Sensitive_data_models_sensitive_column_data_type),
-// 			DbDefinedChildColumnKeys:  pulumi.Any(_var.Sensitive_data_models_sensitive_column_db_defined_child_column_keys),
-// 			ObjectType:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_object_type),
-// 			ParentColumnKeys:          pulumi.Any(_var.Sensitive_data_models_sensitive_column_parent_column_keys),
-// 			RelationType:              pulumi.Any(_var.Sensitive_data_models_sensitive_column_relation_type),
-// 			SensitiveTypeId:           pulumi.Any(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
-// 			Status:                    pulumi.Any(_var.Sensitive_data_models_sensitive_column_status),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewSensitiveDataModelsSensitiveColumn(ctx, "testSensitiveDataModelsSensitiveColumn", &DataSafe.SensitiveDataModelsSensitiveColumnArgs{
+//				ColumnName:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_column_name),
+//				Object:                    pulumi.Any(_var.Sensitive_data_models_sensitive_column_object),
+//				SchemaName:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_schema_name),
+//				SensitiveDataModelId:      pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//				AppDefinedChildColumnKeys: pulumi.Any(_var.Sensitive_data_models_sensitive_column_app_defined_child_column_keys),
+//				AppName:                   pulumi.Any(_var.Sensitive_data_models_sensitive_column_app_name),
+//				DataType:                  pulumi.Any(_var.Sensitive_data_models_sensitive_column_data_type),
+//				DbDefinedChildColumnKeys:  pulumi.Any(_var.Sensitive_data_models_sensitive_column_db_defined_child_column_keys),
+//				ObjectType:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_object_type),
+//				ParentColumnKeys:          pulumi.Any(_var.Sensitive_data_models_sensitive_column_parent_column_keys),
+//				RelationType:              pulumi.Any(_var.Sensitive_data_models_sensitive_column_relation_type),
+//				SensitiveTypeId:           pulumi.Any(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
+//				Status:                    pulumi.Any(_var.Sensitive_data_models_sensitive_column_status),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // SensitiveDataModelsSensitiveColumns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column "sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
+//
+//	$ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column "sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
+//
 // ```
 type SensitiveDataModelsSensitiveColumn struct {
 	pulumi.CustomResourceState
@@ -329,7 +334,7 @@ func (i *SensitiveDataModelsSensitiveColumn) ToSensitiveDataModelsSensitiveColum
 // SensitiveDataModelsSensitiveColumnArrayInput is an input type that accepts SensitiveDataModelsSensitiveColumnArray and SensitiveDataModelsSensitiveColumnArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsSensitiveColumnArrayInput` via:
 //
-//          SensitiveDataModelsSensitiveColumnArray{ SensitiveDataModelsSensitiveColumnArgs{...} }
+//	SensitiveDataModelsSensitiveColumnArray{ SensitiveDataModelsSensitiveColumnArgs{...} }
 type SensitiveDataModelsSensitiveColumnArrayInput interface {
 	pulumi.Input
 
@@ -354,7 +359,7 @@ func (i SensitiveDataModelsSensitiveColumnArray) ToSensitiveDataModelsSensitiveC
 // SensitiveDataModelsSensitiveColumnMapInput is an input type that accepts SensitiveDataModelsSensitiveColumnMap and SensitiveDataModelsSensitiveColumnMapOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsSensitiveColumnMapInput` via:
 //
-//          SensitiveDataModelsSensitiveColumnMap{ "key": SensitiveDataModelsSensitiveColumnArgs{...} }
+//	SensitiveDataModelsSensitiveColumnMap{ "key": SensitiveDataModelsSensitiveColumnArgs{...} }
 type SensitiveDataModelsSensitiveColumnMapInput interface {
 	pulumi.Input
 

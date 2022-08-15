@@ -22,32 +22,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewNatGateway(ctx, "testNatGateway", &Core.NatGatewayArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			BlockTraffic:  pulumi.Any(_var.Nat_gateway_block_traffic),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Nat_gateway_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			PublicIpId:   pulumi.Any(oci_core_public_ip.Test_public_ip.Id),
-// 			RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewNatGateway(ctx, "testNatGateway", &Core.NatGatewayArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				BlockTraffic:  pulumi.Any(_var.Nat_gateway_block_traffic),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Nat_gateway_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				PublicIpId:   pulumi.Any(oci_core_public_ip.Test_public_ip.Id),
+//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // NatGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
+//
+//	$ pulumi import oci:Core/natGateway:NatGateway test_nat_gateway "id"
+//
 // ```
 type NatGateway struct {
 	pulumi.CustomResourceState
@@ -237,7 +242,7 @@ func (i *NatGateway) ToNatGatewayOutputWithContext(ctx context.Context) NatGatew
 // NatGatewayArrayInput is an input type that accepts NatGatewayArray and NatGatewayArrayOutput values.
 // You can construct a concrete instance of `NatGatewayArrayInput` via:
 //
-//          NatGatewayArray{ NatGatewayArgs{...} }
+//	NatGatewayArray{ NatGatewayArgs{...} }
 type NatGatewayArrayInput interface {
 	pulumi.Input
 
@@ -262,7 +267,7 @@ func (i NatGatewayArray) ToNatGatewayArrayOutputWithContext(ctx context.Context)
 // NatGatewayMapInput is an input type that accepts NatGatewayMap and NatGatewayMapOutput values.
 // You can construct a concrete instance of `NatGatewayMapInput` via:
 //
-//          NatGatewayMap{ "key": NatGatewayArgs{...} }
+//	NatGatewayMap{ "key": NatGatewayArgs{...} }
 type NatGatewayMapInput interface {
 	pulumi.Input
 

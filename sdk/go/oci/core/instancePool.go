@@ -21,51 +21,54 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewInstancePool(ctx, "testInstancePool", &Core.InstancePoolArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			InstanceConfigurationId: pulumi.Any(oci_core_instance_configuration.Test_instance_configuration.Id),
-// 			PlacementConfigurations: core.InstancePoolPlacementConfigurationArray{
-// 				&core.InstancePoolPlacementConfigurationArgs{
-// 					AvailabilityDomain: pulumi.Any(_var.Instance_pool_placement_configurations_availability_domain),
-// 					PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 					FaultDomains:       pulumi.Any(_var.Instance_pool_placement_configurations_fault_domains),
-// 					SecondaryVnicSubnets: core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArray{
-// 						&core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{
-// 							SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 							DisplayName: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name),
-// 						},
-// 					},
-// 				},
-// 			},
-// 			Size: pulumi.Any(_var.Instance_pool_size),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Instance_pool_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			LoadBalancers: core.InstancePoolLoadBalancerArray{
-// 				&core.InstancePoolLoadBalancerArgs{
-// 					BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-// 					LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 					Port:           pulumi.Any(_var.Instance_pool_load_balancers_port),
-// 					VnicSelection:  pulumi.Any(_var.Instance_pool_load_balancers_vnic_selection),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewInstancePool(ctx, "testInstancePool", &Core.InstancePoolArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				InstanceConfigurationId: pulumi.Any(oci_core_instance_configuration.Test_instance_configuration.Id),
+//				PlacementConfigurations: core.InstancePoolPlacementConfigurationArray{
+//					&core.InstancePoolPlacementConfigurationArgs{
+//						AvailabilityDomain: pulumi.Any(_var.Instance_pool_placement_configurations_availability_domain),
+//						PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						FaultDomains:       pulumi.Any(_var.Instance_pool_placement_configurations_fault_domains),
+//						SecondaryVnicSubnets: core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArray{
+//							&core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{
+//								SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//								DisplayName: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name),
+//							},
+//						},
+//					},
+//				},
+//				Size: pulumi.Any(_var.Instance_pool_size),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Instance_pool_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				LoadBalancers: core.InstancePoolLoadBalancerArray{
+//					&core.InstancePoolLoadBalancerArgs{
+//						BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
+//						LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//						Port:           pulumi.Any(_var.Instance_pool_load_balancers_port),
+//						VnicSelection:  pulumi.Any(_var.Instance_pool_load_balancers_vnic_selection),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -73,7 +76,9 @@ import (
 // InstancePools can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
+//
+//	$ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
+//
 // ```
 type InstancePool struct {
 	pulumi.CustomResourceState
@@ -265,7 +270,7 @@ func (i *InstancePool) ToInstancePoolOutputWithContext(ctx context.Context) Inst
 // InstancePoolArrayInput is an input type that accepts InstancePoolArray and InstancePoolArrayOutput values.
 // You can construct a concrete instance of `InstancePoolArrayInput` via:
 //
-//          InstancePoolArray{ InstancePoolArgs{...} }
+//	InstancePoolArray{ InstancePoolArgs{...} }
 type InstancePoolArrayInput interface {
 	pulumi.Input
 
@@ -290,7 +295,7 @@ func (i InstancePoolArray) ToInstancePoolArrayOutputWithContext(ctx context.Cont
 // InstancePoolMapInput is an input type that accepts InstancePoolMap and InstancePoolMapOutput values.
 // You can construct a concrete instance of `InstancePoolMapInput` via:
 //
-//          InstancePoolMap{ "key": InstancePoolArgs{...} }
+//	InstancePoolMap{ "key": InstancePoolArgs{...} }
 type InstancePoolMapInput interface {
 	pulumi.Input
 

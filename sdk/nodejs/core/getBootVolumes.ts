@@ -23,7 +23,8 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getBootVolumes(args: GetBootVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumesResult> {
+export function getBootVolumes(args?: GetBootVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumesResult> {
+    args = args || {};
     if (!opts) {
         opts = {}
     }
@@ -44,11 +45,11 @@ export interface GetBootVolumesArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain: string;
+    availabilityDomain?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId: string;
+    compartmentId?: string;
     filters?: inputs.Core.GetBootVolumesFilter[];
     /**
      * The OCID of the volume group.
@@ -63,7 +64,7 @@ export interface GetBootVolumesResult {
     /**
      * The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The list of boot_volumes.
      */
@@ -71,7 +72,7 @@ export interface GetBootVolumesResult {
     /**
      * The OCID of the compartment that contains the boot volume.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly filters?: outputs.Core.GetBootVolumesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -83,7 +84,7 @@ export interface GetBootVolumesResult {
     readonly volumeGroupId?: string;
 }
 
-export function getBootVolumesOutput(args: GetBootVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumesResult> {
+export function getBootVolumesOutput(args?: GetBootVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumesResult> {
     return pulumi.output(args).apply(a => getBootVolumes(a, opts))
 }
 
@@ -94,11 +95,11 @@ export interface GetBootVolumesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Core.GetBootVolumesFilterArgs>[]>;
     /**
      * The OCID of the volume group.

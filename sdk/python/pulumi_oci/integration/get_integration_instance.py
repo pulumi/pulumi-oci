@@ -21,10 +21,13 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, idcs_at=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, state=None, state_message=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, state=None, state_message=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        if attachments and not isinstance(attachments, list):
+            raise TypeError("Expected argument 'attachments' to be a list")
+        pulumi.set(__self__, "attachments", attachments)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +52,9 @@ class GetIntegrationInstanceResult:
         if idcs_at and not isinstance(idcs_at, str):
             raise TypeError("Expected argument 'idcs_at' to be a str")
         pulumi.set(__self__, "idcs_at", idcs_at)
+        if idcs_infos and not isinstance(idcs_infos, list):
+            raise TypeError("Expected argument 'idcs_infos' to be a list")
+        pulumi.set(__self__, "idcs_infos", idcs_infos)
         if instance_url and not isinstance(instance_url, str):
             raise TypeError("Expected argument 'instance_url' to be a str")
         pulumi.set(__self__, "instance_url", instance_url)
@@ -93,6 +99,14 @@ class GetIntegrationInstanceResult:
         A list of alternate custom endpoints used for the integration instance URL.
         """
         return pulumi.get(self, "alternate_custom_endpoints")
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetIntegrationInstanceAttachmentResult']:
+        """
+        A list of associated attachments to other services
+        """
+        return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -154,6 +168,14 @@ class GetIntegrationInstanceResult:
     @pulumi.getter(name="idcsAt")
     def idcs_at(self) -> str:
         return pulumi.get(self, "idcs_at")
+
+    @property
+    @pulumi.getter(name="idcsInfos")
+    def idcs_infos(self) -> Sequence['outputs.GetIntegrationInstanceIdcsInfoResult']:
+        """
+        Information for IDCS access
+        """
+        return pulumi.get(self, "idcs_infos")
 
     @property
     @pulumi.getter(name="instanceUrl")
@@ -256,6 +278,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             yield self
         return GetIntegrationInstanceResult(
             alternate_custom_endpoints=self.alternate_custom_endpoints,
+            attachments=self.attachments,
             compartment_id=self.compartment_id,
             consumption_model=self.consumption_model,
             custom_endpoints=self.custom_endpoints,
@@ -264,6 +287,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             idcs_at=self.idcs_at,
+            idcs_infos=self.idcs_infos,
             instance_url=self.instance_url,
             integration_instance_id=self.integration_instance_id,
             integration_instance_type=self.integration_instance_type,
@@ -307,6 +331,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
 
     return AwaitableGetIntegrationInstanceResult(
         alternate_custom_endpoints=__ret__.alternate_custom_endpoints,
+        attachments=__ret__.attachments,
         compartment_id=__ret__.compartment_id,
         consumption_model=__ret__.consumption_model,
         custom_endpoints=__ret__.custom_endpoints,
@@ -315,6 +340,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         idcs_at=__ret__.idcs_at,
+        idcs_infos=__ret__.idcs_infos,
         instance_url=__ret__.instance_url,
         integration_instance_id=__ret__.integration_instance_id,
         integration_instance_type=__ret__.integration_instance_type,

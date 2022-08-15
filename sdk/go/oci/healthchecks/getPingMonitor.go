@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.GetPingMonitor(ctx, &healthchecks.GetPingMonitorArgs{
-// 			MonitorId: oci_apm_synthetics_monitor.Test_monitor.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.GetPingMonitor(ctx, &healthchecks.GetPingMonitorArgs{
+//				MonitorId: oci_apm_synthetics_monitor.Test_monitor.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupPingMonitor(ctx *pulumi.Context, args *LookupPingMonitorArgs, opts ...pulumi.InvokeOption) (*LookupPingMonitorResult, error) {
 	var rv LookupPingMonitorResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetLetterOfAuthority(ctx, &core.GetLetterOfAuthorityArgs{
-// 			CrossConnectId: oci_core_cross_connect.Test_cross_connect.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetLetterOfAuthority(ctx, &core.GetLetterOfAuthorityArgs{
+//				CrossConnectId: oci_core_cross_connect.Test_cross_connect.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLetterOfAuthority(ctx *pulumi.Context, args *GetLetterOfAuthorityArgs, opts ...pulumi.InvokeOption) (*GetLetterOfAuthorityResult, error) {
 	var rv GetLetterOfAuthorityResult

@@ -21,43 +21,46 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.NewJobRun(ctx, "testJobRun", &DataScience.JobRunArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			JobId:         pulumi.Any(oci_datascience_job.Test_job.Id),
-// 			ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
-// 			Asynchronous:  pulumi.Any(_var.Asynchronous),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Job_run_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			JobConfigurationOverrideDetails: &datascience.JobRunJobConfigurationOverrideDetailsArgs{
-// 				JobType:                 pulumi.Any(_var.Job_run_job_configuration_override_details_job_type),
-// 				CommandLineArguments:    pulumi.Any(_var.Job_run_job_configuration_override_details_command_line_arguments),
-// 				EnvironmentVariables:    pulumi.Any(_var.Job_run_job_configuration_override_details_environment_variables),
-// 				MaximumRuntimeInMinutes: pulumi.Any(_var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes),
-// 			},
-// 			JobLogConfigurationOverrideDetails: &datascience.JobRunJobLogConfigurationOverrideDetailsArgs{
-// 				EnableAutoLogCreation: pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_auto_log_creation),
-// 				EnableLogging:         pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_logging),
-// 				LogGroupId:            pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 				LogId:                 pulumi.Any(oci_logging_log.Test_log.Id),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.NewJobRun(ctx, "testJobRun", &DataScience.JobRunArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				JobId:         pulumi.Any(oci_datascience_job.Test_job.Id),
+//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//				Asynchronous:  pulumi.Any(_var.Asynchronous),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Job_run_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				JobConfigurationOverrideDetails: &datascience.JobRunJobConfigurationOverrideDetailsArgs{
+//					JobType:                 pulumi.Any(_var.Job_run_job_configuration_override_details_job_type),
+//					CommandLineArguments:    pulumi.Any(_var.Job_run_job_configuration_override_details_command_line_arguments),
+//					EnvironmentVariables:    pulumi.Any(_var.Job_run_job_configuration_override_details_environment_variables),
+//					MaximumRuntimeInMinutes: pulumi.Any(_var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes),
+//				},
+//				JobLogConfigurationOverrideDetails: &datascience.JobRunJobLogConfigurationOverrideDetailsArgs{
+//					EnableAutoLogCreation: pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_auto_log_creation),
+//					EnableLogging:         pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_logging),
+//					LogGroupId:            pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//					LogId:                 pulumi.Any(oci_logging_log.Test_log.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -65,7 +68,9 @@ import (
 // JobRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
+//
+//	$ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
+//
 // ```
 type JobRun struct {
 	pulumi.CustomResourceState
@@ -290,7 +295,7 @@ func (i *JobRun) ToJobRunOutputWithContext(ctx context.Context) JobRunOutput {
 // JobRunArrayInput is an input type that accepts JobRunArray and JobRunArrayOutput values.
 // You can construct a concrete instance of `JobRunArrayInput` via:
 //
-//          JobRunArray{ JobRunArgs{...} }
+//	JobRunArray{ JobRunArgs{...} }
 type JobRunArrayInput interface {
 	pulumi.Input
 
@@ -315,7 +320,7 @@ func (i JobRunArray) ToJobRunArrayOutputWithContext(ctx context.Context) JobRunA
 // JobRunMapInput is an input type that accepts JobRunMap and JobRunMapOutput values.
 // You can construct a concrete instance of `JobRunMapInput` via:
 //
-//          JobRunMap{ "key": JobRunArgs{...} }
+//	JobRunMap{ "key": JobRunArgs{...} }
 type JobRunMapInput interface {
 	pulumi.Input
 

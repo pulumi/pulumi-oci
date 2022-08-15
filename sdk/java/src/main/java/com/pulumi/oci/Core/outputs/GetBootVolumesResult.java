@@ -18,7 +18,7 @@ public final class GetBootVolumesResult {
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private final @Nullable String availabilityDomain;
     /**
      * @return The list of boot_volumes.
      * 
@@ -28,7 +28,7 @@ public final class GetBootVolumesResult {
      * @return The OCID of the compartment that contains the boot volume.
      * 
      */
-    private final String compartmentId;
+    private final @Nullable String compartmentId;
     private final @Nullable List<GetBootVolumesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -43,9 +43,9 @@ public final class GetBootVolumesResult {
 
     @CustomType.Constructor
     private GetBootVolumesResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
+        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
         @CustomType.Parameter("bootVolumes") List<GetBootVolumesBootVolume> bootVolumes,
-        @CustomType.Parameter("compartmentId") String compartmentId,
+        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
         @CustomType.Parameter("filters") @Nullable List<GetBootVolumesFilter> filters,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("volumeGroupId") @Nullable String volumeGroupId) {
@@ -61,8 +61,8 @@ public final class GetBootVolumesResult {
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The list of boot_volumes.
@@ -75,8 +75,8 @@ public final class GetBootVolumesResult {
      * @return The OCID of the compartment that contains the boot volume.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<GetBootVolumesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -105,9 +105,9 @@ public final class GetBootVolumesResult {
     }
 
     public static final class Builder {
-        private String availabilityDomain;
+        private @Nullable String availabilityDomain;
         private List<GetBootVolumesBootVolume> bootVolumes;
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable List<GetBootVolumesFilter> filters;
         private String id;
         private @Nullable String volumeGroupId;
@@ -126,8 +126,8 @@ public final class GetBootVolumesResult {
     	      this.volumeGroupId = defaults.volumeGroupId;
         }
 
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         public Builder bootVolumes(List<GetBootVolumesBootVolume> bootVolumes) {
@@ -137,8 +137,8 @@ public final class GetBootVolumesResult {
         public Builder bootVolumes(GetBootVolumesBootVolume... bootVolumes) {
             return bootVolumes(List.of(bootVolumes));
         }
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         public Builder filters(@Nullable List<GetBootVolumesFilter> filters) {

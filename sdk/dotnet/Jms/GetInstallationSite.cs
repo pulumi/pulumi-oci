@@ -39,6 +39,9 @@ namespace Pulumi.Oci.Jms
         ///             JreVersion = @var.Fleet_installation_site_jre_version,
         ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
         ///             OsFamilies = @var.Fleet_installation_site_os_family,
+        ///             PathContains = @var.Fleet_installation_site_path_contains,
+        ///             TimeEnd = @var.Fleet_installation_site_time_end,
+        ///             TimeStart = @var.Fleet_installation_site_time_start,
         ///         }));
         ///     }
         /// 
@@ -78,6 +81,9 @@ namespace Pulumi.Oci.Jms
         ///             JreVersion = @var.Fleet_installation_site_jre_version,
         ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
         ///             OsFamilies = @var.Fleet_installation_site_os_family,
+        ///             PathContains = @var.Fleet_installation_site_path_contains,
+        ///             TimeEnd = @var.Fleet_installation_site_time_end,
+        ///             TimeStart = @var.Fleet_installation_site_time_start,
         ///         }));
         ///     }
         /// 
@@ -153,6 +159,24 @@ namespace Pulumi.Oci.Jms
             set => _osFamilies = value;
         }
 
+        /// <summary>
+        /// Filter the list with path contains the given value.
+        /// </summary>
+        [Input("pathContains")]
+        public string? PathContains { get; set; }
+
+        /// <summary>
+        /// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
+        [Input("timeEnd")]
+        public string? TimeEnd { get; set; }
+
+        /// <summary>
+        /// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
+        [Input("timeStart")]
+        public string? TimeStart { get; set; }
+
         public GetInstallationSiteArgs()
         {
         }
@@ -220,6 +244,24 @@ namespace Pulumi.Oci.Jms
             set => _osFamilies = value;
         }
 
+        /// <summary>
+        /// Filter the list with path contains the given value.
+        /// </summary>
+        [Input("pathContains")]
+        public Input<string>? PathContains { get; set; }
+
+        /// <summary>
+        /// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
+        [Input("timeEnd")]
+        public Input<string>? TimeEnd { get; set; }
+
+        /// <summary>
+        /// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
+        [Input("timeStart")]
+        public Input<string>? TimeStart { get; set; }
+
         public GetInstallationSiteInvokeArgs()
         {
         }
@@ -249,6 +291,9 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string? ManagedInstanceId;
         public readonly ImmutableArray<string> OsFamilies;
+        public readonly string? PathContains;
+        public readonly string? TimeEnd;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetInstallationSiteResult(
@@ -272,7 +317,13 @@ namespace Pulumi.Oci.Jms
 
             string? managedInstanceId,
 
-            ImmutableArray<string> osFamilies)
+            ImmutableArray<string> osFamilies,
+
+            string? pathContains,
+
+            string? timeEnd,
+
+            string? timeStart)
         {
             ApplicationId = applicationId;
             FleetId = fleetId;
@@ -285,6 +336,9 @@ namespace Pulumi.Oci.Jms
             JreVersion = jreVersion;
             ManagedInstanceId = managedInstanceId;
             OsFamilies = osFamilies;
+            PathContains = pathContains;
+            TimeEnd = timeEnd;
+            TimeStart = timeStart;
         }
     }
 }

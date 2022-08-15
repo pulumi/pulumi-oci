@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class DedicatedVantagePointDvpStackDetails
     {
         /// <summary>
-        /// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        /// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         /// </summary>
         public readonly string DvpStackId;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string DvpStackType;
         /// <summary>
-        /// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        /// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         /// </summary>
         public readonly string DvpStreamId;
         /// <summary>
-        /// (Updatable) Version of DVP.
+        /// (Updatable) Version of the dedicated vantage point.
         /// </summary>
         public readonly string DvpVersion;
 

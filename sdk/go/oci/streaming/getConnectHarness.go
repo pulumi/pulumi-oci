@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Streaming.GetConnectHarness(ctx, &streaming.GetConnectHarnessArgs{
-// 			ConnectHarnessId: oci_streaming_connect_harnes.Test_connect_harnes.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Streaming.GetConnectHarness(ctx, &streaming.GetConnectHarnessArgs{
+//				ConnectHarnessId: oci_streaming_connect_harnes.Test_connect_harnes.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupConnectHarness(ctx *pulumi.Context, args *LookupConnectHarnessArgs, opts ...pulumi.InvokeOption) (*LookupConnectHarnessResult, error) {
 	var rv LookupConnectHarnessResult

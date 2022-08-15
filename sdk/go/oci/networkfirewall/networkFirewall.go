@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkFirewall.NewNetworkFirewall(ctx, "testNetworkFirewall", &NetworkFirewall.NetworkFirewallArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-// 			SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			AvailabilityDomain:      pulumi.Any(_var.Network_firewall_availability_domain),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Network_firewall_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Ipv4address:             pulumi.Any(_var.Network_firewall_ipv4address),
-// 			Ipv6address:             pulumi.Any(_var.Network_firewall_ipv6address),
-// 			NetworkSecurityGroupIds: pulumi.Any(_var.Network_firewall_network_security_group_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkFirewall.NewNetworkFirewall(ctx, "testNetworkFirewall", &NetworkFirewall.NetworkFirewallArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
+//				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				AvailabilityDomain:      pulumi.Any(_var.Network_firewall_availability_domain),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Network_firewall_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Ipv4address:             pulumi.Any(_var.Network_firewall_ipv4address),
+//				Ipv6address:             pulumi.Any(_var.Network_firewall_ipv6address),
+//				NetworkSecurityGroupIds: pulumi.Any(_var.Network_firewall_network_security_group_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // NetworkFirewalls can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
+//
+//	$ pulumi import oci:NetworkFirewall/networkFirewall:NetworkFirewall test_network_firewall "id"
+//
 // ```
 type NetworkFirewall struct {
 	pulumi.CustomResourceState
@@ -273,7 +278,7 @@ func (i *NetworkFirewall) ToNetworkFirewallOutputWithContext(ctx context.Context
 // NetworkFirewallArrayInput is an input type that accepts NetworkFirewallArray and NetworkFirewallArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallArrayInput` via:
 //
-//          NetworkFirewallArray{ NetworkFirewallArgs{...} }
+//	NetworkFirewallArray{ NetworkFirewallArgs{...} }
 type NetworkFirewallArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +303,7 @@ func (i NetworkFirewallArray) ToNetworkFirewallArrayOutputWithContext(ctx contex
 // NetworkFirewallMapInput is an input type that accepts NetworkFirewallMap and NetworkFirewallMapOutput values.
 // You can construct a concrete instance of `NetworkFirewallMapInput` via:
 //
-//          NetworkFirewallMap{ "key": NetworkFirewallArgs{...} }
+//	NetworkFirewallMap{ "key": NetworkFirewallArgs{...} }
 type NetworkFirewallMapInput interface {
 	pulumi.Input
 

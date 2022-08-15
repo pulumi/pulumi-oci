@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeader;
@@ -21,6 +22,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      * 
      */
     private final String configType;
+    /**
+     * @return Dns settings.
+     * 
+     */
+    private final List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations;
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
@@ -90,6 +96,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     @CustomType.Constructor
     private GetMonitorsMonitorCollectionItemConfiguration(
         @CustomType.Parameter("configType") String configType,
+        @CustomType.Parameter("dnsConfigurations") List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations,
         @CustomType.Parameter("isCertificateValidationEnabled") Boolean isCertificateValidationEnabled,
         @CustomType.Parameter("isFailureRetried") Boolean isFailureRetried,
         @CustomType.Parameter("isRedirectionEnabled") Boolean isRedirectionEnabled,
@@ -104,6 +111,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         @CustomType.Parameter("verifyResponseContent") String verifyResponseContent,
         @CustomType.Parameter("verifyTexts") List<GetMonitorsMonitorCollectionItemConfigurationVerifyText> verifyTexts) {
         this.configType = configType;
+        this.dnsConfigurations = dnsConfigurations;
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
         this.isFailureRetried = isFailureRetried;
         this.isRedirectionEnabled = isRedirectionEnabled;
@@ -125,6 +133,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     public String configType() {
         return this.configType;
+    }
+    /**
+     * @return Dns settings.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations() {
+        return this.dnsConfigurations;
     }
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -228,6 +243,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
 
     public static final class Builder {
         private String configType;
+        private List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations;
         private Boolean isCertificateValidationEnabled;
         private Boolean isFailureRetried;
         private Boolean isRedirectionEnabled;
@@ -249,6 +265,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         public Builder(GetMonitorsMonitorCollectionItemConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configType = defaults.configType;
+    	      this.dnsConfigurations = defaults.dnsConfigurations;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
@@ -267,6 +284,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
             return this;
+        }
+        public Builder dnsConfigurations(List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations) {
+            this.dnsConfigurations = Objects.requireNonNull(dnsConfigurations);
+            return this;
+        }
+        public Builder dnsConfigurations(GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration... dnsConfigurations) {
+            return dnsConfigurations(List.of(dnsConfigurations));
         }
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = Objects.requireNonNull(isCertificateValidationEnabled);
@@ -338,7 +362,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         public Builder verifyTexts(GetMonitorsMonitorCollectionItemConfigurationVerifyText... verifyTexts) {
             return verifyTexts(List.of(verifyTexts));
         }        public GetMonitorsMonitorCollectionItemConfiguration build() {
-            return new GetMonitorsMonitorCollectionItemConfiguration(configType, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfigurations, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
+            return new GetMonitorsMonitorCollectionItemConfiguration(configType, dnsConfigurations, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfigurations, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
         }
     }
 }

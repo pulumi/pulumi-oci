@@ -22,25 +22,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewTsigKey(ctx, "testTsigKey", &Dns.TsigKeyArgs{
-// 			Algorithm:     pulumi.Any(_var.Tsig_key_algorithm),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Secret:        pulumi.Any(_var.Tsig_key_secret),
-// 			DefinedTags:   pulumi.Any(_var.Tsig_key_defined_tags),
-// 			FreeformTags:  pulumi.Any(_var.Tsig_key_freeform_tags),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewTsigKey(ctx, "testTsigKey", &Dns.TsigKeyArgs{
+//				Algorithm:     pulumi.Any(_var.Tsig_key_algorithm),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Secret:        pulumi.Any(_var.Tsig_key_secret),
+//				DefinedTags:   pulumi.Any(_var.Tsig_key_defined_tags),
+//				FreeformTags:  pulumi.Any(_var.Tsig_key_freeform_tags),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // TsigKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
+//
+//	$ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
+//
 // ```
 type TsigKey struct {
 	pulumi.CustomResourceState
@@ -219,7 +224,7 @@ func (i *TsigKey) ToTsigKeyOutputWithContext(ctx context.Context) TsigKeyOutput 
 // TsigKeyArrayInput is an input type that accepts TsigKeyArray and TsigKeyArrayOutput values.
 // You can construct a concrete instance of `TsigKeyArrayInput` via:
 //
-//          TsigKeyArray{ TsigKeyArgs{...} }
+//	TsigKeyArray{ TsigKeyArgs{...} }
 type TsigKeyArrayInput interface {
 	pulumi.Input
 
@@ -244,7 +249,7 @@ func (i TsigKeyArray) ToTsigKeyArrayOutputWithContext(ctx context.Context) TsigK
 // TsigKeyMapInput is an input type that accepts TsigKeyMap and TsigKeyMapOutput values.
 // You can construct a concrete instance of `TsigKeyMapInput` via:
 //
-//          TsigKeyMap{ "key": TsigKeyArgs{...} }
+//	TsigKeyMap{ "key": TsigKeyArgs{...} }
 type TsigKeyMapInput interface {
 	pulumi.Input
 

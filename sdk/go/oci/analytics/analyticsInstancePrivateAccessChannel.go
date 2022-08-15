@@ -22,30 +22,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Analytics.NewAnalyticsInstancePrivateAccessChannel(ctx, "testAnalyticsInstancePrivateAccessChannel", &Analytics.AnalyticsInstancePrivateAccessChannelArgs{
-// 			AnalyticsInstanceId: pulumi.Any(oci_analytics_analytics_instance.Test_analytics_instance.Id),
-// 			DisplayName:         pulumi.Any(_var.Analytics_instance_private_access_channel_display_name),
-// 			PrivateSourceDnsZones: analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{
-// 				&analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{
-// 					DnsZone:     pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_dns_zones_dns_zone),
-// 					Description: pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_dns_zones_description),
-// 				},
-// 			},
-// 			SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			VcnId:    pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Analytics.NewAnalyticsInstancePrivateAccessChannel(ctx, "testAnalyticsInstancePrivateAccessChannel", &Analytics.AnalyticsInstancePrivateAccessChannelArgs{
+//				AnalyticsInstanceId: pulumi.Any(oci_analytics_analytics_instance.Test_analytics_instance.Id),
+//				DisplayName:         pulumi.Any(_var.Analytics_instance_private_access_channel_display_name),
+//				PrivateSourceDnsZones: analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{
+//					&analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{
+//						DnsZone:     pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_dns_zones_dns_zone),
+//						Description: pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_dns_zones_description),
+//					},
+//				},
+//				SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				VcnId:    pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // AnalyticsInstancePrivateAccessChannels can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
+//
+//	$ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
+//
 // ```
 type AnalyticsInstancePrivateAccessChannel struct {
 	pulumi.CustomResourceState
@@ -214,7 +219,7 @@ func (i *AnalyticsInstancePrivateAccessChannel) ToAnalyticsInstancePrivateAccess
 // AnalyticsInstancePrivateAccessChannelArrayInput is an input type that accepts AnalyticsInstancePrivateAccessChannelArray and AnalyticsInstancePrivateAccessChannelArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelArrayInput` via:
 //
-//          AnalyticsInstancePrivateAccessChannelArray{ AnalyticsInstancePrivateAccessChannelArgs{...} }
+//	AnalyticsInstancePrivateAccessChannelArray{ AnalyticsInstancePrivateAccessChannelArgs{...} }
 type AnalyticsInstancePrivateAccessChannelArrayInput interface {
 	pulumi.Input
 
@@ -239,7 +244,7 @@ func (i AnalyticsInstancePrivateAccessChannelArray) ToAnalyticsInstancePrivateAc
 // AnalyticsInstancePrivateAccessChannelMapInput is an input type that accepts AnalyticsInstancePrivateAccessChannelMap and AnalyticsInstancePrivateAccessChannelMapOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelMapInput` via:
 //
-//          AnalyticsInstancePrivateAccessChannelMap{ "key": AnalyticsInstancePrivateAccessChannelArgs{...} }
+//	AnalyticsInstancePrivateAccessChannelMap{ "key": AnalyticsInstancePrivateAccessChannelArgs{...} }
 type AnalyticsInstancePrivateAccessChannelMapInput interface {
 	pulumi.Input
 

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsEntityTopology(ctx, &loganalytics.GetLogAnalyticsEntityTopologyArgs{
-// 			LogAnalyticsEntityId: oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-// 			Namespace:            _var.Log_analytics_entity_topology_namespace,
-// 			State:                pulumi.StringRef(_var.Log_analytics_entity_topology_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsEntityTopology(ctx, &loganalytics.GetLogAnalyticsEntityTopologyArgs{
+//				LogAnalyticsEntityId: oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
+//				Namespace:            _var.Log_analytics_entity_topology_namespace,
+//				State:                pulumi.StringRef(_var.Log_analytics_entity_topology_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsEntityTopology(ctx *pulumi.Context, args *GetLogAnalyticsEntityTopologyArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsEntityTopologyResult, error) {
 	var rv GetLogAnalyticsEntityTopologyResult

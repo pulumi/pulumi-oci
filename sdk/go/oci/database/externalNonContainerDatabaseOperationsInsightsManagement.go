@@ -22,23 +22,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalNonContainerDatabaseOperationsInsightsManagement(ctx, "testExternalNonContainerDatabaseOperationsInsightsManagement", &Database.ExternalNonContainerDatabaseOperationsInsightsManagementArgs{
-// 			ExternalDatabaseConnectorId:    pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-// 			ExternalNonContainerDatabaseId: pulumi.Any(oci_database_external_non_container_database.Test_external_non_container_database.Id),
-// 			EnableOperationsInsights:       pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalNonContainerDatabaseOperationsInsightsManagement(ctx, "testExternalNonContainerDatabaseOperationsInsightsManagement", &Database.ExternalNonContainerDatabaseOperationsInsightsManagementArgs{
+//				ExternalDatabaseConnectorId:    pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
+//				ExternalNonContainerDatabaseId: pulumi.Any(oci_database_external_non_container_database.Test_external_non_container_database.Id),
+//				EnableOperationsInsights:       pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -159,7 +162,7 @@ func (i *ExternalNonContainerDatabaseOperationsInsightsManagement) ToExternalNon
 // ExternalNonContainerDatabaseOperationsInsightsManagementArrayInput is an input type that accepts ExternalNonContainerDatabaseOperationsInsightsManagementArray and ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseOperationsInsightsManagementArrayInput` via:
 //
-//          ExternalNonContainerDatabaseOperationsInsightsManagementArray{ ExternalNonContainerDatabaseOperationsInsightsManagementArgs{...} }
+//	ExternalNonContainerDatabaseOperationsInsightsManagementArray{ ExternalNonContainerDatabaseOperationsInsightsManagementArgs{...} }
 type ExternalNonContainerDatabaseOperationsInsightsManagementArrayInput interface {
 	pulumi.Input
 
@@ -184,7 +187,7 @@ func (i ExternalNonContainerDatabaseOperationsInsightsManagementArray) ToExterna
 // ExternalNonContainerDatabaseOperationsInsightsManagementMapInput is an input type that accepts ExternalNonContainerDatabaseOperationsInsightsManagementMap and ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseOperationsInsightsManagementMapInput` via:
 //
-//          ExternalNonContainerDatabaseOperationsInsightsManagementMap{ "key": ExternalNonContainerDatabaseOperationsInsightsManagementArgs{...} }
+//	ExternalNonContainerDatabaseOperationsInsightsManagementMap{ "key": ExternalNonContainerDatabaseOperationsInsightsManagementArgs{...} }
 type ExternalNonContainerDatabaseOperationsInsightsManagementMapInput interface {
 	pulumi.Input
 

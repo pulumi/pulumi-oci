@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetReports(ctx, &datasafe.GetReportsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Report_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Report_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Report_display_name),
-// 			ReportDefinitionId:     pulumi.StringRef(oci_data_safe_report_definition.Test_report_definition.Id),
-// 			State:                  pulumi.StringRef(_var.Report_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetReports(ctx, &datasafe.GetReportsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Report_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Report_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Report_display_name),
+//				ReportDefinitionId:     pulumi.StringRef(oci_data_safe_report_definition.Test_report_definition.Id),
+//				State:                  pulumi.StringRef(_var.Report_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetReports(ctx *pulumi.Context, args *GetReportsArgs, opts ...pulumi.InvokeOption) (*GetReportsResult, error) {
 	var rv GetReportsResult

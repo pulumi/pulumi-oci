@@ -46,7 +46,7 @@ type GetAlertRulesAlertRule struct {
 // GetAlertRulesAlertRuleInput is an input type that accepts GetAlertRulesAlertRuleArgs and GetAlertRulesAlertRuleOutput values.
 // You can construct a concrete instance of `GetAlertRulesAlertRuleInput` via:
 //
-//          GetAlertRulesAlertRuleArgs{...}
+//	GetAlertRulesAlertRuleArgs{...}
 type GetAlertRulesAlertRuleInput interface {
 	pulumi.Input
 
@@ -102,7 +102,7 @@ func (i GetAlertRulesAlertRuleArgs) ToGetAlertRulesAlertRuleOutputWithContext(ct
 // GetAlertRulesAlertRuleArrayInput is an input type that accepts GetAlertRulesAlertRuleArray and GetAlertRulesAlertRuleArrayOutput values.
 // You can construct a concrete instance of `GetAlertRulesAlertRuleArrayInput` via:
 //
-//          GetAlertRulesAlertRuleArray{ GetAlertRulesAlertRuleArgs{...} }
+//	GetAlertRulesAlertRuleArray{ GetAlertRulesAlertRuleArgs{...} }
 type GetAlertRulesAlertRuleArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +242,7 @@ type GetAlertRulesFilter struct {
 // GetAlertRulesFilterInput is an input type that accepts GetAlertRulesFilterArgs and GetAlertRulesFilterOutput values.
 // You can construct a concrete instance of `GetAlertRulesFilterInput` via:
 //
-//          GetAlertRulesFilterArgs{...}
+//	GetAlertRulesFilterArgs{...}
 type GetAlertRulesFilterInput interface {
 	pulumi.Input
 
@@ -271,7 +271,7 @@ func (i GetAlertRulesFilterArgs) ToGetAlertRulesFilterOutputWithContext(ctx cont
 // GetAlertRulesFilterArrayInput is an input type that accepts GetAlertRulesFilterArray and GetAlertRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertRulesFilterArrayInput` via:
 //
-//          GetAlertRulesFilterArray{ GetAlertRulesFilterArgs{...} }
+//	GetAlertRulesFilterArray{ GetAlertRulesFilterArgs{...} }
 type GetAlertRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -392,7 +392,7 @@ type GetBudgetsBudget struct {
 // GetBudgetsBudgetInput is an input type that accepts GetBudgetsBudgetArgs and GetBudgetsBudgetOutput values.
 // You can construct a concrete instance of `GetBudgetsBudgetInput` via:
 //
-//          GetBudgetsBudgetArgs{...}
+//	GetBudgetsBudgetArgs{...}
 type GetBudgetsBudgetInput interface {
 	pulumi.Input
 
@@ -465,7 +465,7 @@ func (i GetBudgetsBudgetArgs) ToGetBudgetsBudgetOutputWithContext(ctx context.Co
 // GetBudgetsBudgetArrayInput is an input type that accepts GetBudgetsBudgetArray and GetBudgetsBudgetArrayOutput values.
 // You can construct a concrete instance of `GetBudgetsBudgetArrayInput` via:
 //
-//          GetBudgetsBudgetArray{ GetBudgetsBudgetArgs{...} }
+//	GetBudgetsBudgetArray{ GetBudgetsBudgetArgs{...} }
 type GetBudgetsBudgetArrayInput interface {
 	pulumi.Input
 
@@ -640,7 +640,7 @@ type GetBudgetsFilter struct {
 // GetBudgetsFilterInput is an input type that accepts GetBudgetsFilterArgs and GetBudgetsFilterOutput values.
 // You can construct a concrete instance of `GetBudgetsFilterInput` via:
 //
-//          GetBudgetsFilterArgs{...}
+//	GetBudgetsFilterArgs{...}
 type GetBudgetsFilterInput interface {
 	pulumi.Input
 
@@ -669,7 +669,7 @@ func (i GetBudgetsFilterArgs) ToGetBudgetsFilterOutputWithContext(ctx context.Co
 // GetBudgetsFilterArrayInput is an input type that accepts GetBudgetsFilterArray and GetBudgetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBudgetsFilterArrayInput` via:
 //
-//          GetBudgetsFilterArray{ GetBudgetsFilterArgs{...} }
+//	GetBudgetsFilterArray{ GetBudgetsFilterArgs{...} }
 type GetBudgetsFilterArrayInput interface {
 	pulumi.Input
 

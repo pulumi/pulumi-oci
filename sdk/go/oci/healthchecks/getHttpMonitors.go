@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.GetHttpMonitors(ctx, &healthchecks.GetHttpMonitorsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Http_monitor_display_name),
-// 			HomeRegion:    pulumi.StringRef(_var.Http_monitor_home_region),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.GetHttpMonitors(ctx, &healthchecks.GetHttpMonitorsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Http_monitor_display_name),
+//				HomeRegion:    pulumi.StringRef(_var.Http_monitor_home_region),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetHttpMonitors(ctx *pulumi.Context, args *GetHttpMonitorsArgs, opts ...pulumi.InvokeOption) (*GetHttpMonitorsResult, error) {
 	var rv GetHttpMonitorsResult

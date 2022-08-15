@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkFirewall.GetNetworkFirewalls(ctx, &networkfirewall.GetNetworkFirewallsArgs{
-// 			CompartmentId:           _var.Compartment_id,
-// 			AvailabilityDomain:      pulumi.StringRef(_var.Network_firewall_availability_domain),
-// 			DisplayName:             pulumi.StringRef(_var.Network_firewall_display_name),
-// 			Id:                      pulumi.StringRef(_var.Network_firewall_id),
-// 			NetworkFirewallPolicyId: pulumi.StringRef(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-// 			State:                   pulumi.StringRef(_var.Network_firewall_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkFirewall.GetNetworkFirewalls(ctx, &networkfirewall.GetNetworkFirewallsArgs{
+//				CompartmentId:           _var.Compartment_id,
+//				AvailabilityDomain:      pulumi.StringRef(_var.Network_firewall_availability_domain),
+//				DisplayName:             pulumi.StringRef(_var.Network_firewall_display_name),
+//				Id:                      pulumi.StringRef(_var.Network_firewall_id),
+//				NetworkFirewallPolicyId: pulumi.StringRef(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
+//				State:                   pulumi.StringRef(_var.Network_firewall_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkFirewalls(ctx *pulumi.Context, args *GetNetworkFirewallsArgs, opts ...pulumi.InvokeOption) (*GetNetworkFirewallsResult, error) {
 	var rv GetNetworkFirewallsResult

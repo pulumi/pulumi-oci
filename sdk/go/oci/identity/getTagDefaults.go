@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetTagDefaults(ctx, &identity.GetTagDefaultsArgs{
-// 			CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-// 			Id:              pulumi.StringRef(_var.Tag_default_id),
-// 			State:           pulumi.StringRef(_var.Tag_default_state),
-// 			TagDefinitionId: pulumi.StringRef(oci_identity_tag_definition.Test_tag_definition.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetTagDefaults(ctx, &identity.GetTagDefaultsArgs{
+//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
+//				Id:              pulumi.StringRef(_var.Tag_default_id),
+//				State:           pulumi.StringRef(_var.Tag_default_state),
+//				TagDefinitionId: pulumi.StringRef(oci_identity_tag_definition.Test_tag_definition.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTagDefaults(ctx *pulumi.Context, args *GetTagDefaultsArgs, opts ...pulumi.InvokeOption) (*GetTagDefaultsResult, error) {
 	var rv GetTagDefaultsResult

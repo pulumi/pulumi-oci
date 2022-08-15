@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetGiVersions(ctx, &database.GetGiVersionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Shape:         pulumi.StringRef(_var.Gi_version_shape),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetGiVersions(ctx, &database.GetGiVersionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Shape:         pulumi.StringRef(_var.Gi_version_shape),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetGiVersions(ctx *pulumi.Context, args *GetGiVersionsArgs, opts ...pulumi.InvokeOption) (*GetGiVersionsResult, error) {
 	var rv GetGiVersionsResult

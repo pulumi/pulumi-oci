@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.NewContainerRepository(ctx, "testContainerRepository", &Artifacts.ContainerRepositoryArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Container_repository_display_name),
-// 			IsImmutable:   pulumi.Any(_var.Container_repository_is_immutable),
-// 			IsPublic:      pulumi.Any(_var.Container_repository_is_public),
-// 			Readme: &artifacts.ContainerRepositoryReadmeArgs{
-// 				Content: pulumi.Any(_var.Container_repository_readme_content),
-// 				Format:  pulumi.Any(_var.Container_repository_readme_format),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.NewContainerRepository(ctx, "testContainerRepository", &Artifacts.ContainerRepositoryArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Container_repository_display_name),
+//				IsImmutable:   pulumi.Any(_var.Container_repository_is_immutable),
+//				IsPublic:      pulumi.Any(_var.Container_repository_is_public),
+//				Readme: &artifacts.ContainerRepositoryReadmeArgs{
+//					Content: pulumi.Any(_var.Container_repository_readme_content),
+//					Format:  pulumi.Any(_var.Container_repository_readme_format),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // ContainerRepositories can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+//
+//	$ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+//
 // ```
 type ContainerRepository struct {
 	pulumi.CustomResourceState
@@ -232,7 +237,7 @@ func (i *ContainerRepository) ToContainerRepositoryOutputWithContext(ctx context
 // ContainerRepositoryArrayInput is an input type that accepts ContainerRepositoryArray and ContainerRepositoryArrayOutput values.
 // You can construct a concrete instance of `ContainerRepositoryArrayInput` via:
 //
-//          ContainerRepositoryArray{ ContainerRepositoryArgs{...} }
+//	ContainerRepositoryArray{ ContainerRepositoryArgs{...} }
 type ContainerRepositoryArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +262,7 @@ func (i ContainerRepositoryArray) ToContainerRepositoryArrayOutputWithContext(ct
 // ContainerRepositoryMapInput is an input type that accepts ContainerRepositoryMap and ContainerRepositoryMapOutput values.
 // You can construct a concrete instance of `ContainerRepositoryMapInput` via:
 //
-//          ContainerRepositoryMap{ "key": ContainerRepositoryArgs{...} }
+//	ContainerRepositoryMap{ "key": ContainerRepositoryArgs{...} }
 type ContainerRepositoryMapInput interface {
 	pulumi.Input
 

@@ -26,7 +26,7 @@ type AppFirewallPolicyAction struct {
 // AppFirewallPolicyActionInput is an input type that accepts AppFirewallPolicyActionArgs and AppFirewallPolicyActionOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionInput` via:
 //
-//          AppFirewallPolicyActionArgs{...}
+//	AppFirewallPolicyActionArgs{...}
 type AppFirewallPolicyActionInput interface {
 	pulumi.Input
 
@@ -62,7 +62,7 @@ func (i AppFirewallPolicyActionArgs) ToAppFirewallPolicyActionOutputWithContext(
 // AppFirewallPolicyActionArrayInput is an input type that accepts AppFirewallPolicyActionArray and AppFirewallPolicyActionArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionArrayInput` via:
 //
-//          AppFirewallPolicyActionArray{ AppFirewallPolicyActionArgs{...} }
+//	AppFirewallPolicyActionArray{ AppFirewallPolicyActionArgs{...} }
 type AppFirewallPolicyActionArrayInput interface {
 	pulumi.Input
 
@@ -153,7 +153,7 @@ type AppFirewallPolicyActionBody struct {
 // AppFirewallPolicyActionBodyInput is an input type that accepts AppFirewallPolicyActionBodyArgs and AppFirewallPolicyActionBodyOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionBodyInput` via:
 //
-//          AppFirewallPolicyActionBodyArgs{...}
+//	AppFirewallPolicyActionBodyArgs{...}
 type AppFirewallPolicyActionBodyInput interface {
 	pulumi.Input
 
@@ -191,11 +191,11 @@ func (i AppFirewallPolicyActionBodyArgs) ToAppFirewallPolicyActionBodyPtrOutputW
 // AppFirewallPolicyActionBodyPtrInput is an input type that accepts AppFirewallPolicyActionBodyArgs, AppFirewallPolicyActionBodyPtr and AppFirewallPolicyActionBodyPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionBodyPtrInput` via:
 //
-//          AppFirewallPolicyActionBodyArgs{...}
+//	        AppFirewallPolicyActionBodyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyActionBodyPtrInput interface {
 	pulumi.Input
 
@@ -309,7 +309,7 @@ type AppFirewallPolicyActionHeader struct {
 // AppFirewallPolicyActionHeaderInput is an input type that accepts AppFirewallPolicyActionHeaderArgs and AppFirewallPolicyActionHeaderOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionHeaderInput` via:
 //
-//          AppFirewallPolicyActionHeaderArgs{...}
+//	AppFirewallPolicyActionHeaderArgs{...}
 type AppFirewallPolicyActionHeaderInput interface {
 	pulumi.Input
 
@@ -339,7 +339,7 @@ func (i AppFirewallPolicyActionHeaderArgs) ToAppFirewallPolicyActionHeaderOutput
 // AppFirewallPolicyActionHeaderArrayInput is an input type that accepts AppFirewallPolicyActionHeaderArray and AppFirewallPolicyActionHeaderArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionHeaderArrayInput` via:
 //
-//          AppFirewallPolicyActionHeaderArray{ AppFirewallPolicyActionHeaderArgs{...} }
+//	AppFirewallPolicyActionHeaderArray{ AppFirewallPolicyActionHeaderArgs{...} }
 type AppFirewallPolicyActionHeaderArrayInput interface {
 	pulumi.Input
 
@@ -417,7 +417,7 @@ type AppFirewallPolicyRequestAccessControl struct {
 // AppFirewallPolicyRequestAccessControlInput is an input type that accepts AppFirewallPolicyRequestAccessControlArgs and AppFirewallPolicyRequestAccessControlOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestAccessControlInput` via:
 //
-//          AppFirewallPolicyRequestAccessControlArgs{...}
+//	AppFirewallPolicyRequestAccessControlArgs{...}
 type AppFirewallPolicyRequestAccessControlInput interface {
 	pulumi.Input
 
@@ -457,11 +457,11 @@ func (i AppFirewallPolicyRequestAccessControlArgs) ToAppFirewallPolicyRequestAcc
 // AppFirewallPolicyRequestAccessControlPtrInput is an input type that accepts AppFirewallPolicyRequestAccessControlArgs, AppFirewallPolicyRequestAccessControlPtr and AppFirewallPolicyRequestAccessControlPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestAccessControlPtrInput` via:
 //
-//          AppFirewallPolicyRequestAccessControlArgs{...}
+//	        AppFirewallPolicyRequestAccessControlArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyRequestAccessControlPtrInput interface {
 	pulumi.Input
 
@@ -588,7 +588,7 @@ type AppFirewallPolicyRequestAccessControlRule struct {
 // AppFirewallPolicyRequestAccessControlRuleInput is an input type that accepts AppFirewallPolicyRequestAccessControlRuleArgs and AppFirewallPolicyRequestAccessControlRuleOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestAccessControlRuleInput` via:
 //
-//          AppFirewallPolicyRequestAccessControlRuleArgs{...}
+//	AppFirewallPolicyRequestAccessControlRuleArgs{...}
 type AppFirewallPolicyRequestAccessControlRuleInput interface {
 	pulumi.Input
 
@@ -625,7 +625,7 @@ func (i AppFirewallPolicyRequestAccessControlRuleArgs) ToAppFirewallPolicyReques
 // AppFirewallPolicyRequestAccessControlRuleArrayInput is an input type that accepts AppFirewallPolicyRequestAccessControlRuleArray and AppFirewallPolicyRequestAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestAccessControlRuleArrayInput` via:
 //
-//          AppFirewallPolicyRequestAccessControlRuleArray{ AppFirewallPolicyRequestAccessControlRuleArgs{...} }
+//	AppFirewallPolicyRequestAccessControlRuleArray{ AppFirewallPolicyRequestAccessControlRuleArgs{...} }
 type AppFirewallPolicyRequestAccessControlRuleArrayInput interface {
 	pulumi.Input
 
@@ -719,7 +719,7 @@ type AppFirewallPolicyRequestProtection struct {
 // AppFirewallPolicyRequestProtectionInput is an input type that accepts AppFirewallPolicyRequestProtectionArgs and AppFirewallPolicyRequestProtectionOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionInput` via:
 //
-//          AppFirewallPolicyRequestProtectionArgs{...}
+//	AppFirewallPolicyRequestProtectionArgs{...}
 type AppFirewallPolicyRequestProtectionInput interface {
 	pulumi.Input
 
@@ -759,11 +759,11 @@ func (i AppFirewallPolicyRequestProtectionArgs) ToAppFirewallPolicyRequestProtec
 // AppFirewallPolicyRequestProtectionPtrInput is an input type that accepts AppFirewallPolicyRequestProtectionArgs, AppFirewallPolicyRequestProtectionPtr and AppFirewallPolicyRequestProtectionPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionPtrInput` via:
 //
-//          AppFirewallPolicyRequestProtectionArgs{...}
+//	        AppFirewallPolicyRequestProtectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyRequestProtectionPtrInput interface {
 	pulumi.Input
 
@@ -905,7 +905,7 @@ type AppFirewallPolicyRequestProtectionRule struct {
 // AppFirewallPolicyRequestProtectionRuleInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleArgs and AppFirewallPolicyRequestProtectionRuleOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleArgs{...}
+//	AppFirewallPolicyRequestProtectionRuleArgs{...}
 type AppFirewallPolicyRequestProtectionRuleInput interface {
 	pulumi.Input
 
@@ -948,7 +948,7 @@ func (i AppFirewallPolicyRequestProtectionRuleArgs) ToAppFirewallPolicyRequestPr
 // AppFirewallPolicyRequestProtectionRuleArrayInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleArray and AppFirewallPolicyRequestProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleArrayInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleArray{ AppFirewallPolicyRequestProtectionRuleArgs{...} }
+//	AppFirewallPolicyRequestProtectionRuleArray{ AppFirewallPolicyRequestProtectionRuleArgs{...} }
 type AppFirewallPolicyRequestProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -1067,7 +1067,7 @@ type AppFirewallPolicyRequestProtectionRuleProtectionCapability struct {
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...}
+//	AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...}
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput interface {
 	pulumi.Input
 
@@ -1105,7 +1105,7 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs) ToAppFir
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray{ AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...} }
+//	AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray{ AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...} }
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput interface {
 	pulumi.Input
 
@@ -1207,7 +1207,7 @@ type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeig
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
+//	AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -1237,7 +1237,7 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeW
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray{ AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
+//	AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray{ AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -1317,7 +1317,7 @@ type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions struct
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs{...}
+//	AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs{...}
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsInput interface {
 	pulumi.Input
 
@@ -1355,11 +1355,11 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs, AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtr and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs{...}
+//	        AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrInput interface {
 	pulumi.Input
 
@@ -1483,7 +1483,7 @@ type AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings struct {
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs and AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs{...}
+//	AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs{...}
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsInput interface {
 	pulumi.Input
 
@@ -1529,11 +1529,11 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs) 
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs, AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtr and AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrInput` via:
 //
-//          AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs{...}
+//	        AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrInput interface {
 	pulumi.Input
 
@@ -1717,7 +1717,7 @@ type AppFirewallPolicyRequestRateLimiting struct {
 // AppFirewallPolicyRequestRateLimitingInput is an input type that accepts AppFirewallPolicyRequestRateLimitingArgs and AppFirewallPolicyRequestRateLimitingOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingInput` via:
 //
-//          AppFirewallPolicyRequestRateLimitingArgs{...}
+//	AppFirewallPolicyRequestRateLimitingArgs{...}
 type AppFirewallPolicyRequestRateLimitingInput interface {
 	pulumi.Input
 
@@ -1753,11 +1753,11 @@ func (i AppFirewallPolicyRequestRateLimitingArgs) ToAppFirewallPolicyRequestRate
 // AppFirewallPolicyRequestRateLimitingPtrInput is an input type that accepts AppFirewallPolicyRequestRateLimitingArgs, AppFirewallPolicyRequestRateLimitingPtr and AppFirewallPolicyRequestRateLimitingPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingPtrInput` via:
 //
-//          AppFirewallPolicyRequestRateLimitingArgs{...}
+//	        AppFirewallPolicyRequestRateLimitingArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyRequestRateLimitingPtrInput interface {
 	pulumi.Input
 
@@ -1867,7 +1867,7 @@ type AppFirewallPolicyRequestRateLimitingRule struct {
 // AppFirewallPolicyRequestRateLimitingRuleInput is an input type that accepts AppFirewallPolicyRequestRateLimitingRuleArgs and AppFirewallPolicyRequestRateLimitingRuleOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingRuleInput` via:
 //
-//          AppFirewallPolicyRequestRateLimitingRuleArgs{...}
+//	AppFirewallPolicyRequestRateLimitingRuleArgs{...}
 type AppFirewallPolicyRequestRateLimitingRuleInput interface {
 	pulumi.Input
 
@@ -1906,7 +1906,7 @@ func (i AppFirewallPolicyRequestRateLimitingRuleArgs) ToAppFirewallPolicyRequest
 // AppFirewallPolicyRequestRateLimitingRuleArrayInput is an input type that accepts AppFirewallPolicyRequestRateLimitingRuleArray and AppFirewallPolicyRequestRateLimitingRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingRuleArrayInput` via:
 //
-//          AppFirewallPolicyRequestRateLimitingRuleArray{ AppFirewallPolicyRequestRateLimitingRuleArgs{...} }
+//	AppFirewallPolicyRequestRateLimitingRuleArray{ AppFirewallPolicyRequestRateLimitingRuleArgs{...} }
 type AppFirewallPolicyRequestRateLimitingRuleArrayInput interface {
 	pulumi.Input
 
@@ -2007,7 +2007,7 @@ type AppFirewallPolicyRequestRateLimitingRuleConfiguration struct {
 // AppFirewallPolicyRequestRateLimitingRuleConfigurationInput is an input type that accepts AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs and AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingRuleConfigurationInput` via:
 //
-//          AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...}
+//	AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...}
 type AppFirewallPolicyRequestRateLimitingRuleConfigurationInput interface {
 	pulumi.Input
 
@@ -2039,7 +2039,7 @@ func (i AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs) ToAppFirewall
 // AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput is an input type that accepts AppFirewallPolicyRequestRateLimitingRuleConfigurationArray and AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput` via:
 //
-//          AppFirewallPolicyRequestRateLimitingRuleConfigurationArray{ AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...} }
+//	AppFirewallPolicyRequestRateLimitingRuleConfigurationArray{ AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...} }
 type AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -2118,7 +2118,7 @@ type AppFirewallPolicyResponseAccessControl struct {
 // AppFirewallPolicyResponseAccessControlInput is an input type that accepts AppFirewallPolicyResponseAccessControlArgs and AppFirewallPolicyResponseAccessControlOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseAccessControlInput` via:
 //
-//          AppFirewallPolicyResponseAccessControlArgs{...}
+//	AppFirewallPolicyResponseAccessControlArgs{...}
 type AppFirewallPolicyResponseAccessControlInput interface {
 	pulumi.Input
 
@@ -2154,11 +2154,11 @@ func (i AppFirewallPolicyResponseAccessControlArgs) ToAppFirewallPolicyResponseA
 // AppFirewallPolicyResponseAccessControlPtrInput is an input type that accepts AppFirewallPolicyResponseAccessControlArgs, AppFirewallPolicyResponseAccessControlPtr and AppFirewallPolicyResponseAccessControlPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseAccessControlPtrInput` via:
 //
-//          AppFirewallPolicyResponseAccessControlArgs{...}
+//	        AppFirewallPolicyResponseAccessControlArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyResponseAccessControlPtrInput interface {
 	pulumi.Input
 
@@ -2266,7 +2266,7 @@ type AppFirewallPolicyResponseAccessControlRule struct {
 // AppFirewallPolicyResponseAccessControlRuleInput is an input type that accepts AppFirewallPolicyResponseAccessControlRuleArgs and AppFirewallPolicyResponseAccessControlRuleOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseAccessControlRuleInput` via:
 //
-//          AppFirewallPolicyResponseAccessControlRuleArgs{...}
+//	AppFirewallPolicyResponseAccessControlRuleArgs{...}
 type AppFirewallPolicyResponseAccessControlRuleInput interface {
 	pulumi.Input
 
@@ -2303,7 +2303,7 @@ func (i AppFirewallPolicyResponseAccessControlRuleArgs) ToAppFirewallPolicyRespo
 // AppFirewallPolicyResponseAccessControlRuleArrayInput is an input type that accepts AppFirewallPolicyResponseAccessControlRuleArray and AppFirewallPolicyResponseAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseAccessControlRuleArrayInput` via:
 //
-//          AppFirewallPolicyResponseAccessControlRuleArray{ AppFirewallPolicyResponseAccessControlRuleArgs{...} }
+//	AppFirewallPolicyResponseAccessControlRuleArray{ AppFirewallPolicyResponseAccessControlRuleArgs{...} }
 type AppFirewallPolicyResponseAccessControlRuleArrayInput interface {
 	pulumi.Input
 
@@ -2393,7 +2393,7 @@ type AppFirewallPolicyResponseProtection struct {
 // AppFirewallPolicyResponseProtectionInput is an input type that accepts AppFirewallPolicyResponseProtectionArgs and AppFirewallPolicyResponseProtectionOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionInput` via:
 //
-//          AppFirewallPolicyResponseProtectionArgs{...}
+//	AppFirewallPolicyResponseProtectionArgs{...}
 type AppFirewallPolicyResponseProtectionInput interface {
 	pulumi.Input
 
@@ -2429,11 +2429,11 @@ func (i AppFirewallPolicyResponseProtectionArgs) ToAppFirewallPolicyResponseProt
 // AppFirewallPolicyResponseProtectionPtrInput is an input type that accepts AppFirewallPolicyResponseProtectionArgs, AppFirewallPolicyResponseProtectionPtr and AppFirewallPolicyResponseProtectionPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionPtrInput` via:
 //
-//          AppFirewallPolicyResponseProtectionArgs{...}
+//	        AppFirewallPolicyResponseProtectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyResponseProtectionPtrInput interface {
 	pulumi.Input
 
@@ -2545,7 +2545,7 @@ type AppFirewallPolicyResponseProtectionRule struct {
 // AppFirewallPolicyResponseProtectionRuleInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleArgs and AppFirewallPolicyResponseProtectionRuleOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleArgs{...}
+//	AppFirewallPolicyResponseProtectionRuleArgs{...}
 type AppFirewallPolicyResponseProtectionRuleInput interface {
 	pulumi.Input
 
@@ -2588,7 +2588,7 @@ func (i AppFirewallPolicyResponseProtectionRuleArgs) ToAppFirewallPolicyResponse
 // AppFirewallPolicyResponseProtectionRuleArrayInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleArray and AppFirewallPolicyResponseProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleArrayInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleArray{ AppFirewallPolicyResponseProtectionRuleArgs{...} }
+//	AppFirewallPolicyResponseProtectionRuleArray{ AppFirewallPolicyResponseProtectionRuleArgs{...} }
 type AppFirewallPolicyResponseProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -2707,7 +2707,7 @@ type AppFirewallPolicyResponseProtectionRuleProtectionCapability struct {
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...}
+//	AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...}
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput interface {
 	pulumi.Input
 
@@ -2745,7 +2745,7 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs) ToAppFi
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray{ AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...} }
+//	AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray{ AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...} }
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput interface {
 	pulumi.Input
 
@@ -2847,7 +2847,7 @@ type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWei
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
+//	AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -2877,7 +2877,7 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborative
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray{ AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
+//	AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray{ AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -2957,7 +2957,7 @@ type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions struc
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs{...}
+//	AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs{...}
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsInput interface {
 	pulumi.Input
 
@@ -2995,11 +2995,11 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArg
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs, AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtr and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs{...}
+//	        AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrInput interface {
 	pulumi.Input
 
@@ -3123,7 +3123,7 @@ type AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings struct 
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs and AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs{...}
+//	AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs{...}
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsInput interface {
 	pulumi.Input
 
@@ -3169,11 +3169,11 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs)
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs, AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtr and AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrInput` via:
 //
-//          AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs{...}
+//	        AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrInput interface {
 	pulumi.Input
 
@@ -3359,7 +3359,7 @@ type NetworkAddressListVcnAddress struct {
 // NetworkAddressListVcnAddressInput is an input type that accepts NetworkAddressListVcnAddressArgs and NetworkAddressListVcnAddressOutput values.
 // You can construct a concrete instance of `NetworkAddressListVcnAddressInput` via:
 //
-//          NetworkAddressListVcnAddressArgs{...}
+//	NetworkAddressListVcnAddressArgs{...}
 type NetworkAddressListVcnAddressInput interface {
 	pulumi.Input
 
@@ -3389,7 +3389,7 @@ func (i NetworkAddressListVcnAddressArgs) ToNetworkAddressListVcnAddressOutputWi
 // NetworkAddressListVcnAddressArrayInput is an input type that accepts NetworkAddressListVcnAddressArray and NetworkAddressListVcnAddressArrayOutput values.
 // You can construct a concrete instance of `NetworkAddressListVcnAddressArrayInput` via:
 //
-//          NetworkAddressListVcnAddressArray{ NetworkAddressListVcnAddressArgs{...} }
+//	NetworkAddressListVcnAddressArray{ NetworkAddressListVcnAddressArgs{...} }
 type NetworkAddressListVcnAddressArrayInput interface {
 	pulumi.Input
 
@@ -3464,7 +3464,7 @@ type GetFirewallsFilter struct {
 // GetFirewallsFilterInput is an input type that accepts GetFirewallsFilterArgs and GetFirewallsFilterOutput values.
 // You can construct a concrete instance of `GetFirewallsFilterInput` via:
 //
-//          GetFirewallsFilterArgs{...}
+//	GetFirewallsFilterArgs{...}
 type GetFirewallsFilterInput interface {
 	pulumi.Input
 
@@ -3493,7 +3493,7 @@ func (i GetFirewallsFilterArgs) ToGetFirewallsFilterOutputWithContext(ctx contex
 // GetFirewallsFilterArrayInput is an input type that accepts GetFirewallsFilterArray and GetFirewallsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFirewallsFilterArrayInput` via:
 //
-//          GetFirewallsFilterArray{ GetFirewallsFilterArgs{...} }
+//	GetFirewallsFilterArray{ GetFirewallsFilterArgs{...} }
 type GetFirewallsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3568,7 +3568,7 @@ type GetFirewallsWebAppFirewallCollection struct {
 // GetFirewallsWebAppFirewallCollectionInput is an input type that accepts GetFirewallsWebAppFirewallCollectionArgs and GetFirewallsWebAppFirewallCollectionOutput values.
 // You can construct a concrete instance of `GetFirewallsWebAppFirewallCollectionInput` via:
 //
-//          GetFirewallsWebAppFirewallCollectionArgs{...}
+//	GetFirewallsWebAppFirewallCollectionArgs{...}
 type GetFirewallsWebAppFirewallCollectionInput interface {
 	pulumi.Input
 
@@ -3595,7 +3595,7 @@ func (i GetFirewallsWebAppFirewallCollectionArgs) ToGetFirewallsWebAppFirewallCo
 // GetFirewallsWebAppFirewallCollectionArrayInput is an input type that accepts GetFirewallsWebAppFirewallCollectionArray and GetFirewallsWebAppFirewallCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFirewallsWebAppFirewallCollectionArrayInput` via:
 //
-//          GetFirewallsWebAppFirewallCollectionArray{ GetFirewallsWebAppFirewallCollectionArgs{...} }
+//	GetFirewallsWebAppFirewallCollectionArray{ GetFirewallsWebAppFirewallCollectionArgs{...} }
 type GetFirewallsWebAppFirewallCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3689,7 +3689,7 @@ type GetFirewallsWebAppFirewallCollectionItem struct {
 // GetFirewallsWebAppFirewallCollectionItemInput is an input type that accepts GetFirewallsWebAppFirewallCollectionItemArgs and GetFirewallsWebAppFirewallCollectionItemOutput values.
 // You can construct a concrete instance of `GetFirewallsWebAppFirewallCollectionItemInput` via:
 //
-//          GetFirewallsWebAppFirewallCollectionItemArgs{...}
+//	GetFirewallsWebAppFirewallCollectionItemArgs{...}
 type GetFirewallsWebAppFirewallCollectionItemInput interface {
 	pulumi.Input
 
@@ -3741,7 +3741,7 @@ func (i GetFirewallsWebAppFirewallCollectionItemArgs) ToGetFirewallsWebAppFirewa
 // GetFirewallsWebAppFirewallCollectionItemArrayInput is an input type that accepts GetFirewallsWebAppFirewallCollectionItemArray and GetFirewallsWebAppFirewallCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFirewallsWebAppFirewallCollectionItemArrayInput` via:
 //
-//          GetFirewallsWebAppFirewallCollectionItemArray{ GetFirewallsWebAppFirewallCollectionItemArgs{...} }
+//	GetFirewallsWebAppFirewallCollectionItemArray{ GetFirewallsWebAppFirewallCollectionItemArgs{...} }
 type GetFirewallsWebAppFirewallCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3872,7 +3872,7 @@ type GetNetworkAddressListVcnAddress struct {
 // GetNetworkAddressListVcnAddressInput is an input type that accepts GetNetworkAddressListVcnAddressArgs and GetNetworkAddressListVcnAddressOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListVcnAddressInput` via:
 //
-//          GetNetworkAddressListVcnAddressArgs{...}
+//	GetNetworkAddressListVcnAddressArgs{...}
 type GetNetworkAddressListVcnAddressInput interface {
 	pulumi.Input
 
@@ -3902,7 +3902,7 @@ func (i GetNetworkAddressListVcnAddressArgs) ToGetNetworkAddressListVcnAddressOu
 // GetNetworkAddressListVcnAddressArrayInput is an input type that accepts GetNetworkAddressListVcnAddressArray and GetNetworkAddressListVcnAddressArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListVcnAddressArrayInput` via:
 //
-//          GetNetworkAddressListVcnAddressArray{ GetNetworkAddressListVcnAddressArgs{...} }
+//	GetNetworkAddressListVcnAddressArray{ GetNetworkAddressListVcnAddressArgs{...} }
 type GetNetworkAddressListVcnAddressArrayInput interface {
 	pulumi.Input
 
@@ -3977,7 +3977,7 @@ type GetNetworkAddressListsFilter struct {
 // GetNetworkAddressListsFilterInput is an input type that accepts GetNetworkAddressListsFilterArgs and GetNetworkAddressListsFilterOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsFilterInput` via:
 //
-//          GetNetworkAddressListsFilterArgs{...}
+//	GetNetworkAddressListsFilterArgs{...}
 type GetNetworkAddressListsFilterInput interface {
 	pulumi.Input
 
@@ -4006,7 +4006,7 @@ func (i GetNetworkAddressListsFilterArgs) ToGetNetworkAddressListsFilterOutputWi
 // GetNetworkAddressListsFilterArrayInput is an input type that accepts GetNetworkAddressListsFilterArray and GetNetworkAddressListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsFilterArrayInput` via:
 //
-//          GetNetworkAddressListsFilterArray{ GetNetworkAddressListsFilterArgs{...} }
+//	GetNetworkAddressListsFilterArray{ GetNetworkAddressListsFilterArgs{...} }
 type GetNetworkAddressListsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4081,7 +4081,7 @@ type GetNetworkAddressListsNetworkAddressListCollection struct {
 // GetNetworkAddressListsNetworkAddressListCollectionInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionArgs and GetNetworkAddressListsNetworkAddressListCollectionOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionInput` via:
 //
-//          GetNetworkAddressListsNetworkAddressListCollectionArgs{...}
+//	GetNetworkAddressListsNetworkAddressListCollectionArgs{...}
 type GetNetworkAddressListsNetworkAddressListCollectionInput interface {
 	pulumi.Input
 
@@ -4108,7 +4108,7 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionArgs) ToGetNetworkAddr
 // GetNetworkAddressListsNetworkAddressListCollectionArrayInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionArray and GetNetworkAddressListsNetworkAddressListCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionArrayInput` via:
 //
-//          GetNetworkAddressListsNetworkAddressListCollectionArray{ GetNetworkAddressListsNetworkAddressListCollectionArgs{...} }
+//	GetNetworkAddressListsNetworkAddressListCollectionArray{ GetNetworkAddressListsNetworkAddressListCollectionArgs{...} }
 type GetNetworkAddressListsNetworkAddressListCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4202,7 +4202,7 @@ type GetNetworkAddressListsNetworkAddressListCollectionItem struct {
 // GetNetworkAddressListsNetworkAddressListCollectionItemInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionItemArgs and GetNetworkAddressListsNetworkAddressListCollectionItemOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionItemInput` via:
 //
-//          GetNetworkAddressListsNetworkAddressListCollectionItemArgs{...}
+//	GetNetworkAddressListsNetworkAddressListCollectionItemArgs{...}
 type GetNetworkAddressListsNetworkAddressListCollectionItemInput interface {
 	pulumi.Input
 
@@ -4254,7 +4254,7 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionItemArgs) ToGetNetwork
 // GetNetworkAddressListsNetworkAddressListCollectionItemArrayInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionItemArray and GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionItemArrayInput` via:
 //
-//          GetNetworkAddressListsNetworkAddressListCollectionItemArray{ GetNetworkAddressListsNetworkAddressListCollectionItemArgs{...} }
+//	GetNetworkAddressListsNetworkAddressListCollectionItemArray{ GetNetworkAddressListsNetworkAddressListCollectionItemArgs{...} }
 type GetNetworkAddressListsNetworkAddressListCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4393,7 +4393,7 @@ type GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress struct {
 // GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs and GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressInput` via:
 //
-//          GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs{...}
+//	GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs{...}
 type GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressInput interface {
 	pulumi.Input
 
@@ -4423,7 +4423,7 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs) To
 // GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArray and GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayInput` via:
 //
-//          GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArray{ GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs{...} }
+//	GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArray{ GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs{...} }
 type GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayInput interface {
 	pulumi.Input
 
@@ -4498,7 +4498,7 @@ type GetProtectionCapabilitiesFilter struct {
 // GetProtectionCapabilitiesFilterInput is an input type that accepts GetProtectionCapabilitiesFilterArgs and GetProtectionCapabilitiesFilterOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesFilterInput` via:
 //
-//          GetProtectionCapabilitiesFilterArgs{...}
+//	GetProtectionCapabilitiesFilterArgs{...}
 type GetProtectionCapabilitiesFilterInput interface {
 	pulumi.Input
 
@@ -4527,7 +4527,7 @@ func (i GetProtectionCapabilitiesFilterArgs) ToGetProtectionCapabilitiesFilterOu
 // GetProtectionCapabilitiesFilterArrayInput is an input type that accepts GetProtectionCapabilitiesFilterArray and GetProtectionCapabilitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesFilterArrayInput` via:
 //
-//          GetProtectionCapabilitiesFilterArray{ GetProtectionCapabilitiesFilterArgs{...} }
+//	GetProtectionCapabilitiesFilterArray{ GetProtectionCapabilitiesFilterArgs{...} }
 type GetProtectionCapabilitiesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4603,7 +4603,7 @@ type GetProtectionCapabilitiesProtectionCapabilityCollection struct {
 // GetProtectionCapabilitiesProtectionCapabilityCollectionInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionArgs and GetProtectionCapabilitiesProtectionCapabilityCollectionOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionInput` via:
 //
-//          GetProtectionCapabilitiesProtectionCapabilityCollectionArgs{...}
+//	GetProtectionCapabilitiesProtectionCapabilityCollectionArgs{...}
 type GetProtectionCapabilitiesProtectionCapabilityCollectionInput interface {
 	pulumi.Input
 
@@ -4631,7 +4631,7 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionArgs) ToGetProtec
 // GetProtectionCapabilitiesProtectionCapabilityCollectionArrayInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionArray and GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionArrayInput` via:
 //
-//          GetProtectionCapabilitiesProtectionCapabilityCollectionArray{ GetProtectionCapabilitiesProtectionCapabilityCollectionArgs{...} }
+//	GetProtectionCapabilitiesProtectionCapabilityCollectionArray{ GetProtectionCapabilitiesProtectionCapabilityCollectionArgs{...} }
 type GetProtectionCapabilitiesProtectionCapabilityCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4718,7 +4718,7 @@ type GetProtectionCapabilitiesProtectionCapabilityCollectionItem struct {
 // GetProtectionCapabilitiesProtectionCapabilityCollectionItemInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs and GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionItemInput` via:
 //
-//          GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs{...}
+//	GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs{...}
 type GetProtectionCapabilitiesProtectionCapabilityCollectionItemInput interface {
 	pulumi.Input
 
@@ -4762,7 +4762,7 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs) ToGetPr
 // GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionItemArray and GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayInput` via:
 //
-//          GetProtectionCapabilitiesProtectionCapabilityCollectionItemArray{ GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs{...} }
+//	GetProtectionCapabilitiesProtectionCapabilityCollectionItemArray{ GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs{...} }
 type GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4879,7 +4879,7 @@ type GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWei
 // GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs and GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightInput` via:
 //
-//          GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs{...}
+//	GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs{...}
 type GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -4911,7 +4911,7 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborative
 // GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArray and GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayInput` via:
 //
-//          GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArray{ GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs{...} }
+//	GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArray{ GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs{...} }
 type GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -4998,7 +4998,7 @@ type GetProtectionCapabilityGroupTagsFilter struct {
 // GetProtectionCapabilityGroupTagsFilterInput is an input type that accepts GetProtectionCapabilityGroupTagsFilterArgs and GetProtectionCapabilityGroupTagsFilterOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsFilterInput` via:
 //
-//          GetProtectionCapabilityGroupTagsFilterArgs{...}
+//	GetProtectionCapabilityGroupTagsFilterArgs{...}
 type GetProtectionCapabilityGroupTagsFilterInput interface {
 	pulumi.Input
 
@@ -5028,7 +5028,7 @@ func (i GetProtectionCapabilityGroupTagsFilterArgs) ToGetProtectionCapabilityGro
 // GetProtectionCapabilityGroupTagsFilterArrayInput is an input type that accepts GetProtectionCapabilityGroupTagsFilterArray and GetProtectionCapabilityGroupTagsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsFilterArrayInput` via:
 //
-//          GetProtectionCapabilityGroupTagsFilterArray{ GetProtectionCapabilityGroupTagsFilterArgs{...} }
+//	GetProtectionCapabilityGroupTagsFilterArray{ GetProtectionCapabilityGroupTagsFilterArgs{...} }
 type GetProtectionCapabilityGroupTagsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5105,7 +5105,7 @@ type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection stru
 // GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionInput is an input type that accepts GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArgs and GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionInput` via:
 //
-//          GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArgs{...}
+//	GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArgs{...}
 type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionInput interface {
 	pulumi.Input
 
@@ -5133,7 +5133,7 @@ func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionAr
 // GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayInput is an input type that accepts GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArray and GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayInput` via:
 //
-//          GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArray{ GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArgs{...} }
+//	GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArray{ GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArgs{...} }
 type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5204,7 +5204,7 @@ type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem 
 // GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemInput is an input type that accepts GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs and GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemInput` via:
 //
-//          GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs{...}
+//	GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs{...}
 type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemInput interface {
 	pulumi.Input
 
@@ -5232,7 +5232,7 @@ func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionIt
 // GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayInput is an input type that accepts GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArray and GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayInput` via:
 //
-//          GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArray{ GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs{...} }
+//	GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArray{ GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs{...} }
 type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5305,7 +5305,7 @@ type GetWebAppFirewallPoliciesFilter struct {
 // GetWebAppFirewallPoliciesFilterInput is an input type that accepts GetWebAppFirewallPoliciesFilterArgs and GetWebAppFirewallPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesFilterInput` via:
 //
-//          GetWebAppFirewallPoliciesFilterArgs{...}
+//	GetWebAppFirewallPoliciesFilterArgs{...}
 type GetWebAppFirewallPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -5335,7 +5335,7 @@ func (i GetWebAppFirewallPoliciesFilterArgs) ToGetWebAppFirewallPoliciesFilterOu
 // GetWebAppFirewallPoliciesFilterArrayInput is an input type that accepts GetWebAppFirewallPoliciesFilterArray and GetWebAppFirewallPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesFilterArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesFilterArray{ GetWebAppFirewallPoliciesFilterArgs{...} }
+//	GetWebAppFirewallPoliciesFilterArray{ GetWebAppFirewallPoliciesFilterArgs{...} }
 type GetWebAppFirewallPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5411,7 +5411,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection struct {
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -5438,7 +5438,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs) ToGetWebApp
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5538,7 +5538,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem struct {
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -5596,7 +5596,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs) ToGetWe
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5766,7 +5766,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction struct {
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionInput interface {
 	pulumi.Input
 
@@ -5802,7 +5802,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs) T
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayInput interface {
 	pulumi.Input
 
@@ -5897,7 +5897,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody struc
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyInput interface {
 	pulumi.Input
 
@@ -5927,7 +5927,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArg
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayInput interface {
 	pulumi.Input
 
@@ -6003,7 +6003,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader str
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderInput interface {
 	pulumi.Input
 
@@ -6033,7 +6033,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderA
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayInput interface {
 	pulumi.Input
 
@@ -6111,7 +6111,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessCon
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlInput interface {
 	pulumi.Input
 
@@ -6143,7 +6143,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayInput interface {
 	pulumi.Input
 
@@ -6232,7 +6232,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessCon
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleInput interface {
 	pulumi.Input
 
@@ -6269,7 +6269,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayInput interface {
 	pulumi.Input
 
@@ -6373,7 +6373,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionInput interface {
 	pulumi.Input
 
@@ -6405,7 +6405,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayInput interface {
 	pulumi.Input
 
@@ -6505,7 +6505,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleInput interface {
 	pulumi.Input
 
@@ -6548,7 +6548,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -6679,7 +6679,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityInput interface {
 	pulumi.Input
 
@@ -6717,7 +6717,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayInput interface {
 	pulumi.Input
 
@@ -6825,7 +6825,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -6855,7 +6855,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -6935,7 +6935,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionInput interface {
 	pulumi.Input
 
@@ -6965,7 +6965,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayInput interface {
 	pulumi.Input
 
@@ -7053,7 +7053,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingInput interface {
 	pulumi.Input
 
@@ -7091,7 +7091,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayInput interface {
 	pulumi.Input
 
@@ -7197,7 +7197,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimit
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingInput interface {
 	pulumi.Input
 
@@ -7225,7 +7225,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayInput interface {
 	pulumi.Input
 
@@ -7307,7 +7307,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimit
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleInput interface {
 	pulumi.Input
 
@@ -7346,7 +7346,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayInput interface {
 	pulumi.Input
 
@@ -7457,7 +7457,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimit
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationInput interface {
 	pulumi.Input
 
@@ -7489,7 +7489,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -7574,7 +7574,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessCo
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlInput interface {
 	pulumi.Input
 
@@ -7602,7 +7602,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayInput interface {
 	pulumi.Input
 
@@ -7682,7 +7682,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessCo
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleInput interface {
 	pulumi.Input
 
@@ -7719,7 +7719,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayInput interface {
 	pulumi.Input
 
@@ -7819,7 +7819,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionInput interface {
 	pulumi.Input
 
@@ -7847,7 +7847,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayInput interface {
 	pulumi.Input
 
@@ -7933,7 +7933,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleInput interface {
 	pulumi.Input
 
@@ -7976,7 +7976,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -8107,7 +8107,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityInput interface {
 	pulumi.Input
 
@@ -8145,7 +8145,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayInput interface {
 	pulumi.Input
 
@@ -8253,7 +8253,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -8283,7 +8283,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -8363,7 +8363,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionInput interface {
 	pulumi.Input
 
@@ -8393,7 +8393,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayInput interface {
 	pulumi.Input
 
@@ -8481,7 +8481,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs{...}
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs{...}
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingInput interface {
 	pulumi.Input
 
@@ -8519,7 +8519,7 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
-//          GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs{...} }
+//	GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs{...} }
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayInput interface {
 	pulumi.Input
 
@@ -8633,7 +8633,7 @@ type GetWebAppFirewallPolicyAction struct {
 // GetWebAppFirewallPolicyActionInput is an input type that accepts GetWebAppFirewallPolicyActionArgs and GetWebAppFirewallPolicyActionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionInput` via:
 //
-//          GetWebAppFirewallPolicyActionArgs{...}
+//	GetWebAppFirewallPolicyActionArgs{...}
 type GetWebAppFirewallPolicyActionInput interface {
 	pulumi.Input
 
@@ -8669,7 +8669,7 @@ func (i GetWebAppFirewallPolicyActionArgs) ToGetWebAppFirewallPolicyActionOutput
 // GetWebAppFirewallPolicyActionArrayInput is an input type that accepts GetWebAppFirewallPolicyActionArray and GetWebAppFirewallPolicyActionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionArrayInput` via:
 //
-//          GetWebAppFirewallPolicyActionArray{ GetWebAppFirewallPolicyActionArgs{...} }
+//	GetWebAppFirewallPolicyActionArray{ GetWebAppFirewallPolicyActionArgs{...} }
 type GetWebAppFirewallPolicyActionArrayInput interface {
 	pulumi.Input
 
@@ -8760,7 +8760,7 @@ type GetWebAppFirewallPolicyActionBody struct {
 // GetWebAppFirewallPolicyActionBodyInput is an input type that accepts GetWebAppFirewallPolicyActionBodyArgs and GetWebAppFirewallPolicyActionBodyOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionBodyInput` via:
 //
-//          GetWebAppFirewallPolicyActionBodyArgs{...}
+//	GetWebAppFirewallPolicyActionBodyArgs{...}
 type GetWebAppFirewallPolicyActionBodyInput interface {
 	pulumi.Input
 
@@ -8790,7 +8790,7 @@ func (i GetWebAppFirewallPolicyActionBodyArgs) ToGetWebAppFirewallPolicyActionBo
 // GetWebAppFirewallPolicyActionBodyArrayInput is an input type that accepts GetWebAppFirewallPolicyActionBodyArray and GetWebAppFirewallPolicyActionBodyArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionBodyArrayInput` via:
 //
-//          GetWebAppFirewallPolicyActionBodyArray{ GetWebAppFirewallPolicyActionBodyArgs{...} }
+//	GetWebAppFirewallPolicyActionBodyArray{ GetWebAppFirewallPolicyActionBodyArgs{...} }
 type GetWebAppFirewallPolicyActionBodyArrayInput interface {
 	pulumi.Input
 
@@ -8866,7 +8866,7 @@ type GetWebAppFirewallPolicyActionHeader struct {
 // GetWebAppFirewallPolicyActionHeaderInput is an input type that accepts GetWebAppFirewallPolicyActionHeaderArgs and GetWebAppFirewallPolicyActionHeaderOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionHeaderInput` via:
 //
-//          GetWebAppFirewallPolicyActionHeaderArgs{...}
+//	GetWebAppFirewallPolicyActionHeaderArgs{...}
 type GetWebAppFirewallPolicyActionHeaderInput interface {
 	pulumi.Input
 
@@ -8896,7 +8896,7 @@ func (i GetWebAppFirewallPolicyActionHeaderArgs) ToGetWebAppFirewallPolicyAction
 // GetWebAppFirewallPolicyActionHeaderArrayInput is an input type that accepts GetWebAppFirewallPolicyActionHeaderArray and GetWebAppFirewallPolicyActionHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionHeaderArrayInput` via:
 //
-//          GetWebAppFirewallPolicyActionHeaderArray{ GetWebAppFirewallPolicyActionHeaderArgs{...} }
+//	GetWebAppFirewallPolicyActionHeaderArray{ GetWebAppFirewallPolicyActionHeaderArgs{...} }
 type GetWebAppFirewallPolicyActionHeaderArrayInput interface {
 	pulumi.Input
 
@@ -8974,7 +8974,7 @@ type GetWebAppFirewallPolicyRequestAccessControl struct {
 // GetWebAppFirewallPolicyRequestAccessControlInput is an input type that accepts GetWebAppFirewallPolicyRequestAccessControlArgs and GetWebAppFirewallPolicyRequestAccessControlOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestAccessControlInput` via:
 //
-//          GetWebAppFirewallPolicyRequestAccessControlArgs{...}
+//	GetWebAppFirewallPolicyRequestAccessControlArgs{...}
 type GetWebAppFirewallPolicyRequestAccessControlInput interface {
 	pulumi.Input
 
@@ -9006,7 +9006,7 @@ func (i GetWebAppFirewallPolicyRequestAccessControlArgs) ToGetWebAppFirewallPoli
 // GetWebAppFirewallPolicyRequestAccessControlArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestAccessControlArray and GetWebAppFirewallPolicyRequestAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestAccessControlArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestAccessControlArray{ GetWebAppFirewallPolicyRequestAccessControlArgs{...} }
+//	GetWebAppFirewallPolicyRequestAccessControlArray{ GetWebAppFirewallPolicyRequestAccessControlArgs{...} }
 type GetWebAppFirewallPolicyRequestAccessControlArrayInput interface {
 	pulumi.Input
 
@@ -9093,7 +9093,7 @@ type GetWebAppFirewallPolicyRequestAccessControlRule struct {
 // GetWebAppFirewallPolicyRequestAccessControlRuleInput is an input type that accepts GetWebAppFirewallPolicyRequestAccessControlRuleArgs and GetWebAppFirewallPolicyRequestAccessControlRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestAccessControlRuleInput` via:
 //
-//          GetWebAppFirewallPolicyRequestAccessControlRuleArgs{...}
+//	GetWebAppFirewallPolicyRequestAccessControlRuleArgs{...}
 type GetWebAppFirewallPolicyRequestAccessControlRuleInput interface {
 	pulumi.Input
 
@@ -9130,7 +9130,7 @@ func (i GetWebAppFirewallPolicyRequestAccessControlRuleArgs) ToGetWebAppFirewall
 // GetWebAppFirewallPolicyRequestAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestAccessControlRuleArray and GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestAccessControlRuleArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestAccessControlRuleArray{ GetWebAppFirewallPolicyRequestAccessControlRuleArgs{...} }
+//	GetWebAppFirewallPolicyRequestAccessControlRuleArray{ GetWebAppFirewallPolicyRequestAccessControlRuleArgs{...} }
 type GetWebAppFirewallPolicyRequestAccessControlRuleArrayInput interface {
 	pulumi.Input
 
@@ -9224,7 +9224,7 @@ type GetWebAppFirewallPolicyRequestProtection struct {
 // GetWebAppFirewallPolicyRequestProtectionInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionArgs and GetWebAppFirewallPolicyRequestProtectionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionArgs{...}
+//	GetWebAppFirewallPolicyRequestProtectionArgs{...}
 type GetWebAppFirewallPolicyRequestProtectionInput interface {
 	pulumi.Input
 
@@ -9256,7 +9256,7 @@ func (i GetWebAppFirewallPolicyRequestProtectionArgs) ToGetWebAppFirewallPolicyR
 // GetWebAppFirewallPolicyRequestProtectionArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionArray and GetWebAppFirewallPolicyRequestProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionArray{ GetWebAppFirewallPolicyRequestProtectionArgs{...} }
+//	GetWebAppFirewallPolicyRequestProtectionArray{ GetWebAppFirewallPolicyRequestProtectionArgs{...} }
 type GetWebAppFirewallPolicyRequestProtectionArrayInput interface {
 	pulumi.Input
 
@@ -9354,7 +9354,7 @@ type GetWebAppFirewallPolicyRequestProtectionRule struct {
 // GetWebAppFirewallPolicyRequestProtectionRuleInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleArgs and GetWebAppFirewallPolicyRequestProtectionRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleArgs{...}
+//	GetWebAppFirewallPolicyRequestProtectionRuleArgs{...}
 type GetWebAppFirewallPolicyRequestProtectionRuleInput interface {
 	pulumi.Input
 
@@ -9397,7 +9397,7 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleArgs) ToGetWebAppFirewallPol
 // GetWebAppFirewallPolicyRequestProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleArray and GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleArray{ GetWebAppFirewallPolicyRequestProtectionRuleArgs{...} }
+//	GetWebAppFirewallPolicyRequestProtectionRuleArray{ GetWebAppFirewallPolicyRequestProtectionRuleArgs{...} }
 type GetWebAppFirewallPolicyRequestProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -9516,7 +9516,7 @@ type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability struct {
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...}
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...}
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityInput interface {
 	pulumi.Input
 
@@ -9554,7 +9554,7 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs) To
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...} }
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs{...} }
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput interface {
 	pulumi.Input
 
@@ -9656,7 +9656,7 @@ type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborati
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -9686,7 +9686,7 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollabor
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -9766,7 +9766,7 @@ type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion s
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs{...}
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs{...}
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionInput interface {
 	pulumi.Input
 
@@ -9796,7 +9796,7 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusio
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs{...} }
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs{...} }
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayInput interface {
 	pulumi.Input
 
@@ -9884,7 +9884,7 @@ type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting str
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs{...}
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs{...}
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingInput interface {
 	pulumi.Input
 
@@ -9922,7 +9922,7 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingA
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs{...} }
+//	GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs{...} }
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayInput interface {
 	pulumi.Input
 
@@ -10028,7 +10028,7 @@ type GetWebAppFirewallPolicyRequestRateLimiting struct {
 // GetWebAppFirewallPolicyRequestRateLimitingInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingArgs and GetWebAppFirewallPolicyRequestRateLimitingOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingInput` via:
 //
-//          GetWebAppFirewallPolicyRequestRateLimitingArgs{...}
+//	GetWebAppFirewallPolicyRequestRateLimitingArgs{...}
 type GetWebAppFirewallPolicyRequestRateLimitingInput interface {
 	pulumi.Input
 
@@ -10056,7 +10056,7 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingArgs) ToGetWebAppFirewallPolic
 // GetWebAppFirewallPolicyRequestRateLimitingArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingArray and GetWebAppFirewallPolicyRequestRateLimitingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestRateLimitingArray{ GetWebAppFirewallPolicyRequestRateLimitingArgs{...} }
+//	GetWebAppFirewallPolicyRequestRateLimitingArray{ GetWebAppFirewallPolicyRequestRateLimitingArgs{...} }
 type GetWebAppFirewallPolicyRequestRateLimitingArrayInput interface {
 	pulumi.Input
 
@@ -10138,7 +10138,7 @@ type GetWebAppFirewallPolicyRequestRateLimitingRule struct {
 // GetWebAppFirewallPolicyRequestRateLimitingRuleInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingRuleArgs and GetWebAppFirewallPolicyRequestRateLimitingRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingRuleInput` via:
 //
-//          GetWebAppFirewallPolicyRequestRateLimitingRuleArgs{...}
+//	GetWebAppFirewallPolicyRequestRateLimitingRuleArgs{...}
 type GetWebAppFirewallPolicyRequestRateLimitingRuleInput interface {
 	pulumi.Input
 
@@ -10177,7 +10177,7 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingRuleArgs) ToGetWebAppFirewallP
 // GetWebAppFirewallPolicyRequestRateLimitingRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingRuleArray and GetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingRuleArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestRateLimitingRuleArray{ GetWebAppFirewallPolicyRequestRateLimitingRuleArgs{...} }
+//	GetWebAppFirewallPolicyRequestRateLimitingRuleArray{ GetWebAppFirewallPolicyRequestRateLimitingRuleArgs{...} }
 type GetWebAppFirewallPolicyRequestRateLimitingRuleArrayInput interface {
 	pulumi.Input
 
@@ -10278,7 +10278,7 @@ type GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration struct {
 // GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs and GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationInput` via:
 //
-//          GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...}
+//	GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...}
 type GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationInput interface {
 	pulumi.Input
 
@@ -10310,7 +10310,7 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs) ToGetWe
 // GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArray and GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput` via:
 //
-//          GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArray{ GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...} }
+//	GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArray{ GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs{...} }
 type GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -10391,7 +10391,7 @@ type GetWebAppFirewallPolicyResponseAccessControl struct {
 // GetWebAppFirewallPolicyResponseAccessControlInput is an input type that accepts GetWebAppFirewallPolicyResponseAccessControlArgs and GetWebAppFirewallPolicyResponseAccessControlOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseAccessControlInput` via:
 //
-//          GetWebAppFirewallPolicyResponseAccessControlArgs{...}
+//	GetWebAppFirewallPolicyResponseAccessControlArgs{...}
 type GetWebAppFirewallPolicyResponseAccessControlInput interface {
 	pulumi.Input
 
@@ -10419,7 +10419,7 @@ func (i GetWebAppFirewallPolicyResponseAccessControlArgs) ToGetWebAppFirewallPol
 // GetWebAppFirewallPolicyResponseAccessControlArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseAccessControlArray and GetWebAppFirewallPolicyResponseAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseAccessControlArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseAccessControlArray{ GetWebAppFirewallPolicyResponseAccessControlArgs{...} }
+//	GetWebAppFirewallPolicyResponseAccessControlArray{ GetWebAppFirewallPolicyResponseAccessControlArgs{...} }
 type GetWebAppFirewallPolicyResponseAccessControlArrayInput interface {
 	pulumi.Input
 
@@ -10499,7 +10499,7 @@ type GetWebAppFirewallPolicyResponseAccessControlRule struct {
 // GetWebAppFirewallPolicyResponseAccessControlRuleInput is an input type that accepts GetWebAppFirewallPolicyResponseAccessControlRuleArgs and GetWebAppFirewallPolicyResponseAccessControlRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseAccessControlRuleInput` via:
 //
-//          GetWebAppFirewallPolicyResponseAccessControlRuleArgs{...}
+//	GetWebAppFirewallPolicyResponseAccessControlRuleArgs{...}
 type GetWebAppFirewallPolicyResponseAccessControlRuleInput interface {
 	pulumi.Input
 
@@ -10536,7 +10536,7 @@ func (i GetWebAppFirewallPolicyResponseAccessControlRuleArgs) ToGetWebAppFirewal
 // GetWebAppFirewallPolicyResponseAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseAccessControlRuleArray and GetWebAppFirewallPolicyResponseAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseAccessControlRuleArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseAccessControlRuleArray{ GetWebAppFirewallPolicyResponseAccessControlRuleArgs{...} }
+//	GetWebAppFirewallPolicyResponseAccessControlRuleArray{ GetWebAppFirewallPolicyResponseAccessControlRuleArgs{...} }
 type GetWebAppFirewallPolicyResponseAccessControlRuleArrayInput interface {
 	pulumi.Input
 
@@ -10626,7 +10626,7 @@ type GetWebAppFirewallPolicyResponseProtection struct {
 // GetWebAppFirewallPolicyResponseProtectionInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionArgs and GetWebAppFirewallPolicyResponseProtectionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionArgs{...}
+//	GetWebAppFirewallPolicyResponseProtectionArgs{...}
 type GetWebAppFirewallPolicyResponseProtectionInput interface {
 	pulumi.Input
 
@@ -10654,7 +10654,7 @@ func (i GetWebAppFirewallPolicyResponseProtectionArgs) ToGetWebAppFirewallPolicy
 // GetWebAppFirewallPolicyResponseProtectionArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionArray and GetWebAppFirewallPolicyResponseProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionArray{ GetWebAppFirewallPolicyResponseProtectionArgs{...} }
+//	GetWebAppFirewallPolicyResponseProtectionArray{ GetWebAppFirewallPolicyResponseProtectionArgs{...} }
 type GetWebAppFirewallPolicyResponseProtectionArrayInput interface {
 	pulumi.Input
 
@@ -10740,7 +10740,7 @@ type GetWebAppFirewallPolicyResponseProtectionRule struct {
 // GetWebAppFirewallPolicyResponseProtectionRuleInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleArgs and GetWebAppFirewallPolicyResponseProtectionRuleOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleArgs{...}
+//	GetWebAppFirewallPolicyResponseProtectionRuleArgs{...}
 type GetWebAppFirewallPolicyResponseProtectionRuleInput interface {
 	pulumi.Input
 
@@ -10783,7 +10783,7 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleArgs) ToGetWebAppFirewallPo
 // GetWebAppFirewallPolicyResponseProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleArray and GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleArray{ GetWebAppFirewallPolicyResponseProtectionRuleArgs{...} }
+//	GetWebAppFirewallPolicyResponseProtectionRuleArray{ GetWebAppFirewallPolicyResponseProtectionRuleArgs{...} }
 type GetWebAppFirewallPolicyResponseProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -10902,7 +10902,7 @@ type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability struct {
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...}
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...}
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityInput interface {
 	pulumi.Input
 
@@ -10940,7 +10940,7 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs) T
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...} }
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs{...} }
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput interface {
 	pulumi.Input
 
@@ -11042,7 +11042,7 @@ type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborat
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...}
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightInput interface {
 	pulumi.Input
 
@@ -11072,7 +11072,7 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabo
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs{...} }
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput interface {
 	pulumi.Input
 
@@ -11152,7 +11152,7 @@ type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion 
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs{...}
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs{...}
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionInput interface {
 	pulumi.Input
 
@@ -11182,7 +11182,7 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusi
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs{...} }
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs{...} }
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayInput interface {
 	pulumi.Input
 
@@ -11270,7 +11270,7 @@ type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting st
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs{...}
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs{...}
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingInput interface {
 	pulumi.Input
 
@@ -11308,7 +11308,7 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
-//          GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs{...} }
+//	GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArray{ GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs{...} }
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayInput interface {
 	pulumi.Input
 

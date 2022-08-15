@@ -29,6 +29,7 @@ class BuildPipelineStageArgs:
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
+                 private_access_config: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']] = None,
                  stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None):
         """
@@ -47,6 +48,7 @@ class BuildPipelineStageArgs:
         :param pulumi.Input[str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+        :param pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs'] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input['BuildPipelineStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
@@ -75,6 +77,8 @@ class BuildPipelineStageArgs:
             pulumi.set(__self__, "is_pass_all_parameters_enabled", is_pass_all_parameters_enabled)
         if primary_build_source is not None:
             pulumi.set(__self__, "primary_build_source", primary_build_source)
+        if private_access_config is not None:
+            pulumi.set(__self__, "private_access_config", private_access_config)
         if stage_execution_timeout_in_seconds is not None:
             pulumi.set(__self__, "stage_execution_timeout_in_seconds", stage_execution_timeout_in_seconds)
         if wait_criteria is not None:
@@ -249,6 +253,18 @@ class BuildPipelineStageArgs:
         pulumi.set(self, "primary_build_source", value)
 
     @property
+    @pulumi.getter(name="privateAccessConfig")
+    def private_access_config(self) -> Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']]:
+        """
+        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "private_access_config")
+
+    @private_access_config.setter
+    def private_access_config(self, value: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']]):
+        pulumi.set(self, "private_access_config", value)
+
+    @property
     @pulumi.getter(name="stageExecutionTimeoutInSeconds")
     def stage_execution_timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
@@ -292,6 +308,7 @@ class _BuildPipelineStageState:
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
+                 private_access_config: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -317,6 +334,7 @@ class _BuildPipelineStageState:
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+        :param pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs'] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input[str] state: The current state of the stage.
@@ -357,6 +375,8 @@ class _BuildPipelineStageState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if primary_build_source is not None:
             pulumi.set(__self__, "primary_build_source", primary_build_source)
+        if private_access_config is not None:
+            pulumi.set(__self__, "private_access_config", private_access_config)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if stage_execution_timeout_in_seconds is not None:
@@ -565,6 +585,18 @@ class _BuildPipelineStageState:
         pulumi.set(self, "primary_build_source", value)
 
     @property
+    @pulumi.getter(name="privateAccessConfig")
+    def private_access_config(self) -> Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']]:
+        """
+        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "private_access_config")
+
+    @private_access_config.setter
+    def private_access_config(self, value: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']]):
+        pulumi.set(self, "private_access_config", value)
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -668,6 +700,7 @@ class BuildPipelineStage(pulumi.CustomResource):
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
+                 private_access_config: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStagePrivateAccessConfigArgs']]] = None,
                  stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  wait_criteria: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageWaitCriteriaArgs']]] = None,
                  __props__=None):
@@ -719,6 +752,11 @@ class BuildPipelineStage(pulumi.CustomResource):
             image=var["build_pipeline_stage_image"],
             is_pass_all_parameters_enabled=var["build_pipeline_stage_is_pass_all_parameters_enabled"],
             primary_build_source=var["build_pipeline_stage_primary_build_source"],
+            private_access_config=oci.dev.ops.BuildPipelineStagePrivateAccessConfigArgs(
+                network_channel_type=var["build_pipeline_stage_private_access_config_network_channel_type"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                nsg_ids=var["build_pipeline_stage_private_access_config_nsg_ids"],
+            ),
             stage_execution_timeout_in_seconds=var["build_pipeline_stage_stage_execution_timeout_in_seconds"],
             wait_criteria=oci.dev.ops.BuildPipelineStageWaitCriteriaArgs(
                 wait_duration=var["build_pipeline_stage_wait_criteria_wait_duration"],
@@ -750,6 +788,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+        :param pulumi.Input[pulumi.InputType['BuildPipelineStagePrivateAccessConfigArgs']] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input[pulumi.InputType['BuildPipelineStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
@@ -807,6 +846,11 @@ class BuildPipelineStage(pulumi.CustomResource):
             image=var["build_pipeline_stage_image"],
             is_pass_all_parameters_enabled=var["build_pipeline_stage_is_pass_all_parameters_enabled"],
             primary_build_source=var["build_pipeline_stage_primary_build_source"],
+            private_access_config=oci.dev.ops.BuildPipelineStagePrivateAccessConfigArgs(
+                network_channel_type=var["build_pipeline_stage_private_access_config_network_channel_type"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                nsg_ids=var["build_pipeline_stage_private_access_config_nsg_ids"],
+            ),
             stage_execution_timeout_in_seconds=var["build_pipeline_stage_stage_execution_timeout_in_seconds"],
             wait_criteria=oci.dev.ops.BuildPipelineStageWaitCriteriaArgs(
                 wait_duration=var["build_pipeline_stage_wait_criteria_wait_duration"],
@@ -851,6 +895,7 @@ class BuildPipelineStage(pulumi.CustomResource):
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
+                 private_access_config: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStagePrivateAccessConfigArgs']]] = None,
                  stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  wait_criteria: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStageWaitCriteriaArgs']]] = None,
                  __props__=None):
@@ -885,6 +930,7 @@ class BuildPipelineStage(pulumi.CustomResource):
             __props__.__dict__["image"] = image
             __props__.__dict__["is_pass_all_parameters_enabled"] = is_pass_all_parameters_enabled
             __props__.__dict__["primary_build_source"] = primary_build_source
+            __props__.__dict__["private_access_config"] = private_access_config
             __props__.__dict__["stage_execution_timeout_in_seconds"] = stage_execution_timeout_in_seconds
             __props__.__dict__["wait_criteria"] = wait_criteria
             __props__.__dict__["compartment_id"] = None
@@ -920,6 +966,7 @@ class BuildPipelineStage(pulumi.CustomResource):
             is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             primary_build_source: Optional[pulumi.Input[str]] = None,
+            private_access_config: Optional[pulumi.Input[pulumi.InputType['BuildPipelineStagePrivateAccessConfigArgs']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -950,6 +997,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
+        :param pulumi.Input[pulumi.InputType['BuildPipelineStagePrivateAccessConfigArgs']] private_access_config: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input[str] state: The current state of the stage.
@@ -978,6 +1026,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         __props__.__dict__["is_pass_all_parameters_enabled"] = is_pass_all_parameters_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["primary_build_source"] = primary_build_source
+        __props__.__dict__["private_access_config"] = private_access_config
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["stage_execution_timeout_in_seconds"] = stage_execution_timeout_in_seconds
         __props__.__dict__["state"] = state
@@ -1114,6 +1163,14 @@ class BuildPipelineStage(pulumi.CustomResource):
         (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
         """
         return pulumi.get(self, "primary_build_source")
+
+    @property
+    @pulumi.getter(name="privateAccessConfig")
+    def private_access_config(self) -> pulumi.Output['outputs.BuildPipelineStagePrivateAccessConfig']:
+        """
+        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "private_access_config")
 
     @property
     @pulumi.getter(name="projectId")

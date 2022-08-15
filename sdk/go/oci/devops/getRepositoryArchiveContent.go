@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryArchiveContent(ctx, &devops.GetRepositoryArchiveContentArgs{
-// 			RepositoryId: oci_devops_repository.Test_repository.Id,
-// 			Format:       pulumi.StringRef(_var.Repository_archive_content_format),
-// 			RefName:      pulumi.StringRef(_var.Repository_archive_content_ref_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryArchiveContent(ctx, &devops.GetRepositoryArchiveContentArgs{
+//				RepositoryId: oci_devops_repository.Test_repository.Id,
+//				Format:       pulumi.StringRef(_var.Repository_archive_content_format),
+//				RefName:      pulumi.StringRef(_var.Repository_archive_content_ref_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryArchiveContent(ctx *pulumi.Context, args *GetRepositoryArchiveContentArgs, opts ...pulumi.InvokeOption) (*GetRepositoryArchiveContentResult, error) {
 	var rv GetRepositoryArchiveContentResult

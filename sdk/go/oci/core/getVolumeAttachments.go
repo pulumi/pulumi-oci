@@ -24,24 +24,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVolumeAttachments(ctx, &core.GetVolumeAttachmentsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Volume_attachment_availability_domain),
-// 			InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
-// 			VolumeId:           pulumi.StringRef(oci_core_volume.Test_volume.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVolumeAttachments(ctx, &core.GetVolumeAttachmentsArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Volume_attachment_availability_domain),
+//				InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
+//				VolumeId:           pulumi.StringRef(oci_core_volume.Test_volume.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVolumeAttachments(ctx *pulumi.Context, args *GetVolumeAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetVolumeAttachmentsResult, error) {
 	var rv GetVolumeAttachmentsResult

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ResourceManager.GetPrivateEndpointReachableIp(ctx, &resourcemanager.GetPrivateEndpointReachableIpArgs{
-// 			PrivateEndpointId: oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-// 			PrivateIp:         _var.Private_endpoint_reachable_ip_private_ip,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ResourceManager.GetPrivateEndpointReachableIp(ctx, &resourcemanager.GetPrivateEndpointReachableIpArgs{
+//				PrivateEndpointId: oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+//				PrivateIp:         _var.Private_endpoint_reachable_ip_private_ip,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPrivateEndpointReachableIp(ctx *pulumi.Context, args *GetPrivateEndpointReachableIpArgs, opts ...pulumi.InvokeOption) (*GetPrivateEndpointReachableIpResult, error) {
 	var rv GetPrivateEndpointReachableIpResult

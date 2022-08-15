@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetOperationsInsightsWarehouse(ctx, &opsi.GetOperationsInsightsWarehouseArgs{
-// 			OperationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetOperationsInsightsWarehouse(ctx, &opsi.GetOperationsInsightsWarehouseArgs{
+//				OperationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupOperationsInsightsWarehouse(ctx *pulumi.Context, args *LookupOperationsInsightsWarehouseArgs, opts ...pulumi.InvokeOption) (*LookupOperationsInsightsWarehouseResult, error) {
 	var rv LookupOperationsInsightsWarehouseResult

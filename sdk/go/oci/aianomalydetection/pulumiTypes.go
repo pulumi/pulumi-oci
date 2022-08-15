@@ -56,7 +56,7 @@ type DataAssetDataSourceDetails struct {
 // DataAssetDataSourceDetailsInput is an input type that accepts DataAssetDataSourceDetailsArgs and DataAssetDataSourceDetailsOutput values.
 // You can construct a concrete instance of `DataAssetDataSourceDetailsInput` via:
 //
-//          DataAssetDataSourceDetailsArgs{...}
+//	DataAssetDataSourceDetailsArgs{...}
 type DataAssetDataSourceDetailsInput interface {
 	pulumi.Input
 
@@ -130,11 +130,11 @@ func (i DataAssetDataSourceDetailsArgs) ToDataAssetDataSourceDetailsPtrOutputWit
 // DataAssetDataSourceDetailsPtrInput is an input type that accepts DataAssetDataSourceDetailsArgs, DataAssetDataSourceDetailsPtr and DataAssetDataSourceDetailsPtrOutput values.
 // You can construct a concrete instance of `DataAssetDataSourceDetailsPtrInput` via:
 //
-//          DataAssetDataSourceDetailsArgs{...}
+//	        DataAssetDataSourceDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DataAssetDataSourceDetailsPtrInput interface {
 	pulumi.Input
 
@@ -526,7 +526,7 @@ type DataAssetDataSourceDetailsVersionSpecificDetails struct {
 // DataAssetDataSourceDetailsVersionSpecificDetailsInput is an input type that accepts DataAssetDataSourceDetailsVersionSpecificDetailsArgs and DataAssetDataSourceDetailsVersionSpecificDetailsOutput values.
 // You can construct a concrete instance of `DataAssetDataSourceDetailsVersionSpecificDetailsInput` via:
 //
-//          DataAssetDataSourceDetailsVersionSpecificDetailsArgs{...}
+//	DataAssetDataSourceDetailsVersionSpecificDetailsArgs{...}
 type DataAssetDataSourceDetailsVersionSpecificDetailsInput interface {
 	pulumi.Input
 
@@ -570,11 +570,11 @@ func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToDataAssetDataSou
 // DataAssetDataSourceDetailsVersionSpecificDetailsPtrInput is an input type that accepts DataAssetDataSourceDetailsVersionSpecificDetailsArgs, DataAssetDataSourceDetailsVersionSpecificDetailsPtr and DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput values.
 // You can construct a concrete instance of `DataAssetDataSourceDetailsVersionSpecificDetailsPtrInput` via:
 //
-//          DataAssetDataSourceDetailsVersionSpecificDetailsArgs{...}
+//	        DataAssetDataSourceDetailsVersionSpecificDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DataAssetDataSourceDetailsVersionSpecificDetailsPtrInput interface {
 	pulumi.Input
 
@@ -735,7 +735,7 @@ type ModelModelTrainingDetails struct {
 // ModelModelTrainingDetailsInput is an input type that accepts ModelModelTrainingDetailsArgs and ModelModelTrainingDetailsOutput values.
 // You can construct a concrete instance of `ModelModelTrainingDetailsInput` via:
 //
-//          ModelModelTrainingDetailsArgs{...}
+//	ModelModelTrainingDetailsArgs{...}
 type ModelModelTrainingDetailsInput interface {
 	pulumi.Input
 
@@ -775,11 +775,11 @@ func (i ModelModelTrainingDetailsArgs) ToModelModelTrainingDetailsPtrOutputWithC
 // ModelModelTrainingDetailsPtrInput is an input type that accepts ModelModelTrainingDetailsArgs, ModelModelTrainingDetailsPtr and ModelModelTrainingDetailsPtrOutput values.
 // You can construct a concrete instance of `ModelModelTrainingDetailsPtrInput` via:
 //
-//          ModelModelTrainingDetailsArgs{...}
+//	        ModelModelTrainingDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelModelTrainingDetailsPtrInput interface {
 	pulumi.Input
 
@@ -916,7 +916,7 @@ type ModelModelTrainingResult struct {
 // ModelModelTrainingResultInput is an input type that accepts ModelModelTrainingResultArgs and ModelModelTrainingResultOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultInput` via:
 //
-//          ModelModelTrainingResultArgs{...}
+//	ModelModelTrainingResultArgs{...}
 type ModelModelTrainingResultInput interface {
 	pulumi.Input
 
@@ -954,7 +954,7 @@ func (i ModelModelTrainingResultArgs) ToModelModelTrainingResultOutputWithContex
 // ModelModelTrainingResultArrayInput is an input type that accepts ModelModelTrainingResultArray and ModelModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultArrayInput` via:
 //
-//          ModelModelTrainingResultArray{ ModelModelTrainingResultArgs{...} }
+//	ModelModelTrainingResultArray{ ModelModelTrainingResultArgs{...} }
 type ModelModelTrainingResultArrayInput interface {
 	pulumi.Input
 
@@ -1056,7 +1056,7 @@ type ModelModelTrainingResultRowReductionDetail struct {
 // ModelModelTrainingResultRowReductionDetailInput is an input type that accepts ModelModelTrainingResultRowReductionDetailArgs and ModelModelTrainingResultRowReductionDetailOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultRowReductionDetailInput` via:
 //
-//          ModelModelTrainingResultRowReductionDetailArgs{...}
+//	ModelModelTrainingResultRowReductionDetailArgs{...}
 type ModelModelTrainingResultRowReductionDetailInput interface {
 	pulumi.Input
 
@@ -1090,7 +1090,7 @@ func (i ModelModelTrainingResultRowReductionDetailArgs) ToModelModelTrainingResu
 // ModelModelTrainingResultRowReductionDetailArrayInput is an input type that accepts ModelModelTrainingResultRowReductionDetailArray and ModelModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultRowReductionDetailArrayInput` via:
 //
-//          ModelModelTrainingResultRowReductionDetailArray{ ModelModelTrainingResultRowReductionDetailArgs{...} }
+//	ModelModelTrainingResultRowReductionDetailArray{ ModelModelTrainingResultRowReductionDetailArgs{...} }
 type ModelModelTrainingResultRowReductionDetailArrayInput interface {
 	pulumi.Input
 
@@ -1190,7 +1190,7 @@ type ModelModelTrainingResultSignalDetail struct {
 // ModelModelTrainingResultSignalDetailInput is an input type that accepts ModelModelTrainingResultSignalDetailArgs and ModelModelTrainingResultSignalDetailOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultSignalDetailInput` via:
 //
-//          ModelModelTrainingResultSignalDetailArgs{...}
+//	ModelModelTrainingResultSignalDetailArgs{...}
 type ModelModelTrainingResultSignalDetailInput interface {
 	pulumi.Input
 
@@ -1237,7 +1237,7 @@ func (i ModelModelTrainingResultSignalDetailArgs) ToModelModelTrainingResultSign
 // ModelModelTrainingResultSignalDetailArrayInput is an input type that accepts ModelModelTrainingResultSignalDetailArray and ModelModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultSignalDetailArrayInput` via:
 //
-//          ModelModelTrainingResultSignalDetailArray{ ModelModelTrainingResultSignalDetailArgs{...} }
+//	ModelModelTrainingResultSignalDetailArray{ ModelModelTrainingResultSignalDetailArgs{...} }
 type ModelModelTrainingResultSignalDetailArrayInput interface {
 	pulumi.Input
 
@@ -1348,7 +1348,7 @@ type GetAiPrivateEndpointsAiPrivateEndpointCollection struct {
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs and GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionInput` via:
 //
-//          GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs{...}
+//	GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs{...}
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionInput interface {
 	pulumi.Input
 
@@ -1375,7 +1375,7 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs) ToGetAiPrivateEndp
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionArray and GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput` via:
 //
-//          GetAiPrivateEndpointsAiPrivateEndpointCollectionArray{ GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs{...} }
+//	GetAiPrivateEndpointsAiPrivateEndpointCollectionArray{ GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs{...} }
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1469,7 +1469,7 @@ type GetAiPrivateEndpointsAiPrivateEndpointCollectionItem struct {
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionItemInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs and GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionItemInput` via:
 //
-//          GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs{...}
+//	GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs{...}
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionItemInput interface {
 	pulumi.Input
 
@@ -1521,7 +1521,7 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ToGetAiPrivate
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray and GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayInput` via:
 //
-//          GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray{ GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs{...} }
+//	GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray{ GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs{...} }
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1657,7 +1657,7 @@ type GetAiPrivateEndpointsFilter struct {
 // GetAiPrivateEndpointsFilterInput is an input type that accepts GetAiPrivateEndpointsFilterArgs and GetAiPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsFilterInput` via:
 //
-//          GetAiPrivateEndpointsFilterArgs{...}
+//	GetAiPrivateEndpointsFilterArgs{...}
 type GetAiPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -1686,7 +1686,7 @@ func (i GetAiPrivateEndpointsFilterArgs) ToGetAiPrivateEndpointsFilterOutputWith
 // GetAiPrivateEndpointsFilterArrayInput is an input type that accepts GetAiPrivateEndpointsFilterArray and GetAiPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsFilterArrayInput` via:
 //
-//          GetAiPrivateEndpointsFilterArray{ GetAiPrivateEndpointsFilterArgs{...} }
+//	GetAiPrivateEndpointsFilterArray{ GetAiPrivateEndpointsFilterArgs{...} }
 type GetAiPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1800,7 +1800,7 @@ type GetDetectionDataAssetDataSourceDetail struct {
 // GetDetectionDataAssetDataSourceDetailInput is an input type that accepts GetDetectionDataAssetDataSourceDetailArgs and GetDetectionDataAssetDataSourceDetailOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetDataSourceDetailInput` via:
 //
-//          GetDetectionDataAssetDataSourceDetailArgs{...}
+//	GetDetectionDataAssetDataSourceDetailArgs{...}
 type GetDetectionDataAssetDataSourceDetailInput interface {
 	pulumi.Input
 
@@ -1866,7 +1866,7 @@ func (i GetDetectionDataAssetDataSourceDetailArgs) ToGetDetectionDataAssetDataSo
 // GetDetectionDataAssetDataSourceDetailArrayInput is an input type that accepts GetDetectionDataAssetDataSourceDetailArray and GetDetectionDataAssetDataSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetDataSourceDetailArrayInput` via:
 //
-//          GetDetectionDataAssetDataSourceDetailArray{ GetDetectionDataAssetDataSourceDetailArgs{...} }
+//	GetDetectionDataAssetDataSourceDetailArray{ GetDetectionDataAssetDataSourceDetailArgs{...} }
 type GetDetectionDataAssetDataSourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2040,7 +2040,7 @@ type GetDetectionDataAssetDataSourceDetailVersionSpecificDetail struct {
 // GetDetectionDataAssetDataSourceDetailVersionSpecificDetailInput is an input type that accepts GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs and GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetDataSourceDetailVersionSpecificDetailInput` via:
 //
-//          GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs{...}
+//	GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs{...}
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailInput interface {
 	pulumi.Input
 
@@ -2076,7 +2076,7 @@ func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ToGetDet
 // GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput is an input type that accepts GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray and GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput` via:
 //
-//          GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray{ GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs{...} }
+//	GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray{ GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs{...} }
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput interface {
 	pulumi.Input
 
@@ -2166,7 +2166,7 @@ type GetDetectionDataAssetsDataAssetCollection struct {
 // GetDetectionDataAssetsDataAssetCollectionInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionArgs and GetDetectionDataAssetsDataAssetCollectionOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionArgs{...}
+//	GetDetectionDataAssetsDataAssetCollectionArgs{...}
 type GetDetectionDataAssetsDataAssetCollectionInput interface {
 	pulumi.Input
 
@@ -2193,7 +2193,7 @@ func (i GetDetectionDataAssetsDataAssetCollectionArgs) ToGetDetectionDataAssetsD
 // GetDetectionDataAssetsDataAssetCollectionArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionArray and GetDetectionDataAssetsDataAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionArrayInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionArray{ GetDetectionDataAssetsDataAssetCollectionArgs{...} }
+//	GetDetectionDataAssetsDataAssetCollectionArray{ GetDetectionDataAssetsDataAssetCollectionArgs{...} }
 type GetDetectionDataAssetsDataAssetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2287,7 +2287,7 @@ type GetDetectionDataAssetsDataAssetCollectionItem struct {
 // GetDetectionDataAssetsDataAssetCollectionItemInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemArgs and GetDetectionDataAssetsDataAssetCollectionItemOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionItemArgs{...}
+//	GetDetectionDataAssetsDataAssetCollectionItemArgs{...}
 type GetDetectionDataAssetsDataAssetCollectionItemInput interface {
 	pulumi.Input
 
@@ -2339,7 +2339,7 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemArgs) ToGetDetectionDataAss
 // GetDetectionDataAssetsDataAssetCollectionItemArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemArray and GetDetectionDataAssetsDataAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemArrayInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionItemArray{ GetDetectionDataAssetsDataAssetCollectionItemArgs{...} }
+//	GetDetectionDataAssetsDataAssetCollectionItemArray{ GetDetectionDataAssetsDataAssetCollectionItemArgs{...} }
 type GetDetectionDataAssetsDataAssetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2508,7 +2508,7 @@ type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail struct {
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs{...}
+//	GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs{...}
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailInput interface {
 	pulumi.Input
 
@@ -2574,7 +2574,7 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ToGet
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray{ GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs{...} }
+//	GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray{ GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs{...} }
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2766,7 +2766,7 @@ type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecifi
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs{...}
+//	GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs{...}
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailInput interface {
 	pulumi.Input
 
@@ -2802,7 +2802,7 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput` via:
 //
-//          GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray{ GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs{...} }
+//	GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray{ GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs{...} }
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput interface {
 	pulumi.Input
 
@@ -2902,7 +2902,7 @@ type GetDetectionDataAssetsFilter struct {
 // GetDetectionDataAssetsFilterInput is an input type that accepts GetDetectionDataAssetsFilterArgs and GetDetectionDataAssetsFilterOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsFilterInput` via:
 //
-//          GetDetectionDataAssetsFilterArgs{...}
+//	GetDetectionDataAssetsFilterArgs{...}
 type GetDetectionDataAssetsFilterInput interface {
 	pulumi.Input
 
@@ -2931,7 +2931,7 @@ func (i GetDetectionDataAssetsFilterArgs) ToGetDetectionDataAssetsFilterOutputWi
 // GetDetectionDataAssetsFilterArrayInput is an input type that accepts GetDetectionDataAssetsFilterArray and GetDetectionDataAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsFilterArrayInput` via:
 //
-//          GetDetectionDataAssetsFilterArray{ GetDetectionDataAssetsFilterArgs{...} }
+//	GetDetectionDataAssetsFilterArray{ GetDetectionDataAssetsFilterArgs{...} }
 type GetDetectionDataAssetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3011,7 +3011,7 @@ type GetDetectionModelModelTrainingDetail struct {
 // GetDetectionModelModelTrainingDetailInput is an input type that accepts GetDetectionModelModelTrainingDetailArgs and GetDetectionModelModelTrainingDetailOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingDetailInput` via:
 //
-//          GetDetectionModelModelTrainingDetailArgs{...}
+//	GetDetectionModelModelTrainingDetailArgs{...}
 type GetDetectionModelModelTrainingDetailInput interface {
 	pulumi.Input
 
@@ -3043,7 +3043,7 @@ func (i GetDetectionModelModelTrainingDetailArgs) ToGetDetectionModelModelTraini
 // GetDetectionModelModelTrainingDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingDetailArray and GetDetectionModelModelTrainingDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingDetailArrayInput` via:
 //
-//          GetDetectionModelModelTrainingDetailArray{ GetDetectionModelModelTrainingDetailArgs{...} }
+//	GetDetectionModelModelTrainingDetailArray{ GetDetectionModelModelTrainingDetailArgs{...} }
 type GetDetectionModelModelTrainingDetailArrayInput interface {
 	pulumi.Input
 
@@ -3132,7 +3132,7 @@ type GetDetectionModelModelTrainingResult struct {
 // GetDetectionModelModelTrainingResultInput is an input type that accepts GetDetectionModelModelTrainingResultArgs and GetDetectionModelModelTrainingResultOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultInput` via:
 //
-//          GetDetectionModelModelTrainingResultArgs{...}
+//	GetDetectionModelModelTrainingResultArgs{...}
 type GetDetectionModelModelTrainingResultInput interface {
 	pulumi.Input
 
@@ -3170,7 +3170,7 @@ func (i GetDetectionModelModelTrainingResultArgs) ToGetDetectionModelModelTraini
 // GetDetectionModelModelTrainingResultArrayInput is an input type that accepts GetDetectionModelModelTrainingResultArray and GetDetectionModelModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultArrayInput` via:
 //
-//          GetDetectionModelModelTrainingResultArray{ GetDetectionModelModelTrainingResultArgs{...} }
+//	GetDetectionModelModelTrainingResultArray{ GetDetectionModelModelTrainingResultArgs{...} }
 type GetDetectionModelModelTrainingResultArrayInput interface {
 	pulumi.Input
 
@@ -3274,7 +3274,7 @@ type GetDetectionModelModelTrainingResultRowReductionDetail struct {
 // GetDetectionModelModelTrainingResultRowReductionDetailInput is an input type that accepts GetDetectionModelModelTrainingResultRowReductionDetailArgs and GetDetectionModelModelTrainingResultRowReductionDetailOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultRowReductionDetailInput` via:
 //
-//          GetDetectionModelModelTrainingResultRowReductionDetailArgs{...}
+//	GetDetectionModelModelTrainingResultRowReductionDetailArgs{...}
 type GetDetectionModelModelTrainingResultRowReductionDetailInput interface {
 	pulumi.Input
 
@@ -3308,7 +3308,7 @@ func (i GetDetectionModelModelTrainingResultRowReductionDetailArgs) ToGetDetecti
 // GetDetectionModelModelTrainingResultRowReductionDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingResultRowReductionDetailArray and GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultRowReductionDetailArrayInput` via:
 //
-//          GetDetectionModelModelTrainingResultRowReductionDetailArray{ GetDetectionModelModelTrainingResultRowReductionDetailArgs{...} }
+//	GetDetectionModelModelTrainingResultRowReductionDetailArray{ GetDetectionModelModelTrainingResultRowReductionDetailArgs{...} }
 type GetDetectionModelModelTrainingResultRowReductionDetailArrayInput interface {
 	pulumi.Input
 
@@ -3408,7 +3408,7 @@ type GetDetectionModelModelTrainingResultSignalDetail struct {
 // GetDetectionModelModelTrainingResultSignalDetailInput is an input type that accepts GetDetectionModelModelTrainingResultSignalDetailArgs and GetDetectionModelModelTrainingResultSignalDetailOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultSignalDetailInput` via:
 //
-//          GetDetectionModelModelTrainingResultSignalDetailArgs{...}
+//	GetDetectionModelModelTrainingResultSignalDetailArgs{...}
 type GetDetectionModelModelTrainingResultSignalDetailInput interface {
 	pulumi.Input
 
@@ -3455,7 +3455,7 @@ func (i GetDetectionModelModelTrainingResultSignalDetailArgs) ToGetDetectionMode
 // GetDetectionModelModelTrainingResultSignalDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingResultSignalDetailArray and GetDetectionModelModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultSignalDetailArrayInput` via:
 //
-//          GetDetectionModelModelTrainingResultSignalDetailArray{ GetDetectionModelModelTrainingResultSignalDetailArgs{...} }
+//	GetDetectionModelModelTrainingResultSignalDetailArray{ GetDetectionModelModelTrainingResultSignalDetailArgs{...} }
 type GetDetectionModelModelTrainingResultSignalDetailArrayInput interface {
 	pulumi.Input
 
@@ -3568,7 +3568,7 @@ type GetDetectionModelsFilter struct {
 // GetDetectionModelsFilterInput is an input type that accepts GetDetectionModelsFilterArgs and GetDetectionModelsFilterOutput values.
 // You can construct a concrete instance of `GetDetectionModelsFilterInput` via:
 //
-//          GetDetectionModelsFilterArgs{...}
+//	GetDetectionModelsFilterArgs{...}
 type GetDetectionModelsFilterInput interface {
 	pulumi.Input
 
@@ -3597,7 +3597,7 @@ func (i GetDetectionModelsFilterArgs) ToGetDetectionModelsFilterOutputWithContex
 // GetDetectionModelsFilterArrayInput is an input type that accepts GetDetectionModelsFilterArray and GetDetectionModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsFilterArrayInput` via:
 //
-//          GetDetectionModelsFilterArray{ GetDetectionModelsFilterArgs{...} }
+//	GetDetectionModelsFilterArray{ GetDetectionModelsFilterArgs{...} }
 type GetDetectionModelsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3672,7 +3672,7 @@ type GetDetectionModelsModelCollection struct {
 // GetDetectionModelsModelCollectionInput is an input type that accepts GetDetectionModelsModelCollectionArgs and GetDetectionModelsModelCollectionOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionInput` via:
 //
-//          GetDetectionModelsModelCollectionArgs{...}
+//	GetDetectionModelsModelCollectionArgs{...}
 type GetDetectionModelsModelCollectionInput interface {
 	pulumi.Input
 
@@ -3699,7 +3699,7 @@ func (i GetDetectionModelsModelCollectionArgs) ToGetDetectionModelsModelCollecti
 // GetDetectionModelsModelCollectionArrayInput is an input type that accepts GetDetectionModelsModelCollectionArray and GetDetectionModelsModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionArrayInput` via:
 //
-//          GetDetectionModelsModelCollectionArray{ GetDetectionModelsModelCollectionArgs{...} }
+//	GetDetectionModelsModelCollectionArray{ GetDetectionModelsModelCollectionArgs{...} }
 type GetDetectionModelsModelCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3793,7 +3793,7 @@ type GetDetectionModelsModelCollectionItem struct {
 // GetDetectionModelsModelCollectionItemInput is an input type that accepts GetDetectionModelsModelCollectionItemArgs and GetDetectionModelsModelCollectionItemOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemInput` via:
 //
-//          GetDetectionModelsModelCollectionItemArgs{...}
+//	GetDetectionModelsModelCollectionItemArgs{...}
 type GetDetectionModelsModelCollectionItemInput interface {
 	pulumi.Input
 
@@ -3847,7 +3847,7 @@ func (i GetDetectionModelsModelCollectionItemArgs) ToGetDetectionModelsModelColl
 // GetDetectionModelsModelCollectionItemArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemArray and GetDetectionModelsModelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemArrayInput` via:
 //
-//          GetDetectionModelsModelCollectionItemArray{ GetDetectionModelsModelCollectionItemArgs{...} }
+//	GetDetectionModelsModelCollectionItemArray{ GetDetectionModelsModelCollectionItemArgs{...} }
 type GetDetectionModelsModelCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3989,7 +3989,7 @@ type GetDetectionModelsModelCollectionItemModelTrainingDetail struct {
 // GetDetectionModelsModelCollectionItemModelTrainingDetailInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingDetailArgs and GetDetectionModelsModelCollectionItemModelTrainingDetailOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingDetailInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingDetailArgs{...}
+//	GetDetectionModelsModelCollectionItemModelTrainingDetailArgs{...}
 type GetDetectionModelsModelCollectionItemModelTrainingDetailInput interface {
 	pulumi.Input
 
@@ -4021,7 +4021,7 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ToGetDetec
 // GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingDetailArray and GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingDetailArray{ GetDetectionModelsModelCollectionItemModelTrainingDetailArgs{...} }
+//	GetDetectionModelsModelCollectionItemModelTrainingDetailArray{ GetDetectionModelsModelCollectionItemModelTrainingDetailArgs{...} }
 type GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput interface {
 	pulumi.Input
 
@@ -4110,7 +4110,7 @@ type GetDetectionModelsModelCollectionItemModelTrainingResult struct {
 // GetDetectionModelsModelCollectionItemModelTrainingResultInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultArgs and GetDetectionModelsModelCollectionItemModelTrainingResultOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingResultArgs{...}
+//	GetDetectionModelsModelCollectionItemModelTrainingResultArgs{...}
 type GetDetectionModelsModelCollectionItemModelTrainingResultInput interface {
 	pulumi.Input
 
@@ -4148,7 +4148,7 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ToGetDetec
 // GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultArray and GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingResultArray{ GetDetectionModelsModelCollectionItemModelTrainingResultArgs{...} }
+//	GetDetectionModelsModelCollectionItemModelTrainingResultArray{ GetDetectionModelsModelCollectionItemModelTrainingResultArgs{...} }
 type GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput interface {
 	pulumi.Input
 
@@ -4252,7 +4252,7 @@ type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail 
 // GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs and GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs{...}
+//	GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs{...}
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailInput interface {
 	pulumi.Input
 
@@ -4286,7 +4286,7 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 // GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray and GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray{ GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs{...} }
+//	GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray{ GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs{...} }
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput interface {
 	pulumi.Input
 
@@ -4392,7 +4392,7 @@ type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail struct
 // GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs and GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs{...}
+//	GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs{...}
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailInput interface {
 	pulumi.Input
 
@@ -4439,7 +4439,7 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs
 // GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray and GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput` via:
 //
-//          GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray{ GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs{...} }
+//	GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray{ GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs{...} }
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput interface {
 	pulumi.Input
 
@@ -4558,7 +4558,7 @@ type GetDetectionProjectsFilter struct {
 // GetDetectionProjectsFilterInput is an input type that accepts GetDetectionProjectsFilterArgs and GetDetectionProjectsFilterOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsFilterInput` via:
 //
-//          GetDetectionProjectsFilterArgs{...}
+//	GetDetectionProjectsFilterArgs{...}
 type GetDetectionProjectsFilterInput interface {
 	pulumi.Input
 
@@ -4587,7 +4587,7 @@ func (i GetDetectionProjectsFilterArgs) ToGetDetectionProjectsFilterOutputWithCo
 // GetDetectionProjectsFilterArrayInput is an input type that accepts GetDetectionProjectsFilterArray and GetDetectionProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsFilterArrayInput` via:
 //
-//          GetDetectionProjectsFilterArray{ GetDetectionProjectsFilterArgs{...} }
+//	GetDetectionProjectsFilterArray{ GetDetectionProjectsFilterArgs{...} }
 type GetDetectionProjectsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4662,7 +4662,7 @@ type GetDetectionProjectsProjectCollection struct {
 // GetDetectionProjectsProjectCollectionInput is an input type that accepts GetDetectionProjectsProjectCollectionArgs and GetDetectionProjectsProjectCollectionOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionInput` via:
 //
-//          GetDetectionProjectsProjectCollectionArgs{...}
+//	GetDetectionProjectsProjectCollectionArgs{...}
 type GetDetectionProjectsProjectCollectionInput interface {
 	pulumi.Input
 
@@ -4689,7 +4689,7 @@ func (i GetDetectionProjectsProjectCollectionArgs) ToGetDetectionProjectsProject
 // GetDetectionProjectsProjectCollectionArrayInput is an input type that accepts GetDetectionProjectsProjectCollectionArray and GetDetectionProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionArrayInput` via:
 //
-//          GetDetectionProjectsProjectCollectionArray{ GetDetectionProjectsProjectCollectionArgs{...} }
+//	GetDetectionProjectsProjectCollectionArray{ GetDetectionProjectsProjectCollectionArgs{...} }
 type GetDetectionProjectsProjectCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4777,7 +4777,7 @@ type GetDetectionProjectsProjectCollectionItem struct {
 // GetDetectionProjectsProjectCollectionItemInput is an input type that accepts GetDetectionProjectsProjectCollectionItemArgs and GetDetectionProjectsProjectCollectionItemOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionItemInput` via:
 //
-//          GetDetectionProjectsProjectCollectionItemArgs{...}
+//	GetDetectionProjectsProjectCollectionItemArgs{...}
 type GetDetectionProjectsProjectCollectionItemInput interface {
 	pulumi.Input
 
@@ -4823,7 +4823,7 @@ func (i GetDetectionProjectsProjectCollectionItemArgs) ToGetDetectionProjectsPro
 // GetDetectionProjectsProjectCollectionItemArrayInput is an input type that accepts GetDetectionProjectsProjectCollectionItemArray and GetDetectionProjectsProjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionItemArrayInput` via:
 //
-//          GetDetectionProjectsProjectCollectionItemArray{ GetDetectionProjectsProjectCollectionItemArgs{...} }
+//	GetDetectionProjectsProjectCollectionItemArray{ GetDetectionProjectsProjectCollectionItemArgs{...} }
 type GetDetectionProjectsProjectCollectionItemArrayInput interface {
 	pulumi.Input
 

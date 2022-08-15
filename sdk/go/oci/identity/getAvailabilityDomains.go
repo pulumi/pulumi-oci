@@ -24,21 +24,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetAvailabilityDomains(ctx, &identity.GetAvailabilityDomainsArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetAvailabilityDomains(ctx, &identity.GetAvailabilityDomainsArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAvailabilityDomains(ctx *pulumi.Context, args *GetAvailabilityDomainsArgs, opts ...pulumi.InvokeOption) (*GetAvailabilityDomainsResult, error) {
 	var rv GetAvailabilityDomainsResult

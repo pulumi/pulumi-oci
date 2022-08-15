@@ -20,7 +20,9 @@ import (
 // AuditProfiles can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
+//
+//	$ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
+//
 // ```
 type AuditProfile struct {
 	pulumi.CustomResourceState
@@ -247,7 +249,7 @@ func (i *AuditProfile) ToAuditProfileOutputWithContext(ctx context.Context) Audi
 // AuditProfileArrayInput is an input type that accepts AuditProfileArray and AuditProfileArrayOutput values.
 // You can construct a concrete instance of `AuditProfileArrayInput` via:
 //
-//          AuditProfileArray{ AuditProfileArgs{...} }
+//	AuditProfileArray{ AuditProfileArgs{...} }
 type AuditProfileArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +274,7 @@ func (i AuditProfileArray) ToAuditProfileArrayOutputWithContext(ctx context.Cont
 // AuditProfileMapInput is an input type that accepts AuditProfileMap and AuditProfileMapOutput values.
 // You can construct a concrete instance of `AuditProfileMapInput` via:
 //
-//          AuditProfileMap{ "key": AuditProfileArgs{...} }
+//	AuditProfileMap{ "key": AuditProfileArgs{...} }
 type AuditProfileMapInput interface {
 	pulumi.Input
 

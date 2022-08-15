@@ -54,6 +54,10 @@ export interface GetMonitorArgs {
 export interface GetMonitorResult {
     readonly apmDomainId: string;
     /**
+     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     */
+    readonly batchIntervalInSeconds: number;
+    /**
      * Details of monitor configuration.
      */
     readonly configurations: outputs.ApmSynthetics.GetMonitorConfiguration[];
@@ -74,6 +78,10 @@ export interface GetMonitorResult {
      */
     readonly id: string;
     /**
+     * If isRunNow is enabled, then the monitor will run now.
+     */
+    readonly isRunNow: boolean;
+    /**
      * If runOnce is enabled, then the monitor will run once.
      */
     readonly isRunOnce: boolean;
@@ -86,6 +94,10 @@ export interface GetMonitorResult {
      * Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     readonly repeatIntervalInSeconds: number;
+    /**
+     * Scheduling policy on Vantage points.
+     */
+    readonly schedulingPolicy: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */

@@ -107,8 +107,13 @@ namespace Pulumi.Oci.Opsi
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        /// </summary>
+        public readonly string ComputeId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -215,6 +220,8 @@ namespace Pulumi.Oci.Opsi
         private GetHostInsightResult(
             string compartmentId,
 
+            string computeId,
+
             ImmutableDictionary<string, object> definedTags,
 
             string enterpriseManagerBridgeId,
@@ -268,6 +275,7 @@ namespace Pulumi.Oci.Opsi
             string timeUpdated)
         {
             CompartmentId = compartmentId;
+            ComputeId = computeId;
             DefinedTags = definedTags;
             EnterpriseManagerBridgeId = enterpriseManagerBridgeId;
             EnterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;

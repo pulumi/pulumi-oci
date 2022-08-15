@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetGenericArtifacts(ctx, &artifacts.GetGenericArtifactsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			RepositoryId:  oci_artifacts_repository.Test_repository.Id,
-// 			ArtifactPath:  pulumi.StringRef(_var.Generic_artifact_artifact_path),
-// 			DisplayName:   pulumi.StringRef(_var.Generic_artifact_display_name),
-// 			Id:            pulumi.StringRef(_var.Generic_artifact_id),
-// 			Sha256:        pulumi.StringRef(_var.Generic_artifact_sha256),
-// 			State:         pulumi.StringRef(_var.Generic_artifact_state),
-// 			Version:       pulumi.StringRef(_var.Generic_artifact_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetGenericArtifacts(ctx, &artifacts.GetGenericArtifactsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				RepositoryId:  oci_artifacts_repository.Test_repository.Id,
+//				ArtifactPath:  pulumi.StringRef(_var.Generic_artifact_artifact_path),
+//				DisplayName:   pulumi.StringRef(_var.Generic_artifact_display_name),
+//				Id:            pulumi.StringRef(_var.Generic_artifact_id),
+//				Sha256:        pulumi.StringRef(_var.Generic_artifact_sha256),
+//				State:         pulumi.StringRef(_var.Generic_artifact_state),
+//				Version:       pulumi.StringRef(_var.Generic_artifact_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetGenericArtifacts(ctx *pulumi.Context, args *GetGenericArtifactsArgs, opts ...pulumi.InvokeOption) (*GetGenericArtifactsResult, error) {
 	var rv GetGenericArtifactsResult

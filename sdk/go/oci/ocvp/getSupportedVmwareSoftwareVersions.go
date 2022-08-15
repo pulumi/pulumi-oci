@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.GetSupportedVmwareSoftwareVersions(ctx, &ocvp.GetSupportedVmwareSoftwareVersionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.GetSupportedVmwareSoftwareVersions(ctx, &ocvp.GetSupportedVmwareSoftwareVersionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSupportedVmwareSoftwareVersions(ctx *pulumi.Context, args *GetSupportedVmwareSoftwareVersionsArgs, opts ...pulumi.InvokeOption) (*GetSupportedVmwareSoftwareVersionsResult, error) {
 	var rv GetSupportedVmwareSoftwareVersionsResult

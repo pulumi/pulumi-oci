@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsLogGroup(ctx, &loganalytics.GetLogAnalyticsLogGroupArgs{
-// 			LogAnalyticsLogGroupId: oci_log_analytics_log_analytics_log_group.Test_log_analytics_log_group.Id,
-// 			Namespace:              _var.Log_analytics_log_group_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsLogGroup(ctx, &loganalytics.GetLogAnalyticsLogGroupArgs{
+//				LogAnalyticsLogGroupId: oci_log_analytics_log_analytics_log_group.Test_log_analytics_log_group.Id,
+//				Namespace:              _var.Log_analytics_log_group_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupLogAnalyticsLogGroup(ctx *pulumi.Context, args *LookupLogAnalyticsLogGroupArgs, opts ...pulumi.InvokeOption) (*LookupLogAnalyticsLogGroupResult, error) {
 	var rv LookupLogAnalyticsLogGroupResult

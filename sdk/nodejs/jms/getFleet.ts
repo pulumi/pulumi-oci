@@ -92,6 +92,10 @@ export interface GetFleetResult {
      */
     readonly inventoryLogs: outputs.Jms.GetFleetInventoryLog[];
     /**
+     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     */
+    readonly isAdvancedFeaturesEnabled: boolean;
+    /**
      * Custom Log for inventory or operation log.
      */
     readonly operationLogs: outputs.Jms.GetFleetOperationLog[];

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousDatabase(ctx, &database.GetAutonomousDatabaseArgs{
-// 			AutonomousDatabaseId: oci_database_autonomous_database.Test_autonomous_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDatabase(ctx, &database.GetAutonomousDatabaseArgs{
+//				AutonomousDatabaseId: oci_database_autonomous_database.Test_autonomous_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAutonomousDatabase(ctx *pulumi.Context, args *LookupAutonomousDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousDatabaseResult, error) {
 	var rv LookupAutonomousDatabaseResult

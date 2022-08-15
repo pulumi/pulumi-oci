@@ -20,30 +20,30 @@ public final class GetBootVolumesPlainArgs extends com.pulumi.resources.InvokeAr
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Import(name="availabilityDomain", required=true)
-    private String availabilityDomain;
+    @Import(name="availabilityDomain")
+    private @Nullable String availabilityDomain;
 
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     @Import(name="filters")
@@ -101,7 +101,7 @@ public final class GetBootVolumesPlainArgs extends com.pulumi.resources.InvokeAr
          * @return builder
          * 
          */
-        public Builder availabilityDomain(String availabilityDomain) {
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
             $.availabilityDomain = availabilityDomain;
             return this;
         }
@@ -112,7 +112,7 @@ public final class GetBootVolumesPlainArgs extends com.pulumi.resources.InvokeAr
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -138,8 +138,6 @@ public final class GetBootVolumesPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetBootVolumesPlainArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             return $;
         }
     }

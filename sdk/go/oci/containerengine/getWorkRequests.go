@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ContainerEngine.GetWorkRequests(ctx, &containerengine.GetWorkRequestsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			ClusterId:     pulumi.StringRef(oci_containerengine_cluster.Test_cluster.Id),
-// 			ResourceId:    pulumi.StringRef(oci_containerengine_resource.Test_resource.Id),
-// 			ResourceType:  pulumi.StringRef(_var.Work_request_resource_type),
-// 			Statuses:      _var.Work_request_status,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.GetWorkRequests(ctx, &containerengine.GetWorkRequestsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				ClusterId:     pulumi.StringRef(oci_containerengine_cluster.Test_cluster.Id),
+//				ResourceId:    pulumi.StringRef(oci_containerengine_resource.Test_resource.Id),
+//				ResourceType:  pulumi.StringRef(_var.Work_request_resource_type),
+//				Statuses:      _var.Work_request_status,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetWorkRequests(ctx *pulumi.Context, args *GetWorkRequestsArgs, opts ...pulumi.InvokeOption) (*GetWorkRequestsResult, error) {
 	var rv GetWorkRequestsResult

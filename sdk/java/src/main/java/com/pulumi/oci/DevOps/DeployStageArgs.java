@@ -184,14 +184,14 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
     @Import(name="deployArtifactId")
     private @Nullable Output<String> deployArtifactId;
 
     /**
-     * @return (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * @return (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
     public Optional<Output<String>> deployArtifactId() {
@@ -1003,7 +1003,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployArtifactId (Updatable) Optional binary artifact OCID user may provide to this stage.
+         * @param deployArtifactId (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
          * 
          * @return builder
          * 
@@ -1014,7 +1014,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployArtifactId (Updatable) Optional binary artifact OCID user may provide to this stage.
+         * @param deployArtifactId (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
          * 
          * @return builder
          * 

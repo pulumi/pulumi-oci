@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewRepositoryRef(ctx, "testRepositoryRef", &DevOps.RepositoryRefArgs{
-// 			RefName:      pulumi.Any(_var.Repository_ref_ref_name),
-// 			RefType:      pulumi.Any(_var.Repository_ref_ref_type),
-// 			RepositoryId: pulumi.Any(oci_devops_repository.Test_repository.Id),
-// 			CommitId:     pulumi.Any(oci_devops_commit.Test_commit.Id),
-// 			ObjectId:     pulumi.Any(oci_objectstorage_object.Test_object.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewRepositoryRef(ctx, "testRepositoryRef", &DevOps.RepositoryRefArgs{
+//				RefName:      pulumi.Any(_var.Repository_ref_ref_name),
+//				RefType:      pulumi.Any(_var.Repository_ref_ref_type),
+//				RepositoryId: pulumi.Any(oci_devops_repository.Test_repository.Id),
+//				CommitId:     pulumi.Any(oci_devops_commit.Test_commit.Id),
+//				ObjectId:     pulumi.Any(oci_objectstorage_object.Test_object.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // RepositoryRefs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
+//
+//	$ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
+//
 // ```
 type RepositoryRef struct {
 	pulumi.CustomResourceState
@@ -202,7 +207,7 @@ func (i *RepositoryRef) ToRepositoryRefOutputWithContext(ctx context.Context) Re
 // RepositoryRefArrayInput is an input type that accepts RepositoryRefArray and RepositoryRefArrayOutput values.
 // You can construct a concrete instance of `RepositoryRefArrayInput` via:
 //
-//          RepositoryRefArray{ RepositoryRefArgs{...} }
+//	RepositoryRefArray{ RepositoryRefArgs{...} }
 type RepositoryRefArrayInput interface {
 	pulumi.Input
 
@@ -227,7 +232,7 @@ func (i RepositoryRefArray) ToRepositoryRefArrayOutputWithContext(ctx context.Co
 // RepositoryRefMapInput is an input type that accepts RepositoryRefMap and RepositoryRefMapOutput values.
 // You can construct a concrete instance of `RepositoryRefMapInput` via:
 //
-//          RepositoryRefMap{ "key": RepositoryRefArgs{...} }
+//	RepositoryRefMap{ "key": RepositoryRefArgs{...} }
 type RepositoryRefMapInput interface {
 	pulumi.Input
 

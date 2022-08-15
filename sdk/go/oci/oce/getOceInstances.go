@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oce"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oce"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Oce.GetOceInstances(ctx, &oce.GetOceInstancesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Oce_instance_display_name),
-// 			State:         pulumi.StringRef(_var.Oce_instance_state),
-// 			TenancyId:     pulumi.StringRef(oci_identity_tenancy.Test_tenancy.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Oce.GetOceInstances(ctx, &oce.GetOceInstancesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Oce_instance_display_name),
+//				State:         pulumi.StringRef(_var.Oce_instance_state),
+//				TenancyId:     pulumi.StringRef(oci_identity_tenancy.Test_tenancy.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOceInstances(ctx *pulumi.Context, args *GetOceInstancesArgs, opts ...pulumi.InvokeOption) (*GetOceInstancesResult, error) {
 	var rv GetOceInstancesResult

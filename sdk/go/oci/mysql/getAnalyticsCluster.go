@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetAnalyticsCluster(ctx, &mysql.GetAnalyticsClusterArgs{
-// 			DbSystemId: oci_database_db_system.Test_db_system.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetAnalyticsCluster(ctx, &mysql.GetAnalyticsClusterArgs{
+//				DbSystemId: oci_database_db_system.Test_db_system.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAnalyticsCluster(ctx *pulumi.Context, args *LookupAnalyticsClusterArgs, opts ...pulumi.InvokeOption) (*LookupAnalyticsClusterResult, error) {
 	var rv LookupAnalyticsClusterResult

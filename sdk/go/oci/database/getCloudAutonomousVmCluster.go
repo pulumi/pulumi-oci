@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetCloudAutonomousVmCluster(ctx, &database.GetCloudAutonomousVmClusterArgs{
-// 			CloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetCloudAutonomousVmCluster(ctx, &database.GetCloudAutonomousVmClusterArgs{
+//				CloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCloudAutonomousVmCluster(ctx *pulumi.Context, args *LookupCloudAutonomousVmClusterArgs, opts ...pulumi.InvokeOption) (*LookupCloudAutonomousVmClusterResult, error) {
 	var rv LookupCloudAutonomousVmClusterResult

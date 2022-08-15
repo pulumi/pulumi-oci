@@ -22,34 +22,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewLoadBalancerRoutingPolicy(ctx, "testLoadBalancerRoutingPolicy", &LoadBalancer.LoadBalancerRoutingPolicyArgs{
-// 			ConditionLanguageVersion: pulumi.Any(_var.Load_balancer_routing_policy_condition_language_version),
-// 			LoadBalancerId:           pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			Rules: loadbalancer.LoadBalancerRoutingPolicyRuleArray{
-// 				&loadbalancer.LoadBalancerRoutingPolicyRuleArgs{
-// 					Actions: loadbalancer.LoadBalancerRoutingPolicyRuleActionArray{
-// 						&loadbalancer.LoadBalancerRoutingPolicyRuleActionArgs{
-// 							Name:           pulumi.Any(_var.Load_balancer_routing_policy_rules_actions_name),
-// 							BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-// 						},
-// 					},
-// 					Condition: pulumi.Any(_var.Load_balancer_routing_policy_rules_condition),
-// 					Name:      pulumi.Any(_var.Load_balancer_routing_policy_rules_name),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewLoadBalancerRoutingPolicy(ctx, "testLoadBalancerRoutingPolicy", &LoadBalancer.LoadBalancerRoutingPolicyArgs{
+//				ConditionLanguageVersion: pulumi.Any(_var.Load_balancer_routing_policy_condition_language_version),
+//				LoadBalancerId:           pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Rules: loadbalancer.LoadBalancerRoutingPolicyRuleArray{
+//					&loadbalancer.LoadBalancerRoutingPolicyRuleArgs{
+//						Actions: loadbalancer.LoadBalancerRoutingPolicyRuleActionArray{
+//							&loadbalancer.LoadBalancerRoutingPolicyRuleActionArgs{
+//								Name:           pulumi.Any(_var.Load_balancer_routing_policy_rules_actions_name),
+//								BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
+//							},
+//						},
+//						Condition: pulumi.Any(_var.Load_balancer_routing_policy_rules_condition),
+//						Name:      pulumi.Any(_var.Load_balancer_routing_policy_rules_name),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -57,7 +60,9 @@ import (
 // LoadBalancerRoutingPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
+//
+//	$ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
+//
 // ```
 type LoadBalancerRoutingPolicy struct {
 	pulumi.CustomResourceState
@@ -187,7 +192,7 @@ func (i *LoadBalancerRoutingPolicy) ToLoadBalancerRoutingPolicyOutputWithContext
 // LoadBalancerRoutingPolicyArrayInput is an input type that accepts LoadBalancerRoutingPolicyArray and LoadBalancerRoutingPolicyArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerRoutingPolicyArrayInput` via:
 //
-//          LoadBalancerRoutingPolicyArray{ LoadBalancerRoutingPolicyArgs{...} }
+//	LoadBalancerRoutingPolicyArray{ LoadBalancerRoutingPolicyArgs{...} }
 type LoadBalancerRoutingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -212,7 +217,7 @@ func (i LoadBalancerRoutingPolicyArray) ToLoadBalancerRoutingPolicyArrayOutputWi
 // LoadBalancerRoutingPolicyMapInput is an input type that accepts LoadBalancerRoutingPolicyMap and LoadBalancerRoutingPolicyMapOutput values.
 // You can construct a concrete instance of `LoadBalancerRoutingPolicyMapInput` via:
 //
-//          LoadBalancerRoutingPolicyMap{ "key": LoadBalancerRoutingPolicyArgs{...} }
+//	LoadBalancerRoutingPolicyMap{ "key": LoadBalancerRoutingPolicyArgs{...} }
 type LoadBalancerRoutingPolicyMapInput interface {
 	pulumi.Input
 

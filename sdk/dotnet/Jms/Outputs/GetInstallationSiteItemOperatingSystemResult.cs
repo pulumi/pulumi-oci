@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string Family;
         /// <summary>
+        /// Number of instances running the operating system
+        /// </summary>
+        public readonly int ManagedInstanceCount;
+        /// <summary>
         /// The name of the operating system as provided by the Java system property os.name.
         /// </summary>
         public readonly string Name;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.Jms.Outputs
 
             string family,
 
+            int managedInstanceCount,
+
             string name,
 
             string version)
         {
             Architecture = architecture;
             Family = family;
+            ManagedInstanceCount = managedInstanceCount;
             Name = name;
             Version = version;
         }

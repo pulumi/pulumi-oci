@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewPluggableDatabasesRemoteClone(ctx, "testPluggableDatabasesRemoteClone", &Database.PluggableDatabasesRemoteCloneArgs{
-// 			ClonedPdbName:                  pulumi.Any(_var.Pluggable_databases_remote_clone_cloned_pdb_name),
-// 			PluggableDatabaseId:            pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
-// 			SourceContainerDbAdminPassword: pulumi.Any(_var.Pluggable_databases_remote_clone_source_container_db_admin_password),
-// 			TargetContainerDatabaseId:      pulumi.Any(oci_database_database.Test_database.Id),
-// 			PdbAdminPassword:               pulumi.Any(_var.Pluggable_databases_remote_clone_pdb_admin_password),
-// 			ShouldPdbAdminAccountBeLocked:  pulumi.Any(_var.Pluggable_databases_remote_clone_should_pdb_admin_account_be_locked),
-// 			TargetTdeWalletPassword:        pulumi.Any(_var.Pluggable_databases_remote_clone_target_tde_wallet_password),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewPluggableDatabasesRemoteClone(ctx, "testPluggableDatabasesRemoteClone", &Database.PluggableDatabasesRemoteCloneArgs{
+//				ClonedPdbName:                  pulumi.Any(_var.Pluggable_databases_remote_clone_cloned_pdb_name),
+//				PluggableDatabaseId:            pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
+//				SourceContainerDbAdminPassword: pulumi.Any(_var.Pluggable_databases_remote_clone_source_container_db_admin_password),
+//				TargetContainerDatabaseId:      pulumi.Any(oci_database_database.Test_database.Id),
+//				PdbAdminPassword:               pulumi.Any(_var.Pluggable_databases_remote_clone_pdb_admin_password),
+//				ShouldPdbAdminAccountBeLocked:  pulumi.Any(_var.Pluggable_databases_remote_clone_should_pdb_admin_account_be_locked),
+//				TargetTdeWalletPassword:        pulumi.Any(_var.Pluggable_databases_remote_clone_target_tde_wallet_password),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -271,7 +274,7 @@ func (i *PluggableDatabasesRemoteClone) ToPluggableDatabasesRemoteCloneOutputWit
 // PluggableDatabasesRemoteCloneArrayInput is an input type that accepts PluggableDatabasesRemoteCloneArray and PluggableDatabasesRemoteCloneArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabasesRemoteCloneArrayInput` via:
 //
-//          PluggableDatabasesRemoteCloneArray{ PluggableDatabasesRemoteCloneArgs{...} }
+//	PluggableDatabasesRemoteCloneArray{ PluggableDatabasesRemoteCloneArgs{...} }
 type PluggableDatabasesRemoteCloneArrayInput interface {
 	pulumi.Input
 
@@ -296,7 +299,7 @@ func (i PluggableDatabasesRemoteCloneArray) ToPluggableDatabasesRemoteCloneArray
 // PluggableDatabasesRemoteCloneMapInput is an input type that accepts PluggableDatabasesRemoteCloneMap and PluggableDatabasesRemoteCloneMapOutput values.
 // You can construct a concrete instance of `PluggableDatabasesRemoteCloneMapInput` via:
 //
-//          PluggableDatabasesRemoteCloneMap{ "key": PluggableDatabasesRemoteCloneArgs{...} }
+//	PluggableDatabasesRemoteCloneMap{ "key": PluggableDatabasesRemoteCloneArgs{...} }
 type PluggableDatabasesRemoteCloneMapInput interface {
 	pulumi.Input
 

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IntegrationInstanceNetworkEndpointDetails {
     /**
-     * @return Source IP addresses or IP address ranges ingress rules.
+     * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
     private final @Nullable List<String> allowlistedHttpIps;
@@ -48,7 +48,7 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     }
 
     /**
-     * @return Source IP addresses or IP address ranges ingress rules.
+     * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
     public List<String> allowlistedHttpIps() {

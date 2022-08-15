@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GoldenGate.GetDeployments(ctx, &goldengate.GetDeploymentsArgs{
-// 			CompartmentId:     _var.Compartment_id,
-// 			DisplayName:       pulumi.StringRef(_var.Deployment_display_name),
-// 			Fqdn:              pulumi.StringRef(_var.Deployment_fqdn),
-// 			LifecycleSubState: pulumi.StringRef(_var.Deployment_lifecycle_sub_state),
-// 			State:             pulumi.StringRef(_var.Deployment_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GoldenGate.GetDeployments(ctx, &goldengate.GetDeploymentsArgs{
+//				CompartmentId:     _var.Compartment_id,
+//				DisplayName:       pulumi.StringRef(_var.Deployment_display_name),
+//				Fqdn:              pulumi.StringRef(_var.Deployment_fqdn),
+//				LifecycleSubState: pulumi.StringRef(_var.Deployment_lifecycle_sub_state),
+//				State:             pulumi.StringRef(_var.Deployment_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDeployments(ctx *pulumi.Context, args *GetDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetDeploymentsResult, error) {
 	var rv GetDeploymentsResult

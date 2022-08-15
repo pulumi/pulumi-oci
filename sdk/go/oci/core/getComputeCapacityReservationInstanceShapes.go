@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeCapacityReservationInstanceShapes(ctx, &core.GetComputeCapacityReservationInstanceShapesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Compute_capacity_reservation_instance_shape_availability_domain),
-// 			DisplayName:        pulumi.StringRef(_var.Compute_capacity_reservation_instance_shape_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeCapacityReservationInstanceShapes(ctx, &core.GetComputeCapacityReservationInstanceShapesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Compute_capacity_reservation_instance_shape_availability_domain),
+//				DisplayName:        pulumi.StringRef(_var.Compute_capacity_reservation_instance_shape_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetComputeCapacityReservationInstanceShapes(ctx *pulumi.Context, args *GetComputeCapacityReservationInstanceShapesArgs, opts ...pulumi.InvokeOption) (*GetComputeCapacityReservationInstanceShapesResult, error) {
 	var rv GetComputeCapacityReservationInstanceShapesResult

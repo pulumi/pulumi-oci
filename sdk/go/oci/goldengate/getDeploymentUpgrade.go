@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GoldenGate.GetDeploymentUpgrade(ctx, &goldengate.GetDeploymentUpgradeArgs{
-// 			DeploymentUpgradeId: oci_golden_gate_deployment_upgrade.Test_deployment_upgrade.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GoldenGate.GetDeploymentUpgrade(ctx, &goldengate.GetDeploymentUpgradeArgs{
+//				DeploymentUpgradeId: oci_golden_gate_deployment_upgrade.Test_deployment_upgrade.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDeploymentUpgrade(ctx *pulumi.Context, args *GetDeploymentUpgradeArgs, opts ...pulumi.InvokeOption) (*GetDeploymentUpgradeResult, error) {
 	var rv GetDeploymentUpgradeResult

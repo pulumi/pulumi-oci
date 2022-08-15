@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetMaskingReport(ctx, &datasafe.GetMaskingReportArgs{
-// 			MaskingReportId: oci_data_safe_masking_report.Test_masking_report.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetMaskingReport(ctx, &datasafe.GetMaskingReportArgs{
+//				MaskingReportId: oci_data_safe_masking_report.Test_masking_report.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMaskingReport(ctx *pulumi.Context, args *GetMaskingReportArgs, opts ...pulumi.InvokeOption) (*GetMaskingReportResult, error) {
 	var rv GetMaskingReportResult

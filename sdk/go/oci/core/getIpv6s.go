@@ -15,11 +15,11 @@ import (
 // Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
 // on one of these filters:
 //
-//   * Subnet OCID.
-//   * VNIC OCID.
-//   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-//       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-//       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+//   - Subnet OCID.
+//   - VNIC OCID.
+//   - Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+//     IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+//     [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
 //
 // ## Example Usage
 //
@@ -27,23 +27,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetIpv6s(ctx, &core.GetIpv6sArgs{
-// 			IpAddress: pulumi.StringRef(_var.Ipv6_ip_address),
-// 			SubnetId:  pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
-// 			VnicId:    pulumi.StringRef(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetIpv6s(ctx, &core.GetIpv6sArgs{
+//				IpAddress: pulumi.StringRef(_var.Ipv6_ip_address),
+//				SubnetId:  pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
+//				VnicId:    pulumi.StringRef(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIpv6s(ctx *pulumi.Context, args *GetIpv6sArgs, opts ...pulumi.InvokeOption) (*GetIpv6sResult, error) {
 	var rv GetIpv6sResult

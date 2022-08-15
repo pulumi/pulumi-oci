@@ -20,36 +20,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSensitiveDataModelsSensitiveColumns(ctx, &datasafe.GetSensitiveDataModelsSensitiveColumnsArgs{
-// 			SensitiveDataModelId:            oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-// 			ColumnGroup:                     pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_column_group),
-// 			ColumnNames:                     _var.Sensitive_data_models_sensitive_column_column_name,
-// 			DataTypes:                       _var.Sensitive_data_models_sensitive_column_data_type,
-// 			Objects:                         _var.Sensitive_data_models_sensitive_column_object,
-// 			ObjectTypes:                     _var.Sensitive_data_models_sensitive_column_object_type,
-// 			ParentColumnKeys:                _var.Sensitive_data_models_sensitive_column_parent_column_key,
-// 			RelationTypes:                   _var.Sensitive_data_models_sensitive_column_relation_type,
-// 			SchemaNames:                     _var.Sensitive_data_models_sensitive_column_schema_name,
-// 			SensitiveColumnLifecycleState:   pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state),
-// 			SensitiveTypeIds:                oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-// 			Statuses:                        _var.Sensitive_data_models_sensitive_column_status,
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_created_less_than),
-// 			TimeUpdatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to),
-// 			TimeUpdatedLessThan:             pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_updated_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSensitiveDataModelsSensitiveColumns(ctx, &datasafe.GetSensitiveDataModelsSensitiveColumnsArgs{
+//				SensitiveDataModelId:            oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+//				ColumnGroup:                     pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_column_group),
+//				ColumnNames:                     _var.Sensitive_data_models_sensitive_column_column_name,
+//				DataTypes:                       _var.Sensitive_data_models_sensitive_column_data_type,
+//				Objects:                         _var.Sensitive_data_models_sensitive_column_object,
+//				ObjectTypes:                     _var.Sensitive_data_models_sensitive_column_object_type,
+//				ParentColumnKeys:                _var.Sensitive_data_models_sensitive_column_parent_column_key,
+//				RelationTypes:                   _var.Sensitive_data_models_sensitive_column_relation_type,
+//				SchemaNames:                     _var.Sensitive_data_models_sensitive_column_schema_name,
+//				SensitiveColumnLifecycleState:   pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state),
+//				SensitiveTypeIds:                oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+//				Statuses:                        _var.Sensitive_data_models_sensitive_column_status,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_created_less_than),
+//				TimeUpdatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to),
+//				TimeUpdatedLessThan:             pulumi.StringRef(_var.Sensitive_data_models_sensitive_column_time_updated_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSensitiveDataModelsSensitiveColumns(ctx *pulumi.Context, args *GetSensitiveDataModelsSensitiveColumnsArgs, opts ...pulumi.InvokeOption) (*GetSensitiveDataModelsSensitiveColumnsResult, error) {
 	var rv GetSensitiveDataModelsSensitiveColumnsResult

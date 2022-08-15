@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ComputeInstanceAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ComputeInstanceAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ComputeInstanceAgent.GetInstanceAgentPlugins(ctx, &computeinstanceagent.GetInstanceAgentPluginsArgs{
-// 			InstanceagentId: oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-// 			Name:            pulumi.StringRef(_var.Instance_agent_plugin_name),
-// 			Status:          pulumi.StringRef(_var.Instance_agent_plugin_status),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ComputeInstanceAgent.GetInstanceAgentPlugins(ctx, &computeinstanceagent.GetInstanceAgentPluginsArgs{
+//				InstanceagentId: oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
+//				Name:            pulumi.StringRef(_var.Instance_agent_plugin_name),
+//				Status:          pulumi.StringRef(_var.Instance_agent_plugin_status),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstanceAgentPlugins(ctx *pulumi.Context, args *GetInstanceAgentPluginsArgs, opts ...pulumi.InvokeOption) (*GetInstanceAgentPluginsResult, error) {
 	var rv GetInstanceAgentPluginsResult

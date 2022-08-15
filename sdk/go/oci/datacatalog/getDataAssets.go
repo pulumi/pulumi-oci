@@ -20,31 +20,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetDataAssets(ctx, &datacatalog.GetDataAssetsArgs{
-// 			CatalogId:           oci_datacatalog_catalog.Test_catalog.Id,
-// 			CreatedById:         pulumi.StringRef(oci_datacatalog_created_by.Test_created_by.Id),
-// 			DisplayName:         pulumi.StringRef(_var.Data_asset_display_name),
-// 			DisplayNameContains: pulumi.StringRef(_var.Data_asset_display_name_contains),
-// 			ExternalKey:         pulumi.StringRef(_var.Data_asset_external_key),
-// 			Fields:              _var.Data_asset_fields,
-// 			State:               pulumi.StringRef(_var.Data_asset_state),
-// 			TimeCreated:         _var.Data_asset_time_created,
-// 			TimeUpdated:         _var.Data_asset_time_updated,
-// 			TypeKey:             pulumi.StringRef(_var.Data_asset_type_key),
-// 			UpdatedById:         oci_datacatalog_updated_by.Test_updated_by.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetDataAssets(ctx, &datacatalog.GetDataAssetsArgs{
+//				CatalogId:           oci_datacatalog_catalog.Test_catalog.Id,
+//				CreatedById:         pulumi.StringRef(oci_datacatalog_created_by.Test_created_by.Id),
+//				DisplayName:         pulumi.StringRef(_var.Data_asset_display_name),
+//				DisplayNameContains: pulumi.StringRef(_var.Data_asset_display_name_contains),
+//				ExternalKey:         pulumi.StringRef(_var.Data_asset_external_key),
+//				Fields:              _var.Data_asset_fields,
+//				State:               pulumi.StringRef(_var.Data_asset_state),
+//				TimeCreated:         _var.Data_asset_time_created,
+//				TimeUpdated:         _var.Data_asset_time_updated,
+//				TypeKey:             pulumi.StringRef(_var.Data_asset_type_key),
+//				UpdatedById:         oci_datacatalog_updated_by.Test_updated_by.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDataAssets(ctx *pulumi.Context, args *GetDataAssetsArgs, opts ...pulumi.InvokeOption) (*GetDataAssetsResult, error) {
 	var rv GetDataAssetsResult

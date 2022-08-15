@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.GetSnapshots(ctx, &filestorage.GetSnapshotsArgs{
-// 			FileSystemId: oci_file_storage_file_system.Test_file_system.Id,
-// 			Id:           pulumi.StringRef(_var.Snapshot_id),
-// 			State:        pulumi.StringRef(_var.Snapshot_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.GetSnapshots(ctx, &filestorage.GetSnapshotsArgs{
+//				FileSystemId: oci_file_storage_file_system.Test_file_system.Id,
+//				Id:           pulumi.StringRef(_var.Snapshot_id),
+//				State:        pulumi.StringRef(_var.Snapshot_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSnapshots(ctx *pulumi.Context, args *GetSnapshotsArgs, opts ...pulumi.InvokeOption) (*GetSnapshotsResult, error) {
 	var rv GetSnapshotsResult

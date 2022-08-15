@@ -51,39 +51,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewSubnet(ctx, "testSubnet", &Core.SubnetArgs{
-// 			CidrBlock:          pulumi.Any(_var.Subnet_cidr_block),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			AvailabilityDomain: pulumi.Any(_var.Subnet_availability_domain),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DhcpOptionsId: pulumi.Any(oci_core_dhcp_options.Test_dhcp_options.Id),
-// 			DisplayName:   pulumi.Any(_var.Subnet_display_name),
-// 			DnsLabel:      pulumi.Any(_var.Subnet_dns_label),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Ipv6cidrBlock:           pulumi.Any(_var.Subnet_ipv6cidr_block),
-// 			Ipv6cidrBlocks:          pulumi.Any(_var.Subnet_ipv6cidr_blocks),
-// 			ProhibitInternetIngress: pulumi.Any(_var.Subnet_prohibit_internet_ingress),
-// 			ProhibitPublicIpOnVnic:  pulumi.Any(_var.Subnet_prohibit_public_ip_on_vnic),
-// 			RouteTableId:            pulumi.Any(oci_core_route_table.Test_route_table.Id),
-// 			SecurityListIds:         pulumi.Any(_var.Subnet_security_list_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewSubnet(ctx, "testSubnet", &Core.SubnetArgs{
+//				CidrBlock:          pulumi.Any(_var.Subnet_cidr_block),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				AvailabilityDomain: pulumi.Any(_var.Subnet_availability_domain),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DhcpOptionsId: pulumi.Any(oci_core_dhcp_options.Test_dhcp_options.Id),
+//				DisplayName:   pulumi.Any(_var.Subnet_display_name),
+//				DnsLabel:      pulumi.Any(_var.Subnet_dns_label),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Ipv6cidrBlock:           pulumi.Any(_var.Subnet_ipv6cidr_block),
+//				Ipv6cidrBlocks:          pulumi.Any(_var.Subnet_ipv6cidr_blocks),
+//				ProhibitInternetIngress: pulumi.Any(_var.Subnet_prohibit_internet_ingress),
+//				ProhibitPublicIpOnVnic:  pulumi.Any(_var.Subnet_prohibit_public_ip_on_vnic),
+//				RouteTableId:            pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//				SecurityListIds:         pulumi.Any(_var.Subnet_security_list_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -91,7 +94,9 @@ import (
 // Subnets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
+//
+//	$ pulumi import oci:Core/subnet:Subnet test_subnet "id"
+//
 // ```
 type Subnet struct {
 	pulumi.CustomResourceState
@@ -379,7 +384,7 @@ func (i *Subnet) ToSubnetOutputWithContext(ctx context.Context) SubnetOutput {
 // SubnetArrayInput is an input type that accepts SubnetArray and SubnetArrayOutput values.
 // You can construct a concrete instance of `SubnetArrayInput` via:
 //
-//          SubnetArray{ SubnetArgs{...} }
+//	SubnetArray{ SubnetArgs{...} }
 type SubnetArrayInput interface {
 	pulumi.Input
 
@@ -404,7 +409,7 @@ func (i SubnetArray) ToSubnetArrayOutputWithContext(ctx context.Context) SubnetA
 // SubnetMapInput is an input type that accepts SubnetMap and SubnetMapOutput values.
 // You can construct a concrete instance of `SubnetMapInput` via:
 //
-//          SubnetMap{ "key": SubnetArgs{...} }
+//	SubnetMap{ "key": SubnetArgs{...} }
 type SubnetMapInput interface {
 	pulumi.Input
 

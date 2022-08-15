@@ -21,38 +21,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewRepository(ctx, "testRepository", &DevOps.RepositoryArgs{
-// 			ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
-// 			RepositoryType: pulumi.Any(_var.Repository_repository_type),
-// 			DefaultBranch:  pulumi.Any(_var.Repository_default_branch),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Repository_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			MirrorRepositoryConfig: &devops.RepositoryMirrorRepositoryConfigArgs{
-// 				ConnectorId:   pulumi.Any(oci_devops_connector.Test_connector.Id),
-// 				RepositoryUrl: pulumi.Any(_var.Repository_mirror_repository_config_repository_url),
-// 				TriggerSchedule: &devops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs{
-// 					ScheduleType:   pulumi.Any(_var.Repository_mirror_repository_config_trigger_schedule_schedule_type),
-// 					CustomSchedule: pulumi.Any(_var.Repository_mirror_repository_config_trigger_schedule_custom_schedule),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewRepository(ctx, "testRepository", &DevOps.RepositoryArgs{
+//				ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
+//				RepositoryType: pulumi.Any(_var.Repository_repository_type),
+//				DefaultBranch:  pulumi.Any(_var.Repository_default_branch),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Repository_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				MirrorRepositoryConfig: &devops.RepositoryMirrorRepositoryConfigArgs{
+//					ConnectorId:   pulumi.Any(oci_devops_connector.Test_connector.Id),
+//					RepositoryUrl: pulumi.Any(_var.Repository_mirror_repository_config_repository_url),
+//					TriggerSchedule: &devops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs{
+//						ScheduleType:   pulumi.Any(_var.Repository_mirror_repository_config_trigger_schedule_schedule_type),
+//						CustomSchedule: pulumi.Any(_var.Repository_mirror_repository_config_trigger_schedule_custom_schedule),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // Repositories can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/repository:Repository test_repository "id"
+//
+//	$ pulumi import oci:DevOps/repository:Repository test_repository "id"
+//
 // ```
 type Repository struct {
 	pulumi.CustomResourceState
@@ -308,7 +313,7 @@ func (i *Repository) ToRepositoryOutputWithContext(ctx context.Context) Reposito
 // RepositoryArrayInput is an input type that accepts RepositoryArray and RepositoryArrayOutput values.
 // You can construct a concrete instance of `RepositoryArrayInput` via:
 //
-//          RepositoryArray{ RepositoryArgs{...} }
+//	RepositoryArray{ RepositoryArgs{...} }
 type RepositoryArrayInput interface {
 	pulumi.Input
 
@@ -333,7 +338,7 @@ func (i RepositoryArray) ToRepositoryArrayOutputWithContext(ctx context.Context)
 // RepositoryMapInput is an input type that accepts RepositoryMap and RepositoryMapOutput values.
 // You can construct a concrete instance of `RepositoryMapInput` via:
 //
-//          RepositoryMap{ "key": RepositoryArgs{...} }
+//	RepositoryMap{ "key": RepositoryArgs{...} }
 type RepositoryMapInput interface {
 	pulumi.Input
 

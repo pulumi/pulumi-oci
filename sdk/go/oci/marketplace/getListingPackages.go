@@ -33,24 +33,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetListingPackages(ctx, &marketplace.GetListingPackagesArgs{
-// 			ListingId:      oci_marketplace_listing.Test_listing.Id,
-// 			CompartmentId:  pulumi.StringRef(_var.Compartment_id),
-// 			PackageType:    pulumi.StringRef(_var.Listing_package_package_type),
-// 			PackageVersion: pulumi.StringRef(_var.Listing_package_package_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetListingPackages(ctx, &marketplace.GetListingPackagesArgs{
+//				ListingId:      oci_marketplace_listing.Test_listing.Id,
+//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
+//				PackageType:    pulumi.StringRef(_var.Listing_package_package_type),
+//				PackageVersion: pulumi.StringRef(_var.Listing_package_package_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetListingPackages(ctx *pulumi.Context, args *GetListingPackagesArgs, opts ...pulumi.InvokeOption) (*GetListingPackagesResult, error) {
 	var rv GetListingPackagesResult

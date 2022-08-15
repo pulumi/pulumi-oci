@@ -26,24 +26,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewSteeringPolicyAttachment(ctx, "testSteeringPolicyAttachment", &Dns.SteeringPolicyAttachmentArgs{
-// 			DomainName:       pulumi.Any(_var.Steering_policy_attachment_domain_name),
-// 			SteeringPolicyId: pulumi.Any(oci_dns_steering_policy.Test_steering_policy.Id),
-// 			ZoneId:           pulumi.Any(oci_dns_zone.Test_zone.Id),
-// 			DisplayName:      pulumi.Any(_var.Steering_policy_attachment_display_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewSteeringPolicyAttachment(ctx, "testSteeringPolicyAttachment", &Dns.SteeringPolicyAttachmentArgs{
+//				DomainName:       pulumi.Any(_var.Steering_policy_attachment_domain_name),
+//				SteeringPolicyId: pulumi.Any(oci_dns_steering_policy.Test_steering_policy.Id),
+//				ZoneId:           pulumi.Any(oci_dns_zone.Test_zone.Id),
+//				DisplayName:      pulumi.Any(_var.Steering_policy_attachment_display_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // SteeringPolicyAttachments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
+//
+//	$ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
+//
 // ```
 type SteeringPolicyAttachment struct {
 	pulumi.CustomResourceState
@@ -208,7 +213,7 @@ func (i *SteeringPolicyAttachment) ToSteeringPolicyAttachmentOutputWithContext(c
 // SteeringPolicyAttachmentArrayInput is an input type that accepts SteeringPolicyAttachmentArray and SteeringPolicyAttachmentArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyAttachmentArrayInput` via:
 //
-//          SteeringPolicyAttachmentArray{ SteeringPolicyAttachmentArgs{...} }
+//	SteeringPolicyAttachmentArray{ SteeringPolicyAttachmentArgs{...} }
 type SteeringPolicyAttachmentArrayInput interface {
 	pulumi.Input
 
@@ -233,7 +238,7 @@ func (i SteeringPolicyAttachmentArray) ToSteeringPolicyAttachmentArrayOutputWith
 // SteeringPolicyAttachmentMapInput is an input type that accepts SteeringPolicyAttachmentMap and SteeringPolicyAttachmentMapOutput values.
 // You can construct a concrete instance of `SteeringPolicyAttachmentMapInput` via:
 //
-//          SteeringPolicyAttachmentMap{ "key": SteeringPolicyAttachmentArgs{...} }
+//	SteeringPolicyAttachmentMap{ "key": SteeringPolicyAttachmentArgs{...} }
 type SteeringPolicyAttachmentMapInput interface {
 	pulumi.Input
 

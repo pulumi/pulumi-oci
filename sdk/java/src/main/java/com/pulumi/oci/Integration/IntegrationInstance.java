@@ -10,7 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Integration.IntegrationInstanceArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceState;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceAlternateCustomEndpoint;
+import com.pulumi.oci.Integration.outputs.IntegrationInstanceAttachment;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceCustomEndpoint;
+import com.pulumi.oci.Integration.outputs.IntegrationInstanceIdcsInfo;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -53,6 +55,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<IntegrationInstanceAlternateCustomEndpoint>> alternateCustomEndpoints() {
         return this.alternateCustomEndpoints;
+    }
+    /**
+     * A list of associated attachments to other services
+     * 
+     */
+    @Export(name="attachments", type=List.class, parameters={IntegrationInstanceAttachment.class})
+    private Output<List<IntegrationInstanceAttachment>> attachments;
+
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public Output<List<IntegrationInstanceAttachment>> attachments() {
+        return this.attachments;
     }
     /**
      * (Updatable) Compartment Identifier.
@@ -151,6 +167,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> idcsAt() {
         return Codegen.optional(this.idcsAt);
+    }
+    /**
+     * Information for IDCS access
+     * 
+     */
+    @Export(name="idcsInfos", type=List.class, parameters={IntegrationInstanceIdcsInfo.class})
+    private Output<List<IntegrationInstanceIdcsInfo>> idcsInfos;
+
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    public Output<List<IntegrationInstanceIdcsInfo>> idcsInfos() {
+        return this.idcsInfos;
     }
     /**
      * The Integration Instance URL.

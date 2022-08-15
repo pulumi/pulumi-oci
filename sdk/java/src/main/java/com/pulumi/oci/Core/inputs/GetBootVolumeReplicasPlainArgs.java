@@ -20,30 +20,30 @@ public final class GetBootVolumeReplicasPlainArgs extends com.pulumi.resources.I
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Import(name="availabilityDomain", required=true)
-    private String availabilityDomain;
+    @Import(name="availabilityDomain")
+    private @Nullable String availabilityDomain;
 
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private String compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -83,6 +83,21 @@ public final class GetBootVolumeReplicasPlainArgs extends com.pulumi.resources.I
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     * 
+     */
+    @Import(name="volumeGroupReplicaId")
+    private @Nullable String volumeGroupReplicaId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     * 
+     */
+    public Optional<String> volumeGroupReplicaId() {
+        return Optional.ofNullable(this.volumeGroupReplicaId);
+    }
+
     private GetBootVolumeReplicasPlainArgs() {}
 
     private GetBootVolumeReplicasPlainArgs(GetBootVolumeReplicasPlainArgs $) {
@@ -91,6 +106,7 @@ public final class GetBootVolumeReplicasPlainArgs extends com.pulumi.resources.I
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
+        this.volumeGroupReplicaId = $.volumeGroupReplicaId;
     }
 
     public static Builder builder() {
@@ -117,7 +133,7 @@ public final class GetBootVolumeReplicasPlainArgs extends com.pulumi.resources.I
          * @return builder
          * 
          */
-        public Builder availabilityDomain(String availabilityDomain) {
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
             $.availabilityDomain = availabilityDomain;
             return this;
         }
@@ -128,7 +144,7 @@ public final class GetBootVolumeReplicasPlainArgs extends com.pulumi.resources.I
          * @return builder
          * 
          */
-        public Builder compartmentId(String compartmentId) {
+        public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -164,9 +180,18 @@ public final class GetBootVolumeReplicasPlainArgs extends com.pulumi.resources.I
             return this;
         }
 
+        /**
+         * @param volumeGroupReplicaId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
+            $.volumeGroupReplicaId = volumeGroupReplicaId;
+            return this;
+        }
+
         public GetBootVolumeReplicasPlainArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             return $;
         }
     }

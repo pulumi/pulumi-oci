@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetDeployments(ctx, &devops.GetDeploymentsArgs{
-// 			CompartmentId:                   pulumi.StringRef(_var.Compartment_id),
-// 			DeployPipelineId:                pulumi.StringRef(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
-// 			DisplayName:                     pulumi.StringRef(_var.Deployment_display_name),
-// 			Id:                              pulumi.StringRef(_var.Deployment_id),
-// 			ProjectId:                       pulumi.StringRef(oci_devops_project.Test_project.Id),
-// 			State:                           pulumi.StringRef(_var.Deployment_state),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Deployment_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Deployment_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetDeployments(ctx, &devops.GetDeploymentsArgs{
+//				CompartmentId:                   pulumi.StringRef(_var.Compartment_id),
+//				DeployPipelineId:                pulumi.StringRef(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
+//				DisplayName:                     pulumi.StringRef(_var.Deployment_display_name),
+//				Id:                              pulumi.StringRef(_var.Deployment_id),
+//				ProjectId:                       pulumi.StringRef(oci_devops_project.Test_project.Id),
+//				State:                           pulumi.StringRef(_var.Deployment_state),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Deployment_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Deployment_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDeployments(ctx *pulumi.Context, args *GetDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetDeploymentsResult, error) {
 	var rv GetDeploymentsResult

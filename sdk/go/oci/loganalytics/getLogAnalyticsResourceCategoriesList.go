@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsResourceCategoriesList(ctx, &loganalytics.GetLogAnalyticsResourceCategoriesListArgs{
-// 			Namespace:          _var.Log_analytics_resource_categories_list_namespace,
-// 			ResourceIds:        pulumi.StringRef(_var.Log_analytics_resource_categories_list_resource_ids),
-// 			ResourceTypes:      pulumi.StringRef(_var.Log_analytics_resource_categories_list_resource_types),
-// 			ResourceCategories: pulumi.StringRef(_var.Log_analytics_resource_categories_list_resource_categories),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsResourceCategoriesList(ctx, &loganalytics.GetLogAnalyticsResourceCategoriesListArgs{
+//				Namespace:          _var.Log_analytics_resource_categories_list_namespace,
+//				ResourceIds:        pulumi.StringRef(_var.Log_analytics_resource_categories_list_resource_ids),
+//				ResourceTypes:      pulumi.StringRef(_var.Log_analytics_resource_categories_list_resource_types),
+//				ResourceCategories: pulumi.StringRef(_var.Log_analytics_resource_categories_list_resource_categories),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsResourceCategoriesList(ctx *pulumi.Context, args *GetLogAnalyticsResourceCategoriesListArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsResourceCategoriesListResult, error) {
 	var rv GetLogAnalyticsResourceCategoriesListResult

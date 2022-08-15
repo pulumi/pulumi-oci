@@ -25,21 +25,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetAllowedDomainLicenseTypes(ctx, &identity.GetAllowedDomainLicenseTypesArgs{
-// 			CurrentLicenseTypeName: pulumi.StringRef(_var.Allowed_domain_license_type_current_license_type_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetAllowedDomainLicenseTypes(ctx, &identity.GetAllowedDomainLicenseTypesArgs{
+//				CurrentLicenseTypeName: pulumi.StringRef(_var.Allowed_domain_license_type_current_license_type_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAllowedDomainLicenseTypes(ctx *pulumi.Context, args *GetAllowedDomainLicenseTypesArgs, opts ...pulumi.InvokeOption) (*GetAllowedDomainLicenseTypesResult, error) {
 	var rv GetAllowedDomainLicenseTypesResult

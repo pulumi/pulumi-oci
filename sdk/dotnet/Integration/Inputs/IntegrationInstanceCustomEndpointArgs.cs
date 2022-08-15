@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Integration.Inputs
     public sealed class IntegrationInstanceCustomEndpointArgs : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+        /// </summary>
+        [Input("alias")]
+        public Input<string>? Alias { get; set; }
+
+        /// <summary>
         /// (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         /// </summary>
         [Input("certificateSecretId")]

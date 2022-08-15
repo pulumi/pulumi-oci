@@ -22,7 +22,7 @@ class GetMaintenanceRunsResult:
     """
     A collection of values returned by getMaintenanceRuns.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, maintenance_runs=None, maintenance_type=None, state=None, target_resource_id=None, target_resource_type=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, maintenance_runs=None, maintenance_subtype=None, maintenance_type=None, state=None, target_resource_id=None, target_resource_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -38,6 +38,9 @@ class GetMaintenanceRunsResult:
         if maintenance_runs and not isinstance(maintenance_runs, list):
             raise TypeError("Expected argument 'maintenance_runs' to be a list")
         pulumi.set(__self__, "maintenance_runs", maintenance_runs)
+        if maintenance_subtype and not isinstance(maintenance_subtype, str):
+            raise TypeError("Expected argument 'maintenance_subtype' to be a str")
+        pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         if maintenance_type and not isinstance(maintenance_type, str):
             raise TypeError("Expected argument 'maintenance_type' to be a str")
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -86,6 +89,14 @@ class GetMaintenanceRunsResult:
         return pulumi.get(self, "maintenance_runs")
 
     @property
+    @pulumi.getter(name="maintenanceSubtype")
+    def maintenance_subtype(self) -> Optional[str]:
+        """
+        Maintenance sub-type.
+        """
+        return pulumi.get(self, "maintenance_subtype")
+
+    @property
     @pulumi.getter(name="maintenanceType")
     def maintenance_type(self) -> Optional[str]:
         """
@@ -129,6 +140,7 @@ class AwaitableGetMaintenanceRunsResult(GetMaintenanceRunsResult):
             filters=self.filters,
             id=self.id,
             maintenance_runs=self.maintenance_runs,
+            maintenance_subtype=self.maintenance_subtype,
             maintenance_type=self.maintenance_type,
             state=self.state,
             target_resource_id=self.target_resource_id,
@@ -138,6 +150,7 @@ class AwaitableGetMaintenanceRunsResult(GetMaintenanceRunsResult):
 def get_maintenance_runs(availability_domain: Optional[str] = None,
                          compartment_id: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetMaintenanceRunsFilterArgs']]] = None,
+                         maintenance_subtype: Optional[str] = None,
                          maintenance_type: Optional[str] = None,
                          state: Optional[str] = None,
                          target_resource_id: Optional[str] = None,
@@ -156,6 +169,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 
     test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=var["compartment_id"],
         availability_domain=var["maintenance_run_availability_domain"],
+        maintenance_subtype=var["maintenance_run_maintenance_subtype"],
         maintenance_type=var["maintenance_run_maintenance_type"],
         state=var["maintenance_run_state"],
         target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
@@ -165,6 +179,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str maintenance_subtype: The sub-type of the maintenance run.
     :param str maintenance_type: The maintenance type.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     :param str target_resource_id: The target resource ID.
@@ -174,6 +189,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['maintenanceSubtype'] = maintenance_subtype
     __args__['maintenanceType'] = maintenance_type
     __args__['state'] = state
     __args__['targetResourceId'] = target_resource_id
@@ -190,6 +206,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
         filters=__ret__.filters,
         id=__ret__.id,
         maintenance_runs=__ret__.maintenance_runs,
+        maintenance_subtype=__ret__.maintenance_subtype,
         maintenance_type=__ret__.maintenance_type,
         state=__ret__.state,
         target_resource_id=__ret__.target_resource_id,
@@ -200,6 +217,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
 def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMaintenanceRunsFilterArgs']]]]] = None,
+                                maintenance_subtype: Optional[pulumi.Input[Optional[str]]] = None,
                                 maintenance_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 target_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -218,6 +236,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
 
     test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=var["compartment_id"],
         availability_domain=var["maintenance_run_availability_domain"],
+        maintenance_subtype=var["maintenance_run_maintenance_subtype"],
         maintenance_type=var["maintenance_run_maintenance_type"],
         state=var["maintenance_run_state"],
         target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
@@ -227,6 +246,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str maintenance_subtype: The sub-type of the maintenance run.
     :param str maintenance_type: The maintenance type.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     :param str target_resource_id: The target resource ID.

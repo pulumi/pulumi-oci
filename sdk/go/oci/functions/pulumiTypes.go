@@ -20,7 +20,7 @@ type ApplicationImagePolicyConfig struct {
 // ApplicationImagePolicyConfigInput is an input type that accepts ApplicationImagePolicyConfigArgs and ApplicationImagePolicyConfigOutput values.
 // You can construct a concrete instance of `ApplicationImagePolicyConfigInput` via:
 //
-//          ApplicationImagePolicyConfigArgs{...}
+//	ApplicationImagePolicyConfigArgs{...}
 type ApplicationImagePolicyConfigInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i ApplicationImagePolicyConfigArgs) ToApplicationImagePolicyConfigPtrOutpu
 // ApplicationImagePolicyConfigPtrInput is an input type that accepts ApplicationImagePolicyConfigArgs, ApplicationImagePolicyConfigPtr and ApplicationImagePolicyConfigPtrOutput values.
 // You can construct a concrete instance of `ApplicationImagePolicyConfigPtrInput` via:
 //
-//          ApplicationImagePolicyConfigArgs{...}
+//	        ApplicationImagePolicyConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ApplicationImagePolicyConfigPtrInput interface {
 	pulumi.Input
 
@@ -174,7 +174,7 @@ type ApplicationImagePolicyConfigKeyDetail struct {
 // ApplicationImagePolicyConfigKeyDetailInput is an input type that accepts ApplicationImagePolicyConfigKeyDetailArgs and ApplicationImagePolicyConfigKeyDetailOutput values.
 // You can construct a concrete instance of `ApplicationImagePolicyConfigKeyDetailInput` via:
 //
-//          ApplicationImagePolicyConfigKeyDetailArgs{...}
+//	ApplicationImagePolicyConfigKeyDetailArgs{...}
 type ApplicationImagePolicyConfigKeyDetailInput interface {
 	pulumi.Input
 
@@ -202,7 +202,7 @@ func (i ApplicationImagePolicyConfigKeyDetailArgs) ToApplicationImagePolicyConfi
 // ApplicationImagePolicyConfigKeyDetailArrayInput is an input type that accepts ApplicationImagePolicyConfigKeyDetailArray and ApplicationImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `ApplicationImagePolicyConfigKeyDetailArrayInput` via:
 //
-//          ApplicationImagePolicyConfigKeyDetailArray{ ApplicationImagePolicyConfigKeyDetailArgs{...} }
+//	ApplicationImagePolicyConfigKeyDetailArray{ ApplicationImagePolicyConfigKeyDetailArgs{...} }
 type ApplicationImagePolicyConfigKeyDetailArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +273,7 @@ type ApplicationTraceConfig struct {
 // ApplicationTraceConfigInput is an input type that accepts ApplicationTraceConfigArgs and ApplicationTraceConfigOutput values.
 // You can construct a concrete instance of `ApplicationTraceConfigInput` via:
 //
-//          ApplicationTraceConfigArgs{...}
+//	ApplicationTraceConfigArgs{...}
 type ApplicationTraceConfigInput interface {
 	pulumi.Input
 
@@ -311,11 +311,11 @@ func (i ApplicationTraceConfigArgs) ToApplicationTraceConfigPtrOutputWithContext
 // ApplicationTraceConfigPtrInput is an input type that accepts ApplicationTraceConfigArgs, ApplicationTraceConfigPtr and ApplicationTraceConfigPtrOutput values.
 // You can construct a concrete instance of `ApplicationTraceConfigPtrInput` via:
 //
-//          ApplicationTraceConfigArgs{...}
+//	        ApplicationTraceConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ApplicationTraceConfigPtrInput interface {
 	pulumi.Input
 
@@ -429,7 +429,7 @@ type FunctionProvisionedConcurrencyConfig struct {
 // FunctionProvisionedConcurrencyConfigInput is an input type that accepts FunctionProvisionedConcurrencyConfigArgs and FunctionProvisionedConcurrencyConfigOutput values.
 // You can construct a concrete instance of `FunctionProvisionedConcurrencyConfigInput` via:
 //
-//          FunctionProvisionedConcurrencyConfigArgs{...}
+//	FunctionProvisionedConcurrencyConfigArgs{...}
 type FunctionProvisionedConcurrencyConfigInput interface {
 	pulumi.Input
 
@@ -467,11 +467,11 @@ func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurren
 // FunctionProvisionedConcurrencyConfigPtrInput is an input type that accepts FunctionProvisionedConcurrencyConfigArgs, FunctionProvisionedConcurrencyConfigPtr and FunctionProvisionedConcurrencyConfigPtrOutput values.
 // You can construct a concrete instance of `FunctionProvisionedConcurrencyConfigPtrInput` via:
 //
-//          FunctionProvisionedConcurrencyConfigArgs{...}
+//	        FunctionProvisionedConcurrencyConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type FunctionProvisionedConcurrencyConfigPtrInput interface {
 	pulumi.Input
 
@@ -583,7 +583,7 @@ type FunctionTraceConfig struct {
 // FunctionTraceConfigInput is an input type that accepts FunctionTraceConfigArgs and FunctionTraceConfigOutput values.
 // You can construct a concrete instance of `FunctionTraceConfigInput` via:
 //
-//          FunctionTraceConfigArgs{...}
+//	FunctionTraceConfigArgs{...}
 type FunctionTraceConfigInput interface {
 	pulumi.Input
 
@@ -619,11 +619,11 @@ func (i FunctionTraceConfigArgs) ToFunctionTraceConfigPtrOutputWithContext(ctx c
 // FunctionTraceConfigPtrInput is an input type that accepts FunctionTraceConfigArgs, FunctionTraceConfigPtr and FunctionTraceConfigPtrOutput values.
 // You can construct a concrete instance of `FunctionTraceConfigPtrInput` via:
 //
-//          FunctionTraceConfigArgs{...}
+//	        FunctionTraceConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type FunctionTraceConfigPtrInput interface {
 	pulumi.Input
 
@@ -722,7 +722,7 @@ type GetApplicationImagePolicyConfig struct {
 // GetApplicationImagePolicyConfigInput is an input type that accepts GetApplicationImagePolicyConfigArgs and GetApplicationImagePolicyConfigOutput values.
 // You can construct a concrete instance of `GetApplicationImagePolicyConfigInput` via:
 //
-//          GetApplicationImagePolicyConfigArgs{...}
+//	GetApplicationImagePolicyConfigArgs{...}
 type GetApplicationImagePolicyConfigInput interface {
 	pulumi.Input
 
@@ -752,7 +752,7 @@ func (i GetApplicationImagePolicyConfigArgs) ToGetApplicationImagePolicyConfigOu
 // GetApplicationImagePolicyConfigArrayInput is an input type that accepts GetApplicationImagePolicyConfigArray and GetApplicationImagePolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationImagePolicyConfigArrayInput` via:
 //
-//          GetApplicationImagePolicyConfigArray{ GetApplicationImagePolicyConfigArgs{...} }
+//	GetApplicationImagePolicyConfigArray{ GetApplicationImagePolicyConfigArgs{...} }
 type GetApplicationImagePolicyConfigArrayInput interface {
 	pulumi.Input
 
@@ -828,7 +828,7 @@ type GetApplicationImagePolicyConfigKeyDetail struct {
 // GetApplicationImagePolicyConfigKeyDetailInput is an input type that accepts GetApplicationImagePolicyConfigKeyDetailArgs and GetApplicationImagePolicyConfigKeyDetailOutput values.
 // You can construct a concrete instance of `GetApplicationImagePolicyConfigKeyDetailInput` via:
 //
-//          GetApplicationImagePolicyConfigKeyDetailArgs{...}
+//	GetApplicationImagePolicyConfigKeyDetailArgs{...}
 type GetApplicationImagePolicyConfigKeyDetailInput interface {
 	pulumi.Input
 
@@ -856,7 +856,7 @@ func (i GetApplicationImagePolicyConfigKeyDetailArgs) ToGetApplicationImagePolic
 // GetApplicationImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetApplicationImagePolicyConfigKeyDetailArray and GetApplicationImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetApplicationImagePolicyConfigKeyDetailArrayInput` via:
 //
-//          GetApplicationImagePolicyConfigKeyDetailArray{ GetApplicationImagePolicyConfigKeyDetailArgs{...} }
+//	GetApplicationImagePolicyConfigKeyDetailArray{ GetApplicationImagePolicyConfigKeyDetailArgs{...} }
 type GetApplicationImagePolicyConfigKeyDetailArrayInput interface {
 	pulumi.Input
 
@@ -927,7 +927,7 @@ type GetApplicationTraceConfig struct {
 // GetApplicationTraceConfigInput is an input type that accepts GetApplicationTraceConfigArgs and GetApplicationTraceConfigOutput values.
 // You can construct a concrete instance of `GetApplicationTraceConfigInput` via:
 //
-//          GetApplicationTraceConfigArgs{...}
+//	GetApplicationTraceConfigArgs{...}
 type GetApplicationTraceConfigInput interface {
 	pulumi.Input
 
@@ -957,7 +957,7 @@ func (i GetApplicationTraceConfigArgs) ToGetApplicationTraceConfigOutputWithCont
 // GetApplicationTraceConfigArrayInput is an input type that accepts GetApplicationTraceConfigArray and GetApplicationTraceConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationTraceConfigArrayInput` via:
 //
-//          GetApplicationTraceConfigArray{ GetApplicationTraceConfigArgs{...} }
+//	GetApplicationTraceConfigArray{ GetApplicationTraceConfigArgs{...} }
 type GetApplicationTraceConfigArrayInput interface {
 	pulumi.Input
 
@@ -1057,7 +1057,7 @@ type GetApplicationsApplication struct {
 // GetApplicationsApplicationInput is an input type that accepts GetApplicationsApplicationArgs and GetApplicationsApplicationOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationInput` via:
 //
-//          GetApplicationsApplicationArgs{...}
+//	GetApplicationsApplicationArgs{...}
 type GetApplicationsApplicationInput interface {
 	pulumi.Input
 
@@ -1111,7 +1111,7 @@ func (i GetApplicationsApplicationArgs) ToGetApplicationsApplicationOutputWithCo
 // GetApplicationsApplicationArrayInput is an input type that accepts GetApplicationsApplicationArray and GetApplicationsApplicationArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationArrayInput` via:
 //
-//          GetApplicationsApplicationArray{ GetApplicationsApplicationArgs{...} }
+//	GetApplicationsApplicationArray{ GetApplicationsApplicationArgs{...} }
 type GetApplicationsApplicationArrayInput interface {
 	pulumi.Input
 
@@ -1249,7 +1249,7 @@ type GetApplicationsApplicationImagePolicyConfig struct {
 // GetApplicationsApplicationImagePolicyConfigInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigArgs and GetApplicationsApplicationImagePolicyConfigOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationImagePolicyConfigInput` via:
 //
-//          GetApplicationsApplicationImagePolicyConfigArgs{...}
+//	GetApplicationsApplicationImagePolicyConfigArgs{...}
 type GetApplicationsApplicationImagePolicyConfigInput interface {
 	pulumi.Input
 
@@ -1279,7 +1279,7 @@ func (i GetApplicationsApplicationImagePolicyConfigArgs) ToGetApplicationsApplic
 // GetApplicationsApplicationImagePolicyConfigArrayInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigArray and GetApplicationsApplicationImagePolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationImagePolicyConfigArrayInput` via:
 //
-//          GetApplicationsApplicationImagePolicyConfigArray{ GetApplicationsApplicationImagePolicyConfigArgs{...} }
+//	GetApplicationsApplicationImagePolicyConfigArray{ GetApplicationsApplicationImagePolicyConfigArgs{...} }
 type GetApplicationsApplicationImagePolicyConfigArrayInput interface {
 	pulumi.Input
 
@@ -1355,7 +1355,7 @@ type GetApplicationsApplicationImagePolicyConfigKeyDetail struct {
 // GetApplicationsApplicationImagePolicyConfigKeyDetailInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigKeyDetailArgs and GetApplicationsApplicationImagePolicyConfigKeyDetailOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationImagePolicyConfigKeyDetailInput` via:
 //
-//          GetApplicationsApplicationImagePolicyConfigKeyDetailArgs{...}
+//	GetApplicationsApplicationImagePolicyConfigKeyDetailArgs{...}
 type GetApplicationsApplicationImagePolicyConfigKeyDetailInput interface {
 	pulumi.Input
 
@@ -1383,7 +1383,7 @@ func (i GetApplicationsApplicationImagePolicyConfigKeyDetailArgs) ToGetApplicati
 // GetApplicationsApplicationImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigKeyDetailArray and GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationImagePolicyConfigKeyDetailArrayInput` via:
 //
-//          GetApplicationsApplicationImagePolicyConfigKeyDetailArray{ GetApplicationsApplicationImagePolicyConfigKeyDetailArgs{...} }
+//	GetApplicationsApplicationImagePolicyConfigKeyDetailArray{ GetApplicationsApplicationImagePolicyConfigKeyDetailArgs{...} }
 type GetApplicationsApplicationImagePolicyConfigKeyDetailArrayInput interface {
 	pulumi.Input
 
@@ -1454,7 +1454,7 @@ type GetApplicationsApplicationTraceConfig struct {
 // GetApplicationsApplicationTraceConfigInput is an input type that accepts GetApplicationsApplicationTraceConfigArgs and GetApplicationsApplicationTraceConfigOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationTraceConfigInput` via:
 //
-//          GetApplicationsApplicationTraceConfigArgs{...}
+//	GetApplicationsApplicationTraceConfigArgs{...}
 type GetApplicationsApplicationTraceConfigInput interface {
 	pulumi.Input
 
@@ -1484,7 +1484,7 @@ func (i GetApplicationsApplicationTraceConfigArgs) ToGetApplicationsApplicationT
 // GetApplicationsApplicationTraceConfigArrayInput is an input type that accepts GetApplicationsApplicationTraceConfigArray and GetApplicationsApplicationTraceConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationTraceConfigArrayInput` via:
 //
-//          GetApplicationsApplicationTraceConfigArray{ GetApplicationsApplicationTraceConfigArgs{...} }
+//	GetApplicationsApplicationTraceConfigArray{ GetApplicationsApplicationTraceConfigArgs{...} }
 type GetApplicationsApplicationTraceConfigArrayInput interface {
 	pulumi.Input
 
@@ -1559,7 +1559,7 @@ type GetApplicationsFilter struct {
 // GetApplicationsFilterInput is an input type that accepts GetApplicationsFilterArgs and GetApplicationsFilterOutput values.
 // You can construct a concrete instance of `GetApplicationsFilterInput` via:
 //
-//          GetApplicationsFilterArgs{...}
+//	GetApplicationsFilterArgs{...}
 type GetApplicationsFilterInput interface {
 	pulumi.Input
 
@@ -1588,7 +1588,7 @@ func (i GetApplicationsFilterArgs) ToGetApplicationsFilterOutputWithContext(ctx 
 // GetApplicationsFilterArrayInput is an input type that accepts GetApplicationsFilterArray and GetApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsFilterArrayInput` via:
 //
-//          GetApplicationsFilterArray{ GetApplicationsFilterArgs{...} }
+//	GetApplicationsFilterArray{ GetApplicationsFilterArgs{...} }
 type GetApplicationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1665,7 +1665,7 @@ type GetFunctionProvisionedConcurrencyConfig struct {
 // GetFunctionProvisionedConcurrencyConfigInput is an input type that accepts GetFunctionProvisionedConcurrencyConfigArgs and GetFunctionProvisionedConcurrencyConfigOutput values.
 // You can construct a concrete instance of `GetFunctionProvisionedConcurrencyConfigInput` via:
 //
-//          GetFunctionProvisionedConcurrencyConfigArgs{...}
+//	GetFunctionProvisionedConcurrencyConfigArgs{...}
 type GetFunctionProvisionedConcurrencyConfigInput interface {
 	pulumi.Input
 
@@ -1694,7 +1694,7 @@ func (i GetFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionProvisionedCon
 // GetFunctionProvisionedConcurrencyConfigArrayInput is an input type that accepts GetFunctionProvisionedConcurrencyConfigArray and GetFunctionProvisionedConcurrencyConfigArrayOutput values.
 // You can construct a concrete instance of `GetFunctionProvisionedConcurrencyConfigArrayInput` via:
 //
-//          GetFunctionProvisionedConcurrencyConfigArray{ GetFunctionProvisionedConcurrencyConfigArgs{...} }
+//	GetFunctionProvisionedConcurrencyConfigArray{ GetFunctionProvisionedConcurrencyConfigArgs{...} }
 type GetFunctionProvisionedConcurrencyConfigArrayInput interface {
 	pulumi.Input
 
@@ -1767,7 +1767,7 @@ type GetFunctionTraceConfig struct {
 // GetFunctionTraceConfigInput is an input type that accepts GetFunctionTraceConfigArgs and GetFunctionTraceConfigOutput values.
 // You can construct a concrete instance of `GetFunctionTraceConfigInput` via:
 //
-//          GetFunctionTraceConfigArgs{...}
+//	GetFunctionTraceConfigArgs{...}
 type GetFunctionTraceConfigInput interface {
 	pulumi.Input
 
@@ -1795,7 +1795,7 @@ func (i GetFunctionTraceConfigArgs) ToGetFunctionTraceConfigOutputWithContext(ct
 // GetFunctionTraceConfigArrayInput is an input type that accepts GetFunctionTraceConfigArray and GetFunctionTraceConfigArrayOutput values.
 // You can construct a concrete instance of `GetFunctionTraceConfigArrayInput` via:
 //
-//          GetFunctionTraceConfigArray{ GetFunctionTraceConfigArgs{...} }
+//	GetFunctionTraceConfigArray{ GetFunctionTraceConfigArgs{...} }
 type GetFunctionTraceConfigArrayInput interface {
 	pulumi.Input
 
@@ -1865,7 +1865,7 @@ type GetFunctionsFilter struct {
 // GetFunctionsFilterInput is an input type that accepts GetFunctionsFilterArgs and GetFunctionsFilterOutput values.
 // You can construct a concrete instance of `GetFunctionsFilterInput` via:
 //
-//          GetFunctionsFilterArgs{...}
+//	GetFunctionsFilterArgs{...}
 type GetFunctionsFilterInput interface {
 	pulumi.Input
 
@@ -1894,7 +1894,7 @@ func (i GetFunctionsFilterArgs) ToGetFunctionsFilterOutputWithContext(ctx contex
 // GetFunctionsFilterArrayInput is an input type that accepts GetFunctionsFilterArray and GetFunctionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFunctionsFilterArrayInput` via:
 //
-//          GetFunctionsFilterArray{ GetFunctionsFilterArgs{...} }
+//	GetFunctionsFilterArray{ GetFunctionsFilterArgs{...} }
 type GetFunctionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2002,7 +2002,7 @@ type GetFunctionsFunction struct {
 // GetFunctionsFunctionInput is an input type that accepts GetFunctionsFunctionArgs and GetFunctionsFunctionOutput values.
 // You can construct a concrete instance of `GetFunctionsFunctionInput` via:
 //
-//          GetFunctionsFunctionArgs{...}
+//	GetFunctionsFunctionArgs{...}
 type GetFunctionsFunctionInput interface {
 	pulumi.Input
 
@@ -2062,7 +2062,7 @@ func (i GetFunctionsFunctionArgs) ToGetFunctionsFunctionOutputWithContext(ctx co
 // GetFunctionsFunctionArrayInput is an input type that accepts GetFunctionsFunctionArray and GetFunctionsFunctionArrayOutput values.
 // You can construct a concrete instance of `GetFunctionsFunctionArrayInput` via:
 //
-//          GetFunctionsFunctionArray{ GetFunctionsFunctionArgs{...} }
+//	GetFunctionsFunctionArray{ GetFunctionsFunctionArgs{...} }
 type GetFunctionsFunctionArrayInput interface {
 	pulumi.Input
 
@@ -2214,7 +2214,7 @@ type GetFunctionsFunctionProvisionedConcurrencyConfig struct {
 // GetFunctionsFunctionProvisionedConcurrencyConfigInput is an input type that accepts GetFunctionsFunctionProvisionedConcurrencyConfigArgs and GetFunctionsFunctionProvisionedConcurrencyConfigOutput values.
 // You can construct a concrete instance of `GetFunctionsFunctionProvisionedConcurrencyConfigInput` via:
 //
-//          GetFunctionsFunctionProvisionedConcurrencyConfigArgs{...}
+//	GetFunctionsFunctionProvisionedConcurrencyConfigArgs{...}
 type GetFunctionsFunctionProvisionedConcurrencyConfigInput interface {
 	pulumi.Input
 
@@ -2243,7 +2243,7 @@ func (i GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionsFunc
 // GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput is an input type that accepts GetFunctionsFunctionProvisionedConcurrencyConfigArray and GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput values.
 // You can construct a concrete instance of `GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput` via:
 //
-//          GetFunctionsFunctionProvisionedConcurrencyConfigArray{ GetFunctionsFunctionProvisionedConcurrencyConfigArgs{...} }
+//	GetFunctionsFunctionProvisionedConcurrencyConfigArray{ GetFunctionsFunctionProvisionedConcurrencyConfigArgs{...} }
 type GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput interface {
 	pulumi.Input
 
@@ -2316,7 +2316,7 @@ type GetFunctionsFunctionTraceConfig struct {
 // GetFunctionsFunctionTraceConfigInput is an input type that accepts GetFunctionsFunctionTraceConfigArgs and GetFunctionsFunctionTraceConfigOutput values.
 // You can construct a concrete instance of `GetFunctionsFunctionTraceConfigInput` via:
 //
-//          GetFunctionsFunctionTraceConfigArgs{...}
+//	GetFunctionsFunctionTraceConfigArgs{...}
 type GetFunctionsFunctionTraceConfigInput interface {
 	pulumi.Input
 
@@ -2344,7 +2344,7 @@ func (i GetFunctionsFunctionTraceConfigArgs) ToGetFunctionsFunctionTraceConfigOu
 // GetFunctionsFunctionTraceConfigArrayInput is an input type that accepts GetFunctionsFunctionTraceConfigArray and GetFunctionsFunctionTraceConfigArrayOutput values.
 // You can construct a concrete instance of `GetFunctionsFunctionTraceConfigArrayInput` via:
 //
-//          GetFunctionsFunctionTraceConfigArray{ GetFunctionsFunctionTraceConfigArgs{...} }
+//	GetFunctionsFunctionTraceConfigArray{ GetFunctionsFunctionTraceConfigArgs{...} }
 type GetFunctionsFunctionTraceConfigArrayInput interface {
 	pulumi.Input
 

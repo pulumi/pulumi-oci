@@ -128,8 +128,8 @@ require (
 	github.com/oklog/run v1.0.0 // indirect
 	github.com/opentracing/basictracer-go v1.0.0 // indirect
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
-	github.com/oracle/oci-go-sdk/v65 v65.14.0 // indirect
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20220728185956-7d7ee1838ab7 // indirect
+	github.com/oracle/oci-go-sdk/v65 v65.16.0 // indirect
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20220811202208-09b266c88d40 // indirect
 	github.com/pgavlin/goldmark v1.1.33-0.20200616210433-b5eb04559386 // indirect
 	github.com/pierrec/lz4 v2.6.0+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect

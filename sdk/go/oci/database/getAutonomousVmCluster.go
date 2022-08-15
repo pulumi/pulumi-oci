@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousVmCluster(ctx, &database.GetAutonomousVmClusterArgs{
-// 			AutonomousVmClusterId: oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousVmCluster(ctx, &database.GetAutonomousVmClusterArgs{
+//				AutonomousVmClusterId: oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAutonomousVmCluster(ctx *pulumi.Context, args *LookupAutonomousVmClusterArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousVmClusterResult, error) {
 	var rv LookupAutonomousVmClusterResult

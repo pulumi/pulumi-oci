@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetVirtualServices(ctx, &servicemesh.GetVirtualServicesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Virtual_service_id),
-// 			MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
-// 			Name:          pulumi.StringRef(_var.Virtual_service_name),
-// 			State:         pulumi.StringRef(_var.Virtual_service_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetVirtualServices(ctx, &servicemesh.GetVirtualServicesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Virtual_service_id),
+//				MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
+//				Name:          pulumi.StringRef(_var.Virtual_service_name),
+//				State:         pulumi.StringRef(_var.Virtual_service_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVirtualServices(ctx *pulumi.Context, args *GetVirtualServicesArgs, opts ...pulumi.InvokeOption) (*GetVirtualServicesResult, error) {
 	var rv GetVirtualServicesResult

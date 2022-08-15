@@ -13,6 +13,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class BdsInstanceClusterDetail
     {
+        /// <summary>
+        /// The URL of Ambari
+        /// </summary>
         public readonly string? AmbariUrl;
         /// <summary>
         /// Cloud SQL cell version
@@ -55,6 +58,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? JupyterHubUrl;
         /// <summary>
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        /// </summary>
+        public readonly string? OdhVersion;
+        /// <summary>
         /// Oracle Linux version installed in the cluster
         /// </summary>
         public readonly string? OsVersion;
@@ -91,6 +98,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string? jupyterHubUrl,
 
+            string? odhVersion,
+
             string? osVersion,
 
             string? timeCreated,
@@ -108,6 +117,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             DbVersion = dbVersion;
             HueServerUrl = hueServerUrl;
             JupyterHubUrl = jupyterHubUrl;
+            OdhVersion = odhVersion;
             OsVersion = osVersion;
             TimeCreated = timeCreated;
             TimeRefreshed = timeRefreshed;

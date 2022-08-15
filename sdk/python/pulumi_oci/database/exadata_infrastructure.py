@@ -406,6 +406,7 @@ class _ExadataInfrastructureState:
                  max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
                  max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 monthly_db_server_version: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -446,6 +447,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -517,6 +519,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if monthly_db_server_version is not None:
+            pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
         if netmask is not None:
             pulumi.set(__self__, "netmask", netmask)
         if ntp_servers is not None:
@@ -902,6 +906,18 @@ class _ExadataInfrastructureState:
     @memory_size_in_gbs.setter
     def memory_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "memory_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "monthly_db_server_version")
+
+    @monthly_db_server_version.setter
+    def monthly_db_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "monthly_db_server_version", value)
 
     @property
     @pulumi.getter
@@ -1302,6 +1318,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["max_db_node_storage_in_gbs"] = None
             __props__.__dict__["max_memory_in_gbs"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
+            __props__.__dict__["monthly_db_server_version"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_server_version"] = None
             __props__.__dict__["time_created"] = None
@@ -1346,6 +1363,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
             max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+            monthly_db_server_version: Optional[pulumi.Input[str]] = None,
             netmask: Optional[pulumi.Input[str]] = None,
             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
@@ -1391,6 +1409,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -1435,6 +1454,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["max_db_node_storage_in_gbs"] = max_db_node_storage_in_gbs
         __props__.__dict__["max_memory_in_gbs"] = max_memory_in_gbs
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
+        __props__.__dict__["monthly_db_server_version"] = monthly_db_server_version
         __props__.__dict__["netmask"] = netmask
         __props__.__dict__["ntp_servers"] = ntp_servers
         __props__.__dict__["shape"] = shape
@@ -1689,6 +1709,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         The memory allocated in GBs.
         """
         return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="monthlyDbServerVersion")
+    def monthly_db_server_version(self) -> pulumi.Output[str]:
+        """
+        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        """
+        return pulumi.get(self, "monthly_db_server_version")
 
     @property
     @pulumi.getter

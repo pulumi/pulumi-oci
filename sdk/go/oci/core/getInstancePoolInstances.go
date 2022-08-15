@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetInstancePoolInstances(ctx, &core.GetInstancePoolInstancesArgs{
-// 			CompartmentId:  _var.Compartment_id,
-// 			InstancePoolId: oci_core_instance_pool.Test_instance_pool.Id,
-// 			DisplayName:    pulumi.StringRef(_var.Instance_pool_instance_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetInstancePoolInstances(ctx, &core.GetInstancePoolInstancesArgs{
+//				CompartmentId:  _var.Compartment_id,
+//				InstancePoolId: oci_core_instance_pool.Test_instance_pool.Id,
+//				DisplayName:    pulumi.StringRef(_var.Instance_pool_instance_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstancePoolInstances(ctx *pulumi.Context, args *GetInstancePoolInstancesArgs, opts ...pulumi.InvokeOption) (*GetInstancePoolInstancesResult, error) {
 	var rv GetInstancePoolInstancesResult

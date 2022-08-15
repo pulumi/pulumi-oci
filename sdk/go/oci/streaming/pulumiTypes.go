@@ -20,7 +20,7 @@ type StreamPoolCustomEncryptionKey struct {
 // StreamPoolCustomEncryptionKeyInput is an input type that accepts StreamPoolCustomEncryptionKeyArgs and StreamPoolCustomEncryptionKeyOutput values.
 // You can construct a concrete instance of `StreamPoolCustomEncryptionKeyInput` via:
 //
-//          StreamPoolCustomEncryptionKeyArgs{...}
+//	StreamPoolCustomEncryptionKeyArgs{...}
 type StreamPoolCustomEncryptionKeyInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyPtrOut
 // StreamPoolCustomEncryptionKeyPtrInput is an input type that accepts StreamPoolCustomEncryptionKeyArgs, StreamPoolCustomEncryptionKeyPtr and StreamPoolCustomEncryptionKeyPtrOutput values.
 // You can construct a concrete instance of `StreamPoolCustomEncryptionKeyPtrInput` via:
 //
-//          StreamPoolCustomEncryptionKeyArgs{...}
+//	        StreamPoolCustomEncryptionKeyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type StreamPoolCustomEncryptionKeyPtrInput interface {
 	pulumi.Input
 
@@ -180,7 +180,7 @@ type StreamPoolKafkaSettings struct {
 // StreamPoolKafkaSettingsInput is an input type that accepts StreamPoolKafkaSettingsArgs and StreamPoolKafkaSettingsOutput values.
 // You can construct a concrete instance of `StreamPoolKafkaSettingsInput` via:
 //
-//          StreamPoolKafkaSettingsArgs{...}
+//	StreamPoolKafkaSettingsArgs{...}
 type StreamPoolKafkaSettingsInput interface {
 	pulumi.Input
 
@@ -222,11 +222,11 @@ func (i StreamPoolKafkaSettingsArgs) ToStreamPoolKafkaSettingsPtrOutputWithConte
 // StreamPoolKafkaSettingsPtrInput is an input type that accepts StreamPoolKafkaSettingsArgs, StreamPoolKafkaSettingsPtr and StreamPoolKafkaSettingsPtrOutput values.
 // You can construct a concrete instance of `StreamPoolKafkaSettingsPtrInput` via:
 //
-//          StreamPoolKafkaSettingsArgs{...}
+//	        StreamPoolKafkaSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type StreamPoolKafkaSettingsPtrInput interface {
 	pulumi.Input
 
@@ -372,7 +372,7 @@ type StreamPoolPrivateEndpointSettings struct {
 // StreamPoolPrivateEndpointSettingsInput is an input type that accepts StreamPoolPrivateEndpointSettingsArgs and StreamPoolPrivateEndpointSettingsOutput values.
 // You can construct a concrete instance of `StreamPoolPrivateEndpointSettingsInput` via:
 //
-//          StreamPoolPrivateEndpointSettingsArgs{...}
+//	StreamPoolPrivateEndpointSettingsArgs{...}
 type StreamPoolPrivateEndpointSettingsInput interface {
 	pulumi.Input
 
@@ -412,11 +412,11 @@ func (i StreamPoolPrivateEndpointSettingsArgs) ToStreamPoolPrivateEndpointSettin
 // StreamPoolPrivateEndpointSettingsPtrInput is an input type that accepts StreamPoolPrivateEndpointSettingsArgs, StreamPoolPrivateEndpointSettingsPtr and StreamPoolPrivateEndpointSettingsPtrOutput values.
 // You can construct a concrete instance of `StreamPoolPrivateEndpointSettingsPtrInput` via:
 //
-//          StreamPoolPrivateEndpointSettingsArgs{...}
+//	        StreamPoolPrivateEndpointSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type StreamPoolPrivateEndpointSettingsPtrInput interface {
 	pulumi.Input
 
@@ -557,7 +557,7 @@ type GetConnectHarnessesConnectHarness struct {
 // GetConnectHarnessesConnectHarnessInput is an input type that accepts GetConnectHarnessesConnectHarnessArgs and GetConnectHarnessesConnectHarnessOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesConnectHarnessInput` via:
 //
-//          GetConnectHarnessesConnectHarnessArgs{...}
+//	GetConnectHarnessesConnectHarnessArgs{...}
 type GetConnectHarnessesConnectHarnessInput interface {
 	pulumi.Input
 
@@ -599,7 +599,7 @@ func (i GetConnectHarnessesConnectHarnessArgs) ToGetConnectHarnessesConnectHarne
 // GetConnectHarnessesConnectHarnessArrayInput is an input type that accepts GetConnectHarnessesConnectHarnessArray and GetConnectHarnessesConnectHarnessArrayOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesConnectHarnessArrayInput` via:
 //
-//          GetConnectHarnessesConnectHarnessArray{ GetConnectHarnessesConnectHarnessArgs{...} }
+//	GetConnectHarnessesConnectHarnessArray{ GetConnectHarnessesConnectHarnessArgs{...} }
 type GetConnectHarnessesConnectHarnessArrayInput interface {
 	pulumi.Input
 
@@ -705,7 +705,7 @@ type GetConnectHarnessesFilter struct {
 // GetConnectHarnessesFilterInput is an input type that accepts GetConnectHarnessesFilterArgs and GetConnectHarnessesFilterOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesFilterInput` via:
 //
-//          GetConnectHarnessesFilterArgs{...}
+//	GetConnectHarnessesFilterArgs{...}
 type GetConnectHarnessesFilterInput interface {
 	pulumi.Input
 
@@ -735,7 +735,7 @@ func (i GetConnectHarnessesFilterArgs) ToGetConnectHarnessesFilterOutputWithCont
 // GetConnectHarnessesFilterArrayInput is an input type that accepts GetConnectHarnessesFilterArray and GetConnectHarnessesFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesFilterArrayInput` via:
 //
-//          GetConnectHarnessesFilterArray{ GetConnectHarnessesFilterArgs{...} }
+//	GetConnectHarnessesFilterArray{ GetConnectHarnessesFilterArgs{...} }
 type GetConnectHarnessesFilterArrayInput interface {
 	pulumi.Input
 
@@ -814,7 +814,7 @@ type GetStreamPoolCustomEncryptionKey struct {
 // GetStreamPoolCustomEncryptionKeyInput is an input type that accepts GetStreamPoolCustomEncryptionKeyArgs and GetStreamPoolCustomEncryptionKeyOutput values.
 // You can construct a concrete instance of `GetStreamPoolCustomEncryptionKeyInput` via:
 //
-//          GetStreamPoolCustomEncryptionKeyArgs{...}
+//	GetStreamPoolCustomEncryptionKeyArgs{...}
 type GetStreamPoolCustomEncryptionKeyInput interface {
 	pulumi.Input
 
@@ -844,7 +844,7 @@ func (i GetStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolCustomEncryptionKey
 // GetStreamPoolCustomEncryptionKeyArrayInput is an input type that accepts GetStreamPoolCustomEncryptionKeyArray and GetStreamPoolCustomEncryptionKeyArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolCustomEncryptionKeyArrayInput` via:
 //
-//          GetStreamPoolCustomEncryptionKeyArray{ GetStreamPoolCustomEncryptionKeyArgs{...} }
+//	GetStreamPoolCustomEncryptionKeyArray{ GetStreamPoolCustomEncryptionKeyArgs{...} }
 type GetStreamPoolCustomEncryptionKeyArrayInput interface {
 	pulumi.Input
 
@@ -924,7 +924,7 @@ type GetStreamPoolKafkaSetting struct {
 // GetStreamPoolKafkaSettingInput is an input type that accepts GetStreamPoolKafkaSettingArgs and GetStreamPoolKafkaSettingOutput values.
 // You can construct a concrete instance of `GetStreamPoolKafkaSettingInput` via:
 //
-//          GetStreamPoolKafkaSettingArgs{...}
+//	GetStreamPoolKafkaSettingArgs{...}
 type GetStreamPoolKafkaSettingInput interface {
 	pulumi.Input
 
@@ -958,7 +958,7 @@ func (i GetStreamPoolKafkaSettingArgs) ToGetStreamPoolKafkaSettingOutputWithCont
 // GetStreamPoolKafkaSettingArrayInput is an input type that accepts GetStreamPoolKafkaSettingArray and GetStreamPoolKafkaSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolKafkaSettingArrayInput` via:
 //
-//          GetStreamPoolKafkaSettingArray{ GetStreamPoolKafkaSettingArgs{...} }
+//	GetStreamPoolKafkaSettingArray{ GetStreamPoolKafkaSettingArgs{...} }
 type GetStreamPoolKafkaSettingArrayInput interface {
 	pulumi.Input
 
@@ -1046,7 +1046,7 @@ type GetStreamPoolPrivateEndpointSetting struct {
 // GetStreamPoolPrivateEndpointSettingInput is an input type that accepts GetStreamPoolPrivateEndpointSettingArgs and GetStreamPoolPrivateEndpointSettingOutput values.
 // You can construct a concrete instance of `GetStreamPoolPrivateEndpointSettingInput` via:
 //
-//          GetStreamPoolPrivateEndpointSettingArgs{...}
+//	GetStreamPoolPrivateEndpointSettingArgs{...}
 type GetStreamPoolPrivateEndpointSettingInput interface {
 	pulumi.Input
 
@@ -1078,7 +1078,7 @@ func (i GetStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolPrivateEndpointS
 // GetStreamPoolPrivateEndpointSettingArrayInput is an input type that accepts GetStreamPoolPrivateEndpointSettingArray and GetStreamPoolPrivateEndpointSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolPrivateEndpointSettingArrayInput` via:
 //
-//          GetStreamPoolPrivateEndpointSettingArray{ GetStreamPoolPrivateEndpointSettingArgs{...} }
+//	GetStreamPoolPrivateEndpointSettingArray{ GetStreamPoolPrivateEndpointSettingArgs{...} }
 type GetStreamPoolPrivateEndpointSettingArrayInput interface {
 	pulumi.Input
 
@@ -1159,7 +1159,7 @@ type GetStreamPoolsFilter struct {
 // GetStreamPoolsFilterInput is an input type that accepts GetStreamPoolsFilterArgs and GetStreamPoolsFilterOutput values.
 // You can construct a concrete instance of `GetStreamPoolsFilterInput` via:
 //
-//          GetStreamPoolsFilterArgs{...}
+//	GetStreamPoolsFilterArgs{...}
 type GetStreamPoolsFilterInput interface {
 	pulumi.Input
 
@@ -1189,7 +1189,7 @@ func (i GetStreamPoolsFilterArgs) ToGetStreamPoolsFilterOutputWithContext(ctx co
 // GetStreamPoolsFilterArrayInput is an input type that accepts GetStreamPoolsFilterArray and GetStreamPoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsFilterArrayInput` via:
 //
-//          GetStreamPoolsFilterArray{ GetStreamPoolsFilterArgs{...} }
+//	GetStreamPoolsFilterArray{ GetStreamPoolsFilterArgs{...} }
 type GetStreamPoolsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1290,7 +1290,7 @@ type GetStreamPoolsStreamPool struct {
 // GetStreamPoolsStreamPoolInput is an input type that accepts GetStreamPoolsStreamPoolArgs and GetStreamPoolsStreamPoolOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolInput` via:
 //
-//          GetStreamPoolsStreamPoolArgs{...}
+//	GetStreamPoolsStreamPoolArgs{...}
 type GetStreamPoolsStreamPoolInput interface {
 	pulumi.Input
 
@@ -1342,7 +1342,7 @@ func (i GetStreamPoolsStreamPoolArgs) ToGetStreamPoolsStreamPoolOutputWithContex
 // GetStreamPoolsStreamPoolArrayInput is an input type that accepts GetStreamPoolsStreamPoolArray and GetStreamPoolsStreamPoolArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolArrayInput` via:
 //
-//          GetStreamPoolsStreamPoolArray{ GetStreamPoolsStreamPoolArgs{...} }
+//	GetStreamPoolsStreamPoolArray{ GetStreamPoolsStreamPoolArgs{...} }
 type GetStreamPoolsStreamPoolArrayInput interface {
 	pulumi.Input
 
@@ -1477,7 +1477,7 @@ type GetStreamPoolsStreamPoolCustomEncryptionKey struct {
 // GetStreamPoolsStreamPoolCustomEncryptionKeyInput is an input type that accepts GetStreamPoolsStreamPoolCustomEncryptionKeyArgs and GetStreamPoolsStreamPoolCustomEncryptionKeyOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolCustomEncryptionKeyInput` via:
 //
-//          GetStreamPoolsStreamPoolCustomEncryptionKeyArgs{...}
+//	GetStreamPoolsStreamPoolCustomEncryptionKeyArgs{...}
 type GetStreamPoolsStreamPoolCustomEncryptionKeyInput interface {
 	pulumi.Input
 
@@ -1507,7 +1507,7 @@ func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolsStreamP
 // GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput is an input type that accepts GetStreamPoolsStreamPoolCustomEncryptionKeyArray and GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput` via:
 //
-//          GetStreamPoolsStreamPoolCustomEncryptionKeyArray{ GetStreamPoolsStreamPoolCustomEncryptionKeyArgs{...} }
+//	GetStreamPoolsStreamPoolCustomEncryptionKeyArray{ GetStreamPoolsStreamPoolCustomEncryptionKeyArgs{...} }
 type GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput interface {
 	pulumi.Input
 
@@ -1587,7 +1587,7 @@ type GetStreamPoolsStreamPoolKafkaSetting struct {
 // GetStreamPoolsStreamPoolKafkaSettingInput is an input type that accepts GetStreamPoolsStreamPoolKafkaSettingArgs and GetStreamPoolsStreamPoolKafkaSettingOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolKafkaSettingInput` via:
 //
-//          GetStreamPoolsStreamPoolKafkaSettingArgs{...}
+//	GetStreamPoolsStreamPoolKafkaSettingArgs{...}
 type GetStreamPoolsStreamPoolKafkaSettingInput interface {
 	pulumi.Input
 
@@ -1621,7 +1621,7 @@ func (i GetStreamPoolsStreamPoolKafkaSettingArgs) ToGetStreamPoolsStreamPoolKafk
 // GetStreamPoolsStreamPoolKafkaSettingArrayInput is an input type that accepts GetStreamPoolsStreamPoolKafkaSettingArray and GetStreamPoolsStreamPoolKafkaSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolKafkaSettingArrayInput` via:
 //
-//          GetStreamPoolsStreamPoolKafkaSettingArray{ GetStreamPoolsStreamPoolKafkaSettingArgs{...} }
+//	GetStreamPoolsStreamPoolKafkaSettingArray{ GetStreamPoolsStreamPoolKafkaSettingArgs{...} }
 type GetStreamPoolsStreamPoolKafkaSettingArrayInput interface {
 	pulumi.Input
 
@@ -1709,7 +1709,7 @@ type GetStreamPoolsStreamPoolPrivateEndpointSetting struct {
 // GetStreamPoolsStreamPoolPrivateEndpointSettingInput is an input type that accepts GetStreamPoolsStreamPoolPrivateEndpointSettingArgs and GetStreamPoolsStreamPoolPrivateEndpointSettingOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolPrivateEndpointSettingInput` via:
 //
-//          GetStreamPoolsStreamPoolPrivateEndpointSettingArgs{...}
+//	GetStreamPoolsStreamPoolPrivateEndpointSettingArgs{...}
 type GetStreamPoolsStreamPoolPrivateEndpointSettingInput interface {
 	pulumi.Input
 
@@ -1741,7 +1741,7 @@ func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolsStre
 // GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput is an input type that accepts GetStreamPoolsStreamPoolPrivateEndpointSettingArray and GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput` via:
 //
-//          GetStreamPoolsStreamPoolPrivateEndpointSettingArray{ GetStreamPoolsStreamPoolPrivateEndpointSettingArgs{...} }
+//	GetStreamPoolsStreamPoolPrivateEndpointSettingArray{ GetStreamPoolsStreamPoolPrivateEndpointSettingArgs{...} }
 type GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput interface {
 	pulumi.Input
 
@@ -1822,7 +1822,7 @@ type GetStreamsFilter struct {
 // GetStreamsFilterInput is an input type that accepts GetStreamsFilterArgs and GetStreamsFilterOutput values.
 // You can construct a concrete instance of `GetStreamsFilterInput` via:
 //
-//          GetStreamsFilterArgs{...}
+//	GetStreamsFilterArgs{...}
 type GetStreamsFilterInput interface {
 	pulumi.Input
 
@@ -1852,7 +1852,7 @@ func (i GetStreamsFilterArgs) ToGetStreamsFilterOutputWithContext(ctx context.Co
 // GetStreamsFilterArrayInput is an input type that accepts GetStreamsFilterArray and GetStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamsFilterArrayInput` via:
 //
-//          GetStreamsFilterArray{ GetStreamsFilterArgs{...} }
+//	GetStreamsFilterArray{ GetStreamsFilterArgs{...} }
 type GetStreamsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1951,7 +1951,7 @@ type GetStreamsStream struct {
 // GetStreamsStreamInput is an input type that accepts GetStreamsStreamArgs and GetStreamsStreamOutput values.
 // You can construct a concrete instance of `GetStreamsStreamInput` via:
 //
-//          GetStreamsStreamArgs{...}
+//	GetStreamsStreamArgs{...}
 type GetStreamsStreamInput interface {
 	pulumi.Input
 
@@ -2001,7 +2001,7 @@ func (i GetStreamsStreamArgs) ToGetStreamsStreamOutputWithContext(ctx context.Co
 // GetStreamsStreamArrayInput is an input type that accepts GetStreamsStreamArray and GetStreamsStreamArrayOutput values.
 // You can construct a concrete instance of `GetStreamsStreamArrayInput` via:
 //
-//          GetStreamsStreamArray{ GetStreamsStreamArgs{...} }
+//	GetStreamsStreamArray{ GetStreamsStreamArgs{...} }
 type GetStreamsStreamArrayInput interface {
 	pulumi.Input
 

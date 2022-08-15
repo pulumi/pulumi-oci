@@ -24,23 +24,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewIdpGroupMapping(ctx, "testIdpGroupMapping", &Identity.IdpGroupMappingArgs{
-// 			GroupId:            pulumi.Any(oci_identity_group.Test_group.Id),
-// 			IdentityProviderId: pulumi.Any(oci_identity_identity_provider.Test_identity_provider.Id),
-// 			IdpGroupName:       pulumi.Any(_var.Idp_group_mapping_idp_group_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewIdpGroupMapping(ctx, "testIdpGroupMapping", &Identity.IdpGroupMappingArgs{
+//				GroupId:            pulumi.Any(oci_identity_group.Test_group.Id),
+//				IdentityProviderId: pulumi.Any(oci_identity_identity_provider.Test_identity_provider.Id),
+//				IdpGroupName:       pulumi.Any(_var.Idp_group_mapping_idp_group_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // IdpGroupMappings can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+//
+//	$ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
+//
 // ```
 type IdpGroupMapping struct {
 	pulumi.CustomResourceState
@@ -189,7 +194,7 @@ func (i *IdpGroupMapping) ToIdpGroupMappingOutputWithContext(ctx context.Context
 // IdpGroupMappingArrayInput is an input type that accepts IdpGroupMappingArray and IdpGroupMappingArrayOutput values.
 // You can construct a concrete instance of `IdpGroupMappingArrayInput` via:
 //
-//          IdpGroupMappingArray{ IdpGroupMappingArgs{...} }
+//	IdpGroupMappingArray{ IdpGroupMappingArgs{...} }
 type IdpGroupMappingArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +219,7 @@ func (i IdpGroupMappingArray) ToIdpGroupMappingArrayOutputWithContext(ctx contex
 // IdpGroupMappingMapInput is an input type that accepts IdpGroupMappingMap and IdpGroupMappingMapOutput values.
 // You can construct a concrete instance of `IdpGroupMappingMapInput` via:
 //
-//          IdpGroupMappingMap{ "key": IdpGroupMappingArgs{...} }
+//	IdpGroupMappingMap{ "key": IdpGroupMappingArgs{...} }
 type IdpGroupMappingMapInput interface {
 	pulumi.Input
 

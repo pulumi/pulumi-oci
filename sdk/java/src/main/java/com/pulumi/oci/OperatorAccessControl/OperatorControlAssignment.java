@@ -190,6 +190,20 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
         return this.isLogForwarded;
     }
     /**
+     * More in detail about the lifeCycleState.
+     * 
+     */
+    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return More in detail about the lifeCycleState.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * The OCID of the operator control that is being assigned to a target resource.
      * 
      */

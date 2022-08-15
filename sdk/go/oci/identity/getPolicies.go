@@ -24,23 +24,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetPolicies(ctx, &identity.GetPoliciesArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 			Name:          pulumi.StringRef(_var.Policy_name),
-// 			State:         pulumi.StringRef(_var.Policy_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetPolicies(ctx, &identity.GetPoliciesArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//				Name:          pulumi.StringRef(_var.Policy_name),
+//				State:         pulumi.StringRef(_var.Policy_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPolicies(ctx *pulumi.Context, args *GetPoliciesArgs, opts ...pulumi.InvokeOption) (*GetPoliciesResult, error) {
 	var rv GetPoliciesResult

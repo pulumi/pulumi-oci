@@ -85,7 +85,7 @@ export class DedicatedVantagePoint extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Details of DVP Stack.
+     * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
     public readonly dvpStackDetails!: pulumi.Output<outputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails>;
     /**
@@ -189,7 +189,7 @@ export interface DedicatedVantagePointState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Details of DVP Stack.
+     * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
     dvpStackDetails?: pulumi.Input<inputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails>;
     /**
@@ -239,7 +239,7 @@ export interface DedicatedVantagePointArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) Details of DVP Stack.
+     * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
     dvpStackDetails: pulumi.Input<inputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails>;
     /**

@@ -24,24 +24,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GenericArtifactsContent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GenericArtifactsContent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GenericArtifactsContent.NewArtifactByPath(ctx, "testArtifactByPath", &GenericArtifactsContent.ArtifactByPathArgs{
-// 			ArtifactPath: pulumi.Any(_var.Artifact_path),
-// 			RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),
-// 			Version:      pulumi.Any(_var.Version),
-// 			Source:       pulumi.Any(_var.Source),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GenericArtifactsContent.NewArtifactByPath(ctx, "testArtifactByPath", &GenericArtifactsContent.ArtifactByPathArgs{
+//				ArtifactPath: pulumi.Any(_var.Artifact_path),
+//				RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),
+//				Version:      pulumi.Any(_var.Version),
+//				Source:       pulumi.Any(_var.Source),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type ArtifactByPath struct {
 	pulumi.CustomResourceState
@@ -229,7 +232,7 @@ func (i *ArtifactByPath) ToArtifactByPathOutputWithContext(ctx context.Context) 
 // ArtifactByPathArrayInput is an input type that accepts ArtifactByPathArray and ArtifactByPathArrayOutput values.
 // You can construct a concrete instance of `ArtifactByPathArrayInput` via:
 //
-//          ArtifactByPathArray{ ArtifactByPathArgs{...} }
+//	ArtifactByPathArray{ ArtifactByPathArgs{...} }
 type ArtifactByPathArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +257,7 @@ func (i ArtifactByPathArray) ToArtifactByPathArrayOutputWithContext(ctx context.
 // ArtifactByPathMapInput is an input type that accepts ArtifactByPathMap and ArtifactByPathMapOutput values.
 // You can construct a concrete instance of `ArtifactByPathMapInput` via:
 //
-//          ArtifactByPathMap{ "key": ArtifactByPathArgs{...} }
+//	ArtifactByPathMap{ "key": ArtifactByPathArgs{...} }
 type ArtifactByPathMapInput interface {
 	pulumi.Input
 

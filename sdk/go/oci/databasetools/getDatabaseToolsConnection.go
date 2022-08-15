@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.GetDatabaseToolsConnection(ctx, &databasetools.GetDatabaseToolsConnectionArgs{
-// 			DatabaseToolsConnectionId: oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.GetDatabaseToolsConnection(ctx, &databasetools.GetDatabaseToolsConnectionArgs{
+//				DatabaseToolsConnectionId: oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDatabaseToolsConnection(ctx *pulumi.Context, args *LookupDatabaseToolsConnectionArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseToolsConnectionResult, error) {
 	var rv LookupDatabaseToolsConnectionResult

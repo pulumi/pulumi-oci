@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetNetworkSecurityGroupVnics(ctx, &core.GetNetworkSecurityGroupVnicsArgs{
-// 			NetworkSecurityGroupId: oci_core_network_security_group.Test_network_security_group.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetNetworkSecurityGroupVnics(ctx, &core.GetNetworkSecurityGroupVnicsArgs{
+//				NetworkSecurityGroupId: oci_core_network_security_group.Test_network_security_group.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkSecurityGroupVnics(ctx *pulumi.Context, args *GetNetworkSecurityGroupVnicsArgs, opts ...pulumi.InvokeOption) (*GetNetworkSecurityGroupVnicsResult, error) {
 	var rv GetNetworkSecurityGroupVnicsResult

@@ -2,10 +2,9 @@ module github.com/oracle/terraform-provider-oci/shim
 
 go 1.18
 
-
 require (
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.14.0
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20220728185956-7d7ee1838ab7
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20220811202208-09b266c88d40
 )
 
 require (
@@ -43,7 +42,7 @@ require (
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/oklog/run v1.0.0 // indirect
-	github.com/oracle/oci-go-sdk/v65 v65.14.0 // indirect
+	github.com/oracle/oci-go-sdk/v65 v65.16.0 // indirect
 	github.com/sony/gobreaker v0.5.0 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	github.com/vmihailenco/msgpack/v4 v4.3.12 // indirect

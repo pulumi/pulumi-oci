@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.GetFleet(ctx, &jms.GetFleetArgs{
-// 			FleetId: oci_jms_fleet.Test_fleet.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.GetFleet(ctx, &jms.GetFleetArgs{
+//				FleetId: oci_jms_fleet.Test_fleet.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupFleet(ctx *pulumi.Context, args *LookupFleetArgs, opts ...pulumi.InvokeOption) (*LookupFleetResult, error) {
 	var rv LookupFleetResult
@@ -76,6 +79,8 @@ type LookupFleetResult struct {
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetInventoryLog `pulumi:"inventoryLogs"`
+	// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetOperationLog `pulumi:"operationLogs"`
 	// The lifecycle state of the Fleet.
@@ -181,6 +186,11 @@ func (o LookupFleetResultOutput) Id() pulumi.StringOutput {
 // Custom Log for inventory or operation log.
 func (o LookupFleetResultOutput) InventoryLogs() GetFleetInventoryLogArrayOutput {
 	return o.ApplyT(func(v LookupFleetResult) []GetFleetInventoryLog { return v.InventoryLogs }).(GetFleetInventoryLogArrayOutput)
+}
+
+// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+func (o LookupFleetResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
 }
 
 // Custom Log for inventory or operation log.

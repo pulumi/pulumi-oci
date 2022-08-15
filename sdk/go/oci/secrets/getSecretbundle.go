@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Secrets"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Secrets"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Secrets.GetSecretbundle(ctx, &secrets.GetSecretbundleArgs{
-// 			SecretId:          oci_vault_secret.Test_secret.Id,
-// 			SecretVersionName: pulumi.StringRef(oci_vault_secret_version.Test_secret_version.Name),
-// 			Stage:             pulumi.StringRef(_var.Secretbundle_stage),
-// 			VersionNumber:     pulumi.StringRef(_var.Secretbundle_version_number),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Secrets.GetSecretbundle(ctx, &secrets.GetSecretbundleArgs{
+//				SecretId:          oci_vault_secret.Test_secret.Id,
+//				SecretVersionName: pulumi.StringRef(oci_vault_secret_version.Test_secret_version.Name),
+//				Stage:             pulumi.StringRef(_var.Secretbundle_stage),
+//				VersionNumber:     pulumi.StringRef(_var.Secretbundle_version_number),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecretbundle(ctx *pulumi.Context, args *GetSecretbundleArgs, opts ...pulumi.InvokeOption) (*GetSecretbundleResult, error) {
 	var rv GetSecretbundleResult

@@ -23,26 +23,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewSign(ctx, "testSign", &Kms.SignArgs{
-// 			CryptoEndpoint:   pulumi.Any(_var.Sign_message_crypto_endpoint),
-// 			KeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
-// 			Message:          pulumi.Any(_var.Sign_message),
-// 			SigningAlgorithm: pulumi.Any(_var.Sign_signing_algorithm),
-// 			KeyVersionId:     pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 			MessageType:      pulumi.Any(_var.Sign_message_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewSign(ctx, "testSign", &Kms.SignArgs{
+//				CryptoEndpoint:   pulumi.Any(_var.Sign_message_crypto_endpoint),
+//				KeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
+//				Message:          pulumi.Any(_var.Sign_message),
+//				SigningAlgorithm: pulumi.Any(_var.Sign_signing_algorithm),
+//				KeyVersionId:     pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//				MessageType:      pulumi.Any(_var.Sign_message_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Sign can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Kms/sign:Sign test_sign "id"
+//
+//	$ pulumi import oci:Kms/sign:Sign test_sign "id"
+//
 // ```
 type Sign struct {
 	pulumi.CustomResourceState
@@ -206,7 +211,7 @@ func (i *Sign) ToSignOutputWithContext(ctx context.Context) SignOutput {
 // SignArrayInput is an input type that accepts SignArray and SignArrayOutput values.
 // You can construct a concrete instance of `SignArrayInput` via:
 //
-//          SignArray{ SignArgs{...} }
+//	SignArray{ SignArgs{...} }
 type SignArrayInput interface {
 	pulumi.Input
 
@@ -231,7 +236,7 @@ func (i SignArray) ToSignArrayOutputWithContext(ctx context.Context) SignArrayOu
 // SignMapInput is an input type that accepts SignMap and SignMapOutput values.
 // You can construct a concrete instance of `SignMapInput` via:
 //
-//          SignMap{ "key": SignArgs{...} }
+//	SignMap{ "key": SignArgs{...} }
 type SignMapInput interface {
 	pulumi.Input
 

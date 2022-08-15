@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
 //
-// List the IAM work requests in compartment
+// # List the IAM work requests in compartment
 //
 // - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
 // - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
@@ -23,22 +23,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetIamWorkRequests(ctx, &identity.GetIamWorkRequestsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			ResourceIdentifier: pulumi.StringRef(_var.Iam_work_request_resource_identifier),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetIamWorkRequests(ctx, &identity.GetIamWorkRequestsArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				ResourceIdentifier: pulumi.StringRef(_var.Iam_work_request_resource_identifier),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIamWorkRequests(ctx *pulumi.Context, args *GetIamWorkRequestsArgs, opts ...pulumi.InvokeOption) (*GetIamWorkRequestsResult, error) {
 	var rv GetIamWorkRequestsResult

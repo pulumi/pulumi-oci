@@ -32,24 +32,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditProfileAnalytic(ctx, &datasafe.GetAuditProfileAnalyticArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Audit_profile_analytic_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_profile_analytic_compartment_id_in_subtree),
-// 			GroupBies:              _var.Audit_profile_analytic_group_by,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditProfileAnalytic(ctx, &datasafe.GetAuditProfileAnalyticArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Audit_profile_analytic_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_profile_analytic_compartment_id_in_subtree),
+//				GroupBies:              _var.Audit_profile_analytic_group_by,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAuditProfileAnalytic(ctx *pulumi.Context, args *GetAuditProfileAnalyticArgs, opts ...pulumi.InvokeOption) (*GetAuditProfileAnalyticResult, error) {
 	var rv GetAuditProfileAnalyticResult

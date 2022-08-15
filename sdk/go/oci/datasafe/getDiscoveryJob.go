@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetDiscoveryJob(ctx, &datasafe.GetDiscoveryJobArgs{
-// 			DiscoveryJobId: oci_data_safe_discovery_job.Test_discovery_job.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetDiscoveryJob(ctx, &datasafe.GetDiscoveryJobArgs{
+//				DiscoveryJobId: oci_data_safe_discovery_job.Test_discovery_job.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDiscoveryJob(ctx *pulumi.Context, args *GetDiscoveryJobArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryJobResult, error) {
 	var rv GetDiscoveryJobResult

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataFlow.GetRunLog(ctx, &dataflow.GetRunLogArgs{
-// 			Name:  _var.Run_log_name,
-// 			RunId: oci_dataflow_run.Test_run.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataFlow.GetRunLog(ctx, &dataflow.GetRunLogArgs{
+//				Name:  _var.Run_log_name,
+//				RunId: oci_dataflow_run.Test_run.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRunLog(ctx *pulumi.Context, args *GetRunLogArgs, opts ...pulumi.InvokeOption) (*GetRunLogResult, error) {
 	var rv GetRunLogResult

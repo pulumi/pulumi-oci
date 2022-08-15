@@ -62,6 +62,10 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// </summary>
         public readonly bool IsLogForwarded;
         /// <summary>
+        /// More in detail about the lifeCycleState.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// The OCID of the operator control.
         /// </summary>
         public readonly string OperatorControlId;
@@ -144,6 +148,8 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
 
             bool isLogForwarded,
 
+            string lifecycleDetails,
+
             string operatorControlId,
 
             string remoteSyslogServerAddress,
@@ -184,6 +190,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
             IsAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
             IsEnforcedAlways = isEnforcedAlways;
             IsLogForwarded = isLogForwarded;
+            LifecycleDetails = lifecycleDetails;
             OperatorControlId = operatorControlId;
             RemoteSyslogServerAddress = remoteSyslogServerAddress;
             RemoteSyslogServerCaCert = remoteSyslogServerCaCert;

@@ -30,22 +30,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewAuthToken(ctx, "testAuthToken", &Identity.AuthTokenArgs{
-// 			Description: pulumi.Any(_var.Auth_token_description),
-// 			UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewAuthToken(ctx, "testAuthToken", &Identity.AuthTokenArgs{
+//				Description: pulumi.Any(_var.Auth_token_description),
+//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // AuthTokens can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
+//
+//	$ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
+//
 // ```
 type AuthToken struct {
 	pulumi.CustomResourceState
@@ -187,7 +192,7 @@ func (i *AuthToken) ToAuthTokenOutputWithContext(ctx context.Context) AuthTokenO
 // AuthTokenArrayInput is an input type that accepts AuthTokenArray and AuthTokenArrayOutput values.
 // You can construct a concrete instance of `AuthTokenArrayInput` via:
 //
-//          AuthTokenArray{ AuthTokenArgs{...} }
+//	AuthTokenArray{ AuthTokenArgs{...} }
 type AuthTokenArrayInput interface {
 	pulumi.Input
 
@@ -212,7 +217,7 @@ func (i AuthTokenArray) ToAuthTokenArrayOutputWithContext(ctx context.Context) A
 // AuthTokenMapInput is an input type that accepts AuthTokenMap and AuthTokenMapOutput values.
 // You can construct a concrete instance of `AuthTokenMapInput` via:
 //
-//          AuthTokenMap{ "key": AuthTokenArgs{...} }
+//	AuthTokenMap{ "key": AuthTokenArgs{...} }
 type AuthTokenMapInput interface {
 	pulumi.Input
 

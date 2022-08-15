@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.NewSecurityRecipe(ctx, "testSecurityRecipe", &CloudGuard.SecurityRecipeArgs{
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			DisplayName:      pulumi.Any(_var.Security_recipe_display_name),
-// 			SecurityPolicies: pulumi.Any(_var.Security_recipe_security_policies),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Security_recipe_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.NewSecurityRecipe(ctx, "testSecurityRecipe", &CloudGuard.SecurityRecipeArgs{
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				DisplayName:      pulumi.Any(_var.Security_recipe_display_name),
+//				SecurityPolicies: pulumi.Any(_var.Security_recipe_security_policies),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Security_recipe_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // SecurityRecipes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
+//
+//	$ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
+//
 // ```
 type SecurityRecipe struct {
 	pulumi.CustomResourceState
@@ -235,7 +240,7 @@ func (i *SecurityRecipe) ToSecurityRecipeOutputWithContext(ctx context.Context) 
 // SecurityRecipeArrayInput is an input type that accepts SecurityRecipeArray and SecurityRecipeArrayOutput values.
 // You can construct a concrete instance of `SecurityRecipeArrayInput` via:
 //
-//          SecurityRecipeArray{ SecurityRecipeArgs{...} }
+//	SecurityRecipeArray{ SecurityRecipeArgs{...} }
 type SecurityRecipeArrayInput interface {
 	pulumi.Input
 
@@ -260,7 +265,7 @@ func (i SecurityRecipeArray) ToSecurityRecipeArrayOutputWithContext(ctx context.
 // SecurityRecipeMapInput is an input type that accepts SecurityRecipeMap and SecurityRecipeMapOutput values.
 // You can construct a concrete instance of `SecurityRecipeMapInput` via:
 //
-//          SecurityRecipeMap{ "key": SecurityRecipeArgs{...} }
+//	SecurityRecipeMap{ "key": SecurityRecipeArgs{...} }
 type SecurityRecipeMapInput interface {
 	pulumi.Input
 

@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetOperationsInsightsPrivateEndpoints(ctx, &opsi.GetOperationsInsightsPrivateEndpointsArgs{
-// 			CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Operations_insights_private_endpoint_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Operations_insights_private_endpoint_display_name),
-// 			IsUsedForRacDbs:        pulumi.BoolRef(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
-// 			OpsiPrivateEndpointId:  pulumi.StringRef(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-// 			States:                 _var.Operations_insights_private_endpoint_state,
-// 			VcnId:                  pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetOperationsInsightsPrivateEndpoints(ctx, &opsi.GetOperationsInsightsPrivateEndpointsArgs{
+//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Operations_insights_private_endpoint_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Operations_insights_private_endpoint_display_name),
+//				IsUsedForRacDbs:        pulumi.BoolRef(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
+//				OpsiPrivateEndpointId:  pulumi.StringRef(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//				States:                 _var.Operations_insights_private_endpoint_state,
+//				VcnId:                  pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOperationsInsightsPrivateEndpoints(ctx *pulumi.Context, args *GetOperationsInsightsPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetOperationsInsightsPrivateEndpointsResult, error) {
 	var rv GetOperationsInsightsPrivateEndpointsResult

@@ -35,30 +35,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewCpe(ctx, "testCpe", &Core.CpeArgs{
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			IpAddress:        pulumi.Any(_var.Cpe_ip_address),
-// 			CpeDeviceShapeId: pulumi.Any(data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Cpe_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewCpe(ctx, "testCpe", &Core.CpeArgs{
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				IpAddress:        pulumi.Any(_var.Cpe_ip_address),
+//				CpeDeviceShapeId: pulumi.Any(data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Cpe_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -66,7 +69,9 @@ import (
 // Cpes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
+//
+//	$ pulumi import oci:Core/cpe:Cpe test_cpe "id"
+//
 // ```
 type Cpe struct {
 	pulumi.CustomResourceState
@@ -216,7 +221,7 @@ func (i *Cpe) ToCpeOutputWithContext(ctx context.Context) CpeOutput {
 // CpeArrayInput is an input type that accepts CpeArray and CpeArrayOutput values.
 // You can construct a concrete instance of `CpeArrayInput` via:
 //
-//          CpeArray{ CpeArgs{...} }
+//	CpeArray{ CpeArgs{...} }
 type CpeArrayInput interface {
 	pulumi.Input
 
@@ -241,7 +246,7 @@ func (i CpeArray) ToCpeArrayOutputWithContext(ctx context.Context) CpeArrayOutpu
 // CpeMapInput is an input type that accepts CpeMap and CpeMapOutput values.
 // You can construct a concrete instance of `CpeMapInput` via:
 //
-//          CpeMap{ "key": CpeArgs{...} }
+//	CpeMap{ "key": CpeArgs{...} }
 type CpeMapInput interface {
 	pulumi.Input
 

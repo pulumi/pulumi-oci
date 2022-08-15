@@ -24,24 +24,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.GetLoadBalancers(ctx, &loadbalancer.GetLoadBalancersArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Detail:        pulumi.StringRef(_var.Load_balancer_detail),
-// 			DisplayName:   pulumi.StringRef(_var.Load_balancer_display_name),
-// 			State:         pulumi.StringRef(_var.Load_balancer_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.GetLoadBalancers(ctx, &loadbalancer.GetLoadBalancersArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Detail:        pulumi.StringRef(_var.Load_balancer_detail),
+//				DisplayName:   pulumi.StringRef(_var.Load_balancer_display_name),
+//				State:         pulumi.StringRef(_var.Load_balancer_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLoadBalancers(ctx *pulumi.Context, args *GetLoadBalancersArgs, opts ...pulumi.InvokeOption) (*GetLoadBalancersResult, error) {
 	var rv GetLoadBalancersResult

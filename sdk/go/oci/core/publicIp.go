@@ -41,31 +41,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewPublicIp(ctx, "testPublicIp", &Core.PublicIpArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Lifetime:      pulumi.Any(_var.Public_ip_lifetime),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Public_ip_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			PrivateIpId:    pulumi.Any(oci_core_private_ip.Test_private_ip.Id),
-// 			PublicIpPoolId: pulumi.Any(oci_core_public_ip_pool.Test_public_ip_pool.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewPublicIp(ctx, "testPublicIp", &Core.PublicIpArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Lifetime:      pulumi.Any(_var.Public_ip_lifetime),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Public_ip_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				PrivateIpId:    pulumi.Any(oci_core_private_ip.Test_private_ip.Id),
+//				PublicIpPoolId: pulumi.Any(oci_core_public_ip_pool.Test_public_ip_pool.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -73,7 +76,9 @@ import (
 // PublicIps can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
+//
+//	$ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
+//
 // ```
 type PublicIp struct {
 	pulumi.CustomResourceState
@@ -275,7 +280,7 @@ func (i *PublicIp) ToPublicIpOutputWithContext(ctx context.Context) PublicIpOutp
 // PublicIpArrayInput is an input type that accepts PublicIpArray and PublicIpArrayOutput values.
 // You can construct a concrete instance of `PublicIpArrayInput` via:
 //
-//          PublicIpArray{ PublicIpArgs{...} }
+//	PublicIpArray{ PublicIpArgs{...} }
 type PublicIpArrayInput interface {
 	pulumi.Input
 
@@ -300,7 +305,7 @@ func (i PublicIpArray) ToPublicIpArrayOutputWithContext(ctx context.Context) Pub
 // PublicIpMapInput is an input type that accepts PublicIpMap and PublicIpMapOutput values.
 // You can construct a concrete instance of `PublicIpMapInput` via:
 //
-//          PublicIpMap{ "key": PublicIpArgs{...} }
+//	PublicIpMap{ "key": PublicIpArgs{...} }
 type PublicIpMapInput interface {
 	pulumi.Input
 

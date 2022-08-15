@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationReqAuthenticationDetails;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationRequestHeader;
@@ -23,6 +24,11 @@ public final class ConfigConfiguration {
      * 
      */
     private final @Nullable String configType;
+    /**
+     * @return (Updatable) Dns settings.
+     * 
+     */
+    private final @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
     /**
      * @return (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
@@ -92,6 +98,7 @@ public final class ConfigConfiguration {
     @CustomType.Constructor
     private ConfigConfiguration(
         @CustomType.Parameter("configType") @Nullable String configType,
+        @CustomType.Parameter("dnsConfiguration") @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration,
         @CustomType.Parameter("isCertificateValidationEnabled") @Nullable Boolean isCertificateValidationEnabled,
         @CustomType.Parameter("isFailureRetried") @Nullable Boolean isFailureRetried,
         @CustomType.Parameter("isRedirectionEnabled") @Nullable Boolean isRedirectionEnabled,
@@ -106,6 +113,7 @@ public final class ConfigConfiguration {
         @CustomType.Parameter("verifyResponseContent") @Nullable String verifyResponseContent,
         @CustomType.Parameter("verifyTexts") @Nullable List<ConfigConfigurationVerifyText> verifyTexts) {
         this.configType = configType;
+        this.dnsConfiguration = dnsConfiguration;
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
         this.isFailureRetried = isFailureRetried;
         this.isRedirectionEnabled = isRedirectionEnabled;
@@ -127,6 +135,13 @@ public final class ConfigConfiguration {
      */
     public Optional<String> configType() {
         return Optional.ofNullable(this.configType);
+    }
+    /**
+     * @return (Updatable) Dns settings.
+     * 
+     */
+    public Optional<ConfigConfigurationDnsConfiguration> dnsConfiguration() {
+        return Optional.ofNullable(this.dnsConfiguration);
     }
     /**
      * @return (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -230,6 +245,7 @@ public final class ConfigConfiguration {
 
     public static final class Builder {
         private @Nullable String configType;
+        private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
         private @Nullable Boolean isCertificateValidationEnabled;
         private @Nullable Boolean isFailureRetried;
         private @Nullable Boolean isRedirectionEnabled;
@@ -251,6 +267,7 @@ public final class ConfigConfiguration {
         public Builder(ConfigConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configType = defaults.configType;
+    	      this.dnsConfiguration = defaults.dnsConfiguration;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
@@ -268,6 +285,10 @@ public final class ConfigConfiguration {
 
         public Builder configType(@Nullable String configType) {
             this.configType = configType;
+            return this;
+        }
+        public Builder dnsConfiguration(@Nullable ConfigConfigurationDnsConfiguration dnsConfiguration) {
+            this.dnsConfiguration = dnsConfiguration;
             return this;
         }
         public Builder isCertificateValidationEnabled(@Nullable Boolean isCertificateValidationEnabled) {
@@ -334,7 +355,7 @@ public final class ConfigConfiguration {
         public Builder verifyTexts(ConfigConfigurationVerifyText... verifyTexts) {
             return verifyTexts(List.of(verifyTexts));
         }        public ConfigConfiguration build() {
-            return new ConfigConfiguration(configType, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfiguration, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
+            return new ConfigConfiguration(configType, dnsConfiguration, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfiguration, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
         }
     }
 }

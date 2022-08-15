@@ -24,11 +24,11 @@ import (
 // before using it.
 // If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
 // If any one of admin related fields are provided and one of the following 3 fields
-// - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
-//   returns 400 BAD REQUEST.
-// - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
-//   returns 400 BAD REQUEST.
-// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+//   - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
+//     returns 400 BAD REQUEST.
+//   - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
+//     returns 400 BAD REQUEST.
+//   - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
 //
 // ## Example Usage
 //
@@ -36,38 +36,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewDomain(ctx, "testDomain", &Identity.DomainArgs{
-// 			CompartmentId:  pulumi.Any(_var.Compartment_id),
-// 			Description:    pulumi.Any(_var.Domain_description),
-// 			DisplayName:    pulumi.Any(_var.Domain_display_name),
-// 			HomeRegion:     pulumi.Any(_var.Domain_home_region),
-// 			LicenseType:    pulumi.Any(_var.Domain_license_type),
-// 			AdminEmail:     pulumi.Any(_var.Domain_admin_email),
-// 			AdminFirstName: pulumi.Any(_var.Domain_admin_first_name),
-// 			AdminLastName:  pulumi.Any(_var.Domain_admin_last_name),
-// 			AdminUserName:  pulumi.Any(oci_identity_user.Test_user.Name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsHiddenOnLogin:        pulumi.Any(_var.Domain_is_hidden_on_login),
-// 			IsNotificationBypassed: pulumi.Any(_var.Domain_is_notification_bypassed),
-// 			IsPrimaryEmailRequired: pulumi.Any(_var.Domain_is_primary_email_required),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewDomain(ctx, "testDomain", &Identity.DomainArgs{
+//				CompartmentId:  pulumi.Any(_var.Compartment_id),
+//				Description:    pulumi.Any(_var.Domain_description),
+//				DisplayName:    pulumi.Any(_var.Domain_display_name),
+//				HomeRegion:     pulumi.Any(_var.Domain_home_region),
+//				LicenseType:    pulumi.Any(_var.Domain_license_type),
+//				AdminEmail:     pulumi.Any(_var.Domain_admin_email),
+//				AdminFirstName: pulumi.Any(_var.Domain_admin_first_name),
+//				AdminLastName:  pulumi.Any(_var.Domain_admin_last_name),
+//				AdminUserName:  pulumi.Any(oci_identity_user.Test_user.Name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsHiddenOnLogin:        pulumi.Any(_var.Domain_is_hidden_on_login),
+//				IsNotificationBypassed: pulumi.Any(_var.Domain_is_notification_bypassed),
+//				IsPrimaryEmailRequired: pulumi.Any(_var.Domain_is_primary_email_required),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -75,7 +78,9 @@ import (
 // Domains can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/domain:Domain test_domain "id"
+//
+//	$ pulumi import oci:Identity/domain:Domain test_domain "id"
+//
 // ```
 type Domain struct {
 	pulumi.CustomResourceState
@@ -354,7 +359,7 @@ func (i *Domain) ToDomainOutputWithContext(ctx context.Context) DomainOutput {
 // DomainArrayInput is an input type that accepts DomainArray and DomainArrayOutput values.
 // You can construct a concrete instance of `DomainArrayInput` via:
 //
-//          DomainArray{ DomainArgs{...} }
+//	DomainArray{ DomainArgs{...} }
 type DomainArrayInput interface {
 	pulumi.Input
 
@@ -379,7 +384,7 @@ func (i DomainArray) ToDomainArrayOutputWithContext(ctx context.Context) DomainA
 // DomainMapInput is an input type that accepts DomainMap and DomainMapOutput values.
 // You can construct a concrete instance of `DomainMapInput` via:
 //
-//          DomainMap{ "key": DomainArgs{...} }
+//	DomainMap{ "key": DomainArgs{...} }
 type DomainMapInput interface {
 	pulumi.Input
 

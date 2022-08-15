@@ -30,6 +30,9 @@ __all__ = [
     'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs',
     'NotebookSessionNotebookSessionConfigurationDetailsArgs',
     'NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs',
+    'NotebookSessionNotebookSessionRuntimeConfigDetailsArgs',
+    'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs',
+    'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs',
     'GetFastLaunchJobConfigsFilterArgs',
     'GetJobRunsFilterArgs',
     'GetJobShapesFilterArgs',
@@ -1216,6 +1219,90 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
+
+
+@pulumi.input_type
+class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 custom_environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 notebook_session_git_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']] = None):
+        """
+        :param pulumi.Input[Mapping[str, Any]] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+        :param pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs'] notebook_session_git_config_details: (Updatable) Git configuration Details.
+        """
+        if custom_environment_variables is not None:
+            pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
+        if notebook_session_git_config_details is not None:
+            pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+
+    @property
+    @pulumi.getter(name="customEnvironmentVariables")
+    def custom_environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+        """
+        return pulumi.get(self, "custom_environment_variables")
+
+    @custom_environment_variables.setter
+    def custom_environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "custom_environment_variables", value)
+
+    @property
+    @pulumi.getter(name="notebookSessionGitConfigDetails")
+    def notebook_session_git_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']]:
+        """
+        (Updatable) Git configuration Details.
+        """
+        return pulumi.get(self, "notebook_session_git_config_details")
+
+    @notebook_session_git_config_details.setter
+    def notebook_session_git_config_details(self, value: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']]):
+        pulumi.set(self, "notebook_session_git_config_details", value)
+
+
+@pulumi.input_type
+class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs:
+    def __init__(__self__, *,
+                 notebook_session_git_repo_config_collections: Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]] notebook_session_git_repo_config_collections: (Updatable) A collection of Git repository configurations.
+        """
+        if notebook_session_git_repo_config_collections is not None:
+            pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+
+    @property
+    @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
+    def notebook_session_git_repo_config_collections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]]:
+        """
+        (Updatable) A collection of Git repository configurations.
+        """
+        return pulumi.get(self, "notebook_session_git_repo_config_collections")
+
+    @notebook_session_git_repo_config_collections.setter
+    def notebook_session_git_repo_config_collections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]]):
+        pulumi.set(self, "notebook_session_git_repo_config_collections", value)
+
+
+@pulumi.input_type
+class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs:
+    def __init__(__self__, *,
+                 url: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] url: (Updatable) The repository URL
+        """
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The repository URL
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "url", value)
 
 
 @pulumi.input_type

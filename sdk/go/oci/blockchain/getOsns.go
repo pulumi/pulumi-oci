@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
 //
-// List Blockchain Platform OSNs
+// # List Blockchain Platform OSNs
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.GetOsns(ctx, &blockchain.GetOsnsArgs{
-// 			BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-// 			DisplayName:          pulumi.StringRef(_var.Osn_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.GetOsns(ctx, &blockchain.GetOsnsArgs{
+//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+//				DisplayName:          pulumi.StringRef(_var.Osn_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOsns(ctx *pulumi.Context, args *GetOsnsArgs, opts ...pulumi.InvokeOption) (*GetOsnsResult, error) {
 	var rv GetOsnsResult

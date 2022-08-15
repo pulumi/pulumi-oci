@@ -18,23 +18,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetAvailabilityDomain(ctx, &identity.GetAvailabilityDomainArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 			Id:            pulumi.StringRef(_var.Id),
-// 			AdNumber:      pulumi.IntRef(_var.Ad_number),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetAvailabilityDomain(ctx, &identity.GetAvailabilityDomainArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//				Id:            pulumi.StringRef(_var.Id),
+//				AdNumber:      pulumi.IntRef(_var.Ad_number),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAvailabilityDomain(ctx *pulumi.Context, args *GetAvailabilityDomainArgs, opts ...pulumi.InvokeOption) (*GetAvailabilityDomainResult, error) {
 	var rv GetAvailabilityDomainResult

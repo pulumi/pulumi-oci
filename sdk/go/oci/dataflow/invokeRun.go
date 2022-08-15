@@ -21,55 +21,58 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataFlow.NewInvokeRun(ctx, "testInvokeRun", &DataFlow.InvokeRunArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ApplicationId: pulumi.Any(oci_dataflow_application.Test_application.Id),
-// 			ArchiveUri:    pulumi.Any(_var.Invoke_run_archive_uri),
-// 			Arguments:     pulumi.Any(_var.Invoke_run_arguments),
-// 			Configuration: pulumi.Any(_var.Invoke_run_configuration),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Invoke_run_display_name),
-// 			DriverShape: pulumi.Any(_var.Invoke_run_driver_shape),
-// 			DriverShapeConfig: &dataflow.InvokeRunDriverShapeConfigArgs{
-// 				MemoryInGbs: pulumi.Any(_var.Invoke_run_driver_shape_config_memory_in_gbs),
-// 				Ocpus:       pulumi.Any(_var.Invoke_run_driver_shape_config_ocpus),
-// 			},
-// 			Execute:       pulumi.Any(_var.Invoke_run_execute),
-// 			ExecutorShape: pulumi.Any(_var.Invoke_run_executor_shape),
-// 			ExecutorShapeConfig: &dataflow.InvokeRunExecutorShapeConfigArgs{
-// 				MemoryInGbs: pulumi.Any(_var.Invoke_run_executor_shape_config_memory_in_gbs),
-// 				Ocpus:       pulumi.Any(_var.Invoke_run_executor_shape_config_ocpus),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			LogsBucketUri: pulumi.Any(_var.Invoke_run_logs_bucket_uri),
-// 			MetastoreId:   pulumi.Any(_var.Metastore_id),
-// 			NumExecutors:  pulumi.Any(_var.Invoke_run_num_executors),
-// 			Parameters: dataflow.InvokeRunParameterArray{
-// 				&dataflow.InvokeRunParameterArgs{
-// 					Name:  pulumi.Any(_var.Invoke_run_parameters_name),
-// 					Value: pulumi.Any(_var.Invoke_run_parameters_value),
-// 				},
-// 			},
-// 			SparkVersion:       pulumi.Any(_var.Invoke_run_spark_version),
-// 			Type:               pulumi.Any(_var.Invoke_run_type),
-// 			WarehouseBucketUri: pulumi.Any(_var.Invoke_run_warehouse_bucket_uri),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataFlow.NewInvokeRun(ctx, "testInvokeRun", &DataFlow.InvokeRunArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ApplicationId: pulumi.Any(oci_dataflow_application.Test_application.Id),
+//				ArchiveUri:    pulumi.Any(_var.Invoke_run_archive_uri),
+//				Arguments:     pulumi.Any(_var.Invoke_run_arguments),
+//				Configuration: pulumi.Any(_var.Invoke_run_configuration),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Invoke_run_display_name),
+//				DriverShape: pulumi.Any(_var.Invoke_run_driver_shape),
+//				DriverShapeConfig: &dataflow.InvokeRunDriverShapeConfigArgs{
+//					MemoryInGbs: pulumi.Any(_var.Invoke_run_driver_shape_config_memory_in_gbs),
+//					Ocpus:       pulumi.Any(_var.Invoke_run_driver_shape_config_ocpus),
+//				},
+//				Execute:       pulumi.Any(_var.Invoke_run_execute),
+//				ExecutorShape: pulumi.Any(_var.Invoke_run_executor_shape),
+//				ExecutorShapeConfig: &dataflow.InvokeRunExecutorShapeConfigArgs{
+//					MemoryInGbs: pulumi.Any(_var.Invoke_run_executor_shape_config_memory_in_gbs),
+//					Ocpus:       pulumi.Any(_var.Invoke_run_executor_shape_config_ocpus),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				LogsBucketUri: pulumi.Any(_var.Invoke_run_logs_bucket_uri),
+//				MetastoreId:   pulumi.Any(_var.Metastore_id),
+//				NumExecutors:  pulumi.Any(_var.Invoke_run_num_executors),
+//				Parameters: dataflow.InvokeRunParameterArray{
+//					&dataflow.InvokeRunParameterArgs{
+//						Name:  pulumi.Any(_var.Invoke_run_parameters_name),
+//						Value: pulumi.Any(_var.Invoke_run_parameters_value),
+//					},
+//				},
+//				SparkVersion:       pulumi.Any(_var.Invoke_run_spark_version),
+//				Type:               pulumi.Any(_var.Invoke_run_type),
+//				WarehouseBucketUri: pulumi.Any(_var.Invoke_run_warehouse_bucket_uri),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Note
 //
@@ -80,7 +83,9 @@ import (
 // InvokeRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
+//
+//	$ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
+//
 // ```
 type InvokeRun struct {
 	pulumi.CustomResourceState
@@ -480,7 +485,7 @@ func (i *InvokeRun) ToInvokeRunOutputWithContext(ctx context.Context) InvokeRunO
 // InvokeRunArrayInput is an input type that accepts InvokeRunArray and InvokeRunArrayOutput values.
 // You can construct a concrete instance of `InvokeRunArrayInput` via:
 //
-//          InvokeRunArray{ InvokeRunArgs{...} }
+//	InvokeRunArray{ InvokeRunArgs{...} }
 type InvokeRunArrayInput interface {
 	pulumi.Input
 
@@ -505,7 +510,7 @@ func (i InvokeRunArray) ToInvokeRunArrayOutputWithContext(ctx context.Context) I
 // InvokeRunMapInput is an input type that accepts InvokeRunMap and InvokeRunMapOutput values.
 // You can construct a concrete instance of `InvokeRunMapInput` via:
 //
-//          InvokeRunMap{ "key": InvokeRunArgs{...} }
+//	InvokeRunMap{ "key": InvokeRunArgs{...} }
 type InvokeRunMapInput interface {
 	pulumi.Input
 

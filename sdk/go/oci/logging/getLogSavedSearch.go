@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.GetLogSavedSearch(ctx, &logging.GetLogSavedSearchArgs{
-// 			LogSavedSearchId: oci_logging_log_saved_search.Test_log_saved_search.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.GetLogSavedSearch(ctx, &logging.GetLogSavedSearchArgs{
+//				LogSavedSearchId: oci_logging_log_saved_search.Test_log_saved_search.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupLogSavedSearch(ctx *pulumi.Context, args *LookupLogSavedSearchArgs, opts ...pulumi.InvokeOption) (*LookupLogSavedSearchResult, error) {
 	var rv LookupLogSavedSearchResult

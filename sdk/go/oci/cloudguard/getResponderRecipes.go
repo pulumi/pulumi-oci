@@ -33,26 +33,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetResponderRecipes(ctx, &cloudguard.GetResponderRecipesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Responder_recipe_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Responder_recipe_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Responder_recipe_display_name),
-// 			ResourceMetadataOnly:   pulumi.BoolRef(_var.Responder_recipe_resource_metadata_only),
-// 			State:                  pulumi.StringRef(_var.Responder_recipe_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetResponderRecipes(ctx, &cloudguard.GetResponderRecipesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Responder_recipe_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Responder_recipe_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Responder_recipe_display_name),
+//				ResourceMetadataOnly:   pulumi.BoolRef(_var.Responder_recipe_resource_metadata_only),
+//				State:                  pulumi.StringRef(_var.Responder_recipe_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetResponderRecipes(ctx *pulumi.Context, args *GetResponderRecipesArgs, opts ...pulumi.InvokeOption) (*GetResponderRecipesResult, error) {
 	var rv GetResponderRecipesResult

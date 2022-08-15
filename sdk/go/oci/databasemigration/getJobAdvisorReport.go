@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
 //
-// Get the Pre-Migration Advisor report details
+// # Get the Pre-Migration Advisor report details
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseMigration.GetJobAdvisorReport(ctx, &databasemigration.GetJobAdvisorReportArgs{
-// 			JobId: oci_database_migration_job.Test_job.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseMigration.GetJobAdvisorReport(ctx, &databasemigration.GetJobAdvisorReportArgs{
+//				JobId: oci_database_migration_job.Test_job.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetJobAdvisorReport(ctx *pulumi.Context, args *GetJobAdvisorReportArgs, opts ...pulumi.InvokeOption) (*GetJobAdvisorReportResult, error) {
 	var rv GetJobAdvisorReportResult

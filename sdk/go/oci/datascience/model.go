@@ -21,48 +21,51 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.NewModel(ctx, "testModel", &DataScience.ModelArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
-// 			CustomMetadataLists: datascience.ModelCustomMetadataListArray{
-// 				&datascience.ModelCustomMetadataListArgs{
-// 					Category:    pulumi.Any(_var.Model_custom_metadata_list_category),
-// 					Description: pulumi.Any(_var.Model_custom_metadata_list_description),
-// 					Key:         pulumi.Any(_var.Model_custom_metadata_list_key),
-// 					Value:       pulumi.Any(_var.Model_custom_metadata_list_value),
-// 				},
-// 			},
-// 			DefinedMetadataLists: datascience.ModelDefinedMetadataListArray{
-// 				&datascience.ModelDefinedMetadataListArgs{
-// 					Category:    pulumi.Any(_var.Model_defined_metadata_list_category),
-// 					Description: pulumi.Any(_var.Model_defined_metadata_list_description),
-// 					Key:         pulumi.Any(_var.Model_defined_metadata_list_key),
-// 					Value:       pulumi.Any(_var.Model_defined_metadata_list_value),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Model_description),
-// 			DisplayName: pulumi.Any(_var.Model_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			InputSchema:  pulumi.Any(_var.Model_input_schema),
-// 			OutputSchema: pulumi.Any(_var.Model_output_schema),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.NewModel(ctx, "testModel", &DataScience.ModelArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//				CustomMetadataLists: datascience.ModelCustomMetadataListArray{
+//					&datascience.ModelCustomMetadataListArgs{
+//						Category:    pulumi.Any(_var.Model_custom_metadata_list_category),
+//						Description: pulumi.Any(_var.Model_custom_metadata_list_description),
+//						Key:         pulumi.Any(_var.Model_custom_metadata_list_key),
+//						Value:       pulumi.Any(_var.Model_custom_metadata_list_value),
+//					},
+//				},
+//				DefinedMetadataLists: datascience.ModelDefinedMetadataListArray{
+//					&datascience.ModelDefinedMetadataListArgs{
+//						Category:    pulumi.Any(_var.Model_defined_metadata_list_category),
+//						Description: pulumi.Any(_var.Model_defined_metadata_list_description),
+//						Key:         pulumi.Any(_var.Model_defined_metadata_list_key),
+//						Value:       pulumi.Any(_var.Model_defined_metadata_list_value),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Model_description),
+//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				InputSchema:  pulumi.Any(_var.Model_input_schema),
+//				OutputSchema: pulumi.Any(_var.Model_output_schema),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -70,7 +73,9 @@ import (
 // Models can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataScience/model:Model test_model "id"
+//
+//	$ pulumi import oci:DataScience/model:Model test_model "id"
+//
 // ```
 type Model struct {
 	pulumi.CustomResourceState
@@ -306,7 +311,7 @@ func (i *Model) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 // ModelArrayInput is an input type that accepts ModelArray and ModelArrayOutput values.
 // You can construct a concrete instance of `ModelArrayInput` via:
 //
-//          ModelArray{ ModelArgs{...} }
+//	ModelArray{ ModelArgs{...} }
 type ModelArrayInput interface {
 	pulumi.Input
 
@@ -331,7 +336,7 @@ func (i ModelArray) ToModelArrayOutputWithContext(ctx context.Context) ModelArra
 // ModelMapInput is an input type that accepts ModelMap and ModelMapOutput values.
 // You can construct a concrete instance of `ModelMapInput` via:
 //
-//          ModelMap{ "key": ModelArgs{...} }
+//	ModelMap{ "key": ModelArgs{...} }
 type ModelMapInput interface {
 	pulumi.Input
 

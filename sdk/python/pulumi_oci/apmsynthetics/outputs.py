@@ -11,6 +11,7 @@ from . import outputs
 
 __all__ = [
     'ConfigConfiguration',
+    'ConfigConfigurationDnsConfiguration',
     'ConfigConfigurationNetworkConfiguration',
     'ConfigConfigurationReqAuthenticationDetails',
     'ConfigConfigurationReqAuthenticationDetailsAuthHeader',
@@ -32,6 +33,7 @@ __all__ = [
     'GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult',
     'GetDedicatedVantagePointsFilterResult',
     'GetMonitorConfigurationResult',
+    'GetMonitorConfigurationDnsConfigurationResult',
     'GetMonitorConfigurationNetworkConfigurationResult',
     'GetMonitorConfigurationReqAuthenticationDetailResult',
     'GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult',
@@ -44,6 +46,7 @@ __all__ = [
     'GetMonitorsMonitorCollectionResult',
     'GetMonitorsMonitorCollectionItemResult',
     'GetMonitorsMonitorCollectionItemConfigurationResult',
+    'GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult',
     'GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult',
@@ -77,6 +80,8 @@ class ConfigConfiguration(dict):
         suggest = None
         if key == "configType":
             suggest = "config_type"
+        elif key == "dnsConfiguration":
+            suggest = "dns_configuration"
         elif key == "isCertificateValidationEnabled":
             suggest = "is_certificate_validation_enabled"
         elif key == "isFailureRetried":
@@ -117,6 +122,7 @@ class ConfigConfiguration(dict):
 
     def __init__(__self__, *,
                  config_type: Optional[str] = None,
+                 dns_configuration: Optional['outputs.ConfigConfigurationDnsConfiguration'] = None,
                  is_certificate_validation_enabled: Optional[bool] = None,
                  is_failure_retried: Optional[bool] = None,
                  is_redirection_enabled: Optional[bool] = None,
@@ -132,6 +138,7 @@ class ConfigConfiguration(dict):
                  verify_texts: Optional[Sequence['outputs.ConfigConfigurationVerifyText']] = None):
         """
         :param str config_type: (Updatable) Type of configuration.
+        :param 'ConfigConfigurationDnsConfigurationArgs' dns_configuration: (Updatable) Dns settings.
         :param bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
         :param bool is_redirection_enabled: (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
@@ -148,6 +155,8 @@ class ConfigConfiguration(dict):
         """
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
+        if dns_configuration is not None:
+            pulumi.set(__self__, "dns_configuration", dns_configuration)
         if is_certificate_validation_enabled is not None:
             pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         if is_failure_retried is not None:
@@ -182,6 +191,14 @@ class ConfigConfiguration(dict):
         (Updatable) Type of configuration.
         """
         return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="dnsConfiguration")
+    def dns_configuration(self) -> Optional['outputs.ConfigConfigurationDnsConfiguration']:
+        """
+        (Updatable) Dns settings.
+        """
+        return pulumi.get(self, "dns_configuration")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -286,6 +303,56 @@ class ConfigConfiguration(dict):
         (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
+
+
+@pulumi.output_type
+class ConfigConfigurationDnsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isOverrideDns":
+            suggest = "is_override_dns"
+        elif key == "overrideDnsIp":
+            suggest = "override_dns_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationDnsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationDnsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationDnsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_override_dns: Optional[bool] = None,
+                 override_dns_ip: Optional[str] = None):
+        """
+        :param bool is_override_dns: (Updatable) If isOverrideDns is true, then dns will be overridden.
+        :param str override_dns_ip: (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        if is_override_dns is not None:
+            pulumi.set(__self__, "is_override_dns", is_override_dns)
+        if override_dns_ip is not None:
+            pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+
+    @property
+    @pulumi.getter(name="isOverrideDns")
+    def is_override_dns(self) -> Optional[bool]:
+        """
+        (Updatable) If isOverrideDns is true, then dns will be overridden.
+        """
+        return pulumi.get(self, "is_override_dns")
+
+    @property
+    @pulumi.getter(name="overrideDnsIp")
+    def override_dns_ip(self) -> Optional[str]:
+        """
+        (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        return pulumi.get(self, "override_dns_ip")
 
 
 @pulumi.output_type
@@ -852,10 +919,10 @@ class DedicatedVantagePointDvpStackDetails(dict):
                  dvp_stream_id: str,
                  dvp_version: str):
         """
-        :param str dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param str dvp_stack_type: (Updatable) Type of stack.
-        :param str dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
-        :param str dvp_version: (Updatable) Version of DVP.
+        :param str dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+        :param str dvp_version: (Updatable) Version of the dedicated vantage point.
         """
         pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
         pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
@@ -866,7 +933,7 @@ class DedicatedVantagePointDvpStackDetails(dict):
     @pulumi.getter(name="dvpStackId")
     def dvp_stack_id(self) -> str:
         """
-        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stack_id")
 
@@ -882,7 +949,7 @@ class DedicatedVantagePointDvpStackDetails(dict):
     @pulumi.getter(name="dvpStreamId")
     def dvp_stream_id(self) -> str:
         """
-        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stream_id")
 
@@ -890,7 +957,7 @@ class DedicatedVantagePointDvpStackDetails(dict):
     @pulumi.getter(name="dvpVersion")
     def dvp_version(self) -> str:
         """
-        (Updatable) Version of DVP.
+        (Updatable) Version of the dedicated vantage point.
         """
         return pulumi.get(self, "dvp_version")
 
@@ -1168,10 +1235,10 @@ class GetDedicatedVantagePointDvpStackDetailResult(dict):
                  dvp_stream_id: str,
                  dvp_version: str):
         """
-        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param str dvp_stack_type: Type of stack.
-        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
-        :param str dvp_version: Version of DVP.
+        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+        :param str dvp_version: Version of the dedicated vantage point.
         """
         pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
         pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
@@ -1182,7 +1249,7 @@ class GetDedicatedVantagePointDvpStackDetailResult(dict):
     @pulumi.getter(name="dvpStackId")
     def dvp_stack_id(self) -> str:
         """
-        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stack_id")
 
@@ -1198,7 +1265,7 @@ class GetDedicatedVantagePointDvpStackDetailResult(dict):
     @pulumi.getter(name="dvpStreamId")
     def dvp_stream_id(self) -> str:
         """
-        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stream_id")
 
@@ -1206,7 +1273,7 @@ class GetDedicatedVantagePointDvpStackDetailResult(dict):
     @pulumi.getter(name="dvpVersion")
     def dvp_version(self) -> str:
         """
-        Version of DVP.
+        Version of the dedicated vantage point.
         """
         return pulumi.get(self, "dvp_version")
 
@@ -1293,7 +1360,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
         :param str apm_domain_id: The APM domain ID the request is intended for.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs'] dvp_stack_details: Details of DVP Stack.
+        :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs'] dvp_stack_details: Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
         :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -1344,7 +1411,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
     @pulumi.getter(name="dvpStackDetails")
     def dvp_stack_details(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult']:
         """
-        Details of DVP Stack.
+        Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         """
         return pulumi.get(self, "dvp_stack_details")
 
@@ -1421,10 +1488,10 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail
                  dvp_stream_id: str,
                  dvp_version: str):
         """
-        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param str dvp_stack_type: Type of stack.
-        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
-        :param str dvp_version: Version of DVP.
+        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+        :param str dvp_version: Version of the dedicated vantage point.
         """
         pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
         pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
@@ -1435,7 +1502,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail
     @pulumi.getter(name="dvpStackId")
     def dvp_stack_id(self) -> str:
         """
-        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stack_id")
 
@@ -1451,7 +1518,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail
     @pulumi.getter(name="dvpStreamId")
     def dvp_stream_id(self) -> str:
         """
-        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stream_id")
 
@@ -1459,7 +1526,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail
     @pulumi.getter(name="dvpVersion")
     def dvp_version(self) -> str:
         """
-        Version of DVP.
+        Version of the dedicated vantage point.
         """
         return pulumi.get(self, "dvp_version")
 
@@ -1552,6 +1619,7 @@ class GetDedicatedVantagePointsFilterResult(dict):
 class GetMonitorConfigurationResult(dict):
     def __init__(__self__, *,
                  config_type: str,
+                 dns_configurations: Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult'],
                  is_certificate_validation_enabled: bool,
                  is_failure_retried: bool,
                  is_redirection_enabled: bool,
@@ -1567,6 +1635,7 @@ class GetMonitorConfigurationResult(dict):
                  verify_texts: Sequence['outputs.GetMonitorConfigurationVerifyTextResult']):
         """
         :param str config_type: Type of configuration.
+        :param Sequence['GetMonitorConfigurationDnsConfigurationArgs'] dns_configurations: Dns settings.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
         :param bool is_redirection_enabled: If redirection enabled, then redirects will be allowed while accessing target URL.
@@ -1582,6 +1651,7 @@ class GetMonitorConfigurationResult(dict):
         :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "dns_configurations", dns_configurations)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
@@ -1603,6 +1673,14 @@ class GetMonitorConfigurationResult(dict):
         Type of configuration.
         """
         return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="dnsConfigurations")
+    def dns_configurations(self) -> Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']:
+        """
+        Dns settings.
+        """
+        return pulumi.get(self, "dns_configurations")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -1707,6 +1785,35 @@ class GetMonitorConfigurationResult(dict):
         Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationDnsConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_override_dns: bool,
+                 override_dns_ip: str):
+        """
+        :param bool is_override_dns: If isOverrideDns is true, then dns will be overridden.
+        :param str override_dns_ip: Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        pulumi.set(__self__, "is_override_dns", is_override_dns)
+        pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+
+    @property
+    @pulumi.getter(name="isOverrideDns")
+    def is_override_dns(self) -> bool:
+        """
+        If isOverrideDns is true, then dns will be overridden.
+        """
+        return pulumi.get(self, "is_override_dns")
+
+    @property
+    @pulumi.getter(name="overrideDnsIp")
+    def override_dns_ip(self) -> str:
+        """
+        Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        return pulumi.get(self, "override_dns_ip")
 
 
 @pulumi.output_type
@@ -2111,14 +2218,17 @@ class GetMonitorsMonitorCollectionResult(dict):
 class GetMonitorsMonitorCollectionItemResult(dict):
     def __init__(__self__, *,
                  apm_domain_id: str,
+                 batch_interval_in_seconds: int,
                  configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult'],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_run_now: bool,
                  is_run_once: bool,
                  monitor_type: str,
                  repeat_interval_in_seconds: int,
+                 scheduling_policy: str,
                  script_id: str,
                  script_name: str,
                  script_parameters: Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterResult'],
@@ -2131,14 +2241,17 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  vantage_points: Sequence[str]):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
+        :param int batch_interval_in_seconds: Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param bool is_run_now: If isRunNow is enabled, then the monitor will run now.
         :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
         :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
         :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
+        :param str scheduling_policy: Scheduling policy on Vantage points.
         :param str script_id: A filter to return only monitors using scriptId.
         :param str script_name: Name of the script.
         :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
@@ -2151,14 +2264,17 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param Sequence[str] vantage_points: List of public and dedicated vantage points where the monitor is running.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         pulumi.set(__self__, "configurations", configurations)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_run_now", is_run_now)
         pulumi.set(__self__, "is_run_once", is_run_once)
         pulumi.set(__self__, "monitor_type", monitor_type)
         pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
+        pulumi.set(__self__, "scheduling_policy", scheduling_policy)
         pulumi.set(__self__, "script_id", script_id)
         pulumi.set(__self__, "script_name", script_name)
         pulumi.set(__self__, "script_parameters", script_parameters)
@@ -2177,6 +2293,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="batchIntervalInSeconds")
+    def batch_interval_in_seconds(self) -> int:
+        """
+        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        """
+        return pulumi.get(self, "batch_interval_in_seconds")
 
     @property
     @pulumi.getter
@@ -2219,6 +2343,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isRunNow")
+    def is_run_now(self) -> bool:
+        """
+        If isRunNow is enabled, then the monitor will run now.
+        """
+        return pulumi.get(self, "is_run_now")
+
+    @property
     @pulumi.getter(name="isRunOnce")
     def is_run_once(self) -> bool:
         """
@@ -2241,6 +2373,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         """
         return pulumi.get(self, "repeat_interval_in_seconds")
+
+    @property
+    @pulumi.getter(name="schedulingPolicy")
+    def scheduling_policy(self) -> str:
+        """
+        Scheduling policy on Vantage points.
+        """
+        return pulumi.get(self, "scheduling_policy")
 
     @property
     @pulumi.getter(name="scriptId")
@@ -2327,6 +2467,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
 class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     def __init__(__self__, *,
                  config_type: str,
+                 dns_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult'],
                  is_certificate_validation_enabled: bool,
                  is_failure_retried: bool,
                  is_redirection_enabled: bool,
@@ -2342,6 +2483,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
                  verify_texts: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']):
         """
         :param str config_type: Type of configuration.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs'] dns_configurations: Dns settings.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
         :param bool is_redirection_enabled: If redirection enabled, then redirects will be allowed while accessing target URL.
@@ -2357,6 +2499,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "dns_configurations", dns_configurations)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
@@ -2378,6 +2521,14 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         Type of configuration.
         """
         return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="dnsConfigurations")
+    def dns_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']:
+        """
+        Dns settings.
+        """
+        return pulumi.get(self, "dns_configurations")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -2482,6 +2633,35 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_override_dns: bool,
+                 override_dns_ip: str):
+        """
+        :param bool is_override_dns: If isOverrideDns is true, then dns will be overridden.
+        :param str override_dns_ip: Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        pulumi.set(__self__, "is_override_dns", is_override_dns)
+        pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+
+    @property
+    @pulumi.getter(name="isOverrideDns")
+    def is_override_dns(self) -> bool:
+        """
+        If isOverrideDns is true, then dns will be overridden.
+        """
+        return pulumi.get(self, "is_override_dns")
+
+    @property
+    @pulumi.getter(name="overrideDnsIp")
+    def override_dns_ip(self) -> str:
+        """
+        Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        return pulumi.get(self, "override_dns_ip")
 
 
 @pulumi.output_type

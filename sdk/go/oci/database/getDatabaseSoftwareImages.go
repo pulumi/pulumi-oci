@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDatabaseSoftwareImages(ctx, &database.GetDatabaseSoftwareImagesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			DisplayName:        pulumi.StringRef(_var.Database_software_image_display_name),
-// 			ImageShapeFamily:   pulumi.StringRef(_var.Database_software_image_image_shape_family),
-// 			ImageType:          pulumi.StringRef(_var.Database_software_image_image_type),
-// 			IsUpgradeSupported: pulumi.BoolRef(_var.Database_software_image_is_upgrade_supported),
-// 			State:              pulumi.StringRef(_var.Database_software_image_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDatabaseSoftwareImages(ctx, &database.GetDatabaseSoftwareImagesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				DisplayName:        pulumi.StringRef(_var.Database_software_image_display_name),
+//				ImageShapeFamily:   pulumi.StringRef(_var.Database_software_image_image_shape_family),
+//				ImageType:          pulumi.StringRef(_var.Database_software_image_image_type),
+//				IsUpgradeSupported: pulumi.BoolRef(_var.Database_software_image_is_upgrade_supported),
+//				State:              pulumi.StringRef(_var.Database_software_image_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabaseSoftwareImages(ctx *pulumi.Context, args *GetDatabaseSoftwareImagesArgs, opts ...pulumi.InvokeOption) (*GetDatabaseSoftwareImagesResult, error) {
 	var rv GetDatabaseSoftwareImagesResult

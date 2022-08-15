@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabasesUserProxyUsers(ctx, &databasemanagement.GetManagedDatabasesUserProxyUsersArgs{
-// 			ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-// 			UserName:          oci_identity_user.Test_user.Name,
-// 			Name:              pulumi.StringRef(_var.Managed_databases_user_proxy_user_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabasesUserProxyUsers(ctx, &databasemanagement.GetManagedDatabasesUserProxyUsersArgs{
+//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:          oci_identity_user.Test_user.Name,
+//				Name:              pulumi.StringRef(_var.Managed_databases_user_proxy_user_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabasesUserProxyUsers(ctx *pulumi.Context, args *GetManagedDatabasesUserProxyUsersArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesUserProxyUsersResult, error) {
 	var rv GetManagedDatabasesUserProxyUsersResult

@@ -24,28 +24,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Monitoring.GetMetricData(ctx, &monitoring.GetMetricDataArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			Namespace:              _var.Metric_data_namespace,
-// 			Query:                  _var.Metric_data_query,
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Metric_data_compartment_id_in_subtree),
-// 			EndTime:                pulumi.StringRef(_var.Metric_data_end_time),
-// 			Resolution:             pulumi.StringRef(_var.Metric_data_resolution),
-// 			ResourceGroup:          pulumi.StringRef(_var.Metric_data_resource_group),
-// 			StartTime:              pulumi.StringRef(_var.Metric_data_start_time),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Monitoring.GetMetricData(ctx, &monitoring.GetMetricDataArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				Namespace:              _var.Metric_data_namespace,
+//				Query:                  _var.Metric_data_query,
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Metric_data_compartment_id_in_subtree),
+//				EndTime:                pulumi.StringRef(_var.Metric_data_end_time),
+//				Resolution:             pulumi.StringRef(_var.Metric_data_resolution),
+//				ResourceGroup:          pulumi.StringRef(_var.Metric_data_resource_group),
+//				StartTime:              pulumi.StringRef(_var.Metric_data_start_time),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMetricData(ctx *pulumi.Context, args *GetMetricDataArgs, opts ...pulumi.InvokeOption) (*GetMetricDataResult, error) {
 	var rv GetMetricDataResult

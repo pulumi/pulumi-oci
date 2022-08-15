@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.GetExsiHost(ctx, &ocvp.GetExsiHostArgs{
-// 			EsxiHostId: oci_ocvp_esxi_host.Test_esxi_host.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.GetExsiHost(ctx, &ocvp.GetExsiHostArgs{
+//				EsxiHostId: oci_ocvp_esxi_host.Test_esxi_host.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExsiHost(ctx *pulumi.Context, args *GetExsiHostArgs, opts ...pulumi.InvokeOption) (*GetExsiHostResult, error) {
 	var rv GetExsiHostResult

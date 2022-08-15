@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Limits.GetLimitValues(ctx, &limits.GetLimitValuesArgs{
-// 			CompartmentId:      _var.Tenancy_ocid,
-// 			ServiceName:        oci_limits_service.Test_service.Name,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Limit_value_availability_domain),
-// 			Name:               pulumi.StringRef(_var.Limit_value_name),
-// 			ScopeType:          pulumi.StringRef(_var.Limit_value_scope_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Limits.GetLimitValues(ctx, &limits.GetLimitValuesArgs{
+//				CompartmentId:      _var.Tenancy_ocid,
+//				ServiceName:        oci_limits_service.Test_service.Name,
+//				AvailabilityDomain: pulumi.StringRef(_var.Limit_value_availability_domain),
+//				Name:               pulumi.StringRef(_var.Limit_value_name),
+//				ScopeType:          pulumi.StringRef(_var.Limit_value_scope_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLimitValues(ctx *pulumi.Context, args *GetLimitValuesArgs, opts ...pulumi.InvokeOption) (*GetLimitValuesResult, error) {
 	var rv GetLimitValuesResult

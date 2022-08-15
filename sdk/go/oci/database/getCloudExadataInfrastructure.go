@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetCloudExadataInfrastructure(ctx, &database.GetCloudExadataInfrastructureArgs{
-// 			CloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetCloudExadataInfrastructure(ctx, &database.GetCloudExadataInfrastructureArgs{
+//				CloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCloudExadataInfrastructure(ctx *pulumi.Context, args *LookupCloudExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupCloudExadataInfrastructureResult, error) {
 	var rv LookupCloudExadataInfrastructureResult

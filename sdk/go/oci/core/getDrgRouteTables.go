@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDrgRouteTables(ctx, &core.GetDrgRouteTablesArgs{
-// 			DrgId:                        oci_core_drg.Test_drg.Id,
-// 			DisplayName:                  pulumi.StringRef(_var.Drg_route_table_display_name),
-// 			ImportDrgRouteDistributionId: pulumi.StringRef(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
-// 			State:                        pulumi.StringRef(_var.Drg_route_table_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDrgRouteTables(ctx, &core.GetDrgRouteTablesArgs{
+//				DrgId:                        oci_core_drg.Test_drg.Id,
+//				DisplayName:                  pulumi.StringRef(_var.Drg_route_table_display_name),
+//				ImportDrgRouteDistributionId: pulumi.StringRef(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
+//				State:                        pulumi.StringRef(_var.Drg_route_table_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDrgRouteTables(ctx *pulumi.Context, args *GetDrgRouteTablesArgs, opts ...pulumi.InvokeOption) (*GetDrgRouteTablesResult, error) {
 	var rv GetDrgRouteTablesResult

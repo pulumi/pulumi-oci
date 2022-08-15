@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsResourceCategoriesManagement(ctx, "testLogAnalyticsResourceCategoriesManagement", &LogAnalytics.LogAnalyticsResourceCategoriesManagementArgs{
-// 			Namespace:          pulumi.Any(_var.Log_analytics_resource_categories_management_namespace),
-// 			ResourceId:         pulumi.Any(oci_log_analytics_resource_categories_management_resource_id),
-// 			ResourceType:       pulumi.Any(_var.Log_analytics_resource_categories_management_resource_type),
-// 			ResourceCategories: pulumi.Any(_var.Log_analytics_resource_categories_management_resource_categories),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsResourceCategoriesManagement(ctx, "testLogAnalyticsResourceCategoriesManagement", &LogAnalytics.LogAnalyticsResourceCategoriesManagementArgs{
+//				Namespace:          pulumi.Any(_var.Log_analytics_resource_categories_management_namespace),
+//				ResourceId:         pulumi.Any(oci_log_analytics_resource_categories_management_resource_id),
+//				ResourceType:       pulumi.Any(_var.Log_analytics_resource_categories_management_resource_type),
+//				ResourceCategories: pulumi.Any(_var.Log_analytics_resource_categories_management_resource_categories),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -172,7 +175,7 @@ func (i *LogAnalyticsResourceCategoriesManagement) ToLogAnalyticsResourceCategor
 // LogAnalyticsResourceCategoriesManagementArrayInput is an input type that accepts LogAnalyticsResourceCategoriesManagementArray and LogAnalyticsResourceCategoriesManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsResourceCategoriesManagementArrayInput` via:
 //
-//          LogAnalyticsResourceCategoriesManagementArray{ LogAnalyticsResourceCategoriesManagementArgs{...} }
+//	LogAnalyticsResourceCategoriesManagementArray{ LogAnalyticsResourceCategoriesManagementArgs{...} }
 type LogAnalyticsResourceCategoriesManagementArrayInput interface {
 	pulumi.Input
 
@@ -197,7 +200,7 @@ func (i LogAnalyticsResourceCategoriesManagementArray) ToLogAnalyticsResourceCat
 // LogAnalyticsResourceCategoriesManagementMapInput is an input type that accepts LogAnalyticsResourceCategoriesManagementMap and LogAnalyticsResourceCategoriesManagementMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsResourceCategoriesManagementMapInput` via:
 //
-//          LogAnalyticsResourceCategoriesManagementMap{ "key": LogAnalyticsResourceCategoriesManagementArgs{...} }
+//	LogAnalyticsResourceCategoriesManagementMap{ "key": LogAnalyticsResourceCategoriesManagementArgs{...} }
 type LogAnalyticsResourceCategoriesManagementMapInput interface {
 	pulumi.Input
 

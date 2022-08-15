@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkFirewall.GetNetworkFirewallPolicy(ctx, &networkfirewall.GetNetworkFirewallPolicyArgs{
-// 			NetworkFirewallPolicyId: oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkFirewall.GetNetworkFirewallPolicy(ctx, &networkfirewall.GetNetworkFirewallPolicyArgs{
+//				NetworkFirewallPolicyId: oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNetworkFirewallPolicy(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyResult, error) {
 	var rv LookupNetworkFirewallPolicyResult

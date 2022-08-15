@@ -17,15 +17,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumes = oci.Core.getVolumes({
- *     compartmentId: _var.compartment_id,
  *     availabilityDomain: _var.volume_availability_domain,
+ *     compartmentId: _var.compartment_id,
  *     displayName: _var.volume_display_name,
  *     state: _var.volume_state,
  *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
  * });
  * ```
  */
-export function getVolumes(args: GetVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumesResult> {
+export function getVolumes(args?: GetVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumesResult> {
+    args = args || {};
     if (!opts) {
         opts = {}
     }
@@ -52,7 +53,7 @@ export interface GetVolumesArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
@@ -79,7 +80,7 @@ export interface GetVolumesResult {
     /**
      * The OCID of the compartment that contains the volume.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -103,7 +104,7 @@ export interface GetVolumesResult {
     readonly volumes: outputs.Core.GetVolumesVolume[];
 }
 
-export function getVolumesOutput(args: GetVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumesResult> {
+export function getVolumesOutput(args?: GetVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumesResult> {
     return pulumi.output(args).apply(a => getVolumes(a, opts))
 }
 
@@ -118,7 +119,7 @@ export interface GetVolumesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */

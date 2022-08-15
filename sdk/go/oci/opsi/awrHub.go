@@ -22,30 +22,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewAwrHub(ctx, "testAwrHub", &Opsi.AwrHubArgs{
-// 			CompartmentId:                 pulumi.Any(_var.Compartment_id),
-// 			DisplayName:                   pulumi.Any(_var.Awr_hub_display_name),
-// 			ObjectStorageBucketName:       pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-// 			OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewAwrHub(ctx, "testAwrHub", &Opsi.AwrHubArgs{
+//				CompartmentId:                 pulumi.Any(_var.Compartment_id),
+//				DisplayName:                   pulumi.Any(_var.Awr_hub_display_name),
+//				ObjectStorageBucketName:       pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
+//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // AwrHubs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
+//
+//	$ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
+//
 // ```
 type AwrHub struct {
 	pulumi.CustomResourceState
@@ -239,7 +244,7 @@ func (i *AwrHub) ToAwrHubOutputWithContext(ctx context.Context) AwrHubOutput {
 // AwrHubArrayInput is an input type that accepts AwrHubArray and AwrHubArrayOutput values.
 // You can construct a concrete instance of `AwrHubArrayInput` via:
 //
-//          AwrHubArray{ AwrHubArgs{...} }
+//	AwrHubArray{ AwrHubArgs{...} }
 type AwrHubArrayInput interface {
 	pulumi.Input
 
@@ -264,7 +269,7 @@ func (i AwrHubArray) ToAwrHubArrayOutputWithContext(ctx context.Context) AwrHubA
 // AwrHubMapInput is an input type that accepts AwrHubMap and AwrHubMapOutput values.
 // You can construct a concrete instance of `AwrHubMapInput` via:
 //
-//          AwrHubMap{ "key": AwrHubArgs{...} }
+//	AwrHubMap{ "key": AwrHubArgs{...} }
 type AwrHubMapInput interface {
 	pulumi.Input
 

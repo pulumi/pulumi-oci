@@ -23,30 +23,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.NewManagedInstanceGroup(ctx, "testManagedInstanceGroup", &OsManagement.ManagedInstanceGroupArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Managed_instance_group_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Managed_instance_group_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			OsFamily: pulumi.Any(_var.Managed_instance_group_os_family),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.NewManagedInstanceGroup(ctx, "testManagedInstanceGroup", &OsManagement.ManagedInstanceGroupArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Managed_instance_group_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Managed_instance_group_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				OsFamily: pulumi.Any(_var.Managed_instance_group_os_family),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // ManagedInstanceGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
+//
+//	$ pulumi import oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
+//
 // ```
 type ManagedInstanceGroup struct {
 	pulumi.CustomResourceState
@@ -213,7 +218,7 @@ func (i *ManagedInstanceGroup) ToManagedInstanceGroupOutputWithContext(ctx conte
 // ManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceGroupArray and ManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupArrayInput` via:
 //
-//          ManagedInstanceGroupArray{ ManagedInstanceGroupArgs{...} }
+//	ManagedInstanceGroupArray{ ManagedInstanceGroupArgs{...} }
 type ManagedInstanceGroupArrayInput interface {
 	pulumi.Input
 
@@ -238,7 +243,7 @@ func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutputWithContext(
 // ManagedInstanceGroupMapInput is an input type that accepts ManagedInstanceGroupMap and ManagedInstanceGroupMapOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupMapInput` via:
 //
-//          ManagedInstanceGroupMap{ "key": ManagedInstanceGroupArgs{...} }
+//	ManagedInstanceGroupMap{ "key": ManagedInstanceGroupArgs{...} }
 type ManagedInstanceGroupMapInput interface {
 	pulumi.Input
 

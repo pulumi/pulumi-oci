@@ -13,14 +13,16 @@ import (
 
 // This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a DetectorRecipe
+// # Creates a DetectorRecipe
 //
 // ## Import
 //
 // DetectorRecipes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
+//
+//	$ pulumi import oci:CloudGuard/detectorRecipe:DetectorRecipe test_detector_recipe "id"
+//
 // ```
 type DetectorRecipe struct {
 	pulumi.CustomResourceState
@@ -219,7 +221,7 @@ func (i *DetectorRecipe) ToDetectorRecipeOutputWithContext(ctx context.Context) 
 // DetectorRecipeArrayInput is an input type that accepts DetectorRecipeArray and DetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeArrayInput` via:
 //
-//          DetectorRecipeArray{ DetectorRecipeArgs{...} }
+//	DetectorRecipeArray{ DetectorRecipeArgs{...} }
 type DetectorRecipeArrayInput interface {
 	pulumi.Input
 
@@ -244,7 +246,7 @@ func (i DetectorRecipeArray) ToDetectorRecipeArrayOutputWithContext(ctx context.
 // DetectorRecipeMapInput is an input type that accepts DetectorRecipeMap and DetectorRecipeMapOutput values.
 // You can construct a concrete instance of `DetectorRecipeMapInput` via:
 //
-//          DetectorRecipeMap{ "key": DetectorRecipeArgs{...} }
+//	DetectorRecipeMap{ "key": DetectorRecipeArgs{...} }
 type DetectorRecipeMapInput interface {
 	pulumi.Input
 

@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewDataSafeConfiguration(ctx, "testDataSafeConfiguration", &DataSafe.DataSafeConfigurationArgs{
-// 			IsEnabled:     pulumi.Any(_var.Data_safe_configuration_is_enabled),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewDataSafeConfiguration(ctx, "testDataSafeConfiguration", &DataSafe.DataSafeConfigurationArgs{
+//				IsEnabled:     pulumi.Any(_var.Data_safe_configuration_is_enabled),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -183,7 +186,7 @@ func (i *DataSafeConfiguration) ToDataSafeConfigurationOutputWithContext(ctx con
 // DataSafeConfigurationArrayInput is an input type that accepts DataSafeConfigurationArray and DataSafeConfigurationArrayOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationArrayInput` via:
 //
-//          DataSafeConfigurationArray{ DataSafeConfigurationArgs{...} }
+//	DataSafeConfigurationArray{ DataSafeConfigurationArgs{...} }
 type DataSafeConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -208,7 +211,7 @@ func (i DataSafeConfigurationArray) ToDataSafeConfigurationArrayOutputWithContex
 // DataSafeConfigurationMapInput is an input type that accepts DataSafeConfigurationMap and DataSafeConfigurationMapOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationMapInput` via:
 //
-//          DataSafeConfigurationMap{ "key": DataSafeConfigurationArgs{...} }
+//	DataSafeConfigurationMap{ "key": DataSafeConfigurationArgs{...} }
 type DataSafeConfigurationMapInput interface {
 	pulumi.Input
 

@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetTargetDatabaseRoles(ctx, &datasafe.GetTargetDatabaseRolesArgs{
-// 			TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
-// 			AuthenticationType: pulumi.StringRef(_var.Target_database_role_authentication_type),
-// 			IsOracleMaintained: pulumi.BoolRef(_var.Target_database_role_is_oracle_maintained),
-// 			RoleNames:          _var.Target_database_role_role_name,
-// 			RoleNameContains:   pulumi.StringRef(_var.Target_database_role_role_name_contains),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetTargetDatabaseRoles(ctx, &datasafe.GetTargetDatabaseRolesArgs{
+//				TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
+//				AuthenticationType: pulumi.StringRef(_var.Target_database_role_authentication_type),
+//				IsOracleMaintained: pulumi.BoolRef(_var.Target_database_role_is_oracle_maintained),
+//				RoleNames:          _var.Target_database_role_role_name,
+//				RoleNameContains:   pulumi.StringRef(_var.Target_database_role_role_name_contains),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTargetDatabaseRoles(ctx *pulumi.Context, args *GetTargetDatabaseRolesArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabaseRolesResult, error) {
 	var rv GetTargetDatabaseRolesResult

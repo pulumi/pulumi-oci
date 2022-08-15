@@ -20,7 +20,7 @@ class GetControlAssignmentResult:
     """
     A collection of values returned by getControlAssignment.
     """
-    def __init__(__self__, assigner_id=None, comment=None, compartment_id=None, defined_tags=None, detachment_description=None, error_code=None, error_message=None, freeform_tags=None, id=None, is_auto_approve_during_maintenance=None, is_enforced_always=None, is_log_forwarded=None, operator_control_assignment_id=None, operator_control_id=None, remote_syslog_server_address=None, remote_syslog_server_ca_cert=None, remote_syslog_server_port=None, resource_compartment_id=None, resource_id=None, resource_name=None, resource_type=None, state=None, time_assignment_from=None, time_assignment_to=None, time_of_assignment=None, time_of_deletion=None, unassigner_id=None):
+    def __init__(__self__, assigner_id=None, comment=None, compartment_id=None, defined_tags=None, detachment_description=None, error_code=None, error_message=None, freeform_tags=None, id=None, is_auto_approve_during_maintenance=None, is_enforced_always=None, is_log_forwarded=None, lifecycle_details=None, operator_control_assignment_id=None, operator_control_id=None, remote_syslog_server_address=None, remote_syslog_server_ca_cert=None, remote_syslog_server_port=None, resource_compartment_id=None, resource_id=None, resource_name=None, resource_type=None, state=None, time_assignment_from=None, time_assignment_to=None, time_of_assignment=None, time_of_deletion=None, unassigner_id=None):
         if assigner_id and not isinstance(assigner_id, str):
             raise TypeError("Expected argument 'assigner_id' to be a str")
         pulumi.set(__self__, "assigner_id", assigner_id)
@@ -57,6 +57,9 @@ class GetControlAssignmentResult:
         if is_log_forwarded and not isinstance(is_log_forwarded, bool):
             raise TypeError("Expected argument 'is_log_forwarded' to be a bool")
         pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if operator_control_assignment_id and not isinstance(operator_control_assignment_id, str):
             raise TypeError("Expected argument 'operator_control_assignment_id' to be a str")
         pulumi.set(__self__, "operator_control_assignment_id", operator_control_assignment_id)
@@ -200,6 +203,14 @@ class GetControlAssignmentResult:
         return pulumi.get(self, "is_log_forwarded")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        More in detail about the lifeCycleState.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="operatorControlAssignmentId")
     def operator_control_assignment_id(self) -> str:
         return pulumi.get(self, "operator_control_assignment_id")
@@ -335,6 +346,7 @@ class AwaitableGetControlAssignmentResult(GetControlAssignmentResult):
             is_auto_approve_during_maintenance=self.is_auto_approve_during_maintenance,
             is_enforced_always=self.is_enforced_always,
             is_log_forwarded=self.is_log_forwarded,
+            lifecycle_details=self.lifecycle_details,
             operator_control_assignment_id=self.operator_control_assignment_id,
             operator_control_id=self.operator_control_id,
             remote_syslog_server_address=self.remote_syslog_server_address,
@@ -392,6 +404,7 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
         is_auto_approve_during_maintenance=__ret__.is_auto_approve_during_maintenance,
         is_enforced_always=__ret__.is_enforced_always,
         is_log_forwarded=__ret__.is_log_forwarded,
+        lifecycle_details=__ret__.lifecycle_details,
         operator_control_assignment_id=__ret__.operator_control_assignment_id,
         operator_control_id=__ret__.operator_control_id,
         remote_syslog_server_address=__ret__.remote_syslog_server_address,

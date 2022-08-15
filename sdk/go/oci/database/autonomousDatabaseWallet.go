@@ -17,24 +17,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousDatabaseWallet(ctx, "testAutonomousDatabaseWallet", &Database.AutonomousDatabaseWalletArgs{
-// 			AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-// 			Password:             pulumi.Any(_var.Autonomous_database_wallet_password),
-// 			Base64EncodeContent:  pulumi.Bool(false),
-// 			GenerateType:         pulumi.Any(_var.Autonomous_database_wallet_generate_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousDatabaseWallet(ctx, "testAutonomousDatabaseWallet", &Database.AutonomousDatabaseWalletArgs{
+//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
+//				Password:             pulumi.Any(_var.Autonomous_database_wallet_password),
+//				Base64EncodeContent:  pulumi.Bool(false),
+//				GenerateType:         pulumi.Any(_var.Autonomous_database_wallet_generate_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -163,7 +166,7 @@ func (i *AutonomousDatabaseWallet) ToAutonomousDatabaseWalletOutputWithContext(c
 // AutonomousDatabaseWalletArrayInput is an input type that accepts AutonomousDatabaseWalletArray and AutonomousDatabaseWalletArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseWalletArrayInput` via:
 //
-//          AutonomousDatabaseWalletArray{ AutonomousDatabaseWalletArgs{...} }
+//	AutonomousDatabaseWalletArray{ AutonomousDatabaseWalletArgs{...} }
 type AutonomousDatabaseWalletArrayInput interface {
 	pulumi.Input
 
@@ -188,7 +191,7 @@ func (i AutonomousDatabaseWalletArray) ToAutonomousDatabaseWalletArrayOutputWith
 // AutonomousDatabaseWalletMapInput is an input type that accepts AutonomousDatabaseWalletMap and AutonomousDatabaseWalletMapOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseWalletMapInput` via:
 //
-//          AutonomousDatabaseWalletMap{ "key": AutonomousDatabaseWalletArgs{...} }
+//	AutonomousDatabaseWalletMap{ "key": AutonomousDatabaseWalletArgs{...} }
 type AutonomousDatabaseWalletMapInput interface {
 	pulumi.Input
 

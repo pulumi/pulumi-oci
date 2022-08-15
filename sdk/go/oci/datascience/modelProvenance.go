@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.NewModelProvenance(ctx, "testModelProvenance", &DataScience.ModelProvenanceArgs{
-// 			ModelId:        pulumi.Any(oci_datascience_model.Test_model.Id),
-// 			GitBranch:      pulumi.Any(_var.Model_provenance_git_branch),
-// 			GitCommit:      pulumi.Any(_var.Model_provenance_git_commit),
-// 			RepositoryUrl:  pulumi.Any(_var.Model_provenance_repository_url),
-// 			ScriptDir:      pulumi.Any(_var.Model_provenance_script_dir),
-// 			TrainingId:     pulumi.Any(oci_datascience_training.Test_training.Id),
-// 			TrainingScript: pulumi.Any(_var.Model_provenance_training_script),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.NewModelProvenance(ctx, "testModelProvenance", &DataScience.ModelProvenanceArgs{
+//				ModelId:        pulumi.Any(oci_datascience_model.Test_model.Id),
+//				GitBranch:      pulumi.Any(_var.Model_provenance_git_branch),
+//				GitCommit:      pulumi.Any(_var.Model_provenance_git_commit),
+//				RepositoryUrl:  pulumi.Any(_var.Model_provenance_repository_url),
+//				ScriptDir:      pulumi.Any(_var.Model_provenance_script_dir),
+//				TrainingId:     pulumi.Any(oci_datascience_training.Test_training.Id),
+//				TrainingScript: pulumi.Any(_var.Model_provenance_training_script),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -49,7 +52,9 @@ import (
 // ModelProvenances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
+//
+//	$ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
+//
 // ```
 type ModelProvenance struct {
 	pulumi.CustomResourceState
@@ -200,7 +205,7 @@ func (i *ModelProvenance) ToModelProvenanceOutputWithContext(ctx context.Context
 // ModelProvenanceArrayInput is an input type that accepts ModelProvenanceArray and ModelProvenanceArrayOutput values.
 // You can construct a concrete instance of `ModelProvenanceArrayInput` via:
 //
-//          ModelProvenanceArray{ ModelProvenanceArgs{...} }
+//	ModelProvenanceArray{ ModelProvenanceArgs{...} }
 type ModelProvenanceArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +230,7 @@ func (i ModelProvenanceArray) ToModelProvenanceArrayOutputWithContext(ctx contex
 // ModelProvenanceMapInput is an input type that accepts ModelProvenanceMap and ModelProvenanceMapOutput values.
 // You can construct a concrete instance of `ModelProvenanceMapInput` via:
 //
-//          ModelProvenanceMap{ "key": ModelProvenanceArgs{...} }
+//	ModelProvenanceMap{ "key": ModelProvenanceArgs{...} }
 type ModelProvenanceMapInput interface {
 	pulumi.Input
 

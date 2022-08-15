@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.GetDkims(ctx, &email.GetDkimsArgs{
-// 			EmailDomainId: oci_email_email_domain.Test_email_domain.Id,
-// 			Id:            pulumi.StringRef(_var.Dkim_id),
-// 			Name:          pulumi.StringRef(_var.Dkim_name),
-// 			State:         pulumi.StringRef(_var.Dkim_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.GetDkims(ctx, &email.GetDkimsArgs{
+//				EmailDomainId: oci_email_email_domain.Test_email_domain.Id,
+//				Id:            pulumi.StringRef(_var.Dkim_id),
+//				Name:          pulumi.StringRef(_var.Dkim_name),
+//				State:         pulumi.StringRef(_var.Dkim_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDkims(ctx *pulumi.Context, args *GetDkimsArgs, opts ...pulumi.InvokeOption) (*GetDkimsResult, error) {
 	var rv GetDkimsResult

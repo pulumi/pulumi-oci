@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetGenericArtifact(ctx, &artifacts.GetGenericArtifactArgs{
-// 			ArtifactId: oci_artifacts_artifact.Test_artifact.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetGenericArtifact(ctx, &artifacts.GetGenericArtifactArgs{
+//				ArtifactId: oci_artifacts_artifact.Test_artifact.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupGenericArtifact(ctx *pulumi.Context, args *LookupGenericArtifactArgs, opts ...pulumi.InvokeOption) (*LookupGenericArtifactResult, error) {
 	var rv LookupGenericArtifactResult

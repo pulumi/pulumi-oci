@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetVmClusterNetwork(ctx, &database.GetVmClusterNetworkArgs{
-// 			ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-// 			VmClusterNetworkId:      oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetVmClusterNetwork(ctx, &database.GetVmClusterNetworkArgs{
+//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//				VmClusterNetworkId:      oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupVmClusterNetwork(ctx *pulumi.Context, args *LookupVmClusterNetworkArgs, opts ...pulumi.InvokeOption) (*LookupVmClusterNetworkResult, error) {
 	var rv LookupVmClusterNetworkResult

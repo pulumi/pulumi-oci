@@ -76,7 +76,7 @@ class DeployStageArgs:
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional binary artifact OCID user may provide to this stage.
+        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
@@ -360,7 +360,7 @@ class DeployStageArgs:
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Optional binary artifact OCID user may provide to this stage.
+        (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         """
         return pulumi.get(self, "deploy_artifact_id")
 
@@ -822,7 +822,7 @@ class _DeployStageState:
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional binary artifact OCID user may provide to this stage.
+        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
@@ -1108,7 +1108,7 @@ class _DeployStageState:
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Optional binary artifact OCID user may provide to this stage.
+        (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         """
         return pulumi.get(self, "deploy_artifact_id")
 
@@ -1686,7 +1686,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional binary artifact OCID user may provide to this stage.
+        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
@@ -1955,7 +1955,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
         :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional binary artifact OCID user may provide to this stage.
+        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
@@ -2149,7 +2149,7 @@ class DeployStage(pulumi.CustomResource):
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) Optional binary artifact OCID user may provide to this stage.
+        (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         """
         return pulumi.get(self, "deploy_artifact_id")
 

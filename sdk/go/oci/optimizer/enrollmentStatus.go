@@ -20,7 +20,9 @@ import (
 // EnrollmentStatus can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
+//
+//	$ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
+//
 // ```
 type EnrollmentStatus struct {
 	pulumi.CustomResourceState
@@ -154,7 +156,7 @@ func (i *EnrollmentStatus) ToEnrollmentStatusOutputWithContext(ctx context.Conte
 // EnrollmentStatusArrayInput is an input type that accepts EnrollmentStatusArray and EnrollmentStatusArrayOutput values.
 // You can construct a concrete instance of `EnrollmentStatusArrayInput` via:
 //
-//          EnrollmentStatusArray{ EnrollmentStatusArgs{...} }
+//	EnrollmentStatusArray{ EnrollmentStatusArgs{...} }
 type EnrollmentStatusArrayInput interface {
 	pulumi.Input
 
@@ -179,7 +181,7 @@ func (i EnrollmentStatusArray) ToEnrollmentStatusArrayOutputWithContext(ctx cont
 // EnrollmentStatusMapInput is an input type that accepts EnrollmentStatusMap and EnrollmentStatusMapOutput values.
 // You can construct a concrete instance of `EnrollmentStatusMapInput` via:
 //
-//          EnrollmentStatusMap{ "key": EnrollmentStatusArgs{...} }
+//	EnrollmentStatusMap{ "key": EnrollmentStatusArgs{...} }
 type EnrollmentStatusMapInput interface {
 	pulumi.Input
 

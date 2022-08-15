@@ -22,6 +22,10 @@ from .get_exadata_insight import *
 from .get_exadata_insights import *
 from .get_host_insight import *
 from .get_host_insights import *
+from .get_importable_agent_entities import *
+from .get_importable_agent_entity import *
+from .get_importable_compute_entities import *
+from .get_importable_compute_entity import *
 from .get_operations_insights_private_endpoint import *
 from .get_operations_insights_private_endpoints import *
 from .get_operations_insights_warehouse import *

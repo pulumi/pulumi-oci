@@ -20,7 +20,9 @@ import (
 // ResponderRecipes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
+//
+//	$ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
+//
 // ```
 type ResponderRecipe struct {
 	pulumi.CustomResourceState
@@ -219,7 +221,7 @@ func (i *ResponderRecipe) ToResponderRecipeOutputWithContext(ctx context.Context
 // ResponderRecipeArrayInput is an input type that accepts ResponderRecipeArray and ResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeArrayInput` via:
 //
-//          ResponderRecipeArray{ ResponderRecipeArgs{...} }
+//	ResponderRecipeArray{ ResponderRecipeArgs{...} }
 type ResponderRecipeArrayInput interface {
 	pulumi.Input
 
@@ -244,7 +246,7 @@ func (i ResponderRecipeArray) ToResponderRecipeArrayOutputWithContext(ctx contex
 // ResponderRecipeMapInput is an input type that accepts ResponderRecipeMap and ResponderRecipeMapOutput values.
 // You can construct a concrete instance of `ResponderRecipeMapInput` via:
 //
-//          ResponderRecipeMap{ "key": ResponderRecipeArgs{...} }
+//	ResponderRecipeMap{ "key": ResponderRecipeArgs{...} }
 type ResponderRecipeMapInput interface {
 	pulumi.Input
 

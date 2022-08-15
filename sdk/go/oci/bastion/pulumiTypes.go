@@ -18,7 +18,7 @@ type SessionKeyDetails struct {
 // SessionKeyDetailsInput is an input type that accepts SessionKeyDetailsArgs and SessionKeyDetailsOutput values.
 // You can construct a concrete instance of `SessionKeyDetailsInput` via:
 //
-//          SessionKeyDetailsArgs{...}
+//	SessionKeyDetailsArgs{...}
 type SessionKeyDetailsInput interface {
 	pulumi.Input
 
@@ -54,11 +54,11 @@ func (i SessionKeyDetailsArgs) ToSessionKeyDetailsPtrOutputWithContext(ctx conte
 // SessionKeyDetailsPtrInput is an input type that accepts SessionKeyDetailsArgs, SessionKeyDetailsPtr and SessionKeyDetailsPtrOutput values.
 // You can construct a concrete instance of `SessionKeyDetailsPtrInput` via:
 //
-//          SessionKeyDetailsArgs{...}
+//	        SessionKeyDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SessionKeyDetailsPtrInput interface {
 	pulumi.Input
 
@@ -167,7 +167,7 @@ type SessionTargetResourceDetails struct {
 // SessionTargetResourceDetailsInput is an input type that accepts SessionTargetResourceDetailsArgs and SessionTargetResourceDetailsOutput values.
 // You can construct a concrete instance of `SessionTargetResourceDetailsInput` via:
 //
-//          SessionTargetResourceDetailsArgs{...}
+//	SessionTargetResourceDetailsArgs{...}
 type SessionTargetResourceDetailsInput interface {
 	pulumi.Input
 
@@ -215,11 +215,11 @@ func (i SessionTargetResourceDetailsArgs) ToSessionTargetResourceDetailsPtrOutpu
 // SessionTargetResourceDetailsPtrInput is an input type that accepts SessionTargetResourceDetailsArgs, SessionTargetResourceDetailsPtr and SessionTargetResourceDetailsPtrOutput values.
 // You can construct a concrete instance of `SessionTargetResourceDetailsPtrInput` via:
 //
-//          SessionTargetResourceDetailsArgs{...}
+//	        SessionTargetResourceDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SessionTargetResourceDetailsPtrInput interface {
 	pulumi.Input
 
@@ -431,7 +431,7 @@ type GetBastionsBastion struct {
 // GetBastionsBastionInput is an input type that accepts GetBastionsBastionArgs and GetBastionsBastionOutput values.
 // You can construct a concrete instance of `GetBastionsBastionInput` via:
 //
-//          GetBastionsBastionArgs{...}
+//	GetBastionsBastionArgs{...}
 type GetBastionsBastionInput interface {
 	pulumi.Input
 
@@ -495,7 +495,7 @@ func (i GetBastionsBastionArgs) ToGetBastionsBastionOutputWithContext(ctx contex
 // GetBastionsBastionArrayInput is an input type that accepts GetBastionsBastionArray and GetBastionsBastionArrayOutput values.
 // You can construct a concrete instance of `GetBastionsBastionArrayInput` via:
 //
-//          GetBastionsBastionArray{ GetBastionsBastionArgs{...} }
+//	GetBastionsBastionArray{ GetBastionsBastionArgs{...} }
 type GetBastionsBastionArrayInput interface {
 	pulumi.Input
 
@@ -656,7 +656,7 @@ type GetBastionsFilter struct {
 // GetBastionsFilterInput is an input type that accepts GetBastionsFilterArgs and GetBastionsFilterOutput values.
 // You can construct a concrete instance of `GetBastionsFilterInput` via:
 //
-//          GetBastionsFilterArgs{...}
+//	GetBastionsFilterArgs{...}
 type GetBastionsFilterInput interface {
 	pulumi.Input
 
@@ -686,7 +686,7 @@ func (i GetBastionsFilterArgs) ToGetBastionsFilterOutputWithContext(ctx context.
 // GetBastionsFilterArrayInput is an input type that accepts GetBastionsFilterArray and GetBastionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBastionsFilterArrayInput` via:
 //
-//          GetBastionsFilterArray{ GetBastionsFilterArgs{...} }
+//	GetBastionsFilterArray{ GetBastionsFilterArgs{...} }
 type GetBastionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -763,7 +763,7 @@ type GetSessionKeyDetail struct {
 // GetSessionKeyDetailInput is an input type that accepts GetSessionKeyDetailArgs and GetSessionKeyDetailOutput values.
 // You can construct a concrete instance of `GetSessionKeyDetailInput` via:
 //
-//          GetSessionKeyDetailArgs{...}
+//	GetSessionKeyDetailArgs{...}
 type GetSessionKeyDetailInput interface {
 	pulumi.Input
 
@@ -791,7 +791,7 @@ func (i GetSessionKeyDetailArgs) ToGetSessionKeyDetailOutputWithContext(ctx cont
 // GetSessionKeyDetailArrayInput is an input type that accepts GetSessionKeyDetailArray and GetSessionKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionKeyDetailArrayInput` via:
 //
-//          GetSessionKeyDetailArray{ GetSessionKeyDetailArgs{...} }
+//	GetSessionKeyDetailArray{ GetSessionKeyDetailArgs{...} }
 type GetSessionKeyDetailArrayInput interface {
 	pulumi.Input
 
@@ -870,7 +870,7 @@ type GetSessionTargetResourceDetail struct {
 // GetSessionTargetResourceDetailInput is an input type that accepts GetSessionTargetResourceDetailArgs and GetSessionTargetResourceDetailOutput values.
 // You can construct a concrete instance of `GetSessionTargetResourceDetailInput` via:
 //
-//          GetSessionTargetResourceDetailArgs{...}
+//	GetSessionTargetResourceDetailArgs{...}
 type GetSessionTargetResourceDetailInput interface {
 	pulumi.Input
 
@@ -908,7 +908,7 @@ func (i GetSessionTargetResourceDetailArgs) ToGetSessionTargetResourceDetailOutp
 // GetSessionTargetResourceDetailArrayInput is an input type that accepts GetSessionTargetResourceDetailArray and GetSessionTargetResourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionTargetResourceDetailArrayInput` via:
 //
-//          GetSessionTargetResourceDetailArray{ GetSessionTargetResourceDetailArgs{...} }
+//	GetSessionTargetResourceDetailArray{ GetSessionTargetResourceDetailArgs{...} }
 type GetSessionTargetResourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -1003,7 +1003,7 @@ type GetSessionsFilter struct {
 // GetSessionsFilterInput is an input type that accepts GetSessionsFilterArgs and GetSessionsFilterOutput values.
 // You can construct a concrete instance of `GetSessionsFilterInput` via:
 //
-//          GetSessionsFilterArgs{...}
+//	GetSessionsFilterArgs{...}
 type GetSessionsFilterInput interface {
 	pulumi.Input
 
@@ -1032,7 +1032,7 @@ func (i GetSessionsFilterArgs) ToGetSessionsFilterOutputWithContext(ctx context.
 // GetSessionsFilterArrayInput is an input type that accepts GetSessionsFilterArray and GetSessionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSessionsFilterArrayInput` via:
 //
-//          GetSessionsFilterArray{ GetSessionsFilterArgs{...} }
+//	GetSessionsFilterArray{ GetSessionsFilterArgs{...} }
 type GetSessionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1136,7 +1136,7 @@ type GetSessionsSession struct {
 // GetSessionsSessionInput is an input type that accepts GetSessionsSessionArgs and GetSessionsSessionOutput values.
 // You can construct a concrete instance of `GetSessionsSessionInput` via:
 //
-//          GetSessionsSessionArgs{...}
+//	GetSessionsSessionArgs{...}
 type GetSessionsSessionInput interface {
 	pulumi.Input
 
@@ -1192,7 +1192,7 @@ func (i GetSessionsSessionArgs) ToGetSessionsSessionOutputWithContext(ctx contex
 // GetSessionsSessionArrayInput is an input type that accepts GetSessionsSessionArray and GetSessionsSessionArrayOutput values.
 // You can construct a concrete instance of `GetSessionsSessionArrayInput` via:
 //
-//          GetSessionsSessionArray{ GetSessionsSessionArgs{...} }
+//	GetSessionsSessionArray{ GetSessionsSessionArgs{...} }
 type GetSessionsSessionArrayInput interface {
 	pulumi.Input
 
@@ -1331,7 +1331,7 @@ type GetSessionsSessionKeyDetail struct {
 // GetSessionsSessionKeyDetailInput is an input type that accepts GetSessionsSessionKeyDetailArgs and GetSessionsSessionKeyDetailOutput values.
 // You can construct a concrete instance of `GetSessionsSessionKeyDetailInput` via:
 //
-//          GetSessionsSessionKeyDetailArgs{...}
+//	GetSessionsSessionKeyDetailArgs{...}
 type GetSessionsSessionKeyDetailInput interface {
 	pulumi.Input
 
@@ -1359,7 +1359,7 @@ func (i GetSessionsSessionKeyDetailArgs) ToGetSessionsSessionKeyDetailOutputWith
 // GetSessionsSessionKeyDetailArrayInput is an input type that accepts GetSessionsSessionKeyDetailArray and GetSessionsSessionKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionsSessionKeyDetailArrayInput` via:
 //
-//          GetSessionsSessionKeyDetailArray{ GetSessionsSessionKeyDetailArgs{...} }
+//	GetSessionsSessionKeyDetailArray{ GetSessionsSessionKeyDetailArgs{...} }
 type GetSessionsSessionKeyDetailArrayInput interface {
 	pulumi.Input
 
@@ -1438,7 +1438,7 @@ type GetSessionsSessionTargetResourceDetail struct {
 // GetSessionsSessionTargetResourceDetailInput is an input type that accepts GetSessionsSessionTargetResourceDetailArgs and GetSessionsSessionTargetResourceDetailOutput values.
 // You can construct a concrete instance of `GetSessionsSessionTargetResourceDetailInput` via:
 //
-//          GetSessionsSessionTargetResourceDetailArgs{...}
+//	GetSessionsSessionTargetResourceDetailArgs{...}
 type GetSessionsSessionTargetResourceDetailInput interface {
 	pulumi.Input
 
@@ -1476,7 +1476,7 @@ func (i GetSessionsSessionTargetResourceDetailArgs) ToGetSessionsSessionTargetRe
 // GetSessionsSessionTargetResourceDetailArrayInput is an input type that accepts GetSessionsSessionTargetResourceDetailArray and GetSessionsSessionTargetResourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionsSessionTargetResourceDetailArrayInput` via:
 //
-//          GetSessionsSessionTargetResourceDetailArray{ GetSessionsSessionTargetResourceDetailArgs{...} }
+//	GetSessionsSessionTargetResourceDetailArray{ GetSessionsSessionTargetResourceDetailArgs{...} }
 type GetSessionsSessionTargetResourceDetailArrayInput interface {
 	pulumi.Input
 

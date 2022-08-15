@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string AppPassword;
         /// <summary>
+        /// The Base URL of the hosted BitbucketServer.
+        /// </summary>
+        public readonly string BaseUrl;
+        /// <summary>
         /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -70,6 +74,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
+        /// TLS configuration used by build service to verify TLS connection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult> TlsVerifyConfigs;
+        /// <summary>
         /// Public Bitbucket Cloud Username in plain text
         /// </summary>
         public readonly string Username;
@@ -79,6 +87,8 @@ namespace Pulumi.Oci.DevOps.Outputs
             string accessToken,
 
             string appPassword,
+
+            string baseUrl,
 
             string compartmentId,
 
@@ -104,10 +114,13 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string timeUpdated,
 
+            ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult> tlsVerifyConfigs,
+
             string username)
         {
             AccessToken = accessToken;
             AppPassword = appPassword;
+            BaseUrl = baseUrl;
             CompartmentId = compartmentId;
             ConnectionType = connectionType;
             DefinedTags = definedTags;
@@ -120,6 +133,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TlsVerifyConfigs = tlsVerifyConfigs;
             Username = username;
         }
     }

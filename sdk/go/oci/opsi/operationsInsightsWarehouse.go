@@ -23,30 +23,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewOperationsInsightsWarehouse(ctx, "testOperationsInsightsWarehouse", &Opsi.OperationsInsightsWarehouseArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			CpuAllocated:  pulumi.Any(_var.Operations_insights_warehouse_cpu_allocated),
-// 			DisplayName:   pulumi.Any(_var.Operations_insights_warehouse_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			StorageAllocatedInGbs: pulumi.Any(_var.Operations_insights_warehouse_storage_allocated_in_gbs),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewOperationsInsightsWarehouse(ctx, "testOperationsInsightsWarehouse", &Opsi.OperationsInsightsWarehouseArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				CpuAllocated:  pulumi.Any(_var.Operations_insights_warehouse_cpu_allocated),
+//				DisplayName:   pulumi.Any(_var.Operations_insights_warehouse_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				StorageAllocatedInGbs: pulumi.Any(_var.Operations_insights_warehouse_storage_allocated_in_gbs),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // OperationsInsightsWarehouses can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
+//
+//	$ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
+//
 // ```
 type OperationsInsightsWarehouse struct {
 	pulumi.CustomResourceState
@@ -261,7 +266,7 @@ func (i *OperationsInsightsWarehouse) ToOperationsInsightsWarehouseOutputWithCon
 // OperationsInsightsWarehouseArrayInput is an input type that accepts OperationsInsightsWarehouseArray and OperationsInsightsWarehouseArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseArrayInput` via:
 //
-//          OperationsInsightsWarehouseArray{ OperationsInsightsWarehouseArgs{...} }
+//	OperationsInsightsWarehouseArray{ OperationsInsightsWarehouseArgs{...} }
 type OperationsInsightsWarehouseArrayInput interface {
 	pulumi.Input
 
@@ -286,7 +291,7 @@ func (i OperationsInsightsWarehouseArray) ToOperationsInsightsWarehouseArrayOutp
 // OperationsInsightsWarehouseMapInput is an input type that accepts OperationsInsightsWarehouseMap and OperationsInsightsWarehouseMapOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseMapInput` via:
 //
-//          OperationsInsightsWarehouseMap{ "key": OperationsInsightsWarehouseArgs{...} }
+//	OperationsInsightsWarehouseMap{ "key": OperationsInsightsWarehouseArgs{...} }
 type OperationsInsightsWarehouseMapInput interface {
 	pulumi.Input
 

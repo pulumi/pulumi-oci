@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDrgRouteRule(ctx, &core.GetDrgRouteRuleArgs{
-// 			DrgRouteTableId: oci_core_drg_route_table.Test_drg_route_table.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDrgRouteRule(ctx, &core.GetDrgRouteRuleArgs{
+//				DrgRouteTableId: oci_core_drg_route_table.Test_drg_route_table.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDrgRouteRule(ctx *pulumi.Context, args *GetDrgRouteRuleArgs, opts ...pulumi.InvokeOption) (*GetDrgRouteRuleResult, error) {
 	var rv GetDrgRouteRuleResult

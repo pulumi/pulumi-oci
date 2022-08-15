@@ -23,24 +23,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetShapes(ctx, &mysql.GetShapesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Shape_availability_domain),
-// 			IsSupportedFors:    _var.Shape_is_supported_for,
-// 			Name:               pulumi.StringRef(_var.Shape_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetShapes(ctx, &mysql.GetShapesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Shape_availability_domain),
+//				IsSupportedFors:    _var.Shape_is_supported_for,
+//				Name:               pulumi.StringRef(_var.Shape_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetShapes(ctx *pulumi.Context, args *GetShapesArgs, opts ...pulumi.InvokeOption) (*GetShapesResult, error) {
 	var rv GetShapesResult

@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ContainerEngine.GetClusterKubeConfig(ctx, &containerengine.GetClusterKubeConfigArgs{
-// 			ClusterId:    oci_containerengine_cluster.Test_cluster.Id,
-// 			Endpoint:     pulumi.StringRef(_var.Cluster_kube_config_endpoint),
-// 			Expiration:   pulumi.IntRef(_var.Cluster_kube_config_expiration),
-// 			TokenVersion: pulumi.StringRef(_var.Cluster_kube_config_token_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.GetClusterKubeConfig(ctx, &containerengine.GetClusterKubeConfigArgs{
+//				ClusterId:    oci_containerengine_cluster.Test_cluster.Id,
+//				Endpoint:     pulumi.StringRef(_var.Cluster_kube_config_endpoint),
+//				Expiration:   pulumi.IntRef(_var.Cluster_kube_config_expiration),
+//				TokenVersion: pulumi.StringRef(_var.Cluster_kube_config_token_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetClusterKubeConfig(ctx *pulumi.Context, args *GetClusterKubeConfigArgs, opts ...pulumi.InvokeOption) (*GetClusterKubeConfigResult, error) {
 	var rv GetClusterKubeConfigResult

@@ -20,7 +20,7 @@ type AutonomousContainerDatabaseBackupConfig struct {
 // AutonomousContainerDatabaseBackupConfigInput is an input type that accepts AutonomousContainerDatabaseBackupConfigArgs and AutonomousContainerDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseBackupConfigInput` via:
 //
-//          AutonomousContainerDatabaseBackupConfigArgs{...}
+//	AutonomousContainerDatabaseBackupConfigArgs{...}
 type AutonomousContainerDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i AutonomousContainerDatabaseBackupConfigArgs) ToAutonomousContainerDataba
 // AutonomousContainerDatabaseBackupConfigPtrInput is an input type that accepts AutonomousContainerDatabaseBackupConfigArgs, AutonomousContainerDatabaseBackupConfigPtr and AutonomousContainerDatabaseBackupConfigPtrOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseBackupConfigPtrInput` via:
 //
-//          AutonomousContainerDatabaseBackupConfigArgs{...}
+//	        AutonomousContainerDatabaseBackupConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutonomousContainerDatabaseBackupConfigPtrInput interface {
 	pulumi.Input
 
@@ -184,7 +184,7 @@ type AutonomousContainerDatabaseBackupConfigBackupDestinationDetails struct {
 // AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInput is an input type that accepts AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs and AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInput` via:
 //
-//          AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{...}
+//	AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{...}
 type AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInput interface {
 	pulumi.Input
 
@@ -228,11 +228,11 @@ func (i AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs) ToA
 // AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsPtrInput is an input type that accepts AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs, AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsPtr and AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsPtrOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsPtrInput` via:
 //
-//          AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{...}
+//	        AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -397,7 +397,7 @@ type AutonomousContainerDatabaseKeyHistoryEntry struct {
 // AutonomousContainerDatabaseKeyHistoryEntryInput is an input type that accepts AutonomousContainerDatabaseKeyHistoryEntryArgs and AutonomousContainerDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseKeyHistoryEntryInput` via:
 //
-//          AutonomousContainerDatabaseKeyHistoryEntryArgs{...}
+//	AutonomousContainerDatabaseKeyHistoryEntryArgs{...}
 type AutonomousContainerDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -431,7 +431,7 @@ func (i AutonomousContainerDatabaseKeyHistoryEntryArgs) ToAutonomousContainerDat
 // AutonomousContainerDatabaseKeyHistoryEntryArrayInput is an input type that accepts AutonomousContainerDatabaseKeyHistoryEntryArray and AutonomousContainerDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          AutonomousContainerDatabaseKeyHistoryEntryArray{ AutonomousContainerDatabaseKeyHistoryEntryArgs{...} }
+//	AutonomousContainerDatabaseKeyHistoryEntryArray{ AutonomousContainerDatabaseKeyHistoryEntryArgs{...} }
 type AutonomousContainerDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -532,7 +532,7 @@ type AutonomousContainerDatabaseMaintenanceWindow struct {
 // AutonomousContainerDatabaseMaintenanceWindowInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowArgs and AutonomousContainerDatabaseMaintenanceWindowOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowArgs{...}
+//	AutonomousContainerDatabaseMaintenanceWindowArgs{...}
 type AutonomousContainerDatabaseMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -577,7 +577,7 @@ func (i AutonomousContainerDatabaseMaintenanceWindowArgs) ToAutonomousContainerD
 // AutonomousContainerDatabaseMaintenanceWindowArrayInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowArray and AutonomousContainerDatabaseMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowArrayInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowArray{ AutonomousContainerDatabaseMaintenanceWindowArgs{...} }
+//	AutonomousContainerDatabaseMaintenanceWindowArray{ AutonomousContainerDatabaseMaintenanceWindowArgs{...} }
 type AutonomousContainerDatabaseMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -691,7 +691,7 @@ type AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek struct {
 // AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs and AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...}
+//	AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...}
 type AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -719,7 +719,7 @@ func (i AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs) ToAutonomous
 // AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray and AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray{ AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...} }
+//	AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray{ AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...} }
 type AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -805,7 +805,7 @@ type AutonomousContainerDatabaseMaintenanceWindowDetails struct {
 // AutonomousContainerDatabaseMaintenanceWindowDetailsInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDetailsArgs and AutonomousContainerDatabaseMaintenanceWindowDetailsOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDetailsInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{...}
+//	AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{...}
 type AutonomousContainerDatabaseMaintenanceWindowDetailsInput interface {
 	pulumi.Input
 
@@ -858,11 +858,11 @@ func (i AutonomousContainerDatabaseMaintenanceWindowDetailsArgs) ToAutonomousCon
 // AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDetailsArgs, AutonomousContainerDatabaseMaintenanceWindowDetailsPtr and AutonomousContainerDatabaseMaintenanceWindowDetailsPtrOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{...}
+//	        AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1087,7 +1087,7 @@ type AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeek struct {
 // AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs and AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{...}
+//	AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{...}
 type AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -1115,7 +1115,7 @@ func (i AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs) ToAut
 // AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArrayInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray and AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArrayInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{ AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{...} }
+//	AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{ AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{...} }
 type AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -1184,7 +1184,7 @@ type AutonomousContainerDatabaseMaintenanceWindowDetailsMonth struct {
 // AutonomousContainerDatabaseMaintenanceWindowDetailsMonthInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs and AutonomousContainerDatabaseMaintenanceWindowDetailsMonthOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDetailsMonthInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{...}
+//	AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{...}
 type AutonomousContainerDatabaseMaintenanceWindowDetailsMonthInput interface {
 	pulumi.Input
 
@@ -1212,7 +1212,7 @@ func (i AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs) ToAutonomo
 // AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArrayInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray and AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArrayInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{ AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{...} }
+//	AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{ AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{...} }
 type AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArrayInput interface {
 	pulumi.Input
 
@@ -1281,7 +1281,7 @@ type AutonomousContainerDatabaseMaintenanceWindowMonth struct {
 // AutonomousContainerDatabaseMaintenanceWindowMonthInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowMonthArgs and AutonomousContainerDatabaseMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowMonthInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowMonthArgs{...}
+//	AutonomousContainerDatabaseMaintenanceWindowMonthArgs{...}
 type AutonomousContainerDatabaseMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -1309,7 +1309,7 @@ func (i AutonomousContainerDatabaseMaintenanceWindowMonthArgs) ToAutonomousConta
 // AutonomousContainerDatabaseMaintenanceWindowMonthArrayInput is an input type that accepts AutonomousContainerDatabaseMaintenanceWindowMonthArray and AutonomousContainerDatabaseMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMaintenanceWindowMonthArrayInput` via:
 //
-//          AutonomousContainerDatabaseMaintenanceWindowMonthArray{ AutonomousContainerDatabaseMaintenanceWindowMonthArgs{...} }
+//	AutonomousContainerDatabaseMaintenanceWindowMonthArray{ AutonomousContainerDatabaseMaintenanceWindowMonthArgs{...} }
 type AutonomousContainerDatabaseMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -1380,7 +1380,7 @@ type AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig stru
 // AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput is an input type that accepts AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs and AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput` via:
 //
-//          AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
+//	AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
 type AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -1418,11 +1418,11 @@ func (i AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigAr
 // AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtrInput is an input type that accepts AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs, AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtr and AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtrOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtrInput` via:
 //
-//          AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
+//	        AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtrInput interface {
 	pulumi.Input
 
@@ -1546,7 +1546,7 @@ type AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBacku
 // AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput is an input type that accepts AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs and AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput` via:
 //
-//          AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
+//	AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
 type AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -1582,7 +1582,7 @@ func (i AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBa
 // AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput is an input type that accepts AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray and AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
+//	AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
 type AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -1683,7 +1683,7 @@ type AutonomousDatabaseApexDetail struct {
 // AutonomousDatabaseApexDetailInput is an input type that accepts AutonomousDatabaseApexDetailArgs and AutonomousDatabaseApexDetailOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseApexDetailInput` via:
 //
-//          AutonomousDatabaseApexDetailArgs{...}
+//	AutonomousDatabaseApexDetailArgs{...}
 type AutonomousDatabaseApexDetailInput interface {
 	pulumi.Input
 
@@ -1713,7 +1713,7 @@ func (i AutonomousDatabaseApexDetailArgs) ToAutonomousDatabaseApexDetailOutputWi
 // AutonomousDatabaseApexDetailArrayInput is an input type that accepts AutonomousDatabaseApexDetailArray and AutonomousDatabaseApexDetailArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseApexDetailArrayInput` via:
 //
-//          AutonomousDatabaseApexDetailArray{ AutonomousDatabaseApexDetailArgs{...} }
+//	AutonomousDatabaseApexDetailArray{ AutonomousDatabaseApexDetailArgs{...} }
 type AutonomousDatabaseApexDetailArrayInput interface {
 	pulumi.Input
 
@@ -1789,7 +1789,7 @@ type AutonomousDatabaseBackupConfig struct {
 // AutonomousDatabaseBackupConfigInput is an input type that accepts AutonomousDatabaseBackupConfigArgs and AutonomousDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseBackupConfigInput` via:
 //
-//          AutonomousDatabaseBackupConfigArgs{...}
+//	AutonomousDatabaseBackupConfigArgs{...}
 type AutonomousDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -1819,7 +1819,7 @@ func (i AutonomousDatabaseBackupConfigArgs) ToAutonomousDatabaseBackupConfigOutp
 // AutonomousDatabaseBackupConfigArrayInput is an input type that accepts AutonomousDatabaseBackupConfigArray and AutonomousDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseBackupConfigArrayInput` via:
 //
-//          AutonomousDatabaseBackupConfigArray{ AutonomousDatabaseBackupConfigArgs{...} }
+//	AutonomousDatabaseBackupConfigArray{ AutonomousDatabaseBackupConfigArgs{...} }
 type AutonomousDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -1903,7 +1903,7 @@ type AutonomousDatabaseConnectionString struct {
 // AutonomousDatabaseConnectionStringInput is an input type that accepts AutonomousDatabaseConnectionStringArgs and AutonomousDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseConnectionStringInput` via:
 //
-//          AutonomousDatabaseConnectionStringArgs{...}
+//	AutonomousDatabaseConnectionStringArgs{...}
 type AutonomousDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -1941,7 +1941,7 @@ func (i AutonomousDatabaseConnectionStringArgs) ToAutonomousDatabaseConnectionSt
 // AutonomousDatabaseConnectionStringArrayInput is an input type that accepts AutonomousDatabaseConnectionStringArray and AutonomousDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseConnectionStringArrayInput` via:
 //
-//          AutonomousDatabaseConnectionStringArray{ AutonomousDatabaseConnectionStringArgs{...} }
+//	AutonomousDatabaseConnectionStringArray{ AutonomousDatabaseConnectionStringArgs{...} }
 type AutonomousDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -2051,7 +2051,7 @@ type AutonomousDatabaseConnectionStringProfile struct {
 // AutonomousDatabaseConnectionStringProfileInput is an input type that accepts AutonomousDatabaseConnectionStringProfileArgs and AutonomousDatabaseConnectionStringProfileOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseConnectionStringProfileInput` via:
 //
-//          AutonomousDatabaseConnectionStringProfileArgs{...}
+//	AutonomousDatabaseConnectionStringProfileArgs{...}
 type AutonomousDatabaseConnectionStringProfileInput interface {
 	pulumi.Input
 
@@ -2093,7 +2093,7 @@ func (i AutonomousDatabaseConnectionStringProfileArgs) ToAutonomousDatabaseConne
 // AutonomousDatabaseConnectionStringProfileArrayInput is an input type that accepts AutonomousDatabaseConnectionStringProfileArray and AutonomousDatabaseConnectionStringProfileArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseConnectionStringProfileArrayInput` via:
 //
-//          AutonomousDatabaseConnectionStringProfileArray{ AutonomousDatabaseConnectionStringProfileArgs{...} }
+//	AutonomousDatabaseConnectionStringProfileArray{ AutonomousDatabaseConnectionStringProfileArgs{...} }
 type AutonomousDatabaseConnectionStringProfileArrayInput interface {
 	pulumi.Input
 
@@ -2203,7 +2203,7 @@ type AutonomousDatabaseConnectionUrl struct {
 // AutonomousDatabaseConnectionUrlInput is an input type that accepts AutonomousDatabaseConnectionUrlArgs and AutonomousDatabaseConnectionUrlOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseConnectionUrlInput` via:
 //
-//          AutonomousDatabaseConnectionUrlArgs{...}
+//	AutonomousDatabaseConnectionUrlArgs{...}
 type AutonomousDatabaseConnectionUrlInput interface {
 	pulumi.Input
 
@@ -2237,7 +2237,7 @@ func (i AutonomousDatabaseConnectionUrlArgs) ToAutonomousDatabaseConnectionUrlOu
 // AutonomousDatabaseConnectionUrlArrayInput is an input type that accepts AutonomousDatabaseConnectionUrlArray and AutonomousDatabaseConnectionUrlArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseConnectionUrlArrayInput` via:
 //
-//          AutonomousDatabaseConnectionUrlArray{ AutonomousDatabaseConnectionUrlArgs{...} }
+//	AutonomousDatabaseConnectionUrlArray{ AutonomousDatabaseConnectionUrlArgs{...} }
 type AutonomousDatabaseConnectionUrlArrayInput interface {
 	pulumi.Input
 
@@ -2321,7 +2321,7 @@ type AutonomousDatabaseCustomerContact struct {
 // AutonomousDatabaseCustomerContactInput is an input type that accepts AutonomousDatabaseCustomerContactArgs and AutonomousDatabaseCustomerContactOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseCustomerContactInput` via:
 //
-//          AutonomousDatabaseCustomerContactArgs{...}
+//	AutonomousDatabaseCustomerContactArgs{...}
 type AutonomousDatabaseCustomerContactInput interface {
 	pulumi.Input
 
@@ -2349,7 +2349,7 @@ func (i AutonomousDatabaseCustomerContactArgs) ToAutonomousDatabaseCustomerConta
 // AutonomousDatabaseCustomerContactArrayInput is an input type that accepts AutonomousDatabaseCustomerContactArray and AutonomousDatabaseCustomerContactArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseCustomerContactArrayInput` via:
 //
-//          AutonomousDatabaseCustomerContactArray{ AutonomousDatabaseCustomerContactArgs{...} }
+//	AutonomousDatabaseCustomerContactArray{ AutonomousDatabaseCustomerContactArgs{...} }
 type AutonomousDatabaseCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -2424,7 +2424,7 @@ type AutonomousDatabaseKeyHistoryEntry struct {
 // AutonomousDatabaseKeyHistoryEntryInput is an input type that accepts AutonomousDatabaseKeyHistoryEntryArgs and AutonomousDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseKeyHistoryEntryInput` via:
 //
-//          AutonomousDatabaseKeyHistoryEntryArgs{...}
+//	AutonomousDatabaseKeyHistoryEntryArgs{...}
 type AutonomousDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -2458,7 +2458,7 @@ func (i AutonomousDatabaseKeyHistoryEntryArgs) ToAutonomousDatabaseKeyHistoryEnt
 // AutonomousDatabaseKeyHistoryEntryArrayInput is an input type that accepts AutonomousDatabaseKeyHistoryEntryArray and AutonomousDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          AutonomousDatabaseKeyHistoryEntryArray{ AutonomousDatabaseKeyHistoryEntryArgs{...} }
+//	AutonomousDatabaseKeyHistoryEntryArray{ AutonomousDatabaseKeyHistoryEntryArgs{...} }
 type AutonomousDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -2548,7 +2548,7 @@ type AutonomousDatabaseLocalStandbyDb struct {
 // AutonomousDatabaseLocalStandbyDbInput is an input type that accepts AutonomousDatabaseLocalStandbyDbArgs and AutonomousDatabaseLocalStandbyDbOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseLocalStandbyDbInput` via:
 //
-//          AutonomousDatabaseLocalStandbyDbArgs{...}
+//	AutonomousDatabaseLocalStandbyDbArgs{...}
 type AutonomousDatabaseLocalStandbyDbInput interface {
 	pulumi.Input
 
@@ -2582,7 +2582,7 @@ func (i AutonomousDatabaseLocalStandbyDbArgs) ToAutonomousDatabaseLocalStandbyDb
 // AutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts AutonomousDatabaseLocalStandbyDbArray and AutonomousDatabaseLocalStandbyDbArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseLocalStandbyDbArrayInput` via:
 //
-//          AutonomousDatabaseLocalStandbyDbArray{ AutonomousDatabaseLocalStandbyDbArgs{...} }
+//	AutonomousDatabaseLocalStandbyDbArray{ AutonomousDatabaseLocalStandbyDbArgs{...} }
 type AutonomousDatabaseLocalStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -2670,7 +2670,7 @@ type AutonomousDatabaseScheduledOperation struct {
 // AutonomousDatabaseScheduledOperationInput is an input type that accepts AutonomousDatabaseScheduledOperationArgs and AutonomousDatabaseScheduledOperationOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseScheduledOperationInput` via:
 //
-//          AutonomousDatabaseScheduledOperationArgs{...}
+//	AutonomousDatabaseScheduledOperationArgs{...}
 type AutonomousDatabaseScheduledOperationInput interface {
 	pulumi.Input
 
@@ -2702,7 +2702,7 @@ func (i AutonomousDatabaseScheduledOperationArgs) ToAutonomousDatabaseScheduledO
 // AutonomousDatabaseScheduledOperationArrayInput is an input type that accepts AutonomousDatabaseScheduledOperationArray and AutonomousDatabaseScheduledOperationArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseScheduledOperationArrayInput` via:
 //
-//          AutonomousDatabaseScheduledOperationArray{ AutonomousDatabaseScheduledOperationArgs{...} }
+//	AutonomousDatabaseScheduledOperationArray{ AutonomousDatabaseScheduledOperationArgs{...} }
 type AutonomousDatabaseScheduledOperationArrayInput interface {
 	pulumi.Input
 
@@ -2783,7 +2783,7 @@ type AutonomousDatabaseScheduledOperationDayOfWeek struct {
 // AutonomousDatabaseScheduledOperationDayOfWeekInput is an input type that accepts AutonomousDatabaseScheduledOperationDayOfWeekArgs and AutonomousDatabaseScheduledOperationDayOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseScheduledOperationDayOfWeekInput` via:
 //
-//          AutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
+//	AutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
 type AutonomousDatabaseScheduledOperationDayOfWeekInput interface {
 	pulumi.Input
 
@@ -2841,7 +2841,7 @@ type AutonomousDatabaseStandbyDb struct {
 // AutonomousDatabaseStandbyDbInput is an input type that accepts AutonomousDatabaseStandbyDbArgs and AutonomousDatabaseStandbyDbOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseStandbyDbInput` via:
 //
-//          AutonomousDatabaseStandbyDbArgs{...}
+//	AutonomousDatabaseStandbyDbArgs{...}
 type AutonomousDatabaseStandbyDbInput interface {
 	pulumi.Input
 
@@ -2875,7 +2875,7 @@ func (i AutonomousDatabaseStandbyDbArgs) ToAutonomousDatabaseStandbyDbOutputWith
 // AutonomousDatabaseStandbyDbArrayInput is an input type that accepts AutonomousDatabaseStandbyDbArray and AutonomousDatabaseStandbyDbArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseStandbyDbArrayInput` via:
 //
-//          AutonomousDatabaseStandbyDbArray{ AutonomousDatabaseStandbyDbArgs{...} }
+//	AutonomousDatabaseStandbyDbArray{ AutonomousDatabaseStandbyDbArgs{...} }
 type AutonomousDatabaseStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -2976,7 +2976,7 @@ type AutonomousExadataInfrastructureMaintenanceWindow struct {
 // AutonomousExadataInfrastructureMaintenanceWindowInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowArgs and AutonomousExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowArgs{...}
+//	AutonomousExadataInfrastructureMaintenanceWindowArgs{...}
 type AutonomousExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -3021,7 +3021,7 @@ func (i AutonomousExadataInfrastructureMaintenanceWindowArgs) ToAutonomousExadat
 // AutonomousExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowArray and AutonomousExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowArray{ AutonomousExadataInfrastructureMaintenanceWindowArgs{...} }
+//	AutonomousExadataInfrastructureMaintenanceWindowArray{ AutonomousExadataInfrastructureMaintenanceWindowArgs{...} }
 type AutonomousExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -3135,7 +3135,7 @@ type AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 // AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -3163,7 +3163,7 @@ func (i AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToAutono
 // AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray and AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -3249,7 +3249,7 @@ type AutonomousExadataInfrastructureMaintenanceWindowDetails struct {
 // AutonomousExadataInfrastructureMaintenanceWindowDetailsInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs and AutonomousExadataInfrastructureMaintenanceWindowDetailsOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDetailsInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{...}
+//	AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{...}
 type AutonomousExadataInfrastructureMaintenanceWindowDetailsInput interface {
 	pulumi.Input
 
@@ -3302,11 +3302,11 @@ func (i AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs) ToAutonomou
 // AutonomousExadataInfrastructureMaintenanceWindowDetailsPtrInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs, AutonomousExadataInfrastructureMaintenanceWindowDetailsPtr and AutonomousExadataInfrastructureMaintenanceWindowDetailsPtrOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDetailsPtrInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{...}
+//	        AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutonomousExadataInfrastructureMaintenanceWindowDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3533,7 +3533,7 @@ type AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek struct {
 // AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs and AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{...}
+//	AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{...}
 type AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -3561,7 +3561,7 @@ func (i AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs) T
 // AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArrayInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray and AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArrayInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray{ AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{...} }
+//	AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray{ AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{...} }
 type AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -3630,7 +3630,7 @@ type AutonomousExadataInfrastructureMaintenanceWindowDetailsMonth struct {
 // AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs and AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{...}
+//	AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{...}
 type AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthInput interface {
 	pulumi.Input
 
@@ -3658,7 +3658,7 @@ func (i AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs) ToAuto
 // AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArrayInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArray and AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArrayInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArray{ AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{...} }
+//	AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArray{ AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{...} }
 type AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArrayInput interface {
 	pulumi.Input
 
@@ -3727,7 +3727,7 @@ type AutonomousExadataInfrastructureMaintenanceWindowMonth struct {
 // AutonomousExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowMonthArgs and AutonomousExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	AutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type AutonomousExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -3755,7 +3755,7 @@ func (i AutonomousExadataInfrastructureMaintenanceWindowMonthArgs) ToAutonomousE
 // AutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts AutonomousExadataInfrastructureMaintenanceWindowMonthArray and AutonomousExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          AutonomousExadataInfrastructureMaintenanceWindowMonthArray{ AutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	AutonomousExadataInfrastructureMaintenanceWindowMonthArray{ AutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type AutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -3838,7 +3838,7 @@ type AutonomousVmClusterMaintenanceWindow struct {
 // AutonomousVmClusterMaintenanceWindowInput is an input type that accepts AutonomousVmClusterMaintenanceWindowArgs and AutonomousVmClusterMaintenanceWindowOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowArgs{...}
+//	AutonomousVmClusterMaintenanceWindowArgs{...}
 type AutonomousVmClusterMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -3880,7 +3880,7 @@ func (i AutonomousVmClusterMaintenanceWindowArgs) ToAutonomousVmClusterMaintenan
 // AutonomousVmClusterMaintenanceWindowArrayInput is an input type that accepts AutonomousVmClusterMaintenanceWindowArray and AutonomousVmClusterMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowArrayInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowArray{ AutonomousVmClusterMaintenanceWindowArgs{...} }
+//	AutonomousVmClusterMaintenanceWindowArray{ AutonomousVmClusterMaintenanceWindowArgs{...} }
 type AutonomousVmClusterMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -3991,7 +3991,7 @@ type AutonomousVmClusterMaintenanceWindowDaysOfWeek struct {
 // AutonomousVmClusterMaintenanceWindowDaysOfWeekInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs and AutonomousVmClusterMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDaysOfWeekInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
+//	AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
 type AutonomousVmClusterMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -4019,7 +4019,7 @@ func (i AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs) ToAutonomousVmCluste
 // AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDaysOfWeekArray and AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
+//	AutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
 type AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -4102,7 +4102,7 @@ type AutonomousVmClusterMaintenanceWindowDetail struct {
 // AutonomousVmClusterMaintenanceWindowDetailInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDetailArgs and AutonomousVmClusterMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDetailInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDetailArgs{...}
+//	AutonomousVmClusterMaintenanceWindowDetailArgs{...}
 type AutonomousVmClusterMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -4144,7 +4144,7 @@ func (i AutonomousVmClusterMaintenanceWindowDetailArgs) ToAutonomousVmClusterMai
 // AutonomousVmClusterMaintenanceWindowDetailArrayInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDetailArray and AutonomousVmClusterMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDetailArrayInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDetailArray{ AutonomousVmClusterMaintenanceWindowDetailArgs{...} }
+//	AutonomousVmClusterMaintenanceWindowDetailArray{ AutonomousVmClusterMaintenanceWindowDetailArgs{...} }
 type AutonomousVmClusterMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -4255,7 +4255,7 @@ type AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek struct {
 // AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs and AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
 type AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -4283,7 +4283,7 @@ func (i AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToAutonomousVm
 // AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray and AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -4352,7 +4352,7 @@ type AutonomousVmClusterMaintenanceWindowDetailMonth struct {
 // AutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDetailMonthArgs and AutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
+//	AutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
 type AutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -4380,7 +4380,7 @@ func (i AutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToAutonomousVmClust
 // AutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts AutonomousVmClusterMaintenanceWindowDetailMonthArray and AutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowDetailMonthArray{ AutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
+//	AutonomousVmClusterMaintenanceWindowDetailMonthArray{ AutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
 type AutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -4449,7 +4449,7 @@ type AutonomousVmClusterMaintenanceWindowMonth struct {
 // AutonomousVmClusterMaintenanceWindowMonthInput is an input type that accepts AutonomousVmClusterMaintenanceWindowMonthArgs and AutonomousVmClusterMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowMonthInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowMonthArgs{...}
+//	AutonomousVmClusterMaintenanceWindowMonthArgs{...}
 type AutonomousVmClusterMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -4477,7 +4477,7 @@ func (i AutonomousVmClusterMaintenanceWindowMonthArgs) ToAutonomousVmClusterMain
 // AutonomousVmClusterMaintenanceWindowMonthArrayInput is an input type that accepts AutonomousVmClusterMaintenanceWindowMonthArray and AutonomousVmClusterMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMaintenanceWindowMonthArrayInput` via:
 //
-//          AutonomousVmClusterMaintenanceWindowMonthArray{ AutonomousVmClusterMaintenanceWindowMonthArgs{...} }
+//	AutonomousVmClusterMaintenanceWindowMonthArray{ AutonomousVmClusterMaintenanceWindowMonthArgs{...} }
 type AutonomousVmClusterMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -4548,7 +4548,7 @@ type BackupDestinationAssociatedDatabase struct {
 // BackupDestinationAssociatedDatabaseInput is an input type that accepts BackupDestinationAssociatedDatabaseArgs and BackupDestinationAssociatedDatabaseOutput values.
 // You can construct a concrete instance of `BackupDestinationAssociatedDatabaseInput` via:
 //
-//          BackupDestinationAssociatedDatabaseArgs{...}
+//	BackupDestinationAssociatedDatabaseArgs{...}
 type BackupDestinationAssociatedDatabaseInput interface {
 	pulumi.Input
 
@@ -4578,7 +4578,7 @@ func (i BackupDestinationAssociatedDatabaseArgs) ToBackupDestinationAssociatedDa
 // BackupDestinationAssociatedDatabaseArrayInput is an input type that accepts BackupDestinationAssociatedDatabaseArray and BackupDestinationAssociatedDatabaseArrayOutput values.
 // You can construct a concrete instance of `BackupDestinationAssociatedDatabaseArrayInput` via:
 //
-//          BackupDestinationAssociatedDatabaseArray{ BackupDestinationAssociatedDatabaseArgs{...} }
+//	BackupDestinationAssociatedDatabaseArray{ BackupDestinationAssociatedDatabaseArgs{...} }
 type BackupDestinationAssociatedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -4658,7 +4658,7 @@ type BackupDestinationMountTypeDetails struct {
 // BackupDestinationMountTypeDetailsInput is an input type that accepts BackupDestinationMountTypeDetailsArgs and BackupDestinationMountTypeDetailsOutput values.
 // You can construct a concrete instance of `BackupDestinationMountTypeDetailsInput` via:
 //
-//          BackupDestinationMountTypeDetailsArgs{...}
+//	BackupDestinationMountTypeDetailsArgs{...}
 type BackupDestinationMountTypeDetailsInput interface {
 	pulumi.Input
 
@@ -4700,11 +4700,11 @@ func (i BackupDestinationMountTypeDetailsArgs) ToBackupDestinationMountTypeDetai
 // BackupDestinationMountTypeDetailsPtrInput is an input type that accepts BackupDestinationMountTypeDetailsArgs, BackupDestinationMountTypeDetailsPtr and BackupDestinationMountTypeDetailsPtrOutput values.
 // You can construct a concrete instance of `BackupDestinationMountTypeDetailsPtrInput` via:
 //
-//          BackupDestinationMountTypeDetailsArgs{...}
+//	        BackupDestinationMountTypeDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BackupDestinationMountTypeDetailsPtrInput interface {
 	pulumi.Input
 
@@ -4848,7 +4848,7 @@ type CloudDatabaseManagementCredentialdetails struct {
 // CloudDatabaseManagementCredentialdetailsInput is an input type that accepts CloudDatabaseManagementCredentialdetailsArgs and CloudDatabaseManagementCredentialdetailsOutput values.
 // You can construct a concrete instance of `CloudDatabaseManagementCredentialdetailsInput` via:
 //
-//          CloudDatabaseManagementCredentialdetailsArgs{...}
+//	CloudDatabaseManagementCredentialdetailsArgs{...}
 type CloudDatabaseManagementCredentialdetailsInput interface {
 	pulumi.Input
 
@@ -4886,11 +4886,11 @@ func (i CloudDatabaseManagementCredentialdetailsArgs) ToCloudDatabaseManagementC
 // CloudDatabaseManagementCredentialdetailsPtrInput is an input type that accepts CloudDatabaseManagementCredentialdetailsArgs, CloudDatabaseManagementCredentialdetailsPtr and CloudDatabaseManagementCredentialdetailsPtrOutput values.
 // You can construct a concrete instance of `CloudDatabaseManagementCredentialdetailsPtrInput` via:
 //
-//          CloudDatabaseManagementCredentialdetailsArgs{...}
+//	        CloudDatabaseManagementCredentialdetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CloudDatabaseManagementCredentialdetailsPtrInput interface {
 	pulumi.Input
 
@@ -5002,7 +5002,7 @@ type CloudExadataInfrastructureCustomerContact struct {
 // CloudExadataInfrastructureCustomerContactInput is an input type that accepts CloudExadataInfrastructureCustomerContactArgs and CloudExadataInfrastructureCustomerContactOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureCustomerContactInput` via:
 //
-//          CloudExadataInfrastructureCustomerContactArgs{...}
+//	CloudExadataInfrastructureCustomerContactArgs{...}
 type CloudExadataInfrastructureCustomerContactInput interface {
 	pulumi.Input
 
@@ -5030,7 +5030,7 @@ func (i CloudExadataInfrastructureCustomerContactArgs) ToCloudExadataInfrastruct
 // CloudExadataInfrastructureCustomerContactArrayInput is an input type that accepts CloudExadataInfrastructureCustomerContactArray and CloudExadataInfrastructureCustomerContactArrayOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureCustomerContactArrayInput` via:
 //
-//          CloudExadataInfrastructureCustomerContactArray{ CloudExadataInfrastructureCustomerContactArgs{...} }
+//	CloudExadataInfrastructureCustomerContactArray{ CloudExadataInfrastructureCustomerContactArgs{...} }
 type CloudExadataInfrastructureCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -5116,7 +5116,7 @@ type CloudExadataInfrastructureMaintenanceWindow struct {
 // CloudExadataInfrastructureMaintenanceWindowInput is an input type that accepts CloudExadataInfrastructureMaintenanceWindowArgs and CloudExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          CloudExadataInfrastructureMaintenanceWindowArgs{...}
+//	CloudExadataInfrastructureMaintenanceWindowArgs{...}
 type CloudExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -5169,11 +5169,11 @@ func (i CloudExadataInfrastructureMaintenanceWindowArgs) ToCloudExadataInfrastru
 // CloudExadataInfrastructureMaintenanceWindowPtrInput is an input type that accepts CloudExadataInfrastructureMaintenanceWindowArgs, CloudExadataInfrastructureMaintenanceWindowPtr and CloudExadataInfrastructureMaintenanceWindowPtrOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMaintenanceWindowPtrInput` via:
 //
-//          CloudExadataInfrastructureMaintenanceWindowArgs{...}
+//	        CloudExadataInfrastructureMaintenanceWindowArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CloudExadataInfrastructureMaintenanceWindowPtrInput interface {
 	pulumi.Input
 
@@ -5396,7 +5396,7 @@ type CloudExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 // CloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and CloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type CloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -5424,7 +5424,7 @@ func (i CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToCloudExadat
 // CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray and CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -5493,7 +5493,7 @@ type CloudExadataInfrastructureMaintenanceWindowMonth struct {
 // CloudExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts CloudExadataInfrastructureMaintenanceWindowMonthArgs and CloudExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          CloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	CloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type CloudExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -5521,7 +5521,7 @@ func (i CloudExadataInfrastructureMaintenanceWindowMonthArgs) ToCloudExadataInfr
 // CloudExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts CloudExadataInfrastructureMaintenanceWindowMonthArray and CloudExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          CloudExadataInfrastructureMaintenanceWindowMonthArray{ CloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	CloudExadataInfrastructureMaintenanceWindowMonthArray{ CloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type CloudExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -5590,7 +5590,7 @@ type CloudVmClusterDataCollectionOptions struct {
 // CloudVmClusterDataCollectionOptionsInput is an input type that accepts CloudVmClusterDataCollectionOptionsArgs and CloudVmClusterDataCollectionOptionsOutput values.
 // You can construct a concrete instance of `CloudVmClusterDataCollectionOptionsInput` via:
 //
-//          CloudVmClusterDataCollectionOptionsArgs{...}
+//	CloudVmClusterDataCollectionOptionsArgs{...}
 type CloudVmClusterDataCollectionOptionsInput interface {
 	pulumi.Input
 
@@ -5626,11 +5626,11 @@ func (i CloudVmClusterDataCollectionOptionsArgs) ToCloudVmClusterDataCollectionO
 // CloudVmClusterDataCollectionOptionsPtrInput is an input type that accepts CloudVmClusterDataCollectionOptionsArgs, CloudVmClusterDataCollectionOptionsPtr and CloudVmClusterDataCollectionOptionsPtrOutput values.
 // You can construct a concrete instance of `CloudVmClusterDataCollectionOptionsPtrInput` via:
 //
-//          CloudVmClusterDataCollectionOptionsArgs{...}
+//	        CloudVmClusterDataCollectionOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CloudVmClusterDataCollectionOptionsPtrInput interface {
 	pulumi.Input
 
@@ -5733,7 +5733,7 @@ type CloudVmClusterIormConfigCach struct {
 // CloudVmClusterIormConfigCachInput is an input type that accepts CloudVmClusterIormConfigCachArgs and CloudVmClusterIormConfigCachOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigCachInput` via:
 //
-//          CloudVmClusterIormConfigCachArgs{...}
+//	CloudVmClusterIormConfigCachArgs{...}
 type CloudVmClusterIormConfigCachInput interface {
 	pulumi.Input
 
@@ -5767,7 +5767,7 @@ func (i CloudVmClusterIormConfigCachArgs) ToCloudVmClusterIormConfigCachOutputWi
 // CloudVmClusterIormConfigCachArrayInput is an input type that accepts CloudVmClusterIormConfigCachArray and CloudVmClusterIormConfigCachArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigCachArrayInput` via:
 //
-//          CloudVmClusterIormConfigCachArray{ CloudVmClusterIormConfigCachArgs{...} }
+//	CloudVmClusterIormConfigCachArray{ CloudVmClusterIormConfigCachArgs{...} }
 type CloudVmClusterIormConfigCachArrayInput interface {
 	pulumi.Input
 
@@ -5855,7 +5855,7 @@ type CloudVmClusterIormConfigCachDbPlan struct {
 // CloudVmClusterIormConfigCachDbPlanInput is an input type that accepts CloudVmClusterIormConfigCachDbPlanArgs and CloudVmClusterIormConfigCachDbPlanOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigCachDbPlanInput` via:
 //
-//          CloudVmClusterIormConfigCachDbPlanArgs{...}
+//	CloudVmClusterIormConfigCachDbPlanArgs{...}
 type CloudVmClusterIormConfigCachDbPlanInput interface {
 	pulumi.Input
 
@@ -5887,7 +5887,7 @@ func (i CloudVmClusterIormConfigCachDbPlanArgs) ToCloudVmClusterIormConfigCachDb
 // CloudVmClusterIormConfigCachDbPlanArrayInput is an input type that accepts CloudVmClusterIormConfigCachDbPlanArray and CloudVmClusterIormConfigCachDbPlanArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigCachDbPlanArrayInput` via:
 //
-//          CloudVmClusterIormConfigCachDbPlanArray{ CloudVmClusterIormConfigCachDbPlanArgs{...} }
+//	CloudVmClusterIormConfigCachDbPlanArray{ CloudVmClusterIormConfigCachDbPlanArgs{...} }
 type CloudVmClusterIormConfigCachDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -5970,7 +5970,7 @@ type CloudVmClusterIormConfigDbPlan struct {
 // CloudVmClusterIormConfigDbPlanInput is an input type that accepts CloudVmClusterIormConfigDbPlanArgs and CloudVmClusterIormConfigDbPlanOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigDbPlanInput` via:
 //
-//          CloudVmClusterIormConfigDbPlanArgs{...}
+//	CloudVmClusterIormConfigDbPlanArgs{...}
 type CloudVmClusterIormConfigDbPlanInput interface {
 	pulumi.Input
 
@@ -6002,7 +6002,7 @@ func (i CloudVmClusterIormConfigDbPlanArgs) ToCloudVmClusterIormConfigDbPlanOutp
 // CloudVmClusterIormConfigDbPlanArrayInput is an input type that accepts CloudVmClusterIormConfigDbPlanArray and CloudVmClusterIormConfigDbPlanArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigDbPlanArrayInput` via:
 //
-//          CloudVmClusterIormConfigDbPlanArray{ CloudVmClusterIormConfigDbPlanArgs{...} }
+//	CloudVmClusterIormConfigDbPlanArray{ CloudVmClusterIormConfigDbPlanArgs{...} }
 type CloudVmClusterIormConfigDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -6085,7 +6085,7 @@ type DatabaseConnectionString struct {
 // DatabaseConnectionStringInput is an input type that accepts DatabaseConnectionStringArgs and DatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `DatabaseConnectionStringInput` via:
 //
-//          DatabaseConnectionStringArgs{...}
+//	DatabaseConnectionStringArgs{...}
 type DatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -6117,7 +6117,7 @@ func (i DatabaseConnectionStringArgs) ToDatabaseConnectionStringOutputWithContex
 // DatabaseConnectionStringArrayInput is an input type that accepts DatabaseConnectionStringArray and DatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `DatabaseConnectionStringArrayInput` via:
 //
-//          DatabaseConnectionStringArray{ DatabaseConnectionStringArgs{...} }
+//	DatabaseConnectionStringArray{ DatabaseConnectionStringArgs{...} }
 type DatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -6230,7 +6230,7 @@ type DatabaseDatabase struct {
 // DatabaseDatabaseInput is an input type that accepts DatabaseDatabaseArgs and DatabaseDatabaseOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseInput` via:
 //
-//          DatabaseDatabaseArgs{...}
+//	DatabaseDatabaseArgs{...}
 type DatabaseDatabaseInput interface {
 	pulumi.Input
 
@@ -6300,11 +6300,11 @@ func (i DatabaseDatabaseArgs) ToDatabaseDatabasePtrOutputWithContext(ctx context
 // DatabaseDatabasePtrInput is an input type that accepts DatabaseDatabaseArgs, DatabaseDatabasePtr and DatabaseDatabasePtrOutput values.
 // You can construct a concrete instance of `DatabaseDatabasePtrInput` via:
 //
-//          DatabaseDatabaseArgs{...}
+//	        DatabaseDatabaseArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseDatabasePtrInput interface {
 	pulumi.Input
 
@@ -6662,7 +6662,7 @@ type DatabaseDatabaseDbBackupConfig struct {
 // DatabaseDatabaseDbBackupConfigInput is an input type that accepts DatabaseDatabaseDbBackupConfigArgs and DatabaseDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseDbBackupConfigInput` via:
 //
-//          DatabaseDatabaseDbBackupConfigArgs{...}
+//	DatabaseDatabaseDbBackupConfigArgs{...}
 type DatabaseDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -6704,11 +6704,11 @@ func (i DatabaseDatabaseDbBackupConfigArgs) ToDatabaseDatabaseDbBackupConfigPtrO
 // DatabaseDatabaseDbBackupConfigPtrInput is an input type that accepts DatabaseDatabaseDbBackupConfigArgs, DatabaseDatabaseDbBackupConfigPtr and DatabaseDatabaseDbBackupConfigPtrOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseDbBackupConfigPtrInput` via:
 //
-//          DatabaseDatabaseDbBackupConfigArgs{...}
+//	        DatabaseDatabaseDbBackupConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseDatabaseDbBackupConfigPtrInput interface {
 	pulumi.Input
 
@@ -6855,7 +6855,7 @@ type DatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
 // DatabaseDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs and DatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type DatabaseDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -6886,7 +6886,7 @@ func (i DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs) ToDatabaseDat
 // DatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray and DatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type DatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -6966,7 +6966,7 @@ type DatabaseDatabaseManagementConfig struct {
 // DatabaseDatabaseManagementConfigInput is an input type that accepts DatabaseDatabaseManagementConfigArgs and DatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseManagementConfigInput` via:
 //
-//          DatabaseDatabaseManagementConfigArgs{...}
+//	DatabaseDatabaseManagementConfigArgs{...}
 type DatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -6996,7 +6996,7 @@ func (i DatabaseDatabaseManagementConfigArgs) ToDatabaseDatabaseManagementConfig
 // DatabaseDatabaseManagementConfigArrayInput is an input type that accepts DatabaseDatabaseManagementConfigArray and DatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `DatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          DatabaseDatabaseManagementConfigArray{ DatabaseDatabaseManagementConfigArgs{...} }
+//	DatabaseDatabaseManagementConfigArray{ DatabaseDatabaseManagementConfigArgs{...} }
 type DatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -7076,7 +7076,7 @@ type DatabaseDbBackupConfig struct {
 // DatabaseDbBackupConfigInput is an input type that accepts DatabaseDbBackupConfigArgs and DatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `DatabaseDbBackupConfigInput` via:
 //
-//          DatabaseDbBackupConfigArgs{...}
+//	DatabaseDbBackupConfigArgs{...}
 type DatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -7110,7 +7110,7 @@ func (i DatabaseDbBackupConfigArgs) ToDatabaseDbBackupConfigOutputWithContext(ct
 // DatabaseDbBackupConfigArrayInput is an input type that accepts DatabaseDbBackupConfigArray and DatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `DatabaseDbBackupConfigArrayInput` via:
 //
-//          DatabaseDbBackupConfigArray{ DatabaseDbBackupConfigArgs{...} }
+//	DatabaseDbBackupConfigArray{ DatabaseDbBackupConfigArgs{...} }
 type DatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -7199,7 +7199,7 @@ type DatabaseDbBackupConfigBackupDestinationDetail struct {
 // DatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts DatabaseDbBackupConfigBackupDestinationDetailArgs and DatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `DatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          DatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	DatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type DatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -7230,7 +7230,7 @@ func (i DatabaseDbBackupConfigBackupDestinationDetailArgs) ToDatabaseDbBackupCon
 // DatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts DatabaseDbBackupConfigBackupDestinationDetailArray and DatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `DatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          DatabaseDbBackupConfigBackupDestinationDetailArray{ DatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	DatabaseDbBackupConfigBackupDestinationDetailArray{ DatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type DatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -7312,7 +7312,7 @@ type DatabaseUpgradeConnectionString struct {
 // DatabaseUpgradeConnectionStringInput is an input type that accepts DatabaseUpgradeConnectionStringArgs and DatabaseUpgradeConnectionStringOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeConnectionStringInput` via:
 //
-//          DatabaseUpgradeConnectionStringArgs{...}
+//	DatabaseUpgradeConnectionStringArgs{...}
 type DatabaseUpgradeConnectionStringInput interface {
 	pulumi.Input
 
@@ -7344,7 +7344,7 @@ func (i DatabaseUpgradeConnectionStringArgs) ToDatabaseUpgradeConnectionStringOu
 // DatabaseUpgradeConnectionStringArrayInput is an input type that accepts DatabaseUpgradeConnectionStringArray and DatabaseUpgradeConnectionStringArrayOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeConnectionStringArrayInput` via:
 //
-//          DatabaseUpgradeConnectionStringArray{ DatabaseUpgradeConnectionStringArgs{...} }
+//	DatabaseUpgradeConnectionStringArray{ DatabaseUpgradeConnectionStringArgs{...} }
 type DatabaseUpgradeConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -7431,7 +7431,7 @@ type DatabaseUpgradeDatabaseUpgradeSourceDetails struct {
 // DatabaseUpgradeDatabaseUpgradeSourceDetailsInput is an input type that accepts DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs and DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeDatabaseUpgradeSourceDetailsInput` via:
 //
-//          DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{...}
+//	DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{...}
 type DatabaseUpgradeDatabaseUpgradeSourceDetailsInput interface {
 	pulumi.Input
 
@@ -7475,11 +7475,11 @@ func (i DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs) ToDatabaseUpgradeDataba
 // DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrInput is an input type that accepts DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs, DatabaseUpgradeDatabaseUpgradeSourceDetailsPtr and DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrInput` via:
 //
-//          DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{...}
+//	        DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrInput interface {
 	pulumi.Input
 
@@ -7631,7 +7631,7 @@ type DatabaseUpgradeDbBackupConfig struct {
 // DatabaseUpgradeDbBackupConfigInput is an input type that accepts DatabaseUpgradeDbBackupConfigArgs and DatabaseUpgradeDbBackupConfigOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeDbBackupConfigInput` via:
 //
-//          DatabaseUpgradeDbBackupConfigArgs{...}
+//	DatabaseUpgradeDbBackupConfigArgs{...}
 type DatabaseUpgradeDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -7665,7 +7665,7 @@ func (i DatabaseUpgradeDbBackupConfigArgs) ToDatabaseUpgradeDbBackupConfigOutput
 // DatabaseUpgradeDbBackupConfigArrayInput is an input type that accepts DatabaseUpgradeDbBackupConfigArray and DatabaseUpgradeDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeDbBackupConfigArrayInput` via:
 //
-//          DatabaseUpgradeDbBackupConfigArray{ DatabaseUpgradeDbBackupConfigArgs{...} }
+//	DatabaseUpgradeDbBackupConfigArray{ DatabaseUpgradeDbBackupConfigArgs{...} }
 type DatabaseUpgradeDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -7759,7 +7759,7 @@ type DatabaseUpgradeDbBackupConfigBackupDestinationDetail struct {
 // DatabaseUpgradeDbBackupConfigBackupDestinationDetailInput is an input type that accepts DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs and DatabaseUpgradeDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs{...}
+//	DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs{...}
 type DatabaseUpgradeDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -7795,7 +7795,7 @@ func (i DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs) ToDatabaseUpgr
 // DatabaseUpgradeDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts DatabaseUpgradeDbBackupConfigBackupDestinationDetailArray and DatabaseUpgradeDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          DatabaseUpgradeDbBackupConfigBackupDestinationDetailArray{ DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs{...} }
+//	DatabaseUpgradeDbBackupConfigBackupDestinationDetailArray{ DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs{...} }
 type DatabaseUpgradeDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -7932,7 +7932,7 @@ type DbHomeDatabase struct {
 // DbHomeDatabaseInput is an input type that accepts DbHomeDatabaseArgs and DbHomeDatabaseOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseInput` via:
 //
-//          DbHomeDatabaseArgs{...}
+//	DbHomeDatabaseArgs{...}
 type DbHomeDatabaseInput interface {
 	pulumi.Input
 
@@ -8016,11 +8016,11 @@ func (i DbHomeDatabaseArgs) ToDbHomeDatabasePtrOutputWithContext(ctx context.Con
 // DbHomeDatabasePtrInput is an input type that accepts DbHomeDatabaseArgs, DbHomeDatabasePtr and DbHomeDatabasePtrOutput values.
 // You can construct a concrete instance of `DbHomeDatabasePtrInput` via:
 //
-//          DbHomeDatabaseArgs{...}
+//	        DbHomeDatabaseArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbHomeDatabasePtrInput interface {
 	pulumi.Input
 
@@ -8489,7 +8489,7 @@ type DbHomeDatabaseConnectionString struct {
 // DbHomeDatabaseConnectionStringInput is an input type that accepts DbHomeDatabaseConnectionStringArgs and DbHomeDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseConnectionStringInput` via:
 //
-//          DbHomeDatabaseConnectionStringArgs{...}
+//	DbHomeDatabaseConnectionStringArgs{...}
 type DbHomeDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -8518,7 +8518,7 @@ func (i DbHomeDatabaseConnectionStringArgs) ToDbHomeDatabaseConnectionStringOutp
 // DbHomeDatabaseConnectionStringArrayInput is an input type that accepts DbHomeDatabaseConnectionStringArray and DbHomeDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseConnectionStringArrayInput` via:
 //
-//          DbHomeDatabaseConnectionStringArray{ DbHomeDatabaseConnectionStringArgs{...} }
+//	DbHomeDatabaseConnectionStringArray{ DbHomeDatabaseConnectionStringArgs{...} }
 type DbHomeDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -8600,7 +8600,7 @@ type DbHomeDatabaseDbBackupConfig struct {
 // DbHomeDatabaseDbBackupConfigInput is an input type that accepts DbHomeDatabaseDbBackupConfigArgs and DbHomeDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseDbBackupConfigInput` via:
 //
-//          DbHomeDatabaseDbBackupConfigArgs{...}
+//	DbHomeDatabaseDbBackupConfigArgs{...}
 type DbHomeDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -8642,11 +8642,11 @@ func (i DbHomeDatabaseDbBackupConfigArgs) ToDbHomeDatabaseDbBackupConfigPtrOutpu
 // DbHomeDatabaseDbBackupConfigPtrInput is an input type that accepts DbHomeDatabaseDbBackupConfigArgs, DbHomeDatabaseDbBackupConfigPtr and DbHomeDatabaseDbBackupConfigPtrOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseDbBackupConfigPtrInput` via:
 //
-//          DbHomeDatabaseDbBackupConfigArgs{...}
+//	        DbHomeDatabaseDbBackupConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbHomeDatabaseDbBackupConfigPtrInput interface {
 	pulumi.Input
 
@@ -8792,7 +8792,7 @@ type DbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 // DbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and DbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type DbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -8822,7 +8822,7 @@ func (i DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToDbHomeDatabas
 // DbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts DbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and DbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `DbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          DbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	DbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type DbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -8918,7 +8918,7 @@ type DbSystemDbHome struct {
 // DbSystemDbHomeInput is an input type that accepts DbSystemDbHomeArgs and DbSystemDbHomeOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeInput` via:
 //
-//          DbSystemDbHomeArgs{...}
+//	DbSystemDbHomeArgs{...}
 type DbSystemDbHomeInput interface {
 	pulumi.Input
 
@@ -8976,11 +8976,11 @@ func (i DbSystemDbHomeArgs) ToDbSystemDbHomePtrOutputWithContext(ctx context.Con
 // DbSystemDbHomePtrInput is an input type that accepts DbSystemDbHomeArgs, DbSystemDbHomePtr and DbSystemDbHomePtrOutput values.
 // You can construct a concrete instance of `DbSystemDbHomePtrInput` via:
 //
-//          DbSystemDbHomeArgs{...}
+//	        DbSystemDbHomeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbSystemDbHomePtrInput interface {
 	pulumi.Input
 
@@ -9299,7 +9299,7 @@ type DbSystemDbHomeDatabase struct {
 // DbSystemDbHomeDatabaseInput is an input type that accepts DbSystemDbHomeDatabaseArgs and DbSystemDbHomeDatabaseOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseInput` via:
 //
-//          DbSystemDbHomeDatabaseArgs{...}
+//	DbSystemDbHomeDatabaseArgs{...}
 type DbSystemDbHomeDatabaseInput interface {
 	pulumi.Input
 
@@ -9381,11 +9381,11 @@ func (i DbSystemDbHomeDatabaseArgs) ToDbSystemDbHomeDatabasePtrOutputWithContext
 // DbSystemDbHomeDatabasePtrInput is an input type that accepts DbSystemDbHomeDatabaseArgs, DbSystemDbHomeDatabasePtr and DbSystemDbHomeDatabasePtrOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabasePtrInput` via:
 //
-//          DbSystemDbHomeDatabaseArgs{...}
+//	        DbSystemDbHomeDatabaseArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbSystemDbHomeDatabasePtrInput interface {
 	pulumi.Input
 
@@ -9839,7 +9839,7 @@ type DbSystemDbHomeDatabaseConnectionString struct {
 // DbSystemDbHomeDatabaseConnectionStringInput is an input type that accepts DbSystemDbHomeDatabaseConnectionStringArgs and DbSystemDbHomeDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseConnectionStringInput` via:
 //
-//          DbSystemDbHomeDatabaseConnectionStringArgs{...}
+//	DbSystemDbHomeDatabaseConnectionStringArgs{...}
 type DbSystemDbHomeDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -9868,7 +9868,7 @@ func (i DbSystemDbHomeDatabaseConnectionStringArgs) ToDbSystemDbHomeDatabaseConn
 // DbSystemDbHomeDatabaseConnectionStringArrayInput is an input type that accepts DbSystemDbHomeDatabaseConnectionStringArray and DbSystemDbHomeDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseConnectionStringArrayInput` via:
 //
-//          DbSystemDbHomeDatabaseConnectionStringArray{ DbSystemDbHomeDatabaseConnectionStringArgs{...} }
+//	DbSystemDbHomeDatabaseConnectionStringArray{ DbSystemDbHomeDatabaseConnectionStringArgs{...} }
 type DbSystemDbHomeDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -9950,7 +9950,7 @@ type DbSystemDbHomeDatabaseDbBackupConfig struct {
 // DbSystemDbHomeDatabaseDbBackupConfigInput is an input type that accepts DbSystemDbHomeDatabaseDbBackupConfigArgs and DbSystemDbHomeDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseDbBackupConfigInput` via:
 //
-//          DbSystemDbHomeDatabaseDbBackupConfigArgs{...}
+//	DbSystemDbHomeDatabaseDbBackupConfigArgs{...}
 type DbSystemDbHomeDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -9992,11 +9992,11 @@ func (i DbSystemDbHomeDatabaseDbBackupConfigArgs) ToDbSystemDbHomeDatabaseDbBack
 // DbSystemDbHomeDatabaseDbBackupConfigPtrInput is an input type that accepts DbSystemDbHomeDatabaseDbBackupConfigArgs, DbSystemDbHomeDatabaseDbBackupConfigPtr and DbSystemDbHomeDatabaseDbBackupConfigPtrOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseDbBackupConfigPtrInput` via:
 //
-//          DbSystemDbHomeDatabaseDbBackupConfigArgs{...}
+//	        DbSystemDbHomeDatabaseDbBackupConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbSystemDbHomeDatabaseDbBackupConfigPtrInput interface {
 	pulumi.Input
 
@@ -10142,7 +10142,7 @@ type DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 // DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -10172,7 +10172,7 @@ func (i DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToDbSys
 // DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -10246,7 +10246,7 @@ type DbSystemDbSystemOptions struct {
 // DbSystemDbSystemOptionsInput is an input type that accepts DbSystemDbSystemOptionsArgs and DbSystemDbSystemOptionsOutput values.
 // You can construct a concrete instance of `DbSystemDbSystemOptionsInput` via:
 //
-//          DbSystemDbSystemOptionsArgs{...}
+//	DbSystemDbSystemOptionsArgs{...}
 type DbSystemDbSystemOptionsInput interface {
 	pulumi.Input
 
@@ -10282,11 +10282,11 @@ func (i DbSystemDbSystemOptionsArgs) ToDbSystemDbSystemOptionsPtrOutputWithConte
 // DbSystemDbSystemOptionsPtrInput is an input type that accepts DbSystemDbSystemOptionsArgs, DbSystemDbSystemOptionsPtr and DbSystemDbSystemOptionsPtrOutput values.
 // You can construct a concrete instance of `DbSystemDbSystemOptionsPtrInput` via:
 //
-//          DbSystemDbSystemOptionsArgs{...}
+//	        DbSystemDbSystemOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbSystemDbSystemOptionsPtrInput interface {
 	pulumi.Input
 
@@ -10390,7 +10390,7 @@ type DbSystemIormConfigCach struct {
 // DbSystemIormConfigCachInput is an input type that accepts DbSystemIormConfigCachArgs and DbSystemIormConfigCachOutput values.
 // You can construct a concrete instance of `DbSystemIormConfigCachInput` via:
 //
-//          DbSystemIormConfigCachArgs{...}
+//	DbSystemIormConfigCachArgs{...}
 type DbSystemIormConfigCachInput interface {
 	pulumi.Input
 
@@ -10425,7 +10425,7 @@ func (i DbSystemIormConfigCachArgs) ToDbSystemIormConfigCachOutputWithContext(ct
 // DbSystemIormConfigCachArrayInput is an input type that accepts DbSystemIormConfigCachArray and DbSystemIormConfigCachArrayOutput values.
 // You can construct a concrete instance of `DbSystemIormConfigCachArrayInput` via:
 //
-//          DbSystemIormConfigCachArray{ DbSystemIormConfigCachArgs{...} }
+//	DbSystemIormConfigCachArray{ DbSystemIormConfigCachArgs{...} }
 type DbSystemIormConfigCachArrayInput interface {
 	pulumi.Input
 
@@ -10517,7 +10517,7 @@ type DbSystemIormConfigCachDbPlan struct {
 // DbSystemIormConfigCachDbPlanInput is an input type that accepts DbSystemIormConfigCachDbPlanArgs and DbSystemIormConfigCachDbPlanOutput values.
 // You can construct a concrete instance of `DbSystemIormConfigCachDbPlanInput` via:
 //
-//          DbSystemIormConfigCachDbPlanArgs{...}
+//	DbSystemIormConfigCachDbPlanArgs{...}
 type DbSystemIormConfigCachDbPlanInput interface {
 	pulumi.Input
 
@@ -10549,7 +10549,7 @@ func (i DbSystemIormConfigCachDbPlanArgs) ToDbSystemIormConfigCachDbPlanOutputWi
 // DbSystemIormConfigCachDbPlanArrayInput is an input type that accepts DbSystemIormConfigCachDbPlanArray and DbSystemIormConfigCachDbPlanArrayOutput values.
 // You can construct a concrete instance of `DbSystemIormConfigCachDbPlanArrayInput` via:
 //
-//          DbSystemIormConfigCachDbPlanArray{ DbSystemIormConfigCachDbPlanArgs{...} }
+//	DbSystemIormConfigCachDbPlanArray{ DbSystemIormConfigCachDbPlanArgs{...} }
 type DbSystemIormConfigCachDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -10645,7 +10645,7 @@ type DbSystemMaintenanceWindow struct {
 // DbSystemMaintenanceWindowInput is an input type that accepts DbSystemMaintenanceWindowArgs and DbSystemMaintenanceWindowOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowInput` via:
 //
-//          DbSystemMaintenanceWindowArgs{...}
+//	DbSystemMaintenanceWindowArgs{...}
 type DbSystemMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -10690,7 +10690,7 @@ func (i DbSystemMaintenanceWindowArgs) ToDbSystemMaintenanceWindowOutputWithCont
 // DbSystemMaintenanceWindowArrayInput is an input type that accepts DbSystemMaintenanceWindowArray and DbSystemMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowArrayInput` via:
 //
-//          DbSystemMaintenanceWindowArray{ DbSystemMaintenanceWindowArgs{...} }
+//	DbSystemMaintenanceWindowArray{ DbSystemMaintenanceWindowArgs{...} }
 type DbSystemMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -10800,7 +10800,7 @@ type DbSystemMaintenanceWindowDaysOfWeek struct {
 // DbSystemMaintenanceWindowDaysOfWeekInput is an input type that accepts DbSystemMaintenanceWindowDaysOfWeekArgs and DbSystemMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDaysOfWeekInput` via:
 //
-//          DbSystemMaintenanceWindowDaysOfWeekArgs{...}
+//	DbSystemMaintenanceWindowDaysOfWeekArgs{...}
 type DbSystemMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -10828,7 +10828,7 @@ func (i DbSystemMaintenanceWindowDaysOfWeekArgs) ToDbSystemMaintenanceWindowDays
 // DbSystemMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts DbSystemMaintenanceWindowDaysOfWeekArray and DbSystemMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          DbSystemMaintenanceWindowDaysOfWeekArray{ DbSystemMaintenanceWindowDaysOfWeekArgs{...} }
+//	DbSystemMaintenanceWindowDaysOfWeekArray{ DbSystemMaintenanceWindowDaysOfWeekArgs{...} }
 type DbSystemMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -10914,7 +10914,7 @@ type DbSystemMaintenanceWindowDetails struct {
 // DbSystemMaintenanceWindowDetailsInput is an input type that accepts DbSystemMaintenanceWindowDetailsArgs and DbSystemMaintenanceWindowDetailsOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDetailsInput` via:
 //
-//          DbSystemMaintenanceWindowDetailsArgs{...}
+//	DbSystemMaintenanceWindowDetailsArgs{...}
 type DbSystemMaintenanceWindowDetailsInput interface {
 	pulumi.Input
 
@@ -10967,11 +10967,11 @@ func (i DbSystemMaintenanceWindowDetailsArgs) ToDbSystemMaintenanceWindowDetails
 // DbSystemMaintenanceWindowDetailsPtrInput is an input type that accepts DbSystemMaintenanceWindowDetailsArgs, DbSystemMaintenanceWindowDetailsPtr and DbSystemMaintenanceWindowDetailsPtrOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDetailsPtrInput` via:
 //
-//          DbSystemMaintenanceWindowDetailsArgs{...}
+//	        DbSystemMaintenanceWindowDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DbSystemMaintenanceWindowDetailsPtrInput interface {
 	pulumi.Input
 
@@ -11192,7 +11192,7 @@ type DbSystemMaintenanceWindowDetailsDaysOfWeek struct {
 // DbSystemMaintenanceWindowDetailsDaysOfWeekInput is an input type that accepts DbSystemMaintenanceWindowDetailsDaysOfWeekArgs and DbSystemMaintenanceWindowDetailsDaysOfWeekOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDetailsDaysOfWeekInput` via:
 //
-//          DbSystemMaintenanceWindowDetailsDaysOfWeekArgs{...}
+//	DbSystemMaintenanceWindowDetailsDaysOfWeekArgs{...}
 type DbSystemMaintenanceWindowDetailsDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -11220,7 +11220,7 @@ func (i DbSystemMaintenanceWindowDetailsDaysOfWeekArgs) ToDbSystemMaintenanceWin
 // DbSystemMaintenanceWindowDetailsDaysOfWeekArrayInput is an input type that accepts DbSystemMaintenanceWindowDetailsDaysOfWeekArray and DbSystemMaintenanceWindowDetailsDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDetailsDaysOfWeekArrayInput` via:
 //
-//          DbSystemMaintenanceWindowDetailsDaysOfWeekArray{ DbSystemMaintenanceWindowDetailsDaysOfWeekArgs{...} }
+//	DbSystemMaintenanceWindowDetailsDaysOfWeekArray{ DbSystemMaintenanceWindowDetailsDaysOfWeekArgs{...} }
 type DbSystemMaintenanceWindowDetailsDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -11289,7 +11289,7 @@ type DbSystemMaintenanceWindowDetailsMonth struct {
 // DbSystemMaintenanceWindowDetailsMonthInput is an input type that accepts DbSystemMaintenanceWindowDetailsMonthArgs and DbSystemMaintenanceWindowDetailsMonthOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDetailsMonthInput` via:
 //
-//          DbSystemMaintenanceWindowDetailsMonthArgs{...}
+//	DbSystemMaintenanceWindowDetailsMonthArgs{...}
 type DbSystemMaintenanceWindowDetailsMonthInput interface {
 	pulumi.Input
 
@@ -11317,7 +11317,7 @@ func (i DbSystemMaintenanceWindowDetailsMonthArgs) ToDbSystemMaintenanceWindowDe
 // DbSystemMaintenanceWindowDetailsMonthArrayInput is an input type that accepts DbSystemMaintenanceWindowDetailsMonthArray and DbSystemMaintenanceWindowDetailsMonthArrayOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowDetailsMonthArrayInput` via:
 //
-//          DbSystemMaintenanceWindowDetailsMonthArray{ DbSystemMaintenanceWindowDetailsMonthArgs{...} }
+//	DbSystemMaintenanceWindowDetailsMonthArray{ DbSystemMaintenanceWindowDetailsMonthArgs{...} }
 type DbSystemMaintenanceWindowDetailsMonthArrayInput interface {
 	pulumi.Input
 
@@ -11386,7 +11386,7 @@ type DbSystemMaintenanceWindowMonth struct {
 // DbSystemMaintenanceWindowMonthInput is an input type that accepts DbSystemMaintenanceWindowMonthArgs and DbSystemMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowMonthInput` via:
 //
-//          DbSystemMaintenanceWindowMonthArgs{...}
+//	DbSystemMaintenanceWindowMonthArgs{...}
 type DbSystemMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -11414,7 +11414,7 @@ func (i DbSystemMaintenanceWindowMonthArgs) ToDbSystemMaintenanceWindowMonthOutp
 // DbSystemMaintenanceWindowMonthArrayInput is an input type that accepts DbSystemMaintenanceWindowMonthArray and DbSystemMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `DbSystemMaintenanceWindowMonthArrayInput` via:
 //
-//          DbSystemMaintenanceWindowMonthArray{ DbSystemMaintenanceWindowMonthArgs{...} }
+//	DbSystemMaintenanceWindowMonthArray{ DbSystemMaintenanceWindowMonthArgs{...} }
 type DbSystemMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -11483,7 +11483,7 @@ type DbSystemsUpgradeDbSystemOption struct {
 // DbSystemsUpgradeDbSystemOptionInput is an input type that accepts DbSystemsUpgradeDbSystemOptionArgs and DbSystemsUpgradeDbSystemOptionOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeDbSystemOptionInput` via:
 //
-//          DbSystemsUpgradeDbSystemOptionArgs{...}
+//	DbSystemsUpgradeDbSystemOptionArgs{...}
 type DbSystemsUpgradeDbSystemOptionInput interface {
 	pulumi.Input
 
@@ -11511,7 +11511,7 @@ func (i DbSystemsUpgradeDbSystemOptionArgs) ToDbSystemsUpgradeDbSystemOptionOutp
 // DbSystemsUpgradeDbSystemOptionArrayInput is an input type that accepts DbSystemsUpgradeDbSystemOptionArray and DbSystemsUpgradeDbSystemOptionArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeDbSystemOptionArrayInput` via:
 //
-//          DbSystemsUpgradeDbSystemOptionArray{ DbSystemsUpgradeDbSystemOptionArgs{...} }
+//	DbSystemsUpgradeDbSystemOptionArray{ DbSystemsUpgradeDbSystemOptionArgs{...} }
 type DbSystemsUpgradeDbSystemOptionArrayInput interface {
 	pulumi.Input
 
@@ -11586,7 +11586,7 @@ type DbSystemsUpgradeIormConfigCach struct {
 // DbSystemsUpgradeIormConfigCachInput is an input type that accepts DbSystemsUpgradeIormConfigCachArgs and DbSystemsUpgradeIormConfigCachOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachInput` via:
 //
-//          DbSystemsUpgradeIormConfigCachArgs{...}
+//	DbSystemsUpgradeIormConfigCachArgs{...}
 type DbSystemsUpgradeIormConfigCachInput interface {
 	pulumi.Input
 
@@ -11620,7 +11620,7 @@ func (i DbSystemsUpgradeIormConfigCachArgs) ToDbSystemsUpgradeIormConfigCachOutp
 // DbSystemsUpgradeIormConfigCachArrayInput is an input type that accepts DbSystemsUpgradeIormConfigCachArray and DbSystemsUpgradeIormConfigCachArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachArrayInput` via:
 //
-//          DbSystemsUpgradeIormConfigCachArray{ DbSystemsUpgradeIormConfigCachArgs{...} }
+//	DbSystemsUpgradeIormConfigCachArray{ DbSystemsUpgradeIormConfigCachArgs{...} }
 type DbSystemsUpgradeIormConfigCachArrayInput interface {
 	pulumi.Input
 
@@ -11708,7 +11708,7 @@ type DbSystemsUpgradeIormConfigCachDbPlan struct {
 // DbSystemsUpgradeIormConfigCachDbPlanInput is an input type that accepts DbSystemsUpgradeIormConfigCachDbPlanArgs and DbSystemsUpgradeIormConfigCachDbPlanOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachDbPlanInput` via:
 //
-//          DbSystemsUpgradeIormConfigCachDbPlanArgs{...}
+//	DbSystemsUpgradeIormConfigCachDbPlanArgs{...}
 type DbSystemsUpgradeIormConfigCachDbPlanInput interface {
 	pulumi.Input
 
@@ -11740,7 +11740,7 @@ func (i DbSystemsUpgradeIormConfigCachDbPlanArgs) ToDbSystemsUpgradeIormConfigCa
 // DbSystemsUpgradeIormConfigCachDbPlanArrayInput is an input type that accepts DbSystemsUpgradeIormConfigCachDbPlanArray and DbSystemsUpgradeIormConfigCachDbPlanArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachDbPlanArrayInput` via:
 //
-//          DbSystemsUpgradeIormConfigCachDbPlanArray{ DbSystemsUpgradeIormConfigCachDbPlanArgs{...} }
+//	DbSystemsUpgradeIormConfigCachDbPlanArray{ DbSystemsUpgradeIormConfigCachDbPlanArgs{...} }
 type DbSystemsUpgradeIormConfigCachDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -11830,7 +11830,7 @@ type DbSystemsUpgradeMaintenanceWindow struct {
 // DbSystemsUpgradeMaintenanceWindowInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowArgs and DbSystemsUpgradeMaintenanceWindowOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowInput` via:
 //
-//          DbSystemsUpgradeMaintenanceWindowArgs{...}
+//	DbSystemsUpgradeMaintenanceWindowArgs{...}
 type DbSystemsUpgradeMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -11869,7 +11869,7 @@ func (i DbSystemsUpgradeMaintenanceWindowArgs) ToDbSystemsUpgradeMaintenanceWind
 // DbSystemsUpgradeMaintenanceWindowArrayInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowArray and DbSystemsUpgradeMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowArrayInput` via:
 //
-//          DbSystemsUpgradeMaintenanceWindowArray{ DbSystemsUpgradeMaintenanceWindowArgs{...} }
+//	DbSystemsUpgradeMaintenanceWindowArray{ DbSystemsUpgradeMaintenanceWindowArgs{...} }
 type DbSystemsUpgradeMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -11966,7 +11966,7 @@ type DbSystemsUpgradeMaintenanceWindowDaysOfWeek struct {
 // DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs and DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput` via:
 //
-//          DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{...}
+//	DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{...}
 type DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -11994,7 +11994,7 @@ func (i DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs) ToDbSystemsUpgradeMaint
 // DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray and DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray{ DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{...} }
+//	DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray{ DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{...} }
 type DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -12063,7 +12063,7 @@ type DbSystemsUpgradeMaintenanceWindowMonth struct {
 // DbSystemsUpgradeMaintenanceWindowMonthInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowMonthArgs and DbSystemsUpgradeMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowMonthInput` via:
 //
-//          DbSystemsUpgradeMaintenanceWindowMonthArgs{...}
+//	DbSystemsUpgradeMaintenanceWindowMonthArgs{...}
 type DbSystemsUpgradeMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -12091,7 +12091,7 @@ func (i DbSystemsUpgradeMaintenanceWindowMonthArgs) ToDbSystemsUpgradeMaintenanc
 // DbSystemsUpgradeMaintenanceWindowMonthArrayInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowMonthArray and DbSystemsUpgradeMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowMonthArrayInput` via:
 //
-//          DbSystemsUpgradeMaintenanceWindowMonthArray{ DbSystemsUpgradeMaintenanceWindowMonthArgs{...} }
+//	DbSystemsUpgradeMaintenanceWindowMonthArray{ DbSystemsUpgradeMaintenanceWindowMonthArgs{...} }
 type DbSystemsUpgradeMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -12168,7 +12168,7 @@ type ExadataInfrastructureContact struct {
 // ExadataInfrastructureContactInput is an input type that accepts ExadataInfrastructureContactArgs and ExadataInfrastructureContactOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureContactInput` via:
 //
-//          ExadataInfrastructureContactArgs{...}
+//	ExadataInfrastructureContactArgs{...}
 type ExadataInfrastructureContactInput interface {
 	pulumi.Input
 
@@ -12204,7 +12204,7 @@ func (i ExadataInfrastructureContactArgs) ToExadataInfrastructureContactOutputWi
 // ExadataInfrastructureContactArrayInput is an input type that accepts ExadataInfrastructureContactArray and ExadataInfrastructureContactArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureContactArrayInput` via:
 //
-//          ExadataInfrastructureContactArray{ ExadataInfrastructureContactArgs{...} }
+//	ExadataInfrastructureContactArray{ ExadataInfrastructureContactArgs{...} }
 type ExadataInfrastructureContactArrayInput interface {
 	pulumi.Input
 
@@ -12310,7 +12310,7 @@ type ExadataInfrastructureMaintenanceWindow struct {
 // ExadataInfrastructureMaintenanceWindowInput is an input type that accepts ExadataInfrastructureMaintenanceWindowArgs and ExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          ExadataInfrastructureMaintenanceWindowArgs{...}
+//	ExadataInfrastructureMaintenanceWindowArgs{...}
 type ExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -12363,11 +12363,11 @@ func (i ExadataInfrastructureMaintenanceWindowArgs) ToExadataInfrastructureMaint
 // ExadataInfrastructureMaintenanceWindowPtrInput is an input type that accepts ExadataInfrastructureMaintenanceWindowArgs, ExadataInfrastructureMaintenanceWindowPtr and ExadataInfrastructureMaintenanceWindowPtrOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMaintenanceWindowPtrInput` via:
 //
-//          ExadataInfrastructureMaintenanceWindowArgs{...}
+//	        ExadataInfrastructureMaintenanceWindowArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ExadataInfrastructureMaintenanceWindowPtrInput interface {
 	pulumi.Input
 
@@ -12590,7 +12590,7 @@ type ExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 // ExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and ExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type ExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -12618,7 +12618,7 @@ func (i ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToExadataInfrastru
 // ExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts ExadataInfrastructureMaintenanceWindowDaysOfWeekArray and ExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          ExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	ExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type ExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -12687,7 +12687,7 @@ type ExadataInfrastructureMaintenanceWindowMonth struct {
 // ExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts ExadataInfrastructureMaintenanceWindowMonthArgs and ExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          ExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	ExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type ExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -12715,7 +12715,7 @@ func (i ExadataInfrastructureMaintenanceWindowMonthArgs) ToExadataInfrastructure
 // ExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts ExadataInfrastructureMaintenanceWindowMonthArray and ExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          ExadataInfrastructureMaintenanceWindowMonthArray{ ExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	ExadataInfrastructureMaintenanceWindowMonthArray{ ExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type ExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -12787,7 +12787,7 @@ type ExadataInfrastructureStorageContact struct {
 // ExadataInfrastructureStorageContactInput is an input type that accepts ExadataInfrastructureStorageContactArgs and ExadataInfrastructureStorageContactOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageContactInput` via:
 //
-//          ExadataInfrastructureStorageContactArgs{...}
+//	ExadataInfrastructureStorageContactArgs{...}
 type ExadataInfrastructureStorageContactInput interface {
 	pulumi.Input
 
@@ -12818,7 +12818,7 @@ func (i ExadataInfrastructureStorageContactArgs) ToExadataInfrastructureStorageC
 // ExadataInfrastructureStorageContactArrayInput is an input type that accepts ExadataInfrastructureStorageContactArray and ExadataInfrastructureStorageContactArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageContactArrayInput` via:
 //
-//          ExadataInfrastructureStorageContactArray{ ExadataInfrastructureStorageContactArgs{...} }
+//	ExadataInfrastructureStorageContactArray{ ExadataInfrastructureStorageContactArgs{...} }
 type ExadataInfrastructureStorageContactArrayInput interface {
 	pulumi.Input
 
@@ -12906,7 +12906,7 @@ type ExadataInfrastructureStorageMaintenanceWindow struct {
 // ExadataInfrastructureStorageMaintenanceWindowInput is an input type that accepts ExadataInfrastructureStorageMaintenanceWindowArgs and ExadataInfrastructureStorageMaintenanceWindowOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMaintenanceWindowInput` via:
 //
-//          ExadataInfrastructureStorageMaintenanceWindowArgs{...}
+//	ExadataInfrastructureStorageMaintenanceWindowArgs{...}
 type ExadataInfrastructureStorageMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -12946,11 +12946,11 @@ func (i ExadataInfrastructureStorageMaintenanceWindowArgs) ToExadataInfrastructu
 // ExadataInfrastructureStorageMaintenanceWindowPtrInput is an input type that accepts ExadataInfrastructureStorageMaintenanceWindowArgs, ExadataInfrastructureStorageMaintenanceWindowPtr and ExadataInfrastructureStorageMaintenanceWindowPtrOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMaintenanceWindowPtrInput` via:
 //
-//          ExadataInfrastructureStorageMaintenanceWindowArgs{...}
+//	        ExadataInfrastructureStorageMaintenanceWindowArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ExadataInfrastructureStorageMaintenanceWindowPtrInput interface {
 	pulumi.Input
 
@@ -13113,7 +13113,7 @@ type ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek struct {
 // ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekInput is an input type that accepts ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs and ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekInput` via:
 //
-//          ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs{...}
+//	ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs{...}
 type ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -13140,7 +13140,7 @@ func (i ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs) ToExadataIn
 // ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArray and ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArray{ ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs{...} }
+//	ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArray{ ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs{...} }
 type ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -13207,7 +13207,7 @@ type ExadataInfrastructureStorageMaintenanceWindowMonth struct {
 // ExadataInfrastructureStorageMaintenanceWindowMonthInput is an input type that accepts ExadataInfrastructureStorageMaintenanceWindowMonthArgs and ExadataInfrastructureStorageMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMaintenanceWindowMonthInput` via:
 //
-//          ExadataInfrastructureStorageMaintenanceWindowMonthArgs{...}
+//	ExadataInfrastructureStorageMaintenanceWindowMonthArgs{...}
 type ExadataInfrastructureStorageMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -13234,7 +13234,7 @@ func (i ExadataInfrastructureStorageMaintenanceWindowMonthArgs) ToExadataInfrast
 // ExadataInfrastructureStorageMaintenanceWindowMonthArrayInput is an input type that accepts ExadataInfrastructureStorageMaintenanceWindowMonthArray and ExadataInfrastructureStorageMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMaintenanceWindowMonthArrayInput` via:
 //
-//          ExadataInfrastructureStorageMaintenanceWindowMonthArray{ ExadataInfrastructureStorageMaintenanceWindowMonthArgs{...} }
+//	ExadataInfrastructureStorageMaintenanceWindowMonthArray{ ExadataInfrastructureStorageMaintenanceWindowMonthArgs{...} }
 type ExadataInfrastructureStorageMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -13306,7 +13306,7 @@ type ExadataIormConfigDbPlan struct {
 // ExadataIormConfigDbPlanInput is an input type that accepts ExadataIormConfigDbPlanArgs and ExadataIormConfigDbPlanOutput values.
 // You can construct a concrete instance of `ExadataIormConfigDbPlanInput` via:
 //
-//          ExadataIormConfigDbPlanArgs{...}
+//	ExadataIormConfigDbPlanArgs{...}
 type ExadataIormConfigDbPlanInput interface {
 	pulumi.Input
 
@@ -13338,7 +13338,7 @@ func (i ExadataIormConfigDbPlanArgs) ToExadataIormConfigDbPlanOutputWithContext(
 // ExadataIormConfigDbPlanArrayInput is an input type that accepts ExadataIormConfigDbPlanArray and ExadataIormConfigDbPlanArrayOutput values.
 // You can construct a concrete instance of `ExadataIormConfigDbPlanArrayInput` via:
 //
-//          ExadataIormConfigDbPlanArray{ ExadataIormConfigDbPlanArgs{...} }
+//	ExadataIormConfigDbPlanArray{ ExadataIormConfigDbPlanArgs{...} }
 type ExadataIormConfigDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -13421,7 +13421,7 @@ type ExternalContainerDatabaseDatabaseManagementConfig struct {
 // ExternalContainerDatabaseDatabaseManagementConfigInput is an input type that accepts ExternalContainerDatabaseDatabaseManagementConfigArgs and ExternalContainerDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseDatabaseManagementConfigInput` via:
 //
-//          ExternalContainerDatabaseDatabaseManagementConfigArgs{...}
+//	ExternalContainerDatabaseDatabaseManagementConfigArgs{...}
 type ExternalContainerDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -13453,7 +13453,7 @@ func (i ExternalContainerDatabaseDatabaseManagementConfigArgs) ToExternalContain
 // ExternalContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts ExternalContainerDatabaseDatabaseManagementConfigArray and ExternalContainerDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          ExternalContainerDatabaseDatabaseManagementConfigArray{ ExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
+//	ExternalContainerDatabaseDatabaseManagementConfigArray{ ExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
 type ExternalContainerDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -13536,7 +13536,7 @@ type ExternalContainerDatabaseStackMonitoringConfig struct {
 // ExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts ExternalContainerDatabaseStackMonitoringConfigArgs and ExternalContainerDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseStackMonitoringConfigInput` via:
 //
-//          ExternalContainerDatabaseStackMonitoringConfigArgs{...}
+//	ExternalContainerDatabaseStackMonitoringConfigArgs{...}
 type ExternalContainerDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -13566,7 +13566,7 @@ func (i ExternalContainerDatabaseStackMonitoringConfigArgs) ToExternalContainerD
 // ExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts ExternalContainerDatabaseStackMonitoringConfigArray and ExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          ExternalContainerDatabaseStackMonitoringConfigArray{ ExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+//	ExternalContainerDatabaseStackMonitoringConfigArray{ ExternalContainerDatabaseStackMonitoringConfigArgs{...} }
 type ExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -13650,7 +13650,7 @@ type ExternalDatabaseConnectorConnectionCredentials struct {
 // ExternalDatabaseConnectorConnectionCredentialsInput is an input type that accepts ExternalDatabaseConnectorConnectionCredentialsArgs and ExternalDatabaseConnectorConnectionCredentialsOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorConnectionCredentialsInput` via:
 //
-//          ExternalDatabaseConnectorConnectionCredentialsArgs{...}
+//	ExternalDatabaseConnectorConnectionCredentialsArgs{...}
 type ExternalDatabaseConnectorConnectionCredentialsInput interface {
 	pulumi.Input
 
@@ -13696,11 +13696,11 @@ func (i ExternalDatabaseConnectorConnectionCredentialsArgs) ToExternalDatabaseCo
 // ExternalDatabaseConnectorConnectionCredentialsPtrInput is an input type that accepts ExternalDatabaseConnectorConnectionCredentialsArgs, ExternalDatabaseConnectorConnectionCredentialsPtr and ExternalDatabaseConnectorConnectionCredentialsPtrOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorConnectionCredentialsPtrInput` via:
 //
-//          ExternalDatabaseConnectorConnectionCredentialsArgs{...}
+//	        ExternalDatabaseConnectorConnectionCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ExternalDatabaseConnectorConnectionCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -13878,7 +13878,7 @@ type ExternalDatabaseConnectorConnectionString struct {
 // ExternalDatabaseConnectorConnectionStringInput is an input type that accepts ExternalDatabaseConnectorConnectionStringArgs and ExternalDatabaseConnectorConnectionStringOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorConnectionStringInput` via:
 //
-//          ExternalDatabaseConnectorConnectionStringArgs{...}
+//	ExternalDatabaseConnectorConnectionStringArgs{...}
 type ExternalDatabaseConnectorConnectionStringInput interface {
 	pulumi.Input
 
@@ -13920,11 +13920,11 @@ func (i ExternalDatabaseConnectorConnectionStringArgs) ToExternalDatabaseConnect
 // ExternalDatabaseConnectorConnectionStringPtrInput is an input type that accepts ExternalDatabaseConnectorConnectionStringArgs, ExternalDatabaseConnectorConnectionStringPtr and ExternalDatabaseConnectorConnectionStringPtrOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorConnectionStringPtrInput` via:
 //
-//          ExternalDatabaseConnectorConnectionStringArgs{...}
+//	        ExternalDatabaseConnectorConnectionStringArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ExternalDatabaseConnectorConnectionStringPtrInput interface {
 	pulumi.Input
 
@@ -14070,7 +14070,7 @@ type ExternalNonContainerDatabaseDatabaseManagementConfig struct {
 // ExternalNonContainerDatabaseDatabaseManagementConfigInput is an input type that accepts ExternalNonContainerDatabaseDatabaseManagementConfigArgs and ExternalNonContainerDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseDatabaseManagementConfigInput` via:
 //
-//          ExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
+//	ExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
 type ExternalNonContainerDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -14102,7 +14102,7 @@ func (i ExternalNonContainerDatabaseDatabaseManagementConfigArgs) ToExternalNonC
 // ExternalNonContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts ExternalNonContainerDatabaseDatabaseManagementConfigArray and ExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          ExternalNonContainerDatabaseDatabaseManagementConfigArray{ ExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
+//	ExternalNonContainerDatabaseDatabaseManagementConfigArray{ ExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
 type ExternalNonContainerDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -14187,7 +14187,7 @@ type ExternalNonContainerDatabaseOperationsInsightsConfig struct {
 // ExternalNonContainerDatabaseOperationsInsightsConfigInput is an input type that accepts ExternalNonContainerDatabaseOperationsInsightsConfigArgs and ExternalNonContainerDatabaseOperationsInsightsConfigOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseOperationsInsightsConfigInput` via:
 //
-//          ExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
+//	ExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
 type ExternalNonContainerDatabaseOperationsInsightsConfigInput interface {
 	pulumi.Input
 
@@ -14217,7 +14217,7 @@ func (i ExternalNonContainerDatabaseOperationsInsightsConfigArgs) ToExternalNonC
 // ExternalNonContainerDatabaseOperationsInsightsConfigArrayInput is an input type that accepts ExternalNonContainerDatabaseOperationsInsightsConfigArray and ExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseOperationsInsightsConfigArrayInput` via:
 //
-//          ExternalNonContainerDatabaseOperationsInsightsConfigArray{ ExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
+//	ExternalNonContainerDatabaseOperationsInsightsConfigArray{ ExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
 type ExternalNonContainerDatabaseOperationsInsightsConfigArrayInput interface {
 	pulumi.Input
 
@@ -14297,7 +14297,7 @@ type ExternalNonContainerDatabaseStackMonitoringConfig struct {
 // ExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts ExternalNonContainerDatabaseStackMonitoringConfigArgs and ExternalNonContainerDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseStackMonitoringConfigInput` via:
 //
-//          ExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+//	ExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
 type ExternalNonContainerDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -14327,7 +14327,7 @@ func (i ExternalNonContainerDatabaseStackMonitoringConfigArgs) ToExternalNonCont
 // ExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts ExternalNonContainerDatabaseStackMonitoringConfigArray and ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          ExternalNonContainerDatabaseStackMonitoringConfigArray{ ExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+//	ExternalNonContainerDatabaseStackMonitoringConfigArray{ ExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
 type ExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -14405,7 +14405,7 @@ type ExternalPluggableDatabaseDatabaseManagementConfig struct {
 // ExternalPluggableDatabaseDatabaseManagementConfigInput is an input type that accepts ExternalPluggableDatabaseDatabaseManagementConfigArgs and ExternalPluggableDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseDatabaseManagementConfigInput` via:
 //
-//          ExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
+//	ExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
 type ExternalPluggableDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -14437,7 +14437,7 @@ func (i ExternalPluggableDatabaseDatabaseManagementConfigArgs) ToExternalPluggab
 // ExternalPluggableDatabaseDatabaseManagementConfigArrayInput is an input type that accepts ExternalPluggableDatabaseDatabaseManagementConfigArray and ExternalPluggableDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          ExternalPluggableDatabaseDatabaseManagementConfigArray{ ExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
+//	ExternalPluggableDatabaseDatabaseManagementConfigArray{ ExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
 type ExternalPluggableDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -14520,7 +14520,7 @@ type ExternalPluggableDatabaseOperationsInsightsConfig struct {
 // ExternalPluggableDatabaseOperationsInsightsConfigInput is an input type that accepts ExternalPluggableDatabaseOperationsInsightsConfigArgs and ExternalPluggableDatabaseOperationsInsightsConfigOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseOperationsInsightsConfigInput` via:
 //
-//          ExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
+//	ExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
 type ExternalPluggableDatabaseOperationsInsightsConfigInput interface {
 	pulumi.Input
 
@@ -14550,7 +14550,7 @@ func (i ExternalPluggableDatabaseOperationsInsightsConfigArgs) ToExternalPluggab
 // ExternalPluggableDatabaseOperationsInsightsConfigArrayInput is an input type that accepts ExternalPluggableDatabaseOperationsInsightsConfigArray and ExternalPluggableDatabaseOperationsInsightsConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseOperationsInsightsConfigArrayInput` via:
 //
-//          ExternalPluggableDatabaseOperationsInsightsConfigArray{ ExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
+//	ExternalPluggableDatabaseOperationsInsightsConfigArray{ ExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
 type ExternalPluggableDatabaseOperationsInsightsConfigArrayInput interface {
 	pulumi.Input
 
@@ -14628,7 +14628,7 @@ type ExternalPluggableDatabaseStackMonitoringConfig struct {
 // ExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts ExternalPluggableDatabaseStackMonitoringConfigArgs and ExternalPluggableDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseStackMonitoringConfigInput` via:
 //
-//          ExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+//	ExternalPluggableDatabaseStackMonitoringConfigArgs{...}
 type ExternalPluggableDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -14658,7 +14658,7 @@ func (i ExternalPluggableDatabaseStackMonitoringConfigArgs) ToExternalPluggableD
 // ExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts ExternalPluggableDatabaseStackMonitoringConfigArray and ExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          ExternalPluggableDatabaseStackMonitoringConfigArray{ ExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+//	ExternalPluggableDatabaseStackMonitoringConfigArray{ ExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
 type ExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -14734,7 +14734,7 @@ type KeyStoreAssociatedDatabase struct {
 // KeyStoreAssociatedDatabaseInput is an input type that accepts KeyStoreAssociatedDatabaseArgs and KeyStoreAssociatedDatabaseOutput values.
 // You can construct a concrete instance of `KeyStoreAssociatedDatabaseInput` via:
 //
-//          KeyStoreAssociatedDatabaseArgs{...}
+//	KeyStoreAssociatedDatabaseArgs{...}
 type KeyStoreAssociatedDatabaseInput interface {
 	pulumi.Input
 
@@ -14764,7 +14764,7 @@ func (i KeyStoreAssociatedDatabaseArgs) ToKeyStoreAssociatedDatabaseOutputWithCo
 // KeyStoreAssociatedDatabaseArrayInput is an input type that accepts KeyStoreAssociatedDatabaseArray and KeyStoreAssociatedDatabaseArrayOutput values.
 // You can construct a concrete instance of `KeyStoreAssociatedDatabaseArrayInput` via:
 //
-//          KeyStoreAssociatedDatabaseArray{ KeyStoreAssociatedDatabaseArgs{...} }
+//	KeyStoreAssociatedDatabaseArray{ KeyStoreAssociatedDatabaseArgs{...} }
 type KeyStoreAssociatedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -14846,7 +14846,7 @@ type KeyStoreTypeDetails struct {
 // KeyStoreTypeDetailsInput is an input type that accepts KeyStoreTypeDetailsArgs and KeyStoreTypeDetailsOutput values.
 // You can construct a concrete instance of `KeyStoreTypeDetailsInput` via:
 //
-//          KeyStoreTypeDetailsArgs{...}
+//	KeyStoreTypeDetailsArgs{...}
 type KeyStoreTypeDetailsInput interface {
 	pulumi.Input
 
@@ -14890,11 +14890,11 @@ func (i KeyStoreTypeDetailsArgs) ToKeyStoreTypeDetailsPtrOutputWithContext(ctx c
 // KeyStoreTypeDetailsPtrInput is an input type that accepts KeyStoreTypeDetailsArgs, KeyStoreTypeDetailsPtr and KeyStoreTypeDetailsPtrOutput values.
 // You can construct a concrete instance of `KeyStoreTypeDetailsPtrInput` via:
 //
-//          KeyStoreTypeDetailsArgs{...}
+//	        KeyStoreTypeDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type KeyStoreTypeDetailsPtrInput interface {
 	pulumi.Input
 
@@ -15057,7 +15057,7 @@ type MaintenanceRunEstimatedPatchingTime struct {
 // MaintenanceRunEstimatedPatchingTimeInput is an input type that accepts MaintenanceRunEstimatedPatchingTimeArgs and MaintenanceRunEstimatedPatchingTimeOutput values.
 // You can construct a concrete instance of `MaintenanceRunEstimatedPatchingTimeInput` via:
 //
-//          MaintenanceRunEstimatedPatchingTimeArgs{...}
+//	MaintenanceRunEstimatedPatchingTimeArgs{...}
 type MaintenanceRunEstimatedPatchingTimeInput interface {
 	pulumi.Input
 
@@ -15091,7 +15091,7 @@ func (i MaintenanceRunEstimatedPatchingTimeArgs) ToMaintenanceRunEstimatedPatchi
 // MaintenanceRunEstimatedPatchingTimeArrayInput is an input type that accepts MaintenanceRunEstimatedPatchingTimeArray and MaintenanceRunEstimatedPatchingTimeArrayOutput values.
 // You can construct a concrete instance of `MaintenanceRunEstimatedPatchingTimeArrayInput` via:
 //
-//          MaintenanceRunEstimatedPatchingTimeArray{ MaintenanceRunEstimatedPatchingTimeArgs{...} }
+//	MaintenanceRunEstimatedPatchingTimeArray{ MaintenanceRunEstimatedPatchingTimeArgs{...} }
 type MaintenanceRunEstimatedPatchingTimeArrayInput interface {
 	pulumi.Input
 
@@ -15179,7 +15179,7 @@ type PluggableDatabaseConnectionString struct {
 // PluggableDatabaseConnectionStringInput is an input type that accepts PluggableDatabaseConnectionStringArgs and PluggableDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `PluggableDatabaseConnectionStringInput` via:
 //
-//          PluggableDatabaseConnectionStringArgs{...}
+//	PluggableDatabaseConnectionStringArgs{...}
 type PluggableDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -15211,7 +15211,7 @@ func (i PluggableDatabaseConnectionStringArgs) ToPluggableDatabaseConnectionStri
 // PluggableDatabaseConnectionStringArrayInput is an input type that accepts PluggableDatabaseConnectionStringArray and PluggableDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabaseConnectionStringArrayInput` via:
 //
-//          PluggableDatabaseConnectionStringArray{ PluggableDatabaseConnectionStringArgs{...} }
+//	PluggableDatabaseConnectionStringArray{ PluggableDatabaseConnectionStringArgs{...} }
 type PluggableDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -15294,7 +15294,7 @@ type PluggableDatabasesLocalCloneConnectionString struct {
 // PluggableDatabasesLocalCloneConnectionStringInput is an input type that accepts PluggableDatabasesLocalCloneConnectionStringArgs and PluggableDatabasesLocalCloneConnectionStringOutput values.
 // You can construct a concrete instance of `PluggableDatabasesLocalCloneConnectionStringInput` via:
 //
-//          PluggableDatabasesLocalCloneConnectionStringArgs{...}
+//	PluggableDatabasesLocalCloneConnectionStringArgs{...}
 type PluggableDatabasesLocalCloneConnectionStringInput interface {
 	pulumi.Input
 
@@ -15326,7 +15326,7 @@ func (i PluggableDatabasesLocalCloneConnectionStringArgs) ToPluggableDatabasesLo
 // PluggableDatabasesLocalCloneConnectionStringArrayInput is an input type that accepts PluggableDatabasesLocalCloneConnectionStringArray and PluggableDatabasesLocalCloneConnectionStringArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabasesLocalCloneConnectionStringArrayInput` via:
 //
-//          PluggableDatabasesLocalCloneConnectionStringArray{ PluggableDatabasesLocalCloneConnectionStringArgs{...} }
+//	PluggableDatabasesLocalCloneConnectionStringArray{ PluggableDatabasesLocalCloneConnectionStringArgs{...} }
 type PluggableDatabasesLocalCloneConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -15411,7 +15411,7 @@ type PluggableDatabasesRemoteCloneConnectionString struct {
 // PluggableDatabasesRemoteCloneConnectionStringInput is an input type that accepts PluggableDatabasesRemoteCloneConnectionStringArgs and PluggableDatabasesRemoteCloneConnectionStringOutput values.
 // You can construct a concrete instance of `PluggableDatabasesRemoteCloneConnectionStringInput` via:
 //
-//          PluggableDatabasesRemoteCloneConnectionStringArgs{...}
+//	PluggableDatabasesRemoteCloneConnectionStringArgs{...}
 type PluggableDatabasesRemoteCloneConnectionStringInput interface {
 	pulumi.Input
 
@@ -15443,7 +15443,7 @@ func (i PluggableDatabasesRemoteCloneConnectionStringArgs) ToPluggableDatabasesR
 // PluggableDatabasesRemoteCloneConnectionStringArrayInput is an input type that accepts PluggableDatabasesRemoteCloneConnectionStringArray and PluggableDatabasesRemoteCloneConnectionStringArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabasesRemoteCloneConnectionStringArrayInput` via:
 //
-//          PluggableDatabasesRemoteCloneConnectionStringArray{ PluggableDatabasesRemoteCloneConnectionStringArgs{...} }
+//	PluggableDatabasesRemoteCloneConnectionStringArray{ PluggableDatabasesRemoteCloneConnectionStringArgs{...} }
 type PluggableDatabasesRemoteCloneConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -15524,7 +15524,7 @@ type VmClusterAddVirtualNetworkDataCollectionOption struct {
 // VmClusterAddVirtualNetworkDataCollectionOptionInput is an input type that accepts VmClusterAddVirtualNetworkDataCollectionOptionArgs and VmClusterAddVirtualNetworkDataCollectionOptionOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkDataCollectionOptionInput` via:
 //
-//          VmClusterAddVirtualNetworkDataCollectionOptionArgs{...}
+//	VmClusterAddVirtualNetworkDataCollectionOptionArgs{...}
 type VmClusterAddVirtualNetworkDataCollectionOptionInput interface {
 	pulumi.Input
 
@@ -15552,7 +15552,7 @@ func (i VmClusterAddVirtualNetworkDataCollectionOptionArgs) ToVmClusterAddVirtua
 // VmClusterAddVirtualNetworkDataCollectionOptionArrayInput is an input type that accepts VmClusterAddVirtualNetworkDataCollectionOptionArray and VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkDataCollectionOptionArrayInput` via:
 //
-//          VmClusterAddVirtualNetworkDataCollectionOptionArray{ VmClusterAddVirtualNetworkDataCollectionOptionArgs{...} }
+//	VmClusterAddVirtualNetworkDataCollectionOptionArray{ VmClusterAddVirtualNetworkDataCollectionOptionArgs{...} }
 type VmClusterAddVirtualNetworkDataCollectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -15621,7 +15621,7 @@ type VmClusterAddVirtualNetworkDbServer struct {
 // VmClusterAddVirtualNetworkDbServerInput is an input type that accepts VmClusterAddVirtualNetworkDbServerArgs and VmClusterAddVirtualNetworkDbServerOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkDbServerInput` via:
 //
-//          VmClusterAddVirtualNetworkDbServerArgs{...}
+//	VmClusterAddVirtualNetworkDbServerArgs{...}
 type VmClusterAddVirtualNetworkDbServerInput interface {
 	pulumi.Input
 
@@ -15649,7 +15649,7 @@ func (i VmClusterAddVirtualNetworkDbServerArgs) ToVmClusterAddVirtualNetworkDbSe
 // VmClusterAddVirtualNetworkDbServerArrayInput is an input type that accepts VmClusterAddVirtualNetworkDbServerArray and VmClusterAddVirtualNetworkDbServerArrayOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkDbServerArrayInput` via:
 //
-//          VmClusterAddVirtualNetworkDbServerArray{ VmClusterAddVirtualNetworkDbServerArgs{...} }
+//	VmClusterAddVirtualNetworkDbServerArray{ VmClusterAddVirtualNetworkDbServerArgs{...} }
 type VmClusterAddVirtualNetworkDbServerArrayInput interface {
 	pulumi.Input
 
@@ -15718,7 +15718,7 @@ type VmClusterDataCollectionOptions struct {
 // VmClusterDataCollectionOptionsInput is an input type that accepts VmClusterDataCollectionOptionsArgs and VmClusterDataCollectionOptionsOutput values.
 // You can construct a concrete instance of `VmClusterDataCollectionOptionsInput` via:
 //
-//          VmClusterDataCollectionOptionsArgs{...}
+//	VmClusterDataCollectionOptionsArgs{...}
 type VmClusterDataCollectionOptionsInput interface {
 	pulumi.Input
 
@@ -15754,11 +15754,11 @@ func (i VmClusterDataCollectionOptionsArgs) ToVmClusterDataCollectionOptionsPtrO
 // VmClusterDataCollectionOptionsPtrInput is an input type that accepts VmClusterDataCollectionOptionsArgs, VmClusterDataCollectionOptionsPtr and VmClusterDataCollectionOptionsPtrOutput values.
 // You can construct a concrete instance of `VmClusterDataCollectionOptionsPtrInput` via:
 //
-//          VmClusterDataCollectionOptionsArgs{...}
+//	        VmClusterDataCollectionOptionsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VmClusterDataCollectionOptionsPtrInput interface {
 	pulumi.Input
 
@@ -15863,7 +15863,7 @@ type VmClusterNetworkScan struct {
 // VmClusterNetworkScanInput is an input type that accepts VmClusterNetworkScanArgs and VmClusterNetworkScanOutput values.
 // You can construct a concrete instance of `VmClusterNetworkScanInput` via:
 //
-//          VmClusterNetworkScanArgs{...}
+//	VmClusterNetworkScanArgs{...}
 type VmClusterNetworkScanInput interface {
 	pulumi.Input
 
@@ -15899,7 +15899,7 @@ func (i VmClusterNetworkScanArgs) ToVmClusterNetworkScanOutputWithContext(ctx co
 // VmClusterNetworkScanArrayInput is an input type that accepts VmClusterNetworkScanArray and VmClusterNetworkScanArrayOutput values.
 // You can construct a concrete instance of `VmClusterNetworkScanArrayInput` via:
 //
-//          VmClusterNetworkScanArray{ VmClusterNetworkScanArgs{...} }
+//	VmClusterNetworkScanArray{ VmClusterNetworkScanArgs{...} }
 type VmClusterNetworkScanArrayInput interface {
 	pulumi.Input
 
@@ -15998,7 +15998,7 @@ type VmClusterNetworkVmNetwork struct {
 // VmClusterNetworkVmNetworkInput is an input type that accepts VmClusterNetworkVmNetworkArgs and VmClusterNetworkVmNetworkOutput values.
 // You can construct a concrete instance of `VmClusterNetworkVmNetworkInput` via:
 //
-//          VmClusterNetworkVmNetworkArgs{...}
+//	VmClusterNetworkVmNetworkArgs{...}
 type VmClusterNetworkVmNetworkInput interface {
 	pulumi.Input
 
@@ -16036,7 +16036,7 @@ func (i VmClusterNetworkVmNetworkArgs) ToVmClusterNetworkVmNetworkOutputWithCont
 // VmClusterNetworkVmNetworkArrayInput is an input type that accepts VmClusterNetworkVmNetworkArray and VmClusterNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `VmClusterNetworkVmNetworkArrayInput` via:
 //
-//          VmClusterNetworkVmNetworkArray{ VmClusterNetworkVmNetworkArgs{...} }
+//	VmClusterNetworkVmNetworkArray{ VmClusterNetworkVmNetworkArgs{...} }
 type VmClusterNetworkVmNetworkArrayInput interface {
 	pulumi.Input
 
@@ -16136,7 +16136,7 @@ type VmClusterNetworkVmNetworkNode struct {
 // VmClusterNetworkVmNetworkNodeInput is an input type that accepts VmClusterNetworkVmNetworkNodeArgs and VmClusterNetworkVmNetworkNodeOutput values.
 // You can construct a concrete instance of `VmClusterNetworkVmNetworkNodeInput` via:
 //
-//          VmClusterNetworkVmNetworkNodeArgs{...}
+//	VmClusterNetworkVmNetworkNodeArgs{...}
 type VmClusterNetworkVmNetworkNodeInput interface {
 	pulumi.Input
 
@@ -16170,7 +16170,7 @@ func (i VmClusterNetworkVmNetworkNodeArgs) ToVmClusterNetworkVmNetworkNodeOutput
 // VmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts VmClusterNetworkVmNetworkNodeArray and VmClusterNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `VmClusterNetworkVmNetworkNodeArrayInput` via:
 //
-//          VmClusterNetworkVmNetworkNodeArray{ VmClusterNetworkVmNetworkNodeArgs{...} }
+//	VmClusterNetworkVmNetworkNodeArray{ VmClusterNetworkVmNetworkNodeArgs{...} }
 type VmClusterNetworkVmNetworkNodeArrayInput interface {
 	pulumi.Input
 
@@ -16254,7 +16254,7 @@ type VmClusterRemoveVirtualMachineDataCollectionOption struct {
 // VmClusterRemoveVirtualMachineDataCollectionOptionInput is an input type that accepts VmClusterRemoveVirtualMachineDataCollectionOptionArgs and VmClusterRemoveVirtualMachineDataCollectionOptionOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineDataCollectionOptionInput` via:
 //
-//          VmClusterRemoveVirtualMachineDataCollectionOptionArgs{...}
+//	VmClusterRemoveVirtualMachineDataCollectionOptionArgs{...}
 type VmClusterRemoveVirtualMachineDataCollectionOptionInput interface {
 	pulumi.Input
 
@@ -16282,7 +16282,7 @@ func (i VmClusterRemoveVirtualMachineDataCollectionOptionArgs) ToVmClusterRemove
 // VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput is an input type that accepts VmClusterRemoveVirtualMachineDataCollectionOptionArray and VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput` via:
 //
-//          VmClusterRemoveVirtualMachineDataCollectionOptionArray{ VmClusterRemoveVirtualMachineDataCollectionOptionArgs{...} }
+//	VmClusterRemoveVirtualMachineDataCollectionOptionArray{ VmClusterRemoveVirtualMachineDataCollectionOptionArgs{...} }
 type VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -16351,7 +16351,7 @@ type VmClusterRemoveVirtualMachineDbServer struct {
 // VmClusterRemoveVirtualMachineDbServerInput is an input type that accepts VmClusterRemoveVirtualMachineDbServerArgs and VmClusterRemoveVirtualMachineDbServerOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineDbServerInput` via:
 //
-//          VmClusterRemoveVirtualMachineDbServerArgs{...}
+//	VmClusterRemoveVirtualMachineDbServerArgs{...}
 type VmClusterRemoveVirtualMachineDbServerInput interface {
 	pulumi.Input
 
@@ -16379,7 +16379,7 @@ func (i VmClusterRemoveVirtualMachineDbServerArgs) ToVmClusterRemoveVirtualMachi
 // VmClusterRemoveVirtualMachineDbServerArrayInput is an input type that accepts VmClusterRemoveVirtualMachineDbServerArray and VmClusterRemoveVirtualMachineDbServerArrayOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineDbServerArrayInput` via:
 //
-//          VmClusterRemoveVirtualMachineDbServerArray{ VmClusterRemoveVirtualMachineDbServerArgs{...} }
+//	VmClusterRemoveVirtualMachineDbServerArray{ VmClusterRemoveVirtualMachineDbServerArgs{...} }
 type VmClusterRemoveVirtualMachineDbServerArrayInput interface {
 	pulumi.Input
 
@@ -16448,7 +16448,7 @@ type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet struct {
 // GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput is an input type that accepts GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs and GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput values.
 // You can construct a concrete instance of `GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput` via:
 //
-//          GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{...}
+//	GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{...}
 type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput interface {
 	pulumi.Input
 
@@ -16476,7 +16476,7 @@ func (i GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs) ToGetAuton
 // GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput is an input type that accepts GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray and GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput` via:
 //
-//          GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray{ GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{...} }
+//	GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray{ GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{...} }
 type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput interface {
 	pulumi.Input
 
@@ -16547,7 +16547,7 @@ type GetAutonomousCharacterSetsFilter struct {
 // GetAutonomousCharacterSetsFilterInput is an input type that accepts GetAutonomousCharacterSetsFilterArgs and GetAutonomousCharacterSetsFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousCharacterSetsFilterInput` via:
 //
-//          GetAutonomousCharacterSetsFilterArgs{...}
+//	GetAutonomousCharacterSetsFilterArgs{...}
 type GetAutonomousCharacterSetsFilterInput interface {
 	pulumi.Input
 
@@ -16577,7 +16577,7 @@ func (i GetAutonomousCharacterSetsFilterArgs) ToGetAutonomousCharacterSetsFilter
 // GetAutonomousCharacterSetsFilterArrayInput is an input type that accepts GetAutonomousCharacterSetsFilterArray and GetAutonomousCharacterSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousCharacterSetsFilterArrayInput` via:
 //
-//          GetAutonomousCharacterSetsFilterArray{ GetAutonomousCharacterSetsFilterArgs{...} }
+//	GetAutonomousCharacterSetsFilterArray{ GetAutonomousCharacterSetsFilterArgs{...} }
 type GetAutonomousCharacterSetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -16656,7 +16656,7 @@ type GetAutonomousContainerDatabaseBackupConfig struct {
 // GetAutonomousContainerDatabaseBackupConfigInput is an input type that accepts GetAutonomousContainerDatabaseBackupConfigArgs and GetAutonomousContainerDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousContainerDatabaseBackupConfigArgs{...}
+//	GetAutonomousContainerDatabaseBackupConfigArgs{...}
 type GetAutonomousContainerDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -16686,7 +16686,7 @@ func (i GetAutonomousContainerDatabaseBackupConfigArgs) ToGetAutonomousContainer
 // GetAutonomousContainerDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousContainerDatabaseBackupConfigArray and GetAutonomousContainerDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabaseBackupConfigArgs{...} }
+//	GetAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabaseBackupConfigArgs{...} }
 type GetAutonomousContainerDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -16770,7 +16770,7 @@ type GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail struct {
 // GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput is an input type that accepts GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs and GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
+//	GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
 type GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -16806,7 +16806,7 @@ func (i GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs) T
 // GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray and GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
+//	GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
 type GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -16930,7 +16930,7 @@ type GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatab
 // GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationInput is an input type that accepts GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArgs and GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationInput` via:
 //
-//          GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArgs{...}
+//	GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArgs{...}
 type GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationInput interface {
 	pulumi.Input
 
@@ -16991,7 +16991,7 @@ func (i GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDa
 // GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArrayInput is an input type that accepts GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArray and GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArray{ GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArgs{...} }
+//	GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArray{ GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArgs{...} }
 type GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArrayInput interface {
 	pulumi.Input
 
@@ -17181,7 +17181,7 @@ type GetAutonomousContainerDatabaseDataguardAssociationsFilter struct {
 // GetAutonomousContainerDatabaseDataguardAssociationsFilterInput is an input type that accepts GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs and GetAutonomousContainerDatabaseDataguardAssociationsFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseDataguardAssociationsFilterInput` via:
 //
-//          GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs{...}
+//	GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs{...}
 type GetAutonomousContainerDatabaseDataguardAssociationsFilterInput interface {
 	pulumi.Input
 
@@ -17210,7 +17210,7 @@ func (i GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs) ToGetAuto
 // GetAutonomousContainerDatabaseDataguardAssociationsFilterArrayInput is an input type that accepts GetAutonomousContainerDatabaseDataguardAssociationsFilterArray and GetAutonomousContainerDatabaseDataguardAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseDataguardAssociationsFilterArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseDataguardAssociationsFilterArray{ GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs{...} }
+//	GetAutonomousContainerDatabaseDataguardAssociationsFilterArray{ GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs{...} }
 type GetAutonomousContainerDatabaseDataguardAssociationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -17292,7 +17292,7 @@ type GetAutonomousContainerDatabaseKeyHistoryEntry struct {
 // GetAutonomousContainerDatabaseKeyHistoryEntryInput is an input type that accepts GetAutonomousContainerDatabaseKeyHistoryEntryArgs and GetAutonomousContainerDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseKeyHistoryEntryInput` via:
 //
-//          GetAutonomousContainerDatabaseKeyHistoryEntryArgs{...}
+//	GetAutonomousContainerDatabaseKeyHistoryEntryArgs{...}
 type GetAutonomousContainerDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -17326,7 +17326,7 @@ func (i GetAutonomousContainerDatabaseKeyHistoryEntryArgs) ToGetAutonomousContai
 // GetAutonomousContainerDatabaseKeyHistoryEntryArrayInput is an input type that accepts GetAutonomousContainerDatabaseKeyHistoryEntryArray and GetAutonomousContainerDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseKeyHistoryEntryArray{ GetAutonomousContainerDatabaseKeyHistoryEntryArgs{...} }
+//	GetAutonomousContainerDatabaseKeyHistoryEntryArray{ GetAutonomousContainerDatabaseKeyHistoryEntryArgs{...} }
 type GetAutonomousContainerDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -17427,7 +17427,7 @@ type GetAutonomousContainerDatabaseMaintenanceWindow struct {
 // GetAutonomousContainerDatabaseMaintenanceWindowInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowArgs and GetAutonomousContainerDatabaseMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowArgs{...}
+//	GetAutonomousContainerDatabaseMaintenanceWindowArgs{...}
 type GetAutonomousContainerDatabaseMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -17472,7 +17472,7 @@ func (i GetAutonomousContainerDatabaseMaintenanceWindowArgs) ToGetAutonomousCont
 // GetAutonomousContainerDatabaseMaintenanceWindowArrayInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowArray and GetAutonomousContainerDatabaseMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowArray{ GetAutonomousContainerDatabaseMaintenanceWindowArgs{...} }
+//	GetAutonomousContainerDatabaseMaintenanceWindowArray{ GetAutonomousContainerDatabaseMaintenanceWindowArgs{...} }
 type GetAutonomousContainerDatabaseMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -17586,7 +17586,7 @@ type GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeek struct {
 // GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs and GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...}
+//	GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...}
 type GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -17614,7 +17614,7 @@ func (i GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs) ToGetAuto
 // GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray and GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray{ GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray{ GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...} }
 type GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -17700,7 +17700,7 @@ type GetAutonomousContainerDatabaseMaintenanceWindowDetail struct {
 // GetAutonomousContainerDatabaseMaintenanceWindowDetailInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDetailArgs and GetAutonomousContainerDatabaseMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDetailInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...}
+//	GetAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...}
 type GetAutonomousContainerDatabaseMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -17745,7 +17745,7 @@ func (i GetAutonomousContainerDatabaseMaintenanceWindowDetailArgs) ToGetAutonomo
 // GetAutonomousContainerDatabaseMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDetailArray and GetAutonomousContainerDatabaseMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDetailArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDetailArray{ GetAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...} }
+//	GetAutonomousContainerDatabaseMaintenanceWindowDetailArray{ GetAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...} }
 type GetAutonomousContainerDatabaseMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -17861,7 +17861,7 @@ type GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek struct {
 // GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -17889,7 +17889,7 @@ func (i GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs) ToG
 // GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -17958,7 +17958,7 @@ type GetAutonomousContainerDatabaseMaintenanceWindowDetailMonth struct {
 // GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs and GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...}
+//	GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...}
 type GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -17986,7 +17986,7 @@ func (i GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs) ToGetAut
 // GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArray and GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArray{ GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...} }
+//	GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArray{ GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...} }
 type GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -18055,7 +18055,7 @@ type GetAutonomousContainerDatabaseMaintenanceWindowMonth struct {
 // GetAutonomousContainerDatabaseMaintenanceWindowMonthInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs and GetAutonomousContainerDatabaseMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowMonthInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...}
+//	GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...}
 type GetAutonomousContainerDatabaseMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -18083,7 +18083,7 @@ func (i GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs) ToGetAutonomou
 // GetAutonomousContainerDatabaseMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousContainerDatabaseMaintenanceWindowMonthArray and GetAutonomousContainerDatabaseMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabaseMaintenanceWindowMonthArrayInput` via:
 //
-//          GetAutonomousContainerDatabaseMaintenanceWindowMonthArray{ GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...} }
+//	GetAutonomousContainerDatabaseMaintenanceWindowMonthArray{ GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...} }
 type GetAutonomousContainerDatabaseMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -18154,7 +18154,7 @@ type GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig s
 // GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput is an input type that accepts GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs and GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
+//	GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
 type GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -18184,7 +18184,7 @@ func (i GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfi
 // GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArray and GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...} }
+//	GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...} }
 type GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -18270,7 +18270,7 @@ type GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBa
 // GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput is an input type that accepts GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs and GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
+//	GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
 type GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -18306,7 +18306,7 @@ func (i GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfi
 // GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray and GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
+//	GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
 type GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -18481,7 +18481,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabase struct {
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseInput interface {
 	pulumi.Input
 
@@ -18585,7 +18585,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs) ToGetAut
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -18908,7 +18908,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig stru
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -18938,7 +18938,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigAr
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -19024,7 +19024,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBacku
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -19060,7 +19060,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBa
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -19165,7 +19165,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry s
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -19199,7 +19199,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntr
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -19306,7 +19306,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -19351,7 +19351,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWin
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -19479,7 +19479,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -19507,7 +19507,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWin
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -19595,7 +19595,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -19640,7 +19640,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWin
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -19768,7 +19768,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -19796,7 +19796,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWin
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -19867,7 +19867,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -19895,7 +19895,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWin
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -19966,7 +19966,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -19994,7 +19994,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWin
 // GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArray and GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -20067,7 +20067,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousCon
 // GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -20097,7 +20097,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomous
 // GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArray and GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -20183,7 +20183,7 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousCon
 // GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs and GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...}
 type GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -20219,7 +20219,7 @@ func (i GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomous
 // GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray and GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
+//	GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{ GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{...} }
 type GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -20320,7 +20320,7 @@ type GetAutonomousContainerDatabasesFilter struct {
 // GetAutonomousContainerDatabasesFilterInput is an input type that accepts GetAutonomousContainerDatabasesFilterArgs and GetAutonomousContainerDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesFilterInput` via:
 //
-//          GetAutonomousContainerDatabasesFilterArgs{...}
+//	GetAutonomousContainerDatabasesFilterArgs{...}
 type GetAutonomousContainerDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -20350,7 +20350,7 @@ func (i GetAutonomousContainerDatabasesFilterArgs) ToGetAutonomousContainerDatab
 // GetAutonomousContainerDatabasesFilterArrayInput is an input type that accepts GetAutonomousContainerDatabasesFilterArray and GetAutonomousContainerDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerDatabasesFilterArrayInput` via:
 //
-//          GetAutonomousContainerDatabasesFilterArray{ GetAutonomousContainerDatabasesFilterArgs{...} }
+//	GetAutonomousContainerDatabasesFilterArray{ GetAutonomousContainerDatabasesFilterArgs{...} }
 type GetAutonomousContainerDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -20445,7 +20445,7 @@ type GetAutonomousContainerPatchesAutonomousPatch struct {
 // GetAutonomousContainerPatchesAutonomousPatchInput is an input type that accepts GetAutonomousContainerPatchesAutonomousPatchArgs and GetAutonomousContainerPatchesAutonomousPatchOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerPatchesAutonomousPatchInput` via:
 //
-//          GetAutonomousContainerPatchesAutonomousPatchArgs{...}
+//	GetAutonomousContainerPatchesAutonomousPatchArgs{...}
 type GetAutonomousContainerPatchesAutonomousPatchInput interface {
 	pulumi.Input
 
@@ -20491,7 +20491,7 @@ func (i GetAutonomousContainerPatchesAutonomousPatchArgs) ToGetAutonomousContain
 // GetAutonomousContainerPatchesAutonomousPatchArrayInput is an input type that accepts GetAutonomousContainerPatchesAutonomousPatchArray and GetAutonomousContainerPatchesAutonomousPatchArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerPatchesAutonomousPatchArrayInput` via:
 //
-//          GetAutonomousContainerPatchesAutonomousPatchArray{ GetAutonomousContainerPatchesAutonomousPatchArgs{...} }
+//	GetAutonomousContainerPatchesAutonomousPatchArray{ GetAutonomousContainerPatchesAutonomousPatchArgs{...} }
 type GetAutonomousContainerPatchesAutonomousPatchArrayInput interface {
 	pulumi.Input
 
@@ -20606,7 +20606,7 @@ type GetAutonomousContainerPatchesFilter struct {
 // GetAutonomousContainerPatchesFilterInput is an input type that accepts GetAutonomousContainerPatchesFilterArgs and GetAutonomousContainerPatchesFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerPatchesFilterInput` via:
 //
-//          GetAutonomousContainerPatchesFilterArgs{...}
+//	GetAutonomousContainerPatchesFilterArgs{...}
 type GetAutonomousContainerPatchesFilterInput interface {
 	pulumi.Input
 
@@ -20635,7 +20635,7 @@ func (i GetAutonomousContainerPatchesFilterArgs) ToGetAutonomousContainerPatches
 // GetAutonomousContainerPatchesFilterArrayInput is an input type that accepts GetAutonomousContainerPatchesFilterArray and GetAutonomousContainerPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousContainerPatchesFilterArrayInput` via:
 //
-//          GetAutonomousContainerPatchesFilterArray{ GetAutonomousContainerPatchesFilterArgs{...} }
+//	GetAutonomousContainerPatchesFilterArray{ GetAutonomousContainerPatchesFilterArgs{...} }
 type GetAutonomousContainerPatchesFilterArrayInput interface {
 	pulumi.Input
 
@@ -20713,7 +20713,7 @@ type GetAutonomousDatabaseApexDetail struct {
 // GetAutonomousDatabaseApexDetailInput is an input type that accepts GetAutonomousDatabaseApexDetailArgs and GetAutonomousDatabaseApexDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseApexDetailInput` via:
 //
-//          GetAutonomousDatabaseApexDetailArgs{...}
+//	GetAutonomousDatabaseApexDetailArgs{...}
 type GetAutonomousDatabaseApexDetailInput interface {
 	pulumi.Input
 
@@ -20743,7 +20743,7 @@ func (i GetAutonomousDatabaseApexDetailArgs) ToGetAutonomousDatabaseApexDetailOu
 // GetAutonomousDatabaseApexDetailArrayInput is an input type that accepts GetAutonomousDatabaseApexDetailArray and GetAutonomousDatabaseApexDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseApexDetailArrayInput` via:
 //
-//          GetAutonomousDatabaseApexDetailArray{ GetAutonomousDatabaseApexDetailArgs{...} }
+//	GetAutonomousDatabaseApexDetailArray{ GetAutonomousDatabaseApexDetailArgs{...} }
 type GetAutonomousDatabaseApexDetailArrayInput interface {
 	pulumi.Input
 
@@ -20819,7 +20819,7 @@ type GetAutonomousDatabaseBackupConfig struct {
 // GetAutonomousDatabaseBackupConfigInput is an input type that accepts GetAutonomousDatabaseBackupConfigArgs and GetAutonomousDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousDatabaseBackupConfigArgs{...}
+//	GetAutonomousDatabaseBackupConfigArgs{...}
 type GetAutonomousDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -20849,7 +20849,7 @@ func (i GetAutonomousDatabaseBackupConfigArgs) ToGetAutonomousDatabaseBackupConf
 // GetAutonomousDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousDatabaseBackupConfigArray and GetAutonomousDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousDatabaseBackupConfigArray{ GetAutonomousDatabaseBackupConfigArgs{...} }
+//	GetAutonomousDatabaseBackupConfigArray{ GetAutonomousDatabaseBackupConfigArgs{...} }
 type GetAutonomousDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -20955,7 +20955,7 @@ type GetAutonomousDatabaseBackupsAutonomousDatabaseBackup struct {
 // GetAutonomousDatabaseBackupsAutonomousDatabaseBackupInput is an input type that accepts GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArgs and GetAutonomousDatabaseBackupsAutonomousDatabaseBackupOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseBackupsAutonomousDatabaseBackupInput` via:
 //
-//          GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArgs{...}
+//	GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArgs{...}
 type GetAutonomousDatabaseBackupsAutonomousDatabaseBackupInput interface {
 	pulumi.Input
 
@@ -21015,7 +21015,7 @@ func (i GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArgs) ToGetAutonomou
 // GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArrayInput is an input type that accepts GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArray and GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArrayInput` via:
 //
-//          GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArray{ GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArgs{...} }
+//	GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArray{ GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArgs{...} }
 type GetAutonomousDatabaseBackupsAutonomousDatabaseBackupArrayInput interface {
 	pulumi.Input
 
@@ -21165,7 +21165,7 @@ type GetAutonomousDatabaseBackupsFilter struct {
 // GetAutonomousDatabaseBackupsFilterInput is an input type that accepts GetAutonomousDatabaseBackupsFilterArgs and GetAutonomousDatabaseBackupsFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseBackupsFilterInput` via:
 //
-//          GetAutonomousDatabaseBackupsFilterArgs{...}
+//	GetAutonomousDatabaseBackupsFilterArgs{...}
 type GetAutonomousDatabaseBackupsFilterInput interface {
 	pulumi.Input
 
@@ -21194,7 +21194,7 @@ func (i GetAutonomousDatabaseBackupsFilterArgs) ToGetAutonomousDatabaseBackupsFi
 // GetAutonomousDatabaseBackupsFilterArrayInput is an input type that accepts GetAutonomousDatabaseBackupsFilterArray and GetAutonomousDatabaseBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseBackupsFilterArrayInput` via:
 //
-//          GetAutonomousDatabaseBackupsFilterArray{ GetAutonomousDatabaseBackupsFilterArgs{...} }
+//	GetAutonomousDatabaseBackupsFilterArray{ GetAutonomousDatabaseBackupsFilterArgs{...} }
 type GetAutonomousDatabaseBackupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -21280,7 +21280,7 @@ type GetAutonomousDatabaseConnectionString struct {
 // GetAutonomousDatabaseConnectionStringInput is an input type that accepts GetAutonomousDatabaseConnectionStringArgs and GetAutonomousDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseConnectionStringInput` via:
 //
-//          GetAutonomousDatabaseConnectionStringArgs{...}
+//	GetAutonomousDatabaseConnectionStringArgs{...}
 type GetAutonomousDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -21318,7 +21318,7 @@ func (i GetAutonomousDatabaseConnectionStringArgs) ToGetAutonomousDatabaseConnec
 // GetAutonomousDatabaseConnectionStringArrayInput is an input type that accepts GetAutonomousDatabaseConnectionStringArray and GetAutonomousDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseConnectionStringArrayInput` via:
 //
-//          GetAutonomousDatabaseConnectionStringArray{ GetAutonomousDatabaseConnectionStringArgs{...} }
+//	GetAutonomousDatabaseConnectionStringArray{ GetAutonomousDatabaseConnectionStringArgs{...} }
 type GetAutonomousDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -21428,7 +21428,7 @@ type GetAutonomousDatabaseConnectionStringProfile struct {
 // GetAutonomousDatabaseConnectionStringProfileInput is an input type that accepts GetAutonomousDatabaseConnectionStringProfileArgs and GetAutonomousDatabaseConnectionStringProfileOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseConnectionStringProfileInput` via:
 //
-//          GetAutonomousDatabaseConnectionStringProfileArgs{...}
+//	GetAutonomousDatabaseConnectionStringProfileArgs{...}
 type GetAutonomousDatabaseConnectionStringProfileInput interface {
 	pulumi.Input
 
@@ -21470,7 +21470,7 @@ func (i GetAutonomousDatabaseConnectionStringProfileArgs) ToGetAutonomousDatabas
 // GetAutonomousDatabaseConnectionStringProfileArrayInput is an input type that accepts GetAutonomousDatabaseConnectionStringProfileArray and GetAutonomousDatabaseConnectionStringProfileArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseConnectionStringProfileArrayInput` via:
 //
-//          GetAutonomousDatabaseConnectionStringProfileArray{ GetAutonomousDatabaseConnectionStringProfileArgs{...} }
+//	GetAutonomousDatabaseConnectionStringProfileArray{ GetAutonomousDatabaseConnectionStringProfileArgs{...} }
 type GetAutonomousDatabaseConnectionStringProfileArrayInput interface {
 	pulumi.Input
 
@@ -21580,7 +21580,7 @@ type GetAutonomousDatabaseConnectionUrl struct {
 // GetAutonomousDatabaseConnectionUrlInput is an input type that accepts GetAutonomousDatabaseConnectionUrlArgs and GetAutonomousDatabaseConnectionUrlOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseConnectionUrlInput` via:
 //
-//          GetAutonomousDatabaseConnectionUrlArgs{...}
+//	GetAutonomousDatabaseConnectionUrlArgs{...}
 type GetAutonomousDatabaseConnectionUrlInput interface {
 	pulumi.Input
 
@@ -21614,7 +21614,7 @@ func (i GetAutonomousDatabaseConnectionUrlArgs) ToGetAutonomousDatabaseConnectio
 // GetAutonomousDatabaseConnectionUrlArrayInput is an input type that accepts GetAutonomousDatabaseConnectionUrlArray and GetAutonomousDatabaseConnectionUrlArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseConnectionUrlArrayInput` via:
 //
-//          GetAutonomousDatabaseConnectionUrlArray{ GetAutonomousDatabaseConnectionUrlArgs{...} }
+//	GetAutonomousDatabaseConnectionUrlArray{ GetAutonomousDatabaseConnectionUrlArgs{...} }
 type GetAutonomousDatabaseConnectionUrlArrayInput interface {
 	pulumi.Input
 
@@ -21698,7 +21698,7 @@ type GetAutonomousDatabaseCustomerContact struct {
 // GetAutonomousDatabaseCustomerContactInput is an input type that accepts GetAutonomousDatabaseCustomerContactArgs and GetAutonomousDatabaseCustomerContactOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseCustomerContactInput` via:
 //
-//          GetAutonomousDatabaseCustomerContactArgs{...}
+//	GetAutonomousDatabaseCustomerContactArgs{...}
 type GetAutonomousDatabaseCustomerContactInput interface {
 	pulumi.Input
 
@@ -21726,7 +21726,7 @@ func (i GetAutonomousDatabaseCustomerContactArgs) ToGetAutonomousDatabaseCustome
 // GetAutonomousDatabaseCustomerContactArrayInput is an input type that accepts GetAutonomousDatabaseCustomerContactArray and GetAutonomousDatabaseCustomerContactArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseCustomerContactArrayInput` via:
 //
-//          GetAutonomousDatabaseCustomerContactArray{ GetAutonomousDatabaseCustomerContactArgs{...} }
+//	GetAutonomousDatabaseCustomerContactArray{ GetAutonomousDatabaseCustomerContactArgs{...} }
 type GetAutonomousDatabaseCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -21825,7 +21825,7 @@ type GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoci
 // GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationInput is an input type that accepts GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArgs and GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationInput` via:
 //
-//          GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArgs{...}
+//	GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArgs{...}
 type GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationInput interface {
 	pulumi.Input
 
@@ -21883,7 +21883,7 @@ func (i GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAss
 // GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArrayInput is an input type that accepts GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArray and GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArrayInput` via:
 //
-//          GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArray{ GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArgs{...} }
+//	GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArray{ GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArgs{...} }
 type GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArrayInput interface {
 	pulumi.Input
 
@@ -22060,7 +22060,7 @@ type GetAutonomousDatabaseDataguardAssociationsFilter struct {
 // GetAutonomousDatabaseDataguardAssociationsFilterInput is an input type that accepts GetAutonomousDatabaseDataguardAssociationsFilterArgs and GetAutonomousDatabaseDataguardAssociationsFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseDataguardAssociationsFilterInput` via:
 //
-//          GetAutonomousDatabaseDataguardAssociationsFilterArgs{...}
+//	GetAutonomousDatabaseDataguardAssociationsFilterArgs{...}
 type GetAutonomousDatabaseDataguardAssociationsFilterInput interface {
 	pulumi.Input
 
@@ -22089,7 +22089,7 @@ func (i GetAutonomousDatabaseDataguardAssociationsFilterArgs) ToGetAutonomousDat
 // GetAutonomousDatabaseDataguardAssociationsFilterArrayInput is an input type that accepts GetAutonomousDatabaseDataguardAssociationsFilterArray and GetAutonomousDatabaseDataguardAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseDataguardAssociationsFilterArrayInput` via:
 //
-//          GetAutonomousDatabaseDataguardAssociationsFilterArray{ GetAutonomousDatabaseDataguardAssociationsFilterArgs{...} }
+//	GetAutonomousDatabaseDataguardAssociationsFilterArray{ GetAutonomousDatabaseDataguardAssociationsFilterArgs{...} }
 type GetAutonomousDatabaseDataguardAssociationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -22171,7 +22171,7 @@ type GetAutonomousDatabaseKeyHistoryEntry struct {
 // GetAutonomousDatabaseKeyHistoryEntryInput is an input type that accepts GetAutonomousDatabaseKeyHistoryEntryArgs and GetAutonomousDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseKeyHistoryEntryInput` via:
 //
-//          GetAutonomousDatabaseKeyHistoryEntryArgs{...}
+//	GetAutonomousDatabaseKeyHistoryEntryArgs{...}
 type GetAutonomousDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -22205,7 +22205,7 @@ func (i GetAutonomousDatabaseKeyHistoryEntryArgs) ToGetAutonomousDatabaseKeyHist
 // GetAutonomousDatabaseKeyHistoryEntryArrayInput is an input type that accepts GetAutonomousDatabaseKeyHistoryEntryArray and GetAutonomousDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          GetAutonomousDatabaseKeyHistoryEntryArray{ GetAutonomousDatabaseKeyHistoryEntryArgs{...} }
+//	GetAutonomousDatabaseKeyHistoryEntryArray{ GetAutonomousDatabaseKeyHistoryEntryArgs{...} }
 type GetAutonomousDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -22295,7 +22295,7 @@ type GetAutonomousDatabaseLocalStandbyDb struct {
 // GetAutonomousDatabaseLocalStandbyDbInput is an input type that accepts GetAutonomousDatabaseLocalStandbyDbArgs and GetAutonomousDatabaseLocalStandbyDbOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseLocalStandbyDbInput` via:
 //
-//          GetAutonomousDatabaseLocalStandbyDbArgs{...}
+//	GetAutonomousDatabaseLocalStandbyDbArgs{...}
 type GetAutonomousDatabaseLocalStandbyDbInput interface {
 	pulumi.Input
 
@@ -22329,7 +22329,7 @@ func (i GetAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabaseLocalSta
 // GetAutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts GetAutonomousDatabaseLocalStandbyDbArray and GetAutonomousDatabaseLocalStandbyDbArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseLocalStandbyDbArrayInput` via:
 //
-//          GetAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabaseLocalStandbyDbArgs{...} }
+//	GetAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabaseLocalStandbyDbArgs{...} }
 type GetAutonomousDatabaseLocalStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -22417,7 +22417,7 @@ type GetAutonomousDatabaseScheduledOperation struct {
 // GetAutonomousDatabaseScheduledOperationInput is an input type that accepts GetAutonomousDatabaseScheduledOperationArgs and GetAutonomousDatabaseScheduledOperationOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseScheduledOperationInput` via:
 //
-//          GetAutonomousDatabaseScheduledOperationArgs{...}
+//	GetAutonomousDatabaseScheduledOperationArgs{...}
 type GetAutonomousDatabaseScheduledOperationInput interface {
 	pulumi.Input
 
@@ -22449,7 +22449,7 @@ func (i GetAutonomousDatabaseScheduledOperationArgs) ToGetAutonomousDatabaseSche
 // GetAutonomousDatabaseScheduledOperationArrayInput is an input type that accepts GetAutonomousDatabaseScheduledOperationArray and GetAutonomousDatabaseScheduledOperationArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseScheduledOperationArrayInput` via:
 //
-//          GetAutonomousDatabaseScheduledOperationArray{ GetAutonomousDatabaseScheduledOperationArgs{...} }
+//	GetAutonomousDatabaseScheduledOperationArray{ GetAutonomousDatabaseScheduledOperationArgs{...} }
 type GetAutonomousDatabaseScheduledOperationArrayInput interface {
 	pulumi.Input
 
@@ -22530,7 +22530,7 @@ type GetAutonomousDatabaseScheduledOperationDayOfWeek struct {
 // GetAutonomousDatabaseScheduledOperationDayOfWeekInput is an input type that accepts GetAutonomousDatabaseScheduledOperationDayOfWeekArgs and GetAutonomousDatabaseScheduledOperationDayOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseScheduledOperationDayOfWeekInput` via:
 //
-//          GetAutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
+//	GetAutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
 type GetAutonomousDatabaseScheduledOperationDayOfWeekInput interface {
 	pulumi.Input
 
@@ -22558,7 +22558,7 @@ func (i GetAutonomousDatabaseScheduledOperationDayOfWeekArgs) ToGetAutonomousDat
 // GetAutonomousDatabaseScheduledOperationDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabaseScheduledOperationDayOfWeekArray and GetAutonomousDatabaseScheduledOperationDayOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseScheduledOperationDayOfWeekArrayInput` via:
 //
-//          GetAutonomousDatabaseScheduledOperationDayOfWeekArray{ GetAutonomousDatabaseScheduledOperationDayOfWeekArgs{...} }
+//	GetAutonomousDatabaseScheduledOperationDayOfWeekArray{ GetAutonomousDatabaseScheduledOperationDayOfWeekArgs{...} }
 type GetAutonomousDatabaseScheduledOperationDayOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -22633,7 +22633,7 @@ type GetAutonomousDatabaseStandbyDb struct {
 // GetAutonomousDatabaseStandbyDbInput is an input type that accepts GetAutonomousDatabaseStandbyDbArgs and GetAutonomousDatabaseStandbyDbOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseStandbyDbInput` via:
 //
-//          GetAutonomousDatabaseStandbyDbArgs{...}
+//	GetAutonomousDatabaseStandbyDbArgs{...}
 type GetAutonomousDatabaseStandbyDbInput interface {
 	pulumi.Input
 
@@ -22667,7 +22667,7 @@ func (i GetAutonomousDatabaseStandbyDbArgs) ToGetAutonomousDatabaseStandbyDbOutp
 // GetAutonomousDatabaseStandbyDbArrayInput is an input type that accepts GetAutonomousDatabaseStandbyDbArray and GetAutonomousDatabaseStandbyDbArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabaseStandbyDbArrayInput` via:
 //
-//          GetAutonomousDatabaseStandbyDbArray{ GetAutonomousDatabaseStandbyDbArgs{...} }
+//	GetAutonomousDatabaseStandbyDbArray{ GetAutonomousDatabaseStandbyDbArgs{...} }
 type GetAutonomousDatabaseStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -22942,7 +22942,7 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 // GetAutonomousDatabasesAutonomousDatabaseInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseArgs and GetAutonomousDatabasesAutonomousDatabaseOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseInput interface {
 	pulumi.Input
 
@@ -23161,7 +23161,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseArgs) ToGetAutonomousDatabasesAu
 // GetAutonomousDatabasesAutonomousDatabaseArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseArray and GetAutonomousDatabasesAutonomousDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseArray{ GetAutonomousDatabasesAutonomousDatabaseArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseArray{ GetAutonomousDatabasesAutonomousDatabaseArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -23749,7 +23749,7 @@ type GetAutonomousDatabasesAutonomousDatabaseApexDetail struct {
 // GetAutonomousDatabasesAutonomousDatabaseApexDetailInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs and GetAutonomousDatabasesAutonomousDatabaseApexDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseApexDetailInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseApexDetailInput interface {
 	pulumi.Input
 
@@ -23780,7 +23780,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs) ToGetAutonomousD
 // GetAutonomousDatabasesAutonomousDatabaseApexDetailArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseApexDetailArray and GetAutonomousDatabasesAutonomousDatabaseApexDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseApexDetailArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseApexDetailArray{ GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseApexDetailArray{ GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseApexDetailArrayInput interface {
 	pulumi.Input
 
@@ -23857,7 +23857,7 @@ type GetAutonomousDatabasesAutonomousDatabaseBackupConfig struct {
 // GetAutonomousDatabasesAutonomousDatabaseBackupConfigInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs and GetAutonomousDatabasesAutonomousDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -23887,7 +23887,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs) ToGetAutonomou
 // GetAutonomousDatabasesAutonomousDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseBackupConfigArray and GetAutonomousDatabasesAutonomousDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseBackupConfigArray{ GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseBackupConfigArray{ GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -23971,7 +23971,7 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionString struct {
 // GetAutonomousDatabasesAutonomousDatabaseConnectionStringInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs and GetAutonomousDatabasesAutonomousDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseConnectionStringInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -24009,7 +24009,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs) ToGetAuton
 // GetAutonomousDatabasesAutonomousDatabaseConnectionStringArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseConnectionStringArray and GetAutonomousDatabasesAutonomousDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseConnectionStringArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseConnectionStringArray{ GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseConnectionStringArray{ GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -24121,7 +24121,7 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile struct {
 // GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArgs and GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileInput interface {
 	pulumi.Input
 
@@ -24163,7 +24163,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArgs) ToG
 // GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArray and GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArray{ GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArray{ GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileArrayInput interface {
 	pulumi.Input
 
@@ -24275,7 +24275,7 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionUrl struct {
 // GetAutonomousDatabasesAutonomousDatabaseConnectionUrlInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs and GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseConnectionUrlInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseConnectionUrlInput interface {
 	pulumi.Input
 
@@ -24309,7 +24309,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs) ToGetAutonomo
 // GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArray and GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArray{ GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArray{ GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArrayInput interface {
 	pulumi.Input
 
@@ -24395,7 +24395,7 @@ type GetAutonomousDatabasesAutonomousDatabaseCustomerContact struct {
 // GetAutonomousDatabasesAutonomousDatabaseCustomerContactInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs and GetAutonomousDatabasesAutonomousDatabaseCustomerContactOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseCustomerContactInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseCustomerContactInput interface {
 	pulumi.Input
 
@@ -24423,7 +24423,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs) ToGetAutono
 // GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseCustomerContactArray and GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseCustomerContactArray{ GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseCustomerContactArray{ GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -24498,7 +24498,7 @@ type GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry struct {
 // GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs and GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -24532,7 +24532,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs) ToGetAutono
 // GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArray and GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArray{ GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArray{ GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -24622,7 +24622,7 @@ type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb struct {
 // GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs and GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput interface {
 	pulumi.Input
 
@@ -24656,7 +24656,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonom
 // GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray and GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -24746,7 +24746,7 @@ type GetAutonomousDatabasesAutonomousDatabaseScheduledOperation struct {
 // GetAutonomousDatabasesAutonomousDatabaseScheduledOperationInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs and GetAutonomousDatabasesAutonomousDatabaseScheduledOperationOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledOperationInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseScheduledOperationInput interface {
 	pulumi.Input
 
@@ -24778,7 +24778,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs) ToGetAut
 // GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArray and GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArray{ GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArray{ GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayInput interface {
 	pulumi.Input
 
@@ -24859,7 +24859,7 @@ type GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek struct 
 // GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs and GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekInput interface {
 	pulumi.Input
 
@@ -24887,7 +24887,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs)
 // GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArray and GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArray{ GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArray{ GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -24962,7 +24962,7 @@ type GetAutonomousDatabasesAutonomousDatabaseStandbyDb struct {
 // GetAutonomousDatabasesAutonomousDatabaseStandbyDbInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs and GetAutonomousDatabasesAutonomousDatabaseStandbyDbOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseStandbyDbInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs{...}
+//	GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs{...}
 type GetAutonomousDatabasesAutonomousDatabaseStandbyDbInput interface {
 	pulumi.Input
 
@@ -24996,7 +24996,7 @@ func (i GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs) ToGetAutonomousDa
 // GetAutonomousDatabasesAutonomousDatabaseStandbyDbArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseStandbyDbArray and GetAutonomousDatabasesAutonomousDatabaseStandbyDbArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseStandbyDbArrayInput` via:
 //
-//          GetAutonomousDatabasesAutonomousDatabaseStandbyDbArray{ GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs{...} }
+//	GetAutonomousDatabasesAutonomousDatabaseStandbyDbArray{ GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs{...} }
 type GetAutonomousDatabasesAutonomousDatabaseStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -25261,7 +25261,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseArgs and GetAutonomousDatabasesClonesAutonomousDatabaseOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseInput interface {
 	pulumi.Input
 
@@ -25470,7 +25470,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseArgs) ToGetAutonomousDatab
 // GetAutonomousDatabasesClonesAutonomousDatabaseArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseArray and GetAutonomousDatabasesClonesAutonomousDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseArray{ GetAutonomousDatabasesClonesAutonomousDatabaseArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseArray{ GetAutonomousDatabasesClonesAutonomousDatabaseArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -26012,7 +26012,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseApexDetail struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs and GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailInput interface {
 	pulumi.Input
 
@@ -26042,7 +26042,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs) ToGetAuton
 // GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArray and GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArray{ GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArray{ GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArrayInput interface {
 	pulumi.Input
 
@@ -26118,7 +26118,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs and GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigInput interface {
 	pulumi.Input
 
@@ -26148,7 +26148,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs) ToGetAut
 // GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArray and GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArray{ GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArray{ GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -26234,7 +26234,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs and GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -26272,7 +26272,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs) ToGe
 // GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArray and GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArray{ GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArray{ GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -26384,7 +26384,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile struc
 // GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArgs and GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileInput interface {
 	pulumi.Input
 
@@ -26426,7 +26426,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArg
 // GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArray and GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArray{ GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArray{ GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileArrayInput interface {
 	pulumi.Input
 
@@ -26550,7 +26550,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs and GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlInput interface {
 	pulumi.Input
 
@@ -26584,7 +26584,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs) ToGetAu
 // GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArray and GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArray{ GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArray{ GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArrayInput interface {
 	pulumi.Input
 
@@ -26670,7 +26670,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs and GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactInput interface {
 	pulumi.Input
 
@@ -26698,7 +26698,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs) ToGet
 // GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArray and GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArray{ GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArray{ GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -26773,7 +26773,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs and GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryInput interface {
 	pulumi.Input
 
@@ -26807,7 +26807,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs) ToGet
 // GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArray and GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArray{ GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArray{ GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -26897,7 +26897,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs and GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput interface {
 	pulumi.Input
 
@@ -26931,7 +26931,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs) ToGetA
 // GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray and GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -27021,7 +27021,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationInput interface {
 	pulumi.Input
 
@@ -27053,7 +27053,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs) To
 // GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArray and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArray{ GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArray{ GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayInput interface {
 	pulumi.Input
 
@@ -27138,7 +27138,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek s
 // GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekInput interface {
 	pulumi.Input
 
@@ -27166,7 +27166,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWee
 // GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArray and GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArray{ GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArray{ GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -27243,7 +27243,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb struct {
 // GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs and GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs{...}
+//	GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs{...}
 type GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbInput interface {
 	pulumi.Input
 
@@ -27277,7 +27277,7 @@ func (i GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs) ToGetAutono
 // GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArray and GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArray{ GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs{...} }
+//	GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArray{ GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs{...} }
 type GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayInput interface {
 	pulumi.Input
 
@@ -27365,7 +27365,7 @@ type GetAutonomousDatabasesClonesFilter struct {
 // GetAutonomousDatabasesClonesFilterInput is an input type that accepts GetAutonomousDatabasesClonesFilterArgs and GetAutonomousDatabasesClonesFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesFilterInput` via:
 //
-//          GetAutonomousDatabasesClonesFilterArgs{...}
+//	GetAutonomousDatabasesClonesFilterArgs{...}
 type GetAutonomousDatabasesClonesFilterInput interface {
 	pulumi.Input
 
@@ -27395,7 +27395,7 @@ func (i GetAutonomousDatabasesClonesFilterArgs) ToGetAutonomousDatabasesClonesFi
 // GetAutonomousDatabasesClonesFilterArrayInput is an input type that accepts GetAutonomousDatabasesClonesFilterArray and GetAutonomousDatabasesClonesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesClonesFilterArrayInput` via:
 //
-//          GetAutonomousDatabasesClonesFilterArray{ GetAutonomousDatabasesClonesFilterArgs{...} }
+//	GetAutonomousDatabasesClonesFilterArray{ GetAutonomousDatabasesClonesFilterArgs{...} }
 type GetAutonomousDatabasesClonesFilterArrayInput interface {
 	pulumi.Input
 
@@ -27474,7 +27474,7 @@ type GetAutonomousDatabasesFilter struct {
 // GetAutonomousDatabasesFilterInput is an input type that accepts GetAutonomousDatabasesFilterArgs and GetAutonomousDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesFilterInput` via:
 //
-//          GetAutonomousDatabasesFilterArgs{...}
+//	GetAutonomousDatabasesFilterArgs{...}
 type GetAutonomousDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -27504,7 +27504,7 @@ func (i GetAutonomousDatabasesFilterArgs) ToGetAutonomousDatabasesFilterOutputWi
 // GetAutonomousDatabasesFilterArrayInput is an input type that accepts GetAutonomousDatabasesFilterArray and GetAutonomousDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDatabasesFilterArrayInput` via:
 //
-//          GetAutonomousDatabasesFilterArray{ GetAutonomousDatabasesFilterArgs{...} }
+//	GetAutonomousDatabasesFilterArray{ GetAutonomousDatabasesFilterArgs{...} }
 type GetAutonomousDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -27593,7 +27593,7 @@ type GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion struct {
 // GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionInput is an input type that accepts GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArgs and GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionOutput values.
 // You can construct a concrete instance of `GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionInput` via:
 //
-//          GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArgs{...}
+//	GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArgs{...}
 type GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionInput interface {
 	pulumi.Input
 
@@ -27633,7 +27633,7 @@ func (i GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArgs) ToGetAuton
 // GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArrayInput is an input type that accepts GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArray and GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArrayInput` via:
 //
-//          GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArray{ GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArgs{...} }
+//	GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArray{ GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArgs{...} }
 type GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArrayInput interface {
 	pulumi.Input
 
@@ -27727,7 +27727,7 @@ type GetAutonomousDbPreviewVersionsFilter struct {
 // GetAutonomousDbPreviewVersionsFilterInput is an input type that accepts GetAutonomousDbPreviewVersionsFilterArgs and GetAutonomousDbPreviewVersionsFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousDbPreviewVersionsFilterInput` via:
 //
-//          GetAutonomousDbPreviewVersionsFilterArgs{...}
+//	GetAutonomousDbPreviewVersionsFilterArgs{...}
 type GetAutonomousDbPreviewVersionsFilterInput interface {
 	pulumi.Input
 
@@ -27756,7 +27756,7 @@ func (i GetAutonomousDbPreviewVersionsFilterArgs) ToGetAutonomousDbPreviewVersio
 // GetAutonomousDbPreviewVersionsFilterArrayInput is an input type that accepts GetAutonomousDbPreviewVersionsFilterArray and GetAutonomousDbPreviewVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDbPreviewVersionsFilterArrayInput` via:
 //
-//          GetAutonomousDbPreviewVersionsFilterArray{ GetAutonomousDbPreviewVersionsFilterArgs{...} }
+//	GetAutonomousDbPreviewVersionsFilterArray{ GetAutonomousDbPreviewVersionsFilterArgs{...} }
 type GetAutonomousDbPreviewVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -27846,7 +27846,7 @@ type GetAutonomousDbVersionsAutonomousDbVersion struct {
 // GetAutonomousDbVersionsAutonomousDbVersionInput is an input type that accepts GetAutonomousDbVersionsAutonomousDbVersionArgs and GetAutonomousDbVersionsAutonomousDbVersionOutput values.
 // You can construct a concrete instance of `GetAutonomousDbVersionsAutonomousDbVersionInput` via:
 //
-//          GetAutonomousDbVersionsAutonomousDbVersionArgs{...}
+//	GetAutonomousDbVersionsAutonomousDbVersionArgs{...}
 type GetAutonomousDbVersionsAutonomousDbVersionInput interface {
 	pulumi.Input
 
@@ -27888,7 +27888,7 @@ func (i GetAutonomousDbVersionsAutonomousDbVersionArgs) ToGetAutonomousDbVersion
 // GetAutonomousDbVersionsAutonomousDbVersionArrayInput is an input type that accepts GetAutonomousDbVersionsAutonomousDbVersionArray and GetAutonomousDbVersionsAutonomousDbVersionArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDbVersionsAutonomousDbVersionArrayInput` via:
 //
-//          GetAutonomousDbVersionsAutonomousDbVersionArray{ GetAutonomousDbVersionsAutonomousDbVersionArgs{...} }
+//	GetAutonomousDbVersionsAutonomousDbVersionArray{ GetAutonomousDbVersionsAutonomousDbVersionArgs{...} }
 type GetAutonomousDbVersionsAutonomousDbVersionArrayInput interface {
 	pulumi.Input
 
@@ -27993,7 +27993,7 @@ type GetAutonomousDbVersionsFilter struct {
 // GetAutonomousDbVersionsFilterInput is an input type that accepts GetAutonomousDbVersionsFilterArgs and GetAutonomousDbVersionsFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousDbVersionsFilterInput` via:
 //
-//          GetAutonomousDbVersionsFilterArgs{...}
+//	GetAutonomousDbVersionsFilterArgs{...}
 type GetAutonomousDbVersionsFilterInput interface {
 	pulumi.Input
 
@@ -28022,7 +28022,7 @@ func (i GetAutonomousDbVersionsFilterArgs) ToGetAutonomousDbVersionsFilterOutput
 // GetAutonomousDbVersionsFilterArrayInput is an input type that accepts GetAutonomousDbVersionsFilterArray and GetAutonomousDbVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousDbVersionsFilterArrayInput` via:
 //
-//          GetAutonomousDbVersionsFilterArray{ GetAutonomousDbVersionsFilterArgs{...} }
+//	GetAutonomousDbVersionsFilterArray{ GetAutonomousDbVersionsFilterArgs{...} }
 type GetAutonomousDbVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -28115,7 +28115,7 @@ type GetAutonomousExadataInfrastructureMaintenanceWindow struct {
 // GetAutonomousExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowArgs and GetAutonomousExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowArgs{...}
+//	GetAutonomousExadataInfrastructureMaintenanceWindowArgs{...}
 type GetAutonomousExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -28160,7 +28160,7 @@ func (i GetAutonomousExadataInfrastructureMaintenanceWindowArgs) ToGetAutonomous
 // GetAutonomousExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowArray and GetAutonomousExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowArray{ GetAutonomousExadataInfrastructureMaintenanceWindowArgs{...} }
+//	GetAutonomousExadataInfrastructureMaintenanceWindowArray{ GetAutonomousExadataInfrastructureMaintenanceWindowArgs{...} }
 type GetAutonomousExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -28276,7 +28276,7 @@ type GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 // GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -28304,7 +28304,7 @@ func (i GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGet
 // GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type GetAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -28390,7 +28390,7 @@ type GetAutonomousExadataInfrastructureMaintenanceWindowDetail struct {
 // GetAutonomousExadataInfrastructureMaintenanceWindowDetailInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDetailArgs and GetAutonomousExadataInfrastructureMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDetailInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...}
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...}
 type GetAutonomousExadataInfrastructureMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -28435,7 +28435,7 @@ func (i GetAutonomousExadataInfrastructureMaintenanceWindowDetailArgs) ToGetAuto
 // GetAutonomousExadataInfrastructureMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDetailArray and GetAutonomousExadataInfrastructureMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDetailArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDetailArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...} }
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDetailArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...} }
 type GetAutonomousExadataInfrastructureMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -28553,7 +28553,7 @@ type GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeek struct 
 // GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -28581,7 +28581,7 @@ func (i GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs)
 // GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -28650,7 +28650,7 @@ type GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonth struct {
 // GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs and GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...}
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...}
 type GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -28678,7 +28678,7 @@ func (i GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs) ToGe
 // GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArray and GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...} }
+//	GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArray{ GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...} }
 type GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -28747,7 +28747,7 @@ type GetAutonomousExadataInfrastructureMaintenanceWindowMonth struct {
 // GetAutonomousExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs and GetAutonomousExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type GetAutonomousExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -28775,7 +28775,7 @@ func (i GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs) ToGetAuton
 // GetAutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousExadataInfrastructureMaintenanceWindowMonthArray and GetAutonomousExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureMaintenanceWindowMonthArray{ GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	GetAutonomousExadataInfrastructureMaintenanceWindowMonthArray{ GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type GetAutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -28846,7 +28846,7 @@ type GetAutonomousExadataInfrastructureOcpuByWorkloadType struct {
 // GetAutonomousExadataInfrastructureOcpuByWorkloadTypeInput is an input type that accepts GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArgs and GetAutonomousExadataInfrastructureOcpuByWorkloadTypeOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureOcpuByWorkloadTypeInput` via:
 //
-//          GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArgs{...}
+//	GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArgs{...}
 type GetAutonomousExadataInfrastructureOcpuByWorkloadTypeInput interface {
 	pulumi.Input
 
@@ -28876,7 +28876,7 @@ func (i GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArgs) ToGetAutonomou
 // GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArrayInput is an input type that accepts GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArray and GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArray{ GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArgs{...} }
+//	GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArray{ GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArgs{...} }
 type GetAutonomousExadataInfrastructureOcpuByWorkloadTypeArrayInput interface {
 	pulumi.Input
 
@@ -28960,7 +28960,7 @@ type GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShap
 // GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeInput is an input type that accepts GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArgs and GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeInput` via:
 //
-//          GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArgs{...}
+//	GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArgs{...}
 type GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeInput interface {
 	pulumi.Input
 
@@ -28998,7 +28998,7 @@ func (i GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureS
 // GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArrayInput is an input type that accepts GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArray and GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArray{ GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArgs{...} }
+//	GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArray{ GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArgs{...} }
 type GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeArrayInput interface {
 	pulumi.Input
 
@@ -29106,7 +29106,7 @@ type GetAutonomousExadataInfrastructureShapesFilter struct {
 // GetAutonomousExadataInfrastructureShapesFilterInput is an input type that accepts GetAutonomousExadataInfrastructureShapesFilterArgs and GetAutonomousExadataInfrastructureShapesFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureShapesFilterInput` via:
 //
-//          GetAutonomousExadataInfrastructureShapesFilterArgs{...}
+//	GetAutonomousExadataInfrastructureShapesFilterArgs{...}
 type GetAutonomousExadataInfrastructureShapesFilterInput interface {
 	pulumi.Input
 
@@ -29136,7 +29136,7 @@ func (i GetAutonomousExadataInfrastructureShapesFilterArgs) ToGetAutonomousExada
 // GetAutonomousExadataInfrastructureShapesFilterArrayInput is an input type that accepts GetAutonomousExadataInfrastructureShapesFilterArray and GetAutonomousExadataInfrastructureShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructureShapesFilterArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructureShapesFilterArray{ GetAutonomousExadataInfrastructureShapesFilterArgs{...} }
+//	GetAutonomousExadataInfrastructureShapesFilterArray{ GetAutonomousExadataInfrastructureShapesFilterArgs{...} }
 type GetAutonomousExadataInfrastructureShapesFilterArrayInput interface {
 	pulumi.Input
 
@@ -29256,7 +29256,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure struct {
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureInput interface {
 	pulumi.Input
 
@@ -29327,7 +29327,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs) 
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArrayInput interface {
 	pulumi.Input
 
@@ -29545,7 +29545,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenan
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -29590,7 +29590,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMainte
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -29718,7 +29718,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenan
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -29746,7 +29746,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMainte
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -29834,7 +29834,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenan
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -29879,7 +29879,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMainte
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -30007,7 +30007,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenan
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -30035,7 +30035,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMainte
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -30106,7 +30106,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenan
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -30134,7 +30134,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMainte
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -30205,7 +30205,7 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenan
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArgs and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -30233,7 +30233,7 @@ func (i GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMainte
 // GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArray and GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArray{ GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -30306,7 +30306,7 @@ type GetAutonomousExadataInfrastructuresFilter struct {
 // GetAutonomousExadataInfrastructuresFilterInput is an input type that accepts GetAutonomousExadataInfrastructuresFilterArgs and GetAutonomousExadataInfrastructuresFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresFilterInput` via:
 //
-//          GetAutonomousExadataInfrastructuresFilterArgs{...}
+//	GetAutonomousExadataInfrastructuresFilterArgs{...}
 type GetAutonomousExadataInfrastructuresFilterInput interface {
 	pulumi.Input
 
@@ -30336,7 +30336,7 @@ func (i GetAutonomousExadataInfrastructuresFilterArgs) ToGetAutonomousExadataInf
 // GetAutonomousExadataInfrastructuresFilterArrayInput is an input type that accepts GetAutonomousExadataInfrastructuresFilterArray and GetAutonomousExadataInfrastructuresFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousExadataInfrastructuresFilterArrayInput` via:
 //
-//          GetAutonomousExadataInfrastructuresFilterArray{ GetAutonomousExadataInfrastructuresFilterArgs{...} }
+//	GetAutonomousExadataInfrastructuresFilterArray{ GetAutonomousExadataInfrastructuresFilterArgs{...} }
 type GetAutonomousExadataInfrastructuresFilterArrayInput interface {
 	pulumi.Input
 
@@ -30427,7 +30427,7 @@ type GetAutonomousVmClusterMaintenanceWindow struct {
 // GetAutonomousVmClusterMaintenanceWindowInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowArgs and GetAutonomousVmClusterMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowArgs{...}
+//	GetAutonomousVmClusterMaintenanceWindowArgs{...}
 type GetAutonomousVmClusterMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -30469,7 +30469,7 @@ func (i GetAutonomousVmClusterMaintenanceWindowArgs) ToGetAutonomousVmClusterMai
 // GetAutonomousVmClusterMaintenanceWindowArrayInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowArray and GetAutonomousVmClusterMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowArrayInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowArray{ GetAutonomousVmClusterMaintenanceWindowArgs{...} }
+//	GetAutonomousVmClusterMaintenanceWindowArray{ GetAutonomousVmClusterMaintenanceWindowArgs{...} }
 type GetAutonomousVmClusterMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -30580,7 +30580,7 @@ type GetAutonomousVmClusterMaintenanceWindowDaysOfWeek struct {
 // GetAutonomousVmClusterMaintenanceWindowDaysOfWeekInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs and GetAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
+//	GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
 type GetAutonomousVmClusterMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -30608,7 +30608,7 @@ func (i GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs) ToGetAutonomousVm
 // GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArray and GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
 type GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -30691,7 +30691,7 @@ type GetAutonomousVmClusterMaintenanceWindowDetail struct {
 // GetAutonomousVmClusterMaintenanceWindowDetailInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDetailArgs and GetAutonomousVmClusterMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDetailInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDetailArgs{...}
+//	GetAutonomousVmClusterMaintenanceWindowDetailArgs{...}
 type GetAutonomousVmClusterMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -30733,7 +30733,7 @@ func (i GetAutonomousVmClusterMaintenanceWindowDetailArgs) ToGetAutonomousVmClus
 // GetAutonomousVmClusterMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDetailArray and GetAutonomousVmClusterMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDetailArrayInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDetailArray{ GetAutonomousVmClusterMaintenanceWindowDetailArgs{...} }
+//	GetAutonomousVmClusterMaintenanceWindowDetailArray{ GetAutonomousVmClusterMaintenanceWindowDetailArgs{...} }
 type GetAutonomousVmClusterMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -30844,7 +30844,7 @@ type GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek struct {
 // GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -30872,7 +30872,7 @@ func (i GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetAutono
 // GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -30941,7 +30941,7 @@ type GetAutonomousVmClusterMaintenanceWindowDetailMonth struct {
 // GetAutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs and GetAutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
+//	GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
 type GetAutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -30969,7 +30969,7 @@ func (i GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetAutonomousV
 // GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowDetailMonthArray and GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
+//	GetAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
 type GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -31038,7 +31038,7 @@ type GetAutonomousVmClusterMaintenanceWindowMonth struct {
 // GetAutonomousVmClusterMaintenanceWindowMonthInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowMonthArgs and GetAutonomousVmClusterMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowMonthInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowMonthArgs{...}
+//	GetAutonomousVmClusterMaintenanceWindowMonthArgs{...}
 type GetAutonomousVmClusterMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -31066,7 +31066,7 @@ func (i GetAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetAutonomousVmClust
 // GetAutonomousVmClusterMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousVmClusterMaintenanceWindowMonthArray and GetAutonomousVmClusterMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClusterMaintenanceWindowMonthArrayInput` via:
 //
-//          GetAutonomousVmClusterMaintenanceWindowMonthArray{ GetAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
+//	GetAutonomousVmClusterMaintenanceWindowMonthArray{ GetAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
 type GetAutonomousVmClusterMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -31196,7 +31196,7 @@ type GetAutonomousVmClustersAutonomousVmCluster struct {
 // GetAutonomousVmClustersAutonomousVmClusterInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterArgs and GetAutonomousVmClustersAutonomousVmClusterOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterInput interface {
 	pulumi.Input
 
@@ -31285,7 +31285,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterArgs) ToGetAutonomousVmCluster
 // GetAutonomousVmClustersAutonomousVmClusterArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterArray and GetAutonomousVmClustersAutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterArray{ GetAutonomousVmClustersAutonomousVmClusterArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterArray{ GetAutonomousVmClustersAutonomousVmClusterArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -31528,7 +31528,7 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow struct {
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -31570,7 +31570,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs) ToGetAu
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -31685,7 +31685,7 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeek struc
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -31713,7 +31713,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArg
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -31796,7 +31796,7 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail struct {
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -31838,7 +31838,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs) T
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -31959,7 +31959,7 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -31987,7 +31987,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfW
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -32058,7 +32058,7 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth stru
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -32086,7 +32086,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthAr
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -32155,7 +32155,7 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth struct {
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{...}
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{...}
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -32183,7 +32183,7 @@ func (i GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs) To
 // GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput is an input type that accepts GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray and GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput` via:
 //
-//          GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
+//	GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArray{ GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -32254,7 +32254,7 @@ type GetAutonomousVmClustersFilter struct {
 // GetAutonomousVmClustersFilterInput is an input type that accepts GetAutonomousVmClustersFilterArgs and GetAutonomousVmClustersFilterOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersFilterInput` via:
 //
-//          GetAutonomousVmClustersFilterArgs{...}
+//	GetAutonomousVmClustersFilterArgs{...}
 type GetAutonomousVmClustersFilterInput interface {
 	pulumi.Input
 
@@ -32284,7 +32284,7 @@ func (i GetAutonomousVmClustersFilterArgs) ToGetAutonomousVmClustersFilterOutput
 // GetAutonomousVmClustersFilterArrayInput is an input type that accepts GetAutonomousVmClustersFilterArray and GetAutonomousVmClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutonomousVmClustersFilterArrayInput` via:
 //
-//          GetAutonomousVmClustersFilterArray{ GetAutonomousVmClustersFilterArgs{...} }
+//	GetAutonomousVmClustersFilterArray{ GetAutonomousVmClustersFilterArgs{...} }
 type GetAutonomousVmClustersFilterArrayInput interface {
 	pulumi.Input
 
@@ -32363,7 +32363,7 @@ type GetBackupDestinationAssociatedDatabase struct {
 // GetBackupDestinationAssociatedDatabaseInput is an input type that accepts GetBackupDestinationAssociatedDatabaseArgs and GetBackupDestinationAssociatedDatabaseOutput values.
 // You can construct a concrete instance of `GetBackupDestinationAssociatedDatabaseInput` via:
 //
-//          GetBackupDestinationAssociatedDatabaseArgs{...}
+//	GetBackupDestinationAssociatedDatabaseArgs{...}
 type GetBackupDestinationAssociatedDatabaseInput interface {
 	pulumi.Input
 
@@ -32393,7 +32393,7 @@ func (i GetBackupDestinationAssociatedDatabaseArgs) ToGetBackupDestinationAssoci
 // GetBackupDestinationAssociatedDatabaseArrayInput is an input type that accepts GetBackupDestinationAssociatedDatabaseArray and GetBackupDestinationAssociatedDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetBackupDestinationAssociatedDatabaseArrayInput` via:
 //
-//          GetBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationAssociatedDatabaseArgs{...} }
+//	GetBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationAssociatedDatabaseArgs{...} }
 type GetBackupDestinationAssociatedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -32472,7 +32472,7 @@ type GetBackupDestinationMountTypeDetail struct {
 // GetBackupDestinationMountTypeDetailInput is an input type that accepts GetBackupDestinationMountTypeDetailArgs and GetBackupDestinationMountTypeDetailOutput values.
 // You can construct a concrete instance of `GetBackupDestinationMountTypeDetailInput` via:
 //
-//          GetBackupDestinationMountTypeDetailArgs{...}
+//	GetBackupDestinationMountTypeDetailArgs{...}
 type GetBackupDestinationMountTypeDetailInput interface {
 	pulumi.Input
 
@@ -32505,7 +32505,7 @@ func (i GetBackupDestinationMountTypeDetailArgs) ToGetBackupDestinationMountType
 // GetBackupDestinationMountTypeDetailArrayInput is an input type that accepts GetBackupDestinationMountTypeDetailArray and GetBackupDestinationMountTypeDetailArrayOutput values.
 // You can construct a concrete instance of `GetBackupDestinationMountTypeDetailArrayInput` via:
 //
-//          GetBackupDestinationMountTypeDetailArray{ GetBackupDestinationMountTypeDetailArgs{...} }
+//	GetBackupDestinationMountTypeDetailArray{ GetBackupDestinationMountTypeDetailArgs{...} }
 type GetBackupDestinationMountTypeDetailArrayInput interface {
 	pulumi.Input
 
@@ -32621,7 +32621,7 @@ type GetBackupDestinationsBackupDestination struct {
 // GetBackupDestinationsBackupDestinationInput is an input type that accepts GetBackupDestinationsBackupDestinationArgs and GetBackupDestinationsBackupDestinationOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsBackupDestinationInput` via:
 //
-//          GetBackupDestinationsBackupDestinationArgs{...}
+//	GetBackupDestinationsBackupDestinationArgs{...}
 type GetBackupDestinationsBackupDestinationInput interface {
 	pulumi.Input
 
@@ -32682,7 +32682,7 @@ func (i GetBackupDestinationsBackupDestinationArgs) ToGetBackupDestinationsBacku
 // GetBackupDestinationsBackupDestinationArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationArray and GetBackupDestinationsBackupDestinationArrayOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsBackupDestinationArrayInput` via:
 //
-//          GetBackupDestinationsBackupDestinationArray{ GetBackupDestinationsBackupDestinationArgs{...} }
+//	GetBackupDestinationsBackupDestinationArray{ GetBackupDestinationsBackupDestinationArgs{...} }
 type GetBackupDestinationsBackupDestinationArrayInput interface {
 	pulumi.Input
 
@@ -32838,7 +32838,7 @@ type GetBackupDestinationsBackupDestinationAssociatedDatabase struct {
 // GetBackupDestinationsBackupDestinationAssociatedDatabaseInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs and GetBackupDestinationsBackupDestinationAssociatedDatabaseOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedDatabaseInput` via:
 //
-//          GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...}
+//	GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...}
 type GetBackupDestinationsBackupDestinationAssociatedDatabaseInput interface {
 	pulumi.Input
 
@@ -32868,7 +32868,7 @@ func (i GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs) ToGetBacku
 // GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationAssociatedDatabaseArray and GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput` via:
 //
-//          GetBackupDestinationsBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...} }
+//	GetBackupDestinationsBackupDestinationAssociatedDatabaseArray{ GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs{...} }
 type GetBackupDestinationsBackupDestinationAssociatedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -32947,7 +32947,7 @@ type GetBackupDestinationsBackupDestinationMountTypeDetail struct {
 // GetBackupDestinationsBackupDestinationMountTypeDetailInput is an input type that accepts GetBackupDestinationsBackupDestinationMountTypeDetailArgs and GetBackupDestinationsBackupDestinationMountTypeDetailOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsBackupDestinationMountTypeDetailInput` via:
 //
-//          GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...}
+//	GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...}
 type GetBackupDestinationsBackupDestinationMountTypeDetailInput interface {
 	pulumi.Input
 
@@ -32980,7 +32980,7 @@ func (i GetBackupDestinationsBackupDestinationMountTypeDetailArgs) ToGetBackupDe
 // GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput is an input type that accepts GetBackupDestinationsBackupDestinationMountTypeDetailArray and GetBackupDestinationsBackupDestinationMountTypeDetailArrayOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput` via:
 //
-//          GetBackupDestinationsBackupDestinationMountTypeDetailArray{ GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...} }
+//	GetBackupDestinationsBackupDestinationMountTypeDetailArray{ GetBackupDestinationsBackupDestinationMountTypeDetailArgs{...} }
 type GetBackupDestinationsBackupDestinationMountTypeDetailArrayInput interface {
 	pulumi.Input
 
@@ -33064,7 +33064,7 @@ type GetBackupDestinationsFilter struct {
 // GetBackupDestinationsFilterInput is an input type that accepts GetBackupDestinationsFilterArgs and GetBackupDestinationsFilterOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsFilterInput` via:
 //
-//          GetBackupDestinationsFilterArgs{...}
+//	GetBackupDestinationsFilterArgs{...}
 type GetBackupDestinationsFilterInput interface {
 	pulumi.Input
 
@@ -33093,7 +33093,7 @@ func (i GetBackupDestinationsFilterArgs) ToGetBackupDestinationsFilterOutputWith
 // GetBackupDestinationsFilterArrayInput is an input type that accepts GetBackupDestinationsFilterArray and GetBackupDestinationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackupDestinationsFilterArrayInput` via:
 //
-//          GetBackupDestinationsFilterArray{ GetBackupDestinationsFilterArgs{...} }
+//	GetBackupDestinationsFilterArray{ GetBackupDestinationsFilterArgs{...} }
 type GetBackupDestinationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -33201,7 +33201,7 @@ type GetBackupsBackup struct {
 // GetBackupsBackupInput is an input type that accepts GetBackupsBackupArgs and GetBackupsBackupOutput values.
 // You can construct a concrete instance of `GetBackupsBackupInput` via:
 //
-//          GetBackupsBackupArgs{...}
+//	GetBackupsBackupArgs{...}
 type GetBackupsBackupInput interface {
 	pulumi.Input
 
@@ -33261,7 +33261,7 @@ func (i GetBackupsBackupArgs) ToGetBackupsBackupOutputWithContext(ctx context.Co
 // GetBackupsBackupArrayInput is an input type that accepts GetBackupsBackupArray and GetBackupsBackupArrayOutput values.
 // You can construct a concrete instance of `GetBackupsBackupArrayInput` via:
 //
-//          GetBackupsBackupArray{ GetBackupsBackupArgs{...} }
+//	GetBackupsBackupArray{ GetBackupsBackupArgs{...} }
 type GetBackupsBackupArrayInput interface {
 	pulumi.Input
 
@@ -33411,7 +33411,7 @@ type GetBackupsFilter struct {
 // GetBackupsFilterInput is an input type that accepts GetBackupsFilterArgs and GetBackupsFilterOutput values.
 // You can construct a concrete instance of `GetBackupsFilterInput` via:
 //
-//          GetBackupsFilterArgs{...}
+//	GetBackupsFilterArgs{...}
 type GetBackupsFilterInput interface {
 	pulumi.Input
 
@@ -33440,7 +33440,7 @@ func (i GetBackupsFilterArgs) ToGetBackupsFilterOutputWithContext(ctx context.Co
 // GetBackupsFilterArrayInput is an input type that accepts GetBackupsFilterArray and GetBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackupsFilterArrayInput` via:
 //
-//          GetBackupsFilterArray{ GetBackupsFilterArgs{...} }
+//	GetBackupsFilterArray{ GetBackupsFilterArgs{...} }
 type GetBackupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -33589,7 +33589,7 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
 // GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput values.
 // You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput` via:
 //
-//          GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{...}
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{...}
 type GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput interface {
 	pulumi.Input
 
@@ -33690,7 +33690,7 @@ func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs) ToGetCloudAuto
 // GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput` via:
 //
-//          GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{...} }
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{...} }
 type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -33956,7 +33956,7 @@ type GetCloudAutonomousVmClustersFilter struct {
 // GetCloudAutonomousVmClustersFilterInput is an input type that accepts GetCloudAutonomousVmClustersFilterArgs and GetCloudAutonomousVmClustersFilterOutput values.
 // You can construct a concrete instance of `GetCloudAutonomousVmClustersFilterInput` via:
 //
-//          GetCloudAutonomousVmClustersFilterArgs{...}
+//	GetCloudAutonomousVmClustersFilterArgs{...}
 type GetCloudAutonomousVmClustersFilterInput interface {
 	pulumi.Input
 
@@ -33985,7 +33985,7 @@ func (i GetCloudAutonomousVmClustersFilterArgs) ToGetCloudAutonomousVmClustersFi
 // GetCloudAutonomousVmClustersFilterArrayInput is an input type that accepts GetCloudAutonomousVmClustersFilterArray and GetCloudAutonomousVmClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetCloudAutonomousVmClustersFilterArrayInput` via:
 //
-//          GetCloudAutonomousVmClustersFilterArray{ GetCloudAutonomousVmClustersFilterArgs{...} }
+//	GetCloudAutonomousVmClustersFilterArray{ GetCloudAutonomousVmClustersFilterArgs{...} }
 type GetCloudAutonomousVmClustersFilterArrayInput interface {
 	pulumi.Input
 
@@ -34061,7 +34061,7 @@ type GetCloudExadataInfrastructureCustomerContact struct {
 // GetCloudExadataInfrastructureCustomerContactInput is an input type that accepts GetCloudExadataInfrastructureCustomerContactArgs and GetCloudExadataInfrastructureCustomerContactOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureCustomerContactInput` via:
 //
-//          GetCloudExadataInfrastructureCustomerContactArgs{...}
+//	GetCloudExadataInfrastructureCustomerContactArgs{...}
 type GetCloudExadataInfrastructureCustomerContactInput interface {
 	pulumi.Input
 
@@ -34089,7 +34089,7 @@ func (i GetCloudExadataInfrastructureCustomerContactArgs) ToGetCloudExadataInfra
 // GetCloudExadataInfrastructureCustomerContactArrayInput is an input type that accepts GetCloudExadataInfrastructureCustomerContactArray and GetCloudExadataInfrastructureCustomerContactArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureCustomerContactArrayInput` via:
 //
-//          GetCloudExadataInfrastructureCustomerContactArray{ GetCloudExadataInfrastructureCustomerContactArgs{...} }
+//	GetCloudExadataInfrastructureCustomerContactArray{ GetCloudExadataInfrastructureCustomerContactArgs{...} }
 type GetCloudExadataInfrastructureCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -34175,7 +34175,7 @@ type GetCloudExadataInfrastructureMaintenanceWindow struct {
 // GetCloudExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowArgs and GetCloudExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          GetCloudExadataInfrastructureMaintenanceWindowArgs{...}
+//	GetCloudExadataInfrastructureMaintenanceWindowArgs{...}
 type GetCloudExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -34220,7 +34220,7 @@ func (i GetCloudExadataInfrastructureMaintenanceWindowArgs) ToGetCloudExadataInf
 // GetCloudExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowArray and GetCloudExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          GetCloudExadataInfrastructureMaintenanceWindowArray{ GetCloudExadataInfrastructureMaintenanceWindowArgs{...} }
+//	GetCloudExadataInfrastructureMaintenanceWindowArray{ GetCloudExadataInfrastructureMaintenanceWindowArgs{...} }
 type GetCloudExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -34334,7 +34334,7 @@ type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 // GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -34362,7 +34362,7 @@ func (i GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetCloud
 // GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -34431,7 +34431,7 @@ type GetCloudExadataInfrastructureMaintenanceWindowMonth struct {
 // GetCloudExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowMonthArgs and GetCloudExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type GetCloudExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -34459,7 +34459,7 @@ func (i GetCloudExadataInfrastructureMaintenanceWindowMonthArgs) ToGetCloudExada
 // GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowMonthArray and GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          GetCloudExadataInfrastructureMaintenanceWindowMonthArray{ GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	GetCloudExadataInfrastructureMaintenanceWindowMonthArray{ GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -34562,7 +34562,7 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructure struct {
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{...}
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{...}
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureInput interface {
 	pulumi.Input
 
@@ -34624,7 +34624,7 @@ func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs) ToGetCloud
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{...} }
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{...} }
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput interface {
 	pulumi.Input
 
@@ -34788,7 +34788,7 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact str
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{...}
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{...}
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput interface {
 	pulumi.Input
 
@@ -34816,7 +34816,7 @@ func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactA
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{...} }
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{...} }
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput interface {
 	pulumi.Input
 
@@ -34902,7 +34902,7 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow s
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{...}
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{...}
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -34947,7 +34947,7 @@ func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindo
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{...} }
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{...} }
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -35075,7 +35075,7 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDa
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -35103,7 +35103,7 @@ func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindo
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -35174,7 +35174,7 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMo
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -35202,7 +35202,7 @@ func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindo
 // GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -35275,7 +35275,7 @@ type GetCloudExadataInfrastructuresFilter struct {
 // GetCloudExadataInfrastructuresFilterInput is an input type that accepts GetCloudExadataInfrastructuresFilterArgs and GetCloudExadataInfrastructuresFilterOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresFilterInput` via:
 //
-//          GetCloudExadataInfrastructuresFilterArgs{...}
+//	GetCloudExadataInfrastructuresFilterArgs{...}
 type GetCloudExadataInfrastructuresFilterInput interface {
 	pulumi.Input
 
@@ -35305,7 +35305,7 @@ func (i GetCloudExadataInfrastructuresFilterArgs) ToGetCloudExadataInfrastructur
 // GetCloudExadataInfrastructuresFilterArrayInput is an input type that accepts GetCloudExadataInfrastructuresFilterArray and GetCloudExadataInfrastructuresFilterArrayOutput values.
 // You can construct a concrete instance of `GetCloudExadataInfrastructuresFilterArrayInput` via:
 //
-//          GetCloudExadataInfrastructuresFilterArray{ GetCloudExadataInfrastructuresFilterArgs{...} }
+//	GetCloudExadataInfrastructuresFilterArray{ GetCloudExadataInfrastructuresFilterArgs{...} }
 type GetCloudExadataInfrastructuresFilterArrayInput interface {
 	pulumi.Input
 
@@ -35382,7 +35382,7 @@ type GetCloudVmClusterDataCollectionOption struct {
 // GetCloudVmClusterDataCollectionOptionInput is an input type that accepts GetCloudVmClusterDataCollectionOptionArgs and GetCloudVmClusterDataCollectionOptionOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterDataCollectionOptionInput` via:
 //
-//          GetCloudVmClusterDataCollectionOptionArgs{...}
+//	GetCloudVmClusterDataCollectionOptionArgs{...}
 type GetCloudVmClusterDataCollectionOptionInput interface {
 	pulumi.Input
 
@@ -35410,7 +35410,7 @@ func (i GetCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClusterDataCollec
 // GetCloudVmClusterDataCollectionOptionArrayInput is an input type that accepts GetCloudVmClusterDataCollectionOptionArray and GetCloudVmClusterDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterDataCollectionOptionArrayInput` via:
 //
-//          GetCloudVmClusterDataCollectionOptionArray{ GetCloudVmClusterDataCollectionOptionArgs{...} }
+//	GetCloudVmClusterDataCollectionOptionArray{ GetCloudVmClusterDataCollectionOptionArgs{...} }
 type GetCloudVmClusterDataCollectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -35485,7 +35485,7 @@ type GetCloudVmClusterIormConfigCach struct {
 // GetCloudVmClusterIormConfigCachInput is an input type that accepts GetCloudVmClusterIormConfigCachArgs and GetCloudVmClusterIormConfigCachOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterIormConfigCachInput` via:
 //
-//          GetCloudVmClusterIormConfigCachArgs{...}
+//	GetCloudVmClusterIormConfigCachArgs{...}
 type GetCloudVmClusterIormConfigCachInput interface {
 	pulumi.Input
 
@@ -35519,7 +35519,7 @@ func (i GetCloudVmClusterIormConfigCachArgs) ToGetCloudVmClusterIormConfigCachOu
 // GetCloudVmClusterIormConfigCachArrayInput is an input type that accepts GetCloudVmClusterIormConfigCachArray and GetCloudVmClusterIormConfigCachArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterIormConfigCachArrayInput` via:
 //
-//          GetCloudVmClusterIormConfigCachArray{ GetCloudVmClusterIormConfigCachArgs{...} }
+//	GetCloudVmClusterIormConfigCachArray{ GetCloudVmClusterIormConfigCachArgs{...} }
 type GetCloudVmClusterIormConfigCachArrayInput interface {
 	pulumi.Input
 
@@ -35607,7 +35607,7 @@ type GetCloudVmClusterIormConfigCachDbPlan struct {
 // GetCloudVmClusterIormConfigCachDbPlanInput is an input type that accepts GetCloudVmClusterIormConfigCachDbPlanArgs and GetCloudVmClusterIormConfigCachDbPlanOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterIormConfigCachDbPlanInput` via:
 //
-//          GetCloudVmClusterIormConfigCachDbPlanArgs{...}
+//	GetCloudVmClusterIormConfigCachDbPlanArgs{...}
 type GetCloudVmClusterIormConfigCachDbPlanInput interface {
 	pulumi.Input
 
@@ -35639,7 +35639,7 @@ func (i GetCloudVmClusterIormConfigCachDbPlanArgs) ToGetCloudVmClusterIormConfig
 // GetCloudVmClusterIormConfigCachDbPlanArrayInput is an input type that accepts GetCloudVmClusterIormConfigCachDbPlanArray and GetCloudVmClusterIormConfigCachDbPlanArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterIormConfigCachDbPlanArrayInput` via:
 //
-//          GetCloudVmClusterIormConfigCachDbPlanArray{ GetCloudVmClusterIormConfigCachDbPlanArgs{...} }
+//	GetCloudVmClusterIormConfigCachDbPlanArray{ GetCloudVmClusterIormConfigCachDbPlanArgs{...} }
 type GetCloudVmClusterIormConfigCachDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -35722,7 +35722,7 @@ type GetCloudVmClusterIormConfigDbPlan struct {
 // GetCloudVmClusterIormConfigDbPlanInput is an input type that accepts GetCloudVmClusterIormConfigDbPlanArgs and GetCloudVmClusterIormConfigDbPlanOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterIormConfigDbPlanInput` via:
 //
-//          GetCloudVmClusterIormConfigDbPlanArgs{...}
+//	GetCloudVmClusterIormConfigDbPlanArgs{...}
 type GetCloudVmClusterIormConfigDbPlanInput interface {
 	pulumi.Input
 
@@ -35754,7 +35754,7 @@ func (i GetCloudVmClusterIormConfigDbPlanArgs) ToGetCloudVmClusterIormConfigDbPl
 // GetCloudVmClusterIormConfigDbPlanArrayInput is an input type that accepts GetCloudVmClusterIormConfigDbPlanArray and GetCloudVmClusterIormConfigDbPlanArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClusterIormConfigDbPlanArrayInput` via:
 //
-//          GetCloudVmClusterIormConfigDbPlanArray{ GetCloudVmClusterIormConfigDbPlanArgs{...} }
+//	GetCloudVmClusterIormConfigDbPlanArray{ GetCloudVmClusterIormConfigDbPlanArgs{...} }
 type GetCloudVmClusterIormConfigDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -35916,7 +35916,7 @@ type GetCloudVmClustersCloudVmCluster struct {
 // GetCloudVmClustersCloudVmClusterInput is an input type that accepts GetCloudVmClustersCloudVmClusterArgs and GetCloudVmClustersCloudVmClusterOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterArgs{...}
+//	GetCloudVmClustersCloudVmClusterArgs{...}
 type GetCloudVmClustersCloudVmClusterInput interface {
 	pulumi.Input
 
@@ -36027,7 +36027,7 @@ func (i GetCloudVmClustersCloudVmClusterArgs) ToGetCloudVmClustersCloudVmCluster
 // GetCloudVmClustersCloudVmClusterArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterArray and GetCloudVmClustersCloudVmClusterArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterArrayInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterArray{ GetCloudVmClustersCloudVmClusterArgs{...} }
+//	GetCloudVmClustersCloudVmClusterArray{ GetCloudVmClustersCloudVmClusterArgs{...} }
 type GetCloudVmClustersCloudVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -36309,7 +36309,7 @@ type GetCloudVmClustersCloudVmClusterDataCollectionOption struct {
 // GetCloudVmClustersCloudVmClusterDataCollectionOptionInput is an input type that accepts GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs and GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterDataCollectionOptionInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...}
+//	GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...}
 type GetCloudVmClustersCloudVmClusterDataCollectionOptionInput interface {
 	pulumi.Input
 
@@ -36337,7 +36337,7 @@ func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmCl
 // GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterDataCollectionOptionArray and GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterDataCollectionOptionArray{ GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...} }
+//	GetCloudVmClustersCloudVmClusterDataCollectionOptionArray{ GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...} }
 type GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -36410,7 +36410,7 @@ type GetCloudVmClustersCloudVmClusterIormConfigCach struct {
 // GetCloudVmClustersCloudVmClusterIormConfigCachInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCachArgs and GetCloudVmClustersCloudVmClusterIormConfigCachOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCachInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterIormConfigCachArgs{...}
+//	GetCloudVmClustersCloudVmClusterIormConfigCachArgs{...}
 type GetCloudVmClustersCloudVmClusterIormConfigCachInput interface {
 	pulumi.Input
 
@@ -36442,7 +36442,7 @@ func (i GetCloudVmClustersCloudVmClusterIormConfigCachArgs) ToGetCloudVmClusters
 // GetCloudVmClustersCloudVmClusterIormConfigCachArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCachArray and GetCloudVmClustersCloudVmClusterIormConfigCachArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCachArrayInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterIormConfigCachArray{ GetCloudVmClustersCloudVmClusterIormConfigCachArgs{...} }
+//	GetCloudVmClustersCloudVmClusterIormConfigCachArray{ GetCloudVmClustersCloudVmClusterIormConfigCachArgs{...} }
 type GetCloudVmClustersCloudVmClusterIormConfigCachArrayInput interface {
 	pulumi.Input
 
@@ -36527,7 +36527,7 @@ type GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan struct {
 // GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs and GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs{...}
+//	GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs{...}
 type GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanInput interface {
 	pulumi.Input
 
@@ -36556,7 +36556,7 @@ func (i GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs) ToGetCloudVmCl
 // GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArray and GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArrayInput` via:
 //
-//          GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArray{ GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs{...} }
+//	GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArray{ GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs{...} }
 type GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -36633,7 +36633,7 @@ type GetCloudVmClustersFilter struct {
 // GetCloudVmClustersFilterInput is an input type that accepts GetCloudVmClustersFilterArgs and GetCloudVmClustersFilterOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersFilterInput` via:
 //
-//          GetCloudVmClustersFilterArgs{...}
+//	GetCloudVmClustersFilterArgs{...}
 type GetCloudVmClustersFilterInput interface {
 	pulumi.Input
 
@@ -36662,7 +36662,7 @@ func (i GetCloudVmClustersFilterArgs) ToGetCloudVmClustersFilterOutputWithContex
 // GetCloudVmClustersFilterArrayInput is an input type that accepts GetCloudVmClustersFilterArray and GetCloudVmClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetCloudVmClustersFilterArrayInput` via:
 //
-//          GetCloudVmClustersFilterArray{ GetCloudVmClustersFilterArgs{...} }
+//	GetCloudVmClustersFilterArray{ GetCloudVmClustersFilterArgs{...} }
 type GetCloudVmClustersFilterArrayInput interface {
 	pulumi.Input
 
@@ -36794,7 +36794,7 @@ type GetDataGuardAssociationsDataGuardAssociation struct {
 // GetDataGuardAssociationsDataGuardAssociationInput is an input type that accepts GetDataGuardAssociationsDataGuardAssociationArgs and GetDataGuardAssociationsDataGuardAssociationOutput values.
 // You can construct a concrete instance of `GetDataGuardAssociationsDataGuardAssociationInput` via:
 //
-//          GetDataGuardAssociationsDataGuardAssociationArgs{...}
+//	GetDataGuardAssociationsDataGuardAssociationArgs{...}
 type GetDataGuardAssociationsDataGuardAssociationInput interface {
 	pulumi.Input
 
@@ -36878,7 +36878,7 @@ func (i GetDataGuardAssociationsDataGuardAssociationArgs) ToGetDataGuardAssociat
 // GetDataGuardAssociationsDataGuardAssociationArrayInput is an input type that accepts GetDataGuardAssociationsDataGuardAssociationArray and GetDataGuardAssociationsDataGuardAssociationArrayOutput values.
 // You can construct a concrete instance of `GetDataGuardAssociationsDataGuardAssociationArrayInput` via:
 //
-//          GetDataGuardAssociationsDataGuardAssociationArray{ GetDataGuardAssociationsDataGuardAssociationArgs{...} }
+//	GetDataGuardAssociationsDataGuardAssociationArray{ GetDataGuardAssociationsDataGuardAssociationArgs{...} }
 type GetDataGuardAssociationsDataGuardAssociationArrayInput interface {
 	pulumi.Input
 
@@ -37135,7 +37135,7 @@ type GetDataGuardAssociationsFilter struct {
 // GetDataGuardAssociationsFilterInput is an input type that accepts GetDataGuardAssociationsFilterArgs and GetDataGuardAssociationsFilterOutput values.
 // You can construct a concrete instance of `GetDataGuardAssociationsFilterInput` via:
 //
-//          GetDataGuardAssociationsFilterArgs{...}
+//	GetDataGuardAssociationsFilterArgs{...}
 type GetDataGuardAssociationsFilterInput interface {
 	pulumi.Input
 
@@ -37164,7 +37164,7 @@ func (i GetDataGuardAssociationsFilterArgs) ToGetDataGuardAssociationsFilterOutp
 // GetDataGuardAssociationsFilterArrayInput is an input type that accepts GetDataGuardAssociationsFilterArray and GetDataGuardAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataGuardAssociationsFilterArrayInput` via:
 //
-//          GetDataGuardAssociationsFilterArray{ GetDataGuardAssociationsFilterArgs{...} }
+//	GetDataGuardAssociationsFilterArray{ GetDataGuardAssociationsFilterArgs{...} }
 type GetDataGuardAssociationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -37244,7 +37244,7 @@ type GetDatabaseConnectionString struct {
 // GetDatabaseConnectionStringInput is an input type that accepts GetDatabaseConnectionStringArgs and GetDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetDatabaseConnectionStringInput` via:
 //
-//          GetDatabaseConnectionStringArgs{...}
+//	GetDatabaseConnectionStringArgs{...}
 type GetDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -37276,7 +37276,7 @@ func (i GetDatabaseConnectionStringArgs) ToGetDatabaseConnectionStringOutputWith
 // GetDatabaseConnectionStringArrayInput is an input type that accepts GetDatabaseConnectionStringArray and GetDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseConnectionStringArrayInput` via:
 //
-//          GetDatabaseConnectionStringArray{ GetDatabaseConnectionStringArgs{...} }
+//	GetDatabaseConnectionStringArray{ GetDatabaseConnectionStringArgs{...} }
 type GetDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -37385,7 +37385,7 @@ type GetDatabaseDatabase struct {
 // GetDatabaseDatabaseInput is an input type that accepts GetDatabaseDatabaseArgs and GetDatabaseDatabaseOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseInput` via:
 //
-//          GetDatabaseDatabaseArgs{...}
+//	GetDatabaseDatabaseArgs{...}
 type GetDatabaseDatabaseInput interface {
 	pulumi.Input
 
@@ -37443,7 +37443,7 @@ func (i GetDatabaseDatabaseArgs) ToGetDatabaseDatabaseOutputWithContext(ctx cont
 // GetDatabaseDatabaseArrayInput is an input type that accepts GetDatabaseDatabaseArray and GetDatabaseDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseArrayInput` via:
 //
-//          GetDatabaseDatabaseArray{ GetDatabaseDatabaseArgs{...} }
+//	GetDatabaseDatabaseArray{ GetDatabaseDatabaseArgs{...} }
 type GetDatabaseDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -37599,7 +37599,7 @@ type GetDatabaseDatabaseDbBackupConfig struct {
 // GetDatabaseDatabaseDbBackupConfigInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigArgs and GetDatabaseDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigInput` via:
 //
-//          GetDatabaseDatabaseDbBackupConfigArgs{...}
+//	GetDatabaseDatabaseDbBackupConfigArgs{...}
 type GetDatabaseDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -37633,7 +37633,7 @@ func (i GetDatabaseDatabaseDbBackupConfigArgs) ToGetDatabaseDatabaseDbBackupConf
 // GetDatabaseDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigArray and GetDatabaseDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDatabaseDatabaseDbBackupConfigArray{ GetDatabaseDatabaseDbBackupConfigArgs{...} }
+//	GetDatabaseDatabaseDbBackupConfigArray{ GetDatabaseDatabaseDbBackupConfigArgs{...} }
 type GetDatabaseDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -37722,7 +37722,7 @@ type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
 // GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -37753,7 +37753,7 @@ func (i GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatab
 // GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -37833,7 +37833,7 @@ type GetDatabaseDatabaseManagementConfig struct {
 // GetDatabaseDatabaseManagementConfigInput is an input type that accepts GetDatabaseDatabaseManagementConfigArgs and GetDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetDatabaseDatabaseManagementConfigArgs{...}
+//	GetDatabaseDatabaseManagementConfigArgs{...}
 type GetDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -37863,7 +37863,7 @@ func (i GetDatabaseDatabaseManagementConfigArgs) ToGetDatabaseDatabaseManagement
 // GetDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetDatabaseDatabaseManagementConfigArray and GetDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetDatabaseDatabaseManagementConfigArray{ GetDatabaseDatabaseManagementConfigArgs{...} }
+//	GetDatabaseDatabaseManagementConfigArray{ GetDatabaseDatabaseManagementConfigArgs{...} }
 type GetDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -37943,7 +37943,7 @@ type GetDatabaseDbBackupConfig struct {
 // GetDatabaseDbBackupConfigInput is an input type that accepts GetDatabaseDbBackupConfigArgs and GetDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDatabaseDbBackupConfigInput` via:
 //
-//          GetDatabaseDbBackupConfigArgs{...}
+//	GetDatabaseDbBackupConfigArgs{...}
 type GetDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -37977,7 +37977,7 @@ func (i GetDatabaseDbBackupConfigArgs) ToGetDatabaseDbBackupConfigOutputWithCont
 // GetDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabaseDbBackupConfigArray and GetDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDatabaseDbBackupConfigArray{ GetDatabaseDbBackupConfigArgs{...} }
+//	GetDatabaseDbBackupConfigArray{ GetDatabaseDbBackupConfigArgs{...} }
 type GetDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -38066,7 +38066,7 @@ type GetDatabaseDbBackupConfigBackupDestinationDetail struct {
 // GetDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -38097,7 +38097,7 @@ func (i GetDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabaseDbBac
 // GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -38167,6 +38167,1743 @@ func (o GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index(i pul
 	}).(GetDatabaseDbBackupConfigBackupDestinationDetailOutput)
 }
 
+type GetDatabaseMaintenanceRunHistoriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesFilterInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesFilterArgs and GetDatabaseMaintenanceRunHistoriesFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesFilterInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesFilterArgs{...}
+type GetDatabaseMaintenanceRunHistoriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesFilterOutput() GetDatabaseMaintenanceRunHistoriesFilterOutput
+	ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesFilterOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArgs) ToGetDatabaseMaintenanceRunHistoriesFilterOutput() GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArgs) ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesFilterOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesFilterArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesFilterArray and GetDatabaseMaintenanceRunHistoriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesFilterArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesFilterArray{ GetDatabaseMaintenanceRunHistoriesFilterArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutput() GetDatabaseMaintenanceRunHistoriesFilterArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesFilterArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterArray []GetDatabaseMaintenanceRunHistoriesFilterInput
+
+func (GetDatabaseMaintenanceRunHistoriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArray) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutput() GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesFilterArray) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesFilterArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) ToGetDatabaseMaintenanceRunHistoriesFilterOutput() GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) ToGetDatabaseMaintenanceRunHistoriesFilterOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutput() GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) ToGetDatabaseMaintenanceRunHistoriesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesFilter {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesFilter)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesFilterOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory struct {
+	// List of database server history details.
+	DbServersHistoryDetails []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail `pulumi:"dbServersHistoryDetails"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// Details of a maintenance run.
+	MaintenanceRunDetails []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail `pulumi:"maintenanceRunDetails"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs struct {
+	// List of database server history details.
+	DbServersHistoryDetails GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput `pulumi:"dbServersHistoryDetails"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of a maintenance run.
+	MaintenanceRunDetails GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput `pulumi:"maintenanceRunDetails"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return o
+}
+
+// List of database server history details.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) DbServersHistoryDetails() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail {
+		return v.DbServersHistoryDetails
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of a maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput) MaintenanceRunDetails() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail {
+		return v.MaintenanceRunDetails
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) DbServerPatchingDetails() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return v.DbServerPatchingDetails
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded string `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted string `pulumi:"timePatchingStarted"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration pulumi.IntInput `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded pulumi.StringInput `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted pulumi.StringInput `pulumi:"timePatchingStarted"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+// Estimated time, in minutes, to patch one database server.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) EstimatedPatchDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) int {
+		return v.EstimatedPatchDuration
+	}).(pulumi.IntOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.PatchingStatus
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingEnded
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins int `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime string `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype string `pulumi:"maintenanceSubtype"`
+	// The maintenance type.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount int `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	PatchId string `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime string `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime string `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
+	// The state of the maintenance run history.
+	State string `pulumi:"state"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion string `pulumi:"targetDbServerVersion"`
+	// The target resource ID.
+	TargetResourceId string `pulumi:"targetResourceId"`
+	// The type of the target resource.
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion string `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins pulumi.IntInput `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime pulumi.StringInput `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype pulumi.StringInput `pulumi:"maintenanceSubtype"`
+	// The maintenance type.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount pulumi.IntInput `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime pulumi.StringInput `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime pulumi.StringInput `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
+	// The state of the maintenance run history.
+	State pulumi.StringInput `pulumi:"state"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion pulumi.StringInput `pulumi:"targetDbServerVersion"`
+	// The target resource ID.
+	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	// The type of the target resource.
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion pulumi.StringInput `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.CurrentCustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// The name of the current infrastruture component that is getting patched.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentPatchingComponent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.CurrentPatchingComponent
+	}).(pulumi.StringOutput)
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The estimated start time of the next infrastruture component patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedComponentPatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.EstimatedComponentPatchingStartTime
+	}).(pulumi.StringOutput)
+}
+
+// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedPatchingTimes() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return v.EstimatedPatchingTimes
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Maintenance sub-type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceSubtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.MaintenanceSubtype
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.MaintenanceType
+	}).(pulumi.StringOutput)
+}
+
+// Contain the patch failure count.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchFailureCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.PatchFailureCount
+	}).(pulumi.IntOutput)
+}
+
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingStartTime
+	}).(pulumi.StringOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PatchingStatus
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.PeerMaintenanceRunId
+	}).(pulumi.StringOutput)
+}
+
+// The state of the maintenance run history.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The target software version for the database server patching operation.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetDbServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The target resource ID.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The type of the target resource.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetResourceType
+	}).(pulumi.StringOutput)
+}
+
+// The target Cell version that is to be patched to.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetStorageServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TimeScheduled
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime int `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime int `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime int `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime int `pulumi:"totalEstimatedPatchingTime"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime pulumi.IntInput `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime pulumi.IntInput `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime pulumi.IntInput `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime pulumi.IntInput `pulumi:"totalEstimatedPatchingTime"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+// The estimated time required in minutes for database server patching.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedDbServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedDbServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for network switch patching.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedNetworkSwitchesPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedNetworkSwitchesPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for storage server patching.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedStorageServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedStorageServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated total time required in minutes for all patching operations.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) TotalEstimatedPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.TotalEstimatedPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs struct {
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	DbServerPatchingDetails GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput `pulumi:"dbServerPatchingDetails"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray{ GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return o
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) DbServerPatchingDetails() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail) []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return v.DbServerPatchingDetails
+	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration int `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded string `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted string `pulumi:"timePatchingStarted"`
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs struct {
+	// Estimated time, in minutes, to patch one database server.
+	EstimatedPatchDuration pulumi.IntInput `pulumi:"estimatedPatchDuration"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The time when the patching operation ended.
+	TimePatchingEnded pulumi.StringInput `pulumi:"timePatchingEnded"`
+	// The time when the patching operation started.
+	TimePatchingStarted pulumi.StringInput `pulumi:"timePatchingStarted"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray and GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{ GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return o
+}
+
+// Estimated time, in minutes, to patch one database server.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) EstimatedPatchDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) int {
+		return v.EstimatedPatchDuration
+	}).(pulumi.IntOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.PatchingStatus
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingEnded
+	}).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput) TimePatchingStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail) string {
+		return v.TimePatchingStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail struct {
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins int `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime string `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype string `pulumi:"maintenanceSubtype"`
+	// Maintenance type.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount int `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	PatchId string `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime string `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime string `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
+	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+	State string `pulumi:"state"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion string `pulumi:"targetDbServerVersion"`
+	// The ID of the target resource on which the maintenance run occurs.
+	TargetResourceId string `pulumi:"targetResourceId"`
+	// The type of the target resource on which the maintenance run occurs.
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion string `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs{...}
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs struct {
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins pulumi.IntInput `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime pulumi.StringInput `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Maintenance sub-type.
+	MaintenanceSubtype pulumi.StringInput `pulumi:"maintenanceSubtype"`
+	// Maintenance type.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount pulumi.IntInput `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The time when the patching operation ended.
+	PatchingEndTime pulumi.StringInput `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime pulumi.StringInput `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
+	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+	State pulumi.StringInput `pulumi:"state"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion pulumi.StringInput `pulumi:"targetDbServerVersion"`
+	// The ID of the target resource on which the maintenance run occurs.
+	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	// The type of the target resource on which the maintenance run occurs.
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion pulumi.StringInput `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray{ GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs{...} }
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return o
+}
+
+// The OCID of the compartment.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int {
+		return v.CurrentCustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// The name of the current infrastruture component that is getting patched.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CurrentPatchingComponent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.CurrentPatchingComponent }).(pulumi.StringOutput)
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// Description of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated start time of the next infrastruture component patching operation.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedComponentPatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.EstimatedComponentPatchingStartTime
+	}).(pulumi.StringOutput)
+}
+
+// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) EstimatedPatchingTimes() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return v.EstimatedPatchingTimes
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Maintenance sub-type.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceSubtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.MaintenanceSubtype }).(pulumi.StringOutput)
+}
+
+// Maintenance type.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.MaintenanceType }).(pulumi.StringOutput)
+}
+
+// Contain the patch failure count.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchFailureCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int { return v.PatchFailureCount }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingEndTime }).(pulumi.StringOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingStartTime }).(pulumi.StringOutput)
+}
+
+// The status of the patching operation.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PatchingStatus }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The target software version for the database server patching operation.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TargetDbServerVersion }).(pulumi.StringOutput)
+}
+
+// The ID of the target resource on which the maintenance run occurs.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TargetResourceId }).(pulumi.StringOutput)
+}
+
+// The type of the target resource on which the maintenance run occurs.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TargetResourceType }).(pulumi.StringOutput)
+}
+
+// The target Cell version that is to be patched to.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TargetStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.TargetStorageServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime int `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime int `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime int `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime int `pulumi:"totalEstimatedPatchingTime"`
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...}
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime pulumi.IntInput `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime pulumi.IntInput `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime pulumi.IntInput `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime pulumi.IntInput `pulumi:"totalEstimatedPatchingTime"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{ GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{...} }
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return o
+}
+
+// The estimated time required in minutes for database server patching.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedDbServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedDbServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for network switch patching.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedNetworkSwitchesPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedNetworkSwitchesPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for storage server patching.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) EstimatedStorageServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.EstimatedStorageServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated total time required in minutes for all patching operations.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput) TotalEstimatedPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime) int {
+		return v.TotalEstimatedPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
 type GetDatabasePdbConversionHistoryEntriesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -38176,7 +39913,7 @@ type GetDatabasePdbConversionHistoryEntriesFilter struct {
 // GetDatabasePdbConversionHistoryEntriesFilterInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesFilterArgs and GetDatabasePdbConversionHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesFilterInput` via:
 //
-//          GetDatabasePdbConversionHistoryEntriesFilterArgs{...}
+//	GetDatabasePdbConversionHistoryEntriesFilterArgs{...}
 type GetDatabasePdbConversionHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -38205,7 +39942,7 @@ func (i GetDatabasePdbConversionHistoryEntriesFilterArgs) ToGetDatabasePdbConver
 // GetDatabasePdbConversionHistoryEntriesFilterArrayInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesFilterArray and GetDatabasePdbConversionHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesFilterArrayInput` via:
 //
-//          GetDatabasePdbConversionHistoryEntriesFilterArray{ GetDatabasePdbConversionHistoryEntriesFilterArgs{...} }
+//	GetDatabasePdbConversionHistoryEntriesFilterArray{ GetDatabasePdbConversionHistoryEntriesFilterArgs{...} }
 type GetDatabasePdbConversionHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -38306,7 +40043,7 @@ type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry struct {
 // GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs and GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput values.
 // You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput` via:
 //
-//          GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{...}
+//	GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{...}
 type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput interface {
 	pulumi.Input
 
@@ -38359,7 +40096,7 @@ func (i GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs) ToG
 // GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput is an input type that accepts GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray and GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput` via:
 //
-//          GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray{ GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{...} }
+//	GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray{ GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{...} }
 type GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -38524,7 +40261,7 @@ type GetDatabaseSoftwareImagesDatabaseSoftwareImage struct {
 // GetDatabaseSoftwareImagesDatabaseSoftwareImageInput is an input type that accepts GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs and GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput values.
 // You can construct a concrete instance of `GetDatabaseSoftwareImagesDatabaseSoftwareImageInput` via:
 //
-//          GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs{...}
+//	GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs{...}
 type GetDatabaseSoftwareImagesDatabaseSoftwareImageInput interface {
 	pulumi.Input
 
@@ -38585,7 +40322,7 @@ func (i GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs) ToGetDatabaseSoftwar
 // GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayInput is an input type that accepts GetDatabaseSoftwareImagesDatabaseSoftwareImageArray and GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayInput` via:
 //
-//          GetDatabaseSoftwareImagesDatabaseSoftwareImageArray{ GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs{...} }
+//	GetDatabaseSoftwareImagesDatabaseSoftwareImageArray{ GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs{...} }
 type GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayInput interface {
 	pulumi.Input
 
@@ -38743,7 +40480,7 @@ type GetDatabaseSoftwareImagesFilter struct {
 // GetDatabaseSoftwareImagesFilterInput is an input type that accepts GetDatabaseSoftwareImagesFilterArgs and GetDatabaseSoftwareImagesFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseSoftwareImagesFilterInput` via:
 //
-//          GetDatabaseSoftwareImagesFilterArgs{...}
+//	GetDatabaseSoftwareImagesFilterArgs{...}
 type GetDatabaseSoftwareImagesFilterInput interface {
 	pulumi.Input
 
@@ -38772,7 +40509,7 @@ func (i GetDatabaseSoftwareImagesFilterArgs) ToGetDatabaseSoftwareImagesFilterOu
 // GetDatabaseSoftwareImagesFilterArrayInput is an input type that accepts GetDatabaseSoftwareImagesFilterArray and GetDatabaseSoftwareImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseSoftwareImagesFilterArrayInput` via:
 //
-//          GetDatabaseSoftwareImagesFilterArray{ GetDatabaseSoftwareImagesFilterArgs{...} }
+//	GetDatabaseSoftwareImagesFilterArray{ GetDatabaseSoftwareImagesFilterArgs{...} }
 type GetDatabaseSoftwareImagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -38872,7 +40609,7 @@ type GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry struct {
 // GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryInput is an input type that accepts GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArgs and GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryOutput values.
 // You can construct a concrete instance of `GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryInput` via:
 //
-//          GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArgs{...}
+//	GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArgs{...}
 type GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryInput interface {
 	pulumi.Input
 
@@ -38924,7 +40661,7 @@ func (i GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArgs) ToGetDa
 // GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArrayInput is an input type that accepts GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArray and GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArrayInput` via:
 //
-//          GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArray{ GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArgs{...} }
+//	GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArray{ GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArgs{...} }
 type GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -39053,7 +40790,7 @@ type GetDatabaseUpgradeHistoryEntriesFilter struct {
 // GetDatabaseUpgradeHistoryEntriesFilterInput is an input type that accepts GetDatabaseUpgradeHistoryEntriesFilterArgs and GetDatabaseUpgradeHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseUpgradeHistoryEntriesFilterInput` via:
 //
-//          GetDatabaseUpgradeHistoryEntriesFilterArgs{...}
+//	GetDatabaseUpgradeHistoryEntriesFilterArgs{...}
 type GetDatabaseUpgradeHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -39082,7 +40819,7 @@ func (i GetDatabaseUpgradeHistoryEntriesFilterArgs) ToGetDatabaseUpgradeHistoryE
 // GetDatabaseUpgradeHistoryEntriesFilterArrayInput is an input type that accepts GetDatabaseUpgradeHistoryEntriesFilterArray and GetDatabaseUpgradeHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseUpgradeHistoryEntriesFilterArrayInput` via:
 //
-//          GetDatabaseUpgradeHistoryEntriesFilterArray{ GetDatabaseUpgradeHistoryEntriesFilterArgs{...} }
+//	GetDatabaseUpgradeHistoryEntriesFilterArray{ GetDatabaseUpgradeHistoryEntriesFilterArgs{...} }
 type GetDatabaseUpgradeHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -39215,7 +40952,7 @@ type GetDatabasesDatabase struct {
 // GetDatabasesDatabaseInput is an input type that accepts GetDatabasesDatabaseArgs and GetDatabasesDatabaseOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseInput` via:
 //
-//          GetDatabasesDatabaseArgs{...}
+//	GetDatabasesDatabaseArgs{...}
 type GetDatabasesDatabaseInput interface {
 	pulumi.Input
 
@@ -39300,7 +41037,7 @@ func (i GetDatabasesDatabaseArgs) ToGetDatabasesDatabaseOutputWithContext(ctx co
 // GetDatabasesDatabaseArrayInput is an input type that accepts GetDatabasesDatabaseArray and GetDatabasesDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseArrayInput` via:
 //
-//          GetDatabasesDatabaseArray{ GetDatabasesDatabaseArgs{...} }
+//	GetDatabasesDatabaseArray{ GetDatabasesDatabaseArgs{...} }
 type GetDatabasesDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -39525,7 +41262,7 @@ type GetDatabasesDatabaseConnectionString struct {
 // GetDatabasesDatabaseConnectionStringInput is an input type that accepts GetDatabasesDatabaseConnectionStringArgs and GetDatabasesDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseConnectionStringInput` via:
 //
-//          GetDatabasesDatabaseConnectionStringArgs{...}
+//	GetDatabasesDatabaseConnectionStringArgs{...}
 type GetDatabasesDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -39557,7 +41294,7 @@ func (i GetDatabasesDatabaseConnectionStringArgs) ToGetDatabasesDatabaseConnecti
 // GetDatabasesDatabaseConnectionStringArrayInput is an input type that accepts GetDatabasesDatabaseConnectionStringArray and GetDatabasesDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseConnectionStringArrayInput` via:
 //
-//          GetDatabasesDatabaseConnectionStringArray{ GetDatabasesDatabaseConnectionStringArgs{...} }
+//	GetDatabasesDatabaseConnectionStringArray{ GetDatabasesDatabaseConnectionStringArgs{...} }
 type GetDatabasesDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -39666,7 +41403,7 @@ type GetDatabasesDatabaseDatabase struct {
 // GetDatabasesDatabaseDatabaseInput is an input type that accepts GetDatabasesDatabaseDatabaseArgs and GetDatabasesDatabaseDatabaseOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseInput` via:
 //
-//          GetDatabasesDatabaseDatabaseArgs{...}
+//	GetDatabasesDatabaseDatabaseArgs{...}
 type GetDatabasesDatabaseDatabaseInput interface {
 	pulumi.Input
 
@@ -39724,7 +41461,7 @@ func (i GetDatabasesDatabaseDatabaseArgs) ToGetDatabasesDatabaseDatabaseOutputWi
 // GetDatabasesDatabaseDatabaseArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseArray and GetDatabasesDatabaseDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseArrayInput` via:
 //
-//          GetDatabasesDatabaseDatabaseArray{ GetDatabasesDatabaseDatabaseArgs{...} }
+//	GetDatabasesDatabaseDatabaseArray{ GetDatabasesDatabaseDatabaseArgs{...} }
 type GetDatabasesDatabaseDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -39882,7 +41619,7 @@ type GetDatabasesDatabaseDatabaseDbBackupConfig struct {
 // GetDatabasesDatabaseDatabaseDbBackupConfigInput is an input type that accepts GetDatabasesDatabaseDatabaseDbBackupConfigArgs and GetDatabasesDatabaseDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseDbBackupConfigInput` via:
 //
-//          GetDatabasesDatabaseDatabaseDbBackupConfigArgs{...}
+//	GetDatabasesDatabaseDatabaseDbBackupConfigArgs{...}
 type GetDatabasesDatabaseDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -39916,7 +41653,7 @@ func (i GetDatabasesDatabaseDatabaseDbBackupConfigArgs) ToGetDatabasesDatabaseDa
 // GetDatabasesDatabaseDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseDbBackupConfigArray and GetDatabasesDatabaseDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDatabasesDatabaseDatabaseDbBackupConfigArray{ GetDatabasesDatabaseDatabaseDbBackupConfigArgs{...} }
+//	GetDatabasesDatabaseDatabaseDbBackupConfigArray{ GetDatabasesDatabaseDatabaseDbBackupConfigArgs{...} }
 type GetDatabasesDatabaseDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -40005,7 +41742,7 @@ type GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
 // GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -40036,7 +41773,7 @@ func (i GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs) T
 // GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -40116,7 +41853,7 @@ type GetDatabasesDatabaseDatabaseManagementConfig struct {
 // GetDatabasesDatabaseDatabaseManagementConfigInput is an input type that accepts GetDatabasesDatabaseDatabaseManagementConfigArgs and GetDatabasesDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetDatabasesDatabaseDatabaseManagementConfigArgs{...}
+//	GetDatabasesDatabaseDatabaseManagementConfigArgs{...}
 type GetDatabasesDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -40146,7 +41883,7 @@ func (i GetDatabasesDatabaseDatabaseManagementConfigArgs) ToGetDatabasesDatabase
 // GetDatabasesDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseManagementConfigArray and GetDatabasesDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetDatabasesDatabaseDatabaseManagementConfigArray{ GetDatabasesDatabaseDatabaseManagementConfigArgs{...} }
+//	GetDatabasesDatabaseDatabaseManagementConfigArray{ GetDatabasesDatabaseDatabaseManagementConfigArgs{...} }
 type GetDatabasesDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -40226,7 +41963,7 @@ type GetDatabasesDatabaseDbBackupConfig struct {
 // GetDatabasesDatabaseDbBackupConfigInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigArgs and GetDatabasesDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigInput` via:
 //
-//          GetDatabasesDatabaseDbBackupConfigArgs{...}
+//	GetDatabasesDatabaseDbBackupConfigArgs{...}
 type GetDatabasesDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -40260,7 +41997,7 @@ func (i GetDatabasesDatabaseDbBackupConfigArgs) ToGetDatabasesDatabaseDbBackupCo
 // GetDatabasesDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigArray and GetDatabasesDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDatabasesDatabaseDbBackupConfigArray{ GetDatabasesDatabaseDbBackupConfigArgs{...} }
+//	GetDatabasesDatabaseDbBackupConfigArray{ GetDatabasesDatabaseDbBackupConfigArgs{...} }
 type GetDatabasesDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -40349,7 +42086,7 @@ type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail struct {
 // GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -40380,7 +42117,7 @@ func (i GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetData
 // GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -40459,7 +42196,7 @@ type GetDatabasesFilter struct {
 // GetDatabasesFilterInput is an input type that accepts GetDatabasesFilterArgs and GetDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetDatabasesFilterInput` via:
 //
-//          GetDatabasesFilterArgs{...}
+//	GetDatabasesFilterArgs{...}
 type GetDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -40488,7 +42225,7 @@ func (i GetDatabasesFilterArgs) ToGetDatabasesFilterOutputWithContext(ctx contex
 // GetDatabasesFilterArrayInput is an input type that accepts GetDatabasesFilterArray and GetDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabasesFilterArrayInput` via:
 //
-//          GetDatabasesFilterArray{ GetDatabasesFilterArgs{...} }
+//	GetDatabasesFilterArray{ GetDatabasesFilterArgs{...} }
 type GetDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -40597,7 +42334,7 @@ type GetDbHomeDatabase struct {
 // GetDbHomeDatabaseInput is an input type that accepts GetDbHomeDatabaseArgs and GetDbHomeDatabaseOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseInput` via:
 //
-//          GetDbHomeDatabaseArgs{...}
+//	GetDbHomeDatabaseArgs{...}
 type GetDbHomeDatabaseInput interface {
 	pulumi.Input
 
@@ -40658,7 +42395,7 @@ func (i GetDbHomeDatabaseArgs) ToGetDbHomeDatabaseOutputWithContext(ctx context.
 // GetDbHomeDatabaseArrayInput is an input type that accepts GetDbHomeDatabaseArray and GetDbHomeDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseArrayInput` via:
 //
-//          GetDbHomeDatabaseArray{ GetDbHomeDatabaseArgs{...} }
+//	GetDbHomeDatabaseArray{ GetDbHomeDatabaseArgs{...} }
 type GetDbHomeDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -40836,7 +42573,7 @@ type GetDbHomeDatabaseConnectionString struct {
 // GetDbHomeDatabaseConnectionStringInput is an input type that accepts GetDbHomeDatabaseConnectionStringArgs and GetDbHomeDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseConnectionStringInput` via:
 //
-//          GetDbHomeDatabaseConnectionStringArgs{...}
+//	GetDbHomeDatabaseConnectionStringArgs{...}
 type GetDbHomeDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -40865,7 +42602,7 @@ func (i GetDbHomeDatabaseConnectionStringArgs) ToGetDbHomeDatabaseConnectionStri
 // GetDbHomeDatabaseConnectionStringArrayInput is an input type that accepts GetDbHomeDatabaseConnectionStringArray and GetDbHomeDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseConnectionStringArrayInput` via:
 //
-//          GetDbHomeDatabaseConnectionStringArray{ GetDbHomeDatabaseConnectionStringArgs{...} }
+//	GetDbHomeDatabaseConnectionStringArray{ GetDbHomeDatabaseConnectionStringArgs{...} }
 type GetDbHomeDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -40943,7 +42680,7 @@ type GetDbHomeDatabaseDbBackupConfig struct {
 // GetDbHomeDatabaseDbBackupConfigInput is an input type that accepts GetDbHomeDatabaseDbBackupConfigArgs and GetDbHomeDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseDbBackupConfigInput` via:
 //
-//          GetDbHomeDatabaseDbBackupConfigArgs{...}
+//	GetDbHomeDatabaseDbBackupConfigArgs{...}
 type GetDbHomeDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -40973,7 +42710,7 @@ func (i GetDbHomeDatabaseDbBackupConfigArgs) ToGetDbHomeDatabaseDbBackupConfigOu
 // GetDbHomeDatabaseDbBackupConfigArrayInput is an input type that accepts GetDbHomeDatabaseDbBackupConfigArray and GetDbHomeDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDbHomeDatabaseDbBackupConfigArray{ GetDbHomeDatabaseDbBackupConfigArgs{...} }
+//	GetDbHomeDatabaseDbBackupConfigArray{ GetDbHomeDatabaseDbBackupConfigArgs{...} }
 type GetDbHomeDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -41056,7 +42793,7 @@ type GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 // GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -41085,7 +42822,7 @@ func (i GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDbHomeD
 // GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -41159,7 +42896,7 @@ type GetDbHomePatchHistoryEntriesFilter struct {
 // GetDbHomePatchHistoryEntriesFilterInput is an input type that accepts GetDbHomePatchHistoryEntriesFilterArgs and GetDbHomePatchHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetDbHomePatchHistoryEntriesFilterInput` via:
 //
-//          GetDbHomePatchHistoryEntriesFilterArgs{...}
+//	GetDbHomePatchHistoryEntriesFilterArgs{...}
 type GetDbHomePatchHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -41188,7 +42925,7 @@ func (i GetDbHomePatchHistoryEntriesFilterArgs) ToGetDbHomePatchHistoryEntriesFi
 // GetDbHomePatchHistoryEntriesFilterArrayInput is an input type that accepts GetDbHomePatchHistoryEntriesFilterArray and GetDbHomePatchHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbHomePatchHistoryEntriesFilterArrayInput` via:
 //
-//          GetDbHomePatchHistoryEntriesFilterArray{ GetDbHomePatchHistoryEntriesFilterArgs{...} }
+//	GetDbHomePatchHistoryEntriesFilterArray{ GetDbHomePatchHistoryEntriesFilterArgs{...} }
 type GetDbHomePatchHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -41276,7 +43013,7 @@ type GetDbHomePatchHistoryEntriesPatchHistoryEntry struct {
 // GetDbHomePatchHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs and GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput values.
 // You can construct a concrete instance of `GetDbHomePatchHistoryEntriesPatchHistoryEntryInput` via:
 //
-//          GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{...}
+//	GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{...}
 type GetDbHomePatchHistoryEntriesPatchHistoryEntryInput interface {
 	pulumi.Input
 
@@ -41316,7 +43053,7 @@ func (i GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs) ToGetDbHomePatchHisto
 // GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetDbHomePatchHistoryEntriesPatchHistoryEntryArray and GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput` via:
 //
-//          GetDbHomePatchHistoryEntriesPatchHistoryEntryArray{ GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{...} }
+//	GetDbHomePatchHistoryEntriesPatchHistoryEntryArray{ GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{...} }
 type GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -41416,7 +43153,7 @@ type GetDbHomePatchesFilter struct {
 // GetDbHomePatchesFilterInput is an input type that accepts GetDbHomePatchesFilterArgs and GetDbHomePatchesFilterOutput values.
 // You can construct a concrete instance of `GetDbHomePatchesFilterInput` via:
 //
-//          GetDbHomePatchesFilterArgs{...}
+//	GetDbHomePatchesFilterArgs{...}
 type GetDbHomePatchesFilterInput interface {
 	pulumi.Input
 
@@ -41445,7 +43182,7 @@ func (i GetDbHomePatchesFilterArgs) ToGetDbHomePatchesFilterOutputWithContext(ct
 // GetDbHomePatchesFilterArrayInput is an input type that accepts GetDbHomePatchesFilterArray and GetDbHomePatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbHomePatchesFilterArrayInput` via:
 //
-//          GetDbHomePatchesFilterArray{ GetDbHomePatchesFilterArgs{...} }
+//	GetDbHomePatchesFilterArray{ GetDbHomePatchesFilterArgs{...} }
 type GetDbHomePatchesFilterArrayInput interface {
 	pulumi.Input
 
@@ -41535,7 +43272,7 @@ type GetDbHomePatchesPatch struct {
 // GetDbHomePatchesPatchInput is an input type that accepts GetDbHomePatchesPatchArgs and GetDbHomePatchesPatchOutput values.
 // You can construct a concrete instance of `GetDbHomePatchesPatchInput` via:
 //
-//          GetDbHomePatchesPatchArgs{...}
+//	GetDbHomePatchesPatchArgs{...}
 type GetDbHomePatchesPatchInput interface {
 	pulumi.Input
 
@@ -41577,7 +43314,7 @@ func (i GetDbHomePatchesPatchArgs) ToGetDbHomePatchesPatchOutputWithContext(ctx 
 // GetDbHomePatchesPatchArrayInput is an input type that accepts GetDbHomePatchesPatchArray and GetDbHomePatchesPatchArrayOutput values.
 // You can construct a concrete instance of `GetDbHomePatchesPatchArrayInput` via:
 //
-//          GetDbHomePatchesPatchArray{ GetDbHomePatchesPatchArgs{...} }
+//	GetDbHomePatchesPatchArray{ GetDbHomePatchesPatchArgs{...} }
 type GetDbHomePatchesPatchArrayInput interface {
 	pulumi.Input
 
@@ -41714,7 +43451,7 @@ type GetDbHomesDbHome struct {
 // GetDbHomesDbHomeInput is an input type that accepts GetDbHomesDbHomeArgs and GetDbHomesDbHomeOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeInput` via:
 //
-//          GetDbHomesDbHomeArgs{...}
+//	GetDbHomesDbHomeArgs{...}
 type GetDbHomesDbHomeInput interface {
 	pulumi.Input
 
@@ -41775,7 +43512,7 @@ func (i GetDbHomesDbHomeArgs) ToGetDbHomesDbHomeOutputWithContext(ctx context.Co
 // GetDbHomesDbHomeArrayInput is an input type that accepts GetDbHomesDbHomeArray and GetDbHomesDbHomeArrayOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeArrayInput` via:
 //
-//          GetDbHomesDbHomeArray{ GetDbHomesDbHomeArgs{...} }
+//	GetDbHomesDbHomeArray{ GetDbHomesDbHomeArgs{...} }
 type GetDbHomesDbHomeArrayInput interface {
 	pulumi.Input
 
@@ -41968,7 +43705,7 @@ type GetDbHomesDbHomeDatabase struct {
 // GetDbHomesDbHomeDatabaseInput is an input type that accepts GetDbHomesDbHomeDatabaseArgs and GetDbHomesDbHomeDatabaseOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseInput` via:
 //
-//          GetDbHomesDbHomeDatabaseArgs{...}
+//	GetDbHomesDbHomeDatabaseArgs{...}
 type GetDbHomesDbHomeDatabaseInput interface {
 	pulumi.Input
 
@@ -42030,7 +43767,7 @@ func (i GetDbHomesDbHomeDatabaseArgs) ToGetDbHomesDbHomeDatabaseOutputWithContex
 // GetDbHomesDbHomeDatabaseArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseArray and GetDbHomesDbHomeDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseArrayInput` via:
 //
-//          GetDbHomesDbHomeDatabaseArray{ GetDbHomesDbHomeDatabaseArgs{...} }
+//	GetDbHomesDbHomeDatabaseArray{ GetDbHomesDbHomeDatabaseArgs{...} }
 type GetDbHomesDbHomeDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -42211,7 +43948,7 @@ type GetDbHomesDbHomeDatabaseConnectionString struct {
 // GetDbHomesDbHomeDatabaseConnectionStringInput is an input type that accepts GetDbHomesDbHomeDatabaseConnectionStringArgs and GetDbHomesDbHomeDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseConnectionStringInput` via:
 //
-//          GetDbHomesDbHomeDatabaseConnectionStringArgs{...}
+//	GetDbHomesDbHomeDatabaseConnectionStringArgs{...}
 type GetDbHomesDbHomeDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -42240,7 +43977,7 @@ func (i GetDbHomesDbHomeDatabaseConnectionStringArgs) ToGetDbHomesDbHomeDatabase
 // GetDbHomesDbHomeDatabaseConnectionStringArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseConnectionStringArray and GetDbHomesDbHomeDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseConnectionStringArrayInput` via:
 //
-//          GetDbHomesDbHomeDatabaseConnectionStringArray{ GetDbHomesDbHomeDatabaseConnectionStringArgs{...} }
+//	GetDbHomesDbHomeDatabaseConnectionStringArray{ GetDbHomesDbHomeDatabaseConnectionStringArgs{...} }
 type GetDbHomesDbHomeDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -42318,7 +44055,7 @@ type GetDbHomesDbHomeDatabaseDbBackupConfig struct {
 // GetDbHomesDbHomeDatabaseDbBackupConfigInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigArgs and GetDbHomesDbHomeDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigInput` via:
 //
-//          GetDbHomesDbHomeDatabaseDbBackupConfigArgs{...}
+//	GetDbHomesDbHomeDatabaseDbBackupConfigArgs{...}
 type GetDbHomesDbHomeDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -42348,7 +44085,7 @@ func (i GetDbHomesDbHomeDatabaseDbBackupConfigArgs) ToGetDbHomesDbHomeDatabaseDb
 // GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigArray and GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDbHomesDbHomeDatabaseDbBackupConfigArray{ GetDbHomesDbHomeDatabaseDbBackupConfigArgs{...} }
+//	GetDbHomesDbHomeDatabaseDbBackupConfigArray{ GetDbHomesDbHomeDatabaseDbBackupConfigArgs{...} }
 type GetDbHomesDbHomeDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -42431,7 +44168,7 @@ type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 // GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -42460,7 +44197,7 @@ func (i GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGet
 // GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -42534,7 +44271,7 @@ type GetDbHomesFilter struct {
 // GetDbHomesFilterInput is an input type that accepts GetDbHomesFilterArgs and GetDbHomesFilterOutput values.
 // You can construct a concrete instance of `GetDbHomesFilterInput` via:
 //
-//          GetDbHomesFilterArgs{...}
+//	GetDbHomesFilterArgs{...}
 type GetDbHomesFilterInput interface {
 	pulumi.Input
 
@@ -42563,7 +44300,7 @@ func (i GetDbHomesFilterArgs) ToGetDbHomesFilterOutputWithContext(ctx context.Co
 // GetDbHomesFilterArrayInput is an input type that accepts GetDbHomesFilterArray and GetDbHomesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbHomesFilterArrayInput` via:
 //
-//          GetDbHomesFilterArray{ GetDbHomesFilterArgs{...} }
+//	GetDbHomesFilterArray{ GetDbHomesFilterArgs{...} }
 type GetDbHomesFilterArrayInput interface {
 	pulumi.Input
 
@@ -42650,7 +44387,7 @@ type GetDbNodeConsoleConnectionsConsoleConnection struct {
 // GetDbNodeConsoleConnectionsConsoleConnectionInput is an input type that accepts GetDbNodeConsoleConnectionsConsoleConnectionArgs and GetDbNodeConsoleConnectionsConsoleConnectionOutput values.
 // You can construct a concrete instance of `GetDbNodeConsoleConnectionsConsoleConnectionInput` via:
 //
-//          GetDbNodeConsoleConnectionsConsoleConnectionArgs{...}
+//	GetDbNodeConsoleConnectionsConsoleConnectionArgs{...}
 type GetDbNodeConsoleConnectionsConsoleConnectionInput interface {
 	pulumi.Input
 
@@ -42689,7 +44426,7 @@ func (i GetDbNodeConsoleConnectionsConsoleConnectionArgs) ToGetDbNodeConsoleConn
 // GetDbNodeConsoleConnectionsConsoleConnectionArrayInput is an input type that accepts GetDbNodeConsoleConnectionsConsoleConnectionArray and GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `GetDbNodeConsoleConnectionsConsoleConnectionArrayInput` via:
 //
-//          GetDbNodeConsoleConnectionsConsoleConnectionArray{ GetDbNodeConsoleConnectionsConsoleConnectionArgs{...} }
+//	GetDbNodeConsoleConnectionsConsoleConnectionArray{ GetDbNodeConsoleConnectionsConsoleConnectionArgs{...} }
 type GetDbNodeConsoleConnectionsConsoleConnectionArrayInput interface {
 	pulumi.Input
 
@@ -42788,7 +44525,7 @@ type GetDbNodeConsoleConnectionsFilter struct {
 // GetDbNodeConsoleConnectionsFilterInput is an input type that accepts GetDbNodeConsoleConnectionsFilterArgs and GetDbNodeConsoleConnectionsFilterOutput values.
 // You can construct a concrete instance of `GetDbNodeConsoleConnectionsFilterInput` via:
 //
-//          GetDbNodeConsoleConnectionsFilterArgs{...}
+//	GetDbNodeConsoleConnectionsFilterArgs{...}
 type GetDbNodeConsoleConnectionsFilterInput interface {
 	pulumi.Input
 
@@ -42817,7 +44554,7 @@ func (i GetDbNodeConsoleConnectionsFilterArgs) ToGetDbNodeConsoleConnectionsFilt
 // GetDbNodeConsoleConnectionsFilterArrayInput is an input type that accepts GetDbNodeConsoleConnectionsFilterArray and GetDbNodeConsoleConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbNodeConsoleConnectionsFilterArrayInput` via:
 //
-//          GetDbNodeConsoleConnectionsFilterArray{ GetDbNodeConsoleConnectionsFilterArgs{...} }
+//	GetDbNodeConsoleConnectionsFilterArray{ GetDbNodeConsoleConnectionsFilterArgs{...} }
 type GetDbNodeConsoleConnectionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -42934,7 +44671,7 @@ type GetDbNodesDbNode struct {
 // GetDbNodesDbNodeInput is an input type that accepts GetDbNodesDbNodeArgs and GetDbNodesDbNodeOutput values.
 // You can construct a concrete instance of `GetDbNodesDbNodeInput` via:
 //
-//          GetDbNodesDbNodeArgs{...}
+//	GetDbNodesDbNodeArgs{...}
 type GetDbNodesDbNodeInput interface {
 	pulumi.Input
 
@@ -43003,7 +44740,7 @@ func (i GetDbNodesDbNodeArgs) ToGetDbNodesDbNodeOutputWithContext(ctx context.Co
 // GetDbNodesDbNodeArrayInput is an input type that accepts GetDbNodesDbNodeArray and GetDbNodesDbNodeArrayOutput values.
 // You can construct a concrete instance of `GetDbNodesDbNodeArrayInput` via:
 //
-//          GetDbNodesDbNodeArray{ GetDbNodesDbNodeArgs{...} }
+//	GetDbNodesDbNodeArray{ GetDbNodesDbNodeArgs{...} }
 type GetDbNodesDbNodeArrayInput interface {
 	pulumi.Input
 
@@ -43177,7 +44914,7 @@ type GetDbNodesFilter struct {
 // GetDbNodesFilterInput is an input type that accepts GetDbNodesFilterArgs and GetDbNodesFilterOutput values.
 // You can construct a concrete instance of `GetDbNodesFilterInput` via:
 //
-//          GetDbNodesFilterArgs{...}
+//	GetDbNodesFilterArgs{...}
 type GetDbNodesFilterInput interface {
 	pulumi.Input
 
@@ -43206,7 +44943,7 @@ func (i GetDbNodesFilterArgs) ToGetDbNodesFilterOutputWithContext(ctx context.Co
 // GetDbNodesFilterArrayInput is an input type that accepts GetDbNodesFilterArray and GetDbNodesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbNodesFilterArrayInput` via:
 //
-//          GetDbNodesFilterArray{ GetDbNodesFilterArgs{...} }
+//	GetDbNodesFilterArray{ GetDbNodesFilterArgs{...} }
 type GetDbNodesFilterArrayInput interface {
 	pulumi.Input
 
@@ -43288,7 +45025,7 @@ type GetDbServerDbServerPatchingDetail struct {
 // GetDbServerDbServerPatchingDetailInput is an input type that accepts GetDbServerDbServerPatchingDetailArgs and GetDbServerDbServerPatchingDetailOutput values.
 // You can construct a concrete instance of `GetDbServerDbServerPatchingDetailInput` via:
 //
-//          GetDbServerDbServerPatchingDetailArgs{...}
+//	GetDbServerDbServerPatchingDetailArgs{...}
 type GetDbServerDbServerPatchingDetailInput interface {
 	pulumi.Input
 
@@ -43322,7 +45059,7 @@ func (i GetDbServerDbServerPatchingDetailArgs) ToGetDbServerDbServerPatchingDeta
 // GetDbServerDbServerPatchingDetailArrayInput is an input type that accepts GetDbServerDbServerPatchingDetailArray and GetDbServerDbServerPatchingDetailArrayOutput values.
 // You can construct a concrete instance of `GetDbServerDbServerPatchingDetailArrayInput` via:
 //
-//          GetDbServerDbServerPatchingDetailArray{ GetDbServerDbServerPatchingDetailArgs{...} }
+//	GetDbServerDbServerPatchingDetailArray{ GetDbServerDbServerPatchingDetailArgs{...} }
 type GetDbServerDbServerPatchingDetailArrayInput interface {
 	pulumi.Input
 
@@ -43440,7 +45177,7 @@ type GetDbServersDbServer struct {
 // GetDbServersDbServerInput is an input type that accepts GetDbServersDbServerArgs and GetDbServersDbServerOutput values.
 // You can construct a concrete instance of `GetDbServersDbServerInput` via:
 //
-//          GetDbServersDbServerArgs{...}
+//	GetDbServersDbServerArgs{...}
 type GetDbServersDbServerInput interface {
 	pulumi.Input
 
@@ -43502,7 +45239,7 @@ func (i GetDbServersDbServerArgs) ToGetDbServersDbServerOutputWithContext(ctx co
 // GetDbServersDbServerArrayInput is an input type that accepts GetDbServersDbServerArray and GetDbServersDbServerArrayOutput values.
 // You can construct a concrete instance of `GetDbServersDbServerArrayInput` via:
 //
-//          GetDbServersDbServerArray{ GetDbServersDbServerArgs{...} }
+//	GetDbServersDbServerArray{ GetDbServersDbServerArgs{...} }
 type GetDbServersDbServerArrayInput interface {
 	pulumi.Input
 
@@ -43664,7 +45401,7 @@ type GetDbServersDbServerDbServerPatchingDetail struct {
 // GetDbServersDbServerDbServerPatchingDetailInput is an input type that accepts GetDbServersDbServerDbServerPatchingDetailArgs and GetDbServersDbServerDbServerPatchingDetailOutput values.
 // You can construct a concrete instance of `GetDbServersDbServerDbServerPatchingDetailInput` via:
 //
-//          GetDbServersDbServerDbServerPatchingDetailArgs{...}
+//	GetDbServersDbServerDbServerPatchingDetailArgs{...}
 type GetDbServersDbServerDbServerPatchingDetailInput interface {
 	pulumi.Input
 
@@ -43698,7 +45435,7 @@ func (i GetDbServersDbServerDbServerPatchingDetailArgs) ToGetDbServersDbServerDb
 // GetDbServersDbServerDbServerPatchingDetailArrayInput is an input type that accepts GetDbServersDbServerDbServerPatchingDetailArray and GetDbServersDbServerDbServerPatchingDetailArrayOutput values.
 // You can construct a concrete instance of `GetDbServersDbServerDbServerPatchingDetailArrayInput` via:
 //
-//          GetDbServersDbServerDbServerPatchingDetailArray{ GetDbServersDbServerDbServerPatchingDetailArgs{...} }
+//	GetDbServersDbServerDbServerPatchingDetailArray{ GetDbServersDbServerDbServerPatchingDetailArgs{...} }
 type GetDbServersDbServerDbServerPatchingDetailArrayInput interface {
 	pulumi.Input
 
@@ -43783,7 +45520,7 @@ type GetDbServersFilter struct {
 // GetDbServersFilterInput is an input type that accepts GetDbServersFilterArgs and GetDbServersFilterOutput values.
 // You can construct a concrete instance of `GetDbServersFilterInput` via:
 //
-//          GetDbServersFilterArgs{...}
+//	GetDbServersFilterArgs{...}
 type GetDbServersFilterInput interface {
 	pulumi.Input
 
@@ -43812,7 +45549,7 @@ func (i GetDbServersFilterArgs) ToGetDbServersFilterOutputWithContext(ctx contex
 // GetDbServersFilterArrayInput is an input type that accepts GetDbServersFilterArray and GetDbServersFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbServersFilterArrayInput` via:
 //
-//          GetDbServersFilterArray{ GetDbServersFilterArgs{...} }
+//	GetDbServersFilterArray{ GetDbServersFilterArgs{...} }
 type GetDbServersFilterArrayInput interface {
 	pulumi.Input
 
@@ -43890,7 +45627,7 @@ type GetDbSystemComputePerformancesDbSystemComputePerformance struct {
 // GetDbSystemComputePerformancesDbSystemComputePerformanceInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceArgs and GetDbSystemComputePerformancesDbSystemComputePerformanceOutput values.
 // You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceInput` via:
 //
-//          GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...}
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...}
 type GetDbSystemComputePerformancesDbSystemComputePerformanceInput interface {
 	pulumi.Input
 
@@ -43920,7 +45657,7 @@ func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ToGetDbSys
 // GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceArray and GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput` via:
 //
-//          GetDbSystemComputePerformancesDbSystemComputePerformanceArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...} }
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...} }
 type GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput interface {
 	pulumi.Input
 
@@ -44004,7 +45741,7 @@ type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceL
 // GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs and GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput values.
 // You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput` via:
 //
-//          GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...}
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...}
 type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput interface {
 	pulumi.Input
 
@@ -44040,7 +45777,7 @@ func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerforman
 // GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray and GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput` via:
 //
-//          GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...} }
+//	GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...} }
 type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput interface {
 	pulumi.Input
 
@@ -44140,7 +45877,7 @@ type GetDbSystemComputePerformancesFilter struct {
 // GetDbSystemComputePerformancesFilterInput is an input type that accepts GetDbSystemComputePerformancesFilterArgs and GetDbSystemComputePerformancesFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemComputePerformancesFilterInput` via:
 //
-//          GetDbSystemComputePerformancesFilterArgs{...}
+//	GetDbSystemComputePerformancesFilterArgs{...}
 type GetDbSystemComputePerformancesFilterInput interface {
 	pulumi.Input
 
@@ -44169,7 +45906,7 @@ func (i GetDbSystemComputePerformancesFilterArgs) ToGetDbSystemComputePerformanc
 // GetDbSystemComputePerformancesFilterArrayInput is an input type that accepts GetDbSystemComputePerformancesFilterArray and GetDbSystemComputePerformancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemComputePerformancesFilterArrayInput` via:
 //
-//          GetDbSystemComputePerformancesFilterArray{ GetDbSystemComputePerformancesFilterArgs{...} }
+//	GetDbSystemComputePerformancesFilterArray{ GetDbSystemComputePerformancesFilterArgs{...} }
 type GetDbSystemComputePerformancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -44246,7 +45983,7 @@ type GetDbSystemHistoryEntriesFilter struct {
 // GetDbSystemHistoryEntriesFilterInput is an input type that accepts GetDbSystemHistoryEntriesFilterArgs and GetDbSystemHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemHistoryEntriesFilterInput` via:
 //
-//          GetDbSystemHistoryEntriesFilterArgs{...}
+//	GetDbSystemHistoryEntriesFilterArgs{...}
 type GetDbSystemHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -44275,7 +46012,7 @@ func (i GetDbSystemHistoryEntriesFilterArgs) ToGetDbSystemHistoryEntriesFilterOu
 // GetDbSystemHistoryEntriesFilterArrayInput is an input type that accepts GetDbSystemHistoryEntriesFilterArray and GetDbSystemHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemHistoryEntriesFilterArrayInput` via:
 //
-//          GetDbSystemHistoryEntriesFilterArray{ GetDbSystemHistoryEntriesFilterArgs{...} }
+//	GetDbSystemHistoryEntriesFilterArray{ GetDbSystemHistoryEntriesFilterArgs{...} }
 type GetDbSystemHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -44363,7 +46100,7 @@ type GetDbSystemHistoryEntriesPatchHistoryEntry struct {
 // GetDbSystemHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetDbSystemHistoryEntriesPatchHistoryEntryArgs and GetDbSystemHistoryEntriesPatchHistoryEntryOutput values.
 // You can construct a concrete instance of `GetDbSystemHistoryEntriesPatchHistoryEntryInput` via:
 //
-//          GetDbSystemHistoryEntriesPatchHistoryEntryArgs{...}
+//	GetDbSystemHistoryEntriesPatchHistoryEntryArgs{...}
 type GetDbSystemHistoryEntriesPatchHistoryEntryInput interface {
 	pulumi.Input
 
@@ -44403,7 +46140,7 @@ func (i GetDbSystemHistoryEntriesPatchHistoryEntryArgs) ToGetDbSystemHistoryEntr
 // GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetDbSystemHistoryEntriesPatchHistoryEntryArray and GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput` via:
 //
-//          GetDbSystemHistoryEntriesPatchHistoryEntryArray{ GetDbSystemHistoryEntriesPatchHistoryEntryArgs{...} }
+//	GetDbSystemHistoryEntriesPatchHistoryEntryArray{ GetDbSystemHistoryEntriesPatchHistoryEntryArgs{...} }
 type GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -44503,7 +46240,7 @@ type GetDbSystemPatchesFilter struct {
 // GetDbSystemPatchesFilterInput is an input type that accepts GetDbSystemPatchesFilterArgs and GetDbSystemPatchesFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemPatchesFilterInput` via:
 //
-//          GetDbSystemPatchesFilterArgs{...}
+//	GetDbSystemPatchesFilterArgs{...}
 type GetDbSystemPatchesFilterInput interface {
 	pulumi.Input
 
@@ -44532,7 +46269,7 @@ func (i GetDbSystemPatchesFilterArgs) ToGetDbSystemPatchesFilterOutputWithContex
 // GetDbSystemPatchesFilterArrayInput is an input type that accepts GetDbSystemPatchesFilterArray and GetDbSystemPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemPatchesFilterArrayInput` via:
 //
-//          GetDbSystemPatchesFilterArray{ GetDbSystemPatchesFilterArgs{...} }
+//	GetDbSystemPatchesFilterArray{ GetDbSystemPatchesFilterArgs{...} }
 type GetDbSystemPatchesFilterArrayInput interface {
 	pulumi.Input
 
@@ -44622,7 +46359,7 @@ type GetDbSystemPatchesPatch struct {
 // GetDbSystemPatchesPatchInput is an input type that accepts GetDbSystemPatchesPatchArgs and GetDbSystemPatchesPatchOutput values.
 // You can construct a concrete instance of `GetDbSystemPatchesPatchInput` via:
 //
-//          GetDbSystemPatchesPatchArgs{...}
+//	GetDbSystemPatchesPatchArgs{...}
 type GetDbSystemPatchesPatchInput interface {
 	pulumi.Input
 
@@ -44664,7 +46401,7 @@ func (i GetDbSystemPatchesPatchArgs) ToGetDbSystemPatchesPatchOutputWithContext(
 // GetDbSystemPatchesPatchArrayInput is an input type that accepts GetDbSystemPatchesPatchArray and GetDbSystemPatchesPatchArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemPatchesPatchArrayInput` via:
 //
-//          GetDbSystemPatchesPatchArray{ GetDbSystemPatchesPatchArgs{...} }
+//	GetDbSystemPatchesPatchArray{ GetDbSystemPatchesPatchArgs{...} }
 type GetDbSystemPatchesPatchArrayInput interface {
 	pulumi.Input
 
@@ -44812,7 +46549,7 @@ type GetDbSystemShapesDbSystemShape struct {
 // GetDbSystemShapesDbSystemShapeInput is an input type that accepts GetDbSystemShapesDbSystemShapeArgs and GetDbSystemShapesDbSystemShapeOutput values.
 // You can construct a concrete instance of `GetDbSystemShapesDbSystemShapeInput` via:
 //
-//          GetDbSystemShapesDbSystemShapeArgs{...}
+//	GetDbSystemShapesDbSystemShapeArgs{...}
 type GetDbSystemShapesDbSystemShapeInput interface {
 	pulumi.Input
 
@@ -44884,7 +46621,7 @@ func (i GetDbSystemShapesDbSystemShapeArgs) ToGetDbSystemShapesDbSystemShapeOutp
 // GetDbSystemShapesDbSystemShapeArrayInput is an input type that accepts GetDbSystemShapesDbSystemShapeArray and GetDbSystemShapesDbSystemShapeArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemShapesDbSystemShapeArrayInput` via:
 //
-//          GetDbSystemShapesDbSystemShapeArray{ GetDbSystemShapesDbSystemShapeArgs{...} }
+//	GetDbSystemShapesDbSystemShapeArray{ GetDbSystemShapesDbSystemShapeArgs{...} }
 type GetDbSystemShapesDbSystemShapeArrayInput interface {
 	pulumi.Input
 
@@ -45062,7 +46799,7 @@ type GetDbSystemShapesFilter struct {
 // GetDbSystemShapesFilterInput is an input type that accepts GetDbSystemShapesFilterArgs and GetDbSystemShapesFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemShapesFilterInput` via:
 //
-//          GetDbSystemShapesFilterArgs{...}
+//	GetDbSystemShapesFilterArgs{...}
 type GetDbSystemShapesFilterInput interface {
 	pulumi.Input
 
@@ -45092,7 +46829,7 @@ func (i GetDbSystemShapesFilterArgs) ToGetDbSystemShapesFilterOutputWithContext(
 // GetDbSystemShapesFilterArrayInput is an input type that accepts GetDbSystemShapesFilterArray and GetDbSystemShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemShapesFilterArrayInput` via:
 //
-//          GetDbSystemShapesFilterArray{ GetDbSystemShapesFilterArgs{...} }
+//	GetDbSystemShapesFilterArray{ GetDbSystemShapesFilterArgs{...} }
 type GetDbSystemShapesFilterArrayInput interface {
 	pulumi.Input
 
@@ -45173,7 +46910,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformance struct {
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput interface {
 	pulumi.Input
 
@@ -45205,7 +46942,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ToGetDbSys
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput interface {
 	pulumi.Input
 
@@ -45292,7 +47029,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerforma
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput interface {
 	pulumi.Input
 
@@ -45324,7 +47061,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerfo
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput interface {
 	pulumi.Input
 
@@ -45411,7 +47148,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerforma
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput interface {
 	pulumi.Input
 
@@ -45441,7 +47178,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerfo
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput interface {
 	pulumi.Input
 
@@ -45521,7 +47258,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerforma
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput interface {
 	pulumi.Input
 
@@ -45551,7 +47288,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerfo
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput interface {
 	pulumi.Input
 
@@ -45633,7 +47370,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerforma
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput interface {
 	pulumi.Input
 
@@ -45665,7 +47402,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerfo
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput interface {
 	pulumi.Input
 
@@ -45752,7 +47489,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerforma
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput interface {
 	pulumi.Input
 
@@ -45782,7 +47519,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerfo
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput interface {
 	pulumi.Input
 
@@ -45862,7 +47599,7 @@ type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerforma
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...}
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...}
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput interface {
 	pulumi.Input
 
@@ -45892,7 +47629,7 @@ func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerfo
 // GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...} }
+//	GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...} }
 type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput interface {
 	pulumi.Input
 
@@ -45971,7 +47708,7 @@ type GetDbSystemStoragePerformancesFilter struct {
 // GetDbSystemStoragePerformancesFilterInput is an input type that accepts GetDbSystemStoragePerformancesFilterArgs and GetDbSystemStoragePerformancesFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesFilterInput` via:
 //
-//          GetDbSystemStoragePerformancesFilterArgs{...}
+//	GetDbSystemStoragePerformancesFilterArgs{...}
 type GetDbSystemStoragePerformancesFilterInput interface {
 	pulumi.Input
 
@@ -46000,7 +47737,7 @@ func (i GetDbSystemStoragePerformancesFilterArgs) ToGetDbSystemStoragePerformanc
 // GetDbSystemStoragePerformancesFilterArrayInput is an input type that accepts GetDbSystemStoragePerformancesFilterArray and GetDbSystemStoragePerformancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemStoragePerformancesFilterArrayInput` via:
 //
-//          GetDbSystemStoragePerformancesFilterArray{ GetDbSystemStoragePerformancesFilterArgs{...} }
+//	GetDbSystemStoragePerformancesFilterArray{ GetDbSystemStoragePerformancesFilterArgs{...} }
 type GetDbSystemStoragePerformancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -46175,7 +47912,7 @@ type GetDbSystemsDbSystem struct {
 // GetDbSystemsDbSystemInput is an input type that accepts GetDbSystemsDbSystemArgs and GetDbSystemsDbSystemOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemInput` via:
 //
-//          GetDbSystemsDbSystemArgs{...}
+//	GetDbSystemsDbSystemArgs{...}
 type GetDbSystemsDbSystemInput interface {
 	pulumi.Input
 
@@ -46302,7 +48039,7 @@ func (i GetDbSystemsDbSystemArgs) ToGetDbSystemsDbSystemOutputWithContext(ctx co
 // GetDbSystemsDbSystemArrayInput is an input type that accepts GetDbSystemsDbSystemArray and GetDbSystemsDbSystemArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemArrayInput` via:
 //
-//          GetDbSystemsDbSystemArray{ GetDbSystemsDbSystemArgs{...} }
+//	GetDbSystemsDbSystemArray{ GetDbSystemsDbSystemArgs{...} }
 type GetDbSystemsDbSystemArrayInput interface {
 	pulumi.Input
 
@@ -46644,7 +48381,7 @@ type GetDbSystemsDbSystemDbHome struct {
 // GetDbSystemsDbSystemDbHomeInput is an input type that accepts GetDbSystemsDbSystemDbHomeArgs and GetDbSystemsDbSystemDbHomeOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeArgs{...}
+//	GetDbSystemsDbSystemDbHomeArgs{...}
 type GetDbSystemsDbSystemDbHomeInput interface {
 	pulumi.Input
 
@@ -46691,7 +48428,7 @@ func (i GetDbSystemsDbSystemDbHomeArgs) ToGetDbSystemsDbSystemDbHomeOutputWithCo
 // GetDbSystemsDbSystemDbHomeArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeArray and GetDbSystemsDbSystemDbHomeArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeArrayInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeArray{ GetDbSystemsDbSystemDbHomeArgs{...} }
+//	GetDbSystemsDbSystemDbHomeArray{ GetDbSystemsDbSystemDbHomeArgs{...} }
 type GetDbSystemsDbSystemDbHomeArrayInput interface {
 	pulumi.Input
 
@@ -46846,7 +48583,7 @@ type GetDbSystemsDbSystemDbHomeDatabase struct {
 // GetDbSystemsDbSystemDbHomeDatabaseInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseArgs and GetDbSystemsDbSystemDbHomeDatabaseOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseArgs{...}
+//	GetDbSystemsDbSystemDbHomeDatabaseArgs{...}
 type GetDbSystemsDbSystemDbHomeDatabaseInput interface {
 	pulumi.Input
 
@@ -46905,7 +48642,7 @@ func (i GetDbSystemsDbSystemDbHomeDatabaseArgs) ToGetDbSystemsDbSystemDbHomeData
 // GetDbSystemsDbSystemDbHomeDatabaseArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseArray and GetDbSystemsDbSystemDbHomeDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseArrayInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseArray{ GetDbSystemsDbSystemDbHomeDatabaseArgs{...} }
+//	GetDbSystemsDbSystemDbHomeDatabaseArray{ GetDbSystemsDbSystemDbHomeDatabaseArgs{...} }
 type GetDbSystemsDbSystemDbHomeDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -47082,7 +48819,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseConnectionString struct {
 // GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs and GetDbSystemsDbSystemDbHomeDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{...}
+//	GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{...}
 type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -47111,7 +48848,7 @@ func (i GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs) ToGetDbSystemsDb
 // GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray and GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray{ GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{...} }
+//	GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArray{ GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArgs{...} }
 type GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -47191,7 +48928,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig struct {
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{...}
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{...}
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigInput interface {
 	pulumi.Input
 
@@ -47221,7 +48958,7 @@ func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs) ToGetDbSystemsDbSy
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray{ GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{...} }
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArray{ GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArgs{...} }
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput interface {
 	pulumi.Input
 
@@ -47304,7 +49041,7 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail str
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 	pulumi.Input
 
@@ -47333,7 +49070,7 @@ func (i GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailA
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
 //
-//          GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+//	GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
 	pulumi.Input
 
@@ -47406,7 +49143,7 @@ type GetDbSystemsDbSystemDbSystemOption struct {
 // GetDbSystemsDbSystemDbSystemOptionInput is an input type that accepts GetDbSystemsDbSystemDbSystemOptionArgs and GetDbSystemsDbSystemDbSystemOptionOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbSystemOptionInput` via:
 //
-//          GetDbSystemsDbSystemDbSystemOptionArgs{...}
+//	GetDbSystemsDbSystemDbSystemOptionArgs{...}
 type GetDbSystemsDbSystemDbSystemOptionInput interface {
 	pulumi.Input
 
@@ -47434,7 +49171,7 @@ func (i GetDbSystemsDbSystemDbSystemOptionArgs) ToGetDbSystemsDbSystemDbSystemOp
 // GetDbSystemsDbSystemDbSystemOptionArrayInput is an input type that accepts GetDbSystemsDbSystemDbSystemOptionArray and GetDbSystemsDbSystemDbSystemOptionArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemDbSystemOptionArrayInput` via:
 //
-//          GetDbSystemsDbSystemDbSystemOptionArray{ GetDbSystemsDbSystemDbSystemOptionArgs{...} }
+//	GetDbSystemsDbSystemDbSystemOptionArray{ GetDbSystemsDbSystemDbSystemOptionArgs{...} }
 type GetDbSystemsDbSystemDbSystemOptionArrayInput interface {
 	pulumi.Input
 
@@ -47508,7 +49245,7 @@ type GetDbSystemsDbSystemIormConfigCach struct {
 // GetDbSystemsDbSystemIormConfigCachInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachArgs and GetDbSystemsDbSystemIormConfigCachOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachInput` via:
 //
-//          GetDbSystemsDbSystemIormConfigCachArgs{...}
+//	GetDbSystemsDbSystemIormConfigCachArgs{...}
 type GetDbSystemsDbSystemIormConfigCachInput interface {
 	pulumi.Input
 
@@ -47541,7 +49278,7 @@ func (i GetDbSystemsDbSystemIormConfigCachArgs) ToGetDbSystemsDbSystemIormConfig
 // GetDbSystemsDbSystemIormConfigCachArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachArray and GetDbSystemsDbSystemIormConfigCachArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachArrayInput` via:
 //
-//          GetDbSystemsDbSystemIormConfigCachArray{ GetDbSystemsDbSystemIormConfigCachArgs{...} }
+//	GetDbSystemsDbSystemIormConfigCachArray{ GetDbSystemsDbSystemIormConfigCachArgs{...} }
 type GetDbSystemsDbSystemIormConfigCachArrayInput interface {
 	pulumi.Input
 
@@ -47630,7 +49367,7 @@ type GetDbSystemsDbSystemIormConfigCachDbPlan struct {
 // GetDbSystemsDbSystemIormConfigCachDbPlanInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachDbPlanArgs and GetDbSystemsDbSystemIormConfigCachDbPlanOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachDbPlanInput` via:
 //
-//          GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...}
+//	GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...}
 type GetDbSystemsDbSystemIormConfigCachDbPlanInput interface {
 	pulumi.Input
 
@@ -47659,7 +49396,7 @@ func (i GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ToGetDbSystemsDbSystemIorm
 // GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachDbPlanArray and GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput` via:
 //
-//          GetDbSystemsDbSystemIormConfigCachDbPlanArray{ GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...} }
+//	GetDbSystemsDbSystemIormConfigCachDbPlanArray{ GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...} }
 type GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -47752,7 +49489,7 @@ type GetDbSystemsDbSystemMaintenanceWindow struct {
 // GetDbSystemsDbSystemMaintenanceWindowInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowArgs and GetDbSystemsDbSystemMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowArgs{...}
+//	GetDbSystemsDbSystemMaintenanceWindowArgs{...}
 type GetDbSystemsDbSystemMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -47797,7 +49534,7 @@ func (i GetDbSystemsDbSystemMaintenanceWindowArgs) ToGetDbSystemsDbSystemMainten
 // GetDbSystemsDbSystemMaintenanceWindowArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowArray and GetDbSystemsDbSystemMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowArrayInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowArray{ GetDbSystemsDbSystemMaintenanceWindowArgs{...} }
+//	GetDbSystemsDbSystemMaintenanceWindowArray{ GetDbSystemsDbSystemMaintenanceWindowArgs{...} }
 type GetDbSystemsDbSystemMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -47911,7 +49648,7 @@ type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeek struct {
 // GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs and GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{...}
+//	GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{...}
 type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -47939,7 +49676,7 @@ func (i GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs) ToGetDbSystemsDbSys
 // GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray and GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray{ GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArray{ GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{...} }
 type GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -48025,7 +49762,7 @@ type GetDbSystemsDbSystemMaintenanceWindowDetail struct {
 // GetDbSystemsDbSystemMaintenanceWindowDetailInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailArgs and GetDbSystemsDbSystemMaintenanceWindowDetailOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDetailArgs{...}
+//	GetDbSystemsDbSystemMaintenanceWindowDetailArgs{...}
 type GetDbSystemsDbSystemMaintenanceWindowDetailInput interface {
 	pulumi.Input
 
@@ -48070,7 +49807,7 @@ func (i GetDbSystemsDbSystemMaintenanceWindowDetailArgs) ToGetDbSystemsDbSystemM
 // GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailArray and GetDbSystemsDbSystemMaintenanceWindowDetailArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDetailArray{ GetDbSystemsDbSystemMaintenanceWindowDetailArgs{...} }
+//	GetDbSystemsDbSystemMaintenanceWindowDetailArray{ GetDbSystemsDbSystemMaintenanceWindowDetailArgs{...} }
 type GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput interface {
 	pulumi.Input
 
@@ -48184,7 +49921,7 @@ type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeek struct {
 // GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs and GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{...}
+//	GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{...}
 type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -48212,7 +49949,7 @@ func (i GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs) ToGetDbSystem
 // GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray and GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray{ GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{...} }
+//	GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArray{ GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArgs{...} }
 type GetDbSystemsDbSystemMaintenanceWindowDetailDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -48281,7 +50018,7 @@ type GetDbSystemsDbSystemMaintenanceWindowDetailMonth struct {
 // GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs and GetDbSystemsDbSystemMaintenanceWindowDetailMonthOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{...}
+//	GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{...}
 type GetDbSystemsDbSystemMaintenanceWindowDetailMonthInput interface {
 	pulumi.Input
 
@@ -48309,7 +50046,7 @@ func (i GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs) ToGetDbSystemsDbSy
 // GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray and GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray{ GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{...} }
+//	GetDbSystemsDbSystemMaintenanceWindowDetailMonthArray{ GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs{...} }
 type GetDbSystemsDbSystemMaintenanceWindowDetailMonthArrayInput interface {
 	pulumi.Input
 
@@ -48378,7 +50115,7 @@ type GetDbSystemsDbSystemMaintenanceWindowMonth struct {
 // GetDbSystemsDbSystemMaintenanceWindowMonthInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowMonthArgs and GetDbSystemsDbSystemMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowMonthInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowMonthArgs{...}
+//	GetDbSystemsDbSystemMaintenanceWindowMonthArgs{...}
 type GetDbSystemsDbSystemMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -48406,7 +50143,7 @@ func (i GetDbSystemsDbSystemMaintenanceWindowMonthArgs) ToGetDbSystemsDbSystemMa
 // GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput is an input type that accepts GetDbSystemsDbSystemMaintenanceWindowMonthArray and GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput` via:
 //
-//          GetDbSystemsDbSystemMaintenanceWindowMonthArray{ GetDbSystemsDbSystemMaintenanceWindowMonthArgs{...} }
+//	GetDbSystemsDbSystemMaintenanceWindowMonthArray{ GetDbSystemsDbSystemMaintenanceWindowMonthArgs{...} }
 type GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -48477,7 +50214,7 @@ type GetDbSystemsFilter struct {
 // GetDbSystemsFilterInput is an input type that accepts GetDbSystemsFilterArgs and GetDbSystemsFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemsFilterInput` via:
 //
-//          GetDbSystemsFilterArgs{...}
+//	GetDbSystemsFilterArgs{...}
 type GetDbSystemsFilterInput interface {
 	pulumi.Input
 
@@ -48507,7 +50244,7 @@ func (i GetDbSystemsFilterArgs) ToGetDbSystemsFilterOutputWithContext(ctx contex
 // GetDbSystemsFilterArrayInput is an input type that accepts GetDbSystemsFilterArray and GetDbSystemsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsFilterArrayInput` via:
 //
-//          GetDbSystemsFilterArray{ GetDbSystemsFilterArgs{...} }
+//	GetDbSystemsFilterArray{ GetDbSystemsFilterArgs{...} }
 type GetDbSystemsFilterArrayInput interface {
 	pulumi.Input
 
@@ -48600,7 +50337,7 @@ type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry struct {
 // GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs and GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput values.
 // You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput` via:
 //
-//          GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...}
+//	GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...}
 type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput interface {
 	pulumi.Input
 
@@ -48644,7 +50381,7 @@ func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ToGetD
 // GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray and GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput` via:
 //
-//          GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray{ GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...} }
+//	GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray{ GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...} }
 type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -48756,7 +50493,7 @@ type GetDbSystemsUpgradeHistoryEntriesFilter struct {
 // GetDbSystemsUpgradeHistoryEntriesFilterInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesFilterArgs and GetDbSystemsUpgradeHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesFilterInput` via:
 //
-//          GetDbSystemsUpgradeHistoryEntriesFilterArgs{...}
+//	GetDbSystemsUpgradeHistoryEntriesFilterArgs{...}
 type GetDbSystemsUpgradeHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -48785,7 +50522,7 @@ func (i GetDbSystemsUpgradeHistoryEntriesFilterArgs) ToGetDbSystemsUpgradeHistor
 // GetDbSystemsUpgradeHistoryEntriesFilterArrayInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesFilterArray and GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesFilterArrayInput` via:
 //
-//          GetDbSystemsUpgradeHistoryEntriesFilterArray{ GetDbSystemsUpgradeHistoryEntriesFilterArgs{...} }
+//	GetDbSystemsUpgradeHistoryEntriesFilterArray{ GetDbSystemsUpgradeHistoryEntriesFilterArgs{...} }
 type GetDbSystemsUpgradeHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -48869,7 +50606,7 @@ type GetDbVersionsDbVersion struct {
 // GetDbVersionsDbVersionInput is an input type that accepts GetDbVersionsDbVersionArgs and GetDbVersionsDbVersionOutput values.
 // You can construct a concrete instance of `GetDbVersionsDbVersionInput` via:
 //
-//          GetDbVersionsDbVersionArgs{...}
+//	GetDbVersionsDbVersionArgs{...}
 type GetDbVersionsDbVersionInput interface {
 	pulumi.Input
 
@@ -48905,7 +50642,7 @@ func (i GetDbVersionsDbVersionArgs) ToGetDbVersionsDbVersionOutputWithContext(ct
 // GetDbVersionsDbVersionArrayInput is an input type that accepts GetDbVersionsDbVersionArray and GetDbVersionsDbVersionArrayOutput values.
 // You can construct a concrete instance of `GetDbVersionsDbVersionArrayInput` via:
 //
-//          GetDbVersionsDbVersionArray{ GetDbVersionsDbVersionArgs{...} }
+//	GetDbVersionsDbVersionArray{ GetDbVersionsDbVersionArgs{...} }
 type GetDbVersionsDbVersionArrayInput interface {
 	pulumi.Input
 
@@ -48995,7 +50732,7 @@ type GetDbVersionsFilter struct {
 // GetDbVersionsFilterInput is an input type that accepts GetDbVersionsFilterArgs and GetDbVersionsFilterOutput values.
 // You can construct a concrete instance of `GetDbVersionsFilterInput` via:
 //
-//          GetDbVersionsFilterArgs{...}
+//	GetDbVersionsFilterArgs{...}
 type GetDbVersionsFilterInput interface {
 	pulumi.Input
 
@@ -49024,7 +50761,7 @@ func (i GetDbVersionsFilterArgs) ToGetDbVersionsFilterOutputWithContext(ctx cont
 // GetDbVersionsFilterArrayInput is an input type that accepts GetDbVersionsFilterArray and GetDbVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbVersionsFilterArrayInput` via:
 //
-//          GetDbVersionsFilterArray{ GetDbVersionsFilterArgs{...} }
+//	GetDbVersionsFilterArray{ GetDbVersionsFilterArgs{...} }
 type GetDbVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -49108,7 +50845,7 @@ type GetExadataInfrastructureContact struct {
 // GetExadataInfrastructureContactInput is an input type that accepts GetExadataInfrastructureContactArgs and GetExadataInfrastructureContactOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureContactInput` via:
 //
-//          GetExadataInfrastructureContactArgs{...}
+//	GetExadataInfrastructureContactArgs{...}
 type GetExadataInfrastructureContactInput interface {
 	pulumi.Input
 
@@ -49144,7 +50881,7 @@ func (i GetExadataInfrastructureContactArgs) ToGetExadataInfrastructureContactOu
 // GetExadataInfrastructureContactArrayInput is an input type that accepts GetExadataInfrastructureContactArray and GetExadataInfrastructureContactArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureContactArrayInput` via:
 //
-//          GetExadataInfrastructureContactArray{ GetExadataInfrastructureContactArgs{...} }
+//	GetExadataInfrastructureContactArray{ GetExadataInfrastructureContactArgs{...} }
 type GetExadataInfrastructureContactArrayInput interface {
 	pulumi.Input
 
@@ -49250,7 +50987,7 @@ type GetExadataInfrastructureMaintenanceWindow struct {
 // GetExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowArgs and GetExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          GetExadataInfrastructureMaintenanceWindowArgs{...}
+//	GetExadataInfrastructureMaintenanceWindowArgs{...}
 type GetExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -49295,7 +51032,7 @@ func (i GetExadataInfrastructureMaintenanceWindowArgs) ToGetExadataInfrastructur
 // GetExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowArray and GetExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          GetExadataInfrastructureMaintenanceWindowArray{ GetExadataInfrastructureMaintenanceWindowArgs{...} }
+//	GetExadataInfrastructureMaintenanceWindowArray{ GetExadataInfrastructureMaintenanceWindowArgs{...} }
 type GetExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -49409,7 +51146,7 @@ type GetExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 // GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -49437,7 +51174,7 @@ func (i GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetExadataInf
 // GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type GetExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -49506,7 +51243,7 @@ type GetExadataInfrastructureMaintenanceWindowMonth struct {
 // GetExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowMonthArgs and GetExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          GetExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	GetExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type GetExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -49534,7 +51271,7 @@ func (i GetExadataInfrastructureMaintenanceWindowMonthArgs) ToGetExadataInfrastr
 // GetExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceWindowMonthArray and GetExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          GetExadataInfrastructureMaintenanceWindowMonthArray{ GetExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	GetExadataInfrastructureMaintenanceWindowMonthArray{ GetExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type GetExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -49658,6 +51395,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion string `pulumi:"monthlyDbServerVersion"`
 	// The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -49679,7 +51418,7 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 // GetExadataInfrastructuresExadataInfrastructureInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureArgs and GetExadataInfrastructuresExadataInfrastructureOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureArgs{...}
+//	GetExadataInfrastructuresExadataInfrastructureArgs{...}
 type GetExadataInfrastructuresExadataInfrastructureInput interface {
 	pulumi.Input
 
@@ -49750,6 +51489,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	MaxMemoryInGbs pulumi.IntInput `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion pulumi.StringInput `pulumi:"monthlyDbServerVersion"`
 	// The netmask for the control plane network.
 	Netmask pulumi.StringInput `pulumi:"netmask"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -49783,7 +51524,7 @@ func (i GetExadataInfrastructuresExadataInfrastructureArgs) ToGetExadataInfrastr
 // GetExadataInfrastructuresExadataInfrastructureArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureArray and GetExadataInfrastructuresExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureArrayInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureArray{ GetExadataInfrastructuresExadataInfrastructureArgs{...} }
+//	GetExadataInfrastructuresExadataInfrastructureArray{ GetExadataInfrastructuresExadataInfrastructureArgs{...} }
 type GetExadataInfrastructuresExadataInfrastructureArrayInput interface {
 	pulumi.Input
 
@@ -49981,6 +51722,11 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) MemorySizeInGbs() 
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
+// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MonthlyDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
+}
+
 // The netmask for the control plane network.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) Netmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.Netmask }).(pulumi.StringOutput)
@@ -50057,7 +51803,7 @@ type GetExadataInfrastructuresExadataInfrastructureContact struct {
 // GetExadataInfrastructuresExadataInfrastructureContactInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureContactArgs and GetExadataInfrastructuresExadataInfrastructureContactOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureContactInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureContactArgs{...}
+//	GetExadataInfrastructuresExadataInfrastructureContactArgs{...}
 type GetExadataInfrastructuresExadataInfrastructureContactInput interface {
 	pulumi.Input
 
@@ -50093,7 +51839,7 @@ func (i GetExadataInfrastructuresExadataInfrastructureContactArgs) ToGetExadataI
 // GetExadataInfrastructuresExadataInfrastructureContactArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureContactArray and GetExadataInfrastructuresExadataInfrastructureContactArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureContactArrayInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureContactArray{ GetExadataInfrastructuresExadataInfrastructureContactArgs{...} }
+//	GetExadataInfrastructuresExadataInfrastructureContactArray{ GetExadataInfrastructuresExadataInfrastructureContactArgs{...} }
 type GetExadataInfrastructuresExadataInfrastructureContactArrayInput interface {
 	pulumi.Input
 
@@ -50199,7 +51945,7 @@ type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow struct {
 // GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs and GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{...}
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{...}
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowInput interface {
 	pulumi.Input
 
@@ -50244,7 +51990,7 @@ func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs) ToG
 // GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArray and GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{...} }
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{...} }
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput interface {
 	pulumi.Input
 
@@ -50362,7 +52108,7 @@ type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeek s
 // GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
 	pulumi.Input
 
@@ -50390,7 +52136,7 @@ func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWee
 // GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
 	pulumi.Input
 
@@ -50461,7 +52207,7 @@ type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonth struct
 // GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs and GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs{...}
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs{...}
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthInput interface {
 	pulumi.Input
 
@@ -50489,7 +52235,7 @@ func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs
 // GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArray and GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
 //
-//          GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs{...} }
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
 	pulumi.Input
 
@@ -50560,7 +52306,7 @@ type GetExadataInfrastructuresFilter struct {
 // GetExadataInfrastructuresFilterInput is an input type that accepts GetExadataInfrastructuresFilterArgs and GetExadataInfrastructuresFilterOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresFilterInput` via:
 //
-//          GetExadataInfrastructuresFilterArgs{...}
+//	GetExadataInfrastructuresFilterArgs{...}
 type GetExadataInfrastructuresFilterInput interface {
 	pulumi.Input
 
@@ -50590,7 +52336,7 @@ func (i GetExadataInfrastructuresFilterArgs) ToGetExadataInfrastructuresFilterOu
 // GetExadataInfrastructuresFilterArrayInput is an input type that accepts GetExadataInfrastructuresFilterArray and GetExadataInfrastructuresFilterArrayOutput values.
 // You can construct a concrete instance of `GetExadataInfrastructuresFilterArrayInput` via:
 //
-//          GetExadataInfrastructuresFilterArray{ GetExadataInfrastructuresFilterArgs{...} }
+//	GetExadataInfrastructuresFilterArray{ GetExadataInfrastructuresFilterArgs{...} }
 type GetExadataInfrastructuresFilterArrayInput interface {
 	pulumi.Input
 
@@ -50671,7 +52417,7 @@ type GetExadataIormConfigDbPlan struct {
 // GetExadataIormConfigDbPlanInput is an input type that accepts GetExadataIormConfigDbPlanArgs and GetExadataIormConfigDbPlanOutput values.
 // You can construct a concrete instance of `GetExadataIormConfigDbPlanInput` via:
 //
-//          GetExadataIormConfigDbPlanArgs{...}
+//	GetExadataIormConfigDbPlanArgs{...}
 type GetExadataIormConfigDbPlanInput interface {
 	pulumi.Input
 
@@ -50703,7 +52449,7 @@ func (i GetExadataIormConfigDbPlanArgs) ToGetExadataIormConfigDbPlanOutputWithCo
 // GetExadataIormConfigDbPlanArrayInput is an input type that accepts GetExadataIormConfigDbPlanArray and GetExadataIormConfigDbPlanArrayOutput values.
 // You can construct a concrete instance of `GetExadataIormConfigDbPlanArrayInput` via:
 //
-//          GetExadataIormConfigDbPlanArray{ GetExadataIormConfigDbPlanArgs{...} }
+//	GetExadataIormConfigDbPlanArray{ GetExadataIormConfigDbPlanArgs{...} }
 type GetExadataIormConfigDbPlanArrayInput interface {
 	pulumi.Input
 
@@ -50786,7 +52532,7 @@ type GetExternalContainerDatabaseDatabaseManagementConfig struct {
 // GetExternalContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalContainerDatabaseDatabaseManagementConfigArgs and GetExternalContainerDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetExternalContainerDatabaseDatabaseManagementConfigArgs{...}
+//	GetExternalContainerDatabaseDatabaseManagementConfigArgs{...}
 type GetExternalContainerDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -50818,7 +52564,7 @@ func (i GetExternalContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalC
 // GetExternalContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalContainerDatabaseDatabaseManagementConfigArray and GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetExternalContainerDatabaseDatabaseManagementConfigArray{ GetExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
+//	GetExternalContainerDatabaseDatabaseManagementConfigArray{ GetExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
 type GetExternalContainerDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -50901,7 +52647,7 @@ type GetExternalContainerDatabaseStackMonitoringConfig struct {
 // GetExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalContainerDatabaseStackMonitoringConfigArgs and GetExternalContainerDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabaseStackMonitoringConfigInput` via:
 //
-//          GetExternalContainerDatabaseStackMonitoringConfigArgs{...}
+//	GetExternalContainerDatabaseStackMonitoringConfigArgs{...}
 type GetExternalContainerDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -50931,7 +52677,7 @@ func (i GetExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalCont
 // GetExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalContainerDatabaseStackMonitoringConfigArray and GetExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          GetExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+//	GetExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabaseStackMonitoringConfigArgs{...} }
 type GetExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -51041,7 +52787,7 @@ type GetExternalContainerDatabasesExternalContainerDatabase struct {
 // GetExternalContainerDatabasesExternalContainerDatabaseInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseArgs and GetExternalContainerDatabasesExternalContainerDatabaseOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseInput` via:
 //
-//          GetExternalContainerDatabasesExternalContainerDatabaseArgs{...}
+//	GetExternalContainerDatabasesExternalContainerDatabaseArgs{...}
 type GetExternalContainerDatabasesExternalContainerDatabaseInput interface {
 	pulumi.Input
 
@@ -51105,7 +52851,7 @@ func (i GetExternalContainerDatabasesExternalContainerDatabaseArgs) ToGetExterna
 // GetExternalContainerDatabasesExternalContainerDatabaseArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseArray and GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseArrayInput` via:
 //
-//          GetExternalContainerDatabasesExternalContainerDatabaseArray{ GetExternalContainerDatabasesExternalContainerDatabaseArgs{...} }
+//	GetExternalContainerDatabasesExternalContainerDatabaseArray{ GetExternalContainerDatabasesExternalContainerDatabaseArgs{...} }
 type GetExternalContainerDatabasesExternalContainerDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -51276,7 +53022,7 @@ type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementCon
 // GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs and GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{...}
+//	GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{...}
 type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -51308,7 +53054,7 @@ func (i GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagement
 // GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray and GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
+//	GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
 type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -51395,7 +53141,7 @@ type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig
 // GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs and GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput` via:
 //
-//          GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...}
+//	GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...}
 type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -51425,7 +53171,7 @@ func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringCon
 // GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray and GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+//	GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...} }
 type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -51504,7 +53250,7 @@ type GetExternalContainerDatabasesFilter struct {
 // GetExternalContainerDatabasesFilterInput is an input type that accepts GetExternalContainerDatabasesFilterArgs and GetExternalContainerDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesFilterInput` via:
 //
-//          GetExternalContainerDatabasesFilterArgs{...}
+//	GetExternalContainerDatabasesFilterArgs{...}
 type GetExternalContainerDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -51533,7 +53279,7 @@ func (i GetExternalContainerDatabasesFilterArgs) ToGetExternalContainerDatabases
 // GetExternalContainerDatabasesFilterArrayInput is an input type that accepts GetExternalContainerDatabasesFilterArray and GetExternalContainerDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetExternalContainerDatabasesFilterArrayInput` via:
 //
-//          GetExternalContainerDatabasesFilterArray{ GetExternalContainerDatabasesFilterArgs{...} }
+//	GetExternalContainerDatabasesFilterArray{ GetExternalContainerDatabasesFilterArgs{...} }
 type GetExternalContainerDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -51619,7 +53365,7 @@ type GetExternalDatabaseConnectorConnectionCredential struct {
 // GetExternalDatabaseConnectorConnectionCredentialInput is an input type that accepts GetExternalDatabaseConnectorConnectionCredentialArgs and GetExternalDatabaseConnectorConnectionCredentialOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionCredentialInput` via:
 //
-//          GetExternalDatabaseConnectorConnectionCredentialArgs{...}
+//	GetExternalDatabaseConnectorConnectionCredentialArgs{...}
 type GetExternalDatabaseConnectorConnectionCredentialInput interface {
 	pulumi.Input
 
@@ -51657,7 +53403,7 @@ func (i GetExternalDatabaseConnectorConnectionCredentialArgs) ToGetExternalDatab
 // GetExternalDatabaseConnectorConnectionCredentialArrayInput is an input type that accepts GetExternalDatabaseConnectorConnectionCredentialArray and GetExternalDatabaseConnectorConnectionCredentialArrayOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionCredentialArrayInput` via:
 //
-//          GetExternalDatabaseConnectorConnectionCredentialArray{ GetExternalDatabaseConnectorConnectionCredentialArgs{...} }
+//	GetExternalDatabaseConnectorConnectionCredentialArray{ GetExternalDatabaseConnectorConnectionCredentialArgs{...} }
 type GetExternalDatabaseConnectorConnectionCredentialArrayInput interface {
 	pulumi.Input
 
@@ -51757,7 +53503,7 @@ type GetExternalDatabaseConnectorConnectionString struct {
 // GetExternalDatabaseConnectorConnectionStringInput is an input type that accepts GetExternalDatabaseConnectorConnectionStringArgs and GetExternalDatabaseConnectorConnectionStringOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionStringInput` via:
 //
-//          GetExternalDatabaseConnectorConnectionStringArgs{...}
+//	GetExternalDatabaseConnectorConnectionStringArgs{...}
 type GetExternalDatabaseConnectorConnectionStringInput interface {
 	pulumi.Input
 
@@ -51791,7 +53537,7 @@ func (i GetExternalDatabaseConnectorConnectionStringArgs) ToGetExternalDatabaseC
 // GetExternalDatabaseConnectorConnectionStringArrayInput is an input type that accepts GetExternalDatabaseConnectorConnectionStringArray and GetExternalDatabaseConnectorConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionStringArrayInput` via:
 //
-//          GetExternalDatabaseConnectorConnectionStringArray{ GetExternalDatabaseConnectorConnectionStringArgs{...} }
+//	GetExternalDatabaseConnectorConnectionStringArray{ GetExternalDatabaseConnectorConnectionStringArgs{...} }
 type GetExternalDatabaseConnectorConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -51903,7 +53649,7 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnector struct {
 // GetExternalDatabaseConnectorsExternalDatabaseConnectorInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs and GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorInput` via:
 //
-//          GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{...}
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{...}
 type GetExternalDatabaseConnectorsExternalDatabaseConnectorInput interface {
 	pulumi.Input
 
@@ -51959,7 +53705,7 @@ func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs) ToGetExterna
 // GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorArray and GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput` via:
 //
-//          GetExternalDatabaseConnectorsExternalDatabaseConnectorArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{...} }
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{...} }
 type GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput interface {
 	pulumi.Input
 
@@ -52118,7 +53864,7 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential 
 // GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput` via:
 //
-//          GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{...}
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{...}
 type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput interface {
 	pulumi.Input
 
@@ -52156,7 +53902,7 @@ func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredenti
 // GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput` via:
 //
-//          GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{...} }
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{...} }
 type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput interface {
 	pulumi.Input
 
@@ -52268,7 +54014,7 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString stru
 // GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput` via:
 //
-//          GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{...}
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{...}
 type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput interface {
 	pulumi.Input
 
@@ -52302,7 +54048,7 @@ func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringAr
 // GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput` via:
 //
-//          GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{...} }
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{...} }
 type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -52393,7 +54139,7 @@ type GetExternalDatabaseConnectorsFilter struct {
 // GetExternalDatabaseConnectorsFilterInput is an input type that accepts GetExternalDatabaseConnectorsFilterArgs and GetExternalDatabaseConnectorsFilterOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsFilterInput` via:
 //
-//          GetExternalDatabaseConnectorsFilterArgs{...}
+//	GetExternalDatabaseConnectorsFilterArgs{...}
 type GetExternalDatabaseConnectorsFilterInput interface {
 	pulumi.Input
 
@@ -52422,7 +54168,7 @@ func (i GetExternalDatabaseConnectorsFilterArgs) ToGetExternalDatabaseConnectors
 // GetExternalDatabaseConnectorsFilterArrayInput is an input type that accepts GetExternalDatabaseConnectorsFilterArray and GetExternalDatabaseConnectorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExternalDatabaseConnectorsFilterArrayInput` via:
 //
-//          GetExternalDatabaseConnectorsFilterArray{ GetExternalDatabaseConnectorsFilterArgs{...} }
+//	GetExternalDatabaseConnectorsFilterArray{ GetExternalDatabaseConnectorsFilterArgs{...} }
 type GetExternalDatabaseConnectorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -52502,7 +54248,7 @@ type GetExternalNonContainerDatabaseDatabaseManagementConfig struct {
 // GetExternalNonContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalNonContainerDatabaseDatabaseManagementConfigArgs and GetExternalNonContainerDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
+//	GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
 type GetExternalNonContainerDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -52534,7 +54280,7 @@ func (i GetExternalNonContainerDatabaseDatabaseManagementConfigArgs) ToGetExtern
 // GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseDatabaseManagementConfigArray and GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetExternalNonContainerDatabaseDatabaseManagementConfigArray{ GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
+//	GetExternalNonContainerDatabaseDatabaseManagementConfigArray{ GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
 type GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -52619,7 +54365,7 @@ type GetExternalNonContainerDatabaseOperationsInsightsConfig struct {
 // GetExternalNonContainerDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalNonContainerDatabaseOperationsInsightsConfigArgs and GetExternalNonContainerDatabaseOperationsInsightsConfigOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabaseOperationsInsightsConfigInput` via:
 //
-//          GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
+//	GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
 type GetExternalNonContainerDatabaseOperationsInsightsConfigInput interface {
 	pulumi.Input
 
@@ -52649,7 +54395,7 @@ func (i GetExternalNonContainerDatabaseOperationsInsightsConfigArgs) ToGetExtern
 // GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseOperationsInsightsConfigArray and GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput` via:
 //
-//          GetExternalNonContainerDatabaseOperationsInsightsConfigArray{ GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
+//	GetExternalNonContainerDatabaseOperationsInsightsConfigArray{ GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
 type GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput interface {
 	pulumi.Input
 
@@ -52729,7 +54475,7 @@ type GetExternalNonContainerDatabaseStackMonitoringConfig struct {
 // GetExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalNonContainerDatabaseStackMonitoringConfigArgs and GetExternalNonContainerDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabaseStackMonitoringConfigInput` via:
 //
-//          GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+//	GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
 type GetExternalNonContainerDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -52759,7 +54505,7 @@ func (i GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalN
 // GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseStackMonitoringConfigArray and GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          GetExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+//	GetExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
 type GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -52873,7 +54619,7 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabase struct {
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{...}
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{...}
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput interface {
 	pulumi.Input
 
@@ -52939,7 +54685,7 @@ func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs) ToGetE
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{...} }
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{...} }
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -53119,7 +54865,7 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagem
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -53151,7 +54897,7 @@ func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseMana
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -53238,7 +54984,7 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsig
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput interface {
 	pulumi.Input
 
@@ -53268,7 +55014,7 @@ func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsIn
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput interface {
 	pulumi.Input
 
@@ -53348,7 +55094,7 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoring
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -53378,7 +55124,7 @@ func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitor
 // GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
 type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -53457,7 +55203,7 @@ type GetExternalNonContainerDatabasesFilter struct {
 // GetExternalNonContainerDatabasesFilterInput is an input type that accepts GetExternalNonContainerDatabasesFilterArgs and GetExternalNonContainerDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesFilterInput` via:
 //
-//          GetExternalNonContainerDatabasesFilterArgs{...}
+//	GetExternalNonContainerDatabasesFilterArgs{...}
 type GetExternalNonContainerDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -53486,7 +55232,7 @@ func (i GetExternalNonContainerDatabasesFilterArgs) ToGetExternalNonContainerDat
 // GetExternalNonContainerDatabasesFilterArrayInput is an input type that accepts GetExternalNonContainerDatabasesFilterArray and GetExternalNonContainerDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetExternalNonContainerDatabasesFilterArrayInput` via:
 //
-//          GetExternalNonContainerDatabasesFilterArray{ GetExternalNonContainerDatabasesFilterArgs{...} }
+//	GetExternalNonContainerDatabasesFilterArray{ GetExternalNonContainerDatabasesFilterArgs{...} }
 type GetExternalNonContainerDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -53566,7 +55312,7 @@ type GetExternalPluggableDatabaseDatabaseManagementConfig struct {
 // GetExternalPluggableDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalPluggableDatabaseDatabaseManagementConfigArgs and GetExternalPluggableDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
+//	GetExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
 type GetExternalPluggableDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -53598,7 +55344,7 @@ func (i GetExternalPluggableDatabaseDatabaseManagementConfigArgs) ToGetExternalP
 // GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseDatabaseManagementConfigArray and GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetExternalPluggableDatabaseDatabaseManagementConfigArray{ GetExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
+//	GetExternalPluggableDatabaseDatabaseManagementConfigArray{ GetExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
 type GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -53681,7 +55427,7 @@ type GetExternalPluggableDatabaseOperationsInsightsConfig struct {
 // GetExternalPluggableDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalPluggableDatabaseOperationsInsightsConfigArgs and GetExternalPluggableDatabaseOperationsInsightsConfigOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabaseOperationsInsightsConfigInput` via:
 //
-//          GetExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
+//	GetExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
 type GetExternalPluggableDatabaseOperationsInsightsConfigInput interface {
 	pulumi.Input
 
@@ -53711,7 +55457,7 @@ func (i GetExternalPluggableDatabaseOperationsInsightsConfigArgs) ToGetExternalP
 // GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseOperationsInsightsConfigArray and GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput` via:
 //
-//          GetExternalPluggableDatabaseOperationsInsightsConfigArray{ GetExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
+//	GetExternalPluggableDatabaseOperationsInsightsConfigArray{ GetExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
 type GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput interface {
 	pulumi.Input
 
@@ -53789,7 +55535,7 @@ type GetExternalPluggableDatabaseStackMonitoringConfig struct {
 // GetExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalPluggableDatabaseStackMonitoringConfigArgs and GetExternalPluggableDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabaseStackMonitoringConfigInput` via:
 //
-//          GetExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+//	GetExternalPluggableDatabaseStackMonitoringConfigArgs{...}
 type GetExternalPluggableDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -53819,7 +55565,7 @@ func (i GetExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPlug
 // GetExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseStackMonitoringConfigArray and GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          GetExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+//	GetExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
 type GetExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -53935,7 +55681,7 @@ type GetExternalPluggableDatabasesExternalPluggableDatabase struct {
 // GetExternalPluggableDatabasesExternalPluggableDatabaseInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{...}
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{...}
 type GetExternalPluggableDatabasesExternalPluggableDatabaseInput interface {
 	pulumi.Input
 
@@ -54005,7 +55751,7 @@ func (i GetExternalPluggableDatabasesExternalPluggableDatabaseArgs) ToGetExterna
 // GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseArray and GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{...} }
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{...} }
 type GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -54195,7 +55941,7 @@ type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementCon
 // GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
 type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput interface {
 	pulumi.Input
 
@@ -54227,7 +55973,7 @@ func (i GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagement
 // GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
 type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput interface {
 	pulumi.Input
 
@@ -54314,7 +56060,7 @@ type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsCon
 // GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
 type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput interface {
 	pulumi.Input
 
@@ -54344,7 +56090,7 @@ func (i GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsights
 // GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
 type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput interface {
 	pulumi.Input
 
@@ -54424,7 +56170,7 @@ type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig
 // GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...}
 type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput interface {
 	pulumi.Input
 
@@ -54454,7 +56200,7 @@ func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringCon
 // GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
 //
-//          GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
 type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
 	pulumi.Input
 
@@ -54533,7 +56279,7 @@ type GetExternalPluggableDatabasesFilter struct {
 // GetExternalPluggableDatabasesFilterInput is an input type that accepts GetExternalPluggableDatabasesFilterArgs and GetExternalPluggableDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesFilterInput` via:
 //
-//          GetExternalPluggableDatabasesFilterArgs{...}
+//	GetExternalPluggableDatabasesFilterArgs{...}
 type GetExternalPluggableDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -54562,7 +56308,7 @@ func (i GetExternalPluggableDatabasesFilterArgs) ToGetExternalPluggableDatabases
 // GetExternalPluggableDatabasesFilterArrayInput is an input type that accepts GetExternalPluggableDatabasesFilterArray and GetExternalPluggableDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetExternalPluggableDatabasesFilterArrayInput` via:
 //
-//          GetExternalPluggableDatabasesFilterArray{ GetExternalPluggableDatabasesFilterArgs{...} }
+//	GetExternalPluggableDatabasesFilterArray{ GetExternalPluggableDatabasesFilterArgs{...} }
 type GetExternalPluggableDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -54640,7 +56386,7 @@ type GetFlexComponentsFilter struct {
 // GetFlexComponentsFilterInput is an input type that accepts GetFlexComponentsFilterArgs and GetFlexComponentsFilterOutput values.
 // You can construct a concrete instance of `GetFlexComponentsFilterInput` via:
 //
-//          GetFlexComponentsFilterArgs{...}
+//	GetFlexComponentsFilterArgs{...}
 type GetFlexComponentsFilterInput interface {
 	pulumi.Input
 
@@ -54670,7 +56416,7 @@ func (i GetFlexComponentsFilterArgs) ToGetFlexComponentsFilterOutputWithContext(
 // GetFlexComponentsFilterArrayInput is an input type that accepts GetFlexComponentsFilterArray and GetFlexComponentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFlexComponentsFilterArrayInput` via:
 //
-//          GetFlexComponentsFilterArray{ GetFlexComponentsFilterArgs{...} }
+//	GetFlexComponentsFilterArray{ GetFlexComponentsFilterArgs{...} }
 type GetFlexComponentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -54746,7 +56492,7 @@ type GetFlexComponentsFlexComponentCollection struct {
 // GetFlexComponentsFlexComponentCollectionInput is an input type that accepts GetFlexComponentsFlexComponentCollectionArgs and GetFlexComponentsFlexComponentCollectionOutput values.
 // You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionInput` via:
 //
-//          GetFlexComponentsFlexComponentCollectionArgs{...}
+//	GetFlexComponentsFlexComponentCollectionArgs{...}
 type GetFlexComponentsFlexComponentCollectionInput interface {
 	pulumi.Input
 
@@ -54773,7 +56519,7 @@ func (i GetFlexComponentsFlexComponentCollectionArgs) ToGetFlexComponentsFlexCom
 // GetFlexComponentsFlexComponentCollectionArrayInput is an input type that accepts GetFlexComponentsFlexComponentCollectionArray and GetFlexComponentsFlexComponentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionArrayInput` via:
 //
-//          GetFlexComponentsFlexComponentCollectionArray{ GetFlexComponentsFlexComponentCollectionArgs{...} }
+//	GetFlexComponentsFlexComponentCollectionArray{ GetFlexComponentsFlexComponentCollectionArgs{...} }
 type GetFlexComponentsFlexComponentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -54849,7 +56595,7 @@ type GetFlexComponentsFlexComponentCollectionItem struct {
 // GetFlexComponentsFlexComponentCollectionItemInput is an input type that accepts GetFlexComponentsFlexComponentCollectionItemArgs and GetFlexComponentsFlexComponentCollectionItemOutput values.
 // You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionItemInput` via:
 //
-//          GetFlexComponentsFlexComponentCollectionItemArgs{...}
+//	GetFlexComponentsFlexComponentCollectionItemArgs{...}
 type GetFlexComponentsFlexComponentCollectionItemInput interface {
 	pulumi.Input
 
@@ -54883,7 +56629,7 @@ func (i GetFlexComponentsFlexComponentCollectionItemArgs) ToGetFlexComponentsFle
 // GetFlexComponentsFlexComponentCollectionItemArrayInput is an input type that accepts GetFlexComponentsFlexComponentCollectionItemArray and GetFlexComponentsFlexComponentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionItemArrayInput` via:
 //
-//          GetFlexComponentsFlexComponentCollectionItemArray{ GetFlexComponentsFlexComponentCollectionItemArgs{...} }
+//	GetFlexComponentsFlexComponentCollectionItemArray{ GetFlexComponentsFlexComponentCollectionItemArgs{...} }
 type GetFlexComponentsFlexComponentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -54968,7 +56714,7 @@ type GetGiVersionsFilter struct {
 // GetGiVersionsFilterInput is an input type that accepts GetGiVersionsFilterArgs and GetGiVersionsFilterOutput values.
 // You can construct a concrete instance of `GetGiVersionsFilterInput` via:
 //
-//          GetGiVersionsFilterArgs{...}
+//	GetGiVersionsFilterArgs{...}
 type GetGiVersionsFilterInput interface {
 	pulumi.Input
 
@@ -54997,7 +56743,7 @@ func (i GetGiVersionsFilterArgs) ToGetGiVersionsFilterOutputWithContext(ctx cont
 // GetGiVersionsFilterArrayInput is an input type that accepts GetGiVersionsFilterArray and GetGiVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetGiVersionsFilterArrayInput` via:
 //
-//          GetGiVersionsFilterArray{ GetGiVersionsFilterArgs{...} }
+//	GetGiVersionsFilterArray{ GetGiVersionsFilterArgs{...} }
 type GetGiVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -55073,7 +56819,7 @@ type GetGiVersionsGiVersion struct {
 // GetGiVersionsGiVersionInput is an input type that accepts GetGiVersionsGiVersionArgs and GetGiVersionsGiVersionOutput values.
 // You can construct a concrete instance of `GetGiVersionsGiVersionInput` via:
 //
-//          GetGiVersionsGiVersionArgs{...}
+//	GetGiVersionsGiVersionArgs{...}
 type GetGiVersionsGiVersionInput interface {
 	pulumi.Input
 
@@ -55101,7 +56847,7 @@ func (i GetGiVersionsGiVersionArgs) ToGetGiVersionsGiVersionOutputWithContext(ct
 // GetGiVersionsGiVersionArrayInput is an input type that accepts GetGiVersionsGiVersionArray and GetGiVersionsGiVersionArrayOutput values.
 // You can construct a concrete instance of `GetGiVersionsGiVersionArrayInput` via:
 //
-//          GetGiVersionsGiVersionArray{ GetGiVersionsGiVersionArgs{...} }
+//	GetGiVersionsGiVersionArray{ GetGiVersionsGiVersionArgs{...} }
 type GetGiVersionsGiVersionArrayInput interface {
 	pulumi.Input
 
@@ -55172,7 +56918,7 @@ type GetKeyStoreAssociatedDatabase struct {
 // GetKeyStoreAssociatedDatabaseInput is an input type that accepts GetKeyStoreAssociatedDatabaseArgs and GetKeyStoreAssociatedDatabaseOutput values.
 // You can construct a concrete instance of `GetKeyStoreAssociatedDatabaseInput` via:
 //
-//          GetKeyStoreAssociatedDatabaseArgs{...}
+//	GetKeyStoreAssociatedDatabaseArgs{...}
 type GetKeyStoreAssociatedDatabaseInput interface {
 	pulumi.Input
 
@@ -55202,7 +56948,7 @@ func (i GetKeyStoreAssociatedDatabaseArgs) ToGetKeyStoreAssociatedDatabaseOutput
 // GetKeyStoreAssociatedDatabaseArrayInput is an input type that accepts GetKeyStoreAssociatedDatabaseArray and GetKeyStoreAssociatedDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetKeyStoreAssociatedDatabaseArrayInput` via:
 //
-//          GetKeyStoreAssociatedDatabaseArray{ GetKeyStoreAssociatedDatabaseArgs{...} }
+//	GetKeyStoreAssociatedDatabaseArray{ GetKeyStoreAssociatedDatabaseArgs{...} }
 type GetKeyStoreAssociatedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -55284,7 +57030,7 @@ type GetKeyStoreTypeDetail struct {
 // GetKeyStoreTypeDetailInput is an input type that accepts GetKeyStoreTypeDetailArgs and GetKeyStoreTypeDetailOutput values.
 // You can construct a concrete instance of `GetKeyStoreTypeDetailInput` via:
 //
-//          GetKeyStoreTypeDetailArgs{...}
+//	GetKeyStoreTypeDetailArgs{...}
 type GetKeyStoreTypeDetailInput interface {
 	pulumi.Input
 
@@ -55320,7 +57066,7 @@ func (i GetKeyStoreTypeDetailArgs) ToGetKeyStoreTypeDetailOutputWithContext(ctx 
 // GetKeyStoreTypeDetailArrayInput is an input type that accepts GetKeyStoreTypeDetailArray and GetKeyStoreTypeDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyStoreTypeDetailArrayInput` via:
 //
-//          GetKeyStoreTypeDetailArray{ GetKeyStoreTypeDetailArgs{...} }
+//	GetKeyStoreTypeDetailArray{ GetKeyStoreTypeDetailArgs{...} }
 type GetKeyStoreTypeDetailArrayInput interface {
 	pulumi.Input
 
@@ -55410,7 +57156,7 @@ type GetKeyStoresFilter struct {
 // GetKeyStoresFilterInput is an input type that accepts GetKeyStoresFilterArgs and GetKeyStoresFilterOutput values.
 // You can construct a concrete instance of `GetKeyStoresFilterInput` via:
 //
-//          GetKeyStoresFilterArgs{...}
+//	GetKeyStoresFilterArgs{...}
 type GetKeyStoresFilterInput interface {
 	pulumi.Input
 
@@ -55439,7 +57185,7 @@ func (i GetKeyStoresFilterArgs) ToGetKeyStoresFilterOutputWithContext(ctx contex
 // GetKeyStoresFilterArrayInput is an input type that accepts GetKeyStoresFilterArray and GetKeyStoresFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeyStoresFilterArrayInput` via:
 //
-//          GetKeyStoresFilterArray{ GetKeyStoresFilterArgs{...} }
+//	GetKeyStoresFilterArray{ GetKeyStoresFilterArgs{...} }
 type GetKeyStoresFilterArrayInput interface {
 	pulumi.Input
 
@@ -55533,7 +57279,7 @@ type GetKeyStoresKeyStore struct {
 // GetKeyStoresKeyStoreInput is an input type that accepts GetKeyStoresKeyStoreArgs and GetKeyStoresKeyStoreOutput values.
 // You can construct a concrete instance of `GetKeyStoresKeyStoreInput` via:
 //
-//          GetKeyStoresKeyStoreArgs{...}
+//	GetKeyStoresKeyStoreArgs{...}
 type GetKeyStoresKeyStoreInput interface {
 	pulumi.Input
 
@@ -55579,7 +57325,7 @@ func (i GetKeyStoresKeyStoreArgs) ToGetKeyStoresKeyStoreOutputWithContext(ctx co
 // GetKeyStoresKeyStoreArrayInput is an input type that accepts GetKeyStoresKeyStoreArray and GetKeyStoresKeyStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeyStoresKeyStoreArrayInput` via:
 //
-//          GetKeyStoresKeyStoreArray{ GetKeyStoresKeyStoreArgs{...} }
+//	GetKeyStoresKeyStoreArray{ GetKeyStoresKeyStoreArgs{...} }
 type GetKeyStoresKeyStoreArrayInput interface {
 	pulumi.Input
 
@@ -55695,7 +57441,7 @@ type GetKeyStoresKeyStoreAssociatedDatabase struct {
 // GetKeyStoresKeyStoreAssociatedDatabaseInput is an input type that accepts GetKeyStoresKeyStoreAssociatedDatabaseArgs and GetKeyStoresKeyStoreAssociatedDatabaseOutput values.
 // You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedDatabaseInput` via:
 //
-//          GetKeyStoresKeyStoreAssociatedDatabaseArgs{...}
+//	GetKeyStoresKeyStoreAssociatedDatabaseArgs{...}
 type GetKeyStoresKeyStoreAssociatedDatabaseInput interface {
 	pulumi.Input
 
@@ -55725,7 +57471,7 @@ func (i GetKeyStoresKeyStoreAssociatedDatabaseArgs) ToGetKeyStoresKeyStoreAssoci
 // GetKeyStoresKeyStoreAssociatedDatabaseArrayInput is an input type that accepts GetKeyStoresKeyStoreAssociatedDatabaseArray and GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedDatabaseArrayInput` via:
 //
-//          GetKeyStoresKeyStoreAssociatedDatabaseArray{ GetKeyStoresKeyStoreAssociatedDatabaseArgs{...} }
+//	GetKeyStoresKeyStoreAssociatedDatabaseArray{ GetKeyStoresKeyStoreAssociatedDatabaseArgs{...} }
 type GetKeyStoresKeyStoreAssociatedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -55807,7 +57553,7 @@ type GetKeyStoresKeyStoreTypeDetail struct {
 // GetKeyStoresKeyStoreTypeDetailInput is an input type that accepts GetKeyStoresKeyStoreTypeDetailArgs and GetKeyStoresKeyStoreTypeDetailOutput values.
 // You can construct a concrete instance of `GetKeyStoresKeyStoreTypeDetailInput` via:
 //
-//          GetKeyStoresKeyStoreTypeDetailArgs{...}
+//	GetKeyStoresKeyStoreTypeDetailArgs{...}
 type GetKeyStoresKeyStoreTypeDetailInput interface {
 	pulumi.Input
 
@@ -55843,7 +57589,7 @@ func (i GetKeyStoresKeyStoreTypeDetailArgs) ToGetKeyStoresKeyStoreTypeDetailOutp
 // GetKeyStoresKeyStoreTypeDetailArrayInput is an input type that accepts GetKeyStoresKeyStoreTypeDetailArray and GetKeyStoresKeyStoreTypeDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyStoresKeyStoreTypeDetailArrayInput` via:
 //
-//          GetKeyStoresKeyStoreTypeDetailArray{ GetKeyStoresKeyStoreTypeDetailArgs{...} }
+//	GetKeyStoresKeyStoreTypeDetailArray{ GetKeyStoresKeyStoreTypeDetailArgs{...} }
 type GetKeyStoresKeyStoreTypeDetailArrayInput interface {
 	pulumi.Input
 
@@ -55938,7 +57684,7 @@ type GetMaintenanceRunEstimatedPatchingTime struct {
 // GetMaintenanceRunEstimatedPatchingTimeInput is an input type that accepts GetMaintenanceRunEstimatedPatchingTimeArgs and GetMaintenanceRunEstimatedPatchingTimeOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunEstimatedPatchingTimeInput` via:
 //
-//          GetMaintenanceRunEstimatedPatchingTimeArgs{...}
+//	GetMaintenanceRunEstimatedPatchingTimeArgs{...}
 type GetMaintenanceRunEstimatedPatchingTimeInput interface {
 	pulumi.Input
 
@@ -55972,7 +57718,7 @@ func (i GetMaintenanceRunEstimatedPatchingTimeArgs) ToGetMaintenanceRunEstimated
 // GetMaintenanceRunEstimatedPatchingTimeArrayInput is an input type that accepts GetMaintenanceRunEstimatedPatchingTimeArray and GetMaintenanceRunEstimatedPatchingTimeArrayOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunEstimatedPatchingTimeArrayInput` via:
 //
-//          GetMaintenanceRunEstimatedPatchingTimeArray{ GetMaintenanceRunEstimatedPatchingTimeArgs{...} }
+//	GetMaintenanceRunEstimatedPatchingTimeArray{ GetMaintenanceRunEstimatedPatchingTimeArgs{...} }
 type GetMaintenanceRunEstimatedPatchingTimeArrayInput interface {
 	pulumi.Input
 
@@ -56057,7 +57803,7 @@ type GetMaintenanceRunsFilter struct {
 // GetMaintenanceRunsFilterInput is an input type that accepts GetMaintenanceRunsFilterArgs and GetMaintenanceRunsFilterOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunsFilterInput` via:
 //
-//          GetMaintenanceRunsFilterArgs{...}
+//	GetMaintenanceRunsFilterArgs{...}
 type GetMaintenanceRunsFilterInput interface {
 	pulumi.Input
 
@@ -56086,7 +57832,7 @@ func (i GetMaintenanceRunsFilterArgs) ToGetMaintenanceRunsFilterOutputWithContex
 // GetMaintenanceRunsFilterArrayInput is an input type that accepts GetMaintenanceRunsFilterArray and GetMaintenanceRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunsFilterArrayInput` via:
 //
-//          GetMaintenanceRunsFilterArray{ GetMaintenanceRunsFilterArgs{...} }
+//	GetMaintenanceRunsFilterArray{ GetMaintenanceRunsFilterArgs{...} }
 type GetMaintenanceRunsFilterArrayInput interface {
 	pulumi.Input
 
@@ -56181,7 +57927,7 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	MaintenanceRunId string `pulumi:"maintenanceRunId"`
-	// Maintenance sub-type.
+	// The sub-type of the maintenance run.
 	MaintenanceSubtype string `pulumi:"maintenanceSubtype"`
 	// The maintenance type.
 	MaintenanceType string `pulumi:"maintenanceType"`
@@ -56220,7 +57966,7 @@ type GetMaintenanceRunsMaintenanceRun struct {
 // GetMaintenanceRunsMaintenanceRunInput is an input type that accepts GetMaintenanceRunsMaintenanceRunArgs and GetMaintenanceRunsMaintenanceRunOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunInput` via:
 //
-//          GetMaintenanceRunsMaintenanceRunArgs{...}
+//	GetMaintenanceRunsMaintenanceRunArgs{...}
 type GetMaintenanceRunsMaintenanceRunInput interface {
 	pulumi.Input
 
@@ -56255,7 +58001,7 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	MaintenanceRunId pulumi.StringInput `pulumi:"maintenanceRunId"`
-	// Maintenance sub-type.
+	// The sub-type of the maintenance run.
 	MaintenanceSubtype pulumi.StringInput `pulumi:"maintenanceSubtype"`
 	// The maintenance type.
 	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
@@ -56306,7 +58052,7 @@ func (i GetMaintenanceRunsMaintenanceRunArgs) ToGetMaintenanceRunsMaintenanceRun
 // GetMaintenanceRunsMaintenanceRunArrayInput is an input type that accepts GetMaintenanceRunsMaintenanceRunArray and GetMaintenanceRunsMaintenanceRunArrayOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunArrayInput` via:
 //
-//          GetMaintenanceRunsMaintenanceRunArray{ GetMaintenanceRunsMaintenanceRunArgs{...} }
+//	GetMaintenanceRunsMaintenanceRunArray{ GetMaintenanceRunsMaintenanceRunArgs{...} }
 type GetMaintenanceRunsMaintenanceRunArrayInput interface {
 	pulumi.Input
 
@@ -56415,7 +58161,7 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) MaintenanceRunId() pulumi.String
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.MaintenanceRunId }).(pulumi.StringOutput)
 }
 
-// Maintenance sub-type.
+// The sub-type of the maintenance run.
 func (o GetMaintenanceRunsMaintenanceRunOutput) MaintenanceSubtype() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.MaintenanceSubtype }).(pulumi.StringOutput)
 }
@@ -56534,7 +58280,7 @@ type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime struct {
 // GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput is an input type that accepts GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs and GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput` via:
 //
-//          GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{...}
+//	GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{...}
 type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput interface {
 	pulumi.Input
 
@@ -56568,7 +58314,7 @@ func (i GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs) ToGetMaintena
 // GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput is an input type that accepts GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray and GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput values.
 // You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput` via:
 //
-//          GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray{ GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{...} }
+//	GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray{ GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{...} }
 type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput interface {
 	pulumi.Input
 
@@ -56662,7 +58408,7 @@ type GetPluggableDatabaseConnectionString struct {
 // GetPluggableDatabaseConnectionStringInput is an input type that accepts GetPluggableDatabaseConnectionStringArgs and GetPluggableDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetPluggableDatabaseConnectionStringInput` via:
 //
-//          GetPluggableDatabaseConnectionStringArgs{...}
+//	GetPluggableDatabaseConnectionStringArgs{...}
 type GetPluggableDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -56694,7 +58440,7 @@ func (i GetPluggableDatabaseConnectionStringArgs) ToGetPluggableDatabaseConnecti
 // GetPluggableDatabaseConnectionStringArrayInput is an input type that accepts GetPluggableDatabaseConnectionStringArray and GetPluggableDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetPluggableDatabaseConnectionStringArrayInput` via:
 //
-//          GetPluggableDatabaseConnectionStringArray{ GetPluggableDatabaseConnectionStringArgs{...} }
+//	GetPluggableDatabaseConnectionStringArray{ GetPluggableDatabaseConnectionStringArgs{...} }
 type GetPluggableDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -56774,7 +58520,7 @@ type GetPluggableDatabasesFilter struct {
 // GetPluggableDatabasesFilterInput is an input type that accepts GetPluggableDatabasesFilterArgs and GetPluggableDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetPluggableDatabasesFilterInput` via:
 //
-//          GetPluggableDatabasesFilterArgs{...}
+//	GetPluggableDatabasesFilterArgs{...}
 type GetPluggableDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -56803,7 +58549,7 @@ func (i GetPluggableDatabasesFilterArgs) ToGetPluggableDatabasesFilterOutputWith
 // GetPluggableDatabasesFilterArrayInput is an input type that accepts GetPluggableDatabasesFilterArray and GetPluggableDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPluggableDatabasesFilterArrayInput` via:
 //
-//          GetPluggableDatabasesFilterArray{ GetPluggableDatabasesFilterArgs{...} }
+//	GetPluggableDatabasesFilterArray{ GetPluggableDatabasesFilterArgs{...} }
 type GetPluggableDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -56904,7 +58650,7 @@ type GetPluggableDatabasesPluggableDatabase struct {
 // GetPluggableDatabasesPluggableDatabaseInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseArgs and GetPluggableDatabasesPluggableDatabaseOutput values.
 // You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseInput` via:
 //
-//          GetPluggableDatabasesPluggableDatabaseArgs{...}
+//	GetPluggableDatabasesPluggableDatabaseArgs{...}
 type GetPluggableDatabasesPluggableDatabaseInput interface {
 	pulumi.Input
 
@@ -56957,7 +58703,7 @@ func (i GetPluggableDatabasesPluggableDatabaseArgs) ToGetPluggableDatabasesPlugg
 // GetPluggableDatabasesPluggableDatabaseArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseArray and GetPluggableDatabasesPluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseArrayInput` via:
 //
-//          GetPluggableDatabasesPluggableDatabaseArray{ GetPluggableDatabasesPluggableDatabaseArgs{...} }
+//	GetPluggableDatabasesPluggableDatabaseArray{ GetPluggableDatabasesPluggableDatabaseArgs{...} }
 type GetPluggableDatabasesPluggableDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -57099,7 +58845,7 @@ type GetPluggableDatabasesPluggableDatabaseConnectionString struct {
 // GetPluggableDatabasesPluggableDatabaseConnectionStringInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseConnectionStringArgs and GetPluggableDatabasesPluggableDatabaseConnectionStringOutput values.
 // You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseConnectionStringInput` via:
 //
-//          GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{...}
+//	GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{...}
 type GetPluggableDatabasesPluggableDatabaseConnectionStringInput interface {
 	pulumi.Input
 
@@ -57131,7 +58877,7 @@ func (i GetPluggableDatabasesPluggableDatabaseConnectionStringArgs) ToGetPluggab
 // GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseConnectionStringArray and GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput values.
 // You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput` via:
 //
-//          GetPluggableDatabasesPluggableDatabaseConnectionStringArray{ GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{...} }
+//	GetPluggableDatabasesPluggableDatabaseConnectionStringArray{ GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{...} }
 type GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput interface {
 	pulumi.Input
 
@@ -57212,7 +58958,7 @@ type GetVmClusterDataCollectionOption struct {
 // GetVmClusterDataCollectionOptionInput is an input type that accepts GetVmClusterDataCollectionOptionArgs and GetVmClusterDataCollectionOptionOutput values.
 // You can construct a concrete instance of `GetVmClusterDataCollectionOptionInput` via:
 //
-//          GetVmClusterDataCollectionOptionArgs{...}
+//	GetVmClusterDataCollectionOptionArgs{...}
 type GetVmClusterDataCollectionOptionInput interface {
 	pulumi.Input
 
@@ -57240,7 +58986,7 @@ func (i GetVmClusterDataCollectionOptionArgs) ToGetVmClusterDataCollectionOption
 // GetVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClusterDataCollectionOptionArray and GetVmClusterDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterDataCollectionOptionArrayInput` via:
 //
-//          GetVmClusterDataCollectionOptionArray{ GetVmClusterDataCollectionOptionArgs{...} }
+//	GetVmClusterDataCollectionOptionArray{ GetVmClusterDataCollectionOptionArgs{...} }
 type GetVmClusterDataCollectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -57317,7 +59063,7 @@ type GetVmClusterNetworkScan struct {
 // GetVmClusterNetworkScanInput is an input type that accepts GetVmClusterNetworkScanArgs and GetVmClusterNetworkScanOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkScanInput` via:
 //
-//          GetVmClusterNetworkScanArgs{...}
+//	GetVmClusterNetworkScanArgs{...}
 type GetVmClusterNetworkScanInput interface {
 	pulumi.Input
 
@@ -57353,7 +59099,7 @@ func (i GetVmClusterNetworkScanArgs) ToGetVmClusterNetworkScanOutputWithContext(
 // GetVmClusterNetworkScanArrayInput is an input type that accepts GetVmClusterNetworkScanArray and GetVmClusterNetworkScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkScanArrayInput` via:
 //
-//          GetVmClusterNetworkScanArray{ GetVmClusterNetworkScanArgs{...} }
+//	GetVmClusterNetworkScanArray{ GetVmClusterNetworkScanArgs{...} }
 type GetVmClusterNetworkScanArrayInput interface {
 	pulumi.Input
 
@@ -57452,7 +59198,7 @@ type GetVmClusterNetworkVmNetwork struct {
 // GetVmClusterNetworkVmNetworkInput is an input type that accepts GetVmClusterNetworkVmNetworkArgs and GetVmClusterNetworkVmNetworkOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkVmNetworkInput` via:
 //
-//          GetVmClusterNetworkVmNetworkArgs{...}
+//	GetVmClusterNetworkVmNetworkArgs{...}
 type GetVmClusterNetworkVmNetworkInput interface {
 	pulumi.Input
 
@@ -57490,7 +59236,7 @@ func (i GetVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworkVmNetworkOutputWi
 // GetVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkArray and GetVmClusterNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkVmNetworkArrayInput` via:
 //
-//          GetVmClusterNetworkVmNetworkArray{ GetVmClusterNetworkVmNetworkArgs{...} }
+//	GetVmClusterNetworkVmNetworkArray{ GetVmClusterNetworkVmNetworkArgs{...} }
 type GetVmClusterNetworkVmNetworkArrayInput interface {
 	pulumi.Input
 
@@ -57590,7 +59336,7 @@ type GetVmClusterNetworkVmNetworkNode struct {
 // GetVmClusterNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArgs and GetVmClusterNetworkVmNetworkNodeOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkVmNetworkNodeInput` via:
 //
-//          GetVmClusterNetworkVmNetworkNodeArgs{...}
+//	GetVmClusterNetworkVmNetworkNodeArgs{...}
 type GetVmClusterNetworkVmNetworkNodeInput interface {
 	pulumi.Input
 
@@ -57624,7 +59370,7 @@ func (i GetVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworkVmNetworkNode
 // GetVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkVmNetworkNodeArrayInput` via:
 //
-//          GetVmClusterNetworkVmNetworkNodeArray{ GetVmClusterNetworkVmNetworkNodeArgs{...} }
+//	GetVmClusterNetworkVmNetworkNodeArray{ GetVmClusterNetworkVmNetworkNodeArgs{...} }
 type GetVmClusterNetworkVmNetworkNodeArrayInput interface {
 	pulumi.Input
 
@@ -57709,7 +59455,7 @@ type GetVmClusterNetworksFilter struct {
 // GetVmClusterNetworksFilterInput is an input type that accepts GetVmClusterNetworksFilterArgs and GetVmClusterNetworksFilterOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksFilterInput` via:
 //
-//          GetVmClusterNetworksFilterArgs{...}
+//	GetVmClusterNetworksFilterArgs{...}
 type GetVmClusterNetworksFilterInput interface {
 	pulumi.Input
 
@@ -57738,7 +59484,7 @@ func (i GetVmClusterNetworksFilterArgs) ToGetVmClusterNetworksFilterOutputWithCo
 // GetVmClusterNetworksFilterArrayInput is an input type that accepts GetVmClusterNetworksFilterArray and GetVmClusterNetworksFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksFilterArrayInput` via:
 //
-//          GetVmClusterNetworksFilterArray{ GetVmClusterNetworksFilterArgs{...} }
+//	GetVmClusterNetworksFilterArray{ GetVmClusterNetworksFilterArgs{...} }
 type GetVmClusterNetworksFilterArrayInput interface {
 	pulumi.Input
 
@@ -57841,7 +59587,7 @@ type GetVmClusterNetworksVmClusterNetwork struct {
 // GetVmClusterNetworksVmClusterNetworkInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkArgs and GetVmClusterNetworksVmClusterNetworkOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkArgs{...}
+//	GetVmClusterNetworksVmClusterNetworkArgs{...}
 type GetVmClusterNetworksVmClusterNetworkInput interface {
 	pulumi.Input
 
@@ -57896,7 +59642,7 @@ func (i GetVmClusterNetworksVmClusterNetworkArgs) ToGetVmClusterNetworksVmCluste
 // GetVmClusterNetworksVmClusterNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkArray and GetVmClusterNetworksVmClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkArrayInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkArray{ GetVmClusterNetworksVmClusterNetworkArgs{...} }
+//	GetVmClusterNetworksVmClusterNetworkArray{ GetVmClusterNetworksVmClusterNetworkArgs{...} }
 type GetVmClusterNetworksVmClusterNetworkArrayInput interface {
 	pulumi.Input
 
@@ -58046,7 +59792,7 @@ type GetVmClusterNetworksVmClusterNetworkScan struct {
 // GetVmClusterNetworksVmClusterNetworkScanInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArgs and GetVmClusterNetworksVmClusterNetworkScanOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkScanInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkScanArgs{...}
+//	GetVmClusterNetworksVmClusterNetworkScanArgs{...}
 type GetVmClusterNetworksVmClusterNetworkScanInput interface {
 	pulumi.Input
 
@@ -58082,7 +59828,7 @@ func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToGetVmClusterNetworksVmCl
 // GetVmClusterNetworksVmClusterNetworkScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArray and GetVmClusterNetworksVmClusterNetworkScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkScanArrayInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkScanArray{ GetVmClusterNetworksVmClusterNetworkScanArgs{...} }
+//	GetVmClusterNetworksVmClusterNetworkScanArray{ GetVmClusterNetworksVmClusterNetworkScanArgs{...} }
 type GetVmClusterNetworksVmClusterNetworkScanArrayInput interface {
 	pulumi.Input
 
@@ -58181,7 +59927,7 @@ type GetVmClusterNetworksVmClusterNetworkVmNetwork struct {
 // GetVmClusterNetworksVmClusterNetworkVmNetworkInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArgs and GetVmClusterNetworksVmClusterNetworkVmNetworkOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{...}
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{...}
 type GetVmClusterNetworksVmClusterNetworkVmNetworkInput interface {
 	pulumi.Input
 
@@ -58219,7 +59965,7 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetwork
 // GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArray and GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkVmNetworkArray{ GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{...} }
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkArray{ GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{...} }
 type GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput interface {
 	pulumi.Input
 
@@ -58321,7 +60067,7 @@ type GetVmClusterNetworksVmClusterNetworkVmNetworkNode struct {
 // GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{...}
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{...}
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput interface {
 	pulumi.Input
 
@@ -58355,7 +60101,7 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNet
 // GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput` via:
 //
-//          GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray{ GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{...} }
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray{ GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{...} }
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput interface {
 	pulumi.Input
 
@@ -58440,7 +60186,7 @@ type GetVmClusterPatchHistoryEntriesFilter struct {
 // GetVmClusterPatchHistoryEntriesFilterInput is an input type that accepts GetVmClusterPatchHistoryEntriesFilterArgs and GetVmClusterPatchHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesFilterInput` via:
 //
-//          GetVmClusterPatchHistoryEntriesFilterArgs{...}
+//	GetVmClusterPatchHistoryEntriesFilterArgs{...}
 type GetVmClusterPatchHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -58469,7 +60215,7 @@ func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToGetVmClusterPatchHistoryEnt
 // GetVmClusterPatchHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesFilterArray and GetVmClusterPatchHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesFilterArrayInput` via:
 //
-//          GetVmClusterPatchHistoryEntriesFilterArray{ GetVmClusterPatchHistoryEntriesFilterArgs{...} }
+//	GetVmClusterPatchHistoryEntriesFilterArray{ GetVmClusterPatchHistoryEntriesFilterArgs{...} }
 type GetVmClusterPatchHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -58557,7 +60303,7 @@ type GetVmClusterPatchHistoryEntriesPatchHistoryEntry struct {
 // GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs and GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput` via:
 //
-//          GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{...}
+//	GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{...}
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput interface {
 	pulumi.Input
 
@@ -58597,7 +60343,7 @@ func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToGetVmClusterPatc
 // GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray and GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput` via:
 //
-//          GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray{ GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{...} }
+//	GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray{ GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{...} }
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -58697,7 +60443,7 @@ type GetVmClusterPatchesFilter struct {
 // GetVmClusterPatchesFilterInput is an input type that accepts GetVmClusterPatchesFilterArgs and GetVmClusterPatchesFilterOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesFilterInput` via:
 //
-//          GetVmClusterPatchesFilterArgs{...}
+//	GetVmClusterPatchesFilterArgs{...}
 type GetVmClusterPatchesFilterInput interface {
 	pulumi.Input
 
@@ -58726,7 +60472,7 @@ func (i GetVmClusterPatchesFilterArgs) ToGetVmClusterPatchesFilterOutputWithCont
 // GetVmClusterPatchesFilterArrayInput is an input type that accepts GetVmClusterPatchesFilterArray and GetVmClusterPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesFilterArrayInput` via:
 //
-//          GetVmClusterPatchesFilterArray{ GetVmClusterPatchesFilterArgs{...} }
+//	GetVmClusterPatchesFilterArray{ GetVmClusterPatchesFilterArgs{...} }
 type GetVmClusterPatchesFilterArrayInput interface {
 	pulumi.Input
 
@@ -58816,7 +60562,7 @@ type GetVmClusterPatchesPatch struct {
 // GetVmClusterPatchesPatchInput is an input type that accepts GetVmClusterPatchesPatchArgs and GetVmClusterPatchesPatchOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesPatchInput` via:
 //
-//          GetVmClusterPatchesPatchArgs{...}
+//	GetVmClusterPatchesPatchArgs{...}
 type GetVmClusterPatchesPatchInput interface {
 	pulumi.Input
 
@@ -58858,7 +60604,7 @@ func (i GetVmClusterPatchesPatchArgs) ToGetVmClusterPatchesPatchOutputWithContex
 // GetVmClusterPatchesPatchArrayInput is an input type that accepts GetVmClusterPatchesPatchArray and GetVmClusterPatchesPatchArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesPatchArrayInput` via:
 //
-//          GetVmClusterPatchesPatchArray{ GetVmClusterPatchesPatchArgs{...} }
+//	GetVmClusterPatchesPatchArray{ GetVmClusterPatchesPatchArgs{...} }
 type GetVmClusterPatchesPatchArrayInput interface {
 	pulumi.Input
 
@@ -58974,7 +60720,7 @@ type GetVmClusterRecommendedNetworkNetwork struct {
 // GetVmClusterRecommendedNetworkNetworkInput is an input type that accepts GetVmClusterRecommendedNetworkNetworkArgs and GetVmClusterRecommendedNetworkNetworkOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkNetworkInput` via:
 //
-//          GetVmClusterRecommendedNetworkNetworkArgs{...}
+//	GetVmClusterRecommendedNetworkNetworkArgs{...}
 type GetVmClusterRecommendedNetworkNetworkInput interface {
 	pulumi.Input
 
@@ -59014,7 +60760,7 @@ func (i GetVmClusterRecommendedNetworkNetworkArgs) ToGetVmClusterRecommendedNetw
 // GetVmClusterRecommendedNetworkNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkNetworkArray and GetVmClusterRecommendedNetworkNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkNetworkArrayInput` via:
 //
-//          GetVmClusterRecommendedNetworkNetworkArray{ GetVmClusterRecommendedNetworkNetworkArgs{...} }
+//	GetVmClusterRecommendedNetworkNetworkArray{ GetVmClusterRecommendedNetworkNetworkArgs{...} }
 type GetVmClusterRecommendedNetworkNetworkArrayInput interface {
 	pulumi.Input
 
@@ -59121,7 +60867,7 @@ type GetVmClusterRecommendedNetworkScan struct {
 // GetVmClusterRecommendedNetworkScanInput is an input type that accepts GetVmClusterRecommendedNetworkScanArgs and GetVmClusterRecommendedNetworkScanOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkScanInput` via:
 //
-//          GetVmClusterRecommendedNetworkScanArgs{...}
+//	GetVmClusterRecommendedNetworkScanArgs{...}
 type GetVmClusterRecommendedNetworkScanInput interface {
 	pulumi.Input
 
@@ -59157,7 +60903,7 @@ func (i GetVmClusterRecommendedNetworkScanArgs) ToGetVmClusterRecommendedNetwork
 // GetVmClusterRecommendedNetworkScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkScanArray and GetVmClusterRecommendedNetworkScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkScanArrayInput` via:
 //
-//          GetVmClusterRecommendedNetworkScanArray{ GetVmClusterRecommendedNetworkScanArgs{...} }
+//	GetVmClusterRecommendedNetworkScanArray{ GetVmClusterRecommendedNetworkScanArgs{...} }
 type GetVmClusterRecommendedNetworkScanArrayInput interface {
 	pulumi.Input
 
@@ -59256,7 +61002,7 @@ type GetVmClusterRecommendedNetworkVmNetwork struct {
 // GetVmClusterRecommendedNetworkVmNetworkInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArgs and GetVmClusterRecommendedNetworkVmNetworkOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkInput` via:
 //
-//          GetVmClusterRecommendedNetworkVmNetworkArgs{...}
+//	GetVmClusterRecommendedNetworkVmNetworkArgs{...}
 type GetVmClusterRecommendedNetworkVmNetworkInput interface {
 	pulumi.Input
 
@@ -59294,7 +61040,7 @@ func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToGetVmClusterRecommendedNe
 // GetVmClusterRecommendedNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArray and GetVmClusterRecommendedNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkArrayInput` via:
 //
-//          GetVmClusterRecommendedNetworkVmNetworkArray{ GetVmClusterRecommendedNetworkVmNetworkArgs{...} }
+//	GetVmClusterRecommendedNetworkVmNetworkArray{ GetVmClusterRecommendedNetworkVmNetworkArgs{...} }
 type GetVmClusterRecommendedNetworkVmNetworkArrayInput interface {
 	pulumi.Input
 
@@ -59396,7 +61142,7 @@ type GetVmClusterRecommendedNetworkVmNetworkNode struct {
 // GetVmClusterRecommendedNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArgs and GetVmClusterRecommendedNetworkVmNetworkNodeOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkNodeInput` via:
 //
-//          GetVmClusterRecommendedNetworkVmNetworkNodeArgs{...}
+//	GetVmClusterRecommendedNetworkVmNetworkNodeArgs{...}
 type GetVmClusterRecommendedNetworkVmNetworkNodeInput interface {
 	pulumi.Input
 
@@ -59430,7 +61176,7 @@ func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToGetVmClusterRecommend
 // GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArray and GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput` via:
 //
-//          GetVmClusterRecommendedNetworkVmNetworkNodeArray{ GetVmClusterRecommendedNetworkVmNetworkNodeArgs{...} }
+//	GetVmClusterRecommendedNetworkVmNetworkNodeArray{ GetVmClusterRecommendedNetworkVmNetworkNodeArgs{...} }
 type GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput interface {
 	pulumi.Input
 
@@ -59515,7 +61261,7 @@ type GetVmClusterUpdateHistoryEntriesFilter struct {
 // GetVmClusterUpdateHistoryEntriesFilterInput is an input type that accepts GetVmClusterUpdateHistoryEntriesFilterArgs and GetVmClusterUpdateHistoryEntriesFilterOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesFilterInput` via:
 //
-//          GetVmClusterUpdateHistoryEntriesFilterArgs{...}
+//	GetVmClusterUpdateHistoryEntriesFilterArgs{...}
 type GetVmClusterUpdateHistoryEntriesFilterInput interface {
 	pulumi.Input
 
@@ -59544,7 +61290,7 @@ func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToGetVmClusterUpdateHistoryE
 // GetVmClusterUpdateHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesFilterArray and GetVmClusterUpdateHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesFilterArrayInput` via:
 //
-//          GetVmClusterUpdateHistoryEntriesFilterArray{ GetVmClusterUpdateHistoryEntriesFilterArgs{...} }
+//	GetVmClusterUpdateHistoryEntriesFilterArray{ GetVmClusterUpdateHistoryEntriesFilterArgs{...} }
 type GetVmClusterUpdateHistoryEntriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -59634,7 +61380,7 @@ type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry struct {
 // GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput` via:
 //
-//          GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{...}
+//	GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{...}
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput interface {
 	pulumi.Input
 
@@ -59676,7 +61422,7 @@ func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToGetVm
 // GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput` via:
 //
-//          GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray{ GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{...} }
+//	GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray{ GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{...} }
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput interface {
 	pulumi.Input
 
@@ -59781,7 +61527,7 @@ type GetVmClusterUpdatesFilter struct {
 // GetVmClusterUpdatesFilterInput is an input type that accepts GetVmClusterUpdatesFilterArgs and GetVmClusterUpdatesFilterOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesFilterInput` via:
 //
-//          GetVmClusterUpdatesFilterArgs{...}
+//	GetVmClusterUpdatesFilterArgs{...}
 type GetVmClusterUpdatesFilterInput interface {
 	pulumi.Input
 
@@ -59810,7 +61556,7 @@ func (i GetVmClusterUpdatesFilterArgs) ToGetVmClusterUpdatesFilterOutputWithCont
 // GetVmClusterUpdatesFilterArrayInput is an input type that accepts GetVmClusterUpdatesFilterArray and GetVmClusterUpdatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesFilterArrayInput` via:
 //
-//          GetVmClusterUpdatesFilterArray{ GetVmClusterUpdatesFilterArgs{...} }
+//	GetVmClusterUpdatesFilterArray{ GetVmClusterUpdatesFilterArgs{...} }
 type GetVmClusterUpdatesFilterArrayInput interface {
 	pulumi.Input
 
@@ -59902,7 +61648,7 @@ type GetVmClusterUpdatesVmClusterUpdate struct {
 // GetVmClusterUpdatesVmClusterUpdateInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArgs and GetVmClusterUpdatesVmClusterUpdateOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesVmClusterUpdateInput` via:
 //
-//          GetVmClusterUpdatesVmClusterUpdateArgs{...}
+//	GetVmClusterUpdatesVmClusterUpdateArgs{...}
 type GetVmClusterUpdatesVmClusterUpdateInput interface {
 	pulumi.Input
 
@@ -59946,7 +61692,7 @@ func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToGetVmClusterUpdatesVmClusterUp
 // GetVmClusterUpdatesVmClusterUpdateArrayInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArray and GetVmClusterUpdatesVmClusterUpdateArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesVmClusterUpdateArrayInput` via:
 //
-//          GetVmClusterUpdatesVmClusterUpdateArray{ GetVmClusterUpdatesVmClusterUpdateArgs{...} }
+//	GetVmClusterUpdatesVmClusterUpdateArray{ GetVmClusterUpdatesVmClusterUpdateArgs{...} }
 type GetVmClusterUpdatesVmClusterUpdateArrayInput interface {
 	pulumi.Input
 
@@ -60056,7 +61802,7 @@ type GetVmClustersFilter struct {
 // GetVmClustersFilterInput is an input type that accepts GetVmClustersFilterArgs and GetVmClustersFilterOutput values.
 // You can construct a concrete instance of `GetVmClustersFilterInput` via:
 //
-//          GetVmClustersFilterArgs{...}
+//	GetVmClustersFilterArgs{...}
 type GetVmClustersFilterInput interface {
 	pulumi.Input
 
@@ -60085,7 +61831,7 @@ func (i GetVmClustersFilterArgs) ToGetVmClustersFilterOutputWithContext(ctx cont
 // GetVmClustersFilterArrayInput is an input type that accepts GetVmClustersFilterArray and GetVmClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersFilterArrayInput` via:
 //
-//          GetVmClustersFilterArray{ GetVmClustersFilterArgs{...} }
+//	GetVmClustersFilterArray{ GetVmClustersFilterArgs{...} }
 type GetVmClustersFilterArrayInput interface {
 	pulumi.Input
 
@@ -60213,7 +61959,7 @@ type GetVmClustersVmCluster struct {
 // GetVmClustersVmClusterInput is an input type that accepts GetVmClustersVmClusterArgs and GetVmClustersVmClusterOutput values.
 // You can construct a concrete instance of `GetVmClustersVmClusterInput` via:
 //
-//          GetVmClustersVmClusterArgs{...}
+//	GetVmClustersVmClusterArgs{...}
 type GetVmClustersVmClusterInput interface {
 	pulumi.Input
 
@@ -60293,7 +62039,7 @@ func (i GetVmClustersVmClusterArgs) ToGetVmClustersVmClusterOutputWithContext(ct
 // GetVmClustersVmClusterArrayInput is an input type that accepts GetVmClustersVmClusterArray and GetVmClustersVmClusterArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersVmClusterArrayInput` via:
 //
-//          GetVmClustersVmClusterArray{ GetVmClustersVmClusterArgs{...} }
+//	GetVmClustersVmClusterArray{ GetVmClustersVmClusterArgs{...} }
 type GetVmClustersVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -60500,7 +62246,7 @@ type GetVmClustersVmClusterDataCollectionOption struct {
 // GetVmClustersVmClusterDataCollectionOptionInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArgs and GetVmClustersVmClusterDataCollectionOptionOutput values.
 // You can construct a concrete instance of `GetVmClustersVmClusterDataCollectionOptionInput` via:
 //
-//          GetVmClustersVmClusterDataCollectionOptionArgs{...}
+//	GetVmClustersVmClusterDataCollectionOptionArgs{...}
 type GetVmClustersVmClusterDataCollectionOptionInput interface {
 	pulumi.Input
 
@@ -60528,7 +62274,7 @@ func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToGetVmClustersVmCluster
 // GetVmClustersVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArray and GetVmClustersVmClusterDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersVmClusterDataCollectionOptionArrayInput` via:
 //
-//          GetVmClustersVmClusterDataCollectionOptionArray{ GetVmClustersVmClusterDataCollectionOptionArgs{...} }
+//	GetVmClustersVmClusterDataCollectionOptionArray{ GetVmClustersVmClusterDataCollectionOptionArgs{...} }
 type GetVmClustersVmClusterDataCollectionOptionArrayInput interface {
 	pulumi.Input
 
@@ -61103,6 +62849,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabaseDbBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabaseDbBackupConfigBackupDestinationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabaseDbBackupConfigBackupDestinationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilterInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesFilterArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{})
@@ -61928,6 +63694,26 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigBackupDestinationDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput{})

@@ -21,52 +21,55 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataLabellingService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataLabellingService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataLabellingService.NewDataset(ctx, "testDataset", &DataLabellingService.DatasetArgs{
-// 			AnnotationFormat: pulumi.Any(_var.Dataset_annotation_format),
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			DatasetFormatDetails: &datalabellingservice.DatasetDatasetFormatDetailsArgs{
-// 				FormatType: pulumi.Any(_var.Dataset_dataset_format_details_format_type),
-// 				TextFileTypeMetadata: &datalabellingservice.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{
-// 					ColumnIndex:     pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_index),
-// 					FormatType:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_format_type),
-// 					ColumnDelimiter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter),
-// 					ColumnName:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_name),
-// 					EscapeCharacter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_escape_character),
-// 					LineDelimiter:   pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter),
-// 				},
-// 			},
-// 			DatasetSourceDetails: &datalabellingservice.DatasetDatasetSourceDetailsArgs{
-// 				Bucket:     pulumi.Any(_var.Dataset_dataset_source_details_bucket),
-// 				Namespace:  pulumi.Any(_var.Dataset_dataset_source_details_namespace),
-// 				SourceType: pulumi.Any(_var.Dataset_dataset_source_details_source_type),
-// 				Prefix:     pulumi.Any(_var.Dataset_dataset_source_details_prefix),
-// 			},
-// 			LabelSet: &datalabellingservice.DatasetLabelSetArgs{
-// 				Items: datalabellingservice.DatasetLabelSetItemArray{
-// 					&datalabellingservice.DatasetLabelSetItemArgs{
-// 						Name: pulumi.Any(_var.Dataset_label_set_items_name),
-// 					},
-// 				},
-// 			},
-// 			DefinedTags:                          pulumi.Any(_var.Dataset_defined_tags),
-// 			Description:                          pulumi.Any(_var.Dataset_description),
-// 			DisplayName:                          pulumi.Any(_var.Dataset_display_name),
-// 			FreeformTags:                         pulumi.Any(_var.Dataset_freeform_tags),
-// 			InitialRecordGenerationConfiguration: nil,
-// 			LabelingInstructions:                 pulumi.Any(_var.Dataset_labeling_instructions),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataLabellingService.NewDataset(ctx, "testDataset", &DataLabellingService.DatasetArgs{
+//				AnnotationFormat: pulumi.Any(_var.Dataset_annotation_format),
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				DatasetFormatDetails: &datalabellingservice.DatasetDatasetFormatDetailsArgs{
+//					FormatType: pulumi.Any(_var.Dataset_dataset_format_details_format_type),
+//					TextFileTypeMetadata: &datalabellingservice.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{
+//						ColumnIndex:     pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_index),
+//						FormatType:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_format_type),
+//						ColumnDelimiter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter),
+//						ColumnName:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_name),
+//						EscapeCharacter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_escape_character),
+//						LineDelimiter:   pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter),
+//					},
+//				},
+//				DatasetSourceDetails: &datalabellingservice.DatasetDatasetSourceDetailsArgs{
+//					Bucket:     pulumi.Any(_var.Dataset_dataset_source_details_bucket),
+//					Namespace:  pulumi.Any(_var.Dataset_dataset_source_details_namespace),
+//					SourceType: pulumi.Any(_var.Dataset_dataset_source_details_source_type),
+//					Prefix:     pulumi.Any(_var.Dataset_dataset_source_details_prefix),
+//				},
+//				LabelSet: &datalabellingservice.DatasetLabelSetArgs{
+//					Items: datalabellingservice.DatasetLabelSetItemArray{
+//						&datalabellingservice.DatasetLabelSetItemArgs{
+//							Name: pulumi.Any(_var.Dataset_label_set_items_name),
+//						},
+//					},
+//				},
+//				DefinedTags:                          pulumi.Any(_var.Dataset_defined_tags),
+//				Description:                          pulumi.Any(_var.Dataset_description),
+//				DisplayName:                          pulumi.Any(_var.Dataset_display_name),
+//				FreeformTags:                         pulumi.Any(_var.Dataset_freeform_tags),
+//				InitialRecordGenerationConfiguration: nil,
+//				LabelingInstructions:                 pulumi.Any(_var.Dataset_labeling_instructions),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -74,7 +77,9 @@ import (
 // Datasets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
+//
+//	$ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
+//
 // ```
 type Dataset struct {
 	pulumi.CustomResourceState
@@ -301,7 +306,7 @@ func (i *Dataset) ToDatasetOutputWithContext(ctx context.Context) DatasetOutput 
 // DatasetArrayInput is an input type that accepts DatasetArray and DatasetArrayOutput values.
 // You can construct a concrete instance of `DatasetArrayInput` via:
 //
-//          DatasetArray{ DatasetArgs{...} }
+//	DatasetArray{ DatasetArgs{...} }
 type DatasetArrayInput interface {
 	pulumi.Input
 
@@ -326,7 +331,7 @@ func (i DatasetArray) ToDatasetArrayOutputWithContext(ctx context.Context) Datas
 // DatasetMapInput is an input type that accepts DatasetMap and DatasetMapOutput values.
 // You can construct a concrete instance of `DatasetMapInput` via:
 //
-//          DatasetMap{ "key": DatasetArgs{...} }
+//	DatasetMap{ "key": DatasetArgs{...} }
 type DatasetMapInput interface {
 	pulumi.Input
 

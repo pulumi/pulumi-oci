@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetCertificateAuthorities(ctx, &certificatesmanagement.GetCertificateAuthoritiesArgs{
-// 			CertificateAuthorityId:       pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
-// 			CompartmentId:                pulumi.StringRef(_var.Compartment_id),
-// 			IssuerCertificateAuthorityId: pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
-// 			Name:                         pulumi.StringRef(_var.Certificate_authority_name),
-// 			State:                        pulumi.StringRef(_var.Certificate_authority_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetCertificateAuthorities(ctx, &certificatesmanagement.GetCertificateAuthoritiesArgs{
+//				CertificateAuthorityId:       pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
+//				CompartmentId:                pulumi.StringRef(_var.Compartment_id),
+//				IssuerCertificateAuthorityId: pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
+//				Name:                         pulumi.StringRef(_var.Certificate_authority_name),
+//				State:                        pulumi.StringRef(_var.Certificate_authority_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCertificateAuthorities(ctx *pulumi.Context, args *GetCertificateAuthoritiesArgs, opts ...pulumi.InvokeOption) (*GetCertificateAuthoritiesResult, error) {
 	var rv GetCertificateAuthoritiesResult

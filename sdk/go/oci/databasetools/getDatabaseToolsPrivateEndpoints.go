@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.GetDatabaseToolsPrivateEndpoints(ctx, &databasetools.GetDatabaseToolsPrivateEndpointsArgs{
-// 			CompartmentId:     _var.Compartment_id,
-// 			DisplayName:       pulumi.StringRef(_var.Database_tools_private_endpoint_display_name),
-// 			EndpointServiceId: pulumi.StringRef(oci_core_service.Test_service.Id),
-// 			State:             pulumi.StringRef(_var.Database_tools_private_endpoint_state),
-// 			SubnetId:          pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.GetDatabaseToolsPrivateEndpoints(ctx, &databasetools.GetDatabaseToolsPrivateEndpointsArgs{
+//				CompartmentId:     _var.Compartment_id,
+//				DisplayName:       pulumi.StringRef(_var.Database_tools_private_endpoint_display_name),
+//				EndpointServiceId: pulumi.StringRef(oci_core_service.Test_service.Id),
+//				State:             pulumi.StringRef(_var.Database_tools_private_endpoint_state),
+//				SubnetId:          pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabaseToolsPrivateEndpoints(ctx *pulumi.Context, args *GetDatabaseToolsPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetDatabaseToolsPrivateEndpointsResult, error) {
 	var rv GetDatabaseToolsPrivateEndpointsResult

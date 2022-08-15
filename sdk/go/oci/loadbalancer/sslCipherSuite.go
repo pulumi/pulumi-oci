@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewSslCipherSuite(ctx, "testSslCipherSuite", &LoadBalancer.SslCipherSuiteArgs{
-// 			Ciphers:        pulumi.Any(_var.Ssl_cipher_suite_ciphers),
-// 			LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewSslCipherSuite(ctx, "testSslCipherSuite", &LoadBalancer.SslCipherSuiteArgs{
+//				Ciphers:        pulumi.Any(_var.Ssl_cipher_suite_ciphers),
+//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // SslCipherSuites can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
+//
+//	$ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
+//
 // ```
 type SslCipherSuite struct {
 	pulumi.CustomResourceState
@@ -158,7 +163,7 @@ func (i *SslCipherSuite) ToSslCipherSuiteOutputWithContext(ctx context.Context) 
 // SslCipherSuiteArrayInput is an input type that accepts SslCipherSuiteArray and SslCipherSuiteArrayOutput values.
 // You can construct a concrete instance of `SslCipherSuiteArrayInput` via:
 //
-//          SslCipherSuiteArray{ SslCipherSuiteArgs{...} }
+//	SslCipherSuiteArray{ SslCipherSuiteArgs{...} }
 type SslCipherSuiteArrayInput interface {
 	pulumi.Input
 
@@ -183,7 +188,7 @@ func (i SslCipherSuiteArray) ToSslCipherSuiteArrayOutputWithContext(ctx context.
 // SslCipherSuiteMapInput is an input type that accepts SslCipherSuiteMap and SslCipherSuiteMapOutput values.
 // You can construct a concrete instance of `SslCipherSuiteMapInput` via:
 //
-//          SslCipherSuiteMap{ "key": SslCipherSuiteArgs{...} }
+//	SslCipherSuiteMap{ "key": SslCipherSuiteArgs{...} }
 type SslCipherSuiteMapInput interface {
 	pulumi.Input
 

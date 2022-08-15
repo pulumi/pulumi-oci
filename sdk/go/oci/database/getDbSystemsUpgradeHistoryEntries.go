@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbSystemsUpgradeHistoryEntries(ctx, &database.GetDbSystemsUpgradeHistoryEntriesArgs{
-// 			DbSystemId:    oci_database_db_system.Test_db_system.Id,
-// 			State:         pulumi.StringRef(_var.Db_systems_upgrade_history_entry_state),
-// 			UpgradeAction: pulumi.StringRef(_var.Db_systems_upgrade_history_entry_upgrade_action),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbSystemsUpgradeHistoryEntries(ctx, &database.GetDbSystemsUpgradeHistoryEntriesArgs{
+//				DbSystemId:    oci_database_db_system.Test_db_system.Id,
+//				State:         pulumi.StringRef(_var.Db_systems_upgrade_history_entry_state),
+//				UpgradeAction: pulumi.StringRef(_var.Db_systems_upgrade_history_entry_upgrade_action),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbSystemsUpgradeHistoryEntries(ctx *pulumi.Context, args *GetDbSystemsUpgradeHistoryEntriesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemsUpgradeHistoryEntriesResult, error) {
 	var rv GetDbSystemsUpgradeHistoryEntriesResult

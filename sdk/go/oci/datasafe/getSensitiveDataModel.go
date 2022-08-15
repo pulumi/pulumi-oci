@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSensitiveDataModel(ctx, &datasafe.GetSensitiveDataModelArgs{
-// 			SensitiveDataModelId: oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSensitiveDataModel(ctx, &datasafe.GetSensitiveDataModelArgs{
+//				SensitiveDataModelId: oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSensitiveDataModel(ctx *pulumi.Context, args *LookupSensitiveDataModelArgs, opts ...pulumi.InvokeOption) (*LookupSensitiveDataModelResult, error) {
 	var rv LookupSensitiveDataModelResult

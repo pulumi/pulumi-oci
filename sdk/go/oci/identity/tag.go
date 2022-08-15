@@ -31,10 +31,10 @@ import (
 // to a resource. Lists are created by you and the user must apply a value from the list. Lists
 // are validiated.
 //
-// * If no `validator` is set, the user applying the tag to a resource can type in a static
-//   value or leave the tag value empty.
-// * If a `validator` is set, the user applying the tag to a resource must select from a list
-//   of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
+//   - If no `validator` is set, the user applying the tag to a resource can type in a static
+//     value or leave the tag value empty.
+//   - If a `validator` is set, the user applying the tag to a resource must select from a list
+//     of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
 //
 // ## Example Usage
 //
@@ -42,34 +42,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewTag(ctx, "testTag", &Identity.TagArgs{
-// 			Description:    pulumi.Any(_var.Tag_description),
-// 			TagNamespaceId: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsCostTracking: pulumi.Any(_var.Tag_is_cost_tracking),
-// 			Validator: &identity.TagValidatorArgs{
-// 				ValidatorType: pulumi.Any(_var.Tag_validator_validator_type),
-// 				Values:        pulumi.Any(_var.Tag_validator_values),
-// 			},
-// 			IsRetired: pulumi.Bool(false),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewTag(ctx, "testTag", &Identity.TagArgs{
+//				Description:    pulumi.Any(_var.Tag_description),
+//				TagNamespaceId: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsCostTracking: pulumi.Any(_var.Tag_is_cost_tracking),
+//				Validator: &identity.TagValidatorArgs{
+//					ValidatorType: pulumi.Any(_var.Tag_validator_validator_type),
+//					Values:        pulumi.Any(_var.Tag_validator_values),
+//				},
+//				IsRetired: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -77,7 +80,9 @@ import (
 // Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+//
+//	$ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
+//
 // ```
 type Tag struct {
 	pulumi.CustomResourceState
@@ -253,7 +258,7 @@ func (i *Tag) ToTagOutputWithContext(ctx context.Context) TagOutput {
 // TagArrayInput is an input type that accepts TagArray and TagArrayOutput values.
 // You can construct a concrete instance of `TagArrayInput` via:
 //
-//          TagArray{ TagArgs{...} }
+//	TagArray{ TagArgs{...} }
 type TagArrayInput interface {
 	pulumi.Input
 
@@ -278,7 +283,7 @@ func (i TagArray) ToTagArrayOutputWithContext(ctx context.Context) TagArrayOutpu
 // TagMapInput is an input type that accepts TagMap and TagMapOutput values.
 // You can construct a concrete instance of `TagMapInput` via:
 //
-//          TagMap{ "key": TagArgs{...} }
+//	TagMap{ "key": TagArgs{...} }
 type TagMapInput interface {
 	pulumi.Input
 

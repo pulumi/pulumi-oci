@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousExadataInfrastructure(ctx, &database.GetAutonomousExadataInfrastructureArgs{
-// 			AutonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousExadataInfrastructure(ctx, &database.GetAutonomousExadataInfrastructureArgs{
+//				AutonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAutonomousExadataInfrastructure(ctx *pulumi.Context, args *LookupAutonomousExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousExadataInfrastructureResult, error) {
 	var rv LookupAutonomousExadataInfrastructureResult

@@ -21,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewRemotePeeringConnection(ctx, "testRemotePeeringConnection", &Core.RemotePeeringConnectionArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DrgId:         pulumi.Any(oci_core_drg.Test_drg.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Remote_peering_connection_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			PeerId:         pulumi.Any(oci_core_remote_peering_connection.Test_remote_peering_connection2.Id),
-// 			PeerRegionName: pulumi.Any(_var.Remote_peering_connection_peer_region_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewRemotePeeringConnection(ctx, "testRemotePeeringConnection", &Core.RemotePeeringConnectionArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DrgId:         pulumi.Any(oci_core_drg.Test_drg.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Remote_peering_connection_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				PeerId:         pulumi.Any(oci_core_remote_peering_connection.Test_remote_peering_connection2.Id),
+//				PeerRegionName: pulumi.Any(_var.Remote_peering_connection_peer_region_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // RemotePeeringConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
+//
+//	$ pulumi import oci:Core/remotePeeringConnection:RemotePeeringConnection test_remote_peering_connection "id"
+//
 // ```
 type RemotePeeringConnection struct {
 	pulumi.CustomResourceState
@@ -237,7 +242,7 @@ func (i *RemotePeeringConnection) ToRemotePeeringConnectionOutputWithContext(ctx
 // RemotePeeringConnectionArrayInput is an input type that accepts RemotePeeringConnectionArray and RemotePeeringConnectionArrayOutput values.
 // You can construct a concrete instance of `RemotePeeringConnectionArrayInput` via:
 //
-//          RemotePeeringConnectionArray{ RemotePeeringConnectionArgs{...} }
+//	RemotePeeringConnectionArray{ RemotePeeringConnectionArgs{...} }
 type RemotePeeringConnectionArrayInput interface {
 	pulumi.Input
 
@@ -262,7 +267,7 @@ func (i RemotePeeringConnectionArray) ToRemotePeeringConnectionArrayOutputWithCo
 // RemotePeeringConnectionMapInput is an input type that accepts RemotePeeringConnectionMap and RemotePeeringConnectionMapOutput values.
 // You can construct a concrete instance of `RemotePeeringConnectionMapInput` via:
 //
-//          RemotePeeringConnectionMap{ "key": RemotePeeringConnectionArgs{...} }
+//	RemotePeeringConnectionMap{ "key": RemotePeeringConnectionArgs{...} }
 type RemotePeeringConnectionMapInput interface {
 	pulumi.Input
 

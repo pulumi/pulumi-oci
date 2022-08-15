@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetBootVolumesResult> InvokeAsync(GetBootVolumesArgs args, InvokeOptions? options = null)
+        public static Task<GetBootVolumesResult> InvokeAsync(GetBootVolumesArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumesResult>("oci:Core/getBootVolumes:getBootVolumes", args ?? new GetBootVolumesArgs(), options.WithDefaults());
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Core
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetBootVolumesResult> Invoke(GetBootVolumesInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetBootVolumesResult> Invoke(GetBootVolumesInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetBootVolumesResult>("oci:Core/getBootVolumes:getBootVolumes", args ?? new GetBootVolumesInvokeArgs(), options.WithDefaults());
     }
 
@@ -86,14 +86,14 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        [Input("availabilityDomain", required: true)]
-        public string AvailabilityDomain { get; set; } = null!;
+        [Input("availabilityDomain")]
+        public string? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetBootVolumesFilterArgs>? _filters;
@@ -119,14 +119,14 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        [Input("availabilityDomain", required: true)]
-        public Input<string> AvailabilityDomain { get; set; } = null!;
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetBootVolumesFilterInputArgs>? _filters;
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The list of boot_volumes.
         /// </summary>
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The OCID of the compartment that contains the boot volume.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetBootVolumesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -175,11 +175,11 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetBootVolumesResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<Outputs.GetBootVolumesBootVolumeResult> bootVolumes,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetBootVolumesFilterResult> filters,
 

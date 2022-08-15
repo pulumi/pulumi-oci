@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a DataMaskRule identified by DataMaskRuleId
+// # Returns a DataMaskRule identified by DataMaskRuleId
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetDataMaskRule(ctx, &cloudguard.GetDataMaskRuleArgs{
-// 			DataMaskRuleId: oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetDataMaskRule(ctx, &cloudguard.GetDataMaskRuleArgs{
+//				DataMaskRuleId: oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDataMaskRule(ctx *pulumi.Context, args *LookupDataMaskRuleArgs, opts ...pulumi.InvokeOption) (*LookupDataMaskRuleResult, error) {
 	var rv LookupDataMaskRuleResult

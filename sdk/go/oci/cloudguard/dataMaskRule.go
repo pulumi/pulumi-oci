@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a new Data Mask Rule Definition
+// # Creates a new Data Mask Rule Definition
 //
 // ## Example Usage
 //
@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.NewDataMaskRule(ctx, "testDataMaskRule", &CloudGuard.DataMaskRuleArgs{
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			DataMaskCategories: pulumi.Any(_var.Data_mask_rule_data_mask_categories),
-// 			DisplayName:        pulumi.Any(_var.Data_mask_rule_display_name),
-// 			IamGroupId:         pulumi.Any(oci_identity_group.Test_group.Id),
-// 			TargetSelected: &cloudguard.DataMaskRuleTargetSelectedArgs{
-// 				Kind:   pulumi.Any(_var.Data_mask_rule_target_selected_kind),
-// 				Values: pulumi.Any(_var.Data_mask_rule_target_selected_values),
-// 			},
-// 			DataMaskRuleStatus: pulumi.Any(_var.Data_mask_rule_data_mask_rule_status),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Data_mask_rule_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			State: pulumi.Any(_var.Data_mask_rule_state),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.NewDataMaskRule(ctx, "testDataMaskRule", &CloudGuard.DataMaskRuleArgs{
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				DataMaskCategories: pulumi.Any(_var.Data_mask_rule_data_mask_categories),
+//				DisplayName:        pulumi.Any(_var.Data_mask_rule_display_name),
+//				IamGroupId:         pulumi.Any(oci_identity_group.Test_group.Id),
+//				TargetSelected: &cloudguard.DataMaskRuleTargetSelectedArgs{
+//					Kind:   pulumi.Any(_var.Data_mask_rule_target_selected_kind),
+//					Values: pulumi.Any(_var.Data_mask_rule_target_selected_values),
+//				},
+//				DataMaskRuleStatus: pulumi.Any(_var.Data_mask_rule_data_mask_rule_status),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Data_mask_rule_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				State: pulumi.Any(_var.Data_mask_rule_state),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // DataMaskRules can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
+//
+//	$ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
+//
 // ```
 type DataMaskRule struct {
 	pulumi.CustomResourceState
@@ -276,7 +281,7 @@ func (i *DataMaskRule) ToDataMaskRuleOutputWithContext(ctx context.Context) Data
 // DataMaskRuleArrayInput is an input type that accepts DataMaskRuleArray and DataMaskRuleArrayOutput values.
 // You can construct a concrete instance of `DataMaskRuleArrayInput` via:
 //
-//          DataMaskRuleArray{ DataMaskRuleArgs{...} }
+//	DataMaskRuleArray{ DataMaskRuleArgs{...} }
 type DataMaskRuleArrayInput interface {
 	pulumi.Input
 
@@ -301,7 +306,7 @@ func (i DataMaskRuleArray) ToDataMaskRuleArrayOutputWithContext(ctx context.Cont
 // DataMaskRuleMapInput is an input type that accepts DataMaskRuleMap and DataMaskRuleMapOutput values.
 // You can construct a concrete instance of `DataMaskRuleMapInput` via:
 //
-//          DataMaskRuleMap{ "key": DataMaskRuleArgs{...} }
+//	DataMaskRuleMap{ "key": DataMaskRuleArgs{...} }
 type DataMaskRuleMapInput interface {
 	pulumi.Input
 

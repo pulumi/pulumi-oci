@@ -28,57 +28,60 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/VnMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/VnMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := VnMonitoring.NewPathAnalysi(ctx, "testPathAnalysi", &VnMonitoring.PathAnalysiArgs{
-// 			Type:          pulumi.Any(_var.Path_analysi_type),
-// 			CacheControl:  pulumi.Any(_var.Path_analysi_cache_control),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DestinationEndpoint: &vnmonitoring.PathAnalysiDestinationEndpointArgs{
-// 				Type:                  pulumi.Any(_var.Path_analysi_destination_endpoint_type),
-// 				Address:               pulumi.Any(_var.Path_analysi_destination_endpoint_address),
-// 				InstanceId:            pulumi.Any(oci_core_instance.Test_instance.Id),
-// 				ListenerId:            pulumi.Any(oci_load_balancer_listener.Test_listener.Id),
-// 				LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-// 				SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				VlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 				VnicId:                pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-// 			},
-// 			PathAnalyzerTestId: pulumi.Any(oci_vn_monitoring_path_analyzer_test.Test_path_analyzer_test.Id),
-// 			Protocol:           pulumi.Any(_var.Path_analysi_protocol),
-// 			ProtocolParameters: &vnmonitoring.PathAnalysiProtocolParametersArgs{
-// 				Type:            pulumi.Any(_var.Path_analysi_protocol_parameters_type),
-// 				DestinationPort: pulumi.Any(_var.Path_analysi_protocol_parameters_destination_port),
-// 				IcmpCode:        pulumi.Any(_var.Path_analysi_protocol_parameters_icmp_code),
-// 				IcmpType:        pulumi.Any(_var.Path_analysi_protocol_parameters_icmp_type),
-// 				SourcePort:      pulumi.Any(_var.Path_analysi_protocol_parameters_source_port),
-// 			},
-// 			QueryOptions: &vnmonitoring.PathAnalysiQueryOptionsArgs{
-// 				IsBiDirectionalAnalysis: pulumi.Any(_var.Path_analysi_query_options_is_bi_directional_analysis),
-// 			},
-// 			SourceEndpoint: &vnmonitoring.PathAnalysiSourceEndpointArgs{
-// 				Type:                  pulumi.Any(_var.Path_analysi_source_endpoint_type),
-// 				Address:               pulumi.Any(_var.Path_analysi_source_endpoint_address),
-// 				InstanceId:            pulumi.Any(oci_core_instance.Test_instance.Id),
-// 				ListenerId:            pulumi.Any(oci_load_balancer_listener.Test_listener.Id),
-// 				LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-// 				SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				VlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 				VnicId:                pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := VnMonitoring.NewPathAnalysi(ctx, "testPathAnalysi", &VnMonitoring.PathAnalysiArgs{
+//				Type:          pulumi.Any(_var.Path_analysi_type),
+//				CacheControl:  pulumi.Any(_var.Path_analysi_cache_control),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DestinationEndpoint: &vnmonitoring.PathAnalysiDestinationEndpointArgs{
+//					Type:                  pulumi.Any(_var.Path_analysi_destination_endpoint_type),
+//					Address:               pulumi.Any(_var.Path_analysi_destination_endpoint_address),
+//					InstanceId:            pulumi.Any(oci_core_instance.Test_instance.Id),
+//					ListenerId:            pulumi.Any(oci_load_balancer_listener.Test_listener.Id),
+//					LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//					NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
+//					SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					VlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//					VnicId:                pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//				},
+//				PathAnalyzerTestId: pulumi.Any(oci_vn_monitoring_path_analyzer_test.Test_path_analyzer_test.Id),
+//				Protocol:           pulumi.Any(_var.Path_analysi_protocol),
+//				ProtocolParameters: &vnmonitoring.PathAnalysiProtocolParametersArgs{
+//					Type:            pulumi.Any(_var.Path_analysi_protocol_parameters_type),
+//					DestinationPort: pulumi.Any(_var.Path_analysi_protocol_parameters_destination_port),
+//					IcmpCode:        pulumi.Any(_var.Path_analysi_protocol_parameters_icmp_code),
+//					IcmpType:        pulumi.Any(_var.Path_analysi_protocol_parameters_icmp_type),
+//					SourcePort:      pulumi.Any(_var.Path_analysi_protocol_parameters_source_port),
+//				},
+//				QueryOptions: &vnmonitoring.PathAnalysiQueryOptionsArgs{
+//					IsBiDirectionalAnalysis: pulumi.Any(_var.Path_analysi_query_options_is_bi_directional_analysis),
+//				},
+//				SourceEndpoint: &vnmonitoring.PathAnalysiSourceEndpointArgs{
+//					Type:                  pulumi.Any(_var.Path_analysi_source_endpoint_type),
+//					Address:               pulumi.Any(_var.Path_analysi_source_endpoint_address),
+//					InstanceId:            pulumi.Any(oci_core_instance.Test_instance.Id),
+//					ListenerId:            pulumi.Any(oci_load_balancer_listener.Test_listener.Id),
+//					LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//					NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
+//					SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					VlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//					VnicId:                pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -86,7 +89,9 @@ import (
 // PathAnalysis can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
+//
+//	$ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
+//
 // ```
 type PathAnalysi struct {
 	pulumi.CustomResourceState
@@ -257,7 +262,7 @@ func (i *PathAnalysi) ToPathAnalysiOutputWithContext(ctx context.Context) PathAn
 // PathAnalysiArrayInput is an input type that accepts PathAnalysiArray and PathAnalysiArrayOutput values.
 // You can construct a concrete instance of `PathAnalysiArrayInput` via:
 //
-//          PathAnalysiArray{ PathAnalysiArgs{...} }
+//	PathAnalysiArray{ PathAnalysiArgs{...} }
 type PathAnalysiArrayInput interface {
 	pulumi.Input
 
@@ -282,7 +287,7 @@ func (i PathAnalysiArray) ToPathAnalysiArrayOutputWithContext(ctx context.Contex
 // PathAnalysiMapInput is an input type that accepts PathAnalysiMap and PathAnalysiMapOutput values.
 // You can construct a concrete instance of `PathAnalysiMapInput` via:
 //
-//          PathAnalysiMap{ "key": PathAnalysiArgs{...} }
+//	PathAnalysiMap{ "key": PathAnalysiArgs{...} }
 type PathAnalysiMapInput interface {
 	pulumi.Input
 

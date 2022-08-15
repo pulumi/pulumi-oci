@@ -21,56 +21,59 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewTargetDatabase(ctx, "testTargetDatabase", &DataSafe.TargetDatabaseArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DatabaseDetails: &datasafe.TargetDatabaseDatabaseDetailsArgs{
-// 				DatabaseType:         pulumi.Any(_var.Target_database_database_details_database_type),
-// 				InfrastructureType:   pulumi.Any(_var.Target_database_database_details_infrastructure_type),
-// 				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-// 				DbSystemId:           pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 				InstanceId:           pulumi.Any(oci_core_instance.Test_instance.Id),
-// 				IpAddresses:          pulumi.Any(_var.Target_database_database_details_ip_addresses),
-// 				ListenerPort:         pulumi.Any(_var.Target_database_database_details_listener_port),
-// 				ServiceName:          pulumi.Any(oci_core_service.Test_service.Name),
-// 				VmClusterId:          pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
-// 			},
-// 			ConnectionOption: &datasafe.TargetDatabaseConnectionOptionArgs{
-// 				ConnectionType:            pulumi.Any(_var.Target_database_connection_option_connection_type),
-// 				DatasafePrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-// 				OnPremConnectorId:         pulumi.Any(oci_data_safe_on_prem_connector.Test_on_prem_connector.Id),
-// 			},
-// 			Credentials: &datasafe.TargetDatabaseCredentialsArgs{
-// 				Password: pulumi.Any(_var.Target_database_credentials_password),
-// 				UserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Target_database_description),
-// 			DisplayName: pulumi.Any(_var.Target_database_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			TlsConfig: &datasafe.TargetDatabaseTlsConfigArgs{
-// 				Status:               pulumi.Any(_var.Target_database_tls_config_status),
-// 				CertificateStoreType: pulumi.Any(_var.Target_database_tls_config_certificate_store_type),
-// 				KeyStoreContent:      pulumi.Any(_var.Target_database_tls_config_key_store_content),
-// 				StorePassword:        pulumi.Any(_var.Target_database_tls_config_store_password),
-// 				TrustStoreContent:    pulumi.Any(_var.Target_database_tls_config_trust_store_content),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewTargetDatabase(ctx, "testTargetDatabase", &DataSafe.TargetDatabaseArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DatabaseDetails: &datasafe.TargetDatabaseDatabaseDetailsArgs{
+//					DatabaseType:         pulumi.Any(_var.Target_database_database_details_database_type),
+//					InfrastructureType:   pulumi.Any(_var.Target_database_database_details_infrastructure_type),
+//					AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
+//					DbSystemId:           pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//					InstanceId:           pulumi.Any(oci_core_instance.Test_instance.Id),
+//					IpAddresses:          pulumi.Any(_var.Target_database_database_details_ip_addresses),
+//					ListenerPort:         pulumi.Any(_var.Target_database_database_details_listener_port),
+//					ServiceName:          pulumi.Any(oci_core_service.Test_service.Name),
+//					VmClusterId:          pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//				},
+//				ConnectionOption: &datasafe.TargetDatabaseConnectionOptionArgs{
+//					ConnectionType:            pulumi.Any(_var.Target_database_connection_option_connection_type),
+//					DatasafePrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//					OnPremConnectorId:         pulumi.Any(oci_data_safe_on_prem_connector.Test_on_prem_connector.Id),
+//				},
+//				Credentials: &datasafe.TargetDatabaseCredentialsArgs{
+//					Password: pulumi.Any(_var.Target_database_credentials_password),
+//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Target_database_description),
+//				DisplayName: pulumi.Any(_var.Target_database_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				TlsConfig: &datasafe.TargetDatabaseTlsConfigArgs{
+//					Status:               pulumi.Any(_var.Target_database_tls_config_status),
+//					CertificateStoreType: pulumi.Any(_var.Target_database_tls_config_certificate_store_type),
+//					KeyStoreContent:      pulumi.Any(_var.Target_database_tls_config_key_store_content),
+//					StorePassword:        pulumi.Any(_var.Target_database_tls_config_store_password),
+//					TrustStoreContent:    pulumi.Any(_var.Target_database_tls_config_trust_store_content),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -78,7 +81,9 @@ import (
 // TargetDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
+//
+//	$ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
+//
 // ```
 type TargetDatabase struct {
 	pulumi.CustomResourceState
@@ -288,7 +293,7 @@ func (i *TargetDatabase) ToTargetDatabaseOutputWithContext(ctx context.Context) 
 // TargetDatabaseArrayInput is an input type that accepts TargetDatabaseArray and TargetDatabaseArrayOutput values.
 // You can construct a concrete instance of `TargetDatabaseArrayInput` via:
 //
-//          TargetDatabaseArray{ TargetDatabaseArgs{...} }
+//	TargetDatabaseArray{ TargetDatabaseArgs{...} }
 type TargetDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -313,7 +318,7 @@ func (i TargetDatabaseArray) ToTargetDatabaseArrayOutputWithContext(ctx context.
 // TargetDatabaseMapInput is an input type that accepts TargetDatabaseMap and TargetDatabaseMapOutput values.
 // You can construct a concrete instance of `TargetDatabaseMapInput` via:
 //
-//          TargetDatabaseMap{ "key": TargetDatabaseArgs{...} }
+//	TargetDatabaseMap{ "key": TargetDatabaseArgs{...} }
 type TargetDatabaseMapInput interface {
 	pulumi.Input
 

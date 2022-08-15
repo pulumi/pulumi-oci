@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ComputeInstanceAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ComputeInstanceAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ComputeInstanceAgent.GetInstanceAvailablePlugin(ctx, &computeinstanceagent.GetInstanceAvailablePluginArgs{
-// 			OsName:    _var.Instance_available_plugin_os_name,
-// 			OsVersion: _var.Instance_available_plugin_os_version,
-// 			Name:      pulumi.StringRef(_var.Instance_available_plugin_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ComputeInstanceAgent.GetInstanceAvailablePlugin(ctx, &computeinstanceagent.GetInstanceAvailablePluginArgs{
+//				OsName:    _var.Instance_available_plugin_os_name,
+//				OsVersion: _var.Instance_available_plugin_os_version,
+//				Name:      pulumi.StringRef(_var.Instance_available_plugin_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstanceAvailablePlugin(ctx *pulumi.Context, args *GetInstanceAvailablePluginArgs, opts ...pulumi.InvokeOption) (*GetInstanceAvailablePluginResult, error) {
 	var rv GetInstanceAvailablePluginResult

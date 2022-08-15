@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsObjectCollectionRules(ctx, &loganalytics.GetLogAnalyticsObjectCollectionRulesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Namespace:     _var.Log_analytics_object_collection_rule_namespace,
-// 			Name:          pulumi.StringRef(_var.Log_analytics_object_collection_rule_name),
-// 			State:         pulumi.StringRef(_var.Log_analytics_object_collection_rule_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsObjectCollectionRules(ctx, &loganalytics.GetLogAnalyticsObjectCollectionRulesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Namespace:     _var.Log_analytics_object_collection_rule_namespace,
+//				Name:          pulumi.StringRef(_var.Log_analytics_object_collection_rule_name),
+//				State:         pulumi.StringRef(_var.Log_analytics_object_collection_rule_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsObjectCollectionRules(ctx *pulumi.Context, args *GetLogAnalyticsObjectCollectionRulesArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsObjectCollectionRulesResult, error) {
 	var rv GetLogAnalyticsObjectCollectionRulesResult

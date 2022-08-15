@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.NewBackend(ctx, "testBackend", &NetworkLoadBalancer.BackendArgs{
-// 			BackendSetName:        pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
-// 			NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-// 			Port:                  pulumi.Any(_var.Backend_port),
-// 			IpAddress:             pulumi.Any(_var.Backend_ip_address),
-// 			IsBackup:              pulumi.Any(_var.Backend_is_backup),
-// 			IsDrain:               pulumi.Any(_var.Backend_is_drain),
-// 			IsOffline:             pulumi.Any(_var.Backend_is_offline),
-// 			TargetId:              pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 			Weight:                pulumi.Any(_var.Backend_weight),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.NewBackend(ctx, "testBackend", &NetworkLoadBalancer.BackendArgs{
+//				BackendSetName:        pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
+//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
+//				Port:                  pulumi.Any(_var.Backend_port),
+//				IpAddress:             pulumi.Any(_var.Backend_ip_address),
+//				IsBackup:              pulumi.Any(_var.Backend_is_backup),
+//				IsDrain:               pulumi.Any(_var.Backend_is_drain),
+//				IsOffline:             pulumi.Any(_var.Backend_is_offline),
+//				TargetId:              pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				Weight:                pulumi.Any(_var.Backend_weight),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // Backends can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+//
+//	$ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+//
 // ```
 type Backend struct {
 	pulumi.CustomResourceState
@@ -238,7 +243,7 @@ func (i *Backend) ToBackendOutputWithContext(ctx context.Context) BackendOutput 
 // BackendArrayInput is an input type that accepts BackendArray and BackendArrayOutput values.
 // You can construct a concrete instance of `BackendArrayInput` via:
 //
-//          BackendArray{ BackendArgs{...} }
+//	BackendArray{ BackendArgs{...} }
 type BackendArrayInput interface {
 	pulumi.Input
 
@@ -263,7 +268,7 @@ func (i BackendArray) ToBackendArrayOutputWithContext(ctx context.Context) Backe
 // BackendMapInput is an input type that accepts BackendMap and BackendMapOutput values.
 // You can construct a concrete instance of `BackendMapInput` via:
 //
-//          BackendMap{ "key": BackendArgs{...} }
+//	BackendMap{ "key": BackendArgs{...} }
 type BackendMapInput interface {
 	pulumi.Input
 

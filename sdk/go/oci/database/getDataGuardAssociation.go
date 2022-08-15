@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDataGuardAssociation(ctx, &database.GetDataGuardAssociationArgs{
-// 			DataGuardAssociationId: oci_database_data_guard_association.Test_data_guard_association.Id,
-// 			DatabaseId:             oci_database_database.Test_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDataGuardAssociation(ctx, &database.GetDataGuardAssociationArgs{
+//				DataGuardAssociationId: oci_database_data_guard_association.Test_data_guard_association.Id,
+//				DatabaseId:             oci_database_database.Test_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDataGuardAssociation(ctx *pulumi.Context, args *LookupDataGuardAssociationArgs, opts ...pulumi.InvokeOption) (*LookupDataGuardAssociationResult, error) {
 	var rv LookupDataGuardAssociationResult

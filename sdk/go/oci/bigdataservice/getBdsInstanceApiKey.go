@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.GetBdsInstanceApiKey(ctx, &bigdataservice.GetBdsInstanceApiKeyArgs{
-// 			ApiKeyId:      oci_identity_api_key.Test_api_key.Id,
-// 			BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.GetBdsInstanceApiKey(ctx, &bigdataservice.GetBdsInstanceApiKeyArgs{
+//				ApiKeyId:      oci_identity_api_key.Test_api_key.Id,
+//				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBdsInstanceApiKey(ctx *pulumi.Context, args *LookupBdsInstanceApiKeyArgs, opts ...pulumi.InvokeOption) (*LookupBdsInstanceApiKeyResult, error) {
 	var rv LookupBdsInstanceApiKeyResult

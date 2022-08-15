@@ -17,7 +17,7 @@ type GetEmWarehousesEmWarehouseCollection struct {
 // GetEmWarehousesEmWarehouseCollectionInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionArgs and GetEmWarehousesEmWarehouseCollectionOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionInput` via:
 //
-//          GetEmWarehousesEmWarehouseCollectionArgs{...}
+//	GetEmWarehousesEmWarehouseCollectionArgs{...}
 type GetEmWarehousesEmWarehouseCollectionInput interface {
 	pulumi.Input
 
@@ -44,7 +44,7 @@ func (i GetEmWarehousesEmWarehouseCollectionArgs) ToGetEmWarehousesEmWarehouseCo
 // GetEmWarehousesEmWarehouseCollectionArrayInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionArray and GetEmWarehousesEmWarehouseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionArrayInput` via:
 //
-//          GetEmWarehousesEmWarehouseCollectionArray{ GetEmWarehousesEmWarehouseCollectionArgs{...} }
+//	GetEmWarehousesEmWarehouseCollectionArray{ GetEmWarehousesEmWarehouseCollectionArgs{...} }
 type GetEmWarehousesEmWarehouseCollectionArrayInput interface {
 	pulumi.Input
 
@@ -144,7 +144,7 @@ type GetEmWarehousesEmWarehouseCollectionItem struct {
 // GetEmWarehousesEmWarehouseCollectionItemInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionItemArgs and GetEmWarehousesEmWarehouseCollectionItemOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionItemInput` via:
 //
-//          GetEmWarehousesEmWarehouseCollectionItemArgs{...}
+//	GetEmWarehousesEmWarehouseCollectionItemArgs{...}
 type GetEmWarehousesEmWarehouseCollectionItemInput interface {
 	pulumi.Input
 
@@ -202,7 +202,7 @@ func (i GetEmWarehousesEmWarehouseCollectionItemArgs) ToGetEmWarehousesEmWarehou
 // GetEmWarehousesEmWarehouseCollectionItemArrayInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionItemArray and GetEmWarehousesEmWarehouseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionItemArrayInput` via:
 //
-//          GetEmWarehousesEmWarehouseCollectionItemArray{ GetEmWarehousesEmWarehouseCollectionItemArgs{...} }
+//	GetEmWarehousesEmWarehouseCollectionItemArray{ GetEmWarehousesEmWarehouseCollectionItemArgs{...} }
 type GetEmWarehousesEmWarehouseCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -347,7 +347,7 @@ type GetEmWarehousesFilter struct {
 // GetEmWarehousesFilterInput is an input type that accepts GetEmWarehousesFilterArgs and GetEmWarehousesFilterOutput values.
 // You can construct a concrete instance of `GetEmWarehousesFilterInput` via:
 //
-//          GetEmWarehousesFilterArgs{...}
+//	GetEmWarehousesFilterArgs{...}
 type GetEmWarehousesFilterInput interface {
 	pulumi.Input
 
@@ -376,7 +376,7 @@ func (i GetEmWarehousesFilterArgs) ToGetEmWarehousesFilterOutputWithContext(ctx 
 // GetEmWarehousesFilterArrayInput is an input type that accepts GetEmWarehousesFilterArray and GetEmWarehousesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesFilterArrayInput` via:
 //
-//          GetEmWarehousesFilterArray{ GetEmWarehousesFilterArgs{...} }
+//	GetEmWarehousesFilterArray{ GetEmWarehousesFilterArgs{...} }
 type GetEmWarehousesFilterArrayInput interface {
 	pulumi.Input
 
@@ -472,7 +472,7 @@ type GetEtlRunItem struct {
 // GetEtlRunItemInput is an input type that accepts GetEtlRunItemArgs and GetEtlRunItemOutput values.
 // You can construct a concrete instance of `GetEtlRunItemInput` via:
 //
-//          GetEtlRunItemArgs{...}
+//	GetEtlRunItemArgs{...}
 type GetEtlRunItemInput interface {
 	pulumi.Input
 
@@ -520,7 +520,7 @@ func (i GetEtlRunItemArgs) ToGetEtlRunItemOutputWithContext(ctx context.Context)
 // GetEtlRunItemArrayInput is an input type that accepts GetEtlRunItemArray and GetEtlRunItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunItemArrayInput` via:
 //
-//          GetEtlRunItemArray{ GetEtlRunItemArgs{...} }
+//	GetEtlRunItemArray{ GetEtlRunItemArgs{...} }
 type GetEtlRunItemArrayInput interface {
 	pulumi.Input
 
@@ -639,7 +639,7 @@ type GetEtlRunsEtlRunCollection struct {
 // GetEtlRunsEtlRunCollectionInput is an input type that accepts GetEtlRunsEtlRunCollectionArgs and GetEtlRunsEtlRunCollectionOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionInput` via:
 //
-//          GetEtlRunsEtlRunCollectionArgs{...}
+//	GetEtlRunsEtlRunCollectionArgs{...}
 type GetEtlRunsEtlRunCollectionInput interface {
 	pulumi.Input
 
@@ -667,7 +667,7 @@ func (i GetEtlRunsEtlRunCollectionArgs) ToGetEtlRunsEtlRunCollectionOutputWithCo
 // GetEtlRunsEtlRunCollectionArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionArray and GetEtlRunsEtlRunCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionArrayInput` via:
 //
-//          GetEtlRunsEtlRunCollectionArray{ GetEtlRunsEtlRunCollectionArgs{...} }
+//	GetEtlRunsEtlRunCollectionArray{ GetEtlRunsEtlRunCollectionArgs{...} }
 type GetEtlRunsEtlRunCollectionArrayInput interface {
 	pulumi.Input
 
@@ -736,7 +736,7 @@ type GetEtlRunsEtlRunCollectionItem struct {
 // GetEtlRunsEtlRunCollectionItemInput is an input type that accepts GetEtlRunsEtlRunCollectionItemArgs and GetEtlRunsEtlRunCollectionItemOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemInput` via:
 //
-//          GetEtlRunsEtlRunCollectionItemArgs{...}
+//	GetEtlRunsEtlRunCollectionItemArgs{...}
 type GetEtlRunsEtlRunCollectionItemInput interface {
 	pulumi.Input
 
@@ -764,7 +764,7 @@ func (i GetEtlRunsEtlRunCollectionItemArgs) ToGetEtlRunsEtlRunCollectionItemOutp
 // GetEtlRunsEtlRunCollectionItemArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionItemArray and GetEtlRunsEtlRunCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemArrayInput` via:
 //
-//          GetEtlRunsEtlRunCollectionItemArray{ GetEtlRunsEtlRunCollectionItemArgs{...} }
+//	GetEtlRunsEtlRunCollectionItemArray{ GetEtlRunsEtlRunCollectionItemArgs{...} }
 type GetEtlRunsEtlRunCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -853,7 +853,7 @@ type GetEtlRunsEtlRunCollectionItemItem struct {
 // GetEtlRunsEtlRunCollectionItemItemInput is an input type that accepts GetEtlRunsEtlRunCollectionItemItemArgs and GetEtlRunsEtlRunCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemItemInput` via:
 //
-//          GetEtlRunsEtlRunCollectionItemItemArgs{...}
+//	GetEtlRunsEtlRunCollectionItemItemArgs{...}
 type GetEtlRunsEtlRunCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -901,7 +901,7 @@ func (i GetEtlRunsEtlRunCollectionItemItemArgs) ToGetEtlRunsEtlRunCollectionItem
 // GetEtlRunsEtlRunCollectionItemItemArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionItemItemArray and GetEtlRunsEtlRunCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemItemArrayInput` via:
 //
-//          GetEtlRunsEtlRunCollectionItemItemArray{ GetEtlRunsEtlRunCollectionItemItemArgs{...} }
+//	GetEtlRunsEtlRunCollectionItemItemArray{ GetEtlRunsEtlRunCollectionItemItemArgs{...} }
 type GetEtlRunsEtlRunCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -1021,7 +1021,7 @@ type GetEtlRunsFilter struct {
 // GetEtlRunsFilterInput is an input type that accepts GetEtlRunsFilterArgs and GetEtlRunsFilterOutput values.
 // You can construct a concrete instance of `GetEtlRunsFilterInput` via:
 //
-//          GetEtlRunsFilterArgs{...}
+//	GetEtlRunsFilterArgs{...}
 type GetEtlRunsFilterInput interface {
 	pulumi.Input
 
@@ -1050,7 +1050,7 @@ func (i GetEtlRunsFilterArgs) ToGetEtlRunsFilterOutputWithContext(ctx context.Co
 // GetEtlRunsFilterArrayInput is an input type that accepts GetEtlRunsFilterArray and GetEtlRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsFilterArrayInput` via:
 //
-//          GetEtlRunsFilterArray{ GetEtlRunsFilterArgs{...} }
+//	GetEtlRunsFilterArray{ GetEtlRunsFilterArgs{...} }
 type GetEtlRunsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1130,7 +1130,7 @@ type GetResourceUsageEmInstance struct {
 // GetResourceUsageEmInstanceInput is an input type that accepts GetResourceUsageEmInstanceArgs and GetResourceUsageEmInstanceOutput values.
 // You can construct a concrete instance of `GetResourceUsageEmInstanceInput` via:
 //
-//          GetResourceUsageEmInstanceArgs{...}
+//	GetResourceUsageEmInstanceArgs{...}
 type GetResourceUsageEmInstanceInput interface {
 	pulumi.Input
 
@@ -1162,7 +1162,7 @@ func (i GetResourceUsageEmInstanceArgs) ToGetResourceUsageEmInstanceOutputWithCo
 // GetResourceUsageEmInstanceArrayInput is an input type that accepts GetResourceUsageEmInstanceArray and GetResourceUsageEmInstanceArrayOutput values.
 // You can construct a concrete instance of `GetResourceUsageEmInstanceArrayInput` via:
 //
-//          GetResourceUsageEmInstanceArray{ GetResourceUsageEmInstanceArgs{...} }
+//	GetResourceUsageEmInstanceArray{ GetResourceUsageEmInstanceArgs{...} }
 type GetResourceUsageEmInstanceArrayInput interface {
 	pulumi.Input
 

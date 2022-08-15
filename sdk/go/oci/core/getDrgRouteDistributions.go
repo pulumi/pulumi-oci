@@ -23,23 +23,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDrgRouteDistributions(ctx, &core.GetDrgRouteDistributionsArgs{
-// 			DrgId:       oci_core_drg.Test_drg.Id,
-// 			DisplayName: pulumi.StringRef(_var.Drg_route_distribution_display_name),
-// 			State:       pulumi.StringRef(_var.Drg_route_distribution_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDrgRouteDistributions(ctx, &core.GetDrgRouteDistributionsArgs{
+//				DrgId:       oci_core_drg.Test_drg.Id,
+//				DisplayName: pulumi.StringRef(_var.Drg_route_distribution_display_name),
+//				State:       pulumi.StringRef(_var.Drg_route_distribution_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDrgRouteDistributions(ctx *pulumi.Context, args *GetDrgRouteDistributionsArgs, opts ...pulumi.InvokeOption) (*GetDrgRouteDistributionsResult, error) {
 	var rv GetDrgRouteDistributionsResult

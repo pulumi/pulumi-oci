@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAlertPolicyRules(ctx, &datasafe.GetAlertPolicyRulesArgs{
-// 			AlertPolicyId: oci_data_safe_alert_policy.Test_alert_policy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAlertPolicyRules(ctx, &datasafe.GetAlertPolicyRulesArgs{
+//				AlertPolicyId: oci_data_safe_alert_policy.Test_alert_policy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAlertPolicyRules(ctx *pulumi.Context, args *GetAlertPolicyRulesArgs, opts ...pulumi.InvokeOption) (*GetAlertPolicyRulesResult, error) {
 	var rv GetAlertPolicyRulesResult

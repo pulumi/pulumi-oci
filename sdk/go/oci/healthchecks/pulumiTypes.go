@@ -19,7 +19,7 @@ type GetHttpMonitorsFilter struct {
 // GetHttpMonitorsFilterInput is an input type that accepts GetHttpMonitorsFilterArgs and GetHttpMonitorsFilterOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsFilterInput` via:
 //
-//          GetHttpMonitorsFilterArgs{...}
+//	GetHttpMonitorsFilterArgs{...}
 type GetHttpMonitorsFilterInput interface {
 	pulumi.Input
 
@@ -48,7 +48,7 @@ func (i GetHttpMonitorsFilterArgs) ToGetHttpMonitorsFilterOutputWithContext(ctx 
 // GetHttpMonitorsFilterArrayInput is an input type that accepts GetHttpMonitorsFilterArray and GetHttpMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsFilterArrayInput` via:
 //
-//          GetHttpMonitorsFilterArray{ GetHttpMonitorsFilterArgs{...} }
+//	GetHttpMonitorsFilterArray{ GetHttpMonitorsFilterArgs{...} }
 type GetHttpMonitorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -158,7 +158,7 @@ type GetHttpMonitorsHttpMonitor struct {
 // GetHttpMonitorsHttpMonitorInput is an input type that accepts GetHttpMonitorsHttpMonitorArgs and GetHttpMonitorsHttpMonitorOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsHttpMonitorInput` via:
 //
-//          GetHttpMonitorsHttpMonitorArgs{...}
+//	GetHttpMonitorsHttpMonitorArgs{...}
 type GetHttpMonitorsHttpMonitorInput interface {
 	pulumi.Input
 
@@ -220,7 +220,7 @@ func (i GetHttpMonitorsHttpMonitorArgs) ToGetHttpMonitorsHttpMonitorOutputWithCo
 // GetHttpMonitorsHttpMonitorArrayInput is an input type that accepts GetHttpMonitorsHttpMonitorArray and GetHttpMonitorsHttpMonitorArrayOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsHttpMonitorArrayInput` via:
 //
-//          GetHttpMonitorsHttpMonitorArray{ GetHttpMonitorsHttpMonitorArgs{...} }
+//	GetHttpMonitorsHttpMonitorArray{ GetHttpMonitorsHttpMonitorArgs{...} }
 type GetHttpMonitorsHttpMonitorArrayInput interface {
 	pulumi.Input
 
@@ -375,7 +375,7 @@ type GetHttpProbeResultsFilter struct {
 // GetHttpProbeResultsFilterInput is an input type that accepts GetHttpProbeResultsFilterArgs and GetHttpProbeResultsFilterOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsFilterInput` via:
 //
-//          GetHttpProbeResultsFilterArgs{...}
+//	GetHttpProbeResultsFilterArgs{...}
 type GetHttpProbeResultsFilterInput interface {
 	pulumi.Input
 
@@ -404,7 +404,7 @@ func (i GetHttpProbeResultsFilterArgs) ToGetHttpProbeResultsFilterOutputWithCont
 // GetHttpProbeResultsFilterArrayInput is an input type that accepts GetHttpProbeResultsFilterArray and GetHttpProbeResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsFilterArrayInput` via:
 //
-//          GetHttpProbeResultsFilterArray{ GetHttpProbeResultsFilterArgs{...} }
+//	GetHttpProbeResultsFilterArray{ GetHttpProbeResultsFilterArgs{...} }
 type GetHttpProbeResultsFilterArrayInput interface {
 	pulumi.Input
 
@@ -531,7 +531,7 @@ type GetHttpProbeResultsHttpProbeResult struct {
 // GetHttpProbeResultsHttpProbeResultInput is an input type that accepts GetHttpProbeResultsHttpProbeResultArgs and GetHttpProbeResultsHttpProbeResultOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultInput` via:
 //
-//          GetHttpProbeResultsHttpProbeResultArgs{...}
+//	GetHttpProbeResultsHttpProbeResultArgs{...}
 type GetHttpProbeResultsHttpProbeResultInput interface {
 	pulumi.Input
 
@@ -610,7 +610,7 @@ func (i GetHttpProbeResultsHttpProbeResultArgs) ToGetHttpProbeResultsHttpProbeRe
 // GetHttpProbeResultsHttpProbeResultArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultArray and GetHttpProbeResultsHttpProbeResultArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultArrayInput` via:
 //
-//          GetHttpProbeResultsHttpProbeResultArray{ GetHttpProbeResultsHttpProbeResultArgs{...} }
+//	GetHttpProbeResultsHttpProbeResultArray{ GetHttpProbeResultsHttpProbeResultArgs{...} }
 type GetHttpProbeResultsHttpProbeResultArrayInput interface {
 	pulumi.Input
 
@@ -807,7 +807,7 @@ type GetHttpProbeResultsHttpProbeResultConnection struct {
 // GetHttpProbeResultsHttpProbeResultConnectionInput is an input type that accepts GetHttpProbeResultsHttpProbeResultConnectionArgs and GetHttpProbeResultsHttpProbeResultConnectionOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultConnectionInput` via:
 //
-//          GetHttpProbeResultsHttpProbeResultConnectionArgs{...}
+//	GetHttpProbeResultsHttpProbeResultConnectionArgs{...}
 type GetHttpProbeResultsHttpProbeResultConnectionInput interface {
 	pulumi.Input
 
@@ -841,7 +841,7 @@ func (i GetHttpProbeResultsHttpProbeResultConnectionArgs) ToGetHttpProbeResultsH
 // GetHttpProbeResultsHttpProbeResultConnectionArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultConnectionArray and GetHttpProbeResultsHttpProbeResultConnectionArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultConnectionArrayInput` via:
 //
-//          GetHttpProbeResultsHttpProbeResultConnectionArray{ GetHttpProbeResultsHttpProbeResultConnectionArgs{...} }
+//	GetHttpProbeResultsHttpProbeResultConnectionArray{ GetHttpProbeResultsHttpProbeResultConnectionArgs{...} }
 type GetHttpProbeResultsHttpProbeResultConnectionArrayInput interface {
 	pulumi.Input
 
@@ -927,7 +927,7 @@ type GetHttpProbeResultsHttpProbeResultDn struct {
 // GetHttpProbeResultsHttpProbeResultDnInput is an input type that accepts GetHttpProbeResultsHttpProbeResultDnArgs and GetHttpProbeResultsHttpProbeResultDnOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultDnInput` via:
 //
-//          GetHttpProbeResultsHttpProbeResultDnArgs{...}
+//	GetHttpProbeResultsHttpProbeResultDnArgs{...}
 type GetHttpProbeResultsHttpProbeResultDnInput interface {
 	pulumi.Input
 
@@ -957,7 +957,7 @@ func (i GetHttpProbeResultsHttpProbeResultDnArgs) ToGetHttpProbeResultsHttpProbe
 // GetHttpProbeResultsHttpProbeResultDnArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultDnArray and GetHttpProbeResultsHttpProbeResultDnArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultDnArrayInput` via:
 //
-//          GetHttpProbeResultsHttpProbeResultDnArray{ GetHttpProbeResultsHttpProbeResultDnArgs{...} }
+//	GetHttpProbeResultsHttpProbeResultDnArray{ GetHttpProbeResultsHttpProbeResultDnArgs{...} }
 type GetHttpProbeResultsHttpProbeResultDnArrayInput interface {
 	pulumi.Input
 
@@ -1032,7 +1032,7 @@ type GetPingMonitorsFilter struct {
 // GetPingMonitorsFilterInput is an input type that accepts GetPingMonitorsFilterArgs and GetPingMonitorsFilterOutput values.
 // You can construct a concrete instance of `GetPingMonitorsFilterInput` via:
 //
-//          GetPingMonitorsFilterArgs{...}
+//	GetPingMonitorsFilterArgs{...}
 type GetPingMonitorsFilterInput interface {
 	pulumi.Input
 
@@ -1061,7 +1061,7 @@ func (i GetPingMonitorsFilterArgs) ToGetPingMonitorsFilterOutputWithContext(ctx 
 // GetPingMonitorsFilterArrayInput is an input type that accepts GetPingMonitorsFilterArray and GetPingMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPingMonitorsFilterArrayInput` via:
 //
-//          GetPingMonitorsFilterArray{ GetPingMonitorsFilterArgs{...} }
+//	GetPingMonitorsFilterArray{ GetPingMonitorsFilterArgs{...} }
 type GetPingMonitorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1165,7 +1165,7 @@ type GetPingMonitorsPingMonitor struct {
 // GetPingMonitorsPingMonitorInput is an input type that accepts GetPingMonitorsPingMonitorArgs and GetPingMonitorsPingMonitorOutput values.
 // You can construct a concrete instance of `GetPingMonitorsPingMonitorInput` via:
 //
-//          GetPingMonitorsPingMonitorArgs{...}
+//	GetPingMonitorsPingMonitorArgs{...}
 type GetPingMonitorsPingMonitorInput interface {
 	pulumi.Input
 
@@ -1221,7 +1221,7 @@ func (i GetPingMonitorsPingMonitorArgs) ToGetPingMonitorsPingMonitorOutputWithCo
 // GetPingMonitorsPingMonitorArrayInput is an input type that accepts GetPingMonitorsPingMonitorArray and GetPingMonitorsPingMonitorArrayOutput values.
 // You can construct a concrete instance of `GetPingMonitorsPingMonitorArrayInput` via:
 //
-//          GetPingMonitorsPingMonitorArray{ GetPingMonitorsPingMonitorArgs{...} }
+//	GetPingMonitorsPingMonitorArray{ GetPingMonitorsPingMonitorArgs{...} }
 type GetPingMonitorsPingMonitorArrayInput interface {
 	pulumi.Input
 
@@ -1361,7 +1361,7 @@ type GetPingProbeResultsFilter struct {
 // GetPingProbeResultsFilterInput is an input type that accepts GetPingProbeResultsFilterArgs and GetPingProbeResultsFilterOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsFilterInput` via:
 //
-//          GetPingProbeResultsFilterArgs{...}
+//	GetPingProbeResultsFilterArgs{...}
 type GetPingProbeResultsFilterInput interface {
 	pulumi.Input
 
@@ -1390,7 +1390,7 @@ func (i GetPingProbeResultsFilterArgs) ToGetPingProbeResultsFilterOutputWithCont
 // GetPingProbeResultsFilterArrayInput is an input type that accepts GetPingProbeResultsFilterArray and GetPingProbeResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsFilterArrayInput` via:
 //
-//          GetPingProbeResultsFilterArray{ GetPingProbeResultsFilterArgs{...} }
+//	GetPingProbeResultsFilterArray{ GetPingProbeResultsFilterArgs{...} }
 type GetPingProbeResultsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1501,7 +1501,7 @@ type GetPingProbeResultsPingProbeResult struct {
 // GetPingProbeResultsPingProbeResultInput is an input type that accepts GetPingProbeResultsPingProbeResultArgs and GetPingProbeResultsPingProbeResultOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultInput` via:
 //
-//          GetPingProbeResultsPingProbeResultArgs{...}
+//	GetPingProbeResultsPingProbeResultArgs{...}
 type GetPingProbeResultsPingProbeResultInput interface {
 	pulumi.Input
 
@@ -1564,7 +1564,7 @@ func (i GetPingProbeResultsPingProbeResultArgs) ToGetPingProbeResultsPingProbeRe
 // GetPingProbeResultsPingProbeResultArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultArray and GetPingProbeResultsPingProbeResultArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultArrayInput` via:
 //
-//          GetPingProbeResultsPingProbeResultArray{ GetPingProbeResultsPingProbeResultArgs{...} }
+//	GetPingProbeResultsPingProbeResultArray{ GetPingProbeResultsPingProbeResultArgs{...} }
 type GetPingProbeResultsPingProbeResultArrayInput interface {
 	pulumi.Input
 
@@ -1717,7 +1717,7 @@ type GetPingProbeResultsPingProbeResultConnection struct {
 // GetPingProbeResultsPingProbeResultConnectionInput is an input type that accepts GetPingProbeResultsPingProbeResultConnectionArgs and GetPingProbeResultsPingProbeResultConnectionOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultConnectionInput` via:
 //
-//          GetPingProbeResultsPingProbeResultConnectionArgs{...}
+//	GetPingProbeResultsPingProbeResultConnectionArgs{...}
 type GetPingProbeResultsPingProbeResultConnectionInput interface {
 	pulumi.Input
 
@@ -1747,7 +1747,7 @@ func (i GetPingProbeResultsPingProbeResultConnectionArgs) ToGetPingProbeResultsP
 // GetPingProbeResultsPingProbeResultConnectionArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultConnectionArray and GetPingProbeResultsPingProbeResultConnectionArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultConnectionArrayInput` via:
 //
-//          GetPingProbeResultsPingProbeResultConnectionArray{ GetPingProbeResultsPingProbeResultConnectionArgs{...} }
+//	GetPingProbeResultsPingProbeResultConnectionArray{ GetPingProbeResultsPingProbeResultConnectionArgs{...} }
 type GetPingProbeResultsPingProbeResultConnectionArrayInput interface {
 	pulumi.Input
 
@@ -1823,7 +1823,7 @@ type GetPingProbeResultsPingProbeResultDn struct {
 // GetPingProbeResultsPingProbeResultDnInput is an input type that accepts GetPingProbeResultsPingProbeResultDnArgs and GetPingProbeResultsPingProbeResultDnOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultDnInput` via:
 //
-//          GetPingProbeResultsPingProbeResultDnArgs{...}
+//	GetPingProbeResultsPingProbeResultDnArgs{...}
 type GetPingProbeResultsPingProbeResultDnInput interface {
 	pulumi.Input
 
@@ -1853,7 +1853,7 @@ func (i GetPingProbeResultsPingProbeResultDnArgs) ToGetPingProbeResultsPingProbe
 // GetPingProbeResultsPingProbeResultDnArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultDnArray and GetPingProbeResultsPingProbeResultDnArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultDnArrayInput` via:
 //
-//          GetPingProbeResultsPingProbeResultDnArray{ GetPingProbeResultsPingProbeResultDnArgs{...} }
+//	GetPingProbeResultsPingProbeResultDnArray{ GetPingProbeResultsPingProbeResultDnArgs{...} }
 type GetPingProbeResultsPingProbeResultDnArrayInput interface {
 	pulumi.Input
 
@@ -1929,7 +1929,7 @@ type GetVantagePointsFilter struct {
 // GetVantagePointsFilterInput is an input type that accepts GetVantagePointsFilterArgs and GetVantagePointsFilterOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterInput` via:
 //
-//          GetVantagePointsFilterArgs{...}
+//	GetVantagePointsFilterArgs{...}
 type GetVantagePointsFilterInput interface {
 	pulumi.Input
 
@@ -1959,7 +1959,7 @@ func (i GetVantagePointsFilterArgs) ToGetVantagePointsFilterOutputWithContext(ct
 // GetVantagePointsFilterArrayInput is an input type that accepts GetVantagePointsFilterArray and GetVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterArrayInput` via:
 //
-//          GetVantagePointsFilterArray{ GetVantagePointsFilterArgs{...} }
+//	GetVantagePointsFilterArray{ GetVantagePointsFilterArgs{...} }
 type GetVantagePointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2044,7 +2044,7 @@ type GetVantagePointsHealthChecksVantagePoint struct {
 // GetVantagePointsHealthChecksVantagePointInput is an input type that accepts GetVantagePointsHealthChecksVantagePointArgs and GetVantagePointsHealthChecksVantagePointOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointInput` via:
 //
-//          GetVantagePointsHealthChecksVantagePointArgs{...}
+//	GetVantagePointsHealthChecksVantagePointArgs{...}
 type GetVantagePointsHealthChecksVantagePointInput interface {
 	pulumi.Input
 
@@ -2080,7 +2080,7 @@ func (i GetVantagePointsHealthChecksVantagePointArgs) ToGetVantagePointsHealthCh
 // GetVantagePointsHealthChecksVantagePointArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointArray and GetVantagePointsHealthChecksVantagePointArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointArrayInput` via:
 //
-//          GetVantagePointsHealthChecksVantagePointArray{ GetVantagePointsHealthChecksVantagePointArgs{...} }
+//	GetVantagePointsHealthChecksVantagePointArray{ GetVantagePointsHealthChecksVantagePointArgs{...} }
 type GetVantagePointsHealthChecksVantagePointArrayInput interface {
 	pulumi.Input
 
@@ -2185,7 +2185,7 @@ type GetVantagePointsHealthChecksVantagePointGeo struct {
 // GetVantagePointsHealthChecksVantagePointGeoInput is an input type that accepts GetVantagePointsHealthChecksVantagePointGeoArgs and GetVantagePointsHealthChecksVantagePointGeoOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointGeoInput` via:
 //
-//          GetVantagePointsHealthChecksVantagePointGeoArgs{...}
+//	GetVantagePointsHealthChecksVantagePointGeoArgs{...}
 type GetVantagePointsHealthChecksVantagePointGeoInput interface {
 	pulumi.Input
 
@@ -2225,7 +2225,7 @@ func (i GetVantagePointsHealthChecksVantagePointGeoArgs) ToGetVantagePointsHealt
 // GetVantagePointsHealthChecksVantagePointGeoArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointGeoArray and GetVantagePointsHealthChecksVantagePointGeoArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointGeoArrayInput` via:
 //
-//          GetVantagePointsHealthChecksVantagePointGeoArray{ GetVantagePointsHealthChecksVantagePointGeoArgs{...} }
+//	GetVantagePointsHealthChecksVantagePointGeoArray{ GetVantagePointsHealthChecksVantagePointGeoArgs{...} }
 type GetVantagePointsHealthChecksVantagePointGeoArrayInput interface {
 	pulumi.Input
 
@@ -2330,7 +2330,7 @@ type GetVantagePointsHealthChecksVantagePointRouting struct {
 // GetVantagePointsHealthChecksVantagePointRoutingInput is an input type that accepts GetVantagePointsHealthChecksVantagePointRoutingArgs and GetVantagePointsHealthChecksVantagePointRoutingOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointRoutingInput` via:
 //
-//          GetVantagePointsHealthChecksVantagePointRoutingArgs{...}
+//	GetVantagePointsHealthChecksVantagePointRoutingArgs{...}
 type GetVantagePointsHealthChecksVantagePointRoutingInput interface {
 	pulumi.Input
 
@@ -2364,7 +2364,7 @@ func (i GetVantagePointsHealthChecksVantagePointRoutingArgs) ToGetVantagePointsH
 // GetVantagePointsHealthChecksVantagePointRoutingArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointRoutingArray and GetVantagePointsHealthChecksVantagePointRoutingArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointRoutingArrayInput` via:
 //
-//          GetVantagePointsHealthChecksVantagePointRoutingArray{ GetVantagePointsHealthChecksVantagePointRoutingArgs{...} }
+//	GetVantagePointsHealthChecksVantagePointRoutingArray{ GetVantagePointsHealthChecksVantagePointRoutingArgs{...} }
 type GetVantagePointsHealthChecksVantagePointRoutingArrayInput interface {
 	pulumi.Input
 

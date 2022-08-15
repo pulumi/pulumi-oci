@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.NewSender(ctx, "testSender", &Email.SenderArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			EmailAddress:  pulumi.Any(_var.Sender_email_address),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.NewSender(ctx, "testSender", &Email.SenderArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				EmailAddress:  pulumi.Any(_var.Sender_email_address),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Senders can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Email/sender:Sender test_sender "id"
+//
+//	$ pulumi import oci:Email/sender:Sender test_sender "id"
+//
 // ```
 type Sender struct {
 	pulumi.CustomResourceState
@@ -198,7 +203,7 @@ func (i *Sender) ToSenderOutputWithContext(ctx context.Context) SenderOutput {
 // SenderArrayInput is an input type that accepts SenderArray and SenderArrayOutput values.
 // You can construct a concrete instance of `SenderArrayInput` via:
 //
-//          SenderArray{ SenderArgs{...} }
+//	SenderArray{ SenderArgs{...} }
 type SenderArrayInput interface {
 	pulumi.Input
 
@@ -223,7 +228,7 @@ func (i SenderArray) ToSenderArrayOutputWithContext(ctx context.Context) SenderA
 // SenderMapInput is an input type that accepts SenderMap and SenderMapOutput values.
 // You can construct a concrete instance of `SenderMapInput` via:
 //
-//          SenderMap{ "key": SenderArgs{...} }
+//	SenderMap{ "key": SenderArgs{...} }
 type SenderMapInput interface {
 	pulumi.Input
 

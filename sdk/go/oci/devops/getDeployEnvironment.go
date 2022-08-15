@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetDeployEnvironment(ctx, &devops.GetDeployEnvironmentArgs{
-// 			DeployEnvironmentId: oci_devops_deploy_environment.Test_deploy_environment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetDeployEnvironment(ctx, &devops.GetDeployEnvironmentArgs{
+//				DeployEnvironmentId: oci_devops_deploy_environment.Test_deploy_environment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDeployEnvironment(ctx *pulumi.Context, args *LookupDeployEnvironmentArgs, opts ...pulumi.InvokeOption) (*LookupDeployEnvironmentResult, error) {
 	var rv LookupDeployEnvironmentResult

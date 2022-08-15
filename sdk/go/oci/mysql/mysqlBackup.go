@@ -21,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.NewMysqlBackup(ctx, "testMysqlBackup", &Mysql.MysqlBackupArgs{
-// 			DbSystemId: pulumi.Any(oci_mysql_mysql_db_system.Test_db_system.Id),
-// 			BackupType: pulumi.Any(_var.Mysql_backup_backup_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Mysql_backup_description),
-// 			DisplayName: pulumi.Any(_var.Mysql_backup_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			RetentionInDays: pulumi.Any(_var.Mysql_backup_retention_in_days),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.NewMysqlBackup(ctx, "testMysqlBackup", &Mysql.MysqlBackupArgs{
+//				DbSystemId: pulumi.Any(oci_mysql_mysql_db_system.Test_db_system.Id),
+//				BackupType: pulumi.Any(_var.Mysql_backup_backup_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Mysql_backup_description),
+//				DisplayName: pulumi.Any(_var.Mysql_backup_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				RetentionInDays: pulumi.Any(_var.Mysql_backup_retention_in_days),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // MysqlBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
+//
+//	$ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
+//
 // ```
 type MysqlBackup struct {
 	pulumi.CustomResourceState
@@ -274,7 +279,7 @@ func (i *MysqlBackup) ToMysqlBackupOutputWithContext(ctx context.Context) MysqlB
 // MysqlBackupArrayInput is an input type that accepts MysqlBackupArray and MysqlBackupArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupArrayInput` via:
 //
-//          MysqlBackupArray{ MysqlBackupArgs{...} }
+//	MysqlBackupArray{ MysqlBackupArgs{...} }
 type MysqlBackupArrayInput interface {
 	pulumi.Input
 
@@ -299,7 +304,7 @@ func (i MysqlBackupArray) ToMysqlBackupArrayOutputWithContext(ctx context.Contex
 // MysqlBackupMapInput is an input type that accepts MysqlBackupMap and MysqlBackupMapOutput values.
 // You can construct a concrete instance of `MysqlBackupMapInput` via:
 //
-//          MysqlBackupMap{ "key": MysqlBackupArgs{...} }
+//	MysqlBackupMap{ "key": MysqlBackupArgs{...} }
 type MysqlBackupMapInput interface {
 	pulumi.Input
 

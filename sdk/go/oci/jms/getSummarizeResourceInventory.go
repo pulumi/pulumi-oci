@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.GetSummarizeResourceInventory(ctx, &jms.GetSummarizeResourceInventoryArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			TimeEnd:       pulumi.StringRef(_var.Summarize_resource_inventory_time_end),
-// 			TimeStart:     pulumi.StringRef(_var.Summarize_resource_inventory_time_start),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.GetSummarizeResourceInventory(ctx, &jms.GetSummarizeResourceInventoryArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				TimeEnd:       pulumi.StringRef(_var.Summarize_resource_inventory_time_end),
+//				TimeStart:     pulumi.StringRef(_var.Summarize_resource_inventory_time_start),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSummarizeResourceInventory(ctx *pulumi.Context, args *GetSummarizeResourceInventoryArgs, opts ...pulumi.InvokeOption) (*GetSummarizeResourceInventoryResult, error) {
 	var rv GetSummarizeResourceInventoryResult

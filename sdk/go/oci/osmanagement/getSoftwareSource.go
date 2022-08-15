@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.GetSoftwareSource(ctx, &osmanagement.GetSoftwareSourceArgs{
-// 			SoftwareSourceId: oci_osmanagement_software_source.Test_software_source.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.GetSoftwareSource(ctx, &osmanagement.GetSoftwareSourceArgs{
+//				SoftwareSourceId: oci_osmanagement_software_source.Test_software_source.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSoftwareSource(ctx *pulumi.Context, args *LookupSoftwareSourceArgs, opts ...pulumi.InvokeOption) (*LookupSoftwareSourceResult, error) {
 	var rv LookupSoftwareSourceResult

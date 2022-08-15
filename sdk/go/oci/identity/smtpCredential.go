@@ -24,22 +24,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewSmtpCredential(ctx, "testSmtpCredential", &Identity.SmtpCredentialArgs{
-// 			Description: pulumi.Any(_var.Smtp_credential_description),
-// 			UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewSmtpCredential(ctx, "testSmtpCredential", &Identity.SmtpCredentialArgs{
+//				Description: pulumi.Any(_var.Smtp_credential_description),
+//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // SmtpCredentials can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"
+//
+//	$ pulumi import oci:Identity/smtpCredential:SmtpCredential test_smtp_credential "users/{userId}/smtpCredentials/{smtpCredentialId}"
+//
 // ```
 type SmtpCredential struct {
 	pulumi.CustomResourceState
@@ -187,7 +192,7 @@ func (i *SmtpCredential) ToSmtpCredentialOutputWithContext(ctx context.Context) 
 // SmtpCredentialArrayInput is an input type that accepts SmtpCredentialArray and SmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `SmtpCredentialArrayInput` via:
 //
-//          SmtpCredentialArray{ SmtpCredentialArgs{...} }
+//	SmtpCredentialArray{ SmtpCredentialArgs{...} }
 type SmtpCredentialArrayInput interface {
 	pulumi.Input
 
@@ -212,7 +217,7 @@ func (i SmtpCredentialArray) ToSmtpCredentialArrayOutputWithContext(ctx context.
 // SmtpCredentialMapInput is an input type that accepts SmtpCredentialMap and SmtpCredentialMapOutput values.
 // You can construct a concrete instance of `SmtpCredentialMapInput` via:
 //
-//          SmtpCredentialMap{ "key": SmtpCredentialArgs{...} }
+//	SmtpCredentialMap{ "key": SmtpCredentialArgs{...} }
 type SmtpCredentialMapInput interface {
 	pulumi.Input
 

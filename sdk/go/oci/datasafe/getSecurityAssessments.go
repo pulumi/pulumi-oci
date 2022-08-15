@@ -34,33 +34,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSecurityAssessments(ctx, &datasafe.GetSecurityAssessmentsArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			AccessLevel:                     pulumi.StringRef(_var.Security_assessment_access_level),
-// 			CompartmentIdInSubtree:          pulumi.BoolRef(_var.Security_assessment_compartment_id_in_subtree),
-// 			DisplayName:                     pulumi.StringRef(_var.Security_assessment_display_name),
-// 			IsBaseline:                      pulumi.BoolRef(_var.Security_assessment_is_baseline),
-// 			IsScheduleAssessment:            pulumi.BoolRef(_var.Security_assessment_is_schedule_assessment),
-// 			ScheduleAssessmentId:            pulumi.StringRef(oci_data_safe_schedule_assessment.Test_schedule_assessment.Id),
-// 			State:                           pulumi.StringRef(_var.Security_assessment_state),
-// 			TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Security_assessment_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Security_assessment_time_created_less_than),
-// 			TriggeredBy:                     pulumi.StringRef(_var.Security_assessment_triggered_by),
-// 			Type:                            pulumi.StringRef(_var.Security_assessment_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSecurityAssessments(ctx, &datasafe.GetSecurityAssessmentsArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				AccessLevel:                     pulumi.StringRef(_var.Security_assessment_access_level),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Security_assessment_compartment_id_in_subtree),
+//				DisplayName:                     pulumi.StringRef(_var.Security_assessment_display_name),
+//				IsBaseline:                      pulumi.BoolRef(_var.Security_assessment_is_baseline),
+//				IsScheduleAssessment:            pulumi.BoolRef(_var.Security_assessment_is_schedule_assessment),
+//				ScheduleAssessmentId:            pulumi.StringRef(oci_data_safe_schedule_assessment.Test_schedule_assessment.Id),
+//				State:                           pulumi.StringRef(_var.Security_assessment_state),
+//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Security_assessment_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Security_assessment_time_created_less_than),
+//				TriggeredBy:                     pulumi.StringRef(_var.Security_assessment_triggered_by),
+//				Type:                            pulumi.StringRef(_var.Security_assessment_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecurityAssessments(ctx *pulumi.Context, args *GetSecurityAssessmentsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentsResult, error) {
 	var rv GetSecurityAssessmentsResult

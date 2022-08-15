@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.NewDbManagementPrivateEndpoint(ctx, "testDbManagementPrivateEndpoint", &DatabaseManagement.DbManagementPrivateEndpointArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			Description:   pulumi.Any(_var.Db_management_private_endpoint_description),
-// 			IsCluster:     pulumi.Any(_var.Db_management_private_endpoint_is_cluster),
-// 			NsgIds:        pulumi.Any(_var.Db_management_private_endpoint_nsg_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.NewDbManagementPrivateEndpoint(ctx, "testDbManagementPrivateEndpoint", &DatabaseManagement.DbManagementPrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				Description:   pulumi.Any(_var.Db_management_private_endpoint_description),
+//				IsCluster:     pulumi.Any(_var.Db_management_private_endpoint_is_cluster),
+//				NsgIds:        pulumi.Any(_var.Db_management_private_endpoint_nsg_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // DbManagementPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
+//
+//	$ pulumi import oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint test_db_management_private_endpoint "id"
+//
 // ```
 type DbManagementPrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -215,7 +220,7 @@ func (i *DbManagementPrivateEndpoint) ToDbManagementPrivateEndpointOutputWithCon
 // DbManagementPrivateEndpointArrayInput is an input type that accepts DbManagementPrivateEndpointArray and DbManagementPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DbManagementPrivateEndpointArrayInput` via:
 //
-//          DbManagementPrivateEndpointArray{ DbManagementPrivateEndpointArgs{...} }
+//	DbManagementPrivateEndpointArray{ DbManagementPrivateEndpointArgs{...} }
 type DbManagementPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -240,7 +245,7 @@ func (i DbManagementPrivateEndpointArray) ToDbManagementPrivateEndpointArrayOutp
 // DbManagementPrivateEndpointMapInput is an input type that accepts DbManagementPrivateEndpointMap and DbManagementPrivateEndpointMapOutput values.
 // You can construct a concrete instance of `DbManagementPrivateEndpointMapInput` via:
 //
-//          DbManagementPrivateEndpointMap{ "key": DbManagementPrivateEndpointArgs{...} }
+//	DbManagementPrivateEndpointMap{ "key": DbManagementPrivateEndpointArgs{...} }
 type DbManagementPrivateEndpointMapInput interface {
 	pulumi.Input
 

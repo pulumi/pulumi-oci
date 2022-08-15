@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetDbCredentials(ctx, &identity.GetDbCredentialsArgs{
-// 			UserId: oci_identity_user.Test_user.Id,
-// 			Name:   pulumi.StringRef(_var.Db_credential_name),
-// 			State:  pulumi.StringRef(_var.Db_credential_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetDbCredentials(ctx, &identity.GetDbCredentialsArgs{
+//				UserId: oci_identity_user.Test_user.Id,
+//				Name:   pulumi.StringRef(_var.Db_credential_name),
+//				State:  pulumi.StringRef(_var.Db_credential_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbCredentials(ctx *pulumi.Context, args *GetDbCredentialsArgs, opts ...pulumi.InvokeOption) (*GetDbCredentialsResult, error) {
 	var rv GetDbCredentialsResult

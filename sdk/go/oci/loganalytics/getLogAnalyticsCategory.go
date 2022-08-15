@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsCategory(ctx, &loganalytics.GetLogAnalyticsCategoryArgs{
-// 			Name:      _var.Log_analytics_category_name,
-// 			Namespace: _var.Log_analytics_category_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsCategory(ctx, &loganalytics.GetLogAnalyticsCategoryArgs{
+//				Name:      _var.Log_analytics_category_name,
+//				Namespace: _var.Log_analytics_category_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsCategory(ctx *pulumi.Context, args *GetLogAnalyticsCategoryArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsCategoryResult, error) {
 	var rv GetLogAnalyticsCategoryResult

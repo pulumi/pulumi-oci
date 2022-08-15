@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+// # This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
 //
 // ## Example Usage
 //
@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryType(ctx, &dataconnectivity.GetRegistryTypeArgs{
-// 			RegistryId: oci_data_connectivity_registry.Test_registry.Id,
-// 			TypeKey:    _var.Registry_type_type_key,
-// 			Fields:     _var.Registry_type_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryType(ctx, &dataconnectivity.GetRegistryTypeArgs{
+//				RegistryId: oci_data_connectivity_registry.Test_registry.Id,
+//				TypeKey:    _var.Registry_type_type_key,
+//				Fields:     _var.Registry_type_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRegistryType(ctx *pulumi.Context, args *GetRegistryTypeArgs, opts ...pulumi.InvokeOption) (*GetRegistryTypeResult, error) {
 	var rv GetRegistryTypeResult

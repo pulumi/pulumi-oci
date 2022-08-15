@@ -34,22 +34,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetListing(ctx, &marketplace.GetListingArgs{
-// 			ListingId:     oci_marketplace_listing.Test_listing.Id,
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetListing(ctx, &marketplace.GetListingArgs{
+//				ListingId:     oci_marketplace_listing.Test_listing.Id,
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetListing(ctx *pulumi.Context, args *GetListingArgs, opts ...pulumi.InvokeOption) (*GetListingResult, error) {
 	var rv GetListingResult

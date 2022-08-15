@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetExadataInfrastructure(ctx, &database.GetExadataInfrastructureArgs{
-// 			ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetExadataInfrastructure(ctx, &database.GetExadataInfrastructureArgs{
+//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupExadataInfrastructure(ctx *pulumi.Context, args *LookupExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupExadataInfrastructureResult, error) {
 	var rv LookupExadataInfrastructureResult
@@ -117,6 +120,8 @@ type LookupExadataInfrastructureResult struct {
 	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion string `pulumi:"monthlyDbServerVersion"`
 	// The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -335,6 +340,11 @@ func (o LookupExadataInfrastructureResultOutput) MaxMemoryInGbs() pulumi.IntOutp
 // The memory allocated in GBs.
 func (o LookupExadataInfrastructureResultOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) MonthlyDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
 }
 
 // The netmask for the control plane network.

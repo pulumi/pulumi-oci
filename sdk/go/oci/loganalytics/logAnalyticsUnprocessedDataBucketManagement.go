@@ -23,22 +23,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsUnprocessedDataBucketManagement(ctx, "testLogAnalyticsUnprocessedDataBucketManagement", &LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs{
-// 			Bucket:    pulumi.Any(_var.Log_analytics_unprocessed_data_bucket_management_bucket),
-// 			Namespace: pulumi.Any(_var.Log_analytics_unprocessed_data_bucket_management_namespace),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsUnprocessedDataBucketManagement(ctx, "testLogAnalyticsUnprocessedDataBucketManagement", &LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs{
+//				Bucket:    pulumi.Any(_var.Log_analytics_unprocessed_data_bucket_management_bucket),
+//				Namespace: pulumi.Any(_var.Log_analytics_unprocessed_data_bucket_management_namespace),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -168,7 +171,7 @@ func (i *LogAnalyticsUnprocessedDataBucketManagement) ToLogAnalyticsUnprocessedD
 // LogAnalyticsUnprocessedDataBucketManagementArrayInput is an input type that accepts LogAnalyticsUnprocessedDataBucketManagementArray and LogAnalyticsUnprocessedDataBucketManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsUnprocessedDataBucketManagementArrayInput` via:
 //
-//          LogAnalyticsUnprocessedDataBucketManagementArray{ LogAnalyticsUnprocessedDataBucketManagementArgs{...} }
+//	LogAnalyticsUnprocessedDataBucketManagementArray{ LogAnalyticsUnprocessedDataBucketManagementArgs{...} }
 type LogAnalyticsUnprocessedDataBucketManagementArrayInput interface {
 	pulumi.Input
 
@@ -193,7 +196,7 @@ func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToLogAnalyticsUnproces
 // LogAnalyticsUnprocessedDataBucketManagementMapInput is an input type that accepts LogAnalyticsUnprocessedDataBucketManagementMap and LogAnalyticsUnprocessedDataBucketManagementMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsUnprocessedDataBucketManagementMapInput` via:
 //
-//          LogAnalyticsUnprocessedDataBucketManagementMap{ "key": LogAnalyticsUnprocessedDataBucketManagementArgs{...} }
+//	LogAnalyticsUnprocessedDataBucketManagementMap{ "key": LogAnalyticsUnprocessedDataBucketManagementArgs{...} }
 type LogAnalyticsUnprocessedDataBucketManagementMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetEnrollmentStatus(ctx, &optimizer.GetEnrollmentStatusArgs{
-// 			EnrollmentStatusId: oci_optimizer_enrollment_status.Test_enrollment_status.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetEnrollmentStatus(ctx, &optimizer.GetEnrollmentStatusArgs{
+//				EnrollmentStatusId: oci_optimizer_enrollment_status.Test_enrollment_status.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupEnrollmentStatus(ctx *pulumi.Context, args *LookupEnrollmentStatusArgs, opts ...pulumi.InvokeOption) (*LookupEnrollmentStatusResult, error) {
 	var rv LookupEnrollmentStatusResult

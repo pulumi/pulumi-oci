@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceCatalog.NewCatalogAssociation(ctx, "testServiceCatalogAssociation", &ServiceCatalog.CatalogAssociationArgs{
-// 			EntityId:         pulumi.Any(oci_service_catalog_entity.Test_entity.Id),
-// 			ServiceCatalogId: pulumi.Any(oci_service_catalog_service_catalog.Test_service_catalog.Id),
-// 			EntityType:       pulumi.Any(_var.Service_catalog_association_entity_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceCatalog.NewCatalogAssociation(ctx, "testServiceCatalogAssociation", &ServiceCatalog.CatalogAssociationArgs{
+//				EntityId:         pulumi.Any(oci_service_catalog_entity.Test_entity.Id),
+//				ServiceCatalogId: pulumi.Any(oci_service_catalog_service_catalog.Test_service_catalog.Id),
+//				EntityType:       pulumi.Any(_var.Service_catalog_association_entity_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // ServiceCatalogAssociations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
+//
+//	$ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
+//
 // ```
 type CatalogAssociation struct {
 	pulumi.CustomResourceState
@@ -165,7 +170,7 @@ func (i *CatalogAssociation) ToCatalogAssociationOutputWithContext(ctx context.C
 // CatalogAssociationArrayInput is an input type that accepts CatalogAssociationArray and CatalogAssociationArrayOutput values.
 // You can construct a concrete instance of `CatalogAssociationArrayInput` via:
 //
-//          CatalogAssociationArray{ CatalogAssociationArgs{...} }
+//	CatalogAssociationArray{ CatalogAssociationArgs{...} }
 type CatalogAssociationArrayInput interface {
 	pulumi.Input
 
@@ -190,7 +195,7 @@ func (i CatalogAssociationArray) ToCatalogAssociationArrayOutputWithContext(ctx 
 // CatalogAssociationMapInput is an input type that accepts CatalogAssociationMap and CatalogAssociationMapOutput values.
 // You can construct a concrete instance of `CatalogAssociationMapInput` via:
 //
-//          CatalogAssociationMap{ "key": CatalogAssociationArgs{...} }
+//	CatalogAssociationMap{ "key": CatalogAssociationArgs{...} }
 type CatalogAssociationMapInput interface {
 	pulumi.Input
 

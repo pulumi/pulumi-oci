@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetContainerImages(ctx, &artifacts.GetContainerImagesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_image_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Container_image_display_name),
-// 			ImageId:                pulumi.StringRef(oci_core_image.Test_image.Id),
-// 			IsVersioned:            pulumi.BoolRef(_var.Container_image_is_versioned),
-// 			RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
-// 			RepositoryName:         pulumi.StringRef(oci_artifacts_repository.Test_repository.Name),
-// 			State:                  pulumi.StringRef(_var.Container_image_state),
-// 			Version:                pulumi.StringRef(_var.Container_image_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetContainerImages(ctx, &artifacts.GetContainerImagesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_image_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Container_image_display_name),
+//				ImageId:                pulumi.StringRef(oci_core_image.Test_image.Id),
+//				IsVersioned:            pulumi.BoolRef(_var.Container_image_is_versioned),
+//				RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
+//				RepositoryName:         pulumi.StringRef(oci_artifacts_repository.Test_repository.Name),
+//				State:                  pulumi.StringRef(_var.Container_image_state),
+//				Version:                pulumi.StringRef(_var.Container_image_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetContainerImages(ctx *pulumi.Context, args *GetContainerImagesArgs, opts ...pulumi.InvokeOption) (*GetContainerImagesResult, error) {
 	var rv GetContainerImagesResult

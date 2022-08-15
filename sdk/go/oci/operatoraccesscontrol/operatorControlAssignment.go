@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.NewOperatorControlAssignment(ctx, "testOperatorControlAssignment", &OperatorAccessControl.OperatorControlAssignmentArgs{
-// 			CompartmentId:                  pulumi.Any(_var.Compartment_id),
-// 			IsEnforcedAlways:               pulumi.Any(_var.Operator_control_assignment_is_enforced_always),
-// 			OperatorControlId:              pulumi.Any(oci_operator_access_control_operator_control.Test_operator_control.Id),
-// 			ResourceCompartmentId:          pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-// 			ResourceId:                     pulumi.Any(oci_operator_access_control_resource.Test_resource.Id),
-// 			ResourceName:                   pulumi.Any(_var.Operator_control_assignment_resource_name),
-// 			ResourceType:                   pulumi.Any(_var.Operator_control_assignment_resource_type),
-// 			Comment:                        pulumi.Any(_var.Operator_control_assignment_comment),
-// 			DefinedTags:                    pulumi.Any(_var.Operator_control_assignment_defined_tags),
-// 			FreeformTags:                   pulumi.Any(_var.Operator_control_assignment_freeform_tags),
-// 			IsAutoApproveDuringMaintenance: pulumi.Any(_var.Operator_control_assignment_is_auto_approve_during_maintenance),
-// 			IsLogForwarded:                 pulumi.Any(_var.Operator_control_assignment_is_log_forwarded),
-// 			RemoteSyslogServerAddress:      pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_address),
-// 			RemoteSyslogServerCaCert:       pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_ca_cert),
-// 			RemoteSyslogServerPort:         pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_port),
-// 			TimeAssignmentFrom:             pulumi.Any(_var.Operator_control_assignment_time_assignment_from),
-// 			TimeAssignmentTo:               pulumi.Any(_var.Operator_control_assignment_time_assignment_to),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.NewOperatorControlAssignment(ctx, "testOperatorControlAssignment", &OperatorAccessControl.OperatorControlAssignmentArgs{
+//				CompartmentId:                  pulumi.Any(_var.Compartment_id),
+//				IsEnforcedAlways:               pulumi.Any(_var.Operator_control_assignment_is_enforced_always),
+//				OperatorControlId:              pulumi.Any(oci_operator_access_control_operator_control.Test_operator_control.Id),
+//				ResourceCompartmentId:          pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//				ResourceId:                     pulumi.Any(oci_operator_access_control_resource.Test_resource.Id),
+//				ResourceName:                   pulumi.Any(_var.Operator_control_assignment_resource_name),
+//				ResourceType:                   pulumi.Any(_var.Operator_control_assignment_resource_type),
+//				Comment:                        pulumi.Any(_var.Operator_control_assignment_comment),
+//				DefinedTags:                    pulumi.Any(_var.Operator_control_assignment_defined_tags),
+//				FreeformTags:                   pulumi.Any(_var.Operator_control_assignment_freeform_tags),
+//				IsAutoApproveDuringMaintenance: pulumi.Any(_var.Operator_control_assignment_is_auto_approve_during_maintenance),
+//				IsLogForwarded:                 pulumi.Any(_var.Operator_control_assignment_is_log_forwarded),
+//				RemoteSyslogServerAddress:      pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_address),
+//				RemoteSyslogServerCaCert:       pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_ca_cert),
+//				RemoteSyslogServerPort:         pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_port),
+//				TimeAssignmentFrom:             pulumi.Any(_var.Operator_control_assignment_time_assignment_from),
+//				TimeAssignmentTo:               pulumi.Any(_var.Operator_control_assignment_time_assignment_to),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // OperatorControlAssignments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
+//
+//	$ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
+//
 // ```
 type OperatorControlAssignment struct {
 	pulumi.CustomResourceState
@@ -86,6 +91,8 @@ type OperatorControlAssignment struct {
 	IsEnforcedAlways pulumi.BoolOutput `pulumi:"isEnforcedAlways"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolOutput `pulumi:"isLogForwarded"`
+	// More in detail about the lifeCycleState.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId pulumi.StringOutput `pulumi:"operatorControlId"`
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -188,6 +195,8 @@ type operatorControlAssignmentState struct {
 	IsEnforcedAlways *bool `pulumi:"isEnforcedAlways"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded *bool `pulumi:"isLogForwarded"`
+	// More in detail about the lifeCycleState.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId *string `pulumi:"operatorControlId"`
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -241,6 +250,8 @@ type OperatorControlAssignmentState struct {
 	IsEnforcedAlways pulumi.BoolPtrInput
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolPtrInput
+	// More in detail about the lifeCycleState.
+	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId pulumi.StringPtrInput
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
@@ -376,7 +387,7 @@ func (i *OperatorControlAssignment) ToOperatorControlAssignmentOutputWithContext
 // OperatorControlAssignmentArrayInput is an input type that accepts OperatorControlAssignmentArray and OperatorControlAssignmentArrayOutput values.
 // You can construct a concrete instance of `OperatorControlAssignmentArrayInput` via:
 //
-//          OperatorControlAssignmentArray{ OperatorControlAssignmentArgs{...} }
+//	OperatorControlAssignmentArray{ OperatorControlAssignmentArgs{...} }
 type OperatorControlAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -401,7 +412,7 @@ func (i OperatorControlAssignmentArray) ToOperatorControlAssignmentArrayOutputWi
 // OperatorControlAssignmentMapInput is an input type that accepts OperatorControlAssignmentMap and OperatorControlAssignmentMapOutput values.
 // You can construct a concrete instance of `OperatorControlAssignmentMapInput` via:
 //
-//          OperatorControlAssignmentMap{ "key": OperatorControlAssignmentArgs{...} }
+//	OperatorControlAssignmentMap{ "key": OperatorControlAssignmentArgs{...} }
 type OperatorControlAssignmentMapInput interface {
 	pulumi.Input
 

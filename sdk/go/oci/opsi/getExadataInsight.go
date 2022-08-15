@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetExadataInsight(ctx, &opsi.GetExadataInsightArgs{
-// 			ExadataInsightId: oci_opsi_exadata_insight.Test_exadata_insight.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetExadataInsight(ctx, &opsi.GetExadataInsightArgs{
+//				ExadataInsightId: oci_opsi_exadata_insight.Test_exadata_insight.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupExadataInsight(ctx *pulumi.Context, args *LookupExadataInsightArgs, opts ...pulumi.InvokeOption) (*LookupExadataInsightResult, error) {
 	var rv LookupExadataInsightResult

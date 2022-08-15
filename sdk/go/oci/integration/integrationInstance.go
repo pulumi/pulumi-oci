@@ -21,57 +21,60 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Integration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Integration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Integration.NewIntegrationInstance(ctx, "testIntegrationInstance", &Integration.IntegrationInstanceArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			DisplayName:             pulumi.Any(_var.Integration_instance_display_name),
-// 			IntegrationInstanceType: pulumi.Any(_var.Integration_instance_integration_instance_type),
-// 			IsByol:                  pulumi.Any(_var.Integration_instance_is_byol),
-// 			MessagePacks:            pulumi.Any(_var.Integration_instance_message_packs),
-// 			AlternateCustomEndpoints: integration.IntegrationInstanceAlternateCustomEndpointArray{
-// 				&integration.IntegrationInstanceAlternateCustomEndpointArgs{
-// 					Hostname:            pulumi.Any(_var.Integration_instance_alternate_custom_endpoints_hostname),
-// 					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				},
-// 			},
-// 			ConsumptionModel: pulumi.Any(_var.Integration_instance_consumption_model),
-// 			CustomEndpoint: &integration.IntegrationInstanceCustomEndpointArgs{
-// 				Hostname:            pulumi.Any(_var.Integration_instance_custom_endpoint_hostname),
-// 				CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IdcsAt:                 pulumi.Any(_var.Integration_instance_idcs_at),
-// 			IsFileServerEnabled:    pulumi.Any(_var.Integration_instance_is_file_server_enabled),
-// 			IsVisualBuilderEnabled: pulumi.Any(_var.Integration_instance_is_visual_builder_enabled),
-// 			NetworkEndpointDetails: &integration.IntegrationInstanceNetworkEndpointDetailsArgs{
-// 				NetworkEndpointType: pulumi.Any(_var.Integration_instance_network_endpoint_details_network_endpoint_type),
-// 				AllowlistedHttpIps:  pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_ips),
-// 				AllowlistedHttpVcns: integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{
-// 					&integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{
-// 						Id:             pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_id),
-// 						AllowlistedIps: pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips),
-// 					},
-// 				},
-// 				IsIntegrationVcnAllowlisted: pulumi.Any(_var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted),
-// 			},
-// 			State: pulumi.Any(_var.Integration_instance_target_state),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Integration.NewIntegrationInstance(ctx, "testIntegrationInstance", &Integration.IntegrationInstanceArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				DisplayName:             pulumi.Any(_var.Integration_instance_display_name),
+//				IntegrationInstanceType: pulumi.Any(_var.Integration_instance_integration_instance_type),
+//				IsByol:                  pulumi.Any(_var.Integration_instance_is_byol),
+//				MessagePacks:            pulumi.Any(_var.Integration_instance_message_packs),
+//				AlternateCustomEndpoints: integration.IntegrationInstanceAlternateCustomEndpointArray{
+//					&integration.IntegrationInstanceAlternateCustomEndpointArgs{
+//						Hostname:            pulumi.Any(_var.Integration_instance_alternate_custom_endpoints_hostname),
+//						CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					},
+//				},
+//				ConsumptionModel: pulumi.Any(_var.Integration_instance_consumption_model),
+//				CustomEndpoint: &integration.IntegrationInstanceCustomEndpointArgs{
+//					Hostname:            pulumi.Any(_var.Integration_instance_custom_endpoint_hostname),
+//					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IdcsAt:                 pulumi.Any(_var.Integration_instance_idcs_at),
+//				IsFileServerEnabled:    pulumi.Any(_var.Integration_instance_is_file_server_enabled),
+//				IsVisualBuilderEnabled: pulumi.Any(_var.Integration_instance_is_visual_builder_enabled),
+//				NetworkEndpointDetails: &integration.IntegrationInstanceNetworkEndpointDetailsArgs{
+//					NetworkEndpointType: pulumi.Any(_var.Integration_instance_network_endpoint_details_network_endpoint_type),
+//					AllowlistedHttpIps:  pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_ips),
+//					AllowlistedHttpVcns: integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{
+//						&integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{
+//							Id:             pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_id),
+//							AllowlistedIps: pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips),
+//						},
+//					},
+//					IsIntegrationVcnAllowlisted: pulumi.Any(_var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted),
+//				},
+//				State: pulumi.Any(_var.Integration_instance_target_state),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -79,13 +82,17 @@ import (
 // IntegrationInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
+//
+//	$ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
+//
 // ```
 type IntegrationInstance struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints IntegrationInstanceAlternateCustomEndpointArrayOutput `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments IntegrationInstanceAttachmentArrayOutput `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -100,6 +107,8 @@ type IntegrationInstance struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrOutput `pulumi:"idcsAt"`
+	// Information for IDCS access
+	IdcsInfos IntegrationInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringOutput `pulumi:"instanceUrl"`
 	// (Updatable) Standard or Enterprise type
@@ -170,6 +179,8 @@ func GetIntegrationInstance(ctx *pulumi.Context,
 type integrationInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []IntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments []IntegrationInstanceAttachment `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -184,6 +195,8 @@ type integrationInstanceState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
+	// Information for IDCS access
+	IdcsInfos []IntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl *string `pulumi:"instanceUrl"`
 	// (Updatable) Standard or Enterprise type
@@ -211,6 +224,8 @@ type integrationInstanceState struct {
 type IntegrationInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints IntegrationInstanceAlternateCustomEndpointArrayInput
+	// A list of associated attachments to other services
+	Attachments IntegrationInstanceAttachmentArrayInput
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -225,6 +240,8 @@ type IntegrationInstanceState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrInput
+	// Information for IDCS access
+	IdcsInfos IntegrationInstanceIdcsInfoArrayInput
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringPtrInput
 	// (Updatable) Standard or Enterprise type
@@ -346,7 +363,7 @@ func (i *IntegrationInstance) ToIntegrationInstanceOutputWithContext(ctx context
 // IntegrationInstanceArrayInput is an input type that accepts IntegrationInstanceArray and IntegrationInstanceArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceArrayInput` via:
 //
-//          IntegrationInstanceArray{ IntegrationInstanceArgs{...} }
+//	IntegrationInstanceArray{ IntegrationInstanceArgs{...} }
 type IntegrationInstanceArrayInput interface {
 	pulumi.Input
 
@@ -371,7 +388,7 @@ func (i IntegrationInstanceArray) ToIntegrationInstanceArrayOutputWithContext(ct
 // IntegrationInstanceMapInput is an input type that accepts IntegrationInstanceMap and IntegrationInstanceMapOutput values.
 // You can construct a concrete instance of `IntegrationInstanceMapInput` via:
 //
-//          IntegrationInstanceMap{ "key": IntegrationInstanceArgs{...} }
+//	IntegrationInstanceMap{ "key": IntegrationInstanceArgs{...} }
 type IntegrationInstanceMapInput interface {
 	pulumi.Input
 

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.GetBackendSetHealth(ctx, &loadbalancer.GetBackendSetHealthArgs{
-// 			BackendSetName: oci_load_balancer_backend_set.Test_backend_set.Name,
-// 			LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.GetBackendSetHealth(ctx, &loadbalancer.GetBackendSetHealthArgs{
+//				BackendSetName: oci_load_balancer_backend_set.Test_backend_set.Name,
+//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBackendSetHealth(ctx *pulumi.Context, args *GetBackendSetHealthArgs, opts ...pulumi.InvokeOption) (*GetBackendSetHealthResult, error) {
 	var rv GetBackendSetHealthResult

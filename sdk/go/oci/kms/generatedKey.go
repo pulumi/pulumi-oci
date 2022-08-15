@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewGeneratedKey(ctx, "testGeneratedKey", &Kms.GeneratedKeyArgs{
-// 			CryptoEndpoint:      pulumi.Any(_var.Generated_key_crypto_endpoint),
-// 			IncludePlaintextKey: pulumi.Any(_var.Generated_key_include_plaintext_key),
-// 			KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
-// 			KeyShape: &kms.GeneratedKeyKeyShapeArgs{
-// 				Algorithm: pulumi.Any(_var.Generated_key_key_shape_algorithm),
-// 				Length:    pulumi.Any(_var.Generated_key_key_shape_length),
-// 				CurveId:   pulumi.Any(oci_kms_curve.Test_curve.Id),
-// 			},
-// 			AssociatedData: pulumi.Any(_var.Generated_key_associated_data),
-// 			LoggingContext: pulumi.Any(_var.Generated_key_logging_context),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewGeneratedKey(ctx, "testGeneratedKey", &Kms.GeneratedKeyArgs{
+//				CryptoEndpoint:      pulumi.Any(_var.Generated_key_crypto_endpoint),
+//				IncludePlaintextKey: pulumi.Any(_var.Generated_key_include_plaintext_key),
+//				KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
+//				KeyShape: &kms.GeneratedKeyKeyShapeArgs{
+//					Algorithm: pulumi.Any(_var.Generated_key_key_shape_algorithm),
+//					Length:    pulumi.Any(_var.Generated_key_key_shape_length),
+//					CurveId:   pulumi.Any(oci_kms_curve.Test_curve.Id),
+//				},
+//				AssociatedData: pulumi.Any(_var.Generated_key_associated_data),
+//				LoggingContext: pulumi.Any(_var.Generated_key_logging_context),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -216,7 +219,7 @@ func (i *GeneratedKey) ToGeneratedKeyOutputWithContext(ctx context.Context) Gene
 // GeneratedKeyArrayInput is an input type that accepts GeneratedKeyArray and GeneratedKeyArrayOutput values.
 // You can construct a concrete instance of `GeneratedKeyArrayInput` via:
 //
-//          GeneratedKeyArray{ GeneratedKeyArgs{...} }
+//	GeneratedKeyArray{ GeneratedKeyArgs{...} }
 type GeneratedKeyArrayInput interface {
 	pulumi.Input
 
@@ -241,7 +244,7 @@ func (i GeneratedKeyArray) ToGeneratedKeyArrayOutputWithContext(ctx context.Cont
 // GeneratedKeyMapInput is an input type that accepts GeneratedKeyMap and GeneratedKeyMapOutput values.
 // You can construct a concrete instance of `GeneratedKeyMapInput` via:
 //
-//          GeneratedKeyMap{ "key": GeneratedKeyArgs{...} }
+//	GeneratedKeyMap{ "key": GeneratedKeyArgs{...} }
 type GeneratedKeyMapInput interface {
 	pulumi.Input
 

@@ -22,7 +22,7 @@ type AlarmSuppression struct {
 // AlarmSuppressionInput is an input type that accepts AlarmSuppressionArgs and AlarmSuppressionOutput values.
 // You can construct a concrete instance of `AlarmSuppressionInput` via:
 //
-//          AlarmSuppressionArgs{...}
+//	AlarmSuppressionArgs{...}
 type AlarmSuppressionInput interface {
 	pulumi.Input
 
@@ -62,11 +62,11 @@ func (i AlarmSuppressionArgs) ToAlarmSuppressionPtrOutputWithContext(ctx context
 // AlarmSuppressionPtrInput is an input type that accepts AlarmSuppressionArgs, AlarmSuppressionPtr and AlarmSuppressionPtrOutput values.
 // You can construct a concrete instance of `AlarmSuppressionPtrInput` via:
 //
-//          AlarmSuppressionArgs{...}
+//	        AlarmSuppressionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AlarmSuppressionPtrInput interface {
 	pulumi.Input
 
@@ -197,7 +197,7 @@ type GetAlarmHistoryCollectionEntry struct {
 // GetAlarmHistoryCollectionEntryInput is an input type that accepts GetAlarmHistoryCollectionEntryArgs and GetAlarmHistoryCollectionEntryOutput values.
 // You can construct a concrete instance of `GetAlarmHistoryCollectionEntryInput` via:
 //
-//          GetAlarmHistoryCollectionEntryArgs{...}
+//	GetAlarmHistoryCollectionEntryArgs{...}
 type GetAlarmHistoryCollectionEntryInput interface {
 	pulumi.Input
 
@@ -229,7 +229,7 @@ func (i GetAlarmHistoryCollectionEntryArgs) ToGetAlarmHistoryCollectionEntryOutp
 // GetAlarmHistoryCollectionEntryArrayInput is an input type that accepts GetAlarmHistoryCollectionEntryArray and GetAlarmHistoryCollectionEntryArrayOutput values.
 // You can construct a concrete instance of `GetAlarmHistoryCollectionEntryArrayInput` via:
 //
-//          GetAlarmHistoryCollectionEntryArray{ GetAlarmHistoryCollectionEntryArgs{...} }
+//	GetAlarmHistoryCollectionEntryArray{ GetAlarmHistoryCollectionEntryArgs{...} }
 type GetAlarmHistoryCollectionEntryArrayInput interface {
 	pulumi.Input
 
@@ -318,7 +318,7 @@ type GetAlarmStatusesAlarmStatus struct {
 // GetAlarmStatusesAlarmStatusInput is an input type that accepts GetAlarmStatusesAlarmStatusArgs and GetAlarmStatusesAlarmStatusOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesAlarmStatusInput` via:
 //
-//          GetAlarmStatusesAlarmStatusArgs{...}
+//	GetAlarmStatusesAlarmStatusArgs{...}
 type GetAlarmStatusesAlarmStatusInput interface {
 	pulumi.Input
 
@@ -356,7 +356,7 @@ func (i GetAlarmStatusesAlarmStatusArgs) ToGetAlarmStatusesAlarmStatusOutputWith
 // GetAlarmStatusesAlarmStatusArrayInput is an input type that accepts GetAlarmStatusesAlarmStatusArray and GetAlarmStatusesAlarmStatusArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesAlarmStatusArrayInput` via:
 //
-//          GetAlarmStatusesAlarmStatusArray{ GetAlarmStatusesAlarmStatusArgs{...} }
+//	GetAlarmStatusesAlarmStatusArray{ GetAlarmStatusesAlarmStatusArgs{...} }
 type GetAlarmStatusesAlarmStatusArrayInput interface {
 	pulumi.Input
 
@@ -454,7 +454,7 @@ type GetAlarmStatusesAlarmStatusSuppression struct {
 // GetAlarmStatusesAlarmStatusSuppressionInput is an input type that accepts GetAlarmStatusesAlarmStatusSuppressionArgs and GetAlarmStatusesAlarmStatusSuppressionOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesAlarmStatusSuppressionInput` via:
 //
-//          GetAlarmStatusesAlarmStatusSuppressionArgs{...}
+//	GetAlarmStatusesAlarmStatusSuppressionArgs{...}
 type GetAlarmStatusesAlarmStatusSuppressionInput interface {
 	pulumi.Input
 
@@ -486,7 +486,7 @@ func (i GetAlarmStatusesAlarmStatusSuppressionArgs) ToGetAlarmStatusesAlarmStatu
 // GetAlarmStatusesAlarmStatusSuppressionArrayInput is an input type that accepts GetAlarmStatusesAlarmStatusSuppressionArray and GetAlarmStatusesAlarmStatusSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesAlarmStatusSuppressionArrayInput` via:
 //
-//          GetAlarmStatusesAlarmStatusSuppressionArray{ GetAlarmStatusesAlarmStatusSuppressionArgs{...} }
+//	GetAlarmStatusesAlarmStatusSuppressionArray{ GetAlarmStatusesAlarmStatusSuppressionArgs{...} }
 type GetAlarmStatusesAlarmStatusSuppressionArrayInput interface {
 	pulumi.Input
 
@@ -566,7 +566,7 @@ type GetAlarmStatusesFilter struct {
 // GetAlarmStatusesFilterInput is an input type that accepts GetAlarmStatusesFilterArgs and GetAlarmStatusesFilterOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesFilterInput` via:
 //
-//          GetAlarmStatusesFilterArgs{...}
+//	GetAlarmStatusesFilterArgs{...}
 type GetAlarmStatusesFilterInput interface {
 	pulumi.Input
 
@@ -595,7 +595,7 @@ func (i GetAlarmStatusesFilterArgs) ToGetAlarmStatusesFilterOutputWithContext(ct
 // GetAlarmStatusesFilterArrayInput is an input type that accepts GetAlarmStatusesFilterArray and GetAlarmStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesFilterArrayInput` via:
 //
-//          GetAlarmStatusesFilterArray{ GetAlarmStatusesFilterArgs{...} }
+//	GetAlarmStatusesFilterArray{ GetAlarmStatusesFilterArgs{...} }
 type GetAlarmStatusesFilterArrayInput interface {
 	pulumi.Input
 
@@ -675,7 +675,7 @@ type GetAlarmSuppression struct {
 // GetAlarmSuppressionInput is an input type that accepts GetAlarmSuppressionArgs and GetAlarmSuppressionOutput values.
 // You can construct a concrete instance of `GetAlarmSuppressionInput` via:
 //
-//          GetAlarmSuppressionArgs{...}
+//	GetAlarmSuppressionArgs{...}
 type GetAlarmSuppressionInput interface {
 	pulumi.Input
 
@@ -707,7 +707,7 @@ func (i GetAlarmSuppressionArgs) ToGetAlarmSuppressionOutputWithContext(ctx cont
 // GetAlarmSuppressionArrayInput is an input type that accepts GetAlarmSuppressionArray and GetAlarmSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetAlarmSuppressionArrayInput` via:
 //
-//          GetAlarmSuppressionArray{ GetAlarmSuppressionArgs{...} }
+//	GetAlarmSuppressionArray{ GetAlarmSuppressionArgs{...} }
 type GetAlarmSuppressionArrayInput interface {
 	pulumi.Input
 
@@ -828,7 +828,7 @@ type GetAlarmsAlarm struct {
 // GetAlarmsAlarmInput is an input type that accepts GetAlarmsAlarmArgs and GetAlarmsAlarmOutput values.
 // You can construct a concrete instance of `GetAlarmsAlarmInput` via:
 //
-//          GetAlarmsAlarmArgs{...}
+//	GetAlarmsAlarmArgs{...}
 type GetAlarmsAlarmInput interface {
 	pulumi.Input
 
@@ -898,7 +898,7 @@ func (i GetAlarmsAlarmArgs) ToGetAlarmsAlarmOutputWithContext(ctx context.Contex
 // GetAlarmsAlarmArrayInput is an input type that accepts GetAlarmsAlarmArray and GetAlarmsAlarmArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsAlarmArrayInput` via:
 //
-//          GetAlarmsAlarmArray{ GetAlarmsAlarmArgs{...} }
+//	GetAlarmsAlarmArray{ GetAlarmsAlarmArgs{...} }
 type GetAlarmsAlarmArrayInput interface {
 	pulumi.Input
 
@@ -1076,7 +1076,7 @@ type GetAlarmsAlarmSuppression struct {
 // GetAlarmsAlarmSuppressionInput is an input type that accepts GetAlarmsAlarmSuppressionArgs and GetAlarmsAlarmSuppressionOutput values.
 // You can construct a concrete instance of `GetAlarmsAlarmSuppressionInput` via:
 //
-//          GetAlarmsAlarmSuppressionArgs{...}
+//	GetAlarmsAlarmSuppressionArgs{...}
 type GetAlarmsAlarmSuppressionInput interface {
 	pulumi.Input
 
@@ -1108,7 +1108,7 @@ func (i GetAlarmsAlarmSuppressionArgs) ToGetAlarmsAlarmSuppressionOutputWithCont
 // GetAlarmsAlarmSuppressionArrayInput is an input type that accepts GetAlarmsAlarmSuppressionArray and GetAlarmsAlarmSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsAlarmSuppressionArrayInput` via:
 //
-//          GetAlarmsAlarmSuppressionArray{ GetAlarmsAlarmSuppressionArgs{...} }
+//	GetAlarmsAlarmSuppressionArray{ GetAlarmsAlarmSuppressionArgs{...} }
 type GetAlarmsAlarmSuppressionArrayInput interface {
 	pulumi.Input
 
@@ -1188,7 +1188,7 @@ type GetAlarmsFilter struct {
 // GetAlarmsFilterInput is an input type that accepts GetAlarmsFilterArgs and GetAlarmsFilterOutput values.
 // You can construct a concrete instance of `GetAlarmsFilterInput` via:
 //
-//          GetAlarmsFilterArgs{...}
+//	GetAlarmsFilterArgs{...}
 type GetAlarmsFilterInput interface {
 	pulumi.Input
 
@@ -1217,7 +1217,7 @@ func (i GetAlarmsFilterArgs) ToGetAlarmsFilterOutputWithContext(ctx context.Cont
 // GetAlarmsFilterArrayInput is an input type that accepts GetAlarmsFilterArray and GetAlarmsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsFilterArrayInput` via:
 //
-//          GetAlarmsFilterArray{ GetAlarmsFilterArgs{...} }
+//	GetAlarmsFilterArray{ GetAlarmsFilterArgs{...} }
 type GetAlarmsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1295,7 +1295,7 @@ type GetMetricDataFilter struct {
 // GetMetricDataFilterInput is an input type that accepts GetMetricDataFilterArgs and GetMetricDataFilterOutput values.
 // You can construct a concrete instance of `GetMetricDataFilterInput` via:
 //
-//          GetMetricDataFilterArgs{...}
+//	GetMetricDataFilterArgs{...}
 type GetMetricDataFilterInput interface {
 	pulumi.Input
 
@@ -1325,7 +1325,7 @@ func (i GetMetricDataFilterArgs) ToGetMetricDataFilterOutputWithContext(ctx cont
 // GetMetricDataFilterArrayInput is an input type that accepts GetMetricDataFilterArray and GetMetricDataFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataFilterArrayInput` via:
 //
-//          GetMetricDataFilterArray{ GetMetricDataFilterArgs{...} }
+//	GetMetricDataFilterArray{ GetMetricDataFilterArgs{...} }
 type GetMetricDataFilterArrayInput interface {
 	pulumi.Input
 
@@ -1424,7 +1424,7 @@ type GetMetricDataMetricData struct {
 // GetMetricDataMetricDataInput is an input type that accepts GetMetricDataMetricDataArgs and GetMetricDataMetricDataOutput values.
 // You can construct a concrete instance of `GetMetricDataMetricDataInput` via:
 //
-//          GetMetricDataMetricDataArgs{...}
+//	GetMetricDataMetricDataArgs{...}
 type GetMetricDataMetricDataInput interface {
 	pulumi.Input
 
@@ -1474,7 +1474,7 @@ func (i GetMetricDataMetricDataArgs) ToGetMetricDataMetricDataOutputWithContext(
 // GetMetricDataMetricDataArrayInput is an input type that accepts GetMetricDataMetricDataArray and GetMetricDataMetricDataArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataMetricDataArrayInput` via:
 //
-//          GetMetricDataMetricDataArray{ GetMetricDataMetricDataArgs{...} }
+//	GetMetricDataMetricDataArray{ GetMetricDataMetricDataArgs{...} }
 type GetMetricDataMetricDataArrayInput interface {
 	pulumi.Input
 
@@ -1602,7 +1602,7 @@ type GetMetricDataMetricDataAggregatedDatapoint struct {
 // GetMetricDataMetricDataAggregatedDatapointInput is an input type that accepts GetMetricDataMetricDataAggregatedDatapointArgs and GetMetricDataMetricDataAggregatedDatapointOutput values.
 // You can construct a concrete instance of `GetMetricDataMetricDataAggregatedDatapointInput` via:
 //
-//          GetMetricDataMetricDataAggregatedDatapointArgs{...}
+//	GetMetricDataMetricDataAggregatedDatapointArgs{...}
 type GetMetricDataMetricDataAggregatedDatapointInput interface {
 	pulumi.Input
 
@@ -1632,7 +1632,7 @@ func (i GetMetricDataMetricDataAggregatedDatapointArgs) ToGetMetricDataMetricDat
 // GetMetricDataMetricDataAggregatedDatapointArrayInput is an input type that accepts GetMetricDataMetricDataAggregatedDatapointArray and GetMetricDataMetricDataAggregatedDatapointArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataMetricDataAggregatedDatapointArrayInput` via:
 //
-//          GetMetricDataMetricDataAggregatedDatapointArray{ GetMetricDataMetricDataAggregatedDatapointArgs{...} }
+//	GetMetricDataMetricDataAggregatedDatapointArray{ GetMetricDataMetricDataAggregatedDatapointArgs{...} }
 type GetMetricDataMetricDataAggregatedDatapointArrayInput interface {
 	pulumi.Input
 
@@ -1708,7 +1708,7 @@ type GetMetricsFilter struct {
 // GetMetricsFilterInput is an input type that accepts GetMetricsFilterArgs and GetMetricsFilterOutput values.
 // You can construct a concrete instance of `GetMetricsFilterInput` via:
 //
-//          GetMetricsFilterArgs{...}
+//	GetMetricsFilterArgs{...}
 type GetMetricsFilterInput interface {
 	pulumi.Input
 
@@ -1738,7 +1738,7 @@ func (i GetMetricsFilterArgs) ToGetMetricsFilterOutputWithContext(ctx context.Co
 // GetMetricsFilterArrayInput is an input type that accepts GetMetricsFilterArray and GetMetricsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricsFilterArrayInput` via:
 //
-//          GetMetricsFilterArray{ GetMetricsFilterArgs{...} }
+//	GetMetricsFilterArray{ GetMetricsFilterArgs{...} }
 type GetMetricsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1829,7 +1829,7 @@ type GetMetricsMetric struct {
 // GetMetricsMetricInput is an input type that accepts GetMetricsMetricArgs and GetMetricsMetricOutput values.
 // You can construct a concrete instance of `GetMetricsMetricInput` via:
 //
-//          GetMetricsMetricArgs{...}
+//	GetMetricsMetricArgs{...}
 type GetMetricsMetricInput interface {
 	pulumi.Input
 
@@ -1871,7 +1871,7 @@ func (i GetMetricsMetricArgs) ToGetMetricsMetricOutputWithContext(ctx context.Co
 // GetMetricsMetricArrayInput is an input type that accepts GetMetricsMetricArray and GetMetricsMetricArrayOutput values.
 // You can construct a concrete instance of `GetMetricsMetricArrayInput` via:
 //
-//          GetMetricsMetricArray{ GetMetricsMetricArgs{...} }
+//	GetMetricsMetricArray{ GetMetricsMetricArgs{...} }
 type GetMetricsMetricArrayInput interface {
 	pulumi.Input
 

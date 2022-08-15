@@ -22,40 +22,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.NewLog(ctx, "testLog", &Logging.LogArgs{
-// 			DisplayName: pulumi.Any(_var.Log_display_name),
-// 			LogGroupId:  pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 			LogType:     pulumi.Any(_var.Log_log_type),
-// 			Configuration: &logging.LogConfigurationArgs{
-// 				Source: &logging.LogConfigurationSourceArgs{
-// 					Category:   pulumi.Any(_var.Log_configuration_source_category),
-// 					Resource:   pulumi.Any(_var.Log_configuration_source_resource),
-// 					Service:    pulumi.Any(_var.Log_configuration_source_service),
-// 					SourceType: pulumi.Any(_var.Log_configuration_source_source_type),
-// 				},
-// 				CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsEnabled:         pulumi.Any(_var.Log_is_enabled),
-// 			RetentionDuration: pulumi.Any(_var.Log_retention_duration),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.NewLog(ctx, "testLog", &Logging.LogArgs{
+//				DisplayName: pulumi.Any(_var.Log_display_name),
+//				LogGroupId:  pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//				LogType:     pulumi.Any(_var.Log_log_type),
+//				Configuration: &logging.LogConfigurationArgs{
+//					Source: &logging.LogConfigurationSourceArgs{
+//						Category:   pulumi.Any(_var.Log_configuration_source_category),
+//						Resource:   pulumi.Any(_var.Log_configuration_source_resource),
+//						Service:    pulumi.Any(_var.Log_configuration_source_service),
+//						SourceType: pulumi.Any(_var.Log_configuration_source_source_type),
+//					},
+//					CompartmentId: pulumi.Any(_var.Compartment_id),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsEnabled:         pulumi.Any(_var.Log_is_enabled),
+//				RetentionDuration: pulumi.Any(_var.Log_retention_duration),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -63,7 +66,9 @@ import (
 // Logs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
+//
+//	$ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
+//
 // ```
 type Log struct {
 	pulumi.CustomResourceState
@@ -260,7 +265,7 @@ func (i *Log) ToLogOutputWithContext(ctx context.Context) LogOutput {
 // LogArrayInput is an input type that accepts LogArray and LogArrayOutput values.
 // You can construct a concrete instance of `LogArrayInput` via:
 //
-//          LogArray{ LogArgs{...} }
+//	LogArray{ LogArgs{...} }
 type LogArrayInput interface {
 	pulumi.Input
 
@@ -285,7 +290,7 @@ func (i LogArray) ToLogArrayOutputWithContext(ctx context.Context) LogArrayOutpu
 // LogMapInput is an input type that accepts LogMap and LogMapOutput values.
 // You can construct a concrete instance of `LogMapInput` via:
 //
-//          LogMap{ "key": LogArgs{...} }
+//	LogMap{ "key": LogArgs{...} }
 type LogMapInput interface {
 	pulumi.Input
 

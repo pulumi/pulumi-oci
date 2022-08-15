@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Jms
         ///         {
         ///             CompartmentId = @var.Compartment_id,
         ///             DisplayName = @var.Fleet_display_name,
+        ///             DisplayNameContains = @var.Fleet_display_name_contains,
         ///             Id = @var.Fleet_id,
         ///             State = @var.Fleet_state,
         ///         }));
@@ -70,6 +71,7 @@ namespace Pulumi.Oci.Jms
         ///         {
         ///             CompartmentId = @var.Compartment_id,
         ///             DisplayName = @var.Fleet_display_name,
+        ///             DisplayNameContains = @var.Fleet_display_name_contains,
         ///             Id = @var.Fleet_id,
         ///             State = @var.Fleet_state,
         ///         }));
@@ -98,6 +100,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// Filter the list with displayName contains the given value.
+        /// </summary>
+        [Input("displayNameContains")]
+        public string? DisplayNameContains { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetFleetsFilterArgs>? _filters;
@@ -138,6 +146,12 @@ namespace Pulumi.Oci.Jms
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Filter the list with displayName contains the given value.
+        /// </summary>
+        [Input("displayNameContains")]
+        public Input<string>? DisplayNameContains { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetFleetsFilterInputArgs>? _filters;
         public InputList<Inputs.GetFleetsFilterInputArgs> Filters
@@ -175,6 +189,7 @@ namespace Pulumi.Oci.Jms
         /// The name of the Fleet.
         /// </summary>
         public readonly string? DisplayName;
+        public readonly string? DisplayNameContains;
         public readonly ImmutableArray<Outputs.GetFleetsFilterResult> Filters;
         /// <summary>
         /// The list of fleet_collection.
@@ -195,6 +210,8 @@ namespace Pulumi.Oci.Jms
 
             string? displayName,
 
+            string? displayNameContains,
+
             ImmutableArray<Outputs.GetFleetsFilterResult> filters,
 
             ImmutableArray<Outputs.GetFleetsFleetCollectionResult> fleetCollections,
@@ -205,6 +222,7 @@ namespace Pulumi.Oci.Jms
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
+            DisplayNameContains = displayNameContains;
             Filters = filters;
             FleetCollections = fleetCollections;
             Id = id;

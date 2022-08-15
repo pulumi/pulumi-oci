@@ -21,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.NewRepository(ctx, "testRepository", &Artifacts.RepositoryArgs{
-// 			CompartmentId:  pulumi.Any(_var.Compartment_id),
-// 			IsImmutable:    pulumi.Any(_var.Repository_is_immutable),
-// 			RepositoryType: pulumi.Any(_var.Repository_repository_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Repository_description),
-// 			DisplayName: pulumi.Any(_var.Repository_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.NewRepository(ctx, "testRepository", &Artifacts.RepositoryArgs{
+//				CompartmentId:  pulumi.Any(_var.Compartment_id),
+//				IsImmutable:    pulumi.Any(_var.Repository_is_immutable),
+//				RepositoryType: pulumi.Any(_var.Repository_repository_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Repository_description),
+//				DisplayName: pulumi.Any(_var.Repository_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // Repositories can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Artifacts/repository:Repository test_repository "id"
+//
+//	$ pulumi import oci:Artifacts/repository:Repository test_repository "id"
+//
 // ```
 type Repository struct {
 	pulumi.CustomResourceState
@@ -222,7 +227,7 @@ func (i *Repository) ToRepositoryOutputWithContext(ctx context.Context) Reposito
 // RepositoryArrayInput is an input type that accepts RepositoryArray and RepositoryArrayOutput values.
 // You can construct a concrete instance of `RepositoryArrayInput` via:
 //
-//          RepositoryArray{ RepositoryArgs{...} }
+//	RepositoryArray{ RepositoryArgs{...} }
 type RepositoryArrayInput interface {
 	pulumi.Input
 
@@ -247,7 +252,7 @@ func (i RepositoryArray) ToRepositoryArrayOutputWithContext(ctx context.Context)
 // RepositoryMapInput is an input type that accepts RepositoryMap and RepositoryMapOutput values.
 // You can construct a concrete instance of `RepositoryMapInput` via:
 //
-//          RepositoryMap{ "key": RepositoryArgs{...} }
+//	RepositoryMap{ "key": RepositoryArgs{...} }
 type RepositoryMapInput interface {
 	pulumi.Input
 

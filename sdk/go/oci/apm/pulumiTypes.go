@@ -38,7 +38,7 @@ type GetApmDomainsApmDomain struct {
 // GetApmDomainsApmDomainInput is an input type that accepts GetApmDomainsApmDomainArgs and GetApmDomainsApmDomainOutput values.
 // You can construct a concrete instance of `GetApmDomainsApmDomainInput` via:
 //
-//          GetApmDomainsApmDomainArgs{...}
+//	GetApmDomainsApmDomainArgs{...}
 type GetApmDomainsApmDomainInput interface {
 	pulumi.Input
 
@@ -86,7 +86,7 @@ func (i GetApmDomainsApmDomainArgs) ToGetApmDomainsApmDomainOutputWithContext(ct
 // GetApmDomainsApmDomainArrayInput is an input type that accepts GetApmDomainsApmDomainArray and GetApmDomainsApmDomainArrayOutput values.
 // You can construct a concrete instance of `GetApmDomainsApmDomainArrayInput` via:
 //
-//          GetApmDomainsApmDomainArray{ GetApmDomainsApmDomainArgs{...} }
+//	GetApmDomainsApmDomainArray{ GetApmDomainsApmDomainArgs{...} }
 type GetApmDomainsApmDomainArrayInput interface {
 	pulumi.Input
 
@@ -206,7 +206,7 @@ type GetApmDomainsFilter struct {
 // GetApmDomainsFilterInput is an input type that accepts GetApmDomainsFilterArgs and GetApmDomainsFilterOutput values.
 // You can construct a concrete instance of `GetApmDomainsFilterInput` via:
 //
-//          GetApmDomainsFilterArgs{...}
+//	GetApmDomainsFilterArgs{...}
 type GetApmDomainsFilterInput interface {
 	pulumi.Input
 
@@ -235,7 +235,7 @@ func (i GetApmDomainsFilterArgs) ToGetApmDomainsFilterOutputWithContext(ctx cont
 // GetApmDomainsFilterArrayInput is an input type that accepts GetApmDomainsFilterArray and GetApmDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApmDomainsFilterArrayInput` via:
 //
-//          GetApmDomainsFilterArray{ GetApmDomainsFilterArgs{...} }
+//	GetApmDomainsFilterArray{ GetApmDomainsFilterArgs{...} }
 type GetApmDomainsFilterArrayInput interface {
 	pulumi.Input
 
@@ -315,7 +315,7 @@ type GetDataKeysDataKey struct {
 // GetDataKeysDataKeyInput is an input type that accepts GetDataKeysDataKeyArgs and GetDataKeysDataKeyOutput values.
 // You can construct a concrete instance of `GetDataKeysDataKeyInput` via:
 //
-//          GetDataKeysDataKeyArgs{...}
+//	GetDataKeysDataKeyArgs{...}
 type GetDataKeysDataKeyInput interface {
 	pulumi.Input
 
@@ -347,7 +347,7 @@ func (i GetDataKeysDataKeyArgs) ToGetDataKeysDataKeyOutputWithContext(ctx contex
 // GetDataKeysDataKeyArrayInput is an input type that accepts GetDataKeysDataKeyArray and GetDataKeysDataKeyArrayOutput values.
 // You can construct a concrete instance of `GetDataKeysDataKeyArrayInput` via:
 //
-//          GetDataKeysDataKeyArray{ GetDataKeysDataKeyArgs{...} }
+//	GetDataKeysDataKeyArray{ GetDataKeysDataKeyArgs{...} }
 type GetDataKeysDataKeyArrayInput interface {
 	pulumi.Input
 
@@ -428,7 +428,7 @@ type GetDataKeysFilter struct {
 // GetDataKeysFilterInput is an input type that accepts GetDataKeysFilterArgs and GetDataKeysFilterOutput values.
 // You can construct a concrete instance of `GetDataKeysFilterInput` via:
 //
-//          GetDataKeysFilterArgs{...}
+//	GetDataKeysFilterArgs{...}
 type GetDataKeysFilterInput interface {
 	pulumi.Input
 
@@ -458,7 +458,7 @@ func (i GetDataKeysFilterArgs) ToGetDataKeysFilterOutputWithContext(ctx context.
 // GetDataKeysFilterArrayInput is an input type that accepts GetDataKeysFilterArray and GetDataKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataKeysFilterArrayInput` via:
 //
-//          GetDataKeysFilterArray{ GetDataKeysFilterArgs{...} }
+//	GetDataKeysFilterArray{ GetDataKeysFilterArgs{...} }
 type GetDataKeysFilterArrayInput interface {
 	pulumi.Input
 

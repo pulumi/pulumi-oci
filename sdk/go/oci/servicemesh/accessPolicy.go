@@ -21,52 +21,55 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewAccessPolicy(ctx, "testAccessPolicy", &ServiceMesh.AccessPolicyArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Access_policy_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Rules: servicemesh.AccessPolicyRuleArray{
-// 				&servicemesh.AccessPolicyRuleArgs{
-// 					Action: pulumi.Any(_var.Access_policy_rules_action),
-// 					Destination: &servicemesh.AccessPolicyRuleDestinationArgs{
-// 						Type:             pulumi.Any(_var.Access_policy_rules_destination_type),
-// 						Hostnames:        pulumi.Any(_var.Access_policy_rules_destination_hostnames),
-// 						IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-// 						IpAddresses:      pulumi.Any(_var.Access_policy_rules_destination_ip_addresses),
-// 						Ports:            pulumi.Any(_var.Access_policy_rules_destination_ports),
-// 						Protocol:         pulumi.Any(_var.Access_policy_rules_destination_protocol),
-// 						VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-// 					},
-// 					Source: &servicemesh.AccessPolicyRuleSourceArgs{
-// 						Type:             pulumi.Any(_var.Access_policy_rules_source_type),
-// 						Hostnames:        pulumi.Any(_var.Access_policy_rules_source_hostnames),
-// 						IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-// 						IpAddresses:      pulumi.Any(_var.Access_policy_rules_source_ip_addresses),
-// 						Ports:            pulumi.Any(_var.Access_policy_rules_source_ports),
-// 						Protocol:         pulumi.Any(_var.Access_policy_rules_source_protocol),
-// 						VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewAccessPolicy(ctx, "testAccessPolicy", &ServiceMesh.AccessPolicyArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Access_policy_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Rules: servicemesh.AccessPolicyRuleArray{
+//					&servicemesh.AccessPolicyRuleArgs{
+//						Action: pulumi.Any(_var.Access_policy_rules_action),
+//						Destination: &servicemesh.AccessPolicyRuleDestinationArgs{
+//							Type:             pulumi.Any(_var.Access_policy_rules_destination_type),
+//							Hostnames:        pulumi.Any(_var.Access_policy_rules_destination_hostnames),
+//							IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
+//							IpAddresses:      pulumi.Any(_var.Access_policy_rules_destination_ip_addresses),
+//							Ports:            pulumi.Any(_var.Access_policy_rules_destination_ports),
+//							Protocol:         pulumi.Any(_var.Access_policy_rules_destination_protocol),
+//							VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//						},
+//						Source: &servicemesh.AccessPolicyRuleSourceArgs{
+//							Type:             pulumi.Any(_var.Access_policy_rules_source_type),
+//							Hostnames:        pulumi.Any(_var.Access_policy_rules_source_hostnames),
+//							IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
+//							IpAddresses:      pulumi.Any(_var.Access_policy_rules_source_ip_addresses),
+//							Ports:            pulumi.Any(_var.Access_policy_rules_source_ports),
+//							Protocol:         pulumi.Any(_var.Access_policy_rules_source_protocol),
+//							VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -74,7 +77,9 @@ import (
 // AccessPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
+//
+//	$ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
+//
 // ```
 type AccessPolicy struct {
 	pulumi.CustomResourceState
@@ -258,7 +263,7 @@ func (i *AccessPolicy) ToAccessPolicyOutputWithContext(ctx context.Context) Acce
 // AccessPolicyArrayInput is an input type that accepts AccessPolicyArray and AccessPolicyArrayOutput values.
 // You can construct a concrete instance of `AccessPolicyArrayInput` via:
 //
-//          AccessPolicyArray{ AccessPolicyArgs{...} }
+//	AccessPolicyArray{ AccessPolicyArgs{...} }
 type AccessPolicyArrayInput interface {
 	pulumi.Input
 
@@ -283,7 +288,7 @@ func (i AccessPolicyArray) ToAccessPolicyArrayOutputWithContext(ctx context.Cont
 // AccessPolicyMapInput is an input type that accepts AccessPolicyMap and AccessPolicyMapOutput values.
 // You can construct a concrete instance of `AccessPolicyMapInput` via:
 //
-//          AccessPolicyMap{ "key": AccessPolicyArgs{...} }
+//	AccessPolicyMap{ "key": AccessPolicyArgs{...} }
 type AccessPolicyMapInput interface {
 	pulumi.Input
 

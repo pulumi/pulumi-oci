@@ -32,28 +32,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrg(ctx, "testDrg", &Core.DrgArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Drg_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrg(ctx, "testDrg", &Core.DrgArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Drg_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -61,7 +64,9 @@ import (
 // Drgs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/drg:Drg test_drg "id"
+//
+//	$ pulumi import oci:Core/drg:Drg test_drg "id"
+//
 // ```
 type Drg struct {
 	pulumi.CustomResourceState
@@ -212,7 +217,7 @@ func (i *Drg) ToDrgOutputWithContext(ctx context.Context) DrgOutput {
 // DrgArrayInput is an input type that accepts DrgArray and DrgArrayOutput values.
 // You can construct a concrete instance of `DrgArrayInput` via:
 //
-//          DrgArray{ DrgArgs{...} }
+//	DrgArray{ DrgArgs{...} }
 type DrgArrayInput interface {
 	pulumi.Input
 
@@ -237,7 +242,7 @@ func (i DrgArray) ToDrgArrayOutputWithContext(ctx context.Context) DrgArrayOutpu
 // DrgMapInput is an input type that accepts DrgMap and DrgMapOutput values.
 // You can construct a concrete instance of `DrgMapInput` via:
 //
-//          DrgMap{ "key": DrgArgs{...} }
+//	DrgMap{ "key": DrgArgs{...} }
 type DrgMapInput interface {
 	pulumi.Input
 

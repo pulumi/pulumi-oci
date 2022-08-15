@@ -40,61 +40,64 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewMaskingPoliciesMaskingColumn(ctx, "testMaskingPoliciesMaskingColumn", &DataSafe.MaskingPoliciesMaskingColumnArgs{
-// 			ColumnName:         pulumi.Any(_var.Masking_policies_masking_column_column_name),
-// 			MaskingPolicyId:    pulumi.Any(oci_data_safe_masking_policy.Test_masking_policy.Id),
-// 			Object:             pulumi.Any(_var.Masking_policies_masking_column_object),
-// 			SchemaName:         pulumi.Any(_var.Masking_policies_masking_column_schema_name),
-// 			IsMaskingEnabled:   pulumi.Any(_var.Masking_policies_masking_column_is_masking_enabled),
-// 			MaskingColumnGroup: pulumi.Any(_var.Masking_policies_masking_column_masking_column_group),
-// 			MaskingFormats: datasafe.MaskingPoliciesMaskingColumnMaskingFormatArray{
-// 				&datasafe.MaskingPoliciesMaskingColumnMaskingFormatArgs{
-// 					FormatEntries: datasafe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray{
-// 						&datasafe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{
-// 							Type:                   pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_type),
-// 							ColumnName:             pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_column_name),
-// 							Description:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_description),
-// 							EndDate:                pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_end_date),
-// 							EndLength:              pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_end_length),
-// 							EndValue:               pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_end_value),
-// 							FixedNumber:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_fixed_number),
-// 							FixedString:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_fixed_string),
-// 							GroupingColumns:        pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns),
-// 							Length:                 pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_length),
-// 							LibraryMaskingFormatId: pulumi.Any(oci_data_safe_library_masking_format.Test_library_masking_format.Id),
-// 							PostProcessingFunction: pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function),
-// 							RandomLists:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_random_list),
-// 							RegularExpression:      pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression),
-// 							ReplaceWith:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_replace_with),
-// 							SchemaName:             pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_schema_name),
-// 							SqlExpression:          pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_sql_expression),
-// 							StartDate:              pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_date),
-// 							StartLength:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_length),
-// 							StartPosition:          pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_position),
-// 							StartValue:             pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_value),
-// 							TableName:              pulumi.Any(oci_nosql_table.Test_table.Name),
-// 							UserDefinedFunction:    pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_user_defined_function),
-// 						},
-// 					},
-// 					Condition:   pulumi.Any(_var.Masking_policies_masking_column_masking_formats_condition),
-// 					Description: pulumi.Any(_var.Masking_policies_masking_column_masking_formats_description),
-// 				},
-// 			},
-// 			ObjectType:      pulumi.Any(_var.Masking_policies_masking_column_object_type),
-// 			SensitiveTypeId: pulumi.Any(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewMaskingPoliciesMaskingColumn(ctx, "testMaskingPoliciesMaskingColumn", &DataSafe.MaskingPoliciesMaskingColumnArgs{
+//				ColumnName:         pulumi.Any(_var.Masking_policies_masking_column_column_name),
+//				MaskingPolicyId:    pulumi.Any(oci_data_safe_masking_policy.Test_masking_policy.Id),
+//				Object:             pulumi.Any(_var.Masking_policies_masking_column_object),
+//				SchemaName:         pulumi.Any(_var.Masking_policies_masking_column_schema_name),
+//				IsMaskingEnabled:   pulumi.Any(_var.Masking_policies_masking_column_is_masking_enabled),
+//				MaskingColumnGroup: pulumi.Any(_var.Masking_policies_masking_column_masking_column_group),
+//				MaskingFormats: datasafe.MaskingPoliciesMaskingColumnMaskingFormatArray{
+//					&datasafe.MaskingPoliciesMaskingColumnMaskingFormatArgs{
+//						FormatEntries: datasafe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray{
+//							&datasafe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs{
+//								Type:                   pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_type),
+//								ColumnName:             pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_column_name),
+//								Description:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_description),
+//								EndDate:                pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_end_date),
+//								EndLength:              pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_end_length),
+//								EndValue:               pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_end_value),
+//								FixedNumber:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_fixed_number),
+//								FixedString:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_fixed_string),
+//								GroupingColumns:        pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns),
+//								Length:                 pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_length),
+//								LibraryMaskingFormatId: pulumi.Any(oci_data_safe_library_masking_format.Test_library_masking_format.Id),
+//								PostProcessingFunction: pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function),
+//								RandomLists:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_random_list),
+//								RegularExpression:      pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression),
+//								ReplaceWith:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_replace_with),
+//								SchemaName:             pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_schema_name),
+//								SqlExpression:          pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_sql_expression),
+//								StartDate:              pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_date),
+//								StartLength:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_length),
+//								StartPosition:          pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_position),
+//								StartValue:             pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_start_value),
+//								TableName:              pulumi.Any(oci_nosql_table.Test_table.Name),
+//								UserDefinedFunction:    pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_user_defined_function),
+//							},
+//						},
+//						Condition:   pulumi.Any(_var.Masking_policies_masking_column_masking_formats_condition),
+//						Description: pulumi.Any(_var.Masking_policies_masking_column_masking_formats_description),
+//					},
+//				},
+//				ObjectType:      pulumi.Any(_var.Masking_policies_masking_column_object_type),
+//				SensitiveTypeId: pulumi.Any(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -102,7 +105,9 @@ import (
 // MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
+//
+//	$ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
+//
 // ```
 type MaskingPoliciesMaskingColumn struct {
 	pulumi.CustomResourceState
@@ -324,7 +329,7 @@ func (i *MaskingPoliciesMaskingColumn) ToMaskingPoliciesMaskingColumnOutputWithC
 // MaskingPoliciesMaskingColumnArrayInput is an input type that accepts MaskingPoliciesMaskingColumnArray and MaskingPoliciesMaskingColumnArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnArrayInput` via:
 //
-//          MaskingPoliciesMaskingColumnArray{ MaskingPoliciesMaskingColumnArgs{...} }
+//	MaskingPoliciesMaskingColumnArray{ MaskingPoliciesMaskingColumnArgs{...} }
 type MaskingPoliciesMaskingColumnArrayInput interface {
 	pulumi.Input
 
@@ -349,7 +354,7 @@ func (i MaskingPoliciesMaskingColumnArray) ToMaskingPoliciesMaskingColumnArrayOu
 // MaskingPoliciesMaskingColumnMapInput is an input type that accepts MaskingPoliciesMaskingColumnMap and MaskingPoliciesMaskingColumnMapOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMapInput` via:
 //
-//          MaskingPoliciesMaskingColumnMap{ "key": MaskingPoliciesMaskingColumnArgs{...} }
+//	MaskingPoliciesMaskingColumnMap{ "key": MaskingPoliciesMaskingColumnArgs{...} }
 type MaskingPoliciesMaskingColumnMapInput interface {
 	pulumi.Input
 

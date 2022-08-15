@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetAwrHubAwrSnapshots(ctx, &opsi.GetAwrHubAwrSnapshotsArgs{
-// 			AwrHubId:                    oci_opsi_awr_hub.Test_awr_hub.Id,
-// 			AwrSourceDatabaseIdentifier: _var.Awr_hub_awr_snapshot_awr_source_database_identifier,
-// 			TimeGreaterThanOrEqualTo:    pulumi.StringRef(_var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to),
-// 			TimeLessThanOrEqualTo:       pulumi.StringRef(_var.Awr_hub_awr_snapshot_time_less_than_or_equal_to),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetAwrHubAwrSnapshots(ctx, &opsi.GetAwrHubAwrSnapshotsArgs{
+//				AwrHubId:                    oci_opsi_awr_hub.Test_awr_hub.Id,
+//				AwrSourceDatabaseIdentifier: _var.Awr_hub_awr_snapshot_awr_source_database_identifier,
+//				TimeGreaterThanOrEqualTo:    pulumi.StringRef(_var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to),
+//				TimeLessThanOrEqualTo:       pulumi.StringRef(_var.Awr_hub_awr_snapshot_time_less_than_or_equal_to),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAwrHubAwrSnapshots(ctx *pulumi.Context, args *GetAwrHubAwrSnapshotsArgs, opts ...pulumi.InvokeOption) (*GetAwrHubAwrSnapshotsResult, error) {
 	var rv GetAwrHubAwrSnapshotsResult

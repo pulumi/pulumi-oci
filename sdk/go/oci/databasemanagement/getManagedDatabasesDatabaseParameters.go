@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabasesDatabaseParameters(ctx, &databasemanagement.GetManagedDatabasesDatabaseParametersArgs{
-// 			ManagedDatabaseId:       oci_database_management_managed_database.Test_managed_database.Id,
-// 			IsAllowedValuesIncluded: pulumi.BoolRef(_var.Managed_databases_database_parameter_is_allowed_values_included),
-// 			Name:                    pulumi.StringRef(_var.Managed_databases_database_parameter_name),
-// 			Source:                  pulumi.StringRef(_var.Managed_databases_database_parameter_source),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabasesDatabaseParameters(ctx, &databasemanagement.GetManagedDatabasesDatabaseParametersArgs{
+//				ManagedDatabaseId:       oci_database_management_managed_database.Test_managed_database.Id,
+//				IsAllowedValuesIncluded: pulumi.BoolRef(_var.Managed_databases_database_parameter_is_allowed_values_included),
+//				Name:                    pulumi.StringRef(_var.Managed_databases_database_parameter_name),
+//				Source:                  pulumi.StringRef(_var.Managed_databases_database_parameter_source),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabasesDatabaseParameters(ctx *pulumi.Context, args *GetManagedDatabasesDatabaseParametersArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesDatabaseParametersResult, error) {
 	var rv GetManagedDatabasesDatabaseParametersResult

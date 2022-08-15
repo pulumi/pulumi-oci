@@ -36,6 +36,18 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasePlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskPlainArgs;
@@ -59,6 +71,8 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetAr
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs;
@@ -115,6 +129,12 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogC
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTaskResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult;
@@ -127,6 +147,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningSetResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningSetsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseTableStatisticsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegeResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserDataAccessContainerResult;
@@ -833,6 +854,326 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", TypeShape.of(GetManagedDatabaseGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args) {
+        return getManagedDatabaseOptimizerStatisticsAdvisorExecution(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs args) {
+        return getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args) {
+        return getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args) {
+        return getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript:getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args) {
+        return getManagedDatabaseOptimizerStatisticsAdvisorExecutions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs args) {
+        return getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecutions:getManagedDatabaseOptimizerStatisticsAdvisorExecutions", TypeShape.of(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args) {
+        return getManagedDatabaseOptimizerStatisticsCollectionAggregations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args) {
+        return getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args) {
+        return getManagedDatabaseOptimizerStatisticsCollectionOperation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs args) {
+        return getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperation:getManagedDatabaseOptimizerStatisticsCollectionOperation", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args) {
+        return getManagedDatabaseOptimizerStatisticsCollectionOperations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args) {
+        return getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionOperations:getManagedDatabaseOptimizerStatisticsCollectionOperations", TypeShape.of(GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
@@ -1331,6 +1672,54 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", TypeShape.of(GetManagedDatabaseSqlTuningSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of database table objects grouped by different statuses such as
+     * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args) {
+        return getManagedDatabaseTableStatistics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of database table objects grouped by different statuses such as
+     * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatisticsPlain(GetManagedDatabaseTableStatisticsPlainArgs args) {
+        return getManagedDatabaseTableStatisticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of database table objects grouped by different statuses such as
+     * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", TypeShape.of(GetManagedDatabaseTableStatisticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the number of database table objects grouped by different statuses such as
+     * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatisticsPlain(GetManagedDatabaseTableStatisticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", TypeShape.of(GetManagedDatabaseTableStatisticsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.

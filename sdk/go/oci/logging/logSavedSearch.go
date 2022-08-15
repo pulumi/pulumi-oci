@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.NewLogSavedSearch(ctx, "testLogSavedSearch", &Logging.LogSavedSearchArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Query:         pulumi.Any(_var.Log_saved_search_query),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Log_saved_search_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.NewLogSavedSearch(ctx, "testLogSavedSearch", &Logging.LogSavedSearchArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Query:         pulumi.Any(_var.Log_saved_search_query),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Log_saved_search_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // LogSavedSearches can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
+//
+//	$ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
+//
 // ```
 type LogSavedSearch struct {
 	pulumi.CustomResourceState
@@ -213,7 +218,7 @@ func (i *LogSavedSearch) ToLogSavedSearchOutputWithContext(ctx context.Context) 
 // LogSavedSearchArrayInput is an input type that accepts LogSavedSearchArray and LogSavedSearchArrayOutput values.
 // You can construct a concrete instance of `LogSavedSearchArrayInput` via:
 //
-//          LogSavedSearchArray{ LogSavedSearchArgs{...} }
+//	LogSavedSearchArray{ LogSavedSearchArgs{...} }
 type LogSavedSearchArrayInput interface {
 	pulumi.Input
 
@@ -238,7 +243,7 @@ func (i LogSavedSearchArray) ToLogSavedSearchArrayOutputWithContext(ctx context.
 // LogSavedSearchMapInput is an input type that accepts LogSavedSearchMap and LogSavedSearchMapOutput values.
 // You can construct a concrete instance of `LogSavedSearchMapInput` via:
 //
-//          LogSavedSearchMap{ "key": LogSavedSearchArgs{...} }
+//	LogSavedSearchMap{ "key": LogSavedSearchArgs{...} }
 type LogSavedSearchMapInput interface {
 	pulumi.Input
 

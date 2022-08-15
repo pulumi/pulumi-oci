@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waa.GetAppAcceleration(ctx, &waa.GetAppAccelerationArgs{
-// 			WebAppAccelerationId: oci_waa_web_app_acceleration.Test_web_app_acceleration.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waa.GetAppAcceleration(ctx, &waa.GetAppAccelerationArgs{
+//				WebAppAccelerationId: oci_waa_web_app_acceleration.Test_web_app_acceleration.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAppAcceleration(ctx *pulumi.Context, args *LookupAppAccelerationArgs, opts ...pulumi.InvokeOption) (*LookupAppAccelerationResult, error) {
 	var rv LookupAppAccelerationResult

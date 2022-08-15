@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetInvoiceLineComputedUsages(ctx, &onesubsription.GetInvoiceLineComputedUsagesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			InvoiceLineId: oci_onesubscription_invoice_line.Test_invoice_line.Id,
-// 			Fields:        _var.Invoice_line_computed_usage_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetInvoiceLineComputedUsages(ctx, &onesubsription.GetInvoiceLineComputedUsagesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				InvoiceLineId: oci_onesubscription_invoice_line.Test_invoice_line.Id,
+//				Fields:        _var.Invoice_line_computed_usage_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInvoiceLineComputedUsages(ctx *pulumi.Context, args *GetInvoiceLineComputedUsagesArgs, opts ...pulumi.InvokeOption) (*GetInvoiceLineComputedUsagesResult, error) {
 	var rv GetInvoiceLineComputedUsagesResult

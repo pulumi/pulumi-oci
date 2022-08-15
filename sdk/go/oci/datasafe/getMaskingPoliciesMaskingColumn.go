@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetMaskingPoliciesMaskingColumn(ctx, &datasafe.GetMaskingPoliciesMaskingColumnArgs{
-// 			MaskingColumnKey: _var.Masking_policies_masking_column_masking_column_key,
-// 			MaskingPolicyId:  oci_data_safe_masking_policy.Test_masking_policy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetMaskingPoliciesMaskingColumn(ctx, &datasafe.GetMaskingPoliciesMaskingColumnArgs{
+//				MaskingColumnKey: _var.Masking_policies_masking_column_masking_column_key,
+//				MaskingPolicyId:  oci_data_safe_masking_policy.Test_masking_policy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupMaskingPoliciesMaskingColumn(ctx *pulumi.Context, args *LookupMaskingPoliciesMaskingColumnArgs, opts ...pulumi.InvokeOption) (*LookupMaskingPoliciesMaskingColumnResult, error) {
 	var rv LookupMaskingPoliciesMaskingColumnResult

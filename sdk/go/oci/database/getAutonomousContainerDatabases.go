@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousContainerDatabases(ctx, &database.GetAutonomousContainerDatabasesArgs{
-// 			CompartmentId:                     _var.Compartment_id,
-// 			AutonomousExadataInfrastructureId: pulumi.StringRef(oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id),
-// 			AutonomousVmClusterId:             pulumi.StringRef(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
-// 			AvailabilityDomain:                pulumi.StringRef(_var.Autonomous_container_database_availability_domain),
-// 			CloudAutonomousVmClusterId:        pulumi.StringRef(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
-// 			DisplayName:                       pulumi.StringRef(_var.Autonomous_container_database_display_name),
-// 			InfrastructureType:                pulumi.StringRef(_var.Autonomous_container_database_infrastructure_type),
-// 			ServiceLevelAgreementType:         pulumi.StringRef(_var.Autonomous_container_database_service_level_agreement_type),
-// 			State:                             pulumi.StringRef(_var.Autonomous_container_database_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousContainerDatabases(ctx, &database.GetAutonomousContainerDatabasesArgs{
+//				CompartmentId:                     _var.Compartment_id,
+//				AutonomousExadataInfrastructureId: pulumi.StringRef(oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id),
+//				AutonomousVmClusterId:             pulumi.StringRef(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
+//				AvailabilityDomain:                pulumi.StringRef(_var.Autonomous_container_database_availability_domain),
+//				CloudAutonomousVmClusterId:        pulumi.StringRef(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
+//				DisplayName:                       pulumi.StringRef(_var.Autonomous_container_database_display_name),
+//				InfrastructureType:                pulumi.StringRef(_var.Autonomous_container_database_infrastructure_type),
+//				ServiceLevelAgreementType:         pulumi.StringRef(_var.Autonomous_container_database_service_level_agreement_type),
+//				State:                             pulumi.StringRef(_var.Autonomous_container_database_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousContainerDatabases(ctx *pulumi.Context, args *GetAutonomousContainerDatabasesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousContainerDatabasesResult, error) {
 	var rv GetAutonomousContainerDatabasesResult

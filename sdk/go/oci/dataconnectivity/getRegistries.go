@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistries(ctx, &dataconnectivity.GetRegistriesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			IsDeepLookup:  pulumi.BoolRef(_var.Registry_is_deep_lookup),
-// 			Name:          pulumi.StringRef(_var.Registry_name),
-// 			State:         pulumi.StringRef(_var.Registry_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistries(ctx, &dataconnectivity.GetRegistriesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				IsDeepLookup:  pulumi.BoolRef(_var.Registry_is_deep_lookup),
+//				Name:          pulumi.StringRef(_var.Registry_name),
+//				State:         pulumi.StringRef(_var.Registry_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRegistries(ctx *pulumi.Context, args *GetRegistriesArgs, opts ...pulumi.InvokeOption) (*GetRegistriesResult, error) {
 	var rv GetRegistriesResult

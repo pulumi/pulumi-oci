@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetHistories(ctx, &optimizer.GetHistoriesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: _var.History_compartment_id_in_subtree,
-// 			Name:                   pulumi.StringRef(_var.History_name),
-// 			RecommendationId:       pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
-// 			RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
-// 			ResourceType:           pulumi.StringRef(_var.History_resource_type),
-// 			State:                  pulumi.StringRef(_var.History_state),
-// 			Status:                 pulumi.StringRef(_var.History_status),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetHistories(ctx, &optimizer.GetHistoriesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: _var.History_compartment_id_in_subtree,
+//				Name:                   pulumi.StringRef(_var.History_name),
+//				RecommendationId:       pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
+//				RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
+//				ResourceType:           pulumi.StringRef(_var.History_resource_type),
+//				State:                  pulumi.StringRef(_var.History_state),
+//				Status:                 pulumi.StringRef(_var.History_status),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetHistories(ctx *pulumi.Context, args *GetHistoriesArgs, opts ...pulumi.InvokeOption) (*GetHistoriesResult, error) {
 	var rv GetHistoriesResult

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbSystemStoragePerformances(ctx, &database.GetDbSystemStoragePerformancesArgs{
-// 			StorageManagement: _var.Db_system_storage_performance_storage_management,
-// 			ShapeType:         pulumi.StringRef(_var.Db_system_storage_performance_shape_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbSystemStoragePerformances(ctx, &database.GetDbSystemStoragePerformancesArgs{
+//				StorageManagement: _var.Db_system_storage_performance_storage_management,
+//				ShapeType:         pulumi.StringRef(_var.Db_system_storage_performance_shape_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbSystemStoragePerformances(ctx *pulumi.Context, args *GetDbSystemStoragePerformancesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemStoragePerformancesResult, error) {
 	var rv GetDbSystemStoragePerformancesResult

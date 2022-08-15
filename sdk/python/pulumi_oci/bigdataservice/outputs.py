@@ -100,6 +100,10 @@ __all__ = [
     'GetBdsInstanceNetworkConfigResult',
     'GetBdsInstanceNodeResult',
     'GetBdsInstanceNodeAttachedBlockVolumeResult',
+    'GetBdsInstancePatchHistoriesFilterResult',
+    'GetBdsInstancePatchHistoriesPatchHistoryResult',
+    'GetBdsInstancePatchesFilterResult',
+    'GetBdsInstancePatchesPatchResult',
     'GetBdsInstanceUtilNodeResult',
     'GetBdsInstanceUtilNodeShapeConfigResult',
     'GetBdsInstanceWorkerNodeResult',
@@ -1538,6 +1542,8 @@ class BdsInstanceClusterDetail(dict):
             suggest = "hue_server_url"
         elif key == "jupyterHubUrl":
             suggest = "jupyter_hub_url"
+        elif key == "odhVersion":
+            suggest = "odh_version"
         elif key == "osVersion":
             suggest = "os_version"
         elif key == "timeCreated":
@@ -1568,10 +1574,12 @@ class BdsInstanceClusterDetail(dict):
                  db_version: Optional[str] = None,
                  hue_server_url: Optional[str] = None,
                  jupyter_hub_url: Optional[str] = None,
+                 odh_version: Optional[str] = None,
                  os_version: Optional[str] = None,
                  time_created: Optional[str] = None,
                  time_refreshed: Optional[str] = None):
         """
+        :param str ambari_url: The URL of Ambari
         :param str bd_cell_version: Cloud SQL cell version
         :param str bda_version: BDA version installed in the cluster
         :param str bdm_version: Big Data Manager version installed in the cluster
@@ -1582,6 +1590,7 @@ class BdsInstanceClusterDetail(dict):
         :param str db_version: Query Server Database version
         :param str hue_server_url: The URL of a Hue Server
         :param str jupyter_hub_url: The URL of the Jupyterhub.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
         :param str os_version: Oracle Linux version installed in the cluster
         :param str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param str time_refreshed: The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
@@ -1608,6 +1617,8 @@ class BdsInstanceClusterDetail(dict):
             pulumi.set(__self__, "hue_server_url", hue_server_url)
         if jupyter_hub_url is not None:
             pulumi.set(__self__, "jupyter_hub_url", jupyter_hub_url)
+        if odh_version is not None:
+            pulumi.set(__self__, "odh_version", odh_version)
         if os_version is not None:
             pulumi.set(__self__, "os_version", os_version)
         if time_created is not None:
@@ -1618,6 +1629,9 @@ class BdsInstanceClusterDetail(dict):
     @property
     @pulumi.getter(name="ambariUrl")
     def ambari_url(self) -> Optional[str]:
+        """
+        The URL of Ambari
+        """
         return pulumi.get(self, "ambari_url")
 
     @property
@@ -1699,6 +1713,14 @@ class BdsInstanceClusterDetail(dict):
         The URL of the Jupyterhub.
         """
         return pulumi.get(self, "jupyter_hub_url")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> Optional[str]:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        """
+        return pulumi.get(self, "odh_version")
 
     @property
     @pulumi.getter(name="osVersion")
@@ -4326,6 +4348,7 @@ class GetBdsInstanceClusterDetailResult(dict):
                  db_version: str,
                  hue_server_url: str,
                  jupyter_hub_url: str,
+                 odh_version: str,
                  os_version: str,
                  time_created: str,
                  time_refreshed: str):
@@ -4341,6 +4364,7 @@ class GetBdsInstanceClusterDetailResult(dict):
         :param str db_version: Cloud SQL query server database version.
         :param str hue_server_url: The URL of the Hue server.
         :param str jupyter_hub_url: The URL of the Jupyterhub.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
         :param str os_version: Oracle Linux version installed in the cluster.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
@@ -4356,6 +4380,7 @@ class GetBdsInstanceClusterDetailResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "hue_server_url", hue_server_url)
         pulumi.set(__self__, "jupyter_hub_url", jupyter_hub_url)
+        pulumi.set(__self__, "odh_version", odh_version)
         pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_refreshed", time_refreshed)
@@ -4447,6 +4472,14 @@ class GetBdsInstanceClusterDetailResult(dict):
         The URL of the Jupyterhub.
         """
         return pulumi.get(self, "jupyter_hub_url")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        """
+        return pulumi.get(self, "odh_version")
 
     @property
     @pulumi.getter(name="osVersion")
@@ -5043,6 +5076,129 @@ class GetBdsInstanceNodeAttachedBlockVolumeResult(dict):
 
 
 @pulumi.output_type
+class GetBdsInstancePatchHistoriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstancePatchHistoriesPatchHistoryResult(dict):
+    def __init__(__self__, *,
+                 state: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param str state: The status of the patch.
+        :param str time_updated: The time when the patch history was last updated.
+        :param str version: The version of the patch.
+        """
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The status of the patch.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time when the patch history was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the patch.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetBdsInstancePatchesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstancePatchesPatchResult(dict):
+    def __init__(__self__, *,
+                 time_released: str,
+                 version: str):
+        """
+        :param str time_released: The time when the patch was released.
+        :param str version: The version of the patch.
+        """
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        The time when the patch was released.
+        """
+        return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the patch.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
 class GetBdsInstanceUtilNodeResult(dict):
     def __init__(__self__, *,
                  block_volume_size_in_gbs: str,
@@ -5586,6 +5742,7 @@ class GetBdsInstancesBdsInstanceClusterDetailResult(dict):
                  db_version: str,
                  hue_server_url: str,
                  jupyter_hub_url: str,
+                 odh_version: str,
                  os_version: str,
                  time_created: str,
                  time_refreshed: str):
@@ -5601,6 +5758,7 @@ class GetBdsInstancesBdsInstanceClusterDetailResult(dict):
         :param str db_version: Cloud SQL query server database version.
         :param str hue_server_url: The URL of the Hue server.
         :param str jupyter_hub_url: The URL of the Jupyterhub.
+        :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
         :param str os_version: Oracle Linux version installed in the cluster.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
@@ -5616,6 +5774,7 @@ class GetBdsInstancesBdsInstanceClusterDetailResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "hue_server_url", hue_server_url)
         pulumi.set(__self__, "jupyter_hub_url", jupyter_hub_url)
+        pulumi.set(__self__, "odh_version", odh_version)
         pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_refreshed", time_refreshed)
@@ -5707,6 +5866,14 @@ class GetBdsInstancesBdsInstanceClusterDetailResult(dict):
         The URL of the Jupyterhub.
         """
         return pulumi.get(self, "jupyter_hub_url")
+
+    @property
+    @pulumi.getter(name="odhVersion")
+    def odh_version(self) -> str:
+        """
+        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        """
+        return pulumi.get(self, "odh_version")
 
     @property
     @pulumi.getter(name="osVersion")

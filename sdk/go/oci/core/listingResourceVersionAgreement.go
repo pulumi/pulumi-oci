@@ -115,7 +115,7 @@ func (i *ListingResourceVersionAgreement) ToListingResourceVersionAgreementOutpu
 // ListingResourceVersionAgreementArrayInput is an input type that accepts ListingResourceVersionAgreementArray and ListingResourceVersionAgreementArrayOutput values.
 // You can construct a concrete instance of `ListingResourceVersionAgreementArrayInput` via:
 //
-//          ListingResourceVersionAgreementArray{ ListingResourceVersionAgreementArgs{...} }
+//	ListingResourceVersionAgreementArray{ ListingResourceVersionAgreementArgs{...} }
 type ListingResourceVersionAgreementArrayInput interface {
 	pulumi.Input
 
@@ -140,7 +140,7 @@ func (i ListingResourceVersionAgreementArray) ToListingResourceVersionAgreementA
 // ListingResourceVersionAgreementMapInput is an input type that accepts ListingResourceVersionAgreementMap and ListingResourceVersionAgreementMapOutput values.
 // You can construct a concrete instance of `ListingResourceVersionAgreementMapInput` via:
 //
-//          ListingResourceVersionAgreementMap{ "key": ListingResourceVersionAgreementArgs{...} }
+//	ListingResourceVersionAgreementMap{ "key": ListingResourceVersionAgreementArgs{...} }
 type ListingResourceVersionAgreementMapInput interface {
 	pulumi.Input
 

@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetDecryptedData(ctx, &kms.GetDecryptedDataArgs{
-// 			Ciphertext:     _var.Decrypted_data_ciphertext,
-// 			CryptoEndpoint: _var.Decrypted_data_crypto_endpoint,
-// 			KeyId:          oci_kms_key.Test_key.Id,
-// 			AssociatedData: _var.Decrypted_data_associated_data,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetDecryptedData(ctx, &kms.GetDecryptedDataArgs{
+//				Ciphertext:     _var.Decrypted_data_ciphertext,
+//				CryptoEndpoint: _var.Decrypted_data_crypto_endpoint,
+//				KeyId:          oci_kms_key.Test_key.Id,
+//				AssociatedData: _var.Decrypted_data_associated_data,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDecryptedData(ctx *pulumi.Context, args *GetDecryptedDataArgs, opts ...pulumi.InvokeOption) (*GetDecryptedDataResult, error) {
 	var rv GetDecryptedDataResult

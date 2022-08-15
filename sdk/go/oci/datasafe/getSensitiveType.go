@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSensitiveType(ctx, &datasafe.GetSensitiveTypeArgs{
-// 			SensitiveTypeId: oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSensitiveType(ctx, &datasafe.GetSensitiveTypeArgs{
+//				SensitiveTypeId: oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSensitiveType(ctx *pulumi.Context, args *LookupSensitiveTypeArgs, opts ...pulumi.InvokeOption) (*LookupSensitiveTypeResult, error) {
 	var rv LookupSensitiveTypeResult

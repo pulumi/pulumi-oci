@@ -21,85 +21,88 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousContainerDatabase(ctx, "testAutonomousContainerDatabase", &Database.AutonomousContainerDatabaseArgs{
-// 			DisplayName:                pulumi.Any(_var.Autonomous_container_database_display_name),
-// 			PatchModel:                 pulumi.Any(_var.Autonomous_container_database_patch_model),
-// 			CloudAutonomousVmClusterId: pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
-// 			AutonomousVmClusterId:      pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
-// 			BackupConfig: &database.AutonomousContainerDatabaseBackupConfigArgs{
-// 				BackupDestinationDetails: &database.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{
-// 					Type:          pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_type),
-// 					Id:            pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_id),
-// 					InternetProxy: pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_internet_proxy),
-// 					VpcPassword:   pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_vpc_password),
-// 					VpcUser:       pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_vpc_user),
-// 				},
-// 				RecoveryWindowInDays: pulumi.Any(_var.Autonomous_container_database_backup_config_recovery_window_in_days),
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DbUniqueName:  pulumi.Any(_var.Autonomous_container_database_db_unique_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsAutomaticFailoverEnabled: pulumi.Any(_var.Autonomous_container_database_is_automatic_failover_enabled),
-// 			KeyStoreId:                 pulumi.Any(oci_database_key_store.Test_key_store.Id),
-// 			KmsKeyId:                   pulumi.Any(oci_kms_key.Test_key.Id),
-// 			MaintenanceWindowDetails: &database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{
-// 				Preference:                pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_preference),
-// 				CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
-// 				DaysOfWeeks: database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{
-// 					&database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{
-// 						Name: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_days_of_week_name),
-// 					},
-// 				},
-// 				HoursOfDays:                  pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_hours_of_day),
-// 				IsCustomActionTimeoutEnabled: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled),
-// 				LeadTimeInWeeks:              pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
-// 				Months: database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{
-// 					&database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{
-// 						Name: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_months_name),
-// 					},
-// 				},
-// 				PatchingMode:  pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_patching_mode),
-// 				WeeksOfMonths: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_weeks_of_month),
-// 			},
-// 			PeerAutonomousContainerDatabaseDisplayName: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_display_name),
-// 			PeerCloudAutonomousVmClusterId:             pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
-// 			ProtectionMode:                             pulumi.Any(_var.Autonomous_container_database_protection_mode),
-// 			PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{
-// 				BackupDestinationDetails: database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
-// 					&database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
-// 						Type:          pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type),
-// 						Id:            pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id),
-// 						InternetProxy: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy),
-// 						VpcPassword:   pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password),
-// 						VpcUser:       pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user),
-// 					},
-// 				},
-// 				RecoveryWindowInDays: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days),
-// 			},
-// 			PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-// 			PeerAutonomousVmClusterId:                    pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
-// 			PeerDbUniqueName:                             pulumi.Any(_var.Autonomous_container_database_peer_db_unique_name),
-// 			ServiceLevelAgreementType:                    pulumi.Any(_var.Autonomous_container_database_service_level_agreement_type),
-// 			VaultId:                                      pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			StandbyMaintenanceBufferInDays:               pulumi.Any(_var.Autonomous_container_database_standby_maintenance_buffer_in_days),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousContainerDatabase(ctx, "testAutonomousContainerDatabase", &Database.AutonomousContainerDatabaseArgs{
+//				DisplayName:                pulumi.Any(_var.Autonomous_container_database_display_name),
+//				PatchModel:                 pulumi.Any(_var.Autonomous_container_database_patch_model),
+//				CloudAutonomousVmClusterId: pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
+//				AutonomousVmClusterId:      pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
+//				BackupConfig: &database.AutonomousContainerDatabaseBackupConfigArgs{
+//					BackupDestinationDetails: &database.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{
+//						Type:          pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_type),
+//						Id:            pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_id),
+//						InternetProxy: pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_internet_proxy),
+//						VpcPassword:   pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_vpc_password),
+//						VpcUser:       pulumi.Any(_var.Autonomous_container_database_backup_config_backup_destination_details_vpc_user),
+//					},
+//					RecoveryWindowInDays: pulumi.Any(_var.Autonomous_container_database_backup_config_recovery_window_in_days),
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DbUniqueName:  pulumi.Any(_var.Autonomous_container_database_db_unique_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsAutomaticFailoverEnabled: pulumi.Any(_var.Autonomous_container_database_is_automatic_failover_enabled),
+//				KeyStoreId:                 pulumi.Any(oci_database_key_store.Test_key_store.Id),
+//				KmsKeyId:                   pulumi.Any(oci_kms_key.Test_key.Id),
+//				MaintenanceWindowDetails: &database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{
+//					Preference:                pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_preference),
+//					CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
+//					DaysOfWeeks: database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{
+//						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{
+//							Name: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_days_of_week_name),
+//						},
+//					},
+//					HoursOfDays:                  pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_hours_of_day),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled),
+//					LeadTimeInWeeks:              pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
+//					Months: database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{
+//						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{
+//							Name: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_months_name),
+//						},
+//					},
+//					PatchingMode:  pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_patching_mode),
+//					WeeksOfMonths: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_weeks_of_month),
+//				},
+//				PeerAutonomousContainerDatabaseDisplayName: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_display_name),
+//				PeerCloudAutonomousVmClusterId:             pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
+//				ProtectionMode:                             pulumi.Any(_var.Autonomous_container_database_protection_mode),
+//				PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{
+//					BackupDestinationDetails: database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
+//						&database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
+//							Type:          pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type),
+//							Id:            pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id),
+//							InternetProxy: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy),
+//							VpcPassword:   pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password),
+//							VpcUser:       pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user),
+//						},
+//					},
+//					RecoveryWindowInDays: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days),
+//				},
+//				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//				PeerAutonomousVmClusterId:                    pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
+//				PeerDbUniqueName:                             pulumi.Any(_var.Autonomous_container_database_peer_db_unique_name),
+//				ServiceLevelAgreementType:                    pulumi.Any(_var.Autonomous_container_database_service_level_agreement_type),
+//				VaultId:                                      pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				StandbyMaintenanceBufferInDays:               pulumi.Any(_var.Autonomous_container_database_standby_maintenance_buffer_in_days),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -107,7 +110,9 @@ import (
 // AutonomousContainerDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
+//
+//	$ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
+//
 // ```
 type AutonomousContainerDatabase struct {
 	pulumi.CustomResourceState
@@ -544,7 +549,7 @@ func (i *AutonomousContainerDatabase) ToAutonomousContainerDatabaseOutputWithCon
 // AutonomousContainerDatabaseArrayInput is an input type that accepts AutonomousContainerDatabaseArray and AutonomousContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseArrayInput` via:
 //
-//          AutonomousContainerDatabaseArray{ AutonomousContainerDatabaseArgs{...} }
+//	AutonomousContainerDatabaseArray{ AutonomousContainerDatabaseArgs{...} }
 type AutonomousContainerDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -569,7 +574,7 @@ func (i AutonomousContainerDatabaseArray) ToAutonomousContainerDatabaseArrayOutp
 // AutonomousContainerDatabaseMapInput is an input type that accepts AutonomousContainerDatabaseMap and AutonomousContainerDatabaseMapOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseMapInput` via:
 //
-//          AutonomousContainerDatabaseMap{ "key": AutonomousContainerDatabaseArgs{...} }
+//	AutonomousContainerDatabaseMap{ "key": AutonomousContainerDatabaseArgs{...} }
 type AutonomousContainerDatabaseMapInput interface {
 	pulumi.Input
 

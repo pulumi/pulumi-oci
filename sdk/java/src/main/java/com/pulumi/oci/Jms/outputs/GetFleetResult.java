@@ -6,6 +6,7 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetInventoryLog;
 import com.pulumi.oci.Jms.outputs.GetFleetOperationLog;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -72,6 +73,11 @@ public final class GetFleetResult {
      */
     private final List<GetFleetInventoryLog> inventoryLogs;
     /**
+     * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    private final Boolean isAdvancedFeaturesEnabled;
+    /**
      * @return Custom Log for inventory or operation log.
      * 
      */
@@ -106,6 +112,7 @@ public final class GetFleetResult {
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("inventoryLogs") List<GetFleetInventoryLog> inventoryLogs,
+        @CustomType.Parameter("isAdvancedFeaturesEnabled") Boolean isAdvancedFeaturesEnabled,
         @CustomType.Parameter("operationLogs") List<GetFleetOperationLog> operationLogs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
@@ -122,6 +129,7 @@ public final class GetFleetResult {
         this.freeformTags = freeformTags;
         this.id = id;
         this.inventoryLogs = inventoryLogs;
+        this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
         this.operationLogs = operationLogs;
         this.state = state;
         this.systemTags = systemTags;
@@ -209,6 +217,13 @@ public final class GetFleetResult {
         return this.inventoryLogs;
     }
     /**
+     * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    public Boolean isAdvancedFeaturesEnabled() {
+        return this.isAdvancedFeaturesEnabled;
+    }
+    /**
      * @return Custom Log for inventory or operation log.
      * 
      */
@@ -258,6 +273,7 @@ public final class GetFleetResult {
         private Map<String,Object> freeformTags;
         private String id;
         private List<GetFleetInventoryLog> inventoryLogs;
+        private Boolean isAdvancedFeaturesEnabled;
         private List<GetFleetOperationLog> operationLogs;
         private String state;
         private Map<String,Object> systemTags;
@@ -281,6 +297,7 @@ public final class GetFleetResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.inventoryLogs = defaults.inventoryLogs;
+    	      this.isAdvancedFeaturesEnabled = defaults.isAdvancedFeaturesEnabled;
     	      this.operationLogs = defaults.operationLogs;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -338,6 +355,10 @@ public final class GetFleetResult {
         public Builder inventoryLogs(GetFleetInventoryLog... inventoryLogs) {
             return inventoryLogs(List.of(inventoryLogs));
         }
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = Objects.requireNonNull(isAdvancedFeaturesEnabled);
+            return this;
+        }
         public Builder operationLogs(List<GetFleetOperationLog> operationLogs) {
             this.operationLogs = Objects.requireNonNull(operationLogs);
             return this;
@@ -357,7 +378,7 @@ public final class GetFleetResult {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }        public GetFleetResult build() {
-            return new GetFleetResult(approximateApplicationCount, approximateInstallationCount, approximateJreCount, approximateManagedInstanceCount, compartmentId, definedTags, description, displayName, fleetId, freeformTags, id, inventoryLogs, operationLogs, state, systemTags, timeCreated);
+            return new GetFleetResult(approximateApplicationCount, approximateInstallationCount, approximateJreCount, approximateManagedInstanceCount, compartmentId, definedTags, description, displayName, fleetId, freeformTags, id, inventoryLogs, isAdvancedFeaturesEnabled, operationLogs, state, systemTags, timeCreated);
         }
     }
 }

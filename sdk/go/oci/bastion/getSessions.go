@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Bastion.GetSessions(ctx, &bastion.GetSessionsArgs{
-// 			BastionId:             oci_bastion_bastion.Test_bastion.Id,
-// 			DisplayName:           pulumi.StringRef(_var.Session_display_name),
-// 			SessionId:             pulumi.StringRef(oci_bastion_session.Test_session.Id),
-// 			SessionLifecycleState: pulumi.StringRef(_var.Session_session_lifecycle_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Bastion.GetSessions(ctx, &bastion.GetSessionsArgs{
+//				BastionId:             oci_bastion_bastion.Test_bastion.Id,
+//				DisplayName:           pulumi.StringRef(_var.Session_display_name),
+//				SessionId:             pulumi.StringRef(oci_bastion_session.Test_session.Id),
+//				SessionLifecycleState: pulumi.StringRef(_var.Session_session_lifecycle_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSessions(ctx *pulumi.Context, args *GetSessionsArgs, opts ...pulumi.InvokeOption) (*GetSessionsResult, error) {
 	var rv GetSessionsResult

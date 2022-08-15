@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbServer(ctx, &database.GetDbServerArgs{
-// 			DbServerId:              oci_database_db_server.Test_db_server.Id,
-// 			ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbServer(ctx, &database.GetDbServerArgs{
+//				DbServerId:              oci_database_db_server.Test_db_server.Id,
+//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbServer(ctx *pulumi.Context, args *GetDbServerArgs, opts ...pulumi.InvokeOption) (*GetDbServerResult, error) {
 	var rv GetDbServerResult

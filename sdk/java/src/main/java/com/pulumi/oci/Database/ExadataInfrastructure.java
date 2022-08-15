@@ -468,6 +468,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.memorySizeInGbs;
     }
     /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * 
+     */
+    @Export(name="monthlyDbServerVersion", type=String.class, parameters={})
+    private Output<String> monthlyDbServerVersion;
+
+    /**
+     * @return The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * 
+     */
+    public Output<String> monthlyDbServerVersion() {
+        return this.monthlyDbServerVersion;
+    }
+    /**
      * (Updatable) The netmask for the control plane network.
      * 
      */

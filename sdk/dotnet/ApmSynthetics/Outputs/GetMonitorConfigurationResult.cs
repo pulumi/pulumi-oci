@@ -18,6 +18,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string ConfigType;
         /// <summary>
+        /// Dns settings.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitorConfigurationDnsConfigurationResult> DnsConfigurations;
+        /// <summary>
         /// If certificate validation is enabled, then the call will fail in case of certification errors.
         /// </summary>
         public readonly bool IsCertificateValidationEnabled;
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         private GetMonitorConfigurationResult(
             string configType,
 
+            ImmutableArray<Outputs.GetMonitorConfigurationDnsConfigurationResult> dnsConfigurations,
+
             bool isCertificateValidationEnabled,
 
             bool isFailureRetried,
@@ -101,6 +107,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             ImmutableArray<Outputs.GetMonitorConfigurationVerifyTextResult> verifyTexts)
         {
             ConfigType = configType;
+            DnsConfigurations = dnsConfigurations;
             IsCertificateValidationEnabled = isCertificateValidationEnabled;
             IsFailureRetried = isFailureRetried;
             IsRedirectionEnabled = isRedirectionEnabled;

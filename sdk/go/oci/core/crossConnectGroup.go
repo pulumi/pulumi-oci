@@ -35,29 +35,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewCrossConnectGroup(ctx, "testCrossConnectGroup", &Core.CrossConnectGroupArgs{
-// 			CompartmentId:         pulumi.Any(_var.Compartment_id),
-// 			CustomerReferenceName: pulumi.Any(_var.Cross_connect_group_customer_reference_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Cross_connect_group_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewCrossConnectGroup(ctx, "testCrossConnectGroup", &Core.CrossConnectGroupArgs{
+//				CompartmentId:         pulumi.Any(_var.Compartment_id),
+//				CustomerReferenceName: pulumi.Any(_var.Cross_connect_group_customer_reference_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Cross_connect_group_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -65,7 +68,9 @@ import (
 // CrossConnectGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
+//
+//	$ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
+//
 // ```
 type CrossConnectGroup struct {
 	pulumi.CustomResourceState
@@ -230,7 +235,7 @@ func (i *CrossConnectGroup) ToCrossConnectGroupOutputWithContext(ctx context.Con
 // CrossConnectGroupArrayInput is an input type that accepts CrossConnectGroupArray and CrossConnectGroupArrayOutput values.
 // You can construct a concrete instance of `CrossConnectGroupArrayInput` via:
 //
-//          CrossConnectGroupArray{ CrossConnectGroupArgs{...} }
+//	CrossConnectGroupArray{ CrossConnectGroupArgs{...} }
 type CrossConnectGroupArrayInput interface {
 	pulumi.Input
 
@@ -255,7 +260,7 @@ func (i CrossConnectGroupArray) ToCrossConnectGroupArrayOutputWithContext(ctx co
 // CrossConnectGroupMapInput is an input type that accepts CrossConnectGroupMap and CrossConnectGroupMapOutput values.
 // You can construct a concrete instance of `CrossConnectGroupMapInput` via:
 //
-//          CrossConnectGroupMap{ "key": CrossConnectGroupArgs{...} }
+//	CrossConnectGroupMap{ "key": CrossConnectGroupArgs{...} }
 type CrossConnectGroupMapInput interface {
 	pulumi.Input
 

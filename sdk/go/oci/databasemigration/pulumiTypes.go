@@ -20,7 +20,7 @@ type ConnectionAdminCredentials struct {
 // ConnectionAdminCredentialsInput is an input type that accepts ConnectionAdminCredentialsArgs and ConnectionAdminCredentialsOutput values.
 // You can construct a concrete instance of `ConnectionAdminCredentialsInput` via:
 //
-//          ConnectionAdminCredentialsArgs{...}
+//	ConnectionAdminCredentialsArgs{...}
 type ConnectionAdminCredentialsInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i ConnectionAdminCredentialsArgs) ToConnectionAdminCredentialsPtrOutputWit
 // ConnectionAdminCredentialsPtrInput is an input type that accepts ConnectionAdminCredentialsArgs, ConnectionAdminCredentialsPtr and ConnectionAdminCredentialsPtrOutput values.
 // You can construct a concrete instance of `ConnectionAdminCredentialsPtrInput` via:
 //
-//          ConnectionAdminCredentialsArgs{...}
+//	        ConnectionAdminCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectionAdminCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -180,7 +180,7 @@ type ConnectionConnectDescriptor struct {
 // ConnectionConnectDescriptorInput is an input type that accepts ConnectionConnectDescriptorArgs and ConnectionConnectDescriptorOutput values.
 // You can construct a concrete instance of `ConnectionConnectDescriptorInput` via:
 //
-//          ConnectionConnectDescriptorArgs{...}
+//	ConnectionConnectDescriptorArgs{...}
 type ConnectionConnectDescriptorInput interface {
 	pulumi.Input
 
@@ -222,11 +222,11 @@ func (i ConnectionConnectDescriptorArgs) ToConnectionConnectDescriptorPtrOutputW
 // ConnectionConnectDescriptorPtrInput is an input type that accepts ConnectionConnectDescriptorArgs, ConnectionConnectDescriptorPtr and ConnectionConnectDescriptorPtrOutput values.
 // You can construct a concrete instance of `ConnectionConnectDescriptorPtrInput` via:
 //
-//          ConnectionConnectDescriptorArgs{...}
+//	        ConnectionConnectDescriptorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectionConnectDescriptorPtrInput interface {
 	pulumi.Input
 
@@ -374,7 +374,7 @@ type ConnectionPrivateEndpoint struct {
 // ConnectionPrivateEndpointInput is an input type that accepts ConnectionPrivateEndpointArgs and ConnectionPrivateEndpointOutput values.
 // You can construct a concrete instance of `ConnectionPrivateEndpointInput` via:
 //
-//          ConnectionPrivateEndpointArgs{...}
+//	ConnectionPrivateEndpointArgs{...}
 type ConnectionPrivateEndpointInput interface {
 	pulumi.Input
 
@@ -416,11 +416,11 @@ func (i ConnectionPrivateEndpointArgs) ToConnectionPrivateEndpointPtrOutputWithC
 // ConnectionPrivateEndpointPtrInput is an input type that accepts ConnectionPrivateEndpointArgs, ConnectionPrivateEndpointPtr and ConnectionPrivateEndpointPtrOutput values.
 // You can construct a concrete instance of `ConnectionPrivateEndpointPtrInput` via:
 //
-//          ConnectionPrivateEndpointArgs{...}
+//	        ConnectionPrivateEndpointArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectionPrivateEndpointPtrInput interface {
 	pulumi.Input
 
@@ -568,7 +568,7 @@ type ConnectionSshDetails struct {
 // ConnectionSshDetailsInput is an input type that accepts ConnectionSshDetailsArgs and ConnectionSshDetailsOutput values.
 // You can construct a concrete instance of `ConnectionSshDetailsInput` via:
 //
-//          ConnectionSshDetailsArgs{...}
+//	ConnectionSshDetailsArgs{...}
 type ConnectionSshDetailsInput interface {
 	pulumi.Input
 
@@ -610,11 +610,11 @@ func (i ConnectionSshDetailsArgs) ToConnectionSshDetailsPtrOutputWithContext(ctx
 // ConnectionSshDetailsPtrInput is an input type that accepts ConnectionSshDetailsArgs, ConnectionSshDetailsPtr and ConnectionSshDetailsPtrOutput values.
 // You can construct a concrete instance of `ConnectionSshDetailsPtrInput` via:
 //
-//          ConnectionSshDetailsArgs{...}
+//	        ConnectionSshDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectionSshDetailsPtrInput interface {
 	pulumi.Input
 
@@ -760,7 +760,7 @@ type ConnectionVaultDetails struct {
 // ConnectionVaultDetailsInput is an input type that accepts ConnectionVaultDetailsArgs and ConnectionVaultDetailsOutput values.
 // You can construct a concrete instance of `ConnectionVaultDetailsInput` via:
 //
-//          ConnectionVaultDetailsArgs{...}
+//	ConnectionVaultDetailsArgs{...}
 type ConnectionVaultDetailsInput interface {
 	pulumi.Input
 
@@ -800,11 +800,11 @@ func (i ConnectionVaultDetailsArgs) ToConnectionVaultDetailsPtrOutputWithContext
 // ConnectionVaultDetailsPtrInput is an input type that accepts ConnectionVaultDetailsArgs, ConnectionVaultDetailsPtr and ConnectionVaultDetailsPtrOutput values.
 // You can construct a concrete instance of `ConnectionVaultDetailsPtrInput` via:
 //
-//          ConnectionVaultDetailsArgs{...}
+//	        ConnectionVaultDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectionVaultDetailsPtrInput interface {
 	pulumi.Input
 
@@ -935,7 +935,7 @@ type JobProgress struct {
 // JobProgressInput is an input type that accepts JobProgressArgs and JobProgressOutput values.
 // You can construct a concrete instance of `JobProgressInput` via:
 //
-//          JobProgressArgs{...}
+//	JobProgressArgs{...}
 type JobProgressInput interface {
 	pulumi.Input
 
@@ -967,7 +967,7 @@ func (i JobProgressArgs) ToJobProgressOutputWithContext(ctx context.Context) Job
 // JobProgressArrayInput is an input type that accepts JobProgressArray and JobProgressArrayOutput values.
 // You can construct a concrete instance of `JobProgressArrayInput` via:
 //
-//          JobProgressArray{ JobProgressArgs{...} }
+//	JobProgressArray{ JobProgressArgs{...} }
 type JobProgressArrayInput interface {
 	pulumi.Input
 
@@ -1058,7 +1058,7 @@ type JobProgressPhase struct {
 // JobProgressPhaseInput is an input type that accepts JobProgressPhaseArgs and JobProgressPhaseOutput values.
 // You can construct a concrete instance of `JobProgressPhaseInput` via:
 //
-//          JobProgressPhaseArgs{...}
+//	JobProgressPhaseArgs{...}
 type JobProgressPhaseInput interface {
 	pulumi.Input
 
@@ -1098,7 +1098,7 @@ func (i JobProgressPhaseArgs) ToJobProgressPhaseOutputWithContext(ctx context.Co
 // JobProgressPhaseArrayInput is an input type that accepts JobProgressPhaseArray and JobProgressPhaseArrayOutput values.
 // You can construct a concrete instance of `JobProgressPhaseArrayInput` via:
 //
-//          JobProgressPhaseArray{ JobProgressPhaseArgs{...} }
+//	JobProgressPhaseArray{ JobProgressPhaseArgs{...} }
 type JobProgressPhaseArrayInput interface {
 	pulumi.Input
 
@@ -1199,7 +1199,7 @@ type JobProgressPhaseExtract struct {
 // JobProgressPhaseExtractInput is an input type that accepts JobProgressPhaseExtractArgs and JobProgressPhaseExtractOutput values.
 // You can construct a concrete instance of `JobProgressPhaseExtractInput` via:
 //
-//          JobProgressPhaseExtractArgs{...}
+//	JobProgressPhaseExtractArgs{...}
 type JobProgressPhaseExtractInput interface {
 	pulumi.Input
 
@@ -1229,7 +1229,7 @@ func (i JobProgressPhaseExtractArgs) ToJobProgressPhaseExtractOutputWithContext(
 // JobProgressPhaseExtractArrayInput is an input type that accepts JobProgressPhaseExtractArray and JobProgressPhaseExtractArrayOutput values.
 // You can construct a concrete instance of `JobProgressPhaseExtractArrayInput` via:
 //
-//          JobProgressPhaseExtractArray{ JobProgressPhaseExtractArgs{...} }
+//	JobProgressPhaseExtractArray{ JobProgressPhaseExtractArgs{...} }
 type JobProgressPhaseExtractArrayInput interface {
 	pulumi.Input
 
@@ -1307,7 +1307,7 @@ type JobProgressPhaseLogLocation struct {
 // JobProgressPhaseLogLocationInput is an input type that accepts JobProgressPhaseLogLocationArgs and JobProgressPhaseLogLocationOutput values.
 // You can construct a concrete instance of `JobProgressPhaseLogLocationInput` via:
 //
-//          JobProgressPhaseLogLocationArgs{...}
+//	JobProgressPhaseLogLocationArgs{...}
 type JobProgressPhaseLogLocationInput interface {
 	pulumi.Input
 
@@ -1339,7 +1339,7 @@ func (i JobProgressPhaseLogLocationArgs) ToJobProgressPhaseLogLocationOutputWith
 // JobProgressPhaseLogLocationArrayInput is an input type that accepts JobProgressPhaseLogLocationArray and JobProgressPhaseLogLocationArrayOutput values.
 // You can construct a concrete instance of `JobProgressPhaseLogLocationArrayInput` via:
 //
-//          JobProgressPhaseLogLocationArray{ JobProgressPhaseLogLocationArgs{...} }
+//	JobProgressPhaseLogLocationArray{ JobProgressPhaseLogLocationArgs{...} }
 type JobProgressPhaseLogLocationArrayInput interface {
 	pulumi.Input
 
@@ -1422,7 +1422,7 @@ type JobUnsupportedObject struct {
 // JobUnsupportedObjectInput is an input type that accepts JobUnsupportedObjectArgs and JobUnsupportedObjectOutput values.
 // You can construct a concrete instance of `JobUnsupportedObjectInput` via:
 //
-//          JobUnsupportedObjectArgs{...}
+//	JobUnsupportedObjectArgs{...}
 type JobUnsupportedObjectInput interface {
 	pulumi.Input
 
@@ -1454,7 +1454,7 @@ func (i JobUnsupportedObjectArgs) ToJobUnsupportedObjectOutputWithContext(ctx co
 // JobUnsupportedObjectArrayInput is an input type that accepts JobUnsupportedObjectArray and JobUnsupportedObjectArrayOutput values.
 // You can construct a concrete instance of `JobUnsupportedObjectArrayInput` via:
 //
-//          JobUnsupportedObjectArray{ JobUnsupportedObjectArgs{...} }
+//	JobUnsupportedObjectArray{ JobUnsupportedObjectArgs{...} }
 type JobUnsupportedObjectArrayInput interface {
 	pulumi.Input
 
@@ -1535,7 +1535,7 @@ type MigrationAdvisorSettings struct {
 // MigrationAdvisorSettingsInput is an input type that accepts MigrationAdvisorSettingsArgs and MigrationAdvisorSettingsOutput values.
 // You can construct a concrete instance of `MigrationAdvisorSettingsInput` via:
 //
-//          MigrationAdvisorSettingsArgs{...}
+//	MigrationAdvisorSettingsArgs{...}
 type MigrationAdvisorSettingsInput interface {
 	pulumi.Input
 
@@ -1573,11 +1573,11 @@ func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsPtrOutputWithCon
 // MigrationAdvisorSettingsPtrInput is an input type that accepts MigrationAdvisorSettingsArgs, MigrationAdvisorSettingsPtr and MigrationAdvisorSettingsPtrOutput values.
 // You can construct a concrete instance of `MigrationAdvisorSettingsPtrInput` via:
 //
-//          MigrationAdvisorSettingsArgs{...}
+//	        MigrationAdvisorSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationAdvisorSettingsPtrInput interface {
 	pulumi.Input
 
@@ -1691,7 +1691,7 @@ type MigrationDataTransferMediumDetails struct {
 // MigrationDataTransferMediumDetailsInput is an input type that accepts MigrationDataTransferMediumDetailsArgs and MigrationDataTransferMediumDetailsOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsInput` via:
 //
-//          MigrationDataTransferMediumDetailsArgs{...}
+//	MigrationDataTransferMediumDetailsArgs{...}
 type MigrationDataTransferMediumDetailsInput interface {
 	pulumi.Input
 
@@ -1729,11 +1729,11 @@ func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDet
 // MigrationDataTransferMediumDetailsPtrInput is an input type that accepts MigrationDataTransferMediumDetailsArgs, MigrationDataTransferMediumDetailsPtr and MigrationDataTransferMediumDetailsPtrOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsPtrInput` via:
 //
-//          MigrationDataTransferMediumDetailsArgs{...}
+//	        MigrationDataTransferMediumDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDataTransferMediumDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1851,7 +1851,7 @@ type MigrationDataTransferMediumDetailsDatabaseLinkDetails struct {
 // MigrationDataTransferMediumDetailsDatabaseLinkDetailsInput is an input type that accepts MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs and MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsDatabaseLinkDetailsInput` via:
 //
-//          MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{...}
+//	MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{...}
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsInput interface {
 	pulumi.Input
 
@@ -1889,11 +1889,11 @@ func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs) ToMigrationDa
 // MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrInput is an input type that accepts MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs, MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtr and MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrInput` via:
 //
-//          MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{...}
+//	        MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrInput interface {
 	pulumi.Input
 
@@ -2009,7 +2009,7 @@ type MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket struct {
 // MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketInput is an input type that accepts MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs and MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketInput` via:
 //
-//          MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{...}
+//	MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{...}
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketInput interface {
 	pulumi.Input
 
@@ -2047,11 +2047,11 @@ func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs) T
 // MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrInput is an input type that accepts MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs, MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtr and MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrInput` via:
 //
-//          MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{...}
+//	        MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrInput interface {
 	pulumi.Input
 
@@ -2165,7 +2165,7 @@ type MigrationDataTransferMediumDetailsObjectStorageDetails struct {
 // MigrationDataTransferMediumDetailsObjectStorageDetailsInput is an input type that accepts MigrationDataTransferMediumDetailsObjectStorageDetailsArgs and MigrationDataTransferMediumDetailsObjectStorageDetailsOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsObjectStorageDetailsInput` via:
 //
-//          MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{...}
+//	MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{...}
 type MigrationDataTransferMediumDetailsObjectStorageDetailsInput interface {
 	pulumi.Input
 
@@ -2203,11 +2203,11 @@ func (i MigrationDataTransferMediumDetailsObjectStorageDetailsArgs) ToMigrationD
 // MigrationDataTransferMediumDetailsObjectStorageDetailsPtrInput is an input type that accepts MigrationDataTransferMediumDetailsObjectStorageDetailsArgs, MigrationDataTransferMediumDetailsObjectStorageDetailsPtr and MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput values.
 // You can construct a concrete instance of `MigrationDataTransferMediumDetailsObjectStorageDetailsPtrInput` via:
 //
-//          MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{...}
+//	        MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDataTransferMediumDetailsObjectStorageDetailsPtrInput interface {
 	pulumi.Input
 
@@ -2327,7 +2327,7 @@ type MigrationDatapumpSettings struct {
 // MigrationDatapumpSettingsInput is an input type that accepts MigrationDatapumpSettingsArgs and MigrationDatapumpSettingsOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsInput` via:
 //
-//          MigrationDatapumpSettingsArgs{...}
+//	MigrationDatapumpSettingsArgs{...}
 type MigrationDatapumpSettingsInput interface {
 	pulumi.Input
 
@@ -2371,11 +2371,11 @@ func (i MigrationDatapumpSettingsArgs) ToMigrationDatapumpSettingsPtrOutputWithC
 // MigrationDatapumpSettingsPtrInput is an input type that accepts MigrationDatapumpSettingsArgs, MigrationDatapumpSettingsPtr and MigrationDatapumpSettingsPtrOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsPtrInput` via:
 //
-//          MigrationDatapumpSettingsArgs{...}
+//	        MigrationDatapumpSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDatapumpSettingsPtrInput interface {
 	pulumi.Input
 
@@ -2548,7 +2548,7 @@ type MigrationDatapumpSettingsDataPumpParameters struct {
 // MigrationDatapumpSettingsDataPumpParametersInput is an input type that accepts MigrationDatapumpSettingsDataPumpParametersArgs and MigrationDatapumpSettingsDataPumpParametersOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsDataPumpParametersInput` via:
 //
-//          MigrationDatapumpSettingsDataPumpParametersArgs{...}
+//	MigrationDatapumpSettingsDataPumpParametersArgs{...}
 type MigrationDatapumpSettingsDataPumpParametersInput interface {
 	pulumi.Input
 
@@ -2594,11 +2594,11 @@ func (i MigrationDatapumpSettingsDataPumpParametersArgs) ToMigrationDatapumpSett
 // MigrationDatapumpSettingsDataPumpParametersPtrInput is an input type that accepts MigrationDatapumpSettingsDataPumpParametersArgs, MigrationDatapumpSettingsDataPumpParametersPtr and MigrationDatapumpSettingsDataPumpParametersPtrOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsDataPumpParametersPtrInput` via:
 //
-//          MigrationDatapumpSettingsDataPumpParametersArgs{...}
+//	        MigrationDatapumpSettingsDataPumpParametersArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDatapumpSettingsDataPumpParametersPtrInput interface {
 	pulumi.Input
 
@@ -2772,7 +2772,7 @@ type MigrationDatapumpSettingsExportDirectoryObject struct {
 // MigrationDatapumpSettingsExportDirectoryObjectInput is an input type that accepts MigrationDatapumpSettingsExportDirectoryObjectArgs and MigrationDatapumpSettingsExportDirectoryObjectOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsExportDirectoryObjectInput` via:
 //
-//          MigrationDatapumpSettingsExportDirectoryObjectArgs{...}
+//	MigrationDatapumpSettingsExportDirectoryObjectArgs{...}
 type MigrationDatapumpSettingsExportDirectoryObjectInput interface {
 	pulumi.Input
 
@@ -2810,11 +2810,11 @@ func (i MigrationDatapumpSettingsExportDirectoryObjectArgs) ToMigrationDatapumpS
 // MigrationDatapumpSettingsExportDirectoryObjectPtrInput is an input type that accepts MigrationDatapumpSettingsExportDirectoryObjectArgs, MigrationDatapumpSettingsExportDirectoryObjectPtr and MigrationDatapumpSettingsExportDirectoryObjectPtrOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsExportDirectoryObjectPtrInput` via:
 //
-//          MigrationDatapumpSettingsExportDirectoryObjectArgs{...}
+//	        MigrationDatapumpSettingsExportDirectoryObjectArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDatapumpSettingsExportDirectoryObjectPtrInput interface {
 	pulumi.Input
 
@@ -2928,7 +2928,7 @@ type MigrationDatapumpSettingsImportDirectoryObject struct {
 // MigrationDatapumpSettingsImportDirectoryObjectInput is an input type that accepts MigrationDatapumpSettingsImportDirectoryObjectArgs and MigrationDatapumpSettingsImportDirectoryObjectOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsImportDirectoryObjectInput` via:
 //
-//          MigrationDatapumpSettingsImportDirectoryObjectArgs{...}
+//	MigrationDatapumpSettingsImportDirectoryObjectArgs{...}
 type MigrationDatapumpSettingsImportDirectoryObjectInput interface {
 	pulumi.Input
 
@@ -2966,11 +2966,11 @@ func (i MigrationDatapumpSettingsImportDirectoryObjectArgs) ToMigrationDatapumpS
 // MigrationDatapumpSettingsImportDirectoryObjectPtrInput is an input type that accepts MigrationDatapumpSettingsImportDirectoryObjectArgs, MigrationDatapumpSettingsImportDirectoryObjectPtr and MigrationDatapumpSettingsImportDirectoryObjectPtrOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsImportDirectoryObjectPtrInput` via:
 //
-//          MigrationDatapumpSettingsImportDirectoryObjectArgs{...}
+//	        MigrationDatapumpSettingsImportDirectoryObjectArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDatapumpSettingsImportDirectoryObjectPtrInput interface {
 	pulumi.Input
 
@@ -3086,7 +3086,7 @@ type MigrationDatapumpSettingsMetadataRemap struct {
 // MigrationDatapumpSettingsMetadataRemapInput is an input type that accepts MigrationDatapumpSettingsMetadataRemapArgs and MigrationDatapumpSettingsMetadataRemapOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsMetadataRemapInput` via:
 //
-//          MigrationDatapumpSettingsMetadataRemapArgs{...}
+//	MigrationDatapumpSettingsMetadataRemapArgs{...}
 type MigrationDatapumpSettingsMetadataRemapInput interface {
 	pulumi.Input
 
@@ -3118,7 +3118,7 @@ func (i MigrationDatapumpSettingsMetadataRemapArgs) ToMigrationDatapumpSettingsM
 // MigrationDatapumpSettingsMetadataRemapArrayInput is an input type that accepts MigrationDatapumpSettingsMetadataRemapArray and MigrationDatapumpSettingsMetadataRemapArrayOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsMetadataRemapArrayInput` via:
 //
-//          MigrationDatapumpSettingsMetadataRemapArray{ MigrationDatapumpSettingsMetadataRemapArgs{...} }
+//	MigrationDatapumpSettingsMetadataRemapArray{ MigrationDatapumpSettingsMetadataRemapArgs{...} }
 type MigrationDatapumpSettingsMetadataRemapArrayInput interface {
 	pulumi.Input
 
@@ -3199,7 +3199,7 @@ type MigrationDumpTransferDetails struct {
 // MigrationDumpTransferDetailsInput is an input type that accepts MigrationDumpTransferDetailsArgs and MigrationDumpTransferDetailsOutput values.
 // You can construct a concrete instance of `MigrationDumpTransferDetailsInput` via:
 //
-//          MigrationDumpTransferDetailsArgs{...}
+//	MigrationDumpTransferDetailsArgs{...}
 type MigrationDumpTransferDetailsInput interface {
 	pulumi.Input
 
@@ -3237,11 +3237,11 @@ func (i MigrationDumpTransferDetailsArgs) ToMigrationDumpTransferDetailsPtrOutpu
 // MigrationDumpTransferDetailsPtrInput is an input type that accepts MigrationDumpTransferDetailsArgs, MigrationDumpTransferDetailsPtr and MigrationDumpTransferDetailsPtrOutput values.
 // You can construct a concrete instance of `MigrationDumpTransferDetailsPtrInput` via:
 //
-//          MigrationDumpTransferDetailsArgs{...}
+//	        MigrationDumpTransferDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDumpTransferDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3355,7 +3355,7 @@ type MigrationDumpTransferDetailsSource struct {
 // MigrationDumpTransferDetailsSourceInput is an input type that accepts MigrationDumpTransferDetailsSourceArgs and MigrationDumpTransferDetailsSourceOutput values.
 // You can construct a concrete instance of `MigrationDumpTransferDetailsSourceInput` via:
 //
-//          MigrationDumpTransferDetailsSourceArgs{...}
+//	MigrationDumpTransferDetailsSourceArgs{...}
 type MigrationDumpTransferDetailsSourceInput interface {
 	pulumi.Input
 
@@ -3393,11 +3393,11 @@ func (i MigrationDumpTransferDetailsSourceArgs) ToMigrationDumpTransferDetailsSo
 // MigrationDumpTransferDetailsSourcePtrInput is an input type that accepts MigrationDumpTransferDetailsSourceArgs, MigrationDumpTransferDetailsSourcePtr and MigrationDumpTransferDetailsSourcePtrOutput values.
 // You can construct a concrete instance of `MigrationDumpTransferDetailsSourcePtrInput` via:
 //
-//          MigrationDumpTransferDetailsSourceArgs{...}
+//	        MigrationDumpTransferDetailsSourceArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDumpTransferDetailsSourcePtrInput interface {
 	pulumi.Input
 
@@ -3511,7 +3511,7 @@ type MigrationDumpTransferDetailsTarget struct {
 // MigrationDumpTransferDetailsTargetInput is an input type that accepts MigrationDumpTransferDetailsTargetArgs and MigrationDumpTransferDetailsTargetOutput values.
 // You can construct a concrete instance of `MigrationDumpTransferDetailsTargetInput` via:
 //
-//          MigrationDumpTransferDetailsTargetArgs{...}
+//	MigrationDumpTransferDetailsTargetArgs{...}
 type MigrationDumpTransferDetailsTargetInput interface {
 	pulumi.Input
 
@@ -3549,11 +3549,11 @@ func (i MigrationDumpTransferDetailsTargetArgs) ToMigrationDumpTransferDetailsTa
 // MigrationDumpTransferDetailsTargetPtrInput is an input type that accepts MigrationDumpTransferDetailsTargetArgs, MigrationDumpTransferDetailsTargetPtr and MigrationDumpTransferDetailsTargetPtrOutput values.
 // You can construct a concrete instance of `MigrationDumpTransferDetailsTargetPtrInput` via:
 //
-//          MigrationDumpTransferDetailsTargetArgs{...}
+//	        MigrationDumpTransferDetailsTargetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationDumpTransferDetailsTargetPtrInput interface {
 	pulumi.Input
 
@@ -3669,7 +3669,7 @@ type MigrationExcludeObject struct {
 // MigrationExcludeObjectInput is an input type that accepts MigrationExcludeObjectArgs and MigrationExcludeObjectOutput values.
 // You can construct a concrete instance of `MigrationExcludeObjectInput` via:
 //
-//          MigrationExcludeObjectArgs{...}
+//	MigrationExcludeObjectArgs{...}
 type MigrationExcludeObjectInput interface {
 	pulumi.Input
 
@@ -3701,7 +3701,7 @@ func (i MigrationExcludeObjectArgs) ToMigrationExcludeObjectOutputWithContext(ct
 // MigrationExcludeObjectArrayInput is an input type that accepts MigrationExcludeObjectArray and MigrationExcludeObjectArrayOutput values.
 // You can construct a concrete instance of `MigrationExcludeObjectArrayInput` via:
 //
-//          MigrationExcludeObjectArray{ MigrationExcludeObjectArgs{...} }
+//	MigrationExcludeObjectArray{ MigrationExcludeObjectArgs{...} }
 type MigrationExcludeObjectArrayInput interface {
 	pulumi.Input
 
@@ -3782,7 +3782,7 @@ type MigrationGoldenGateDetails struct {
 // MigrationGoldenGateDetailsInput is an input type that accepts MigrationGoldenGateDetailsArgs and MigrationGoldenGateDetailsOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsInput` via:
 //
-//          MigrationGoldenGateDetailsArgs{...}
+//	MigrationGoldenGateDetailsArgs{...}
 type MigrationGoldenGateDetailsInput interface {
 	pulumi.Input
 
@@ -3820,11 +3820,11 @@ func (i MigrationGoldenGateDetailsArgs) ToMigrationGoldenGateDetailsPtrOutputWit
 // MigrationGoldenGateDetailsPtrInput is an input type that accepts MigrationGoldenGateDetailsArgs, MigrationGoldenGateDetailsPtr and MigrationGoldenGateDetailsPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsPtrInput` via:
 //
-//          MigrationGoldenGateDetailsArgs{...}
+//	        MigrationGoldenGateDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsPtrInput interface {
 	pulumi.Input
 
@@ -3950,7 +3950,7 @@ type MigrationGoldenGateDetailsHub struct {
 // MigrationGoldenGateDetailsHubInput is an input type that accepts MigrationGoldenGateDetailsHubArgs and MigrationGoldenGateDetailsHubOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubInput` via:
 //
-//          MigrationGoldenGateDetailsHubArgs{...}
+//	MigrationGoldenGateDetailsHubArgs{...}
 type MigrationGoldenGateDetailsHubInput interface {
 	pulumi.Input
 
@@ -4000,11 +4000,11 @@ func (i MigrationGoldenGateDetailsHubArgs) ToMigrationGoldenGateDetailsHubPtrOut
 // MigrationGoldenGateDetailsHubPtrInput is an input type that accepts MigrationGoldenGateDetailsHubArgs, MigrationGoldenGateDetailsHubPtr and MigrationGoldenGateDetailsHubPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubPtrInput` via:
 //
-//          MigrationGoldenGateDetailsHubArgs{...}
+//	        MigrationGoldenGateDetailsHubArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsHubPtrInput interface {
 	pulumi.Input
 
@@ -4216,7 +4216,7 @@ type MigrationGoldenGateDetailsHubRestAdminCredentials struct {
 // MigrationGoldenGateDetailsHubRestAdminCredentialsInput is an input type that accepts MigrationGoldenGateDetailsHubRestAdminCredentialsArgs and MigrationGoldenGateDetailsHubRestAdminCredentialsOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubRestAdminCredentialsInput` via:
 //
-//          MigrationGoldenGateDetailsHubRestAdminCredentialsArgs{...}
+//	MigrationGoldenGateDetailsHubRestAdminCredentialsArgs{...}
 type MigrationGoldenGateDetailsHubRestAdminCredentialsInput interface {
 	pulumi.Input
 
@@ -4254,11 +4254,11 @@ func (i MigrationGoldenGateDetailsHubRestAdminCredentialsArgs) ToMigrationGolden
 // MigrationGoldenGateDetailsHubRestAdminCredentialsPtrInput is an input type that accepts MigrationGoldenGateDetailsHubRestAdminCredentialsArgs, MigrationGoldenGateDetailsHubRestAdminCredentialsPtr and MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubRestAdminCredentialsPtrInput` via:
 //
-//          MigrationGoldenGateDetailsHubRestAdminCredentialsArgs{...}
+//	        MigrationGoldenGateDetailsHubRestAdminCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsHubRestAdminCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -4372,7 +4372,7 @@ type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials struct {
 // MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsInput is an input type that accepts MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs and MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsInput` via:
 //
-//          MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{...}
+//	MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{...}
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsInput interface {
 	pulumi.Input
 
@@ -4410,11 +4410,11 @@ func (i MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs) ToMi
 // MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrInput is an input type that accepts MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs, MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtr and MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrInput` via:
 //
-//          MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{...}
+//	        MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -4528,7 +4528,7 @@ type MigrationGoldenGateDetailsHubSourceDbAdminCredentials struct {
 // MigrationGoldenGateDetailsHubSourceDbAdminCredentialsInput is an input type that accepts MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs and MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubSourceDbAdminCredentialsInput` via:
 //
-//          MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{...}
+//	MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{...}
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsInput interface {
 	pulumi.Input
 
@@ -4566,11 +4566,11 @@ func (i MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs) ToMigrationGo
 // MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrInput is an input type that accepts MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs, MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtr and MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrInput` via:
 //
-//          MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{...}
+//	        MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -4684,7 +4684,7 @@ type MigrationGoldenGateDetailsHubTargetDbAdminCredentials struct {
 // MigrationGoldenGateDetailsHubTargetDbAdminCredentialsInput is an input type that accepts MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs and MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubTargetDbAdminCredentialsInput` via:
 //
-//          MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs{...}
+//	MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs{...}
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsInput interface {
 	pulumi.Input
 
@@ -4722,11 +4722,11 @@ func (i MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs) ToMigrationGo
 // MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrInput is an input type that accepts MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs, MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtr and MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrInput` via:
 //
-//          MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs{...}
+//	        MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -4842,7 +4842,7 @@ type MigrationGoldenGateDetailsSettings struct {
 // MigrationGoldenGateDetailsSettingsInput is an input type that accepts MigrationGoldenGateDetailsSettingsArgs and MigrationGoldenGateDetailsSettingsOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsSettingsInput` via:
 //
-//          MigrationGoldenGateDetailsSettingsArgs{...}
+//	MigrationGoldenGateDetailsSettingsArgs{...}
 type MigrationGoldenGateDetailsSettingsInput interface {
 	pulumi.Input
 
@@ -4882,11 +4882,11 @@ func (i MigrationGoldenGateDetailsSettingsArgs) ToMigrationGoldenGateDetailsSett
 // MigrationGoldenGateDetailsSettingsPtrInput is an input type that accepts MigrationGoldenGateDetailsSettingsArgs, MigrationGoldenGateDetailsSettingsPtr and MigrationGoldenGateDetailsSettingsPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsSettingsPtrInput` via:
 //
-//          MigrationGoldenGateDetailsSettingsArgs{...}
+//	        MigrationGoldenGateDetailsSettingsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsSettingsPtrInput interface {
 	pulumi.Input
 
@@ -5019,7 +5019,7 @@ type MigrationGoldenGateDetailsSettingsExtract struct {
 // MigrationGoldenGateDetailsSettingsExtractInput is an input type that accepts MigrationGoldenGateDetailsSettingsExtractArgs and MigrationGoldenGateDetailsSettingsExtractOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsSettingsExtractInput` via:
 //
-//          MigrationGoldenGateDetailsSettingsExtractArgs{...}
+//	MigrationGoldenGateDetailsSettingsExtractArgs{...}
 type MigrationGoldenGateDetailsSettingsExtractInput interface {
 	pulumi.Input
 
@@ -5057,11 +5057,11 @@ func (i MigrationGoldenGateDetailsSettingsExtractArgs) ToMigrationGoldenGateDeta
 // MigrationGoldenGateDetailsSettingsExtractPtrInput is an input type that accepts MigrationGoldenGateDetailsSettingsExtractArgs, MigrationGoldenGateDetailsSettingsExtractPtr and MigrationGoldenGateDetailsSettingsExtractPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsSettingsExtractPtrInput` via:
 //
-//          MigrationGoldenGateDetailsSettingsExtractArgs{...}
+//	        MigrationGoldenGateDetailsSettingsExtractArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsSettingsExtractPtrInput interface {
 	pulumi.Input
 
@@ -5177,7 +5177,7 @@ type MigrationGoldenGateDetailsSettingsReplicat struct {
 // MigrationGoldenGateDetailsSettingsReplicatInput is an input type that accepts MigrationGoldenGateDetailsSettingsReplicatArgs and MigrationGoldenGateDetailsSettingsReplicatOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsSettingsReplicatInput` via:
 //
-//          MigrationGoldenGateDetailsSettingsReplicatArgs{...}
+//	MigrationGoldenGateDetailsSettingsReplicatArgs{...}
 type MigrationGoldenGateDetailsSettingsReplicatInput interface {
 	pulumi.Input
 
@@ -5217,11 +5217,11 @@ func (i MigrationGoldenGateDetailsSettingsReplicatArgs) ToMigrationGoldenGateDet
 // MigrationGoldenGateDetailsSettingsReplicatPtrInput is an input type that accepts MigrationGoldenGateDetailsSettingsReplicatArgs, MigrationGoldenGateDetailsSettingsReplicatPtr and MigrationGoldenGateDetailsSettingsReplicatPtrOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateDetailsSettingsReplicatPtrInput` via:
 //
-//          MigrationGoldenGateDetailsSettingsReplicatArgs{...}
+//	        MigrationGoldenGateDetailsSettingsReplicatArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationGoldenGateDetailsSettingsReplicatPtrInput interface {
 	pulumi.Input
 
@@ -5352,7 +5352,7 @@ type MigrationIncludeObject struct {
 // MigrationIncludeObjectInput is an input type that accepts MigrationIncludeObjectArgs and MigrationIncludeObjectOutput values.
 // You can construct a concrete instance of `MigrationIncludeObjectInput` via:
 //
-//          MigrationIncludeObjectArgs{...}
+//	MigrationIncludeObjectArgs{...}
 type MigrationIncludeObjectInput interface {
 	pulumi.Input
 
@@ -5384,7 +5384,7 @@ func (i MigrationIncludeObjectArgs) ToMigrationIncludeObjectOutputWithContext(ct
 // MigrationIncludeObjectArrayInput is an input type that accepts MigrationIncludeObjectArray and MigrationIncludeObjectArrayOutput values.
 // You can construct a concrete instance of `MigrationIncludeObjectArrayInput` via:
 //
-//          MigrationIncludeObjectArray{ MigrationIncludeObjectArgs{...} }
+//	MigrationIncludeObjectArray{ MigrationIncludeObjectArgs{...} }
 type MigrationIncludeObjectArrayInput interface {
 	pulumi.Input
 
@@ -5467,7 +5467,7 @@ type MigrationVaultDetails struct {
 // MigrationVaultDetailsInput is an input type that accepts MigrationVaultDetailsArgs and MigrationVaultDetailsOutput values.
 // You can construct a concrete instance of `MigrationVaultDetailsInput` via:
 //
-//          MigrationVaultDetailsArgs{...}
+//	MigrationVaultDetailsArgs{...}
 type MigrationVaultDetailsInput interface {
 	pulumi.Input
 
@@ -5507,11 +5507,11 @@ func (i MigrationVaultDetailsArgs) ToMigrationVaultDetailsPtrOutputWithContext(c
 // MigrationVaultDetailsPtrInput is an input type that accepts MigrationVaultDetailsArgs, MigrationVaultDetailsPtr and MigrationVaultDetailsPtrOutput values.
 // You can construct a concrete instance of `MigrationVaultDetailsPtrInput` via:
 //
-//          MigrationVaultDetailsArgs{...}
+//	        MigrationVaultDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MigrationVaultDetailsPtrInput interface {
 	pulumi.Input
 
@@ -5638,7 +5638,7 @@ type GetAgentImagesAgentImageCollection struct {
 // GetAgentImagesAgentImageCollectionInput is an input type that accepts GetAgentImagesAgentImageCollectionArgs and GetAgentImagesAgentImageCollectionOutput values.
 // You can construct a concrete instance of `GetAgentImagesAgentImageCollectionInput` via:
 //
-//          GetAgentImagesAgentImageCollectionArgs{...}
+//	GetAgentImagesAgentImageCollectionArgs{...}
 type GetAgentImagesAgentImageCollectionInput interface {
 	pulumi.Input
 
@@ -5666,7 +5666,7 @@ func (i GetAgentImagesAgentImageCollectionArgs) ToGetAgentImagesAgentImageCollec
 // GetAgentImagesAgentImageCollectionArrayInput is an input type that accepts GetAgentImagesAgentImageCollectionArray and GetAgentImagesAgentImageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentImagesAgentImageCollectionArrayInput` via:
 //
-//          GetAgentImagesAgentImageCollectionArray{ GetAgentImagesAgentImageCollectionArgs{...} }
+//	GetAgentImagesAgentImageCollectionArray{ GetAgentImagesAgentImageCollectionArgs{...} }
 type GetAgentImagesAgentImageCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5737,7 +5737,7 @@ type GetAgentImagesAgentImageCollectionItem struct {
 // GetAgentImagesAgentImageCollectionItemInput is an input type that accepts GetAgentImagesAgentImageCollectionItemArgs and GetAgentImagesAgentImageCollectionItemOutput values.
 // You can construct a concrete instance of `GetAgentImagesAgentImageCollectionItemInput` via:
 //
-//          GetAgentImagesAgentImageCollectionItemArgs{...}
+//	GetAgentImagesAgentImageCollectionItemArgs{...}
 type GetAgentImagesAgentImageCollectionItemInput interface {
 	pulumi.Input
 
@@ -5767,7 +5767,7 @@ func (i GetAgentImagesAgentImageCollectionItemArgs) ToGetAgentImagesAgentImageCo
 // GetAgentImagesAgentImageCollectionItemArrayInput is an input type that accepts GetAgentImagesAgentImageCollectionItemArray and GetAgentImagesAgentImageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAgentImagesAgentImageCollectionItemArrayInput` via:
 //
-//          GetAgentImagesAgentImageCollectionItemArray{ GetAgentImagesAgentImageCollectionItemArgs{...} }
+//	GetAgentImagesAgentImageCollectionItemArray{ GetAgentImagesAgentImageCollectionItemArgs{...} }
 type GetAgentImagesAgentImageCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5842,7 +5842,7 @@ type GetAgentImagesFilter struct {
 // GetAgentImagesFilterInput is an input type that accepts GetAgentImagesFilterArgs and GetAgentImagesFilterOutput values.
 // You can construct a concrete instance of `GetAgentImagesFilterInput` via:
 //
-//          GetAgentImagesFilterArgs{...}
+//	GetAgentImagesFilterArgs{...}
 type GetAgentImagesFilterInput interface {
 	pulumi.Input
 
@@ -5871,7 +5871,7 @@ func (i GetAgentImagesFilterArgs) ToGetAgentImagesFilterOutputWithContext(ctx co
 // GetAgentImagesFilterArrayInput is an input type that accepts GetAgentImagesFilterArray and GetAgentImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentImagesFilterArrayInput` via:
 //
-//          GetAgentImagesFilterArray{ GetAgentImagesFilterArgs{...} }
+//	GetAgentImagesFilterArray{ GetAgentImagesFilterArgs{...} }
 type GetAgentImagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5946,7 +5946,7 @@ type GetAgentsAgentCollection struct {
 // GetAgentsAgentCollectionInput is an input type that accepts GetAgentsAgentCollectionArgs and GetAgentsAgentCollectionOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionInput` via:
 //
-//          GetAgentsAgentCollectionArgs{...}
+//	GetAgentsAgentCollectionArgs{...}
 type GetAgentsAgentCollectionInput interface {
 	pulumi.Input
 
@@ -5973,7 +5973,7 @@ func (i GetAgentsAgentCollectionArgs) ToGetAgentsAgentCollectionOutputWithContex
 // GetAgentsAgentCollectionArrayInput is an input type that accepts GetAgentsAgentCollectionArray and GetAgentsAgentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionArrayInput` via:
 //
-//          GetAgentsAgentCollectionArray{ GetAgentsAgentCollectionArgs{...} }
+//	GetAgentsAgentCollectionArray{ GetAgentsAgentCollectionArgs{...} }
 type GetAgentsAgentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6066,7 +6066,7 @@ type GetAgentsAgentCollectionItem struct {
 // GetAgentsAgentCollectionItemInput is an input type that accepts GetAgentsAgentCollectionItemArgs and GetAgentsAgentCollectionItemOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionItemInput` via:
 //
-//          GetAgentsAgentCollectionItemArgs{...}
+//	GetAgentsAgentCollectionItemArgs{...}
 type GetAgentsAgentCollectionItemInput interface {
 	pulumi.Input
 
@@ -6119,7 +6119,7 @@ func (i GetAgentsAgentCollectionItemArgs) ToGetAgentsAgentCollectionItemOutputWi
 // GetAgentsAgentCollectionItemArrayInput is an input type that accepts GetAgentsAgentCollectionItemArray and GetAgentsAgentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionItemArrayInput` via:
 //
-//          GetAgentsAgentCollectionItemArray{ GetAgentsAgentCollectionItemArgs{...} }
+//	GetAgentsAgentCollectionItemArray{ GetAgentsAgentCollectionItemArgs{...} }
 type GetAgentsAgentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6253,7 +6253,7 @@ type GetAgentsFilter struct {
 // GetAgentsFilterInput is an input type that accepts GetAgentsFilterArgs and GetAgentsFilterOutput values.
 // You can construct a concrete instance of `GetAgentsFilterInput` via:
 //
-//          GetAgentsFilterArgs{...}
+//	GetAgentsFilterArgs{...}
 type GetAgentsFilterInput interface {
 	pulumi.Input
 
@@ -6282,7 +6282,7 @@ func (i GetAgentsFilterArgs) ToGetAgentsFilterOutputWithContext(ctx context.Cont
 // GetAgentsFilterArrayInput is an input type that accepts GetAgentsFilterArray and GetAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentsFilterArrayInput` via:
 //
-//          GetAgentsFilterArray{ GetAgentsFilterArgs{...} }
+//	GetAgentsFilterArray{ GetAgentsFilterArgs{...} }
 type GetAgentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -6359,7 +6359,7 @@ type GetConnectionAdminCredential struct {
 // GetConnectionAdminCredentialInput is an input type that accepts GetConnectionAdminCredentialArgs and GetConnectionAdminCredentialOutput values.
 // You can construct a concrete instance of `GetConnectionAdminCredentialInput` via:
 //
-//          GetConnectionAdminCredentialArgs{...}
+//	GetConnectionAdminCredentialArgs{...}
 type GetConnectionAdminCredentialInput interface {
 	pulumi.Input
 
@@ -6388,7 +6388,7 @@ func (i GetConnectionAdminCredentialArgs) ToGetConnectionAdminCredentialOutputWi
 // GetConnectionAdminCredentialArrayInput is an input type that accepts GetConnectionAdminCredentialArray and GetConnectionAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetConnectionAdminCredentialArrayInput` via:
 //
-//          GetConnectionAdminCredentialArray{ GetConnectionAdminCredentialArgs{...} }
+//	GetConnectionAdminCredentialArray{ GetConnectionAdminCredentialArgs{...} }
 type GetConnectionAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -6467,7 +6467,7 @@ type GetConnectionConnectDescriptor struct {
 // GetConnectionConnectDescriptorInput is an input type that accepts GetConnectionConnectDescriptorArgs and GetConnectionConnectDescriptorOutput values.
 // You can construct a concrete instance of `GetConnectionConnectDescriptorInput` via:
 //
-//          GetConnectionConnectDescriptorArgs{...}
+//	GetConnectionConnectDescriptorArgs{...}
 type GetConnectionConnectDescriptorInput interface {
 	pulumi.Input
 
@@ -6501,7 +6501,7 @@ func (i GetConnectionConnectDescriptorArgs) ToGetConnectionConnectDescriptorOutp
 // GetConnectionConnectDescriptorArrayInput is an input type that accepts GetConnectionConnectDescriptorArray and GetConnectionConnectDescriptorArrayOutput values.
 // You can construct a concrete instance of `GetConnectionConnectDescriptorArrayInput` via:
 //
-//          GetConnectionConnectDescriptorArray{ GetConnectionConnectDescriptorArgs{...} }
+//	GetConnectionConnectDescriptorArray{ GetConnectionConnectDescriptorArgs{...} }
 type GetConnectionConnectDescriptorArrayInput interface {
 	pulumi.Input
 
@@ -6591,7 +6591,7 @@ type GetConnectionPrivateEndpoint struct {
 // GetConnectionPrivateEndpointInput is an input type that accepts GetConnectionPrivateEndpointArgs and GetConnectionPrivateEndpointOutput values.
 // You can construct a concrete instance of `GetConnectionPrivateEndpointInput` via:
 //
-//          GetConnectionPrivateEndpointArgs{...}
+//	GetConnectionPrivateEndpointArgs{...}
 type GetConnectionPrivateEndpointInput interface {
 	pulumi.Input
 
@@ -6625,7 +6625,7 @@ func (i GetConnectionPrivateEndpointArgs) ToGetConnectionPrivateEndpointOutputWi
 // GetConnectionPrivateEndpointArrayInput is an input type that accepts GetConnectionPrivateEndpointArray and GetConnectionPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetConnectionPrivateEndpointArrayInput` via:
 //
-//          GetConnectionPrivateEndpointArray{ GetConnectionPrivateEndpointArgs{...} }
+//	GetConnectionPrivateEndpointArray{ GetConnectionPrivateEndpointArgs{...} }
 type GetConnectionPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -6714,7 +6714,7 @@ type GetConnectionSshDetail struct {
 // GetConnectionSshDetailInput is an input type that accepts GetConnectionSshDetailArgs and GetConnectionSshDetailOutput values.
 // You can construct a concrete instance of `GetConnectionSshDetailInput` via:
 //
-//          GetConnectionSshDetailArgs{...}
+//	GetConnectionSshDetailArgs{...}
 type GetConnectionSshDetailInput interface {
 	pulumi.Input
 
@@ -6747,7 +6747,7 @@ func (i GetConnectionSshDetailArgs) ToGetConnectionSshDetailOutputWithContext(ct
 // GetConnectionSshDetailArrayInput is an input type that accepts GetConnectionSshDetailArray and GetConnectionSshDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionSshDetailArrayInput` via:
 //
-//          GetConnectionSshDetailArray{ GetConnectionSshDetailArgs{...} }
+//	GetConnectionSshDetailArray{ GetConnectionSshDetailArgs{...} }
 type GetConnectionSshDetailArrayInput interface {
 	pulumi.Input
 
@@ -6834,7 +6834,7 @@ type GetConnectionVaultDetail struct {
 // GetConnectionVaultDetailInput is an input type that accepts GetConnectionVaultDetailArgs and GetConnectionVaultDetailOutput values.
 // You can construct a concrete instance of `GetConnectionVaultDetailInput` via:
 //
-//          GetConnectionVaultDetailArgs{...}
+//	GetConnectionVaultDetailArgs{...}
 type GetConnectionVaultDetailInput interface {
 	pulumi.Input
 
@@ -6866,7 +6866,7 @@ func (i GetConnectionVaultDetailArgs) ToGetConnectionVaultDetailOutputWithContex
 // GetConnectionVaultDetailArrayInput is an input type that accepts GetConnectionVaultDetailArray and GetConnectionVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionVaultDetailArrayInput` via:
 //
-//          GetConnectionVaultDetailArray{ GetConnectionVaultDetailArgs{...} }
+//	GetConnectionVaultDetailArray{ GetConnectionVaultDetailArgs{...} }
 type GetConnectionVaultDetailArrayInput interface {
 	pulumi.Input
 
@@ -6944,7 +6944,7 @@ type GetConnectionsConnectionCollection struct {
 // GetConnectionsConnectionCollectionInput is an input type that accepts GetConnectionsConnectionCollectionArgs and GetConnectionsConnectionCollectionOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionInput` via:
 //
-//          GetConnectionsConnectionCollectionArgs{...}
+//	GetConnectionsConnectionCollectionArgs{...}
 type GetConnectionsConnectionCollectionInput interface {
 	pulumi.Input
 
@@ -6971,7 +6971,7 @@ func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollec
 // GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
+//	GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
 type GetConnectionsConnectionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -7077,7 +7077,7 @@ type GetConnectionsConnectionCollectionItem struct {
 // GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemInput` via:
 //
-//          GetConnectionsConnectionCollectionItemArgs{...}
+//	GetConnectionsConnectionCollectionItemArgs{...}
 type GetConnectionsConnectionCollectionItemInput interface {
 	pulumi.Input
 
@@ -7143,7 +7143,7 @@ func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCo
 // GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
+//	GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
 type GetConnectionsConnectionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -7321,7 +7321,7 @@ type GetConnectionsConnectionCollectionItemAdminCredential struct {
 // GetConnectionsConnectionCollectionItemAdminCredentialInput is an input type that accepts GetConnectionsConnectionCollectionItemAdminCredentialArgs and GetConnectionsConnectionCollectionItemAdminCredentialOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdminCredentialInput` via:
 //
-//          GetConnectionsConnectionCollectionItemAdminCredentialArgs{...}
+//	GetConnectionsConnectionCollectionItemAdminCredentialArgs{...}
 type GetConnectionsConnectionCollectionItemAdminCredentialInput interface {
 	pulumi.Input
 
@@ -7350,7 +7350,7 @@ func (i GetConnectionsConnectionCollectionItemAdminCredentialArgs) ToGetConnecti
 // GetConnectionsConnectionCollectionItemAdminCredentialArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemAdminCredentialArray and GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdminCredentialArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemAdminCredentialArray{ GetConnectionsConnectionCollectionItemAdminCredentialArgs{...} }
+//	GetConnectionsConnectionCollectionItemAdminCredentialArray{ GetConnectionsConnectionCollectionItemAdminCredentialArgs{...} }
 type GetConnectionsConnectionCollectionItemAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -7429,7 +7429,7 @@ type GetConnectionsConnectionCollectionItemConnectDescriptor struct {
 // GetConnectionsConnectionCollectionItemConnectDescriptorInput is an input type that accepts GetConnectionsConnectionCollectionItemConnectDescriptorArgs and GetConnectionsConnectionCollectionItemConnectDescriptorOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemConnectDescriptorInput` via:
 //
-//          GetConnectionsConnectionCollectionItemConnectDescriptorArgs{...}
+//	GetConnectionsConnectionCollectionItemConnectDescriptorArgs{...}
 type GetConnectionsConnectionCollectionItemConnectDescriptorInput interface {
 	pulumi.Input
 
@@ -7463,7 +7463,7 @@ func (i GetConnectionsConnectionCollectionItemConnectDescriptorArgs) ToGetConnec
 // GetConnectionsConnectionCollectionItemConnectDescriptorArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemConnectDescriptorArray and GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemConnectDescriptorArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemConnectDescriptorArray{ GetConnectionsConnectionCollectionItemConnectDescriptorArgs{...} }
+//	GetConnectionsConnectionCollectionItemConnectDescriptorArray{ GetConnectionsConnectionCollectionItemConnectDescriptorArgs{...} }
 type GetConnectionsConnectionCollectionItemConnectDescriptorArrayInput interface {
 	pulumi.Input
 
@@ -7553,7 +7553,7 @@ type GetConnectionsConnectionCollectionItemPrivateEndpoint struct {
 // GetConnectionsConnectionCollectionItemPrivateEndpointInput is an input type that accepts GetConnectionsConnectionCollectionItemPrivateEndpointArgs and GetConnectionsConnectionCollectionItemPrivateEndpointOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemPrivateEndpointInput` via:
 //
-//          GetConnectionsConnectionCollectionItemPrivateEndpointArgs{...}
+//	GetConnectionsConnectionCollectionItemPrivateEndpointArgs{...}
 type GetConnectionsConnectionCollectionItemPrivateEndpointInput interface {
 	pulumi.Input
 
@@ -7587,7 +7587,7 @@ func (i GetConnectionsConnectionCollectionItemPrivateEndpointArgs) ToGetConnecti
 // GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemPrivateEndpointArray and GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemPrivateEndpointArray{ GetConnectionsConnectionCollectionItemPrivateEndpointArgs{...} }
+//	GetConnectionsConnectionCollectionItemPrivateEndpointArray{ GetConnectionsConnectionCollectionItemPrivateEndpointArgs{...} }
 type GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -7676,7 +7676,7 @@ type GetConnectionsConnectionCollectionItemSshDetail struct {
 // GetConnectionsConnectionCollectionItemSshDetailInput is an input type that accepts GetConnectionsConnectionCollectionItemSshDetailArgs and GetConnectionsConnectionCollectionItemSshDetailOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemSshDetailInput` via:
 //
-//          GetConnectionsConnectionCollectionItemSshDetailArgs{...}
+//	GetConnectionsConnectionCollectionItemSshDetailArgs{...}
 type GetConnectionsConnectionCollectionItemSshDetailInput interface {
 	pulumi.Input
 
@@ -7709,7 +7709,7 @@ func (i GetConnectionsConnectionCollectionItemSshDetailArgs) ToGetConnectionsCon
 // GetConnectionsConnectionCollectionItemSshDetailArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemSshDetailArray and GetConnectionsConnectionCollectionItemSshDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemSshDetailArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemSshDetailArray{ GetConnectionsConnectionCollectionItemSshDetailArgs{...} }
+//	GetConnectionsConnectionCollectionItemSshDetailArray{ GetConnectionsConnectionCollectionItemSshDetailArgs{...} }
 type GetConnectionsConnectionCollectionItemSshDetailArrayInput interface {
 	pulumi.Input
 
@@ -7796,7 +7796,7 @@ type GetConnectionsConnectionCollectionItemVaultDetail struct {
 // GetConnectionsConnectionCollectionItemVaultDetailInput is an input type that accepts GetConnectionsConnectionCollectionItemVaultDetailArgs and GetConnectionsConnectionCollectionItemVaultDetailOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemVaultDetailInput` via:
 //
-//          GetConnectionsConnectionCollectionItemVaultDetailArgs{...}
+//	GetConnectionsConnectionCollectionItemVaultDetailArgs{...}
 type GetConnectionsConnectionCollectionItemVaultDetailInput interface {
 	pulumi.Input
 
@@ -7828,7 +7828,7 @@ func (i GetConnectionsConnectionCollectionItemVaultDetailArgs) ToGetConnectionsC
 // GetConnectionsConnectionCollectionItemVaultDetailArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemVaultDetailArray and GetConnectionsConnectionCollectionItemVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemVaultDetailArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemVaultDetailArray{ GetConnectionsConnectionCollectionItemVaultDetailArgs{...} }
+//	GetConnectionsConnectionCollectionItemVaultDetailArray{ GetConnectionsConnectionCollectionItemVaultDetailArgs{...} }
 type GetConnectionsConnectionCollectionItemVaultDetailArrayInput interface {
 	pulumi.Input
 
@@ -7908,7 +7908,7 @@ type GetConnectionsFilter struct {
 // GetConnectionsFilterInput is an input type that accepts GetConnectionsFilterArgs and GetConnectionsFilterOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterInput` via:
 //
-//          GetConnectionsFilterArgs{...}
+//	GetConnectionsFilterArgs{...}
 type GetConnectionsFilterInput interface {
 	pulumi.Input
 
@@ -7937,7 +7937,7 @@ func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx co
 // GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
 //
-//          GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
+//	GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
 type GetConnectionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -8015,7 +8015,7 @@ type GetJobAdvisorReportReportLocationDetail struct {
 // GetJobAdvisorReportReportLocationDetailInput is an input type that accepts GetJobAdvisorReportReportLocationDetailArgs and GetJobAdvisorReportReportLocationDetailOutput values.
 // You can construct a concrete instance of `GetJobAdvisorReportReportLocationDetailInput` via:
 //
-//          GetJobAdvisorReportReportLocationDetailArgs{...}
+//	GetJobAdvisorReportReportLocationDetailArgs{...}
 type GetJobAdvisorReportReportLocationDetailInput interface {
 	pulumi.Input
 
@@ -8045,7 +8045,7 @@ func (i GetJobAdvisorReportReportLocationDetailArgs) ToGetJobAdvisorReportReport
 // GetJobAdvisorReportReportLocationDetailArrayInput is an input type that accepts GetJobAdvisorReportReportLocationDetailArray and GetJobAdvisorReportReportLocationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobAdvisorReportReportLocationDetailArrayInput` via:
 //
-//          GetJobAdvisorReportReportLocationDetailArray{ GetJobAdvisorReportReportLocationDetailArgs{...} }
+//	GetJobAdvisorReportReportLocationDetailArray{ GetJobAdvisorReportReportLocationDetailArgs{...} }
 type GetJobAdvisorReportReportLocationDetailArrayInput interface {
 	pulumi.Input
 
@@ -8125,7 +8125,7 @@ type GetJobAdvisorReportReportLocationDetailObjectStorageDetail struct {
 // GetJobAdvisorReportReportLocationDetailObjectStorageDetailInput is an input type that accepts GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs and GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput values.
 // You can construct a concrete instance of `GetJobAdvisorReportReportLocationDetailObjectStorageDetailInput` via:
 //
-//          GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs{...}
+//	GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs{...}
 type GetJobAdvisorReportReportLocationDetailObjectStorageDetailInput interface {
 	pulumi.Input
 
@@ -8157,7 +8157,7 @@ func (i GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs) ToGetJob
 // GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput is an input type that accepts GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray and GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput` via:
 //
-//          GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray{ GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs{...} }
+//	GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray{ GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs{...} }
 type GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput interface {
 	pulumi.Input
 
@@ -8236,7 +8236,7 @@ type GetJobOutputItem struct {
 // GetJobOutputItemInput is an input type that accepts GetJobOutputItemArgs and GetJobOutputItemOutput values.
 // You can construct a concrete instance of `GetJobOutputItemInput` via:
 //
-//          GetJobOutputItemArgs{...}
+//	GetJobOutputItemArgs{...}
 type GetJobOutputItemInput interface {
 	pulumi.Input
 
@@ -8264,7 +8264,7 @@ func (i GetJobOutputItemArgs) ToGetJobOutputItemOutputWithContext(ctx context.Co
 // GetJobOutputItemArrayInput is an input type that accepts GetJobOutputItemArray and GetJobOutputItemArrayOutput values.
 // You can construct a concrete instance of `GetJobOutputItemArrayInput` via:
 //
-//          GetJobOutputItemArray{ GetJobOutputItemArgs{...} }
+//	GetJobOutputItemArray{ GetJobOutputItemArgs{...} }
 type GetJobOutputItemArrayInput interface {
 	pulumi.Input
 
@@ -8335,7 +8335,7 @@ type GetMigrationAdvisorSetting struct {
 // GetMigrationAdvisorSettingInput is an input type that accepts GetMigrationAdvisorSettingArgs and GetMigrationAdvisorSettingOutput values.
 // You can construct a concrete instance of `GetMigrationAdvisorSettingInput` via:
 //
-//          GetMigrationAdvisorSettingArgs{...}
+//	GetMigrationAdvisorSettingArgs{...}
 type GetMigrationAdvisorSettingInput interface {
 	pulumi.Input
 
@@ -8365,7 +8365,7 @@ func (i GetMigrationAdvisorSettingArgs) ToGetMigrationAdvisorSettingOutputWithCo
 // GetMigrationAdvisorSettingArrayInput is an input type that accepts GetMigrationAdvisorSettingArray and GetMigrationAdvisorSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationAdvisorSettingArrayInput` via:
 //
-//          GetMigrationAdvisorSettingArray{ GetMigrationAdvisorSettingArgs{...} }
+//	GetMigrationAdvisorSettingArray{ GetMigrationAdvisorSettingArgs{...} }
 type GetMigrationAdvisorSettingArrayInput interface {
 	pulumi.Input
 
@@ -8441,7 +8441,7 @@ type GetMigrationDataTransferMediumDetail struct {
 // GetMigrationDataTransferMediumDetailInput is an input type that accepts GetMigrationDataTransferMediumDetailArgs and GetMigrationDataTransferMediumDetailOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailInput` via:
 //
-//          GetMigrationDataTransferMediumDetailArgs{...}
+//	GetMigrationDataTransferMediumDetailArgs{...}
 type GetMigrationDataTransferMediumDetailInput interface {
 	pulumi.Input
 
@@ -8471,7 +8471,7 @@ func (i GetMigrationDataTransferMediumDetailArgs) ToGetMigrationDataTransferMedi
 // GetMigrationDataTransferMediumDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailArray and GetMigrationDataTransferMediumDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailArrayInput` via:
 //
-//          GetMigrationDataTransferMediumDetailArray{ GetMigrationDataTransferMediumDetailArgs{...} }
+//	GetMigrationDataTransferMediumDetailArray{ GetMigrationDataTransferMediumDetailArgs{...} }
 type GetMigrationDataTransferMediumDetailArrayInput interface {
 	pulumi.Input
 
@@ -8551,7 +8551,7 @@ type GetMigrationDataTransferMediumDetailDatabaseLinkDetail struct {
 // GetMigrationDataTransferMediumDetailDatabaseLinkDetailInput is an input type that accepts GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs and GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailDatabaseLinkDetailInput` via:
 //
-//          GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs{...}
+//	GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs{...}
 type GetMigrationDataTransferMediumDetailDatabaseLinkDetailInput interface {
 	pulumi.Input
 
@@ -8581,7 +8581,7 @@ func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs) ToGetMigrati
 // GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailDatabaseLinkDetailArray and GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayInput` via:
 //
-//          GetMigrationDataTransferMediumDetailDatabaseLinkDetailArray{ GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs{...} }
+//	GetMigrationDataTransferMediumDetailDatabaseLinkDetailArray{ GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs{...} }
 type GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayInput interface {
 	pulumi.Input
 
@@ -8659,7 +8659,7 @@ type GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket struct {
 // GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketInput is an input type that accepts GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs and GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketInput` via:
 //
-//          GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...}
+//	GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...}
 type GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketInput interface {
 	pulumi.Input
 
@@ -8689,7 +8689,7 @@ func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs) 
 // GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray and GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput` via:
 //
-//          GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray{ GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...} }
+//	GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray{ GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...} }
 type GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput interface {
 	pulumi.Input
 
@@ -8765,7 +8765,7 @@ type GetMigrationDataTransferMediumDetailObjectStorageDetail struct {
 // GetMigrationDataTransferMediumDetailObjectStorageDetailInput is an input type that accepts GetMigrationDataTransferMediumDetailObjectStorageDetailArgs and GetMigrationDataTransferMediumDetailObjectStorageDetailOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailObjectStorageDetailInput` via:
 //
-//          GetMigrationDataTransferMediumDetailObjectStorageDetailArgs{...}
+//	GetMigrationDataTransferMediumDetailObjectStorageDetailArgs{...}
 type GetMigrationDataTransferMediumDetailObjectStorageDetailInput interface {
 	pulumi.Input
 
@@ -8795,7 +8795,7 @@ func (i GetMigrationDataTransferMediumDetailObjectStorageDetailArgs) ToGetMigrat
 // GetMigrationDataTransferMediumDetailObjectStorageDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailObjectStorageDetailArray and GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailObjectStorageDetailArrayInput` via:
 //
-//          GetMigrationDataTransferMediumDetailObjectStorageDetailArray{ GetMigrationDataTransferMediumDetailObjectStorageDetailArgs{...} }
+//	GetMigrationDataTransferMediumDetailObjectStorageDetailArray{ GetMigrationDataTransferMediumDetailObjectStorageDetailArgs{...} }
 type GetMigrationDataTransferMediumDetailObjectStorageDetailArrayInput interface {
 	pulumi.Input
 
@@ -8877,7 +8877,7 @@ type GetMigrationDatapumpSetting struct {
 // GetMigrationDatapumpSettingInput is an input type that accepts GetMigrationDatapumpSettingArgs and GetMigrationDatapumpSettingOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingInput` via:
 //
-//          GetMigrationDatapumpSettingArgs{...}
+//	GetMigrationDatapumpSettingArgs{...}
 type GetMigrationDatapumpSettingInput interface {
 	pulumi.Input
 
@@ -8913,7 +8913,7 @@ func (i GetMigrationDatapumpSettingArgs) ToGetMigrationDatapumpSettingOutputWith
 // GetMigrationDatapumpSettingArrayInput is an input type that accepts GetMigrationDatapumpSettingArray and GetMigrationDatapumpSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingArrayInput` via:
 //
-//          GetMigrationDatapumpSettingArray{ GetMigrationDatapumpSettingArgs{...} }
+//	GetMigrationDatapumpSettingArray{ GetMigrationDatapumpSettingArgs{...} }
 type GetMigrationDatapumpSettingArrayInput interface {
 	pulumi.Input
 
@@ -9020,7 +9020,7 @@ type GetMigrationDatapumpSettingDataPumpParameter struct {
 // GetMigrationDatapumpSettingDataPumpParameterInput is an input type that accepts GetMigrationDatapumpSettingDataPumpParameterArgs and GetMigrationDatapumpSettingDataPumpParameterOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingDataPumpParameterInput` via:
 //
-//          GetMigrationDatapumpSettingDataPumpParameterArgs{...}
+//	GetMigrationDatapumpSettingDataPumpParameterArgs{...}
 type GetMigrationDatapumpSettingDataPumpParameterInput interface {
 	pulumi.Input
 
@@ -9058,7 +9058,7 @@ func (i GetMigrationDatapumpSettingDataPumpParameterArgs) ToGetMigrationDatapump
 // GetMigrationDatapumpSettingDataPumpParameterArrayInput is an input type that accepts GetMigrationDatapumpSettingDataPumpParameterArray and GetMigrationDatapumpSettingDataPumpParameterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingDataPumpParameterArrayInput` via:
 //
-//          GetMigrationDatapumpSettingDataPumpParameterArray{ GetMigrationDatapumpSettingDataPumpParameterArgs{...} }
+//	GetMigrationDatapumpSettingDataPumpParameterArray{ GetMigrationDatapumpSettingDataPumpParameterArgs{...} }
 type GetMigrationDatapumpSettingDataPumpParameterArrayInput interface {
 	pulumi.Input
 
@@ -9154,7 +9154,7 @@ type GetMigrationDatapumpSettingExportDirectoryObject struct {
 // GetMigrationDatapumpSettingExportDirectoryObjectInput is an input type that accepts GetMigrationDatapumpSettingExportDirectoryObjectArgs and GetMigrationDatapumpSettingExportDirectoryObjectOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingExportDirectoryObjectInput` via:
 //
-//          GetMigrationDatapumpSettingExportDirectoryObjectArgs{...}
+//	GetMigrationDatapumpSettingExportDirectoryObjectArgs{...}
 type GetMigrationDatapumpSettingExportDirectoryObjectInput interface {
 	pulumi.Input
 
@@ -9184,7 +9184,7 @@ func (i GetMigrationDatapumpSettingExportDirectoryObjectArgs) ToGetMigrationData
 // GetMigrationDatapumpSettingExportDirectoryObjectArrayInput is an input type that accepts GetMigrationDatapumpSettingExportDirectoryObjectArray and GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingExportDirectoryObjectArrayInput` via:
 //
-//          GetMigrationDatapumpSettingExportDirectoryObjectArray{ GetMigrationDatapumpSettingExportDirectoryObjectArgs{...} }
+//	GetMigrationDatapumpSettingExportDirectoryObjectArray{ GetMigrationDatapumpSettingExportDirectoryObjectArgs{...} }
 type GetMigrationDatapumpSettingExportDirectoryObjectArrayInput interface {
 	pulumi.Input
 
@@ -9260,7 +9260,7 @@ type GetMigrationDatapumpSettingImportDirectoryObject struct {
 // GetMigrationDatapumpSettingImportDirectoryObjectInput is an input type that accepts GetMigrationDatapumpSettingImportDirectoryObjectArgs and GetMigrationDatapumpSettingImportDirectoryObjectOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingImportDirectoryObjectInput` via:
 //
-//          GetMigrationDatapumpSettingImportDirectoryObjectArgs{...}
+//	GetMigrationDatapumpSettingImportDirectoryObjectArgs{...}
 type GetMigrationDatapumpSettingImportDirectoryObjectInput interface {
 	pulumi.Input
 
@@ -9290,7 +9290,7 @@ func (i GetMigrationDatapumpSettingImportDirectoryObjectArgs) ToGetMigrationData
 // GetMigrationDatapumpSettingImportDirectoryObjectArrayInput is an input type that accepts GetMigrationDatapumpSettingImportDirectoryObjectArray and GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingImportDirectoryObjectArrayInput` via:
 //
-//          GetMigrationDatapumpSettingImportDirectoryObjectArray{ GetMigrationDatapumpSettingImportDirectoryObjectArgs{...} }
+//	GetMigrationDatapumpSettingImportDirectoryObjectArray{ GetMigrationDatapumpSettingImportDirectoryObjectArgs{...} }
 type GetMigrationDatapumpSettingImportDirectoryObjectArrayInput interface {
 	pulumi.Input
 
@@ -9368,7 +9368,7 @@ type GetMigrationDatapumpSettingMetadataRemap struct {
 // GetMigrationDatapumpSettingMetadataRemapInput is an input type that accepts GetMigrationDatapumpSettingMetadataRemapArgs and GetMigrationDatapumpSettingMetadataRemapOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingMetadataRemapInput` via:
 //
-//          GetMigrationDatapumpSettingMetadataRemapArgs{...}
+//	GetMigrationDatapumpSettingMetadataRemapArgs{...}
 type GetMigrationDatapumpSettingMetadataRemapInput interface {
 	pulumi.Input
 
@@ -9400,7 +9400,7 @@ func (i GetMigrationDatapumpSettingMetadataRemapArgs) ToGetMigrationDatapumpSett
 // GetMigrationDatapumpSettingMetadataRemapArrayInput is an input type that accepts GetMigrationDatapumpSettingMetadataRemapArray and GetMigrationDatapumpSettingMetadataRemapArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingMetadataRemapArrayInput` via:
 //
-//          GetMigrationDatapumpSettingMetadataRemapArray{ GetMigrationDatapumpSettingMetadataRemapArgs{...} }
+//	GetMigrationDatapumpSettingMetadataRemapArray{ GetMigrationDatapumpSettingMetadataRemapArgs{...} }
 type GetMigrationDatapumpSettingMetadataRemapArrayInput interface {
 	pulumi.Input
 
@@ -9481,7 +9481,7 @@ type GetMigrationDumpTransferDetail struct {
 // GetMigrationDumpTransferDetailInput is an input type that accepts GetMigrationDumpTransferDetailArgs and GetMigrationDumpTransferDetailOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailInput` via:
 //
-//          GetMigrationDumpTransferDetailArgs{...}
+//	GetMigrationDumpTransferDetailArgs{...}
 type GetMigrationDumpTransferDetailInput interface {
 	pulumi.Input
 
@@ -9511,7 +9511,7 @@ func (i GetMigrationDumpTransferDetailArgs) ToGetMigrationDumpTransferDetailOutp
 // GetMigrationDumpTransferDetailArrayInput is an input type that accepts GetMigrationDumpTransferDetailArray and GetMigrationDumpTransferDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailArrayInput` via:
 //
-//          GetMigrationDumpTransferDetailArray{ GetMigrationDumpTransferDetailArgs{...} }
+//	GetMigrationDumpTransferDetailArray{ GetMigrationDumpTransferDetailArgs{...} }
 type GetMigrationDumpTransferDetailArrayInput interface {
 	pulumi.Input
 
@@ -9587,7 +9587,7 @@ type GetMigrationDumpTransferDetailSource struct {
 // GetMigrationDumpTransferDetailSourceInput is an input type that accepts GetMigrationDumpTransferDetailSourceArgs and GetMigrationDumpTransferDetailSourceOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailSourceInput` via:
 //
-//          GetMigrationDumpTransferDetailSourceArgs{...}
+//	GetMigrationDumpTransferDetailSourceArgs{...}
 type GetMigrationDumpTransferDetailSourceInput interface {
 	pulumi.Input
 
@@ -9617,7 +9617,7 @@ func (i GetMigrationDumpTransferDetailSourceArgs) ToGetMigrationDumpTransferDeta
 // GetMigrationDumpTransferDetailSourceArrayInput is an input type that accepts GetMigrationDumpTransferDetailSourceArray and GetMigrationDumpTransferDetailSourceArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailSourceArrayInput` via:
 //
-//          GetMigrationDumpTransferDetailSourceArray{ GetMigrationDumpTransferDetailSourceArgs{...} }
+//	GetMigrationDumpTransferDetailSourceArray{ GetMigrationDumpTransferDetailSourceArgs{...} }
 type GetMigrationDumpTransferDetailSourceArrayInput interface {
 	pulumi.Input
 
@@ -9693,7 +9693,7 @@ type GetMigrationDumpTransferDetailTarget struct {
 // GetMigrationDumpTransferDetailTargetInput is an input type that accepts GetMigrationDumpTransferDetailTargetArgs and GetMigrationDumpTransferDetailTargetOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailTargetInput` via:
 //
-//          GetMigrationDumpTransferDetailTargetArgs{...}
+//	GetMigrationDumpTransferDetailTargetArgs{...}
 type GetMigrationDumpTransferDetailTargetInput interface {
 	pulumi.Input
 
@@ -9723,7 +9723,7 @@ func (i GetMigrationDumpTransferDetailTargetArgs) ToGetMigrationDumpTransferDeta
 // GetMigrationDumpTransferDetailTargetArrayInput is an input type that accepts GetMigrationDumpTransferDetailTargetArray and GetMigrationDumpTransferDetailTargetArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailTargetArrayInput` via:
 //
-//          GetMigrationDumpTransferDetailTargetArray{ GetMigrationDumpTransferDetailTargetArgs{...} }
+//	GetMigrationDumpTransferDetailTargetArray{ GetMigrationDumpTransferDetailTargetArgs{...} }
 type GetMigrationDumpTransferDetailTargetArrayInput interface {
 	pulumi.Input
 
@@ -9801,7 +9801,7 @@ type GetMigrationExcludeObject struct {
 // GetMigrationExcludeObjectInput is an input type that accepts GetMigrationExcludeObjectArgs and GetMigrationExcludeObjectOutput values.
 // You can construct a concrete instance of `GetMigrationExcludeObjectInput` via:
 //
-//          GetMigrationExcludeObjectArgs{...}
+//	GetMigrationExcludeObjectArgs{...}
 type GetMigrationExcludeObjectInput interface {
 	pulumi.Input
 
@@ -9833,7 +9833,7 @@ func (i GetMigrationExcludeObjectArgs) ToGetMigrationExcludeObjectOutputWithCont
 // GetMigrationExcludeObjectArrayInput is an input type that accepts GetMigrationExcludeObjectArray and GetMigrationExcludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationExcludeObjectArrayInput` via:
 //
-//          GetMigrationExcludeObjectArray{ GetMigrationExcludeObjectArgs{...} }
+//	GetMigrationExcludeObjectArray{ GetMigrationExcludeObjectArgs{...} }
 type GetMigrationExcludeObjectArrayInput interface {
 	pulumi.Input
 
@@ -9914,7 +9914,7 @@ type GetMigrationGoldenGateDetail struct {
 // GetMigrationGoldenGateDetailInput is an input type that accepts GetMigrationGoldenGateDetailArgs and GetMigrationGoldenGateDetailOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailInput` via:
 //
-//          GetMigrationGoldenGateDetailArgs{...}
+//	GetMigrationGoldenGateDetailArgs{...}
 type GetMigrationGoldenGateDetailInput interface {
 	pulumi.Input
 
@@ -9944,7 +9944,7 @@ func (i GetMigrationGoldenGateDetailArgs) ToGetMigrationGoldenGateDetailOutputWi
 // GetMigrationGoldenGateDetailArrayInput is an input type that accepts GetMigrationGoldenGateDetailArray and GetMigrationGoldenGateDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailArray{ GetMigrationGoldenGateDetailArgs{...} }
+//	GetMigrationGoldenGateDetailArray{ GetMigrationGoldenGateDetailArgs{...} }
 type GetMigrationGoldenGateDetailArrayInput interface {
 	pulumi.Input
 
@@ -10032,7 +10032,7 @@ type GetMigrationGoldenGateDetailHub struct {
 // GetMigrationGoldenGateDetailHubInput is an input type that accepts GetMigrationGoldenGateDetailHubArgs and GetMigrationGoldenGateDetailHubOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubInput` via:
 //
-//          GetMigrationGoldenGateDetailHubArgs{...}
+//	GetMigrationGoldenGateDetailHubArgs{...}
 type GetMigrationGoldenGateDetailHubInput interface {
 	pulumi.Input
 
@@ -10074,7 +10074,7 @@ func (i GetMigrationGoldenGateDetailHubArgs) ToGetMigrationGoldenGateDetailHubOu
 // GetMigrationGoldenGateDetailHubArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubArray and GetMigrationGoldenGateDetailHubArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailHubArray{ GetMigrationGoldenGateDetailHubArgs{...} }
+//	GetMigrationGoldenGateDetailHubArray{ GetMigrationGoldenGateDetailHubArgs{...} }
 type GetMigrationGoldenGateDetailHubArrayInput interface {
 	pulumi.Input
 
@@ -10187,7 +10187,7 @@ type GetMigrationGoldenGateDetailHubRestAdminCredential struct {
 // GetMigrationGoldenGateDetailHubRestAdminCredentialInput is an input type that accepts GetMigrationGoldenGateDetailHubRestAdminCredentialArgs and GetMigrationGoldenGateDetailHubRestAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubRestAdminCredentialInput` via:
 //
-//          GetMigrationGoldenGateDetailHubRestAdminCredentialArgs{...}
+//	GetMigrationGoldenGateDetailHubRestAdminCredentialArgs{...}
 type GetMigrationGoldenGateDetailHubRestAdminCredentialInput interface {
 	pulumi.Input
 
@@ -10216,7 +10216,7 @@ func (i GetMigrationGoldenGateDetailHubRestAdminCredentialArgs) ToGetMigrationGo
 // GetMigrationGoldenGateDetailHubRestAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubRestAdminCredentialArray and GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubRestAdminCredentialArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailHubRestAdminCredentialArray{ GetMigrationGoldenGateDetailHubRestAdminCredentialArgs{...} }
+//	GetMigrationGoldenGateDetailHubRestAdminCredentialArray{ GetMigrationGoldenGateDetailHubRestAdminCredentialArgs{...} }
 type GetMigrationGoldenGateDetailHubRestAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -10290,7 +10290,7 @@ type GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential struct {
 // GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialInput is an input type that accepts GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs and GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialInput` via:
 //
-//          GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...}
+//	GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...}
 type GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialInput interface {
 	pulumi.Input
 
@@ -10319,7 +10319,7 @@ func (i GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs) ToG
 // GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArray and GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArray{ GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...} }
+//	GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArray{ GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...} }
 type GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -10393,7 +10393,7 @@ type GetMigrationGoldenGateDetailHubSourceDbAdminCredential struct {
 // GetMigrationGoldenGateDetailHubSourceDbAdminCredentialInput is an input type that accepts GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs and GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubSourceDbAdminCredentialInput` via:
 //
-//          GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs{...}
+//	GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs{...}
 type GetMigrationGoldenGateDetailHubSourceDbAdminCredentialInput interface {
 	pulumi.Input
 
@@ -10422,7 +10422,7 @@ func (i GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs) ToGetMigrati
 // GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArray and GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArray{ GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs{...} }
+//	GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArray{ GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs{...} }
 type GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -10496,7 +10496,7 @@ type GetMigrationGoldenGateDetailHubTargetDbAdminCredential struct {
 // GetMigrationGoldenGateDetailHubTargetDbAdminCredentialInput is an input type that accepts GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs and GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubTargetDbAdminCredentialInput` via:
 //
-//          GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs{...}
+//	GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs{...}
 type GetMigrationGoldenGateDetailHubTargetDbAdminCredentialInput interface {
 	pulumi.Input
 
@@ -10525,7 +10525,7 @@ func (i GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs) ToGetMigrati
 // GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArray and GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArray{ GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs{...} }
+//	GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArray{ GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs{...} }
 type GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -10602,7 +10602,7 @@ type GetMigrationGoldenGateDetailSetting struct {
 // GetMigrationGoldenGateDetailSettingInput is an input type that accepts GetMigrationGoldenGateDetailSettingArgs and GetMigrationGoldenGateDetailSettingOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingInput` via:
 //
-//          GetMigrationGoldenGateDetailSettingArgs{...}
+//	GetMigrationGoldenGateDetailSettingArgs{...}
 type GetMigrationGoldenGateDetailSettingInput interface {
 	pulumi.Input
 
@@ -10634,7 +10634,7 @@ func (i GetMigrationGoldenGateDetailSettingArgs) ToGetMigrationGoldenGateDetailS
 // GetMigrationGoldenGateDetailSettingArrayInput is an input type that accepts GetMigrationGoldenGateDetailSettingArray and GetMigrationGoldenGateDetailSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailSettingArray{ GetMigrationGoldenGateDetailSettingArgs{...} }
+//	GetMigrationGoldenGateDetailSettingArray{ GetMigrationGoldenGateDetailSettingArgs{...} }
 type GetMigrationGoldenGateDetailSettingArrayInput interface {
 	pulumi.Input
 
@@ -10719,7 +10719,7 @@ type GetMigrationGoldenGateDetailSettingExtract struct {
 // GetMigrationGoldenGateDetailSettingExtractInput is an input type that accepts GetMigrationGoldenGateDetailSettingExtractArgs and GetMigrationGoldenGateDetailSettingExtractOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingExtractInput` via:
 //
-//          GetMigrationGoldenGateDetailSettingExtractArgs{...}
+//	GetMigrationGoldenGateDetailSettingExtractArgs{...}
 type GetMigrationGoldenGateDetailSettingExtractInput interface {
 	pulumi.Input
 
@@ -10749,7 +10749,7 @@ func (i GetMigrationGoldenGateDetailSettingExtractArgs) ToGetMigrationGoldenGate
 // GetMigrationGoldenGateDetailSettingExtractArrayInput is an input type that accepts GetMigrationGoldenGateDetailSettingExtractArray and GetMigrationGoldenGateDetailSettingExtractArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingExtractArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailSettingExtractArray{ GetMigrationGoldenGateDetailSettingExtractArgs{...} }
+//	GetMigrationGoldenGateDetailSettingExtractArray{ GetMigrationGoldenGateDetailSettingExtractArgs{...} }
 type GetMigrationGoldenGateDetailSettingExtractArrayInput interface {
 	pulumi.Input
 
@@ -10827,7 +10827,7 @@ type GetMigrationGoldenGateDetailSettingReplicat struct {
 // GetMigrationGoldenGateDetailSettingReplicatInput is an input type that accepts GetMigrationGoldenGateDetailSettingReplicatArgs and GetMigrationGoldenGateDetailSettingReplicatOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingReplicatInput` via:
 //
-//          GetMigrationGoldenGateDetailSettingReplicatArgs{...}
+//	GetMigrationGoldenGateDetailSettingReplicatArgs{...}
 type GetMigrationGoldenGateDetailSettingReplicatInput interface {
 	pulumi.Input
 
@@ -10859,7 +10859,7 @@ func (i GetMigrationGoldenGateDetailSettingReplicatArgs) ToGetMigrationGoldenGat
 // GetMigrationGoldenGateDetailSettingReplicatArrayInput is an input type that accepts GetMigrationGoldenGateDetailSettingReplicatArray and GetMigrationGoldenGateDetailSettingReplicatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingReplicatArrayInput` via:
 //
-//          GetMigrationGoldenGateDetailSettingReplicatArray{ GetMigrationGoldenGateDetailSettingReplicatArgs{...} }
+//	GetMigrationGoldenGateDetailSettingReplicatArray{ GetMigrationGoldenGateDetailSettingReplicatArgs{...} }
 type GetMigrationGoldenGateDetailSettingReplicatArrayInput interface {
 	pulumi.Input
 
@@ -10942,7 +10942,7 @@ type GetMigrationIncludeObject struct {
 // GetMigrationIncludeObjectInput is an input type that accepts GetMigrationIncludeObjectArgs and GetMigrationIncludeObjectOutput values.
 // You can construct a concrete instance of `GetMigrationIncludeObjectInput` via:
 //
-//          GetMigrationIncludeObjectArgs{...}
+//	GetMigrationIncludeObjectArgs{...}
 type GetMigrationIncludeObjectInput interface {
 	pulumi.Input
 
@@ -10974,7 +10974,7 @@ func (i GetMigrationIncludeObjectArgs) ToGetMigrationIncludeObjectOutputWithCont
 // GetMigrationIncludeObjectArrayInput is an input type that accepts GetMigrationIncludeObjectArray and GetMigrationIncludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationIncludeObjectArrayInput` via:
 //
-//          GetMigrationIncludeObjectArray{ GetMigrationIncludeObjectArgs{...} }
+//	GetMigrationIncludeObjectArray{ GetMigrationIncludeObjectArgs{...} }
 type GetMigrationIncludeObjectArrayInput interface {
 	pulumi.Input
 
@@ -11055,7 +11055,7 @@ type GetMigrationObjectTypesFilter struct {
 // GetMigrationObjectTypesFilterInput is an input type that accepts GetMigrationObjectTypesFilterArgs and GetMigrationObjectTypesFilterOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesFilterInput` via:
 //
-//          GetMigrationObjectTypesFilterArgs{...}
+//	GetMigrationObjectTypesFilterArgs{...}
 type GetMigrationObjectTypesFilterInput interface {
 	pulumi.Input
 
@@ -11085,7 +11085,7 @@ func (i GetMigrationObjectTypesFilterArgs) ToGetMigrationObjectTypesFilterOutput
 // GetMigrationObjectTypesFilterArrayInput is an input type that accepts GetMigrationObjectTypesFilterArray and GetMigrationObjectTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesFilterArrayInput` via:
 //
-//          GetMigrationObjectTypesFilterArray{ GetMigrationObjectTypesFilterArgs{...} }
+//	GetMigrationObjectTypesFilterArray{ GetMigrationObjectTypesFilterArgs{...} }
 type GetMigrationObjectTypesFilterArrayInput interface {
 	pulumi.Input
 
@@ -11162,7 +11162,7 @@ type GetMigrationObjectTypesMigrationObjectTypeSummaryCollection struct {
 // GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionInput is an input type that accepts GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs and GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionInput` via:
 //
-//          GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs{...}
+//	GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs{...}
 type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -11190,7 +11190,7 @@ func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs) ToGetMi
 // GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput is an input type that accepts GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray and GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput` via:
 //
-//          GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray{ GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs{...} }
+//	GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray{ GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs{...} }
 type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11261,7 +11261,7 @@ type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem struct {
 // GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemInput is an input type that accepts GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs and GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemInput` via:
 //
-//          GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs{...}
+//	GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs{...}
 type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -11289,7 +11289,7 @@ func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs) ToG
 // GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput is an input type that accepts GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray and GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput` via:
 //
-//          GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray{ GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs{...} }
+//	GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray{ GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs{...} }
 type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11362,7 +11362,7 @@ type GetMigrationVaultDetail struct {
 // GetMigrationVaultDetailInput is an input type that accepts GetMigrationVaultDetailArgs and GetMigrationVaultDetailOutput values.
 // You can construct a concrete instance of `GetMigrationVaultDetailInput` via:
 //
-//          GetMigrationVaultDetailArgs{...}
+//	GetMigrationVaultDetailArgs{...}
 type GetMigrationVaultDetailInput interface {
 	pulumi.Input
 
@@ -11394,7 +11394,7 @@ func (i GetMigrationVaultDetailArgs) ToGetMigrationVaultDetailOutputWithContext(
 // GetMigrationVaultDetailArrayInput is an input type that accepts GetMigrationVaultDetailArray and GetMigrationVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationVaultDetailArrayInput` via:
 //
-//          GetMigrationVaultDetailArray{ GetMigrationVaultDetailArgs{...} }
+//	GetMigrationVaultDetailArray{ GetMigrationVaultDetailArgs{...} }
 type GetMigrationVaultDetailArrayInput interface {
 	pulumi.Input
 
@@ -11475,7 +11475,7 @@ type GetMigrationsFilter struct {
 // GetMigrationsFilterInput is an input type that accepts GetMigrationsFilterArgs and GetMigrationsFilterOutput values.
 // You can construct a concrete instance of `GetMigrationsFilterInput` via:
 //
-//          GetMigrationsFilterArgs{...}
+//	GetMigrationsFilterArgs{...}
 type GetMigrationsFilterInput interface {
 	pulumi.Input
 
@@ -11505,7 +11505,7 @@ func (i GetMigrationsFilterArgs) ToGetMigrationsFilterOutputWithContext(ctx cont
 // GetMigrationsFilterArrayInput is an input type that accepts GetMigrationsFilterArray and GetMigrationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsFilterArrayInput` via:
 //
-//          GetMigrationsFilterArray{ GetMigrationsFilterArgs{...} }
+//	GetMigrationsFilterArray{ GetMigrationsFilterArgs{...} }
 type GetMigrationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -11581,7 +11581,7 @@ type GetMigrationsMigrationCollection struct {
 // GetMigrationsMigrationCollectionInput is an input type that accepts GetMigrationsMigrationCollectionArgs and GetMigrationsMigrationCollectionOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionInput` via:
 //
-//          GetMigrationsMigrationCollectionArgs{...}
+//	GetMigrationsMigrationCollectionArgs{...}
 type GetMigrationsMigrationCollectionInput interface {
 	pulumi.Input
 
@@ -11608,7 +11608,7 @@ func (i GetMigrationsMigrationCollectionArgs) ToGetMigrationsMigrationCollection
 // GetMigrationsMigrationCollectionArrayInput is an input type that accepts GetMigrationsMigrationCollectionArray and GetMigrationsMigrationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionArray{ GetMigrationsMigrationCollectionArgs{...} }
+//	GetMigrationsMigrationCollectionArray{ GetMigrationsMigrationCollectionArgs{...} }
 type GetMigrationsMigrationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11728,7 +11728,7 @@ type GetMigrationsMigrationCollectionItem struct {
 // GetMigrationsMigrationCollectionItemInput is an input type that accepts GetMigrationsMigrationCollectionItemArgs and GetMigrationsMigrationCollectionItemOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemInput` via:
 //
-//          GetMigrationsMigrationCollectionItemArgs{...}
+//	GetMigrationsMigrationCollectionItemArgs{...}
 type GetMigrationsMigrationCollectionItemInput interface {
 	pulumi.Input
 
@@ -11808,7 +11808,7 @@ func (i GetMigrationsMigrationCollectionItemArgs) ToGetMigrationsMigrationCollec
 // GetMigrationsMigrationCollectionItemArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemArray and GetMigrationsMigrationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemArray{ GetMigrationsMigrationCollectionItemArgs{...} }
+//	GetMigrationsMigrationCollectionItemArray{ GetMigrationsMigrationCollectionItemArgs{...} }
 type GetMigrationsMigrationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -12025,7 +12025,7 @@ type GetMigrationsMigrationCollectionItemAdvisorSetting struct {
 // GetMigrationsMigrationCollectionItemAdvisorSettingInput is an input type that accepts GetMigrationsMigrationCollectionItemAdvisorSettingArgs and GetMigrationsMigrationCollectionItemAdvisorSettingOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemAdvisorSettingInput` via:
 //
-//          GetMigrationsMigrationCollectionItemAdvisorSettingArgs{...}
+//	GetMigrationsMigrationCollectionItemAdvisorSettingArgs{...}
 type GetMigrationsMigrationCollectionItemAdvisorSettingInput interface {
 	pulumi.Input
 
@@ -12055,7 +12055,7 @@ func (i GetMigrationsMigrationCollectionItemAdvisorSettingArgs) ToGetMigrationsM
 // GetMigrationsMigrationCollectionItemAdvisorSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemAdvisorSettingArray and GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemAdvisorSettingArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemAdvisorSettingArray{ GetMigrationsMigrationCollectionItemAdvisorSettingArgs{...} }
+//	GetMigrationsMigrationCollectionItemAdvisorSettingArray{ GetMigrationsMigrationCollectionItemAdvisorSettingArgs{...} }
 type GetMigrationsMigrationCollectionItemAdvisorSettingArrayInput interface {
 	pulumi.Input
 
@@ -12131,7 +12131,7 @@ type GetMigrationsMigrationCollectionItemDataTransferMediumDetail struct {
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs and GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs{...}
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs{...}
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailInput interface {
 	pulumi.Input
 
@@ -12161,7 +12161,7 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs) ToGetM
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs{...} }
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs{...} }
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput interface {
 	pulumi.Input
 
@@ -12241,7 +12241,7 @@ type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDet
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs and GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs{...}
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs{...}
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailInput interface {
 	pulumi.Input
 
@@ -12271,7 +12271,7 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs{...} }
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs{...} }
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayInput interface {
 	pulumi.Input
 
@@ -12351,7 +12351,7 @@ type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDet
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs and GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...}
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...}
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketInput interface {
 	pulumi.Input
 
@@ -12381,7 +12381,7 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...} }
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs{...} }
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput interface {
 	pulumi.Input
 
@@ -12461,7 +12461,7 @@ type GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDe
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs and GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs{...}
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs{...}
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailInput interface {
 	pulumi.Input
 
@@ -12491,7 +12491,7 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs{...} }
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs{...} }
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayInput interface {
 	pulumi.Input
 
@@ -12577,7 +12577,7 @@ type GetMigrationsMigrationCollectionItemDatapumpSetting struct {
 // GetMigrationsMigrationCollectionItemDatapumpSettingInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingArgs and GetMigrationsMigrationCollectionItemDatapumpSettingOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingArgs{...}
+//	GetMigrationsMigrationCollectionItemDatapumpSettingArgs{...}
 type GetMigrationsMigrationCollectionItemDatapumpSettingInput interface {
 	pulumi.Input
 
@@ -12613,7 +12613,7 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingArgs) ToGetMigrations
 // GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingArray and GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingArray{ GetMigrationsMigrationCollectionItemDatapumpSettingArgs{...} }
+//	GetMigrationsMigrationCollectionItemDatapumpSettingArray{ GetMigrationsMigrationCollectionItemDatapumpSettingArgs{...} }
 type GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput interface {
 	pulumi.Input
 
@@ -12720,7 +12720,7 @@ type GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter struct
 // GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs and GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs{...}
+//	GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs{...}
 type GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterInput interface {
 	pulumi.Input
 
@@ -12758,7 +12758,7 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs
 // GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArray and GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArray{ GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs{...} }
+//	GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArray{ GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs{...} }
 type GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayInput interface {
 	pulumi.Input
 
@@ -12862,7 +12862,7 @@ type GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject st
 // GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArgs and GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArgs{...}
+//	GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArgs{...}
 type GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectInput interface {
 	pulumi.Input
 
@@ -12892,7 +12892,7 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject
 // GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArray and GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArray{ GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArgs{...} }
+//	GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArray{ GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArgs{...} }
 type GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayInput interface {
 	pulumi.Input
 
@@ -12968,7 +12968,7 @@ type GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject st
 // GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArgs and GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArgs{...}
+//	GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArgs{...}
 type GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectInput interface {
 	pulumi.Input
 
@@ -12998,7 +12998,7 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject
 // GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArray and GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArray{ GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArgs{...} }
+//	GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArray{ GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArgs{...} }
 type GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayInput interface {
 	pulumi.Input
 
@@ -13076,7 +13076,7 @@ type GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap struct {
 // GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs and GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs{...}
+//	GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs{...}
 type GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapInput interface {
 	pulumi.Input
 
@@ -13108,7 +13108,7 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs) To
 // GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArray and GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArray{ GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs{...} }
+//	GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArray{ GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs{...} }
 type GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayInput interface {
 	pulumi.Input
 
@@ -13189,7 +13189,7 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetail struct {
 // GetMigrationsMigrationCollectionItemDumpTransferDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailArgs and GetMigrationsMigrationCollectionItemDumpTransferDetailOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDumpTransferDetailArgs{...}
+//	GetMigrationsMigrationCollectionItemDumpTransferDetailArgs{...}
 type GetMigrationsMigrationCollectionItemDumpTransferDetailInput interface {
 	pulumi.Input
 
@@ -13219,7 +13219,7 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailArgs) ToGetMigrati
 // GetMigrationsMigrationCollectionItemDumpTransferDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailArray and GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDumpTransferDetailArray{ GetMigrationsMigrationCollectionItemDumpTransferDetailArgs{...} }
+//	GetMigrationsMigrationCollectionItemDumpTransferDetailArray{ GetMigrationsMigrationCollectionItemDumpTransferDetailArgs{...} }
 type GetMigrationsMigrationCollectionItemDumpTransferDetailArrayInput interface {
 	pulumi.Input
 
@@ -13299,7 +13299,7 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailSource struct {
 // GetMigrationsMigrationCollectionItemDumpTransferDetailSourceInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs and GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailSourceInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs{...}
+//	GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs{...}
 type GetMigrationsMigrationCollectionItemDumpTransferDetailSourceInput interface {
 	pulumi.Input
 
@@ -13329,7 +13329,7 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs) ToGetM
 // GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArray and GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArray{ GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs{...} }
+//	GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArray{ GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs{...} }
 type GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput interface {
 	pulumi.Input
 
@@ -13405,7 +13405,7 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailTarget struct {
 // GetMigrationsMigrationCollectionItemDumpTransferDetailTargetInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs and GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailTargetInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs{...}
+//	GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs{...}
 type GetMigrationsMigrationCollectionItemDumpTransferDetailTargetInput interface {
 	pulumi.Input
 
@@ -13435,7 +13435,7 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs) ToGetM
 // GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArray and GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArray{ GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs{...} }
+//	GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArray{ GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs{...} }
 type GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayInput interface {
 	pulumi.Input
 
@@ -13513,7 +13513,7 @@ type GetMigrationsMigrationCollectionItemExcludeObject struct {
 // GetMigrationsMigrationCollectionItemExcludeObjectInput is an input type that accepts GetMigrationsMigrationCollectionItemExcludeObjectArgs and GetMigrationsMigrationCollectionItemExcludeObjectOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemExcludeObjectInput` via:
 //
-//          GetMigrationsMigrationCollectionItemExcludeObjectArgs{...}
+//	GetMigrationsMigrationCollectionItemExcludeObjectArgs{...}
 type GetMigrationsMigrationCollectionItemExcludeObjectInput interface {
 	pulumi.Input
 
@@ -13545,7 +13545,7 @@ func (i GetMigrationsMigrationCollectionItemExcludeObjectArgs) ToGetMigrationsMi
 // GetMigrationsMigrationCollectionItemExcludeObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemExcludeObjectArray and GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemExcludeObjectArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemExcludeObjectArray{ GetMigrationsMigrationCollectionItemExcludeObjectArgs{...} }
+//	GetMigrationsMigrationCollectionItemExcludeObjectArray{ GetMigrationsMigrationCollectionItemExcludeObjectArgs{...} }
 type GetMigrationsMigrationCollectionItemExcludeObjectArrayInput interface {
 	pulumi.Input
 
@@ -13626,7 +13626,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetail struct {
 // GetMigrationsMigrationCollectionItemGoldenGateDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailInput interface {
 	pulumi.Input
 
@@ -13656,7 +13656,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailArgs) ToGetMigration
 // GetMigrationsMigrationCollectionItemGoldenGateDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailArray and GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailArrayInput interface {
 	pulumi.Input
 
@@ -13748,7 +13748,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailHub struct {
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubInput interface {
 	pulumi.Input
 
@@ -13790,7 +13790,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs) ToGetMigrat
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayInput interface {
 	pulumi.Input
 
@@ -13907,7 +13907,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential 
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialInput interface {
 	pulumi.Input
 
@@ -13936,7 +13936,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredenti
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -14014,7 +14014,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdm
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialInput interface {
 	pulumi.Input
 
@@ -14043,7 +14043,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDb
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -14121,7 +14121,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredent
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialInput interface {
 	pulumi.Input
 
@@ -14150,7 +14150,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCred
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -14228,7 +14228,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredent
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialInput interface {
 	pulumi.Input
 
@@ -14257,7 +14257,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCred
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayInput interface {
 	pulumi.Input
 
@@ -14338,7 +14338,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailSetting struct {
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingInput interface {
 	pulumi.Input
 
@@ -14370,7 +14370,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs) ToGetMi
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArray and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayInput interface {
 	pulumi.Input
 
@@ -14455,7 +14455,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract struct {
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractInput interface {
 	pulumi.Input
 
@@ -14485,7 +14485,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs) 
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayInput interface {
 	pulumi.Input
 
@@ -14567,7 +14567,7 @@ type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat struct 
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs{...}
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs{...}
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatInput interface {
 	pulumi.Input
 
@@ -14599,7 +14599,7 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs)
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs{...} }
+//	GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray{ GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs{...} }
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayInput interface {
 	pulumi.Input
 
@@ -14688,7 +14688,7 @@ type GetMigrationsMigrationCollectionItemIncludeObject struct {
 // GetMigrationsMigrationCollectionItemIncludeObjectInput is an input type that accepts GetMigrationsMigrationCollectionItemIncludeObjectArgs and GetMigrationsMigrationCollectionItemIncludeObjectOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemIncludeObjectInput` via:
 //
-//          GetMigrationsMigrationCollectionItemIncludeObjectArgs{...}
+//	GetMigrationsMigrationCollectionItemIncludeObjectArgs{...}
 type GetMigrationsMigrationCollectionItemIncludeObjectInput interface {
 	pulumi.Input
 
@@ -14720,7 +14720,7 @@ func (i GetMigrationsMigrationCollectionItemIncludeObjectArgs) ToGetMigrationsMi
 // GetMigrationsMigrationCollectionItemIncludeObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemIncludeObjectArray and GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemIncludeObjectArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemIncludeObjectArray{ GetMigrationsMigrationCollectionItemIncludeObjectArgs{...} }
+//	GetMigrationsMigrationCollectionItemIncludeObjectArray{ GetMigrationsMigrationCollectionItemIncludeObjectArgs{...} }
 type GetMigrationsMigrationCollectionItemIncludeObjectArrayInput interface {
 	pulumi.Input
 
@@ -14803,7 +14803,7 @@ type GetMigrationsMigrationCollectionItemVaultDetail struct {
 // GetMigrationsMigrationCollectionItemVaultDetailInput is an input type that accepts GetMigrationsMigrationCollectionItemVaultDetailArgs and GetMigrationsMigrationCollectionItemVaultDetailOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemVaultDetailInput` via:
 //
-//          GetMigrationsMigrationCollectionItemVaultDetailArgs{...}
+//	GetMigrationsMigrationCollectionItemVaultDetailArgs{...}
 type GetMigrationsMigrationCollectionItemVaultDetailInput interface {
 	pulumi.Input
 
@@ -14835,7 +14835,7 @@ func (i GetMigrationsMigrationCollectionItemVaultDetailArgs) ToGetMigrationsMigr
 // GetMigrationsMigrationCollectionItemVaultDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemVaultDetailArray and GetMigrationsMigrationCollectionItemVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemVaultDetailArrayInput` via:
 //
-//          GetMigrationsMigrationCollectionItemVaultDetailArray{ GetMigrationsMigrationCollectionItemVaultDetailArgs{...} }
+//	GetMigrationsMigrationCollectionItemVaultDetailArray{ GetMigrationsMigrationCollectionItemVaultDetailArgs{...} }
 type GetMigrationsMigrationCollectionItemVaultDetailArrayInput interface {
 	pulumi.Input
 

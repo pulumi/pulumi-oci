@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.GetDiscoveryJobLogs(ctx, &stackmonitoring.GetDiscoveryJobLogsArgs{
-// 			DiscoveryJobId: oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
-// 			LogType:        pulumi.StringRef(_var.Discovery_job_log_log_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.GetDiscoveryJobLogs(ctx, &stackmonitoring.GetDiscoveryJobLogsArgs{
+//				DiscoveryJobId: oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
+//				LogType:        pulumi.StringRef(_var.Discovery_job_log_log_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDiscoveryJobLogs(ctx *pulumi.Context, args *GetDiscoveryJobLogsArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryJobLogsResult, error) {
 	var rv GetDiscoveryJobLogsResult

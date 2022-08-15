@@ -155,6 +155,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         public readonly bool IsAutoApproved;
         /// <summary>
+        /// more in detail about the lifeCycleState.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// Additional message specific to the access request that can be specified by the approver at the time of approval.
         /// </summary>
         public readonly string OpctlAdditionalMessage;
@@ -251,6 +255,8 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             bool isAutoApproved,
 
+            string lifecycleDetails,
+
             string opctlAdditionalMessage,
 
             string opctlId,
@@ -298,6 +304,7 @@ namespace Pulumi.Oci.OperatorAccessControl
             FreeformTags = freeformTags;
             Id = id;
             IsAutoApproved = isAutoApproved;
+            LifecycleDetails = lifecycleDetails;
             OpctlAdditionalMessage = opctlAdditionalMessage;
             OpctlId = opctlId;
             OpctlName = opctlName;

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetTagStandardTagNamespaceTemplate(ctx, &identity.GetTagStandardTagNamespaceTemplateArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			StandardTagNamespaceName: oci_identity_tag_namespace.Test_tag_namespace.Name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetTagStandardTagNamespaceTemplate(ctx, &identity.GetTagStandardTagNamespaceTemplateArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				StandardTagNamespaceName: oci_identity_tag_namespace.Test_tag_namespace.Name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTagStandardTagNamespaceTemplate(ctx *pulumi.Context, args *GetTagStandardTagNamespaceTemplateArgs, opts ...pulumi.InvokeOption) (*GetTagStandardTagNamespaceTemplateResult, error) {
 	var rv GetTagStandardTagNamespaceTemplateResult

@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waa.NewAppAccelerationPolicy(ctx, "testWebAppAccelerationPolicy", &Waa.AppAccelerationPolicyArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Web_app_acceleration_policy_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			ResponseCachingPolicy: &waa.AppAccelerationPolicyResponseCachingPolicyArgs{
-// 				IsResponseHeaderBasedCachingEnabled: pulumi.Any(_var.Web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled),
-// 			},
-// 			ResponseCompressionPolicy: &waa.AppAccelerationPolicyResponseCompressionPolicyArgs{
-// 				GzipCompression: &waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{
-// 					IsEnabled: pulumi.Any(_var.Web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled),
-// 				},
-// 			},
-// 			SystemTags: pulumi.Any(_var.Web_app_acceleration_policy_system_tags),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waa.NewAppAccelerationPolicy(ctx, "testWebAppAccelerationPolicy", &Waa.AppAccelerationPolicyArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Web_app_acceleration_policy_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				ResponseCachingPolicy: &waa.AppAccelerationPolicyResponseCachingPolicyArgs{
+//					IsResponseHeaderBasedCachingEnabled: pulumi.Any(_var.Web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled),
+//				},
+//				ResponseCompressionPolicy: &waa.AppAccelerationPolicyResponseCompressionPolicyArgs{
+//					GzipCompression: &waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{
+//						IsEnabled: pulumi.Any(_var.Web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled),
+//					},
+//				},
+//				SystemTags: pulumi.Any(_var.Web_app_acceleration_policy_system_tags),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // WebAppAccelerationPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
+//
+//	$ pulumi import oci:Waa/appAccelerationPolicy:AppAccelerationPolicy test_web_app_acceleration_policy "id"
+//
 // ```
 type AppAccelerationPolicy struct {
 	pulumi.CustomResourceState
@@ -234,7 +239,7 @@ func (i *AppAccelerationPolicy) ToAppAccelerationPolicyOutputWithContext(ctx con
 // AppAccelerationPolicyArrayInput is an input type that accepts AppAccelerationPolicyArray and AppAccelerationPolicyArrayOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyArrayInput` via:
 //
-//          AppAccelerationPolicyArray{ AppAccelerationPolicyArgs{...} }
+//	AppAccelerationPolicyArray{ AppAccelerationPolicyArgs{...} }
 type AppAccelerationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -259,7 +264,7 @@ func (i AppAccelerationPolicyArray) ToAppAccelerationPolicyArrayOutputWithContex
 // AppAccelerationPolicyMapInput is an input type that accepts AppAccelerationPolicyMap and AppAccelerationPolicyMapOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyMapInput` via:
 //
-//          AppAccelerationPolicyMap{ "key": AppAccelerationPolicyArgs{...} }
+//	AppAccelerationPolicyMap{ "key": AppAccelerationPolicyArgs{...} }
 type AppAccelerationPolicyMapInput interface {
 	pulumi.Input
 

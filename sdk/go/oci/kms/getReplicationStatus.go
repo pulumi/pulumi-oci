@@ -23,22 +23,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetReplicationStatus(ctx, &kms.GetReplicationStatusArgs{
-// 			ReplicationId:      oci_kms_replication.Test_replication.Id,
-// 			ManagementEndpoint: _var.Replication_status_management_endpoint,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetReplicationStatus(ctx, &kms.GetReplicationStatusArgs{
+//				ReplicationId:      oci_kms_replication.Test_replication.Id,
+//				ManagementEndpoint: _var.Replication_status_management_endpoint,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetReplicationStatus(ctx *pulumi.Context, args *GetReplicationStatusArgs, opts ...pulumi.InvokeOption) (*GetReplicationStatusResult, error) {
 	var rv GetReplicationStatusResult

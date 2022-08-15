@@ -53,6 +53,11 @@ import * as utilities from "../utilities";
  *     image: _var.build_pipeline_stage_image,
  *     isPassAllParametersEnabled: _var.build_pipeline_stage_is_pass_all_parameters_enabled,
  *     primaryBuildSource: _var.build_pipeline_stage_primary_build_source,
+ *     privateAccessConfig: {
+ *         networkChannelType: _var.build_pipeline_stage_private_access_config_network_channel_type,
+ *         subnetId: oci_core_subnet.test_subnet.id,
+ *         nsgIds: _var.build_pipeline_stage_private_access_config_nsg_ids,
+ *     },
  *     stageExecutionTimeoutInSeconds: _var.build_pipeline_stage_stage_execution_timeout_in_seconds,
  *     waitCriteria: {
  *         waitDuration: _var.build_pipeline_stage_wait_criteria_wait_duration,
@@ -162,6 +167,10 @@ export class BuildPipelineStage extends pulumi.CustomResource {
      */
     public readonly primaryBuildSource!: pulumi.Output<string>;
     /**
+     * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+     */
+    public readonly privateAccessConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
+    /**
      * The OCID of the DevOps project.
      */
     public /*out*/ readonly projectId!: pulumi.Output<string>;
@@ -219,6 +228,7 @@ export class BuildPipelineStage extends pulumi.CustomResource {
             resourceInputs["isPassAllParametersEnabled"] = state ? state.isPassAllParametersEnabled : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["primaryBuildSource"] = state ? state.primaryBuildSource : undefined;
+            resourceInputs["privateAccessConfig"] = state ? state.privateAccessConfig : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["stageExecutionTimeoutInSeconds"] = state ? state.stageExecutionTimeoutInSeconds : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -251,6 +261,7 @@ export class BuildPipelineStage extends pulumi.CustomResource {
             resourceInputs["image"] = args ? args.image : undefined;
             resourceInputs["isPassAllParametersEnabled"] = args ? args.isPassAllParametersEnabled : undefined;
             resourceInputs["primaryBuildSource"] = args ? args.primaryBuildSource : undefined;
+            resourceInputs["privateAccessConfig"] = args ? args.privateAccessConfig : undefined;
             resourceInputs["stageExecutionTimeoutInSeconds"] = args ? args.stageExecutionTimeoutInSeconds : undefined;
             resourceInputs["waitCriteria"] = args ? args.waitCriteria : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -334,6 +345,10 @@ export interface BuildPipelineStageState {
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      */
     primaryBuildSource?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+     */
+    privateAccessConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
     /**
      * The OCID of the DevOps project.
      */
@@ -424,6 +439,10 @@ export interface BuildPipelineStageArgs {
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      */
     primaryBuildSource?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+     */
+    privateAccessConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
     /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      */

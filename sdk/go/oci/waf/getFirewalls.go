@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.GetFirewalls(ctx, &waf.GetFirewallsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			DisplayName:            pulumi.StringRef(_var.Web_app_firewall_display_name),
-// 			Id:                     pulumi.StringRef(_var.Web_app_firewall_id),
-// 			States:                 _var.Web_app_firewall_state,
-// 			WebAppFirewallPolicyId: pulumi.StringRef(oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.GetFirewalls(ctx, &waf.GetFirewallsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				DisplayName:            pulumi.StringRef(_var.Web_app_firewall_display_name),
+//				Id:                     pulumi.StringRef(_var.Web_app_firewall_id),
+//				States:                 _var.Web_app_firewall_state,
+//				WebAppFirewallPolicyId: pulumi.StringRef(oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFirewalls(ctx *pulumi.Context, args *GetFirewallsArgs, opts ...pulumi.InvokeOption) (*GetFirewallsResult, error) {
 	var rv GetFirewallsResult

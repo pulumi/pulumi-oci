@@ -32,6 +32,12 @@ namespace Pulumi.Oci.Opsi
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        /// </summary>
+        [Output("computeId")]
+        public Output<string> ComputeId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
@@ -227,6 +233,12 @@ namespace Pulumi.Oci.Opsi
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        /// </summary>
+        [Input("computeId")]
+        public Input<string>? ComputeId { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -305,6 +317,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        /// </summary>
+        [Input("computeId")]
+        public Input<string>? ComputeId { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

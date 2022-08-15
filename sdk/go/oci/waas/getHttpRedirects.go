@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.GetHttpRedirects(ctx, &waas.GetHttpRedirectsArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			DisplayNames:                    _var.Http_redirect_display_names,
-// 			Ids:                             _var.Http_redirect_ids,
-// 			States:                          _var.Http_redirect_states,
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Http_redirect_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Http_redirect_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.GetHttpRedirects(ctx, &waas.GetHttpRedirectsArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				DisplayNames:                    _var.Http_redirect_display_names,
+//				Ids:                             _var.Http_redirect_ids,
+//				States:                          _var.Http_redirect_states,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Http_redirect_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Http_redirect_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetHttpRedirects(ctx *pulumi.Context, args *GetHttpRedirectsArgs, opts ...pulumi.InvokeOption) (*GetHttpRedirectsResult, error) {
 	var rv GetHttpRedirectsResult

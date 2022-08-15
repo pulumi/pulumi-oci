@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.NewListener(ctx, "testListener", &NetworkLoadBalancer.ListenerArgs{
-// 			DefaultBackendSetName: pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
-// 			NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-// 			Port:                  pulumi.Any(_var.Listener_port),
-// 			Protocol:              pulumi.Any(_var.Listener_protocol),
-// 			IpVersion:             pulumi.Any(_var.Listener_ip_version),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.NewListener(ctx, "testListener", &NetworkLoadBalancer.ListenerArgs{
+//				DefaultBackendSetName: pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
+//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
+//				Port:                  pulumi.Any(_var.Listener_port),
+//				Protocol:              pulumi.Any(_var.Listener_protocol),
+//				IpVersion:             pulumi.Any(_var.Listener_ip_version),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // Listeners can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
+//
+//	$ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
+//
 // ```
 type Listener struct {
 	pulumi.CustomResourceState
@@ -197,7 +202,7 @@ func (i *Listener) ToListenerOutputWithContext(ctx context.Context) ListenerOutp
 // ListenerArrayInput is an input type that accepts ListenerArray and ListenerArrayOutput values.
 // You can construct a concrete instance of `ListenerArrayInput` via:
 //
-//          ListenerArray{ ListenerArgs{...} }
+//	ListenerArray{ ListenerArgs{...} }
 type ListenerArrayInput interface {
 	pulumi.Input
 
@@ -222,7 +227,7 @@ func (i ListenerArray) ToListenerArrayOutputWithContext(ctx context.Context) Lis
 // ListenerMapInput is an input type that accepts ListenerMap and ListenerMapOutput values.
 // You can construct a concrete instance of `ListenerMapInput` via:
 //
-//          ListenerMap{ "key": ListenerArgs{...} }
+//	ListenerMap{ "key": ListenerArgs{...} }
 type ListenerMapInput interface {
 	pulumi.Input
 

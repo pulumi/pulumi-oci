@@ -28,21 +28,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetExadataIormConfig(ctx, &database.GetExadataIormConfigArgs{
-// 			DbSystemId: oci_database_db_system.Test_db_system.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetExadataIormConfig(ctx, &database.GetExadataIormConfigArgs{
+//				DbSystemId: oci_database_db_system.Test_db_system.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupExadataIormConfig(ctx *pulumi.Context, args *LookupExadataIormConfigArgs, opts ...pulumi.InvokeOption) (*LookupExadataIormConfigResult, error) {
 	var rv LookupExadataIormConfigResult

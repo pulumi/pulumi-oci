@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ContainerEngine.GetNodePools(ctx, &containerengine.GetNodePoolsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			ClusterId:     pulumi.StringRef(oci_containerengine_cluster.Test_cluster.Id),
-// 			Name:          pulumi.StringRef(_var.Node_pool_name),
-// 			States:        _var.Node_pool_state,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.GetNodePools(ctx, &containerengine.GetNodePoolsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				ClusterId:     pulumi.StringRef(oci_containerengine_cluster.Test_cluster.Id),
+//				Name:          pulumi.StringRef(_var.Node_pool_name),
+//				States:        _var.Node_pool_state,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNodePools(ctx *pulumi.Context, args *GetNodePoolsArgs, opts ...pulumi.InvokeOption) (*GetNodePoolsResult, error) {
 	var rv GetNodePoolsResult

@@ -25,25 +25,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabases(ctx, &databasemanagement.GetManagedDatabasesArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			DeploymentType:   pulumi.StringRef(_var.Managed_database_deployment_type),
-// 			Id:               pulumi.StringRef(_var.Managed_database_id),
-// 			ManagementOption: pulumi.StringRef(_var.Managed_database_management_option),
-// 			Name:             pulumi.StringRef(_var.Managed_database_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabases(ctx, &databasemanagement.GetManagedDatabasesArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				DeploymentType:   pulumi.StringRef(_var.Managed_database_deployment_type),
+//				Id:               pulumi.StringRef(_var.Managed_database_id),
+//				ManagementOption: pulumi.StringRef(_var.Managed_database_management_option),
+//				Name:             pulumi.StringRef(_var.Managed_database_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabases(ctx *pulumi.Context, args *GetManagedDatabasesArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesResult, error) {
 	var rv GetManagedDatabasesResult

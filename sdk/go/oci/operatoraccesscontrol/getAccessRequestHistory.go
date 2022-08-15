@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.GetAccessRequestHistory(ctx, &operatoraccesscontrol.GetAccessRequestHistoryArgs{
-// 			AccessRequestId: oci_operator_access_control_access_request.Test_access_request.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.GetAccessRequestHistory(ctx, &operatoraccesscontrol.GetAccessRequestHistoryArgs{
+//				AccessRequestId: oci_operator_access_control_access_request.Test_access_request.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAccessRequestHistory(ctx *pulumi.Context, args *GetAccessRequestHistoryArgs, opts ...pulumi.InvokeOption) (*GetAccessRequestHistoryResult, error) {
 	var rv GetAccessRequestHistoryResult

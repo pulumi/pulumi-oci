@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryFileLine(ctx, &devops.GetRepositoryFileLineArgs{
-// 			RepositoryId:    oci_devops_repository.Test_repository.Id,
-// 			Revision:        _var.Repository_file_line_revision,
-// 			FilePath:        _var.Repository_file_line_file_path,
-// 			StartLineNumber: pulumi.IntRef(_var.Repository_file_line_start_line_number),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryFileLine(ctx, &devops.GetRepositoryFileLineArgs{
+//				RepositoryId:    oci_devops_repository.Test_repository.Id,
+//				Revision:        _var.Repository_file_line_revision,
+//				FilePath:        _var.Repository_file_line_file_path,
+//				StartLineNumber: pulumi.IntRef(_var.Repository_file_line_start_line_number),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryFileLine(ctx *pulumi.Context, args *GetRepositoryFileLineArgs, opts ...pulumi.InvokeOption) (*GetRepositoryFileLineResult, error) {
 	var rv GetRepositoryFileLineResult

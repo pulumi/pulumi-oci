@@ -81,7 +81,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details of DVP Stack.
+        /// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         /// </summary>
         [Output("dvpStackDetails")]
         public Output<Outputs.DedicatedVantagePointDvpStackDetails> DvpStackDetails { get; private set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details of DVP Stack.
+        /// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         /// </summary>
         [Input("dvpStackDetails", required: true)]
         public Input<Inputs.DedicatedVantagePointDvpStackDetailsArgs> DvpStackDetails { get; set; } = null!;
@@ -260,7 +260,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of DVP Stack.
+        /// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         /// </summary>
         [Input("dvpStackDetails")]
         public Input<Inputs.DedicatedVantagePointDvpStackDetailsGetArgs>? DvpStackDetails { get; set; }

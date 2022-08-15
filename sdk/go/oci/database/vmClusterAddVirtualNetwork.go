@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewVmClusterAddVirtualNetwork(ctx, "testVmClusterAddVirtualMachine", &Database.VmClusterAddVirtualNetworkArgs{
-// 			DbServers: database.VmClusterAddVirtualNetworkDbServerArray{
-// 				&database.VmClusterAddVirtualNetworkDbServerArgs{
-// 					DbServerId: pulumi.Any(oci_database_db_server.Test_db_server.Id),
-// 				},
-// 			},
-// 			VmClusterId: pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewVmClusterAddVirtualNetwork(ctx, "testVmClusterAddVirtualMachine", &Database.VmClusterAddVirtualNetworkArgs{
+//				DbServers: database.VmClusterAddVirtualNetworkDbServerArray{
+//					&database.VmClusterAddVirtualNetworkDbServerArgs{
+//						DbServerId: pulumi.Any(oci_database_db_server.Test_db_server.Id),
+//					},
+//				},
+//				VmClusterId: pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ##### Note: You may also need to add `dbServers` and `cpuCoreCount` to the ignoreChanges for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
@@ -50,7 +53,9 @@ import (
 // VmClusterAddVirtualMachine can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
+//
+//	$ pulumi import oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork test_vm_cluster_add_virtual_machine "id"
+//
 // ```
 type VmClusterAddVirtualNetwork struct {
 	pulumi.CustomResourceState
@@ -298,7 +303,7 @@ func (i *VmClusterAddVirtualNetwork) ToVmClusterAddVirtualNetworkOutputWithConte
 // VmClusterAddVirtualNetworkArrayInput is an input type that accepts VmClusterAddVirtualNetworkArray and VmClusterAddVirtualNetworkArrayOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkArrayInput` via:
 //
-//          VmClusterAddVirtualNetworkArray{ VmClusterAddVirtualNetworkArgs{...} }
+//	VmClusterAddVirtualNetworkArray{ VmClusterAddVirtualNetworkArgs{...} }
 type VmClusterAddVirtualNetworkArrayInput interface {
 	pulumi.Input
 
@@ -323,7 +328,7 @@ func (i VmClusterAddVirtualNetworkArray) ToVmClusterAddVirtualNetworkArrayOutput
 // VmClusterAddVirtualNetworkMapInput is an input type that accepts VmClusterAddVirtualNetworkMap and VmClusterAddVirtualNetworkMapOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkMapInput` via:
 //
-//          VmClusterAddVirtualNetworkMap{ "key": VmClusterAddVirtualNetworkArgs{...} }
+//	VmClusterAddVirtualNetworkMap{ "key": VmClusterAddVirtualNetworkArgs{...} }
 type VmClusterAddVirtualNetworkMapInput interface {
 	pulumi.Input
 

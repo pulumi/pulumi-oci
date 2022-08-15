@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Core
         ///             CompartmentId = @var.Compartment_id,
         ///             DisplayName = @var.Boot_volume_replica_display_name,
         ///             State = @var.Boot_volume_replica_state,
+        ///             VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
         ///         }));
         ///     }
         /// 
@@ -43,7 +44,7 @@ namespace Pulumi.Oci.Core
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetBootVolumeReplicasResult> InvokeAsync(GetBootVolumeReplicasArgs args, InvokeOptions? options = null)
+        public static Task<GetBootVolumeReplicasResult> InvokeAsync(GetBootVolumeReplicasArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasArgs(), options.WithDefaults());
 
         /// <summary>
@@ -70,6 +71,7 @@ namespace Pulumi.Oci.Core
         ///             CompartmentId = @var.Compartment_id,
         ///             DisplayName = @var.Boot_volume_replica_display_name,
         ///             State = @var.Boot_volume_replica_state,
+        ///             VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
         ///         }));
         ///     }
         /// 
@@ -78,7 +80,7 @@ namespace Pulumi.Oci.Core
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetBootVolumeReplicasResult> Invoke(GetBootVolumeReplicasInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetBootVolumeReplicasResult> Invoke(GetBootVolumeReplicasInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasInvokeArgs(), options.WithDefaults());
     }
 
@@ -88,14 +90,14 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        [Input("availabilityDomain", required: true)]
-        public string AvailabilityDomain { get; set; } = null!;
+        [Input("availabilityDomain")]
+        public string? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -117,6 +119,12 @@ namespace Pulumi.Oci.Core
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+        /// </summary>
+        [Input("volumeGroupReplicaId")]
+        public string? VolumeGroupReplicaId { get; set; }
+
         public GetBootVolumeReplicasArgs()
         {
         }
@@ -127,14 +135,14 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        [Input("availabilityDomain", required: true)]
-        public Input<string> AvailabilityDomain { get; set; } = null!;
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -156,6 +164,12 @@ namespace Pulumi.Oci.Core
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+        /// </summary>
+        [Input("volumeGroupReplicaId")]
+        public Input<string>? VolumeGroupReplicaId { get; set; }
+
         public GetBootVolumeReplicasInvokeArgs()
         {
         }
@@ -168,7 +182,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The list of boot_volume_replicas.
         /// </summary>
@@ -176,7 +190,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The OCID of the compartment that contains the boot volume replica.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -190,14 +204,15 @@ namespace Pulumi.Oci.Core
         /// The current state of a boot volume replica.
         /// </summary>
         public readonly string? State;
+        public readonly string? VolumeGroupReplicaId;
 
         [OutputConstructor]
         private GetBootVolumeReplicasResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<Outputs.GetBootVolumeReplicasBootVolumeReplicaResult> bootVolumeReplicas,
 
-            string compartmentId,
+            string? compartmentId,
 
             string? displayName,
 
@@ -205,7 +220,9 @@ namespace Pulumi.Oci.Core
 
             string id,
 
-            string? state)
+            string? state,
+
+            string? volumeGroupReplicaId)
         {
             AvailabilityDomain = availabilityDomain;
             BootVolumeReplicas = bootVolumeReplicas;
@@ -214,6 +231,7 @@ namespace Pulumi.Oci.Core
             Filters = filters;
             Id = id;
             State = state;
+            VolumeGroupReplicaId = volumeGroupReplicaId;
         }
     }
 }

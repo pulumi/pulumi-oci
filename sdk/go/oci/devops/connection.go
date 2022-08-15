@@ -21,33 +21,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewConnection(ctx, "testConnection", &DevOps.ConnectionArgs{
-// 			ConnectionType: pulumi.Any(_var.Connection_connection_type),
-// 			ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
-// 			AccessToken:    pulumi.Any(_var.Connection_access_token),
-// 			AppPassword:    pulumi.Any(_var.Connection_app_password),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Connection_description),
-// 			DisplayName: pulumi.Any(_var.Connection_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Username: pulumi.Any(_var.Connection_username),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewConnection(ctx, "testConnection", &DevOps.ConnectionArgs{
+//				ConnectionType: pulumi.Any(_var.Connection_connection_type),
+//				ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
+//				AccessToken:    pulumi.Any(_var.Connection_access_token),
+//				AppPassword:    pulumi.Any(_var.Connection_app_password),
+//				BaseUrl:        pulumi.Any(_var.Connection_base_url),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Connection_description),
+//				DisplayName: pulumi.Any(_var.Connection_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				TlsVerifyConfig: &devops.ConnectionTlsVerifyConfigArgs{
+//					CaCertificateBundleId: pulumi.Any(oci_devops_ca_certificate_bundle.Test_ca_certificate_bundle.Id),
+//					TlsVerifyMode:         pulumi.Any(_var.Connection_tls_verify_config_tls_verify_mode),
+//				},
+//				Username: pulumi.Any(_var.Connection_username),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +63,9 @@ import (
 // Connections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/connection:Connection test_connection "id"
+//
+//	$ pulumi import oci:DevOps/connection:Connection test_connection "id"
+//
 // ```
 type Connection struct {
 	pulumi.CustomResourceState
@@ -64,6 +74,8 @@ type Connection struct {
 	AccessToken pulumi.StringOutput `pulumi:"accessToken"`
 	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword pulumi.StringOutput `pulumi:"appPassword"`
+	// (Updatable) The Base URL of the hosted BitbucketServer.
+	BaseUrl pulumi.StringOutput `pulumi:"baseUrl"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The type of connection.
@@ -86,6 +98,8 @@ type Connection struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfig ConnectionTlsVerifyConfigOutput `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 	Username pulumi.StringOutput `pulumi:"username"`
 }
@@ -129,6 +143,8 @@ type connectionState struct {
 	AccessToken *string `pulumi:"accessToken"`
 	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword *string `pulumi:"appPassword"`
+	// (Updatable) The Base URL of the hosted BitbucketServer.
+	BaseUrl *string `pulumi:"baseUrl"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The type of connection.
@@ -151,6 +167,8 @@ type connectionState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfig *ConnectionTlsVerifyConfig `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 	Username *string `pulumi:"username"`
 }
@@ -160,6 +178,8 @@ type ConnectionState struct {
 	AccessToken pulumi.StringPtrInput
 	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword pulumi.StringPtrInput
+	// (Updatable) The Base URL of the hosted BitbucketServer.
+	BaseUrl pulumi.StringPtrInput
 	// The OCID of the compartment containing the connection.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The type of connection.
@@ -182,6 +202,8 @@ type ConnectionState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfig ConnectionTlsVerifyConfigPtrInput
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 	Username pulumi.StringPtrInput
 }
@@ -195,6 +217,8 @@ type connectionArgs struct {
 	AccessToken *string `pulumi:"accessToken"`
 	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword *string `pulumi:"appPassword"`
+	// (Updatable) The Base URL of the hosted BitbucketServer.
+	BaseUrl *string `pulumi:"baseUrl"`
 	// (Updatable) The type of connection.
 	ConnectionType string `pulumi:"connectionType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -207,6 +231,8 @@ type connectionArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DevOps project.
 	ProjectId string `pulumi:"projectId"`
+	// (Updatable) TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfig *ConnectionTlsVerifyConfig `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 	Username *string `pulumi:"username"`
 }
@@ -217,6 +243,8 @@ type ConnectionArgs struct {
 	AccessToken pulumi.StringPtrInput
 	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword pulumi.StringPtrInput
+	// (Updatable) The Base URL of the hosted BitbucketServer.
+	BaseUrl pulumi.StringPtrInput
 	// (Updatable) The type of connection.
 	ConnectionType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -229,6 +257,8 @@ type ConnectionArgs struct {
 	FreeformTags pulumi.MapInput
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringInput
+	// (Updatable) TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfig ConnectionTlsVerifyConfigPtrInput
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 	Username pulumi.StringPtrInput
 }
@@ -259,7 +289,7 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
-//          ConnectionArray{ ConnectionArgs{...} }
+//	ConnectionArray{ ConnectionArgs{...} }
 type ConnectionArrayInput interface {
 	pulumi.Input
 
@@ -284,7 +314,7 @@ func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context)
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
 // You can construct a concrete instance of `ConnectionMapInput` via:
 //
-//          ConnectionMap{ "key": ConnectionArgs{...} }
+//	ConnectionMap{ "key": ConnectionArgs{...} }
 type ConnectionMapInput interface {
 	pulumi.Input
 

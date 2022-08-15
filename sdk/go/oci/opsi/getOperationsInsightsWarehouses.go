@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetOperationsInsightsWarehouses(ctx, &opsi.GetOperationsInsightsWarehousesArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Operations_insights_warehouse_display_name),
-// 			Id:            pulumi.StringRef(_var.Operations_insights_warehouse_id),
-// 			States:        _var.Operations_insights_warehouse_state,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetOperationsInsightsWarehouses(ctx, &opsi.GetOperationsInsightsWarehousesArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:   pulumi.StringRef(_var.Operations_insights_warehouse_display_name),
+//				Id:            pulumi.StringRef(_var.Operations_insights_warehouse_id),
+//				States:        _var.Operations_insights_warehouse_state,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOperationsInsightsWarehouses(ctx *pulumi.Context, args *GetOperationsInsightsWarehousesArgs, opts ...pulumi.InvokeOption) (*GetOperationsInsightsWarehousesResult, error) {
 	var rv GetOperationsInsightsWarehousesResult

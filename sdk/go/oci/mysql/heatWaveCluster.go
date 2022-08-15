@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.NewHeatWaveCluster(ctx, "testHeatWaveCluster", &Mysql.HeatWaveClusterArgs{
-// 			DbSystemId:  pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 			ClusterSize: pulumi.Any(_var.Heat_wave_cluster_cluster_size),
-// 			ShapeName:   pulumi.Any(oci_mysql_shape.Test_shape.Name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.NewHeatWaveCluster(ctx, "testHeatWaveCluster", &Mysql.HeatWaveClusterArgs{
+//				DbSystemId:  pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				ClusterSize: pulumi.Any(_var.Heat_wave_cluster_cluster_size),
+//				ShapeName:   pulumi.Any(oci_mysql_shape.Test_shape.Name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // HeatWaveCluster can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
+//
+//	$ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
+//
 // ```
 type HeatWaveCluster struct {
 	pulumi.CustomResourceState
@@ -196,7 +201,7 @@ func (i *HeatWaveCluster) ToHeatWaveClusterOutputWithContext(ctx context.Context
 // HeatWaveClusterArrayInput is an input type that accepts HeatWaveClusterArray and HeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `HeatWaveClusterArrayInput` via:
 //
-//          HeatWaveClusterArray{ HeatWaveClusterArgs{...} }
+//	HeatWaveClusterArray{ HeatWaveClusterArgs{...} }
 type HeatWaveClusterArrayInput interface {
 	pulumi.Input
 
@@ -221,7 +226,7 @@ func (i HeatWaveClusterArray) ToHeatWaveClusterArrayOutputWithContext(ctx contex
 // HeatWaveClusterMapInput is an input type that accepts HeatWaveClusterMap and HeatWaveClusterMapOutput values.
 // You can construct a concrete instance of `HeatWaveClusterMapInput` via:
 //
-//          HeatWaveClusterMap{ "key": HeatWaveClusterArgs{...} }
+//	HeatWaveClusterMap{ "key": HeatWaveClusterArgs{...} }
 type HeatWaveClusterMapInput interface {
 	pulumi.Input
 

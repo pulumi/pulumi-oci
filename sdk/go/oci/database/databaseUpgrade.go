@@ -16,14 +16,15 @@ import (
 // Upgrades the specified Oracle Database instance.
 //
 // Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
-// 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
-// 	To avoid a force new create of the dbHome on the next apply, add the following to the resource
-// 	```	lifecycle {
-// 	   	ignore_changes = [
-// 	   		db_home.0.db_version,
-// 	   	]
-// 	}
-// 	```
+//
+//	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
+//	To avoid a force new create of the dbHome on the next apply, add the following to the resource
+//	```	lifecycle {
+//	   	ignore_changes = [
+//	   		db_home.0.db_version,
+//	   	]
+//	}
+//	```
 //
 // ## Example Usage
 //
@@ -31,29 +32,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDatabaseUpgrade(ctx, "testDatabaseUpgrade", &Database.DatabaseUpgradeArgs{
-// 			Action:     pulumi.Any(_var.Database_upgrade_action),
-// 			DatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
-// 			DatabaseUpgradeSourceDetails: &database.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{
-// 				DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
-// 				DbHomeId:                oci_database_db_home.Test_db_home.Id,
-// 				DbVersion:               pulumi.Any(_var.Database_upgrade_database_upgrade_source_details_db_version),
-// 				Options:                 pulumi.Any(_var.Database_upgrade_database_upgrade_source_details_options),
-// 				Source:                  pulumi.Any(_var.Database_upgrade_database_upgrade_source_details_source),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDatabaseUpgrade(ctx, "testDatabaseUpgrade", &Database.DatabaseUpgradeArgs{
+//				Action:     pulumi.Any(_var.Database_upgrade_action),
+//				DatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
+//				DatabaseUpgradeSourceDetails: &database.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs{
+//					DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
+//					DbHomeId:                oci_database_db_home.Test_db_home.Id,
+//					DbVersion:               pulumi.Any(_var.Database_upgrade_database_upgrade_source_details_db_version),
+//					Options:                 pulumi.Any(_var.Database_upgrade_database_upgrade_source_details_options),
+//					Source:                  pulumi.Any(_var.Database_upgrade_database_upgrade_source_details_source),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -321,7 +325,7 @@ func (i *DatabaseUpgrade) ToDatabaseUpgradeOutputWithContext(ctx context.Context
 // DatabaseUpgradeArrayInput is an input type that accepts DatabaseUpgradeArray and DatabaseUpgradeArrayOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeArrayInput` via:
 //
-//          DatabaseUpgradeArray{ DatabaseUpgradeArgs{...} }
+//	DatabaseUpgradeArray{ DatabaseUpgradeArgs{...} }
 type DatabaseUpgradeArrayInput interface {
 	pulumi.Input
 
@@ -346,7 +350,7 @@ func (i DatabaseUpgradeArray) ToDatabaseUpgradeArrayOutputWithContext(ctx contex
 // DatabaseUpgradeMapInput is an input type that accepts DatabaseUpgradeMap and DatabaseUpgradeMapOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeMapInput` via:
 //
-//          DatabaseUpgradeMap{ "key": DatabaseUpgradeArgs{...} }
+//	DatabaseUpgradeMap{ "key": DatabaseUpgradeArgs{...} }
 type DatabaseUpgradeMapInput interface {
 	pulumi.Input
 

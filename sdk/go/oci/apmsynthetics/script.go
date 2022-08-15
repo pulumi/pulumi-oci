@@ -21,38 +21,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.NewScript(ctx, "testScript", &ApmSynthetics.ScriptArgs{
-// 			ApmDomainId:     pulumi.Any(oci_apm_synthetics_apm_domain.Test_apm_domain.Id),
-// 			Content:         pulumi.Any(_var.Script_content),
-// 			ContentType:     pulumi.Any(_var.Script_content_type),
-// 			DisplayName:     pulumi.Any(_var.Script_display_name),
-// 			ContentFileName: pulumi.Any(_var.Script_content_file_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Parameters: apmsynthetics.ScriptParameterArray{
-// 				&apmsynthetics.ScriptParameterArgs{
-// 					ParamName:  pulumi.Any(_var.Script_parameters_param_name),
-// 					IsSecret:   pulumi.Any(_var.Script_parameters_is_secret),
-// 					ParamValue: pulumi.Any(_var.Script_parameters_param_value),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.NewScript(ctx, "testScript", &ApmSynthetics.ScriptArgs{
+//				ApmDomainId:     pulumi.Any(oci_apm_synthetics_apm_domain.Test_apm_domain.Id),
+//				Content:         pulumi.Any(_var.Script_content),
+//				ContentType:     pulumi.Any(_var.Script_content_type),
+//				DisplayName:     pulumi.Any(_var.Script_display_name),
+//				ContentFileName: pulumi.Any(_var.Script_content_file_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Parameters: apmsynthetics.ScriptParameterArray{
+//					&apmsynthetics.ScriptParameterArgs{
+//						ParamName:  pulumi.Any(_var.Script_parameters_param_name),
+//						IsSecret:   pulumi.Any(_var.Script_parameters_is_secret),
+//						ParamValue: pulumi.Any(_var.Script_parameters_param_value),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // Scripts can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
+//
+//	$ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
+//
 // ```
 type Script struct {
 	pulumi.CustomResourceState
@@ -260,7 +265,7 @@ func (i *Script) ToScriptOutputWithContext(ctx context.Context) ScriptOutput {
 // ScriptArrayInput is an input type that accepts ScriptArray and ScriptArrayOutput values.
 // You can construct a concrete instance of `ScriptArrayInput` via:
 //
-//          ScriptArray{ ScriptArgs{...} }
+//	ScriptArray{ ScriptArgs{...} }
 type ScriptArrayInput interface {
 	pulumi.Input
 
@@ -285,7 +290,7 @@ func (i ScriptArray) ToScriptArrayOutputWithContext(ctx context.Context) ScriptA
 // ScriptMapInput is an input type that accepts ScriptMap and ScriptMapOutput values.
 // You can construct a concrete instance of `ScriptMapInput` via:
 //
-//          ScriptMap{ "key": ScriptArgs{...} }
+//	ScriptMap{ "key": ScriptArgs{...} }
 type ScriptMapInput interface {
 	pulumi.Input
 

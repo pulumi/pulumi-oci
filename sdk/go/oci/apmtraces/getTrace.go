@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmTraces.GetTrace(ctx, &apmtraces.GetTraceArgs{
-// 			ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-// 			TraceKey:    _var.Trace_trace_key,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmTraces.GetTrace(ctx, &apmtraces.GetTraceArgs{
+//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//				TraceKey:    _var.Trace_trace_key,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTrace(ctx *pulumi.Context, args *GetTraceArgs, opts ...pulumi.InvokeOption) (*GetTraceResult, error) {
 	var rv GetTraceResult

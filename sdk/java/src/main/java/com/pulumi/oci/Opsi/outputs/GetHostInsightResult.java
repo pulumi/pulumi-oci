@@ -14,9 +14,15 @@ import java.util.Objects;
 public final class GetHostInsightResult {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     private final String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * 
+     */
+    private final String computeId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -147,6 +153,7 @@ public final class GetHostInsightResult {
     @CustomType.Constructor
     private GetHostInsightResult(
         @CustomType.Parameter("compartmentId") String compartmentId,
+        @CustomType.Parameter("computeId") String computeId,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("enterpriseManagerBridgeId") String enterpriseManagerBridgeId,
         @CustomType.Parameter("enterpriseManagerEntityDisplayName") String enterpriseManagerEntityDisplayName,
@@ -174,6 +181,7 @@ public final class GetHostInsightResult {
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated) {
         this.compartmentId = compartmentId;
+        this.computeId = computeId;
         this.definedTags = definedTags;
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
         this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
@@ -204,10 +212,18 @@ public final class GetHostInsightResult {
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * 
+     */
+    public String computeId() {
+        return this.computeId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -398,6 +414,7 @@ public final class GetHostInsightResult {
 
     public static final class Builder {
         private String compartmentId;
+        private String computeId;
         private Map<String,Object> definedTags;
         private String enterpriseManagerBridgeId;
         private String enterpriseManagerEntityDisplayName;
@@ -432,6 +449,7 @@ public final class GetHostInsightResult {
         public Builder(GetHostInsightResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeId = defaults.computeId;
     	      this.definedTags = defaults.definedTags;
     	      this.enterpriseManagerBridgeId = defaults.enterpriseManagerBridgeId;
     	      this.enterpriseManagerEntityDisplayName = defaults.enterpriseManagerEntityDisplayName;
@@ -462,6 +480,10 @@ public final class GetHostInsightResult {
 
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        public Builder computeId(String computeId) {
+            this.computeId = Objects.requireNonNull(computeId);
             return this;
         }
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -568,7 +590,7 @@ public final class GetHostInsightResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetHostInsightResult build() {
-            return new GetHostInsightResult(compartmentId, definedTags, enterpriseManagerBridgeId, enterpriseManagerEntityDisplayName, enterpriseManagerEntityIdentifier, enterpriseManagerEntityName, enterpriseManagerEntityType, enterpriseManagerIdentifier, entitySource, exadataInsightId, freeformTags, hostDisplayName, hostInsightId, hostName, hostType, id, lifecycleDetails, managementAgentId, platformName, platformType, platformVersion, processorCount, state, status, systemTags, timeCreated, timeUpdated);
+            return new GetHostInsightResult(compartmentId, computeId, definedTags, enterpriseManagerBridgeId, enterpriseManagerEntityDisplayName, enterpriseManagerEntityIdentifier, enterpriseManagerEntityName, enterpriseManagerEntityType, enterpriseManagerIdentifier, entitySource, exadataInsightId, freeformTags, hostDisplayName, hostInsightId, hostName, hostType, id, lifecycleDetails, managementAgentId, platformName, platformType, platformVersion, processorCount, state, status, systemTags, timeCreated, timeUpdated);
         }
     }
 }

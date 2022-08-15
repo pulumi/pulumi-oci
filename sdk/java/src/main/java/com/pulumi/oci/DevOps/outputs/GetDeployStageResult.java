@@ -83,7 +83,7 @@ public final class GetDeployStageResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return Optional binary artifact OCID user may provide to this stage.
+     * @return Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
     private final String deployArtifactId;
@@ -491,7 +491,7 @@ public final class GetDeployStageResult {
         return this.definedTags;
     }
     /**
-     * @return Optional binary artifact OCID user may provide to this stage.
+     * @return Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
     public String deployArtifactId() {

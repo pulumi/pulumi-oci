@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetTargetDatabasesColumns(ctx, &datasafe.GetTargetDatabasesColumnsArgs{
-// 			TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
-// 			ColumnNames:        _var.Target_databases_column_column_name,
-// 			ColumnNameContains: pulumi.StringRef(_var.Target_databases_column_column_name_contains),
-// 			Datatypes:          _var.Target_databases_column_datatype,
-// 			SchemaNames:        _var.Target_databases_column_schema_name,
-// 			SchemaNameContains: pulumi.StringRef(_var.Target_databases_column_schema_name_contains),
-// 			TableNames:         oci_nosql_table.Test_table.Name,
-// 			TableNameContains:  pulumi.StringRef(_var.Target_databases_column_table_name_contains),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetTargetDatabasesColumns(ctx, &datasafe.GetTargetDatabasesColumnsArgs{
+//				TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
+//				ColumnNames:        _var.Target_databases_column_column_name,
+//				ColumnNameContains: pulumi.StringRef(_var.Target_databases_column_column_name_contains),
+//				Datatypes:          _var.Target_databases_column_datatype,
+//				SchemaNames:        _var.Target_databases_column_schema_name,
+//				SchemaNameContains: pulumi.StringRef(_var.Target_databases_column_schema_name_contains),
+//				TableNames:         oci_nosql_table.Test_table.Name,
+//				TableNameContains:  pulumi.StringRef(_var.Target_databases_column_table_name_contains),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTargetDatabasesColumns(ctx *pulumi.Context, args *GetTargetDatabasesColumnsArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabasesColumnsResult, error) {
 	var rv GetTargetDatabasesColumnsResult

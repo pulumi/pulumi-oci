@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDatabaseUpgradeHistoryEntry(ctx, &database.GetDatabaseUpgradeHistoryEntryArgs{
-// 			DatabaseId:            oci_database_database.Test_database.Id,
-// 			UpgradeHistoryEntryId: oci_database_upgrade_history_entry.Test_upgrade_history_entry.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDatabaseUpgradeHistoryEntry(ctx, &database.GetDatabaseUpgradeHistoryEntryArgs{
+//				DatabaseId:            oci_database_database.Test_database.Id,
+//				UpgradeHistoryEntryId: oci_database_upgrade_history_entry.Test_upgrade_history_entry.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabaseUpgradeHistoryEntry(ctx *pulumi.Context, args *GetDatabaseUpgradeHistoryEntryArgs, opts ...pulumi.InvokeOption) (*GetDatabaseUpgradeHistoryEntryResult, error) {
 	var rv GetDatabaseUpgradeHistoryEntryResult

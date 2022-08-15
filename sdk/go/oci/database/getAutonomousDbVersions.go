@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousDbVersions(ctx, &database.GetAutonomousDbVersionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DbWorkload:    pulumi.StringRef(_var.Autonomous_db_version_db_workload),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDbVersions(ctx, &database.GetAutonomousDbVersionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DbWorkload:    pulumi.StringRef(_var.Autonomous_db_version_db_workload),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousDbVersions(ctx *pulumi.Context, args *GetAutonomousDbVersionsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDbVersionsResult, error) {
 	var rv GetAutonomousDbVersionsResult

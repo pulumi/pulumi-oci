@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetObjectHead(ctx, &objectstorage.GetObjectHeadArgs{
-// 			Bucket:    _var.Object_bucket,
-// 			Namespace: _var.Object_namespace,
-// 			Object:    _var.Object_object,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetObjectHead(ctx, &objectstorage.GetObjectHeadArgs{
+//				Bucket:    _var.Object_bucket,
+//				Namespace: _var.Object_namespace,
+//				Object:    _var.Object_object,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetObjectHead(ctx *pulumi.Context, args *GetObjectHeadArgs, opts ...pulumi.InvokeOption) (*GetObjectHeadResult, error) {
 	var rv GetObjectHeadResult

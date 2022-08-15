@@ -17,26 +17,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewRecord(ctx, "testRecord", &Dns.RecordArgs{
-// 			ZoneNameOrId:  pulumi.Any(oci_dns_zone_name_or.Test_zone_name_or.Id),
-// 			Domain:        pulumi.Any(_var.Record_items_domain),
-// 			Rtype:         pulumi.Any(_var.Record_items_rtype),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Rdata:         pulumi.Any(_var.Record_items_rdata),
-// 			Ttl:           pulumi.Any(_var.Record_items_ttl),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewRecord(ctx, "testRecord", &Dns.RecordArgs{
+//				ZoneNameOrId:  pulumi.Any(oci_dns_zone_name_or.Test_zone_name_or.Id),
+//				Domain:        pulumi.Any(_var.Record_items_domain),
+//				Rtype:         pulumi.Any(_var.Record_items_rtype),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Rdata:         pulumi.Any(_var.Record_items_rdata),
+//				Ttl:           pulumi.Any(_var.Record_items_ttl),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -235,7 +238,7 @@ func (i *Record) ToRecordOutputWithContext(ctx context.Context) RecordOutput {
 // RecordArrayInput is an input type that accepts RecordArray and RecordArrayOutput values.
 // You can construct a concrete instance of `RecordArrayInput` via:
 //
-//          RecordArray{ RecordArgs{...} }
+//	RecordArray{ RecordArgs{...} }
 type RecordArrayInput interface {
 	pulumi.Input
 
@@ -260,7 +263,7 @@ func (i RecordArray) ToRecordArrayOutputWithContext(ctx context.Context) RecordA
 // RecordMapInput is an input type that accepts RecordMap and RecordMapOutput values.
 // You can construct a concrete instance of `RecordMapInput` via:
 //
-//          RecordMap{ "key": RecordArgs{...} }
+//	RecordMap{ "key": RecordArgs{...} }
 type RecordMapInput interface {
 	pulumi.Input
 

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetNamespaceScheduledTask(ctx, &loganalytics.GetNamespaceScheduledTaskArgs{
-// 			Namespace:       _var.Namespace_scheduled_task_namespace,
-// 			ScheduledTaskId: oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetNamespaceScheduledTask(ctx, &loganalytics.GetNamespaceScheduledTaskArgs{
+//				Namespace:       _var.Namespace_scheduled_task_namespace,
+//				ScheduledTaskId: oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNamespaceScheduledTask(ctx *pulumi.Context, args *LookupNamespaceScheduledTaskArgs, opts ...pulumi.InvokeOption) (*LookupNamespaceScheduledTaskResult, error) {
 	var rv LookupNamespaceScheduledTaskResult

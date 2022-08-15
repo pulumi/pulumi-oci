@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryCommit(ctx, &devops.GetRepositoryCommitArgs{
-// 			CommitId:     oci_devops_commit.Test_commit.Id,
-// 			RepositoryId: oci_devops_repository.Test_repository.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryCommit(ctx, &devops.GetRepositoryCommitArgs{
+//				CommitId:     oci_devops_commit.Test_commit.Id,
+//				RepositoryId: oci_devops_repository.Test_repository.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryCommit(ctx *pulumi.Context, args *GetRepositoryCommitArgs, opts ...pulumi.InvokeOption) (*GetRepositoryCommitResult, error) {
 	var rv GetRepositoryCommitResult

@@ -16,21 +16,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ResourceManager.GetStackTfState(ctx, &resourcemanager.GetStackTfStateArgs{
-// 			StackId: oci_resourcemanager_stack.Test_stack.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ResourceManager.GetStackTfState(ctx, &resourcemanager.GetStackTfStateArgs{
+//				StackId: oci_resourcemanager_stack.Test_stack.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetStackTfState(ctx *pulumi.Context, args *GetStackTfStateArgs, opts ...pulumi.InvokeOption) (*GetStackTfStateResult, error) {
 	var rv GetStackTfStateResult

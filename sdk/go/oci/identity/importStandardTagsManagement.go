@@ -22,22 +22,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewImportStandardTagsManagement(ctx, "testImportStandardTagsManagement", &Identity.ImportStandardTagsManagementArgs{
-// 			CompartmentId:            pulumi.Any(_var.Compartment_id),
-// 			StandardTagNamespaceName: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewImportStandardTagsManagement(ctx, "testImportStandardTagsManagement", &Identity.ImportStandardTagsManagementArgs{
+//				CompartmentId:            pulumi.Any(_var.Compartment_id),
+//				StandardTagNamespaceName: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // ImportStandardTagsManagement can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
+//
+//	$ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
+//
 // ```
 type ImportStandardTagsManagement struct {
 	pulumi.CustomResourceState
@@ -152,7 +157,7 @@ func (i *ImportStandardTagsManagement) ToImportStandardTagsManagementOutputWithC
 // ImportStandardTagsManagementArrayInput is an input type that accepts ImportStandardTagsManagementArray and ImportStandardTagsManagementArrayOutput values.
 // You can construct a concrete instance of `ImportStandardTagsManagementArrayInput` via:
 //
-//          ImportStandardTagsManagementArray{ ImportStandardTagsManagementArgs{...} }
+//	ImportStandardTagsManagementArray{ ImportStandardTagsManagementArgs{...} }
 type ImportStandardTagsManagementArrayInput interface {
 	pulumi.Input
 
@@ -177,7 +182,7 @@ func (i ImportStandardTagsManagementArray) ToImportStandardTagsManagementArrayOu
 // ImportStandardTagsManagementMapInput is an input type that accepts ImportStandardTagsManagementMap and ImportStandardTagsManagementMapOutput values.
 // You can construct a concrete instance of `ImportStandardTagsManagementMapInput` via:
 //
-//          ImportStandardTagsManagementMap{ "key": ImportStandardTagsManagementArgs{...} }
+//	ImportStandardTagsManagementMap{ "key": ImportStandardTagsManagementArgs{...} }
 type ImportStandardTagsManagementMapInput interface {
 	pulumi.Input
 

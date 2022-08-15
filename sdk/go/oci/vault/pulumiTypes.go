@@ -24,7 +24,7 @@ type SecretSecretContent struct {
 // SecretSecretContentInput is an input type that accepts SecretSecretContentArgs and SecretSecretContentOutput values.
 // You can construct a concrete instance of `SecretSecretContentInput` via:
 //
-//          SecretSecretContentArgs{...}
+//	SecretSecretContentArgs{...}
 type SecretSecretContentInput interface {
 	pulumi.Input
 
@@ -66,11 +66,11 @@ func (i SecretSecretContentArgs) ToSecretSecretContentPtrOutputWithContext(ctx c
 // SecretSecretContentPtrInput is an input type that accepts SecretSecretContentArgs, SecretSecretContentPtr and SecretSecretContentPtrOutput values.
 // You can construct a concrete instance of `SecretSecretContentPtrInput` via:
 //
-//          SecretSecretContentArgs{...}
+//	        SecretSecretContentArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SecretSecretContentPtrInput interface {
 	pulumi.Input
 
@@ -220,7 +220,7 @@ type SecretSecretRule struct {
 // SecretSecretRuleInput is an input type that accepts SecretSecretRuleArgs and SecretSecretRuleOutput values.
 // You can construct a concrete instance of `SecretSecretRuleInput` via:
 //
-//          SecretSecretRuleArgs{...}
+//	SecretSecretRuleArgs{...}
 type SecretSecretRuleInput interface {
 	pulumi.Input
 
@@ -256,7 +256,7 @@ func (i SecretSecretRuleArgs) ToSecretSecretRuleOutputWithContext(ctx context.Co
 // SecretSecretRuleArrayInput is an input type that accepts SecretSecretRuleArray and SecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `SecretSecretRuleArrayInput` via:
 //
-//          SecretSecretRuleArray{ SecretSecretRuleArgs{...} }
+//	SecretSecretRuleArray{ SecretSecretRuleArgs{...} }
 type SecretSecretRuleArrayInput interface {
 	pulumi.Input
 
@@ -347,7 +347,7 @@ type GetSecretSecretContent struct {
 // GetSecretSecretContentInput is an input type that accepts GetSecretSecretContentArgs and GetSecretSecretContentOutput values.
 // You can construct a concrete instance of `GetSecretSecretContentInput` via:
 //
-//          GetSecretSecretContentArgs{...}
+//	GetSecretSecretContentArgs{...}
 type GetSecretSecretContentInput interface {
 	pulumi.Input
 
@@ -377,7 +377,7 @@ func (i GetSecretSecretContentArgs) ToGetSecretSecretContentOutputWithContext(ct
 // GetSecretSecretContentArrayInput is an input type that accepts GetSecretSecretContentArray and GetSecretSecretContentArrayOutput values.
 // You can construct a concrete instance of `GetSecretSecretContentArrayInput` via:
 //
-//          GetSecretSecretContentArray{ GetSecretSecretContentArgs{...} }
+//	GetSecretSecretContentArray{ GetSecretSecretContentArgs{...} }
 type GetSecretSecretContentArrayInput interface {
 	pulumi.Input
 
@@ -465,7 +465,7 @@ type GetSecretSecretRule struct {
 // GetSecretSecretRuleInput is an input type that accepts GetSecretSecretRuleArgs and GetSecretSecretRuleOutput values.
 // You can construct a concrete instance of `GetSecretSecretRuleInput` via:
 //
-//          GetSecretSecretRuleArgs{...}
+//	GetSecretSecretRuleArgs{...}
 type GetSecretSecretRuleInput interface {
 	pulumi.Input
 
@@ -501,7 +501,7 @@ func (i GetSecretSecretRuleArgs) ToGetSecretSecretRuleOutputWithContext(ctx cont
 // GetSecretSecretRuleArrayInput is an input type that accepts GetSecretSecretRuleArray and GetSecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `GetSecretSecretRuleArrayInput` via:
 //
-//          GetSecretSecretRuleArray{ GetSecretSecretRuleArgs{...} }
+//	GetSecretSecretRuleArray{ GetSecretSecretRuleArgs{...} }
 type GetSecretSecretRuleArrayInput interface {
 	pulumi.Input
 
@@ -592,7 +592,7 @@ type GetSecretsFilter struct {
 // GetSecretsFilterInput is an input type that accepts GetSecretsFilterArgs and GetSecretsFilterOutput values.
 // You can construct a concrete instance of `GetSecretsFilterInput` via:
 //
-//          GetSecretsFilterArgs{...}
+//	GetSecretsFilterArgs{...}
 type GetSecretsFilterInput interface {
 	pulumi.Input
 
@@ -622,7 +622,7 @@ func (i GetSecretsFilterArgs) ToGetSecretsFilterOutputWithContext(ctx context.Co
 // GetSecretsFilterArrayInput is an input type that accepts GetSecretsFilterArray and GetSecretsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecretsFilterArrayInput` via:
 //
-//          GetSecretsFilterArray{ GetSecretsFilterArgs{...} }
+//	GetSecretsFilterArray{ GetSecretsFilterArgs{...} }
 type GetSecretsFilterArrayInput interface {
 	pulumi.Input
 
@@ -730,7 +730,7 @@ type GetSecretsSecret struct {
 // GetSecretsSecretInput is an input type that accepts GetSecretsSecretArgs and GetSecretsSecretOutput values.
 // You can construct a concrete instance of `GetSecretsSecretInput` via:
 //
-//          GetSecretsSecretArgs{...}
+//	GetSecretsSecretArgs{...}
 type GetSecretsSecretInput interface {
 	pulumi.Input
 
@@ -789,7 +789,7 @@ func (i GetSecretsSecretArgs) ToGetSecretsSecretOutputWithContext(ctx context.Co
 // GetSecretsSecretArrayInput is an input type that accepts GetSecretsSecretArray and GetSecretsSecretArrayOutput values.
 // You can construct a concrete instance of `GetSecretsSecretArrayInput` via:
 //
-//          GetSecretsSecretArray{ GetSecretsSecretArgs{...} }
+//	GetSecretsSecretArray{ GetSecretsSecretArgs{...} }
 type GetSecretsSecretArrayInput interface {
 	pulumi.Input
 
@@ -940,7 +940,7 @@ type GetSecretsSecretSecretContent struct {
 // GetSecretsSecretSecretContentInput is an input type that accepts GetSecretsSecretSecretContentArgs and GetSecretsSecretSecretContentOutput values.
 // You can construct a concrete instance of `GetSecretsSecretSecretContentInput` via:
 //
-//          GetSecretsSecretSecretContentArgs{...}
+//	GetSecretsSecretSecretContentArgs{...}
 type GetSecretsSecretSecretContentInput interface {
 	pulumi.Input
 
@@ -971,7 +971,7 @@ func (i GetSecretsSecretSecretContentArgs) ToGetSecretsSecretSecretContentOutput
 // GetSecretsSecretSecretContentArrayInput is an input type that accepts GetSecretsSecretSecretContentArray and GetSecretsSecretSecretContentArrayOutput values.
 // You can construct a concrete instance of `GetSecretsSecretSecretContentArrayInput` via:
 //
-//          GetSecretsSecretSecretContentArray{ GetSecretsSecretSecretContentArgs{...} }
+//	GetSecretsSecretSecretContentArray{ GetSecretsSecretSecretContentArgs{...} }
 type GetSecretsSecretSecretContentArrayInput interface {
 	pulumi.Input
 
@@ -1060,7 +1060,7 @@ type GetSecretsSecretSecretRule struct {
 // GetSecretsSecretSecretRuleInput is an input type that accepts GetSecretsSecretSecretRuleArgs and GetSecretsSecretSecretRuleOutput values.
 // You can construct a concrete instance of `GetSecretsSecretSecretRuleInput` via:
 //
-//          GetSecretsSecretSecretRuleArgs{...}
+//	GetSecretsSecretSecretRuleArgs{...}
 type GetSecretsSecretSecretRuleInput interface {
 	pulumi.Input
 
@@ -1096,7 +1096,7 @@ func (i GetSecretsSecretSecretRuleArgs) ToGetSecretsSecretSecretRuleOutputWithCo
 // GetSecretsSecretSecretRuleArrayInput is an input type that accepts GetSecretsSecretSecretRuleArray and GetSecretsSecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `GetSecretsSecretSecretRuleArrayInput` via:
 //
-//          GetSecretsSecretSecretRuleArray{ GetSecretsSecretSecretRuleArgs{...} }
+//	GetSecretsSecretSecretRuleArray{ GetSecretsSecretSecretRuleArgs{...} }
 type GetSecretsSecretSecretRuleArrayInput interface {
 	pulumi.Input
 

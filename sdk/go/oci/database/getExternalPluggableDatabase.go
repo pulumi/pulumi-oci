@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetExternalPluggableDatabase(ctx, &database.GetExternalPluggableDatabaseArgs{
-// 			ExternalPluggableDatabaseId: oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetExternalPluggableDatabase(ctx, &database.GetExternalPluggableDatabaseArgs{
+//				ExternalPluggableDatabaseId: oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupExternalPluggableDatabase(ctx *pulumi.Context, args *LookupExternalPluggableDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupExternalPluggableDatabaseResult, error) {
 	var rv LookupExternalPluggableDatabaseResult

@@ -14,14 +14,14 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
     public static final DedicatedVantagePointDvpStackDetailsArgs Empty = new DedicatedVantagePointDvpStackDetailsArgs();
 
     /**
-     * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     @Import(name="dvpStackId", required=true)
     private Output<String> dvpStackId;
 
     /**
-     * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     public Output<String> dvpStackId() {
@@ -44,14 +44,14 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     @Import(name="dvpStreamId", required=true)
     private Output<String> dvpStreamId;
 
     /**
-     * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
     public Output<String> dvpStreamId() {
@@ -59,14 +59,14 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Version of DVP.
+     * (Updatable) Version of the dedicated vantage point.
      * 
      */
     @Import(name="dvpVersion", required=true)
     private Output<String> dvpVersion;
 
     /**
-     * @return (Updatable) Version of DVP.
+     * @return (Updatable) Version of the dedicated vantage point.
      * 
      */
     public Output<String> dvpVersion() {
@@ -101,7 +101,7 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         /**
-         * @param dvpStackId (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * @param dvpStackId (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * 
          * @return builder
          * 
@@ -112,7 +112,7 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         /**
-         * @param dvpStackId (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * @param dvpStackId (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         /**
-         * @param dvpStreamId (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * @param dvpStreamId (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         /**
-         * @param dvpStreamId (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * @param dvpStreamId (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         /**
-         * @param dvpVersion (Updatable) Version of DVP.
+         * @param dvpVersion (Updatable) Version of the dedicated vantage point.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class DedicatedVantagePointDvpStackDetailsArgs extends com.pulumi.r
         }
 
         /**
-         * @param dvpVersion (Updatable) Version of DVP.
+         * @param dvpVersion (Updatable) Version of the dedicated vantage point.
          * 
          * @return builder
          * 

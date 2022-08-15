@@ -22,21 +22,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementDashboard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementDashboard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementDashboard.GetManagementDashboardsExport(ctx, &managementdashboard.GetManagementDashboardsExportArgs{
-// 			ExportDashboardId: oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementDashboard.GetManagementDashboardsExport(ctx, &managementdashboard.GetManagementDashboardsExportArgs{
+//				ExportDashboardId: oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementDashboardsExport(ctx *pulumi.Context, args *GetManagementDashboardsExportArgs, opts ...pulumi.InvokeOption) (*GetManagementDashboardsExportResult, error) {
 	var rv GetManagementDashboardsExportResult

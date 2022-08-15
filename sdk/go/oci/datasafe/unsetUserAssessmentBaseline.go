@@ -22,21 +22,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewUnsetUserAssessmentBaseline(ctx, "testUnsetUserAssessmentBaseline", &DataSafe.UnsetUserAssessmentBaselineArgs{
-// 			UserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewUnsetUserAssessmentBaseline(ctx, "testUnsetUserAssessmentBaseline", &DataSafe.UnsetUserAssessmentBaselineArgs{
+//				UserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // UnsetUserAssessmentBaseline can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline test_unset_user_assessment_baseline "id"
+//
+//	$ pulumi import oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline test_unset_user_assessment_baseline "id"
+//
 // ```
 type UnsetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState
@@ -135,7 +140,7 @@ func (i *UnsetUserAssessmentBaseline) ToUnsetUserAssessmentBaselineOutputWithCon
 // UnsetUserAssessmentBaselineArrayInput is an input type that accepts UnsetUserAssessmentBaselineArray and UnsetUserAssessmentBaselineArrayOutput values.
 // You can construct a concrete instance of `UnsetUserAssessmentBaselineArrayInput` via:
 //
-//          UnsetUserAssessmentBaselineArray{ UnsetUserAssessmentBaselineArgs{...} }
+//	UnsetUserAssessmentBaselineArray{ UnsetUserAssessmentBaselineArgs{...} }
 type UnsetUserAssessmentBaselineArrayInput interface {
 	pulumi.Input
 
@@ -160,7 +165,7 @@ func (i UnsetUserAssessmentBaselineArray) ToUnsetUserAssessmentBaselineArrayOutp
 // UnsetUserAssessmentBaselineMapInput is an input type that accepts UnsetUserAssessmentBaselineMap and UnsetUserAssessmentBaselineMapOutput values.
 // You can construct a concrete instance of `UnsetUserAssessmentBaselineMapInput` via:
 //
-//          UnsetUserAssessmentBaselineMap{ "key": UnsetUserAssessmentBaselineArgs{...} }
+//	UnsetUserAssessmentBaselineMap{ "key": UnsetUserAssessmentBaselineArgs{...} }
 type UnsetUserAssessmentBaselineMapInput interface {
 	pulumi.Input
 

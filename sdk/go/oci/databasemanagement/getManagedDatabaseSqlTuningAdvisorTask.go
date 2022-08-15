@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTaskArgs{
-// 			ManagedDatabaseId:        oci_database_management_managed_database.Test_managed_database.Id,
-// 			Name:                     pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_name),
-// 			Status:                   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_status),
-// 			TimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to),
-// 			TimeLessThanOrEqualTo:    pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTaskArgs{
+//				ManagedDatabaseId:        oci_database_management_managed_database.Test_managed_database.Id,
+//				Name:                     pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_name),
+//				Status:                   pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_status),
+//				TimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to),
+//				TimeLessThanOrEqualTo:    pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseSqlTuningAdvisorTask(ctx *pulumi.Context, args *GetManagedDatabaseSqlTuningAdvisorTaskArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlTuningAdvisorTaskResult, error) {
 	var rv GetManagedDatabaseSqlTuningAdvisorTaskResult

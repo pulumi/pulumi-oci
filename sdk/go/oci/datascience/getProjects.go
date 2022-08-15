@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetProjects(ctx, &datascience.GetProjectsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			CreatedBy:     pulumi.StringRef(_var.Project_created_by),
-// 			DisplayName:   pulumi.StringRef(_var.Project_display_name),
-// 			Id:            pulumi.StringRef(_var.Project_id),
-// 			State:         pulumi.StringRef(_var.Project_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetProjects(ctx, &datascience.GetProjectsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				CreatedBy:     pulumi.StringRef(_var.Project_created_by),
+//				DisplayName:   pulumi.StringRef(_var.Project_display_name),
+//				Id:            pulumi.StringRef(_var.Project_id),
+//				State:         pulumi.StringRef(_var.Project_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProjects(ctx *pulumi.Context, args *GetProjectsArgs, opts ...pulumi.InvokeOption) (*GetProjectsResult, error) {
 	var rv GetProjectsResult

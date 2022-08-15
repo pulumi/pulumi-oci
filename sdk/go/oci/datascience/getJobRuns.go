@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetJobRuns(ctx, &datascience.GetJobRunsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			CreatedBy:     pulumi.StringRef(_var.Job_run_created_by),
-// 			DisplayName:   pulumi.StringRef(_var.Job_run_display_name),
-// 			Id:            pulumi.StringRef(_var.Job_run_id),
-// 			JobId:         pulumi.StringRef(oci_datascience_job.Test_job.Id),
-// 			State:         pulumi.StringRef(_var.Job_run_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetJobRuns(ctx, &datascience.GetJobRunsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				CreatedBy:     pulumi.StringRef(_var.Job_run_created_by),
+//				DisplayName:   pulumi.StringRef(_var.Job_run_display_name),
+//				Id:            pulumi.StringRef(_var.Job_run_id),
+//				JobId:         pulumi.StringRef(oci_datascience_job.Test_job.Id),
+//				State:         pulumi.StringRef(_var.Job_run_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetJobRuns(ctx *pulumi.Context, args *GetJobRunsArgs, opts ...pulumi.InvokeOption) (*GetJobRunsResult, error) {
 	var rv GetJobRunsResult

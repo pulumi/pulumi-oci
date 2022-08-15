@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// List resources which are members of the given monitored resource
+// # List resources which are members of the given monitored resource
 //
 // ## Example Usage
 //
@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.NewMonitoredResourcesListMember(ctx, "testMonitoredResourcesListMember", &StackMonitoring.MonitoredResourcesListMemberArgs{
-// 			MonitoredResourceId:   pulumi.Any(oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id),
-// 			DestinationResourceId: pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
-// 			LimitLevel:            pulumi.Any(_var.Monitored_resources_list_member_limit_level),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.NewMonitoredResourcesListMember(ctx, "testMonitoredResourcesListMember", &StackMonitoring.MonitoredResourcesListMemberArgs{
+//				MonitoredResourceId:   pulumi.Any(oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id),
+//				DestinationResourceId: pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
+//				LimitLevel:            pulumi.Any(_var.Monitored_resources_list_member_limit_level),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // MonitoredResourcesListMembers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
+//
+//	$ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
+//
 // ```
 type MonitoredResourcesListMember struct {
 	pulumi.CustomResourceState
@@ -162,7 +167,7 @@ func (i *MonitoredResourcesListMember) ToMonitoredResourcesListMemberOutputWithC
 // MonitoredResourcesListMemberArrayInput is an input type that accepts MonitoredResourcesListMemberArray and MonitoredResourcesListMemberArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberArrayInput` via:
 //
-//          MonitoredResourcesListMemberArray{ MonitoredResourcesListMemberArgs{...} }
+//	MonitoredResourcesListMemberArray{ MonitoredResourcesListMemberArgs{...} }
 type MonitoredResourcesListMemberArrayInput interface {
 	pulumi.Input
 
@@ -187,7 +192,7 @@ func (i MonitoredResourcesListMemberArray) ToMonitoredResourcesListMemberArrayOu
 // MonitoredResourcesListMemberMapInput is an input type that accepts MonitoredResourcesListMemberMap and MonitoredResourcesListMemberMapOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberMapInput` via:
 //
-//          MonitoredResourcesListMemberMap{ "key": MonitoredResourcesListMemberArgs{...} }
+//	MonitoredResourcesListMemberMap{ "key": MonitoredResourcesListMemberArgs{...} }
 type MonitoredResourcesListMemberMapInput interface {
 	pulumi.Input
 

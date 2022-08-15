@@ -19,19 +19,22 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.NewContainerConfiguration(ctx, "testContainerConfiguration", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.NewContainerConfiguration(ctx, "testContainerConfiguration", nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -39,7 +42,9 @@ import (
 // ContainerConfiguration can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
+//
+//	$ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
+//
 // ```
 type ContainerConfiguration struct {
 	pulumi.CustomResourceState
@@ -144,7 +149,7 @@ func (i *ContainerConfiguration) ToContainerConfigurationOutputWithContext(ctx c
 // ContainerConfigurationArrayInput is an input type that accepts ContainerConfigurationArray and ContainerConfigurationArrayOutput values.
 // You can construct a concrete instance of `ContainerConfigurationArrayInput` via:
 //
-//          ContainerConfigurationArray{ ContainerConfigurationArgs{...} }
+//	ContainerConfigurationArray{ ContainerConfigurationArgs{...} }
 type ContainerConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -169,7 +174,7 @@ func (i ContainerConfigurationArray) ToContainerConfigurationArrayOutputWithCont
 // ContainerConfigurationMapInput is an input type that accepts ContainerConfigurationMap and ContainerConfigurationMapOutput values.
 // You can construct a concrete instance of `ContainerConfigurationMapInput` via:
 //
-//          ContainerConfigurationMap{ "key": ContainerConfigurationArgs{...} }
+//	ContainerConfigurationMap{ "key": ContainerConfigurationArgs{...} }
 type ContainerConfigurationMapInput interface {
 	pulumi.Input
 

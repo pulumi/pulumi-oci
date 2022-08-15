@@ -22,7 +22,7 @@ type SddcHcxOnPremLicense struct {
 // SddcHcxOnPremLicenseInput is an input type that accepts SddcHcxOnPremLicenseArgs and SddcHcxOnPremLicenseOutput values.
 // You can construct a concrete instance of `SddcHcxOnPremLicenseInput` via:
 //
-//          SddcHcxOnPremLicenseArgs{...}
+//	SddcHcxOnPremLicenseArgs{...}
 type SddcHcxOnPremLicenseInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i SddcHcxOnPremLicenseArgs) ToSddcHcxOnPremLicenseOutputWithContext(ctx co
 // SddcHcxOnPremLicenseArrayInput is an input type that accepts SddcHcxOnPremLicenseArray and SddcHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `SddcHcxOnPremLicenseArrayInput` via:
 //
-//          SddcHcxOnPremLicenseArray{ SddcHcxOnPremLicenseArgs{...} }
+//	SddcHcxOnPremLicenseArray{ SddcHcxOnPremLicenseArgs{...} }
 type SddcHcxOnPremLicenseArrayInput interface {
 	pulumi.Input
 
@@ -171,7 +171,7 @@ type GetExsiHostsEsxiHostCollection struct {
 // GetExsiHostsEsxiHostCollectionInput is an input type that accepts GetExsiHostsEsxiHostCollectionArgs and GetExsiHostsEsxiHostCollectionOutput values.
 // You can construct a concrete instance of `GetExsiHostsEsxiHostCollectionInput` via:
 //
-//          GetExsiHostsEsxiHostCollectionArgs{...}
+//	GetExsiHostsEsxiHostCollectionArgs{...}
 type GetExsiHostsEsxiHostCollectionInput interface {
 	pulumi.Input
 
@@ -237,7 +237,7 @@ func (i GetExsiHostsEsxiHostCollectionArgs) ToGetExsiHostsEsxiHostCollectionOutp
 // GetExsiHostsEsxiHostCollectionArrayInput is an input type that accepts GetExsiHostsEsxiHostCollectionArray and GetExsiHostsEsxiHostCollectionArrayOutput values.
 // You can construct a concrete instance of `GetExsiHostsEsxiHostCollectionArrayInput` via:
 //
-//          GetExsiHostsEsxiHostCollectionArray{ GetExsiHostsEsxiHostCollectionArgs{...} }
+//	GetExsiHostsEsxiHostCollectionArray{ GetExsiHostsEsxiHostCollectionArgs{...} }
 type GetExsiHostsEsxiHostCollectionArrayInput interface {
 	pulumi.Input
 
@@ -402,7 +402,7 @@ type GetExsiHostsFilter struct {
 // GetExsiHostsFilterInput is an input type that accepts GetExsiHostsFilterArgs and GetExsiHostsFilterOutput values.
 // You can construct a concrete instance of `GetExsiHostsFilterInput` via:
 //
-//          GetExsiHostsFilterArgs{...}
+//	GetExsiHostsFilterArgs{...}
 type GetExsiHostsFilterInput interface {
 	pulumi.Input
 
@@ -431,7 +431,7 @@ func (i GetExsiHostsFilterArgs) ToGetExsiHostsFilterOutputWithContext(ctx contex
 // GetExsiHostsFilterArrayInput is an input type that accepts GetExsiHostsFilterArray and GetExsiHostsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExsiHostsFilterArrayInput` via:
 //
-//          GetExsiHostsFilterArray{ GetExsiHostsFilterArgs{...} }
+//	GetExsiHostsFilterArray{ GetExsiHostsFilterArgs{...} }
 type GetExsiHostsFilterArrayInput interface {
 	pulumi.Input
 
@@ -511,7 +511,7 @@ type GetSddcHcxOnPremLicense struct {
 // GetSddcHcxOnPremLicenseInput is an input type that accepts GetSddcHcxOnPremLicenseArgs and GetSddcHcxOnPremLicenseOutput values.
 // You can construct a concrete instance of `GetSddcHcxOnPremLicenseInput` via:
 //
-//          GetSddcHcxOnPremLicenseArgs{...}
+//	GetSddcHcxOnPremLicenseArgs{...}
 type GetSddcHcxOnPremLicenseInput interface {
 	pulumi.Input
 
@@ -543,7 +543,7 @@ func (i GetSddcHcxOnPremLicenseArgs) ToGetSddcHcxOnPremLicenseOutputWithContext(
 // GetSddcHcxOnPremLicenseArrayInput is an input type that accepts GetSddcHcxOnPremLicenseArray and GetSddcHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `GetSddcHcxOnPremLicenseArrayInput` via:
 //
-//          GetSddcHcxOnPremLicenseArray{ GetSddcHcxOnPremLicenseArgs{...} }
+//	GetSddcHcxOnPremLicenseArray{ GetSddcHcxOnPremLicenseArgs{...} }
 type GetSddcHcxOnPremLicenseArrayInput interface {
 	pulumi.Input
 
@@ -623,7 +623,7 @@ type GetSddcsFilter struct {
 // GetSddcsFilterInput is an input type that accepts GetSddcsFilterArgs and GetSddcsFilterOutput values.
 // You can construct a concrete instance of `GetSddcsFilterInput` via:
 //
-//          GetSddcsFilterArgs{...}
+//	GetSddcsFilterArgs{...}
 type GetSddcsFilterInput interface {
 	pulumi.Input
 
@@ -652,7 +652,7 @@ func (i GetSddcsFilterArgs) ToGetSddcsFilterOutputWithContext(ctx context.Contex
 // GetSddcsFilterArrayInput is an input type that accepts GetSddcsFilterArray and GetSddcsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSddcsFilterArrayInput` via:
 //
-//          GetSddcsFilterArray{ GetSddcsFilterArgs{...} }
+//	GetSddcsFilterArray{ GetSddcsFilterArgs{...} }
 type GetSddcsFilterArrayInput interface {
 	pulumi.Input
 
@@ -831,7 +831,7 @@ type GetSddcsSddcCollection struct {
 // GetSddcsSddcCollectionInput is an input type that accepts GetSddcsSddcCollectionArgs and GetSddcsSddcCollectionOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionInput` via:
 //
-//          GetSddcsSddcCollectionArgs{...}
+//	GetSddcsSddcCollectionArgs{...}
 type GetSddcsSddcCollectionInput interface {
 	pulumi.Input
 
@@ -962,7 +962,7 @@ func (i GetSddcsSddcCollectionArgs) ToGetSddcsSddcCollectionOutputWithContext(ct
 // GetSddcsSddcCollectionArrayInput is an input type that accepts GetSddcsSddcCollectionArray and GetSddcsSddcCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionArrayInput` via:
 //
-//          GetSddcsSddcCollectionArray{ GetSddcsSddcCollectionArgs{...} }
+//	GetSddcsSddcCollectionArray{ GetSddcsSddcCollectionArgs{...} }
 type GetSddcsSddcCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1297,7 +1297,7 @@ type GetSddcsSddcCollectionHcxOnPremLicense struct {
 // GetSddcsSddcCollectionHcxOnPremLicenseInput is an input type that accepts GetSddcsSddcCollectionHcxOnPremLicenseArgs and GetSddcsSddcCollectionHcxOnPremLicenseOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionHcxOnPremLicenseInput` via:
 //
-//          GetSddcsSddcCollectionHcxOnPremLicenseArgs{...}
+//	GetSddcsSddcCollectionHcxOnPremLicenseArgs{...}
 type GetSddcsSddcCollectionHcxOnPremLicenseInput interface {
 	pulumi.Input
 
@@ -1329,7 +1329,7 @@ func (i GetSddcsSddcCollectionHcxOnPremLicenseArgs) ToGetSddcsSddcCollectionHcxO
 // GetSddcsSddcCollectionHcxOnPremLicenseArrayInput is an input type that accepts GetSddcsSddcCollectionHcxOnPremLicenseArray and GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionHcxOnPremLicenseArrayInput` via:
 //
-//          GetSddcsSddcCollectionHcxOnPremLicenseArray{ GetSddcsSddcCollectionHcxOnPremLicenseArgs{...} }
+//	GetSddcsSddcCollectionHcxOnPremLicenseArray{ GetSddcsSddcCollectionHcxOnPremLicenseArgs{...} }
 type GetSddcsSddcCollectionHcxOnPremLicenseArrayInput interface {
 	pulumi.Input
 
@@ -1410,7 +1410,7 @@ type GetSupportedHostShapesFilter struct {
 // GetSupportedHostShapesFilterInput is an input type that accepts GetSupportedHostShapesFilterArgs and GetSupportedHostShapesFilterOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesFilterInput` via:
 //
-//          GetSupportedHostShapesFilterArgs{...}
+//	GetSupportedHostShapesFilterArgs{...}
 type GetSupportedHostShapesFilterInput interface {
 	pulumi.Input
 
@@ -1440,7 +1440,7 @@ func (i GetSupportedHostShapesFilterArgs) ToGetSupportedHostShapesFilterOutputWi
 // GetSupportedHostShapesFilterArrayInput is an input type that accepts GetSupportedHostShapesFilterArray and GetSupportedHostShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesFilterArrayInput` via:
 //
-//          GetSupportedHostShapesFilterArray{ GetSupportedHostShapesFilterArgs{...} }
+//	GetSupportedHostShapesFilterArray{ GetSupportedHostShapesFilterArgs{...} }
 type GetSupportedHostShapesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1533,7 +1533,7 @@ type GetSupportedHostShapesItem struct {
 // GetSupportedHostShapesItemInput is an input type that accepts GetSupportedHostShapesItemArgs and GetSupportedHostShapesItemOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesItemInput` via:
 //
-//          GetSupportedHostShapesItemArgs{...}
+//	GetSupportedHostShapesItemArgs{...}
 type GetSupportedHostShapesItemInput interface {
 	pulumi.Input
 
@@ -1577,7 +1577,7 @@ func (i GetSupportedHostShapesItemArgs) ToGetSupportedHostShapesItemOutputWithCo
 // GetSupportedHostShapesItemArrayInput is an input type that accepts GetSupportedHostShapesItemArray and GetSupportedHostShapesItemArrayOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesItemArrayInput` via:
 //
-//          GetSupportedHostShapesItemArray{ GetSupportedHostShapesItemArgs{...} }
+//	GetSupportedHostShapesItemArray{ GetSupportedHostShapesItemArgs{...} }
 type GetSupportedHostShapesItemArrayInput interface {
 	pulumi.Input
 
@@ -1688,7 +1688,7 @@ type GetSupportedSkusFilter struct {
 // GetSupportedSkusFilterInput is an input type that accepts GetSupportedSkusFilterArgs and GetSupportedSkusFilterOutput values.
 // You can construct a concrete instance of `GetSupportedSkusFilterInput` via:
 //
-//          GetSupportedSkusFilterArgs{...}
+//	GetSupportedSkusFilterArgs{...}
 type GetSupportedSkusFilterInput interface {
 	pulumi.Input
 
@@ -1718,7 +1718,7 @@ func (i GetSupportedSkusFilterArgs) ToGetSupportedSkusFilterOutputWithContext(ct
 // GetSupportedSkusFilterArrayInput is an input type that accepts GetSupportedSkusFilterArray and GetSupportedSkusFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedSkusFilterArrayInput` via:
 //
-//          GetSupportedSkusFilterArray{ GetSupportedSkusFilterArgs{...} }
+//	GetSupportedSkusFilterArray{ GetSupportedSkusFilterArgs{...} }
 type GetSupportedSkusFilterArrayInput interface {
 	pulumi.Input
 
@@ -1795,7 +1795,7 @@ type GetSupportedSkusItem struct {
 // GetSupportedSkusItemInput is an input type that accepts GetSupportedSkusItemArgs and GetSupportedSkusItemOutput values.
 // You can construct a concrete instance of `GetSupportedSkusItemInput` via:
 //
-//          GetSupportedSkusItemArgs{...}
+//	GetSupportedSkusItemArgs{...}
 type GetSupportedSkusItemInput interface {
 	pulumi.Input
 
@@ -1823,7 +1823,7 @@ func (i GetSupportedSkusItemArgs) ToGetSupportedSkusItemOutputWithContext(ctx co
 // GetSupportedSkusItemArrayInput is an input type that accepts GetSupportedSkusItemArray and GetSupportedSkusItemArrayOutput values.
 // You can construct a concrete instance of `GetSupportedSkusItemArrayInput` via:
 //
-//          GetSupportedSkusItemArray{ GetSupportedSkusItemArgs{...} }
+//	GetSupportedSkusItemArray{ GetSupportedSkusItemArgs{...} }
 type GetSupportedSkusItemArrayInput interface {
 	pulumi.Input
 
@@ -1893,7 +1893,7 @@ type GetSupportedVmwareSoftwareVersionsFilter struct {
 // GetSupportedVmwareSoftwareVersionsFilterInput is an input type that accepts GetSupportedVmwareSoftwareVersionsFilterArgs and GetSupportedVmwareSoftwareVersionsFilterOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsFilterInput` via:
 //
-//          GetSupportedVmwareSoftwareVersionsFilterArgs{...}
+//	GetSupportedVmwareSoftwareVersionsFilterArgs{...}
 type GetSupportedVmwareSoftwareVersionsFilterInput interface {
 	pulumi.Input
 
@@ -1922,7 +1922,7 @@ func (i GetSupportedVmwareSoftwareVersionsFilterArgs) ToGetSupportedVmwareSoftwa
 // GetSupportedVmwareSoftwareVersionsFilterArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsFilterArray and GetSupportedVmwareSoftwareVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsFilterArrayInput` via:
 //
-//          GetSupportedVmwareSoftwareVersionsFilterArray{ GetSupportedVmwareSoftwareVersionsFilterArgs{...} }
+//	GetSupportedVmwareSoftwareVersionsFilterArray{ GetSupportedVmwareSoftwareVersionsFilterArgs{...} }
 type GetSupportedVmwareSoftwareVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2000,7 +2000,7 @@ type GetSupportedVmwareSoftwareVersionsItem struct {
 // GetSupportedVmwareSoftwareVersionsItemInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemArgs and GetSupportedVmwareSoftwareVersionsItemOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsItemInput` via:
 //
-//          GetSupportedVmwareSoftwareVersionsItemArgs{...}
+//	GetSupportedVmwareSoftwareVersionsItemArgs{...}
 type GetSupportedVmwareSoftwareVersionsItemInput interface {
 	pulumi.Input
 
@@ -2030,7 +2030,7 @@ func (i GetSupportedVmwareSoftwareVersionsItemArgs) ToGetSupportedVmwareSoftware
 // GetSupportedVmwareSoftwareVersionsItemArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemArray and GetSupportedVmwareSoftwareVersionsItemArrayOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsItemArrayInput` via:
 //
-//          GetSupportedVmwareSoftwareVersionsItemArray{ GetSupportedVmwareSoftwareVersionsItemArgs{...} }
+//	GetSupportedVmwareSoftwareVersionsItemArray{ GetSupportedVmwareSoftwareVersionsItemArgs{...} }
 type GetSupportedVmwareSoftwareVersionsItemArrayInput interface {
 	pulumi.Input
 

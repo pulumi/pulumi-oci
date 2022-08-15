@@ -30,7 +30,7 @@ type GetAccessRequestHistoryItem struct {
 // GetAccessRequestHistoryItemInput is an input type that accepts GetAccessRequestHistoryItemArgs and GetAccessRequestHistoryItemOutput values.
 // You can construct a concrete instance of `GetAccessRequestHistoryItemInput` via:
 //
-//          GetAccessRequestHistoryItemArgs{...}
+//	GetAccessRequestHistoryItemArgs{...}
 type GetAccessRequestHistoryItemInput interface {
 	pulumi.Input
 
@@ -70,7 +70,7 @@ func (i GetAccessRequestHistoryItemArgs) ToGetAccessRequestHistoryItemOutputWith
 // GetAccessRequestHistoryItemArrayInput is an input type that accepts GetAccessRequestHistoryItemArray and GetAccessRequestHistoryItemArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestHistoryItemArrayInput` via:
 //
-//          GetAccessRequestHistoryItemArray{ GetAccessRequestHistoryItemArgs{...} }
+//	GetAccessRequestHistoryItemArray{ GetAccessRequestHistoryItemArgs{...} }
 type GetAccessRequestHistoryItemArrayInput interface {
 	pulumi.Input
 
@@ -168,7 +168,7 @@ type GetAccessRequestsAccessRequestCollection struct {
 // GetAccessRequestsAccessRequestCollectionInput is an input type that accepts GetAccessRequestsAccessRequestCollectionArgs and GetAccessRequestsAccessRequestCollectionOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionInput` via:
 //
-//          GetAccessRequestsAccessRequestCollectionArgs{...}
+//	GetAccessRequestsAccessRequestCollectionArgs{...}
 type GetAccessRequestsAccessRequestCollectionInput interface {
 	pulumi.Input
 
@@ -195,7 +195,7 @@ func (i GetAccessRequestsAccessRequestCollectionArgs) ToGetAccessRequestsAccessR
 // GetAccessRequestsAccessRequestCollectionArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionArray and GetAccessRequestsAccessRequestCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionArrayInput` via:
 //
-//          GetAccessRequestsAccessRequestCollectionArray{ GetAccessRequestsAccessRequestCollectionArgs{...} }
+//	GetAccessRequestsAccessRequestCollectionArray{ GetAccessRequestsAccessRequestCollectionArgs{...} }
 type GetAccessRequestsAccessRequestCollectionArrayInput interface {
 	pulumi.Input
 
@@ -282,6 +282,8 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Whether the access request was automatically approved.
 	IsAutoApproved bool `pulumi:"isAutoApproved"`
+	// more in detail about the lifeCycleState.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
 	OpctlAdditionalMessage string `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
@@ -321,7 +323,7 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 // GetAccessRequestsAccessRequestCollectionItemInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemArgs and GetAccessRequestsAccessRequestCollectionItemOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemInput` via:
 //
-//          GetAccessRequestsAccessRequestCollectionItemArgs{...}
+//	GetAccessRequestsAccessRequestCollectionItemArgs{...}
 type GetAccessRequestsAccessRequestCollectionItemInput interface {
 	pulumi.Input
 
@@ -354,6 +356,8 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the access request was automatically approved.
 	IsAutoApproved pulumi.BoolInput `pulumi:"isAutoApproved"`
+	// more in detail about the lifeCycleState.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
 	OpctlAdditionalMessage pulumi.StringInput `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
@@ -405,7 +409,7 @@ func (i GetAccessRequestsAccessRequestCollectionItemArgs) ToGetAccessRequestsAcc
 // GetAccessRequestsAccessRequestCollectionItemArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemArray and GetAccessRequestsAccessRequestCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemArrayInput` via:
 //
-//          GetAccessRequestsAccessRequestCollectionItemArray{ GetAccessRequestsAccessRequestCollectionItemArgs{...} }
+//	GetAccessRequestsAccessRequestCollectionItemArray{ GetAccessRequestsAccessRequestCollectionItemArgs{...} }
 type GetAccessRequestsAccessRequestCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -499,6 +503,11 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) Id() pulumi.StringOu
 // Whether the access request was automatically approved.
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) IsAutoApproved() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) bool { return v.IsAutoApproved }).(pulumi.BoolOutput)
+}
+
+// more in detail about the lifeCycleState.
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // Additional message specific to the access request that can be specified by the approver at the time of approval.
@@ -615,7 +624,7 @@ type GetAccessRequestsFilter struct {
 // GetAccessRequestsFilterInput is an input type that accepts GetAccessRequestsFilterArgs and GetAccessRequestsFilterOutput values.
 // You can construct a concrete instance of `GetAccessRequestsFilterInput` via:
 //
-//          GetAccessRequestsFilterArgs{...}
+//	GetAccessRequestsFilterArgs{...}
 type GetAccessRequestsFilterInput interface {
 	pulumi.Input
 
@@ -644,7 +653,7 @@ func (i GetAccessRequestsFilterArgs) ToGetAccessRequestsFilterOutputWithContext(
 // GetAccessRequestsFilterArrayInput is an input type that accepts GetAccessRequestsFilterArray and GetAccessRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsFilterArrayInput` via:
 //
-//          GetAccessRequestsFilterArray{ GetAccessRequestsFilterArgs{...} }
+//	GetAccessRequestsFilterArray{ GetAccessRequestsFilterArgs{...} }
 type GetAccessRequestsFilterArrayInput interface {
 	pulumi.Input
 
@@ -722,7 +731,7 @@ type GetActionProperty struct {
 // GetActionPropertyInput is an input type that accepts GetActionPropertyArgs and GetActionPropertyOutput values.
 // You can construct a concrete instance of `GetActionPropertyInput` via:
 //
-//          GetActionPropertyArgs{...}
+//	GetActionPropertyArgs{...}
 type GetActionPropertyInput interface {
 	pulumi.Input
 
@@ -752,7 +761,7 @@ func (i GetActionPropertyArgs) ToGetActionPropertyOutputWithContext(ctx context.
 // GetActionPropertyArrayInput is an input type that accepts GetActionPropertyArray and GetActionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetActionPropertyArrayInput` via:
 //
-//          GetActionPropertyArray{ GetActionPropertyArgs{...} }
+//	GetActionPropertyArray{ GetActionPropertyArgs{...} }
 type GetActionPropertyArrayInput interface {
 	pulumi.Input
 
@@ -828,7 +837,7 @@ type GetActionsFilter struct {
 // GetActionsFilterInput is an input type that accepts GetActionsFilterArgs and GetActionsFilterOutput values.
 // You can construct a concrete instance of `GetActionsFilterInput` via:
 //
-//          GetActionsFilterArgs{...}
+//	GetActionsFilterArgs{...}
 type GetActionsFilterInput interface {
 	pulumi.Input
 
@@ -858,7 +867,7 @@ func (i GetActionsFilterArgs) ToGetActionsFilterOutputWithContext(ctx context.Co
 // GetActionsFilterArrayInput is an input type that accepts GetActionsFilterArray and GetActionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetActionsFilterArrayInput` via:
 //
-//          GetActionsFilterArray{ GetActionsFilterArgs{...} }
+//	GetActionsFilterArray{ GetActionsFilterArgs{...} }
 type GetActionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -934,7 +943,7 @@ type GetActionsOperatorActionCollection struct {
 // GetActionsOperatorActionCollectionInput is an input type that accepts GetActionsOperatorActionCollectionArgs and GetActionsOperatorActionCollectionOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionInput` via:
 //
-//          GetActionsOperatorActionCollectionArgs{...}
+//	GetActionsOperatorActionCollectionArgs{...}
 type GetActionsOperatorActionCollectionInput interface {
 	pulumi.Input
 
@@ -961,7 +970,7 @@ func (i GetActionsOperatorActionCollectionArgs) ToGetActionsOperatorActionCollec
 // GetActionsOperatorActionCollectionArrayInput is an input type that accepts GetActionsOperatorActionCollectionArray and GetActionsOperatorActionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionArrayInput` via:
 //
-//          GetActionsOperatorActionCollectionArray{ GetActionsOperatorActionCollectionArgs{...} }
+//	GetActionsOperatorActionCollectionArray{ GetActionsOperatorActionCollectionArgs{...} }
 type GetActionsOperatorActionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1045,7 +1054,7 @@ type GetActionsOperatorActionCollectionItem struct {
 // GetActionsOperatorActionCollectionItemInput is an input type that accepts GetActionsOperatorActionCollectionItemArgs and GetActionsOperatorActionCollectionItemOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionItemInput` via:
 //
-//          GetActionsOperatorActionCollectionItemArgs{...}
+//	GetActionsOperatorActionCollectionItemArgs{...}
 type GetActionsOperatorActionCollectionItemInput interface {
 	pulumi.Input
 
@@ -1089,7 +1098,7 @@ func (i GetActionsOperatorActionCollectionItemArgs) ToGetActionsOperatorActionCo
 // GetActionsOperatorActionCollectionItemArrayInput is an input type that accepts GetActionsOperatorActionCollectionItemArray and GetActionsOperatorActionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionItemArrayInput` via:
 //
-//          GetActionsOperatorActionCollectionItemArray{ GetActionsOperatorActionCollectionItemArgs{...} }
+//	GetActionsOperatorActionCollectionItemArray{ GetActionsOperatorActionCollectionItemArgs{...} }
 type GetActionsOperatorActionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1202,7 +1211,7 @@ type GetActionsOperatorActionCollectionItemProperty struct {
 // GetActionsOperatorActionCollectionItemPropertyInput is an input type that accepts GetActionsOperatorActionCollectionItemPropertyArgs and GetActionsOperatorActionCollectionItemPropertyOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionItemPropertyInput` via:
 //
-//          GetActionsOperatorActionCollectionItemPropertyArgs{...}
+//	GetActionsOperatorActionCollectionItemPropertyArgs{...}
 type GetActionsOperatorActionCollectionItemPropertyInput interface {
 	pulumi.Input
 
@@ -1232,7 +1241,7 @@ func (i GetActionsOperatorActionCollectionItemPropertyArgs) ToGetActionsOperator
 // GetActionsOperatorActionCollectionItemPropertyArrayInput is an input type that accepts GetActionsOperatorActionCollectionItemPropertyArray and GetActionsOperatorActionCollectionItemPropertyArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionItemPropertyArrayInput` via:
 //
-//          GetActionsOperatorActionCollectionItemPropertyArray{ GetActionsOperatorActionCollectionItemPropertyArgs{...} }
+//	GetActionsOperatorActionCollectionItemPropertyArray{ GetActionsOperatorActionCollectionItemPropertyArgs{...} }
 type GetActionsOperatorActionCollectionItemPropertyArrayInput interface {
 	pulumi.Input
 
@@ -1307,7 +1316,7 @@ type GetControlAssignmentsFilter struct {
 // GetControlAssignmentsFilterInput is an input type that accepts GetControlAssignmentsFilterArgs and GetControlAssignmentsFilterOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsFilterInput` via:
 //
-//          GetControlAssignmentsFilterArgs{...}
+//	GetControlAssignmentsFilterArgs{...}
 type GetControlAssignmentsFilterInput interface {
 	pulumi.Input
 
@@ -1336,7 +1345,7 @@ func (i GetControlAssignmentsFilterArgs) ToGetControlAssignmentsFilterOutputWith
 // GetControlAssignmentsFilterArrayInput is an input type that accepts GetControlAssignmentsFilterArray and GetControlAssignmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsFilterArrayInput` via:
 //
-//          GetControlAssignmentsFilterArray{ GetControlAssignmentsFilterArgs{...} }
+//	GetControlAssignmentsFilterArray{ GetControlAssignmentsFilterArgs{...} }
 type GetControlAssignmentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1411,7 +1420,7 @@ type GetControlAssignmentsOperatorControlAssignmentCollection struct {
 // GetControlAssignmentsOperatorControlAssignmentCollectionInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionArgs and GetControlAssignmentsOperatorControlAssignmentCollectionOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionInput` via:
 //
-//          GetControlAssignmentsOperatorControlAssignmentCollectionArgs{...}
+//	GetControlAssignmentsOperatorControlAssignmentCollectionArgs{...}
 type GetControlAssignmentsOperatorControlAssignmentCollectionInput interface {
 	pulumi.Input
 
@@ -1438,7 +1447,7 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionArgs) ToGetContr
 // GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionArray and GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput` via:
 //
-//          GetControlAssignmentsOperatorControlAssignmentCollectionArray{ GetControlAssignmentsOperatorControlAssignmentCollectionArgs{...} }
+//	GetControlAssignmentsOperatorControlAssignmentCollectionArray{ GetControlAssignmentsOperatorControlAssignmentCollectionArgs{...} }
 type GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1525,6 +1534,8 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
 	IsLogForwarded bool `pulumi:"isLogForwarded"`
+	// More in detail about the lifeCycleState.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control.
 	OperatorControlId string `pulumi:"operatorControlId"`
 	// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
@@ -1558,7 +1569,7 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 // GetControlAssignmentsOperatorControlAssignmentCollectionItemInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs and GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionItemInput` via:
 //
-//          GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs{...}
+//	GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs{...}
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemInput interface {
 	pulumi.Input
 
@@ -1591,6 +1602,8 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	IsEnforcedAlways pulumi.BoolInput `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
 	IsLogForwarded pulumi.BoolInput `pulumi:"isLogForwarded"`
+	// More in detail about the lifeCycleState.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control.
 	OperatorControlId pulumi.StringInput `pulumi:"operatorControlId"`
 	// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
@@ -1636,7 +1649,7 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ToGetC
 // GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionItemArray and GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayInput` via:
 //
-//          GetControlAssignmentsOperatorControlAssignmentCollectionItemArray{ GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs{...} }
+//	GetControlAssignmentsOperatorControlAssignmentCollectionItemArray{ GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs{...} }
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1738,6 +1751,11 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsEn
 // If set indicates that the audit logs are being forwarded to the relevant remote logging server
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsLogForwarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool { return v.IsLogForwarded }).(pulumi.BoolOutput)
+}
+
+// More in detail about the lifeCycleState.
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The OCID of the operator control.
@@ -1851,7 +1869,7 @@ type GetControlsFilter struct {
 // GetControlsFilterInput is an input type that accepts GetControlsFilterArgs and GetControlsFilterOutput values.
 // You can construct a concrete instance of `GetControlsFilterInput` via:
 //
-//          GetControlsFilterArgs{...}
+//	GetControlsFilterArgs{...}
 type GetControlsFilterInput interface {
 	pulumi.Input
 
@@ -1880,7 +1898,7 @@ func (i GetControlsFilterArgs) ToGetControlsFilterOutputWithContext(ctx context.
 // GetControlsFilterArrayInput is an input type that accepts GetControlsFilterArray and GetControlsFilterArrayOutput values.
 // You can construct a concrete instance of `GetControlsFilterArrayInput` via:
 //
-//          GetControlsFilterArray{ GetControlsFilterArgs{...} }
+//	GetControlsFilterArray{ GetControlsFilterArgs{...} }
 type GetControlsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1955,7 +1973,7 @@ type GetControlsOperatorControlCollection struct {
 // GetControlsOperatorControlCollectionInput is an input type that accepts GetControlsOperatorControlCollectionArgs and GetControlsOperatorControlCollectionOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionInput` via:
 //
-//          GetControlsOperatorControlCollectionArgs{...}
+//	GetControlsOperatorControlCollectionArgs{...}
 type GetControlsOperatorControlCollectionInput interface {
 	pulumi.Input
 
@@ -1982,7 +2000,7 @@ func (i GetControlsOperatorControlCollectionArgs) ToGetControlsOperatorControlCo
 // GetControlsOperatorControlCollectionArrayInput is an input type that accepts GetControlsOperatorControlCollectionArray and GetControlsOperatorControlCollectionArrayOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionArrayInput` via:
 //
-//          GetControlsOperatorControlCollectionArray{ GetControlsOperatorControlCollectionArgs{...} }
+//	GetControlsOperatorControlCollectionArray{ GetControlsOperatorControlCollectionArgs{...} }
 type GetControlsOperatorControlCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2088,7 +2106,7 @@ type GetControlsOperatorControlCollectionItem struct {
 // GetControlsOperatorControlCollectionItemInput is an input type that accepts GetControlsOperatorControlCollectionItemArgs and GetControlsOperatorControlCollectionItemOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionItemInput` via:
 //
-//          GetControlsOperatorControlCollectionItemArgs{...}
+//	GetControlsOperatorControlCollectionItemArgs{...}
 type GetControlsOperatorControlCollectionItemInput interface {
 	pulumi.Input
 
@@ -2152,7 +2170,7 @@ func (i GetControlsOperatorControlCollectionItemArgs) ToGetControlsOperatorContr
 // GetControlsOperatorControlCollectionItemArrayInput is an input type that accepts GetControlsOperatorControlCollectionItemArray and GetControlsOperatorControlCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionItemArrayInput` via:
 //
-//          GetControlsOperatorControlCollectionItemArray{ GetControlsOperatorControlCollectionItemArgs{...} }
+//	GetControlsOperatorControlCollectionItemArray{ GetControlsOperatorControlCollectionItemArgs{...} }
 type GetControlsOperatorControlCollectionItemArrayInput interface {
 	pulumi.Input
 

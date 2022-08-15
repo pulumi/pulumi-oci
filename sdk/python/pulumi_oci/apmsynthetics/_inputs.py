@@ -10,6 +10,7 @@ from .. import _utilities
 
 __all__ = [
     'ConfigConfigurationArgs',
+    'ConfigConfigurationDnsConfigurationArgs',
     'ConfigConfigurationNetworkConfigurationArgs',
     'ConfigConfigurationReqAuthenticationDetailsArgs',
     'ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs',
@@ -33,6 +34,7 @@ __all__ = [
 class ConfigConfigurationArgs:
     def __init__(__self__, *,
                  config_type: Optional[pulumi.Input[str]] = None,
+                 dns_configuration: Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']] = None,
                  is_certificate_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  is_failure_retried: Optional[pulumi.Input[bool]] = None,
                  is_redirection_enabled: Optional[pulumi.Input[bool]] = None,
@@ -48,6 +50,7 @@ class ConfigConfigurationArgs:
                  verify_texts: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]] = None):
         """
         :param pulumi.Input[str] config_type: (Updatable) Type of configuration.
+        :param pulumi.Input['ConfigConfigurationDnsConfigurationArgs'] dns_configuration: (Updatable) Dns settings.
         :param pulumi.Input[bool] is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param pulumi.Input[bool] is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
         :param pulumi.Input[bool] is_redirection_enabled: (Updatable) If redirection enabled, then redirects will be allowed while accessing target URL.
@@ -64,6 +67,8 @@ class ConfigConfigurationArgs:
         """
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
+        if dns_configuration is not None:
+            pulumi.set(__self__, "dns_configuration", dns_configuration)
         if is_certificate_validation_enabled is not None:
             pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         if is_failure_retried is not None:
@@ -102,6 +107,18 @@ class ConfigConfigurationArgs:
     @config_type.setter
     def config_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "config_type", value)
+
+    @property
+    @pulumi.getter(name="dnsConfiguration")
+    def dns_configuration(self) -> Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']]:
+        """
+        (Updatable) Dns settings.
+        """
+        return pulumi.get(self, "dns_configuration")
+
+    @dns_configuration.setter
+    def dns_configuration(self, value: Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']]):
+        pulumi.set(self, "dns_configuration", value)
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -258,6 +275,45 @@ class ConfigConfigurationArgs:
     @verify_texts.setter
     def verify_texts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]]):
         pulumi.set(self, "verify_texts", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationDnsConfigurationArgs:
+    def __init__(__self__, *,
+                 is_override_dns: Optional[pulumi.Input[bool]] = None,
+                 override_dns_ip: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_override_dns: (Updatable) If isOverrideDns is true, then dns will be overridden.
+        :param pulumi.Input[str] override_dns_ip: (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        if is_override_dns is not None:
+            pulumi.set(__self__, "is_override_dns", is_override_dns)
+        if override_dns_ip is not None:
+            pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+
+    @property
+    @pulumi.getter(name="isOverrideDns")
+    def is_override_dns(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If isOverrideDns is true, then dns will be overridden.
+        """
+        return pulumi.get(self, "is_override_dns")
+
+    @is_override_dns.setter
+    def is_override_dns(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_override_dns", value)
+
+    @property
+    @pulumi.getter(name="overrideDnsIp")
+    def override_dns_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        """
+        return pulumi.get(self, "override_dns_ip")
+
+    @override_dns_ip.setter
+    def override_dns_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "override_dns_ip", value)
 
 
 @pulumi.input_type
@@ -754,10 +810,10 @@ class DedicatedVantagePointDvpStackDetailsArgs:
                  dvp_stream_id: pulumi.Input[str],
                  dvp_version: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param pulumi.Input[str] dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param pulumi.Input[str] dvp_stack_type: (Updatable) Type of stack.
-        :param pulumi.Input[str] dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
-        :param pulumi.Input[str] dvp_version: (Updatable) Version of DVP.
+        :param pulumi.Input[str] dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+        :param pulumi.Input[str] dvp_version: (Updatable) Version of the dedicated vantage point.
         """
         pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
         pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
@@ -768,7 +824,7 @@ class DedicatedVantagePointDvpStackDetailsArgs:
     @pulumi.getter(name="dvpStackId")
     def dvp_stack_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stack_id")
 
@@ -792,7 +848,7 @@ class DedicatedVantagePointDvpStackDetailsArgs:
     @pulumi.getter(name="dvpStreamId")
     def dvp_stream_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         """
         return pulumi.get(self, "dvp_stream_id")
 
@@ -804,7 +860,7 @@ class DedicatedVantagePointDvpStackDetailsArgs:
     @pulumi.getter(name="dvpVersion")
     def dvp_version(self) -> pulumi.Input[str]:
         """
-        (Updatable) Version of DVP.
+        (Updatable) Version of the dedicated vantage point.
         """
         return pulumi.get(self, "dvp_version")
 

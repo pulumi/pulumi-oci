@@ -24,32 +24,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oda"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oda"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Oda.NewOdaInstance(ctx, "testOdaInstance", &Oda.OdaInstanceArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ShapeName:     pulumi.String("DEVELOPMENT"),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Oda_instance_description),
-// 			DisplayName: pulumi.Any(_var.Oda_instance_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IdentityDomain:    pulumi.Any(_var.Oda_instance_identity_domain),
-// 			IsRoleBasedAccess: pulumi.Any(_var.Oda_instance_is_role_based_access),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Oda.NewOdaInstance(ctx, "testOdaInstance", &Oda.OdaInstanceArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ShapeName:     pulumi.String("DEVELOPMENT"),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Oda_instance_description),
+//				DisplayName: pulumi.Any(_var.Oda_instance_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IdentityDomain:    pulumi.Any(_var.Oda_instance_identity_domain),
+//				IsRoleBasedAccess: pulumi.Any(_var.Oda_instance_is_role_based_access),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -57,7 +60,9 @@ import (
 // OdaInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
+//
+//	$ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
+//
 // ```
 type OdaInstance struct {
 	pulumi.CustomResourceState
@@ -309,7 +314,7 @@ func (i *OdaInstance) ToOdaInstanceOutputWithContext(ctx context.Context) OdaIns
 // OdaInstanceArrayInput is an input type that accepts OdaInstanceArray and OdaInstanceArrayOutput values.
 // You can construct a concrete instance of `OdaInstanceArrayInput` via:
 //
-//          OdaInstanceArray{ OdaInstanceArgs{...} }
+//	OdaInstanceArray{ OdaInstanceArgs{...} }
 type OdaInstanceArrayInput interface {
 	pulumi.Input
 
@@ -334,7 +339,7 @@ func (i OdaInstanceArray) ToOdaInstanceArrayOutputWithContext(ctx context.Contex
 // OdaInstanceMapInput is an input type that accepts OdaInstanceMap and OdaInstanceMapOutput values.
 // You can construct a concrete instance of `OdaInstanceMapInput` via:
 //
-//          OdaInstanceMap{ "key": OdaInstanceArgs{...} }
+//	OdaInstanceMap{ "key": OdaInstanceArgs{...} }
 type OdaInstanceMapInput interface {
 	pulumi.Input
 

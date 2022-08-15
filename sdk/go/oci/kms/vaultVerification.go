@@ -25,22 +25,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewVaultVerification(ctx, "testReplication", &Kms.VaultVerificationArgs{
-// 			VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			ReplicaRegion: pulumi.Any(_var.Replica_region),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewVaultVerification(ctx, "testReplication", &Kms.VaultVerificationArgs{
+//				VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				ReplicaRegion: pulumi.Any(_var.Replica_region),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type VaultVerification struct {
 	pulumi.CustomResourceState
@@ -149,7 +152,7 @@ func (i *VaultVerification) ToVaultVerificationOutputWithContext(ctx context.Con
 // VaultVerificationArrayInput is an input type that accepts VaultVerificationArray and VaultVerificationArrayOutput values.
 // You can construct a concrete instance of `VaultVerificationArrayInput` via:
 //
-//          VaultVerificationArray{ VaultVerificationArgs{...} }
+//	VaultVerificationArray{ VaultVerificationArgs{...} }
 type VaultVerificationArrayInput interface {
 	pulumi.Input
 
@@ -174,7 +177,7 @@ func (i VaultVerificationArray) ToVaultVerificationArrayOutputWithContext(ctx co
 // VaultVerificationMapInput is an input type that accepts VaultVerificationMap and VaultVerificationMapOutput values.
 // You can construct a concrete instance of `VaultVerificationMapInput` via:
 //
-//          VaultVerificationMap{ "key": VaultVerificationArgs{...} }
+//	VaultVerificationMap{ "key": VaultVerificationArgs{...} }
 type VaultVerificationMapInput interface {
 	pulumi.Input
 

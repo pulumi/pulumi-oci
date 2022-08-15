@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetAcceptedAgreements(ctx, &marketplace.GetAcceptedAgreementsArgs{
-// 			CompartmentId:       _var.Compartment_id,
-// 			AcceptedAgreementId: pulumi.StringRef(oci_marketplace_accepted_agreement.Test_accepted_agreement.Id),
-// 			DisplayName:         pulumi.StringRef(_var.Accepted_agreement_display_name),
-// 			ListingId:           pulumi.StringRef(oci_marketplace_listing.Test_listing.Id),
-// 			PackageVersion:      pulumi.StringRef(_var.Accepted_agreement_package_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetAcceptedAgreements(ctx, &marketplace.GetAcceptedAgreementsArgs{
+//				CompartmentId:       _var.Compartment_id,
+//				AcceptedAgreementId: pulumi.StringRef(oci_marketplace_accepted_agreement.Test_accepted_agreement.Id),
+//				DisplayName:         pulumi.StringRef(_var.Accepted_agreement_display_name),
+//				ListingId:           pulumi.StringRef(oci_marketplace_listing.Test_listing.Id),
+//				PackageVersion:      pulumi.StringRef(_var.Accepted_agreement_package_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAcceptedAgreements(ctx *pulumi.Context, args *GetAcceptedAgreementsArgs, opts ...pulumi.InvokeOption) (*GetAcceptedAgreementsResult, error) {
 	var rv GetAcceptedAgreementsResult

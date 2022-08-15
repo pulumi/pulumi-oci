@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewView(ctx, "testView", &Dns.ViewArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Scope:         pulumi.String("PRIVATE"),
-// 			DefinedTags:   pulumi.Any(_var.View_defined_tags),
-// 			DisplayName:   pulumi.Any(_var.View_display_name),
-// 			FreeformTags:  pulumi.Any(_var.View_freeform_tags),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewView(ctx, "testView", &Dns.ViewArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Scope:         pulumi.String("PRIVATE"),
+//				DefinedTags:   pulumi.Any(_var.View_defined_tags),
+//				DisplayName:   pulumi.Any(_var.View_display_name),
+//				FreeformTags:  pulumi.Any(_var.View_freeform_tags),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,13 +50,17 @@ import (
 // For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/view:View test_view "id"
+//
+//	$ pulumi import oci:Dns/view:View test_view "id"
+//
 // ```
 //
-//  For Views created using `scope`, these Views can be imported using the `id`, e.g.
+//	For Views created using `scope`, these Views can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
+//
+//	$ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
+//
 // ```
 type View struct {
 	pulumi.CustomResourceState
@@ -217,7 +224,7 @@ func (i *View) ToViewOutputWithContext(ctx context.Context) ViewOutput {
 // ViewArrayInput is an input type that accepts ViewArray and ViewArrayOutput values.
 // You can construct a concrete instance of `ViewArrayInput` via:
 //
-//          ViewArray{ ViewArgs{...} }
+//	ViewArray{ ViewArgs{...} }
 type ViewArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +249,7 @@ func (i ViewArray) ToViewArrayOutputWithContext(ctx context.Context) ViewArrayOu
 // ViewMapInput is an input type that accepts ViewMap and ViewMapOutput values.
 // You can construct a concrete instance of `ViewMapInput` via:
 //
-//          ViewMap{ "key": ViewArgs{...} }
+//	ViewMap{ "key": ViewArgs{...} }
 type ViewMapInput interface {
 	pulumi.Input
 

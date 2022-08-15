@@ -22,22 +22,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetFaultDomains(ctx, &identity.GetFaultDomainsArgs{
-// 			AvailabilityDomain: _var.Fault_domain_availability_domain,
-// 			CompartmentId:      _var.Compartment_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetFaultDomains(ctx, &identity.GetFaultDomainsArgs{
+//				AvailabilityDomain: _var.Fault_domain_availability_domain,
+//				CompartmentId:      _var.Compartment_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFaultDomains(ctx *pulumi.Context, args *GetFaultDomainsArgs, opts ...pulumi.InvokeOption) (*GetFaultDomainsResult, error) {
 	var rv GetFaultDomainsResult

@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.NewDedicatedVantagePoint(ctx, "testDedicatedVantagePoint", &ApmSynthetics.DedicatedVantagePointArgs{
-// 			ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
-// 			DisplayName: pulumi.Any(_var.Dedicated_vantage_point_display_name),
-// 			DvpStackDetails: &apmsynthetics.DedicatedVantagePointDvpStackDetailsArgs{
-// 				DvpStackId:   pulumi.Any(oci_resourcemanager_stack.Test_stack.Id),
-// 				DvpStackType: pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_stack_type),
-// 				DvpStreamId:  pulumi.Any(oci_streaming_stream.Test_stream.Id),
-// 				DvpVersion:   pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_version),
-// 			},
-// 			Region: pulumi.Any(_var.Dedicated_vantage_point_region),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Status: pulumi.Any(_var.Dedicated_vantage_point_status),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.NewDedicatedVantagePoint(ctx, "testDedicatedVantagePoint", &ApmSynthetics.DedicatedVantagePointArgs{
+//				ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
+//				DisplayName: pulumi.Any(_var.Dedicated_vantage_point_display_name),
+//				DvpStackDetails: &apmsynthetics.DedicatedVantagePointDvpStackDetailsArgs{
+//					DvpStackId:   pulumi.Any(oci_resourcemanager_stack.Test_stack.Id),
+//					DvpStackType: pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_stack_type),
+//					DvpStreamId:  pulumi.Any(oci_streaming_stream.Test_stream.Id),
+//					DvpVersion:   pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_version),
+//				},
+//				Region: pulumi.Any(_var.Dedicated_vantage_point_region),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Status: pulumi.Any(_var.Dedicated_vantage_point_status),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // DedicatedVantagePoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
+//
+//	$ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
+//
 // ```
 type DedicatedVantagePoint struct {
 	pulumi.CustomResourceState
@@ -69,7 +74,7 @@ type DedicatedVantagePoint struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Details of DVP Stack.
+	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetailsOutput `pulumi:"dvpStackDetails"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -134,7 +139,7 @@ type dedicatedVantagePointState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Details of DVP Stack.
+	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails *DedicatedVantagePointDvpStackDetails `pulumi:"dvpStackDetails"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -159,7 +164,7 @@ type DedicatedVantagePointState struct {
 	DefinedTags pulumi.MapInput
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Details of DVP Stack.
+	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetailsPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -188,7 +193,7 @@ type dedicatedVantagePointArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Details of DVP Stack.
+	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetails `pulumi:"dvpStackDetails"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -206,7 +211,7 @@ type DedicatedVantagePointArgs struct {
 	DefinedTags pulumi.MapInput
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringInput
-	// (Updatable) Details of DVP Stack.
+	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetailsInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -242,7 +247,7 @@ func (i *DedicatedVantagePoint) ToDedicatedVantagePointOutputWithContext(ctx con
 // DedicatedVantagePointArrayInput is an input type that accepts DedicatedVantagePointArray and DedicatedVantagePointArrayOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointArrayInput` via:
 //
-//          DedicatedVantagePointArray{ DedicatedVantagePointArgs{...} }
+//	DedicatedVantagePointArray{ DedicatedVantagePointArgs{...} }
 type DedicatedVantagePointArrayInput interface {
 	pulumi.Input
 
@@ -267,7 +272,7 @@ func (i DedicatedVantagePointArray) ToDedicatedVantagePointArrayOutputWithContex
 // DedicatedVantagePointMapInput is an input type that accepts DedicatedVantagePointMap and DedicatedVantagePointMapOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointMapInput` via:
 //
-//          DedicatedVantagePointMap{ "key": DedicatedVantagePointArgs{...} }
+//	DedicatedVantagePointMap{ "key": DedicatedVantagePointArgs{...} }
 type DedicatedVantagePointMapInput interface {
 	pulumi.Input
 

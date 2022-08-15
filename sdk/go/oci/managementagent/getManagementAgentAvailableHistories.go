@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
 //
-// Lists the availability history records of Management Agent
+// # Lists the availability history records of Management Agent
 //
 // ## Example Usage
 //
@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgentAvailableHistories(ctx, &managementagent.GetManagementAgentAvailableHistoriesArgs{
-// 			ManagementAgentId:                      oci_management_agent_management_agent.Test_management_agent.Id,
-// 			TimeAvailabilityStatusEndedGreaterThan: pulumi.StringRef(_var.Management_agent_available_history_time_availability_status_ended_greater_than),
-// 			TimeAvailabilityStatusStartedLessThan:  pulumi.StringRef(_var.Management_agent_available_history_time_availability_status_started_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgentAvailableHistories(ctx, &managementagent.GetManagementAgentAvailableHistoriesArgs{
+//				ManagementAgentId:                      oci_management_agent_management_agent.Test_management_agent.Id,
+//				TimeAvailabilityStatusEndedGreaterThan: pulumi.StringRef(_var.Management_agent_available_history_time_availability_status_ended_greater_than),
+//				TimeAvailabilityStatusStartedLessThan:  pulumi.StringRef(_var.Management_agent_available_history_time_availability_status_started_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementAgentAvailableHistories(ctx *pulumi.Context, args *GetManagementAgentAvailableHistoriesArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentAvailableHistoriesResult, error) {
 	var rv GetManagementAgentAvailableHistoriesResult

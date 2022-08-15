@@ -21,50 +21,53 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.NewProfile(ctx, "testProfile", &Optimizer.ProfileArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Description:   pulumi.Any(_var.Profile_description),
-// 			LevelsConfiguration: &optimizer.ProfileLevelsConfigurationArgs{
-// 				Items: optimizer.ProfileLevelsConfigurationItemArray{
-// 					&optimizer.ProfileLevelsConfigurationItemArgs{
-// 						Level:            pulumi.Any(_var.Profile_levels_configuration_items_level),
-// 						RecommendationId: pulumi.Any(oci_optimizer_recommendation.Test_recommendation.Id),
-// 					},
-// 				},
-// 			},
-// 			AggregationIntervalInDays: pulumi.Any(_var.Profile_aggregation_interval_in_days),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			TargetCompartments: &optimizer.ProfileTargetCompartmentsArgs{
-// 				Items: pulumi.Any(_var.Profile_target_compartments_items),
-// 			},
-// 			TargetTags: &optimizer.ProfileTargetTagsArgs{
-// 				Items: optimizer.ProfileTargetTagsItemArray{
-// 					&optimizer.ProfileTargetTagsItemArgs{
-// 						TagDefinitionName: pulumi.Any(_var.Profile_target_tags_items_tag_definition_name),
-// 						TagNamespaceName:  pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Name),
-// 						TagValueType:      pulumi.Any(_var.Profile_target_tags_items_tag_value_type),
-// 						TagValues:         pulumi.Any(_var.Profile_target_tags_items_tag_values),
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.NewProfile(ctx, "testProfile", &Optimizer.ProfileArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Description:   pulumi.Any(_var.Profile_description),
+//				LevelsConfiguration: &optimizer.ProfileLevelsConfigurationArgs{
+//					Items: optimizer.ProfileLevelsConfigurationItemArray{
+//						&optimizer.ProfileLevelsConfigurationItemArgs{
+//							Level:            pulumi.Any(_var.Profile_levels_configuration_items_level),
+//							RecommendationId: pulumi.Any(oci_optimizer_recommendation.Test_recommendation.Id),
+//						},
+//					},
+//				},
+//				AggregationIntervalInDays: pulumi.Any(_var.Profile_aggregation_interval_in_days),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				TargetCompartments: &optimizer.ProfileTargetCompartmentsArgs{
+//					Items: pulumi.Any(_var.Profile_target_compartments_items),
+//				},
+//				TargetTags: &optimizer.ProfileTargetTagsArgs{
+//					Items: optimizer.ProfileTargetTagsItemArray{
+//						&optimizer.ProfileTargetTagsItemArgs{
+//							TagDefinitionName: pulumi.Any(_var.Profile_target_tags_items_tag_definition_name),
+//							TagNamespaceName:  pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Name),
+//							TagValueType:      pulumi.Any(_var.Profile_target_tags_items_tag_value_type),
+//							TagValues:         pulumi.Any(_var.Profile_target_tags_items_tag_values),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -72,7 +75,9 @@ import (
 // Profiles can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
+//
+//	$ pulumi import oci:Optimizer/profile:Profile test_profile "id"
+//
 // ```
 type Profile struct {
 	pulumi.CustomResourceState
@@ -267,7 +272,7 @@ func (i *Profile) ToProfileOutputWithContext(ctx context.Context) ProfileOutput 
 // ProfileArrayInput is an input type that accepts ProfileArray and ProfileArrayOutput values.
 // You can construct a concrete instance of `ProfileArrayInput` via:
 //
-//          ProfileArray{ ProfileArgs{...} }
+//	ProfileArray{ ProfileArgs{...} }
 type ProfileArrayInput interface {
 	pulumi.Input
 
@@ -292,7 +297,7 @@ func (i ProfileArray) ToProfileArrayOutputWithContext(ctx context.Context) Profi
 // ProfileMapInput is an input type that accepts ProfileMap and ProfileMapOutput values.
 // You can construct a concrete instance of `ProfileMapInput` via:
 //
-//          ProfileMap{ "key": ProfileArgs{...} }
+//	ProfileMap{ "key": ProfileArgs{...} }
 type ProfileMapInput interface {
 	pulumi.Input
 

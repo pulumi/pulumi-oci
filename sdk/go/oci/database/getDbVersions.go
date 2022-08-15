@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbVersions(ctx, &database.GetDbVersionsArgs{
-// 			CompartmentId:                    _var.Compartment_id,
-// 			DbSystemId:                       pulumi.StringRef(oci_database_db_system.Test_db_system.Id),
-// 			DbSystemShape:                    pulumi.StringRef(_var.Db_version_db_system_shape),
-// 			IsDatabaseSoftwareImageSupported: pulumi.BoolRef(_var.Db_version_is_database_software_image_supported),
-// 			IsUpgradeSupported:               pulumi.BoolRef(_var.Db_version_is_upgrade_supported),
-// 			StorageManagement:                pulumi.StringRef(_var.Db_version_storage_management),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbVersions(ctx, &database.GetDbVersionsArgs{
+//				CompartmentId:                    _var.Compartment_id,
+//				DbSystemId:                       pulumi.StringRef(oci_database_db_system.Test_db_system.Id),
+//				DbSystemShape:                    pulumi.StringRef(_var.Db_version_db_system_shape),
+//				IsDatabaseSoftwareImageSupported: pulumi.BoolRef(_var.Db_version_is_database_software_image_supported),
+//				IsUpgradeSupported:               pulumi.BoolRef(_var.Db_version_is_upgrade_supported),
+//				StorageManagement:                pulumi.StringRef(_var.Db_version_storage_management),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbVersions(ctx *pulumi.Context, args *GetDbVersionsArgs, opts ...pulumi.InvokeOption) (*GetDbVersionsResult, error) {
 	var rv GetDbVersionsResult

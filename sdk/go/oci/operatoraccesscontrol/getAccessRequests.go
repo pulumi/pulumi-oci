@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.GetAccessRequests(ctx, &operatoraccesscontrol.GetAccessRequestsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			ResourceName:  pulumi.StringRef(_var.Access_request_resource_name),
-// 			ResourceType:  pulumi.StringRef(_var.Access_request_resource_type),
-// 			State:         pulumi.StringRef(_var.Access_request_state),
-// 			TimeEnd:       pulumi.StringRef(_var.Access_request_time_end),
-// 			TimeStart:     pulumi.StringRef(_var.Access_request_time_start),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.GetAccessRequests(ctx, &operatoraccesscontrol.GetAccessRequestsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				ResourceName:  pulumi.StringRef(_var.Access_request_resource_name),
+//				ResourceType:  pulumi.StringRef(_var.Access_request_resource_type),
+//				State:         pulumi.StringRef(_var.Access_request_state),
+//				TimeEnd:       pulumi.StringRef(_var.Access_request_time_end),
+//				TimeStart:     pulumi.StringRef(_var.Access_request_time_start),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAccessRequests(ctx *pulumi.Context, args *GetAccessRequestsArgs, opts ...pulumi.InvokeOption) (*GetAccessRequestsResult, error) {
 	var rv GetAccessRequestsResult

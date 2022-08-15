@@ -33,6 +33,18 @@ __all__ = [
     'GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult',
     'GetInstallationSitesInstallationSiteCollectionItemItemJreResult',
     'GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult',
+    'GetJavaFamiliesFilterResult',
+    'GetJavaFamiliesJavaFamilyCollectionResult',
+    'GetJavaFamiliesJavaFamilyCollectionItemResult',
+    'GetJavaReleaseArtifactResult',
+    'GetJavaReleaseFamilyDetailResult',
+    'GetJavaReleaseLicenseDetailResult',
+    'GetJavaReleasesFilterResult',
+    'GetJavaReleasesJavaReleaseCollectionResult',
+    'GetJavaReleasesJavaReleaseCollectionItemResult',
+    'GetJavaReleasesJavaReleaseCollectionItemArtifactResult',
+    'GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult',
+    'GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult',
     'GetListJreUsageItemResult',
     'GetListJreUsageItemOperatingSystemResult',
 ]
@@ -362,6 +374,7 @@ class GetFleetsFleetCollectionItemResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  inventory_logs: Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult'],
+                 is_advanced_features_enabled: bool,
                  operation_logs: Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -378,6 +391,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param str id: The ID of the Fleet.
         :param Sequence['GetFleetsFleetCollectionItemInventoryLogArgs'] inventory_logs: Custom Log for inventory or operation log.
+        :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
         :param Sequence['GetFleetsFleetCollectionItemOperationLogArgs'] operation_logs: Custom Log for inventory or operation log.
         :param str state: The state of the lifecycle.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -394,6 +408,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "inventory_logs", inventory_logs)
+        pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
         pulumi.set(__self__, "operation_logs", operation_logs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -486,6 +501,14 @@ class GetFleetsFleetCollectionItemResult(dict):
         Custom Log for inventory or operation log.
         """
         return pulumi.get(self, "inventory_logs")
+
+    @property
+    @pulumi.getter(name="isAdvancedFeaturesEnabled")
+    def is_advanced_features_enabled(self) -> bool:
+        """
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        """
+        return pulumi.get(self, "is_advanced_features_enabled")
 
     @property
     @pulumi.getter(name="operationLogs")
@@ -780,16 +803,19 @@ class GetInstallationSiteItemOperatingSystemResult(dict):
     def __init__(__self__, *,
                  architecture: str,
                  family: str,
+                 managed_instance_count: int,
                  name: str,
                  version: str):
         """
         :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
         :param str family: The operating system type, such as Windows or Linux
+        :param int managed_instance_count: Number of instances running the operating system
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
         pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "family", family)
+        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "version", version)
 
@@ -808,6 +834,14 @@ class GetInstallationSiteItemOperatingSystemResult(dict):
         The operating system type, such as Windows or Linux
         """
         return pulumi.get(self, "family")
+
+    @property
+    @pulumi.getter(name="managedInstanceCount")
+    def managed_instance_count(self) -> int:
+        """
+        Number of instances running the operating system
+        """
+        return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter
@@ -1097,16 +1131,19 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
     def __init__(__self__, *,
                  architecture: str,
                  family: str,
+                 managed_instance_count: int,
                  name: str,
                  version: str):
         """
         :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
         :param str family: The operating system type, such as Windows or Linux
+        :param int managed_instance_count: Number of instances running the operating system
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
         pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "family", family)
+        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "version", version)
 
@@ -1127,6 +1164,14 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
         return pulumi.get(self, "family")
 
     @property
+    @pulumi.getter(name="managedInstanceCount")
+    def managed_instance_count(self) -> int:
+        """
+        Number of instances running the operating system
+        """
+        return pulumi.get(self, "managed_instance_count")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -1144,12 +1189,609 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
 
 
 @pulumi.output_type
+class GetJavaFamiliesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaFamiliesJavaFamilyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 doc_url: str,
+                 end_of_support_life_date: str,
+                 family_version: str,
+                 support_type: str):
+        """
+        :param str display_name: The display name for the Java family.
+        :param str doc_url: Link to access the documentation for the release.
+        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str family_version: The version identifier for the Java family.
+        :param str support_type: This indicates the support category for the Java release family.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "doc_url", doc_url)
+        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "support_type", support_type)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The display name for the Java family.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="docUrl")
+    def doc_url(self) -> str:
+        """
+        Link to access the documentation for the release.
+        """
+        return pulumi.get(self, "doc_url")
+
+    @property
+    @pulumi.getter(name="endOfSupportLifeDate")
+    def end_of_support_life_date(self) -> str:
+        """
+        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "end_of_support_life_date")
+
+    @property
+    @pulumi.getter(name="familyVersion")
+    def family_version(self) -> str:
+        """
+        The version identifier for the Java family.
+        """
+        return pulumi.get(self, "family_version")
+
+    @property
+    @pulumi.getter(name="supportType")
+    def support_type(self) -> str:
+        """
+        This indicates the support category for the Java release family.
+        """
+        return pulumi.get(self, "support_type")
+
+
+@pulumi.output_type
+class GetJavaReleaseArtifactResult(dict):
+    def __init__(__self__, *,
+                 approximate_file_size_in_bytes: str,
+                 artifact_content_type: str,
+                 artifact_description: str,
+                 artifact_id: str,
+                 sha256: str):
+        """
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str artifact_content_type: Product content type of this artifact.
+        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_id: Unique identifier for the artifact.
+        :param str sha256: SHA256 checksum of the artifact.
+        """
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> str:
+        """
+        Product content type of this artifact.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @property
+    @pulumi.getter(name="artifactDescription")
+    def artifact_description(self) -> str:
+        """
+        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        """
+        return pulumi.get(self, "artifact_description")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        Unique identifier for the artifact.
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the artifact.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
+class GetJavaReleaseFamilyDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 doc_url: str,
+                 end_of_support_life_date: str,
+                 family_version: str,
+                 support_type: str):
+        """
+        :param str display_name: Commonly used name for the license type.
+        :param str doc_url: Link to access the documentation for the release.
+        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str family_version: Java release family identifier.
+        :param str support_type: This indicates the support category for the Java release family.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "doc_url", doc_url)
+        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "support_type", support_type)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Commonly used name for the license type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="docUrl")
+    def doc_url(self) -> str:
+        """
+        Link to access the documentation for the release.
+        """
+        return pulumi.get(self, "doc_url")
+
+    @property
+    @pulumi.getter(name="endOfSupportLifeDate")
+    def end_of_support_life_date(self) -> str:
+        """
+        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "end_of_support_life_date")
+
+    @property
+    @pulumi.getter(name="familyVersion")
+    def family_version(self) -> str:
+        """
+        Java release family identifier.
+        """
+        return pulumi.get(self, "family_version")
+
+    @property
+    @pulumi.getter(name="supportType")
+    def support_type(self) -> str:
+        """
+        This indicates the support category for the Java release family.
+        """
+        return pulumi.get(self, "support_type")
+
+
+@pulumi.output_type
+class GetJavaReleaseLicenseDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 license_type: str,
+                 license_url: str):
+        """
+        :param str display_name: Commonly used name for the license type.
+        :param str license_type: License type for the Java version.
+        :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "license_url", license_url)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Commonly used name for the license type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        License type for the Java version.
+        """
+        return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="licenseUrl")
+    def license_url(self) -> str:
+        """
+        Publicly accessible license URL containing the detailed terms and conditions.
+        """
+        return pulumi.get(self, "license_url")
+
+
+@pulumi.output_type
+class GetJavaReleasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult'],
+                 family_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult'],
+                 family_version: str,
+                 license_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult'],
+                 license_type: str,
+                 parent_release_version: str,
+                 release_date: str,
+                 release_notes_url: str,
+                 release_type: str,
+                 release_version: str,
+                 security_status: str):
+        """
+        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemArtifactArgs'] artifacts: List of Java artifacts.
+        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs'] family_details: Complete information of a specific Java release family.
+        :param str family_version: The version identifier for the Java family.
+        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs'] license_details: Information about a license type for Java.
+        :param str license_type: Java license type.
+        :param str parent_release_version: Parent Java release version identifier. This is applicable for BPR releases.
+        :param str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str release_notes_url: Release notes associated with the Java version.
+        :param str release_type: Java release type.
+        :param str release_version: Unique Java release version identifier
+        :param str security_status: The security status of the Java version.
+        """
+        pulumi.set(__self__, "artifacts", artifacts)
+        pulumi.set(__self__, "family_details", family_details)
+        pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "license_details", license_details)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "parent_release_version", parent_release_version)
+        pulumi.set(__self__, "release_date", release_date)
+        pulumi.set(__self__, "release_notes_url", release_notes_url)
+        pulumi.set(__self__, "release_type", release_type)
+        pulumi.set(__self__, "release_version", release_version)
+        pulumi.set(__self__, "security_status", security_status)
+
+    @property
+    @pulumi.getter
+    def artifacts(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult']:
+        """
+        List of Java artifacts.
+        """
+        return pulumi.get(self, "artifacts")
+
+    @property
+    @pulumi.getter(name="familyDetails")
+    def family_details(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult']:
+        """
+        Complete information of a specific Java release family.
+        """
+        return pulumi.get(self, "family_details")
+
+    @property
+    @pulumi.getter(name="familyVersion")
+    def family_version(self) -> str:
+        """
+        The version identifier for the Java family.
+        """
+        return pulumi.get(self, "family_version")
+
+    @property
+    @pulumi.getter(name="licenseDetails")
+    def license_details(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult']:
+        """
+        Information about a license type for Java.
+        """
+        return pulumi.get(self, "license_details")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        Java license type.
+        """
+        return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="parentReleaseVersion")
+    def parent_release_version(self) -> str:
+        """
+        Parent Java release version identifier. This is applicable for BPR releases.
+        """
+        return pulumi.get(self, "parent_release_version")
+
+    @property
+    @pulumi.getter(name="releaseDate")
+    def release_date(self) -> str:
+        """
+        The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "release_date")
+
+    @property
+    @pulumi.getter(name="releaseNotesUrl")
+    def release_notes_url(self) -> str:
+        """
+        Release notes associated with the Java version.
+        """
+        return pulumi.get(self, "release_notes_url")
+
+    @property
+    @pulumi.getter(name="releaseType")
+    def release_type(self) -> str:
+        """
+        Java release type.
+        """
+        return pulumi.get(self, "release_type")
+
+    @property
+    @pulumi.getter(name="releaseVersion")
+    def release_version(self) -> str:
+        """
+        Unique Java release version identifier
+        """
+        return pulumi.get(self, "release_version")
+
+    @property
+    @pulumi.getter(name="securityStatus")
+    def security_status(self) -> str:
+        """
+        The security status of the Java version.
+        """
+        return pulumi.get(self, "security_status")
+
+
+@pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
+    def __init__(__self__, *,
+                 approximate_file_size_in_bytes: str,
+                 artifact_content_type: str,
+                 artifact_description: str,
+                 artifact_id: str,
+                 sha256: str):
+        """
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str artifact_content_type: Product content type of this artifact.
+        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_id: Unique identifier for the artifact.
+        :param str sha256: SHA256 checksum of the artifact.
+        """
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> str:
+        """
+        Product content type of this artifact.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @property
+    @pulumi.getter(name="artifactDescription")
+    def artifact_description(self) -> str:
+        """
+        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        """
+        return pulumi.get(self, "artifact_description")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        Unique identifier for the artifact.
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the artifact.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 doc_url: str,
+                 end_of_support_life_date: str,
+                 family_version: str,
+                 support_type: str):
+        """
+        :param str display_name: Commonly used name for the license type.
+        :param str doc_url: Link to access the documentation for the release.
+        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str family_version: The version identifier for the Java family.
+        :param str support_type: This indicates the support category for the Java release family.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "doc_url", doc_url)
+        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "support_type", support_type)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Commonly used name for the license type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="docUrl")
+    def doc_url(self) -> str:
+        """
+        Link to access the documentation for the release.
+        """
+        return pulumi.get(self, "doc_url")
+
+    @property
+    @pulumi.getter(name="endOfSupportLifeDate")
+    def end_of_support_life_date(self) -> str:
+        """
+        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "end_of_support_life_date")
+
+    @property
+    @pulumi.getter(name="familyVersion")
+    def family_version(self) -> str:
+        """
+        The version identifier for the Java family.
+        """
+        return pulumi.get(self, "family_version")
+
+    @property
+    @pulumi.getter(name="supportType")
+    def support_type(self) -> str:
+        """
+        This indicates the support category for the Java release family.
+        """
+        return pulumi.get(self, "support_type")
+
+
+@pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 license_type: str,
+                 license_url: str):
+        """
+        :param str display_name: Commonly used name for the license type.
+        :param str license_type: Java license type.
+        :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "license_url", license_url)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Commonly used name for the license type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        Java license type.
+        """
+        return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="licenseUrl")
+    def license_url(self) -> str:
+        """
+        Publicly accessible license URL containing the detailed terms and conditions.
+        """
+        return pulumi.get(self, "license_url")
+
+
+@pulumi.output_type
 class GetListJreUsageItemResult(dict):
     def __init__(__self__, *,
                  approximate_application_count: int,
                  approximate_installation_count: int,
                  approximate_managed_instance_count: int,
                  approximate_pending_work_request_count: int,
+                 days_under_security_baseline: int,
                  distribution: str,
                  end_of_support_life_date: str,
                  fleet_id: str,
@@ -1169,11 +1811,12 @@ class GetListJreUsageItemResult(dict):
         :param int approximate_installation_count: The approximate count of installations that are installations of this Java Runtime.
         :param int approximate_managed_instance_count: The approximate count of the managed instances that report this Java Runtime.
         :param int approximate_pending_work_request_count: The approximate count of work requests working on this Java Runtime.
+        :param int days_under_security_baseline: The number of days since this release has been under the security baseline.
         :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
         :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
         :param str id: The internal identifier of the Java Runtime.
-        :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+        :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
         :param Sequence['GetListJreUsageItemOperatingSystemArgs'] operating_systems: The operating systems that have this Java Runtime installed.
         :param str release_date: The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str security_status: The security status of the Java Runtime.
@@ -1188,6 +1831,7 @@ class GetListJreUsageItemResult(dict):
         pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
         pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
         pulumi.set(__self__, "approximate_pending_work_request_count", approximate_pending_work_request_count)
+        pulumi.set(__self__, "days_under_security_baseline", days_under_security_baseline)
         pulumi.set(__self__, "distribution", distribution)
         pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
         pulumi.set(__self__, "fleet_id", fleet_id)
@@ -1236,6 +1880,14 @@ class GetListJreUsageItemResult(dict):
         return pulumi.get(self, "approximate_pending_work_request_count")
 
     @property
+    @pulumi.getter(name="daysUnderSecurityBaseline")
+    def days_under_security_baseline(self) -> int:
+        """
+        The number of days since this release has been under the security baseline.
+        """
+        return pulumi.get(self, "days_under_security_baseline")
+
+    @property
     @pulumi.getter
     def distribution(self) -> str:
         """
@@ -1255,7 +1907,7 @@ class GetListJreUsageItemResult(dict):
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
         """
         return pulumi.get(self, "fleet_id")
 
@@ -1271,7 +1923,7 @@ class GetListJreUsageItemResult(dict):
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
         """
         return pulumi.get(self, "managed_instance_id")
 
@@ -1353,16 +2005,19 @@ class GetListJreUsageItemOperatingSystemResult(dict):
     def __init__(__self__, *,
                  architecture: str,
                  family: str,
+                 managed_instance_count: int,
                  name: str,
                  version: str):
         """
         :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
         :param str family: The operating system type, such as Windows or Linux
+        :param int managed_instance_count: Number of instances running the operating system
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the Java Runtime.
         """
         pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "family", family)
+        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "version", version)
 
@@ -1381,6 +2036,14 @@ class GetListJreUsageItemOperatingSystemResult(dict):
         The operating system type, such as Windows or Linux
         """
         return pulumi.get(self, "family")
+
+    @property
+    @pulumi.getter(name="managedInstanceCount")
+    def managed_instance_count(self) -> int:
+        """
+        Number of instances running the operating system
+        """
+        return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter

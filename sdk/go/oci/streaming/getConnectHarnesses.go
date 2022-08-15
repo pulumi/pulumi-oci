@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Streaming.GetConnectHarnesses(ctx, &streaming.GetConnectHarnessesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Connect_harness_id),
-// 			Name:          pulumi.StringRef(_var.Connect_harness_name),
-// 			State:         pulumi.StringRef(_var.Connect_harness_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Streaming.GetConnectHarnesses(ctx, &streaming.GetConnectHarnessesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Connect_harness_id),
+//				Name:          pulumi.StringRef(_var.Connect_harness_name),
+//				State:         pulumi.StringRef(_var.Connect_harness_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetConnectHarnesses(ctx *pulumi.Context, args *GetConnectHarnessesArgs, opts ...pulumi.InvokeOption) (*GetConnectHarnessesResult, error) {
 	var rv GetConnectHarnessesResult

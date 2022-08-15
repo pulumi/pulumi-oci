@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.GetBdsInstanceMetastoreConfigs(ctx, &bigdataservice.GetBdsInstanceMetastoreConfigsArgs{
-// 			BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
-// 			BdsApiKeyId:   pulumi.StringRef(oci_identity_api_key.Test_api_key.Id),
-// 			DisplayName:   pulumi.StringRef(_var.Bds_instance_metastore_config_display_name),
-// 			MetastoreId:   pulumi.StringRef(oci_datacatalog_metastore.Test_metastore.Id),
-// 			MetastoreType: pulumi.StringRef(_var.Bds_instance_metastore_config_metastore_type),
-// 			State:         pulumi.StringRef(_var.Bds_instance_metastore_config_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.GetBdsInstanceMetastoreConfigs(ctx, &bigdataservice.GetBdsInstanceMetastoreConfigsArgs{
+//				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
+//				BdsApiKeyId:   pulumi.StringRef(oci_identity_api_key.Test_api_key.Id),
+//				DisplayName:   pulumi.StringRef(_var.Bds_instance_metastore_config_display_name),
+//				MetastoreId:   pulumi.StringRef(oci_datacatalog_metastore.Test_metastore.Id),
+//				MetastoreType: pulumi.StringRef(_var.Bds_instance_metastore_config_metastore_type),
+//				State:         pulumi.StringRef(_var.Bds_instance_metastore_config_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBdsInstanceMetastoreConfigs(ctx *pulumi.Context, args *GetBdsInstanceMetastoreConfigsArgs, opts ...pulumi.InvokeOption) (*GetBdsInstanceMetastoreConfigsResult, error) {
 	var rv GetBdsInstanceMetastoreConfigsResult

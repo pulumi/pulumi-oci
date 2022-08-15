@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetSecurityZones(ctx, &cloudguard.GetSecurityZonesArgs{
-// 			CompartmentId:                    _var.Compartment_id,
-// 			DisplayName:                      pulumi.StringRef(_var.Security_zone_display_name),
-// 			Id:                               pulumi.StringRef(_var.Security_zone_id),
-// 			IsRequiredSecurityZonesInSubtree: pulumi.BoolRef(_var.Security_zone_is_required_security_zones_in_subtree),
-// 			SecurityRecipeId:                 pulumi.StringRef(oci_cloud_guard_security_recipe.Test_security_recipe.Id),
-// 			State:                            pulumi.StringRef(_var.Security_zone_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetSecurityZones(ctx, &cloudguard.GetSecurityZonesArgs{
+//				CompartmentId:                    _var.Compartment_id,
+//				DisplayName:                      pulumi.StringRef(_var.Security_zone_display_name),
+//				Id:                               pulumi.StringRef(_var.Security_zone_id),
+//				IsRequiredSecurityZonesInSubtree: pulumi.BoolRef(_var.Security_zone_is_required_security_zones_in_subtree),
+//				SecurityRecipeId:                 pulumi.StringRef(oci_cloud_guard_security_recipe.Test_security_recipe.Id),
+//				State:                            pulumi.StringRef(_var.Security_zone_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecurityZones(ctx *pulumi.Context, args *GetSecurityZonesArgs, opts ...pulumi.InvokeOption) (*GetSecurityZonesResult, error) {
 	var rv GetSecurityZonesResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.GetTopUtilizedResources(ctx, &licensemanager.GetTopUtilizedResourcesArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Top_utilized_resource_is_compartment_id_in_subtree),
-// 			ResourceUnitType:         pulumi.StringRef(_var.Top_utilized_resource_resource_unit_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.GetTopUtilizedResources(ctx, &licensemanager.GetTopUtilizedResourcesArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Top_utilized_resource_is_compartment_id_in_subtree),
+//				ResourceUnitType:         pulumi.StringRef(_var.Top_utilized_resource_resource_unit_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTopUtilizedResources(ctx *pulumi.Context, args *GetTopUtilizedResourcesArgs, opts ...pulumi.InvokeOption) (*GetTopUtilizedResourcesResult, error) {
 	var rv GetTopUtilizedResourcesResult

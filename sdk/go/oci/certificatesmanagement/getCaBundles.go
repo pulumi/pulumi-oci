@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetCaBundles(ctx, &certificatesmanagement.GetCaBundlesArgs{
-// 			CaBundleId:    pulumi.StringRef(oci_certificates_management_ca_bundle.Test_ca_bundle.Id),
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			Name:          pulumi.StringRef(_var.Ca_bundle_name),
-// 			State:         pulumi.StringRef(_var.Ca_bundle_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetCaBundles(ctx, &certificatesmanagement.GetCaBundlesArgs{
+//				CaBundleId:    pulumi.StringRef(oci_certificates_management_ca_bundle.Test_ca_bundle.Id),
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				Name:          pulumi.StringRef(_var.Ca_bundle_name),
+//				State:         pulumi.StringRef(_var.Ca_bundle_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCaBundles(ctx *pulumi.Context, args *GetCaBundlesArgs, opts ...pulumi.InvokeOption) (*GetCaBundlesResult, error) {
 	var rv GetCaBundlesResult

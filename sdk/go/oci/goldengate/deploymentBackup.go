@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GoldenGate.NewDeploymentBackup(ctx, "testDeploymentBackup", &GoldenGate.DeploymentBackupArgs{
-// 			Bucket:        pulumi.Any(_var.Deployment_backup_bucket),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DeploymentId:  pulumi.Any(oci_golden_gate_deployment.Test_deployment.Id),
-// 			DisplayName:   pulumi.Any(_var.Deployment_backup_display_name),
-// 			Namespace:     pulumi.Any(_var.Deployment_backup_namespace),
-// 			Object:        pulumi.Any(_var.Deployment_backup_object),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GoldenGate.NewDeploymentBackup(ctx, "testDeploymentBackup", &GoldenGate.DeploymentBackupArgs{
+//				Bucket:        pulumi.Any(_var.Deployment_backup_bucket),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DeploymentId:  pulumi.Any(oci_golden_gate_deployment.Test_deployment.Id),
+//				DisplayName:   pulumi.Any(_var.Deployment_backup_display_name),
+//				Namespace:     pulumi.Any(_var.Deployment_backup_namespace),
+//				Object:        pulumi.Any(_var.Deployment_backup_object),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // DeploymentBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
+//
+//	$ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
+//
 // ```
 type DeploymentBackup struct {
 	pulumi.CustomResourceState
@@ -296,7 +301,7 @@ func (i *DeploymentBackup) ToDeploymentBackupOutputWithContext(ctx context.Conte
 // DeploymentBackupArrayInput is an input type that accepts DeploymentBackupArray and DeploymentBackupArrayOutput values.
 // You can construct a concrete instance of `DeploymentBackupArrayInput` via:
 //
-//          DeploymentBackupArray{ DeploymentBackupArgs{...} }
+//	DeploymentBackupArray{ DeploymentBackupArgs{...} }
 type DeploymentBackupArrayInput interface {
 	pulumi.Input
 
@@ -321,7 +326,7 @@ func (i DeploymentBackupArray) ToDeploymentBackupArrayOutputWithContext(ctx cont
 // DeploymentBackupMapInput is an input type that accepts DeploymentBackupMap and DeploymentBackupMapOutput values.
 // You can construct a concrete instance of `DeploymentBackupMapInput` via:
 //
-//          DeploymentBackupMap{ "key": DeploymentBackupArgs{...} }
+//	DeploymentBackupMap{ "key": DeploymentBackupArgs{...} }
 type DeploymentBackupMapInput interface {
 	pulumi.Input
 

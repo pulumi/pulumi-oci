@@ -9422,6 +9422,7 @@ class GetBlockVolumeReplicasBlockVolumeReplicaResult(dict):
         :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         :param str time_created: The date and time the block volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_last_synced: The date and time the block volume replica was last synced from the source block volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str volume_group_replica_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "block_volume_id", block_volume_id)
@@ -9527,6 +9528,9 @@ class GetBlockVolumeReplicasBlockVolumeReplicaResult(dict):
     @property
     @pulumi.getter(name="volumeGroupReplicaId")
     def volume_group_replica_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+        """
         return pulumi.get(self, "volume_group_replica_id")
 
 
@@ -10077,6 +10081,7 @@ class GetBootVolumeReplicasBootVolumeReplicaResult(dict):
         :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         :param str time_created: The date and time the boot volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_last_synced: The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str volume_group_replica_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -10191,6 +10196,9 @@ class GetBootVolumeReplicasBootVolumeReplicaResult(dict):
     @property
     @pulumi.getter(name="volumeGroupReplicaId")
     def volume_group_replica_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+        """
         return pulumi.get(self, "volume_group_replica_id")
 
 
@@ -32272,11 +32280,22 @@ class GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult(dict):
 @pulumi.output_type
 class GetVolumeGroupReplicaMemberReplicaResult(dict):
     def __init__(__self__, *,
+                 membership_state: str,
                  volume_replica_id: str):
         """
+        :param str membership_state: Membership state of the volume replica in relation to the volume group replica.
         :param str volume_replica_id: The volume replica ID.
         """
+        pulumi.set(__self__, "membership_state", membership_state)
         pulumi.set(__self__, "volume_replica_id", volume_replica_id)
+
+    @property
+    @pulumi.getter(name="membershipState")
+    def membership_state(self) -> str:
+        """
+        Membership state of the volume replica in relation to the volume group replica.
+        """
+        return pulumi.get(self, "membership_state")
 
     @property
     @pulumi.getter(name="volumeReplicaId")
@@ -32456,11 +32475,22 @@ class GetVolumeGroupReplicasVolumeGroupReplicaResult(dict):
 @pulumi.output_type
 class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaResult(dict):
     def __init__(__self__, *,
+                 membership_state: str,
                  volume_replica_id: str):
         """
+        :param str membership_state: Membership state of the volume replica in relation to the volume group replica.
         :param str volume_replica_id: The volume replica ID.
         """
+        pulumi.set(__self__, "membership_state", membership_state)
         pulumi.set(__self__, "volume_replica_id", volume_replica_id)
+
+    @property
+    @pulumi.getter(name="membershipState")
+    def membership_state(self) -> str:
+        """
+        Membership state of the volume replica in relation to the volume group replica.
+        """
+        return pulumi.get(self, "membership_state")
 
     @property
     @pulumi.getter(name="volumeReplicaId")

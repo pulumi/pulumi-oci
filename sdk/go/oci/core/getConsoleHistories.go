@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetConsoleHistories(ctx, &core.GetConsoleHistoriesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Console_history_availability_domain),
-// 			InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
-// 			State:              pulumi.StringRef(_var.Console_history_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetConsoleHistories(ctx, &core.GetConsoleHistoriesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Console_history_availability_domain),
+//				InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
+//				State:              pulumi.StringRef(_var.Console_history_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetConsoleHistories(ctx *pulumi.Context, args *GetConsoleHistoriesArgs, opts ...pulumi.InvokeOption) (*GetConsoleHistoriesResult, error) {
 	var rv GetConsoleHistoriesResult

@@ -22,181 +22,184 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewInstanceConfiguration(ctx, "testInstanceConfiguration", &Core.InstanceConfigurationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Instance_configuration_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			InstanceDetails: &core.InstanceConfigurationInstanceDetailsArgs{
-// 				InstanceType: pulumi.Any(_var.Instance_configuration_instance_details_instance_type),
-// 				BlockVolumes: core.InstanceConfigurationInstanceDetailsBlockVolumeArray{
-// 					&core.InstanceConfigurationInstanceDetailsBlockVolumeArgs{
-// 						AttachDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs{
-// 							Type:                           pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_type),
-// 							Device:                         pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_device),
-// 							DisplayName:                    pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_display_name),
-// 							IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled),
-// 							IsReadOnly:                     pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_is_read_only),
-// 							IsShareable:                    pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_is_shareable),
-// 							UseChap:                        pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_use_chap),
-// 						},
-// 						CreateDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs{
-// 							AvailabilityDomain: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain),
-// 							BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
-// 							CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 							DefinedTags: pulumi.AnyMap{
-// 								"Operations.CostCenter": pulumi.Any("42"),
-// 							},
-// 							DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_display_name),
-// 							FreeformTags: pulumi.AnyMap{
-// 								"Department": pulumi.Any("Finance"),
-// 							},
-// 							KmsKeyId:  pulumi.Any(oci_kms_key.Test_key.Id),
-// 							SizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_size_in_gbs),
-// 							SourceDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs{
-// 								Type: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_source_details_type),
-// 								Id:   pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_source_details_id),
-// 							},
-// 							VpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb),
-// 						},
-// 						VolumeId: pulumi.Any(oci_core_volume.Test_volume.Id),
-// 					},
-// 				},
-// 				LaunchDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsArgs{
-// 					AgentConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs{
-// 						AreAllPluginsDisabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled),
-// 						IsManagementDisabled:  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_is_management_disabled),
-// 						IsMonitoringDisabled:  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled),
-// 						PluginsConfigs: core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArray{
-// 							&core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs{
-// 								DesiredState: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state),
-// 								Name:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_plugins_config_name),
-// 							},
-// 						},
-// 					},
-// 					AvailabilityConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs{
-// 						RecoveryAction: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_config_recovery_action),
-// 					},
-// 					AvailabilityDomain:    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_domain),
-// 					CapacityReservationId: pulumi.Any(oci_core_capacity_reservation.Test_capacity_reservation.Id),
-// 					CompartmentId:         pulumi.Any(_var.Compartment_id),
-// 					CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs{
-// 						AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record),
-// 						AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip),
-// 						DefinedTags: pulumi.AnyMap{
-// 							"Operations.CostCenter": pulumi.Any("42"),
-// 						},
-// 						DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_display_name),
-// 						FreeformTags: pulumi.AnyMap{
-// 							"Department": pulumi.Any("Finance"),
-// 						},
-// 						HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label),
-// 						NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids),
-// 						PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_private_ip),
-// 						SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check),
-// 						SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 					},
-// 					DedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-// 					DefinedTags: pulumi.AnyMap{
-// 						"Operations.CostCenter": pulumi.Any("42"),
-// 					},
-// 					DisplayName:      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_display_name),
-// 					ExtendedMetadata: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_extended_metadata),
-// 					FaultDomain:      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_fault_domain),
-// 					FreeformTags: pulumi.AnyMap{
-// 						"Department": pulumi.Any("Finance"),
-// 					},
-// 					InstanceOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs{
-// 						AreLegacyImdsEndpointsDisabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled),
-// 					},
-// 					IpxeScript:                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_ipxe_script),
-// 					IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled),
-// 					LaunchMode:                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_mode),
-// 					LaunchOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs{
-// 						BootVolumeType:                  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_boot_volume_type),
-// 						Firmware:                        pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_firmware),
-// 						IsConsistentVolumeNamingEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled),
-// 						IsPvEncryptionInTransitEnabled:  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled),
-// 						NetworkType:                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_network_type),
-// 						RemoteDataVolumeType:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type),
-// 					},
-// 					Metadata: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_metadata),
-// 					PlatformConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs{
-// 						Type:                                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_type),
-// 						AreVirtualInstructionsEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled),
-// 						IsAccessControlServiceEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled),
-// 						IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled),
-// 						IsMeasuredBootEnabled:                    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled),
-// 						IsSecureBootEnabled:                      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled),
-// 						IsSymmetricMultiThreadingEnabled:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled),
-// 						IsTrustedPlatformModuleEnabled:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled),
-// 						NumaNodesPerSocket:                       pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket),
-// 						PercentageOfCoresEnabled:                 pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
-// 					},
-// 					PreemptibleInstanceConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs{
-// 						PreemptionAction: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs{
-// 							Type:               pulumi.Any(_var.Instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type),
-// 							PreserveBootVolume: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume),
-// 						},
-// 					},
-// 					PreferredMaintenanceAction: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_preferred_maintenance_action),
-// 					Shape:                      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape),
-// 					ShapeConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs{
-// 						BaselineOcpuUtilization: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization),
-// 						MemoryInGbs:             pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs),
-// 						Nvmes:                   pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_nvmes),
-// 						Ocpus:                   pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_ocpus),
-// 					},
-// 					SourceDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs{
-// 						SourceType:          pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_source_type),
-// 						BootVolumeId:        pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
-// 						BootVolumeSizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs),
-// 						BootVolumeVpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb),
-// 						ImageId:             pulumi.Any(oci_core_image.Test_image.Id),
-// 					},
-// 				},
-// 				SecondaryVnics: core.InstanceConfigurationInstanceDetailsSecondaryVnicArray{
-// 					&core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs{
-// 						CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs{
-// 							AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record),
-// 							AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip),
-// 							DefinedTags: pulumi.AnyMap{
-// 								"Operations.CostCenter": pulumi.Any("42"),
-// 							},
-// 							DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name),
-// 							FreeformTags: pulumi.AnyMap{
-// 								"Department": pulumi.Any("Finance"),
-// 							},
-// 							HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label),
-// 							NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids),
-// 							PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip),
-// 							SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check),
-// 							SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 						},
-// 						DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_display_name),
-// 						NicIndex:    pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_nic_index),
-// 					},
-// 				},
-// 			},
-// 			InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			Source:     pulumi.Any(_var.Instance_configuration_source),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewInstanceConfiguration(ctx, "testInstanceConfiguration", &Core.InstanceConfigurationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Instance_configuration_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				InstanceDetails: &core.InstanceConfigurationInstanceDetailsArgs{
+//					InstanceType: pulumi.Any(_var.Instance_configuration_instance_details_instance_type),
+//					BlockVolumes: core.InstanceConfigurationInstanceDetailsBlockVolumeArray{
+//						&core.InstanceConfigurationInstanceDetailsBlockVolumeArgs{
+//							AttachDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs{
+//								Type:                           pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_type),
+//								Device:                         pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_device),
+//								DisplayName:                    pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_display_name),
+//								IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled),
+//								IsReadOnly:                     pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_is_read_only),
+//								IsShareable:                    pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_is_shareable),
+//								UseChap:                        pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_use_chap),
+//							},
+//							CreateDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs{
+//								AvailabilityDomain: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain),
+//								BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//								CompartmentId:      pulumi.Any(_var.Compartment_id),
+//								DefinedTags: pulumi.AnyMap{
+//									"Operations.CostCenter": pulumi.Any("42"),
+//								},
+//								DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_display_name),
+//								FreeformTags: pulumi.AnyMap{
+//									"Department": pulumi.Any("Finance"),
+//								},
+//								KmsKeyId:  pulumi.Any(oci_kms_key.Test_key.Id),
+//								SizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_size_in_gbs),
+//								SourceDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs{
+//									Type: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_source_details_type),
+//									Id:   pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_source_details_id),
+//								},
+//								VpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb),
+//							},
+//							VolumeId: pulumi.Any(oci_core_volume.Test_volume.Id),
+//						},
+//					},
+//					LaunchDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsArgs{
+//						AgentConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs{
+//							AreAllPluginsDisabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled),
+//							IsManagementDisabled:  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_is_management_disabled),
+//							IsMonitoringDisabled:  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled),
+//							PluginsConfigs: core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArray{
+//								&core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs{
+//									DesiredState: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state),
+//									Name:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_agent_config_plugins_config_name),
+//								},
+//							},
+//						},
+//						AvailabilityConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs{
+//							RecoveryAction: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_config_recovery_action),
+//						},
+//						AvailabilityDomain:    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_availability_domain),
+//						CapacityReservationId: pulumi.Any(oci_core_capacity_reservation.Test_capacity_reservation.Id),
+//						CompartmentId:         pulumi.Any(_var.Compartment_id),
+//						CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs{
+//							AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record),
+//							AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip),
+//							DefinedTags: pulumi.AnyMap{
+//								"Operations.CostCenter": pulumi.Any("42"),
+//							},
+//							DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_display_name),
+//							FreeformTags: pulumi.AnyMap{
+//								"Department": pulumi.Any("Finance"),
+//							},
+//							HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label),
+//							NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids),
+//							PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_private_ip),
+//							SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check),
+//							SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						},
+//						DedicatedVmHostId: pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
+//						DefinedTags: pulumi.AnyMap{
+//							"Operations.CostCenter": pulumi.Any("42"),
+//						},
+//						DisplayName:      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_display_name),
+//						ExtendedMetadata: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_extended_metadata),
+//						FaultDomain:      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_fault_domain),
+//						FreeformTags: pulumi.AnyMap{
+//							"Department": pulumi.Any("Finance"),
+//						},
+//						InstanceOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs{
+//							AreLegacyImdsEndpointsDisabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled),
+//						},
+//						IpxeScript:                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_ipxe_script),
+//						IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled),
+//						LaunchMode:                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_mode),
+//						LaunchOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs{
+//							BootVolumeType:                  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_boot_volume_type),
+//							Firmware:                        pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_firmware),
+//							IsConsistentVolumeNamingEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled),
+//							IsPvEncryptionInTransitEnabled:  pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled),
+//							NetworkType:                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_network_type),
+//							RemoteDataVolumeType:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type),
+//						},
+//						Metadata: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_metadata),
+//						PlatformConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs{
+//							Type:                                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_type),
+//							AreVirtualInstructionsEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled),
+//							IsAccessControlServiceEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled),
+//							IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled),
+//							IsMeasuredBootEnabled:                    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled),
+//							IsSecureBootEnabled:                      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled),
+//							IsSymmetricMultiThreadingEnabled:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled),
+//							IsTrustedPlatformModuleEnabled:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled),
+//							NumaNodesPerSocket:                       pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket),
+//							PercentageOfCoresEnabled:                 pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
+//						},
+//						PreemptibleInstanceConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs{
+//							PreemptionAction: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs{
+//								Type:               pulumi.Any(_var.Instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type),
+//								PreserveBootVolume: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume),
+//							},
+//						},
+//						PreferredMaintenanceAction: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_preferred_maintenance_action),
+//						Shape:                      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape),
+//						ShapeConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs{
+//							BaselineOcpuUtilization: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization),
+//							MemoryInGbs:             pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs),
+//							Nvmes:                   pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_nvmes),
+//							Ocpus:                   pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_ocpus),
+//						},
+//						SourceDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs{
+//							SourceType:          pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_source_type),
+//							BootVolumeId:        pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
+//							BootVolumeSizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs),
+//							BootVolumeVpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb),
+//							ImageId:             pulumi.Any(oci_core_image.Test_image.Id),
+//						},
+//					},
+//					SecondaryVnics: core.InstanceConfigurationInstanceDetailsSecondaryVnicArray{
+//						&core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs{
+//							CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs{
+//								AssignPrivateDnsRecord: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record),
+//								AssignPublicIp:         pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip),
+//								DefinedTags: pulumi.AnyMap{
+//									"Operations.CostCenter": pulumi.Any("42"),
+//								},
+//								DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name),
+//								FreeformTags: pulumi.AnyMap{
+//									"Department": pulumi.Any("Finance"),
+//								},
+//								HostnameLabel:       pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label),
+//								NsgIds:              pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids),
+//								PrivateIp:           pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip),
+//								SkipSourceDestCheck: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check),
+//								SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//							},
+//							DisplayName: pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_display_name),
+//							NicIndex:    pulumi.Any(_var.Instance_configuration_instance_details_secondary_vnics_nic_index),
+//						},
+//					},
+//				},
+//				InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
+//				Source:     pulumi.Any(_var.Instance_configuration_source),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -204,7 +207,9 @@ import (
 // InstanceConfigurations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
+//
+//	$ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
+//
 // ```
 type InstanceConfiguration struct {
 	pulumi.CustomResourceState
@@ -362,7 +367,7 @@ func (i *InstanceConfiguration) ToInstanceConfigurationOutputWithContext(ctx con
 // InstanceConfigurationArrayInput is an input type that accepts InstanceConfigurationArray and InstanceConfigurationArrayOutput values.
 // You can construct a concrete instance of `InstanceConfigurationArrayInput` via:
 //
-//          InstanceConfigurationArray{ InstanceConfigurationArgs{...} }
+//	InstanceConfigurationArray{ InstanceConfigurationArgs{...} }
 type InstanceConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -387,7 +392,7 @@ func (i InstanceConfigurationArray) ToInstanceConfigurationArrayOutputWithContex
 // InstanceConfigurationMapInput is an input type that accepts InstanceConfigurationMap and InstanceConfigurationMapOutput values.
 // You can construct a concrete instance of `InstanceConfigurationMapInput` via:
 //
-//          InstanceConfigurationMap{ "key": InstanceConfigurationArgs{...} }
+//	InstanceConfigurationMap{ "key": InstanceConfigurationArgs{...} }
 type InstanceConfigurationMapInput interface {
 	pulumi.Input
 

@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewDataSafePrivateEndpoint(ctx, "testDataSafePrivateEndpoint", &DataSafe.DataSafePrivateEndpointArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Data_safe_private_endpoint_display_name),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Data_safe_private_endpoint_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NsgIds:            pulumi.Any(_var.Data_safe_private_endpoint_nsg_ids),
-// 			PrivateEndpointIp: pulumi.Any(_var.Data_safe_private_endpoint_private_endpoint_ip),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewDataSafePrivateEndpoint(ctx, "testDataSafePrivateEndpoint", &DataSafe.DataSafePrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Data_safe_private_endpoint_display_name),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Data_safe_private_endpoint_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NsgIds:            pulumi.Any(_var.Data_safe_private_endpoint_nsg_ids),
+//				PrivateEndpointIp: pulumi.Any(_var.Data_safe_private_endpoint_private_endpoint_ip),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // DataSafePrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint "id"
+//
+//	$ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint "id"
+//
 // ```
 type DataSafePrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -265,7 +270,7 @@ func (i *DataSafePrivateEndpoint) ToDataSafePrivateEndpointOutputWithContext(ctx
 // DataSafePrivateEndpointArrayInput is an input type that accepts DataSafePrivateEndpointArray and DataSafePrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DataSafePrivateEndpointArrayInput` via:
 //
-//          DataSafePrivateEndpointArray{ DataSafePrivateEndpointArgs{...} }
+//	DataSafePrivateEndpointArray{ DataSafePrivateEndpointArgs{...} }
 type DataSafePrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -290,7 +295,7 @@ func (i DataSafePrivateEndpointArray) ToDataSafePrivateEndpointArrayOutputWithCo
 // DataSafePrivateEndpointMapInput is an input type that accepts DataSafePrivateEndpointMap and DataSafePrivateEndpointMapOutput values.
 // You can construct a concrete instance of `DataSafePrivateEndpointMapInput` via:
 //
-//          DataSafePrivateEndpointMap{ "key": DataSafePrivateEndpointArgs{...} }
+//	DataSafePrivateEndpointMap{ "key": DataSafePrivateEndpointArgs{...} }
 type DataSafePrivateEndpointMapInput interface {
 	pulumi.Input
 

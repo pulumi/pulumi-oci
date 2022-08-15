@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetCertificateAuthorityVersions(ctx, &certificatesmanagement.GetCertificateAuthorityVersionsArgs{
-// 			CertificateAuthorityId: oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-// 			VersionNumber:          pulumi.StringRef(_var.Certificate_authority_version_version_number),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetCertificateAuthorityVersions(ctx, &certificatesmanagement.GetCertificateAuthorityVersionsArgs{
+//				CertificateAuthorityId: oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+//				VersionNumber:          pulumi.StringRef(_var.Certificate_authority_version_version_number),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCertificateAuthorityVersions(ctx *pulumi.Context, args *GetCertificateAuthorityVersionsArgs, opts ...pulumi.InvokeOption) (*GetCertificateAuthorityVersionsResult, error) {
 	var rv GetCertificateAuthorityVersionsResult

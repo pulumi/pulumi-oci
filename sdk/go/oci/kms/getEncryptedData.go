@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetEncryptedData(ctx, &kms.GetEncryptedDataArgs{
-// 			CryptoEndpoint: _var.Encrypted_data_crypto_endpoint,
-// 			KeyId:          oci_kms_key.Test_key.Id,
-// 			Plaintext:      _var.Encrypted_data_plaintext,
-// 			AssociatedData: _var.Encrypted_data_associated_data,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetEncryptedData(ctx, &kms.GetEncryptedDataArgs{
+//				CryptoEndpoint: _var.Encrypted_data_crypto_endpoint,
+//				KeyId:          oci_kms_key.Test_key.Id,
+//				Plaintext:      _var.Encrypted_data_plaintext,
+//				AssociatedData: _var.Encrypted_data_associated_data,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupEncryptedData(ctx *pulumi.Context, args *LookupEncryptedDataArgs, opts ...pulumi.InvokeOption) (*LookupEncryptedDataResult, error) {
 	var rv LookupEncryptedDataResult

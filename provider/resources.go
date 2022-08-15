@@ -36,6 +36,7 @@ const (
 	analyticsMod                    = "Analytics"                    // Analytics
 	apiGatewayMod                   = "ApiGateway"                   // API Gateway
 	admMod                          = "Adm"                          // ADM
+	announcementsServiceMod         = "AnnouncementsService"         // Announcements Service
 	apmMod                          = "Apm"                          // APM
 	apmTracesMod                    = "ApmTraces"                    // APM Traces
 	apmConfigMod                    = "ApmConfig"                    // APM Config
@@ -101,6 +102,7 @@ const (
 	ospGatewayMod                   = "OspGateway"                   // Osp Gateway
 	onsMod                          = "Ons"                          // Ons
 	oneSubscriptionMod              = "OneSubsription"               // One Subscription
+	opensearchMod                   = "Opensearch"                   // Opensearch
 	operatorAccessControlMod        = "OperatorAccessControl"        // Operator Access Control
 	opsiMod                         = "Opsi"                         // Opsi
 	optimizerMod                    = "Optimizer"                    // Optimizer
@@ -197,6 +199,16 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_adm_knowledge_base":      {Tok: tfbridge.MakeResource(mainPkg, admMod, "KnowledgeBase")},
 			"oci_adm_vulnerability_audit": {Tok: tfbridge.MakeResource(mainPkg, admMod, "VulnerabilityAudit")},
 
+			"oci_announcements_service_announcement_subscription": {
+				Tok: tfbridge.MakeResource(mainPkg, announcementsServiceMod, "AnnouncementSubscription"),
+			},
+			"oci_announcements_service_announcement_subscriptions_actions_change_compartment": {
+				Tok: tfbridge.MakeResource(mainPkg, announcementsServiceMod, "AnnouncementSubscriptionsActionsChangeCompartment"),
+			},
+			"oci_announcements_service_announcement_subscriptions_filter_group": {
+				Tok: tfbridge.MakeResource(mainPkg, announcementsServiceMod, "AnnouncementSubscriptionsFilterGroup"),
+			},
+
 			"oci_apm_apm_domain": {Tok: tfbridge.MakeResource(mainPkg, apmMod, "ApmDomain")},
 
 			"oci_apm_config_config": {Tok: tfbridge.MakeResource(mainPkg, apmConfigMod, "Config")},
@@ -224,6 +236,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_bds_bds_instance":                  {Tok: tfbridge.MakeResource(mainPkg, bigDataServiceMod, "BdsInstance")},
 			"oci_bds_bds_instance_api_key":          {Tok: tfbridge.MakeResource(mainPkg, bigDataServiceMod, "BdsInstanceApiKey")},
 			"oci_bds_bds_instance_metastore_config": {Tok: tfbridge.MakeResource(mainPkg, bigDataServiceMod, "BdsInstanceMetastoreConfig")},
+			"oci_bds_bds_instance_patch_action":     {Tok: tfbridge.MakeResource(mainPkg, bigDataServiceMod, "BdsInstancePatchAction")},
 
 			"oci_blockchain_blockchain_platform": {Tok: tfbridge.MakeResource(mainPkg, blockchainMod, "BlockchainPlatform")},
 			"oci_blockchain_osn":                 {Tok: tfbridge.MakeResource(mainPkg, blockchainMod, "Osn")},
@@ -683,6 +696,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_ons_notification_topic": {Tok: tfbridge.MakeResource(mainPkg, onsMod, "NotificationTopic")},
 			"oci_ons_subscription":       {Tok: tfbridge.MakeResource(mainPkg, onsMod, "Subscription")},
 
+			"oci_opensearch_opensearch_cluster": {Tok: tfbridge.MakeResource(mainPkg, opensearchMod, "Cluster")},
+
 			"oci_operator_access_control_operator_control":            {Tok: tfbridge.MakeResource(mainPkg, operatorAccessControlMod, "OperatorControl")},
 			"oci_operator_access_control_operator_control_assignment": {Tok: tfbridge.MakeResource(mainPkg, operatorAccessControlMod, "OperatorControlAssignment")},
 
@@ -820,6 +835,13 @@ func Provider() tfbridge.ProviderInfo {
 				Tok: tfbridge.MakeDataSource(mainPkg, admMod, "getVulnerabilityAuditApplicationDependencyVulnerabilities"),
 			},
 
+			"oci_announcements_service_announcement_subscription": {
+				Tok: tfbridge.MakeDataSource(mainPkg, announcementsServiceMod, "getAnnouncementSubscription"),
+			},
+			"oci_announcements_service_announcement_subscriptions": {
+				Tok: tfbridge.MakeDataSource(mainPkg, announcementsServiceMod, "getAnnouncementSubscriptions"),
+			},
+
 			"oci_apm_apm_domain":     {Tok: tfbridge.MakeDataSource(mainPkg, apmMod, "getApmDomain")},
 			"oci_apm_apm_domains":    {Tok: tfbridge.MakeDataSource(mainPkg, apmMod, "getApmDomains")},
 			"oci_apm_data_keys":      {Tok: tfbridge.MakeDataSource(mainPkg, apmMod, "getDataKeys")},
@@ -880,6 +902,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_bds_bds_instance_metastore_config":  {Tok: tfbridge.MakeDataSource(mainPkg, bigDataServiceMod, "getBdsInstanceMetastoreConfig")},
 			"oci_bds_bds_instance_metastore_configs": {Tok: tfbridge.MakeDataSource(mainPkg, bigDataServiceMod, "getBdsInstanceMetastoreConfigs")},
 			"oci_bds_bds_instances":                  {Tok: tfbridge.MakeDataSource(mainPkg, bigDataServiceMod, "getBdsInstances")},
+			"oci_bds_bds_instance_patch_histories":   {Tok: tfbridge.MakeDataSource(mainPkg, bigDataServiceMod, "getBdsInstancePatchHistories")},
+			"oci_bds_bds_instance_patches":           {Tok: tfbridge.MakeDataSource(mainPkg, bigDataServiceMod, "getBdsInstancePatches")},
 
 			"oci_blockchain_blockchain_platform":         {Tok: tfbridge.MakeDataSource(mainPkg, blockchainMod, "getBlockchainPlatform")},
 			"oci_blockchain_blockchain_platform_patches": {Tok: tfbridge.MakeDataSource(mainPkg, blockchainMod, "getBlockchainPlatformPatches")},
@@ -1104,6 +1128,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_core_capture_filters":                  {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getCaptureFilters")},
 			"oci_core_vtap":                             {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getVtap")},
 			"oci_core_vtaps":                            {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getVtaps")},
+			"oci_core_instance_maintenance_reboot":      {Tok: tfbridge.MakeDataSource(mainPkg, coreMod, "getInstanceMaintenanceReboot")},
 
 			"oci_data_connectivity_registries":           {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistries")},
 			"oci_data_connectivity_registry":             {Tok: tfbridge.MakeDataSource(mainPkg, dataConnectivityMod, "getRegistry")},
@@ -1309,6 +1334,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_db_system_storage_performances":                       {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getDbSystemStoragePerformances")},
 			"oci_database_db_systems_upgrade_history_entries":                   {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getDbSystemsUpgradeHistoryEntries")},
 			"oci_database_db_systems_upgrade_history_entry":                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getDbSystemsUpgradeHistoryEntry")},
+			"oci_database_maintenance_run_histories":                            {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getDatabaseMaintenanceRunHistories")},
+			"oci_database_maintenance_run_history":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getDatabaseMaintenanceRunHistory")},
 
 			"oci_database_management_db_management_private_endpoint":                      {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getDbManagementPrivateEndpoint")},
 			"oci_database_management_db_management_private_endpoint_associated_database":  {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getDbManagementPrivateEndpointAssociatedDatabase")},
@@ -1324,41 +1351,48 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_management_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision": {
 				Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison"),
 			},
-			"oci_database_management_managed_database_sql_tuning_advisor_tasks_finding":            {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksFinding")},
-			"oci_database_management_managed_database_sql_tuning_advisor_tasks_findings":           {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksFindings")},
-			"oci_database_management_managed_database_sql_tuning_advisor_tasks_recommendation":     {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksRecommendation")},
-			"oci_database_management_managed_database_sql_tuning_advisor_tasks_recommendations":    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksRecommendations")},
-			"oci_database_management_managed_database_sql_tuning_advisor_tasks_sql_execution_plan": {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan")},
-			"oci_database_management_managed_database_sql_tuning_advisor_tasks_summary_report":     {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksSummaryReport")},
-			"oci_database_management_managed_database_user":                                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUser")},
-			"oci_database_management_managed_database_user_consumer_group_privilege":               {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserConsumerGroupPrivilege")},
-			"oci_database_management_managed_database_user_consumer_group_privileges":              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserConsumerGroupPrivileges")},
-			"oci_database_management_managed_database_user_data_access_container":                  {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserDataAccessContainer")},
-			"oci_database_management_managed_database_user_data_access_containers":                 {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserDataAccessContainers")},
-			"oci_database_management_managed_database_user_object_privilege":                       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserObjectPrivilege")},
-			"oci_database_management_managed_database_user_object_privileges":                      {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserObjectPrivileges")},
-			"oci_database_management_managed_database_user_proxied_for_user":                       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserProxiedForUser")},
-			"oci_database_management_managed_database_user_proxied_for_users":                      {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserProxiedForUsers")},
-			"oci_database_management_managed_database_user_role":                                   {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserRole")},
-			"oci_database_management_managed_database_user_roles":                                  {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserRoles")},
-			"oci_database_management_managed_database_users":                                       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUsers")},
-			"oci_database_management_managed_databases":                                            {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabases")},
-			"oci_database_management_managed_databases_asm_properties":                             {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesAsmProperties")},
-			"oci_database_management_managed_databases_asm_property":                               {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesAsmProperty")},
-			"oci_database_management_managed_databases_database_parameter":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesDatabaseParameter")},
-			"oci_database_management_managed_databases_database_parameters":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesDatabaseParameters")},
-			"oci_database_management_managed_databases_user_proxy_user":                            {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserProxyUser")},
-			"oci_database_management_managed_databases_user_proxy_users":                           {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserProxyUsers")},
-			"oci_database_management_managed_databases_user_system_privilege":                      {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserSystemPrivilege")},
-			"oci_database_management_managed_databases_user_system_privileges":                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserSystemPrivileges")},
-			"oci_database_management_managed_database_addm_task":                                   {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAddmTask")},
-			"oci_database_management_managed_database_addm_tasks":                                  {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAddmTasks")},
-			"oci_database_management_managed_database_alert_log_count":                             {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAlertLogCount")},
-			"oci_database_management_managed_database_alert_log_counts":                            {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAlertLogCounts")},
-			"oci_database_management_managed_database_attention_log_count":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAttentionLogCount")},
-			"oci_database_management_managed_database_attention_log_counts":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAttentionLogCounts")},
-			"oci_database_management_managed_database_sql_tuning_set":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningSet")},
-			"oci_database_management_managed_database_sql_tuning_sets":                             {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningSets")},
+			"oci_database_management_managed_database_sql_tuning_advisor_tasks_finding":              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksFinding")},
+			"oci_database_management_managed_database_sql_tuning_advisor_tasks_findings":             {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksFindings")},
+			"oci_database_management_managed_database_sql_tuning_advisor_tasks_recommendation":       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksRecommendation")},
+			"oci_database_management_managed_database_sql_tuning_advisor_tasks_recommendations":      {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksRecommendations")},
+			"oci_database_management_managed_database_sql_tuning_advisor_tasks_sql_execution_plan":   {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan")},
+			"oci_database_management_managed_database_sql_tuning_advisor_tasks_summary_report":       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningAdvisorTasksSummaryReport")},
+			"oci_database_management_managed_database_user":                                          {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUser")},
+			"oci_database_management_managed_database_user_consumer_group_privilege":                 {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserConsumerGroupPrivilege")},
+			"oci_database_management_managed_database_user_consumer_group_privileges":                {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserConsumerGroupPrivileges")},
+			"oci_database_management_managed_database_user_data_access_container":                    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserDataAccessContainer")},
+			"oci_database_management_managed_database_user_data_access_containers":                   {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserDataAccessContainers")},
+			"oci_database_management_managed_database_user_object_privilege":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserObjectPrivilege")},
+			"oci_database_management_managed_database_user_object_privileges":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserObjectPrivileges")},
+			"oci_database_management_managed_database_user_proxied_for_user":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserProxiedForUser")},
+			"oci_database_management_managed_database_user_proxied_for_users":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserProxiedForUsers")},
+			"oci_database_management_managed_database_user_role":                                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserRole")},
+			"oci_database_management_managed_database_user_roles":                                    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUserRoles")},
+			"oci_database_management_managed_database_users":                                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseUsers")},
+			"oci_database_management_managed_databases":                                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabases")},
+			"oci_database_management_managed_databases_asm_properties":                               {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesAsmProperties")},
+			"oci_database_management_managed_databases_asm_property":                                 {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesAsmProperty")},
+			"oci_database_management_managed_databases_database_parameter":                           {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesDatabaseParameter")},
+			"oci_database_management_managed_databases_database_parameters":                          {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesDatabaseParameters")},
+			"oci_database_management_managed_databases_user_proxy_user":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserProxyUser")},
+			"oci_database_management_managed_databases_user_proxy_users":                             {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserProxyUsers")},
+			"oci_database_management_managed_databases_user_system_privilege":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserSystemPrivilege")},
+			"oci_database_management_managed_databases_user_system_privileges":                       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabasesUserSystemPrivileges")},
+			"oci_database_management_managed_database_addm_task":                                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAddmTask")},
+			"oci_database_management_managed_database_addm_tasks":                                    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAddmTasks")},
+			"oci_database_management_managed_database_alert_log_count":                               {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAlertLogCount")},
+			"oci_database_management_managed_database_alert_log_counts":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAlertLogCounts")},
+			"oci_database_management_managed_database_attention_log_count":                           {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAttentionLogCount")},
+			"oci_database_management_managed_database_attention_log_counts":                          {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseAttentionLogCounts")},
+			"oci_database_management_managed_database_sql_tuning_set":                                {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningSet")},
+			"oci_database_management_managed_database_sql_tuning_sets":                               {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseSqlTuningSets")},
+			"oci_database_management_managed_database_optimizer_statistics_advisor_execution":        {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsAdvisorExecution")},
+			"oci_database_management_managed_database_optimizer_statistics_advisor_execution_script": {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript")},
+			"oci_database_management_managed_database_optimizer_statistics_advisor_executions":       {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsAdvisorExecutions")},
+			"oci_database_management_managed_database_optimizer_statistics_collection_aggregations":  {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsCollectionAggregations")},
+			"oci_database_management_managed_database_optimizer_statistics_collection_operation":     {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsCollectionOperation")},
+			"oci_database_management_managed_database_optimizer_statistics_collection_operations":    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsCollectionOperations")},
+			"oci_database_management_managed_database_table_statistics":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseTableStatistics")},
 
 			"oci_database_migration_agent":                  {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getAgent")},
 			"oci_database_migration_agent_images":           {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getAgentImages")},
@@ -1584,6 +1618,10 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_jms_fleets":                       {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getFleets")},
 			"oci_jms_list_jre_usage":               {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getListJreUsage")},
 			"oci_jms_summarize_resource_inventory": {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getSummarizeResourceInventory")},
+			"oci_jms_java_families":                {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaFamilies")},
+			"oci_jms_java_family":                  {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaFamily")},
+			"oci_jms_java_release":                 {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaRelease")},
+			"oci_jms_java_releases":                {Tok: tfbridge.MakeDataSource(mainPkg, jmsMod, "getJavaReleases")},
 
 			"oci_kms_decrypted_data":     {Tok: tfbridge.MakeDataSource(mainPkg, kmsMod, "getDecryptedData")},
 			"oci_kms_encrypted_data":     {Tok: tfbridge.MakeDataSource(mainPkg, kmsMod, "getEncryptedData")},
@@ -1801,6 +1839,11 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_onesubscription_subscribed_services":          {Tok: tfbridge.MakeDataSource(mainPkg, oneSubscriptionMod, "getSubscribedServices")},
 			"oci_onesubscription_subscriptions":                {Tok: tfbridge.MakeDataSource(mainPkg, oneSubscriptionMod, "getSubscriptions")},
 
+			"oci_opensearch_opensearch_cluster":  {Tok: tfbridge.MakeDataSource(mainPkg, opensearchMod, "getOpensearchCluster")},
+			"oci_opensearch_opensearch_clusters": {Tok: tfbridge.MakeDataSource(mainPkg, opensearchMod, "getOpensearchClusters")},
+			"oci_opensearch_opensearch_version":  {Tok: tfbridge.MakeDataSource(mainPkg, opensearchMod, "getOpensearchVersion")},
+			"oci_opensearch_opensearch_versions": {Tok: tfbridge.MakeDataSource(mainPkg, opensearchMod, "getOpensearchVersions")},
+
 			"oci_operator_access_control_access_request":               {Tok: tfbridge.MakeDataSource(mainPkg, operatorAccessControlMod, "getAccessRequest")},
 			"oci_operator_access_control_access_request_history":       {Tok: tfbridge.MakeDataSource(mainPkg, operatorAccessControlMod, "getAccessRequestHistory")},
 			"oci_operator_access_control_access_requests":              {Tok: tfbridge.MakeDataSource(mainPkg, operatorAccessControlMod, "getAccessRequests")},
@@ -1831,6 +1874,10 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_opsi_operations_insights_warehouse_user":                   {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getOperationsInsightsWarehouseUser")},
 			"oci_opsi_operations_insights_warehouse_users":                  {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getOperationsInsightsWarehouseUsers")},
 			"oci_opsi_operations_insights_warehouses":                       {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getOperationsInsightsWarehouses")},
+			"oci_opsi_importable_agent_entities":                            {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getImportableAgentEntities")},
+			"oci_opsi_importable_agent_entity":                              {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getImportableAgentEntity")},
+			"oci_opsi_importable_compute_entities":                          {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getImportableComputeEntities")},
+			"oci_opsi_importable_compute_entity":                            {Tok: tfbridge.MakeDataSource(mainPkg, opsiMod, "getImportableComputeEntity")},
 
 			"oci_optimizer_categories":                {Tok: tfbridge.MakeDataSource(mainPkg, optimizerMod, "getCategories")},
 			"oci_optimizer_category":                  {Tok: tfbridge.MakeDataSource(mainPkg, optimizerMod, "getCategory")},

@@ -21,54 +21,57 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewCloudExadataInfrastructure(ctx, "testCloudExadataInfrastructure", &Database.CloudExadataInfrastructureArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.Cloud_exadata_infrastructure_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			DisplayName:        pulumi.Any(_var.Cloud_exadata_infrastructure_display_name),
-// 			Shape:              pulumi.Any(_var.Cloud_exadata_infrastructure_shape),
-// 			ComputeCount:       pulumi.Any(_var.Cloud_exadata_infrastructure_compute_count),
-// 			CustomerContacts: database.CloudExadataInfrastructureCustomerContactArray{
-// 				&database.CloudExadataInfrastructureCustomerContactArgs{
-// 					Email: pulumi.Any(_var.Cloud_exadata_infrastructure_customer_contacts_email),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.Any(_var.Cloud_exadata_infrastructure_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{
-// 				Preference:                pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_preference),
-// 				CustomActionTimeoutInMins: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
-// 				DaysOfWeeks: database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
-// 					&database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
-// 						Name: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_days_of_week_name),
-// 					},
-// 				},
-// 				HoursOfDays:                  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_hours_of_day),
-// 				IsCustomActionTimeoutEnabled: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled),
-// 				LeadTimeInWeeks:              pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
-// 				Months: database.CloudExadataInfrastructureMaintenanceWindowMonthArray{
-// 					&database.CloudExadataInfrastructureMaintenanceWindowMonthArgs{
-// 						Name: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_months_name),
-// 					},
-// 				},
-// 				PatchingMode:  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_patching_mode),
-// 				WeeksOfMonths: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month),
-// 			},
-// 			StorageCount: pulumi.Any(_var.Cloud_exadata_infrastructure_storage_count),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewCloudExadataInfrastructure(ctx, "testCloudExadataInfrastructure", &Database.CloudExadataInfrastructureArgs{
+//				AvailabilityDomain: pulumi.Any(_var.Cloud_exadata_infrastructure_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				DisplayName:        pulumi.Any(_var.Cloud_exadata_infrastructure_display_name),
+//				Shape:              pulumi.Any(_var.Cloud_exadata_infrastructure_shape),
+//				ComputeCount:       pulumi.Any(_var.Cloud_exadata_infrastructure_compute_count),
+//				CustomerContacts: database.CloudExadataInfrastructureCustomerContactArray{
+//					&database.CloudExadataInfrastructureCustomerContactArgs{
+//						Email: pulumi.Any(_var.Cloud_exadata_infrastructure_customer_contacts_email),
+//					},
+//				},
+//				DefinedTags: pulumi.Any(_var.Cloud_exadata_infrastructure_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{
+//					Preference:                pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_preference),
+//					CustomActionTimeoutInMins: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
+//					DaysOfWeeks: database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
+//						&database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
+//							Name: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_days_of_week_name),
+//						},
+//					},
+//					HoursOfDays:                  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_hours_of_day),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled),
+//					LeadTimeInWeeks:              pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
+//					Months: database.CloudExadataInfrastructureMaintenanceWindowMonthArray{
+//						&database.CloudExadataInfrastructureMaintenanceWindowMonthArgs{
+//							Name: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_months_name),
+//						},
+//					},
+//					PatchingMode:  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_patching_mode),
+//					WeeksOfMonths: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month),
+//				},
+//				StorageCount: pulumi.Any(_var.Cloud_exadata_infrastructure_storage_count),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -76,7 +79,9 @@ import (
 // CloudExadataInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
+//
+//	$ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
+//
 // ```
 type CloudExadataInfrastructure struct {
 	pulumi.CustomResourceState
@@ -308,7 +313,7 @@ func (i *CloudExadataInfrastructure) ToCloudExadataInfrastructureOutputWithConte
 // CloudExadataInfrastructureArrayInput is an input type that accepts CloudExadataInfrastructureArray and CloudExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureArrayInput` via:
 //
-//          CloudExadataInfrastructureArray{ CloudExadataInfrastructureArgs{...} }
+//	CloudExadataInfrastructureArray{ CloudExadataInfrastructureArgs{...} }
 type CloudExadataInfrastructureArrayInput interface {
 	pulumi.Input
 
@@ -333,7 +338,7 @@ func (i CloudExadataInfrastructureArray) ToCloudExadataInfrastructureArrayOutput
 // CloudExadataInfrastructureMapInput is an input type that accepts CloudExadataInfrastructureMap and CloudExadataInfrastructureMapOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureMapInput` via:
 //
-//          CloudExadataInfrastructureMap{ "key": CloudExadataInfrastructureArgs{...} }
+//	CloudExadataInfrastructureMap{ "key": CloudExadataInfrastructureArgs{...} }
 type CloudExadataInfrastructureMapInput interface {
 	pulumi.Input
 

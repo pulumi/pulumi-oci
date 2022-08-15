@@ -21,10 +21,13 @@ class GetMonitorResult:
     """
     A collection of values returned by getMonitor.
     """
-    def __init__(__self__, apm_domain_id=None, configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_run_once=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
+    def __init__(__self__, apm_domain_id=None, batch_interval_in_seconds=None, configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_run_now=None, is_run_once=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if batch_interval_in_seconds and not isinstance(batch_interval_in_seconds, int):
+            raise TypeError("Expected argument 'batch_interval_in_seconds' to be a int")
+        pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         if configurations and not isinstance(configurations, list):
             raise TypeError("Expected argument 'configurations' to be a list")
         pulumi.set(__self__, "configurations", configurations)
@@ -40,6 +43,9 @@ class GetMonitorResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_run_now and not isinstance(is_run_now, bool):
+            raise TypeError("Expected argument 'is_run_now' to be a bool")
+        pulumi.set(__self__, "is_run_now", is_run_now)
         if is_run_once and not isinstance(is_run_once, bool):
             raise TypeError("Expected argument 'is_run_once' to be a bool")
         pulumi.set(__self__, "is_run_once", is_run_once)
@@ -52,6 +58,9 @@ class GetMonitorResult:
         if repeat_interval_in_seconds and not isinstance(repeat_interval_in_seconds, int):
             raise TypeError("Expected argument 'repeat_interval_in_seconds' to be a int")
         pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
+        if scheduling_policy and not isinstance(scheduling_policy, str):
+            raise TypeError("Expected argument 'scheduling_policy' to be a str")
+        pulumi.set(__self__, "scheduling_policy", scheduling_policy)
         if script_id and not isinstance(script_id, str):
             raise TypeError("Expected argument 'script_id' to be a str")
         pulumi.set(__self__, "script_id", script_id)
@@ -87,6 +96,14 @@ class GetMonitorResult:
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> str:
         return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="batchIntervalInSeconds")
+    def batch_interval_in_seconds(self) -> int:
+        """
+        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        """
+        return pulumi.get(self, "batch_interval_in_seconds")
 
     @property
     @pulumi.getter
@@ -129,6 +146,14 @@ class GetMonitorResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isRunNow")
+    def is_run_now(self) -> bool:
+        """
+        If isRunNow is enabled, then the monitor will run now.
+        """
+        return pulumi.get(self, "is_run_now")
+
+    @property
     @pulumi.getter(name="isRunOnce")
     def is_run_once(self) -> bool:
         """
@@ -156,6 +181,14 @@ class GetMonitorResult:
         Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         """
         return pulumi.get(self, "repeat_interval_in_seconds")
+
+    @property
+    @pulumi.getter(name="schedulingPolicy")
+    def scheduling_policy(self) -> str:
+        """
+        Scheduling policy on Vantage points.
+        """
+        return pulumi.get(self, "scheduling_policy")
 
     @property
     @pulumi.getter(name="scriptId")
@@ -245,15 +278,18 @@ class AwaitableGetMonitorResult(GetMonitorResult):
             yield self
         return GetMonitorResult(
             apm_domain_id=self.apm_domain_id,
+            batch_interval_in_seconds=self.batch_interval_in_seconds,
             configurations=self.configurations,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_run_now=self.is_run_now,
             is_run_once=self.is_run_once,
             monitor_id=self.monitor_id,
             monitor_type=self.monitor_type,
             repeat_interval_in_seconds=self.repeat_interval_in_seconds,
+            scheduling_policy=self.scheduling_policy,
             script_id=self.script_id,
             script_name=self.script_name,
             script_parameters=self.script_parameters,
@@ -299,15 +335,18 @@ def get_monitor(apm_domain_id: Optional[str] = None,
 
     return AwaitableGetMonitorResult(
         apm_domain_id=__ret__.apm_domain_id,
+        batch_interval_in_seconds=__ret__.batch_interval_in_seconds,
         configurations=__ret__.configurations,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        is_run_now=__ret__.is_run_now,
         is_run_once=__ret__.is_run_once,
         monitor_id=__ret__.monitor_id,
         monitor_type=__ret__.monitor_type,
         repeat_interval_in_seconds=__ret__.repeat_interval_in_seconds,
+        scheduling_policy=__ret__.scheduling_policy,
         script_id=__ret__.script_id,
         script_name=__ret__.script_name,
         script_parameters=__ret__.script_parameters,

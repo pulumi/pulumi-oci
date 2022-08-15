@@ -20,7 +20,7 @@ type GetNotificationTopicsFilter struct {
 // GetNotificationTopicsFilterInput is an input type that accepts GetNotificationTopicsFilterArgs and GetNotificationTopicsFilterOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsFilterInput` via:
 //
-//          GetNotificationTopicsFilterArgs{...}
+//	GetNotificationTopicsFilterArgs{...}
 type GetNotificationTopicsFilterInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i GetNotificationTopicsFilterArgs) ToGetNotificationTopicsFilterOutputWith
 // GetNotificationTopicsFilterArrayInput is an input type that accepts GetNotificationTopicsFilterArray and GetNotificationTopicsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsFilterArrayInput` via:
 //
-//          GetNotificationTopicsFilterArray{ GetNotificationTopicsFilterArgs{...} }
+//	GetNotificationTopicsFilterArray{ GetNotificationTopicsFilterArgs{...} }
 type GetNotificationTopicsFilterArrayInput interface {
 	pulumi.Input
 
@@ -149,7 +149,7 @@ type GetNotificationTopicsNotificationTopic struct {
 // GetNotificationTopicsNotificationTopicInput is an input type that accepts GetNotificationTopicsNotificationTopicArgs and GetNotificationTopicsNotificationTopicOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsNotificationTopicInput` via:
 //
-//          GetNotificationTopicsNotificationTopicArgs{...}
+//	GetNotificationTopicsNotificationTopicArgs{...}
 type GetNotificationTopicsNotificationTopicInput interface {
 	pulumi.Input
 
@@ -199,7 +199,7 @@ func (i GetNotificationTopicsNotificationTopicArgs) ToGetNotificationTopicsNotif
 // GetNotificationTopicsNotificationTopicArrayInput is an input type that accepts GetNotificationTopicsNotificationTopicArray and GetNotificationTopicsNotificationTopicArrayOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsNotificationTopicArrayInput` via:
 //
-//          GetNotificationTopicsNotificationTopicArray{ GetNotificationTopicsNotificationTopicArgs{...} }
+//	GetNotificationTopicsNotificationTopicArray{ GetNotificationTopicsNotificationTopicArgs{...} }
 type GetNotificationTopicsNotificationTopicArrayInput interface {
 	pulumi.Input
 
@@ -324,7 +324,7 @@ type GetSubscriptionsFilter struct {
 // GetSubscriptionsFilterInput is an input type that accepts GetSubscriptionsFilterArgs and GetSubscriptionsFilterOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterInput` via:
 //
-//          GetSubscriptionsFilterArgs{...}
+//	GetSubscriptionsFilterArgs{...}
 type GetSubscriptionsFilterInput interface {
 	pulumi.Input
 
@@ -353,7 +353,7 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
-//          GetSubscriptionsFilterArray{ GetSubscriptionsFilterArgs{...} }
+//	GetSubscriptionsFilterArray{ GetSubscriptionsFilterArgs{...} }
 type GetSubscriptionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -448,7 +448,7 @@ type GetSubscriptionsSubscription struct {
 // GetSubscriptionsSubscriptionInput is an input type that accepts GetSubscriptionsSubscriptionArgs and GetSubscriptionsSubscriptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionInput` via:
 //
-//          GetSubscriptionsSubscriptionArgs{...}
+//	GetSubscriptionsSubscriptionArgs{...}
 type GetSubscriptionsSubscriptionInput interface {
 	pulumi.Input
 
@@ -495,7 +495,7 @@ func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutputWi
 // GetSubscriptionsSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionArray and GetSubscriptionsSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionArray{ GetSubscriptionsSubscriptionArgs{...} }
+//	GetSubscriptionsSubscriptionArray{ GetSubscriptionsSubscriptionArgs{...} }
 type GetSubscriptionsSubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -614,7 +614,7 @@ type GetSubscriptionsSubscriptionDeliveryPolicy struct {
 // GetSubscriptionsSubscriptionDeliveryPolicyInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyArgs and GetSubscriptionsSubscriptionDeliveryPolicyOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyInput` via:
 //
-//          GetSubscriptionsSubscriptionDeliveryPolicyArgs{...}
+//	GetSubscriptionsSubscriptionDeliveryPolicyArgs{...}
 type GetSubscriptionsSubscriptionDeliveryPolicyInput interface {
 	pulumi.Input
 
@@ -641,7 +641,7 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyArgs) ToGetSubscriptionsSubscr
 // GetSubscriptionsSubscriptionDeliveryPolicyArrayInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyArray and GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionDeliveryPolicyArray{ GetSubscriptionsSubscriptionDeliveryPolicyArgs{...} }
+//	GetSubscriptionsSubscriptionDeliveryPolicyArray{ GetSubscriptionsSubscriptionDeliveryPolicyArgs{...} }
 type GetSubscriptionsSubscriptionDeliveryPolicyArrayInput interface {
 	pulumi.Input
 
@@ -713,7 +713,7 @@ type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy struct {
 // GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs and GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyInput` via:
 //
-//          GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs{...}
+//	GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs{...}
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyInput interface {
 	pulumi.Input
 
@@ -743,7 +743,7 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ToGetS
 // GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray and GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray{ GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs{...} }
+//	GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray{ GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs{...} }
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayInput interface {
 	pulumi.Input
 

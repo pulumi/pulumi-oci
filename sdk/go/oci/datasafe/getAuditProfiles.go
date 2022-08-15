@@ -34,30 +34,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditProfiles(ctx, &datasafe.GetAuditProfilesArgs{
-// 			CompartmentId:                            _var.Compartment_id,
-// 			AccessLevel:                              pulumi.StringRef(_var.Audit_profile_access_level),
-// 			AuditCollectedVolumeGreaterThanOrEqualTo: pulumi.StringRef(_var.Audit_profile_audit_collected_volume_greater_than_or_equal_to),
-// 			AuditProfileId:                           pulumi.StringRef(oci_data_safe_audit_profile.Test_audit_profile.Id),
-// 			CompartmentIdInSubtree:                   pulumi.BoolRef(_var.Audit_profile_compartment_id_in_subtree),
-// 			DisplayName:                              pulumi.StringRef(_var.Audit_profile_display_name),
-// 			IsOverrideGlobalRetentionSetting:         pulumi.BoolRef(_var.Audit_profile_is_override_global_retention_setting),
-// 			IsPaidUsageEnabled:                       pulumi.BoolRef(_var.Audit_profile_is_paid_usage_enabled),
-// 			State:                                    pulumi.StringRef(_var.Audit_profile_state),
-// 			TargetId:                                 pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditProfiles(ctx, &datasafe.GetAuditProfilesArgs{
+//				CompartmentId:                            _var.Compartment_id,
+//				AccessLevel:                              pulumi.StringRef(_var.Audit_profile_access_level),
+//				AuditCollectedVolumeGreaterThanOrEqualTo: pulumi.StringRef(_var.Audit_profile_audit_collected_volume_greater_than_or_equal_to),
+//				AuditProfileId:                           pulumi.StringRef(oci_data_safe_audit_profile.Test_audit_profile.Id),
+//				CompartmentIdInSubtree:                   pulumi.BoolRef(_var.Audit_profile_compartment_id_in_subtree),
+//				DisplayName:                              pulumi.StringRef(_var.Audit_profile_display_name),
+//				IsOverrideGlobalRetentionSetting:         pulumi.BoolRef(_var.Audit_profile_is_override_global_retention_setting),
+//				IsPaidUsageEnabled:                       pulumi.BoolRef(_var.Audit_profile_is_paid_usage_enabled),
+//				State:                                    pulumi.StringRef(_var.Audit_profile_state),
+//				TargetId:                                 pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAuditProfiles(ctx *pulumi.Context, args *GetAuditProfilesArgs, opts ...pulumi.InvokeOption) (*GetAuditProfilesResult, error) {
 	var rv GetAuditProfilesResult

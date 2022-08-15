@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
 //
-// Invokes a function
+// # Invokes a function
 //
 // ## Example Usage
 //
@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Functions.NewInvokeFunction(ctx, "testInvokeFunction", &Functions.InvokeFunctionArgs{
-// 			FunctionId:          pulumi.Any(oci_functions_function.Test_function.Id),
-// 			InvokeFunctionBody:  pulumi.Any(_var.Invoke_function_invoke_function_body),
-// 			FnIntent:            pulumi.Any(_var.Invoke_function_fn_intent),
-// 			FnInvokeType:        pulumi.Any(_var.Invoke_function_fn_invoke_type),
-// 			Base64EncodeContent: pulumi.Bool(false),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Functions.NewInvokeFunction(ctx, "testInvokeFunction", &Functions.InvokeFunctionArgs{
+//				FunctionId:          pulumi.Any(oci_functions_function.Test_function.Id),
+//				InvokeFunctionBody:  pulumi.Any(_var.Invoke_function_invoke_function_body),
+//				FnIntent:            pulumi.Any(_var.Invoke_function_fn_intent),
+//				FnInvokeType:        pulumi.Any(_var.Invoke_function_fn_invoke_type),
+//				Base64EncodeContent: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -193,7 +196,7 @@ func (i *InvokeFunction) ToInvokeFunctionOutputWithContext(ctx context.Context) 
 // InvokeFunctionArrayInput is an input type that accepts InvokeFunctionArray and InvokeFunctionArrayOutput values.
 // You can construct a concrete instance of `InvokeFunctionArrayInput` via:
 //
-//          InvokeFunctionArray{ InvokeFunctionArgs{...} }
+//	InvokeFunctionArray{ InvokeFunctionArgs{...} }
 type InvokeFunctionArrayInput interface {
 	pulumi.Input
 
@@ -218,7 +221,7 @@ func (i InvokeFunctionArray) ToInvokeFunctionArrayOutputWithContext(ctx context.
 // InvokeFunctionMapInput is an input type that accepts InvokeFunctionMap and InvokeFunctionMapOutput values.
 // You can construct a concrete instance of `InvokeFunctionMapInput` via:
 //
-//          InvokeFunctionMap{ "key": InvokeFunctionArgs{...} }
+//	InvokeFunctionMap{ "key": InvokeFunctionArgs{...} }
 type InvokeFunctionMapInput interface {
 	pulumi.Input
 

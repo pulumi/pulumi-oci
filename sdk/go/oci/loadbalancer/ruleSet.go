@@ -22,50 +22,53 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewRuleSet(ctx, "testRuleSet", &LoadBalancer.RuleSetArgs{
-// 			Items: loadbalancer.RuleSetItemArray{
-// 				&loadbalancer.RuleSetItemArgs{
-// 					Action:                      pulumi.Any(_var.Rule_set_items_action),
-// 					AllowedMethods:              pulumi.Any(_var.Rule_set_items_allowed_methods),
-// 					AreInvalidCharactersAllowed: pulumi.Any(_var.Rule_set_items_are_invalid_characters_allowed),
-// 					Conditions: loadbalancer.RuleSetItemConditionArray{
-// 						&loadbalancer.RuleSetItemConditionArgs{
-// 							AttributeName:  pulumi.Any(_var.Rule_set_items_conditions_attribute_name),
-// 							AttributeValue: pulumi.Any(_var.Rule_set_items_conditions_attribute_value),
-// 							Operator:       pulumi.Any(_var.Rule_set_items_conditions_operator),
-// 						},
-// 					},
-// 					Description:             pulumi.Any(_var.Rule_set_items_description),
-// 					Header:                  pulumi.Any(_var.Rule_set_items_header),
-// 					HttpLargeHeaderSizeInKb: pulumi.Any(_var.Rule_set_items_http_large_header_size_in_kb),
-// 					Prefix:                  pulumi.Any(_var.Rule_set_items_prefix),
-// 					RedirectUri: &loadbalancer.RuleSetItemRedirectUriArgs{
-// 						Host:     pulumi.Any(_var.Rule_set_items_redirect_uri_host),
-// 						Path:     pulumi.Any(_var.Rule_set_items_redirect_uri_path),
-// 						Port:     pulumi.Any(_var.Rule_set_items_redirect_uri_port),
-// 						Protocol: pulumi.Any(_var.Rule_set_items_redirect_uri_protocol),
-// 						Query:    pulumi.Any(_var.Rule_set_items_redirect_uri_query),
-// 					},
-// 					ResponseCode: pulumi.Any(_var.Rule_set_items_response_code),
-// 					StatusCode:   pulumi.Any(_var.Rule_set_items_status_code),
-// 					Suffix:       pulumi.Any(_var.Rule_set_items_suffix),
-// 					Value:        pulumi.Any(_var.Rule_set_items_value),
-// 				},
-// 			},
-// 			LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewRuleSet(ctx, "testRuleSet", &LoadBalancer.RuleSetArgs{
+//				Items: loadbalancer.RuleSetItemArray{
+//					&loadbalancer.RuleSetItemArgs{
+//						Action:                      pulumi.Any(_var.Rule_set_items_action),
+//						AllowedMethods:              pulumi.Any(_var.Rule_set_items_allowed_methods),
+//						AreInvalidCharactersAllowed: pulumi.Any(_var.Rule_set_items_are_invalid_characters_allowed),
+//						Conditions: loadbalancer.RuleSetItemConditionArray{
+//							&loadbalancer.RuleSetItemConditionArgs{
+//								AttributeName:  pulumi.Any(_var.Rule_set_items_conditions_attribute_name),
+//								AttributeValue: pulumi.Any(_var.Rule_set_items_conditions_attribute_value),
+//								Operator:       pulumi.Any(_var.Rule_set_items_conditions_operator),
+//							},
+//						},
+//						Description:             pulumi.Any(_var.Rule_set_items_description),
+//						Header:                  pulumi.Any(_var.Rule_set_items_header),
+//						HttpLargeHeaderSizeInKb: pulumi.Any(_var.Rule_set_items_http_large_header_size_in_kb),
+//						Prefix:                  pulumi.Any(_var.Rule_set_items_prefix),
+//						RedirectUri: &loadbalancer.RuleSetItemRedirectUriArgs{
+//							Host:     pulumi.Any(_var.Rule_set_items_redirect_uri_host),
+//							Path:     pulumi.Any(_var.Rule_set_items_redirect_uri_path),
+//							Port:     pulumi.Any(_var.Rule_set_items_redirect_uri_port),
+//							Protocol: pulumi.Any(_var.Rule_set_items_redirect_uri_protocol),
+//							Query:    pulumi.Any(_var.Rule_set_items_redirect_uri_query),
+//						},
+//						ResponseCode: pulumi.Any(_var.Rule_set_items_response_code),
+//						StatusCode:   pulumi.Any(_var.Rule_set_items_status_code),
+//						Suffix:       pulumi.Any(_var.Rule_set_items_suffix),
+//						Value:        pulumi.Any(_var.Rule_set_items_value),
+//					},
+//				},
+//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -73,7 +76,9 @@ import (
 // RuleSets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
+//
+//	$ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
+//
 // ```
 type RuleSet struct {
 	pulumi.CustomResourceState
@@ -190,7 +195,7 @@ func (i *RuleSet) ToRuleSetOutputWithContext(ctx context.Context) RuleSetOutput 
 // RuleSetArrayInput is an input type that accepts RuleSetArray and RuleSetArrayOutput values.
 // You can construct a concrete instance of `RuleSetArrayInput` via:
 //
-//          RuleSetArray{ RuleSetArgs{...} }
+//	RuleSetArray{ RuleSetArgs{...} }
 type RuleSetArrayInput interface {
 	pulumi.Input
 
@@ -215,7 +220,7 @@ func (i RuleSetArray) ToRuleSetArrayOutputWithContext(ctx context.Context) RuleS
 // RuleSetMapInput is an input type that accepts RuleSetMap and RuleSetMapOutput values.
 // You can construct a concrete instance of `RuleSetMapInput` via:
 //
-//          RuleSetMap{ "key": RuleSetArgs{...} }
+//	RuleSetMap{ "key": RuleSetArgs{...} }
 type RuleSetMapInput interface {
 	pulumi.Input
 

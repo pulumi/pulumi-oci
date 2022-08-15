@@ -23,35 +23,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.NewSoftwareSource(ctx, "testSoftwareSource", &OsManagement.SoftwareSourceArgs{
-// 			ArchType:      pulumi.Any(_var.Software_source_arch_type),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Software_source_display_name),
-// 			ChecksumType:  pulumi.Any(_var.Software_source_checksum_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Software_source_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			MaintainerEmail: pulumi.Any(_var.Software_source_maintainer_email),
-// 			MaintainerName:  pulumi.Any(_var.Software_source_maintainer_name),
-// 			MaintainerPhone: pulumi.Any(_var.Software_source_maintainer_phone),
-// 			ParentId:        pulumi.Any(oci_osmanagement_parent.Test_parent.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.NewSoftwareSource(ctx, "testSoftwareSource", &OsManagement.SoftwareSourceArgs{
+//				ArchType:      pulumi.Any(_var.Software_source_arch_type),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Software_source_display_name),
+//				ChecksumType:  pulumi.Any(_var.Software_source_checksum_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Software_source_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				MaintainerEmail: pulumi.Any(_var.Software_source_maintainer_email),
+//				MaintainerName:  pulumi.Any(_var.Software_source_maintainer_name),
+//				MaintainerPhone: pulumi.Any(_var.Software_source_maintainer_phone),
+//				ParentId:        pulumi.Any(oci_osmanagement_parent.Test_parent.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // SoftwareSources can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
+//
+//	$ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
+//
 // ```
 type SoftwareSource struct {
 	pulumi.CustomResourceState
@@ -316,7 +321,7 @@ func (i *SoftwareSource) ToSoftwareSourceOutputWithContext(ctx context.Context) 
 // SoftwareSourceArrayInput is an input type that accepts SoftwareSourceArray and SoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceArrayInput` via:
 //
-//          SoftwareSourceArray{ SoftwareSourceArgs{...} }
+//	SoftwareSourceArray{ SoftwareSourceArgs{...} }
 type SoftwareSourceArrayInput interface {
 	pulumi.Input
 
@@ -341,7 +346,7 @@ func (i SoftwareSourceArray) ToSoftwareSourceArrayOutputWithContext(ctx context.
 // SoftwareSourceMapInput is an input type that accepts SoftwareSourceMap and SoftwareSourceMapOutput values.
 // You can construct a concrete instance of `SoftwareSourceMapInput` via:
 //
-//          SoftwareSourceMap{ "key": SoftwareSourceArgs{...} }
+//	SoftwareSourceMap{ "key": SoftwareSourceArgs{...} }
 type SoftwareSourceMapInput interface {
 	pulumi.Input
 

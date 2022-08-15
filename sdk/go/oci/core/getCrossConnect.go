@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetCrossConnect(ctx, &core.GetCrossConnectArgs{
-// 			CrossConnectId: oci_core_cross_connect.Test_cross_connect.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetCrossConnect(ctx, &core.GetCrossConnectArgs{
+//				CrossConnectId: oci_core_cross_connect.Test_cross_connect.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCrossConnect(ctx *pulumi.Context, args *LookupCrossConnectArgs, opts ...pulumi.InvokeOption) (*LookupCrossConnectResult, error) {
 	var rv LookupCrossConnectResult

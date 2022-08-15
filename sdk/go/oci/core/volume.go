@@ -34,46 +34,49 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolume(ctx, "testVolume", &Core.VolumeArgs{
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			AvailabilityDomain: pulumi.Any(_var.Volume_availability_domain),
-// 			BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
-// 			BlockVolumeReplicas: core.VolumeBlockVolumeReplicaArray{
-// 				&core.VolumeBlockVolumeReplicaArgs{
-// 					AvailabilityDomain: pulumi.Any(_var.Volume_block_volume_replicas_availability_domain),
-// 					DisplayName:        pulumi.Any(_var.Volume_block_volume_replicas_display_name),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Volume_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsAutoTuneEnabled: pulumi.Any(_var.Volume_is_auto_tune_enabled),
-// 			KmsKeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
-// 			SizeInGbs:         pulumi.Any(_var.Volume_size_in_gbs),
-// 			SizeInMbs:         pulumi.Any(_var.Volume_size_in_mbs),
-// 			SourceDetails: &core.VolumeSourceDetailsArgs{
-// 				Id:   pulumi.Any(_var.Volume_source_details_id),
-// 				Type: pulumi.Any(_var.Volume_source_details_type),
-// 			},
-// 			VpusPerGb:                   pulumi.Any(_var.Volume_vpus_per_gb),
-// 			BlockVolumeReplicasDeletion: pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolume(ctx, "testVolume", &Core.VolumeArgs{
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				AvailabilityDomain: pulumi.Any(_var.Volume_availability_domain),
+//				BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//				BlockVolumeReplicas: core.VolumeBlockVolumeReplicaArray{
+//					&core.VolumeBlockVolumeReplicaArgs{
+//						AvailabilityDomain: pulumi.Any(_var.Volume_block_volume_replicas_availability_domain),
+//						DisplayName:        pulumi.Any(_var.Volume_block_volume_replicas_display_name),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Volume_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsAutoTuneEnabled: pulumi.Any(_var.Volume_is_auto_tune_enabled),
+//				KmsKeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
+//				SizeInGbs:         pulumi.Any(_var.Volume_size_in_gbs),
+//				SizeInMbs:         pulumi.Any(_var.Volume_size_in_mbs),
+//				SourceDetails: &core.VolumeSourceDetailsArgs{
+//					Id:   pulumi.Any(_var.Volume_source_details_id),
+//					Type: pulumi.Any(_var.Volume_source_details_type),
+//				},
+//				VpusPerGb:                   pulumi.Any(_var.Volume_vpus_per_gb),
+//				BlockVolumeReplicasDeletion: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -81,7 +84,9 @@ import (
 // Volumes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volume:Volume test_volume "id"
+//
+//	$ pulumi import oci:Core/volume:Volume test_volume "id"
+//
 // ```
 type Volume struct {
 	pulumi.CustomResourceState
@@ -361,7 +366,7 @@ func (i *Volume) ToVolumeOutputWithContext(ctx context.Context) VolumeOutput {
 // VolumeArrayInput is an input type that accepts VolumeArray and VolumeArrayOutput values.
 // You can construct a concrete instance of `VolumeArrayInput` via:
 //
-//          VolumeArray{ VolumeArgs{...} }
+//	VolumeArray{ VolumeArgs{...} }
 type VolumeArrayInput interface {
 	pulumi.Input
 
@@ -386,7 +391,7 @@ func (i VolumeArray) ToVolumeArrayOutputWithContext(ctx context.Context) VolumeA
 // VolumeMapInput is an input type that accepts VolumeMap and VolumeMapOutput values.
 // You can construct a concrete instance of `VolumeMapInput` via:
 //
-//          VolumeMap{ "key": VolumeArgs{...} }
+//	VolumeMap{ "key": VolumeArgs{...} }
 type VolumeMapInput interface {
 	pulumi.Input
 

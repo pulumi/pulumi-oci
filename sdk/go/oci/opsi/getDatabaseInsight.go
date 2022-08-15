@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetDatabaseInsight(ctx, &opsi.GetDatabaseInsightArgs{
-// 			DatabaseInsightId: oci_opsi_database_insight.Test_database_insight.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetDatabaseInsight(ctx, &opsi.GetDatabaseInsightArgs{
+//				DatabaseInsightId: oci_opsi_database_insight.Test_database_insight.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDatabaseInsight(ctx *pulumi.Context, args *LookupDatabaseInsightArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseInsightResult, error) {
 	var rv LookupDatabaseInsightResult

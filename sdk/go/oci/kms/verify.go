@@ -23,27 +23,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewVerify(ctx, "testVerify", &Kms.VerifyArgs{
-// 			CryptoEndpoint:   pulumi.Any(_var.Verify_message_crypto_endpoint),
-// 			KeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
-// 			KeyVersionId:     pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 			Message:          pulumi.Any(_var.Verify_message),
-// 			Signature:        pulumi.Any(_var.Verify_signature),
-// 			SigningAlgorithm: pulumi.Any(_var.Verify_signing_algorithm),
-// 			MessageType:      pulumi.Any(_var.Verify_message_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewVerify(ctx, "testVerify", &Kms.VerifyArgs{
+//				CryptoEndpoint:   pulumi.Any(_var.Verify_message_crypto_endpoint),
+//				KeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
+//				KeyVersionId:     pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//				Message:          pulumi.Any(_var.Verify_message),
+//				Signature:        pulumi.Any(_var.Verify_signature),
+//				SigningAlgorithm: pulumi.Any(_var.Verify_signing_algorithm),
+//				MessageType:      pulumi.Any(_var.Verify_message_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // Verify can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Kms/verify:Verify test_verify "id"
+//
+//	$ pulumi import oci:Kms/verify:Verify test_verify "id"
+//
 // ```
 type Verify struct {
 	pulumi.CustomResourceState
@@ -223,7 +228,7 @@ func (i *Verify) ToVerifyOutputWithContext(ctx context.Context) VerifyOutput {
 // VerifyArrayInput is an input type that accepts VerifyArray and VerifyArrayOutput values.
 // You can construct a concrete instance of `VerifyArrayInput` via:
 //
-//          VerifyArray{ VerifyArgs{...} }
+//	VerifyArray{ VerifyArgs{...} }
 type VerifyArrayInput interface {
 	pulumi.Input
 
@@ -248,7 +253,7 @@ func (i VerifyArray) ToVerifyArrayOutputWithContext(ctx context.Context) VerifyA
 // VerifyMapInput is an input type that accepts VerifyMap and VerifyMapOutput values.
 // You can construct a concrete instance of `VerifyMapInput` via:
 //
-//          VerifyMap{ "key": VerifyArgs{...} }
+//	VerifyMap{ "key": VerifyArgs{...} }
 type VerifyMapInput interface {
 	pulumi.Input
 

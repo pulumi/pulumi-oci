@@ -22,6 +22,11 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private final String apmDomainId;
     /**
+     * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * 
+     */
+    private final Integer batchIntervalInSeconds;
+    /**
      * @return Details of monitor configuration.
      * 
      */
@@ -47,6 +52,11 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private final String id;
     /**
+     * @return If isRunNow is enabled, then the monitor will run now.
+     * 
+     */
+    private final Boolean isRunNow;
+    /**
      * @return If runOnce is enabled, then the monitor will run once.
      * 
      */
@@ -61,6 +71,11 @@ public final class GetMonitorsMonitorCollectionItem {
      * 
      */
     private final Integer repeatIntervalInSeconds;
+    /**
+     * @return Scheduling policy on Vantage points.
+     * 
+     */
+    private final String schedulingPolicy;
     /**
      * @return A filter to return only monitors using scriptId.
      * 
@@ -115,14 +130,17 @@ public final class GetMonitorsMonitorCollectionItem {
     @CustomType.Constructor
     private GetMonitorsMonitorCollectionItem(
         @CustomType.Parameter("apmDomainId") String apmDomainId,
+        @CustomType.Parameter("batchIntervalInSeconds") Integer batchIntervalInSeconds,
         @CustomType.Parameter("configurations") List<GetMonitorsMonitorCollectionItemConfiguration> configurations,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("displayName") String displayName,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("isRunNow") Boolean isRunNow,
         @CustomType.Parameter("isRunOnce") Boolean isRunOnce,
         @CustomType.Parameter("monitorType") String monitorType,
         @CustomType.Parameter("repeatIntervalInSeconds") Integer repeatIntervalInSeconds,
+        @CustomType.Parameter("schedulingPolicy") String schedulingPolicy,
         @CustomType.Parameter("scriptId") String scriptId,
         @CustomType.Parameter("scriptName") String scriptName,
         @CustomType.Parameter("scriptParameters") List<GetMonitorsMonitorCollectionItemScriptParameter> scriptParameters,
@@ -134,14 +152,17 @@ public final class GetMonitorsMonitorCollectionItem {
         @CustomType.Parameter("vantagePointCount") Integer vantagePointCount,
         @CustomType.Parameter("vantagePoints") List<String> vantagePoints) {
         this.apmDomainId = apmDomainId;
+        this.batchIntervalInSeconds = batchIntervalInSeconds;
         this.configurations = configurations;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.isRunNow = isRunNow;
         this.isRunOnce = isRunOnce;
         this.monitorType = monitorType;
         this.repeatIntervalInSeconds = repeatIntervalInSeconds;
+        this.schedulingPolicy = schedulingPolicy;
         this.scriptId = scriptId;
         this.scriptName = scriptName;
         this.scriptParameters = scriptParameters;
@@ -160,6 +181,13 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     public String apmDomainId() {
         return this.apmDomainId;
+    }
+    /**
+     * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * 
+     */
+    public Integer batchIntervalInSeconds() {
+        return this.batchIntervalInSeconds;
     }
     /**
      * @return Details of monitor configuration.
@@ -197,6 +225,13 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.id;
     }
     /**
+     * @return If isRunNow is enabled, then the monitor will run now.
+     * 
+     */
+    public Boolean isRunNow() {
+        return this.isRunNow;
+    }
+    /**
      * @return If runOnce is enabled, then the monitor will run once.
      * 
      */
@@ -216,6 +251,13 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     public Integer repeatIntervalInSeconds() {
         return this.repeatIntervalInSeconds;
+    }
+    /**
+     * @return Scheduling policy on Vantage points.
+     * 
+     */
+    public String schedulingPolicy() {
+        return this.schedulingPolicy;
     }
     /**
      * @return A filter to return only monitors using scriptId.
@@ -298,14 +340,17 @@ public final class GetMonitorsMonitorCollectionItem {
 
     public static final class Builder {
         private String apmDomainId;
+        private Integer batchIntervalInSeconds;
         private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isRunNow;
         private Boolean isRunOnce;
         private String monitorType;
         private Integer repeatIntervalInSeconds;
+        private String schedulingPolicy;
         private String scriptId;
         private String scriptName;
         private List<GetMonitorsMonitorCollectionItemScriptParameter> scriptParameters;
@@ -324,14 +369,17 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder(GetMonitorsMonitorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
+    	      this.batchIntervalInSeconds = defaults.batchIntervalInSeconds;
     	      this.configurations = defaults.configurations;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isRunNow = defaults.isRunNow;
     	      this.isRunOnce = defaults.isRunOnce;
     	      this.monitorType = defaults.monitorType;
     	      this.repeatIntervalInSeconds = defaults.repeatIntervalInSeconds;
+    	      this.schedulingPolicy = defaults.schedulingPolicy;
     	      this.scriptId = defaults.scriptId;
     	      this.scriptName = defaults.scriptName;
     	      this.scriptParameters = defaults.scriptParameters;
@@ -346,6 +394,10 @@ public final class GetMonitorsMonitorCollectionItem {
 
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            return this;
+        }
+        public Builder batchIntervalInSeconds(Integer batchIntervalInSeconds) {
+            this.batchIntervalInSeconds = Objects.requireNonNull(batchIntervalInSeconds);
             return this;
         }
         public Builder configurations(List<GetMonitorsMonitorCollectionItemConfiguration> configurations) {
@@ -371,6 +423,10 @@ public final class GetMonitorsMonitorCollectionItem {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder isRunNow(Boolean isRunNow) {
+            this.isRunNow = Objects.requireNonNull(isRunNow);
+            return this;
+        }
         public Builder isRunOnce(Boolean isRunOnce) {
             this.isRunOnce = Objects.requireNonNull(isRunOnce);
             return this;
@@ -381,6 +437,10 @@ public final class GetMonitorsMonitorCollectionItem {
         }
         public Builder repeatIntervalInSeconds(Integer repeatIntervalInSeconds) {
             this.repeatIntervalInSeconds = Objects.requireNonNull(repeatIntervalInSeconds);
+            return this;
+        }
+        public Builder schedulingPolicy(String schedulingPolicy) {
+            this.schedulingPolicy = Objects.requireNonNull(schedulingPolicy);
             return this;
         }
         public Builder scriptId(String scriptId) {
@@ -429,7 +489,7 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder vantagePoints(String... vantagePoints) {
             return vantagePoints(List.of(vantagePoints));
         }        public GetMonitorsMonitorCollectionItem build() {
-            return new GetMonitorsMonitorCollectionItem(apmDomainId, configurations, definedTags, displayName, freeformTags, id, isRunOnce, monitorType, repeatIntervalInSeconds, scriptId, scriptName, scriptParameters, status, target, timeCreated, timeUpdated, timeoutInSeconds, vantagePointCount, vantagePoints);
+            return new GetMonitorsMonitorCollectionItem(apmDomainId, batchIntervalInSeconds, configurations, definedTags, displayName, freeformTags, id, isRunNow, isRunOnce, monitorType, repeatIntervalInSeconds, schedulingPolicy, scriptId, scriptName, scriptParameters, status, target, timeCreated, timeUpdated, timeoutInSeconds, vantagePointCount, vantagePoints);
         }
     }
 }

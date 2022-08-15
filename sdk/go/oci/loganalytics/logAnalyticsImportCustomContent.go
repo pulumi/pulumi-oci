@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsImportCustomContent(ctx, "testLogAnalyticsImportCustomContent", &LogAnalytics.LogAnalyticsImportCustomContentArgs{
-// 			ImportCustomContentFile: pulumi.Any(_var.Log_analytics_import_custom_content_import_custom_content_file),
-// 			Namespace:               pulumi.Any(_var.Log_analytics_import_custom_content_namespace),
-// 			Expect:                  pulumi.Any(_var.Log_analytics_import_custom_content_expect),
-// 			IsOverwrite:             pulumi.Any(_var.Log_analytics_import_custom_content_is_overwrite),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsImportCustomContent(ctx, "testLogAnalyticsImportCustomContent", &LogAnalytics.LogAnalyticsImportCustomContentArgs{
+//				ImportCustomContentFile: pulumi.Any(_var.Log_analytics_import_custom_content_import_custom_content_file),
+//				Namespace:               pulumi.Any(_var.Log_analytics_import_custom_content_namespace),
+//				Expect:                  pulumi.Any(_var.Log_analytics_import_custom_content_expect),
+//				IsOverwrite:             pulumi.Any(_var.Log_analytics_import_custom_content_is_overwrite),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -196,7 +199,7 @@ func (i *LogAnalyticsImportCustomContent) ToLogAnalyticsImportCustomContentOutpu
 // LogAnalyticsImportCustomContentArrayInput is an input type that accepts LogAnalyticsImportCustomContentArray and LogAnalyticsImportCustomContentArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentArrayInput` via:
 //
-//          LogAnalyticsImportCustomContentArray{ LogAnalyticsImportCustomContentArgs{...} }
+//	LogAnalyticsImportCustomContentArray{ LogAnalyticsImportCustomContentArgs{...} }
 type LogAnalyticsImportCustomContentArrayInput interface {
 	pulumi.Input
 
@@ -221,7 +224,7 @@ func (i LogAnalyticsImportCustomContentArray) ToLogAnalyticsImportCustomContentA
 // LogAnalyticsImportCustomContentMapInput is an input type that accepts LogAnalyticsImportCustomContentMap and LogAnalyticsImportCustomContentMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentMapInput` via:
 //
-//          LogAnalyticsImportCustomContentMap{ "key": LogAnalyticsImportCustomContentArgs{...} }
+//	LogAnalyticsImportCustomContentMap{ "key": LogAnalyticsImportCustomContentArgs{...} }
 type LogAnalyticsImportCustomContentMapInput interface {
 	pulumi.Input
 

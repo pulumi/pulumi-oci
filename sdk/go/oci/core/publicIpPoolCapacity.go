@@ -17,23 +17,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewPublicIpPoolCapacity(ctx, "testPublicIpPoolCapacity", &Core.PublicIpPoolCapacityArgs{
-// 			ByoipId:        pulumi.Any(_var.Byoip_id),
-// 			CidrBlock:      pulumi.Any(_var.Cidr_block),
-// 			PublicIpPoolId: pulumi.Any(_var.Public_ip_pool_id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewPublicIpPoolCapacity(ctx, "testPublicIpPoolCapacity", &Core.PublicIpPoolCapacityArgs{
+//				ByoipId:        pulumi.Any(_var.Byoip_id),
+//				CidrBlock:      pulumi.Any(_var.Cidr_block),
+//				PublicIpPoolId: pulumi.Any(_var.Public_ip_pool_id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -41,7 +44,9 @@ import (
 // PublicIpPoolCapacity can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
+//
+//	$ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
+//
 // ```
 type PublicIpPoolCapacity struct {
 	pulumi.CustomResourceState
@@ -158,7 +163,7 @@ func (i *PublicIpPoolCapacity) ToPublicIpPoolCapacityOutputWithContext(ctx conte
 // PublicIpPoolCapacityArrayInput is an input type that accepts PublicIpPoolCapacityArray and PublicIpPoolCapacityArrayOutput values.
 // You can construct a concrete instance of `PublicIpPoolCapacityArrayInput` via:
 //
-//          PublicIpPoolCapacityArray{ PublicIpPoolCapacityArgs{...} }
+//	PublicIpPoolCapacityArray{ PublicIpPoolCapacityArgs{...} }
 type PublicIpPoolCapacityArrayInput interface {
 	pulumi.Input
 
@@ -183,7 +188,7 @@ func (i PublicIpPoolCapacityArray) ToPublicIpPoolCapacityArrayOutputWithContext(
 // PublicIpPoolCapacityMapInput is an input type that accepts PublicIpPoolCapacityMap and PublicIpPoolCapacityMapOutput values.
 // You can construct a concrete instance of `PublicIpPoolCapacityMapInput` via:
 //
-//          PublicIpPoolCapacityMap{ "key": PublicIpPoolCapacityArgs{...} }
+//	PublicIpPoolCapacityMap{ "key": PublicIpPoolCapacityArgs{...} }
 type PublicIpPoolCapacityMapInput interface {
 	pulumi.Input
 

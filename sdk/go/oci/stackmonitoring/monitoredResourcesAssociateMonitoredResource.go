@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.NewMonitoredResourcesAssociateMonitoredResource(ctx, "testMonitoredResourcesAssociateMonitoredResource", &StackMonitoring.MonitoredResourcesAssociateMonitoredResourceArgs{
-// 			AssociationType:       pulumi.Any(_var.Monitored_resources_associate_monitored_resource_association_type),
-// 			CompartmentId:         pulumi.Any(_var.Compartment_id),
-// 			DestinationResourceId: pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
-// 			SourceResourceId:      pulumi.Any(oci_stack_monitoring_source_resource.Test_source_resource.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.NewMonitoredResourcesAssociateMonitoredResource(ctx, "testMonitoredResourcesAssociateMonitoredResource", &StackMonitoring.MonitoredResourcesAssociateMonitoredResourceArgs{
+//				AssociationType:       pulumi.Any(_var.Monitored_resources_associate_monitored_resource_association_type),
+//				CompartmentId:         pulumi.Any(_var.Compartment_id),
+//				DestinationResourceId: pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
+//				SourceResourceId:      pulumi.Any(oci_stack_monitoring_source_resource.Test_source_resource.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // MonitoredResourcesAssociateMonitoredResources can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
+//
+//	$ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
+//
 // ```
 type MonitoredResourcesAssociateMonitoredResource struct {
 	pulumi.CustomResourceState
@@ -200,7 +205,7 @@ func (i *MonitoredResourcesAssociateMonitoredResource) ToMonitoredResourcesAssoc
 // MonitoredResourcesAssociateMonitoredResourceArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceArray and MonitoredResourcesAssociateMonitoredResourceArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceArrayInput` via:
 //
-//          MonitoredResourcesAssociateMonitoredResourceArray{ MonitoredResourcesAssociateMonitoredResourceArgs{...} }
+//	MonitoredResourcesAssociateMonitoredResourceArray{ MonitoredResourcesAssociateMonitoredResourceArgs{...} }
 type MonitoredResourcesAssociateMonitoredResourceArrayInput interface {
 	pulumi.Input
 
@@ -225,7 +230,7 @@ func (i MonitoredResourcesAssociateMonitoredResourceArray) ToMonitoredResourcesA
 // MonitoredResourcesAssociateMonitoredResourceMapInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceMap and MonitoredResourcesAssociateMonitoredResourceMapOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceMapInput` via:
 //
-//          MonitoredResourcesAssociateMonitoredResourceMap{ "key": MonitoredResourcesAssociateMonitoredResourceArgs{...} }
+//	MonitoredResourcesAssociateMonitoredResourceMap{ "key": MonitoredResourcesAssociateMonitoredResourceArgs{...} }
 type MonitoredResourcesAssociateMonitoredResourceMapInput interface {
 	pulumi.Input
 

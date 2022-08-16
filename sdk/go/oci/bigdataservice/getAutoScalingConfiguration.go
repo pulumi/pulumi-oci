@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.GetAutoScalingConfiguration(ctx, &bigdataservice.GetAutoScalingConfigurationArgs{
-// 			AutoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-// 			BdsInstanceId:              oci_bds_bds_instance.Test_bds_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.GetAutoScalingConfiguration(ctx, &bigdataservice.GetAutoScalingConfigurationArgs{
+//				AutoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+//				BdsInstanceId:              oci_bds_bds_instance.Test_bds_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAutoScalingConfiguration(ctx *pulumi.Context, args *LookupAutoScalingConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupAutoScalingConfigurationResult, error) {
 	var rv LookupAutoScalingConfigurationResult

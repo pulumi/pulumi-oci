@@ -17,6 +17,8 @@ if typing.TYPE_CHECKING:
     aivision = __aivision
     import pulumi_oci.analytics as __analytics
     analytics = __analytics
+    import pulumi_oci.announcementsservice as __announcementsservice
+    announcementsservice = __announcementsservice
     import pulumi_oci.apigateway as __apigateway
     apigateway = __apigateway
     import pulumi_oci.apm as __apm
@@ -147,6 +149,8 @@ if typing.TYPE_CHECKING:
     onesubsription = __onesubsription
     import pulumi_oci.ons as __ons
     ons = __ons
+    import pulumi_oci.opensearch as __opensearch
+    opensearch = __opensearch
     import pulumi_oci.operatoraccesscontrol as __operatoraccesscontrol
     operatoraccesscontrol = __operatoraccesscontrol
     import pulumi_oci.opsi as __opsi
@@ -202,6 +206,7 @@ else:
     aianomalydetection = _utilities.lazy_import('pulumi_oci.aianomalydetection')
     aivision = _utilities.lazy_import('pulumi_oci.aivision')
     analytics = _utilities.lazy_import('pulumi_oci.analytics')
+    announcementsservice = _utilities.lazy_import('pulumi_oci.announcementsservice')
     apigateway = _utilities.lazy_import('pulumi_oci.apigateway')
     apm = _utilities.lazy_import('pulumi_oci.apm')
     apmconfig = _utilities.lazy_import('pulumi_oci.apmconfig')
@@ -267,6 +272,7 @@ else:
     oda = _utilities.lazy_import('pulumi_oci.oda')
     onesubsription = _utilities.lazy_import('pulumi_oci.onesubsription')
     ons = _utilities.lazy_import('pulumi_oci.ons')
+    opensearch = _utilities.lazy_import('pulumi_oci.opensearch')
     operatoraccesscontrol = _utilities.lazy_import('pulumi_oci.operatoraccesscontrol')
     opsi = _utilities.lazy_import('pulumi_oci.opsi')
     optimizer = _utilities.lazy_import('pulumi_oci.optimizer')
@@ -382,6 +388,30 @@ _utilities.register(
   "fqn": "pulumi_oci.analytics",
   "classes": {
    "oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl": "AnalyticsInstanceVanityUrl"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AnnouncementsService/announcementSubscription",
+  "fqn": "pulumi_oci.announcementsservice",
+  "classes": {
+   "oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription": "AnnouncementSubscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AnnouncementsService/announcementSubscriptionsActionsChangeCompartment",
+  "fqn": "pulumi_oci.announcementsservice",
+  "classes": {
+   "oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment": "AnnouncementSubscriptionsActionsChangeCompartment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AnnouncementsService/announcementSubscriptionsFilterGroup",
+  "fqn": "pulumi_oci.announcementsservice",
+  "classes": {
+   "oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup": "AnnouncementSubscriptionsFilterGroup"
   }
  },
  {
@@ -582,6 +612,14 @@ _utilities.register(
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
    "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig": "BdsInstanceMetastoreConfig"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "BigDataService/bdsInstancePatchAction",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction": "BdsInstancePatchAction"
   }
  },
  {
@@ -3270,6 +3308,14 @@ _utilities.register(
   "fqn": "pulumi_oci.ons",
   "classes": {
    "oci:Ons/subscription:Subscription": "Subscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opensearch/cluster",
+  "fqn": "pulumi_oci.opensearch",
+  "classes": {
+   "oci:Opensearch/cluster:Cluster": "Cluster"
   }
  },
  {

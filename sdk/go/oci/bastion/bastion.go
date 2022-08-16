@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Bastion.NewBastion(ctx, "testBastion", &Bastion.BastionArgs{
-// 			BastionType:               pulumi.Any(_var.Bastion_bastion_type),
-// 			CompartmentId:             pulumi.Any(_var.Compartment_id),
-// 			TargetSubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			ClientCidrBlockAllowLists: pulumi.Any(_var.Bastion_client_cidr_block_allow_list),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			MaxSessionTtlInSeconds:    pulumi.Any(_var.Bastion_max_session_ttl_in_seconds),
-// 			PhoneBookEntry:            pulumi.Any(_var.Bastion_phone_book_entry),
-// 			StaticJumpHostIpAddresses: pulumi.Any(_var.Bastion_static_jump_host_ip_addresses),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Bastion.NewBastion(ctx, "testBastion", &Bastion.BastionArgs{
+//				BastionType:               pulumi.Any(_var.Bastion_bastion_type),
+//				CompartmentId:             pulumi.Any(_var.Compartment_id),
+//				TargetSubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				ClientCidrBlockAllowLists: pulumi.Any(_var.Bastion_client_cidr_block_allow_list),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				MaxSessionTtlInSeconds:    pulumi.Any(_var.Bastion_max_session_ttl_in_seconds),
+//				PhoneBookEntry:            pulumi.Any(_var.Bastion_phone_book_entry),
+//				StaticJumpHostIpAddresses: pulumi.Any(_var.Bastion_static_jump_host_ip_addresses),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // Bastions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
+//
+//	$ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
+//
 // ```
 type Bastion struct {
 	pulumi.CustomResourceState
@@ -290,7 +295,7 @@ func (i *Bastion) ToBastionOutputWithContext(ctx context.Context) BastionOutput 
 // BastionArrayInput is an input type that accepts BastionArray and BastionArrayOutput values.
 // You can construct a concrete instance of `BastionArrayInput` via:
 //
-//          BastionArray{ BastionArgs{...} }
+//	BastionArray{ BastionArgs{...} }
 type BastionArrayInput interface {
 	pulumi.Input
 
@@ -315,7 +320,7 @@ func (i BastionArray) ToBastionArrayOutputWithContext(ctx context.Context) Basti
 // BastionMapInput is an input type that accepts BastionMap and BastionMapOutput values.
 // You can construct a concrete instance of `BastionMapInput` via:
 //
-//          BastionMap{ "key": BastionArgs{...} }
+//	BastionMap{ "key": BastionArgs{...} }
 type BastionMapInput interface {
 	pulumi.Input
 

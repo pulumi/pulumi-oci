@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Integration.Outputs
     public sealed class GetIntegrationInstanceCustomEndpointResult
     {
         /// <summary>
+        /// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+        /// </summary>
+        public readonly string Alias;
+        /// <summary>
         /// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
         /// </summary>
         public readonly string CertificateSecretId;
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.Integration.Outputs
 
         [OutputConstructor]
         private GetIntegrationInstanceCustomEndpointResult(
+            string alias,
+
             string certificateSecretId,
 
             int certificateSecretVersion,
 
             string hostname)
         {
+            Alias = alias;
             CertificateSecretId = certificateSecretId;
             CertificateSecretVersion = certificateSecretVersion;
             Hostname = hostname;

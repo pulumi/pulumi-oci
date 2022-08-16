@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Nosql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Nosql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Nosql.NewIndex(ctx, "testIndex", &Nosql.IndexArgs{
-// 			Keys: nosql.IndexKeyArray{
-// 				&nosql.IndexKeyArgs{
-// 					ColumnName:    pulumi.Any(_var.Index_keys_column_name),
-// 					JsonFieldType: pulumi.Any(_var.Index_keys_json_field_type),
-// 					JsonPath:      pulumi.Any(_var.Index_keys_json_path),
-// 				},
-// 			},
-// 			TableNameOrId: pulumi.Any(oci_nosql_table_name_or.Test_table_name_or.Id),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			IsIfNotExists: pulumi.Any(_var.Index_is_if_not_exists),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Nosql.NewIndex(ctx, "testIndex", &Nosql.IndexArgs{
+//				Keys: nosql.IndexKeyArray{
+//					&nosql.IndexKeyArgs{
+//						ColumnName:    pulumi.Any(_var.Index_keys_column_name),
+//						JsonFieldType: pulumi.Any(_var.Index_keys_json_field_type),
+//						JsonPath:      pulumi.Any(_var.Index_keys_json_path),
+//					},
+//				},
+//				TableNameOrId: pulumi.Any(oci_nosql_table_name_or.Test_table_name_or.Id),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				IsIfNotExists: pulumi.Any(_var.Index_is_if_not_exists),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // Indexes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
+//
+//	$ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
+//
 // ```
 type Index struct {
 	pulumi.CustomResourceState
@@ -210,7 +215,7 @@ func (i *Index) ToIndexOutputWithContext(ctx context.Context) IndexOutput {
 // IndexArrayInput is an input type that accepts IndexArray and IndexArrayOutput values.
 // You can construct a concrete instance of `IndexArrayInput` via:
 //
-//          IndexArray{ IndexArgs{...} }
+//	IndexArray{ IndexArgs{...} }
 type IndexArrayInput interface {
 	pulumi.Input
 
@@ -235,7 +240,7 @@ func (i IndexArray) ToIndexArrayOutputWithContext(ctx context.Context) IndexArra
 // IndexMapInput is an input type that accepts IndexMap and IndexMapOutput values.
 // You can construct a concrete instance of `IndexMapInput` via:
 //
-//          IndexMap{ "key": IndexArgs{...} }
+//	IndexMap{ "key": IndexArgs{...} }
 type IndexMapInput interface {
 	pulumi.Input
 

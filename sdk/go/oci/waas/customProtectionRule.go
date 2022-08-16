@@ -23,30 +23,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.NewCustomProtectionRule(ctx, "testCustomProtectionRule", &Waas.CustomProtectionRuleArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Custom_protection_rule_display_name),
-// 			Template:      pulumi.Any(_var.Custom_protection_rule_template),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Custom_protection_rule_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.NewCustomProtectionRule(ctx, "testCustomProtectionRule", &Waas.CustomProtectionRuleArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Custom_protection_rule_display_name),
+//				Template:      pulumi.Any(_var.Custom_protection_rule_template),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Custom_protection_rule_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // CustomProtectionRules can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
+//
+//	$ pulumi import oci:Waas/customProtectionRule:CustomProtectionRule test_custom_protection_rule "id"
+//
 // ```
 type CustomProtectionRule struct {
 	pulumi.CustomResourceState
@@ -219,7 +224,7 @@ func (i *CustomProtectionRule) ToCustomProtectionRuleOutputWithContext(ctx conte
 // CustomProtectionRuleArrayInput is an input type that accepts CustomProtectionRuleArray and CustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `CustomProtectionRuleArrayInput` via:
 //
-//          CustomProtectionRuleArray{ CustomProtectionRuleArgs{...} }
+//	CustomProtectionRuleArray{ CustomProtectionRuleArgs{...} }
 type CustomProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -244,7 +249,7 @@ func (i CustomProtectionRuleArray) ToCustomProtectionRuleArrayOutputWithContext(
 // CustomProtectionRuleMapInput is an input type that accepts CustomProtectionRuleMap and CustomProtectionRuleMapOutput values.
 // You can construct a concrete instance of `CustomProtectionRuleMapInput` via:
 //
-//          CustomProtectionRuleMap{ "key": CustomProtectionRuleArgs{...} }
+//	CustomProtectionRuleMap{ "key": CustomProtectionRuleArgs{...} }
 type CustomProtectionRuleMapInput interface {
 	pulumi.Input
 

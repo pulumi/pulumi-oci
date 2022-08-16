@@ -21,42 +21,45 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewVmCluster(ctx, "testVmCluster", &Database.VmClusterArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			CpuCoreCount:            pulumi.Any(_var.Vm_cluster_cpu_core_count),
-// 			DisplayName:             pulumi.Any(_var.Vm_cluster_display_name),
-// 			ExadataInfrastructureId: pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-// 			GiVersion:               pulumi.Any(_var.Vm_cluster_gi_version),
-// 			SshPublicKeys:           pulumi.Any(_var.Vm_cluster_ssh_public_keys),
-// 			VmClusterNetworkId:      pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
-// 			DataCollectionOptions: &database.VmClusterDataCollectionOptionsArgs{
-// 				IsDiagnosticsEventsEnabled: pulumi.Any(_var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled),
-// 			},
-// 			DataStorageSizeInTbs:   pulumi.Any(_var.Vm_cluster_data_storage_size_in_tbs),
-// 			DbNodeStorageSizeInGbs: pulumi.Any(_var.Vm_cluster_db_node_storage_size_in_gbs),
-// 			DbServers:              pulumi.Any(_var.Vm_cluster_db_servers),
-// 			DefinedTags:            pulumi.Any(_var.Vm_cluster_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsLocalBackupEnabled:     pulumi.Any(_var.Vm_cluster_is_local_backup_enabled),
-// 			IsSparseDiskgroupEnabled: pulumi.Any(_var.Vm_cluster_is_sparse_diskgroup_enabled),
-// 			LicenseModel:             pulumi.Any(_var.Vm_cluster_license_model),
-// 			MemorySizeInGbs:          pulumi.Any(_var.Vm_cluster_memory_size_in_gbs),
-// 			TimeZone:                 pulumi.Any(_var.Vm_cluster_time_zone),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewVmCluster(ctx, "testVmCluster", &Database.VmClusterArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				CpuCoreCount:            pulumi.Any(_var.Vm_cluster_cpu_core_count),
+//				DisplayName:             pulumi.Any(_var.Vm_cluster_display_name),
+//				ExadataInfrastructureId: pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
+//				GiVersion:               pulumi.Any(_var.Vm_cluster_gi_version),
+//				SshPublicKeys:           pulumi.Any(_var.Vm_cluster_ssh_public_keys),
+//				VmClusterNetworkId:      pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
+//				DataCollectionOptions: &database.VmClusterDataCollectionOptionsArgs{
+//					IsDiagnosticsEventsEnabled: pulumi.Any(_var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled),
+//				},
+//				DataStorageSizeInTbs:   pulumi.Any(_var.Vm_cluster_data_storage_size_in_tbs),
+//				DbNodeStorageSizeInGbs: pulumi.Any(_var.Vm_cluster_db_node_storage_size_in_gbs),
+//				DbServers:              pulumi.Any(_var.Vm_cluster_db_servers),
+//				DefinedTags:            pulumi.Any(_var.Vm_cluster_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsLocalBackupEnabled:     pulumi.Any(_var.Vm_cluster_is_local_backup_enabled),
+//				IsSparseDiskgroupEnabled: pulumi.Any(_var.Vm_cluster_is_sparse_diskgroup_enabled),
+//				LicenseModel:             pulumi.Any(_var.Vm_cluster_license_model),
+//				MemorySizeInGbs:          pulumi.Any(_var.Vm_cluster_memory_size_in_gbs),
+//				TimeZone:                 pulumi.Any(_var.Vm_cluster_time_zone),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -64,7 +67,9 @@ import (
 // VmClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
+//
+//	$ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
+//
 // ```
 type VmCluster struct {
 	pulumi.CustomResourceState
@@ -393,7 +398,7 @@ func (i *VmCluster) ToVmClusterOutputWithContext(ctx context.Context) VmClusterO
 // VmClusterArrayInput is an input type that accepts VmClusterArray and VmClusterArrayOutput values.
 // You can construct a concrete instance of `VmClusterArrayInput` via:
 //
-//          VmClusterArray{ VmClusterArgs{...} }
+//	VmClusterArray{ VmClusterArgs{...} }
 type VmClusterArrayInput interface {
 	pulumi.Input
 
@@ -418,7 +423,7 @@ func (i VmClusterArray) ToVmClusterArrayOutputWithContext(ctx context.Context) V
 // VmClusterMapInput is an input type that accepts VmClusterMap and VmClusterMapOutput values.
 // You can construct a concrete instance of `VmClusterMapInput` via:
 //
-//          VmClusterMap{ "key": VmClusterArgs{...} }
+//	VmClusterMap{ "key": VmClusterArgs{...} }
 type VmClusterMapInput interface {
 	pulumi.Input
 

@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Bastion.NewSession(ctx, "testSession", &Bastion.SessionArgs{
-// 			BastionId: pulumi.Any(oci_bastion_bastion.Test_bastion.Id),
-// 			KeyDetails: &bastion.SessionKeyDetailsArgs{
-// 				PublicKeyContent: pulumi.Any(_var.Session_key_details_public_key_content),
-// 			},
-// 			TargetResourceDetails: &bastion.SessionTargetResourceDetailsArgs{
-// 				SessionType:                           pulumi.Any(_var.Session_target_resource_details_session_type),
-// 				TargetResourceId:                      pulumi.Any(oci_bastion_target_resource.Test_target_resource.Id),
-// 				TargetResourceOperatingSystemUserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 				TargetResourcePort:                    pulumi.Any(_var.Session_target_resource_details_target_resource_port),
-// 				TargetResourcePrivateIpAddress:        pulumi.Any(_var.Session_target_resource_details_target_resource_private_ip_address),
-// 			},
-// 			DisplayName:         pulumi.Any(_var.Session_display_name),
-// 			KeyType:             pulumi.Any(_var.Session_key_type),
-// 			SessionTtlInSeconds: pulumi.Any(_var.Session_session_ttl_in_seconds),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Bastion.NewSession(ctx, "testSession", &Bastion.SessionArgs{
+//				BastionId: pulumi.Any(oci_bastion_bastion.Test_bastion.Id),
+//				KeyDetails: &bastion.SessionKeyDetailsArgs{
+//					PublicKeyContent: pulumi.Any(_var.Session_key_details_public_key_content),
+//				},
+//				TargetResourceDetails: &bastion.SessionTargetResourceDetailsArgs{
+//					SessionType:                           pulumi.Any(_var.Session_target_resource_details_session_type),
+//					TargetResourceId:                      pulumi.Any(oci_bastion_target_resource.Test_target_resource.Id),
+//					TargetResourceOperatingSystemUserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//					TargetResourcePort:                    pulumi.Any(_var.Session_target_resource_details_target_resource_port),
+//					TargetResourcePrivateIpAddress:        pulumi.Any(_var.Session_target_resource_details_target_resource_private_ip_address),
+//				},
+//				DisplayName:         pulumi.Any(_var.Session_display_name),
+//				KeyType:             pulumi.Any(_var.Session_key_type),
+//				SessionTtlInSeconds: pulumi.Any(_var.Session_session_ttl_in_seconds),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // Sessions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Bastion/session:Session test_session "id"
+//
+//	$ pulumi import oci:Bastion/session:Session test_session "id"
+//
 // ```
 type Session struct {
 	pulumi.CustomResourceState
@@ -251,7 +256,7 @@ func (i *Session) ToSessionOutputWithContext(ctx context.Context) SessionOutput 
 // SessionArrayInput is an input type that accepts SessionArray and SessionArrayOutput values.
 // You can construct a concrete instance of `SessionArrayInput` via:
 //
-//          SessionArray{ SessionArgs{...} }
+//	SessionArray{ SessionArgs{...} }
 type SessionArrayInput interface {
 	pulumi.Input
 
@@ -276,7 +281,7 @@ func (i SessionArray) ToSessionArrayOutputWithContext(ctx context.Context) Sessi
 // SessionMapInput is an input type that accepts SessionMap and SessionMapOutput values.
 // You can construct a concrete instance of `SessionMapInput` via:
 //
-//          SessionMap{ "key": SessionArgs{...} }
+//	SessionMap{ "key": SessionArgs{...} }
 type SessionMapInput interface {
 	pulumi.Input
 

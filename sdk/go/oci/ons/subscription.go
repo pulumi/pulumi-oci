@@ -25,30 +25,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ons.NewSubscription(ctx, "testSubscription", &Ons.SubscriptionArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Endpoint:      pulumi.Any(_var.Subscription_endpoint),
-// 			Protocol:      pulumi.Any(_var.Subscription_protocol),
-// 			TopicId:       pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ons.NewSubscription(ctx, "testSubscription", &Ons.SubscriptionArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Endpoint:      pulumi.Any(_var.Subscription_endpoint),
+//				Protocol:      pulumi.Any(_var.Subscription_protocol),
+//				TopicId:       pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // Subscriptions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
+//
+//	$ pulumi import oci:Ons/subscription:Subscription test_subscription "id"
+//
 // ```
 type Subscription struct {
 	pulumi.CustomResourceState
@@ -234,7 +239,7 @@ func (i *Subscription) ToSubscriptionOutputWithContext(ctx context.Context) Subs
 // SubscriptionArrayInput is an input type that accepts SubscriptionArray and SubscriptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionArrayInput` via:
 //
-//          SubscriptionArray{ SubscriptionArgs{...} }
+//	SubscriptionArray{ SubscriptionArgs{...} }
 type SubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -259,7 +264,7 @@ func (i SubscriptionArray) ToSubscriptionArrayOutputWithContext(ctx context.Cont
 // SubscriptionMapInput is an input type that accepts SubscriptionMap and SubscriptionMapOutput values.
 // You can construct a concrete instance of `SubscriptionMapInput` via:
 //
-//          SubscriptionMap{ "key": SubscriptionArgs{...} }
+//	SubscriptionMap{ "key": SubscriptionArgs{...} }
 type SubscriptionMapInput interface {
 	pulumi.Input
 

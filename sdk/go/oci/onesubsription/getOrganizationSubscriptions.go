@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
 //
-// API that returns data for the list of subscription ids returned from Organizations API
+// # API that returns data for the list of subscription ids returned from Organizations API
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetOrganizationSubscriptions(ctx, &onesubsription.GetOrganizationSubscriptionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetOrganizationSubscriptions(ctx, &onesubsription.GetOrganizationSubscriptionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOrganizationSubscriptions(ctx *pulumi.Context, args *GetOrganizationSubscriptionsArgs, opts ...pulumi.InvokeOption) (*GetOrganizationSubscriptionsResult, error) {
 	var rv GetOrganizationSubscriptionsResult

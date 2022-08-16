@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ContainerEngine.GetNodePoolOption(ctx, &containerengine.GetNodePoolOptionArgs{
-// 			NodePoolOptionId: oci_containerengine_node_pool_option.Test_node_pool_option.Id,
-// 			CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.GetNodePoolOption(ctx, &containerengine.GetNodePoolOptionArgs{
+//				NodePoolOptionId: oci_containerengine_node_pool_option.Test_node_pool_option.Id,
+//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNodePoolOption(ctx *pulumi.Context, args *GetNodePoolOptionArgs, opts ...pulumi.InvokeOption) (*GetNodePoolOptionResult, error) {
 	var rv GetNodePoolOptionResult

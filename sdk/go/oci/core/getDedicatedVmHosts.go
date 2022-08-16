@@ -23,27 +23,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDedicatedVmHosts(ctx, &core.GetDedicatedVmHostsArgs{
-// 			CompartmentId:                            _var.Compartment_id,
-// 			AvailabilityDomain:                       pulumi.StringRef(_var.Dedicated_vm_host_availability_domain),
-// 			DisplayName:                              pulumi.StringRef(_var.Dedicated_vm_host_display_name),
-// 			InstanceShapeName:                        pulumi.StringRef(_var.Dedicated_vm_host_instance_shape_name),
-// 			RemainingMemoryInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(_var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to),
-// 			RemainingOcpusGreaterThanOrEqualTo:       pulumi.Float64Ref(_var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to),
-// 			State:                                    pulumi.StringRef(_var.Dedicated_vm_host_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDedicatedVmHosts(ctx, &core.GetDedicatedVmHostsArgs{
+//				CompartmentId:                            _var.Compartment_id,
+//				AvailabilityDomain:                       pulumi.StringRef(_var.Dedicated_vm_host_availability_domain),
+//				DisplayName:                              pulumi.StringRef(_var.Dedicated_vm_host_display_name),
+//				InstanceShapeName:                        pulumi.StringRef(_var.Dedicated_vm_host_instance_shape_name),
+//				RemainingMemoryInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(_var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to),
+//				RemainingOcpusGreaterThanOrEqualTo:       pulumi.Float64Ref(_var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to),
+//				State:                                    pulumi.StringRef(_var.Dedicated_vm_host_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDedicatedVmHosts(ctx *pulumi.Context, args *GetDedicatedVmHostsArgs, opts ...pulumi.InvokeOption) (*GetDedicatedVmHostsResult, error) {
 	var rv GetDedicatedVmHostsResult

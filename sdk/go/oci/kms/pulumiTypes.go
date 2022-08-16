@@ -25,7 +25,7 @@ type GeneratedKeyKeyShape struct {
 // GeneratedKeyKeyShapeInput is an input type that accepts GeneratedKeyKeyShapeArgs and GeneratedKeyKeyShapeOutput values.
 // You can construct a concrete instance of `GeneratedKeyKeyShapeInput` via:
 //
-//          GeneratedKeyKeyShapeArgs{...}
+//	GeneratedKeyKeyShapeArgs{...}
 type GeneratedKeyKeyShapeInput interface {
 	pulumi.Input
 
@@ -68,11 +68,11 @@ func (i GeneratedKeyKeyShapeArgs) ToGeneratedKeyKeyShapePtrOutputWithContext(ctx
 // GeneratedKeyKeyShapePtrInput is an input type that accepts GeneratedKeyKeyShapeArgs, GeneratedKeyKeyShapePtr and GeneratedKeyKeyShapePtrOutput values.
 // You can construct a concrete instance of `GeneratedKeyKeyShapePtrInput` via:
 //
-//          GeneratedKeyKeyShapeArgs{...}
+//	        GeneratedKeyKeyShapeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GeneratedKeyKeyShapePtrInput interface {
 	pulumi.Input
 
@@ -212,7 +212,7 @@ type KeyKeyShape struct {
 // KeyKeyShapeInput is an input type that accepts KeyKeyShapeArgs and KeyKeyShapeOutput values.
 // You can construct a concrete instance of `KeyKeyShapeInput` via:
 //
-//          KeyKeyShapeArgs{...}
+//	KeyKeyShapeArgs{...}
 type KeyKeyShapeInput interface {
 	pulumi.Input
 
@@ -255,11 +255,11 @@ func (i KeyKeyShapeArgs) ToKeyKeyShapePtrOutputWithContext(ctx context.Context) 
 // KeyKeyShapePtrInput is an input type that accepts KeyKeyShapeArgs, KeyKeyShapePtr and KeyKeyShapePtrOutput values.
 // You can construct a concrete instance of `KeyKeyShapePtrInput` via:
 //
-//          KeyKeyShapeArgs{...}
+//	        KeyKeyShapeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type KeyKeyShapePtrInput interface {
 	pulumi.Input
 
@@ -392,7 +392,7 @@ type KeyReplicaDetail struct {
 // KeyReplicaDetailInput is an input type that accepts KeyReplicaDetailArgs and KeyReplicaDetailOutput values.
 // You can construct a concrete instance of `KeyReplicaDetailInput` via:
 //
-//          KeyReplicaDetailArgs{...}
+//	KeyReplicaDetailArgs{...}
 type KeyReplicaDetailInput interface {
 	pulumi.Input
 
@@ -420,7 +420,7 @@ func (i KeyReplicaDetailArgs) ToKeyReplicaDetailOutputWithContext(ctx context.Co
 // KeyReplicaDetailArrayInput is an input type that accepts KeyReplicaDetailArray and KeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `KeyReplicaDetailArrayInput` via:
 //
-//          KeyReplicaDetailArray{ KeyReplicaDetailArgs{...} }
+//	KeyReplicaDetailArray{ KeyReplicaDetailArgs{...} }
 type KeyReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -493,7 +493,7 @@ type KeyRestoreFromFile struct {
 // KeyRestoreFromFileInput is an input type that accepts KeyRestoreFromFileArgs and KeyRestoreFromFileOutput values.
 // You can construct a concrete instance of `KeyRestoreFromFileInput` via:
 //
-//          KeyRestoreFromFileArgs{...}
+//	KeyRestoreFromFileArgs{...}
 type KeyRestoreFromFileInput interface {
 	pulumi.Input
 
@@ -533,11 +533,11 @@ func (i KeyRestoreFromFileArgs) ToKeyRestoreFromFilePtrOutputWithContext(ctx con
 // KeyRestoreFromFilePtrInput is an input type that accepts KeyRestoreFromFileArgs, KeyRestoreFromFilePtr and KeyRestoreFromFilePtrOutput values.
 // You can construct a concrete instance of `KeyRestoreFromFilePtrInput` via:
 //
-//          KeyRestoreFromFileArgs{...}
+//	        KeyRestoreFromFileArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type KeyRestoreFromFilePtrInput interface {
 	pulumi.Input
 
@@ -672,7 +672,7 @@ type KeyRestoreFromObjectStore struct {
 // KeyRestoreFromObjectStoreInput is an input type that accepts KeyRestoreFromObjectStoreArgs and KeyRestoreFromObjectStoreOutput values.
 // You can construct a concrete instance of `KeyRestoreFromObjectStoreInput` via:
 //
-//          KeyRestoreFromObjectStoreArgs{...}
+//	KeyRestoreFromObjectStoreArgs{...}
 type KeyRestoreFromObjectStoreInput interface {
 	pulumi.Input
 
@@ -716,11 +716,11 @@ func (i KeyRestoreFromObjectStoreArgs) ToKeyRestoreFromObjectStorePtrOutputWithC
 // KeyRestoreFromObjectStorePtrInput is an input type that accepts KeyRestoreFromObjectStoreArgs, KeyRestoreFromObjectStorePtr and KeyRestoreFromObjectStorePtrOutput values.
 // You can construct a concrete instance of `KeyRestoreFromObjectStorePtrInput` via:
 //
-//          KeyRestoreFromObjectStoreArgs{...}
+//	        KeyRestoreFromObjectStoreArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type KeyRestoreFromObjectStorePtrInput interface {
 	pulumi.Input
 
@@ -877,7 +877,7 @@ type KeyVersionReplicaDetail struct {
 // KeyVersionReplicaDetailInput is an input type that accepts KeyVersionReplicaDetailArgs and KeyVersionReplicaDetailOutput values.
 // You can construct a concrete instance of `KeyVersionReplicaDetailInput` via:
 //
-//          KeyVersionReplicaDetailArgs{...}
+//	KeyVersionReplicaDetailArgs{...}
 type KeyVersionReplicaDetailInput interface {
 	pulumi.Input
 
@@ -905,7 +905,7 @@ func (i KeyVersionReplicaDetailArgs) ToKeyVersionReplicaDetailOutputWithContext(
 // KeyVersionReplicaDetailArrayInput is an input type that accepts KeyVersionReplicaDetailArray and KeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `KeyVersionReplicaDetailArrayInput` via:
 //
-//          KeyVersionReplicaDetailArray{ KeyVersionReplicaDetailArgs{...} }
+//	KeyVersionReplicaDetailArray{ KeyVersionReplicaDetailArgs{...} }
 type KeyVersionReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -974,7 +974,7 @@ type VaultReplicaDetail struct {
 // VaultReplicaDetailInput is an input type that accepts VaultReplicaDetailArgs and VaultReplicaDetailOutput values.
 // You can construct a concrete instance of `VaultReplicaDetailInput` via:
 //
-//          VaultReplicaDetailArgs{...}
+//	VaultReplicaDetailArgs{...}
 type VaultReplicaDetailInput interface {
 	pulumi.Input
 
@@ -1002,7 +1002,7 @@ func (i VaultReplicaDetailArgs) ToVaultReplicaDetailOutputWithContext(ctx contex
 // VaultReplicaDetailArrayInput is an input type that accepts VaultReplicaDetailArray and VaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `VaultReplicaDetailArrayInput` via:
 //
-//          VaultReplicaDetailArray{ VaultReplicaDetailArgs{...} }
+//	VaultReplicaDetailArray{ VaultReplicaDetailArgs{...} }
 type VaultReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -1075,7 +1075,7 @@ type VaultRestoreFromFile struct {
 // VaultRestoreFromFileInput is an input type that accepts VaultRestoreFromFileArgs and VaultRestoreFromFileOutput values.
 // You can construct a concrete instance of `VaultRestoreFromFileInput` via:
 //
-//          VaultRestoreFromFileArgs{...}
+//	VaultRestoreFromFileArgs{...}
 type VaultRestoreFromFileInput interface {
 	pulumi.Input
 
@@ -1115,11 +1115,11 @@ func (i VaultRestoreFromFileArgs) ToVaultRestoreFromFilePtrOutputWithContext(ctx
 // VaultRestoreFromFilePtrInput is an input type that accepts VaultRestoreFromFileArgs, VaultRestoreFromFilePtr and VaultRestoreFromFilePtrOutput values.
 // You can construct a concrete instance of `VaultRestoreFromFilePtrInput` via:
 //
-//          VaultRestoreFromFileArgs{...}
+//	        VaultRestoreFromFileArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VaultRestoreFromFilePtrInput interface {
 	pulumi.Input
 
@@ -1254,7 +1254,7 @@ type VaultRestoreFromObjectStore struct {
 // VaultRestoreFromObjectStoreInput is an input type that accepts VaultRestoreFromObjectStoreArgs and VaultRestoreFromObjectStoreOutput values.
 // You can construct a concrete instance of `VaultRestoreFromObjectStoreInput` via:
 //
-//          VaultRestoreFromObjectStoreArgs{...}
+//	VaultRestoreFromObjectStoreArgs{...}
 type VaultRestoreFromObjectStoreInput interface {
 	pulumi.Input
 
@@ -1298,11 +1298,11 @@ func (i VaultRestoreFromObjectStoreArgs) ToVaultRestoreFromObjectStorePtrOutputW
 // VaultRestoreFromObjectStorePtrInput is an input type that accepts VaultRestoreFromObjectStoreArgs, VaultRestoreFromObjectStorePtr and VaultRestoreFromObjectStorePtrOutput values.
 // You can construct a concrete instance of `VaultRestoreFromObjectStorePtrInput` via:
 //
-//          VaultRestoreFromObjectStoreArgs{...}
+//	        VaultRestoreFromObjectStoreArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VaultRestoreFromObjectStorePtrInput interface {
 	pulumi.Input
 
@@ -1466,7 +1466,7 @@ type GetKeyKeyShape struct {
 // GetKeyKeyShapeInput is an input type that accepts GetKeyKeyShapeArgs and GetKeyKeyShapeOutput values.
 // You can construct a concrete instance of `GetKeyKeyShapeInput` via:
 //
-//          GetKeyKeyShapeArgs{...}
+//	GetKeyKeyShapeArgs{...}
 type GetKeyKeyShapeInput interface {
 	pulumi.Input
 
@@ -1501,7 +1501,7 @@ func (i GetKeyKeyShapeArgs) ToGetKeyKeyShapeOutputWithContext(ctx context.Contex
 // GetKeyKeyShapeArrayInput is an input type that accepts GetKeyKeyShapeArray and GetKeyKeyShapeArrayOutput values.
 // You can construct a concrete instance of `GetKeyKeyShapeArrayInput` via:
 //
-//          GetKeyKeyShapeArray{ GetKeyKeyShapeArgs{...} }
+//	GetKeyKeyShapeArray{ GetKeyKeyShapeArgs{...} }
 type GetKeyKeyShapeArrayInput interface {
 	pulumi.Input
 
@@ -1583,7 +1583,7 @@ type GetKeyReplicaDetail struct {
 // GetKeyReplicaDetailInput is an input type that accepts GetKeyReplicaDetailArgs and GetKeyReplicaDetailOutput values.
 // You can construct a concrete instance of `GetKeyReplicaDetailInput` via:
 //
-//          GetKeyReplicaDetailArgs{...}
+//	GetKeyReplicaDetailArgs{...}
 type GetKeyReplicaDetailInput interface {
 	pulumi.Input
 
@@ -1611,7 +1611,7 @@ func (i GetKeyReplicaDetailArgs) ToGetKeyReplicaDetailOutputWithContext(ctx cont
 // GetKeyReplicaDetailArrayInput is an input type that accepts GetKeyReplicaDetailArray and GetKeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyReplicaDetailArrayInput` via:
 //
-//          GetKeyReplicaDetailArray{ GetKeyReplicaDetailArgs{...} }
+//	GetKeyReplicaDetailArray{ GetKeyReplicaDetailArgs{...} }
 type GetKeyReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -1684,7 +1684,7 @@ type GetKeyRestoreFromFile struct {
 // GetKeyRestoreFromFileInput is an input type that accepts GetKeyRestoreFromFileArgs and GetKeyRestoreFromFileOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromFileInput` via:
 //
-//          GetKeyRestoreFromFileArgs{...}
+//	GetKeyRestoreFromFileArgs{...}
 type GetKeyRestoreFromFileInput interface {
 	pulumi.Input
 
@@ -1716,7 +1716,7 @@ func (i GetKeyRestoreFromFileArgs) ToGetKeyRestoreFromFileOutputWithContext(ctx 
 // GetKeyRestoreFromFileArrayInput is an input type that accepts GetKeyRestoreFromFileArray and GetKeyRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromFileArrayInput` via:
 //
-//          GetKeyRestoreFromFileArray{ GetKeyRestoreFromFileArgs{...} }
+//	GetKeyRestoreFromFileArray{ GetKeyRestoreFromFileArgs{...} }
 type GetKeyRestoreFromFileArrayInput interface {
 	pulumi.Input
 
@@ -1803,7 +1803,7 @@ type GetKeyRestoreFromObjectStore struct {
 // GetKeyRestoreFromObjectStoreInput is an input type that accepts GetKeyRestoreFromObjectStoreArgs and GetKeyRestoreFromObjectStoreOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromObjectStoreInput` via:
 //
-//          GetKeyRestoreFromObjectStoreArgs{...}
+//	GetKeyRestoreFromObjectStoreArgs{...}
 type GetKeyRestoreFromObjectStoreInput interface {
 	pulumi.Input
 
@@ -1839,7 +1839,7 @@ func (i GetKeyRestoreFromObjectStoreArgs) ToGetKeyRestoreFromObjectStoreOutputWi
 // GetKeyRestoreFromObjectStoreArrayInput is an input type that accepts GetKeyRestoreFromObjectStoreArray and GetKeyRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromObjectStoreArrayInput` via:
 //
-//          GetKeyRestoreFromObjectStoreArray{ GetKeyRestoreFromObjectStoreArgs{...} }
+//	GetKeyRestoreFromObjectStoreArray{ GetKeyRestoreFromObjectStoreArgs{...} }
 type GetKeyRestoreFromObjectStoreArrayInput interface {
 	pulumi.Input
 
@@ -1928,7 +1928,7 @@ type GetKeyVersionReplicaDetail struct {
 // GetKeyVersionReplicaDetailInput is an input type that accepts GetKeyVersionReplicaDetailArgs and GetKeyVersionReplicaDetailOutput values.
 // You can construct a concrete instance of `GetKeyVersionReplicaDetailInput` via:
 //
-//          GetKeyVersionReplicaDetailArgs{...}
+//	GetKeyVersionReplicaDetailArgs{...}
 type GetKeyVersionReplicaDetailInput interface {
 	pulumi.Input
 
@@ -1956,7 +1956,7 @@ func (i GetKeyVersionReplicaDetailArgs) ToGetKeyVersionReplicaDetailOutputWithCo
 // GetKeyVersionReplicaDetailArrayInput is an input type that accepts GetKeyVersionReplicaDetailArray and GetKeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionReplicaDetailArrayInput` via:
 //
-//          GetKeyVersionReplicaDetailArray{ GetKeyVersionReplicaDetailArgs{...} }
+//	GetKeyVersionReplicaDetailArray{ GetKeyVersionReplicaDetailArgs{...} }
 type GetKeyVersionReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -2026,7 +2026,7 @@ type GetKeyVersionsFilter struct {
 // GetKeyVersionsFilterInput is an input type that accepts GetKeyVersionsFilterArgs and GetKeyVersionsFilterOutput values.
 // You can construct a concrete instance of `GetKeyVersionsFilterInput` via:
 //
-//          GetKeyVersionsFilterArgs{...}
+//	GetKeyVersionsFilterArgs{...}
 type GetKeyVersionsFilterInput interface {
 	pulumi.Input
 
@@ -2055,7 +2055,7 @@ func (i GetKeyVersionsFilterArgs) ToGetKeyVersionsFilterOutputWithContext(ctx co
 // GetKeyVersionsFilterArrayInput is an input type that accepts GetKeyVersionsFilterArray and GetKeyVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsFilterArrayInput` via:
 //
-//          GetKeyVersionsFilterArray{ GetKeyVersionsFilterArgs{...} }
+//	GetKeyVersionsFilterArray{ GetKeyVersionsFilterArgs{...} }
 type GetKeyVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2156,7 +2156,7 @@ type GetKeyVersionsKeyVersion struct {
 // GetKeyVersionsKeyVersionInput is an input type that accepts GetKeyVersionsKeyVersionArgs and GetKeyVersionsKeyVersionOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionInput` via:
 //
-//          GetKeyVersionsKeyVersionArgs{...}
+//	GetKeyVersionsKeyVersionArgs{...}
 type GetKeyVersionsKeyVersionInput interface {
 	pulumi.Input
 
@@ -2209,7 +2209,7 @@ func (i GetKeyVersionsKeyVersionArgs) ToGetKeyVersionsKeyVersionOutputWithContex
 // GetKeyVersionsKeyVersionArrayInput is an input type that accepts GetKeyVersionsKeyVersionArray and GetKeyVersionsKeyVersionArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionArrayInput` via:
 //
-//          GetKeyVersionsKeyVersionArray{ GetKeyVersionsKeyVersionArgs{...} }
+//	GetKeyVersionsKeyVersionArray{ GetKeyVersionsKeyVersionArgs{...} }
 type GetKeyVersionsKeyVersionArrayInput interface {
 	pulumi.Input
 
@@ -2342,7 +2342,7 @@ type GetKeyVersionsKeyVersionReplicaDetail struct {
 // GetKeyVersionsKeyVersionReplicaDetailInput is an input type that accepts GetKeyVersionsKeyVersionReplicaDetailArgs and GetKeyVersionsKeyVersionReplicaDetailOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionReplicaDetailInput` via:
 //
-//          GetKeyVersionsKeyVersionReplicaDetailArgs{...}
+//	GetKeyVersionsKeyVersionReplicaDetailArgs{...}
 type GetKeyVersionsKeyVersionReplicaDetailInput interface {
 	pulumi.Input
 
@@ -2370,7 +2370,7 @@ func (i GetKeyVersionsKeyVersionReplicaDetailArgs) ToGetKeyVersionsKeyVersionRep
 // GetKeyVersionsKeyVersionReplicaDetailArrayInput is an input type that accepts GetKeyVersionsKeyVersionReplicaDetailArray and GetKeyVersionsKeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionReplicaDetailArrayInput` via:
 //
-//          GetKeyVersionsKeyVersionReplicaDetailArray{ GetKeyVersionsKeyVersionReplicaDetailArgs{...} }
+//	GetKeyVersionsKeyVersionReplicaDetailArray{ GetKeyVersionsKeyVersionReplicaDetailArgs{...} }
 type GetKeyVersionsKeyVersionReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -2440,7 +2440,7 @@ type GetKeysFilter struct {
 // GetKeysFilterInput is an input type that accepts GetKeysFilterArgs and GetKeysFilterOutput values.
 // You can construct a concrete instance of `GetKeysFilterInput` via:
 //
-//          GetKeysFilterArgs{...}
+//	GetKeysFilterArgs{...}
 type GetKeysFilterInput interface {
 	pulumi.Input
 
@@ -2469,7 +2469,7 @@ func (i GetKeysFilterArgs) ToGetKeysFilterOutputWithContext(ctx context.Context)
 // GetKeysFilterArrayInput is an input type that accepts GetKeysFilterArray and GetKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeysFilterArrayInput` via:
 //
-//          GetKeysFilterArray{ GetKeysFilterArgs{...} }
+//	GetKeysFilterArray{ GetKeysFilterArgs{...} }
 type GetKeysFilterArrayInput interface {
 	pulumi.Input
 
@@ -2578,7 +2578,7 @@ type GetKeysKey struct {
 // GetKeysKeyInput is an input type that accepts GetKeysKeyArgs and GetKeysKeyOutput values.
 // You can construct a concrete instance of `GetKeysKeyInput` via:
 //
-//          GetKeysKeyArgs{...}
+//	GetKeysKeyArgs{...}
 type GetKeysKeyInput interface {
 	pulumi.Input
 
@@ -2639,7 +2639,7 @@ func (i GetKeysKeyArgs) ToGetKeysKeyOutputWithContext(ctx context.Context) GetKe
 // GetKeysKeyArrayInput is an input type that accepts GetKeysKeyArray and GetKeysKeyArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyArrayInput` via:
 //
-//          GetKeysKeyArray{ GetKeysKeyArgs{...} }
+//	GetKeysKeyArray{ GetKeysKeyArgs{...} }
 type GetKeysKeyArrayInput interface {
 	pulumi.Input
 
@@ -2802,7 +2802,7 @@ type GetKeysKeyKeyShape struct {
 // GetKeysKeyKeyShapeInput is an input type that accepts GetKeysKeyKeyShapeArgs and GetKeysKeyKeyShapeOutput values.
 // You can construct a concrete instance of `GetKeysKeyKeyShapeInput` via:
 //
-//          GetKeysKeyKeyShapeArgs{...}
+//	GetKeysKeyKeyShapeArgs{...}
 type GetKeysKeyKeyShapeInput interface {
 	pulumi.Input
 
@@ -2834,7 +2834,7 @@ func (i GetKeysKeyKeyShapeArgs) ToGetKeysKeyKeyShapeOutputWithContext(ctx contex
 // GetKeysKeyKeyShapeArrayInput is an input type that accepts GetKeysKeyKeyShapeArray and GetKeysKeyKeyShapeArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyKeyShapeArrayInput` via:
 //
-//          GetKeysKeyKeyShapeArray{ GetKeysKeyKeyShapeArgs{...} }
+//	GetKeysKeyKeyShapeArray{ GetKeysKeyKeyShapeArgs{...} }
 type GetKeysKeyKeyShapeArrayInput interface {
 	pulumi.Input
 
@@ -2913,7 +2913,7 @@ type GetKeysKeyReplicaDetail struct {
 // GetKeysKeyReplicaDetailInput is an input type that accepts GetKeysKeyReplicaDetailArgs and GetKeysKeyReplicaDetailOutput values.
 // You can construct a concrete instance of `GetKeysKeyReplicaDetailInput` via:
 //
-//          GetKeysKeyReplicaDetailArgs{...}
+//	GetKeysKeyReplicaDetailArgs{...}
 type GetKeysKeyReplicaDetailInput interface {
 	pulumi.Input
 
@@ -2941,7 +2941,7 @@ func (i GetKeysKeyReplicaDetailArgs) ToGetKeysKeyReplicaDetailOutputWithContext(
 // GetKeysKeyReplicaDetailArrayInput is an input type that accepts GetKeysKeyReplicaDetailArray and GetKeysKeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyReplicaDetailArrayInput` via:
 //
-//          GetKeysKeyReplicaDetailArray{ GetKeysKeyReplicaDetailArgs{...} }
+//	GetKeysKeyReplicaDetailArray{ GetKeysKeyReplicaDetailArgs{...} }
 type GetKeysKeyReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -3011,7 +3011,7 @@ type GetKeysKeyRestoreFromFile struct {
 // GetKeysKeyRestoreFromFileInput is an input type that accepts GetKeysKeyRestoreFromFileArgs and GetKeysKeyRestoreFromFileOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromFileInput` via:
 //
-//          GetKeysKeyRestoreFromFileArgs{...}
+//	GetKeysKeyRestoreFromFileArgs{...}
 type GetKeysKeyRestoreFromFileInput interface {
 	pulumi.Input
 
@@ -3040,7 +3040,7 @@ func (i GetKeysKeyRestoreFromFileArgs) ToGetKeysKeyRestoreFromFileOutputWithCont
 // GetKeysKeyRestoreFromFileArrayInput is an input type that accepts GetKeysKeyRestoreFromFileArray and GetKeysKeyRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromFileArrayInput` via:
 //
-//          GetKeysKeyRestoreFromFileArray{ GetKeysKeyRestoreFromFileArgs{...} }
+//	GetKeysKeyRestoreFromFileArray{ GetKeysKeyRestoreFromFileArgs{...} }
 type GetKeysKeyRestoreFromFileArrayInput interface {
 	pulumi.Input
 
@@ -3119,7 +3119,7 @@ type GetKeysKeyRestoreFromObjectStore struct {
 // GetKeysKeyRestoreFromObjectStoreInput is an input type that accepts GetKeysKeyRestoreFromObjectStoreArgs and GetKeysKeyRestoreFromObjectStoreOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromObjectStoreInput` via:
 //
-//          GetKeysKeyRestoreFromObjectStoreArgs{...}
+//	GetKeysKeyRestoreFromObjectStoreArgs{...}
 type GetKeysKeyRestoreFromObjectStoreInput interface {
 	pulumi.Input
 
@@ -3150,7 +3150,7 @@ func (i GetKeysKeyRestoreFromObjectStoreArgs) ToGetKeysKeyRestoreFromObjectStore
 // GetKeysKeyRestoreFromObjectStoreArrayInput is an input type that accepts GetKeysKeyRestoreFromObjectStoreArray and GetKeysKeyRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromObjectStoreArrayInput` via:
 //
-//          GetKeysKeyRestoreFromObjectStoreArray{ GetKeysKeyRestoreFromObjectStoreArgs{...} }
+//	GetKeysKeyRestoreFromObjectStoreArray{ GetKeysKeyRestoreFromObjectStoreArgs{...} }
 type GetKeysKeyRestoreFromObjectStoreArrayInput interface {
 	pulumi.Input
 
@@ -3236,7 +3236,7 @@ type GetReplicationStatusReplicaDetail struct {
 // GetReplicationStatusReplicaDetailInput is an input type that accepts GetReplicationStatusReplicaDetailArgs and GetReplicationStatusReplicaDetailOutput values.
 // You can construct a concrete instance of `GetReplicationStatusReplicaDetailInput` via:
 //
-//          GetReplicationStatusReplicaDetailArgs{...}
+//	GetReplicationStatusReplicaDetailArgs{...}
 type GetReplicationStatusReplicaDetailInput interface {
 	pulumi.Input
 
@@ -3266,7 +3266,7 @@ func (i GetReplicationStatusReplicaDetailArgs) ToGetReplicationStatusReplicaDeta
 // GetReplicationStatusReplicaDetailArrayInput is an input type that accepts GetReplicationStatusReplicaDetailArray and GetReplicationStatusReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetReplicationStatusReplicaDetailArrayInput` via:
 //
-//          GetReplicationStatusReplicaDetailArray{ GetReplicationStatusReplicaDetailArgs{...} }
+//	GetReplicationStatusReplicaDetailArray{ GetReplicationStatusReplicaDetailArgs{...} }
 type GetReplicationStatusReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -3340,7 +3340,7 @@ type GetVaultReplicaDetail struct {
 // GetVaultReplicaDetailInput is an input type that accepts GetVaultReplicaDetailArgs and GetVaultReplicaDetailOutput values.
 // You can construct a concrete instance of `GetVaultReplicaDetailInput` via:
 //
-//          GetVaultReplicaDetailArgs{...}
+//	GetVaultReplicaDetailArgs{...}
 type GetVaultReplicaDetailInput interface {
 	pulumi.Input
 
@@ -3368,7 +3368,7 @@ func (i GetVaultReplicaDetailArgs) ToGetVaultReplicaDetailOutputWithContext(ctx 
 // GetVaultReplicaDetailArrayInput is an input type that accepts GetVaultReplicaDetailArray and GetVaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicaDetailArrayInput` via:
 //
-//          GetVaultReplicaDetailArray{ GetVaultReplicaDetailArgs{...} }
+//	GetVaultReplicaDetailArray{ GetVaultReplicaDetailArgs{...} }
 type GetVaultReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -3438,7 +3438,7 @@ type GetVaultReplicasFilter struct {
 // GetVaultReplicasFilterInput is an input type that accepts GetVaultReplicasFilterArgs and GetVaultReplicasFilterOutput values.
 // You can construct a concrete instance of `GetVaultReplicasFilterInput` via:
 //
-//          GetVaultReplicasFilterArgs{...}
+//	GetVaultReplicasFilterArgs{...}
 type GetVaultReplicasFilterInput interface {
 	pulumi.Input
 
@@ -3467,7 +3467,7 @@ func (i GetVaultReplicasFilterArgs) ToGetVaultReplicasFilterOutputWithContext(ct
 // GetVaultReplicasFilterArrayInput is an input type that accepts GetVaultReplicasFilterArray and GetVaultReplicasFilterArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicasFilterArrayInput` via:
 //
-//          GetVaultReplicasFilterArray{ GetVaultReplicasFilterArgs{...} }
+//	GetVaultReplicasFilterArray{ GetVaultReplicasFilterArgs{...} }
 type GetVaultReplicasFilterArrayInput interface {
 	pulumi.Input
 
@@ -3549,7 +3549,7 @@ type GetVaultReplicasVaultReplica struct {
 // GetVaultReplicasVaultReplicaInput is an input type that accepts GetVaultReplicasVaultReplicaArgs and GetVaultReplicasVaultReplicaOutput values.
 // You can construct a concrete instance of `GetVaultReplicasVaultReplicaInput` via:
 //
-//          GetVaultReplicasVaultReplicaArgs{...}
+//	GetVaultReplicasVaultReplicaArgs{...}
 type GetVaultReplicasVaultReplicaInput interface {
 	pulumi.Input
 
@@ -3583,7 +3583,7 @@ func (i GetVaultReplicasVaultReplicaArgs) ToGetVaultReplicasVaultReplicaOutputWi
 // GetVaultReplicasVaultReplicaArrayInput is an input type that accepts GetVaultReplicasVaultReplicaArray and GetVaultReplicasVaultReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicasVaultReplicaArrayInput` via:
 //
-//          GetVaultReplicasVaultReplicaArray{ GetVaultReplicasVaultReplicaArgs{...} }
+//	GetVaultReplicasVaultReplicaArray{ GetVaultReplicasVaultReplicaArgs{...} }
 type GetVaultReplicasVaultReplicaArrayInput interface {
 	pulumi.Input
 
@@ -3671,7 +3671,7 @@ type GetVaultRestoreFromFile struct {
 // GetVaultRestoreFromFileInput is an input type that accepts GetVaultRestoreFromFileArgs and GetVaultRestoreFromFileOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromFileInput` via:
 //
-//          GetVaultRestoreFromFileArgs{...}
+//	GetVaultRestoreFromFileArgs{...}
 type GetVaultRestoreFromFileInput interface {
 	pulumi.Input
 
@@ -3703,7 +3703,7 @@ func (i GetVaultRestoreFromFileArgs) ToGetVaultRestoreFromFileOutputWithContext(
 // GetVaultRestoreFromFileArrayInput is an input type that accepts GetVaultRestoreFromFileArray and GetVaultRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromFileArrayInput` via:
 //
-//          GetVaultRestoreFromFileArray{ GetVaultRestoreFromFileArgs{...} }
+//	GetVaultRestoreFromFileArray{ GetVaultRestoreFromFileArgs{...} }
 type GetVaultRestoreFromFileArrayInput interface {
 	pulumi.Input
 
@@ -3790,7 +3790,7 @@ type GetVaultRestoreFromObjectStore struct {
 // GetVaultRestoreFromObjectStoreInput is an input type that accepts GetVaultRestoreFromObjectStoreArgs and GetVaultRestoreFromObjectStoreOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromObjectStoreInput` via:
 //
-//          GetVaultRestoreFromObjectStoreArgs{...}
+//	GetVaultRestoreFromObjectStoreArgs{...}
 type GetVaultRestoreFromObjectStoreInput interface {
 	pulumi.Input
 
@@ -3826,7 +3826,7 @@ func (i GetVaultRestoreFromObjectStoreArgs) ToGetVaultRestoreFromObjectStoreOutp
 // GetVaultRestoreFromObjectStoreArrayInput is an input type that accepts GetVaultRestoreFromObjectStoreArray and GetVaultRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromObjectStoreArrayInput` via:
 //
-//          GetVaultRestoreFromObjectStoreArray{ GetVaultRestoreFromObjectStoreArgs{...} }
+//	GetVaultRestoreFromObjectStoreArray{ GetVaultRestoreFromObjectStoreArgs{...} }
 type GetVaultRestoreFromObjectStoreArrayInput interface {
 	pulumi.Input
 
@@ -3916,7 +3916,7 @@ type GetVaultsFilter struct {
 // GetVaultsFilterInput is an input type that accepts GetVaultsFilterArgs and GetVaultsFilterOutput values.
 // You can construct a concrete instance of `GetVaultsFilterInput` via:
 //
-//          GetVaultsFilterArgs{...}
+//	GetVaultsFilterArgs{...}
 type GetVaultsFilterInput interface {
 	pulumi.Input
 
@@ -3945,7 +3945,7 @@ func (i GetVaultsFilterArgs) ToGetVaultsFilterOutputWithContext(ctx context.Cont
 // GetVaultsFilterArrayInput is an input type that accepts GetVaultsFilterArray and GetVaultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVaultsFilterArrayInput` via:
 //
-//          GetVaultsFilterArray{ GetVaultsFilterArgs{...} }
+//	GetVaultsFilterArray{ GetVaultsFilterArgs{...} }
 type GetVaultsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4050,7 +4050,7 @@ type GetVaultsVault struct {
 // GetVaultsVaultInput is an input type that accepts GetVaultsVaultArgs and GetVaultsVaultOutput values.
 // You can construct a concrete instance of `GetVaultsVaultInput` via:
 //
-//          GetVaultsVaultArgs{...}
+//	GetVaultsVaultArgs{...}
 type GetVaultsVaultInput interface {
 	pulumi.Input
 
@@ -4107,7 +4107,7 @@ func (i GetVaultsVaultArgs) ToGetVaultsVaultOutputWithContext(ctx context.Contex
 // GetVaultsVaultArrayInput is an input type that accepts GetVaultsVaultArray and GetVaultsVaultArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultArrayInput` via:
 //
-//          GetVaultsVaultArray{ GetVaultsVaultArgs{...} }
+//	GetVaultsVaultArray{ GetVaultsVaultArgs{...} }
 type GetVaultsVaultArrayInput interface {
 	pulumi.Input
 
@@ -4253,7 +4253,7 @@ type GetVaultsVaultReplicaDetail struct {
 // GetVaultsVaultReplicaDetailInput is an input type that accepts GetVaultsVaultReplicaDetailArgs and GetVaultsVaultReplicaDetailOutput values.
 // You can construct a concrete instance of `GetVaultsVaultReplicaDetailInput` via:
 //
-//          GetVaultsVaultReplicaDetailArgs{...}
+//	GetVaultsVaultReplicaDetailArgs{...}
 type GetVaultsVaultReplicaDetailInput interface {
 	pulumi.Input
 
@@ -4281,7 +4281,7 @@ func (i GetVaultsVaultReplicaDetailArgs) ToGetVaultsVaultReplicaDetailOutputWith
 // GetVaultsVaultReplicaDetailArrayInput is an input type that accepts GetVaultsVaultReplicaDetailArray and GetVaultsVaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultReplicaDetailArrayInput` via:
 //
-//          GetVaultsVaultReplicaDetailArray{ GetVaultsVaultReplicaDetailArgs{...} }
+//	GetVaultsVaultReplicaDetailArray{ GetVaultsVaultReplicaDetailArgs{...} }
 type GetVaultsVaultReplicaDetailArrayInput interface {
 	pulumi.Input
 
@@ -4351,7 +4351,7 @@ type GetVaultsVaultRestoreFromFile struct {
 // GetVaultsVaultRestoreFromFileInput is an input type that accepts GetVaultsVaultRestoreFromFileArgs and GetVaultsVaultRestoreFromFileOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromFileInput` via:
 //
-//          GetVaultsVaultRestoreFromFileArgs{...}
+//	GetVaultsVaultRestoreFromFileArgs{...}
 type GetVaultsVaultRestoreFromFileInput interface {
 	pulumi.Input
 
@@ -4380,7 +4380,7 @@ func (i GetVaultsVaultRestoreFromFileArgs) ToGetVaultsVaultRestoreFromFileOutput
 // GetVaultsVaultRestoreFromFileArrayInput is an input type that accepts GetVaultsVaultRestoreFromFileArray and GetVaultsVaultRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromFileArrayInput` via:
 //
-//          GetVaultsVaultRestoreFromFileArray{ GetVaultsVaultRestoreFromFileArgs{...} }
+//	GetVaultsVaultRestoreFromFileArray{ GetVaultsVaultRestoreFromFileArgs{...} }
 type GetVaultsVaultRestoreFromFileArrayInput interface {
 	pulumi.Input
 
@@ -4459,7 +4459,7 @@ type GetVaultsVaultRestoreFromObjectStore struct {
 // GetVaultsVaultRestoreFromObjectStoreInput is an input type that accepts GetVaultsVaultRestoreFromObjectStoreArgs and GetVaultsVaultRestoreFromObjectStoreOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromObjectStoreInput` via:
 //
-//          GetVaultsVaultRestoreFromObjectStoreArgs{...}
+//	GetVaultsVaultRestoreFromObjectStoreArgs{...}
 type GetVaultsVaultRestoreFromObjectStoreInput interface {
 	pulumi.Input
 
@@ -4490,7 +4490,7 @@ func (i GetVaultsVaultRestoreFromObjectStoreArgs) ToGetVaultsVaultRestoreFromObj
 // GetVaultsVaultRestoreFromObjectStoreArrayInput is an input type that accepts GetVaultsVaultRestoreFromObjectStoreArray and GetVaultsVaultRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromObjectStoreArrayInput` via:
 //
-//          GetVaultsVaultRestoreFromObjectStoreArray{ GetVaultsVaultRestoreFromObjectStoreArgs{...} }
+//	GetVaultsVaultRestoreFromObjectStoreArray{ GetVaultsVaultRestoreFromObjectStoreArgs{...} }
 type GetVaultsVaultRestoreFromObjectStoreArrayInput interface {
 	pulumi.Input
 

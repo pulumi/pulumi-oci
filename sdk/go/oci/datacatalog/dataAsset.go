@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.NewDataAsset(ctx, "testDataAsset", &DataCatalog.DataAssetArgs{
-// 			CatalogId:   pulumi.Any(oci_datacatalog_catalog.Test_catalog.Id),
-// 			DisplayName: pulumi.Any(_var.Data_asset_display_name),
-// 			TypeKey:     pulumi.Any(_var.Data_asset_type_key),
-// 			Description: pulumi.Any(_var.Data_asset_description),
-// 			Properties:  pulumi.Any(_var.Data_asset_properties),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.NewDataAsset(ctx, "testDataAsset", &DataCatalog.DataAssetArgs{
+//				CatalogId:   pulumi.Any(oci_datacatalog_catalog.Test_catalog.Id),
+//				DisplayName: pulumi.Any(_var.Data_asset_display_name),
+//				TypeKey:     pulumi.Any(_var.Data_asset_type_key),
+//				Description: pulumi.Any(_var.Data_asset_description),
+//				Properties:  pulumi.Any(_var.Data_asset_properties),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // DataAssets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
+//
+//	$ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
+//
 // ```
 type DataAsset struct {
 	pulumi.CustomResourceState
@@ -238,7 +243,7 @@ func (i *DataAsset) ToDataAssetOutputWithContext(ctx context.Context) DataAssetO
 // DataAssetArrayInput is an input type that accepts DataAssetArray and DataAssetArrayOutput values.
 // You can construct a concrete instance of `DataAssetArrayInput` via:
 //
-//          DataAssetArray{ DataAssetArgs{...} }
+//	DataAssetArray{ DataAssetArgs{...} }
 type DataAssetArrayInput interface {
 	pulumi.Input
 
@@ -263,7 +268,7 @@ func (i DataAssetArray) ToDataAssetArrayOutputWithContext(ctx context.Context) D
 // DataAssetMapInput is an input type that accepts DataAssetMap and DataAssetMapOutput values.
 // You can construct a concrete instance of `DataAssetMapInput` via:
 //
-//          DataAssetMap{ "key": DataAssetArgs{...} }
+//	DataAssetMap{ "key": DataAssetArgs{...} }
 type DataAssetMapInput interface {
 	pulumi.Input
 

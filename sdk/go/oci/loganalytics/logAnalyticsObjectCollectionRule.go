@@ -21,40 +21,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsObjectCollectionRule(ctx, "testLogAnalyticsObjectCollectionRule", &LogAnalytics.LogAnalyticsObjectCollectionRuleArgs{
-// 			CompartmentId:  pulumi.Any(_var.Compartment_id),
-// 			LogGroupId:     pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 			LogSourceName:  pulumi.Any(_var.Log_analytics_object_collection_rule_log_source_name),
-// 			Namespace:      pulumi.Any(_var.Log_analytics_object_collection_rule_namespace),
-// 			OsBucketName:   pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-// 			OsNamespace:    pulumi.Any(_var.Log_analytics_object_collection_rule_os_namespace),
-// 			CharEncoding:   pulumi.Any(_var.Log_analytics_object_collection_rule_char_encoding),
-// 			CollectionType: pulumi.Any(_var.Log_analytics_object_collection_rule_collection_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Log_analytics_object_collection_rule_description),
-// 			EntityId:    pulumi.Any(oci_log_analytics_entity.Test_entity.Id),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			ObjectNameFilters: pulumi.Any(_var.Log_analytics_object_collection_rule_object_name_filters),
-// 			Overrides:         pulumi.Any(_var.Log_analytics_object_collection_rule_overrides),
-// 			PollSince:         pulumi.Any(_var.Log_analytics_object_collection_rule_poll_since),
-// 			PollTill:          pulumi.Any(_var.Log_analytics_object_collection_rule_poll_till),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsObjectCollectionRule(ctx, "testLogAnalyticsObjectCollectionRule", &LogAnalytics.LogAnalyticsObjectCollectionRuleArgs{
+//				CompartmentId:  pulumi.Any(_var.Compartment_id),
+//				LogGroupId:     pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//				LogSourceName:  pulumi.Any(_var.Log_analytics_object_collection_rule_log_source_name),
+//				Namespace:      pulumi.Any(_var.Log_analytics_object_collection_rule_namespace),
+//				OsBucketName:   pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
+//				OsNamespace:    pulumi.Any(_var.Log_analytics_object_collection_rule_os_namespace),
+//				CharEncoding:   pulumi.Any(_var.Log_analytics_object_collection_rule_char_encoding),
+//				CollectionType: pulumi.Any(_var.Log_analytics_object_collection_rule_collection_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Log_analytics_object_collection_rule_description),
+//				EntityId:    pulumi.Any(oci_log_analytics_entity.Test_entity.Id),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				ObjectNameFilters: pulumi.Any(_var.Log_analytics_object_collection_rule_object_name_filters),
+//				Overrides:         pulumi.Any(_var.Log_analytics_object_collection_rule_overrides),
+//				PollSince:         pulumi.Any(_var.Log_analytics_object_collection_rule_poll_since),
+//				PollTill:          pulumi.Any(_var.Log_analytics_object_collection_rule_poll_till),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // LogAnalyticsObjectCollectionRules can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
+//
+//	$ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
+//
 // ```
 type LogAnalyticsObjectCollectionRule struct {
 	pulumi.CustomResourceState
@@ -352,7 +357,7 @@ func (i *LogAnalyticsObjectCollectionRule) ToLogAnalyticsObjectCollectionRuleOut
 // LogAnalyticsObjectCollectionRuleArrayInput is an input type that accepts LogAnalyticsObjectCollectionRuleArray and LogAnalyticsObjectCollectionRuleArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleArrayInput` via:
 //
-//          LogAnalyticsObjectCollectionRuleArray{ LogAnalyticsObjectCollectionRuleArgs{...} }
+//	LogAnalyticsObjectCollectionRuleArray{ LogAnalyticsObjectCollectionRuleArgs{...} }
 type LogAnalyticsObjectCollectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -377,7 +382,7 @@ func (i LogAnalyticsObjectCollectionRuleArray) ToLogAnalyticsObjectCollectionRul
 // LogAnalyticsObjectCollectionRuleMapInput is an input type that accepts LogAnalyticsObjectCollectionRuleMap and LogAnalyticsObjectCollectionRuleMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleMapInput` via:
 //
-//          LogAnalyticsObjectCollectionRuleMap{ "key": LogAnalyticsObjectCollectionRuleArgs{...} }
+//	LogAnalyticsObjectCollectionRuleMap{ "key": LogAnalyticsObjectCollectionRuleArgs{...} }
 type LogAnalyticsObjectCollectionRuleMapInput interface {
 	pulumi.Input
 

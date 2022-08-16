@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetContainerConfiguration(ctx, &artifacts.GetContainerConfigurationArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetContainerConfiguration(ctx, &artifacts.GetContainerConfigurationArgs{
+//				CompartmentId: _var.Compartment_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupContainerConfiguration(ctx *pulumi.Context, args *LookupContainerConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupContainerConfigurationResult, error) {
 	var rv LookupContainerConfigurationResult

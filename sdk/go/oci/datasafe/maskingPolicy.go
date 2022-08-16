@@ -37,43 +37,46 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewMaskingPolicy(ctx, "testMaskingPolicy", &DataSafe.MaskingPolicyArgs{
-// 			ColumnSources: datasafe.MaskingPolicyColumnSourceArray{
-// 				&datasafe.MaskingPolicyColumnSourceArgs{
-// 					ColumnSource:         pulumi.Any(_var.Masking_policy_column_source_column_source),
-// 					SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-// 					TargetId:             pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 				},
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Masking_policy_description),
-// 			DisplayName: pulumi.Any(_var.Masking_policy_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsDropTempTablesEnabled: pulumi.Any(_var.Masking_policy_is_drop_temp_tables_enabled),
-// 			IsRedoLoggingEnabled:    pulumi.Any(_var.Masking_policy_is_redo_logging_enabled),
-// 			IsRefreshStatsEnabled:   pulumi.Any(_var.Masking_policy_is_refresh_stats_enabled),
-// 			ParallelDegree:          pulumi.Any(_var.Masking_policy_parallel_degree),
-// 			PostMaskingScript:       pulumi.Any(_var.Masking_policy_post_masking_script),
-// 			PreMaskingScript:        pulumi.Any(_var.Masking_policy_pre_masking_script),
-// 			Recompile:               pulumi.Any(_var.Masking_policy_recompile),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewMaskingPolicy(ctx, "testMaskingPolicy", &DataSafe.MaskingPolicyArgs{
+//				ColumnSources: datasafe.MaskingPolicyColumnSourceArray{
+//					&datasafe.MaskingPolicyColumnSourceArgs{
+//						ColumnSource:         pulumi.Any(_var.Masking_policy_column_source_column_source),
+//						SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//						TargetId:             pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//					},
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Masking_policy_description),
+//				DisplayName: pulumi.Any(_var.Masking_policy_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsDropTempTablesEnabled: pulumi.Any(_var.Masking_policy_is_drop_temp_tables_enabled),
+//				IsRedoLoggingEnabled:    pulumi.Any(_var.Masking_policy_is_redo_logging_enabled),
+//				IsRefreshStatsEnabled:   pulumi.Any(_var.Masking_policy_is_refresh_stats_enabled),
+//				ParallelDegree:          pulumi.Any(_var.Masking_policy_parallel_degree),
+//				PostMaskingScript:       pulumi.Any(_var.Masking_policy_post_masking_script),
+//				PreMaskingScript:        pulumi.Any(_var.Masking_policy_pre_masking_script),
+//				Recompile:               pulumi.Any(_var.Masking_policy_recompile),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -81,7 +84,9 @@ import (
 // MaskingPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
+//
+//	$ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
+//
 // ```
 type MaskingPolicy struct {
 	pulumi.CustomResourceState
@@ -323,7 +328,7 @@ func (i *MaskingPolicy) ToMaskingPolicyOutputWithContext(ctx context.Context) Ma
 // MaskingPolicyArrayInput is an input type that accepts MaskingPolicyArray and MaskingPolicyArrayOutput values.
 // You can construct a concrete instance of `MaskingPolicyArrayInput` via:
 //
-//          MaskingPolicyArray{ MaskingPolicyArgs{...} }
+//	MaskingPolicyArray{ MaskingPolicyArgs{...} }
 type MaskingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -348,7 +353,7 @@ func (i MaskingPolicyArray) ToMaskingPolicyArrayOutputWithContext(ctx context.Co
 // MaskingPolicyMapInput is an input type that accepts MaskingPolicyMap and MaskingPolicyMapOutput values.
 // You can construct a concrete instance of `MaskingPolicyMapInput` via:
 //
-//          MaskingPolicyMap{ "key": MaskingPolicyArgs{...} }
+//	MaskingPolicyMap{ "key": MaskingPolicyArgs{...} }
 type MaskingPolicyMapInput interface {
 	pulumi.Input
 

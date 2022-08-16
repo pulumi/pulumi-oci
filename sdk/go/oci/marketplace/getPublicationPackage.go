@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetPublicationPackage(ctx, &marketplace.GetPublicationPackageArgs{
-// 			PackageVersion: _var.Publication_package_package_version,
-// 			PublicationId:  oci_marketplace_publication.Test_publication.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetPublicationPackage(ctx, &marketplace.GetPublicationPackageArgs{
+//				PackageVersion: _var.Publication_package_package_version,
+//				PublicationId:  oci_marketplace_publication.Test_publication.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPublicationPackage(ctx *pulumi.Context, args *GetPublicationPackageArgs, opts ...pulumi.InvokeOption) (*GetPublicationPackageResult, error) {
 	var rv GetPublicationPackageResult

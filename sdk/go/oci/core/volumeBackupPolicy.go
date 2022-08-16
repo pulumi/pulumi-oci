@@ -24,43 +24,46 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolumeBackupPolicy(ctx, "testVolumeBackupPolicy", &Core.VolumeBackupPolicyArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DestinationRegion: pulumi.Any(_var.Volume_backup_policy_destination_region),
-// 			DisplayName:       pulumi.Any(_var.Volume_backup_policy_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Schedules: core.VolumeBackupPolicyScheduleArray{
-// 				&core.VolumeBackupPolicyScheduleArgs{
-// 					BackupType:       pulumi.Any(_var.Volume_backup_policy_schedules_backup_type),
-// 					Period:           pulumi.Any(_var.Volume_backup_policy_schedules_period),
-// 					RetentionSeconds: pulumi.Any(_var.Volume_backup_policy_schedules_retention_seconds),
-// 					DayOfMonth:       pulumi.Any(_var.Volume_backup_policy_schedules_day_of_month),
-// 					DayOfWeek:        pulumi.Any(_var.Volume_backup_policy_schedules_day_of_week),
-// 					HourOfDay:        pulumi.Any(_var.Volume_backup_policy_schedules_hour_of_day),
-// 					Month:            pulumi.Any(_var.Volume_backup_policy_schedules_month),
-// 					OffsetSeconds:    pulumi.Any(_var.Volume_backup_policy_schedules_offset_seconds),
-// 					OffsetType:       pulumi.Any(_var.Volume_backup_policy_schedules_offset_type),
-// 					TimeZone:         pulumi.Any(_var.Volume_backup_policy_schedules_time_zone),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolumeBackupPolicy(ctx, "testVolumeBackupPolicy", &Core.VolumeBackupPolicyArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DestinationRegion: pulumi.Any(_var.Volume_backup_policy_destination_region),
+//				DisplayName:       pulumi.Any(_var.Volume_backup_policy_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Schedules: core.VolumeBackupPolicyScheduleArray{
+//					&core.VolumeBackupPolicyScheduleArgs{
+//						BackupType:       pulumi.Any(_var.Volume_backup_policy_schedules_backup_type),
+//						Period:           pulumi.Any(_var.Volume_backup_policy_schedules_period),
+//						RetentionSeconds: pulumi.Any(_var.Volume_backup_policy_schedules_retention_seconds),
+//						DayOfMonth:       pulumi.Any(_var.Volume_backup_policy_schedules_day_of_month),
+//						DayOfWeek:        pulumi.Any(_var.Volume_backup_policy_schedules_day_of_week),
+//						HourOfDay:        pulumi.Any(_var.Volume_backup_policy_schedules_hour_of_day),
+//						Month:            pulumi.Any(_var.Volume_backup_policy_schedules_month),
+//						OffsetSeconds:    pulumi.Any(_var.Volume_backup_policy_schedules_offset_seconds),
+//						OffsetType:       pulumi.Any(_var.Volume_backup_policy_schedules_offset_type),
+//						TimeZone:         pulumi.Any(_var.Volume_backup_policy_schedules_time_zone),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -68,7 +71,9 @@ import (
 // VolumeBackupPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
+//
+//	$ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
+//
 // ```
 type VolumeBackupPolicy struct {
 	pulumi.CustomResourceState
@@ -215,7 +220,7 @@ func (i *VolumeBackupPolicy) ToVolumeBackupPolicyOutputWithContext(ctx context.C
 // VolumeBackupPolicyArrayInput is an input type that accepts VolumeBackupPolicyArray and VolumeBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupPolicyArrayInput` via:
 //
-//          VolumeBackupPolicyArray{ VolumeBackupPolicyArgs{...} }
+//	VolumeBackupPolicyArray{ VolumeBackupPolicyArgs{...} }
 type VolumeBackupPolicyArrayInput interface {
 	pulumi.Input
 
@@ -240,7 +245,7 @@ func (i VolumeBackupPolicyArray) ToVolumeBackupPolicyArrayOutputWithContext(ctx 
 // VolumeBackupPolicyMapInput is an input type that accepts VolumeBackupPolicyMap and VolumeBackupPolicyMapOutput values.
 // You can construct a concrete instance of `VolumeBackupPolicyMapInput` via:
 //
-//          VolumeBackupPolicyMap{ "key": VolumeBackupPolicyArgs{...} }
+//	VolumeBackupPolicyMap{ "key": VolumeBackupPolicyArgs{...} }
 type VolumeBackupPolicyMapInput interface {
 	pulumi.Input
 

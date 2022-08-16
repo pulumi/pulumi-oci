@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
 //
-// Gets a IntegrationInstance by identifier
+// # Gets a IntegrationInstance by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Integration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Integration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Integration.GetIntegrationInstance(ctx, &integration.GetIntegrationInstanceArgs{
-// 			IntegrationInstanceId: oci_integration_integration_instance.Test_integration_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Integration.GetIntegrationInstance(ctx, &integration.GetIntegrationInstanceArgs{
+//				IntegrationInstanceId: oci_integration_integration_instance.Test_integration_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupIntegrationInstance(ctx *pulumi.Context, args *LookupIntegrationInstanceArgs, opts ...pulumi.InvokeOption) (*LookupIntegrationInstanceResult, error) {
 	var rv LookupIntegrationInstanceResult
@@ -55,6 +58,8 @@ type LookupIntegrationInstanceArgs struct {
 type LookupIntegrationInstanceResult struct {
 	// A list of alternate custom endpoints used for the integration instance URL.
 	AlternateCustomEndpoints []GetIntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	// A list of associated attachments to other services
+	Attachments []GetIntegrationInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
@@ -70,6 +75,8 @@ type LookupIntegrationInstanceResult struct {
 	// The Virtual Cloud Network OCID.
 	Id     string `pulumi:"id"`
 	IdcsAt string `pulumi:"idcsAt"`
+	// Information for IDCS access
+	IdcsInfos []GetIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
 	InstanceUrl           string `pulumi:"instanceUrl"`
 	IntegrationInstanceId string `pulumi:"integrationInstanceId"`
@@ -140,6 +147,11 @@ func (o LookupIntegrationInstanceResultOutput) AlternateCustomEndpoints() GetInt
 	}).(GetIntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
+// A list of associated attachments to other services
+func (o LookupIntegrationInstanceResultOutput) Attachments() GetIntegrationInstanceAttachmentArrayOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceAttachment { return v.Attachments }).(GetIntegrationInstanceAttachmentArrayOutput)
+}
+
 // Compartment Identifier.
 func (o LookupIntegrationInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -179,6 +191,11 @@ func (o LookupIntegrationInstanceResultOutput) Id() pulumi.StringOutput {
 
 func (o LookupIntegrationInstanceResultOutput) IdcsAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.IdcsAt }).(pulumi.StringOutput)
+}
+
+// Information for IDCS access
+func (o LookupIntegrationInstanceResultOutput) IdcsInfos() GetIntegrationInstanceIdcsInfoArrayOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceIdcsInfo { return v.IdcsInfos }).(GetIntegrationInstanceIdcsInfoArrayOutput)
 }
 
 // The Integration Instance URL.

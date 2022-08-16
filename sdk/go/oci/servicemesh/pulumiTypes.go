@@ -22,7 +22,7 @@ type AccessPolicyRule struct {
 // AccessPolicyRuleInput is an input type that accepts AccessPolicyRuleArgs and AccessPolicyRuleOutput values.
 // You can construct a concrete instance of `AccessPolicyRuleInput` via:
 //
-//          AccessPolicyRuleArgs{...}
+//	AccessPolicyRuleArgs{...}
 type AccessPolicyRuleInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i AccessPolicyRuleArgs) ToAccessPolicyRuleOutputWithContext(ctx context.Co
 // AccessPolicyRuleArrayInput is an input type that accepts AccessPolicyRuleArray and AccessPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `AccessPolicyRuleArrayInput` via:
 //
-//          AccessPolicyRuleArray{ AccessPolicyRuleArgs{...} }
+//	AccessPolicyRuleArray{ AccessPolicyRuleArgs{...} }
 type AccessPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -145,7 +145,7 @@ type AccessPolicyRuleDestination struct {
 // AccessPolicyRuleDestinationInput is an input type that accepts AccessPolicyRuleDestinationArgs and AccessPolicyRuleDestinationOutput values.
 // You can construct a concrete instance of `AccessPolicyRuleDestinationInput` via:
 //
-//          AccessPolicyRuleDestinationArgs{...}
+//	AccessPolicyRuleDestinationArgs{...}
 type AccessPolicyRuleDestinationInput interface {
 	pulumi.Input
 
@@ -251,7 +251,7 @@ type AccessPolicyRuleSource struct {
 // AccessPolicyRuleSourceInput is an input type that accepts AccessPolicyRuleSourceArgs and AccessPolicyRuleSourceOutput values.
 // You can construct a concrete instance of `AccessPolicyRuleSourceInput` via:
 //
-//          AccessPolicyRuleSourceArgs{...}
+//	AccessPolicyRuleSourceArgs{...}
 type AccessPolicyRuleSourceInput interface {
 	pulumi.Input
 
@@ -345,7 +345,7 @@ type IngressGatewayAccessLogging struct {
 // IngressGatewayAccessLoggingInput is an input type that accepts IngressGatewayAccessLoggingArgs and IngressGatewayAccessLoggingOutput values.
 // You can construct a concrete instance of `IngressGatewayAccessLoggingInput` via:
 //
-//          IngressGatewayAccessLoggingArgs{...}
+//	IngressGatewayAccessLoggingArgs{...}
 type IngressGatewayAccessLoggingInput interface {
 	pulumi.Input
 
@@ -381,11 +381,11 @@ func (i IngressGatewayAccessLoggingArgs) ToIngressGatewayAccessLoggingPtrOutputW
 // IngressGatewayAccessLoggingPtrInput is an input type that accepts IngressGatewayAccessLoggingArgs, IngressGatewayAccessLoggingPtr and IngressGatewayAccessLoggingPtrOutput values.
 // You can construct a concrete instance of `IngressGatewayAccessLoggingPtrInput` via:
 //
-//          IngressGatewayAccessLoggingArgs{...}
+//	        IngressGatewayAccessLoggingArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayAccessLoggingPtrInput interface {
 	pulumi.Input
 
@@ -486,7 +486,7 @@ type IngressGatewayHost struct {
 // IngressGatewayHostInput is an input type that accepts IngressGatewayHostArgs and IngressGatewayHostOutput values.
 // You can construct a concrete instance of `IngressGatewayHostInput` via:
 //
-//          IngressGatewayHostArgs{...}
+//	IngressGatewayHostArgs{...}
 type IngressGatewayHostInput interface {
 	pulumi.Input
 
@@ -518,7 +518,7 @@ func (i IngressGatewayHostArgs) ToIngressGatewayHostOutputWithContext(ctx contex
 // IngressGatewayHostArrayInput is an input type that accepts IngressGatewayHostArray and IngressGatewayHostArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayHostArrayInput` via:
 //
-//          IngressGatewayHostArray{ IngressGatewayHostArgs{...} }
+//	IngressGatewayHostArray{ IngressGatewayHostArgs{...} }
 type IngressGatewayHostArrayInput interface {
 	pulumi.Input
 
@@ -601,7 +601,7 @@ type IngressGatewayHostListener struct {
 // IngressGatewayHostListenerInput is an input type that accepts IngressGatewayHostListenerArgs and IngressGatewayHostListenerOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerInput` via:
 //
-//          IngressGatewayHostListenerArgs{...}
+//	IngressGatewayHostListenerArgs{...}
 type IngressGatewayHostListenerInput interface {
 	pulumi.Input
 
@@ -633,7 +633,7 @@ func (i IngressGatewayHostListenerArgs) ToIngressGatewayHostListenerOutputWithCo
 // IngressGatewayHostListenerArrayInput is an input type that accepts IngressGatewayHostListenerArray and IngressGatewayHostListenerArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerArrayInput` via:
 //
-//          IngressGatewayHostListenerArray{ IngressGatewayHostListenerArgs{...} }
+//	IngressGatewayHostListenerArray{ IngressGatewayHostListenerArgs{...} }
 type IngressGatewayHostListenerArrayInput interface {
 	pulumi.Input
 
@@ -716,7 +716,7 @@ type IngressGatewayHostListenerTls struct {
 // IngressGatewayHostListenerTlsInput is an input type that accepts IngressGatewayHostListenerTlsArgs and IngressGatewayHostListenerTlsOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsInput` via:
 //
-//          IngressGatewayHostListenerTlsArgs{...}
+//	IngressGatewayHostListenerTlsArgs{...}
 type IngressGatewayHostListenerTlsInput interface {
 	pulumi.Input
 
@@ -756,11 +756,11 @@ func (i IngressGatewayHostListenerTlsArgs) ToIngressGatewayHostListenerTlsPtrOut
 // IngressGatewayHostListenerTlsPtrInput is an input type that accepts IngressGatewayHostListenerTlsArgs, IngressGatewayHostListenerTlsPtr and IngressGatewayHostListenerTlsPtrOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsPtrInput` via:
 //
-//          IngressGatewayHostListenerTlsArgs{...}
+//	        IngressGatewayHostListenerTlsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayHostListenerTlsPtrInput interface {
 	pulumi.Input
 
@@ -893,7 +893,7 @@ type IngressGatewayHostListenerTlsClientValidation struct {
 // IngressGatewayHostListenerTlsClientValidationInput is an input type that accepts IngressGatewayHostListenerTlsClientValidationArgs and IngressGatewayHostListenerTlsClientValidationOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsClientValidationInput` via:
 //
-//          IngressGatewayHostListenerTlsClientValidationArgs{...}
+//	IngressGatewayHostListenerTlsClientValidationArgs{...}
 type IngressGatewayHostListenerTlsClientValidationInput interface {
 	pulumi.Input
 
@@ -931,11 +931,11 @@ func (i IngressGatewayHostListenerTlsClientValidationArgs) ToIngressGatewayHostL
 // IngressGatewayHostListenerTlsClientValidationPtrInput is an input type that accepts IngressGatewayHostListenerTlsClientValidationArgs, IngressGatewayHostListenerTlsClientValidationPtr and IngressGatewayHostListenerTlsClientValidationPtrOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsClientValidationPtrInput` via:
 //
-//          IngressGatewayHostListenerTlsClientValidationArgs{...}
+//	        IngressGatewayHostListenerTlsClientValidationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayHostListenerTlsClientValidationPtrInput interface {
 	pulumi.Input
 
@@ -1053,7 +1053,7 @@ type IngressGatewayHostListenerTlsClientValidationTrustedCaBundle struct {
 // IngressGatewayHostListenerTlsClientValidationTrustedCaBundleInput is an input type that accepts IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs and IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsClientValidationTrustedCaBundleInput` via:
 //
-//          IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{...}
+//	IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{...}
 type IngressGatewayHostListenerTlsClientValidationTrustedCaBundleInput interface {
 	pulumi.Input
 
@@ -1093,11 +1093,11 @@ func (i IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs) ToIngr
 // IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrInput is an input type that accepts IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs, IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtr and IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrInput` via:
 //
-//          IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{...}
+//	        IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrInput interface {
 	pulumi.Input
 
@@ -1228,7 +1228,7 @@ type IngressGatewayHostListenerTlsServerCertificate struct {
 // IngressGatewayHostListenerTlsServerCertificateInput is an input type that accepts IngressGatewayHostListenerTlsServerCertificateArgs and IngressGatewayHostListenerTlsServerCertificateOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsServerCertificateInput` via:
 //
-//          IngressGatewayHostListenerTlsServerCertificateArgs{...}
+//	IngressGatewayHostListenerTlsServerCertificateArgs{...}
 type IngressGatewayHostListenerTlsServerCertificateInput interface {
 	pulumi.Input
 
@@ -1268,11 +1268,11 @@ func (i IngressGatewayHostListenerTlsServerCertificateArgs) ToIngressGatewayHost
 // IngressGatewayHostListenerTlsServerCertificatePtrInput is an input type that accepts IngressGatewayHostListenerTlsServerCertificateArgs, IngressGatewayHostListenerTlsServerCertificatePtr and IngressGatewayHostListenerTlsServerCertificatePtrOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerTlsServerCertificatePtrInput` via:
 //
-//          IngressGatewayHostListenerTlsServerCertificateArgs{...}
+//	        IngressGatewayHostListenerTlsServerCertificateArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayHostListenerTlsServerCertificatePtrInput interface {
 	pulumi.Input
 
@@ -1401,7 +1401,7 @@ type IngressGatewayMtls struct {
 // IngressGatewayMtlsInput is an input type that accepts IngressGatewayMtlsArgs and IngressGatewayMtlsOutput values.
 // You can construct a concrete instance of `IngressGatewayMtlsInput` via:
 //
-//          IngressGatewayMtlsArgs{...}
+//	IngressGatewayMtlsArgs{...}
 type IngressGatewayMtlsInput interface {
 	pulumi.Input
 
@@ -1439,11 +1439,11 @@ func (i IngressGatewayMtlsArgs) ToIngressGatewayMtlsPtrOutputWithContext(ctx con
 // IngressGatewayMtlsPtrInput is an input type that accepts IngressGatewayMtlsArgs, IngressGatewayMtlsPtr and IngressGatewayMtlsPtrOutput values.
 // You can construct a concrete instance of `IngressGatewayMtlsPtrInput` via:
 //
-//          IngressGatewayMtlsArgs{...}
+//	        IngressGatewayMtlsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayMtlsPtrInput interface {
 	pulumi.Input
 
@@ -1569,7 +1569,7 @@ type IngressGatewayRouteTableRouteRule struct {
 // IngressGatewayRouteTableRouteRuleInput is an input type that accepts IngressGatewayRouteTableRouteRuleArgs and IngressGatewayRouteTableRouteRuleOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleInput` via:
 //
-//          IngressGatewayRouteTableRouteRuleArgs{...}
+//	IngressGatewayRouteTableRouteRuleArgs{...}
 type IngressGatewayRouteTableRouteRuleInput interface {
 	pulumi.Input
 
@@ -1611,7 +1611,7 @@ func (i IngressGatewayRouteTableRouteRuleArgs) ToIngressGatewayRouteTableRouteRu
 // IngressGatewayRouteTableRouteRuleArrayInput is an input type that accepts IngressGatewayRouteTableRouteRuleArray and IngressGatewayRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleArrayInput` via:
 //
-//          IngressGatewayRouteTableRouteRuleArray{ IngressGatewayRouteTableRouteRuleArgs{...} }
+//	IngressGatewayRouteTableRouteRuleArray{ IngressGatewayRouteTableRouteRuleArgs{...} }
 type IngressGatewayRouteTableRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -1723,7 +1723,7 @@ type IngressGatewayRouteTableRouteRuleDestination struct {
 // IngressGatewayRouteTableRouteRuleDestinationInput is an input type that accepts IngressGatewayRouteTableRouteRuleDestinationArgs and IngressGatewayRouteTableRouteRuleDestinationOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleDestinationInput` via:
 //
-//          IngressGatewayRouteTableRouteRuleDestinationArgs{...}
+//	IngressGatewayRouteTableRouteRuleDestinationArgs{...}
 type IngressGatewayRouteTableRouteRuleDestinationInput interface {
 	pulumi.Input
 
@@ -1755,7 +1755,7 @@ func (i IngressGatewayRouteTableRouteRuleDestinationArgs) ToIngressGatewayRouteT
 // IngressGatewayRouteTableRouteRuleDestinationArrayInput is an input type that accepts IngressGatewayRouteTableRouteRuleDestinationArray and IngressGatewayRouteTableRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleDestinationArrayInput` via:
 //
-//          IngressGatewayRouteTableRouteRuleDestinationArray{ IngressGatewayRouteTableRouteRuleDestinationArgs{...} }
+//	IngressGatewayRouteTableRouteRuleDestinationArray{ IngressGatewayRouteTableRouteRuleDestinationArgs{...} }
 type IngressGatewayRouteTableRouteRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -1836,7 +1836,7 @@ type IngressGatewayRouteTableRouteRuleIngressGatewayHost struct {
 // IngressGatewayRouteTableRouteRuleIngressGatewayHostInput is an input type that accepts IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs and IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleIngressGatewayHostInput` via:
 //
-//          IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...}
+//	IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...}
 type IngressGatewayRouteTableRouteRuleIngressGatewayHostInput interface {
 	pulumi.Input
 
@@ -1874,11 +1874,11 @@ func (i IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToIngressGatewa
 // IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrInput is an input type that accepts IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs, IngressGatewayRouteTableRouteRuleIngressGatewayHostPtr and IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrInput` via:
 //
-//          IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...}
+//	        IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrInput interface {
 	pulumi.Input
 
@@ -1990,7 +1990,7 @@ type MeshCertificateAuthority struct {
 // MeshCertificateAuthorityInput is an input type that accepts MeshCertificateAuthorityArgs and MeshCertificateAuthorityOutput values.
 // You can construct a concrete instance of `MeshCertificateAuthorityInput` via:
 //
-//          MeshCertificateAuthorityArgs{...}
+//	MeshCertificateAuthorityArgs{...}
 type MeshCertificateAuthorityInput interface {
 	pulumi.Input
 
@@ -2018,7 +2018,7 @@ func (i MeshCertificateAuthorityArgs) ToMeshCertificateAuthorityOutputWithContex
 // MeshCertificateAuthorityArrayInput is an input type that accepts MeshCertificateAuthorityArray and MeshCertificateAuthorityArrayOutput values.
 // You can construct a concrete instance of `MeshCertificateAuthorityArrayInput` via:
 //
-//          MeshCertificateAuthorityArray{ MeshCertificateAuthorityArgs{...} }
+//	MeshCertificateAuthorityArray{ MeshCertificateAuthorityArgs{...} }
 type MeshCertificateAuthorityArrayInput interface {
 	pulumi.Input
 
@@ -2087,7 +2087,7 @@ type MeshMtls struct {
 // MeshMtlsInput is an input type that accepts MeshMtlsArgs and MeshMtlsOutput values.
 // You can construct a concrete instance of `MeshMtlsInput` via:
 //
-//          MeshMtlsArgs{...}
+//	MeshMtlsArgs{...}
 type MeshMtlsInput interface {
 	pulumi.Input
 
@@ -2123,11 +2123,11 @@ func (i MeshMtlsArgs) ToMeshMtlsPtrOutputWithContext(ctx context.Context) MeshMt
 // MeshMtlsPtrInput is an input type that accepts MeshMtlsArgs, MeshMtlsPtr and MeshMtlsPtrOutput values.
 // You can construct a concrete instance of `MeshMtlsPtrInput` via:
 //
-//          MeshMtlsArgs{...}
+//	        MeshMtlsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MeshMtlsPtrInput interface {
 	pulumi.Input
 
@@ -2224,7 +2224,7 @@ type VirtualDeploymentAccessLogging struct {
 // VirtualDeploymentAccessLoggingInput is an input type that accepts VirtualDeploymentAccessLoggingArgs and VirtualDeploymentAccessLoggingOutput values.
 // You can construct a concrete instance of `VirtualDeploymentAccessLoggingInput` via:
 //
-//          VirtualDeploymentAccessLoggingArgs{...}
+//	VirtualDeploymentAccessLoggingArgs{...}
 type VirtualDeploymentAccessLoggingInput interface {
 	pulumi.Input
 
@@ -2260,11 +2260,11 @@ func (i VirtualDeploymentAccessLoggingArgs) ToVirtualDeploymentAccessLoggingPtrO
 // VirtualDeploymentAccessLoggingPtrInput is an input type that accepts VirtualDeploymentAccessLoggingArgs, VirtualDeploymentAccessLoggingPtr and VirtualDeploymentAccessLoggingPtrOutput values.
 // You can construct a concrete instance of `VirtualDeploymentAccessLoggingPtrInput` via:
 //
-//          VirtualDeploymentAccessLoggingArgs{...}
+//	        VirtualDeploymentAccessLoggingArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VirtualDeploymentAccessLoggingPtrInput interface {
 	pulumi.Input
 
@@ -2363,7 +2363,7 @@ type VirtualDeploymentListener struct {
 // VirtualDeploymentListenerInput is an input type that accepts VirtualDeploymentListenerArgs and VirtualDeploymentListenerOutput values.
 // You can construct a concrete instance of `VirtualDeploymentListenerInput` via:
 //
-//          VirtualDeploymentListenerArgs{...}
+//	VirtualDeploymentListenerArgs{...}
 type VirtualDeploymentListenerInput interface {
 	pulumi.Input
 
@@ -2393,7 +2393,7 @@ func (i VirtualDeploymentListenerArgs) ToVirtualDeploymentListenerOutputWithCont
 // VirtualDeploymentListenerArrayInput is an input type that accepts VirtualDeploymentListenerArray and VirtualDeploymentListenerArrayOutput values.
 // You can construct a concrete instance of `VirtualDeploymentListenerArrayInput` via:
 //
-//          VirtualDeploymentListenerArray{ VirtualDeploymentListenerArgs{...} }
+//	VirtualDeploymentListenerArray{ VirtualDeploymentListenerArgs{...} }
 type VirtualDeploymentListenerArrayInput interface {
 	pulumi.Input
 
@@ -2469,7 +2469,7 @@ type VirtualDeploymentServiceDiscovery struct {
 // VirtualDeploymentServiceDiscoveryInput is an input type that accepts VirtualDeploymentServiceDiscoveryArgs and VirtualDeploymentServiceDiscoveryOutput values.
 // You can construct a concrete instance of `VirtualDeploymentServiceDiscoveryInput` via:
 //
-//          VirtualDeploymentServiceDiscoveryArgs{...}
+//	VirtualDeploymentServiceDiscoveryArgs{...}
 type VirtualDeploymentServiceDiscoveryInput interface {
 	pulumi.Input
 
@@ -2507,11 +2507,11 @@ func (i VirtualDeploymentServiceDiscoveryArgs) ToVirtualDeploymentServiceDiscove
 // VirtualDeploymentServiceDiscoveryPtrInput is an input type that accepts VirtualDeploymentServiceDiscoveryArgs, VirtualDeploymentServiceDiscoveryPtr and VirtualDeploymentServiceDiscoveryPtrOutput values.
 // You can construct a concrete instance of `VirtualDeploymentServiceDiscoveryPtrInput` via:
 //
-//          VirtualDeploymentServiceDiscoveryArgs{...}
+//	        VirtualDeploymentServiceDiscoveryArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VirtualDeploymentServiceDiscoveryPtrInput interface {
 	pulumi.Input
 
@@ -2623,7 +2623,7 @@ type VirtualServiceDefaultRoutingPolicy struct {
 // VirtualServiceDefaultRoutingPolicyInput is an input type that accepts VirtualServiceDefaultRoutingPolicyArgs and VirtualServiceDefaultRoutingPolicyOutput values.
 // You can construct a concrete instance of `VirtualServiceDefaultRoutingPolicyInput` via:
 //
-//          VirtualServiceDefaultRoutingPolicyArgs{...}
+//	VirtualServiceDefaultRoutingPolicyArgs{...}
 type VirtualServiceDefaultRoutingPolicyInput interface {
 	pulumi.Input
 
@@ -2659,11 +2659,11 @@ func (i VirtualServiceDefaultRoutingPolicyArgs) ToVirtualServiceDefaultRoutingPo
 // VirtualServiceDefaultRoutingPolicyPtrInput is an input type that accepts VirtualServiceDefaultRoutingPolicyArgs, VirtualServiceDefaultRoutingPolicyPtr and VirtualServiceDefaultRoutingPolicyPtrOutput values.
 // You can construct a concrete instance of `VirtualServiceDefaultRoutingPolicyPtrInput` via:
 //
-//          VirtualServiceDefaultRoutingPolicyArgs{...}
+//	        VirtualServiceDefaultRoutingPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VirtualServiceDefaultRoutingPolicyPtrInput interface {
 	pulumi.Input
 
@@ -2764,7 +2764,7 @@ type VirtualServiceMtls struct {
 // VirtualServiceMtlsInput is an input type that accepts VirtualServiceMtlsArgs and VirtualServiceMtlsOutput values.
 // You can construct a concrete instance of `VirtualServiceMtlsInput` via:
 //
-//          VirtualServiceMtlsArgs{...}
+//	VirtualServiceMtlsArgs{...}
 type VirtualServiceMtlsInput interface {
 	pulumi.Input
 
@@ -2804,11 +2804,11 @@ func (i VirtualServiceMtlsArgs) ToVirtualServiceMtlsPtrOutputWithContext(ctx con
 // VirtualServiceMtlsPtrInput is an input type that accepts VirtualServiceMtlsArgs, VirtualServiceMtlsPtr and VirtualServiceMtlsPtrOutput values.
 // You can construct a concrete instance of `VirtualServiceMtlsPtrInput` via:
 //
-//          VirtualServiceMtlsArgs{...}
+//	        VirtualServiceMtlsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VirtualServiceMtlsPtrInput interface {
 	pulumi.Input
 
@@ -2943,7 +2943,7 @@ type VirtualServiceRouteTableRouteRule struct {
 // VirtualServiceRouteTableRouteRuleInput is an input type that accepts VirtualServiceRouteTableRouteRuleArgs and VirtualServiceRouteTableRouteRuleOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableRouteRuleInput` via:
 //
-//          VirtualServiceRouteTableRouteRuleArgs{...}
+//	VirtualServiceRouteTableRouteRuleArgs{...}
 type VirtualServiceRouteTableRouteRuleInput interface {
 	pulumi.Input
 
@@ -2979,7 +2979,7 @@ func (i VirtualServiceRouteTableRouteRuleArgs) ToVirtualServiceRouteTableRouteRu
 // VirtualServiceRouteTableRouteRuleArrayInput is an input type that accepts VirtualServiceRouteTableRouteRuleArray and VirtualServiceRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableRouteRuleArrayInput` via:
 //
-//          VirtualServiceRouteTableRouteRuleArray{ VirtualServiceRouteTableRouteRuleArgs{...} }
+//	VirtualServiceRouteTableRouteRuleArray{ VirtualServiceRouteTableRouteRuleArgs{...} }
 type VirtualServiceRouteTableRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -3074,7 +3074,7 @@ type VirtualServiceRouteTableRouteRuleDestination struct {
 // VirtualServiceRouteTableRouteRuleDestinationInput is an input type that accepts VirtualServiceRouteTableRouteRuleDestinationArgs and VirtualServiceRouteTableRouteRuleDestinationOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableRouteRuleDestinationInput` via:
 //
-//          VirtualServiceRouteTableRouteRuleDestinationArgs{...}
+//	VirtualServiceRouteTableRouteRuleDestinationArgs{...}
 type VirtualServiceRouteTableRouteRuleDestinationInput interface {
 	pulumi.Input
 
@@ -3106,7 +3106,7 @@ func (i VirtualServiceRouteTableRouteRuleDestinationArgs) ToVirtualServiceRouteT
 // VirtualServiceRouteTableRouteRuleDestinationArrayInput is an input type that accepts VirtualServiceRouteTableRouteRuleDestinationArray and VirtualServiceRouteTableRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableRouteRuleDestinationArrayInput` via:
 //
-//          VirtualServiceRouteTableRouteRuleDestinationArray{ VirtualServiceRouteTableRouteRuleDestinationArgs{...} }
+//	VirtualServiceRouteTableRouteRuleDestinationArray{ VirtualServiceRouteTableRouteRuleDestinationArgs{...} }
 type VirtualServiceRouteTableRouteRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -3184,7 +3184,7 @@ type GetAccessPoliciesAccessPolicyCollection struct {
 // GetAccessPoliciesAccessPolicyCollectionInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionArgs and GetAccessPoliciesAccessPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionArgs{...}
+//	GetAccessPoliciesAccessPolicyCollectionArgs{...}
 type GetAccessPoliciesAccessPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -3211,7 +3211,7 @@ func (i GetAccessPoliciesAccessPolicyCollectionArgs) ToGetAccessPoliciesAccessPo
 // GetAccessPoliciesAccessPolicyCollectionArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionArray and GetAccessPoliciesAccessPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionArrayInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionArray{ GetAccessPoliciesAccessPolicyCollectionArgs{...} }
+//	GetAccessPoliciesAccessPolicyCollectionArray{ GetAccessPoliciesAccessPolicyCollectionArgs{...} }
 type GetAccessPoliciesAccessPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3305,7 +3305,7 @@ type GetAccessPoliciesAccessPolicyCollectionItem struct {
 // GetAccessPoliciesAccessPolicyCollectionItemInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemArgs and GetAccessPoliciesAccessPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemArgs{...}
+//	GetAccessPoliciesAccessPolicyCollectionItemArgs{...}
 type GetAccessPoliciesAccessPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -3357,7 +3357,7 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemArgs) ToGetAccessPoliciesAcce
 // GetAccessPoliciesAccessPolicyCollectionItemArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemArray and GetAccessPoliciesAccessPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemArrayInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemArray{ GetAccessPoliciesAccessPolicyCollectionItemArgs{...} }
+//	GetAccessPoliciesAccessPolicyCollectionItemArray{ GetAccessPoliciesAccessPolicyCollectionItemArgs{...} }
 type GetAccessPoliciesAccessPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3492,7 +3492,7 @@ type GetAccessPoliciesAccessPolicyCollectionItemRule struct {
 // GetAccessPoliciesAccessPolicyCollectionItemRuleInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleArgs and GetAccessPoliciesAccessPolicyCollectionItemRuleOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemRuleInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemRuleArgs{...}
+//	GetAccessPoliciesAccessPolicyCollectionItemRuleArgs{...}
 type GetAccessPoliciesAccessPolicyCollectionItemRuleInput interface {
 	pulumi.Input
 
@@ -3524,7 +3524,7 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleArgs) ToGetAccessPolicies
 // GetAccessPoliciesAccessPolicyCollectionItemRuleArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleArray and GetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemRuleArrayInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemRuleArray{ GetAccessPoliciesAccessPolicyCollectionItemRuleArgs{...} }
+//	GetAccessPoliciesAccessPolicyCollectionItemRuleArray{ GetAccessPoliciesAccessPolicyCollectionItemRuleArgs{...} }
 type GetAccessPoliciesAccessPolicyCollectionItemRuleArrayInput interface {
 	pulumi.Input
 
@@ -3619,7 +3619,7 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleDestination struct {
 // GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs and GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs{...}
+//	GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs{...}
 type GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationInput interface {
 	pulumi.Input
 
@@ -3659,7 +3659,7 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs) ToGetAcc
 // GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArray and GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArray{ GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs{...} }
+//	GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArray{ GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs{...} }
 type GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -3770,7 +3770,7 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleSource struct {
 // GetAccessPoliciesAccessPolicyCollectionItemRuleSourceInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs and GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemRuleSourceInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs{...}
+//	GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs{...}
 type GetAccessPoliciesAccessPolicyCollectionItemRuleSourceInput interface {
 	pulumi.Input
 
@@ -3810,7 +3810,7 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs) ToGetAccessPo
 // GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArray and GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayInput` via:
 //
-//          GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArray{ GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs{...} }
+//	GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArray{ GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs{...} }
 type GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayInput interface {
 	pulumi.Input
 
@@ -3911,7 +3911,7 @@ type GetAccessPoliciesFilter struct {
 // GetAccessPoliciesFilterInput is an input type that accepts GetAccessPoliciesFilterArgs and GetAccessPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesFilterInput` via:
 //
-//          GetAccessPoliciesFilterArgs{...}
+//	GetAccessPoliciesFilterArgs{...}
 type GetAccessPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -3941,7 +3941,7 @@ func (i GetAccessPoliciesFilterArgs) ToGetAccessPoliciesFilterOutputWithContext(
 // GetAccessPoliciesFilterArrayInput is an input type that accepts GetAccessPoliciesFilterArray and GetAccessPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesFilterArrayInput` via:
 //
-//          GetAccessPoliciesFilterArray{ GetAccessPoliciesFilterArgs{...} }
+//	GetAccessPoliciesFilterArray{ GetAccessPoliciesFilterArgs{...} }
 type GetAccessPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4022,7 +4022,7 @@ type GetAccessPolicyRule struct {
 // GetAccessPolicyRuleInput is an input type that accepts GetAccessPolicyRuleArgs and GetAccessPolicyRuleOutput values.
 // You can construct a concrete instance of `GetAccessPolicyRuleInput` via:
 //
-//          GetAccessPolicyRuleArgs{...}
+//	GetAccessPolicyRuleArgs{...}
 type GetAccessPolicyRuleInput interface {
 	pulumi.Input
 
@@ -4054,7 +4054,7 @@ func (i GetAccessPolicyRuleArgs) ToGetAccessPolicyRuleOutputWithContext(ctx cont
 // GetAccessPolicyRuleArrayInput is an input type that accepts GetAccessPolicyRuleArray and GetAccessPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetAccessPolicyRuleArrayInput` via:
 //
-//          GetAccessPolicyRuleArray{ GetAccessPolicyRuleArgs{...} }
+//	GetAccessPolicyRuleArray{ GetAccessPolicyRuleArgs{...} }
 type GetAccessPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -4145,7 +4145,7 @@ type GetAccessPolicyRuleDestination struct {
 // GetAccessPolicyRuleDestinationInput is an input type that accepts GetAccessPolicyRuleDestinationArgs and GetAccessPolicyRuleDestinationOutput values.
 // You can construct a concrete instance of `GetAccessPolicyRuleDestinationInput` via:
 //
-//          GetAccessPolicyRuleDestinationArgs{...}
+//	GetAccessPolicyRuleDestinationArgs{...}
 type GetAccessPolicyRuleDestinationInput interface {
 	pulumi.Input
 
@@ -4185,7 +4185,7 @@ func (i GetAccessPolicyRuleDestinationArgs) ToGetAccessPolicyRuleDestinationOutp
 // GetAccessPolicyRuleDestinationArrayInput is an input type that accepts GetAccessPolicyRuleDestinationArray and GetAccessPolicyRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `GetAccessPolicyRuleDestinationArrayInput` via:
 //
-//          GetAccessPolicyRuleDestinationArray{ GetAccessPolicyRuleDestinationArgs{...} }
+//	GetAccessPolicyRuleDestinationArray{ GetAccessPolicyRuleDestinationArgs{...} }
 type GetAccessPolicyRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -4296,7 +4296,7 @@ type GetAccessPolicyRuleSource struct {
 // GetAccessPolicyRuleSourceInput is an input type that accepts GetAccessPolicyRuleSourceArgs and GetAccessPolicyRuleSourceOutput values.
 // You can construct a concrete instance of `GetAccessPolicyRuleSourceInput` via:
 //
-//          GetAccessPolicyRuleSourceArgs{...}
+//	GetAccessPolicyRuleSourceArgs{...}
 type GetAccessPolicyRuleSourceInput interface {
 	pulumi.Input
 
@@ -4336,7 +4336,7 @@ func (i GetAccessPolicyRuleSourceArgs) ToGetAccessPolicyRuleSourceOutputWithCont
 // GetAccessPolicyRuleSourceArrayInput is an input type that accepts GetAccessPolicyRuleSourceArray and GetAccessPolicyRuleSourceArrayOutput values.
 // You can construct a concrete instance of `GetAccessPolicyRuleSourceArrayInput` via:
 //
-//          GetAccessPolicyRuleSourceArray{ GetAccessPolicyRuleSourceArgs{...} }
+//	GetAccessPolicyRuleSourceArray{ GetAccessPolicyRuleSourceArgs{...} }
 type GetAccessPolicyRuleSourceArrayInput interface {
 	pulumi.Input
 
@@ -4435,7 +4435,7 @@ type GetIngressGatewayAccessLogging struct {
 // GetIngressGatewayAccessLoggingInput is an input type that accepts GetIngressGatewayAccessLoggingArgs and GetIngressGatewayAccessLoggingOutput values.
 // You can construct a concrete instance of `GetIngressGatewayAccessLoggingInput` via:
 //
-//          GetIngressGatewayAccessLoggingArgs{...}
+//	GetIngressGatewayAccessLoggingArgs{...}
 type GetIngressGatewayAccessLoggingInput interface {
 	pulumi.Input
 
@@ -4463,7 +4463,7 @@ func (i GetIngressGatewayAccessLoggingArgs) ToGetIngressGatewayAccessLoggingOutp
 // GetIngressGatewayAccessLoggingArrayInput is an input type that accepts GetIngressGatewayAccessLoggingArray and GetIngressGatewayAccessLoggingArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayAccessLoggingArrayInput` via:
 //
-//          GetIngressGatewayAccessLoggingArray{ GetIngressGatewayAccessLoggingArgs{...} }
+//	GetIngressGatewayAccessLoggingArray{ GetIngressGatewayAccessLoggingArgs{...} }
 type GetIngressGatewayAccessLoggingArrayInput interface {
 	pulumi.Input
 
@@ -4536,7 +4536,7 @@ type GetIngressGatewayHost struct {
 // GetIngressGatewayHostInput is an input type that accepts GetIngressGatewayHostArgs and GetIngressGatewayHostOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostInput` via:
 //
-//          GetIngressGatewayHostArgs{...}
+//	GetIngressGatewayHostArgs{...}
 type GetIngressGatewayHostInput interface {
 	pulumi.Input
 
@@ -4568,7 +4568,7 @@ func (i GetIngressGatewayHostArgs) ToGetIngressGatewayHostOutputWithContext(ctx 
 // GetIngressGatewayHostArrayInput is an input type that accepts GetIngressGatewayHostArray and GetIngressGatewayHostArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostArrayInput` via:
 //
-//          GetIngressGatewayHostArray{ GetIngressGatewayHostArgs{...} }
+//	GetIngressGatewayHostArray{ GetIngressGatewayHostArgs{...} }
 type GetIngressGatewayHostArrayInput interface {
 	pulumi.Input
 
@@ -4651,7 +4651,7 @@ type GetIngressGatewayHostListener struct {
 // GetIngressGatewayHostListenerInput is an input type that accepts GetIngressGatewayHostListenerArgs and GetIngressGatewayHostListenerOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerInput` via:
 //
-//          GetIngressGatewayHostListenerArgs{...}
+//	GetIngressGatewayHostListenerArgs{...}
 type GetIngressGatewayHostListenerInput interface {
 	pulumi.Input
 
@@ -4683,7 +4683,7 @@ func (i GetIngressGatewayHostListenerArgs) ToGetIngressGatewayHostListenerOutput
 // GetIngressGatewayHostListenerArrayInput is an input type that accepts GetIngressGatewayHostListenerArray and GetIngressGatewayHostListenerArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerArrayInput` via:
 //
-//          GetIngressGatewayHostListenerArray{ GetIngressGatewayHostListenerArgs{...} }
+//	GetIngressGatewayHostListenerArray{ GetIngressGatewayHostListenerArgs{...} }
 type GetIngressGatewayHostListenerArrayInput interface {
 	pulumi.Input
 
@@ -4766,7 +4766,7 @@ type GetIngressGatewayHostListenerTl struct {
 // GetIngressGatewayHostListenerTlInput is an input type that accepts GetIngressGatewayHostListenerTlArgs and GetIngressGatewayHostListenerTlOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlInput` via:
 //
-//          GetIngressGatewayHostListenerTlArgs{...}
+//	GetIngressGatewayHostListenerTlArgs{...}
 type GetIngressGatewayHostListenerTlInput interface {
 	pulumi.Input
 
@@ -4798,7 +4798,7 @@ func (i GetIngressGatewayHostListenerTlArgs) ToGetIngressGatewayHostListenerTlOu
 // GetIngressGatewayHostListenerTlArrayInput is an input type that accepts GetIngressGatewayHostListenerTlArray and GetIngressGatewayHostListenerTlArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlArrayInput` via:
 //
-//          GetIngressGatewayHostListenerTlArray{ GetIngressGatewayHostListenerTlArgs{...} }
+//	GetIngressGatewayHostListenerTlArray{ GetIngressGatewayHostListenerTlArgs{...} }
 type GetIngressGatewayHostListenerTlArrayInput interface {
 	pulumi.Input
 
@@ -4883,7 +4883,7 @@ type GetIngressGatewayHostListenerTlClientValidation struct {
 // GetIngressGatewayHostListenerTlClientValidationInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationArgs and GetIngressGatewayHostListenerTlClientValidationOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlClientValidationInput` via:
 //
-//          GetIngressGatewayHostListenerTlClientValidationArgs{...}
+//	GetIngressGatewayHostListenerTlClientValidationArgs{...}
 type GetIngressGatewayHostListenerTlClientValidationInput interface {
 	pulumi.Input
 
@@ -4913,7 +4913,7 @@ func (i GetIngressGatewayHostListenerTlClientValidationArgs) ToGetIngressGateway
 // GetIngressGatewayHostListenerTlClientValidationArrayInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationArray and GetIngressGatewayHostListenerTlClientValidationArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlClientValidationArrayInput` via:
 //
-//          GetIngressGatewayHostListenerTlClientValidationArray{ GetIngressGatewayHostListenerTlClientValidationArgs{...} }
+//	GetIngressGatewayHostListenerTlClientValidationArray{ GetIngressGatewayHostListenerTlClientValidationArgs{...} }
 type GetIngressGatewayHostListenerTlClientValidationArrayInput interface {
 	pulumi.Input
 
@@ -4993,7 +4993,7 @@ type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle struct {
 // GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs and GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleInput` via:
 //
-//          GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs{...}
+//	GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs{...}
 type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleInput interface {
 	pulumi.Input
 
@@ -5025,7 +5025,7 @@ func (i GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs) ToGe
 // GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArray and GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayInput` via:
 //
-//          GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArray{ GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs{...} }
+//	GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArray{ GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs{...} }
 type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayInput interface {
 	pulumi.Input
 
@@ -5108,7 +5108,7 @@ type GetIngressGatewayHostListenerTlServerCertificate struct {
 // GetIngressGatewayHostListenerTlServerCertificateInput is an input type that accepts GetIngressGatewayHostListenerTlServerCertificateArgs and GetIngressGatewayHostListenerTlServerCertificateOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlServerCertificateInput` via:
 //
-//          GetIngressGatewayHostListenerTlServerCertificateArgs{...}
+//	GetIngressGatewayHostListenerTlServerCertificateArgs{...}
 type GetIngressGatewayHostListenerTlServerCertificateInput interface {
 	pulumi.Input
 
@@ -5140,7 +5140,7 @@ func (i GetIngressGatewayHostListenerTlServerCertificateArgs) ToGetIngressGatewa
 // GetIngressGatewayHostListenerTlServerCertificateArrayInput is an input type that accepts GetIngressGatewayHostListenerTlServerCertificateArray and GetIngressGatewayHostListenerTlServerCertificateArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlServerCertificateArrayInput` via:
 //
-//          GetIngressGatewayHostListenerTlServerCertificateArray{ GetIngressGatewayHostListenerTlServerCertificateArgs{...} }
+//	GetIngressGatewayHostListenerTlServerCertificateArray{ GetIngressGatewayHostListenerTlServerCertificateArgs{...} }
 type GetIngressGatewayHostListenerTlServerCertificateArrayInput interface {
 	pulumi.Input
 
@@ -5221,7 +5221,7 @@ type GetIngressGatewayMtl struct {
 // GetIngressGatewayMtlInput is an input type that accepts GetIngressGatewayMtlArgs and GetIngressGatewayMtlOutput values.
 // You can construct a concrete instance of `GetIngressGatewayMtlInput` via:
 //
-//          GetIngressGatewayMtlArgs{...}
+//	GetIngressGatewayMtlArgs{...}
 type GetIngressGatewayMtlInput interface {
 	pulumi.Input
 
@@ -5251,7 +5251,7 @@ func (i GetIngressGatewayMtlArgs) ToGetIngressGatewayMtlOutputWithContext(ctx co
 // GetIngressGatewayMtlArrayInput is an input type that accepts GetIngressGatewayMtlArray and GetIngressGatewayMtlArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayMtlArrayInput` via:
 //
-//          GetIngressGatewayMtlArray{ GetIngressGatewayMtlArgs{...} }
+//	GetIngressGatewayMtlArray{ GetIngressGatewayMtlArgs{...} }
 type GetIngressGatewayMtlArrayInput interface {
 	pulumi.Input
 
@@ -5339,7 +5339,7 @@ type GetIngressGatewayRouteTableRouteRule struct {
 // GetIngressGatewayRouteTableRouteRuleInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleArgs and GetIngressGatewayRouteTableRouteRuleOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTableRouteRuleInput` via:
 //
-//          GetIngressGatewayRouteTableRouteRuleArgs{...}
+//	GetIngressGatewayRouteTableRouteRuleArgs{...}
 type GetIngressGatewayRouteTableRouteRuleInput interface {
 	pulumi.Input
 
@@ -5381,7 +5381,7 @@ func (i GetIngressGatewayRouteTableRouteRuleArgs) ToGetIngressGatewayRouteTableR
 // GetIngressGatewayRouteTableRouteRuleArrayInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleArray and GetIngressGatewayRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTableRouteRuleArrayInput` via:
 //
-//          GetIngressGatewayRouteTableRouteRuleArray{ GetIngressGatewayRouteTableRouteRuleArgs{...} }
+//	GetIngressGatewayRouteTableRouteRuleArray{ GetIngressGatewayRouteTableRouteRuleArgs{...} }
 type GetIngressGatewayRouteTableRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -5493,7 +5493,7 @@ type GetIngressGatewayRouteTableRouteRuleDestination struct {
 // GetIngressGatewayRouteTableRouteRuleDestinationInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleDestinationArgs and GetIngressGatewayRouteTableRouteRuleDestinationOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTableRouteRuleDestinationInput` via:
 //
-//          GetIngressGatewayRouteTableRouteRuleDestinationArgs{...}
+//	GetIngressGatewayRouteTableRouteRuleDestinationArgs{...}
 type GetIngressGatewayRouteTableRouteRuleDestinationInput interface {
 	pulumi.Input
 
@@ -5525,7 +5525,7 @@ func (i GetIngressGatewayRouteTableRouteRuleDestinationArgs) ToGetIngressGateway
 // GetIngressGatewayRouteTableRouteRuleDestinationArrayInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleDestinationArray and GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTableRouteRuleDestinationArrayInput` via:
 //
-//          GetIngressGatewayRouteTableRouteRuleDestinationArray{ GetIngressGatewayRouteTableRouteRuleDestinationArgs{...} }
+//	GetIngressGatewayRouteTableRouteRuleDestinationArray{ GetIngressGatewayRouteTableRouteRuleDestinationArgs{...} }
 type GetIngressGatewayRouteTableRouteRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -5606,7 +5606,7 @@ type GetIngressGatewayRouteTableRouteRuleIngressGatewayHost struct {
 // GetIngressGatewayRouteTableRouteRuleIngressGatewayHostInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs and GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTableRouteRuleIngressGatewayHostInput` via:
 //
-//          GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...}
+//	GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...}
 type GetIngressGatewayRouteTableRouteRuleIngressGatewayHostInput interface {
 	pulumi.Input
 
@@ -5636,7 +5636,7 @@ func (i GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToGetIngress
 // GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArray and GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayInput` via:
 //
-//          GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArray{ GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...} }
+//	GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArray{ GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{...} }
 type GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayInput interface {
 	pulumi.Input
 
@@ -5712,7 +5712,7 @@ type GetIngressGatewayRouteTablesFilter struct {
 // GetIngressGatewayRouteTablesFilterInput is an input type that accepts GetIngressGatewayRouteTablesFilterArgs and GetIngressGatewayRouteTablesFilterOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesFilterInput` via:
 //
-//          GetIngressGatewayRouteTablesFilterArgs{...}
+//	GetIngressGatewayRouteTablesFilterArgs{...}
 type GetIngressGatewayRouteTablesFilterInput interface {
 	pulumi.Input
 
@@ -5742,7 +5742,7 @@ func (i GetIngressGatewayRouteTablesFilterArgs) ToGetIngressGatewayRouteTablesFi
 // GetIngressGatewayRouteTablesFilterArrayInput is an input type that accepts GetIngressGatewayRouteTablesFilterArray and GetIngressGatewayRouteTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesFilterArrayInput` via:
 //
-//          GetIngressGatewayRouteTablesFilterArray{ GetIngressGatewayRouteTablesFilterArgs{...} }
+//	GetIngressGatewayRouteTablesFilterArray{ GetIngressGatewayRouteTablesFilterArgs{...} }
 type GetIngressGatewayRouteTablesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5818,7 +5818,7 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection struct {
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs{...}
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs{...}
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionInput interface {
 	pulumi.Input
 
@@ -5845,7 +5845,7 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs) ToGe
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs{...} }
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs{...} }
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5941,7 +5941,7 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem struct {
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs{...}
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs{...}
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemInput interface {
 	pulumi.Input
 
@@ -5995,7 +5995,7 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs) 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs{...} }
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs{...} }
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6163,7 +6163,7 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs{...}
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs{...}
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleInput interface {
 	pulumi.Input
 
@@ -6205,7 +6205,7 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs{...} }
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs{...} }
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -6329,7 +6329,7 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs{...}
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs{...}
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationInput interface {
 	pulumi.Input
 
@@ -6361,7 +6361,7 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs{...} }
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs{...} }
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -6448,7 +6448,7 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs{...}
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs{...}
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostInput interface {
 	pulumi.Input
 
@@ -6478,7 +6478,7 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayInput` via:
 //
-//          GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs{...} }
+//	GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArray{ GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs{...} }
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayInput interface {
 	pulumi.Input
 
@@ -6558,7 +6558,7 @@ type GetIngressGatewaysFilter struct {
 // GetIngressGatewaysFilterInput is an input type that accepts GetIngressGatewaysFilterArgs and GetIngressGatewaysFilterOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysFilterInput` via:
 //
-//          GetIngressGatewaysFilterArgs{...}
+//	GetIngressGatewaysFilterArgs{...}
 type GetIngressGatewaysFilterInput interface {
 	pulumi.Input
 
@@ -6588,7 +6588,7 @@ func (i GetIngressGatewaysFilterArgs) ToGetIngressGatewaysFilterOutputWithContex
 // GetIngressGatewaysFilterArrayInput is an input type that accepts GetIngressGatewaysFilterArray and GetIngressGatewaysFilterArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysFilterArrayInput` via:
 //
-//          GetIngressGatewaysFilterArray{ GetIngressGatewaysFilterArgs{...} }
+//	GetIngressGatewaysFilterArray{ GetIngressGatewaysFilterArgs{...} }
 type GetIngressGatewaysFilterArrayInput interface {
 	pulumi.Input
 
@@ -6664,7 +6664,7 @@ type GetIngressGatewaysIngressGatewayCollection struct {
 // GetIngressGatewaysIngressGatewayCollectionInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionArgs and GetIngressGatewaysIngressGatewayCollectionOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionInput interface {
 	pulumi.Input
 
@@ -6691,7 +6691,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionArgs) ToGetIngressGatewaysIngr
 // GetIngressGatewaysIngressGatewayCollectionArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionArray and GetIngressGatewaysIngressGatewayCollectionArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionArray{ GetIngressGatewaysIngressGatewayCollectionArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionArray{ GetIngressGatewaysIngressGatewayCollectionArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6789,7 +6789,7 @@ type GetIngressGatewaysIngressGatewayCollectionItem struct {
 // GetIngressGatewaysIngressGatewayCollectionItemInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemArgs and GetIngressGatewaysIngressGatewayCollectionItemOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemInput interface {
 	pulumi.Input
 
@@ -6845,7 +6845,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemArgs) ToGetIngressGateways
 // GetIngressGatewaysIngressGatewayCollectionItemArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemArray and GetIngressGatewaysIngressGatewayCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemArray{ GetIngressGatewaysIngressGatewayCollectionItemArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemArray{ GetIngressGatewaysIngressGatewayCollectionItemArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6990,7 +6990,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemAccessLogging struct {
 // GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs and GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingInput interface {
 	pulumi.Input
 
@@ -7018,7 +7018,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs) ToGetIn
 // GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArray and GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArray{ GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArray{ GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayInput interface {
 	pulumi.Input
 
@@ -7091,7 +7091,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHost struct {
 // GetIngressGatewaysIngressGatewayCollectionItemHostInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostArgs and GetIngressGatewaysIngressGatewayCollectionItemHostOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemHostArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemHostInput interface {
 	pulumi.Input
 
@@ -7123,7 +7123,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostArgs) ToGetIngressGate
 // GetIngressGatewaysIngressGatewayCollectionItemHostArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostArray and GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostArray{ GetIngressGatewaysIngressGatewayCollectionItemHostArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemHostArray{ GetIngressGatewaysIngressGatewayCollectionItemHostArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemHostArrayInput interface {
 	pulumi.Input
 
@@ -7208,7 +7208,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListener struct {
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerInput interface {
 	pulumi.Input
 
@@ -7240,7 +7240,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs) ToGetIng
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayInput interface {
 	pulumi.Input
 
@@ -7325,7 +7325,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl struct {
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlInput interface {
 	pulumi.Input
 
@@ -7357,7 +7357,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs) ToGetI
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayInput interface {
 	pulumi.Input
 
@@ -7442,7 +7442,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidatio
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationInput interface {
 	pulumi.Input
 
@@ -7472,7 +7472,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayInput interface {
 	pulumi.Input
 
@@ -7554,7 +7554,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidatio
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleInput interface {
 	pulumi.Input
 
@@ -7586,7 +7586,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayInput interface {
 	pulumi.Input
 
@@ -7675,7 +7675,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertifica
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateInput interface {
 	pulumi.Input
 
@@ -7707,7 +7707,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertif
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArray{ GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayInput interface {
 	pulumi.Input
 
@@ -7794,7 +7794,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemMtl struct {
 // GetIngressGatewaysIngressGatewayCollectionItemMtlInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemMtlArgs and GetIngressGatewaysIngressGatewayCollectionItemMtlOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemMtlInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemMtlArgs{...}
+//	GetIngressGatewaysIngressGatewayCollectionItemMtlArgs{...}
 type GetIngressGatewaysIngressGatewayCollectionItemMtlInput interface {
 	pulumi.Input
 
@@ -7824,7 +7824,7 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemMtlArgs) ToGetIngressGatew
 // GetIngressGatewaysIngressGatewayCollectionItemMtlArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemMtlArray and GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemMtlArrayInput` via:
 //
-//          GetIngressGatewaysIngressGatewayCollectionItemMtlArray{ GetIngressGatewaysIngressGatewayCollectionItemMtlArgs{...} }
+//	GetIngressGatewaysIngressGatewayCollectionItemMtlArray{ GetIngressGatewaysIngressGatewayCollectionItemMtlArgs{...} }
 type GetIngressGatewaysIngressGatewayCollectionItemMtlArrayInput interface {
 	pulumi.Input
 
@@ -7898,7 +7898,7 @@ type GetMeshCertificateAuthority struct {
 // GetMeshCertificateAuthorityInput is an input type that accepts GetMeshCertificateAuthorityArgs and GetMeshCertificateAuthorityOutput values.
 // You can construct a concrete instance of `GetMeshCertificateAuthorityInput` via:
 //
-//          GetMeshCertificateAuthorityArgs{...}
+//	GetMeshCertificateAuthorityArgs{...}
 type GetMeshCertificateAuthorityInput interface {
 	pulumi.Input
 
@@ -7926,7 +7926,7 @@ func (i GetMeshCertificateAuthorityArgs) ToGetMeshCertificateAuthorityOutputWith
 // GetMeshCertificateAuthorityArrayInput is an input type that accepts GetMeshCertificateAuthorityArray and GetMeshCertificateAuthorityArrayOutput values.
 // You can construct a concrete instance of `GetMeshCertificateAuthorityArrayInput` via:
 //
-//          GetMeshCertificateAuthorityArray{ GetMeshCertificateAuthorityArgs{...} }
+//	GetMeshCertificateAuthorityArray{ GetMeshCertificateAuthorityArgs{...} }
 type GetMeshCertificateAuthorityArrayInput interface {
 	pulumi.Input
 
@@ -7995,7 +7995,7 @@ type GetMeshMtl struct {
 // GetMeshMtlInput is an input type that accepts GetMeshMtlArgs and GetMeshMtlOutput values.
 // You can construct a concrete instance of `GetMeshMtlInput` via:
 //
-//          GetMeshMtlArgs{...}
+//	GetMeshMtlArgs{...}
 type GetMeshMtlInput interface {
 	pulumi.Input
 
@@ -8023,7 +8023,7 @@ func (i GetMeshMtlArgs) ToGetMeshMtlOutputWithContext(ctx context.Context) GetMe
 // GetMeshMtlArrayInput is an input type that accepts GetMeshMtlArray and GetMeshMtlArrayOutput values.
 // You can construct a concrete instance of `GetMeshMtlArrayInput` via:
 //
-//          GetMeshMtlArray{ GetMeshMtlArgs{...} }
+//	GetMeshMtlArray{ GetMeshMtlArgs{...} }
 type GetMeshMtlArrayInput interface {
 	pulumi.Input
 
@@ -8093,7 +8093,7 @@ type GetMeshesFilter struct {
 // GetMeshesFilterInput is an input type that accepts GetMeshesFilterArgs and GetMeshesFilterOutput values.
 // You can construct a concrete instance of `GetMeshesFilterInput` via:
 //
-//          GetMeshesFilterArgs{...}
+//	GetMeshesFilterArgs{...}
 type GetMeshesFilterInput interface {
 	pulumi.Input
 
@@ -8122,7 +8122,7 @@ func (i GetMeshesFilterArgs) ToGetMeshesFilterOutputWithContext(ctx context.Cont
 // GetMeshesFilterArrayInput is an input type that accepts GetMeshesFilterArray and GetMeshesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMeshesFilterArrayInput` via:
 //
-//          GetMeshesFilterArray{ GetMeshesFilterArgs{...} }
+//	GetMeshesFilterArray{ GetMeshesFilterArgs{...} }
 type GetMeshesFilterArrayInput interface {
 	pulumi.Input
 
@@ -8197,7 +8197,7 @@ type GetMeshesMeshCollection struct {
 // GetMeshesMeshCollectionInput is an input type that accepts GetMeshesMeshCollectionArgs and GetMeshesMeshCollectionOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionInput` via:
 //
-//          GetMeshesMeshCollectionArgs{...}
+//	GetMeshesMeshCollectionArgs{...}
 type GetMeshesMeshCollectionInput interface {
 	pulumi.Input
 
@@ -8224,7 +8224,7 @@ func (i GetMeshesMeshCollectionArgs) ToGetMeshesMeshCollectionOutputWithContext(
 // GetMeshesMeshCollectionArrayInput is an input type that accepts GetMeshesMeshCollectionArray and GetMeshesMeshCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionArrayInput` via:
 //
-//          GetMeshesMeshCollectionArray{ GetMeshesMeshCollectionArgs{...} }
+//	GetMeshesMeshCollectionArray{ GetMeshesMeshCollectionArgs{...} }
 type GetMeshesMeshCollectionArrayInput interface {
 	pulumi.Input
 
@@ -8316,7 +8316,7 @@ type GetMeshesMeshCollectionItem struct {
 // GetMeshesMeshCollectionItemInput is an input type that accepts GetMeshesMeshCollectionItemArgs and GetMeshesMeshCollectionItemOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionItemInput` via:
 //
-//          GetMeshesMeshCollectionItemArgs{...}
+//	GetMeshesMeshCollectionItemArgs{...}
 type GetMeshesMeshCollectionItemInput interface {
 	pulumi.Input
 
@@ -8368,7 +8368,7 @@ func (i GetMeshesMeshCollectionItemArgs) ToGetMeshesMeshCollectionItemOutputWith
 // GetMeshesMeshCollectionItemArrayInput is an input type that accepts GetMeshesMeshCollectionItemArray and GetMeshesMeshCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionItemArrayInput` via:
 //
-//          GetMeshesMeshCollectionItemArray{ GetMeshesMeshCollectionItemArgs{...} }
+//	GetMeshesMeshCollectionItemArray{ GetMeshesMeshCollectionItemArgs{...} }
 type GetMeshesMeshCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -8499,7 +8499,7 @@ type GetMeshesMeshCollectionItemCertificateAuthority struct {
 // GetMeshesMeshCollectionItemCertificateAuthorityInput is an input type that accepts GetMeshesMeshCollectionItemCertificateAuthorityArgs and GetMeshesMeshCollectionItemCertificateAuthorityOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionItemCertificateAuthorityInput` via:
 //
-//          GetMeshesMeshCollectionItemCertificateAuthorityArgs{...}
+//	GetMeshesMeshCollectionItemCertificateAuthorityArgs{...}
 type GetMeshesMeshCollectionItemCertificateAuthorityInput interface {
 	pulumi.Input
 
@@ -8527,7 +8527,7 @@ func (i GetMeshesMeshCollectionItemCertificateAuthorityArgs) ToGetMeshesMeshColl
 // GetMeshesMeshCollectionItemCertificateAuthorityArrayInput is an input type that accepts GetMeshesMeshCollectionItemCertificateAuthorityArray and GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionItemCertificateAuthorityArrayInput` via:
 //
-//          GetMeshesMeshCollectionItemCertificateAuthorityArray{ GetMeshesMeshCollectionItemCertificateAuthorityArgs{...} }
+//	GetMeshesMeshCollectionItemCertificateAuthorityArray{ GetMeshesMeshCollectionItemCertificateAuthorityArgs{...} }
 type GetMeshesMeshCollectionItemCertificateAuthorityArrayInput interface {
 	pulumi.Input
 
@@ -8596,7 +8596,7 @@ type GetMeshesMeshCollectionItemMtl struct {
 // GetMeshesMeshCollectionItemMtlInput is an input type that accepts GetMeshesMeshCollectionItemMtlArgs and GetMeshesMeshCollectionItemMtlOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionItemMtlInput` via:
 //
-//          GetMeshesMeshCollectionItemMtlArgs{...}
+//	GetMeshesMeshCollectionItemMtlArgs{...}
 type GetMeshesMeshCollectionItemMtlInput interface {
 	pulumi.Input
 
@@ -8624,7 +8624,7 @@ func (i GetMeshesMeshCollectionItemMtlArgs) ToGetMeshesMeshCollectionItemMtlOutp
 // GetMeshesMeshCollectionItemMtlArrayInput is an input type that accepts GetMeshesMeshCollectionItemMtlArray and GetMeshesMeshCollectionItemMtlArrayOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionItemMtlArrayInput` via:
 //
-//          GetMeshesMeshCollectionItemMtlArray{ GetMeshesMeshCollectionItemMtlArgs{...} }
+//	GetMeshesMeshCollectionItemMtlArray{ GetMeshesMeshCollectionItemMtlArgs{...} }
 type GetMeshesMeshCollectionItemMtlArrayInput interface {
 	pulumi.Input
 
@@ -8693,7 +8693,7 @@ type GetVirtualDeploymentAccessLogging struct {
 // GetVirtualDeploymentAccessLoggingInput is an input type that accepts GetVirtualDeploymentAccessLoggingArgs and GetVirtualDeploymentAccessLoggingOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentAccessLoggingInput` via:
 //
-//          GetVirtualDeploymentAccessLoggingArgs{...}
+//	GetVirtualDeploymentAccessLoggingArgs{...}
 type GetVirtualDeploymentAccessLoggingInput interface {
 	pulumi.Input
 
@@ -8721,7 +8721,7 @@ func (i GetVirtualDeploymentAccessLoggingArgs) ToGetVirtualDeploymentAccessLoggi
 // GetVirtualDeploymentAccessLoggingArrayInput is an input type that accepts GetVirtualDeploymentAccessLoggingArray and GetVirtualDeploymentAccessLoggingArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentAccessLoggingArrayInput` via:
 //
-//          GetVirtualDeploymentAccessLoggingArray{ GetVirtualDeploymentAccessLoggingArgs{...} }
+//	GetVirtualDeploymentAccessLoggingArray{ GetVirtualDeploymentAccessLoggingArgs{...} }
 type GetVirtualDeploymentAccessLoggingArrayInput interface {
 	pulumi.Input
 
@@ -8792,7 +8792,7 @@ type GetVirtualDeploymentListener struct {
 // GetVirtualDeploymentListenerInput is an input type that accepts GetVirtualDeploymentListenerArgs and GetVirtualDeploymentListenerOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentListenerInput` via:
 //
-//          GetVirtualDeploymentListenerArgs{...}
+//	GetVirtualDeploymentListenerArgs{...}
 type GetVirtualDeploymentListenerInput interface {
 	pulumi.Input
 
@@ -8822,7 +8822,7 @@ func (i GetVirtualDeploymentListenerArgs) ToGetVirtualDeploymentListenerOutputWi
 // GetVirtualDeploymentListenerArrayInput is an input type that accepts GetVirtualDeploymentListenerArray and GetVirtualDeploymentListenerArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentListenerArrayInput` via:
 //
-//          GetVirtualDeploymentListenerArray{ GetVirtualDeploymentListenerArgs{...} }
+//	GetVirtualDeploymentListenerArray{ GetVirtualDeploymentListenerArgs{...} }
 type GetVirtualDeploymentListenerArrayInput interface {
 	pulumi.Input
 
@@ -8898,7 +8898,7 @@ type GetVirtualDeploymentServiceDiscovery struct {
 // GetVirtualDeploymentServiceDiscoveryInput is an input type that accepts GetVirtualDeploymentServiceDiscoveryArgs and GetVirtualDeploymentServiceDiscoveryOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentServiceDiscoveryInput` via:
 //
-//          GetVirtualDeploymentServiceDiscoveryArgs{...}
+//	GetVirtualDeploymentServiceDiscoveryArgs{...}
 type GetVirtualDeploymentServiceDiscoveryInput interface {
 	pulumi.Input
 
@@ -8928,7 +8928,7 @@ func (i GetVirtualDeploymentServiceDiscoveryArgs) ToGetVirtualDeploymentServiceD
 // GetVirtualDeploymentServiceDiscoveryArrayInput is an input type that accepts GetVirtualDeploymentServiceDiscoveryArray and GetVirtualDeploymentServiceDiscoveryArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentServiceDiscoveryArrayInput` via:
 //
-//          GetVirtualDeploymentServiceDiscoveryArray{ GetVirtualDeploymentServiceDiscoveryArgs{...} }
+//	GetVirtualDeploymentServiceDiscoveryArray{ GetVirtualDeploymentServiceDiscoveryArgs{...} }
 type GetVirtualDeploymentServiceDiscoveryArrayInput interface {
 	pulumi.Input
 
@@ -9004,7 +9004,7 @@ type GetVirtualDeploymentsFilter struct {
 // GetVirtualDeploymentsFilterInput is an input type that accepts GetVirtualDeploymentsFilterArgs and GetVirtualDeploymentsFilterOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsFilterInput` via:
 //
-//          GetVirtualDeploymentsFilterArgs{...}
+//	GetVirtualDeploymentsFilterArgs{...}
 type GetVirtualDeploymentsFilterInput interface {
 	pulumi.Input
 
@@ -9034,7 +9034,7 @@ func (i GetVirtualDeploymentsFilterArgs) ToGetVirtualDeploymentsFilterOutputWith
 // GetVirtualDeploymentsFilterArrayInput is an input type that accepts GetVirtualDeploymentsFilterArray and GetVirtualDeploymentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsFilterArrayInput` via:
 //
-//          GetVirtualDeploymentsFilterArray{ GetVirtualDeploymentsFilterArgs{...} }
+//	GetVirtualDeploymentsFilterArray{ GetVirtualDeploymentsFilterArgs{...} }
 type GetVirtualDeploymentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -9110,7 +9110,7 @@ type GetVirtualDeploymentsVirtualDeploymentCollection struct {
 // GetVirtualDeploymentsVirtualDeploymentCollectionInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionArgs and GetVirtualDeploymentsVirtualDeploymentCollectionOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionArgs{...}
+//	GetVirtualDeploymentsVirtualDeploymentCollectionArgs{...}
 type GetVirtualDeploymentsVirtualDeploymentCollectionInput interface {
 	pulumi.Input
 
@@ -9137,7 +9137,7 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionArgs) ToGetVirtualDeploy
 // GetVirtualDeploymentsVirtualDeploymentCollectionArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionArray and GetVirtualDeploymentsVirtualDeploymentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionArrayInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionArray{ GetVirtualDeploymentsVirtualDeploymentCollectionArgs{...} }
+//	GetVirtualDeploymentsVirtualDeploymentCollectionArray{ GetVirtualDeploymentsVirtualDeploymentCollectionArgs{...} }
 type GetVirtualDeploymentsVirtualDeploymentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -9235,7 +9235,7 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItem struct {
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs{...}
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs{...}
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemInput interface {
 	pulumi.Input
 
@@ -9291,7 +9291,7 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs) ToGetVirtualDe
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs{...} }
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs{...} }
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -9442,7 +9442,7 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging struct {
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs{...}
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs{...}
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingInput interface {
 	pulumi.Input
 
@@ -9470,7 +9470,7 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs) T
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs{...} }
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs{...} }
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayInput interface {
 	pulumi.Input
 
@@ -9541,7 +9541,7 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemListener struct {
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs{...}
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs{...}
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput interface {
 	pulumi.Input
 
@@ -9571,7 +9571,7 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs) ToGetV
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs{...} }
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs{...} }
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayInput interface {
 	pulumi.Input
 
@@ -9647,7 +9647,7 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery struct
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs{...}
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs{...}
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryInput interface {
 	pulumi.Input
 
@@ -9677,7 +9677,7 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayInput` via:
 //
-//          GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs{...} }
+//	GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArray{ GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs{...} }
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayInput interface {
 	pulumi.Input
 
@@ -9751,7 +9751,7 @@ type GetVirtualServiceDefaultRoutingPolicy struct {
 // GetVirtualServiceDefaultRoutingPolicyInput is an input type that accepts GetVirtualServiceDefaultRoutingPolicyArgs and GetVirtualServiceDefaultRoutingPolicyOutput values.
 // You can construct a concrete instance of `GetVirtualServiceDefaultRoutingPolicyInput` via:
 //
-//          GetVirtualServiceDefaultRoutingPolicyArgs{...}
+//	GetVirtualServiceDefaultRoutingPolicyArgs{...}
 type GetVirtualServiceDefaultRoutingPolicyInput interface {
 	pulumi.Input
 
@@ -9779,7 +9779,7 @@ func (i GetVirtualServiceDefaultRoutingPolicyArgs) ToGetVirtualServiceDefaultRou
 // GetVirtualServiceDefaultRoutingPolicyArrayInput is an input type that accepts GetVirtualServiceDefaultRoutingPolicyArray and GetVirtualServiceDefaultRoutingPolicyArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceDefaultRoutingPolicyArrayInput` via:
 //
-//          GetVirtualServiceDefaultRoutingPolicyArray{ GetVirtualServiceDefaultRoutingPolicyArgs{...} }
+//	GetVirtualServiceDefaultRoutingPolicyArray{ GetVirtualServiceDefaultRoutingPolicyArgs{...} }
 type GetVirtualServiceDefaultRoutingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -9852,7 +9852,7 @@ type GetVirtualServiceMtl struct {
 // GetVirtualServiceMtlInput is an input type that accepts GetVirtualServiceMtlArgs and GetVirtualServiceMtlOutput values.
 // You can construct a concrete instance of `GetVirtualServiceMtlInput` via:
 //
-//          GetVirtualServiceMtlArgs{...}
+//	GetVirtualServiceMtlArgs{...}
 type GetVirtualServiceMtlInput interface {
 	pulumi.Input
 
@@ -9884,7 +9884,7 @@ func (i GetVirtualServiceMtlArgs) ToGetVirtualServiceMtlOutputWithContext(ctx co
 // GetVirtualServiceMtlArrayInput is an input type that accepts GetVirtualServiceMtlArray and GetVirtualServiceMtlArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceMtlArrayInput` via:
 //
-//          GetVirtualServiceMtlArray{ GetVirtualServiceMtlArgs{...} }
+//	GetVirtualServiceMtlArray{ GetVirtualServiceMtlArgs{...} }
 type GetVirtualServiceMtlArrayInput interface {
 	pulumi.Input
 
@@ -9971,7 +9971,7 @@ type GetVirtualServiceRouteTableRouteRule struct {
 // GetVirtualServiceRouteTableRouteRuleInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleArgs and GetVirtualServiceRouteTableRouteRuleOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTableRouteRuleInput` via:
 //
-//          GetVirtualServiceRouteTableRouteRuleArgs{...}
+//	GetVirtualServiceRouteTableRouteRuleArgs{...}
 type GetVirtualServiceRouteTableRouteRuleInput interface {
 	pulumi.Input
 
@@ -10007,7 +10007,7 @@ func (i GetVirtualServiceRouteTableRouteRuleArgs) ToGetVirtualServiceRouteTableR
 // GetVirtualServiceRouteTableRouteRuleArrayInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleArray and GetVirtualServiceRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTableRouteRuleArrayInput` via:
 //
-//          GetVirtualServiceRouteTableRouteRuleArray{ GetVirtualServiceRouteTableRouteRuleArgs{...} }
+//	GetVirtualServiceRouteTableRouteRuleArray{ GetVirtualServiceRouteTableRouteRuleArgs{...} }
 type GetVirtualServiceRouteTableRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -10102,7 +10102,7 @@ type GetVirtualServiceRouteTableRouteRuleDestination struct {
 // GetVirtualServiceRouteTableRouteRuleDestinationInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleDestinationArgs and GetVirtualServiceRouteTableRouteRuleDestinationOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTableRouteRuleDestinationInput` via:
 //
-//          GetVirtualServiceRouteTableRouteRuleDestinationArgs{...}
+//	GetVirtualServiceRouteTableRouteRuleDestinationArgs{...}
 type GetVirtualServiceRouteTableRouteRuleDestinationInput interface {
 	pulumi.Input
 
@@ -10134,7 +10134,7 @@ func (i GetVirtualServiceRouteTableRouteRuleDestinationArgs) ToGetVirtualService
 // GetVirtualServiceRouteTableRouteRuleDestinationArrayInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleDestinationArray and GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTableRouteRuleDestinationArrayInput` via:
 //
-//          GetVirtualServiceRouteTableRouteRuleDestinationArray{ GetVirtualServiceRouteTableRouteRuleDestinationArgs{...} }
+//	GetVirtualServiceRouteTableRouteRuleDestinationArray{ GetVirtualServiceRouteTableRouteRuleDestinationArgs{...} }
 type GetVirtualServiceRouteTableRouteRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -10215,7 +10215,7 @@ type GetVirtualServiceRouteTablesFilter struct {
 // GetVirtualServiceRouteTablesFilterInput is an input type that accepts GetVirtualServiceRouteTablesFilterArgs and GetVirtualServiceRouteTablesFilterOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesFilterInput` via:
 //
-//          GetVirtualServiceRouteTablesFilterArgs{...}
+//	GetVirtualServiceRouteTablesFilterArgs{...}
 type GetVirtualServiceRouteTablesFilterInput interface {
 	pulumi.Input
 
@@ -10245,7 +10245,7 @@ func (i GetVirtualServiceRouteTablesFilterArgs) ToGetVirtualServiceRouteTablesFi
 // GetVirtualServiceRouteTablesFilterArrayInput is an input type that accepts GetVirtualServiceRouteTablesFilterArray and GetVirtualServiceRouteTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesFilterArrayInput` via:
 //
-//          GetVirtualServiceRouteTablesFilterArray{ GetVirtualServiceRouteTablesFilterArgs{...} }
+//	GetVirtualServiceRouteTablesFilterArray{ GetVirtualServiceRouteTablesFilterArgs{...} }
 type GetVirtualServiceRouteTablesFilterArrayInput interface {
 	pulumi.Input
 
@@ -10321,7 +10321,7 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection struct {
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs{...}
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs{...}
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionInput interface {
 	pulumi.Input
 
@@ -10348,7 +10348,7 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs) ToGe
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs{...} }
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs{...} }
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10444,7 +10444,7 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem struct {
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs{...}
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs{...}
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemInput interface {
 	pulumi.Input
 
@@ -10498,7 +10498,7 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs) 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs{...} }
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs{...} }
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10660,7 +10660,7 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs{...}
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs{...}
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleInput interface {
 	pulumi.Input
 
@@ -10696,7 +10696,7 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs{...} }
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs{...} }
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -10799,7 +10799,7 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs{...}
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs{...}
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationInput interface {
 	pulumi.Input
 
@@ -10831,7 +10831,7 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayInput` via:
 //
-//          GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs{...} }
+//	GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArray{ GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs{...} }
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayInput interface {
 	pulumi.Input
 
@@ -10918,7 +10918,7 @@ type GetVirtualServicesFilter struct {
 // GetVirtualServicesFilterInput is an input type that accepts GetVirtualServicesFilterArgs and GetVirtualServicesFilterOutput values.
 // You can construct a concrete instance of `GetVirtualServicesFilterInput` via:
 //
-//          GetVirtualServicesFilterArgs{...}
+//	GetVirtualServicesFilterArgs{...}
 type GetVirtualServicesFilterInput interface {
 	pulumi.Input
 
@@ -10948,7 +10948,7 @@ func (i GetVirtualServicesFilterArgs) ToGetVirtualServicesFilterOutputWithContex
 // GetVirtualServicesFilterArrayInput is an input type that accepts GetVirtualServicesFilterArray and GetVirtualServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesFilterArrayInput` via:
 //
-//          GetVirtualServicesFilterArray{ GetVirtualServicesFilterArgs{...} }
+//	GetVirtualServicesFilterArray{ GetVirtualServicesFilterArgs{...} }
 type GetVirtualServicesFilterArrayInput interface {
 	pulumi.Input
 
@@ -11024,7 +11024,7 @@ type GetVirtualServicesVirtualServiceCollection struct {
 // GetVirtualServicesVirtualServiceCollectionInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionArgs and GetVirtualServicesVirtualServiceCollectionOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionArgs{...}
+//	GetVirtualServicesVirtualServiceCollectionArgs{...}
 type GetVirtualServicesVirtualServiceCollectionInput interface {
 	pulumi.Input
 
@@ -11051,7 +11051,7 @@ func (i GetVirtualServicesVirtualServiceCollectionArgs) ToGetVirtualServicesVirt
 // GetVirtualServicesVirtualServiceCollectionArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionArray and GetVirtualServicesVirtualServiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionArrayInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionArray{ GetVirtualServicesVirtualServiceCollectionArgs{...} }
+//	GetVirtualServicesVirtualServiceCollectionArray{ GetVirtualServicesVirtualServiceCollectionArgs{...} }
 type GetVirtualServicesVirtualServiceCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11149,7 +11149,7 @@ type GetVirtualServicesVirtualServiceCollectionItem struct {
 // GetVirtualServicesVirtualServiceCollectionItemInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemArgs and GetVirtualServicesVirtualServiceCollectionItemOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionItemInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionItemArgs{...}
+//	GetVirtualServicesVirtualServiceCollectionItemArgs{...}
 type GetVirtualServicesVirtualServiceCollectionItemInput interface {
 	pulumi.Input
 
@@ -11205,7 +11205,7 @@ func (i GetVirtualServicesVirtualServiceCollectionItemArgs) ToGetVirtualServices
 // GetVirtualServicesVirtualServiceCollectionItemArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemArray and GetVirtualServicesVirtualServiceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionItemArrayInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionItemArray{ GetVirtualServicesVirtualServiceCollectionItemArgs{...} }
+//	GetVirtualServicesVirtualServiceCollectionItemArray{ GetVirtualServicesVirtualServiceCollectionItemArgs{...} }
 type GetVirtualServicesVirtualServiceCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11348,7 +11348,7 @@ type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy struct {
 // GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs and GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs{...}
+//	GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs{...}
 type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyInput interface {
 	pulumi.Input
 
@@ -11376,7 +11376,7 @@ func (i GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs) 
 // GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArray and GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArray{ GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs{...} }
+//	GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArray{ GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs{...} }
 type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -11449,7 +11449,7 @@ type GetVirtualServicesVirtualServiceCollectionItemMtl struct {
 // GetVirtualServicesVirtualServiceCollectionItemMtlInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemMtlArgs and GetVirtualServicesVirtualServiceCollectionItemMtlOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionItemMtlInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionItemMtlArgs{...}
+//	GetVirtualServicesVirtualServiceCollectionItemMtlArgs{...}
 type GetVirtualServicesVirtualServiceCollectionItemMtlInput interface {
 	pulumi.Input
 
@@ -11481,7 +11481,7 @@ func (i GetVirtualServicesVirtualServiceCollectionItemMtlArgs) ToGetVirtualServi
 // GetVirtualServicesVirtualServiceCollectionItemMtlArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemMtlArray and GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionItemMtlArrayInput` via:
 //
-//          GetVirtualServicesVirtualServiceCollectionItemMtlArray{ GetVirtualServicesVirtualServiceCollectionItemMtlArgs{...} }
+//	GetVirtualServicesVirtualServiceCollectionItemMtlArray{ GetVirtualServicesVirtualServiceCollectionItemMtlArgs{...} }
 type GetVirtualServicesVirtualServiceCollectionItemMtlArrayInput interface {
 	pulumi.Input
 

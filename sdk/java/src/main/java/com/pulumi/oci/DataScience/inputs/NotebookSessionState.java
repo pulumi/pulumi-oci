@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -140,6 +141,21 @@ public final class NotebookSessionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) Notebook Session runtime configuration details.
+     * 
+     */
+    @Import(name="notebookSessionRuntimeConfigDetails")
+    private @Nullable Output<NotebookSessionNotebookSessionRuntimeConfigDetailsArgs> notebookSessionRuntimeConfigDetails;
+
+    /**
+     * @return (Updatable) Notebook Session runtime configuration details.
+     * 
+     */
+    public Optional<Output<NotebookSessionNotebookSessionRuntimeConfigDetailsArgs>> notebookSessionRuntimeConfigDetails() {
+        return Optional.ofNullable(this.notebookSessionRuntimeConfigDetails);
+    }
+
+    /**
      * The URL to interact with the notebook session.
      * 
      */
@@ -210,6 +226,7 @@ public final class NotebookSessionState extends com.pulumi.resources.ResourceArg
         this.lifecycleDetails = $.lifecycleDetails;
         this.notebookSessionConfigDetails = $.notebookSessionConfigDetails;
         this.notebookSessionConfigurationDetails = $.notebookSessionConfigurationDetails;
+        this.notebookSessionRuntimeConfigDetails = $.notebookSessionRuntimeConfigDetails;
         this.notebookSessionUrl = $.notebookSessionUrl;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -400,6 +417,27 @@ public final class NotebookSessionState extends com.pulumi.resources.ResourceArg
          */
         public Builder notebookSessionConfigurationDetails(NotebookSessionNotebookSessionConfigurationDetailsArgs notebookSessionConfigurationDetails) {
             return notebookSessionConfigurationDetails(Output.of(notebookSessionConfigurationDetails));
+        }
+
+        /**
+         * @param notebookSessionRuntimeConfigDetails (Updatable) Notebook Session runtime configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionRuntimeConfigDetails(@Nullable Output<NotebookSessionNotebookSessionRuntimeConfigDetailsArgs> notebookSessionRuntimeConfigDetails) {
+            $.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+            return this;
+        }
+
+        /**
+         * @param notebookSessionRuntimeConfigDetails (Updatable) Notebook Session runtime configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionRuntimeConfigDetails(NotebookSessionNotebookSessionRuntimeConfigDetailsArgs notebookSessionRuntimeConfigDetails) {
+            return notebookSessionRuntimeConfigDetails(Output.of(notebookSessionRuntimeConfigDetails));
         }
 
         /**

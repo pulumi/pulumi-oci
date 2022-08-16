@@ -38,7 +38,7 @@ type SubscriptionBillingAddress struct {
 // SubscriptionBillingAddressInput is an input type that accepts SubscriptionBillingAddressArgs and SubscriptionBillingAddressOutput values.
 // You can construct a concrete instance of `SubscriptionBillingAddressInput` via:
 //
-//          SubscriptionBillingAddressArgs{...}
+//	SubscriptionBillingAddressArgs{...}
 type SubscriptionBillingAddressInput interface {
 	pulumi.Input
 
@@ -86,7 +86,7 @@ func (i SubscriptionBillingAddressArgs) ToSubscriptionBillingAddressOutputWithCo
 // SubscriptionBillingAddressArrayInput is an input type that accepts SubscriptionBillingAddressArray and SubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `SubscriptionBillingAddressArrayInput` via:
 //
-//          SubscriptionBillingAddressArray{ SubscriptionBillingAddressArgs{...} }
+//	SubscriptionBillingAddressArray{ SubscriptionBillingAddressArgs{...} }
 type SubscriptionBillingAddressArrayInput interface {
 	pulumi.Input
 
@@ -205,7 +205,7 @@ type SubscriptionPaymentGateway struct {
 // SubscriptionPaymentGatewayInput is an input type that accepts SubscriptionPaymentGatewayArgs and SubscriptionPaymentGatewayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayInput` via:
 //
-//          SubscriptionPaymentGatewayArgs{...}
+//	SubscriptionPaymentGatewayArgs{...}
 type SubscriptionPaymentGatewayInput interface {
 	pulumi.Input
 
@@ -233,7 +233,7 @@ func (i SubscriptionPaymentGatewayArgs) ToSubscriptionPaymentGatewayOutputWithCo
 // SubscriptionPaymentGatewayArrayInput is an input type that accepts SubscriptionPaymentGatewayArray and SubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayArrayInput` via:
 //
-//          SubscriptionPaymentGatewayArray{ SubscriptionPaymentGatewayArgs{...} }
+//	SubscriptionPaymentGatewayArray{ SubscriptionPaymentGatewayArgs{...} }
 type SubscriptionPaymentGatewayArrayInput interface {
 	pulumi.Input
 
@@ -306,7 +306,7 @@ type SubscriptionPaymentGatewayMerchantDefinedData struct {
 // SubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts SubscriptionPaymentGatewayMerchantDefinedDataArgs and SubscriptionPaymentGatewayMerchantDefinedDataOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayMerchantDefinedDataInput` via:
 //
-//          SubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
+//	SubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
 type SubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 	pulumi.Input
 
@@ -336,7 +336,7 @@ func (i SubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscriptionPayment
 // SubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts SubscriptionPaymentGatewayMerchantDefinedDataArray and SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
-//          SubscriptionPaymentGatewayMerchantDefinedDataArray{ SubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
+//	SubscriptionPaymentGatewayMerchantDefinedDataArray{ SubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
 type SubscriptionPaymentGatewayMerchantDefinedDataArrayInput interface {
 	pulumi.Input
 
@@ -430,7 +430,7 @@ type SubscriptionPaymentOption struct {
 // SubscriptionPaymentOptionInput is an input type that accepts SubscriptionPaymentOptionArgs and SubscriptionPaymentOptionOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentOptionInput` via:
 //
-//          SubscriptionPaymentOptionArgs{...}
+//	SubscriptionPaymentOptionArgs{...}
 type SubscriptionPaymentOptionInput interface {
 	pulumi.Input
 
@@ -478,7 +478,7 @@ func (i SubscriptionPaymentOptionArgs) ToSubscriptionPaymentOptionOutputWithCont
 // SubscriptionPaymentOptionArrayInput is an input type that accepts SubscriptionPaymentOptionArray and SubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentOptionArrayInput` via:
 //
-//          SubscriptionPaymentOptionArray{ SubscriptionPaymentOptionArgs{...} }
+//	SubscriptionPaymentOptionArray{ SubscriptionPaymentOptionArgs{...} }
 type SubscriptionPaymentOptionArrayInput interface {
 	pulumi.Input
 
@@ -633,7 +633,7 @@ type SubscriptionSubscription struct {
 // SubscriptionSubscriptionInput is an input type that accepts SubscriptionSubscriptionArgs and SubscriptionSubscriptionOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionInput` via:
 //
-//          SubscriptionSubscriptionArgs{...}
+//	SubscriptionSubscriptionArgs{...}
 type SubscriptionSubscriptionInput interface {
 	pulumi.Input
 
@@ -705,11 +705,11 @@ func (i SubscriptionSubscriptionArgs) ToSubscriptionSubscriptionPtrOutputWithCon
 // SubscriptionSubscriptionPtrInput is an input type that accepts SubscriptionSubscriptionArgs, SubscriptionSubscriptionPtr and SubscriptionSubscriptionPtrOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPtrInput` via:
 //
-//          SubscriptionSubscriptionArgs{...}
+//	        SubscriptionSubscriptionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SubscriptionSubscriptionPtrInput interface {
 	pulumi.Input
 
@@ -1096,7 +1096,7 @@ type SubscriptionSubscriptionBillingAddress struct {
 // SubscriptionSubscriptionBillingAddressInput is an input type that accepts SubscriptionSubscriptionBillingAddressArgs and SubscriptionSubscriptionBillingAddressOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionBillingAddressInput` via:
 //
-//          SubscriptionSubscriptionBillingAddressArgs{...}
+//	SubscriptionSubscriptionBillingAddressArgs{...}
 type SubscriptionSubscriptionBillingAddressInput interface {
 	pulumi.Input
 
@@ -1144,7 +1144,7 @@ func (i SubscriptionSubscriptionBillingAddressArgs) ToSubscriptionSubscriptionBi
 // SubscriptionSubscriptionBillingAddressArrayInput is an input type that accepts SubscriptionSubscriptionBillingAddressArray and SubscriptionSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionBillingAddressArrayInput` via:
 //
-//          SubscriptionSubscriptionBillingAddressArray{ SubscriptionSubscriptionBillingAddressArgs{...} }
+//	SubscriptionSubscriptionBillingAddressArray{ SubscriptionSubscriptionBillingAddressArgs{...} }
 type SubscriptionSubscriptionBillingAddressArrayInput interface {
 	pulumi.Input
 
@@ -1263,7 +1263,7 @@ type SubscriptionSubscriptionPaymentGateway struct {
 // SubscriptionSubscriptionPaymentGatewayInput is an input type that accepts SubscriptionSubscriptionPaymentGatewayArgs and SubscriptionSubscriptionPaymentGatewayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentGatewayInput` via:
 //
-//          SubscriptionSubscriptionPaymentGatewayArgs{...}
+//	SubscriptionSubscriptionPaymentGatewayArgs{...}
 type SubscriptionSubscriptionPaymentGatewayInput interface {
 	pulumi.Input
 
@@ -1299,11 +1299,11 @@ func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPa
 // SubscriptionSubscriptionPaymentGatewayPtrInput is an input type that accepts SubscriptionSubscriptionPaymentGatewayArgs, SubscriptionSubscriptionPaymentGatewayPtr and SubscriptionSubscriptionPaymentGatewayPtrOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentGatewayPtrInput` via:
 //
-//          SubscriptionSubscriptionPaymentGatewayArgs{...}
+//	        SubscriptionSubscriptionPaymentGatewayArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SubscriptionSubscriptionPaymentGatewayPtrInput interface {
 	pulumi.Input
 
@@ -1404,7 +1404,7 @@ type SubscriptionSubscriptionPaymentGatewayMerchantDefinedData struct {
 // SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs and SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput` via:
 //
-//          SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
+//	SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
 type SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 	pulumi.Input
 
@@ -1442,11 +1442,11 @@ func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscri
 // SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrInput is an input type that accepts SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs, SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtr and SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrInput` via:
 //
-//          SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
+//	        SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrInput interface {
 	pulumi.Input
 
@@ -1578,7 +1578,7 @@ type SubscriptionSubscriptionPaymentOption struct {
 // SubscriptionSubscriptionPaymentOptionInput is an input type that accepts SubscriptionSubscriptionPaymentOptionArgs and SubscriptionSubscriptionPaymentOptionOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentOptionInput` via:
 //
-//          SubscriptionSubscriptionPaymentOptionArgs{...}
+//	SubscriptionSubscriptionPaymentOptionArgs{...}
 type SubscriptionSubscriptionPaymentOptionInput interface {
 	pulumi.Input
 
@@ -1626,7 +1626,7 @@ func (i SubscriptionSubscriptionPaymentOptionArgs) ToSubscriptionSubscriptionPay
 // SubscriptionSubscriptionPaymentOptionArrayInput is an input type that accepts SubscriptionSubscriptionPaymentOptionArray and SubscriptionSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentOptionArrayInput` via:
 //
-//          SubscriptionSubscriptionPaymentOptionArray{ SubscriptionSubscriptionPaymentOptionArgs{...} }
+//	SubscriptionSubscriptionPaymentOptionArray{ SubscriptionSubscriptionPaymentOptionArgs{...} }
 type SubscriptionSubscriptionPaymentOptionArrayInput interface {
 	pulumi.Input
 
@@ -1753,7 +1753,7 @@ type SubscriptionSubscriptionTaxInfo struct {
 // SubscriptionSubscriptionTaxInfoInput is an input type that accepts SubscriptionSubscriptionTaxInfoArgs and SubscriptionSubscriptionTaxInfoOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionTaxInfoInput` via:
 //
-//          SubscriptionSubscriptionTaxInfoArgs{...}
+//	SubscriptionSubscriptionTaxInfoArgs{...}
 type SubscriptionSubscriptionTaxInfoInput interface {
 	pulumi.Input
 
@@ -1797,11 +1797,11 @@ func (i SubscriptionSubscriptionTaxInfoArgs) ToSubscriptionSubscriptionTaxInfoPt
 // SubscriptionSubscriptionTaxInfoPtrInput is an input type that accepts SubscriptionSubscriptionTaxInfoArgs, SubscriptionSubscriptionTaxInfoPtr and SubscriptionSubscriptionTaxInfoPtrOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionTaxInfoPtrInput` via:
 //
-//          SubscriptionSubscriptionTaxInfoArgs{...}
+//	        SubscriptionSubscriptionTaxInfoArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SubscriptionSubscriptionTaxInfoPtrInput interface {
 	pulumi.Input
 
@@ -1966,7 +1966,7 @@ type SubscriptionTaxInfo struct {
 // SubscriptionTaxInfoInput is an input type that accepts SubscriptionTaxInfoArgs and SubscriptionTaxInfoOutput values.
 // You can construct a concrete instance of `SubscriptionTaxInfoInput` via:
 //
-//          SubscriptionTaxInfoArgs{...}
+//	SubscriptionTaxInfoArgs{...}
 type SubscriptionTaxInfoInput interface {
 	pulumi.Input
 
@@ -2002,7 +2002,7 @@ func (i SubscriptionTaxInfoArgs) ToSubscriptionTaxInfoOutputWithContext(ctx cont
 // SubscriptionTaxInfoArrayInput is an input type that accepts SubscriptionTaxInfoArray and SubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `SubscriptionTaxInfoArrayInput` via:
 //
-//          SubscriptionTaxInfoArray{ SubscriptionTaxInfoArgs{...} }
+//	SubscriptionTaxInfoArray{ SubscriptionTaxInfoArgs{...} }
 type SubscriptionTaxInfoArrayInput interface {
 	pulumi.Input
 
@@ -2117,7 +2117,7 @@ type GetInvoiceBillToAddress struct {
 // GetInvoiceBillToAddressInput is an input type that accepts GetInvoiceBillToAddressArgs and GetInvoiceBillToAddressOutput values.
 // You can construct a concrete instance of `GetInvoiceBillToAddressInput` via:
 //
-//          GetInvoiceBillToAddressArgs{...}
+//	GetInvoiceBillToAddressArgs{...}
 type GetInvoiceBillToAddressInput interface {
 	pulumi.Input
 
@@ -2171,7 +2171,7 @@ func (i GetInvoiceBillToAddressArgs) ToGetInvoiceBillToAddressOutputWithContext(
 // GetInvoiceBillToAddressArrayInput is an input type that accepts GetInvoiceBillToAddressArray and GetInvoiceBillToAddressArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceBillToAddressArrayInput` via:
 //
-//          GetInvoiceBillToAddressArray{ GetInvoiceBillToAddressArgs{...} }
+//	GetInvoiceBillToAddressArray{ GetInvoiceBillToAddressArgs{...} }
 type GetInvoiceBillToAddressArrayInput interface {
 	pulumi.Input
 
@@ -2313,7 +2313,7 @@ type GetInvoiceBillToAddressCountry struct {
 // GetInvoiceBillToAddressCountryInput is an input type that accepts GetInvoiceBillToAddressCountryArgs and GetInvoiceBillToAddressCountryOutput values.
 // You can construct a concrete instance of `GetInvoiceBillToAddressCountryInput` via:
 //
-//          GetInvoiceBillToAddressCountryArgs{...}
+//	GetInvoiceBillToAddressCountryArgs{...}
 type GetInvoiceBillToAddressCountryInput interface {
 	pulumi.Input
 
@@ -2349,7 +2349,7 @@ func (i GetInvoiceBillToAddressCountryArgs) ToGetInvoiceBillToAddressCountryOutp
 // GetInvoiceBillToAddressCountryArrayInput is an input type that accepts GetInvoiceBillToAddressCountryArray and GetInvoiceBillToAddressCountryArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceBillToAddressCountryArrayInput` via:
 //
-//          GetInvoiceBillToAddressCountryArray{ GetInvoiceBillToAddressCountryArgs{...} }
+//	GetInvoiceBillToAddressCountryArray{ GetInvoiceBillToAddressCountryArgs{...} }
 type GetInvoiceBillToAddressCountryArrayInput interface {
 	pulumi.Input
 
@@ -2446,7 +2446,7 @@ type GetInvoiceCurrency struct {
 // GetInvoiceCurrencyInput is an input type that accepts GetInvoiceCurrencyArgs and GetInvoiceCurrencyOutput values.
 // You can construct a concrete instance of `GetInvoiceCurrencyInput` via:
 //
-//          GetInvoiceCurrencyArgs{...}
+//	GetInvoiceCurrencyArgs{...}
 type GetInvoiceCurrencyInput interface {
 	pulumi.Input
 
@@ -2482,7 +2482,7 @@ func (i GetInvoiceCurrencyArgs) ToGetInvoiceCurrencyOutputWithContext(ctx contex
 // GetInvoiceCurrencyArrayInput is an input type that accepts GetInvoiceCurrencyArray and GetInvoiceCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceCurrencyArrayInput` via:
 //
-//          GetInvoiceCurrencyArray{ GetInvoiceCurrencyArgs{...} }
+//	GetInvoiceCurrencyArray{ GetInvoiceCurrencyArgs{...} }
 type GetInvoiceCurrencyArrayInput interface {
 	pulumi.Input
 
@@ -2591,7 +2591,7 @@ type GetInvoiceLastPaymentDetail struct {
 // GetInvoiceLastPaymentDetailInput is an input type that accepts GetInvoiceLastPaymentDetailArgs and GetInvoiceLastPaymentDetailOutput values.
 // You can construct a concrete instance of `GetInvoiceLastPaymentDetailInput` via:
 //
-//          GetInvoiceLastPaymentDetailArgs{...}
+//	GetInvoiceLastPaymentDetailArgs{...}
 type GetInvoiceLastPaymentDetailInput interface {
 	pulumi.Input
 
@@ -2639,7 +2639,7 @@ func (i GetInvoiceLastPaymentDetailArgs) ToGetInvoiceLastPaymentDetailOutputWith
 // GetInvoiceLastPaymentDetailArrayInput is an input type that accepts GetInvoiceLastPaymentDetailArray and GetInvoiceLastPaymentDetailArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceLastPaymentDetailArrayInput` via:
 //
-//          GetInvoiceLastPaymentDetailArray{ GetInvoiceLastPaymentDetailArgs{...} }
+//	GetInvoiceLastPaymentDetailArray{ GetInvoiceLastPaymentDetailArgs{...} }
 type GetInvoiceLastPaymentDetailArrayInput interface {
 	pulumi.Input
 
@@ -2760,7 +2760,7 @@ type GetInvoicesFilter struct {
 // GetInvoicesFilterInput is an input type that accepts GetInvoicesFilterArgs and GetInvoicesFilterOutput values.
 // You can construct a concrete instance of `GetInvoicesFilterInput` via:
 //
-//          GetInvoicesFilterArgs{...}
+//	GetInvoicesFilterArgs{...}
 type GetInvoicesFilterInput interface {
 	pulumi.Input
 
@@ -2790,7 +2790,7 @@ func (i GetInvoicesFilterArgs) ToGetInvoicesFilterOutputWithContext(ctx context.
 // GetInvoicesFilterArrayInput is an input type that accepts GetInvoicesFilterArray and GetInvoicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesFilterArrayInput` via:
 //
-//          GetInvoicesFilterArray{ GetInvoicesFilterArgs{...} }
+//	GetInvoicesFilterArray{ GetInvoicesFilterArgs{...} }
 type GetInvoicesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2866,7 +2866,7 @@ type GetInvoicesInvoiceCollection struct {
 // GetInvoicesInvoiceCollectionInput is an input type that accepts GetInvoicesInvoiceCollectionArgs and GetInvoicesInvoiceCollectionOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionInput` via:
 //
-//          GetInvoicesInvoiceCollectionArgs{...}
+//	GetInvoicesInvoiceCollectionArgs{...}
 type GetInvoicesInvoiceCollectionInput interface {
 	pulumi.Input
 
@@ -2893,7 +2893,7 @@ func (i GetInvoicesInvoiceCollectionArgs) ToGetInvoicesInvoiceCollectionOutputWi
 // GetInvoicesInvoiceCollectionArrayInput is an input type that accepts GetInvoicesInvoiceCollectionArray and GetInvoicesInvoiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionArrayInput` via:
 //
-//          GetInvoicesInvoiceCollectionArray{ GetInvoicesInvoiceCollectionArgs{...} }
+//	GetInvoicesInvoiceCollectionArray{ GetInvoicesInvoiceCollectionArgs{...} }
 type GetInvoicesInvoiceCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3014,7 +3014,7 @@ type GetInvoicesInvoiceCollectionItem struct {
 // GetInvoicesInvoiceCollectionItemInput is an input type that accepts GetInvoicesInvoiceCollectionItemArgs and GetInvoicesInvoiceCollectionItemOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemArgs{...}
+//	GetInvoicesInvoiceCollectionItemArgs{...}
 type GetInvoicesInvoiceCollectionItemInput interface {
 	pulumi.Input
 
@@ -3095,7 +3095,7 @@ func (i GetInvoicesInvoiceCollectionItemArgs) ToGetInvoicesInvoiceCollectionItem
 // GetInvoicesInvoiceCollectionItemArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemArray and GetInvoicesInvoiceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemArrayInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemArray{ GetInvoicesInvoiceCollectionItemArgs{...} }
+//	GetInvoicesInvoiceCollectionItemArray{ GetInvoicesInvoiceCollectionItemArgs{...} }
 type GetInvoicesInvoiceCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3336,7 +3336,7 @@ type GetInvoicesInvoiceCollectionItemBillToAddress struct {
 // GetInvoicesInvoiceCollectionItemBillToAddressInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressArgs and GetInvoicesInvoiceCollectionItemBillToAddressOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemBillToAddressInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemBillToAddressArgs{...}
+//	GetInvoicesInvoiceCollectionItemBillToAddressArgs{...}
 type GetInvoicesInvoiceCollectionItemBillToAddressInput interface {
 	pulumi.Input
 
@@ -3390,7 +3390,7 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressArgs) ToGetInvoicesInvoiceC
 // GetInvoicesInvoiceCollectionItemBillToAddressArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressArray and GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemBillToAddressArrayInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemBillToAddressArray{ GetInvoicesInvoiceCollectionItemBillToAddressArgs{...} }
+//	GetInvoicesInvoiceCollectionItemBillToAddressArray{ GetInvoicesInvoiceCollectionItemBillToAddressArgs{...} }
 type GetInvoicesInvoiceCollectionItemBillToAddressArrayInput interface {
 	pulumi.Input
 
@@ -3534,7 +3534,7 @@ type GetInvoicesInvoiceCollectionItemBillToAddressCountry struct {
 // GetInvoicesInvoiceCollectionItemBillToAddressCountryInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs and GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemBillToAddressCountryInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs{...}
+//	GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs{...}
 type GetInvoicesInvoiceCollectionItemBillToAddressCountryInput interface {
 	pulumi.Input
 
@@ -3570,7 +3570,7 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ToGetInvoicesI
 // GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressCountryArray and GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemBillToAddressCountryArray{ GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs{...} }
+//	GetInvoicesInvoiceCollectionItemBillToAddressCountryArray{ GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs{...} }
 type GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput interface {
 	pulumi.Input
 
@@ -3667,7 +3667,7 @@ type GetInvoicesInvoiceCollectionItemCurrency struct {
 // GetInvoicesInvoiceCollectionItemCurrencyInput is an input type that accepts GetInvoicesInvoiceCollectionItemCurrencyArgs and GetInvoicesInvoiceCollectionItemCurrencyOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemCurrencyInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemCurrencyArgs{...}
+//	GetInvoicesInvoiceCollectionItemCurrencyArgs{...}
 type GetInvoicesInvoiceCollectionItemCurrencyInput interface {
 	pulumi.Input
 
@@ -3703,7 +3703,7 @@ func (i GetInvoicesInvoiceCollectionItemCurrencyArgs) ToGetInvoicesInvoiceCollec
 // GetInvoicesInvoiceCollectionItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemCurrencyArray and GetInvoicesInvoiceCollectionItemCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemCurrencyArrayInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemCurrencyArray{ GetInvoicesInvoiceCollectionItemCurrencyArgs{...} }
+//	GetInvoicesInvoiceCollectionItemCurrencyArray{ GetInvoicesInvoiceCollectionItemCurrencyArgs{...} }
 type GetInvoicesInvoiceCollectionItemCurrencyArrayInput interface {
 	pulumi.Input
 
@@ -3812,7 +3812,7 @@ type GetInvoicesInvoiceCollectionItemLastPaymentDetail struct {
 // GetInvoicesInvoiceCollectionItemLastPaymentDetailInput is an input type that accepts GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs and GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemLastPaymentDetailInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs{...}
+//	GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs{...}
 type GetInvoicesInvoiceCollectionItemLastPaymentDetailInput interface {
 	pulumi.Input
 
@@ -3860,7 +3860,7 @@ func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ToGetInvoicesInvo
 // GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemLastPaymentDetailArray and GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput` via:
 //
-//          GetInvoicesInvoiceCollectionItemLastPaymentDetailArray{ GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs{...} }
+//	GetInvoicesInvoiceCollectionItemLastPaymentDetailArray{ GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs{...} }
 type GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput interface {
 	pulumi.Input
 
@@ -3995,7 +3995,7 @@ type GetInvoicesInvoiceLineItem struct {
 // GetInvoicesInvoiceLineItemInput is an input type that accepts GetInvoicesInvoiceLineItemArgs and GetInvoicesInvoiceLineItemOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLineItemInput` via:
 //
-//          GetInvoicesInvoiceLineItemArgs{...}
+//	GetInvoicesInvoiceLineItemArgs{...}
 type GetInvoicesInvoiceLineItemInput interface {
 	pulumi.Input
 
@@ -4039,7 +4039,7 @@ func (i GetInvoicesInvoiceLineItemArgs) ToGetInvoicesInvoiceLineItemOutputWithCo
 // GetInvoicesInvoiceLineItemArrayInput is an input type that accepts GetInvoicesInvoiceLineItemArray and GetInvoicesInvoiceLineItemArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLineItemArrayInput` via:
 //
-//          GetInvoicesInvoiceLineItemArray{ GetInvoicesInvoiceLineItemArgs{...} }
+//	GetInvoicesInvoiceLineItemArray{ GetInvoicesInvoiceLineItemArgs{...} }
 type GetInvoicesInvoiceLineItemArrayInput interface {
 	pulumi.Input
 
@@ -4156,7 +4156,7 @@ type GetInvoicesInvoiceLineItemCurrency struct {
 // GetInvoicesInvoiceLineItemCurrencyInput is an input type that accepts GetInvoicesInvoiceLineItemCurrencyArgs and GetInvoicesInvoiceLineItemCurrencyOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLineItemCurrencyInput` via:
 //
-//          GetInvoicesInvoiceLineItemCurrencyArgs{...}
+//	GetInvoicesInvoiceLineItemCurrencyArgs{...}
 type GetInvoicesInvoiceLineItemCurrencyInput interface {
 	pulumi.Input
 
@@ -4192,7 +4192,7 @@ func (i GetInvoicesInvoiceLineItemCurrencyArgs) ToGetInvoicesInvoiceLineItemCurr
 // GetInvoicesInvoiceLineItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceLineItemCurrencyArray and GetInvoicesInvoiceLineItemCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLineItemCurrencyArrayInput` via:
 //
-//          GetInvoicesInvoiceLineItemCurrencyArray{ GetInvoicesInvoiceLineItemCurrencyArgs{...} }
+//	GetInvoicesInvoiceLineItemCurrencyArray{ GetInvoicesInvoiceLineItemCurrencyArgs{...} }
 type GetInvoicesInvoiceLineItemCurrencyArrayInput interface {
 	pulumi.Input
 
@@ -4283,7 +4283,7 @@ type GetInvoicesInvoiceLinesFilter struct {
 // GetInvoicesInvoiceLinesFilterInput is an input type that accepts GetInvoicesInvoiceLinesFilterArgs and GetInvoicesInvoiceLinesFilterOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesFilterInput` via:
 //
-//          GetInvoicesInvoiceLinesFilterArgs{...}
+//	GetInvoicesInvoiceLinesFilterArgs{...}
 type GetInvoicesInvoiceLinesFilterInput interface {
 	pulumi.Input
 
@@ -4313,7 +4313,7 @@ func (i GetInvoicesInvoiceLinesFilterArgs) ToGetInvoicesInvoiceLinesFilterOutput
 // GetInvoicesInvoiceLinesFilterArrayInput is an input type that accepts GetInvoicesInvoiceLinesFilterArray and GetInvoicesInvoiceLinesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesFilterArrayInput` via:
 //
-//          GetInvoicesInvoiceLinesFilterArray{ GetInvoicesInvoiceLinesFilterArgs{...} }
+//	GetInvoicesInvoiceLinesFilterArray{ GetInvoicesInvoiceLinesFilterArgs{...} }
 type GetInvoicesInvoiceLinesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4390,7 +4390,7 @@ type GetInvoicesInvoiceLinesInvoiceLineCollection struct {
 // GetInvoicesInvoiceLinesInvoiceLineCollectionInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionArgs and GetInvoicesInvoiceLinesInvoiceLineCollectionOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionInput` via:
 //
-//          GetInvoicesInvoiceLinesInvoiceLineCollectionArgs{...}
+//	GetInvoicesInvoiceLinesInvoiceLineCollectionArgs{...}
 type GetInvoicesInvoiceLinesInvoiceLineCollectionInput interface {
 	pulumi.Input
 
@@ -4418,7 +4418,7 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArgs) ToGetInvoicesInvoiceLi
 // GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionArray and GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput` via:
 //
-//          GetInvoicesInvoiceLinesInvoiceLineCollectionArray{ GetInvoicesInvoiceLinesInvoiceLineCollectionArgs{...} }
+//	GetInvoicesInvoiceLinesInvoiceLineCollectionArray{ GetInvoicesInvoiceLinesInvoiceLineCollectionArgs{...} }
 type GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4505,7 +4505,7 @@ type GetInvoicesInvoiceLinesInvoiceLineCollectionItem struct {
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs and GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionItemInput` via:
 //
-//          GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs{...}
+//	GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs{...}
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemInput interface {
 	pulumi.Input
 
@@ -4549,7 +4549,7 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ToGetInvoicesInvoi
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray and GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayInput` via:
 //
-//          GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray{ GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs{...} }
+//	GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray{ GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs{...} }
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4668,7 +4668,7 @@ type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency struct {
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs and GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyInput` via:
 //
-//          GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs{...}
+//	GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs{...}
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyInput interface {
 	pulumi.Input
 
@@ -4704,7 +4704,7 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ToGetInvoi
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray and GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput` via:
 //
-//          GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray{ GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs{...} }
+//	GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray{ GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs{...} }
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput interface {
 	pulumi.Input
 
@@ -4813,7 +4813,7 @@ type GetSubscriptionBillingAddress struct {
 // GetSubscriptionBillingAddressInput is an input type that accepts GetSubscriptionBillingAddressArgs and GetSubscriptionBillingAddressOutput values.
 // You can construct a concrete instance of `GetSubscriptionBillingAddressInput` via:
 //
-//          GetSubscriptionBillingAddressArgs{...}
+//	GetSubscriptionBillingAddressArgs{...}
 type GetSubscriptionBillingAddressInput interface {
 	pulumi.Input
 
@@ -4861,7 +4861,7 @@ func (i GetSubscriptionBillingAddressArgs) ToGetSubscriptionBillingAddressOutput
 // GetSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionBillingAddressArray and GetSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionBillingAddressArrayInput` via:
 //
-//          GetSubscriptionBillingAddressArray{ GetSubscriptionBillingAddressArgs{...} }
+//	GetSubscriptionBillingAddressArray{ GetSubscriptionBillingAddressArgs{...} }
 type GetSubscriptionBillingAddressArrayInput interface {
 	pulumi.Input
 
@@ -4980,7 +4980,7 @@ type GetSubscriptionPaymentGateway struct {
 // GetSubscriptionPaymentGatewayInput is an input type that accepts GetSubscriptionPaymentGatewayArgs and GetSubscriptionPaymentGatewayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayInput` via:
 //
-//          GetSubscriptionPaymentGatewayArgs{...}
+//	GetSubscriptionPaymentGatewayArgs{...}
 type GetSubscriptionPaymentGatewayInput interface {
 	pulumi.Input
 
@@ -5008,7 +5008,7 @@ func (i GetSubscriptionPaymentGatewayArgs) ToGetSubscriptionPaymentGatewayOutput
 // GetSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionPaymentGatewayArray and GetSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayArrayInput` via:
 //
-//          GetSubscriptionPaymentGatewayArray{ GetSubscriptionPaymentGatewayArgs{...} }
+//	GetSubscriptionPaymentGatewayArray{ GetSubscriptionPaymentGatewayArgs{...} }
 type GetSubscriptionPaymentGatewayArrayInput interface {
 	pulumi.Input
 
@@ -5081,7 +5081,7 @@ type GetSubscriptionPaymentGatewayMerchantDefinedData struct {
 // GetSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayMerchantDefinedDataInput` via:
 //
-//          GetSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
+//	GetSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
 type GetSubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 	pulumi.Input
 
@@ -5111,7 +5111,7 @@ func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionP
 // GetSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
-//          GetSubscriptionPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
+//	GetSubscriptionPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
 type GetSubscriptionPaymentGatewayMerchantDefinedDataArrayInput interface {
 	pulumi.Input
 
@@ -5205,7 +5205,7 @@ type GetSubscriptionPaymentOption struct {
 // GetSubscriptionPaymentOptionInput is an input type that accepts GetSubscriptionPaymentOptionArgs and GetSubscriptionPaymentOptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentOptionInput` via:
 //
-//          GetSubscriptionPaymentOptionArgs{...}
+//	GetSubscriptionPaymentOptionArgs{...}
 type GetSubscriptionPaymentOptionInput interface {
 	pulumi.Input
 
@@ -5253,7 +5253,7 @@ func (i GetSubscriptionPaymentOptionArgs) ToGetSubscriptionPaymentOptionOutputWi
 // GetSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionPaymentOptionArray and GetSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentOptionArrayInput` via:
 //
-//          GetSubscriptionPaymentOptionArray{ GetSubscriptionPaymentOptionArgs{...} }
+//	GetSubscriptionPaymentOptionArray{ GetSubscriptionPaymentOptionArgs{...} }
 type GetSubscriptionPaymentOptionArrayInput interface {
 	pulumi.Input
 
@@ -5408,7 +5408,7 @@ type GetSubscriptionSubscription struct {
 // GetSubscriptionSubscriptionInput is an input type that accepts GetSubscriptionSubscriptionArgs and GetSubscriptionSubscriptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionInput` via:
 //
-//          GetSubscriptionSubscriptionArgs{...}
+//	GetSubscriptionSubscriptionArgs{...}
 type GetSubscriptionSubscriptionInput interface {
 	pulumi.Input
 
@@ -5472,7 +5472,7 @@ func (i GetSubscriptionSubscriptionArgs) ToGetSubscriptionSubscriptionOutputWith
 // GetSubscriptionSubscriptionArrayInput is an input type that accepts GetSubscriptionSubscriptionArray and GetSubscriptionSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionArrayInput` via:
 //
-//          GetSubscriptionSubscriptionArray{ GetSubscriptionSubscriptionArgs{...} }
+//	GetSubscriptionSubscriptionArray{ GetSubscriptionSubscriptionArgs{...} }
 type GetSubscriptionSubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -5657,7 +5657,7 @@ type GetSubscriptionSubscriptionBillingAddress struct {
 // GetSubscriptionSubscriptionBillingAddressInput is an input type that accepts GetSubscriptionSubscriptionBillingAddressArgs and GetSubscriptionSubscriptionBillingAddressOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionBillingAddressInput` via:
 //
-//          GetSubscriptionSubscriptionBillingAddressArgs{...}
+//	GetSubscriptionSubscriptionBillingAddressArgs{...}
 type GetSubscriptionSubscriptionBillingAddressInput interface {
 	pulumi.Input
 
@@ -5705,7 +5705,7 @@ func (i GetSubscriptionSubscriptionBillingAddressArgs) ToGetSubscriptionSubscrip
 // GetSubscriptionSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionSubscriptionBillingAddressArray and GetSubscriptionSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionBillingAddressArrayInput` via:
 //
-//          GetSubscriptionSubscriptionBillingAddressArray{ GetSubscriptionSubscriptionBillingAddressArgs{...} }
+//	GetSubscriptionSubscriptionBillingAddressArray{ GetSubscriptionSubscriptionBillingAddressArgs{...} }
 type GetSubscriptionSubscriptionBillingAddressArrayInput interface {
 	pulumi.Input
 
@@ -5824,7 +5824,7 @@ type GetSubscriptionSubscriptionPaymentGateway struct {
 // GetSubscriptionSubscriptionPaymentGatewayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayArgs and GetSubscriptionSubscriptionPaymentGatewayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayInput` via:
 //
-//          GetSubscriptionSubscriptionPaymentGatewayArgs{...}
+//	GetSubscriptionSubscriptionPaymentGatewayArgs{...}
 type GetSubscriptionSubscriptionPaymentGatewayInput interface {
 	pulumi.Input
 
@@ -5852,7 +5852,7 @@ func (i GetSubscriptionSubscriptionPaymentGatewayArgs) ToGetSubscriptionSubscrip
 // GetSubscriptionSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayArray and GetSubscriptionSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayArrayInput` via:
 //
-//          GetSubscriptionSubscriptionPaymentGatewayArray{ GetSubscriptionSubscriptionPaymentGatewayArgs{...} }
+//	GetSubscriptionSubscriptionPaymentGatewayArray{ GetSubscriptionSubscriptionPaymentGatewayArgs{...} }
 type GetSubscriptionSubscriptionPaymentGatewayArrayInput interface {
 	pulumi.Input
 
@@ -5925,7 +5925,7 @@ type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData struct {
 // GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput` via:
 //
-//          GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
+//	GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 	pulumi.Input
 
@@ -5955,7 +5955,7 @@ func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetS
 // GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
-//          GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
+//	GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayInput interface {
 	pulumi.Input
 
@@ -6049,7 +6049,7 @@ type GetSubscriptionSubscriptionPaymentOption struct {
 // GetSubscriptionSubscriptionPaymentOptionInput is an input type that accepts GetSubscriptionSubscriptionPaymentOptionArgs and GetSubscriptionSubscriptionPaymentOptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentOptionInput` via:
 //
-//          GetSubscriptionSubscriptionPaymentOptionArgs{...}
+//	GetSubscriptionSubscriptionPaymentOptionArgs{...}
 type GetSubscriptionSubscriptionPaymentOptionInput interface {
 	pulumi.Input
 
@@ -6097,7 +6097,7 @@ func (i GetSubscriptionSubscriptionPaymentOptionArgs) ToGetSubscriptionSubscript
 // GetSubscriptionSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentOptionArray and GetSubscriptionSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentOptionArrayInput` via:
 //
-//          GetSubscriptionSubscriptionPaymentOptionArray{ GetSubscriptionSubscriptionPaymentOptionArgs{...} }
+//	GetSubscriptionSubscriptionPaymentOptionArray{ GetSubscriptionSubscriptionPaymentOptionArgs{...} }
 type GetSubscriptionSubscriptionPaymentOptionArrayInput interface {
 	pulumi.Input
 
@@ -6224,7 +6224,7 @@ type GetSubscriptionSubscriptionTaxInfo struct {
 // GetSubscriptionSubscriptionTaxInfoInput is an input type that accepts GetSubscriptionSubscriptionTaxInfoArgs and GetSubscriptionSubscriptionTaxInfoOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionTaxInfoInput` via:
 //
-//          GetSubscriptionSubscriptionTaxInfoArgs{...}
+//	GetSubscriptionSubscriptionTaxInfoArgs{...}
 type GetSubscriptionSubscriptionTaxInfoInput interface {
 	pulumi.Input
 
@@ -6260,7 +6260,7 @@ func (i GetSubscriptionSubscriptionTaxInfoArgs) ToGetSubscriptionSubscriptionTax
 // GetSubscriptionSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionSubscriptionTaxInfoArray and GetSubscriptionSubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionTaxInfoArrayInput` via:
 //
-//          GetSubscriptionSubscriptionTaxInfoArray{ GetSubscriptionSubscriptionTaxInfoArgs{...} }
+//	GetSubscriptionSubscriptionTaxInfoArray{ GetSubscriptionSubscriptionTaxInfoArgs{...} }
 type GetSubscriptionSubscriptionTaxInfoArrayInput interface {
 	pulumi.Input
 
@@ -6357,7 +6357,7 @@ type GetSubscriptionTaxInfo struct {
 // GetSubscriptionTaxInfoInput is an input type that accepts GetSubscriptionTaxInfoArgs and GetSubscriptionTaxInfoOutput values.
 // You can construct a concrete instance of `GetSubscriptionTaxInfoInput` via:
 //
-//          GetSubscriptionTaxInfoArgs{...}
+//	GetSubscriptionTaxInfoArgs{...}
 type GetSubscriptionTaxInfoInput interface {
 	pulumi.Input
 
@@ -6393,7 +6393,7 @@ func (i GetSubscriptionTaxInfoArgs) ToGetSubscriptionTaxInfoOutputWithContext(ct
 // GetSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionTaxInfoArray and GetSubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionTaxInfoArrayInput` via:
 //
-//          GetSubscriptionTaxInfoArray{ GetSubscriptionTaxInfoArgs{...} }
+//	GetSubscriptionTaxInfoArray{ GetSubscriptionTaxInfoArgs{...} }
 type GetSubscriptionTaxInfoArrayInput interface {
 	pulumi.Input
 
@@ -6483,7 +6483,7 @@ type GetSubscriptionsFilter struct {
 // GetSubscriptionsFilterInput is an input type that accepts GetSubscriptionsFilterArgs and GetSubscriptionsFilterOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterInput` via:
 //
-//          GetSubscriptionsFilterArgs{...}
+//	GetSubscriptionsFilterArgs{...}
 type GetSubscriptionsFilterInput interface {
 	pulumi.Input
 
@@ -6512,7 +6512,7 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
-//          GetSubscriptionsFilterArray{ GetSubscriptionsFilterArgs{...} }
+//	GetSubscriptionsFilterArray{ GetSubscriptionsFilterArgs{...} }
 type GetSubscriptionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -6587,7 +6587,7 @@ type GetSubscriptionsSubscriptionCollection struct {
 // GetSubscriptionsSubscriptionCollectionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionArgs and GetSubscriptionsSubscriptionCollectionOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionArgs{...}
+//	GetSubscriptionsSubscriptionCollectionArgs{...}
 type GetSubscriptionsSubscriptionCollectionInput interface {
 	pulumi.Input
 
@@ -6614,7 +6614,7 @@ func (i GetSubscriptionsSubscriptionCollectionArgs) ToGetSubscriptionsSubscripti
 // GetSubscriptionsSubscriptionCollectionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionArray and GetSubscriptionsSubscriptionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionArray{ GetSubscriptionsSubscriptionCollectionArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionArray{ GetSubscriptionsSubscriptionCollectionArgs{...} }
 type GetSubscriptionsSubscriptionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6727,7 +6727,7 @@ type GetSubscriptionsSubscriptionCollectionItem struct {
 // GetSubscriptionsSubscriptionCollectionItemInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemArgs and GetSubscriptionsSubscriptionCollectionItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemInput interface {
 	pulumi.Input
 
@@ -6798,7 +6798,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemArgs) ToGetSubscriptionsSubscr
 // GetSubscriptionsSubscriptionCollectionItemArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemArray and GetSubscriptionsSubscriptionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemArray{ GetSubscriptionsSubscriptionCollectionItemArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemArray{ GetSubscriptionsSubscriptionCollectionItemArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -7009,7 +7009,7 @@ type GetSubscriptionsSubscriptionCollectionItemBillingAddress struct {
 // GetSubscriptionsSubscriptionCollectionItemBillingAddressInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs and GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemBillingAddressInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemBillingAddressInput interface {
 	pulumi.Input
 
@@ -7057,7 +7057,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ToGetSubsc
 // GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemBillingAddressArray and GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemBillingAddressArray{ GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemBillingAddressArray{ GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput interface {
 	pulumi.Input
 
@@ -7176,7 +7176,7 @@ type GetSubscriptionsSubscriptionCollectionItemPaymentGateway struct {
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayInput interface {
 	pulumi.Input
 
@@ -7204,7 +7204,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs) ToGetSubsc
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray{ GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray{ GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput interface {
 	pulumi.Input
 
@@ -7277,7 +7277,7 @@ type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataInput interface {
 	pulumi.Input
 
@@ -7307,7 +7307,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayInput interface {
 	pulumi.Input
 
@@ -7405,7 +7405,7 @@ type GetSubscriptionsSubscriptionCollectionItemPaymentOption struct {
 // GetSubscriptionsSubscriptionCollectionItemPaymentOptionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs and GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentOptionInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemPaymentOptionInput interface {
 	pulumi.Input
 
@@ -7453,7 +7453,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ToGetSubscr
 // GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray and GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray{ GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray{ GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput interface {
 	pulumi.Input
 
@@ -7608,7 +7608,7 @@ type GetSubscriptionsSubscriptionCollectionItemSubscription struct {
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionInput interface {
 	pulumi.Input
 
@@ -7672,7 +7672,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ToGetSubscri
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -7859,7 +7859,7 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress struct
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressInput interface {
 	pulumi.Input
 
@@ -7907,7 +7907,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput interface {
 	pulumi.Input
 
@@ -8036,7 +8036,7 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway struct
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayInput interface {
 	pulumi.Input
 
@@ -8064,7 +8064,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput interface {
 	pulumi.Input
 
@@ -8137,7 +8137,7 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchan
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 	pulumi.Input
 
@@ -8167,7 +8167,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayInput interface {
 	pulumi.Input
 
@@ -8265,7 +8265,7 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption struct 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionInput interface {
 	pulumi.Input
 
@@ -8313,7 +8313,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs)
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput interface {
 	pulumi.Input
 
@@ -8458,7 +8458,7 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo struct {
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoInput interface {
 	pulumi.Input
 
@@ -8494,7 +8494,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ToGet
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray{ GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput interface {
 	pulumi.Input
 
@@ -8593,7 +8593,7 @@ type GetSubscriptionsSubscriptionCollectionItemTaxInfo struct {
 // GetSubscriptionsSubscriptionCollectionItemTaxInfoInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs and GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemTaxInfoInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs{...}
+//	GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs{...}
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoInput interface {
 	pulumi.Input
 
@@ -8629,7 +8629,7 @@ func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ToGetSubscription
 // GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemTaxInfoArray and GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput` via:
 //
-//          GetSubscriptionsSubscriptionCollectionItemTaxInfoArray{ GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs{...} }
+//	GetSubscriptionsSubscriptionCollectionItemTaxInfoArray{ GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs{...} }
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput interface {
 	pulumi.Input
 

@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetExadataInsights(ctx, &opsi.GetExadataInsightsArgs{
-// 			CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-// 			CompartmentIdInSubtree:    pulumi.BoolRef(_var.Exadata_insight_compartment_id_in_subtree),
-// 			EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-// 			ExadataTypes:              _var.Exadata_insight_exadata_type,
-// 			Id:                        pulumi.StringRef(_var.Exadata_insight_id),
-// 			States:                    _var.Exadata_insight_state,
-// 			Statuses:                  _var.Exadata_insight_status,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetExadataInsights(ctx, &opsi.GetExadataInsightsArgs{
+//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
+//				CompartmentIdInSubtree:    pulumi.BoolRef(_var.Exadata_insight_compartment_id_in_subtree),
+//				EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
+//				ExadataTypes:              _var.Exadata_insight_exadata_type,
+//				Id:                        pulumi.StringRef(_var.Exadata_insight_id),
+//				States:                    _var.Exadata_insight_state,
+//				Statuses:                  _var.Exadata_insight_status,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExadataInsights(ctx *pulumi.Context, args *GetExadataInsightsArgs, opts ...pulumi.InvokeOption) (*GetExadataInsightsResult, error) {
 	var rv GetExadataInsightsResult

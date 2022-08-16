@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Gets a report by identifier
+// # Gets a report by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetReport(ctx, &datasafe.GetReportArgs{
-// 			ReportId: oci_data_safe_report.Test_report.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetReport(ctx, &datasafe.GetReportArgs{
+//				ReportId: oci_data_safe_report.Test_report.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetReport(ctx *pulumi.Context, args *GetReportArgs, opts ...pulumi.InvokeOption) (*GetReportResult, error) {
 	var rv GetReportResult

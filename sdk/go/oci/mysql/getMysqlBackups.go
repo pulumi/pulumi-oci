@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetMysqlBackups(ctx, &mysql.GetMysqlBackupsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			BackupId:      pulumi.StringRef(oci_mysql_mysql_backup.Test_backup.Id),
-// 			CreationType:  pulumi.StringRef(_var.Mysql_backup_creation_type),
-// 			DbSystemId:    pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
-// 			DisplayName:   pulumi.StringRef(_var.Mysql_backup_display_name),
-// 			State:         pulumi.StringRef(_var.Mysql_backup_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetMysqlBackups(ctx, &mysql.GetMysqlBackupsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				BackupId:      pulumi.StringRef(oci_mysql_mysql_backup.Test_backup.Id),
+//				CreationType:  pulumi.StringRef(_var.Mysql_backup_creation_type),
+//				DbSystemId:    pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
+//				DisplayName:   pulumi.StringRef(_var.Mysql_backup_display_name),
+//				State:         pulumi.StringRef(_var.Mysql_backup_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMysqlBackups(ctx *pulumi.Context, args *GetMysqlBackupsArgs, opts ...pulumi.InvokeOption) (*GetMysqlBackupsResult, error) {
 	var rv GetMysqlBackupsResult

@@ -22,22 +22,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetResolver(ctx, &dns.GetResolverArgs{
-// 			ResolverId: oci_dns_resolver.Test_resolver.Id,
-// 			Scope:      "PRIVATE",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetResolver(ctx, &dns.GetResolverArgs{
+//				ResolverId: oci_dns_resolver.Test_resolver.Id,
+//				Scope:      "PRIVATE",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupResolver(ctx *pulumi.Context, args *LookupResolverArgs, opts ...pulumi.InvokeOption) (*LookupResolverResult, error) {
 	var rv LookupResolverResult

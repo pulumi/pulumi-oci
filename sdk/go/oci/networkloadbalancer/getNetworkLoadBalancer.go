@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.GetNetworkLoadBalancer(ctx, &networkloadbalancer.GetNetworkLoadBalancerArgs{
-// 			NetworkLoadBalancerId: oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.GetNetworkLoadBalancer(ctx, &networkloadbalancer.GetNetworkLoadBalancerArgs{
+//				NetworkLoadBalancerId: oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNetworkLoadBalancer(ctx *pulumi.Context, args *LookupNetworkLoadBalancerArgs, opts ...pulumi.InvokeOption) (*LookupNetworkLoadBalancerResult, error) {
 	var rv LookupNetworkLoadBalancerResult

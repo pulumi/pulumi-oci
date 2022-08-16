@@ -34,31 +34,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetListings(ctx, &marketplace.GetListingsArgs{
-// 			Categories:       _var.Listing_category,
-// 			CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-// 			ImageId:          pulumi.StringRef(oci_core_image.Test_image.Id),
-// 			IsFeatured:       pulumi.BoolRef(_var.Listing_is_featured),
-// 			ListingId:        pulumi.StringRef(oci_marketplace_listing.Test_listing.Id),
-// 			ListingTypes:     _var.Listing_listing_types,
-// 			Names:            _var.Listing_name,
-// 			OperatingSystems: _var.Listing_operating_systems,
-// 			PackageType:      pulumi.StringRef(_var.Listing_package_type),
-// 			Pricings:         _var.Listing_pricing,
-// 			PublisherId:      pulumi.StringRef(oci_marketplace_publisher.Test_publisher.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetListings(ctx, &marketplace.GetListingsArgs{
+//				Categories:       _var.Listing_category,
+//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
+//				ImageId:          pulumi.StringRef(oci_core_image.Test_image.Id),
+//				IsFeatured:       pulumi.BoolRef(_var.Listing_is_featured),
+//				ListingId:        pulumi.StringRef(oci_marketplace_listing.Test_listing.Id),
+//				ListingTypes:     _var.Listing_listing_types,
+//				Names:            _var.Listing_name,
+//				OperatingSystems: _var.Listing_operating_systems,
+//				PackageType:      pulumi.StringRef(_var.Listing_package_type),
+//				Pricings:         _var.Listing_pricing,
+//				PublisherId:      pulumi.StringRef(oci_marketplace_publisher.Test_publisher.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetListings(ctx *pulumi.Context, args *GetListingsArgs, opts ...pulumi.InvokeOption) (*GetListingsResult, error) {
 	var rv GetListingsResult

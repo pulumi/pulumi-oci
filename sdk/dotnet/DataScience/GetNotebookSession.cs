@@ -143,6 +143,10 @@ namespace Pulumi.Oci.DataScience
         public readonly ImmutableArray<Outputs.GetNotebookSessionNotebookSessionConfigurationDetailResult> NotebookSessionConfigurationDetails;
         public readonly string NotebookSessionId;
         /// <summary>
+        /// Notebook Session runtime configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailResult> NotebookSessionRuntimeConfigDetails;
+        /// <summary>
         /// The URL to interact with the notebook session.
         /// </summary>
         public readonly string NotebookSessionUrl;
@@ -181,6 +185,8 @@ namespace Pulumi.Oci.DataScience
 
             string notebookSessionId,
 
+            ImmutableArray<Outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailResult> notebookSessionRuntimeConfigDetails,
+
             string notebookSessionUrl,
 
             string projectId,
@@ -199,6 +205,7 @@ namespace Pulumi.Oci.DataScience
             NotebookSessionConfigDetails = notebookSessionConfigDetails;
             NotebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
             NotebookSessionId = notebookSessionId;
+            NotebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
             NotebookSessionUrl = notebookSessionUrl;
             ProjectId = projectId;
             State = state;

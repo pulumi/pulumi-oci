@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetChannels(ctx, &mysql.GetChannelsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			ChannelId:     pulumi.StringRef(oci_mysql_channel.Test_channel.Id),
-// 			DbSystemId:    pulumi.StringRef(oci_database_db_system.Test_db_system.Id),
-// 			DisplayName:   pulumi.StringRef(_var.Channel_display_name),
-// 			IsEnabled:     pulumi.BoolRef(_var.Channel_is_enabled),
-// 			State:         pulumi.StringRef(_var.Channel_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetChannels(ctx, &mysql.GetChannelsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				ChannelId:     pulumi.StringRef(oci_mysql_channel.Test_channel.Id),
+//				DbSystemId:    pulumi.StringRef(oci_database_db_system.Test_db_system.Id),
+//				DisplayName:   pulumi.StringRef(_var.Channel_display_name),
+//				IsEnabled:     pulumi.BoolRef(_var.Channel_is_enabled),
+//				State:         pulumi.StringRef(_var.Channel_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetChannels(ctx *pulumi.Context, args *GetChannelsArgs, opts ...pulumi.InvokeOption) (*GetChannelsResult, error) {
 	var rv GetChannelsResult

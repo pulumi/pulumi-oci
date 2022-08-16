@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewBackupDestination(ctx, "testBackupDestination", &Database.BackupDestinationArgs{
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			DisplayName:      pulumi.Any(_var.Backup_destination_display_name),
-// 			Type:             pulumi.Any(_var.Backup_destination_type),
-// 			ConnectionString: pulumi.Any(_var.Backup_destination_connection_string),
-// 			DefinedTags:      pulumi.Any(_var.Backup_destination_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			LocalMountPointPath: pulumi.Any(_var.Backup_destination_local_mount_point_path),
-// 			MountTypeDetails: &database.BackupDestinationMountTypeDetailsArgs{
-// 				MountType:           pulumi.Any(_var.Backup_destination_mount_type_details_mount_type),
-// 				LocalMountPointPath: pulumi.Any(_var.Backup_destination_mount_type_details_local_mount_point_path),
-// 				NfsServers:          pulumi.Any(_var.Backup_destination_mount_type_details_nfs_server),
-// 				NfsServerExport:     pulumi.Any(_var.Backup_destination_mount_type_details_nfs_server_export),
-// 			},
-// 			VpcUsers: pulumi.Any(_var.Backup_destination_vpc_users),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewBackupDestination(ctx, "testBackupDestination", &Database.BackupDestinationArgs{
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				DisplayName:      pulumi.Any(_var.Backup_destination_display_name),
+//				Type:             pulumi.Any(_var.Backup_destination_type),
+//				ConnectionString: pulumi.Any(_var.Backup_destination_connection_string),
+//				DefinedTags:      pulumi.Any(_var.Backup_destination_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				LocalMountPointPath: pulumi.Any(_var.Backup_destination_local_mount_point_path),
+//				MountTypeDetails: &database.BackupDestinationMountTypeDetailsArgs{
+//					MountType:           pulumi.Any(_var.Backup_destination_mount_type_details_mount_type),
+//					LocalMountPointPath: pulumi.Any(_var.Backup_destination_mount_type_details_local_mount_point_path),
+//					NfsServers:          pulumi.Any(_var.Backup_destination_mount_type_details_nfs_server),
+//					NfsServerExport:     pulumi.Any(_var.Backup_destination_mount_type_details_nfs_server_export),
+//				},
+//				VpcUsers: pulumi.Any(_var.Backup_destination_vpc_users),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // BackupDestinations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
+//
+//	$ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
+//
 // ```
 type BackupDestination struct {
 	pulumi.CustomResourceState
@@ -287,7 +292,7 @@ func (i *BackupDestination) ToBackupDestinationOutputWithContext(ctx context.Con
 // BackupDestinationArrayInput is an input type that accepts BackupDestinationArray and BackupDestinationArrayOutput values.
 // You can construct a concrete instance of `BackupDestinationArrayInput` via:
 //
-//          BackupDestinationArray{ BackupDestinationArgs{...} }
+//	BackupDestinationArray{ BackupDestinationArgs{...} }
 type BackupDestinationArrayInput interface {
 	pulumi.Input
 
@@ -312,7 +317,7 @@ func (i BackupDestinationArray) ToBackupDestinationArrayOutputWithContext(ctx co
 // BackupDestinationMapInput is an input type that accepts BackupDestinationMap and BackupDestinationMapOutput values.
 // You can construct a concrete instance of `BackupDestinationMapInput` via:
 //
-//          BackupDestinationMap{ "key": BackupDestinationArgs{...} }
+//	BackupDestinationMap{ "key": BackupDestinationArgs{...} }
 type BackupDestinationMapInput interface {
 	pulumi.Input
 

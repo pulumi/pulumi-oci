@@ -10,6 +10,12 @@ import * as utilities from "../utilities";
  *
  * Create a new Fleet using the information provided.
  *
+ * `inventoryLog` is now a required parameter for CreateFleet API.
+ * Update existing applications using this API
+ * before July 15, 2022 to ensure the applications continue to work.
+ * See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+ * Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -19,6 +25,10 @@ import * as utilities from "../utilities";
  * const testFleet = new oci.jms.Fleet("testFleet", {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.fleet_display_name,
+ *     inventoryLog: {
+ *         logGroupId: oci_logging_log_group.test_log_group.id,
+ *         logId: oci_logging_log.test_log.id,
+ *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -26,10 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     inventoryLog: {
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
- *     },
+ *     isAdvancedFeaturesEnabled: _var.fleet_is_advanced_features_enabled,
  *     operationLog: {
  *         logGroupId: oci_logging_log_group.test_log_group.id,
  *         logId: oci_logging_log.test_log.id,
@@ -114,6 +121,10 @@ export class Fleet extends pulumi.CustomResource {
      */
     public readonly inventoryLog!: pulumi.Output<outputs.Jms.FleetInventoryLog>;
     /**
+     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     */
+    public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Custom Log for inventory or operation log.
      */
     public readonly operationLog!: pulumi.Output<outputs.Jms.FleetOperationLog>;
@@ -153,6 +164,7 @@ export class Fleet extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["inventoryLog"] = state ? state.inventoryLog : undefined;
+            resourceInputs["isAdvancedFeaturesEnabled"] = state ? state.isAdvancedFeaturesEnabled : undefined;
             resourceInputs["operationLog"] = state ? state.operationLog : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -165,12 +177,16 @@ export class Fleet extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
+            if ((!args || args.inventoryLog === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'inventoryLog'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["inventoryLog"] = args ? args.inventoryLog : undefined;
+            resourceInputs["isAdvancedFeaturesEnabled"] = args ? args.isAdvancedFeaturesEnabled : undefined;
             resourceInputs["operationLog"] = args ? args.operationLog : undefined;
             resourceInputs["approximateApplicationCount"] = undefined /*out*/;
             resourceInputs["approximateInstallationCount"] = undefined /*out*/;
@@ -230,6 +246,10 @@ export interface FleetState {
      */
     inventoryLog?: pulumi.Input<inputs.Jms.FleetInventoryLog>;
     /**
+     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     */
+    isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Custom Log for inventory or operation log.
      */
     operationLog?: pulumi.Input<inputs.Jms.FleetOperationLog>;
@@ -274,7 +294,11 @@ export interface FleetArgs {
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    inventoryLog?: pulumi.Input<inputs.Jms.FleetInventoryLog>;
+    inventoryLog: pulumi.Input<inputs.Jms.FleetInventoryLog>;
+    /**
+     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     */
+    isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */

@@ -20,26 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetMaintenanceRuns(ctx, &database.GetMaintenanceRunsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Maintenance_run_availability_domain),
-// 			MaintenanceType:    pulumi.StringRef(_var.Maintenance_run_maintenance_type),
-// 			State:              pulumi.StringRef(_var.Maintenance_run_state),
-// 			TargetResourceId:   pulumi.StringRef(oci_database_target_resource.Test_target_resource.Id),
-// 			TargetResourceType: pulumi.StringRef(_var.Maintenance_run_target_resource_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetMaintenanceRuns(ctx, &database.GetMaintenanceRunsArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Maintenance_run_availability_domain),
+//				MaintenanceSubtype: pulumi.StringRef(_var.Maintenance_run_maintenance_subtype),
+//				MaintenanceType:    pulumi.StringRef(_var.Maintenance_run_maintenance_type),
+//				State:              pulumi.StringRef(_var.Maintenance_run_state),
+//				TargetResourceId:   pulumi.StringRef(oci_database_target_resource.Test_target_resource.Id),
+//				TargetResourceType: pulumi.StringRef(_var.Maintenance_run_target_resource_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMaintenanceRuns(ctx *pulumi.Context, args *GetMaintenanceRunsArgs, opts ...pulumi.InvokeOption) (*GetMaintenanceRunsResult, error) {
 	var rv GetMaintenanceRunsResult
@@ -57,6 +61,8 @@ type GetMaintenanceRunsArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetMaintenanceRunsFilter `pulumi:"filters"`
+	// The sub-type of the maintenance run.
+	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
 	// The maintenance type.
 	MaintenanceType *string `pulumi:"maintenanceType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
@@ -77,6 +83,8 @@ type GetMaintenanceRunsResult struct {
 	Id string `pulumi:"id"`
 	// The list of maintenance_runs.
 	MaintenanceRuns []GetMaintenanceRunsMaintenanceRun `pulumi:"maintenanceRuns"`
+	// Maintenance sub-type.
+	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
 	// Maintenance type.
 	MaintenanceType *string `pulumi:"maintenanceType"`
 	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
@@ -107,6 +115,8 @@ type GetMaintenanceRunsOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput                 `pulumi:"compartmentId"`
 	Filters       GetMaintenanceRunsFilterArrayInput `pulumi:"filters"`
+	// The sub-type of the maintenance run.
+	MaintenanceSubtype pulumi.StringPtrInput `pulumi:"maintenanceSubtype"`
 	// The maintenance type.
 	MaintenanceType pulumi.StringPtrInput `pulumi:"maintenanceType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
@@ -157,6 +167,11 @@ func (o GetMaintenanceRunsResultOutput) Id() pulumi.StringOutput {
 // The list of maintenance_runs.
 func (o GetMaintenanceRunsResultOutput) MaintenanceRuns() GetMaintenanceRunsMaintenanceRunArrayOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsResult) []GetMaintenanceRunsMaintenanceRun { return v.MaintenanceRuns }).(GetMaintenanceRunsMaintenanceRunArrayOutput)
+}
+
+// Maintenance sub-type.
+func (o GetMaintenanceRunsResultOutput) MaintenanceSubtype() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.MaintenanceSubtype }).(pulumi.StringPtrOutput)
 }
 
 // Maintenance type.

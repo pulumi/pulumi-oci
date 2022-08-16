@@ -22,23 +22,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.NewAnalyticsCluster(ctx, "testAnalyticsCluster", &Mysql.AnalyticsClusterArgs{
-// 			DbSystemId:  pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 			ClusterSize: pulumi.Any(_var.Analytics_cluster_cluster_size),
-// 			ShapeName:   pulumi.Any(oci_mysql_shape.Test_shape.Name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.NewAnalyticsCluster(ctx, "testAnalyticsCluster", &Mysql.AnalyticsClusterArgs{
+//				DbSystemId:  pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				ClusterSize: pulumi.Any(_var.Analytics_cluster_cluster_size),
+//				ShapeName:   pulumi.Any(oci_mysql_shape.Test_shape.Name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // AnalyticsCluster can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Mysql/analyticsCluster:AnalyticsCluster test_analytics_cluster "dbSystems/{dbSystemId}/analyticsCluster"
+//
+//	$ pulumi import oci:Mysql/analyticsCluster:AnalyticsCluster test_analytics_cluster "dbSystems/{dbSystemId}/analyticsCluster"
+//
 // ```
 type AnalyticsCluster struct {
 	pulumi.CustomResourceState
@@ -197,7 +202,7 @@ func (i *AnalyticsCluster) ToAnalyticsClusterOutputWithContext(ctx context.Conte
 // AnalyticsClusterArrayInput is an input type that accepts AnalyticsClusterArray and AnalyticsClusterArrayOutput values.
 // You can construct a concrete instance of `AnalyticsClusterArrayInput` via:
 //
-//          AnalyticsClusterArray{ AnalyticsClusterArgs{...} }
+//	AnalyticsClusterArray{ AnalyticsClusterArgs{...} }
 type AnalyticsClusterArrayInput interface {
 	pulumi.Input
 
@@ -222,7 +227,7 @@ func (i AnalyticsClusterArray) ToAnalyticsClusterArrayOutputWithContext(ctx cont
 // AnalyticsClusterMapInput is an input type that accepts AnalyticsClusterMap and AnalyticsClusterMapOutput values.
 // You can construct a concrete instance of `AnalyticsClusterMapInput` via:
 //
-//          AnalyticsClusterMap{ "key": AnalyticsClusterArgs{...} }
+//	AnalyticsClusterMap{ "key": AnalyticsClusterArgs{...} }
 type AnalyticsClusterMapInput interface {
 	pulumi.Input
 

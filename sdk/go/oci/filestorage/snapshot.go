@@ -22,27 +22,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.NewSnapshot(ctx, "testSnapshot", &FileStorage.SnapshotArgs{
-// 			FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.NewSnapshot(ctx, "testSnapshot", &FileStorage.SnapshotArgs{
+//				FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Snapshots can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"
+//
+//	$ pulumi import oci:FileStorage/snapshot:Snapshot test_snapshot "id"
+//
 // ```
 type Snapshot struct {
 	pulumi.CustomResourceState
@@ -201,7 +206,7 @@ func (i *Snapshot) ToSnapshotOutputWithContext(ctx context.Context) SnapshotOutp
 // SnapshotArrayInput is an input type that accepts SnapshotArray and SnapshotArrayOutput values.
 // You can construct a concrete instance of `SnapshotArrayInput` via:
 //
-//          SnapshotArray{ SnapshotArgs{...} }
+//	SnapshotArray{ SnapshotArgs{...} }
 type SnapshotArrayInput interface {
 	pulumi.Input
 
@@ -226,7 +231,7 @@ func (i SnapshotArray) ToSnapshotArrayOutputWithContext(ctx context.Context) Sna
 // SnapshotMapInput is an input type that accepts SnapshotMap and SnapshotMapOutput values.
 // You can construct a concrete instance of `SnapshotMapInput` via:
 //
-//          SnapshotMap{ "key": SnapshotArgs{...} }
+//	SnapshotMap{ "key": SnapshotArgs{...} }
 type SnapshotMapInput interface {
 	pulumi.Input
 

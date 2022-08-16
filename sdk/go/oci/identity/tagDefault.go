@@ -28,24 +28,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewTagDefault(ctx, "testTagDefault", &Identity.TagDefaultArgs{
-// 			CompartmentId:   pulumi.Any(_var.Compartment_id),
-// 			TagDefinitionId: pulumi.Any(oci_identity_tag_definition.Test_tag_definition.Id),
-// 			Value:           pulumi.Any(_var.Tag_default_value),
-// 			IsRequired:      pulumi.Any(_var.Tag_default_is_required),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewTagDefault(ctx, "testTagDefault", &Identity.TagDefaultArgs{
+//				CompartmentId:   pulumi.Any(_var.Compartment_id),
+//				TagDefinitionId: pulumi.Any(oci_identity_tag_definition.Test_tag_definition.Id),
+//				Value:           pulumi.Any(_var.Tag_default_value),
+//				IsRequired:      pulumi.Any(_var.Tag_default_is_required),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // TagDefaults can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
+//
+//	$ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
+//
 // ```
 type TagDefault struct {
 	pulumi.CustomResourceState
@@ -214,7 +219,7 @@ func (i *TagDefault) ToTagDefaultOutputWithContext(ctx context.Context) TagDefau
 // TagDefaultArrayInput is an input type that accepts TagDefaultArray and TagDefaultArrayOutput values.
 // You can construct a concrete instance of `TagDefaultArrayInput` via:
 //
-//          TagDefaultArray{ TagDefaultArgs{...} }
+//	TagDefaultArray{ TagDefaultArgs{...} }
 type TagDefaultArrayInput interface {
 	pulumi.Input
 
@@ -239,7 +244,7 @@ func (i TagDefaultArray) ToTagDefaultArrayOutputWithContext(ctx context.Context)
 // TagDefaultMapInput is an input type that accepts TagDefaultMap and TagDefaultMapOutput values.
 // You can construct a concrete instance of `TagDefaultMapInput` via:
 //
-//          TagDefaultMap{ "key": TagDefaultArgs{...} }
+//	TagDefaultMap{ "key": TagDefaultArgs{...} }
 type TagDefaultMapInput interface {
 	pulumi.Input
 

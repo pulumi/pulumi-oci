@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Budget"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Budget"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Budget.NewBudget(ctx, "testBudget", &Budget.BudgetArgs{
-// 			Amount:                            pulumi.Any(_var.Budget_amount),
-// 			CompartmentId:                     pulumi.Any(_var.Tenancy_ocid),
-// 			ResetPeriod:                       pulumi.Any(_var.Budget_reset_period),
-// 			BudgetProcessingPeriodStartOffset: pulumi.Any(_var.Budget_budget_processing_period_start_offset),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Budget_description),
-// 			DisplayName: pulumi.Any(_var.Budget_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			ProcessingPeriodType: pulumi.Any(_var.Budget_processing_period_type),
-// 			TargetCompartmentId:  pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-// 			TargetType:           pulumi.Any(_var.Budget_target_type),
-// 			Targets:              pulumi.Any(_var.Budget_targets),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Budget.NewBudget(ctx, "testBudget", &Budget.BudgetArgs{
+//				Amount:                            pulumi.Any(_var.Budget_amount),
+//				CompartmentId:                     pulumi.Any(_var.Tenancy_ocid),
+//				ResetPeriod:                       pulumi.Any(_var.Budget_reset_period),
+//				BudgetProcessingPeriodStartOffset: pulumi.Any(_var.Budget_budget_processing_period_start_offset),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Budget_description),
+//				DisplayName: pulumi.Any(_var.Budget_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ProcessingPeriodType: pulumi.Any(_var.Budget_processing_period_type),
+//				TargetCompartmentId:  pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//				TargetType:           pulumi.Any(_var.Budget_target_type),
+//				Targets:              pulumi.Any(_var.Budget_targets),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // Budgets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Budget/budget:Budget test_budget "id"
+//
+//	$ pulumi import oci:Budget/budget:Budget test_budget "id"
+//
 // ```
 type Budget struct {
 	pulumi.CustomResourceState
@@ -323,7 +328,7 @@ func (i *Budget) ToBudgetOutputWithContext(ctx context.Context) BudgetOutput {
 // BudgetArrayInput is an input type that accepts BudgetArray and BudgetArrayOutput values.
 // You can construct a concrete instance of `BudgetArrayInput` via:
 //
-//          BudgetArray{ BudgetArgs{...} }
+//	BudgetArray{ BudgetArgs{...} }
 type BudgetArrayInput interface {
 	pulumi.Input
 
@@ -348,7 +353,7 @@ func (i BudgetArray) ToBudgetArrayOutputWithContext(ctx context.Context) BudgetA
 // BudgetMapInput is an input type that accepts BudgetMap and BudgetMapOutput values.
 // You can construct a concrete instance of `BudgetMapInput` via:
 //
-//          BudgetMap{ "key": BudgetArgs{...} }
+//	BudgetMap{ "key": BudgetArgs{...} }
 type BudgetMapInput interface {
 	pulumi.Input
 

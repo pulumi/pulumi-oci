@@ -18,7 +18,7 @@ type AppAccelerationPolicyResponseCachingPolicy struct {
 // AppAccelerationPolicyResponseCachingPolicyInput is an input type that accepts AppAccelerationPolicyResponseCachingPolicyArgs and AppAccelerationPolicyResponseCachingPolicyOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyResponseCachingPolicyInput` via:
 //
-//          AppAccelerationPolicyResponseCachingPolicyArgs{...}
+//	AppAccelerationPolicyResponseCachingPolicyArgs{...}
 type AppAccelerationPolicyResponseCachingPolicyInput interface {
 	pulumi.Input
 
@@ -54,11 +54,11 @@ func (i AppAccelerationPolicyResponseCachingPolicyArgs) ToAppAccelerationPolicyR
 // AppAccelerationPolicyResponseCachingPolicyPtrInput is an input type that accepts AppAccelerationPolicyResponseCachingPolicyArgs, AppAccelerationPolicyResponseCachingPolicyPtr and AppAccelerationPolicyResponseCachingPolicyPtrOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyResponseCachingPolicyPtrInput` via:
 //
-//          AppAccelerationPolicyResponseCachingPolicyArgs{...}
+//	        AppAccelerationPolicyResponseCachingPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppAccelerationPolicyResponseCachingPolicyPtrInput interface {
 	pulumi.Input
 
@@ -155,7 +155,7 @@ type AppAccelerationPolicyResponseCompressionPolicy struct {
 // AppAccelerationPolicyResponseCompressionPolicyInput is an input type that accepts AppAccelerationPolicyResponseCompressionPolicyArgs and AppAccelerationPolicyResponseCompressionPolicyOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyResponseCompressionPolicyInput` via:
 //
-//          AppAccelerationPolicyResponseCompressionPolicyArgs{...}
+//	AppAccelerationPolicyResponseCompressionPolicyArgs{...}
 type AppAccelerationPolicyResponseCompressionPolicyInput interface {
 	pulumi.Input
 
@@ -191,11 +191,11 @@ func (i AppAccelerationPolicyResponseCompressionPolicyArgs) ToAppAccelerationPol
 // AppAccelerationPolicyResponseCompressionPolicyPtrInput is an input type that accepts AppAccelerationPolicyResponseCompressionPolicyArgs, AppAccelerationPolicyResponseCompressionPolicyPtr and AppAccelerationPolicyResponseCompressionPolicyPtrOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyResponseCompressionPolicyPtrInput` via:
 //
-//          AppAccelerationPolicyResponseCompressionPolicyArgs{...}
+//	        AppAccelerationPolicyResponseCompressionPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppAccelerationPolicyResponseCompressionPolicyPtrInput interface {
 	pulumi.Input
 
@@ -294,7 +294,7 @@ type AppAccelerationPolicyResponseCompressionPolicyGzipCompression struct {
 // AppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput is an input type that accepts AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs and AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput` via:
 //
-//          AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...}
+//	AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...}
 type AppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput interface {
 	pulumi.Input
 
@@ -330,11 +330,11 @@ func (i AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) ToApp
 // AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrInput is an input type that accepts AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs, AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtr and AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrInput` via:
 //
-//          AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...}
+//	        AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrInput interface {
 	pulumi.Input
 
@@ -432,7 +432,7 @@ type GetAppAccelerationPoliciesFilter struct {
 // GetAppAccelerationPoliciesFilterInput is an input type that accepts GetAppAccelerationPoliciesFilterArgs and GetAppAccelerationPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesFilterInput` via:
 //
-//          GetAppAccelerationPoliciesFilterArgs{...}
+//	GetAppAccelerationPoliciesFilterArgs{...}
 type GetAppAccelerationPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -461,7 +461,7 @@ func (i GetAppAccelerationPoliciesFilterArgs) ToGetAppAccelerationPoliciesFilter
 // GetAppAccelerationPoliciesFilterArrayInput is an input type that accepts GetAppAccelerationPoliciesFilterArray and GetAppAccelerationPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesFilterArrayInput` via:
 //
-//          GetAppAccelerationPoliciesFilterArray{ GetAppAccelerationPoliciesFilterArgs{...} }
+//	GetAppAccelerationPoliciesFilterArray{ GetAppAccelerationPoliciesFilterArgs{...} }
 type GetAppAccelerationPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -536,7 +536,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection struct {
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs{...}
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs{...}
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -563,7 +563,7 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs) ToGetA
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs{...} }
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArgs{...} }
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -655,7 +655,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem struct {
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs{...}
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs{...}
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -705,7 +705,7 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs) To
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs{...} }
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArgs{...} }
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -843,7 +843,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCac
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs{...}
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs{...}
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyInput interface {
 	pulumi.Input
 
@@ -871,7 +871,7 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs{...} }
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArgs{...} }
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -942,7 +942,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCom
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs{...}
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs{...}
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyInput interface {
 	pulumi.Input
 
@@ -970,7 +970,7 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs{...} }
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArgs{...} }
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyArrayInput interface {
 	pulumi.Input
 
@@ -1041,7 +1041,7 @@ type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCom
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs{...}
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs{...}
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionInput interface {
 	pulumi.Input
 
@@ -1069,7 +1069,7 @@ func (i GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponse
 // GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayInput is an input type that accepts GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArray and GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayInput` via:
 //
-//          GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs{...} }
+//	GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArray{ GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs{...} }
 type GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArrayInput interface {
 	pulumi.Input
 
@@ -1140,7 +1140,7 @@ type GetAppAccelerationPolicyResponseCachingPolicy struct {
 // GetAppAccelerationPolicyResponseCachingPolicyInput is an input type that accepts GetAppAccelerationPolicyResponseCachingPolicyArgs and GetAppAccelerationPolicyResponseCachingPolicyOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCachingPolicyInput` via:
 //
-//          GetAppAccelerationPolicyResponseCachingPolicyArgs{...}
+//	GetAppAccelerationPolicyResponseCachingPolicyArgs{...}
 type GetAppAccelerationPolicyResponseCachingPolicyInput interface {
 	pulumi.Input
 
@@ -1168,7 +1168,7 @@ func (i GetAppAccelerationPolicyResponseCachingPolicyArgs) ToGetAppAccelerationP
 // GetAppAccelerationPolicyResponseCachingPolicyArrayInput is an input type that accepts GetAppAccelerationPolicyResponseCachingPolicyArray and GetAppAccelerationPolicyResponseCachingPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCachingPolicyArrayInput` via:
 //
-//          GetAppAccelerationPolicyResponseCachingPolicyArray{ GetAppAccelerationPolicyResponseCachingPolicyArgs{...} }
+//	GetAppAccelerationPolicyResponseCachingPolicyArray{ GetAppAccelerationPolicyResponseCachingPolicyArgs{...} }
 type GetAppAccelerationPolicyResponseCachingPolicyArrayInput interface {
 	pulumi.Input
 
@@ -1239,7 +1239,7 @@ type GetAppAccelerationPolicyResponseCompressionPolicy struct {
 // GetAppAccelerationPolicyResponseCompressionPolicyInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyArgs and GetAppAccelerationPolicyResponseCompressionPolicyOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCompressionPolicyInput` via:
 //
-//          GetAppAccelerationPolicyResponseCompressionPolicyArgs{...}
+//	GetAppAccelerationPolicyResponseCompressionPolicyArgs{...}
 type GetAppAccelerationPolicyResponseCompressionPolicyInput interface {
 	pulumi.Input
 
@@ -1267,7 +1267,7 @@ func (i GetAppAccelerationPolicyResponseCompressionPolicyArgs) ToGetAppAccelerat
 // GetAppAccelerationPolicyResponseCompressionPolicyArrayInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyArray and GetAppAccelerationPolicyResponseCompressionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCompressionPolicyArrayInput` via:
 //
-//          GetAppAccelerationPolicyResponseCompressionPolicyArray{ GetAppAccelerationPolicyResponseCompressionPolicyArgs{...} }
+//	GetAppAccelerationPolicyResponseCompressionPolicyArray{ GetAppAccelerationPolicyResponseCompressionPolicyArgs{...} }
 type GetAppAccelerationPolicyResponseCompressionPolicyArrayInput interface {
 	pulumi.Input
 
@@ -1338,7 +1338,7 @@ type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression struct {
 // GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs and GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput` via:
 //
-//          GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...}
+//	GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...}
 type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput interface {
 	pulumi.Input
 
@@ -1366,7 +1366,7 @@ func (i GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs) To
 // GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayInput is an input type that accepts GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArray and GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayInput` via:
 //
-//          GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArray{ GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...} }
+//	GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArray{ GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{...} }
 type GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArrayInput interface {
 	pulumi.Input
 
@@ -1436,7 +1436,7 @@ type GetAppAccelerationsFilter struct {
 // GetAppAccelerationsFilterInput is an input type that accepts GetAppAccelerationsFilterArgs and GetAppAccelerationsFilterOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsFilterInput` via:
 //
-//          GetAppAccelerationsFilterArgs{...}
+//	GetAppAccelerationsFilterArgs{...}
 type GetAppAccelerationsFilterInput interface {
 	pulumi.Input
 
@@ -1465,7 +1465,7 @@ func (i GetAppAccelerationsFilterArgs) ToGetAppAccelerationsFilterOutputWithCont
 // GetAppAccelerationsFilterArrayInput is an input type that accepts GetAppAccelerationsFilterArray and GetAppAccelerationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsFilterArrayInput` via:
 //
-//          GetAppAccelerationsFilterArray{ GetAppAccelerationsFilterArgs{...} }
+//	GetAppAccelerationsFilterArray{ GetAppAccelerationsFilterArgs{...} }
 type GetAppAccelerationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1540,7 +1540,7 @@ type GetAppAccelerationsWebAppAccelerationCollection struct {
 // GetAppAccelerationsWebAppAccelerationCollectionInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionArgs and GetAppAccelerationsWebAppAccelerationCollectionOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsWebAppAccelerationCollectionInput` via:
 //
-//          GetAppAccelerationsWebAppAccelerationCollectionArgs{...}
+//	GetAppAccelerationsWebAppAccelerationCollectionArgs{...}
 type GetAppAccelerationsWebAppAccelerationCollectionInput interface {
 	pulumi.Input
 
@@ -1567,7 +1567,7 @@ func (i GetAppAccelerationsWebAppAccelerationCollectionArgs) ToGetAppAcceleratio
 // GetAppAccelerationsWebAppAccelerationCollectionArrayInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionArray and GetAppAccelerationsWebAppAccelerationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsWebAppAccelerationCollectionArrayInput` via:
 //
-//          GetAppAccelerationsWebAppAccelerationCollectionArray{ GetAppAccelerationsWebAppAccelerationCollectionArgs{...} }
+//	GetAppAccelerationsWebAppAccelerationCollectionArray{ GetAppAccelerationsWebAppAccelerationCollectionArgs{...} }
 type GetAppAccelerationsWebAppAccelerationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1661,7 +1661,7 @@ type GetAppAccelerationsWebAppAccelerationCollectionItem struct {
 // GetAppAccelerationsWebAppAccelerationCollectionItemInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionItemArgs and GetAppAccelerationsWebAppAccelerationCollectionItemOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsWebAppAccelerationCollectionItemInput` via:
 //
-//          GetAppAccelerationsWebAppAccelerationCollectionItemArgs{...}
+//	GetAppAccelerationsWebAppAccelerationCollectionItemArgs{...}
 type GetAppAccelerationsWebAppAccelerationCollectionItemInput interface {
 	pulumi.Input
 
@@ -1713,7 +1713,7 @@ func (i GetAppAccelerationsWebAppAccelerationCollectionItemArgs) ToGetAppAcceler
 // GetAppAccelerationsWebAppAccelerationCollectionItemArrayInput is an input type that accepts GetAppAccelerationsWebAppAccelerationCollectionItemArray and GetAppAccelerationsWebAppAccelerationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAppAccelerationsWebAppAccelerationCollectionItemArrayInput` via:
 //
-//          GetAppAccelerationsWebAppAccelerationCollectionItemArray{ GetAppAccelerationsWebAppAccelerationCollectionItemArgs{...} }
+//	GetAppAccelerationsWebAppAccelerationCollectionItemArray{ GetAppAccelerationsWebAppAccelerationCollectionItemArgs{...} }
 type GetAppAccelerationsWebAppAccelerationCollectionItemArrayInput interface {
 	pulumi.Input
 

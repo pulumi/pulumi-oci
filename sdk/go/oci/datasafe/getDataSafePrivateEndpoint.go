@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetDataSafePrivateEndpoint(ctx, &datasafe.GetDataSafePrivateEndpointArgs{
-// 			DataSafePrivateEndpointId: oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetDataSafePrivateEndpoint(ctx, &datasafe.GetDataSafePrivateEndpointArgs{
+//				DataSafePrivateEndpointId: oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDataSafePrivateEndpoint(ctx *pulumi.Context, args *LookupDataSafePrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupDataSafePrivateEndpointResult, error) {
 	var rv LookupDataSafePrivateEndpointResult

@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EmWarehouse.GetEmWarehouses(ctx, &emwarehouse.GetEmWarehousesArgs{
-// 			CompartmentId:                 pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:                   pulumi.StringRef(_var.Em_warehouse_display_name),
-// 			Id:                            pulumi.StringRef(_var.Em_warehouse_id),
-// 			OperationsInsightsWarehouseId: pulumi.StringRef(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-// 			State:                         pulumi.StringRef(_var.Em_warehouse_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := EmWarehouse.GetEmWarehouses(ctx, &emwarehouse.GetEmWarehousesArgs{
+//				CompartmentId:                 pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:                   pulumi.StringRef(_var.Em_warehouse_display_name),
+//				Id:                            pulumi.StringRef(_var.Em_warehouse_id),
+//				OperationsInsightsWarehouseId: pulumi.StringRef(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//				State:                         pulumi.StringRef(_var.Em_warehouse_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetEmWarehouses(ctx *pulumi.Context, args *GetEmWarehousesArgs, opts ...pulumi.InvokeOption) (*GetEmWarehousesResult, error) {
 	var rv GetEmWarehousesResult

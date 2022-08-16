@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabasesAsmProperty(ctx, &databasemanagement.GetManagedDatabasesAsmPropertyArgs{
-// 			ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-// 			Name:              pulumi.StringRef(_var.Managed_databases_asm_property_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabasesAsmProperty(ctx, &databasemanagement.GetManagedDatabasesAsmPropertyArgs{
+//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				Name:              pulumi.StringRef(_var.Managed_databases_asm_property_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabasesAsmProperty(ctx *pulumi.Context, args *GetManagedDatabasesAsmPropertyArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabasesAsmPropertyResult, error) {
 	var rv GetManagedDatabasesAsmPropertyResult

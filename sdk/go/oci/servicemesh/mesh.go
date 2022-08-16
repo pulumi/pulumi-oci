@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewMesh(ctx, "testMesh", &ServiceMesh.MeshArgs{
-// 			CertificateAuthorities: servicemesh.MeshCertificateAuthorityArray{
-// 				&servicemesh.MeshCertificateAuthorityArgs{
-// 					Id: pulumi.Any(_var.Mesh_certificate_authorities_id),
-// 				},
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Mesh_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Mesh_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Mtls: &servicemesh.MeshMtlsArgs{
-// 				Minimum: pulumi.Any(_var.Mesh_mtls_minimum),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewMesh(ctx, "testMesh", &ServiceMesh.MeshArgs{
+//				CertificateAuthorities: servicemesh.MeshCertificateAuthorityArray{
+//					&servicemesh.MeshCertificateAuthorityArgs{
+//						Id: pulumi.Any(_var.Mesh_certificate_authorities_id),
+//					},
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Mesh_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Mesh_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Mtls: &servicemesh.MeshMtlsArgs{
+//					Minimum: pulumi.Any(_var.Mesh_mtls_minimum),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // Meshes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
+//
+//	$ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
+//
 // ```
 type Mesh struct {
 	pulumi.CustomResourceState
@@ -246,7 +251,7 @@ func (i *Mesh) ToMeshOutputWithContext(ctx context.Context) MeshOutput {
 // MeshArrayInput is an input type that accepts MeshArray and MeshArrayOutput values.
 // You can construct a concrete instance of `MeshArrayInput` via:
 //
-//          MeshArray{ MeshArgs{...} }
+//	MeshArray{ MeshArgs{...} }
 type MeshArrayInput interface {
 	pulumi.Input
 
@@ -271,7 +276,7 @@ func (i MeshArray) ToMeshArrayOutputWithContext(ctx context.Context) MeshArrayOu
 // MeshMapInput is an input type that accepts MeshMap and MeshMapOutput values.
 // You can construct a concrete instance of `MeshMapInput` via:
 //
-//          MeshMap{ "key": MeshArgs{...} }
+//	MeshMap{ "key": MeshArgs{...} }
 type MeshMapInput interface {
 	pulumi.Input
 

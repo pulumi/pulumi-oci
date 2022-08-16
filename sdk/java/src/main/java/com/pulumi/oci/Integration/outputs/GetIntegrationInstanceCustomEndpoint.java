@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetIntegrationInstanceCustomEndpoint {
     /**
+     * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     * 
+     */
+    private final String alias;
+    /**
      * @return Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      * 
      */
@@ -28,14 +33,23 @@ public final class GetIntegrationInstanceCustomEndpoint {
 
     @CustomType.Constructor
     private GetIntegrationInstanceCustomEndpoint(
+        @CustomType.Parameter("alias") String alias,
         @CustomType.Parameter("certificateSecretId") String certificateSecretId,
         @CustomType.Parameter("certificateSecretVersion") Integer certificateSecretVersion,
         @CustomType.Parameter("hostname") String hostname) {
+        this.alias = alias;
         this.certificateSecretId = certificateSecretId;
         this.certificateSecretVersion = certificateSecretVersion;
         this.hostname = hostname;
     }
 
+    /**
+     * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     * 
+     */
+    public String alias() {
+        return this.alias;
+    }
     /**
      * @return Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      * 
@@ -67,6 +81,7 @@ public final class GetIntegrationInstanceCustomEndpoint {
     }
 
     public static final class Builder {
+        private String alias;
         private String certificateSecretId;
         private Integer certificateSecretVersion;
         private String hostname;
@@ -77,11 +92,16 @@ public final class GetIntegrationInstanceCustomEndpoint {
 
         public Builder(GetIntegrationInstanceCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alias = defaults.alias;
     	      this.certificateSecretId = defaults.certificateSecretId;
     	      this.certificateSecretVersion = defaults.certificateSecretVersion;
     	      this.hostname = defaults.hostname;
         }
 
+        public Builder alias(String alias) {
+            this.alias = Objects.requireNonNull(alias);
+            return this;
+        }
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = Objects.requireNonNull(certificateSecretId);
             return this;
@@ -94,7 +114,7 @@ public final class GetIntegrationInstanceCustomEndpoint {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }        public GetIntegrationInstanceCustomEndpoint build() {
-            return new GetIntegrationInstanceCustomEndpoint(certificateSecretId, certificateSecretVersion, hostname);
+            return new GetIntegrationInstanceCustomEndpoint(alias, certificateSecretId, certificateSecretVersion, hostname);
         }
     }
 }

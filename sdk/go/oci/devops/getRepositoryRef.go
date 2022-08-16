@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryRef(ctx, &devops.GetRepositoryRefArgs{
-// 			RefName:      _var.Repository_ref_ref_name,
-// 			RepositoryId: oci_devops_repository.Test_repository.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryRef(ctx, &devops.GetRepositoryRefArgs{
+//				RefName:      _var.Repository_ref_ref_name,
+//				RepositoryId: oci_devops_repository.Test_repository.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupRepositoryRef(ctx *pulumi.Context, args *LookupRepositoryRefArgs, opts ...pulumi.InvokeOption) (*LookupRepositoryRefResult, error) {
 	var rv LookupRepositoryRefResult

@@ -23,21 +23,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetCloudVmClusterIormConfig(ctx, &database.GetCloudVmClusterIormConfigArgs{
-// 			CloudVmClusterId: oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetCloudVmClusterIormConfig(ctx, &database.GetCloudVmClusterIormConfigArgs{
+//				CloudVmClusterId: oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCloudVmClusterIormConfig(ctx *pulumi.Context, args *LookupCloudVmClusterIormConfigArgs, opts ...pulumi.InvokeOption) (*LookupCloudVmClusterIormConfigResult, error) {
 	var rv LookupCloudVmClusterIormConfigResult

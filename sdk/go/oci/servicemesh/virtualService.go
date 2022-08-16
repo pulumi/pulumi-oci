@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewVirtualService(ctx, "testVirtualService", &ServiceMesh.VirtualServiceArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
-// 			DefaultRoutingPolicy: &servicemesh.VirtualServiceDefaultRoutingPolicyArgs{
-// 				Type: pulumi.Any(_var.Virtual_service_default_routing_policy_type),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Virtual_service_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Hosts: pulumi.Any(_var.Virtual_service_hosts),
-// 			Mtls: &servicemesh.VirtualServiceMtlsArgs{
-// 				Mode:            pulumi.Any(_var.Virtual_service_mtls_mode),
-// 				MaximumValidity: pulumi.Any(_var.Virtual_service_mtls_maximum_validity),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewVirtualService(ctx, "testVirtualService", &ServiceMesh.VirtualServiceArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//				DefaultRoutingPolicy: &servicemesh.VirtualServiceDefaultRoutingPolicyArgs{
+//					Type: pulumi.Any(_var.Virtual_service_default_routing_policy_type),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Virtual_service_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Hosts: pulumi.Any(_var.Virtual_service_hosts),
+//				Mtls: &servicemesh.VirtualServiceMtlsArgs{
+//					Mode:            pulumi.Any(_var.Virtual_service_mtls_mode),
+//					MaximumValidity: pulumi.Any(_var.Virtual_service_mtls_maximum_validity),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // VirtualServices can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
+//
+//	$ pulumi import oci:ServiceMesh/virtualService:VirtualService test_virtual_service "id"
+//
 // ```
 type VirtualService struct {
 	pulumi.CustomResourceState
@@ -263,7 +268,7 @@ func (i *VirtualService) ToVirtualServiceOutputWithContext(ctx context.Context) 
 // VirtualServiceArrayInput is an input type that accepts VirtualServiceArray and VirtualServiceArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceArrayInput` via:
 //
-//          VirtualServiceArray{ VirtualServiceArgs{...} }
+//	VirtualServiceArray{ VirtualServiceArgs{...} }
 type VirtualServiceArrayInput interface {
 	pulumi.Input
 
@@ -288,7 +293,7 @@ func (i VirtualServiceArray) ToVirtualServiceArrayOutputWithContext(ctx context.
 // VirtualServiceMapInput is an input type that accepts VirtualServiceMap and VirtualServiceMapOutput values.
 // You can construct a concrete instance of `VirtualServiceMapInput` via:
 //
-//          VirtualServiceMap{ "key": VirtualServiceArgs{...} }
+//	VirtualServiceMap{ "key": VirtualServiceArgs{...} }
 type VirtualServiceMapInput interface {
 	pulumi.Input
 

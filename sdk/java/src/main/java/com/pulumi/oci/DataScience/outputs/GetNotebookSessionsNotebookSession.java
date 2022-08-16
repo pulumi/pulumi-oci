@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -60,6 +61,11 @@ public final class GetNotebookSessionsNotebookSession {
      */
     private final List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
     /**
+     * @return Notebook Session runtime configuration details.
+     * 
+     */
+    private final List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
+    /**
      * @return The URL to interact with the notebook session.
      * 
      */
@@ -91,6 +97,7 @@ public final class GetNotebookSessionsNotebookSession {
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("notebookSessionConfigDetails") List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails,
         @CustomType.Parameter("notebookSessionConfigurationDetails") List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails,
+        @CustomType.Parameter("notebookSessionRuntimeConfigDetails") List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails,
         @CustomType.Parameter("notebookSessionUrl") String notebookSessionUrl,
         @CustomType.Parameter("projectId") String projectId,
         @CustomType.Parameter("state") String state,
@@ -104,6 +111,7 @@ public final class GetNotebookSessionsNotebookSession {
         this.lifecycleDetails = lifecycleDetails;
         this.notebookSessionConfigDetails = notebookSessionConfigDetails;
         this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
+        this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
         this.notebookSessionUrl = notebookSessionUrl;
         this.projectId = projectId;
         this.state = state;
@@ -174,6 +182,13 @@ public final class GetNotebookSessionsNotebookSession {
         return this.notebookSessionConfigurationDetails;
     }
     /**
+     * @return Notebook Session runtime configuration details.
+     * 
+     */
+    public List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails() {
+        return this.notebookSessionRuntimeConfigDetails;
+    }
+    /**
      * @return The URL to interact with the notebook session.
      * 
      */
@@ -220,6 +235,7 @@ public final class GetNotebookSessionsNotebookSession {
         private String lifecycleDetails;
         private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails;
         private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
+        private List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
         private String notebookSessionUrl;
         private String projectId;
         private String state;
@@ -240,6 +256,7 @@ public final class GetNotebookSessionsNotebookSession {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.notebookSessionConfigDetails = defaults.notebookSessionConfigDetails;
     	      this.notebookSessionConfigurationDetails = defaults.notebookSessionConfigurationDetails;
+    	      this.notebookSessionRuntimeConfigDetails = defaults.notebookSessionRuntimeConfigDetails;
     	      this.notebookSessionUrl = defaults.notebookSessionUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -288,6 +305,13 @@ public final class GetNotebookSessionsNotebookSession {
         public Builder notebookSessionConfigurationDetails(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail... notebookSessionConfigurationDetails) {
             return notebookSessionConfigurationDetails(List.of(notebookSessionConfigurationDetails));
         }
+        public Builder notebookSessionRuntimeConfigDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails) {
+            this.notebookSessionRuntimeConfigDetails = Objects.requireNonNull(notebookSessionRuntimeConfigDetails);
+            return this;
+        }
+        public Builder notebookSessionRuntimeConfigDetails(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail... notebookSessionRuntimeConfigDetails) {
+            return notebookSessionRuntimeConfigDetails(List.of(notebookSessionRuntimeConfigDetails));
+        }
         public Builder notebookSessionUrl(String notebookSessionUrl) {
             this.notebookSessionUrl = Objects.requireNonNull(notebookSessionUrl);
             return this;
@@ -304,7 +328,7 @@ public final class GetNotebookSessionsNotebookSession {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }        public GetNotebookSessionsNotebookSession build() {
-            return new GetNotebookSessionsNotebookSession(compartmentId, createdBy, definedTags, displayName, freeformTags, id, lifecycleDetails, notebookSessionConfigDetails, notebookSessionConfigurationDetails, notebookSessionUrl, projectId, state, timeCreated);
+            return new GetNotebookSessionsNotebookSession(compartmentId, createdBy, definedTags, displayName, freeformTags, id, lifecycleDetails, notebookSessionConfigDetails, notebookSessionConfigurationDetails, notebookSessionRuntimeConfigDetails, notebookSessionUrl, projectId, state, timeCreated);
         }
     }
 }

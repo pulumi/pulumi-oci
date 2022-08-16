@@ -15,6 +15,7 @@ class HostInsightArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  entity_source: pulumi.Input[str],
+                 compute_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
@@ -27,6 +28,7 @@ class HostInsightArgs:
         The set of arguments for constructing a HostInsight resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
         :param pulumi.Input[str] entity_source: (Updatable) Source of the host entity.
+        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
@@ -38,6 +40,8 @@ class HostInsightArgs:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_source", entity_source)
+        if compute_id is not None:
+            pulumi.set(__self__, "compute_id", compute_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if enterprise_manager_bridge_id is not None:
@@ -78,6 +82,18 @@ class HostInsightArgs:
     @entity_source.setter
     def entity_source(self, value: pulumi.Input[str]):
         pulumi.set(self, "entity_source", value)
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
+
+    @compute_id.setter
+    def compute_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -180,6 +196,7 @@ class HostInsightArgs:
 class _HostInsightState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_entity_display_name: Optional[pulumi.Input[str]] = None,
@@ -207,6 +224,7 @@ class _HostInsightState:
         """
         Input properties used for looking up and filtering HostInsight resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
+        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
@@ -234,6 +252,8 @@ class _HostInsightState:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_id is not None:
+            pulumi.set(__self__, "compute_id", compute_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if enterprise_manager_bridge_id is not None:
@@ -294,6 +314,18 @@ class _HostInsightState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
+
+    @compute_id.setter
+    def compute_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -590,6 +622,7 @@ class HostInsight(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
@@ -616,6 +649,7 @@ class HostInsight(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
+        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
@@ -661,6 +695,7 @@ class HostInsight(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compute_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
@@ -685,6 +720,7 @@ class HostInsight(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_id"] = compute_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["enterprise_manager_bridge_id"] = enterprise_manager_bridge_id
             __props__.__dict__["enterprise_manager_entity_identifier"] = enterprise_manager_entity_identifier
@@ -722,6 +758,7 @@ class HostInsight(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compute_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
             enterprise_manager_entity_display_name: Optional[pulumi.Input[str]] = None,
@@ -754,6 +791,7 @@ class HostInsight(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
+        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
@@ -784,6 +822,7 @@ class HostInsight(pulumi.CustomResource):
         __props__ = _HostInsightState.__new__(_HostInsightState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_id"] = compute_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["enterprise_manager_bridge_id"] = enterprise_manager_bridge_id
         __props__.__dict__["enterprise_manager_entity_display_name"] = enterprise_manager_entity_display_name
@@ -817,6 +856,14 @@ class HostInsight(pulumi.CustomResource):
         (Updatable) Compartment Identifier of host
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="definedTags")

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetOperationsInsightsPrivateEndpoint(ctx, &opsi.GetOperationsInsightsPrivateEndpointArgs{
-// 			OperationsInsightsPrivateEndpointId: oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetOperationsInsightsPrivateEndpoint(ctx, &opsi.GetOperationsInsightsPrivateEndpointArgs{
+//				OperationsInsightsPrivateEndpointId: oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupOperationsInsightsPrivateEndpoint(ctx *pulumi.Context, args *LookupOperationsInsightsPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupOperationsInsightsPrivateEndpointResult, error) {
 	var rv LookupOperationsInsightsPrivateEndpointResult

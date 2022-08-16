@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ComputeInstanceAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ComputeInstanceAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ComputeInstanceAgent.GetInstanceAgentPlugin(ctx, &computeinstanceagent.GetInstanceAgentPluginArgs{
-// 			InstanceagentId: oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-// 			PluginName:      _var.Instance_agent_plugin_plugin_name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ComputeInstanceAgent.GetInstanceAgentPlugin(ctx, &computeinstanceagent.GetInstanceAgentPluginArgs{
+//				InstanceagentId: oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
+//				PluginName:      _var.Instance_agent_plugin_plugin_name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstanceAgentPlugin(ctx *pulumi.Context, args *GetInstanceAgentPluginArgs, opts ...pulumi.InvokeOption) (*GetInstanceAgentPluginResult, error) {
 	var rv GetInstanceAgentPluginResult

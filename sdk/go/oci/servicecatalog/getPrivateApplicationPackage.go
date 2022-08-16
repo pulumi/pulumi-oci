@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceCatalog.GetPrivateApplicationPackage(ctx, &servicecatalog.GetPrivateApplicationPackageArgs{
-// 			PrivateApplicationPackageId: oci_service_catalog_private_application_package.Test_private_application_package.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceCatalog.GetPrivateApplicationPackage(ctx, &servicecatalog.GetPrivateApplicationPackageArgs{
+//				PrivateApplicationPackageId: oci_service_catalog_private_application_package.Test_private_application_package.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPrivateApplicationPackage(ctx *pulumi.Context, args *GetPrivateApplicationPackageArgs, opts ...pulumi.InvokeOption) (*GetPrivateApplicationPackageResult, error) {
 	var rv GetPrivateApplicationPackageResult

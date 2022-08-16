@@ -20,29 +20,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.GetInstallationSites(ctx, &jms.GetInstallationSitesArgs{
-// 			FleetId:           oci_jms_fleet.Test_fleet.Id,
-// 			ApplicationId:     pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-// 			InstallationPath:  pulumi.StringRef(_var.Fleet_installation_site_installation_path),
-// 			JreDistribution:   pulumi.StringRef(_var.Fleet_installation_site_jre_distribution),
-// 			JreSecurityStatus: pulumi.StringRef(_var.Fleet_installation_site_jre_security_status),
-// 			JreVendor:         pulumi.StringRef(_var.Fleet_installation_site_jre_vendor),
-// 			JreVersion:        pulumi.StringRef(_var.Fleet_installation_site_jre_version),
-// 			ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-// 			OsFamilies:        _var.Fleet_installation_site_os_family,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.GetInstallationSites(ctx, &jms.GetInstallationSitesArgs{
+//				FleetId:           oci_jms_fleet.Test_fleet.Id,
+//				ApplicationId:     pulumi.StringRef(oci_dataflow_application.Test_application.Id),
+//				InstallationPath:  pulumi.StringRef(_var.Fleet_installation_site_installation_path),
+//				JreDistribution:   pulumi.StringRef(_var.Fleet_installation_site_jre_distribution),
+//				JreSecurityStatus: pulumi.StringRef(_var.Fleet_installation_site_jre_security_status),
+//				JreVendor:         pulumi.StringRef(_var.Fleet_installation_site_jre_vendor),
+//				JreVersion:        pulumi.StringRef(_var.Fleet_installation_site_jre_version),
+//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
+//				OsFamilies:        _var.Fleet_installation_site_os_family,
+//				PathContains:      pulumi.StringRef(_var.Fleet_installation_site_path_contains),
+//				TimeEnd:           pulumi.StringRef(_var.Fleet_installation_site_time_end),
+//				TimeStart:         pulumi.StringRef(_var.Fleet_installation_site_time_start),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstallationSites(ctx *pulumi.Context, args *GetInstallationSitesArgs, opts ...pulumi.InvokeOption) (*GetInstallationSitesResult, error) {
 	var rv GetInstallationSitesResult
@@ -74,6 +80,12 @@ type GetInstallationSitesArgs struct {
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The operating system type.
 	OsFamilies []string `pulumi:"osFamilies"`
+	// Filter the list with path contains the given value.
+	PathContains *string `pulumi:"pathContains"`
+	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeEnd *string `pulumi:"timeEnd"`
+	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // A collection of values returned by getInstallationSites.
@@ -93,6 +105,9 @@ type GetInstallationSitesResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
 	ManagedInstanceId *string  `pulumi:"managedInstanceId"`
 	OsFamilies        []string `pulumi:"osFamilies"`
+	PathContains      *string  `pulumi:"pathContains"`
+	TimeEnd           *string  `pulumi:"timeEnd"`
+	TimeStart         *string  `pulumi:"timeStart"`
 }
 
 func GetInstallationSitesOutput(ctx *pulumi.Context, args GetInstallationSitesOutputArgs, opts ...pulumi.InvokeOption) GetInstallationSitesResultOutput {
@@ -129,6 +144,12 @@ type GetInstallationSitesOutputArgs struct {
 	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// The operating system type.
 	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
+	// Filter the list with path contains the given value.
+	PathContains pulumi.StringPtrInput `pulumi:"pathContains"`
+	// The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
+	// The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetInstallationSitesOutputArgs) ElementType() reflect.Type {
@@ -201,6 +222,18 @@ func (o GetInstallationSitesResultOutput) ManagedInstanceId() pulumi.StringPtrOu
 
 func (o GetInstallationSitesResultOutput) OsFamilies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstallationSitesResult) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
+}
+
+func (o GetInstallationSitesResultOutput) PathContains() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesResult) *string { return v.PathContains }).(pulumi.StringPtrOutput)
+}
+
+func (o GetInstallationSitesResultOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesResult) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
+}
+
+func (o GetInstallationSitesResultOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesResult) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 func init() {

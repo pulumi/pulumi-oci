@@ -25,24 +25,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Monitoring.GetAlarms(ctx, &monitoring.GetAlarmsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Alarm_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Alarm_display_name),
-// 			State:                  pulumi.StringRef(_var.Alarm_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Monitoring.GetAlarms(ctx, &monitoring.GetAlarmsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Alarm_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Alarm_display_name),
+//				State:                  pulumi.StringRef(_var.Alarm_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAlarms(ctx *pulumi.Context, args *GetAlarmsArgs, opts ...pulumi.InvokeOption) (*GetAlarmsResult, error) {
 	var rv GetAlarmsResult

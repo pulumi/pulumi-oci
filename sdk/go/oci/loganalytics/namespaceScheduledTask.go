@@ -21,49 +21,52 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewNamespaceScheduledTask(ctx, "testNamespaceScheduledTask", &LogAnalytics.NamespaceScheduledTaskArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Kind:          pulumi.Any(_var.Namespace_scheduled_task_kind),
-// 			Namespace:     pulumi.Any(_var.Namespace_scheduled_task_namespace),
-// 			Action: &loganalytics.NamespaceScheduledTaskActionArgs{
-// 				Type:                   pulumi.Any(_var.Namespace_scheduled_task_action_type),
-// 				CompartmentIdInSubtree: pulumi.Any(_var.Namespace_scheduled_task_action_compartment_id_in_subtree),
-// 				DataType:               pulumi.Any(_var.Namespace_scheduled_task_action_data_type),
-// 				PurgeCompartmentId:     pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-// 				PurgeDuration:          pulumi.Any(_var.Namespace_scheduled_task_action_purge_duration),
-// 				QueryString:            pulumi.Any(_var.Namespace_scheduled_task_action_query_string),
-// 				SavedSearchId:          pulumi.Any(oci_log_analytics_saved_search.Test_saved_search.Id),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Namespace_scheduled_task_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			SavedSearchId: pulumi.Any(oci_log_analytics_saved_search.Test_saved_search.Id),
-// 			Schedules: &loganalytics.NamespaceScheduledTaskSchedulesArgs{
-// 				Type:              _var.Namespace_scheduled_task_schedules_type,
-// 				Expression:        _var.Namespace_scheduled_task_schedules_expression,
-// 				MisfirePolicy:     _var.Namespace_scheduled_task_schedules_misfire_policy,
-// 				RecurringInterval: _var.Namespace_scheduled_task_schedules_recurring_interval,
-// 				RepeatCount:       _var.Namespace_scheduled_task_schedules_repeat_count,
-// 				TimeZone:          _var.Namespace_scheduled_task_schedules_time_zone,
-// 			},
-// 			TaskType: pulumi.Any(_var.Namespace_scheduled_task_task_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewNamespaceScheduledTask(ctx, "testNamespaceScheduledTask", &LogAnalytics.NamespaceScheduledTaskArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Kind:          pulumi.Any(_var.Namespace_scheduled_task_kind),
+//				Namespace:     pulumi.Any(_var.Namespace_scheduled_task_namespace),
+//				Action: &loganalytics.NamespaceScheduledTaskActionArgs{
+//					Type:                   pulumi.Any(_var.Namespace_scheduled_task_action_type),
+//					CompartmentIdInSubtree: pulumi.Any(_var.Namespace_scheduled_task_action_compartment_id_in_subtree),
+//					DataType:               pulumi.Any(_var.Namespace_scheduled_task_action_data_type),
+//					PurgeCompartmentId:     pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+//					PurgeDuration:          pulumi.Any(_var.Namespace_scheduled_task_action_purge_duration),
+//					QueryString:            pulumi.Any(_var.Namespace_scheduled_task_action_query_string),
+//					SavedSearchId:          pulumi.Any(oci_log_analytics_saved_search.Test_saved_search.Id),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Namespace_scheduled_task_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				SavedSearchId: pulumi.Any(oci_log_analytics_saved_search.Test_saved_search.Id),
+//				Schedules: &loganalytics.NamespaceScheduledTaskSchedulesArgs{
+//					Type:              _var.Namespace_scheduled_task_schedules_type,
+//					Expression:        _var.Namespace_scheduled_task_schedules_expression,
+//					MisfirePolicy:     _var.Namespace_scheduled_task_schedules_misfire_policy,
+//					RecurringInterval: _var.Namespace_scheduled_task_schedules_recurring_interval,
+//					RepeatCount:       _var.Namespace_scheduled_task_schedules_repeat_count,
+//					TimeZone:          _var.Namespace_scheduled_task_schedules_time_zone,
+//				},
+//				TaskType: pulumi.Any(_var.Namespace_scheduled_task_task_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -71,7 +74,9 @@ import (
 // NamespaceScheduledTasks can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
+//
+//	$ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
+//
 // ```
 type NamespaceScheduledTask struct {
 	pulumi.CustomResourceState
@@ -306,7 +311,7 @@ func (i *NamespaceScheduledTask) ToNamespaceScheduledTaskOutputWithContext(ctx c
 // NamespaceScheduledTaskArrayInput is an input type that accepts NamespaceScheduledTaskArray and NamespaceScheduledTaskArrayOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskArrayInput` via:
 //
-//          NamespaceScheduledTaskArray{ NamespaceScheduledTaskArgs{...} }
+//	NamespaceScheduledTaskArray{ NamespaceScheduledTaskArgs{...} }
 type NamespaceScheduledTaskArrayInput interface {
 	pulumi.Input
 
@@ -331,7 +336,7 @@ func (i NamespaceScheduledTaskArray) ToNamespaceScheduledTaskArrayOutputWithCont
 // NamespaceScheduledTaskMapInput is an input type that accepts NamespaceScheduledTaskMap and NamespaceScheduledTaskMapOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskMapInput` via:
 //
-//          NamespaceScheduledTaskMap{ "key": NamespaceScheduledTaskArgs{...} }
+//	NamespaceScheduledTaskMap{ "key": NamespaceScheduledTaskArgs{...} }
 type NamespaceScheduledTaskMapInput interface {
 	pulumi.Input
 

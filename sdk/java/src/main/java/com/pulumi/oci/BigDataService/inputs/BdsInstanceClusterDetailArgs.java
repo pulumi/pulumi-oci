@@ -15,9 +15,17 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
 
     public static final BdsInstanceClusterDetailArgs Empty = new BdsInstanceClusterDetailArgs();
 
+    /**
+     * The URL of Ambari
+     * 
+     */
     @Import(name="ambariUrl")
     private @Nullable Output<String> ambariUrl;
 
+    /**
+     * @return The URL of Ambari
+     * 
+     */
     public Optional<Output<String>> ambariUrl() {
         return Optional.ofNullable(this.ambariUrl);
     }
@@ -173,6 +181,21 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * 
+     */
+    @Import(name="odhVersion")
+    private @Nullable Output<String> odhVersion;
+
+    /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * 
+     */
+    public Optional<Output<String>> odhVersion() {
+        return Optional.ofNullable(this.odhVersion);
+    }
+
+    /**
      * Oracle Linux version installed in the cluster
      * 
      */
@@ -231,6 +254,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         this.dbVersion = $.dbVersion;
         this.hueServerUrl = $.hueServerUrl;
         this.jupyterHubUrl = $.jupyterHubUrl;
+        this.odhVersion = $.odhVersion;
         this.osVersion = $.osVersion;
         this.timeCreated = $.timeCreated;
         this.timeRefreshed = $.timeRefreshed;
@@ -254,11 +278,23 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
             $ = new BdsInstanceClusterDetailArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param ambariUrl The URL of Ambari
+         * 
+         * @return builder
+         * 
+         */
         public Builder ambariUrl(@Nullable Output<String> ambariUrl) {
             $.ambariUrl = ambariUrl;
             return this;
         }
 
+        /**
+         * @param ambariUrl The URL of Ambari
+         * 
+         * @return builder
+         * 
+         */
         public Builder ambariUrl(String ambariUrl) {
             return ambariUrl(Output.of(ambariUrl));
         }
@@ -471,6 +507,27 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
          */
         public Builder jupyterHubUrl(String jupyterHubUrl) {
             return jupyterHubUrl(Output.of(jupyterHubUrl));
+        }
+
+        /**
+         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder odhVersion(@Nullable Output<String> odhVersion) {
+            $.odhVersion = odhVersion;
+            return this;
+        }
+
+        /**
+         * @param odhVersion Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder odhVersion(String odhVersion) {
+            return odhVersion(Output.of(odhVersion));
         }
 
         /**

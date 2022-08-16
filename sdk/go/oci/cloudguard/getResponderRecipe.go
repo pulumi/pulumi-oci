@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Get a ResponderRecipe by identifier
+// # Get a ResponderRecipe by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetResponderRecipe(ctx, &cloudguard.GetResponderRecipeArgs{
-// 			ResponderRecipeId: oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetResponderRecipe(ctx, &cloudguard.GetResponderRecipeArgs{
+//				ResponderRecipeId: oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupResponderRecipe(ctx *pulumi.Context, args *LookupResponderRecipeArgs, opts ...pulumi.InvokeOption) (*LookupResponderRecipeResult, error) {
 	var rv LookupResponderRecipeResult

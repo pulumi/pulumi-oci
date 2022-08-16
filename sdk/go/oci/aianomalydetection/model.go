@@ -21,35 +21,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.NewModel(ctx, "testModel", &AiAnomalyDetection.ModelArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ModelTrainingDetails: &aianomalydetection.ModelModelTrainingDetailsArgs{
-// 				DataAssetIds:     pulumi.Any(_var.Model_model_training_details_data_asset_ids),
-// 				TargetFap:        pulumi.Any(_var.Model_model_training_details_target_fap),
-// 				TrainingFraction: pulumi.Any(_var.Model_model_training_details_training_fraction),
-// 			},
-// 			ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Model_description),
-// 			DisplayName: pulumi.Any(_var.Model_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.NewModel(ctx, "testModel", &AiAnomalyDetection.ModelArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ModelTrainingDetails: &aianomalydetection.ModelModelTrainingDetailsArgs{
+//					DataAssetIds:     pulumi.Any(_var.Model_model_training_details_data_asset_ids),
+//					TargetFap:        pulumi.Any(_var.Model_model_training_details_target_fap),
+//					TrainingFraction: pulumi.Any(_var.Model_model_training_details_training_fraction),
+//				},
+//				ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Model_description),
+//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -57,7 +60,9 @@ import (
 // Models can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:AiAnomalyDetection/model:Model test_model "id"
+//
+//	$ pulumi import oci:AiAnomalyDetection/model:Model test_model "id"
+//
 // ```
 type Model struct {
 	pulumi.CustomResourceState
@@ -250,7 +255,7 @@ func (i *Model) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 // ModelArrayInput is an input type that accepts ModelArray and ModelArrayOutput values.
 // You can construct a concrete instance of `ModelArrayInput` via:
 //
-//          ModelArray{ ModelArgs{...} }
+//	ModelArray{ ModelArgs{...} }
 type ModelArrayInput interface {
 	pulumi.Input
 
@@ -275,7 +280,7 @@ func (i ModelArray) ToModelArrayOutputWithContext(ctx context.Context) ModelArra
 // ModelMapInput is an input type that accepts ModelMap and ModelMapOutput values.
 // You can construct a concrete instance of `ModelMapInput` via:
 //
-//          ModelMap{ "key": ModelArgs{...} }
+//	ModelMap{ "key": ModelArgs{...} }
 type ModelMapInput interface {
 	pulumi.Input
 

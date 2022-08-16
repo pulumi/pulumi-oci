@@ -21,35 +21,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.NewSubscriber(ctx, "testSubscriber", &ApiGateway.SubscriberArgs{
-// 			Clients: apigateway.SubscriberClientArray{
-// 				&apigateway.SubscriberClientArgs{
-// 					Name:  pulumi.Any(_var.Subscriber_clients_name),
-// 					Token: pulumi.Any(_var.Subscriber_clients_token),
-// 				},
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			UsagePlans:    pulumi.Any(_var.Subscriber_usage_plans),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Subscriber_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.NewSubscriber(ctx, "testSubscriber", &ApiGateway.SubscriberArgs{
+//				Clients: apigateway.SubscriberClientArray{
+//					&apigateway.SubscriberClientArgs{
+//						Name:  pulumi.Any(_var.Subscriber_clients_name),
+//						Token: pulumi.Any(_var.Subscriber_clients_token),
+//					},
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				UsagePlans:    pulumi.Any(_var.Subscriber_usage_plans),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Subscriber_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -57,7 +60,9 @@ import (
 // Subscribers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
+//
+//	$ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
+//
 // ```
 type Subscriber struct {
 	pulumi.CustomResourceState
@@ -228,7 +233,7 @@ func (i *Subscriber) ToSubscriberOutputWithContext(ctx context.Context) Subscrib
 // SubscriberArrayInput is an input type that accepts SubscriberArray and SubscriberArrayOutput values.
 // You can construct a concrete instance of `SubscriberArrayInput` via:
 //
-//          SubscriberArray{ SubscriberArgs{...} }
+//	SubscriberArray{ SubscriberArgs{...} }
 type SubscriberArrayInput interface {
 	pulumi.Input
 
@@ -253,7 +258,7 @@ func (i SubscriberArray) ToSubscriberArrayOutputWithContext(ctx context.Context)
 // SubscriberMapInput is an input type that accepts SubscriberMap and SubscriberMapOutput values.
 // You can construct a concrete instance of `SubscriberMapInput` via:
 //
-//          SubscriberMap{ "key": SubscriberArgs{...} }
+//	SubscriberMap{ "key": SubscriberArgs{...} }
 type SubscriberMapInput interface {
 	pulumi.Input
 

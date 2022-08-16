@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetKeyStores(ctx, &database.GetKeyStoresArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetKeyStores(ctx, &database.GetKeyStoresArgs{
+//				CompartmentId: _var.Compartment_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKeyStores(ctx *pulumi.Context, args *GetKeyStoresArgs, opts ...pulumi.InvokeOption) (*GetKeyStoresResult, error) {
 	var rv GetKeyStoresResult

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousDatabaseDataguardAssociation(ctx, &database.GetAutonomousDatabaseDataguardAssociationArgs{
-// 			AutonomousDatabaseDataguardAssociationId: oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
-// 			AutonomousDatabaseId:                     oci_database_autonomous_database.Test_autonomous_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDatabaseDataguardAssociation(ctx, &database.GetAutonomousDatabaseDataguardAssociationArgs{
+//				AutonomousDatabaseDataguardAssociationId: oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
+//				AutonomousDatabaseId:                     oci_database_autonomous_database.Test_autonomous_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousDatabaseDataguardAssociation(ctx *pulumi.Context, args *GetAutonomousDatabaseDataguardAssociationArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabaseDataguardAssociationResult, error) {
 	var rv GetAutonomousDatabaseDataguardAssociationResult

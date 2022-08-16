@@ -10,16 +10,31 @@ import java.util.Objects;
 @CustomType
 public final class GetVolumeGroupReplicaMemberReplica {
     /**
+     * @return Membership state of the volume replica in relation to the volume group replica.
+     * 
+     */
+    private final String membershipState;
+    /**
      * @return The volume replica ID.
      * 
      */
     private final String volumeReplicaId;
 
     @CustomType.Constructor
-    private GetVolumeGroupReplicaMemberReplica(@CustomType.Parameter("volumeReplicaId") String volumeReplicaId) {
+    private GetVolumeGroupReplicaMemberReplica(
+        @CustomType.Parameter("membershipState") String membershipState,
+        @CustomType.Parameter("volumeReplicaId") String volumeReplicaId) {
+        this.membershipState = membershipState;
         this.volumeReplicaId = volumeReplicaId;
     }
 
+    /**
+     * @return Membership state of the volume replica in relation to the volume group replica.
+     * 
+     */
+    public String membershipState() {
+        return this.membershipState;
+    }
     /**
      * @return The volume replica ID.
      * 
@@ -37,6 +52,7 @@ public final class GetVolumeGroupReplicaMemberReplica {
     }
 
     public static final class Builder {
+        private String membershipState;
         private String volumeReplicaId;
 
         public Builder() {
@@ -45,14 +61,19 @@ public final class GetVolumeGroupReplicaMemberReplica {
 
         public Builder(GetVolumeGroupReplicaMemberReplica defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.membershipState = defaults.membershipState;
     	      this.volumeReplicaId = defaults.volumeReplicaId;
         }
 
+        public Builder membershipState(String membershipState) {
+            this.membershipState = Objects.requireNonNull(membershipState);
+            return this;
+        }
         public Builder volumeReplicaId(String volumeReplicaId) {
             this.volumeReplicaId = Objects.requireNonNull(volumeReplicaId);
             return this;
         }        public GetVolumeGroupReplicaMemberReplica build() {
-            return new GetVolumeGroupReplicaMemberReplica(volumeReplicaId);
+            return new GetVolumeGroupReplicaMemberReplica(membershipState, volumeReplicaId);
         }
     }
 }

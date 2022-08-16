@@ -17,28 +17,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewCompartment(ctx, "testCompartment", &Identity.CompartmentArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Description:   pulumi.Any(_var.Compartment_description),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewCompartment(ctx, "testCompartment", &Identity.CompartmentArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Description:   pulumi.Any(_var.Compartment_description),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // Compartments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
+//
+//	$ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
+//
 // ```
 type Compartment struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *Compartment) ToCompartmentOutputWithContext(ctx context.Context) Compar
 // CompartmentArrayInput is an input type that accepts CompartmentArray and CompartmentArrayOutput values.
 // You can construct a concrete instance of `CompartmentArrayInput` via:
 //
-//          CompartmentArray{ CompartmentArgs{...} }
+//	CompartmentArray{ CompartmentArgs{...} }
 type CompartmentArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i CompartmentArray) ToCompartmentArrayOutputWithContext(ctx context.Contex
 // CompartmentMapInput is an input type that accepts CompartmentMap and CompartmentMapOutput values.
 // You can construct a concrete instance of `CompartmentMapInput` via:
 //
-//          CompartmentMap{ "key": CompartmentArgs{...} }
+//	CompartmentMap{ "key": CompartmentArgs{...} }
 type CompartmentMapInput interface {
 	pulumi.Input
 

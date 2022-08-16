@@ -33,6 +33,11 @@ public final class GetListJreUsageItem {
      */
     private final Integer approximatePendingWorkRequestCount;
     /**
+     * @return The number of days since this release has been under the security baseline.
+     * 
+     */
+    private final Integer daysUnderSecurityBaseline;
+    /**
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
@@ -43,7 +48,7 @@ public final class GetListJreUsageItem {
      */
     private final String endOfSupportLifeDate;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
      * 
      */
     private final String fleetId;
@@ -53,7 +58,7 @@ public final class GetListJreUsageItem {
      */
     private final String id;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
      * 
      */
     private final String managedInstanceId;
@@ -109,6 +114,7 @@ public final class GetListJreUsageItem {
         @CustomType.Parameter("approximateInstallationCount") Integer approximateInstallationCount,
         @CustomType.Parameter("approximateManagedInstanceCount") Integer approximateManagedInstanceCount,
         @CustomType.Parameter("approximatePendingWorkRequestCount") Integer approximatePendingWorkRequestCount,
+        @CustomType.Parameter("daysUnderSecurityBaseline") Integer daysUnderSecurityBaseline,
         @CustomType.Parameter("distribution") String distribution,
         @CustomType.Parameter("endOfSupportLifeDate") String endOfSupportLifeDate,
         @CustomType.Parameter("fleetId") String fleetId,
@@ -127,6 +133,7 @@ public final class GetListJreUsageItem {
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateManagedInstanceCount = approximateManagedInstanceCount;
         this.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
+        this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
         this.distribution = distribution;
         this.endOfSupportLifeDate = endOfSupportLifeDate;
         this.fleetId = fleetId;
@@ -172,6 +179,13 @@ public final class GetListJreUsageItem {
         return this.approximatePendingWorkRequestCount;
     }
     /**
+     * @return The number of days since this release has been under the security baseline.
+     * 
+     */
+    public Integer daysUnderSecurityBaseline() {
+        return this.daysUnderSecurityBaseline;
+    }
+    /**
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
@@ -186,7 +200,7 @@ public final class GetListJreUsageItem {
         return this.endOfSupportLifeDate;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
      * 
      */
     public String fleetId() {
@@ -200,7 +214,7 @@ public final class GetListJreUsageItem {
         return this.id;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
      * 
      */
     public String managedInstanceId() {
@@ -283,6 +297,7 @@ public final class GetListJreUsageItem {
         private Integer approximateInstallationCount;
         private Integer approximateManagedInstanceCount;
         private Integer approximatePendingWorkRequestCount;
+        private Integer daysUnderSecurityBaseline;
         private String distribution;
         private String endOfSupportLifeDate;
         private String fleetId;
@@ -308,6 +323,7 @@ public final class GetListJreUsageItem {
     	      this.approximateInstallationCount = defaults.approximateInstallationCount;
     	      this.approximateManagedInstanceCount = defaults.approximateManagedInstanceCount;
     	      this.approximatePendingWorkRequestCount = defaults.approximatePendingWorkRequestCount;
+    	      this.daysUnderSecurityBaseline = defaults.daysUnderSecurityBaseline;
     	      this.distribution = defaults.distribution;
     	      this.endOfSupportLifeDate = defaults.endOfSupportLifeDate;
     	      this.fleetId = defaults.fleetId;
@@ -338,6 +354,10 @@ public final class GetListJreUsageItem {
         }
         public Builder approximatePendingWorkRequestCount(Integer approximatePendingWorkRequestCount) {
             this.approximatePendingWorkRequestCount = Objects.requireNonNull(approximatePendingWorkRequestCount);
+            return this;
+        }
+        public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
+            this.daysUnderSecurityBaseline = Objects.requireNonNull(daysUnderSecurityBaseline);
             return this;
         }
         public Builder distribution(String distribution) {
@@ -399,7 +419,7 @@ public final class GetListJreUsageItem {
             this.version = Objects.requireNonNull(version);
             return this;
         }        public GetListJreUsageItem build() {
-            return new GetListJreUsageItem(approximateApplicationCount, approximateInstallationCount, approximateManagedInstanceCount, approximatePendingWorkRequestCount, distribution, endOfSupportLifeDate, fleetId, id, managedInstanceId, operatingSystems, releaseDate, securityStatus, timeEnd, timeFirstSeen, timeLastSeen, timeStart, vendor, version);
+            return new GetListJreUsageItem(approximateApplicationCount, approximateInstallationCount, approximateManagedInstanceCount, approximatePendingWorkRequestCount, daysUnderSecurityBaseline, distribution, endOfSupportLifeDate, fleetId, id, managedInstanceId, operatingSystems, releaseDate, securityStatus, timeEnd, timeFirstSeen, timeLastSeen, timeStart, vendor, version);
         }
     }
 }

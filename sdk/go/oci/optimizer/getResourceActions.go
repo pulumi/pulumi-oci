@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetResourceActions(ctx, &optimizer.GetResourceActionsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: _var.Resource_action_compartment_id_in_subtree,
-// 			RecommendationId:       oci_optimizer_recommendation.Test_recommendation.Id,
-// 			Name:                   pulumi.StringRef(_var.Resource_action_name),
-// 			ResourceType:           pulumi.StringRef(_var.Resource_action_resource_type),
-// 			State:                  pulumi.StringRef(_var.Resource_action_state),
-// 			Status:                 pulumi.StringRef(_var.Resource_action_status),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetResourceActions(ctx, &optimizer.GetResourceActionsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: _var.Resource_action_compartment_id_in_subtree,
+//				RecommendationId:       oci_optimizer_recommendation.Test_recommendation.Id,
+//				Name:                   pulumi.StringRef(_var.Resource_action_name),
+//				ResourceType:           pulumi.StringRef(_var.Resource_action_resource_type),
+//				State:                  pulumi.StringRef(_var.Resource_action_state),
+//				Status:                 pulumi.StringRef(_var.Resource_action_status),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetResourceActions(ctx *pulumi.Context, args *GetResourceActionsArgs, opts ...pulumi.InvokeOption) (*GetResourceActionsResult, error) {
 	var rv GetResourceActionsResult

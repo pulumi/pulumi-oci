@@ -22,7 +22,7 @@ type VbInstanceAlternateCustomEndpoint struct {
 // VbInstanceAlternateCustomEndpointInput is an input type that accepts VbInstanceAlternateCustomEndpointArgs and VbInstanceAlternateCustomEndpointOutput values.
 // You can construct a concrete instance of `VbInstanceAlternateCustomEndpointInput` via:
 //
-//          VbInstanceAlternateCustomEndpointArgs{...}
+//	VbInstanceAlternateCustomEndpointArgs{...}
 type VbInstanceAlternateCustomEndpointInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i VbInstanceAlternateCustomEndpointArgs) ToVbInstanceAlternateCustomEndpoi
 // VbInstanceAlternateCustomEndpointArrayInput is an input type that accepts VbInstanceAlternateCustomEndpointArray and VbInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `VbInstanceAlternateCustomEndpointArrayInput` via:
 //
-//          VbInstanceAlternateCustomEndpointArray{ VbInstanceAlternateCustomEndpointArgs{...} }
+//	VbInstanceAlternateCustomEndpointArray{ VbInstanceAlternateCustomEndpointArgs{...} }
 type VbInstanceAlternateCustomEndpointArrayInput interface {
 	pulumi.Input
 
@@ -137,7 +137,7 @@ type VbInstanceCustomEndpoint struct {
 // VbInstanceCustomEndpointInput is an input type that accepts VbInstanceCustomEndpointArgs and VbInstanceCustomEndpointOutput values.
 // You can construct a concrete instance of `VbInstanceCustomEndpointInput` via:
 //
-//          VbInstanceCustomEndpointArgs{...}
+//	VbInstanceCustomEndpointArgs{...}
 type VbInstanceCustomEndpointInput interface {
 	pulumi.Input
 
@@ -177,11 +177,11 @@ func (i VbInstanceCustomEndpointArgs) ToVbInstanceCustomEndpointPtrOutputWithCon
 // VbInstanceCustomEndpointPtrInput is an input type that accepts VbInstanceCustomEndpointArgs, VbInstanceCustomEndpointPtr and VbInstanceCustomEndpointPtrOutput values.
 // You can construct a concrete instance of `VbInstanceCustomEndpointPtrInput` via:
 //
-//          VbInstanceCustomEndpointArgs{...}
+//	        VbInstanceCustomEndpointArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VbInstanceCustomEndpointPtrInput interface {
 	pulumi.Input
 
@@ -312,7 +312,7 @@ type GetVbInstanceAlternateCustomEndpoint struct {
 // GetVbInstanceAlternateCustomEndpointInput is an input type that accepts GetVbInstanceAlternateCustomEndpointArgs and GetVbInstanceAlternateCustomEndpointOutput values.
 // You can construct a concrete instance of `GetVbInstanceAlternateCustomEndpointInput` via:
 //
-//          GetVbInstanceAlternateCustomEndpointArgs{...}
+//	GetVbInstanceAlternateCustomEndpointArgs{...}
 type GetVbInstanceAlternateCustomEndpointInput interface {
 	pulumi.Input
 
@@ -344,7 +344,7 @@ func (i GetVbInstanceAlternateCustomEndpointArgs) ToGetVbInstanceAlternateCustom
 // GetVbInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetVbInstanceAlternateCustomEndpointArray and GetVbInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceAlternateCustomEndpointArrayInput` via:
 //
-//          GetVbInstanceAlternateCustomEndpointArray{ GetVbInstanceAlternateCustomEndpointArgs{...} }
+//	GetVbInstanceAlternateCustomEndpointArray{ GetVbInstanceAlternateCustomEndpointArgs{...} }
 type GetVbInstanceAlternateCustomEndpointArrayInput interface {
 	pulumi.Input
 
@@ -422,7 +422,7 @@ type GetVbInstanceApplicationsApplicationSummaryCollection struct {
 // GetVbInstanceApplicationsApplicationSummaryCollectionInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionArgs and GetVbInstanceApplicationsApplicationSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionInput` via:
 //
-//          GetVbInstanceApplicationsApplicationSummaryCollectionArgs{...}
+//	GetVbInstanceApplicationsApplicationSummaryCollectionArgs{...}
 type GetVbInstanceApplicationsApplicationSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -449,7 +449,7 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionArgs) ToGetVbInstan
 // GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionArray and GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput` via:
 //
-//          GetVbInstanceApplicationsApplicationSummaryCollectionArray{ GetVbInstanceApplicationsApplicationSummaryCollectionArgs{...} }
+//	GetVbInstanceApplicationsApplicationSummaryCollectionArray{ GetVbInstanceApplicationsApplicationSummaryCollectionArgs{...} }
 type GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -525,7 +525,7 @@ type GetVbInstanceApplicationsApplicationSummaryCollectionItem struct {
 // GetVbInstanceApplicationsApplicationSummaryCollectionItemInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs and GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionItemInput` via:
 //
-//          GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs{...}
+//	GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs{...}
 type GetVbInstanceApplicationsApplicationSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -559,7 +559,7 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs) ToGetVbIn
 // GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionItemArray and GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput` via:
 //
-//          GetVbInstanceApplicationsApplicationSummaryCollectionItemArray{ GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs{...} }
+//	GetVbInstanceApplicationsApplicationSummaryCollectionItemArray{ GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs{...} }
 type GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -647,7 +647,7 @@ type GetVbInstanceCustomEndpoint struct {
 // GetVbInstanceCustomEndpointInput is an input type that accepts GetVbInstanceCustomEndpointArgs and GetVbInstanceCustomEndpointOutput values.
 // You can construct a concrete instance of `GetVbInstanceCustomEndpointInput` via:
 //
-//          GetVbInstanceCustomEndpointArgs{...}
+//	GetVbInstanceCustomEndpointArgs{...}
 type GetVbInstanceCustomEndpointInput interface {
 	pulumi.Input
 
@@ -679,7 +679,7 @@ func (i GetVbInstanceCustomEndpointArgs) ToGetVbInstanceCustomEndpointOutputWith
 // GetVbInstanceCustomEndpointArrayInput is an input type that accepts GetVbInstanceCustomEndpointArray and GetVbInstanceCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceCustomEndpointArrayInput` via:
 //
-//          GetVbInstanceCustomEndpointArray{ GetVbInstanceCustomEndpointArgs{...} }
+//	GetVbInstanceCustomEndpointArray{ GetVbInstanceCustomEndpointArgs{...} }
 type GetVbInstanceCustomEndpointArrayInput interface {
 	pulumi.Input
 
@@ -759,7 +759,7 @@ type GetVbInstancesFilter struct {
 // GetVbInstancesFilterInput is an input type that accepts GetVbInstancesFilterArgs and GetVbInstancesFilterOutput values.
 // You can construct a concrete instance of `GetVbInstancesFilterInput` via:
 //
-//          GetVbInstancesFilterArgs{...}
+//	GetVbInstancesFilterArgs{...}
 type GetVbInstancesFilterInput interface {
 	pulumi.Input
 
@@ -788,7 +788,7 @@ func (i GetVbInstancesFilterArgs) ToGetVbInstancesFilterOutputWithContext(ctx co
 // GetVbInstancesFilterArrayInput is an input type that accepts GetVbInstancesFilterArray and GetVbInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesFilterArrayInput` via:
 //
-//          GetVbInstancesFilterArray{ GetVbInstancesFilterArgs{...} }
+//	GetVbInstancesFilterArray{ GetVbInstancesFilterArgs{...} }
 type GetVbInstancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -863,7 +863,7 @@ type GetVbInstancesVbInstanceSummaryCollection struct {
 // GetVbInstancesVbInstanceSummaryCollectionInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionArgs and GetVbInstancesVbInstanceSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionArgs{...}
+//	GetVbInstancesVbInstanceSummaryCollectionArgs{...}
 type GetVbInstancesVbInstanceSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -890,7 +890,7 @@ func (i GetVbInstancesVbInstanceSummaryCollectionArgs) ToGetVbInstancesVbInstanc
 // GetVbInstancesVbInstanceSummaryCollectionArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionArray and GetVbInstancesVbInstanceSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionArrayInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionArray{ GetVbInstancesVbInstanceSummaryCollectionArgs{...} }
+//	GetVbInstancesVbInstanceSummaryCollectionArray{ GetVbInstancesVbInstanceSummaryCollectionArgs{...} }
 type GetVbInstancesVbInstanceSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -991,7 +991,7 @@ type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 // GetVbInstancesVbInstanceSummaryCollectionItemInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemArgs and GetVbInstancesVbInstanceSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionItemArgs{...}
+//	GetVbInstancesVbInstanceSummaryCollectionItemArgs{...}
 type GetVbInstancesVbInstanceSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -1050,7 +1050,7 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemArgs) ToGetVbInstancesVbIns
 // GetVbInstancesVbInstanceSummaryCollectionItemArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemArray and GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemArrayInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionItemArray{ GetVbInstancesVbInstanceSummaryCollectionItemArgs{...} }
+//	GetVbInstancesVbInstanceSummaryCollectionItemArray{ GetVbInstancesVbInstanceSummaryCollectionItemArgs{...} }
 type GetVbInstancesVbInstanceSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1206,7 +1206,7 @@ type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint struct
 // GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs and GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs{...}
+//	GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs{...}
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput interface {
 	pulumi.Input
 
@@ -1238,7 +1238,7 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs
 // GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray and GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray{ GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs{...} }
+//	GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray{ GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs{...} }
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput interface {
 	pulumi.Input
 
@@ -1325,7 +1325,7 @@ type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint struct {
 // GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs and GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs{...}
+//	GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs{...}
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput interface {
 	pulumi.Input
 
@@ -1357,7 +1357,7 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ToGetVb
 // GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray and GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput` via:
 //
-//          GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray{ GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs{...} }
+//	GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray{ GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs{...} }
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput interface {
 	pulumi.Input
 

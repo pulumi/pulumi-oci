@@ -26,21 +26,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetFastConnectProviderServices(ctx, &core.GetFastConnectProviderServicesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetFastConnectProviderServices(ctx, &core.GetFastConnectProviderServicesArgs{
+//				CompartmentId: _var.Compartment_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFastConnectProviderServices(ctx *pulumi.Context, args *GetFastConnectProviderServicesArgs, opts ...pulumi.InvokeOption) (*GetFastConnectProviderServicesResult, error) {
 	var rv GetFastConnectProviderServicesResult

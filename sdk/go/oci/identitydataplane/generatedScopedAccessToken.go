@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/IdentityDataPlane"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/IdentityDataPlane"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := IdentityDataPlane.NewGeneratedScopedAccessToken(ctx, "testGenerateScopedAccessToken", &IdentityDataPlane.GeneratedScopedAccessTokenArgs{
-// 			PublicKey: pulumi.Any(_var.Generate_scoped_access_token_public_key),
-// 			Scope:     pulumi.Any(_var.Generate_scoped_access_token_scope),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := IdentityDataPlane.NewGeneratedScopedAccessToken(ctx, "testGenerateScopedAccessToken", &IdentityDataPlane.GeneratedScopedAccessTokenArgs{
+//				PublicKey: pulumi.Any(_var.Generate_scoped_access_token_public_key),
+//				Scope:     pulumi.Any(_var.Generate_scoped_access_token_scope),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // GenerateScopedAccessToken can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
+//
+//	$ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
+//
 // ```
 type GeneratedScopedAccessToken struct {
 	pulumi.CustomResourceState
@@ -154,7 +159,7 @@ func (i *GeneratedScopedAccessToken) ToGeneratedScopedAccessTokenOutputWithConte
 // GeneratedScopedAccessTokenArrayInput is an input type that accepts GeneratedScopedAccessTokenArray and GeneratedScopedAccessTokenArrayOutput values.
 // You can construct a concrete instance of `GeneratedScopedAccessTokenArrayInput` via:
 //
-//          GeneratedScopedAccessTokenArray{ GeneratedScopedAccessTokenArgs{...} }
+//	GeneratedScopedAccessTokenArray{ GeneratedScopedAccessTokenArgs{...} }
 type GeneratedScopedAccessTokenArrayInput interface {
 	pulumi.Input
 
@@ -179,7 +184,7 @@ func (i GeneratedScopedAccessTokenArray) ToGeneratedScopedAccessTokenArrayOutput
 // GeneratedScopedAccessTokenMapInput is an input type that accepts GeneratedScopedAccessTokenMap and GeneratedScopedAccessTokenMapOutput values.
 // You can construct a concrete instance of `GeneratedScopedAccessTokenMapInput` via:
 //
-//          GeneratedScopedAccessTokenMap{ "key": GeneratedScopedAccessTokenArgs{...} }
+//	GeneratedScopedAccessTokenMap{ "key": GeneratedScopedAccessTokenArgs{...} }
 type GeneratedScopedAccessTokenMapInput interface {
 	pulumi.Input
 

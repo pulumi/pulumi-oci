@@ -49,31 +49,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.NewFileSystem(ctx, "testFileSystem", &FileStorage.FileSystemArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.File_system_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.File_system_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			KmsKeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-// 			SourceSnapshotId: pulumi.Any(oci_file_storage_snapshot.Test_snapshot.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.NewFileSystem(ctx, "testFileSystem", &FileStorage.FileSystemArgs{
+//				AvailabilityDomain: pulumi.Any(_var.File_system_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.File_system_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				KmsKeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
+//				SourceSnapshotId: pulumi.Any(oci_file_storage_snapshot.Test_snapshot.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -81,7 +84,9 @@ import (
 // FileSystems can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
+//
+//	$ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
+//
 // ```
 type FileSystem struct {
 	pulumi.CustomResourceState
@@ -277,7 +282,7 @@ func (i *FileSystem) ToFileSystemOutputWithContext(ctx context.Context) FileSyst
 // FileSystemArrayInput is an input type that accepts FileSystemArray and FileSystemArrayOutput values.
 // You can construct a concrete instance of `FileSystemArrayInput` via:
 //
-//          FileSystemArray{ FileSystemArgs{...} }
+//	FileSystemArray{ FileSystemArgs{...} }
 type FileSystemArrayInput interface {
 	pulumi.Input
 
@@ -302,7 +307,7 @@ func (i FileSystemArray) ToFileSystemArrayOutputWithContext(ctx context.Context)
 // FileSystemMapInput is an input type that accepts FileSystemMap and FileSystemMapOutput values.
 // You can construct a concrete instance of `FileSystemMapInput` via:
 //
-//          FileSystemMap{ "key": FileSystemArgs{...} }
+//	FileSystemMap{ "key": FileSystemArgs{...} }
 type FileSystemMapInput interface {
 	pulumi.Input
 

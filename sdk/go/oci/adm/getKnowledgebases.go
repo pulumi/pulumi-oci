@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Adm"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Adm"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Adm.GetKnowledgebases(ctx, &adm.GetKnowledgebasesArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Knowledge_base_display_name),
-// 			Id:            pulumi.StringRef(_var.Knowledge_base_id),
-// 			State:         pulumi.StringRef(_var.Knowledge_base_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Adm.GetKnowledgebases(ctx, &adm.GetKnowledgebasesArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:   pulumi.StringRef(_var.Knowledge_base_display_name),
+//				Id:            pulumi.StringRef(_var.Knowledge_base_id),
+//				State:         pulumi.StringRef(_var.Knowledge_base_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKnowledgebases(ctx *pulumi.Context, args *GetKnowledgebasesArgs, opts ...pulumi.InvokeOption) (*GetKnowledgebasesResult, error) {
 	var rv GetKnowledgebasesResult

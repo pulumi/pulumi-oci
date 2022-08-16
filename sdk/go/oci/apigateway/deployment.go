@@ -21,266 +21,269 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.NewDeployment(ctx, "testDeployment", &ApiGateway.DeploymentArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			GatewayId:     pulumi.Any(oci_apigateway_gateway.Test_gateway.Id),
-// 			PathPrefix:    pulumi.Any(_var.Deployment_path_prefix),
-// 			Specification: &apigateway.DeploymentSpecificationArgs{
-// 				LoggingPolicies: &apigateway.DeploymentSpecificationLoggingPoliciesArgs{
-// 					AccessLog: &apigateway.DeploymentSpecificationLoggingPoliciesAccessLogArgs{
-// 						IsEnabled: pulumi.Any(_var.Deployment_specification_logging_policies_access_log_is_enabled),
-// 					},
-// 					ExecutionLog: &apigateway.DeploymentSpecificationLoggingPoliciesExecutionLogArgs{
-// 						IsEnabled: pulumi.Any(_var.Deployment_specification_logging_policies_execution_log_is_enabled),
-// 						LogLevel:  pulumi.Any(_var.Deployment_specification_logging_policies_execution_log_log_level),
-// 					},
-// 				},
-// 				RequestPolicies: &apigateway.DeploymentSpecificationRequestPoliciesArgs{
-// 					Authentication: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationArgs{
-// 						Type:                     pulumi.Any(_var.Deployment_specification_request_policies_authentication_type),
-// 						Audiences:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_audiences),
-// 						FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
-// 						IsAnonymousAccessAllowed: pulumi.Any(_var.Deployment_specification_request_policies_authentication_is_anonymous_access_allowed),
-// 						Issuers:                  pulumi.Any(_var.Deployment_specification_request_policies_authentication_issuers),
-// 						MaxClockSkewInSeconds:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_max_clock_skew_in_seconds),
-// 						PublicKeys: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs{
-// 							Type:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_type),
-// 							IsSslVerifyDisabled: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled),
-// 							Keys: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArray{
-// 								&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs{
-// 									Format: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_format),
-// 									Alg:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_alg),
-// 									E:      pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_e),
-// 									Key:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_key),
-// 									KeyOps: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_key_ops),
-// 									Kid:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_kid),
-// 									Kty:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_kty),
-// 									N:      pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_n),
-// 									Use:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_use),
-// 								},
-// 							},
-// 							MaxCacheDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours),
-// 							Uri:                     pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_uri),
-// 						},
-// 						TokenAuthScheme: pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_auth_scheme),
-// 						TokenHeader:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_header),
-// 						TokenQueryParam: pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_query_param),
-// 						VerifyClaims: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArray{
-// 							&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs{
-// 								IsRequired: pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_is_required),
-// 								Key:        pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_key),
-// 								Values:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_values),
-// 							},
-// 						},
-// 					},
-// 					Cors: &apigateway.DeploymentSpecificationRequestPoliciesCorsArgs{
-// 						AllowedOrigins:            pulumi.Any(_var.Deployment_specification_request_policies_cors_allowed_origins),
-// 						AllowedHeaders:            pulumi.Any(_var.Deployment_specification_request_policies_cors_allowed_headers),
-// 						AllowedMethods:            pulumi.Any(_var.Deployment_specification_request_policies_cors_allowed_methods),
-// 						ExposedHeaders:            pulumi.Any(_var.Deployment_specification_request_policies_cors_exposed_headers),
-// 						IsAllowCredentialsEnabled: pulumi.Any(_var.Deployment_specification_request_policies_cors_is_allow_credentials_enabled),
-// 						MaxAgeInSeconds:           pulumi.Any(_var.Deployment_specification_request_policies_cors_max_age_in_seconds),
-// 					},
-// 					MutualTls: &apigateway.DeploymentSpecificationRequestPoliciesMutualTlsArgs{
-// 						AllowedSans:                   pulumi.Any(_var.Deployment_specification_request_policies_mutual_tls_allowed_sans),
-// 						IsVerifiedCertificateRequired: pulumi.Any(_var.Deployment_specification_request_policies_mutual_tls_is_verified_certificate_required),
-// 					},
-// 					RateLimiting: &apigateway.DeploymentSpecificationRequestPoliciesRateLimitingArgs{
-// 						RateInRequestsPerSecond: pulumi.Any(_var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second),
-// 						RateKey:                 pulumi.Any(_var.Deployment_specification_request_policies_rate_limiting_rate_key),
-// 					},
-// 					UsagePlans: &apigateway.DeploymentSpecificationRequestPoliciesUsagePlansArgs{
-// 						TokenLocations: pulumi.Any(_var.Deployment_specification_request_policies_usage_plans_token_locations),
-// 					},
-// 				},
-// 				Routes: apigateway.DeploymentSpecificationRouteArray{
-// 					&apigateway.DeploymentSpecificationRouteArgs{
-// 						Backend: &apigateway.DeploymentSpecificationRouteBackendArgs{
-// 							Type:                    pulumi.Any(_var.Deployment_specification_routes_backend_type),
-// 							Body:                    pulumi.Any(_var.Deployment_specification_routes_backend_body),
-// 							ConnectTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_connect_timeout_in_seconds),
-// 							FunctionId:              pulumi.Any(oci_functions_function.Test_function.Id),
-// 							Headers: apigateway.DeploymentSpecificationRouteBackendHeaderArray{
-// 								&apigateway.DeploymentSpecificationRouteBackendHeaderArgs{
-// 									Name:  pulumi.Any(_var.Deployment_specification_routes_backend_headers_name),
-// 									Value: pulumi.Any(_var.Deployment_specification_routes_backend_headers_value),
-// 								},
-// 							},
-// 							IsSslVerifyDisabled:  pulumi.Any(_var.Deployment_specification_routes_backend_is_ssl_verify_disabled),
-// 							ReadTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_read_timeout_in_seconds),
-// 							SendTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_send_timeout_in_seconds),
-// 							Status:               pulumi.Any(_var.Deployment_specification_routes_backend_status),
-// 							Url:                  pulumi.Any(_var.Deployment_specification_routes_backend_url),
-// 						},
-// 						Path: pulumi.Any(_var.Deployment_specification_routes_path),
-// 						LoggingPolicies: &apigateway.DeploymentSpecificationRouteLoggingPoliciesArgs{
-// 							AccessLog: &apigateway.DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs{
-// 								IsEnabled: pulumi.Any(_var.Deployment_specification_routes_logging_policies_access_log_is_enabled),
-// 							},
-// 							ExecutionLog: &apigateway.DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs{
-// 								IsEnabled: pulumi.Any(_var.Deployment_specification_routes_logging_policies_execution_log_is_enabled),
-// 								LogLevel:  pulumi.Any(_var.Deployment_specification_routes_logging_policies_execution_log_log_level),
-// 							},
-// 						},
-// 						Methods: pulumi.Any(_var.Deployment_specification_routes_methods),
-// 						RequestPolicies: &apigateway.DeploymentSpecificationRouteRequestPoliciesArgs{
-// 							Authorization: &apigateway.DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs{
-// 								AllowedScopes: pulumi.Any(_var.Deployment_specification_routes_request_policies_authorization_allowed_scope),
-// 								Type:          pulumi.Any(_var.Deployment_specification_routes_request_policies_authorization_type),
-// 							},
-// 							BodyValidation: &apigateway.DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs{
-// 								Contents: apigateway.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArray{
-// 									&apigateway.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs{
-// 										MediaType:      pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_content_media_type),
-// 										ValidationType: pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_content_validation_type),
-// 									},
-// 								},
-// 								Required:       pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_required),
-// 								ValidationMode: pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_validation_mode),
-// 							},
-// 							Cors: &apigateway.DeploymentSpecificationRouteRequestPoliciesCorsArgs{
-// 								AllowedOrigins:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_allowed_origins),
-// 								AllowedHeaders:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_allowed_headers),
-// 								AllowedMethods:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_allowed_methods),
-// 								ExposedHeaders:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_exposed_headers),
-// 								IsAllowCredentialsEnabled: pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled),
-// 								MaxAgeInSeconds:           pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_max_age_in_seconds),
-// 							},
-// 							HeaderTransformations: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs{
-// 								FilterHeaders: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs{
-// 											Name: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_items_name),
-// 										},
-// 									},
-// 									Type: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_type),
-// 								},
-// 								RenameHeaders: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs{
-// 											From: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_from),
-// 											To:   pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_to),
-// 										},
-// 									},
-// 								},
-// 								SetHeaders: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs{
-// 											Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_name),
-// 											Values:   pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_values),
-// 											IfExists: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_if_exists),
-// 										},
-// 									},
-// 								},
-// 							},
-// 							HeaderValidations: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs{
-// 								Headers: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArray{
-// 									&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs{
-// 										Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_header_validations_headers_name),
-// 										Required: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_validations_headers_required),
-// 									},
-// 								},
-// 								ValidationMode: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_validations_validation_mode),
-// 							},
-// 							QueryParameterTransformations: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs{
-// 								FilterQueryParameters: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs{
-// 											Name: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_items_name),
-// 										},
-// 									},
-// 									Type: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_type),
-// 								},
-// 								RenameQueryParameters: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs{
-// 											From: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_from),
-// 											To:   pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_to),
-// 										},
-// 									},
-// 								},
-// 								SetQueryParameters: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs{
-// 											Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_name),
-// 											Values:   pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_values),
-// 											IfExists: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_if_exists),
-// 										},
-// 									},
-// 								},
-// 							},
-// 							QueryParameterValidations: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs{
-// 								Parameters: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArray{
-// 									&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs{
-// 										Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_name),
-// 										Required: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_required),
-// 									},
-// 								},
-// 								ValidationMode: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_validations_validation_mode),
-// 							},
-// 							ResponseCacheLookup: &apigateway.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs{
-// 								Type:                    pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_type),
-// 								CacheKeyAdditions:       pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions),
-// 								IsEnabled:               pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_is_enabled),
-// 								IsPrivateCachingEnabled: pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled),
-// 							},
-// 						},
-// 						ResponsePolicies: &apigateway.DeploymentSpecificationRouteResponsePoliciesArgs{
-// 							HeaderTransformations: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs{
-// 								FilterHeaders: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs{
-// 											Name: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_items_name),
-// 										},
-// 									},
-// 									Type: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_type),
-// 								},
-// 								RenameHeaders: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs{
-// 											From: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_from),
-// 											To:   pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_to),
-// 										},
-// 									},
-// 								},
-// 								SetHeaders: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs{
-// 									Items: apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArray{
-// 										&apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs{
-// 											Name:     pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_name),
-// 											Values:   pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_values),
-// 											IfExists: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_if_exists),
-// 										},
-// 									},
-// 								},
-// 							},
-// 							ResponseCacheStore: &apigateway.DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs{
-// 								TimeToLiveInSeconds: pulumi.Any(_var.Deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds),
-// 								Type:                pulumi.Any(_var.Deployment_specification_routes_response_policies_response_cache_store_type),
-// 							},
-// 						},
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Deployment_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.NewDeployment(ctx, "testDeployment", &ApiGateway.DeploymentArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				GatewayId:     pulumi.Any(oci_apigateway_gateway.Test_gateway.Id),
+//				PathPrefix:    pulumi.Any(_var.Deployment_path_prefix),
+//				Specification: &apigateway.DeploymentSpecificationArgs{
+//					LoggingPolicies: &apigateway.DeploymentSpecificationLoggingPoliciesArgs{
+//						AccessLog: &apigateway.DeploymentSpecificationLoggingPoliciesAccessLogArgs{
+//							IsEnabled: pulumi.Any(_var.Deployment_specification_logging_policies_access_log_is_enabled),
+//						},
+//						ExecutionLog: &apigateway.DeploymentSpecificationLoggingPoliciesExecutionLogArgs{
+//							IsEnabled: pulumi.Any(_var.Deployment_specification_logging_policies_execution_log_is_enabled),
+//							LogLevel:  pulumi.Any(_var.Deployment_specification_logging_policies_execution_log_log_level),
+//						},
+//					},
+//					RequestPolicies: &apigateway.DeploymentSpecificationRequestPoliciesArgs{
+//						Authentication: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationArgs{
+//							Type:                     pulumi.Any(_var.Deployment_specification_request_policies_authentication_type),
+//							Audiences:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_audiences),
+//							FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
+//							IsAnonymousAccessAllowed: pulumi.Any(_var.Deployment_specification_request_policies_authentication_is_anonymous_access_allowed),
+//							Issuers:                  pulumi.Any(_var.Deployment_specification_request_policies_authentication_issuers),
+//							MaxClockSkewInSeconds:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_max_clock_skew_in_seconds),
+//							PublicKeys: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs{
+//								Type:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_type),
+//								IsSslVerifyDisabled: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled),
+//								Keys: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArray{
+//									&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs{
+//										Format: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_format),
+//										Alg:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_alg),
+//										E:      pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_e),
+//										Key:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_key),
+//										KeyOps: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_key_ops),
+//										Kid:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_kid),
+//										Kty:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_kty),
+//										N:      pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_n),
+//										Use:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_keys_use),
+//									},
+//								},
+//								MaxCacheDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours),
+//								Uri:                     pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_uri),
+//							},
+//							TokenAuthScheme: pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_auth_scheme),
+//							TokenHeader:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_header),
+//							TokenQueryParam: pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_query_param),
+//							VerifyClaims: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArray{
+//								&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs{
+//									IsRequired: pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_is_required),
+//									Key:        pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_key),
+//									Values:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_values),
+//								},
+//							},
+//						},
+//						Cors: &apigateway.DeploymentSpecificationRequestPoliciesCorsArgs{
+//							AllowedOrigins:            pulumi.Any(_var.Deployment_specification_request_policies_cors_allowed_origins),
+//							AllowedHeaders:            pulumi.Any(_var.Deployment_specification_request_policies_cors_allowed_headers),
+//							AllowedMethods:            pulumi.Any(_var.Deployment_specification_request_policies_cors_allowed_methods),
+//							ExposedHeaders:            pulumi.Any(_var.Deployment_specification_request_policies_cors_exposed_headers),
+//							IsAllowCredentialsEnabled: pulumi.Any(_var.Deployment_specification_request_policies_cors_is_allow_credentials_enabled),
+//							MaxAgeInSeconds:           pulumi.Any(_var.Deployment_specification_request_policies_cors_max_age_in_seconds),
+//						},
+//						MutualTls: &apigateway.DeploymentSpecificationRequestPoliciesMutualTlsArgs{
+//							AllowedSans:                   pulumi.Any(_var.Deployment_specification_request_policies_mutual_tls_allowed_sans),
+//							IsVerifiedCertificateRequired: pulumi.Any(_var.Deployment_specification_request_policies_mutual_tls_is_verified_certificate_required),
+//						},
+//						RateLimiting: &apigateway.DeploymentSpecificationRequestPoliciesRateLimitingArgs{
+//							RateInRequestsPerSecond: pulumi.Any(_var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second),
+//							RateKey:                 pulumi.Any(_var.Deployment_specification_request_policies_rate_limiting_rate_key),
+//						},
+//						UsagePlans: &apigateway.DeploymentSpecificationRequestPoliciesUsagePlansArgs{
+//							TokenLocations: pulumi.Any(_var.Deployment_specification_request_policies_usage_plans_token_locations),
+//						},
+//					},
+//					Routes: apigateway.DeploymentSpecificationRouteArray{
+//						&apigateway.DeploymentSpecificationRouteArgs{
+//							Backend: &apigateway.DeploymentSpecificationRouteBackendArgs{
+//								Type:                    pulumi.Any(_var.Deployment_specification_routes_backend_type),
+//								Body:                    pulumi.Any(_var.Deployment_specification_routes_backend_body),
+//								ConnectTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_connect_timeout_in_seconds),
+//								FunctionId:              pulumi.Any(oci_functions_function.Test_function.Id),
+//								Headers: apigateway.DeploymentSpecificationRouteBackendHeaderArray{
+//									&apigateway.DeploymentSpecificationRouteBackendHeaderArgs{
+//										Name:  pulumi.Any(_var.Deployment_specification_routes_backend_headers_name),
+//										Value: pulumi.Any(_var.Deployment_specification_routes_backend_headers_value),
+//									},
+//								},
+//								IsSslVerifyDisabled:  pulumi.Any(_var.Deployment_specification_routes_backend_is_ssl_verify_disabled),
+//								ReadTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_read_timeout_in_seconds),
+//								SendTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_send_timeout_in_seconds),
+//								Status:               pulumi.Any(_var.Deployment_specification_routes_backend_status),
+//								Url:                  pulumi.Any(_var.Deployment_specification_routes_backend_url),
+//							},
+//							Path: pulumi.Any(_var.Deployment_specification_routes_path),
+//							LoggingPolicies: &apigateway.DeploymentSpecificationRouteLoggingPoliciesArgs{
+//								AccessLog: &apigateway.DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs{
+//									IsEnabled: pulumi.Any(_var.Deployment_specification_routes_logging_policies_access_log_is_enabled),
+//								},
+//								ExecutionLog: &apigateway.DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs{
+//									IsEnabled: pulumi.Any(_var.Deployment_specification_routes_logging_policies_execution_log_is_enabled),
+//									LogLevel:  pulumi.Any(_var.Deployment_specification_routes_logging_policies_execution_log_log_level),
+//								},
+//							},
+//							Methods: pulumi.Any(_var.Deployment_specification_routes_methods),
+//							RequestPolicies: &apigateway.DeploymentSpecificationRouteRequestPoliciesArgs{
+//								Authorization: &apigateway.DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs{
+//									AllowedScopes: pulumi.Any(_var.Deployment_specification_routes_request_policies_authorization_allowed_scope),
+//									Type:          pulumi.Any(_var.Deployment_specification_routes_request_policies_authorization_type),
+//								},
+//								BodyValidation: &apigateway.DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs{
+//									Contents: apigateway.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArray{
+//										&apigateway.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs{
+//											MediaType:      pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_content_media_type),
+//											ValidationType: pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_content_validation_type),
+//										},
+//									},
+//									Required:       pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_required),
+//									ValidationMode: pulumi.Any(_var.Deployment_specification_routes_request_policies_body_validation_validation_mode),
+//								},
+//								Cors: &apigateway.DeploymentSpecificationRouteRequestPoliciesCorsArgs{
+//									AllowedOrigins:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_allowed_origins),
+//									AllowedHeaders:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_allowed_headers),
+//									AllowedMethods:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_allowed_methods),
+//									ExposedHeaders:            pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_exposed_headers),
+//									IsAllowCredentialsEnabled: pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled),
+//									MaxAgeInSeconds:           pulumi.Any(_var.Deployment_specification_routes_request_policies_cors_max_age_in_seconds),
+//								},
+//								HeaderTransformations: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs{
+//									FilterHeaders: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs{
+//												Name: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_items_name),
+//											},
+//										},
+//										Type: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_type),
+//									},
+//									RenameHeaders: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs{
+//												From: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_from),
+//												To:   pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_to),
+//											},
+//										},
+//									},
+//									SetHeaders: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs{
+//												Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_name),
+//												Values:   pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_values),
+//												IfExists: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_if_exists),
+//											},
+//										},
+//									},
+//								},
+//								HeaderValidations: &apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs{
+//									Headers: apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArray{
+//										&apigateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs{
+//											Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_header_validations_headers_name),
+//											Required: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_validations_headers_required),
+//										},
+//									},
+//									ValidationMode: pulumi.Any(_var.Deployment_specification_routes_request_policies_header_validations_validation_mode),
+//								},
+//								QueryParameterTransformations: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs{
+//									FilterQueryParameters: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArray{
+//											&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs{
+//												Name: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_items_name),
+//											},
+//										},
+//										Type: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_type),
+//									},
+//									RenameQueryParameters: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArray{
+//											&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs{
+//												From: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_from),
+//												To:   pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_to),
+//											},
+//										},
+//									},
+//									SetQueryParameters: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArray{
+//											&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs{
+//												Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_name),
+//												Values:   pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_values),
+//												IfExists: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_if_exists),
+//											},
+//										},
+//									},
+//								},
+//								QueryParameterValidations: &apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs{
+//									Parameters: apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArray{
+//										&apigateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs{
+//											Name:     pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_name),
+//											Required: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_required),
+//										},
+//									},
+//									ValidationMode: pulumi.Any(_var.Deployment_specification_routes_request_policies_query_parameter_validations_validation_mode),
+//								},
+//								ResponseCacheLookup: &apigateway.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs{
+//									Type:                    pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_type),
+//									CacheKeyAdditions:       pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions),
+//									IsEnabled:               pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_is_enabled),
+//									IsPrivateCachingEnabled: pulumi.Any(_var.Deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled),
+//								},
+//							},
+//							ResponsePolicies: &apigateway.DeploymentSpecificationRouteResponsePoliciesArgs{
+//								HeaderTransformations: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs{
+//									FilterHeaders: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs{
+//												Name: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_items_name),
+//											},
+//										},
+//										Type: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_type),
+//									},
+//									RenameHeaders: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs{
+//												From: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_from),
+//												To:   pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_to),
+//											},
+//										},
+//									},
+//									SetHeaders: &apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs{
+//												Name:     pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_name),
+//												Values:   pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_values),
+//												IfExists: pulumi.Any(_var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_if_exists),
+//											},
+//										},
+//									},
+//								},
+//								ResponseCacheStore: &apigateway.DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs{
+//									TimeToLiveInSeconds: pulumi.Any(_var.Deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds),
+//									Type:                pulumi.Any(_var.Deployment_specification_routes_response_policies_response_cache_store_type),
+//								},
+//							},
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Deployment_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -288,7 +291,9 @@ import (
 // Deployments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApiGateway/deployment:Deployment test_deployment "id"
+//
+//	$ pulumi import oci:ApiGateway/deployment:Deployment test_deployment "id"
+//
 // ```
 type Deployment struct {
 	pulumi.CustomResourceState
@@ -478,7 +483,7 @@ func (i *Deployment) ToDeploymentOutputWithContext(ctx context.Context) Deployme
 // DeploymentArrayInput is an input type that accepts DeploymentArray and DeploymentArrayOutput values.
 // You can construct a concrete instance of `DeploymentArrayInput` via:
 //
-//          DeploymentArray{ DeploymentArgs{...} }
+//	DeploymentArray{ DeploymentArgs{...} }
 type DeploymentArrayInput interface {
 	pulumi.Input
 
@@ -503,7 +508,7 @@ func (i DeploymentArray) ToDeploymentArrayOutputWithContext(ctx context.Context)
 // DeploymentMapInput is an input type that accepts DeploymentMap and DeploymentMapOutput values.
 // You can construct a concrete instance of `DeploymentMapInput` via:
 //
-//          DeploymentMap{ "key": DeploymentArgs{...} }
+//	DeploymentMap{ "key": DeploymentArgs{...} }
 type DeploymentMapInput interface {
 	pulumi.Input
 

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.GetTopUtilizedProductLicenses(ctx, &licensemanager.GetTopUtilizedProductLicensesArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Top_utilized_product_license_is_compartment_id_in_subtree),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.GetTopUtilizedProductLicenses(ctx, &licensemanager.GetTopUtilizedProductLicensesArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Top_utilized_product_license_is_compartment_id_in_subtree),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTopUtilizedProductLicenses(ctx *pulumi.Context, args *GetTopUtilizedProductLicensesArgs, opts ...pulumi.InvokeOption) (*GetTopUtilizedProductLicensesResult, error) {
 	var rv GetTopUtilizedProductLicensesResult

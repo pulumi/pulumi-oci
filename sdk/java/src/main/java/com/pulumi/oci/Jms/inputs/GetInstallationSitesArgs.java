@@ -159,6 +159,51 @@ public final class GetInstallationSitesArgs extends com.pulumi.resources.InvokeA
         return Optional.ofNullable(this.osFamilies);
     }
 
+    /**
+     * Filter the list with path contains the given value.
+     * 
+     */
+    @Import(name="pathContains")
+    private @Nullable Output<String> pathContains;
+
+    /**
+     * @return Filter the list with path contains the given value.
+     * 
+     */
+    public Optional<Output<String>> pathContains() {
+        return Optional.ofNullable(this.pathContains);
+    }
+
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    @Import(name="timeEnd")
+    private @Nullable Output<String> timeEnd;
+
+    /**
+     * @return The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    public Optional<Output<String>> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
+    }
+
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    @Import(name="timeStart")
+    private @Nullable Output<String> timeStart;
+
+    /**
+     * @return The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
+    public Optional<Output<String>> timeStart() {
+        return Optional.ofNullable(this.timeStart);
+    }
+
     private GetInstallationSitesArgs() {}
 
     private GetInstallationSitesArgs(GetInstallationSitesArgs $) {
@@ -172,6 +217,9 @@ public final class GetInstallationSitesArgs extends com.pulumi.resources.InvokeA
         this.jreVersion = $.jreVersion;
         this.managedInstanceId = $.managedInstanceId;
         this.osFamilies = $.osFamilies;
+        this.pathContains = $.pathContains;
+        this.timeEnd = $.timeEnd;
+        this.timeStart = $.timeStart;
     }
 
     public static Builder builder() {
@@ -402,6 +450,69 @@ public final class GetInstallationSitesArgs extends com.pulumi.resources.InvokeA
          */
         public Builder osFamilies(String... osFamilies) {
             return osFamilies(List.of(osFamilies));
+        }
+
+        /**
+         * @param pathContains Filter the list with path contains the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pathContains(@Nullable Output<String> pathContains) {
+            $.pathContains = pathContains;
+            return this;
+        }
+
+        /**
+         * @param pathContains Filter the list with path contains the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pathContains(String pathContains) {
+            return pathContains(Output.of(pathContains));
+        }
+
+        /**
+         * @param timeEnd The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeEnd(@Nullable Output<String> timeEnd) {
+            $.timeEnd = timeEnd;
+            return this;
+        }
+
+        /**
+         * @param timeEnd The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeEnd(String timeEnd) {
+            return timeEnd(Output.of(timeEnd));
+        }
+
+        /**
+         * @param timeStart The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeStart(@Nullable Output<String> timeStart) {
+            $.timeStart = timeStart;
+            return this;
+        }
+
+        /**
+         * @param timeStart The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeStart(String timeStart) {
+            return timeStart(Output.of(timeStart));
         }
 
         public GetInstallationSitesArgs build() {

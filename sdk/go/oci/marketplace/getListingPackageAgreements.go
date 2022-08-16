@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetListingPackageAgreements(ctx, &marketplace.GetListingPackageAgreementsArgs{
-// 			ListingId:      oci_marketplace_listing.Test_listing.Id,
-// 			PackageVersion: _var.Listing_package_agreement_package_version,
-// 			CompartmentId:  pulumi.StringRef(_var.Compartment_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetListingPackageAgreements(ctx, &marketplace.GetListingPackageAgreementsArgs{
+//				ListingId:      oci_marketplace_listing.Test_listing.Id,
+//				PackageVersion: _var.Listing_package_agreement_package_version,
+//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetListingPackageAgreements(ctx *pulumi.Context, args *GetListingPackageAgreementsArgs, opts ...pulumi.InvokeOption) (*GetListingPackageAgreementsResult, error) {
 	var rv GetListingPackageAgreementsResult

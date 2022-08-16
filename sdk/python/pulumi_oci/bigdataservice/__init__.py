@@ -9,6 +9,7 @@ from .auto_scaling_configuration import *
 from .bds_instance import *
 from .bds_instance_api_key import *
 from .bds_instance_metastore_config import *
+from .bds_instance_patch_action import *
 from .get_auto_scaling_configuration import *
 from .get_auto_scaling_configurations import *
 from .get_bds_instance import *
@@ -16,6 +17,8 @@ from .get_bds_instance_api_key import *
 from .get_bds_instance_api_keys import *
 from .get_bds_instance_metastore_config import *
 from .get_bds_instance_metastore_configs import *
+from .get_bds_instance_patch_histories import *
+from .get_bds_instance_patches import *
 from .get_bds_instances import *
 from ._inputs import *
 from . import outputs

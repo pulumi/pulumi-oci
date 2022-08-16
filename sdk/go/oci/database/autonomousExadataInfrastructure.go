@@ -21,53 +21,56 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousExadataInfrastructure(ctx, "testAutonomousExadataInfrastructure", &Database.AutonomousExadataInfrastructureArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.Autonomous_exadata_infrastructure_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			Shape:              pulumi.Any(_var.Autonomous_exadata_infrastructure_shape),
-// 			SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Autonomous_exadata_infrastructure_display_name),
-// 			Domain:      pulumi.Any(_var.Autonomous_exadata_infrastructure_domain),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			LicenseModel: pulumi.Any(_var.Autonomous_exadata_infrastructure_license_model),
-// 			MaintenanceWindowDetails: &database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{
-// 				Preference:                pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_preference),
-// 				CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins),
-// 				DaysOfWeeks: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray{
-// 					&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{
-// 						Name: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name),
-// 					},
-// 				},
-// 				HoursOfDays:                  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day),
-// 				IsCustomActionTimeoutEnabled: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled),
-// 				LeadTimeInWeeks:              pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks),
-// 				Months: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArray{
-// 					&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{
-// 						Name: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_months_name),
-// 					},
-// 				},
-// 				PatchingMode:  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode),
-// 				WeeksOfMonths: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month),
-// 			},
-// 			NsgIds: pulumi.Any(_var.Autonomous_exadata_infrastructure_nsg_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousExadataInfrastructure(ctx, "testAutonomousExadataInfrastructure", &Database.AutonomousExadataInfrastructureArgs{
+//				AvailabilityDomain: pulumi.Any(_var.Autonomous_exadata_infrastructure_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				Shape:              pulumi.Any(_var.Autonomous_exadata_infrastructure_shape),
+//				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Autonomous_exadata_infrastructure_display_name),
+//				Domain:      pulumi.Any(_var.Autonomous_exadata_infrastructure_domain),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				LicenseModel: pulumi.Any(_var.Autonomous_exadata_infrastructure_license_model),
+//				MaintenanceWindowDetails: &database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{
+//					Preference:                pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_preference),
+//					CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins),
+//					DaysOfWeeks: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray{
+//						&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{
+//							Name: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name),
+//						},
+//					},
+//					HoursOfDays:                  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled),
+//					LeadTimeInWeeks:              pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks),
+//					Months: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArray{
+//						&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{
+//							Name: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_months_name),
+//						},
+//					},
+//					PatchingMode:  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode),
+//					WeeksOfMonths: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month),
+//				},
+//				NsgIds: pulumi.Any(_var.Autonomous_exadata_infrastructure_nsg_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -75,7 +78,9 @@ import (
 // AutonomousExadataInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
+//
+//	$ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
+//
 // ```
 type AutonomousExadataInfrastructure struct {
 	pulumi.CustomResourceState
@@ -349,7 +354,7 @@ func (i *AutonomousExadataInfrastructure) ToAutonomousExadataInfrastructureOutpu
 // AutonomousExadataInfrastructureArrayInput is an input type that accepts AutonomousExadataInfrastructureArray and AutonomousExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureArrayInput` via:
 //
-//          AutonomousExadataInfrastructureArray{ AutonomousExadataInfrastructureArgs{...} }
+//	AutonomousExadataInfrastructureArray{ AutonomousExadataInfrastructureArgs{...} }
 type AutonomousExadataInfrastructureArrayInput interface {
 	pulumi.Input
 
@@ -374,7 +379,7 @@ func (i AutonomousExadataInfrastructureArray) ToAutonomousExadataInfrastructureA
 // AutonomousExadataInfrastructureMapInput is an input type that accepts AutonomousExadataInfrastructureMap and AutonomousExadataInfrastructureMapOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureMapInput` via:
 //
-//          AutonomousExadataInfrastructureMap{ "key": AutonomousExadataInfrastructureArgs{...} }
+//	AutonomousExadataInfrastructureMap{ "key": AutonomousExadataInfrastructureArgs{...} }
 type AutonomousExadataInfrastructureMapInput interface {
 	pulumi.Input
 

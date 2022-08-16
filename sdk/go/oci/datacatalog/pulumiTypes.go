@@ -40,7 +40,7 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 // GetCatalogPrivateEndpointsCatalogPrivateEndpointInput is an input type that accepts GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs and GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput values.
 // You can construct a concrete instance of `GetCatalogPrivateEndpointsCatalogPrivateEndpointInput` via:
 //
-//          GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs{...}
+//	GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs{...}
 type GetCatalogPrivateEndpointsCatalogPrivateEndpointInput interface {
 	pulumi.Input
 
@@ -90,7 +90,7 @@ func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs) ToGetCatalogPrivat
 // GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayInput is an input type that accepts GetCatalogPrivateEndpointsCatalogPrivateEndpointArray and GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayInput` via:
 //
-//          GetCatalogPrivateEndpointsCatalogPrivateEndpointArray{ GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs{...} }
+//	GetCatalogPrivateEndpointsCatalogPrivateEndpointArray{ GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs{...} }
 type GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -215,7 +215,7 @@ type GetCatalogPrivateEndpointsFilter struct {
 // GetCatalogPrivateEndpointsFilterInput is an input type that accepts GetCatalogPrivateEndpointsFilterArgs and GetCatalogPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetCatalogPrivateEndpointsFilterInput` via:
 //
-//          GetCatalogPrivateEndpointsFilterArgs{...}
+//	GetCatalogPrivateEndpointsFilterArgs{...}
 type GetCatalogPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -244,7 +244,7 @@ func (i GetCatalogPrivateEndpointsFilterArgs) ToGetCatalogPrivateEndpointsFilter
 // GetCatalogPrivateEndpointsFilterArrayInput is an input type that accepts GetCatalogPrivateEndpointsFilterArray and GetCatalogPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCatalogPrivateEndpointsFilterArrayInput` via:
 //
-//          GetCatalogPrivateEndpointsFilterArray{ GetCatalogPrivateEndpointsFilterArgs{...} }
+//	GetCatalogPrivateEndpointsFilterArray{ GetCatalogPrivateEndpointsFilterArgs{...} }
 type GetCatalogPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -322,7 +322,7 @@ type GetCatalogTypesFilter struct {
 // GetCatalogTypesFilterInput is an input type that accepts GetCatalogTypesFilterArgs and GetCatalogTypesFilterOutput values.
 // You can construct a concrete instance of `GetCatalogTypesFilterInput` via:
 //
-//          GetCatalogTypesFilterArgs{...}
+//	GetCatalogTypesFilterArgs{...}
 type GetCatalogTypesFilterInput interface {
 	pulumi.Input
 
@@ -352,7 +352,7 @@ func (i GetCatalogTypesFilterArgs) ToGetCatalogTypesFilterOutputWithContext(ctx 
 // GetCatalogTypesFilterArrayInput is an input type that accepts GetCatalogTypesFilterArray and GetCatalogTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCatalogTypesFilterArrayInput` via:
 //
-//          GetCatalogTypesFilterArray{ GetCatalogTypesFilterArgs{...} }
+//	GetCatalogTypesFilterArray{ GetCatalogTypesFilterArgs{...} }
 type GetCatalogTypesFilterArrayInput interface {
 	pulumi.Input
 
@@ -429,7 +429,7 @@ type GetCatalogTypesTypeCollection struct {
 // GetCatalogTypesTypeCollectionInput is an input type that accepts GetCatalogTypesTypeCollectionArgs and GetCatalogTypesTypeCollectionOutput values.
 // You can construct a concrete instance of `GetCatalogTypesTypeCollectionInput` via:
 //
-//          GetCatalogTypesTypeCollectionArgs{...}
+//	GetCatalogTypesTypeCollectionArgs{...}
 type GetCatalogTypesTypeCollectionInput interface {
 	pulumi.Input
 
@@ -457,7 +457,7 @@ func (i GetCatalogTypesTypeCollectionArgs) ToGetCatalogTypesTypeCollectionOutput
 // GetCatalogTypesTypeCollectionArrayInput is an input type that accepts GetCatalogTypesTypeCollectionArray and GetCatalogTypesTypeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCatalogTypesTypeCollectionArrayInput` via:
 //
-//          GetCatalogTypesTypeCollectionArray{ GetCatalogTypesTypeCollectionArgs{...} }
+//	GetCatalogTypesTypeCollectionArray{ GetCatalogTypesTypeCollectionArgs{...} }
 type GetCatalogTypesTypeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -541,7 +541,7 @@ type GetCatalogTypesTypeCollectionItem struct {
 // GetCatalogTypesTypeCollectionItemInput is an input type that accepts GetCatalogTypesTypeCollectionItemArgs and GetCatalogTypesTypeCollectionItemOutput values.
 // You can construct a concrete instance of `GetCatalogTypesTypeCollectionItemInput` via:
 //
-//          GetCatalogTypesTypeCollectionItemArgs{...}
+//	GetCatalogTypesTypeCollectionItemArgs{...}
 type GetCatalogTypesTypeCollectionItemInput interface {
 	pulumi.Input
 
@@ -581,7 +581,7 @@ func (i GetCatalogTypesTypeCollectionItemArgs) ToGetCatalogTypesTypeCollectionIt
 // GetCatalogTypesTypeCollectionItemArrayInput is an input type that accepts GetCatalogTypesTypeCollectionItemArray and GetCatalogTypesTypeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCatalogTypesTypeCollectionItemArrayInput` via:
 //
-//          GetCatalogTypesTypeCollectionItemArray{ GetCatalogTypesTypeCollectionItemArgs{...} }
+//	GetCatalogTypesTypeCollectionItemArray{ GetCatalogTypesTypeCollectionItemArgs{...} }
 type GetCatalogTypesTypeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -704,7 +704,7 @@ type GetCatalogsCatalog struct {
 // GetCatalogsCatalogInput is an input type that accepts GetCatalogsCatalogArgs and GetCatalogsCatalogOutput values.
 // You can construct a concrete instance of `GetCatalogsCatalogInput` via:
 //
-//          GetCatalogsCatalogArgs{...}
+//	GetCatalogsCatalogArgs{...}
 type GetCatalogsCatalogInput interface {
 	pulumi.Input
 
@@ -756,7 +756,7 @@ func (i GetCatalogsCatalogArgs) ToGetCatalogsCatalogOutputWithContext(ctx contex
 // GetCatalogsCatalogArrayInput is an input type that accepts GetCatalogsCatalogArray and GetCatalogsCatalogArrayOutput values.
 // You can construct a concrete instance of `GetCatalogsCatalogArrayInput` via:
 //
-//          GetCatalogsCatalogArray{ GetCatalogsCatalogArgs{...} }
+//	GetCatalogsCatalogArray{ GetCatalogsCatalogArgs{...} }
 type GetCatalogsCatalogArrayInput interface {
 	pulumi.Input
 
@@ -886,7 +886,7 @@ type GetCatalogsFilter struct {
 // GetCatalogsFilterInput is an input type that accepts GetCatalogsFilterArgs and GetCatalogsFilterOutput values.
 // You can construct a concrete instance of `GetCatalogsFilterInput` via:
 //
-//          GetCatalogsFilterArgs{...}
+//	GetCatalogsFilterArgs{...}
 type GetCatalogsFilterInput interface {
 	pulumi.Input
 
@@ -915,7 +915,7 @@ func (i GetCatalogsFilterArgs) ToGetCatalogsFilterOutputWithContext(ctx context.
 // GetCatalogsFilterArrayInput is an input type that accepts GetCatalogsFilterArray and GetCatalogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCatalogsFilterArrayInput` via:
 //
-//          GetCatalogsFilterArray{ GetCatalogsFilterArgs{...} }
+//	GetCatalogsFilterArray{ GetCatalogsFilterArgs{...} }
 type GetCatalogsFilterArrayInput interface {
 	pulumi.Input
 
@@ -991,7 +991,7 @@ type GetConnectionsConnectionCollection struct {
 // GetConnectionsConnectionCollectionInput is an input type that accepts GetConnectionsConnectionCollectionArgs and GetConnectionsConnectionCollectionOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionInput` via:
 //
-//          GetConnectionsConnectionCollectionArgs{...}
+//	GetConnectionsConnectionCollectionArgs{...}
 type GetConnectionsConnectionCollectionInput interface {
 	pulumi.Input
 
@@ -1019,7 +1019,7 @@ func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollec
 // GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
+//	GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
 type GetConnectionsConnectionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1122,7 +1122,7 @@ type GetConnectionsConnectionCollectionItem struct {
 // GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemInput` via:
 //
-//          GetConnectionsConnectionCollectionItemArgs{...}
+//	GetConnectionsConnectionCollectionItemArgs{...}
 type GetConnectionsConnectionCollectionItemInput interface {
 	pulumi.Input
 
@@ -1181,7 +1181,7 @@ func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCo
 // GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
+//	GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
 type GetConnectionsConnectionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1330,7 +1330,7 @@ type GetConnectionsFilter struct {
 // GetConnectionsFilterInput is an input type that accepts GetConnectionsFilterArgs and GetConnectionsFilterOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterInput` via:
 //
-//          GetConnectionsFilterArgs{...}
+//	GetConnectionsFilterArgs{...}
 type GetConnectionsFilterInput interface {
 	pulumi.Input
 
@@ -1359,7 +1359,7 @@ func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx co
 // GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
 //
-//          GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
+//	GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
 type GetConnectionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1435,7 +1435,7 @@ type GetDataAssetsDataAssetCollection struct {
 // GetDataAssetsDataAssetCollectionInput is an input type that accepts GetDataAssetsDataAssetCollectionArgs and GetDataAssetsDataAssetCollectionOutput values.
 // You can construct a concrete instance of `GetDataAssetsDataAssetCollectionInput` via:
 //
-//          GetDataAssetsDataAssetCollectionArgs{...}
+//	GetDataAssetsDataAssetCollectionArgs{...}
 type GetDataAssetsDataAssetCollectionInput interface {
 	pulumi.Input
 
@@ -1463,7 +1463,7 @@ func (i GetDataAssetsDataAssetCollectionArgs) ToGetDataAssetsDataAssetCollection
 // GetDataAssetsDataAssetCollectionArrayInput is an input type that accepts GetDataAssetsDataAssetCollectionArray and GetDataAssetsDataAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDataAssetsDataAssetCollectionArrayInput` via:
 //
-//          GetDataAssetsDataAssetCollectionArray{ GetDataAssetsDataAssetCollectionArgs{...} }
+//	GetDataAssetsDataAssetCollectionArray{ GetDataAssetsDataAssetCollectionArgs{...} }
 type GetDataAssetsDataAssetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1561,7 +1561,7 @@ type GetDataAssetsDataAssetCollectionItem struct {
 // GetDataAssetsDataAssetCollectionItemInput is an input type that accepts GetDataAssetsDataAssetCollectionItemArgs and GetDataAssetsDataAssetCollectionItemOutput values.
 // You can construct a concrete instance of `GetDataAssetsDataAssetCollectionItemInput` via:
 //
-//          GetDataAssetsDataAssetCollectionItemArgs{...}
+//	GetDataAssetsDataAssetCollectionItemArgs{...}
 type GetDataAssetsDataAssetCollectionItemInput interface {
 	pulumi.Input
 
@@ -1615,7 +1615,7 @@ func (i GetDataAssetsDataAssetCollectionItemArgs) ToGetDataAssetsDataAssetCollec
 // GetDataAssetsDataAssetCollectionItemArrayInput is an input type that accepts GetDataAssetsDataAssetCollectionItemArray and GetDataAssetsDataAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDataAssetsDataAssetCollectionItemArrayInput` via:
 //
-//          GetDataAssetsDataAssetCollectionItemArray{ GetDataAssetsDataAssetCollectionItemArgs{...} }
+//	GetDataAssetsDataAssetCollectionItemArray{ GetDataAssetsDataAssetCollectionItemArgs{...} }
 type GetDataAssetsDataAssetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1750,7 +1750,7 @@ type GetDataAssetsFilter struct {
 // GetDataAssetsFilterInput is an input type that accepts GetDataAssetsFilterArgs and GetDataAssetsFilterOutput values.
 // You can construct a concrete instance of `GetDataAssetsFilterInput` via:
 //
-//          GetDataAssetsFilterArgs{...}
+//	GetDataAssetsFilterArgs{...}
 type GetDataAssetsFilterInput interface {
 	pulumi.Input
 
@@ -1779,7 +1779,7 @@ func (i GetDataAssetsFilterArgs) ToGetDataAssetsFilterOutputWithContext(ctx cont
 // GetDataAssetsFilterArrayInput is an input type that accepts GetDataAssetsFilterArray and GetDataAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataAssetsFilterArrayInput` via:
 //
-//          GetDataAssetsFilterArray{ GetDataAssetsFilterArgs{...} }
+//	GetDataAssetsFilterArray{ GetDataAssetsFilterArgs{...} }
 type GetDataAssetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1856,7 +1856,7 @@ type GetMetastoresFilter struct {
 // GetMetastoresFilterInput is an input type that accepts GetMetastoresFilterArgs and GetMetastoresFilterOutput values.
 // You can construct a concrete instance of `GetMetastoresFilterInput` via:
 //
-//          GetMetastoresFilterArgs{...}
+//	GetMetastoresFilterArgs{...}
 type GetMetastoresFilterInput interface {
 	pulumi.Input
 
@@ -1885,7 +1885,7 @@ func (i GetMetastoresFilterArgs) ToGetMetastoresFilterOutputWithContext(ctx cont
 // GetMetastoresFilterArrayInput is an input type that accepts GetMetastoresFilterArray and GetMetastoresFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetastoresFilterArrayInput` via:
 //
-//          GetMetastoresFilterArray{ GetMetastoresFilterArgs{...} }
+//	GetMetastoresFilterArray{ GetMetastoresFilterArgs{...} }
 type GetMetastoresFilterArrayInput interface {
 	pulumi.Input
 
@@ -1981,7 +1981,7 @@ type GetMetastoresMetastore struct {
 // GetMetastoresMetastoreInput is an input type that accepts GetMetastoresMetastoreArgs and GetMetastoresMetastoreOutput values.
 // You can construct a concrete instance of `GetMetastoresMetastoreInput` via:
 //
-//          GetMetastoresMetastoreArgs{...}
+//	GetMetastoresMetastoreArgs{...}
 type GetMetastoresMetastoreInput interface {
 	pulumi.Input
 
@@ -2029,7 +2029,7 @@ func (i GetMetastoresMetastoreArgs) ToGetMetastoresMetastoreOutputWithContext(ct
 // GetMetastoresMetastoreArrayInput is an input type that accepts GetMetastoresMetastoreArray and GetMetastoresMetastoreArrayOutput values.
 // You can construct a concrete instance of `GetMetastoresMetastoreArrayInput` via:
 //
-//          GetMetastoresMetastoreArray{ GetMetastoresMetastoreArgs{...} }
+//	GetMetastoresMetastoreArray{ GetMetastoresMetastoreArgs{...} }
 type GetMetastoresMetastoreArrayInput interface {
 	pulumi.Input
 

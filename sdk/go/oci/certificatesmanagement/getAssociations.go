@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetAssociations(ctx, &certificatesmanagement.GetAssociationsArgs{
-// 			AssociatedResourceId:   pulumi.StringRef(oci_certificates_management_associated_resource.Test_associated_resource.Id),
-// 			AssociationId:          pulumi.StringRef(oci_certificates_management_association.Test_association.Id),
-// 			AssociationType:        pulumi.StringRef(_var.Association_association_type),
-// 			CertificatesResourceId: pulumi.StringRef(oci_certificates_management_certificates_resource.Test_certificates_resource.Id),
-// 			CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-// 			Name:                   pulumi.StringRef(_var.Association_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetAssociations(ctx, &certificatesmanagement.GetAssociationsArgs{
+//				AssociatedResourceId:   pulumi.StringRef(oci_certificates_management_associated_resource.Test_associated_resource.Id),
+//				AssociationId:          pulumi.StringRef(oci_certificates_management_association.Test_association.Id),
+//				AssociationType:        pulumi.StringRef(_var.Association_association_type),
+//				CertificatesResourceId: pulumi.StringRef(oci_certificates_management_certificates_resource.Test_certificates_resource.Id),
+//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
+//				Name:                   pulumi.StringRef(_var.Association_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAssociations(ctx *pulumi.Context, args *GetAssociationsArgs, opts ...pulumi.InvokeOption) (*GetAssociationsResult, error) {
 	var rv GetAssociationsResult

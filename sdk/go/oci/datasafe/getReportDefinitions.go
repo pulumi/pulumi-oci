@@ -22,28 +22,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetReportDefinitions(ctx, &datasafe.GetReportDefinitionsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Report_definition_access_level),
-// 			Category:               pulumi.StringRef(_var.Report_definition_category),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Report_definition_compartment_id_in_subtree),
-// 			DataSource:             pulumi.StringRef(_var.Report_definition_data_source),
-// 			DisplayName:            pulumi.StringRef(_var.Report_definition_display_name),
-// 			IsSeeded:               pulumi.BoolRef(_var.Report_definition_is_seeded),
-// 			State:                  pulumi.StringRef(_var.Report_definition_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetReportDefinitions(ctx, &datasafe.GetReportDefinitionsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Report_definition_access_level),
+//				Category:               pulumi.StringRef(_var.Report_definition_category),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Report_definition_compartment_id_in_subtree),
+//				DataSource:             pulumi.StringRef(_var.Report_definition_data_source),
+//				DisplayName:            pulumi.StringRef(_var.Report_definition_display_name),
+//				IsSeeded:               pulumi.BoolRef(_var.Report_definition_is_seeded),
+//				State:                  pulumi.StringRef(_var.Report_definition_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetReportDefinitions(ctx *pulumi.Context, args *GetReportDefinitionsArgs, opts ...pulumi.InvokeOption) (*GetReportDefinitionsResult, error) {
 	var rv GetReportDefinitionsResult

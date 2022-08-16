@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetContainerImageSignature(ctx, &artifacts.GetContainerImageSignatureArgs{
-// 			ImageSignatureId: oci_artifacts_image_signature.Test_image_signature.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetContainerImageSignature(ctx, &artifacts.GetContainerImageSignatureArgs{
+//				ImageSignatureId: oci_artifacts_image_signature.Test_image_signature.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupContainerImageSignature(ctx *pulumi.Context, args *LookupContainerImageSignatureArgs, opts ...pulumi.InvokeOption) (*LookupContainerImageSignatureResult, error) {
 	var rv LookupContainerImageSignatureResult

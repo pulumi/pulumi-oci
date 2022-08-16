@@ -52,33 +52,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.NewMountTarget(ctx, "testMountTarget", &FileStorage.MountTargetArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.Mount_target_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Mount_target_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			HostnameLabel: pulumi.Any(_var.Mount_target_hostname_label),
-// 			IpAddress:     pulumi.Any(_var.Mount_target_ip_address),
-// 			NsgIds:        pulumi.Any(_var.Mount_target_nsg_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.NewMountTarget(ctx, "testMountTarget", &FileStorage.MountTargetArgs{
+//				AvailabilityDomain: pulumi.Any(_var.Mount_target_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Mount_target_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				HostnameLabel: pulumi.Any(_var.Mount_target_hostname_label),
+//				IpAddress:     pulumi.Any(_var.Mount_target_ip_address),
+//				NsgIds:        pulumi.Any(_var.Mount_target_nsg_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -86,7 +89,9 @@ import (
 // MountTargets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
+//
+//	$ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
+//
 // ```
 type MountTarget struct {
 	pulumi.CustomResourceState
@@ -293,7 +298,7 @@ func (i *MountTarget) ToMountTargetOutputWithContext(ctx context.Context) MountT
 // MountTargetArrayInput is an input type that accepts MountTargetArray and MountTargetArrayOutput values.
 // You can construct a concrete instance of `MountTargetArrayInput` via:
 //
-//          MountTargetArray{ MountTargetArgs{...} }
+//	MountTargetArray{ MountTargetArgs{...} }
 type MountTargetArrayInput interface {
 	pulumi.Input
 
@@ -318,7 +323,7 @@ func (i MountTargetArray) ToMountTargetArrayOutputWithContext(ctx context.Contex
 // MountTargetMapInput is an input type that accepts MountTargetMap and MountTargetMapOutput values.
 // You can construct a concrete instance of `MountTargetMapInput` via:
 //
-//          MountTargetMap{ "key": MountTargetArgs{...} }
+//	MountTargetMap{ "key": MountTargetArgs{...} }
 type MountTargetMapInput interface {
 	pulumi.Input
 

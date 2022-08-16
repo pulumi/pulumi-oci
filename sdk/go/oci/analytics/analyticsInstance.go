@@ -22,49 +22,52 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Analytics.NewAnalyticsInstance(ctx, "testAnalyticsInstance", &Analytics.AnalyticsInstanceArgs{
-// 			Capacity: &analytics.AnalyticsInstanceCapacityArgs{
-// 				CapacityType:  pulumi.Any(_var.Analytics_instance_capacity_capacity_type),
-// 				CapacityValue: pulumi.Any(_var.Analytics_instance_capacity_capacity_value),
-// 			},
-// 			CompartmentId:   pulumi.Any(_var.Compartment_id),
-// 			FeatureSet:      pulumi.Any(_var.Analytics_instance_feature_set),
-// 			IdcsAccessToken: pulumi.Any(_var.Analytics_instance_idcs_access_token),
-// 			LicenseType:     pulumi.Any(_var.Analytics_instance_license_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description:       pulumi.Any(_var.Analytics_instance_description),
-// 			EmailNotification: pulumi.Any(_var.Analytics_instance_email_notification),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
-// 			NetworkEndpointDetails: &analytics.AnalyticsInstanceNetworkEndpointDetailsArgs{
-// 				NetworkEndpointType: pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_endpoint_type),
-// 				SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				VcnId:               pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 				WhitelistedIps:      pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_ips),
-// 				WhitelistedVcns: analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{
-// 					&analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{
-// 						Id:             pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id),
-// 						WhitelistedIps: pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips),
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Analytics.NewAnalyticsInstance(ctx, "testAnalyticsInstance", &Analytics.AnalyticsInstanceArgs{
+//				Capacity: &analytics.AnalyticsInstanceCapacityArgs{
+//					CapacityType:  pulumi.Any(_var.Analytics_instance_capacity_capacity_type),
+//					CapacityValue: pulumi.Any(_var.Analytics_instance_capacity_capacity_value),
+//				},
+//				CompartmentId:   pulumi.Any(_var.Compartment_id),
+//				FeatureSet:      pulumi.Any(_var.Analytics_instance_feature_set),
+//				IdcsAccessToken: pulumi.Any(_var.Analytics_instance_idcs_access_token),
+//				LicenseType:     pulumi.Any(_var.Analytics_instance_license_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description:       pulumi.Any(_var.Analytics_instance_description),
+//				EmailNotification: pulumi.Any(_var.Analytics_instance_email_notification),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//				NetworkEndpointDetails: &analytics.AnalyticsInstanceNetworkEndpointDetailsArgs{
+//					NetworkEndpointType: pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_endpoint_type),
+//					SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					VcnId:               pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//					WhitelistedIps:      pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_ips),
+//					WhitelistedVcns: analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{
+//						&analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{
+//							Id:             pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id),
+//							WhitelistedIps: pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -72,7 +75,9 @@ import (
 // AnalyticsInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
+//
+//	$ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
+//
 // ```
 type AnalyticsInstance struct {
 	pulumi.CustomResourceState
@@ -313,7 +318,7 @@ func (i *AnalyticsInstance) ToAnalyticsInstanceOutputWithContext(ctx context.Con
 // AnalyticsInstanceArrayInput is an input type that accepts AnalyticsInstanceArray and AnalyticsInstanceArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceArrayInput` via:
 //
-//          AnalyticsInstanceArray{ AnalyticsInstanceArgs{...} }
+//	AnalyticsInstanceArray{ AnalyticsInstanceArgs{...} }
 type AnalyticsInstanceArrayInput interface {
 	pulumi.Input
 
@@ -338,7 +343,7 @@ func (i AnalyticsInstanceArray) ToAnalyticsInstanceArrayOutputWithContext(ctx co
 // AnalyticsInstanceMapInput is an input type that accepts AnalyticsInstanceMap and AnalyticsInstanceMapOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceMapInput` via:
 //
-//          AnalyticsInstanceMap{ "key": AnalyticsInstanceArgs{...} }
+//	AnalyticsInstanceMap{ "key": AnalyticsInstanceArgs{...} }
 type AnalyticsInstanceMapInput interface {
 	pulumi.Input
 

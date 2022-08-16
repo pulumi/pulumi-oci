@@ -6,7 +6,9 @@ package com.pulumi.oci.Integration.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceAlternateCustomEndpointArgs;
+import com.pulumi.oci.Integration.inputs.IntegrationInstanceAttachmentArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceCustomEndpointArgs;
+import com.pulumi.oci.Integration.inputs.IntegrationInstanceIdcsInfoArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -36,6 +38,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<List<IntegrationInstanceAlternateCustomEndpointArgs>>> alternateCustomEndpoints() {
         return Optional.ofNullable(this.alternateCustomEndpoints);
+    }
+
+    /**
+     * A list of associated attachments to other services
+     * 
+     */
+    @Import(name="attachments")
+    private @Nullable Output<List<IntegrationInstanceAttachmentArgs>> attachments;
+
+    /**
+     * @return A list of associated attachments to other services
+     * 
+     */
+    public Optional<Output<List<IntegrationInstanceAttachmentArgs>>> attachments() {
+        return Optional.ofNullable(this.attachments);
     }
 
     /**
@@ -141,6 +158,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<String>> idcsAt() {
         return Optional.ofNullable(this.idcsAt);
+    }
+
+    /**
+     * Information for IDCS access
+     * 
+     */
+    @Import(name="idcsInfos")
+    private @Nullable Output<List<IntegrationInstanceIdcsInfoArgs>> idcsInfos;
+
+    /**
+     * @return Information for IDCS access
+     * 
+     */
+    public Optional<Output<List<IntegrationInstanceIdcsInfoArgs>>> idcsInfos() {
+        return Optional.ofNullable(this.idcsInfos);
     }
 
     /**
@@ -312,6 +344,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
     private IntegrationInstanceState(IntegrationInstanceState $) {
         this.alternateCustomEndpoints = $.alternateCustomEndpoints;
+        this.attachments = $.attachments;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
         this.customEndpoint = $.customEndpoint;
@@ -319,6 +352,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
+        this.idcsInfos = $.idcsInfos;
         this.instanceUrl = $.instanceUrl;
         this.integrationInstanceType = $.integrationInstanceType;
         this.isByol = $.isByol;
@@ -379,6 +413,37 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder alternateCustomEndpoints(IntegrationInstanceAlternateCustomEndpointArgs... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(@Nullable Output<List<IntegrationInstanceAttachmentArgs>> attachments) {
+            $.attachments = attachments;
+            return this;
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(List<IntegrationInstanceAttachmentArgs> attachments) {
+            return attachments(Output.of(attachments));
+        }
+
+        /**
+         * @param attachments A list of associated attachments to other services
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachments(IntegrationInstanceAttachmentArgs... attachments) {
+            return attachments(List.of(attachments));
         }
 
         /**
@@ -526,6 +591,37 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder idcsAt(String idcsAt) {
             return idcsAt(Output.of(idcsAt));
+        }
+
+        /**
+         * @param idcsInfos Information for IDCS access
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idcsInfos(@Nullable Output<List<IntegrationInstanceIdcsInfoArgs>> idcsInfos) {
+            $.idcsInfos = idcsInfos;
+            return this;
+        }
+
+        /**
+         * @param idcsInfos Information for IDCS access
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idcsInfos(List<IntegrationInstanceIdcsInfoArgs> idcsInfos) {
+            return idcsInfos(Output.of(idcsInfos));
+        }
+
+        /**
+         * @param idcsInfos Information for IDCS access
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idcsInfos(IntegrationInstanceIdcsInfoArgs... idcsInfos) {
+            return idcsInfos(List.of(idcsInfos));
         }
 
         /**

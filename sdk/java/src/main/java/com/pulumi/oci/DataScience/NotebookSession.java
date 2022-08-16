@@ -11,6 +11,7 @@ import com.pulumi.oci.DataScience.NotebookSessionArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionState;
 import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionConfigDetails;
 import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionRuntimeConfigDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
@@ -146,6 +147,20 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      */
     public Output<NotebookSessionNotebookSessionConfigurationDetails> notebookSessionConfigurationDetails() {
         return this.notebookSessionConfigurationDetails;
+    }
+    /**
+     * (Updatable) Notebook Session runtime configuration details.
+     * 
+     */
+    @Export(name="notebookSessionRuntimeConfigDetails", type=NotebookSessionNotebookSessionRuntimeConfigDetails.class, parameters={})
+    private Output<NotebookSessionNotebookSessionRuntimeConfigDetails> notebookSessionRuntimeConfigDetails;
+
+    /**
+     * @return (Updatable) Notebook Session runtime configuration details.
+     * 
+     */
+    public Output<NotebookSessionNotebookSessionRuntimeConfigDetails> notebookSessionRuntimeConfigDetails() {
+        return this.notebookSessionRuntimeConfigDetails;
     }
     /**
      * The URL to interact with the notebook session.

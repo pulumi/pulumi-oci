@@ -23,37 +23,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewSensitiveDataModel(ctx, "testSensitiveDataModel", &DataSafe.SensitiveDataModelArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 			AppSuiteName:  pulumi.Any(_var.Sensitive_data_model_app_suite_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Sensitive_data_model_description),
-// 			DisplayName: pulumi.Any(_var.Sensitive_data_model_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Sensitive_data_model_is_app_defined_relation_discovery_enabled),
-// 			IsIncludeAllSchemas:                  pulumi.Any(_var.Sensitive_data_model_is_include_all_schemas),
-// 			IsIncludeAllSensitiveTypes:           pulumi.Any(_var.Sensitive_data_model_is_include_all_sensitive_types),
-// 			IsSampleDataCollectionEnabled:        pulumi.Any(_var.Sensitive_data_model_is_sample_data_collection_enabled),
-// 			SchemasForDiscoveries:                pulumi.Any(_var.Sensitive_data_model_schemas_for_discovery),
-// 			SensitiveTypeIdsForDiscoveries:       pulumi.Any(_var.Sensitive_data_model_sensitive_type_ids_for_discovery),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewSensitiveDataModel(ctx, "testSensitiveDataModel", &DataSafe.SensitiveDataModelArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				AppSuiteName:  pulumi.Any(_var.Sensitive_data_model_app_suite_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Sensitive_data_model_description),
+//				DisplayName: pulumi.Any(_var.Sensitive_data_model_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Sensitive_data_model_is_app_defined_relation_discovery_enabled),
+//				IsIncludeAllSchemas:                  pulumi.Any(_var.Sensitive_data_model_is_include_all_schemas),
+//				IsIncludeAllSensitiveTypes:           pulumi.Any(_var.Sensitive_data_model_is_include_all_sensitive_types),
+//				IsSampleDataCollectionEnabled:        pulumi.Any(_var.Sensitive_data_model_is_sample_data_collection_enabled),
+//				SchemasForDiscoveries:                pulumi.Any(_var.Sensitive_data_model_schemas_for_discovery),
+//				SensitiveTypeIdsForDiscoveries:       pulumi.Any(_var.Sensitive_data_model_sensitive_type_ids_for_discovery),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -61,7 +64,9 @@ import (
 // SensitiveDataModels can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/sensitiveDataModel:SensitiveDataModel test_sensitive_data_model "id"
+//
+//	$ pulumi import oci:DataSafe/sensitiveDataModel:SensitiveDataModel test_sensitive_data_model "id"
+//
 // ```
 type SensitiveDataModel struct {
 	pulumi.CustomResourceState
@@ -299,7 +304,7 @@ func (i *SensitiveDataModel) ToSensitiveDataModelOutputWithContext(ctx context.C
 // SensitiveDataModelArrayInput is an input type that accepts SensitiveDataModelArray and SensitiveDataModelArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelArrayInput` via:
 //
-//          SensitiveDataModelArray{ SensitiveDataModelArgs{...} }
+//	SensitiveDataModelArray{ SensitiveDataModelArgs{...} }
 type SensitiveDataModelArrayInput interface {
 	pulumi.Input
 
@@ -324,7 +329,7 @@ func (i SensitiveDataModelArray) ToSensitiveDataModelArrayOutputWithContext(ctx 
 // SensitiveDataModelMapInput is an input type that accepts SensitiveDataModelMap and SensitiveDataModelMapOutput values.
 // You can construct a concrete instance of `SensitiveDataModelMapInput` via:
 //
-//          SensitiveDataModelMap{ "key": SensitiveDataModelArgs{...} }
+//	SensitiveDataModelMap{ "key": SensitiveDataModelArgs{...} }
 type SensitiveDataModelMapInput interface {
 	pulumi.Input
 

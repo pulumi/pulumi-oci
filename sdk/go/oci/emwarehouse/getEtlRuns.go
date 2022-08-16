@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.
 //
-// Gets a list of runs of an EmWarehouseResource by identifier
+// # Gets a list of runs of an EmWarehouseResource by identifier
 //
 // ## Example Usage
 //
@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EmWarehouse.GetEtlRuns(ctx, &emwarehouse.GetEtlRunsArgs{
-// 			EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Em_warehouse_etl_run_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := EmWarehouse.GetEtlRuns(ctx, &emwarehouse.GetEtlRunsArgs{
+//				EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:   pulumi.StringRef(_var.Em_warehouse_etl_run_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetEtlRuns(ctx *pulumi.Context, args *GetEtlRunsArgs, opts ...pulumi.InvokeOption) (*GetEtlRunsResult, error) {
 	var rv GetEtlRunsResult

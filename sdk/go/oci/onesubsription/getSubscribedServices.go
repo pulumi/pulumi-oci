@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
 //
-// This list API returns all subscribed services for given Subscription ID
+// # This list API returns all subscribed services for given Subscription ID
 //
 // ## Example Usage
 //
@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetSubscribedServices(ctx, &onesubsription.GetSubscribedServicesArgs{
-// 			CompartmentId:  _var.Compartment_id,
-// 			SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
-// 			OrderLineId:    pulumi.StringRef(oci_onesubscription_order_line.Test_order_line.Id),
-// 			Status:         pulumi.StringRef(_var.Subscribed_service_status),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetSubscribedServices(ctx, &onesubsription.GetSubscribedServicesArgs{
+//				CompartmentId:  _var.Compartment_id,
+//				SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
+//				OrderLineId:    pulumi.StringRef(oci_onesubscription_order_line.Test_order_line.Id),
+//				Status:         pulumi.StringRef(_var.Subscribed_service_status),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubscribedServices(ctx *pulumi.Context, args *GetSubscribedServicesArgs, opts ...pulumi.InvokeOption) (*GetSubscribedServicesResult, error) {
 	var rv GetSubscribedServicesResult

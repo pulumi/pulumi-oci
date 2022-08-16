@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVlan(ctx, "testVlan", &Core.VlanArgs{
-// 			CidrBlock:          pulumi.Any(_var.Vlan_cidr_block),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			AvailabilityDomain: pulumi.Any(_var.Vlan_availability_domain),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Vlan_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NsgIds:       pulumi.Any(_var.Vlan_nsg_ids),
-// 			RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-// 			VlanTag:      pulumi.Any(_var.Vlan_vlan_tag),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVlan(ctx, "testVlan", &Core.VlanArgs{
+//				CidrBlock:          pulumi.Any(_var.Vlan_cidr_block),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				AvailabilityDomain: pulumi.Any(_var.Vlan_availability_domain),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Vlan_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NsgIds:       pulumi.Any(_var.Vlan_nsg_ids),
+//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//				VlanTag:      pulumi.Any(_var.Vlan_vlan_tag),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // Vlans can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/vlan:Vlan test_vlan "id"
+//
+//	$ pulumi import oci:Core/vlan:Vlan test_vlan "id"
+//
 // ```
 type Vlan struct {
 	pulumi.CustomResourceState
@@ -255,7 +260,7 @@ func (i *Vlan) ToVlanOutputWithContext(ctx context.Context) VlanOutput {
 // VlanArrayInput is an input type that accepts VlanArray and VlanArrayOutput values.
 // You can construct a concrete instance of `VlanArrayInput` via:
 //
-//          VlanArray{ VlanArgs{...} }
+//	VlanArray{ VlanArgs{...} }
 type VlanArrayInput interface {
 	pulumi.Input
 
@@ -280,7 +285,7 @@ func (i VlanArray) ToVlanArrayOutputWithContext(ctx context.Context) VlanArrayOu
 // VlanMapInput is an input type that accepts VlanMap and VlanMapOutput values.
 // You can construct a concrete instance of `VlanMapInput` via:
 //
-//          VlanMap{ "key": VlanArgs{...} }
+//	VlanMap{ "key": VlanArgs{...} }
 type VlanMapInput interface {
 	pulumi.Input
 

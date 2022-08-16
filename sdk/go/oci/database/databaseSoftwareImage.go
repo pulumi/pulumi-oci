@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDatabaseSoftwareImage(ctx, "testDatabaseSoftwareImage", &Database.DatabaseSoftwareImageArgs{
-// 			CompartmentId:                      pulumi.Any(_var.Compartment_id),
-// 			DisplayName:                        pulumi.Any(_var.Database_software_image_display_name),
-// 			DatabaseSoftwareImageOneOffPatches: pulumi.Any(_var.Database_software_image_database_software_image_one_off_patches),
-// 			DatabaseVersion:                    pulumi.Any(_var.Database_software_image_database_version),
-// 			DefinedTags:                        pulumi.Any(_var.Database_software_image_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			ImageShapeFamily: pulumi.Any(_var.Database_software_image_image_shape_family),
-// 			ImageType:        pulumi.Any(_var.Database_software_image_image_type),
-// 			LsInventory:      pulumi.Any(_var.Database_software_image_ls_inventory),
-// 			PatchSet:         pulumi.Any(_var.Database_software_image_patch_set),
-// 			SourceDbHomeId:   pulumi.Any(oci_database_db_home.Test_db_home.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDatabaseSoftwareImage(ctx, "testDatabaseSoftwareImage", &Database.DatabaseSoftwareImageArgs{
+//				CompartmentId:                      pulumi.Any(_var.Compartment_id),
+//				DisplayName:                        pulumi.Any(_var.Database_software_image_display_name),
+//				DatabaseSoftwareImageOneOffPatches: pulumi.Any(_var.Database_software_image_database_software_image_one_off_patches),
+//				DatabaseVersion:                    pulumi.Any(_var.Database_software_image_database_version),
+//				DefinedTags:                        pulumi.Any(_var.Database_software_image_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ImageShapeFamily: pulumi.Any(_var.Database_software_image_image_shape_family),
+//				ImageType:        pulumi.Any(_var.Database_software_image_image_type),
+//				LsInventory:      pulumi.Any(_var.Database_software_image_ls_inventory),
+//				PatchSet:         pulumi.Any(_var.Database_software_image_patch_set),
+//				SourceDbHomeId:   pulumi.Any(oci_database_db_home.Test_db_home.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // DatabaseSoftwareImages can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
+//
+//	$ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
+//
 // ```
 type DatabaseSoftwareImage struct {
 	pulumi.CustomResourceState
@@ -285,7 +290,7 @@ func (i *DatabaseSoftwareImage) ToDatabaseSoftwareImageOutputWithContext(ctx con
 // DatabaseSoftwareImageArrayInput is an input type that accepts DatabaseSoftwareImageArray and DatabaseSoftwareImageArrayOutput values.
 // You can construct a concrete instance of `DatabaseSoftwareImageArrayInput` via:
 //
-//          DatabaseSoftwareImageArray{ DatabaseSoftwareImageArgs{...} }
+//	DatabaseSoftwareImageArray{ DatabaseSoftwareImageArgs{...} }
 type DatabaseSoftwareImageArrayInput interface {
 	pulumi.Input
 
@@ -310,7 +315,7 @@ func (i DatabaseSoftwareImageArray) ToDatabaseSoftwareImageArrayOutputWithContex
 // DatabaseSoftwareImageMapInput is an input type that accepts DatabaseSoftwareImageMap and DatabaseSoftwareImageMapOutput values.
 // You can construct a concrete instance of `DatabaseSoftwareImageMapInput` via:
 //
-//          DatabaseSoftwareImageMap{ "key": DatabaseSoftwareImageArgs{...} }
+//	DatabaseSoftwareImageMap{ "key": DatabaseSoftwareImageArgs{...} }
 type DatabaseSoftwareImageMapInput interface {
 	pulumi.Input
 

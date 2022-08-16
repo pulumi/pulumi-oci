@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.GetListJreUsage(ctx, &jms.GetListJreUsageArgs{
-// 			ApplicationId:   pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-// 			ApplicationName: pulumi.StringRef(oci_dataflow_application.Test_application.Name),
-// 			CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-// 			HostId:          pulumi.StringRef(oci_jms_host.Test_host.Id),
-// 			TimeEnd:         pulumi.StringRef(_var.List_jre_usage_time_end),
-// 			TimeStart:       pulumi.StringRef(_var.List_jre_usage_time_start),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.GetListJreUsage(ctx, &jms.GetListJreUsageArgs{
+//				ApplicationId:   pulumi.StringRef(oci_dataflow_application.Test_application.Id),
+//				ApplicationName: pulumi.StringRef(oci_dataflow_application.Test_application.Name),
+//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
+//				HostId:          pulumi.StringRef(oci_jms_host.Test_host.Id),
+//				TimeEnd:         pulumi.StringRef(_var.List_jre_usage_time_end),
+//				TimeStart:       pulumi.StringRef(_var.List_jre_usage_time_start),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetListJreUsage(ctx *pulumi.Context, args *GetListJreUsageArgs, opts ...pulumi.InvokeOption) (*GetListJreUsageResult, error) {
 	var rv GetListJreUsageResult

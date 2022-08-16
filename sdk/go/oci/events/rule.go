@@ -21,43 +21,46 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Events"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Events"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Events.NewRule(ctx, "testRule", &Events.RuleArgs{
-// 			Actions: &events.RuleActionsArgs{
-// 				Actions: events.RuleActionsActionArray{
-// 					&events.RuleActionsActionArgs{
-// 						ActionType:  pulumi.Any(_var.Rule_actions_actions_action_type),
-// 						IsEnabled:   pulumi.Any(_var.Rule_actions_actions_is_enabled),
-// 						Description: pulumi.Any(_var.Rule_actions_actions_description),
-// 						FunctionId:  pulumi.Any(oci_functions_function.Test_function.Id),
-// 						StreamId:    pulumi.Any(oci_streaming_stream.Test_stream.Id),
-// 						TopicId:     pulumi.Any(oci_ons_notification_topic.Test_topic.Id),
-// 					},
-// 				},
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Condition:     pulumi.Any(_var.Rule_condition),
-// 			DisplayName:   pulumi.Any(_var.Rule_display_name),
-// 			IsEnabled:     pulumi.Any(_var.Rule_is_enabled),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Rule_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Events.NewRule(ctx, "testRule", &Events.RuleArgs{
+//				Actions: &events.RuleActionsArgs{
+//					Actions: events.RuleActionsActionArray{
+//						&events.RuleActionsActionArgs{
+//							ActionType:  pulumi.Any(_var.Rule_actions_actions_action_type),
+//							IsEnabled:   pulumi.Any(_var.Rule_actions_actions_is_enabled),
+//							Description: pulumi.Any(_var.Rule_actions_actions_description),
+//							FunctionId:  pulumi.Any(oci_functions_function.Test_function.Id),
+//							StreamId:    pulumi.Any(oci_streaming_stream.Test_stream.Id),
+//							TopicId:     pulumi.Any(oci_ons_notification_topic.Test_topic.Id),
+//						},
+//					},
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Condition:     pulumi.Any(_var.Rule_condition),
+//				DisplayName:   pulumi.Any(_var.Rule_display_name),
+//				IsEnabled:     pulumi.Any(_var.Rule_is_enabled),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Rule_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -65,7 +68,9 @@ import (
 // Rules can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Events/rule:Rule test_rule "id"
+//
+//	$ pulumi import oci:Events/rule:Rule test_rule "id"
+//
 // ```
 type Rule struct {
 	pulumi.CustomResourceState
@@ -261,7 +266,7 @@ func (i *Rule) ToRuleOutputWithContext(ctx context.Context) RuleOutput {
 // RuleArrayInput is an input type that accepts RuleArray and RuleArrayOutput values.
 // You can construct a concrete instance of `RuleArrayInput` via:
 //
-//          RuleArray{ RuleArgs{...} }
+//	RuleArray{ RuleArgs{...} }
 type RuleArrayInput interface {
 	pulumi.Input
 
@@ -286,7 +291,7 @@ func (i RuleArray) ToRuleArrayOutputWithContext(ctx context.Context) RuleArrayOu
 // RuleMapInput is an input type that accepts RuleMap and RuleMapOutput values.
 // You can construct a concrete instance of `RuleMapInput` via:
 //
-//          RuleMap{ "key": RuleArgs{...} }
+//	RuleMap{ "key": RuleArgs{...} }
 type RuleMapInput interface {
 	pulumi.Input
 

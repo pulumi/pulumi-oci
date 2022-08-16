@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
 //
-// List Blockchain Platform Patches
+// # List Blockchain Platform Patches
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.GetBlockchainPlatformPatches(ctx, &blockchain.GetBlockchainPlatformPatchesArgs{
-// 			BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.GetBlockchainPlatformPatches(ctx, &blockchain.GetBlockchainPlatformPatchesArgs{
+//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBlockchainPlatformPatches(ctx *pulumi.Context, args *GetBlockchainPlatformPatchesArgs, opts ...pulumi.InvokeOption) (*GetBlockchainPlatformPatchesResult, error) {
 	var rv GetBlockchainPlatformPatchesResult

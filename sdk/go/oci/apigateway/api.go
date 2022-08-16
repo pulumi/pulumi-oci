@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.NewApi(ctx, "testApi", &ApiGateway.ApiArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Content:       pulumi.Any(_var.Api_content),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Api_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.NewApi(ctx, "testApi", &ApiGateway.ApiArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Content:       pulumi.Any(_var.Api_content),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Api_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // Apis can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApiGateway/api:Api test_api "id"
+//
+//	$ pulumi import oci:ApiGateway/api:Api test_api "id"
+//
 // ```
 type Api struct {
 	pulumi.CustomResourceState
@@ -239,7 +244,7 @@ func (i *Api) ToApiOutputWithContext(ctx context.Context) ApiOutput {
 // ApiArrayInput is an input type that accepts ApiArray and ApiArrayOutput values.
 // You can construct a concrete instance of `ApiArrayInput` via:
 //
-//          ApiArray{ ApiArgs{...} }
+//	ApiArray{ ApiArgs{...} }
 type ApiArrayInput interface {
 	pulumi.Input
 
@@ -264,7 +269,7 @@ func (i ApiArray) ToApiArrayOutputWithContext(ctx context.Context) ApiArrayOutpu
 // ApiMapInput is an input type that accepts ApiMap and ApiMapOutput values.
 // You can construct a concrete instance of `ApiMapInput` via:
 //
-//          ApiMap{ "key": ApiArgs{...} }
+//	ApiMap{ "key": ApiArgs{...} }
 type ApiMapInput interface {
 	pulumi.Input
 

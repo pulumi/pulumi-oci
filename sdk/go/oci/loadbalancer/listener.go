@@ -21,46 +21,49 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewListener(ctx, "testListener", &LoadBalancer.ListenerArgs{
-// 			DefaultBackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-// 			LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			Port:                  pulumi.Any(_var.Listener_port),
-// 			Protocol:              pulumi.Any(_var.Listener_protocol),
-// 			ConnectionConfiguration: &loadbalancer.ListenerConnectionConfigurationArgs{
-// 				IdleTimeoutInSeconds:           pulumi.Any(_var.Listener_connection_configuration_idle_timeout_in_seconds),
-// 				BackendTcpProxyProtocolVersion: pulumi.Any(_var.Listener_connection_configuration_backend_tcp_proxy_protocol_version),
-// 			},
-// 			HostnameNames: pulumi.StringArray{
-// 				pulumi.Any(oci_load_balancer_hostname.Test_hostname.Name),
-// 			},
-// 			PathRouteSetName:  pulumi.Any(oci_load_balancer_path_route_set.Test_path_route_set.Name),
-// 			RoutingPolicyName: pulumi.Any(oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name),
-// 			RuleSetNames: pulumi.StringArray{
-// 				pulumi.Any(oci_load_balancer_rule_set.Test_rule_set.Name),
-// 			},
-// 			SslConfiguration: &loadbalancer.ListenerSslConfigurationArgs{
-// 				CertificateName:                pulumi.Any(oci_load_balancer_certificate.Test_certificate.Name),
-// 				CertificateIds:                 pulumi.Any(_var.Listener_ssl_configuration_certificate_ids),
-// 				CipherSuiteName:                pulumi.Any(_var.Listener_ssl_configuration_cipher_suite_name),
-// 				Protocols:                      pulumi.Any(_var.Listener_ssl_configuration_protocols),
-// 				ServerOrderPreference:          pulumi.Any(_var.Listener_ssl_configuration_server_order_preference),
-// 				TrustedCertificateAuthorityIds: pulumi.Any(_var.Listener_ssl_configuration_trusted_certificate_authority_ids),
-// 				VerifyDepth:                    pulumi.Any(_var.Listener_ssl_configuration_verify_depth),
-// 				VerifyPeerCertificate:          pulumi.Any(_var.Listener_ssl_configuration_verify_peer_certificate),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewListener(ctx, "testListener", &LoadBalancer.ListenerArgs{
+//				DefaultBackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
+//				LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Port:                  pulumi.Any(_var.Listener_port),
+//				Protocol:              pulumi.Any(_var.Listener_protocol),
+//				ConnectionConfiguration: &loadbalancer.ListenerConnectionConfigurationArgs{
+//					IdleTimeoutInSeconds:           pulumi.Any(_var.Listener_connection_configuration_idle_timeout_in_seconds),
+//					BackendTcpProxyProtocolVersion: pulumi.Any(_var.Listener_connection_configuration_backend_tcp_proxy_protocol_version),
+//				},
+//				HostnameNames: pulumi.StringArray{
+//					pulumi.Any(oci_load_balancer_hostname.Test_hostname.Name),
+//				},
+//				PathRouteSetName:  pulumi.Any(oci_load_balancer_path_route_set.Test_path_route_set.Name),
+//				RoutingPolicyName: pulumi.Any(oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name),
+//				RuleSetNames: pulumi.StringArray{
+//					pulumi.Any(oci_load_balancer_rule_set.Test_rule_set.Name),
+//				},
+//				SslConfiguration: &loadbalancer.ListenerSslConfigurationArgs{
+//					CertificateName:                pulumi.Any(oci_load_balancer_certificate.Test_certificate.Name),
+//					CertificateIds:                 pulumi.Any(_var.Listener_ssl_configuration_certificate_ids),
+//					CipherSuiteName:                pulumi.Any(_var.Listener_ssl_configuration_cipher_suite_name),
+//					Protocols:                      pulumi.Any(_var.Listener_ssl_configuration_protocols),
+//					ServerOrderPreference:          pulumi.Any(_var.Listener_ssl_configuration_server_order_preference),
+//					TrustedCertificateAuthorityIds: pulumi.Any(_var.Listener_ssl_configuration_trusted_certificate_authority_ids),
+//					VerifyDepth:                    pulumi.Any(_var.Listener_ssl_configuration_verify_depth),
+//					VerifyPeerCertificate:          pulumi.Any(_var.Listener_ssl_configuration_verify_peer_certificate),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -68,7 +71,9 @@ import (
 // Listeners can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
+//
+//	$ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
+//
 // ```
 type Listener struct {
 	pulumi.CustomResourceState
@@ -271,7 +276,7 @@ func (i *Listener) ToListenerOutputWithContext(ctx context.Context) ListenerOutp
 // ListenerArrayInput is an input type that accepts ListenerArray and ListenerArrayOutput values.
 // You can construct a concrete instance of `ListenerArrayInput` via:
 //
-//          ListenerArray{ ListenerArgs{...} }
+//	ListenerArray{ ListenerArgs{...} }
 type ListenerArrayInput interface {
 	pulumi.Input
 
@@ -296,7 +301,7 @@ func (i ListenerArray) ToListenerArrayOutputWithContext(ctx context.Context) Lis
 // ListenerMapInput is an input type that accepts ListenerMap and ListenerMapOutput values.
 // You can construct a concrete instance of `ListenerMapInput` via:
 //
-//          ListenerMap{ "key": ListenerArgs{...} }
+//	ListenerMap{ "key": ListenerArgs{...} }
 type ListenerMapInput interface {
 	pulumi.Input
 

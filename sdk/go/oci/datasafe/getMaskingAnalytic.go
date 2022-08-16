@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetMaskingAnalytic(ctx, &datasafe.GetMaskingAnalyticArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Masking_analytic_compartment_id_in_subtree),
-// 			GroupBy:                pulumi.StringRef(_var.Masking_analytic_group_by),
-// 			MaskingPolicyId:        pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
-// 			TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetMaskingAnalytic(ctx, &datasafe.GetMaskingAnalyticArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Masking_analytic_compartment_id_in_subtree),
+//				GroupBy:                pulumi.StringRef(_var.Masking_analytic_group_by),
+//				MaskingPolicyId:        pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
+//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMaskingAnalytic(ctx *pulumi.Context, args *GetMaskingAnalyticArgs, opts ...pulumi.InvokeOption) (*GetMaskingAnalyticResult, error) {
 	var rv GetMaskingAnalyticResult

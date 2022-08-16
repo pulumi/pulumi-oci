@@ -43,26 +43,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.GetManagedInstanceStreamProfile(ctx, &osmanagement.GetManagedInstanceStreamProfileArgs{
-// 			ManagedInstanceId: _var.Managed_instance_id,
-// 			CompartmentId:     pulumi.StringRef(_var.Compartment_id),
-// 			ModuleName:        pulumi.StringRef(_var.Managed_instance_module_name),
-// 			ProfileName:       pulumi.StringRef(_var.Managed_instance_module_stream_profile_name),
-// 			ProfileStatus:     pulumi.StringRef(_var.Managed_instance_profile_status),
-// 			StreamName:        pulumi.StringRef(_var.Managed_instance_module_stream_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.GetManagedInstanceStreamProfile(ctx, &osmanagement.GetManagedInstanceStreamProfileArgs{
+//				ManagedInstanceId: _var.Managed_instance_id,
+//				CompartmentId:     pulumi.StringRef(_var.Compartment_id),
+//				ModuleName:        pulumi.StringRef(_var.Managed_instance_module_name),
+//				ProfileName:       pulumi.StringRef(_var.Managed_instance_module_stream_profile_name),
+//				ProfileStatus:     pulumi.StringRef(_var.Managed_instance_profile_status),
+//				StreamName:        pulumi.StringRef(_var.Managed_instance_module_stream_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedInstanceStreamProfile(ctx *pulumi.Context, args *GetManagedInstanceStreamProfileArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceStreamProfileResult, error) {
 	var rv GetManagedInstanceStreamProfileResult

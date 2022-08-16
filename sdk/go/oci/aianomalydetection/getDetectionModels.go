@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.GetDetectionModels(ctx, &aianomalydetection.GetDetectionModelsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Model_display_name),
-// 			ProjectId:     pulumi.StringRef(oci_ai_anomaly_detection_project.Test_project.Id),
-// 			State:         pulumi.StringRef(_var.Model_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.GetDetectionModels(ctx, &aianomalydetection.GetDetectionModelsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Model_display_name),
+//				ProjectId:     pulumi.StringRef(oci_ai_anomaly_detection_project.Test_project.Id),
+//				State:         pulumi.StringRef(_var.Model_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDetectionModels(ctx *pulumi.Context, args *GetDetectionModelsArgs, opts ...pulumi.InvokeOption) (*GetDetectionModelsResult, error) {
 	var rv GetDetectionModelsResult

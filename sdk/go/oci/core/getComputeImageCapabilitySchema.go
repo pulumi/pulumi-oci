@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
 //
-// Gets the specified Compute Image Capability Schema
+// # Gets the specified Compute Image Capability Schema
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeImageCapabilitySchema(ctx, &core.GetComputeImageCapabilitySchemaArgs{
-// 			ComputeImageCapabilitySchemaId: oci_core_compute_image_capability_schema.Test_compute_image_capability_schema.Id,
-// 			IsMergeEnabled:                 pulumi.StringRef(_var.Compute_image_capability_schema_is_merge_enabled),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeImageCapabilitySchema(ctx, &core.GetComputeImageCapabilitySchemaArgs{
+//				ComputeImageCapabilitySchemaId: oci_core_compute_image_capability_schema.Test_compute_image_capability_schema.Id,
+//				IsMergeEnabled:                 pulumi.StringRef(_var.Compute_image_capability_schema_is_merge_enabled),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupComputeImageCapabilitySchema(ctx *pulumi.Context, args *LookupComputeImageCapabilitySchemaArgs, opts ...pulumi.InvokeOption) (*LookupComputeImageCapabilitySchemaResult, error) {
 	var rv LookupComputeImageCapabilitySchemaResult

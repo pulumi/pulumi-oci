@@ -21,42 +21,45 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalDatabaseConnector(ctx, "testExternalDatabaseConnector", &Database.ExternalDatabaseConnectorArgs{
-// 			ConnectionCredentials: &database.ExternalDatabaseConnectorConnectionCredentialsArgs{
-// 				CredentialName: pulumi.Any(_var.External_database_connector_connection_credentials_credential_name),
-// 				CredentialType: pulumi.Any(_var.External_database_connector_connection_credentials_credential_type),
-// 				Password:       pulumi.Any(_var.External_database_connector_connection_credentials_password),
-// 				Role:           pulumi.Any(_var.External_database_connector_connection_credentials_role),
-// 				SslSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				Username:       pulumi.Any(_var.External_database_connector_connection_credentials_username),
-// 			},
-// 			ConnectionString: &database.ExternalDatabaseConnectorConnectionStringArgs{
-// 				Hostname: pulumi.Any(_var.External_database_connector_connection_string_hostname),
-// 				Port:     pulumi.Any(_var.External_database_connector_connection_string_port),
-// 				Protocol: pulumi.Any(_var.External_database_connector_connection_string_protocol),
-// 				Service:  pulumi.Any(_var.External_database_connector_connection_string_service),
-// 			},
-// 			ConnectorAgentId:   pulumi.Any(oci_database_connector_agent.Test_connector_agent.Id),
-// 			DisplayName:        pulumi.Any(_var.External_database_connector_display_name),
-// 			ExternalDatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
-// 			ConnectorType:      pulumi.Any(_var.External_database_connector_connector_type),
-// 			DefinedTags:        pulumi.Any(_var.External_database_connector_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalDatabaseConnector(ctx, "testExternalDatabaseConnector", &Database.ExternalDatabaseConnectorArgs{
+//				ConnectionCredentials: &database.ExternalDatabaseConnectorConnectionCredentialsArgs{
+//					CredentialName: pulumi.Any(_var.External_database_connector_connection_credentials_credential_name),
+//					CredentialType: pulumi.Any(_var.External_database_connector_connection_credentials_credential_type),
+//					Password:       pulumi.Any(_var.External_database_connector_connection_credentials_password),
+//					Role:           pulumi.Any(_var.External_database_connector_connection_credentials_role),
+//					SslSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Username:       pulumi.Any(_var.External_database_connector_connection_credentials_username),
+//				},
+//				ConnectionString: &database.ExternalDatabaseConnectorConnectionStringArgs{
+//					Hostname: pulumi.Any(_var.External_database_connector_connection_string_hostname),
+//					Port:     pulumi.Any(_var.External_database_connector_connection_string_port),
+//					Protocol: pulumi.Any(_var.External_database_connector_connection_string_protocol),
+//					Service:  pulumi.Any(_var.External_database_connector_connection_string_service),
+//				},
+//				ConnectorAgentId:   pulumi.Any(oci_database_connector_agent.Test_connector_agent.Id),
+//				DisplayName:        pulumi.Any(_var.External_database_connector_display_name),
+//				ExternalDatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
+//				ConnectorType:      pulumi.Any(_var.External_database_connector_connector_type),
+//				DefinedTags:        pulumi.Any(_var.External_database_connector_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -64,7 +67,9 @@ import (
 // ExternalDatabaseConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
+//
+//	$ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
+//
 // ```
 type ExternalDatabaseConnector struct {
 	pulumi.CustomResourceState
@@ -273,7 +278,7 @@ func (i *ExternalDatabaseConnector) ToExternalDatabaseConnectorOutputWithContext
 // ExternalDatabaseConnectorArrayInput is an input type that accepts ExternalDatabaseConnectorArray and ExternalDatabaseConnectorArrayOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorArrayInput` via:
 //
-//          ExternalDatabaseConnectorArray{ ExternalDatabaseConnectorArgs{...} }
+//	ExternalDatabaseConnectorArray{ ExternalDatabaseConnectorArgs{...} }
 type ExternalDatabaseConnectorArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +303,7 @@ func (i ExternalDatabaseConnectorArray) ToExternalDatabaseConnectorArrayOutputWi
 // ExternalDatabaseConnectorMapInput is an input type that accepts ExternalDatabaseConnectorMap and ExternalDatabaseConnectorMapOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorMapInput` via:
 //
-//          ExternalDatabaseConnectorMap{ "key": ExternalDatabaseConnectorArgs{...} }
+//	ExternalDatabaseConnectorMap{ "key": ExternalDatabaseConnectorArgs{...} }
 type ExternalDatabaseConnectorMapInput interface {
 	pulumi.Input
 

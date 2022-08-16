@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.NewMonitoredResourcesSearch(ctx, "testMonitoredResourcesSearch", &StackMonitoring.MonitoredResourcesSearchArgs{
-// 			CompartmentId:                   pulumi.Any(_var.Compartment_id),
-// 			HostName:                        pulumi.Any(_var.Monitored_resources_search_host_name),
-// 			HostNameContains:                pulumi.Any(_var.Monitored_resources_search_host_name_contains),
-// 			ManagementAgentId:               pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
-// 			NameContains:                    pulumi.Any(_var.Monitored_resources_search_name_contains),
-// 			PropertyEquals:                  pulumi.Any(_var.Monitored_resources_search_property_equals),
-// 			ResourceTimeZone:                pulumi.Any(_var.Monitored_resources_search_resource_time_zone),
-// 			State:                           pulumi.Any(_var.Monitored_resources_search_state),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.Any(_var.Monitored_resources_search_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.Any(_var.Monitored_resources_search_time_created_less_than),
-// 			TimeUpdatedGreaterThanOrEqualTo: pulumi.Any(_var.Monitored_resources_search_time_updated_greater_than_or_equal_to),
-// 			TimeUpdatedLessThan:             pulumi.Any(_var.Monitored_resources_search_time_updated_less_than),
-// 			Type:                            pulumi.Any(_var.Monitored_resources_search_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.NewMonitoredResourcesSearch(ctx, "testMonitoredResourcesSearch", &StackMonitoring.MonitoredResourcesSearchArgs{
+//				CompartmentId:                   pulumi.Any(_var.Compartment_id),
+//				HostName:                        pulumi.Any(_var.Monitored_resources_search_host_name),
+//				HostNameContains:                pulumi.Any(_var.Monitored_resources_search_host_name_contains),
+//				ManagementAgentId:               pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				NameContains:                    pulumi.Any(_var.Monitored_resources_search_name_contains),
+//				PropertyEquals:                  pulumi.Any(_var.Monitored_resources_search_property_equals),
+//				ResourceTimeZone:                pulumi.Any(_var.Monitored_resources_search_resource_time_zone),
+//				State:                           pulumi.Any(_var.Monitored_resources_search_state),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.Any(_var.Monitored_resources_search_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.Any(_var.Monitored_resources_search_time_created_less_than),
+//				TimeUpdatedGreaterThanOrEqualTo: pulumi.Any(_var.Monitored_resources_search_time_updated_greater_than_or_equal_to),
+//				TimeUpdatedLessThan:             pulumi.Any(_var.Monitored_resources_search_time_updated_less_than),
+//				Type:                            pulumi.Any(_var.Monitored_resources_search_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // MonitoredResourcesSearch can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
+//
+//	$ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
+//
 // ```
 type MonitoredResourcesSearch struct {
 	pulumi.CustomResourceState
@@ -282,7 +287,7 @@ func (i *MonitoredResourcesSearch) ToMonitoredResourcesSearchOutputWithContext(c
 // MonitoredResourcesSearchArrayInput is an input type that accepts MonitoredResourcesSearchArray and MonitoredResourcesSearchArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchArrayInput` via:
 //
-//          MonitoredResourcesSearchArray{ MonitoredResourcesSearchArgs{...} }
+//	MonitoredResourcesSearchArray{ MonitoredResourcesSearchArgs{...} }
 type MonitoredResourcesSearchArrayInput interface {
 	pulumi.Input
 
@@ -307,7 +312,7 @@ func (i MonitoredResourcesSearchArray) ToMonitoredResourcesSearchArrayOutputWith
 // MonitoredResourcesSearchMapInput is an input type that accepts MonitoredResourcesSearchMap and MonitoredResourcesSearchMapOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchMapInput` via:
 //
-//          MonitoredResourcesSearchMap{ "key": MonitoredResourcesSearchArgs{...} }
+//	MonitoredResourcesSearchMap{ "key": MonitoredResourcesSearchArgs{...} }
 type MonitoredResourcesSearchMapInput interface {
 	pulumi.Input
 

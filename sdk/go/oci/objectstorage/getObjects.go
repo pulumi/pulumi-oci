@@ -29,28 +29,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetObjects(ctx, &objectstorage.GetObjectsArgs{
-// 			Bucket:     _var.Object_bucket,
-// 			Namespace:  _var.Object_namespace,
-// 			Delimiter:  pulumi.StringRef(_var.Object_delimiter),
-// 			End:        pulumi.StringRef(_var.Object_end),
-// 			Fields:     _var.Object_fields,
-// 			Prefix:     pulumi.StringRef(_var.Object_prefix),
-// 			Start:      pulumi.StringRef(_var.Object_start),
-// 			StartAfter: pulumi.StringRef(_var.Object_start_after),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetObjects(ctx, &objectstorage.GetObjectsArgs{
+//				Bucket:     _var.Object_bucket,
+//				Namespace:  _var.Object_namespace,
+//				Delimiter:  pulumi.StringRef(_var.Object_delimiter),
+//				End:        pulumi.StringRef(_var.Object_end),
+//				Fields:     _var.Object_fields,
+//				Prefix:     pulumi.StringRef(_var.Object_prefix),
+//				Start:      pulumi.StringRef(_var.Object_start),
+//				StartAfter: pulumi.StringRef(_var.Object_start_after),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetObjects(ctx *pulumi.Context, args *GetObjectsArgs, opts ...pulumi.InvokeOption) (*GetObjectsResult, error) {
 	var rv GetObjectsResult

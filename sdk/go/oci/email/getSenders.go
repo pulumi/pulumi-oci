@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.GetSenders(ctx, &email.GetSendersArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Domain:        pulumi.StringRef(_var.Sender_domain),
-// 			EmailAddress:  pulumi.StringRef(_var.Sender_email_address),
-// 			State:         pulumi.StringRef(_var.Sender_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.GetSenders(ctx, &email.GetSendersArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Domain:        pulumi.StringRef(_var.Sender_domain),
+//				EmailAddress:  pulumi.StringRef(_var.Sender_email_address),
+//				State:         pulumi.StringRef(_var.Sender_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSenders(ctx *pulumi.Context, args *GetSendersArgs, opts ...pulumi.InvokeOption) (*GetSendersResult, error) {
 	var rv GetSendersResult

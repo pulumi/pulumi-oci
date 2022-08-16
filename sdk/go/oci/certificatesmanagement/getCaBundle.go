@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetCaBundle(ctx, &certificatesmanagement.GetCaBundleArgs{
-// 			CaBundleId: oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetCaBundle(ctx, &certificatesmanagement.GetCaBundleArgs{
+//				CaBundleId: oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCaBundle(ctx *pulumi.Context, args *LookupCaBundleArgs, opts ...pulumi.InvokeOption) (*LookupCaBundleResult, error) {
 	var rv LookupCaBundleResult

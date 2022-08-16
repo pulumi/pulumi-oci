@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetMysqlDbSystem(ctx, &mysql.GetMysqlDbSystemArgs{
-// 			DbSystemId: oci_mysql_mysql_db_system.Test_db_system.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetMysqlDbSystem(ctx, &mysql.GetMysqlDbSystemArgs{
+//				DbSystemId: oci_mysql_mysql_db_system.Test_db_system.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupMysqlDbSystem(ctx *pulumi.Context, args *LookupMysqlDbSystemArgs, opts ...pulumi.InvokeOption) (*LookupMysqlDbSystemResult, error) {
 	var rv LookupMysqlDbSystemResult

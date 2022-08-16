@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.GetUnifiedAgentConfigurations(ctx, &logging.GetUnifiedAgentConfigurationsArgs{
-// 			CompartmentId:            _var.Compartment_id,
-// 			DisplayName:              pulumi.StringRef(_var.Unified_agent_configuration_display_name),
-// 			GroupId:                  pulumi.StringRef(oci_identity_group.Test_group.Id),
-// 			IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Unified_agent_configuration_is_compartment_id_in_subtree),
-// 			LogId:                    pulumi.StringRef(oci_logging_log.Test_log.Id),
-// 			State:                    pulumi.StringRef(_var.Unified_agent_configuration_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.GetUnifiedAgentConfigurations(ctx, &logging.GetUnifiedAgentConfigurationsArgs{
+//				CompartmentId:            _var.Compartment_id,
+//				DisplayName:              pulumi.StringRef(_var.Unified_agent_configuration_display_name),
+//				GroupId:                  pulumi.StringRef(oci_identity_group.Test_group.Id),
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Unified_agent_configuration_is_compartment_id_in_subtree),
+//				LogId:                    pulumi.StringRef(oci_logging_log.Test_log.Id),
+//				State:                    pulumi.StringRef(_var.Unified_agent_configuration_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUnifiedAgentConfigurations(ctx *pulumi.Context, args *GetUnifiedAgentConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetUnifiedAgentConfigurationsResult, error) {
 	var rv GetUnifiedAgentConfigurationsResult

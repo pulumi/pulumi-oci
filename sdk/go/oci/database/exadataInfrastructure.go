@@ -22,69 +22,72 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExadataInfrastructure(ctx, "testExadataInfrastructure", &Database.ExadataInfrastructureArgs{
-// 			AdminNetworkCidr:         pulumi.Any(_var.Exadata_infrastructure_admin_network_cidr),
-// 			CloudControlPlaneServer1: pulumi.Any(_var.Exadata_infrastructure_cloud_control_plane_server1),
-// 			CloudControlPlaneServer2: pulumi.Any(_var.Exadata_infrastructure_cloud_control_plane_server2),
-// 			CompartmentId:            pulumi.Any(_var.Compartment_id),
-// 			DisplayName:              pulumi.Any(_var.Exadata_infrastructure_display_name),
-// 			DnsServers:               pulumi.Any(_var.Exadata_infrastructure_dns_server),
-// 			Gateway:                  pulumi.Any(_var.Exadata_infrastructure_gateway),
-// 			InfiniBandNetworkCidr:    pulumi.Any(_var.Exadata_infrastructure_infini_band_network_cidr),
-// 			Netmask:                  pulumi.Any(_var.Exadata_infrastructure_netmask),
-// 			NtpServers:               pulumi.Any(_var.Exadata_infrastructure_ntp_server),
-// 			Shape:                    pulumi.Any(_var.Exadata_infrastructure_shape),
-// 			TimeZone:                 pulumi.Any(_var.Exadata_infrastructure_time_zone),
-// 			ActivationFile:           pulumi.Any(_var.Exadata_infrastructure_activation_file),
-// 			ComputeCount:             pulumi.Any(_var.Exadata_infrastructure_compute_count),
-// 			Contacts: database.ExadataInfrastructureContactArray{
-// 				&database.ExadataInfrastructureContactArgs{
-// 					Email:                 pulumi.Any(_var.Exadata_infrastructure_contacts_email),
-// 					IsPrimary:             pulumi.Any(_var.Exadata_infrastructure_contacts_is_primary),
-// 					Name:                  pulumi.Any(_var.Exadata_infrastructure_contacts_name),
-// 					IsContactMosValidated: pulumi.Any(_var.Exadata_infrastructure_contacts_is_contact_mos_validated),
-// 					PhoneNumber:           pulumi.Any(_var.Exadata_infrastructure_contacts_phone_number),
-// 				},
-// 			},
-// 			CorporateProxy: pulumi.Any(_var.Exadata_infrastructure_corporate_proxy),
-// 			DefinedTags:    pulumi.Any(_var.Exadata_infrastructure_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsCpsOfflineReportEnabled: pulumi.Any(_var.Exadata_infrastructure_is_cps_offline_report_enabled),
-// 			MaintenanceWindow: &database.ExadataInfrastructureMaintenanceWindowArgs{
-// 				Preference:                pulumi.Any(_var.Exadata_infrastructure_maintenance_window_preference),
-// 				CustomActionTimeoutInMins: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
-// 				DaysOfWeeks: database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
-// 					&database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
-// 						Name: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_days_of_week_name),
-// 					},
-// 				},
-// 				HoursOfDays:                  pulumi.Any(_var.Exadata_infrastructure_maintenance_window_hours_of_day),
-// 				IsCustomActionTimeoutEnabled: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled),
-// 				LeadTimeInWeeks:              pulumi.Any(_var.Exadata_infrastructure_maintenance_window_lead_time_in_weeks),
-// 				Months: database.ExadataInfrastructureMaintenanceWindowMonthArray{
-// 					&database.ExadataInfrastructureMaintenanceWindowMonthArgs{
-// 						Name: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_months_name),
-// 					},
-// 				},
-// 				PatchingMode:  pulumi.Any(_var.Exadata_infrastructure_maintenance_window_patching_mode),
-// 				WeeksOfMonths: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_weeks_of_month),
-// 			},
-// 			StorageCount: pulumi.Any(_var.Exadata_infrastructure_storage_count),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExadataInfrastructure(ctx, "testExadataInfrastructure", &Database.ExadataInfrastructureArgs{
+//				AdminNetworkCidr:         pulumi.Any(_var.Exadata_infrastructure_admin_network_cidr),
+//				CloudControlPlaneServer1: pulumi.Any(_var.Exadata_infrastructure_cloud_control_plane_server1),
+//				CloudControlPlaneServer2: pulumi.Any(_var.Exadata_infrastructure_cloud_control_plane_server2),
+//				CompartmentId:            pulumi.Any(_var.Compartment_id),
+//				DisplayName:              pulumi.Any(_var.Exadata_infrastructure_display_name),
+//				DnsServers:               pulumi.Any(_var.Exadata_infrastructure_dns_server),
+//				Gateway:                  pulumi.Any(_var.Exadata_infrastructure_gateway),
+//				InfiniBandNetworkCidr:    pulumi.Any(_var.Exadata_infrastructure_infini_band_network_cidr),
+//				Netmask:                  pulumi.Any(_var.Exadata_infrastructure_netmask),
+//				NtpServers:               pulumi.Any(_var.Exadata_infrastructure_ntp_server),
+//				Shape:                    pulumi.Any(_var.Exadata_infrastructure_shape),
+//				TimeZone:                 pulumi.Any(_var.Exadata_infrastructure_time_zone),
+//				ActivationFile:           pulumi.Any(_var.Exadata_infrastructure_activation_file),
+//				ComputeCount:             pulumi.Any(_var.Exadata_infrastructure_compute_count),
+//				Contacts: database.ExadataInfrastructureContactArray{
+//					&database.ExadataInfrastructureContactArgs{
+//						Email:                 pulumi.Any(_var.Exadata_infrastructure_contacts_email),
+//						IsPrimary:             pulumi.Any(_var.Exadata_infrastructure_contacts_is_primary),
+//						Name:                  pulumi.Any(_var.Exadata_infrastructure_contacts_name),
+//						IsContactMosValidated: pulumi.Any(_var.Exadata_infrastructure_contacts_is_contact_mos_validated),
+//						PhoneNumber:           pulumi.Any(_var.Exadata_infrastructure_contacts_phone_number),
+//					},
+//				},
+//				CorporateProxy: pulumi.Any(_var.Exadata_infrastructure_corporate_proxy),
+//				DefinedTags:    pulumi.Any(_var.Exadata_infrastructure_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsCpsOfflineReportEnabled: pulumi.Any(_var.Exadata_infrastructure_is_cps_offline_report_enabled),
+//				MaintenanceWindow: &database.ExadataInfrastructureMaintenanceWindowArgs{
+//					Preference:                pulumi.Any(_var.Exadata_infrastructure_maintenance_window_preference),
+//					CustomActionTimeoutInMins: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
+//					DaysOfWeeks: database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
+//						&database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
+//							Name: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_days_of_week_name),
+//						},
+//					},
+//					HoursOfDays:                  pulumi.Any(_var.Exadata_infrastructure_maintenance_window_hours_of_day),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled),
+//					LeadTimeInWeeks:              pulumi.Any(_var.Exadata_infrastructure_maintenance_window_lead_time_in_weeks),
+//					Months: database.ExadataInfrastructureMaintenanceWindowMonthArray{
+//						&database.ExadataInfrastructureMaintenanceWindowMonthArgs{
+//							Name: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_months_name),
+//						},
+//					},
+//					PatchingMode:  pulumi.Any(_var.Exadata_infrastructure_maintenance_window_patching_mode),
+//					WeeksOfMonths: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_weeks_of_month),
+//				},
+//				StorageCount: pulumi.Any(_var.Exadata_infrastructure_storage_count),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -92,7 +95,9 @@ import (
 // ExadataInfrastructures can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
+//
+//	$ pulumi import oci:Database/exadataInfrastructure:ExadataInfrastructure test_exadata_infrastructure "id"
+//
 // ```
 type ExadataInfrastructure struct {
 	pulumi.CustomResourceState
@@ -158,6 +163,8 @@ type ExadataInfrastructure struct {
 	MaxMemoryInGbs pulumi.IntOutput `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion pulumi.StringOutput `pulumi:"monthlyDbServerVersion"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringOutput `pulumi:"netmask"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -302,6 +309,8 @@ type exadataInfrastructureState struct {
 	MaxMemoryInGbs *int `pulumi:"maxMemoryInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion *string `pulumi:"monthlyDbServerVersion"`
 	// (Updatable) The netmask for the control plane network.
 	Netmask *string `pulumi:"netmask"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -382,6 +391,8 @@ type ExadataInfrastructureState struct {
 	MaxMemoryInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
+	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+	MonthlyDbServerVersion pulumi.StringPtrInput
 	// (Updatable) The netmask for the control plane network.
 	Netmask pulumi.StringPtrInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -527,7 +538,7 @@ func (i *ExadataInfrastructure) ToExadataInfrastructureOutputWithContext(ctx con
 // ExadataInfrastructureArrayInput is an input type that accepts ExadataInfrastructureArray and ExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureArrayInput` via:
 //
-//          ExadataInfrastructureArray{ ExadataInfrastructureArgs{...} }
+//	ExadataInfrastructureArray{ ExadataInfrastructureArgs{...} }
 type ExadataInfrastructureArrayInput interface {
 	pulumi.Input
 
@@ -552,7 +563,7 @@ func (i ExadataInfrastructureArray) ToExadataInfrastructureArrayOutputWithContex
 // ExadataInfrastructureMapInput is an input type that accepts ExadataInfrastructureMap and ExadataInfrastructureMapOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureMapInput` via:
 //
-//          ExadataInfrastructureMap{ "key": ExadataInfrastructureArgs{...} }
+//	ExadataInfrastructureMap{ "key": ExadataInfrastructureArgs{...} }
 type ExadataInfrastructureMapInput interface {
 	pulumi.Input
 

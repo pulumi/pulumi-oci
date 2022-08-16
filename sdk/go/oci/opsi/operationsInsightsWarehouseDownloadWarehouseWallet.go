@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewOperationsInsightsWarehouseDownloadWarehouseWallet(ctx, "testOperationsInsightsWarehouseDownloadWarehouseWallet", &Opsi.OperationsInsightsWarehouseDownloadWarehouseWalletArgs{
-// 			OperationsInsightsWarehouseId:             pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-// 			OperationsInsightsWarehouseWalletPassword: pulumi.Any(_var.Operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewOperationsInsightsWarehouseDownloadWarehouseWallet(ctx, "testOperationsInsightsWarehouseDownloadWarehouseWallet", &Opsi.OperationsInsightsWarehouseDownloadWarehouseWalletArgs{
+//				OperationsInsightsWarehouseId:             pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//				OperationsInsightsWarehouseWalletPassword: pulumi.Any(_var.Operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
+//
+//	$ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
+//
 // ```
 type OperationsInsightsWarehouseDownloadWarehouseWallet struct {
 	pulumi.CustomResourceState
@@ -148,7 +153,7 @@ func (i *OperationsInsightsWarehouseDownloadWarehouseWallet) ToOperationsInsight
 // OperationsInsightsWarehouseDownloadWarehouseWalletArrayInput is an input type that accepts OperationsInsightsWarehouseDownloadWarehouseWalletArray and OperationsInsightsWarehouseDownloadWarehouseWalletArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseDownloadWarehouseWalletArrayInput` via:
 //
-//          OperationsInsightsWarehouseDownloadWarehouseWalletArray{ OperationsInsightsWarehouseDownloadWarehouseWalletArgs{...} }
+//	OperationsInsightsWarehouseDownloadWarehouseWalletArray{ OperationsInsightsWarehouseDownloadWarehouseWalletArgs{...} }
 type OperationsInsightsWarehouseDownloadWarehouseWalletArrayInput interface {
 	pulumi.Input
 
@@ -173,7 +178,7 @@ func (i OperationsInsightsWarehouseDownloadWarehouseWalletArray) ToOperationsIns
 // OperationsInsightsWarehouseDownloadWarehouseWalletMapInput is an input type that accepts OperationsInsightsWarehouseDownloadWarehouseWalletMap and OperationsInsightsWarehouseDownloadWarehouseWalletMapOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseDownloadWarehouseWalletMapInput` via:
 //
-//          OperationsInsightsWarehouseDownloadWarehouseWalletMap{ "key": OperationsInsightsWarehouseDownloadWarehouseWalletArgs{...} }
+//	OperationsInsightsWarehouseDownloadWarehouseWalletMap{ "key": OperationsInsightsWarehouseDownloadWarehouseWalletArgs{...} }
 type OperationsInsightsWarehouseDownloadWarehouseWalletMapInput interface {
 	pulumi.Input
 

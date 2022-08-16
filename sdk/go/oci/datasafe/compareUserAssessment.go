@@ -22,22 +22,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewCompareUserAssessment(ctx, "testCompareUserAssessment", &DataSafe.CompareUserAssessmentArgs{
-// 			ComparisonUserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
-// 			UserAssessmentId:           pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewCompareUserAssessment(ctx, "testCompareUserAssessment", &DataSafe.CompareUserAssessmentArgs{
+//				ComparisonUserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
+//				UserAssessmentId:           pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // CompareUserAssessment can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
+//
+//	$ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
+//
 // ```
 type CompareUserAssessment struct {
 	pulumi.CustomResourceState
@@ -149,7 +154,7 @@ func (i *CompareUserAssessment) ToCompareUserAssessmentOutputWithContext(ctx con
 // CompareUserAssessmentArrayInput is an input type that accepts CompareUserAssessmentArray and CompareUserAssessmentArrayOutput values.
 // You can construct a concrete instance of `CompareUserAssessmentArrayInput` via:
 //
-//          CompareUserAssessmentArray{ CompareUserAssessmentArgs{...} }
+//	CompareUserAssessmentArray{ CompareUserAssessmentArgs{...} }
 type CompareUserAssessmentArrayInput interface {
 	pulumi.Input
 
@@ -174,7 +179,7 @@ func (i CompareUserAssessmentArray) ToCompareUserAssessmentArrayOutputWithContex
 // CompareUserAssessmentMapInput is an input type that accepts CompareUserAssessmentMap and CompareUserAssessmentMapOutput values.
 // You can construct a concrete instance of `CompareUserAssessmentMapInput` via:
 //
-//          CompareUserAssessmentMap{ "key": CompareUserAssessmentArgs{...} }
+//	CompareUserAssessmentMap{ "key": CompareUserAssessmentArgs{...} }
 type CompareUserAssessmentMapInput interface {
 	pulumi.Input
 

@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.GetDatabaseToolsEndpointServices(ctx, &databasetools.GetDatabaseToolsEndpointServicesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Database_tools_endpoint_service_display_name),
-// 			Name:          pulumi.StringRef(_var.Database_tools_endpoint_service_name),
-// 			State:         pulumi.StringRef(_var.Database_tools_endpoint_service_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.GetDatabaseToolsEndpointServices(ctx, &databasetools.GetDatabaseToolsEndpointServicesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Database_tools_endpoint_service_display_name),
+//				Name:          pulumi.StringRef(_var.Database_tools_endpoint_service_name),
+//				State:         pulumi.StringRef(_var.Database_tools_endpoint_service_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabaseToolsEndpointServices(ctx *pulumi.Context, args *GetDatabaseToolsEndpointServicesArgs, opts ...pulumi.InvokeOption) (*GetDatabaseToolsEndpointServicesResult, error) {
 	var rv GetDatabaseToolsEndpointServicesResult

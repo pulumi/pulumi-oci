@@ -20,7 +20,7 @@ type FleetInventoryLog struct {
 // FleetInventoryLogInput is an input type that accepts FleetInventoryLogArgs and FleetInventoryLogOutput values.
 // You can construct a concrete instance of `FleetInventoryLogInput` via:
 //
-//          FleetInventoryLogArgs{...}
+//	FleetInventoryLogArgs{...}
 type FleetInventoryLogInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i FleetInventoryLogArgs) ToFleetInventoryLogPtrOutputWithContext(ctx conte
 // FleetInventoryLogPtrInput is an input type that accepts FleetInventoryLogArgs, FleetInventoryLogPtr and FleetInventoryLogPtrOutput values.
 // You can construct a concrete instance of `FleetInventoryLogPtrInput` via:
 //
-//          FleetInventoryLogArgs{...}
+//	        FleetInventoryLogArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type FleetInventoryLogPtrInput interface {
 	pulumi.Input
 
@@ -176,7 +176,7 @@ type FleetOperationLog struct {
 // FleetOperationLogInput is an input type that accepts FleetOperationLogArgs and FleetOperationLogOutput values.
 // You can construct a concrete instance of `FleetOperationLogInput` via:
 //
-//          FleetOperationLogArgs{...}
+//	FleetOperationLogArgs{...}
 type FleetOperationLogInput interface {
 	pulumi.Input
 
@@ -214,11 +214,11 @@ func (i FleetOperationLogArgs) ToFleetOperationLogPtrOutputWithContext(ctx conte
 // FleetOperationLogPtrInput is an input type that accepts FleetOperationLogArgs, FleetOperationLogPtr and FleetOperationLogPtrOutput values.
 // You can construct a concrete instance of `FleetOperationLogPtrInput` via:
 //
-//          FleetOperationLogArgs{...}
+//	        FleetOperationLogArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type FleetOperationLogPtrInput interface {
 	pulumi.Input
 
@@ -331,7 +331,7 @@ type GetFleetBlocklistsFilter struct {
 // GetFleetBlocklistsFilterInput is an input type that accepts GetFleetBlocklistsFilterArgs and GetFleetBlocklistsFilterOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsFilterInput` via:
 //
-//          GetFleetBlocklistsFilterArgs{...}
+//	GetFleetBlocklistsFilterArgs{...}
 type GetFleetBlocklistsFilterInput interface {
 	pulumi.Input
 
@@ -360,7 +360,7 @@ func (i GetFleetBlocklistsFilterArgs) ToGetFleetBlocklistsFilterOutputWithContex
 // GetFleetBlocklistsFilterArrayInput is an input type that accepts GetFleetBlocklistsFilterArray and GetFleetBlocklistsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsFilterArrayInput` via:
 //
-//          GetFleetBlocklistsFilterArray{ GetFleetBlocklistsFilterArgs{...} }
+//	GetFleetBlocklistsFilterArray{ GetFleetBlocklistsFilterArgs{...} }
 type GetFleetBlocklistsFilterArrayInput interface {
 	pulumi.Input
 
@@ -442,7 +442,7 @@ type GetFleetBlocklistsItem struct {
 // GetFleetBlocklistsItemInput is an input type that accepts GetFleetBlocklistsItemArgs and GetFleetBlocklistsItemOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsItemInput` via:
 //
-//          GetFleetBlocklistsItemArgs{...}
+//	GetFleetBlocklistsItemArgs{...}
 type GetFleetBlocklistsItemInput interface {
 	pulumi.Input
 
@@ -476,7 +476,7 @@ func (i GetFleetBlocklistsItemArgs) ToGetFleetBlocklistsItemOutputWithContext(ct
 // GetFleetBlocklistsItemArrayInput is an input type that accepts GetFleetBlocklistsItemArray and GetFleetBlocklistsItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsItemArrayInput` via:
 //
-//          GetFleetBlocklistsItemArray{ GetFleetBlocklistsItemArgs{...} }
+//	GetFleetBlocklistsItemArray{ GetFleetBlocklistsItemArgs{...} }
 type GetFleetBlocklistsItemArrayInput interface {
 	pulumi.Input
 
@@ -564,7 +564,7 @@ type GetFleetBlocklistsItemTarget struct {
 // GetFleetBlocklistsItemTargetInput is an input type that accepts GetFleetBlocklistsItemTargetArgs and GetFleetBlocklistsItemTargetOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsItemTargetInput` via:
 //
-//          GetFleetBlocklistsItemTargetArgs{...}
+//	GetFleetBlocklistsItemTargetArgs{...}
 type GetFleetBlocklistsItemTargetInput interface {
 	pulumi.Input
 
@@ -596,7 +596,7 @@ func (i GetFleetBlocklistsItemTargetArgs) ToGetFleetBlocklistsItemTargetOutputWi
 // GetFleetBlocklistsItemTargetArrayInput is an input type that accepts GetFleetBlocklistsItemTargetArray and GetFleetBlocklistsItemTargetArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsItemTargetArrayInput` via:
 //
-//          GetFleetBlocklistsItemTargetArray{ GetFleetBlocklistsItemTargetArgs{...} }
+//	GetFleetBlocklistsItemTargetArray{ GetFleetBlocklistsItemTargetArgs{...} }
 type GetFleetBlocklistsItemTargetArrayInput interface {
 	pulumi.Input
 
@@ -677,7 +677,7 @@ type GetFleetInventoryLog struct {
 // GetFleetInventoryLogInput is an input type that accepts GetFleetInventoryLogArgs and GetFleetInventoryLogOutput values.
 // You can construct a concrete instance of `GetFleetInventoryLogInput` via:
 //
-//          GetFleetInventoryLogArgs{...}
+//	GetFleetInventoryLogArgs{...}
 type GetFleetInventoryLogInput interface {
 	pulumi.Input
 
@@ -707,7 +707,7 @@ func (i GetFleetInventoryLogArgs) ToGetFleetInventoryLogOutputWithContext(ctx co
 // GetFleetInventoryLogArrayInput is an input type that accepts GetFleetInventoryLogArray and GetFleetInventoryLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetInventoryLogArrayInput` via:
 //
-//          GetFleetInventoryLogArray{ GetFleetInventoryLogArgs{...} }
+//	GetFleetInventoryLogArray{ GetFleetInventoryLogArgs{...} }
 type GetFleetInventoryLogArrayInput interface {
 	pulumi.Input
 
@@ -783,7 +783,7 @@ type GetFleetOperationLog struct {
 // GetFleetOperationLogInput is an input type that accepts GetFleetOperationLogArgs and GetFleetOperationLogOutput values.
 // You can construct a concrete instance of `GetFleetOperationLogInput` via:
 //
-//          GetFleetOperationLogArgs{...}
+//	GetFleetOperationLogArgs{...}
 type GetFleetOperationLogInput interface {
 	pulumi.Input
 
@@ -813,7 +813,7 @@ func (i GetFleetOperationLogArgs) ToGetFleetOperationLogOutputWithContext(ctx co
 // GetFleetOperationLogArrayInput is an input type that accepts GetFleetOperationLogArray and GetFleetOperationLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetOperationLogArrayInput` via:
 //
-//          GetFleetOperationLogArray{ GetFleetOperationLogArgs{...} }
+//	GetFleetOperationLogArray{ GetFleetOperationLogArgs{...} }
 type GetFleetOperationLogArrayInput interface {
 	pulumi.Input
 
@@ -888,7 +888,7 @@ type GetFleetsFilter struct {
 // GetFleetsFilterInput is an input type that accepts GetFleetsFilterArgs and GetFleetsFilterOutput values.
 // You can construct a concrete instance of `GetFleetsFilterInput` via:
 //
-//          GetFleetsFilterArgs{...}
+//	GetFleetsFilterArgs{...}
 type GetFleetsFilterInput interface {
 	pulumi.Input
 
@@ -917,7 +917,7 @@ func (i GetFleetsFilterArgs) ToGetFleetsFilterOutputWithContext(ctx context.Cont
 // GetFleetsFilterArrayInput is an input type that accepts GetFleetsFilterArray and GetFleetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFilterArrayInput` via:
 //
-//          GetFleetsFilterArray{ GetFleetsFilterArgs{...} }
+//	GetFleetsFilterArray{ GetFleetsFilterArgs{...} }
 type GetFleetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -992,7 +992,7 @@ type GetFleetsFleetCollection struct {
 // GetFleetsFleetCollectionInput is an input type that accepts GetFleetsFleetCollectionArgs and GetFleetsFleetCollectionOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionInput` via:
 //
-//          GetFleetsFleetCollectionArgs{...}
+//	GetFleetsFleetCollectionArgs{...}
 type GetFleetsFleetCollectionInput interface {
 	pulumi.Input
 
@@ -1019,7 +1019,7 @@ func (i GetFleetsFleetCollectionArgs) ToGetFleetsFleetCollectionOutputWithContex
 // GetFleetsFleetCollectionArrayInput is an input type that accepts GetFleetsFleetCollectionArray and GetFleetsFleetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionArrayInput` via:
 //
-//          GetFleetsFleetCollectionArray{ GetFleetsFleetCollectionArgs{...} }
+//	GetFleetsFleetCollectionArray{ GetFleetsFleetCollectionArgs{...} }
 type GetFleetsFleetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1102,6 +1102,8 @@ type GetFleetsFleetCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetsFleetCollectionItemInventoryLog `pulumi:"inventoryLogs"`
+	// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetsFleetCollectionItemOperationLog `pulumi:"operationLogs"`
 	// The state of the lifecycle.
@@ -1115,7 +1117,7 @@ type GetFleetsFleetCollectionItem struct {
 // GetFleetsFleetCollectionItemInput is an input type that accepts GetFleetsFleetCollectionItemArgs and GetFleetsFleetCollectionItemOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemInput` via:
 //
-//          GetFleetsFleetCollectionItemArgs{...}
+//	GetFleetsFleetCollectionItemArgs{...}
 type GetFleetsFleetCollectionItemInput interface {
 	pulumi.Input
 
@@ -1146,6 +1148,8 @@ type GetFleetsFleetCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs GetFleetsFleetCollectionItemInventoryLogArrayInput `pulumi:"inventoryLogs"`
+	// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	IsAdvancedFeaturesEnabled pulumi.BoolInput `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs GetFleetsFleetCollectionItemOperationLogArrayInput `pulumi:"operationLogs"`
 	// The state of the lifecycle.
@@ -1171,7 +1175,7 @@ func (i GetFleetsFleetCollectionItemArgs) ToGetFleetsFleetCollectionItemOutputWi
 // GetFleetsFleetCollectionItemArrayInput is an input type that accepts GetFleetsFleetCollectionItemArray and GetFleetsFleetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemArrayInput` via:
 //
-//          GetFleetsFleetCollectionItemArray{ GetFleetsFleetCollectionItemArgs{...} }
+//	GetFleetsFleetCollectionItemArray{ GetFleetsFleetCollectionItemArgs{...} }
 type GetFleetsFleetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1264,6 +1268,11 @@ func (o GetFleetsFleetCollectionItemOutput) InventoryLogs() GetFleetsFleetCollec
 	}).(GetFleetsFleetCollectionItemInventoryLogArrayOutput)
 }
 
+// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+func (o GetFleetsFleetCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
 // Custom Log for inventory or operation log.
 func (o GetFleetsFleetCollectionItemOutput) OperationLogs() GetFleetsFleetCollectionItemOperationLogArrayOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) []GetFleetsFleetCollectionItemOperationLog {
@@ -1316,7 +1325,7 @@ type GetFleetsFleetCollectionItemInventoryLog struct {
 // GetFleetsFleetCollectionItemInventoryLogInput is an input type that accepts GetFleetsFleetCollectionItemInventoryLogArgs and GetFleetsFleetCollectionItemInventoryLogOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemInventoryLogInput` via:
 //
-//          GetFleetsFleetCollectionItemInventoryLogArgs{...}
+//	GetFleetsFleetCollectionItemInventoryLogArgs{...}
 type GetFleetsFleetCollectionItemInventoryLogInput interface {
 	pulumi.Input
 
@@ -1346,7 +1355,7 @@ func (i GetFleetsFleetCollectionItemInventoryLogArgs) ToGetFleetsFleetCollection
 // GetFleetsFleetCollectionItemInventoryLogArrayInput is an input type that accepts GetFleetsFleetCollectionItemInventoryLogArray and GetFleetsFleetCollectionItemInventoryLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemInventoryLogArrayInput` via:
 //
-//          GetFleetsFleetCollectionItemInventoryLogArray{ GetFleetsFleetCollectionItemInventoryLogArgs{...} }
+//	GetFleetsFleetCollectionItemInventoryLogArray{ GetFleetsFleetCollectionItemInventoryLogArgs{...} }
 type GetFleetsFleetCollectionItemInventoryLogArrayInput interface {
 	pulumi.Input
 
@@ -1422,7 +1431,7 @@ type GetFleetsFleetCollectionItemOperationLog struct {
 // GetFleetsFleetCollectionItemOperationLogInput is an input type that accepts GetFleetsFleetCollectionItemOperationLogArgs and GetFleetsFleetCollectionItemOperationLogOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemOperationLogInput` via:
 //
-//          GetFleetsFleetCollectionItemOperationLogArgs{...}
+//	GetFleetsFleetCollectionItemOperationLogArgs{...}
 type GetFleetsFleetCollectionItemOperationLogInput interface {
 	pulumi.Input
 
@@ -1452,7 +1461,7 @@ func (i GetFleetsFleetCollectionItemOperationLogArgs) ToGetFleetsFleetCollection
 // GetFleetsFleetCollectionItemOperationLogArrayInput is an input type that accepts GetFleetsFleetCollectionItemOperationLogArray and GetFleetsFleetCollectionItemOperationLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemOperationLogArrayInput` via:
 //
-//          GetFleetsFleetCollectionItemOperationLogArray{ GetFleetsFleetCollectionItemOperationLogArgs{...} }
+//	GetFleetsFleetCollectionItemOperationLogArray{ GetFleetsFleetCollectionItemOperationLogArgs{...} }
 type GetFleetsFleetCollectionItemOperationLogArrayInput interface {
 	pulumi.Input
 
@@ -1544,7 +1553,7 @@ type GetInstallationSiteItem struct {
 // GetInstallationSiteItemInput is an input type that accepts GetInstallationSiteItemArgs and GetInstallationSiteItemOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemInput` via:
 //
-//          GetInstallationSiteItemArgs{...}
+//	GetInstallationSiteItemArgs{...}
 type GetInstallationSiteItemInput interface {
 	pulumi.Input
 
@@ -1590,7 +1599,7 @@ func (i GetInstallationSiteItemArgs) ToGetInstallationSiteItemOutputWithContext(
 // GetInstallationSiteItemArrayInput is an input type that accepts GetInstallationSiteItemArray and GetInstallationSiteItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemArrayInput` via:
 //
-//          GetInstallationSiteItemArray{ GetInstallationSiteItemArgs{...} }
+//	GetInstallationSiteItemArray{ GetInstallationSiteItemArgs{...} }
 type GetInstallationSiteItemArrayInput interface {
 	pulumi.Input
 
@@ -1706,7 +1715,7 @@ type GetInstallationSiteItemBlocklist struct {
 // GetInstallationSiteItemBlocklistInput is an input type that accepts GetInstallationSiteItemBlocklistArgs and GetInstallationSiteItemBlocklistOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemBlocklistInput` via:
 //
-//          GetInstallationSiteItemBlocklistArgs{...}
+//	GetInstallationSiteItemBlocklistArgs{...}
 type GetInstallationSiteItemBlocklistInput interface {
 	pulumi.Input
 
@@ -1736,7 +1745,7 @@ func (i GetInstallationSiteItemBlocklistArgs) ToGetInstallationSiteItemBlocklist
 // GetInstallationSiteItemBlocklistArrayInput is an input type that accepts GetInstallationSiteItemBlocklistArray and GetInstallationSiteItemBlocklistArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemBlocklistArrayInput` via:
 //
-//          GetInstallationSiteItemBlocklistArray{ GetInstallationSiteItemBlocklistArgs{...} }
+//	GetInstallationSiteItemBlocklistArray{ GetInstallationSiteItemBlocklistArgs{...} }
 type GetInstallationSiteItemBlocklistArrayInput interface {
 	pulumi.Input
 
@@ -1816,7 +1825,7 @@ type GetInstallationSiteItemJre struct {
 // GetInstallationSiteItemJreInput is an input type that accepts GetInstallationSiteItemJreArgs and GetInstallationSiteItemJreOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemJreInput` via:
 //
-//          GetInstallationSiteItemJreArgs{...}
+//	GetInstallationSiteItemJreArgs{...}
 type GetInstallationSiteItemJreInput interface {
 	pulumi.Input
 
@@ -1850,7 +1859,7 @@ func (i GetInstallationSiteItemJreArgs) ToGetInstallationSiteItemJreOutputWithCo
 // GetInstallationSiteItemJreArrayInput is an input type that accepts GetInstallationSiteItemJreArray and GetInstallationSiteItemJreArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemJreArrayInput` via:
 //
-//          GetInstallationSiteItemJreArray{ GetInstallationSiteItemJreArgs{...} }
+//	GetInstallationSiteItemJreArray{ GetInstallationSiteItemJreArgs{...} }
 type GetInstallationSiteItemJreArrayInput interface {
 	pulumi.Input
 
@@ -1931,6 +1940,8 @@ type GetInstallationSiteItemOperatingSystem struct {
 	Architecture string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family string `pulumi:"family"`
+	// Number of instances running the operating system
+	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name string `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
@@ -1940,7 +1951,7 @@ type GetInstallationSiteItemOperatingSystem struct {
 // GetInstallationSiteItemOperatingSystemInput is an input type that accepts GetInstallationSiteItemOperatingSystemArgs and GetInstallationSiteItemOperatingSystemOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemOperatingSystemInput` via:
 //
-//          GetInstallationSiteItemOperatingSystemArgs{...}
+//	GetInstallationSiteItemOperatingSystemArgs{...}
 type GetInstallationSiteItemOperatingSystemInput interface {
 	pulumi.Input
 
@@ -1953,6 +1964,8 @@ type GetInstallationSiteItemOperatingSystemArgs struct {
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family pulumi.StringInput `pulumi:"family"`
+	// Number of instances running the operating system
+	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
@@ -1974,7 +1987,7 @@ func (i GetInstallationSiteItemOperatingSystemArgs) ToGetInstallationSiteItemOpe
 // GetInstallationSiteItemOperatingSystemArrayInput is an input type that accepts GetInstallationSiteItemOperatingSystemArray and GetInstallationSiteItemOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemOperatingSystemArrayInput` via:
 //
-//          GetInstallationSiteItemOperatingSystemArray{ GetInstallationSiteItemOperatingSystemArgs{...} }
+//	GetInstallationSiteItemOperatingSystemArray{ GetInstallationSiteItemOperatingSystemArgs{...} }
 type GetInstallationSiteItemOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -2020,6 +2033,11 @@ func (o GetInstallationSiteItemOperatingSystemOutput) Family() pulumi.StringOutp
 	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
 }
 
+// Number of instances running the operating system
+func (o GetInstallationSiteItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+}
+
 // The name of the operating system as provided by the Java system property os.name.
 func (o GetInstallationSiteItemOperatingSystemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSiteItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
@@ -2060,7 +2078,7 @@ type GetInstallationSitesFilter struct {
 // GetInstallationSitesFilterInput is an input type that accepts GetInstallationSitesFilterArgs and GetInstallationSitesFilterOutput values.
 // You can construct a concrete instance of `GetInstallationSitesFilterInput` via:
 //
-//          GetInstallationSitesFilterArgs{...}
+//	GetInstallationSitesFilterArgs{...}
 type GetInstallationSitesFilterInput interface {
 	pulumi.Input
 
@@ -2090,7 +2108,7 @@ func (i GetInstallationSitesFilterArgs) ToGetInstallationSitesFilterOutputWithCo
 // GetInstallationSitesFilterArrayInput is an input type that accepts GetInstallationSitesFilterArray and GetInstallationSitesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesFilterArrayInput` via:
 //
-//          GetInstallationSitesFilterArray{ GetInstallationSitesFilterArgs{...} }
+//	GetInstallationSitesFilterArray{ GetInstallationSitesFilterArgs{...} }
 type GetInstallationSitesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2167,7 +2185,7 @@ type GetInstallationSitesInstallationSiteCollection struct {
 // GetInstallationSitesInstallationSiteCollectionInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionArgs and GetInstallationSitesInstallationSiteCollectionOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionArgs{...}
+//	GetInstallationSitesInstallationSiteCollectionArgs{...}
 type GetInstallationSitesInstallationSiteCollectionInput interface {
 	pulumi.Input
 
@@ -2195,7 +2213,7 @@ func (i GetInstallationSitesInstallationSiteCollectionArgs) ToGetInstallationSit
 // GetInstallationSitesInstallationSiteCollectionArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionArray and GetInstallationSitesInstallationSiteCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionArrayInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionArray{ GetInstallationSitesInstallationSiteCollectionArgs{...} }
+//	GetInstallationSitesInstallationSiteCollectionArray{ GetInstallationSitesInstallationSiteCollectionArgs{...} }
 type GetInstallationSitesInstallationSiteCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2266,7 +2284,7 @@ type GetInstallationSitesInstallationSiteCollectionItem struct {
 // GetInstallationSitesInstallationSiteCollectionItemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemArgs and GetInstallationSitesInstallationSiteCollectionItemOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemArgs{...}
+//	GetInstallationSitesInstallationSiteCollectionItemArgs{...}
 type GetInstallationSitesInstallationSiteCollectionItemInput interface {
 	pulumi.Input
 
@@ -2294,7 +2312,7 @@ func (i GetInstallationSitesInstallationSiteCollectionItemArgs) ToGetInstallatio
 // GetInstallationSitesInstallationSiteCollectionItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemArray and GetInstallationSitesInstallationSiteCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemArrayInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemArray{ GetInstallationSitesInstallationSiteCollectionItemArgs{...} }
+//	GetInstallationSitesInstallationSiteCollectionItemArray{ GetInstallationSitesInstallationSiteCollectionItemArgs{...} }
 type GetInstallationSitesInstallationSiteCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2383,7 +2401,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItem struct {
 // GetInstallationSitesInstallationSiteCollectionItemItemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArgs and GetInstallationSitesInstallationSiteCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemArgs{...}
+//	GetInstallationSitesInstallationSiteCollectionItemItemArgs{...}
 type GetInstallationSitesInstallationSiteCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -2429,7 +2447,7 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToGetInstall
 // GetInstallationSitesInstallationSiteCollectionItemItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArray and GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemArrayInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemArray{ GetInstallationSitesInstallationSiteCollectionItemItemArgs{...} }
+//	GetInstallationSitesInstallationSiteCollectionItemItemArray{ GetInstallationSitesInstallationSiteCollectionItemItemArgs{...} }
 type GetInstallationSitesInstallationSiteCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -2553,7 +2571,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemBlocklist struct {
 // GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{...}
+//	GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{...}
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput interface {
 	pulumi.Input
 
@@ -2583,7 +2601,7 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToG
 // GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray{ GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{...} }
+//	GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray{ GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{...} }
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput interface {
 	pulumi.Input
 
@@ -2663,7 +2681,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemJre struct {
 // GetInstallationSitesInstallationSiteCollectionItemItemJreInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArgs and GetInstallationSitesInstallationSiteCollectionItemItemJreOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemJreInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{...}
+//	GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{...}
 type GetInstallationSitesInstallationSiteCollectionItemItemJreInput interface {
 	pulumi.Input
 
@@ -2697,7 +2715,7 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToGetInst
 // GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArray and GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemJreArray{ GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{...} }
+//	GetInstallationSitesInstallationSiteCollectionItemItemJreArray{ GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{...} }
 type GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput interface {
 	pulumi.Input
 
@@ -2778,6 +2796,8 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struc
 	Architecture string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family string `pulumi:"family"`
+	// Number of instances running the operating system
+	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name string `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
@@ -2787,7 +2807,7 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struc
 // GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{...}
+//	GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{...}
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput interface {
 	pulumi.Input
 
@@ -2800,6 +2820,8 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs s
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family pulumi.StringInput `pulumi:"family"`
+	// Number of instances running the operating system
+	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The version of the operating system as provided by the Java system property os.version.
@@ -2821,7 +2843,7 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArg
 // GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput` via:
 //
-//          GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray{ GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{...} }
+//	GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray{ GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{...} }
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -2869,6 +2891,13 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOut
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
 }
 
+// Number of instances running the operating system
+func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) int {
+		return v.ManagedInstanceCount
+	}).(pulumi.IntOutput)
+}
+
 // The name of the operating system as provided by the Java system property os.name.
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
@@ -2899,6 +2928,1496 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArr
 	}).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput)
 }
 
+type GetJavaFamiliesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaFamiliesFilterInput is an input type that accepts GetJavaFamiliesFilterArgs and GetJavaFamiliesFilterOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesFilterInput` via:
+//
+//	GetJavaFamiliesFilterArgs{...}
+type GetJavaFamiliesFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesFilterOutput() GetJavaFamiliesFilterOutput
+	ToGetJavaFamiliesFilterOutputWithContext(context.Context) GetJavaFamiliesFilterOutput
+}
+
+type GetJavaFamiliesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaFamiliesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesFilter)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesFilterArgs) ToGetJavaFamiliesFilterOutput() GetJavaFamiliesFilterOutput {
+	return i.ToGetJavaFamiliesFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesFilterArgs) ToGetJavaFamiliesFilterOutputWithContext(ctx context.Context) GetJavaFamiliesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesFilterOutput)
+}
+
+// GetJavaFamiliesFilterArrayInput is an input type that accepts GetJavaFamiliesFilterArray and GetJavaFamiliesFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesFilterArrayInput` via:
+//
+//	GetJavaFamiliesFilterArray{ GetJavaFamiliesFilterArgs{...} }
+type GetJavaFamiliesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesFilterArrayOutput() GetJavaFamiliesFilterArrayOutput
+	ToGetJavaFamiliesFilterArrayOutputWithContext(context.Context) GetJavaFamiliesFilterArrayOutput
+}
+
+type GetJavaFamiliesFilterArray []GetJavaFamiliesFilterInput
+
+func (GetJavaFamiliesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesFilter)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesFilterArray) ToGetJavaFamiliesFilterArrayOutput() GetJavaFamiliesFilterArrayOutput {
+	return i.ToGetJavaFamiliesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesFilterArray) ToGetJavaFamiliesFilterArrayOutputWithContext(ctx context.Context) GetJavaFamiliesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesFilterArrayOutput)
+}
+
+type GetJavaFamiliesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesFilter)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesFilterOutput) ToGetJavaFamiliesFilterOutput() GetJavaFamiliesFilterOutput {
+	return o
+}
+
+func (o GetJavaFamiliesFilterOutput) ToGetJavaFamiliesFilterOutputWithContext(ctx context.Context) GetJavaFamiliesFilterOutput {
+	return o
+}
+
+func (o GetJavaFamiliesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaFamiliesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaFamiliesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaFamiliesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaFamiliesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesFilter)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesFilterArrayOutput) ToGetJavaFamiliesFilterArrayOutput() GetJavaFamiliesFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesFilterArrayOutput) ToGetJavaFamiliesFilterArrayOutputWithContext(ctx context.Context) GetJavaFamiliesFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamiliesFilter {
+		return vs[0].([]GetJavaFamiliesFilter)[vs[1].(int)]
+	}).(GetJavaFamiliesFilterOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollection struct {
+	Items []GetJavaFamiliesJavaFamilyCollectionItem `pulumi:"items"`
+}
+
+// GetJavaFamiliesJavaFamilyCollectionInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionArgs and GetJavaFamiliesJavaFamilyCollectionOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionInput` via:
+//
+//	GetJavaFamiliesJavaFamilyCollectionArgs{...}
+type GetJavaFamiliesJavaFamilyCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesJavaFamilyCollectionOutput() GetJavaFamiliesJavaFamilyCollectionOutput
+	ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(context.Context) GetJavaFamiliesJavaFamilyCollectionOutput
+}
+
+type GetJavaFamiliesJavaFamilyCollectionArgs struct {
+	Items GetJavaFamiliesJavaFamilyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaFamiliesJavaFamilyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollection)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionArgs) ToGetJavaFamiliesJavaFamilyCollectionOutput() GetJavaFamiliesJavaFamilyCollectionOutput {
+	return i.ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionArgs) ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionOutput)
+}
+
+// GetJavaFamiliesJavaFamilyCollectionArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionArray and GetJavaFamiliesJavaFamilyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionArrayInput` via:
+//
+//	GetJavaFamiliesJavaFamilyCollectionArray{ GetJavaFamiliesJavaFamilyCollectionArgs{...} }
+type GetJavaFamiliesJavaFamilyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesJavaFamilyCollectionArrayOutput() GetJavaFamiliesJavaFamilyCollectionArrayOutput
+	ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(context.Context) GetJavaFamiliesJavaFamilyCollectionArrayOutput
+}
+
+type GetJavaFamiliesJavaFamilyCollectionArray []GetJavaFamiliesJavaFamilyCollectionInput
+
+func (GetJavaFamiliesJavaFamilyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesJavaFamilyCollection)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionArray) ToGetJavaFamiliesJavaFamilyCollectionArrayOutput() GetJavaFamiliesJavaFamilyCollectionArrayOutput {
+	return i.ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionArray) ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionArrayOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesJavaFamilyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollection)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToGetJavaFamiliesJavaFamilyCollectionOutput() GetJavaFamiliesJavaFamilyCollectionOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionOutput) Items() GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollection) []GetJavaFamiliesJavaFamilyCollectionItem { return v.Items }).(GetJavaFamiliesJavaFamilyCollectionItemArrayOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesJavaFamilyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesJavaFamilyCollection)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionArrayOutput() GetJavaFamiliesJavaFamilyCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamiliesJavaFamilyCollection {
+		return vs[0].([]GetJavaFamiliesJavaFamilyCollection)[vs[1].(int)]
+	}).(GetJavaFamiliesJavaFamilyCollectionOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItem struct {
+	// The display name for the Java family.
+	DisplayName string `pulumi:"displayName"`
+	// Link to access the documentation for the release.
+	DocUrl string `pulumi:"docUrl"`
+	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	// The version identifier for the Java family.
+	FamilyVersion string `pulumi:"familyVersion"`
+	// This indicates the support category for the Java release family.
+	SupportType string `pulumi:"supportType"`
+}
+
+// GetJavaFamiliesJavaFamilyCollectionItemInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemArgs and GetJavaFamiliesJavaFamilyCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionItemInput` via:
+//
+//	GetJavaFamiliesJavaFamilyCollectionItemArgs{...}
+type GetJavaFamiliesJavaFamilyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesJavaFamilyCollectionItemOutput() GetJavaFamiliesJavaFamilyCollectionItemOutput
+	ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(context.Context) GetJavaFamiliesJavaFamilyCollectionItemOutput
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemArgs struct {
+	// The display name for the Java family.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Link to access the documentation for the release.
+	DocUrl pulumi.StringInput `pulumi:"docUrl"`
+	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	// The version identifier for the Java family.
+	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// This indicates the support category for the Java release family.
+	SupportType pulumi.StringInput `pulumi:"supportType"`
+}
+
+func (GetJavaFamiliesJavaFamilyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToGetJavaFamiliesJavaFamilyCollectionItemOutput() GetJavaFamiliesJavaFamilyCollectionItemOutput {
+	return i.ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemOutput)
+}
+
+// GetJavaFamiliesJavaFamilyCollectionItemArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemArray and GetJavaFamiliesJavaFamilyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionItemArrayInput` via:
+//
+//	GetJavaFamiliesJavaFamilyCollectionItemArray{ GetJavaFamiliesJavaFamilyCollectionItemArgs{...} }
+type GetJavaFamiliesJavaFamilyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutput() GetJavaFamiliesJavaFamilyCollectionItemArrayOutput
+	ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(context.Context) GetJavaFamiliesJavaFamilyCollectionItemArrayOutput
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemArray []GetJavaFamiliesJavaFamilyCollectionItemInput
+
+func (GetJavaFamiliesJavaFamilyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesJavaFamilyCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemArray) ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutput() GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
+	return i.ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemArray) ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemArrayOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesJavaFamilyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToGetJavaFamiliesJavaFamilyCollectionItemOutput() GetJavaFamiliesJavaFamilyCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemOutput {
+	return o
+}
+
+// The display name for the Java family.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Link to access the documentation for the release.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) DocUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.DocUrl }).(pulumi.StringOutput)
+}
+
+// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) EndOfSupportLifeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+}
+
+// The version identifier for the Java family.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) FamilyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.FamilyVersion }).(pulumi.StringOutput)
+}
+
+// This indicates the support category for the Java release family.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) SupportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.SupportType }).(pulumi.StringOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesJavaFamilyCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutput() GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamiliesJavaFamilyCollectionItem {
+		return vs[0].([]GetJavaFamiliesJavaFamilyCollectionItem)[vs[1].(int)]
+	}).(GetJavaFamiliesJavaFamilyCollectionItemOutput)
+}
+
+type GetJavaReleaseArtifact struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// Product content type of this artifact.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription string `pulumi:"artifactDescription"`
+	// Unique identifier for the artifact.
+	ArtifactId string `pulumi:"artifactId"`
+	// SHA256 checksum of the artifact.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetJavaReleaseArtifactInput is an input type that accepts GetJavaReleaseArtifactArgs and GetJavaReleaseArtifactOutput values.
+// You can construct a concrete instance of `GetJavaReleaseArtifactInput` via:
+//
+//	GetJavaReleaseArtifactArgs{...}
+type GetJavaReleaseArtifactInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseArtifactOutput() GetJavaReleaseArtifactOutput
+	ToGetJavaReleaseArtifactOutputWithContext(context.Context) GetJavaReleaseArtifactOutput
+}
+
+type GetJavaReleaseArtifactArgs struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// Product content type of this artifact.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// Unique identifier for the artifact.
+	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// SHA256 checksum of the artifact.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetJavaReleaseArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleaseArtifactArgs) ToGetJavaReleaseArtifactOutput() GetJavaReleaseArtifactOutput {
+	return i.ToGetJavaReleaseArtifactOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseArtifactArgs) ToGetJavaReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleaseArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseArtifactOutput)
+}
+
+// GetJavaReleaseArtifactArrayInput is an input type that accepts GetJavaReleaseArtifactArray and GetJavaReleaseArtifactArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleaseArtifactArrayInput` via:
+//
+//	GetJavaReleaseArtifactArray{ GetJavaReleaseArtifactArgs{...} }
+type GetJavaReleaseArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseArtifactArrayOutput() GetJavaReleaseArtifactArrayOutput
+	ToGetJavaReleaseArtifactArrayOutputWithContext(context.Context) GetJavaReleaseArtifactArrayOutput
+}
+
+type GetJavaReleaseArtifactArray []GetJavaReleaseArtifactInput
+
+func (GetJavaReleaseArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleaseArtifactArray) ToGetJavaReleaseArtifactArrayOutput() GetJavaReleaseArtifactArrayOutput {
+	return i.ToGetJavaReleaseArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseArtifactArray) ToGetJavaReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleaseArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseArtifactArrayOutput)
+}
+
+type GetJavaReleaseArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleaseArtifactOutput) ToGetJavaReleaseArtifactOutput() GetJavaReleaseArtifactOutput {
+	return o
+}
+
+func (o GetJavaReleaseArtifactOutput) ToGetJavaReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleaseArtifactOutput {
+	return o
+}
+
+// Approximate compressed file size in bytes.
+func (o GetJavaReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+}
+
+// Product content type of this artifact.
+func (o GetJavaReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
+}
+
+// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+func (o GetJavaReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the artifact.
+func (o GetJavaReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the artifact.
+func (o GetJavaReleaseArtifactOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+}
+
+type GetJavaReleaseArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleaseArtifactArrayOutput) ToGetJavaReleaseArtifactArrayOutput() GetJavaReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseArtifactArrayOutput) ToGetJavaReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseArtifact {
+		return vs[0].([]GetJavaReleaseArtifact)[vs[1].(int)]
+	}).(GetJavaReleaseArtifactOutput)
+}
+
+type GetJavaReleaseFamilyDetail struct {
+	// Commonly used name for the license type.
+	DisplayName string `pulumi:"displayName"`
+	// Link to access the documentation for the release.
+	DocUrl string `pulumi:"docUrl"`
+	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	// Java release family identifier.
+	FamilyVersion string `pulumi:"familyVersion"`
+	// This indicates the support category for the Java release family.
+	SupportType string `pulumi:"supportType"`
+}
+
+// GetJavaReleaseFamilyDetailInput is an input type that accepts GetJavaReleaseFamilyDetailArgs and GetJavaReleaseFamilyDetailOutput values.
+// You can construct a concrete instance of `GetJavaReleaseFamilyDetailInput` via:
+//
+//	GetJavaReleaseFamilyDetailArgs{...}
+type GetJavaReleaseFamilyDetailInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseFamilyDetailOutput() GetJavaReleaseFamilyDetailOutput
+	ToGetJavaReleaseFamilyDetailOutputWithContext(context.Context) GetJavaReleaseFamilyDetailOutput
+}
+
+type GetJavaReleaseFamilyDetailArgs struct {
+	// Commonly used name for the license type.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Link to access the documentation for the release.
+	DocUrl pulumi.StringInput `pulumi:"docUrl"`
+	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	// Java release family identifier.
+	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// This indicates the support category for the Java release family.
+	SupportType pulumi.StringInput `pulumi:"supportType"`
+}
+
+func (GetJavaReleaseFamilyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseFamilyDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleaseFamilyDetailArgs) ToGetJavaReleaseFamilyDetailOutput() GetJavaReleaseFamilyDetailOutput {
+	return i.ToGetJavaReleaseFamilyDetailOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseFamilyDetailArgs) ToGetJavaReleaseFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailOutput)
+}
+
+// GetJavaReleaseFamilyDetailArrayInput is an input type that accepts GetJavaReleaseFamilyDetailArray and GetJavaReleaseFamilyDetailArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleaseFamilyDetailArrayInput` via:
+//
+//	GetJavaReleaseFamilyDetailArray{ GetJavaReleaseFamilyDetailArgs{...} }
+type GetJavaReleaseFamilyDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseFamilyDetailArrayOutput() GetJavaReleaseFamilyDetailArrayOutput
+	ToGetJavaReleaseFamilyDetailArrayOutputWithContext(context.Context) GetJavaReleaseFamilyDetailArrayOutput
+}
+
+type GetJavaReleaseFamilyDetailArray []GetJavaReleaseFamilyDetailInput
+
+func (GetJavaReleaseFamilyDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseFamilyDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleaseFamilyDetailArray) ToGetJavaReleaseFamilyDetailArrayOutput() GetJavaReleaseFamilyDetailArrayOutput {
+	return i.ToGetJavaReleaseFamilyDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseFamilyDetailArray) ToGetJavaReleaseFamilyDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailArrayOutput)
+}
+
+type GetJavaReleaseFamilyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseFamilyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseFamilyDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleaseFamilyDetailOutput) ToGetJavaReleaseFamilyDetailOutput() GetJavaReleaseFamilyDetailOutput {
+	return o
+}
+
+func (o GetJavaReleaseFamilyDetailOutput) ToGetJavaReleaseFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailOutput {
+	return o
+}
+
+// Commonly used name for the license type.
+func (o GetJavaReleaseFamilyDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Link to access the documentation for the release.
+func (o GetJavaReleaseFamilyDetailOutput) DocUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.DocUrl }).(pulumi.StringOutput)
+}
+
+// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaReleaseFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+}
+
+// Java release family identifier.
+func (o GetJavaReleaseFamilyDetailOutput) FamilyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.FamilyVersion }).(pulumi.StringOutput)
+}
+
+// This indicates the support category for the Java release family.
+func (o GetJavaReleaseFamilyDetailOutput) SupportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.SupportType }).(pulumi.StringOutput)
+}
+
+type GetJavaReleaseFamilyDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseFamilyDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseFamilyDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleaseFamilyDetailArrayOutput) ToGetJavaReleaseFamilyDetailArrayOutput() GetJavaReleaseFamilyDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseFamilyDetailArrayOutput) ToGetJavaReleaseFamilyDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseFamilyDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseFamilyDetail {
+		return vs[0].([]GetJavaReleaseFamilyDetail)[vs[1].(int)]
+	}).(GetJavaReleaseFamilyDetailOutput)
+}
+
+type GetJavaReleaseLicenseDetail struct {
+	// Commonly used name for the license type.
+	DisplayName string `pulumi:"displayName"`
+	// License type for the Java version.
+	LicenseType string `pulumi:"licenseType"`
+	// Publicly accessible license URL containing the detailed terms and conditions.
+	LicenseUrl string `pulumi:"licenseUrl"`
+}
+
+// GetJavaReleaseLicenseDetailInput is an input type that accepts GetJavaReleaseLicenseDetailArgs and GetJavaReleaseLicenseDetailOutput values.
+// You can construct a concrete instance of `GetJavaReleaseLicenseDetailInput` via:
+//
+//	GetJavaReleaseLicenseDetailArgs{...}
+type GetJavaReleaseLicenseDetailInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseLicenseDetailOutput() GetJavaReleaseLicenseDetailOutput
+	ToGetJavaReleaseLicenseDetailOutputWithContext(context.Context) GetJavaReleaseLicenseDetailOutput
+}
+
+type GetJavaReleaseLicenseDetailArgs struct {
+	// Commonly used name for the license type.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// License type for the Java version.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// Publicly accessible license URL containing the detailed terms and conditions.
+	LicenseUrl pulumi.StringInput `pulumi:"licenseUrl"`
+}
+
+func (GetJavaReleaseLicenseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseLicenseDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleaseLicenseDetailArgs) ToGetJavaReleaseLicenseDetailOutput() GetJavaReleaseLicenseDetailOutput {
+	return i.ToGetJavaReleaseLicenseDetailOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseLicenseDetailArgs) ToGetJavaReleaseLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseLicenseDetailOutput)
+}
+
+// GetJavaReleaseLicenseDetailArrayInput is an input type that accepts GetJavaReleaseLicenseDetailArray and GetJavaReleaseLicenseDetailArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleaseLicenseDetailArrayInput` via:
+//
+//	GetJavaReleaseLicenseDetailArray{ GetJavaReleaseLicenseDetailArgs{...} }
+type GetJavaReleaseLicenseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseLicenseDetailArrayOutput() GetJavaReleaseLicenseDetailArrayOutput
+	ToGetJavaReleaseLicenseDetailArrayOutputWithContext(context.Context) GetJavaReleaseLicenseDetailArrayOutput
+}
+
+type GetJavaReleaseLicenseDetailArray []GetJavaReleaseLicenseDetailInput
+
+func (GetJavaReleaseLicenseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseLicenseDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleaseLicenseDetailArray) ToGetJavaReleaseLicenseDetailArrayOutput() GetJavaReleaseLicenseDetailArrayOutput {
+	return i.ToGetJavaReleaseLicenseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseLicenseDetailArray) ToGetJavaReleaseLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseLicenseDetailArrayOutput)
+}
+
+type GetJavaReleaseLicenseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseLicenseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseLicenseDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleaseLicenseDetailOutput) ToGetJavaReleaseLicenseDetailOutput() GetJavaReleaseLicenseDetailOutput {
+	return o
+}
+
+func (o GetJavaReleaseLicenseDetailOutput) ToGetJavaReleaseLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailOutput {
+	return o
+}
+
+// Commonly used name for the license type.
+func (o GetJavaReleaseLicenseDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// License type for the Java version.
+func (o GetJavaReleaseLicenseDetailOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// Publicly accessible license URL containing the detailed terms and conditions.
+func (o GetJavaReleaseLicenseDetailOutput) LicenseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.LicenseUrl }).(pulumi.StringOutput)
+}
+
+type GetJavaReleaseLicenseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseLicenseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseLicenseDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleaseLicenseDetailArrayOutput) ToGetJavaReleaseLicenseDetailArrayOutput() GetJavaReleaseLicenseDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseLicenseDetailArrayOutput) ToGetJavaReleaseLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseLicenseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseLicenseDetail {
+		return vs[0].([]GetJavaReleaseLicenseDetail)[vs[1].(int)]
+	}).(GetJavaReleaseLicenseDetailOutput)
+}
+
+type GetJavaReleasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaReleasesFilterInput is an input type that accepts GetJavaReleasesFilterArgs and GetJavaReleasesFilterOutput values.
+// You can construct a concrete instance of `GetJavaReleasesFilterInput` via:
+//
+//	GetJavaReleasesFilterArgs{...}
+type GetJavaReleasesFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesFilterOutput() GetJavaReleasesFilterOutput
+	ToGetJavaReleasesFilterOutputWithContext(context.Context) GetJavaReleasesFilterOutput
+}
+
+type GetJavaReleasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaReleasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesFilter)(nil)).Elem()
+}
+
+func (i GetJavaReleasesFilterArgs) ToGetJavaReleasesFilterOutput() GetJavaReleasesFilterOutput {
+	return i.ToGetJavaReleasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesFilterArgs) ToGetJavaReleasesFilterOutputWithContext(ctx context.Context) GetJavaReleasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesFilterOutput)
+}
+
+// GetJavaReleasesFilterArrayInput is an input type that accepts GetJavaReleasesFilterArray and GetJavaReleasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesFilterArrayInput` via:
+//
+//	GetJavaReleasesFilterArray{ GetJavaReleasesFilterArgs{...} }
+type GetJavaReleasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesFilterArrayOutput() GetJavaReleasesFilterArrayOutput
+	ToGetJavaReleasesFilterArrayOutputWithContext(context.Context) GetJavaReleasesFilterArrayOutput
+}
+
+type GetJavaReleasesFilterArray []GetJavaReleasesFilterInput
+
+func (GetJavaReleasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesFilter)(nil)).Elem()
+}
+
+func (i GetJavaReleasesFilterArray) ToGetJavaReleasesFilterArrayOutput() GetJavaReleasesFilterArrayOutput {
+	return i.ToGetJavaReleasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesFilterArray) ToGetJavaReleasesFilterArrayOutputWithContext(ctx context.Context) GetJavaReleasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesFilterArrayOutput)
+}
+
+type GetJavaReleasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesFilter)(nil)).Elem()
+}
+
+func (o GetJavaReleasesFilterOutput) ToGetJavaReleasesFilterOutput() GetJavaReleasesFilterOutput {
+	return o
+}
+
+func (o GetJavaReleasesFilterOutput) ToGetJavaReleasesFilterOutputWithContext(ctx context.Context) GetJavaReleasesFilterOutput {
+	return o
+}
+
+func (o GetJavaReleasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaReleasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaReleasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaReleasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesFilter)(nil)).Elem()
+}
+
+func (o GetJavaReleasesFilterArrayOutput) ToGetJavaReleasesFilterArrayOutput() GetJavaReleasesFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesFilterArrayOutput) ToGetJavaReleasesFilterArrayOutputWithContext(ctx context.Context) GetJavaReleasesFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesFilter {
+		return vs[0].([]GetJavaReleasesFilter)[vs[1].(int)]
+	}).(GetJavaReleasesFilterOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollection struct {
+	Items []GetJavaReleasesJavaReleaseCollectionItem `pulumi:"items"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionArgs and GetJavaReleasesJavaReleaseCollectionOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionArgs{...}
+type GetJavaReleasesJavaReleaseCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionOutput() GetJavaReleasesJavaReleaseCollectionOutput
+	ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionArgs struct {
+	Items GetJavaReleasesJavaReleaseCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollection)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionArgs) ToGetJavaReleasesJavaReleaseCollectionOutput() GetJavaReleasesJavaReleaseCollectionOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionArgs) ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionArray and GetJavaReleasesJavaReleaseCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionArray{ GetJavaReleasesJavaReleaseCollectionArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionArrayOutput() GetJavaReleasesJavaReleaseCollectionArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionArray []GetJavaReleasesJavaReleaseCollectionInput
+
+func (GetJavaReleasesJavaReleaseCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollection)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionArray) ToGetJavaReleasesJavaReleaseCollectionArrayOutput() GetJavaReleasesJavaReleaseCollectionArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionArray) ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollection)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionOutput) ToGetJavaReleasesJavaReleaseCollectionOutput() GetJavaReleasesJavaReleaseCollectionOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionOutput) ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionOutput) Items() GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollection) []GetJavaReleasesJavaReleaseCollectionItem {
+		return v.Items
+	}).(GetJavaReleasesJavaReleaseCollectionItemArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollection)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToGetJavaReleasesJavaReleaseCollectionArrayOutput() GetJavaReleasesJavaReleaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollection {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollection)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItem struct {
+	// List of Java artifacts.
+	Artifacts []GetJavaReleasesJavaReleaseCollectionItemArtifact `pulumi:"artifacts"`
+	// Complete information of a specific Java release family.
+	FamilyDetails []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail `pulumi:"familyDetails"`
+	// The version identifier for the Java family.
+	FamilyVersion string `pulumi:"familyVersion"`
+	// Information about a license type for Java.
+	LicenseDetails []GetJavaReleasesJavaReleaseCollectionItemLicenseDetail `pulumi:"licenseDetails"`
+	// Java license type.
+	LicenseType string `pulumi:"licenseType"`
+	// Parent Java release version identifier. This is applicable for BPR releases.
+	ParentReleaseVersion string `pulumi:"parentReleaseVersion"`
+	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate string `pulumi:"releaseDate"`
+	// Release notes associated with the Java version.
+	ReleaseNotesUrl string `pulumi:"releaseNotesUrl"`
+	// Java release type.
+	ReleaseType string `pulumi:"releaseType"`
+	// Unique Java release version identifier
+	ReleaseVersion string `pulumi:"releaseVersion"`
+	// The security status of the Java version.
+	SecurityStatus string `pulumi:"securityStatus"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArgs and GetJavaReleasesJavaReleaseCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemArgs{...}
+type GetJavaReleasesJavaReleaseCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemOutput() GetJavaReleasesJavaReleaseCollectionItemOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArgs struct {
+	// List of Java artifacts.
+	Artifacts GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput `pulumi:"artifacts"`
+	// Complete information of a specific Java release family.
+	FamilyDetails GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput `pulumi:"familyDetails"`
+	// The version identifier for the Java family.
+	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// Information about a license type for Java.
+	LicenseDetails GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput `pulumi:"licenseDetails"`
+	// Java license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// Parent Java release version identifier. This is applicable for BPR releases.
+	ParentReleaseVersion pulumi.StringInput `pulumi:"parentReleaseVersion"`
+	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
+	// Release notes associated with the Java version.
+	ReleaseNotesUrl pulumi.StringInput `pulumi:"releaseNotesUrl"`
+	// Java release type.
+	ReleaseType pulumi.StringInput `pulumi:"releaseType"`
+	// Unique Java release version identifier
+	ReleaseVersion pulumi.StringInput `pulumi:"releaseVersion"`
+	// The security status of the Java version.
+	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToGetJavaReleasesJavaReleaseCollectionItemOutput() GetJavaReleasesJavaReleaseCollectionItemOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArray and GetJavaReleasesJavaReleaseCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemArray{ GetJavaReleasesJavaReleaseCollectionItemArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemArrayOutput() GetJavaReleasesJavaReleaseCollectionItemArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArray []GetJavaReleasesJavaReleaseCollectionItemInput
+
+func (GetJavaReleasesJavaReleaseCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArray) ToGetJavaReleasesJavaReleaseCollectionItemArrayOutput() GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArray) ToGetJavaReleasesJavaReleaseCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaReleaseCollectionItemOutput() GetJavaReleasesJavaReleaseCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemOutput {
+	return o
+}
+
+// List of Java artifacts.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) Artifacts() GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemArtifact {
+		return v.Artifacts
+	}).(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput)
+}
+
+// Complete information of a specific Java release family.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyDetails() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
+		return v.FamilyDetails
+	}).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput)
+}
+
+// The version identifier for the Java family.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.FamilyVersion }).(pulumi.StringOutput)
+}
+
+// Information about a license type for Java.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseDetails() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemLicenseDetail {
+		return v.LicenseDetails
+	}).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput)
+}
+
+// Java license type.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// Parent Java release version identifier. This is applicable for BPR releases.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ParentReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ParentReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseDate }).(pulumi.StringOutput)
+}
+
+// Release notes associated with the Java version.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseNotesUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseNotesUrl }).(pulumi.StringOutput)
+}
+
+// Java release type.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseType }).(pulumi.StringOutput)
+}
+
+// Unique Java release version identifier
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.ReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The security status of the Java version.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) SecurityStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemArrayOutput() GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItem {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItem)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionItemOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArtifact struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// Product content type of this artifact.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription string `pulumi:"artifactDescription"`
+	// Unique identifier for the artifact.
+	ArtifactId string `pulumi:"artifactId"`
+	// SHA256 checksum of the artifact.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemArtifactInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArtifactArgs and GetJavaReleasesJavaReleaseCollectionItemArtifactOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemArtifactInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemArtifactArgs{...}
+type GetJavaReleasesJavaReleaseCollectionItemArtifactInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutput() GetJavaReleasesJavaReleaseCollectionItemArtifactOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArtifactArgs struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// Product content type of this artifact.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// Unique identifier for the artifact.
+	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// SHA256 checksum of the artifact.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutput() GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArtifactOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArtifactArray and GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemArtifactArray{ GetJavaReleasesJavaReleaseCollectionItemArtifactArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput() GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArtifactArray []GetJavaReleasesJavaReleaseCollectionItemArtifactInput
+
+func (GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput() GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutput() GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
+	return o
+}
+
+// Approximate compressed file size in bytes.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+}
+
+// Product content type of this artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
+}
+
+// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput() GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemArtifact {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemArtifact)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionItemArtifactOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetail struct {
+	// Commonly used name for the license type.
+	DisplayName string `pulumi:"displayName"`
+	// Link to access the documentation for the release.
+	DocUrl string `pulumi:"docUrl"`
+	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	// The version identifier for the Java family.
+	FamilyVersion string `pulumi:"familyVersion"`
+	// This indicates the support category for the Java release family.
+	SupportType string `pulumi:"supportType"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs{...}
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs struct {
+	// Commonly used name for the license type.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Link to access the documentation for the release.
+	DocUrl pulumi.StringInput `pulumi:"docUrl"`
+	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
+	// The version identifier for the Java family.
+	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// This indicates the support category for the Java release family.
+	SupportType pulumi.StringInput `pulumi:"supportType"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray{ GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray []GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
+	return o
+}
+
+// Commonly used name for the license type.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Link to access the documentation for the release.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DocUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.DocUrl }).(pulumi.StringOutput)
+}
+
+// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+}
+
+// The version identifier for the Java family.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) FamilyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.FamilyVersion }).(pulumi.StringOutput)
+}
+
+// This indicates the support category for the Java release family.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) SupportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.SupportType }).(pulumi.StringOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetail struct {
+	// Commonly used name for the license type.
+	DisplayName string `pulumi:"displayName"`
+	// Java license type.
+	LicenseType string `pulumi:"licenseType"`
+	// Publicly accessible license URL containing the detailed terms and conditions.
+	LicenseUrl string `pulumi:"licenseUrl"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs and GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs{...}
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs struct {
+	// Commonly used name for the license type.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Java license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// Publicly accessible license URL containing the detailed terms and conditions.
+	LicenseUrl pulumi.StringInput `pulumi:"licenseUrl"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray and GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray{ GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray []GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput
+
+func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
+	return o
+}
+
+// Commonly used name for the license type.
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Java license type.
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// Publicly accessible license URL containing the detailed terms and conditions.
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) LicenseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.LicenseUrl }).(pulumi.StringOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput() GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemLicenseDetail {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput)
+}
+
 type GetListJreUsageItem struct {
 	// The approximate count of the applications running on this Java Runtime.
 	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
@@ -2908,15 +4427,17 @@ type GetListJreUsageItem struct {
 	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
 	// The approximate count of work requests working on this Java Runtime.
 	ApproximatePendingWorkRequestCount int `pulumi:"approximatePendingWorkRequestCount"`
+	// The number of days since this release has been under the security baseline.
+	DaysUnderSecurityBaseline int `pulumi:"daysUnderSecurityBaseline"`
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
 	Distribution string `pulumi:"distribution"`
 	// The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
 	FleetId string `pulumi:"fleetId"`
 	// The internal identifier of the Java Runtime.
 	Id string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// The operating systems that have this Java Runtime installed.
 	OperatingSystems []GetListJreUsageItemOperatingSystem `pulumi:"operatingSystems"`
@@ -2941,7 +4462,7 @@ type GetListJreUsageItem struct {
 // GetListJreUsageItemInput is an input type that accepts GetListJreUsageItemArgs and GetListJreUsageItemOutput values.
 // You can construct a concrete instance of `GetListJreUsageItemInput` via:
 //
-//          GetListJreUsageItemArgs{...}
+//	GetListJreUsageItemArgs{...}
 type GetListJreUsageItemInput interface {
 	pulumi.Input
 
@@ -2958,15 +4479,17 @@ type GetListJreUsageItemArgs struct {
 	ApproximateManagedInstanceCount pulumi.IntInput `pulumi:"approximateManagedInstanceCount"`
 	// The approximate count of work requests working on this Java Runtime.
 	ApproximatePendingWorkRequestCount pulumi.IntInput `pulumi:"approximatePendingWorkRequestCount"`
+	// The number of days since this release has been under the security baseline.
+	DaysUnderSecurityBaseline pulumi.IntInput `pulumi:"daysUnderSecurityBaseline"`
 	// The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
 	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
 	// The internal identifier of the Java Runtime.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
 	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
 	// The operating systems that have this Java Runtime installed.
 	OperatingSystems GetListJreUsageItemOperatingSystemArrayInput `pulumi:"operatingSystems"`
@@ -3003,7 +4526,7 @@ func (i GetListJreUsageItemArgs) ToGetListJreUsageItemOutputWithContext(ctx cont
 // GetListJreUsageItemArrayInput is an input type that accepts GetListJreUsageItemArray and GetListJreUsageItemArrayOutput values.
 // You can construct a concrete instance of `GetListJreUsageItemArrayInput` via:
 //
-//          GetListJreUsageItemArray{ GetListJreUsageItemArgs{...} }
+//	GetListJreUsageItemArray{ GetListJreUsageItemArgs{...} }
 type GetListJreUsageItemArrayInput interface {
 	pulumi.Input
 
@@ -3059,6 +4582,11 @@ func (o GetListJreUsageItemOutput) ApproximatePendingWorkRequestCount() pulumi.I
 	return o.ApplyT(func(v GetListJreUsageItem) int { return v.ApproximatePendingWorkRequestCount }).(pulumi.IntOutput)
 }
 
+// The number of days since this release has been under the security baseline.
+func (o GetListJreUsageItemOutput) DaysUnderSecurityBaseline() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListJreUsageItem) int { return v.DaysUnderSecurityBaseline }).(pulumi.IntOutput)
+}
+
 // The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
 func (o GetListJreUsageItemOutput) Distribution() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Distribution }).(pulumi.StringOutput)
@@ -3069,7 +4597,7 @@ func (o GetListJreUsageItemOutput) EndOfSupportLifeDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
 func (o GetListJreUsageItemOutput) FleetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.FleetId }).(pulumi.StringOutput)
 }
@@ -3079,7 +4607,7 @@ func (o GetListJreUsageItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
 func (o GetListJreUsageItemOutput) ManagedInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
 }
@@ -3154,6 +4682,8 @@ type GetListJreUsageItemOperatingSystem struct {
 	Architecture string `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family string `pulumi:"family"`
+	// Number of instances running the operating system
+	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name string `pulumi:"name"`
 	// The version of the Java Runtime.
@@ -3163,7 +4693,7 @@ type GetListJreUsageItemOperatingSystem struct {
 // GetListJreUsageItemOperatingSystemInput is an input type that accepts GetListJreUsageItemOperatingSystemArgs and GetListJreUsageItemOperatingSystemOutput values.
 // You can construct a concrete instance of `GetListJreUsageItemOperatingSystemInput` via:
 //
-//          GetListJreUsageItemOperatingSystemArgs{...}
+//	GetListJreUsageItemOperatingSystemArgs{...}
 type GetListJreUsageItemOperatingSystemInput interface {
 	pulumi.Input
 
@@ -3176,6 +4706,8 @@ type GetListJreUsageItemOperatingSystemArgs struct {
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// The operating system type, such as Windows or Linux
 	Family pulumi.StringInput `pulumi:"family"`
+	// Number of instances running the operating system
+	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
 	// The name of the operating system as provided by the Java system property os.name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The version of the Java Runtime.
@@ -3197,7 +4729,7 @@ func (i GetListJreUsageItemOperatingSystemArgs) ToGetListJreUsageItemOperatingSy
 // GetListJreUsageItemOperatingSystemArrayInput is an input type that accepts GetListJreUsageItemOperatingSystemArray and GetListJreUsageItemOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListJreUsageItemOperatingSystemArrayInput` via:
 //
-//          GetListJreUsageItemOperatingSystemArray{ GetListJreUsageItemOperatingSystemArgs{...} }
+//	GetListJreUsageItemOperatingSystemArray{ GetListJreUsageItemOperatingSystemArgs{...} }
 type GetListJreUsageItemOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -3241,6 +4773,11 @@ func (o GetListJreUsageItemOperatingSystemOutput) Architecture() pulumi.StringOu
 // The operating system type, such as Windows or Linux
 func (o GetListJreUsageItemOperatingSystemOutput) Family() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
+}
+
+// Number of instances running the operating system
+func (o GetListJreUsageItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListJreUsageItemOperatingSystem) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
 }
 
 // The name of the operating system as provided by the Java system property os.name.
@@ -3320,6 +4857,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemJreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesFilterInput)(nil)).Elem(), GetJavaFamiliesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesFilterArrayInput)(nil)).Elem(), GetJavaFamiliesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionArrayInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemArrayInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseArtifactInput)(nil)).Elem(), GetJavaReleaseArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseArtifactArrayInput)(nil)).Elem(), GetJavaReleaseArtifactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseFamilyDetailInput)(nil)).Elem(), GetJavaReleaseFamilyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseFamilyDetailArrayInput)(nil)).Elem(), GetJavaReleaseFamilyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseLicenseDetailInput)(nil)).Elem(), GetJavaReleaseLicenseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseLicenseDetailArrayInput)(nil)).Elem(), GetJavaReleaseLicenseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesFilterInput)(nil)).Elem(), GetJavaReleasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesFilterArrayInput)(nil)).Elem(), GetJavaReleasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemArtifactInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemArtifactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemInput)(nil)).Elem(), GetListJreUsageItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemArrayInput)(nil)).Elem(), GetListJreUsageItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArgs{})
@@ -3370,6 +4931,30 @@ func init() {
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput{})
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput{})
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseArtifactOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseArtifactArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseFamilyDetailOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseFamilyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseLicenseDetailOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseLicenseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemArtifactOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOperatingSystemOutput{})

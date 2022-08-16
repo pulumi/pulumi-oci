@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsUnprocessedDataBucket(ctx, &loganalytics.GetLogAnalyticsUnprocessedDataBucketArgs{
-// 			Namespace: _var.Log_analytics_unprocessed_data_bucket_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsUnprocessedDataBucket(ctx, &loganalytics.GetLogAnalyticsUnprocessedDataBucketArgs{
+//				Namespace: _var.Log_analytics_unprocessed_data_bucket_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsUnprocessedDataBucket(ctx *pulumi.Context, args *GetLogAnalyticsUnprocessedDataBucketArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsUnprocessedDataBucketResult, error) {
 	var rv GetLogAnalyticsUnprocessedDataBucketResult

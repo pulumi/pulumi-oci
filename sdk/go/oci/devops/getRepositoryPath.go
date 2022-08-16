@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryPath(ctx, &devops.GetRepositoryPathArgs{
-// 			RepositoryId:   oci_devops_repository.Test_repository.Id,
-// 			DisplayName:    pulumi.StringRef(_var.Repository_path_display_name),
-// 			FolderPath:     pulumi.StringRef(_var.Repository_path_folder_path),
-// 			PathsInSubtree: pulumi.BoolRef(_var.Repository_path_paths_in_subtree),
-// 			Ref:            pulumi.StringRef(_var.Repository_path_ref),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryPath(ctx, &devops.GetRepositoryPathArgs{
+//				RepositoryId:   oci_devops_repository.Test_repository.Id,
+//				DisplayName:    pulumi.StringRef(_var.Repository_path_display_name),
+//				FolderPath:     pulumi.StringRef(_var.Repository_path_folder_path),
+//				PathsInSubtree: pulumi.BoolRef(_var.Repository_path_paths_in_subtree),
+//				Ref:            pulumi.StringRef(_var.Repository_path_ref),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryPath(ctx *pulumi.Context, args *GetRepositoryPathArgs, opts ...pulumi.InvokeOption) (*GetRepositoryPathResult, error) {
 	var rv GetRepositoryPathResult

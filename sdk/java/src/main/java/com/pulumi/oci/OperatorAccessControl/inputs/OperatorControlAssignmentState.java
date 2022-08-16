@@ -185,6 +185,21 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
     }
 
     /**
+     * More in detail about the lifeCycleState.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return More in detail about the lifeCycleState.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
      * The OCID of the operator control that is being assigned to a target resource.
      * 
      */
@@ -408,6 +423,7 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
         this.isAutoApproveDuringMaintenance = $.isAutoApproveDuringMaintenance;
         this.isEnforcedAlways = $.isEnforcedAlways;
         this.isLogForwarded = $.isLogForwarded;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.operatorControlId = $.operatorControlId;
         this.remoteSyslogServerAddress = $.remoteSyslogServerAddress;
         this.remoteSyslogServerCaCert = $.remoteSyslogServerCaCert;
@@ -671,6 +687,27 @@ public final class OperatorControlAssignmentState extends com.pulumi.resources.R
          */
         public Builder isLogForwarded(Boolean isLogForwarded) {
             return isLogForwarded(Output.of(isLogForwarded));
+        }
+
+        /**
+         * @param lifecycleDetails More in detail about the lifeCycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails More in detail about the lifeCycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
         /**

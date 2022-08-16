@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmConfig"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmConfig"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmConfig.GetConfigs(ctx, &apmconfig.GetConfigsArgs{
-// 			ApmDomainId:       oci_apm_apm_domain.Test_apm_domain.Id,
-// 			ConfigType:        pulumi.StringRef(_var.Config_config_type),
-// 			DefinedTagEquals:  _var.Config_defined_tag_equals,
-// 			DefinedTagExists:  _var.Config_defined_tag_exists,
-// 			DisplayName:       pulumi.StringRef(_var.Config_display_name),
-// 			FreeformTagEquals: _var.Config_freeform_tag_equals,
-// 			FreeformTagExists: _var.Config_freeform_tag_exists,
-// 			OptionsGroup:      pulumi.StringRef(_var.Config_options_group),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmConfig.GetConfigs(ctx, &apmconfig.GetConfigsArgs{
+//				ApmDomainId:       oci_apm_apm_domain.Test_apm_domain.Id,
+//				ConfigType:        pulumi.StringRef(_var.Config_config_type),
+//				DefinedTagEquals:  _var.Config_defined_tag_equals,
+//				DefinedTagExists:  _var.Config_defined_tag_exists,
+//				DisplayName:       pulumi.StringRef(_var.Config_display_name),
+//				FreeformTagEquals: _var.Config_freeform_tag_equals,
+//				FreeformTagExists: _var.Config_freeform_tag_exists,
+//				OptionsGroup:      pulumi.StringRef(_var.Config_options_group),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetConfigs(ctx *pulumi.Context, args *GetConfigsArgs, opts ...pulumi.InvokeOption) (*GetConfigsResult, error) {
 	var rv GetConfigsResult

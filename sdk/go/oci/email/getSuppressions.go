@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.GetSuppressions(ctx, &email.GetSuppressionsArgs{
-// 			CompartmentId:                   _var.Tenancy_ocid,
-// 			EmailAddress:                    pulumi.StringRef(_var.Suppression_email_address),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Suppression_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Suppression_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.GetSuppressions(ctx, &email.GetSuppressionsArgs{
+//				CompartmentId:                   _var.Tenancy_ocid,
+//				EmailAddress:                    pulumi.StringRef(_var.Suppression_email_address),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Suppression_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Suppression_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSuppressions(ctx *pulumi.Context, args *GetSuppressionsArgs, opts ...pulumi.InvokeOption) (*GetSuppressionsResult, error) {
 	var rv GetSuppressionsResult

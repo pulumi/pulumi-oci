@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: _var.Category_compartment_id_in_subtree,
-// 			Name:                   pulumi.StringRef(_var.Category_name),
-// 			State:                  pulumi.StringRef(_var.Category_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: _var.Category_compartment_id_in_subtree,
+//				Name:                   pulumi.StringRef(_var.Category_name),
+//				State:                  pulumi.StringRef(_var.Category_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCategories(ctx *pulumi.Context, args *GetCategoriesArgs, opts ...pulumi.InvokeOption) (*GetCategoriesResult, error) {
 	var rv GetCategoriesResult

@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GoldenGate.GetDeploymentUpgrades(ctx, &goldengate.GetDeploymentUpgradesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DeploymentId:  pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
-// 			DisplayName:   pulumi.StringRef(_var.Deployment_upgrade_display_name),
-// 			State:         pulumi.StringRef(_var.Deployment_upgrade_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GoldenGate.GetDeploymentUpgrades(ctx, &goldengate.GetDeploymentUpgradesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DeploymentId:  pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
+//				DisplayName:   pulumi.StringRef(_var.Deployment_upgrade_display_name),
+//				State:         pulumi.StringRef(_var.Deployment_upgrade_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDeploymentUpgrades(ctx *pulumi.Context, args *GetDeploymentUpgradesArgs, opts ...pulumi.InvokeOption) (*GetDeploymentUpgradesResult, error) {
 	var rv GetDeploymentUpgradesResult

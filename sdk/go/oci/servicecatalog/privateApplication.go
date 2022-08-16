@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceCatalog.NewPrivateApplication(ctx, "testPrivateApplication", &ServiceCatalog.PrivateApplicationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Private_application_display_name),
-// 			PackageDetails: &servicecatalog.PrivateApplicationPackageDetailsArgs{
-// 				PackageType:          pulumi.Any(_var.Private_application_package_details_package_type),
-// 				Version:              pulumi.Any(_var.Private_application_package_details_version),
-// 				ZipFileBase64encoded: pulumi.Any(_var.Private_application_package_details_zip_file_base64encoded),
-// 			},
-// 			ShortDescription: pulumi.Any(_var.Private_application_short_description),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			LogoFileBase64encoded: pulumi.Any(_var.Private_application_logo_file_base64encoded),
-// 			LongDescription:       pulumi.Any(_var.Private_application_long_description),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceCatalog.NewPrivateApplication(ctx, "testPrivateApplication", &ServiceCatalog.PrivateApplicationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Private_application_display_name),
+//				PackageDetails: &servicecatalog.PrivateApplicationPackageDetailsArgs{
+//					PackageType:          pulumi.Any(_var.Private_application_package_details_package_type),
+//					Version:              pulumi.Any(_var.Private_application_package_details_version),
+//					ZipFileBase64encoded: pulumi.Any(_var.Private_application_package_details_zip_file_base64encoded),
+//				},
+//				ShortDescription: pulumi.Any(_var.Private_application_short_description),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				LogoFileBase64encoded: pulumi.Any(_var.Private_application_logo_file_base64encoded),
+//				LongDescription:       pulumi.Any(_var.Private_application_long_description),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // PrivateApplications can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
+//
+//	$ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
+//
 // ```
 type PrivateApplication struct {
 	pulumi.CustomResourceState
@@ -258,7 +263,7 @@ func (i *PrivateApplication) ToPrivateApplicationOutputWithContext(ctx context.C
 // PrivateApplicationArrayInput is an input type that accepts PrivateApplicationArray and PrivateApplicationArrayOutput values.
 // You can construct a concrete instance of `PrivateApplicationArrayInput` via:
 //
-//          PrivateApplicationArray{ PrivateApplicationArgs{...} }
+//	PrivateApplicationArray{ PrivateApplicationArgs{...} }
 type PrivateApplicationArrayInput interface {
 	pulumi.Input
 
@@ -283,7 +288,7 @@ func (i PrivateApplicationArray) ToPrivateApplicationArrayOutputWithContext(ctx 
 // PrivateApplicationMapInput is an input type that accepts PrivateApplicationMap and PrivateApplicationMapOutput values.
 // You can construct a concrete instance of `PrivateApplicationMapInput` via:
 //
-//          PrivateApplicationMap{ "key": PrivateApplicationArgs{...} }
+//	PrivateApplicationMap{ "key": PrivateApplicationArgs{...} }
 type PrivateApplicationMapInput interface {
 	pulumi.Input
 

@@ -21,55 +21,58 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDatabase(ctx, "testDatabase", &Database.DatabaseArgs{
-// 			Database: &database.DatabaseDatabaseArgs{
-// 				AdminPassword:           pulumi.Any(_var.Database_database_admin_password),
-// 				DbName:                  pulumi.Any(_var.Database_database_db_name),
-// 				BackupId:                pulumi.Any(oci_database_backup.Test_backup.Id),
-// 				BackupTdePassword:       pulumi.Any(_var.Database_database_backup_tde_password),
-// 				CharacterSet:            pulumi.Any(_var.Database_database_character_set),
-// 				DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
-// 				DbBackupConfig: &database.DatabaseDatabaseDbBackupConfigArgs{
-// 					AutoBackupEnabled: pulumi.Any(_var.Database_database_db_backup_config_auto_backup_enabled),
-// 					AutoBackupWindow:  pulumi.Any(_var.Database_database_db_backup_config_auto_backup_window),
-// 					BackupDestinationDetails: database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{
-// 						&database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{
-// 							Id:   pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_id),
-// 							Type: pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_type),
-// 						},
-// 					},
-// 					RecoveryWindowInDays: pulumi.Any(_var.Database_database_db_backup_config_recovery_window_in_days),
-// 				},
-// 				DbUniqueName:      pulumi.Any(_var.Database_database_db_unique_name),
-// 				DbWorkload:        pulumi.Any(_var.Database_database_db_workload),
-// 				DefinedTags:       pulumi.Any(_var.Database_database_defined_tags),
-// 				FreeformTags:      pulumi.Any(_var.Database_database_freeform_tags),
-// 				KmsKeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
-// 				KmsKeyVersionId:   pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 				NcharacterSet:     pulumi.Any(_var.Database_database_ncharacter_set),
-// 				PdbName:           pulumi.Any(_var.Database_database_pdb_name),
-// 				SidPrefix:         pulumi.Any(_var.Database_database_sid_prefix),
-// 				TdeWalletPassword: pulumi.Any(_var.Database_database_tde_wallet_password),
-// 				VaultId:           pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			},
-// 			DbHomeId:        pulumi.Any(oci_database_db_home.Test_db_home.Id),
-// 			Source:          pulumi.Any(_var.Database_source),
-// 			DbVersion:       pulumi.Any(_var.Database_db_version),
-// 			KmsKeyId:        pulumi.Any(oci_kms_key.Test_key.Id),
-// 			KmsKeyVersionId: pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDatabase(ctx, "testDatabase", &Database.DatabaseArgs{
+//				Database: &database.DatabaseDatabaseArgs{
+//					AdminPassword:           pulumi.Any(_var.Database_database_admin_password),
+//					DbName:                  pulumi.Any(_var.Database_database_db_name),
+//					BackupId:                pulumi.Any(oci_database_backup.Test_backup.Id),
+//					BackupTdePassword:       pulumi.Any(_var.Database_database_backup_tde_password),
+//					CharacterSet:            pulumi.Any(_var.Database_database_character_set),
+//					DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
+//					DbBackupConfig: &database.DatabaseDatabaseDbBackupConfigArgs{
+//						AutoBackupEnabled: pulumi.Any(_var.Database_database_db_backup_config_auto_backup_enabled),
+//						AutoBackupWindow:  pulumi.Any(_var.Database_database_db_backup_config_auto_backup_window),
+//						BackupDestinationDetails: database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{
+//							&database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{
+//								Id:   pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_id),
+//								Type: pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_type),
+//							},
+//						},
+//						RecoveryWindowInDays: pulumi.Any(_var.Database_database_db_backup_config_recovery_window_in_days),
+//					},
+//					DbUniqueName:      pulumi.Any(_var.Database_database_db_unique_name),
+//					DbWorkload:        pulumi.Any(_var.Database_database_db_workload),
+//					DefinedTags:       pulumi.Any(_var.Database_database_defined_tags),
+//					FreeformTags:      pulumi.Any(_var.Database_database_freeform_tags),
+//					KmsKeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
+//					KmsKeyVersionId:   pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//					NcharacterSet:     pulumi.Any(_var.Database_database_ncharacter_set),
+//					PdbName:           pulumi.Any(_var.Database_database_pdb_name),
+//					SidPrefix:         pulumi.Any(_var.Database_database_sid_prefix),
+//					TdeWalletPassword: pulumi.Any(_var.Database_database_tde_wallet_password),
+//					VaultId:           pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				},
+//				DbHomeId:        pulumi.Any(oci_database_db_home.Test_db_home.Id),
+//				Source:          pulumi.Any(_var.Database_source),
+//				DbVersion:       pulumi.Any(_var.Database_db_version),
+//				KmsKeyId:        pulumi.Any(oci_kms_key.Test_key.Id),
+//				KmsKeyVersionId: pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -77,7 +80,9 @@ import (
 // Databases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/database:Database test_database "id"
+//
+//	$ pulumi import oci:Database/database:Database test_database "id"
+//
 // ```
 type Database struct {
 	pulumi.CustomResourceState
@@ -386,7 +391,7 @@ func (i *Database) ToDatabaseOutputWithContext(ctx context.Context) DatabaseOutp
 // DatabaseArrayInput is an input type that accepts DatabaseArray and DatabaseArrayOutput values.
 // You can construct a concrete instance of `DatabaseArrayInput` via:
 //
-//          DatabaseArray{ DatabaseArgs{...} }
+//	DatabaseArray{ DatabaseArgs{...} }
 type DatabaseArrayInput interface {
 	pulumi.Input
 
@@ -411,7 +416,7 @@ func (i DatabaseArray) ToDatabaseArrayOutputWithContext(ctx context.Context) Dat
 // DatabaseMapInput is an input type that accepts DatabaseMap and DatabaseMapOutput values.
 // You can construct a concrete instance of `DatabaseMapInput` via:
 //
-//          DatabaseMap{ "key": DatabaseArgs{...} }
+//	DatabaseMap{ "key": DatabaseArgs{...} }
 type DatabaseMapInput interface {
 	pulumi.Input
 

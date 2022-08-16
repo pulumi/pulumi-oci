@@ -24,7 +24,7 @@ type PublicationIcon struct {
 // PublicationIconInput is an input type that accepts PublicationIconArgs and PublicationIconOutput values.
 // You can construct a concrete instance of `PublicationIconInput` via:
 //
-//          PublicationIconArgs{...}
+//	PublicationIconArgs{...}
 type PublicationIconInput interface {
 	pulumi.Input
 
@@ -58,7 +58,7 @@ func (i PublicationIconArgs) ToPublicationIconOutputWithContext(ctx context.Cont
 // PublicationIconArrayInput is an input type that accepts PublicationIconArray and PublicationIconArrayOutput values.
 // You can construct a concrete instance of `PublicationIconArrayInput` via:
 //
-//          PublicationIconArray{ PublicationIconArgs{...} }
+//	PublicationIconArray{ PublicationIconArgs{...} }
 type PublicationIconArrayInput interface {
 	pulumi.Input
 
@@ -150,7 +150,7 @@ type PublicationPackageDetails struct {
 // PublicationPackageDetailsInput is an input type that accepts PublicationPackageDetailsArgs and PublicationPackageDetailsOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsInput` via:
 //
-//          PublicationPackageDetailsArgs{...}
+//	PublicationPackageDetailsArgs{...}
 type PublicationPackageDetailsInput interface {
 	pulumi.Input
 
@@ -194,11 +194,11 @@ func (i PublicationPackageDetailsArgs) ToPublicationPackageDetailsPtrOutputWithC
 // PublicationPackageDetailsPtrInput is an input type that accepts PublicationPackageDetailsArgs, PublicationPackageDetailsPtr and PublicationPackageDetailsPtrOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsPtrInput` via:
 //
-//          PublicationPackageDetailsArgs{...}
+//	        PublicationPackageDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PublicationPackageDetailsPtrInput interface {
 	pulumi.Input
 
@@ -357,7 +357,7 @@ type PublicationPackageDetailsEula struct {
 // PublicationPackageDetailsEulaInput is an input type that accepts PublicationPackageDetailsEulaArgs and PublicationPackageDetailsEulaOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsEulaInput` via:
 //
-//          PublicationPackageDetailsEulaArgs{...}
+//	PublicationPackageDetailsEulaArgs{...}
 type PublicationPackageDetailsEulaInput interface {
 	pulumi.Input
 
@@ -387,7 +387,7 @@ func (i PublicationPackageDetailsEulaArgs) ToPublicationPackageDetailsEulaOutput
 // PublicationPackageDetailsEulaArrayInput is an input type that accepts PublicationPackageDetailsEulaArray and PublicationPackageDetailsEulaArrayOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsEulaArrayInput` via:
 //
-//          PublicationPackageDetailsEulaArray{ PublicationPackageDetailsEulaArgs{...} }
+//	PublicationPackageDetailsEulaArray{ PublicationPackageDetailsEulaArgs{...} }
 type PublicationPackageDetailsEulaArrayInput interface {
 	pulumi.Input
 
@@ -461,7 +461,7 @@ type PublicationPackageDetailsOperatingSystem struct {
 // PublicationPackageDetailsOperatingSystemInput is an input type that accepts PublicationPackageDetailsOperatingSystemArgs and PublicationPackageDetailsOperatingSystemOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsOperatingSystemInput` via:
 //
-//          PublicationPackageDetailsOperatingSystemArgs{...}
+//	PublicationPackageDetailsOperatingSystemArgs{...}
 type PublicationPackageDetailsOperatingSystemInput interface {
 	pulumi.Input
 
@@ -497,11 +497,11 @@ func (i PublicationPackageDetailsOperatingSystemArgs) ToPublicationPackageDetail
 // PublicationPackageDetailsOperatingSystemPtrInput is an input type that accepts PublicationPackageDetailsOperatingSystemArgs, PublicationPackageDetailsOperatingSystemPtr and PublicationPackageDetailsOperatingSystemPtrOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsOperatingSystemPtrInput` via:
 //
-//          PublicationPackageDetailsOperatingSystemArgs{...}
+//	        PublicationPackageDetailsOperatingSystemArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PublicationPackageDetailsOperatingSystemPtrInput interface {
 	pulumi.Input
 
@@ -604,7 +604,7 @@ type PublicationSupportContact struct {
 // PublicationSupportContactInput is an input type that accepts PublicationSupportContactArgs and PublicationSupportContactOutput values.
 // You can construct a concrete instance of `PublicationSupportContactInput` via:
 //
-//          PublicationSupportContactArgs{...}
+//	PublicationSupportContactArgs{...}
 type PublicationSupportContactInput interface {
 	pulumi.Input
 
@@ -638,7 +638,7 @@ func (i PublicationSupportContactArgs) ToPublicationSupportContactOutputWithCont
 // PublicationSupportContactArrayInput is an input type that accepts PublicationSupportContactArray and PublicationSupportContactArrayOutput values.
 // You can construct a concrete instance of `PublicationSupportContactArrayInput` via:
 //
-//          PublicationSupportContactArray{ PublicationSupportContactArgs{...} }
+//	PublicationSupportContactArray{ PublicationSupportContactArgs{...} }
 type PublicationSupportContactArrayInput interface {
 	pulumi.Input
 
@@ -722,7 +722,7 @@ type PublicationSupportedOperatingSystem struct {
 // PublicationSupportedOperatingSystemInput is an input type that accepts PublicationSupportedOperatingSystemArgs and PublicationSupportedOperatingSystemOutput values.
 // You can construct a concrete instance of `PublicationSupportedOperatingSystemInput` via:
 //
-//          PublicationSupportedOperatingSystemArgs{...}
+//	PublicationSupportedOperatingSystemArgs{...}
 type PublicationSupportedOperatingSystemInput interface {
 	pulumi.Input
 
@@ -750,7 +750,7 @@ func (i PublicationSupportedOperatingSystemArgs) ToPublicationSupportedOperating
 // PublicationSupportedOperatingSystemArrayInput is an input type that accepts PublicationSupportedOperatingSystemArray and PublicationSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `PublicationSupportedOperatingSystemArrayInput` via:
 //
-//          PublicationSupportedOperatingSystemArray{ PublicationSupportedOperatingSystemArgs{...} }
+//	PublicationSupportedOperatingSystemArray{ PublicationSupportedOperatingSystemArgs{...} }
 type PublicationSupportedOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -836,7 +836,7 @@ type GetAcceptedAgreementsAcceptedAgreement struct {
 // GetAcceptedAgreementsAcceptedAgreementInput is an input type that accepts GetAcceptedAgreementsAcceptedAgreementArgs and GetAcceptedAgreementsAcceptedAgreementOutput values.
 // You can construct a concrete instance of `GetAcceptedAgreementsAcceptedAgreementInput` via:
 //
-//          GetAcceptedAgreementsAcceptedAgreementArgs{...}
+//	GetAcceptedAgreementsAcceptedAgreementArgs{...}
 type GetAcceptedAgreementsAcceptedAgreementInput interface {
 	pulumi.Input
 
@@ -881,7 +881,7 @@ func (i GetAcceptedAgreementsAcceptedAgreementArgs) ToGetAcceptedAgreementsAccep
 // GetAcceptedAgreementsAcceptedAgreementArrayInput is an input type that accepts GetAcceptedAgreementsAcceptedAgreementArray and GetAcceptedAgreementsAcceptedAgreementArrayOutput values.
 // You can construct a concrete instance of `GetAcceptedAgreementsAcceptedAgreementArrayInput` via:
 //
-//          GetAcceptedAgreementsAcceptedAgreementArray{ GetAcceptedAgreementsAcceptedAgreementArgs{...} }
+//	GetAcceptedAgreementsAcceptedAgreementArray{ GetAcceptedAgreementsAcceptedAgreementArgs{...} }
 type GetAcceptedAgreementsAcceptedAgreementArrayInput interface {
 	pulumi.Input
 
@@ -995,7 +995,7 @@ type GetAcceptedAgreementsFilter struct {
 // GetAcceptedAgreementsFilterInput is an input type that accepts GetAcceptedAgreementsFilterArgs and GetAcceptedAgreementsFilterOutput values.
 // You can construct a concrete instance of `GetAcceptedAgreementsFilterInput` via:
 //
-//          GetAcceptedAgreementsFilterArgs{...}
+//	GetAcceptedAgreementsFilterArgs{...}
 type GetAcceptedAgreementsFilterInput interface {
 	pulumi.Input
 
@@ -1024,7 +1024,7 @@ func (i GetAcceptedAgreementsFilterArgs) ToGetAcceptedAgreementsFilterOutputWith
 // GetAcceptedAgreementsFilterArrayInput is an input type that accepts GetAcceptedAgreementsFilterArray and GetAcceptedAgreementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAcceptedAgreementsFilterArrayInput` via:
 //
-//          GetAcceptedAgreementsFilterArray{ GetAcceptedAgreementsFilterArgs{...} }
+//	GetAcceptedAgreementsFilterArray{ GetAcceptedAgreementsFilterArgs{...} }
 type GetAcceptedAgreementsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1100,7 +1100,7 @@ type GetCategoriesCategory struct {
 // GetCategoriesCategoryInput is an input type that accepts GetCategoriesCategoryArgs and GetCategoriesCategoryOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryInput` via:
 //
-//          GetCategoriesCategoryArgs{...}
+//	GetCategoriesCategoryArgs{...}
 type GetCategoriesCategoryInput interface {
 	pulumi.Input
 
@@ -1128,7 +1128,7 @@ func (i GetCategoriesCategoryArgs) ToGetCategoriesCategoryOutputWithContext(ctx 
 // GetCategoriesCategoryArrayInput is an input type that accepts GetCategoriesCategoryArray and GetCategoriesCategoryArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryArrayInput` via:
 //
-//          GetCategoriesCategoryArray{ GetCategoriesCategoryArgs{...} }
+//	GetCategoriesCategoryArray{ GetCategoriesCategoryArgs{...} }
 type GetCategoriesCategoryArrayInput interface {
 	pulumi.Input
 
@@ -1199,7 +1199,7 @@ type GetCategoriesFilter struct {
 // GetCategoriesFilterInput is an input type that accepts GetCategoriesFilterArgs and GetCategoriesFilterOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterInput` via:
 //
-//          GetCategoriesFilterArgs{...}
+//	GetCategoriesFilterArgs{...}
 type GetCategoriesFilterInput interface {
 	pulumi.Input
 
@@ -1229,7 +1229,7 @@ func (i GetCategoriesFilterArgs) ToGetCategoriesFilterOutputWithContext(ctx cont
 // GetCategoriesFilterArrayInput is an input type that accepts GetCategoriesFilterArray and GetCategoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterArrayInput` via:
 //
-//          GetCategoriesFilterArray{ GetCategoriesFilterArgs{...} }
+//	GetCategoriesFilterArray{ GetCategoriesFilterArgs{...} }
 type GetCategoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1312,7 +1312,7 @@ type GetListingBanner struct {
 // GetListingBannerInput is an input type that accepts GetListingBannerArgs and GetListingBannerOutput values.
 // You can construct a concrete instance of `GetListingBannerInput` via:
 //
-//          GetListingBannerArgs{...}
+//	GetListingBannerArgs{...}
 type GetListingBannerInput interface {
 	pulumi.Input
 
@@ -1346,7 +1346,7 @@ func (i GetListingBannerArgs) ToGetListingBannerOutputWithContext(ctx context.Co
 // GetListingBannerArrayInput is an input type that accepts GetListingBannerArray and GetListingBannerArrayOutput values.
 // You can construct a concrete instance of `GetListingBannerArrayInput` via:
 //
-//          GetListingBannerArray{ GetListingBannerArgs{...} }
+//	GetListingBannerArray{ GetListingBannerArgs{...} }
 type GetListingBannerArrayInput interface {
 	pulumi.Input
 
@@ -1434,7 +1434,7 @@ type GetListingDocumentationLink struct {
 // GetListingDocumentationLinkInput is an input type that accepts GetListingDocumentationLinkArgs and GetListingDocumentationLinkOutput values.
 // You can construct a concrete instance of `GetListingDocumentationLinkInput` via:
 //
-//          GetListingDocumentationLinkArgs{...}
+//	GetListingDocumentationLinkArgs{...}
 type GetListingDocumentationLinkInput interface {
 	pulumi.Input
 
@@ -1466,7 +1466,7 @@ func (i GetListingDocumentationLinkArgs) ToGetListingDocumentationLinkOutputWith
 // GetListingDocumentationLinkArrayInput is an input type that accepts GetListingDocumentationLinkArray and GetListingDocumentationLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingDocumentationLinkArrayInput` via:
 //
-//          GetListingDocumentationLinkArray{ GetListingDocumentationLinkArgs{...} }
+//	GetListingDocumentationLinkArray{ GetListingDocumentationLinkArgs{...} }
 type GetListingDocumentationLinkArrayInput interface {
 	pulumi.Input
 
@@ -1551,7 +1551,7 @@ type GetListingIcon struct {
 // GetListingIconInput is an input type that accepts GetListingIconArgs and GetListingIconOutput values.
 // You can construct a concrete instance of `GetListingIconInput` via:
 //
-//          GetListingIconArgs{...}
+//	GetListingIconArgs{...}
 type GetListingIconInput interface {
 	pulumi.Input
 
@@ -1585,7 +1585,7 @@ func (i GetListingIconArgs) ToGetListingIconOutputWithContext(ctx context.Contex
 // GetListingIconArrayInput is an input type that accepts GetListingIconArray and GetListingIconArrayOutput values.
 // You can construct a concrete instance of `GetListingIconArrayInput` via:
 //
-//          GetListingIconArray{ GetListingIconArgs{...} }
+//	GetListingIconArray{ GetListingIconArgs{...} }
 type GetListingIconArrayInput interface {
 	pulumi.Input
 
@@ -1671,7 +1671,7 @@ type GetListingLanguage struct {
 // GetListingLanguageInput is an input type that accepts GetListingLanguageArgs and GetListingLanguageOutput values.
 // You can construct a concrete instance of `GetListingLanguageInput` via:
 //
-//          GetListingLanguageArgs{...}
+//	GetListingLanguageArgs{...}
 type GetListingLanguageInput interface {
 	pulumi.Input
 
@@ -1701,7 +1701,7 @@ func (i GetListingLanguageArgs) ToGetListingLanguageOutputWithContext(ctx contex
 // GetListingLanguageArrayInput is an input type that accepts GetListingLanguageArray and GetListingLanguageArrayOutput values.
 // You can construct a concrete instance of `GetListingLanguageArrayInput` via:
 //
-//          GetListingLanguageArray{ GetListingLanguageArgs{...} }
+//	GetListingLanguageArray{ GetListingLanguageArgs{...} }
 type GetListingLanguageArrayInput interface {
 	pulumi.Input
 
@@ -1777,7 +1777,7 @@ type GetListingLink struct {
 // GetListingLinkInput is an input type that accepts GetListingLinkArgs and GetListingLinkOutput values.
 // You can construct a concrete instance of `GetListingLinkInput` via:
 //
-//          GetListingLinkArgs{...}
+//	GetListingLinkArgs{...}
 type GetListingLinkInput interface {
 	pulumi.Input
 
@@ -1807,7 +1807,7 @@ func (i GetListingLinkArgs) ToGetListingLinkOutputWithContext(ctx context.Contex
 // GetListingLinkArrayInput is an input type that accepts GetListingLinkArray and GetListingLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingLinkArrayInput` via:
 //
-//          GetListingLinkArray{ GetListingLinkArgs{...} }
+//	GetListingLinkArray{ GetListingLinkArgs{...} }
 type GetListingLinkArrayInput interface {
 	pulumi.Input
 
@@ -1887,7 +1887,7 @@ type GetListingPackageAgreementsAgreement struct {
 // GetListingPackageAgreementsAgreementInput is an input type that accepts GetListingPackageAgreementsAgreementArgs and GetListingPackageAgreementsAgreementOutput values.
 // You can construct a concrete instance of `GetListingPackageAgreementsAgreementInput` via:
 //
-//          GetListingPackageAgreementsAgreementArgs{...}
+//	GetListingPackageAgreementsAgreementArgs{...}
 type GetListingPackageAgreementsAgreementInput interface {
 	pulumi.Input
 
@@ -1921,7 +1921,7 @@ func (i GetListingPackageAgreementsAgreementArgs) ToGetListingPackageAgreementsA
 // GetListingPackageAgreementsAgreementArrayInput is an input type that accepts GetListingPackageAgreementsAgreementArray and GetListingPackageAgreementsAgreementArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageAgreementsAgreementArrayInput` via:
 //
-//          GetListingPackageAgreementsAgreementArray{ GetListingPackageAgreementsAgreementArgs{...} }
+//	GetListingPackageAgreementsAgreementArray{ GetListingPackageAgreementsAgreementArgs{...} }
 type GetListingPackageAgreementsAgreementArrayInput interface {
 	pulumi.Input
 
@@ -2006,7 +2006,7 @@ type GetListingPackageAgreementsFilter struct {
 // GetListingPackageAgreementsFilterInput is an input type that accepts GetListingPackageAgreementsFilterArgs and GetListingPackageAgreementsFilterOutput values.
 // You can construct a concrete instance of `GetListingPackageAgreementsFilterInput` via:
 //
-//          GetListingPackageAgreementsFilterArgs{...}
+//	GetListingPackageAgreementsFilterArgs{...}
 type GetListingPackageAgreementsFilterInput interface {
 	pulumi.Input
 
@@ -2035,7 +2035,7 @@ func (i GetListingPackageAgreementsFilterArgs) ToGetListingPackageAgreementsFilt
 // GetListingPackageAgreementsFilterArrayInput is an input type that accepts GetListingPackageAgreementsFilterArray and GetListingPackageAgreementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageAgreementsFilterArrayInput` via:
 //
-//          GetListingPackageAgreementsFilterArray{ GetListingPackageAgreementsFilterArgs{...} }
+//	GetListingPackageAgreementsFilterArray{ GetListingPackageAgreementsFilterArgs{...} }
 type GetListingPackageAgreementsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2111,7 +2111,7 @@ type GetListingPackageOperatingSystem struct {
 // GetListingPackageOperatingSystemInput is an input type that accepts GetListingPackageOperatingSystemArgs and GetListingPackageOperatingSystemOutput values.
 // You can construct a concrete instance of `GetListingPackageOperatingSystemInput` via:
 //
-//          GetListingPackageOperatingSystemArgs{...}
+//	GetListingPackageOperatingSystemArgs{...}
 type GetListingPackageOperatingSystemInput interface {
 	pulumi.Input
 
@@ -2139,7 +2139,7 @@ func (i GetListingPackageOperatingSystemArgs) ToGetListingPackageOperatingSystem
 // GetListingPackageOperatingSystemArrayInput is an input type that accepts GetListingPackageOperatingSystemArray and GetListingPackageOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageOperatingSystemArrayInput` via:
 //
-//          GetListingPackageOperatingSystemArray{ GetListingPackageOperatingSystemArgs{...} }
+//	GetListingPackageOperatingSystemArray{ GetListingPackageOperatingSystemArgs{...} }
 type GetListingPackageOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -2216,7 +2216,7 @@ type GetListingPackagePricing struct {
 // GetListingPackagePricingInput is an input type that accepts GetListingPackagePricingArgs and GetListingPackagePricingOutput values.
 // You can construct a concrete instance of `GetListingPackagePricingInput` via:
 //
-//          GetListingPackagePricingArgs{...}
+//	GetListingPackagePricingArgs{...}
 type GetListingPackagePricingInput interface {
 	pulumi.Input
 
@@ -2252,7 +2252,7 @@ func (i GetListingPackagePricingArgs) ToGetListingPackagePricingOutputWithContex
 // GetListingPackagePricingArrayInput is an input type that accepts GetListingPackagePricingArray and GetListingPackagePricingArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagePricingArrayInput` via:
 //
-//          GetListingPackagePricingArray{ GetListingPackagePricingArgs{...} }
+//	GetListingPackagePricingArray{ GetListingPackagePricingArgs{...} }
 type GetListingPackagePricingArrayInput interface {
 	pulumi.Input
 
@@ -2347,7 +2347,7 @@ type GetListingPackagePricingInternationalMarketPrice struct {
 // GetListingPackagePricingInternationalMarketPriceInput is an input type that accepts GetListingPackagePricingInternationalMarketPriceArgs and GetListingPackagePricingInternationalMarketPriceOutput values.
 // You can construct a concrete instance of `GetListingPackagePricingInternationalMarketPriceInput` via:
 //
-//          GetListingPackagePricingInternationalMarketPriceArgs{...}
+//	GetListingPackagePricingInternationalMarketPriceArgs{...}
 type GetListingPackagePricingInternationalMarketPriceInput interface {
 	pulumi.Input
 
@@ -2379,7 +2379,7 @@ func (i GetListingPackagePricingInternationalMarketPriceArgs) ToGetListingPackag
 // GetListingPackagePricingInternationalMarketPriceArrayInput is an input type that accepts GetListingPackagePricingInternationalMarketPriceArray and GetListingPackagePricingInternationalMarketPriceArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagePricingInternationalMarketPriceArrayInput` via:
 //
-//          GetListingPackagePricingInternationalMarketPriceArray{ GetListingPackagePricingInternationalMarketPriceArgs{...} }
+//	GetListingPackagePricingInternationalMarketPriceArray{ GetListingPackagePricingInternationalMarketPriceArgs{...} }
 type GetListingPackagePricingInternationalMarketPriceArrayInput interface {
 	pulumi.Input
 
@@ -2462,7 +2462,7 @@ type GetListingPackageRegion struct {
 // GetListingPackageRegionInput is an input type that accepts GetListingPackageRegionArgs and GetListingPackageRegionOutput values.
 // You can construct a concrete instance of `GetListingPackageRegionInput` via:
 //
-//          GetListingPackageRegionArgs{...}
+//	GetListingPackageRegionArgs{...}
 type GetListingPackageRegionInput interface {
 	pulumi.Input
 
@@ -2494,7 +2494,7 @@ func (i GetListingPackageRegionArgs) ToGetListingPackageRegionOutputWithContext(
 // GetListingPackageRegionArrayInput is an input type that accepts GetListingPackageRegionArray and GetListingPackageRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageRegionArrayInput` via:
 //
-//          GetListingPackageRegionArray{ GetListingPackageRegionArgs{...} }
+//	GetListingPackageRegionArray{ GetListingPackageRegionArgs{...} }
 type GetListingPackageRegionArrayInput interface {
 	pulumi.Input
 
@@ -2575,7 +2575,7 @@ type GetListingPackageRegionCountry struct {
 // GetListingPackageRegionCountryInput is an input type that accepts GetListingPackageRegionCountryArgs and GetListingPackageRegionCountryOutput values.
 // You can construct a concrete instance of `GetListingPackageRegionCountryInput` via:
 //
-//          GetListingPackageRegionCountryArgs{...}
+//	GetListingPackageRegionCountryArgs{...}
 type GetListingPackageRegionCountryInput interface {
 	pulumi.Input
 
@@ -2605,7 +2605,7 @@ func (i GetListingPackageRegionCountryArgs) ToGetListingPackageRegionCountryOutp
 // GetListingPackageRegionCountryArrayInput is an input type that accepts GetListingPackageRegionCountryArray and GetListingPackageRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageRegionCountryArrayInput` via:
 //
-//          GetListingPackageRegionCountryArray{ GetListingPackageRegionCountryArgs{...} }
+//	GetListingPackageRegionCountryArray{ GetListingPackageRegionCountryArgs{...} }
 type GetListingPackageRegionCountryArrayInput interface {
 	pulumi.Input
 
@@ -2689,7 +2689,7 @@ type GetListingPackageVariable struct {
 // GetListingPackageVariableInput is an input type that accepts GetListingPackageVariableArgs and GetListingPackageVariableOutput values.
 // You can construct a concrete instance of `GetListingPackageVariableInput` via:
 //
-//          GetListingPackageVariableArgs{...}
+//	GetListingPackageVariableArgs{...}
 type GetListingPackageVariableInput interface {
 	pulumi.Input
 
@@ -2727,7 +2727,7 @@ func (i GetListingPackageVariableArgs) ToGetListingPackageVariableOutputWithCont
 // GetListingPackageVariableArrayInput is an input type that accepts GetListingPackageVariableArray and GetListingPackageVariableArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageVariableArrayInput` via:
 //
-//          GetListingPackageVariableArray{ GetListingPackageVariableArgs{...} }
+//	GetListingPackageVariableArray{ GetListingPackageVariableArgs{...} }
 type GetListingPackageVariableArrayInput interface {
 	pulumi.Input
 
@@ -2823,7 +2823,7 @@ type GetListingPackagesFilter struct {
 // GetListingPackagesFilterInput is an input type that accepts GetListingPackagesFilterArgs and GetListingPackagesFilterOutput values.
 // You can construct a concrete instance of `GetListingPackagesFilterInput` via:
 //
-//          GetListingPackagesFilterArgs{...}
+//	GetListingPackagesFilterArgs{...}
 type GetListingPackagesFilterInput interface {
 	pulumi.Input
 
@@ -2853,7 +2853,7 @@ func (i GetListingPackagesFilterArgs) ToGetListingPackagesFilterOutputWithContex
 // GetListingPackagesFilterArrayInput is an input type that accepts GetListingPackagesFilterArray and GetListingPackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesFilterArrayInput` via:
 //
-//          GetListingPackagesFilterArray{ GetListingPackagesFilterArgs{...} }
+//	GetListingPackagesFilterArray{ GetListingPackagesFilterArgs{...} }
 type GetListingPackagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2944,7 +2944,7 @@ type GetListingPackagesListingPackage struct {
 // GetListingPackagesListingPackageInput is an input type that accepts GetListingPackagesListingPackageArgs and GetListingPackagesListingPackageOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageInput` via:
 //
-//          GetListingPackagesListingPackageArgs{...}
+//	GetListingPackagesListingPackageArgs{...}
 type GetListingPackagesListingPackageInput interface {
 	pulumi.Input
 
@@ -2986,7 +2986,7 @@ func (i GetListingPackagesListingPackageArgs) ToGetListingPackagesListingPackage
 // GetListingPackagesListingPackageArrayInput is an input type that accepts GetListingPackagesListingPackageArray and GetListingPackagesListingPackageArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageArrayInput` via:
 //
-//          GetListingPackagesListingPackageArray{ GetListingPackagesListingPackageArgs{...} }
+//	GetListingPackagesListingPackageArray{ GetListingPackagesListingPackageArgs{...} }
 type GetListingPackagesListingPackageArrayInput interface {
 	pulumi.Input
 
@@ -3092,7 +3092,7 @@ type GetListingPackagesListingPackageOperatingSystem struct {
 // GetListingPackagesListingPackageOperatingSystemInput is an input type that accepts GetListingPackagesListingPackageOperatingSystemArgs and GetListingPackagesListingPackageOperatingSystemOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageOperatingSystemInput` via:
 //
-//          GetListingPackagesListingPackageOperatingSystemArgs{...}
+//	GetListingPackagesListingPackageOperatingSystemArgs{...}
 type GetListingPackagesListingPackageOperatingSystemInput interface {
 	pulumi.Input
 
@@ -3120,7 +3120,7 @@ func (i GetListingPackagesListingPackageOperatingSystemArgs) ToGetListingPackage
 // GetListingPackagesListingPackageOperatingSystemArrayInput is an input type that accepts GetListingPackagesListingPackageOperatingSystemArray and GetListingPackagesListingPackageOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageOperatingSystemArrayInput` via:
 //
-//          GetListingPackagesListingPackageOperatingSystemArray{ GetListingPackagesListingPackageOperatingSystemArgs{...} }
+//	GetListingPackagesListingPackageOperatingSystemArray{ GetListingPackagesListingPackageOperatingSystemArgs{...} }
 type GetListingPackagesListingPackageOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -3197,7 +3197,7 @@ type GetListingPackagesListingPackagePricing struct {
 // GetListingPackagesListingPackagePricingInput is an input type that accepts GetListingPackagesListingPackagePricingArgs and GetListingPackagesListingPackagePricingOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackagePricingInput` via:
 //
-//          GetListingPackagesListingPackagePricingArgs{...}
+//	GetListingPackagesListingPackagePricingArgs{...}
 type GetListingPackagesListingPackagePricingInput interface {
 	pulumi.Input
 
@@ -3233,7 +3233,7 @@ func (i GetListingPackagesListingPackagePricingArgs) ToGetListingPackagesListing
 // GetListingPackagesListingPackagePricingArrayInput is an input type that accepts GetListingPackagesListingPackagePricingArray and GetListingPackagesListingPackagePricingArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackagePricingArrayInput` via:
 //
-//          GetListingPackagesListingPackagePricingArray{ GetListingPackagesListingPackagePricingArgs{...} }
+//	GetListingPackagesListingPackagePricingArray{ GetListingPackagesListingPackagePricingArgs{...} }
 type GetListingPackagesListingPackagePricingArrayInput interface {
 	pulumi.Input
 
@@ -3328,7 +3328,7 @@ type GetListingPackagesListingPackagePricingInternationalMarketPrice struct {
 // GetListingPackagesListingPackagePricingInternationalMarketPriceInput is an input type that accepts GetListingPackagesListingPackagePricingInternationalMarketPriceArgs and GetListingPackagesListingPackagePricingInternationalMarketPriceOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackagePricingInternationalMarketPriceInput` via:
 //
-//          GetListingPackagesListingPackagePricingInternationalMarketPriceArgs{...}
+//	GetListingPackagesListingPackagePricingInternationalMarketPriceArgs{...}
 type GetListingPackagesListingPackagePricingInternationalMarketPriceInput interface {
 	pulumi.Input
 
@@ -3360,7 +3360,7 @@ func (i GetListingPackagesListingPackagePricingInternationalMarketPriceArgs) ToG
 // GetListingPackagesListingPackagePricingInternationalMarketPriceArrayInput is an input type that accepts GetListingPackagesListingPackagePricingInternationalMarketPriceArray and GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackagePricingInternationalMarketPriceArrayInput` via:
 //
-//          GetListingPackagesListingPackagePricingInternationalMarketPriceArray{ GetListingPackagesListingPackagePricingInternationalMarketPriceArgs{...} }
+//	GetListingPackagesListingPackagePricingInternationalMarketPriceArray{ GetListingPackagesListingPackagePricingInternationalMarketPriceArgs{...} }
 type GetListingPackagesListingPackagePricingInternationalMarketPriceArrayInput interface {
 	pulumi.Input
 
@@ -3445,7 +3445,7 @@ type GetListingPackagesListingPackageRegion struct {
 // GetListingPackagesListingPackageRegionInput is an input type that accepts GetListingPackagesListingPackageRegionArgs and GetListingPackagesListingPackageRegionOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageRegionInput` via:
 //
-//          GetListingPackagesListingPackageRegionArgs{...}
+//	GetListingPackagesListingPackageRegionArgs{...}
 type GetListingPackagesListingPackageRegionInput interface {
 	pulumi.Input
 
@@ -3477,7 +3477,7 @@ func (i GetListingPackagesListingPackageRegionArgs) ToGetListingPackagesListingP
 // GetListingPackagesListingPackageRegionArrayInput is an input type that accepts GetListingPackagesListingPackageRegionArray and GetListingPackagesListingPackageRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageRegionArrayInput` via:
 //
-//          GetListingPackagesListingPackageRegionArray{ GetListingPackagesListingPackageRegionArgs{...} }
+//	GetListingPackagesListingPackageRegionArray{ GetListingPackagesListingPackageRegionArgs{...} }
 type GetListingPackagesListingPackageRegionArrayInput interface {
 	pulumi.Input
 
@@ -3560,7 +3560,7 @@ type GetListingPackagesListingPackageRegionCountry struct {
 // GetListingPackagesListingPackageRegionCountryInput is an input type that accepts GetListingPackagesListingPackageRegionCountryArgs and GetListingPackagesListingPackageRegionCountryOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageRegionCountryInput` via:
 //
-//          GetListingPackagesListingPackageRegionCountryArgs{...}
+//	GetListingPackagesListingPackageRegionCountryArgs{...}
 type GetListingPackagesListingPackageRegionCountryInput interface {
 	pulumi.Input
 
@@ -3590,7 +3590,7 @@ func (i GetListingPackagesListingPackageRegionCountryArgs) ToGetListingPackagesL
 // GetListingPackagesListingPackageRegionCountryArrayInput is an input type that accepts GetListingPackagesListingPackageRegionCountryArray and GetListingPackagesListingPackageRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageRegionCountryArrayInput` via:
 //
-//          GetListingPackagesListingPackageRegionCountryArray{ GetListingPackagesListingPackageRegionCountryArgs{...} }
+//	GetListingPackagesListingPackageRegionCountryArray{ GetListingPackagesListingPackageRegionCountryArgs{...} }
 type GetListingPackagesListingPackageRegionCountryArrayInput interface {
 	pulumi.Input
 
@@ -3682,7 +3682,7 @@ type GetListingPublisher struct {
 // GetListingPublisherInput is an input type that accepts GetListingPublisherArgs and GetListingPublisherOutput values.
 // You can construct a concrete instance of `GetListingPublisherInput` via:
 //
-//          GetListingPublisherArgs{...}
+//	GetListingPublisherArgs{...}
 type GetListingPublisherInput interface {
 	pulumi.Input
 
@@ -3728,7 +3728,7 @@ func (i GetListingPublisherArgs) ToGetListingPublisherOutputWithContext(ctx cont
 // GetListingPublisherArrayInput is an input type that accepts GetListingPublisherArray and GetListingPublisherArrayOutput values.
 // You can construct a concrete instance of `GetListingPublisherArrayInput` via:
 //
-//          GetListingPublisherArray{ GetListingPublisherArgs{...} }
+//	GetListingPublisherArray{ GetListingPublisherArgs{...} }
 type GetListingPublisherArrayInput interface {
 	pulumi.Input
 
@@ -3844,7 +3844,7 @@ type GetListingPublisherLink struct {
 // GetListingPublisherLinkInput is an input type that accepts GetListingPublisherLinkArgs and GetListingPublisherLinkOutput values.
 // You can construct a concrete instance of `GetListingPublisherLinkInput` via:
 //
-//          GetListingPublisherLinkArgs{...}
+//	GetListingPublisherLinkArgs{...}
 type GetListingPublisherLinkInput interface {
 	pulumi.Input
 
@@ -3874,7 +3874,7 @@ func (i GetListingPublisherLinkArgs) ToGetListingPublisherLinkOutputWithContext(
 // GetListingPublisherLinkArrayInput is an input type that accepts GetListingPublisherLinkArray and GetListingPublisherLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingPublisherLinkArrayInput` via:
 //
-//          GetListingPublisherLinkArray{ GetListingPublisherLinkArgs{...} }
+//	GetListingPublisherLinkArray{ GetListingPublisherLinkArgs{...} }
 type GetListingPublisherLinkArrayInput interface {
 	pulumi.Input
 
@@ -3954,7 +3954,7 @@ type GetListingPublisherLogo struct {
 // GetListingPublisherLogoInput is an input type that accepts GetListingPublisherLogoArgs and GetListingPublisherLogoOutput values.
 // You can construct a concrete instance of `GetListingPublisherLogoInput` via:
 //
-//          GetListingPublisherLogoArgs{...}
+//	GetListingPublisherLogoArgs{...}
 type GetListingPublisherLogoInput interface {
 	pulumi.Input
 
@@ -3988,7 +3988,7 @@ func (i GetListingPublisherLogoArgs) ToGetListingPublisherLogoOutputWithContext(
 // GetListingPublisherLogoArrayInput is an input type that accepts GetListingPublisherLogoArray and GetListingPublisherLogoArrayOutput values.
 // You can construct a concrete instance of `GetListingPublisherLogoArrayInput` via:
 //
-//          GetListingPublisherLogoArray{ GetListingPublisherLogoArgs{...} }
+//	GetListingPublisherLogoArray{ GetListingPublisherLogoArgs{...} }
 type GetListingPublisherLogoArrayInput interface {
 	pulumi.Input
 
@@ -4076,7 +4076,7 @@ type GetListingRegion struct {
 // GetListingRegionInput is an input type that accepts GetListingRegionArgs and GetListingRegionOutput values.
 // You can construct a concrete instance of `GetListingRegionInput` via:
 //
-//          GetListingRegionArgs{...}
+//	GetListingRegionArgs{...}
 type GetListingRegionInput interface {
 	pulumi.Input
 
@@ -4108,7 +4108,7 @@ func (i GetListingRegionArgs) ToGetListingRegionOutputWithContext(ctx context.Co
 // GetListingRegionArrayInput is an input type that accepts GetListingRegionArray and GetListingRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingRegionArrayInput` via:
 //
-//          GetListingRegionArray{ GetListingRegionArgs{...} }
+//	GetListingRegionArray{ GetListingRegionArgs{...} }
 type GetListingRegionArrayInput interface {
 	pulumi.Input
 
@@ -4189,7 +4189,7 @@ type GetListingRegionCountry struct {
 // GetListingRegionCountryInput is an input type that accepts GetListingRegionCountryArgs and GetListingRegionCountryOutput values.
 // You can construct a concrete instance of `GetListingRegionCountryInput` via:
 //
-//          GetListingRegionCountryArgs{...}
+//	GetListingRegionCountryArgs{...}
 type GetListingRegionCountryInput interface {
 	pulumi.Input
 
@@ -4219,7 +4219,7 @@ func (i GetListingRegionCountryArgs) ToGetListingRegionCountryOutputWithContext(
 // GetListingRegionCountryArrayInput is an input type that accepts GetListingRegionCountryArray and GetListingRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingRegionCountryArrayInput` via:
 //
-//          GetListingRegionCountryArray{ GetListingRegionCountryArgs{...} }
+//	GetListingRegionCountryArray{ GetListingRegionCountryArgs{...} }
 type GetListingRegionCountryArrayInput interface {
 	pulumi.Input
 
@@ -4301,7 +4301,7 @@ type GetListingScreenshot struct {
 // GetListingScreenshotInput is an input type that accepts GetListingScreenshotArgs and GetListingScreenshotOutput values.
 // You can construct a concrete instance of `GetListingScreenshotInput` via:
 //
-//          GetListingScreenshotArgs{...}
+//	GetListingScreenshotArgs{...}
 type GetListingScreenshotInput interface {
 	pulumi.Input
 
@@ -4337,7 +4337,7 @@ func (i GetListingScreenshotArgs) ToGetListingScreenshotOutputWithContext(ctx co
 // GetListingScreenshotArrayInput is an input type that accepts GetListingScreenshotArray and GetListingScreenshotArrayOutput values.
 // You can construct a concrete instance of `GetListingScreenshotArrayInput` via:
 //
-//          GetListingScreenshotArray{ GetListingScreenshotArgs{...} }
+//	GetListingScreenshotArray{ GetListingScreenshotArgs{...} }
 type GetListingScreenshotArrayInput interface {
 	pulumi.Input
 
@@ -4432,7 +4432,7 @@ type GetListingSupportContact struct {
 // GetListingSupportContactInput is an input type that accepts GetListingSupportContactArgs and GetListingSupportContactOutput values.
 // You can construct a concrete instance of `GetListingSupportContactInput` via:
 //
-//          GetListingSupportContactArgs{...}
+//	GetListingSupportContactArgs{...}
 type GetListingSupportContactInput interface {
 	pulumi.Input
 
@@ -4466,7 +4466,7 @@ func (i GetListingSupportContactArgs) ToGetListingSupportContactOutputWithContex
 // GetListingSupportContactArrayInput is an input type that accepts GetListingSupportContactArray and GetListingSupportContactArrayOutput values.
 // You can construct a concrete instance of `GetListingSupportContactArrayInput` via:
 //
-//          GetListingSupportContactArray{ GetListingSupportContactArgs{...} }
+//	GetListingSupportContactArray{ GetListingSupportContactArgs{...} }
 type GetListingSupportContactArrayInput interface {
 	pulumi.Input
 
@@ -4552,7 +4552,7 @@ type GetListingSupportLink struct {
 // GetListingSupportLinkInput is an input type that accepts GetListingSupportLinkArgs and GetListingSupportLinkOutput values.
 // You can construct a concrete instance of `GetListingSupportLinkInput` via:
 //
-//          GetListingSupportLinkArgs{...}
+//	GetListingSupportLinkArgs{...}
 type GetListingSupportLinkInput interface {
 	pulumi.Input
 
@@ -4582,7 +4582,7 @@ func (i GetListingSupportLinkArgs) ToGetListingSupportLinkOutputWithContext(ctx 
 // GetListingSupportLinkArrayInput is an input type that accepts GetListingSupportLinkArray and GetListingSupportLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingSupportLinkArrayInput` via:
 //
-//          GetListingSupportLinkArray{ GetListingSupportLinkArgs{...} }
+//	GetListingSupportLinkArray{ GetListingSupportLinkArgs{...} }
 type GetListingSupportLinkArrayInput interface {
 	pulumi.Input
 
@@ -4656,7 +4656,7 @@ type GetListingSupportedOperatingSystem struct {
 // GetListingSupportedOperatingSystemInput is an input type that accepts GetListingSupportedOperatingSystemArgs and GetListingSupportedOperatingSystemOutput values.
 // You can construct a concrete instance of `GetListingSupportedOperatingSystemInput` via:
 //
-//          GetListingSupportedOperatingSystemArgs{...}
+//	GetListingSupportedOperatingSystemArgs{...}
 type GetListingSupportedOperatingSystemInput interface {
 	pulumi.Input
 
@@ -4684,7 +4684,7 @@ func (i GetListingSupportedOperatingSystemArgs) ToGetListingSupportedOperatingSy
 // GetListingSupportedOperatingSystemArrayInput is an input type that accepts GetListingSupportedOperatingSystemArray and GetListingSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingSupportedOperatingSystemArrayInput` via:
 //
-//          GetListingSupportedOperatingSystemArray{ GetListingSupportedOperatingSystemArgs{...} }
+//	GetListingSupportedOperatingSystemArray{ GetListingSupportedOperatingSystemArgs{...} }
 type GetListingSupportedOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -4755,7 +4755,7 @@ type GetListingTaxesFilter struct {
 // GetListingTaxesFilterInput is an input type that accepts GetListingTaxesFilterArgs and GetListingTaxesFilterOutput values.
 // You can construct a concrete instance of `GetListingTaxesFilterInput` via:
 //
-//          GetListingTaxesFilterArgs{...}
+//	GetListingTaxesFilterArgs{...}
 type GetListingTaxesFilterInput interface {
 	pulumi.Input
 
@@ -4785,7 +4785,7 @@ func (i GetListingTaxesFilterArgs) ToGetListingTaxesFilterOutputWithContext(ctx 
 // GetListingTaxesFilterArrayInput is an input type that accepts GetListingTaxesFilterArray and GetListingTaxesFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingTaxesFilterArrayInput` via:
 //
-//          GetListingTaxesFilterArray{ GetListingTaxesFilterArgs{...} }
+//	GetListingTaxesFilterArray{ GetListingTaxesFilterArgs{...} }
 type GetListingTaxesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4868,7 +4868,7 @@ type GetListingTaxesTax struct {
 // GetListingTaxesTaxInput is an input type that accepts GetListingTaxesTaxArgs and GetListingTaxesTaxOutput values.
 // You can construct a concrete instance of `GetListingTaxesTaxInput` via:
 //
-//          GetListingTaxesTaxArgs{...}
+//	GetListingTaxesTaxArgs{...}
 type GetListingTaxesTaxInput interface {
 	pulumi.Input
 
@@ -4902,7 +4902,7 @@ func (i GetListingTaxesTaxArgs) ToGetListingTaxesTaxOutputWithContext(ctx contex
 // GetListingTaxesTaxArrayInput is an input type that accepts GetListingTaxesTaxArray and GetListingTaxesTaxArrayOutput values.
 // You can construct a concrete instance of `GetListingTaxesTaxArrayInput` via:
 //
-//          GetListingTaxesTaxArray{ GetListingTaxesTaxArgs{...} }
+//	GetListingTaxesTaxArray{ GetListingTaxesTaxArgs{...} }
 type GetListingTaxesTaxArrayInput interface {
 	pulumi.Input
 
@@ -4988,7 +4988,7 @@ type GetListingVideo struct {
 // GetListingVideoInput is an input type that accepts GetListingVideoArgs and GetListingVideoOutput values.
 // You can construct a concrete instance of `GetListingVideoInput` via:
 //
-//          GetListingVideoArgs{...}
+//	GetListingVideoArgs{...}
 type GetListingVideoInput interface {
 	pulumi.Input
 
@@ -5018,7 +5018,7 @@ func (i GetListingVideoArgs) ToGetListingVideoOutputWithContext(ctx context.Cont
 // GetListingVideoArrayInput is an input type that accepts GetListingVideoArray and GetListingVideoArrayOutput values.
 // You can construct a concrete instance of `GetListingVideoArrayInput` via:
 //
-//          GetListingVideoArray{ GetListingVideoArgs{...} }
+//	GetListingVideoArray{ GetListingVideoArgs{...} }
 type GetListingVideoArrayInput interface {
 	pulumi.Input
 
@@ -5094,7 +5094,7 @@ type GetListingsFilter struct {
 // GetListingsFilterInput is an input type that accepts GetListingsFilterArgs and GetListingsFilterOutput values.
 // You can construct a concrete instance of `GetListingsFilterInput` via:
 //
-//          GetListingsFilterArgs{...}
+//	GetListingsFilterArgs{...}
 type GetListingsFilterInput interface {
 	pulumi.Input
 
@@ -5124,7 +5124,7 @@ func (i GetListingsFilterArgs) ToGetListingsFilterOutputWithContext(ctx context.
 // GetListingsFilterArrayInput is an input type that accepts GetListingsFilterArray and GetListingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingsFilterArrayInput` via:
 //
-//          GetListingsFilterArray{ GetListingsFilterArgs{...} }
+//	GetListingsFilterArray{ GetListingsFilterArgs{...} }
 type GetListingsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5230,7 +5230,7 @@ type GetListingsListing struct {
 // GetListingsListingInput is an input type that accepts GetListingsListingArgs and GetListingsListingOutput values.
 // You can construct a concrete instance of `GetListingsListingInput` via:
 //
-//          GetListingsListingArgs{...}
+//	GetListingsListingArgs{...}
 type GetListingsListingInput interface {
 	pulumi.Input
 
@@ -5287,7 +5287,7 @@ func (i GetListingsListingArgs) ToGetListingsListingOutputWithContext(ctx contex
 // GetListingsListingArrayInput is an input type that accepts GetListingsListingArray and GetListingsListingArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingArrayInput` via:
 //
-//          GetListingsListingArray{ GetListingsListingArgs{...} }
+//	GetListingsListingArray{ GetListingsListingArgs{...} }
 type GetListingsListingArrayInput interface {
 	pulumi.Input
 
@@ -5438,7 +5438,7 @@ type GetListingsListingBanner struct {
 // GetListingsListingBannerInput is an input type that accepts GetListingsListingBannerArgs and GetListingsListingBannerOutput values.
 // You can construct a concrete instance of `GetListingsListingBannerInput` via:
 //
-//          GetListingsListingBannerArgs{...}
+//	GetListingsListingBannerArgs{...}
 type GetListingsListingBannerInput interface {
 	pulumi.Input
 
@@ -5472,7 +5472,7 @@ func (i GetListingsListingBannerArgs) ToGetListingsListingBannerOutputWithContex
 // GetListingsListingBannerArrayInput is an input type that accepts GetListingsListingBannerArray and GetListingsListingBannerArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingBannerArrayInput` via:
 //
-//          GetListingsListingBannerArray{ GetListingsListingBannerArgs{...} }
+//	GetListingsListingBannerArray{ GetListingsListingBannerArgs{...} }
 type GetListingsListingBannerArrayInput interface {
 	pulumi.Input
 
@@ -5560,7 +5560,7 @@ type GetListingsListingDocumentationLink struct {
 // GetListingsListingDocumentationLinkInput is an input type that accepts GetListingsListingDocumentationLinkArgs and GetListingsListingDocumentationLinkOutput values.
 // You can construct a concrete instance of `GetListingsListingDocumentationLinkInput` via:
 //
-//          GetListingsListingDocumentationLinkArgs{...}
+//	GetListingsListingDocumentationLinkArgs{...}
 type GetListingsListingDocumentationLinkInput interface {
 	pulumi.Input
 
@@ -5592,7 +5592,7 @@ func (i GetListingsListingDocumentationLinkArgs) ToGetListingsListingDocumentati
 // GetListingsListingDocumentationLinkArrayInput is an input type that accepts GetListingsListingDocumentationLinkArray and GetListingsListingDocumentationLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingDocumentationLinkArrayInput` via:
 //
-//          GetListingsListingDocumentationLinkArray{ GetListingsListingDocumentationLinkArgs{...} }
+//	GetListingsListingDocumentationLinkArray{ GetListingsListingDocumentationLinkArgs{...} }
 type GetListingsListingDocumentationLinkArrayInput interface {
 	pulumi.Input
 
@@ -5677,7 +5677,7 @@ type GetListingsListingIcon struct {
 // GetListingsListingIconInput is an input type that accepts GetListingsListingIconArgs and GetListingsListingIconOutput values.
 // You can construct a concrete instance of `GetListingsListingIconInput` via:
 //
-//          GetListingsListingIconArgs{...}
+//	GetListingsListingIconArgs{...}
 type GetListingsListingIconInput interface {
 	pulumi.Input
 
@@ -5711,7 +5711,7 @@ func (i GetListingsListingIconArgs) ToGetListingsListingIconOutputWithContext(ct
 // GetListingsListingIconArrayInput is an input type that accepts GetListingsListingIconArray and GetListingsListingIconArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingIconArrayInput` via:
 //
-//          GetListingsListingIconArray{ GetListingsListingIconArgs{...} }
+//	GetListingsListingIconArray{ GetListingsListingIconArgs{...} }
 type GetListingsListingIconArrayInput interface {
 	pulumi.Input
 
@@ -5799,7 +5799,7 @@ type GetListingsListingPublisher struct {
 // GetListingsListingPublisherInput is an input type that accepts GetListingsListingPublisherArgs and GetListingsListingPublisherOutput values.
 // You can construct a concrete instance of `GetListingsListingPublisherInput` via:
 //
-//          GetListingsListingPublisherArgs{...}
+//	GetListingsListingPublisherArgs{...}
 type GetListingsListingPublisherInput interface {
 	pulumi.Input
 
@@ -5831,7 +5831,7 @@ func (i GetListingsListingPublisherArgs) ToGetListingsListingPublisherOutputWith
 // GetListingsListingPublisherArrayInput is an input type that accepts GetListingsListingPublisherArray and GetListingsListingPublisherArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingPublisherArrayInput` via:
 //
-//          GetListingsListingPublisherArray{ GetListingsListingPublisherArgs{...} }
+//	GetListingsListingPublisherArray{ GetListingsListingPublisherArgs{...} }
 type GetListingsListingPublisherArrayInput interface {
 	pulumi.Input
 
@@ -5914,7 +5914,7 @@ type GetListingsListingRegion struct {
 // GetListingsListingRegionInput is an input type that accepts GetListingsListingRegionArgs and GetListingsListingRegionOutput values.
 // You can construct a concrete instance of `GetListingsListingRegionInput` via:
 //
-//          GetListingsListingRegionArgs{...}
+//	GetListingsListingRegionArgs{...}
 type GetListingsListingRegionInput interface {
 	pulumi.Input
 
@@ -5946,7 +5946,7 @@ func (i GetListingsListingRegionArgs) ToGetListingsListingRegionOutputWithContex
 // GetListingsListingRegionArrayInput is an input type that accepts GetListingsListingRegionArray and GetListingsListingRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingRegionArrayInput` via:
 //
-//          GetListingsListingRegionArray{ GetListingsListingRegionArgs{...} }
+//	GetListingsListingRegionArray{ GetListingsListingRegionArgs{...} }
 type GetListingsListingRegionArrayInput interface {
 	pulumi.Input
 
@@ -6027,7 +6027,7 @@ type GetListingsListingRegionCountry struct {
 // GetListingsListingRegionCountryInput is an input type that accepts GetListingsListingRegionCountryArgs and GetListingsListingRegionCountryOutput values.
 // You can construct a concrete instance of `GetListingsListingRegionCountryInput` via:
 //
-//          GetListingsListingRegionCountryArgs{...}
+//	GetListingsListingRegionCountryArgs{...}
 type GetListingsListingRegionCountryInput interface {
 	pulumi.Input
 
@@ -6057,7 +6057,7 @@ func (i GetListingsListingRegionCountryArgs) ToGetListingsListingRegionCountryOu
 // GetListingsListingRegionCountryArrayInput is an input type that accepts GetListingsListingRegionCountryArray and GetListingsListingRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingRegionCountryArrayInput` via:
 //
-//          GetListingsListingRegionCountryArray{ GetListingsListingRegionCountryArgs{...} }
+//	GetListingsListingRegionCountryArray{ GetListingsListingRegionCountryArgs{...} }
 type GetListingsListingRegionCountryArrayInput interface {
 	pulumi.Input
 
@@ -6131,7 +6131,7 @@ type GetListingsListingSupportedOperatingSystem struct {
 // GetListingsListingSupportedOperatingSystemInput is an input type that accepts GetListingsListingSupportedOperatingSystemArgs and GetListingsListingSupportedOperatingSystemOutput values.
 // You can construct a concrete instance of `GetListingsListingSupportedOperatingSystemInput` via:
 //
-//          GetListingsListingSupportedOperatingSystemArgs{...}
+//	GetListingsListingSupportedOperatingSystemArgs{...}
 type GetListingsListingSupportedOperatingSystemInput interface {
 	pulumi.Input
 
@@ -6159,7 +6159,7 @@ func (i GetListingsListingSupportedOperatingSystemArgs) ToGetListingsListingSupp
 // GetListingsListingSupportedOperatingSystemArrayInput is an input type that accepts GetListingsListingSupportedOperatingSystemArray and GetListingsListingSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingSupportedOperatingSystemArrayInput` via:
 //
-//          GetListingsListingSupportedOperatingSystemArray{ GetListingsListingSupportedOperatingSystemArgs{...} }
+//	GetListingsListingSupportedOperatingSystemArray{ GetListingsListingSupportedOperatingSystemArgs{...} }
 type GetListingsListingSupportedOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -6234,7 +6234,7 @@ type GetPublicationIcon struct {
 // GetPublicationIconInput is an input type that accepts GetPublicationIconArgs and GetPublicationIconOutput values.
 // You can construct a concrete instance of `GetPublicationIconInput` via:
 //
-//          GetPublicationIconArgs{...}
+//	GetPublicationIconArgs{...}
 type GetPublicationIconInput interface {
 	pulumi.Input
 
@@ -6268,7 +6268,7 @@ func (i GetPublicationIconArgs) ToGetPublicationIconOutputWithContext(ctx contex
 // GetPublicationIconArrayInput is an input type that accepts GetPublicationIconArray and GetPublicationIconArrayOutput values.
 // You can construct a concrete instance of `GetPublicationIconArrayInput` via:
 //
-//          GetPublicationIconArray{ GetPublicationIconArgs{...} }
+//	GetPublicationIconArray{ GetPublicationIconArgs{...} }
 type GetPublicationIconArrayInput interface {
 	pulumi.Input
 
@@ -6356,7 +6356,7 @@ type GetPublicationPackageDetail struct {
 // GetPublicationPackageDetailInput is an input type that accepts GetPublicationPackageDetailArgs and GetPublicationPackageDetailOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailInput` via:
 //
-//          GetPublicationPackageDetailArgs{...}
+//	GetPublicationPackageDetailArgs{...}
 type GetPublicationPackageDetailInput interface {
 	pulumi.Input
 
@@ -6388,7 +6388,7 @@ func (i GetPublicationPackageDetailArgs) ToGetPublicationPackageDetailOutputWith
 // GetPublicationPackageDetailArrayInput is an input type that accepts GetPublicationPackageDetailArray and GetPublicationPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailArrayInput` via:
 //
-//          GetPublicationPackageDetailArray{ GetPublicationPackageDetailArgs{...} }
+//	GetPublicationPackageDetailArray{ GetPublicationPackageDetailArgs{...} }
 type GetPublicationPackageDetailArrayInput interface {
 	pulumi.Input
 
@@ -6475,7 +6475,7 @@ type GetPublicationPackageDetailEula struct {
 // GetPublicationPackageDetailEulaInput is an input type that accepts GetPublicationPackageDetailEulaArgs and GetPublicationPackageDetailEulaOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailEulaInput` via:
 //
-//          GetPublicationPackageDetailEulaArgs{...}
+//	GetPublicationPackageDetailEulaArgs{...}
 type GetPublicationPackageDetailEulaInput interface {
 	pulumi.Input
 
@@ -6503,7 +6503,7 @@ func (i GetPublicationPackageDetailEulaArgs) ToGetPublicationPackageDetailEulaOu
 // GetPublicationPackageDetailEulaArrayInput is an input type that accepts GetPublicationPackageDetailEulaArray and GetPublicationPackageDetailEulaArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailEulaArrayInput` via:
 //
-//          GetPublicationPackageDetailEulaArray{ GetPublicationPackageDetailEulaArgs{...} }
+//	GetPublicationPackageDetailEulaArray{ GetPublicationPackageDetailEulaArgs{...} }
 type GetPublicationPackageDetailEulaArrayInput interface {
 	pulumi.Input
 
@@ -6575,7 +6575,7 @@ type GetPublicationPackageDetailOperatingSystem struct {
 // GetPublicationPackageDetailOperatingSystemInput is an input type that accepts GetPublicationPackageDetailOperatingSystemArgs and GetPublicationPackageDetailOperatingSystemOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailOperatingSystemInput` via:
 //
-//          GetPublicationPackageDetailOperatingSystemArgs{...}
+//	GetPublicationPackageDetailOperatingSystemArgs{...}
 type GetPublicationPackageDetailOperatingSystemInput interface {
 	pulumi.Input
 
@@ -6603,7 +6603,7 @@ func (i GetPublicationPackageDetailOperatingSystemArgs) ToGetPublicationPackageD
 // GetPublicationPackageDetailOperatingSystemArrayInput is an input type that accepts GetPublicationPackageDetailOperatingSystemArray and GetPublicationPackageDetailOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailOperatingSystemArrayInput` via:
 //
-//          GetPublicationPackageDetailOperatingSystemArray{ GetPublicationPackageDetailOperatingSystemArgs{...} }
+//	GetPublicationPackageDetailOperatingSystemArray{ GetPublicationPackageDetailOperatingSystemArgs{...} }
 type GetPublicationPackageDetailOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -6672,7 +6672,7 @@ type GetPublicationPackageOperatingSystem struct {
 // GetPublicationPackageOperatingSystemInput is an input type that accepts GetPublicationPackageOperatingSystemArgs and GetPublicationPackageOperatingSystemOutput values.
 // You can construct a concrete instance of `GetPublicationPackageOperatingSystemInput` via:
 //
-//          GetPublicationPackageOperatingSystemArgs{...}
+//	GetPublicationPackageOperatingSystemArgs{...}
 type GetPublicationPackageOperatingSystemInput interface {
 	pulumi.Input
 
@@ -6700,7 +6700,7 @@ func (i GetPublicationPackageOperatingSystemArgs) ToGetPublicationPackageOperati
 // GetPublicationPackageOperatingSystemArrayInput is an input type that accepts GetPublicationPackageOperatingSystemArray and GetPublicationPackageOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageOperatingSystemArrayInput` via:
 //
-//          GetPublicationPackageOperatingSystemArray{ GetPublicationPackageOperatingSystemArgs{...} }
+//	GetPublicationPackageOperatingSystemArray{ GetPublicationPackageOperatingSystemArgs{...} }
 type GetPublicationPackageOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -6779,7 +6779,7 @@ type GetPublicationPackageVariable struct {
 // GetPublicationPackageVariableInput is an input type that accepts GetPublicationPackageVariableArgs and GetPublicationPackageVariableOutput values.
 // You can construct a concrete instance of `GetPublicationPackageVariableInput` via:
 //
-//          GetPublicationPackageVariableArgs{...}
+//	GetPublicationPackageVariableArgs{...}
 type GetPublicationPackageVariableInput interface {
 	pulumi.Input
 
@@ -6817,7 +6817,7 @@ func (i GetPublicationPackageVariableArgs) ToGetPublicationPackageVariableOutput
 // GetPublicationPackageVariableArrayInput is an input type that accepts GetPublicationPackageVariableArray and GetPublicationPackageVariableArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageVariableArrayInput` via:
 //
-//          GetPublicationPackageVariableArray{ GetPublicationPackageVariableArgs{...} }
+//	GetPublicationPackageVariableArray{ GetPublicationPackageVariableArgs{...} }
 type GetPublicationPackageVariableArrayInput interface {
 	pulumi.Input
 
@@ -6913,7 +6913,7 @@ type GetPublicationPackagesFilter struct {
 // GetPublicationPackagesFilterInput is an input type that accepts GetPublicationPackagesFilterArgs and GetPublicationPackagesFilterOutput values.
 // You can construct a concrete instance of `GetPublicationPackagesFilterInput` via:
 //
-//          GetPublicationPackagesFilterArgs{...}
+//	GetPublicationPackagesFilterArgs{...}
 type GetPublicationPackagesFilterInput interface {
 	pulumi.Input
 
@@ -6943,7 +6943,7 @@ func (i GetPublicationPackagesFilterArgs) ToGetPublicationPackagesFilterOutputWi
 // GetPublicationPackagesFilterArrayInput is an input type that accepts GetPublicationPackagesFilterArray and GetPublicationPackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackagesFilterArrayInput` via:
 //
-//          GetPublicationPackagesFilterArray{ GetPublicationPackagesFilterArgs{...} }
+//	GetPublicationPackagesFilterArray{ GetPublicationPackagesFilterArgs{...} }
 type GetPublicationPackagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -7028,7 +7028,7 @@ type GetPublicationPackagesPublicationPackage struct {
 // GetPublicationPackagesPublicationPackageInput is an input type that accepts GetPublicationPackagesPublicationPackageArgs and GetPublicationPackagesPublicationPackageOutput values.
 // You can construct a concrete instance of `GetPublicationPackagesPublicationPackageInput` via:
 //
-//          GetPublicationPackagesPublicationPackageArgs{...}
+//	GetPublicationPackagesPublicationPackageArgs{...}
 type GetPublicationPackagesPublicationPackageInput interface {
 	pulumi.Input
 
@@ -7064,7 +7064,7 @@ func (i GetPublicationPackagesPublicationPackageArgs) ToGetPublicationPackagesPu
 // GetPublicationPackagesPublicationPackageArrayInput is an input type that accepts GetPublicationPackagesPublicationPackageArray and GetPublicationPackagesPublicationPackageArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackagesPublicationPackageArrayInput` via:
 //
-//          GetPublicationPackagesPublicationPackageArray{ GetPublicationPackagesPublicationPackageArgs{...} }
+//	GetPublicationPackagesPublicationPackageArray{ GetPublicationPackagesPublicationPackageArgs{...} }
 type GetPublicationPackagesPublicationPackageArrayInput interface {
 	pulumi.Input
 
@@ -7159,7 +7159,7 @@ type GetPublicationSupportContact struct {
 // GetPublicationSupportContactInput is an input type that accepts GetPublicationSupportContactArgs and GetPublicationSupportContactOutput values.
 // You can construct a concrete instance of `GetPublicationSupportContactInput` via:
 //
-//          GetPublicationSupportContactArgs{...}
+//	GetPublicationSupportContactArgs{...}
 type GetPublicationSupportContactInput interface {
 	pulumi.Input
 
@@ -7193,7 +7193,7 @@ func (i GetPublicationSupportContactArgs) ToGetPublicationSupportContactOutputWi
 // GetPublicationSupportContactArrayInput is an input type that accepts GetPublicationSupportContactArray and GetPublicationSupportContactArrayOutput values.
 // You can construct a concrete instance of `GetPublicationSupportContactArrayInput` via:
 //
-//          GetPublicationSupportContactArray{ GetPublicationSupportContactArgs{...} }
+//	GetPublicationSupportContactArray{ GetPublicationSupportContactArgs{...} }
 type GetPublicationSupportContactArrayInput interface {
 	pulumi.Input
 
@@ -7277,7 +7277,7 @@ type GetPublicationSupportedOperatingSystem struct {
 // GetPublicationSupportedOperatingSystemInput is an input type that accepts GetPublicationSupportedOperatingSystemArgs and GetPublicationSupportedOperatingSystemOutput values.
 // You can construct a concrete instance of `GetPublicationSupportedOperatingSystemInput` via:
 //
-//          GetPublicationSupportedOperatingSystemArgs{...}
+//	GetPublicationSupportedOperatingSystemArgs{...}
 type GetPublicationSupportedOperatingSystemInput interface {
 	pulumi.Input
 
@@ -7305,7 +7305,7 @@ func (i GetPublicationSupportedOperatingSystemArgs) ToGetPublicationSupportedOpe
 // GetPublicationSupportedOperatingSystemArrayInput is an input type that accepts GetPublicationSupportedOperatingSystemArray and GetPublicationSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationSupportedOperatingSystemArrayInput` via:
 //
-//          GetPublicationSupportedOperatingSystemArray{ GetPublicationSupportedOperatingSystemArgs{...} }
+//	GetPublicationSupportedOperatingSystemArray{ GetPublicationSupportedOperatingSystemArgs{...} }
 type GetPublicationSupportedOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -7376,7 +7376,7 @@ type GetPublicationsFilter struct {
 // GetPublicationsFilterInput is an input type that accepts GetPublicationsFilterArgs and GetPublicationsFilterOutput values.
 // You can construct a concrete instance of `GetPublicationsFilterInput` via:
 //
-//          GetPublicationsFilterArgs{...}
+//	GetPublicationsFilterArgs{...}
 type GetPublicationsFilterInput interface {
 	pulumi.Input
 
@@ -7406,7 +7406,7 @@ func (i GetPublicationsFilterArgs) ToGetPublicationsFilterOutputWithContext(ctx 
 // GetPublicationsFilterArrayInput is an input type that accepts GetPublicationsFilterArray and GetPublicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsFilterArrayInput` via:
 //
-//          GetPublicationsFilterArray{ GetPublicationsFilterArgs{...} }
+//	GetPublicationsFilterArray{ GetPublicationsFilterArgs{...} }
 type GetPublicationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7511,7 +7511,7 @@ type GetPublicationsPublication struct {
 // GetPublicationsPublicationInput is an input type that accepts GetPublicationsPublicationArgs and GetPublicationsPublicationOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationInput` via:
 //
-//          GetPublicationsPublicationArgs{...}
+//	GetPublicationsPublicationArgs{...}
 type GetPublicationsPublicationInput interface {
 	pulumi.Input
 
@@ -7567,7 +7567,7 @@ func (i GetPublicationsPublicationArgs) ToGetPublicationsPublicationOutputWithCo
 // GetPublicationsPublicationArrayInput is an input type that accepts GetPublicationsPublicationArray and GetPublicationsPublicationArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationArrayInput` via:
 //
-//          GetPublicationsPublicationArray{ GetPublicationsPublicationArgs{...} }
+//	GetPublicationsPublicationArray{ GetPublicationsPublicationArgs{...} }
 type GetPublicationsPublicationArrayInput interface {
 	pulumi.Input
 
@@ -7719,7 +7719,7 @@ type GetPublicationsPublicationIcon struct {
 // GetPublicationsPublicationIconInput is an input type that accepts GetPublicationsPublicationIconArgs and GetPublicationsPublicationIconOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationIconInput` via:
 //
-//          GetPublicationsPublicationIconArgs{...}
+//	GetPublicationsPublicationIconArgs{...}
 type GetPublicationsPublicationIconInput interface {
 	pulumi.Input
 
@@ -7753,7 +7753,7 @@ func (i GetPublicationsPublicationIconArgs) ToGetPublicationsPublicationIconOutp
 // GetPublicationsPublicationIconArrayInput is an input type that accepts GetPublicationsPublicationIconArray and GetPublicationsPublicationIconArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationIconArrayInput` via:
 //
-//          GetPublicationsPublicationIconArray{ GetPublicationsPublicationIconArgs{...} }
+//	GetPublicationsPublicationIconArray{ GetPublicationsPublicationIconArgs{...} }
 type GetPublicationsPublicationIconArrayInput interface {
 	pulumi.Input
 
@@ -7841,7 +7841,7 @@ type GetPublicationsPublicationPackageDetail struct {
 // GetPublicationsPublicationPackageDetailInput is an input type that accepts GetPublicationsPublicationPackageDetailArgs and GetPublicationsPublicationPackageDetailOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailInput` via:
 //
-//          GetPublicationsPublicationPackageDetailArgs{...}
+//	GetPublicationsPublicationPackageDetailArgs{...}
 type GetPublicationsPublicationPackageDetailInput interface {
 	pulumi.Input
 
@@ -7873,7 +7873,7 @@ func (i GetPublicationsPublicationPackageDetailArgs) ToGetPublicationsPublicatio
 // GetPublicationsPublicationPackageDetailArrayInput is an input type that accepts GetPublicationsPublicationPackageDetailArray and GetPublicationsPublicationPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailArrayInput` via:
 //
-//          GetPublicationsPublicationPackageDetailArray{ GetPublicationsPublicationPackageDetailArgs{...} }
+//	GetPublicationsPublicationPackageDetailArray{ GetPublicationsPublicationPackageDetailArgs{...} }
 type GetPublicationsPublicationPackageDetailArrayInput interface {
 	pulumi.Input
 
@@ -7962,7 +7962,7 @@ type GetPublicationsPublicationPackageDetailEula struct {
 // GetPublicationsPublicationPackageDetailEulaInput is an input type that accepts GetPublicationsPublicationPackageDetailEulaArgs and GetPublicationsPublicationPackageDetailEulaOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailEulaInput` via:
 //
-//          GetPublicationsPublicationPackageDetailEulaArgs{...}
+//	GetPublicationsPublicationPackageDetailEulaArgs{...}
 type GetPublicationsPublicationPackageDetailEulaInput interface {
 	pulumi.Input
 
@@ -7990,7 +7990,7 @@ func (i GetPublicationsPublicationPackageDetailEulaArgs) ToGetPublicationsPublic
 // GetPublicationsPublicationPackageDetailEulaArrayInput is an input type that accepts GetPublicationsPublicationPackageDetailEulaArray and GetPublicationsPublicationPackageDetailEulaArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailEulaArrayInput` via:
 //
-//          GetPublicationsPublicationPackageDetailEulaArray{ GetPublicationsPublicationPackageDetailEulaArgs{...} }
+//	GetPublicationsPublicationPackageDetailEulaArray{ GetPublicationsPublicationPackageDetailEulaArgs{...} }
 type GetPublicationsPublicationPackageDetailEulaArrayInput interface {
 	pulumi.Input
 
@@ -8062,7 +8062,7 @@ type GetPublicationsPublicationPackageDetailOperatingSystem struct {
 // GetPublicationsPublicationPackageDetailOperatingSystemInput is an input type that accepts GetPublicationsPublicationPackageDetailOperatingSystemArgs and GetPublicationsPublicationPackageDetailOperatingSystemOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailOperatingSystemInput` via:
 //
-//          GetPublicationsPublicationPackageDetailOperatingSystemArgs{...}
+//	GetPublicationsPublicationPackageDetailOperatingSystemArgs{...}
 type GetPublicationsPublicationPackageDetailOperatingSystemInput interface {
 	pulumi.Input
 
@@ -8090,7 +8090,7 @@ func (i GetPublicationsPublicationPackageDetailOperatingSystemArgs) ToGetPublica
 // GetPublicationsPublicationPackageDetailOperatingSystemArrayInput is an input type that accepts GetPublicationsPublicationPackageDetailOperatingSystemArray and GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailOperatingSystemArrayInput` via:
 //
-//          GetPublicationsPublicationPackageDetailOperatingSystemArray{ GetPublicationsPublicationPackageDetailOperatingSystemArgs{...} }
+//	GetPublicationsPublicationPackageDetailOperatingSystemArray{ GetPublicationsPublicationPackageDetailOperatingSystemArgs{...} }
 type GetPublicationsPublicationPackageDetailOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -8165,7 +8165,7 @@ type GetPublicationsPublicationSupportContact struct {
 // GetPublicationsPublicationSupportContactInput is an input type that accepts GetPublicationsPublicationSupportContactArgs and GetPublicationsPublicationSupportContactOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationSupportContactInput` via:
 //
-//          GetPublicationsPublicationSupportContactArgs{...}
+//	GetPublicationsPublicationSupportContactArgs{...}
 type GetPublicationsPublicationSupportContactInput interface {
 	pulumi.Input
 
@@ -8199,7 +8199,7 @@ func (i GetPublicationsPublicationSupportContactArgs) ToGetPublicationsPublicati
 // GetPublicationsPublicationSupportContactArrayInput is an input type that accepts GetPublicationsPublicationSupportContactArray and GetPublicationsPublicationSupportContactArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationSupportContactArrayInput` via:
 //
-//          GetPublicationsPublicationSupportContactArray{ GetPublicationsPublicationSupportContactArgs{...} }
+//	GetPublicationsPublicationSupportContactArray{ GetPublicationsPublicationSupportContactArgs{...} }
 type GetPublicationsPublicationSupportContactArrayInput interface {
 	pulumi.Input
 
@@ -8283,7 +8283,7 @@ type GetPublicationsPublicationSupportedOperatingSystem struct {
 // GetPublicationsPublicationSupportedOperatingSystemInput is an input type that accepts GetPublicationsPublicationSupportedOperatingSystemArgs and GetPublicationsPublicationSupportedOperatingSystemOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationSupportedOperatingSystemInput` via:
 //
-//          GetPublicationsPublicationSupportedOperatingSystemArgs{...}
+//	GetPublicationsPublicationSupportedOperatingSystemArgs{...}
 type GetPublicationsPublicationSupportedOperatingSystemInput interface {
 	pulumi.Input
 
@@ -8311,7 +8311,7 @@ func (i GetPublicationsPublicationSupportedOperatingSystemArgs) ToGetPublication
 // GetPublicationsPublicationSupportedOperatingSystemArrayInput is an input type that accepts GetPublicationsPublicationSupportedOperatingSystemArray and GetPublicationsPublicationSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationSupportedOperatingSystemArrayInput` via:
 //
-//          GetPublicationsPublicationSupportedOperatingSystemArray{ GetPublicationsPublicationSupportedOperatingSystemArgs{...} }
+//	GetPublicationsPublicationSupportedOperatingSystemArray{ GetPublicationsPublicationSupportedOperatingSystemArgs{...} }
 type GetPublicationsPublicationSupportedOperatingSystemArrayInput interface {
 	pulumi.Input
 
@@ -8382,7 +8382,7 @@ type GetPublishersFilter struct {
 // GetPublishersFilterInput is an input type that accepts GetPublishersFilterArgs and GetPublishersFilterOutput values.
 // You can construct a concrete instance of `GetPublishersFilterInput` via:
 //
-//          GetPublishersFilterArgs{...}
+//	GetPublishersFilterArgs{...}
 type GetPublishersFilterInput interface {
 	pulumi.Input
 
@@ -8412,7 +8412,7 @@ func (i GetPublishersFilterArgs) ToGetPublishersFilterOutputWithContext(ctx cont
 // GetPublishersFilterArrayInput is an input type that accepts GetPublishersFilterArray and GetPublishersFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublishersFilterArrayInput` via:
 //
-//          GetPublishersFilterArray{ GetPublishersFilterArgs{...} }
+//	GetPublishersFilterArray{ GetPublishersFilterArgs{...} }
 type GetPublishersFilterArrayInput interface {
 	pulumi.Input
 
@@ -8493,7 +8493,7 @@ type GetPublishersPublisher struct {
 // GetPublishersPublisherInput is an input type that accepts GetPublishersPublisherArgs and GetPublishersPublisherOutput values.
 // You can construct a concrete instance of `GetPublishersPublisherInput` via:
 //
-//          GetPublishersPublisherArgs{...}
+//	GetPublishersPublisherArgs{...}
 type GetPublishersPublisherInput interface {
 	pulumi.Input
 
@@ -8525,7 +8525,7 @@ func (i GetPublishersPublisherArgs) ToGetPublishersPublisherOutputWithContext(ct
 // GetPublishersPublisherArrayInput is an input type that accepts GetPublishersPublisherArray and GetPublishersPublisherArrayOutput values.
 // You can construct a concrete instance of `GetPublishersPublisherArrayInput` via:
 //
-//          GetPublishersPublisherArray{ GetPublishersPublisherArgs{...} }
+//	GetPublishersPublisherArray{ GetPublishersPublisherArgs{...} }
 type GetPublishersPublisherArrayInput interface {
 	pulumi.Input
 

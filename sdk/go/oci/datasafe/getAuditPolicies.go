@@ -34,27 +34,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditPolicies(ctx, &datasafe.GetAuditPoliciesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Audit_policy_access_level),
-// 			AuditPolicyId:          pulumi.StringRef(oci_data_safe_audit_policy.Test_audit_policy.Id),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_policy_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Audit_policy_display_name),
-// 			State:                  pulumi.StringRef(_var.Audit_policy_state),
-// 			TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditPolicies(ctx, &datasafe.GetAuditPoliciesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Audit_policy_access_level),
+//				AuditPolicyId:          pulumi.StringRef(oci_data_safe_audit_policy.Test_audit_policy.Id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_policy_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Audit_policy_display_name),
+//				State:                  pulumi.StringRef(_var.Audit_policy_state),
+//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAuditPolicies(ctx *pulumi.Context, args *GetAuditPoliciesArgs, opts ...pulumi.InvokeOption) (*GetAuditPoliciesResult, error) {
 	var rv GetAuditPoliciesResult

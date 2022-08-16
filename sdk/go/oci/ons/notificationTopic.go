@@ -34,28 +34,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ons.NewNotificationTopic(ctx, "testNotificationTopic", &Ons.NotificationTopicArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Notification_topic_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ons.NewNotificationTopic(ctx, "testNotificationTopic", &Ons.NotificationTopicArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Notification_topic_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -63,7 +66,9 @@ import (
 // NotificationTopics can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
+//
+//	$ pulumi import oci:Ons/notificationTopic:NotificationTopic test_notification_topic "id"
+//
 // ```
 type NotificationTopic struct {
 	pulumi.CustomResourceState
@@ -230,7 +235,7 @@ func (i *NotificationTopic) ToNotificationTopicOutputWithContext(ctx context.Con
 // NotificationTopicArrayInput is an input type that accepts NotificationTopicArray and NotificationTopicArrayOutput values.
 // You can construct a concrete instance of `NotificationTopicArrayInput` via:
 //
-//          NotificationTopicArray{ NotificationTopicArgs{...} }
+//	NotificationTopicArray{ NotificationTopicArgs{...} }
 type NotificationTopicArrayInput interface {
 	pulumi.Input
 
@@ -255,7 +260,7 @@ func (i NotificationTopicArray) ToNotificationTopicArrayOutputWithContext(ctx co
 // NotificationTopicMapInput is an input type that accepts NotificationTopicMap and NotificationTopicMapOutput values.
 // You can construct a concrete instance of `NotificationTopicMapInput` via:
 //
-//          NotificationTopicMap{ "key": NotificationTopicArgs{...} }
+//	NotificationTopicMap{ "key": NotificationTopicArgs{...} }
 type NotificationTopicMapInput interface {
 	pulumi.Input
 

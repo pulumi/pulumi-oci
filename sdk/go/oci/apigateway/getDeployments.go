@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.GetDeployments(ctx, &apigateway.GetDeploymentsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Deployment_display_name),
-// 			GatewayId:     pulumi.StringRef(oci_apigateway_gateway.Test_gateway.Id),
-// 			State:         pulumi.StringRef(_var.Deployment_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.GetDeployments(ctx, &apigateway.GetDeploymentsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Deployment_display_name),
+//				GatewayId:     pulumi.StringRef(oci_apigateway_gateway.Test_gateway.Id),
+//				State:         pulumi.StringRef(_var.Deployment_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDeployments(ctx *pulumi.Context, args *GetDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetDeploymentsResult, error) {
 	var rv GetDeploymentsResult

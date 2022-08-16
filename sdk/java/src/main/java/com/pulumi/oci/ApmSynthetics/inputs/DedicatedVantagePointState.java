@@ -66,14 +66,14 @@ public final class DedicatedVantagePointState extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Details of DVP Stack.
+     * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     @Import(name="dvpStackDetails")
     private @Nullable Output<DedicatedVantagePointDvpStackDetailsArgs> dvpStackDetails;
 
     /**
-     * @return (Updatable) Details of DVP Stack.
+     * @return (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     public Optional<Output<DedicatedVantagePointDvpStackDetailsArgs>> dvpStackDetails() {
@@ -283,7 +283,7 @@ public final class DedicatedVantagePointState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param dvpStackDetails (Updatable) Details of DVP Stack.
+         * @param dvpStackDetails (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class DedicatedVantagePointState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param dvpStackDetails (Updatable) Details of DVP Stack.
+         * @param dvpStackDetails (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
          * 
          * @return builder
          * 

@@ -23,23 +23,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetCompatibleFormatsForSensitiveType(ctx, &datasafe.GetCompatibleFormatsForSensitiveTypeArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Compatible_formats_for_sensitive_type_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetCompatibleFormatsForSensitiveType(ctx, &datasafe.GetCompatibleFormatsForSensitiveTypeArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Compatible_formats_for_sensitive_type_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCompatibleFormatsForSensitiveType(ctx *pulumi.Context, args *GetCompatibleFormatsForSensitiveTypeArgs, opts ...pulumi.InvokeOption) (*GetCompatibleFormatsForSensitiveTypeResult, error) {
 	var rv GetCompatibleFormatsForSensitiveTypeResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseSqlTuningSet(ctx, &databasemanagement.GetManagedDatabaseSqlTuningSetArgs{
-// 			ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-// 			NameContains:      pulumi.StringRef(_var.Managed_database_sql_tuning_set_name_contains),
-// 			Owner:             pulumi.StringRef(_var.Managed_database_sql_tuning_set_owner),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningSet(ctx, &databasemanagement.GetManagedDatabaseSqlTuningSetArgs{
+//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				NameContains:      pulumi.StringRef(_var.Managed_database_sql_tuning_set_name_contains),
+//				Owner:             pulumi.StringRef(_var.Managed_database_sql_tuning_set_owner),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseSqlTuningSet(ctx *pulumi.Context, args *GetManagedDatabaseSqlTuningSetArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlTuningSetResult, error) {
 	var rv GetManagedDatabaseSqlTuningSetResult

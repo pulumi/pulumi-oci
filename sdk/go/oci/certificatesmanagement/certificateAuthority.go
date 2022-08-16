@@ -20,7 +20,9 @@ import (
 // CertificateAuthorities can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
+//
+//	$ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
+//
 // ```
 type CertificateAuthority struct {
 	pulumi.CustomResourceState
@@ -251,7 +253,7 @@ func (i *CertificateAuthority) ToCertificateAuthorityOutputWithContext(ctx conte
 // CertificateAuthorityArrayInput is an input type that accepts CertificateAuthorityArray and CertificateAuthorityArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityArrayInput` via:
 //
-//          CertificateAuthorityArray{ CertificateAuthorityArgs{...} }
+//	CertificateAuthorityArray{ CertificateAuthorityArgs{...} }
 type CertificateAuthorityArrayInput interface {
 	pulumi.Input
 
@@ -276,7 +278,7 @@ func (i CertificateAuthorityArray) ToCertificateAuthorityArrayOutputWithContext(
 // CertificateAuthorityMapInput is an input type that accepts CertificateAuthorityMap and CertificateAuthorityMapOutput values.
 // You can construct a concrete instance of `CertificateAuthorityMapInput` via:
 //
-//          CertificateAuthorityMap{ "key": CertificateAuthorityArgs{...} }
+//	CertificateAuthorityMap{ "key": CertificateAuthorityArgs{...} }
 type CertificateAuthorityMapInput interface {
 	pulumi.Input
 

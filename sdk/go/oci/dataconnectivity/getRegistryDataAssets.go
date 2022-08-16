@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryDataAssets(ctx, &dataconnectivity.GetRegistryDataAssetsArgs{
-// 			RegistryId:          oci_data_connectivity_registry.Test_registry.Id,
-// 			EndpointIds:         _var.Registry_data_asset_endpoint_ids,
-// 			ExcludeEndpointIds:  _var.Registry_data_asset_exclude_endpoint_ids,
-// 			ExcludeTypes:        _var.Registry_data_asset_exclude_types,
-// 			FavoritesQueryParam: pulumi.StringRef(_var.Registry_data_asset_favorites_query_param),
-// 			Fields:              _var.Registry_data_asset_fields,
-// 			FolderId:            pulumi.StringRef(oci_data_connectivity_folder.Test_folder.Id),
-// 			IncludeTypes:        _var.Registry_data_asset_include_types,
-// 			Name:                pulumi.StringRef(_var.Registry_data_asset_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryDataAssets(ctx, &dataconnectivity.GetRegistryDataAssetsArgs{
+//				RegistryId:          oci_data_connectivity_registry.Test_registry.Id,
+//				EndpointIds:         _var.Registry_data_asset_endpoint_ids,
+//				ExcludeEndpointIds:  _var.Registry_data_asset_exclude_endpoint_ids,
+//				ExcludeTypes:        _var.Registry_data_asset_exclude_types,
+//				FavoritesQueryParam: pulumi.StringRef(_var.Registry_data_asset_favorites_query_param),
+//				Fields:              _var.Registry_data_asset_fields,
+//				FolderId:            pulumi.StringRef(oci_data_connectivity_folder.Test_folder.Id),
+//				IncludeTypes:        _var.Registry_data_asset_include_types,
+//				Name:                pulumi.StringRef(_var.Registry_data_asset_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRegistryDataAssets(ctx *pulumi.Context, args *GetRegistryDataAssetsArgs, opts ...pulumi.InvokeOption) (*GetRegistryDataAssetsResult, error) {
 	var rv GetRegistryDataAssetsResult

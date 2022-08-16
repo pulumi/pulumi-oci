@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetPluggableDatabase(ctx, &database.GetPluggableDatabaseArgs{
-// 			PluggableDatabaseId: oci_database_pluggable_database.Test_pluggable_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetPluggableDatabase(ctx, &database.GetPluggableDatabaseArgs{
+//				PluggableDatabaseId: oci_database_pluggable_database.Test_pluggable_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupPluggableDatabase(ctx *pulumi.Context, args *LookupPluggableDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupPluggableDatabaseResult, error) {
 	var rv LookupPluggableDatabaseResult

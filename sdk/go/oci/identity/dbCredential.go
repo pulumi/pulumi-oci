@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewDbCredential(ctx, "testDbCredential", &Identity.DbCredentialArgs{
-// 			Description: pulumi.Any(_var.Db_credential_description),
-// 			Password:    pulumi.Any(_var.Db_credential_password),
-// 			UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewDbCredential(ctx, "testDbCredential", &Identity.DbCredentialArgs{
+//				Description: pulumi.Any(_var.Db_credential_description),
+//				Password:    pulumi.Any(_var.Db_credential_password),
+//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -182,7 +185,7 @@ func (i *DbCredential) ToDbCredentialOutputWithContext(ctx context.Context) DbCr
 // DbCredentialArrayInput is an input type that accepts DbCredentialArray and DbCredentialArrayOutput values.
 // You can construct a concrete instance of `DbCredentialArrayInput` via:
 //
-//          DbCredentialArray{ DbCredentialArgs{...} }
+//	DbCredentialArray{ DbCredentialArgs{...} }
 type DbCredentialArrayInput interface {
 	pulumi.Input
 
@@ -207,7 +210,7 @@ func (i DbCredentialArray) ToDbCredentialArrayOutputWithContext(ctx context.Cont
 // DbCredentialMapInput is an input type that accepts DbCredentialMap and DbCredentialMapOutput values.
 // You can construct a concrete instance of `DbCredentialMapInput` via:
 //
-//          DbCredentialMap{ "key": DbCredentialArgs{...} }
+//	DbCredentialMap{ "key": DbCredentialArgs{...} }
 type DbCredentialMapInput interface {
 	pulumi.Input
 

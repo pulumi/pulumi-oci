@@ -22,29 +22,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewPluggableDatabase(ctx, "testPluggableDatabase", &Database.PluggableDatabaseArgs{
-// 			ContainerDatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
-// 			PdbName:             pulumi.Any(_var.Pluggable_database_pdb_name),
-// 			DefinedTags:         pulumi.Any(_var.Pluggable_database_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			PdbAdminPassword:              pulumi.Any(_var.Pluggable_database_pdb_admin_password),
-// 			ShouldPdbAdminAccountBeLocked: pulumi.Any(_var.Pluggable_database_should_pdb_admin_account_be_locked),
-// 			TdeWalletPassword:             pulumi.Any(_var.Pluggable_database_tde_wallet_password),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewPluggableDatabase(ctx, "testPluggableDatabase", &Database.PluggableDatabaseArgs{
+//				ContainerDatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
+//				PdbName:             pulumi.Any(_var.Pluggable_database_pdb_name),
+//				DefinedTags:         pulumi.Any(_var.Pluggable_database_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				PdbAdminPassword:              pulumi.Any(_var.Pluggable_database_pdb_admin_password),
+//				ShouldPdbAdminAccountBeLocked: pulumi.Any(_var.Pluggable_database_should_pdb_admin_account_be_locked),
+//				TdeWalletPassword:             pulumi.Any(_var.Pluggable_database_tde_wallet_password),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // PluggableDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
+//
+//	$ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
+//
 // ```
 type PluggableDatabase struct {
 	pulumi.CustomResourceState
@@ -248,7 +253,7 @@ func (i *PluggableDatabase) ToPluggableDatabaseOutputWithContext(ctx context.Con
 // PluggableDatabaseArrayInput is an input type that accepts PluggableDatabaseArray and PluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabaseArrayInput` via:
 //
-//          PluggableDatabaseArray{ PluggableDatabaseArgs{...} }
+//	PluggableDatabaseArray{ PluggableDatabaseArgs{...} }
 type PluggableDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +278,7 @@ func (i PluggableDatabaseArray) ToPluggableDatabaseArrayOutputWithContext(ctx co
 // PluggableDatabaseMapInput is an input type that accepts PluggableDatabaseMap and PluggableDatabaseMapOutput values.
 // You can construct a concrete instance of `PluggableDatabaseMapInput` via:
 //
-//          PluggableDatabaseMap{ "key": PluggableDatabaseArgs{...} }
+//	PluggableDatabaseMap{ "key": PluggableDatabaseArgs{...} }
 type PluggableDatabaseMapInput interface {
 	pulumi.Input
 

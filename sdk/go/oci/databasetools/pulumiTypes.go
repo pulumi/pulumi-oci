@@ -22,7 +22,7 @@ type DatabaseToolsConnectionKeyStore struct {
 // DatabaseToolsConnectionKeyStoreInput is an input type that accepts DatabaseToolsConnectionKeyStoreArgs and DatabaseToolsConnectionKeyStoreOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreInput` via:
 //
-//          DatabaseToolsConnectionKeyStoreArgs{...}
+//	DatabaseToolsConnectionKeyStoreArgs{...}
 type DatabaseToolsConnectionKeyStoreInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i DatabaseToolsConnectionKeyStoreArgs) ToDatabaseToolsConnectionKeyStoreOu
 // DatabaseToolsConnectionKeyStoreArrayInput is an input type that accepts DatabaseToolsConnectionKeyStoreArray and DatabaseToolsConnectionKeyStoreArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreArrayInput` via:
 //
-//          DatabaseToolsConnectionKeyStoreArray{ DatabaseToolsConnectionKeyStoreArgs{...} }
+//	DatabaseToolsConnectionKeyStoreArray{ DatabaseToolsConnectionKeyStoreArgs{...} }
 type DatabaseToolsConnectionKeyStoreArrayInput interface {
 	pulumi.Input
 
@@ -139,7 +139,7 @@ type DatabaseToolsConnectionKeyStoreKeyStoreContent struct {
 // DatabaseToolsConnectionKeyStoreKeyStoreContentInput is an input type that accepts DatabaseToolsConnectionKeyStoreKeyStoreContentArgs and DatabaseToolsConnectionKeyStoreKeyStoreContentOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreKeyStoreContentInput` via:
 //
-//          DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...}
+//	DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...}
 type DatabaseToolsConnectionKeyStoreKeyStoreContentInput interface {
 	pulumi.Input
 
@@ -177,11 +177,11 @@ func (i DatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToDatabaseToolsConne
 // DatabaseToolsConnectionKeyStoreKeyStoreContentPtrInput is an input type that accepts DatabaseToolsConnectionKeyStoreKeyStoreContentArgs, DatabaseToolsConnectionKeyStoreKeyStoreContentPtr and DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreKeyStoreContentPtrInput` via:
 //
-//          DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...}
+//	        DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseToolsConnectionKeyStoreKeyStoreContentPtrInput interface {
 	pulumi.Input
 
@@ -295,7 +295,7 @@ type DatabaseToolsConnectionKeyStoreKeyStorePassword struct {
 // DatabaseToolsConnectionKeyStoreKeyStorePasswordInput is an input type that accepts DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs and DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreKeyStorePasswordInput` via:
 //
-//          DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...}
+//	DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...}
 type DatabaseToolsConnectionKeyStoreKeyStorePasswordInput interface {
 	pulumi.Input
 
@@ -333,11 +333,11 @@ func (i DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToDatabaseToolsConn
 // DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrInput is an input type that accepts DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs, DatabaseToolsConnectionKeyStoreKeyStorePasswordPtr and DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrInput` via:
 //
-//          DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...}
+//	        DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrInput interface {
 	pulumi.Input
 
@@ -451,7 +451,7 @@ type DatabaseToolsConnectionRelatedResource struct {
 // DatabaseToolsConnectionRelatedResourceInput is an input type that accepts DatabaseToolsConnectionRelatedResourceArgs and DatabaseToolsConnectionRelatedResourceOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionRelatedResourceInput` via:
 //
-//          DatabaseToolsConnectionRelatedResourceArgs{...}
+//	DatabaseToolsConnectionRelatedResourceArgs{...}
 type DatabaseToolsConnectionRelatedResourceInput interface {
 	pulumi.Input
 
@@ -489,11 +489,11 @@ func (i DatabaseToolsConnectionRelatedResourceArgs) ToDatabaseToolsConnectionRel
 // DatabaseToolsConnectionRelatedResourcePtrInput is an input type that accepts DatabaseToolsConnectionRelatedResourceArgs, DatabaseToolsConnectionRelatedResourcePtr and DatabaseToolsConnectionRelatedResourcePtrOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionRelatedResourcePtrInput` via:
 //
-//          DatabaseToolsConnectionRelatedResourceArgs{...}
+//	        DatabaseToolsConnectionRelatedResourceArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseToolsConnectionRelatedResourcePtrInput interface {
 	pulumi.Input
 
@@ -607,7 +607,7 @@ type DatabaseToolsConnectionUserPassword struct {
 // DatabaseToolsConnectionUserPasswordInput is an input type that accepts DatabaseToolsConnectionUserPasswordArgs and DatabaseToolsConnectionUserPasswordOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionUserPasswordInput` via:
 //
-//          DatabaseToolsConnectionUserPasswordArgs{...}
+//	DatabaseToolsConnectionUserPasswordArgs{...}
 type DatabaseToolsConnectionUserPasswordInput interface {
 	pulumi.Input
 
@@ -645,11 +645,11 @@ func (i DatabaseToolsConnectionUserPasswordArgs) ToDatabaseToolsConnectionUserPa
 // DatabaseToolsConnectionUserPasswordPtrInput is an input type that accepts DatabaseToolsConnectionUserPasswordArgs, DatabaseToolsConnectionUserPasswordPtr and DatabaseToolsConnectionUserPasswordPtrOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionUserPasswordPtrInput` via:
 //
-//          DatabaseToolsConnectionUserPasswordArgs{...}
+//	        DatabaseToolsConnectionUserPasswordArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseToolsConnectionUserPasswordPtrInput interface {
 	pulumi.Input
 
@@ -761,7 +761,7 @@ type DatabaseToolsPrivateEndpointReverseConnectionConfiguration struct {
 // DatabaseToolsPrivateEndpointReverseConnectionConfigurationInput is an input type that accepts DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs and DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointReverseConnectionConfigurationInput` via:
 //
-//          DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...}
+//	DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...}
 type DatabaseToolsPrivateEndpointReverseConnectionConfigurationInput interface {
 	pulumi.Input
 
@@ -789,7 +789,7 @@ func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs) ToDataba
 // DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput is an input type that accepts DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray and DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput` via:
 //
-//          DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{ DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...} }
+//	DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{ DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...} }
 type DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -860,7 +860,7 @@ type DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnection
 // DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput is an input type that accepts DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs and DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput` via:
 //
-//          DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...}
+//	DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...}
 type DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput interface {
 	pulumi.Input
 
@@ -888,7 +888,7 @@ func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 // DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput is an input type that accepts DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray and DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput` via:
 //
-//          DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray{ DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...} }
+//	DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray{ DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...} }
 type DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput interface {
 	pulumi.Input
 
@@ -963,7 +963,7 @@ type GetDatabaseToolsConnectionKeyStore struct {
 // GetDatabaseToolsConnectionKeyStoreInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreArgs and GetDatabaseToolsConnectionKeyStoreOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreInput` via:
 //
-//          GetDatabaseToolsConnectionKeyStoreArgs{...}
+//	GetDatabaseToolsConnectionKeyStoreArgs{...}
 type GetDatabaseToolsConnectionKeyStoreInput interface {
 	pulumi.Input
 
@@ -995,7 +995,7 @@ func (i GetDatabaseToolsConnectionKeyStoreArgs) ToGetDatabaseToolsConnectionKeyS
 // GetDatabaseToolsConnectionKeyStoreArrayInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreArray and GetDatabaseToolsConnectionKeyStoreArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreArrayInput` via:
 //
-//          GetDatabaseToolsConnectionKeyStoreArray{ GetDatabaseToolsConnectionKeyStoreArgs{...} }
+//	GetDatabaseToolsConnectionKeyStoreArray{ GetDatabaseToolsConnectionKeyStoreArgs{...} }
 type GetDatabaseToolsConnectionKeyStoreArrayInput interface {
 	pulumi.Input
 
@@ -1080,7 +1080,7 @@ type GetDatabaseToolsConnectionKeyStoreKeyStoreContent struct {
 // GetDatabaseToolsConnectionKeyStoreKeyStoreContentInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs and GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreKeyStoreContentInput` via:
 //
-//          GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...}
+//	GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...}
 type GetDatabaseToolsConnectionKeyStoreKeyStoreContentInput interface {
 	pulumi.Input
 
@@ -1110,7 +1110,7 @@ func (i GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToGetDatabaseTool
 // GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray and GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayInput` via:
 //
-//          GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray{ GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...} }
+//	GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray{ GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs{...} }
 type GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayInput interface {
 	pulumi.Input
 
@@ -1186,7 +1186,7 @@ type GetDatabaseToolsConnectionKeyStoreKeyStorePassword struct {
 // GetDatabaseToolsConnectionKeyStoreKeyStorePasswordInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs and GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreKeyStorePasswordInput` via:
 //
-//          GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...}
+//	GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...}
 type GetDatabaseToolsConnectionKeyStoreKeyStorePasswordInput interface {
 	pulumi.Input
 
@@ -1216,7 +1216,7 @@ func (i GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToGetDatabaseToo
 // GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray and GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayInput` via:
 //
-//          GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray{ GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...} }
+//	GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray{ GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{...} }
 type GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayInput interface {
 	pulumi.Input
 
@@ -1292,7 +1292,7 @@ type GetDatabaseToolsConnectionRelatedResource struct {
 // GetDatabaseToolsConnectionRelatedResourceInput is an input type that accepts GetDatabaseToolsConnectionRelatedResourceArgs and GetDatabaseToolsConnectionRelatedResourceOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionRelatedResourceInput` via:
 //
-//          GetDatabaseToolsConnectionRelatedResourceArgs{...}
+//	GetDatabaseToolsConnectionRelatedResourceArgs{...}
 type GetDatabaseToolsConnectionRelatedResourceInput interface {
 	pulumi.Input
 
@@ -1322,7 +1322,7 @@ func (i GetDatabaseToolsConnectionRelatedResourceArgs) ToGetDatabaseToolsConnect
 // GetDatabaseToolsConnectionRelatedResourceArrayInput is an input type that accepts GetDatabaseToolsConnectionRelatedResourceArray and GetDatabaseToolsConnectionRelatedResourceArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionRelatedResourceArrayInput` via:
 //
-//          GetDatabaseToolsConnectionRelatedResourceArray{ GetDatabaseToolsConnectionRelatedResourceArgs{...} }
+//	GetDatabaseToolsConnectionRelatedResourceArray{ GetDatabaseToolsConnectionRelatedResourceArgs{...} }
 type GetDatabaseToolsConnectionRelatedResourceArrayInput interface {
 	pulumi.Input
 
@@ -1398,7 +1398,7 @@ type GetDatabaseToolsConnectionUserPassword struct {
 // GetDatabaseToolsConnectionUserPasswordInput is an input type that accepts GetDatabaseToolsConnectionUserPasswordArgs and GetDatabaseToolsConnectionUserPasswordOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionUserPasswordInput` via:
 //
-//          GetDatabaseToolsConnectionUserPasswordArgs{...}
+//	GetDatabaseToolsConnectionUserPasswordArgs{...}
 type GetDatabaseToolsConnectionUserPasswordInput interface {
 	pulumi.Input
 
@@ -1428,7 +1428,7 @@ func (i GetDatabaseToolsConnectionUserPasswordArgs) ToGetDatabaseToolsConnection
 // GetDatabaseToolsConnectionUserPasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionUserPasswordArray and GetDatabaseToolsConnectionUserPasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionUserPasswordArrayInput` via:
 //
-//          GetDatabaseToolsConnectionUserPasswordArray{ GetDatabaseToolsConnectionUserPasswordArgs{...} }
+//	GetDatabaseToolsConnectionUserPasswordArray{ GetDatabaseToolsConnectionUserPasswordArgs{...} }
 type GetDatabaseToolsConnectionUserPasswordArrayInput interface {
 	pulumi.Input
 
@@ -1501,7 +1501,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection struct {
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionInput interface {
 	pulumi.Input
 
@@ -1528,7 +1528,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs) ToGetD
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1632,7 +1632,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput interface {
 	pulumi.Input
 
@@ -1694,7 +1694,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs) To
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1874,7 +1874,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore st
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreInput interface {
 	pulumi.Input
 
@@ -1906,7 +1906,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput interface {
 	pulumi.Input
 
@@ -1993,7 +1993,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKey
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentInput interface {
 	pulumi.Input
 
@@ -2023,7 +2023,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayInput interface {
 	pulumi.Input
 
@@ -2103,7 +2103,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKey
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordInput interface {
 	pulumi.Input
 
@@ -2133,7 +2133,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayInput interface {
 	pulumi.Input
 
@@ -2213,7 +2213,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedReso
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceInput interface {
 	pulumi.Input
 
@@ -2243,7 +2243,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedR
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput interface {
 	pulumi.Input
 
@@ -2323,7 +2323,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswor
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs{...}
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs{...}
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordInput interface {
 	pulumi.Input
 
@@ -2353,7 +2353,7 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPass
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs{...} }
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs{...} }
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput interface {
 	pulumi.Input
 
@@ -2432,7 +2432,7 @@ type GetDatabaseToolsConnectionsFilter struct {
 // GetDatabaseToolsConnectionsFilterInput is an input type that accepts GetDatabaseToolsConnectionsFilterArgs and GetDatabaseToolsConnectionsFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsFilterInput` via:
 //
-//          GetDatabaseToolsConnectionsFilterArgs{...}
+//	GetDatabaseToolsConnectionsFilterArgs{...}
 type GetDatabaseToolsConnectionsFilterInput interface {
 	pulumi.Input
 
@@ -2461,7 +2461,7 @@ func (i GetDatabaseToolsConnectionsFilterArgs) ToGetDatabaseToolsConnectionsFilt
 // GetDatabaseToolsConnectionsFilterArrayInput is an input type that accepts GetDatabaseToolsConnectionsFilterArray and GetDatabaseToolsConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsFilterArrayInput` via:
 //
-//          GetDatabaseToolsConnectionsFilterArray{ GetDatabaseToolsConnectionsFilterArgs{...} }
+//	GetDatabaseToolsConnectionsFilterArray{ GetDatabaseToolsConnectionsFilterArgs{...} }
 type GetDatabaseToolsConnectionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2536,7 +2536,7 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection stru
 // GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionInput is an input type that accepts GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs and GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionInput` via:
 //
-//          GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs{...}
+//	GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs{...}
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionInput interface {
 	pulumi.Input
 
@@ -2563,7 +2563,7 @@ func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionAr
 // GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayInput is an input type that accepts GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArray and GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayInput` via:
 //
-//          GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArray{ GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs{...} }
+//	GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArray{ GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs{...} }
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2655,7 +2655,7 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem 
 // GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemInput is an input type that accepts GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs and GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemInput` via:
 //
-//          GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs{...}
+//	GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs{...}
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemInput interface {
 	pulumi.Input
 
@@ -2705,7 +2705,7 @@ func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 // GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput is an input type that accepts GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray and GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput` via:
 //
-//          GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray{ GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs{...} }
+//	GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray{ GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs{...} }
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2853,7 +2853,7 @@ type GetDatabaseToolsEndpointServicesFilter struct {
 // GetDatabaseToolsEndpointServicesFilterInput is an input type that accepts GetDatabaseToolsEndpointServicesFilterArgs and GetDatabaseToolsEndpointServicesFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesFilterInput` via:
 //
-//          GetDatabaseToolsEndpointServicesFilterArgs{...}
+//	GetDatabaseToolsEndpointServicesFilterArgs{...}
 type GetDatabaseToolsEndpointServicesFilterInput interface {
 	pulumi.Input
 
@@ -2883,7 +2883,7 @@ func (i GetDatabaseToolsEndpointServicesFilterArgs) ToGetDatabaseToolsEndpointSe
 // GetDatabaseToolsEndpointServicesFilterArrayInput is an input type that accepts GetDatabaseToolsEndpointServicesFilterArray and GetDatabaseToolsEndpointServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesFilterArrayInput` via:
 //
-//          GetDatabaseToolsEndpointServicesFilterArray{ GetDatabaseToolsEndpointServicesFilterArgs{...} }
+//	GetDatabaseToolsEndpointServicesFilterArray{ GetDatabaseToolsEndpointServicesFilterArgs{...} }
 type GetDatabaseToolsEndpointServicesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2960,7 +2960,7 @@ type GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration struct {
 // GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationInput is an input type that accepts GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs and GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...}
+//	GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...}
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationInput interface {
 	pulumi.Input
 
@@ -2988,7 +2988,7 @@ func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs) ToGet
 // GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray and GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{ GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...} }
+//	GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{ GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{...} }
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3059,7 +3059,7 @@ type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 // GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput is an input type that accepts GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs and GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...}
+//	GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...}
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput interface {
 	pulumi.Input
 
@@ -3087,7 +3087,7 @@ func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConn
 // GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray and GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray{ GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...} }
+//	GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray{ GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...} }
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput interface {
 	pulumi.Input
 
@@ -3157,7 +3157,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection stru
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArgs and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArgs{...}
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArgs{...}
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionInput interface {
 	pulumi.Input
 
@@ -3184,7 +3184,7 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionAr
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArgs{...} }
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArgs{...} }
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3292,7 +3292,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs{...}
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs{...}
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemInput interface {
 	pulumi.Input
 
@@ -3358,7 +3358,7 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs{...} }
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs{...} }
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3560,7 +3560,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemR
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs{...}
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs{...}
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationInput interface {
 	pulumi.Input
 
@@ -3588,7 +3588,7 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs{...} }
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs{...} }
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3659,7 +3659,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemR
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...}
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...}
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpInput interface {
 	pulumi.Input
 
@@ -3687,7 +3687,7 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...} }
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs{...} }
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput interface {
 	pulumi.Input
 
@@ -3759,7 +3759,7 @@ type GetDatabaseToolsPrivateEndpointsFilter struct {
 // GetDatabaseToolsPrivateEndpointsFilterInput is an input type that accepts GetDatabaseToolsPrivateEndpointsFilterArgs and GetDatabaseToolsPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsFilterInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsFilterArgs{...}
+//	GetDatabaseToolsPrivateEndpointsFilterArgs{...}
 type GetDatabaseToolsPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -3788,7 +3788,7 @@ func (i GetDatabaseToolsPrivateEndpointsFilterArgs) ToGetDatabaseToolsPrivateEnd
 // GetDatabaseToolsPrivateEndpointsFilterArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsFilterArray and GetDatabaseToolsPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsFilterArrayInput` via:
 //
-//          GetDatabaseToolsPrivateEndpointsFilterArray{ GetDatabaseToolsPrivateEndpointsFilterArgs{...} }
+//	GetDatabaseToolsPrivateEndpointsFilterArray{ GetDatabaseToolsPrivateEndpointsFilterArgs{...} }
 type GetDatabaseToolsPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 

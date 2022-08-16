@@ -20,7 +20,9 @@ import (
 // AuditPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
+//
+//	$ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
+//
 // ```
 type AuditPolicy struct {
 	pulumi.CustomResourceState
@@ -247,7 +249,7 @@ func (i *AuditPolicy) ToAuditPolicyOutputWithContext(ctx context.Context) AuditP
 // AuditPolicyArrayInput is an input type that accepts AuditPolicyArray and AuditPolicyArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyArrayInput` via:
 //
-//          AuditPolicyArray{ AuditPolicyArgs{...} }
+//	AuditPolicyArray{ AuditPolicyArgs{...} }
 type AuditPolicyArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +274,7 @@ func (i AuditPolicyArray) ToAuditPolicyArrayOutputWithContext(ctx context.Contex
 // AuditPolicyMapInput is an input type that accepts AuditPolicyMap and AuditPolicyMapOutput values.
 // You can construct a concrete instance of `AuditPolicyMapInput` via:
 //
-//          AuditPolicyMap{ "key": AuditPolicyArgs{...} }
+//	AuditPolicyMap{ "key": AuditPolicyArgs{...} }
 type AuditPolicyMapInput interface {
 	pulumi.Input
 

@@ -24,7 +24,9 @@ import (
 // LibraryMaskingFormats can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
+//
+//	$ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
+//
 // ```
 type LibraryMasingFormat struct {
 	pulumi.CustomResourceState
@@ -202,7 +204,7 @@ func (i *LibraryMasingFormat) ToLibraryMasingFormatOutputWithContext(ctx context
 // LibraryMasingFormatArrayInput is an input type that accepts LibraryMasingFormatArray and LibraryMasingFormatArrayOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatArrayInput` via:
 //
-//          LibraryMasingFormatArray{ LibraryMasingFormatArgs{...} }
+//	LibraryMasingFormatArray{ LibraryMasingFormatArgs{...} }
 type LibraryMasingFormatArrayInput interface {
 	pulumi.Input
 
@@ -227,7 +229,7 @@ func (i LibraryMasingFormatArray) ToLibraryMasingFormatArrayOutputWithContext(ct
 // LibraryMasingFormatMapInput is an input type that accepts LibraryMasingFormatMap and LibraryMasingFormatMapOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatMapInput` via:
 //
-//          LibraryMasingFormatMap{ "key": LibraryMasingFormatArgs{...} }
+//	LibraryMasingFormatMap{ "key": LibraryMasingFormatArgs{...} }
 type LibraryMasingFormatMapInput interface {
 	pulumi.Input
 

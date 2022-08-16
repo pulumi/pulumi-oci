@@ -23,141 +23,144 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseMigration.NewMigration(ctx, "testMigration", &DatabaseMigration.MigrationArgs{
-// 			CompartmentId:              pulumi.Any(_var.Compartment_id),
-// 			SourceDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),
-// 			TargetDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),
-// 			Type:                       pulumi.Any(_var.Migration_type),
-// 			AdvisorSettings: &databasemigration.MigrationAdvisorSettingsArgs{
-// 				IsIgnoreErrors: pulumi.Any(_var.Migration_advisor_settings_is_ignore_errors),
-// 				IsSkipAdvisor:  pulumi.Any(_var.Migration_advisor_settings_is_skip_advisor),
-// 			},
-// 			AgentId: pulumi.Any(oci_database_migration_agent.Test_agent.Id),
-// 			DataTransferMediumDetails: &databasemigration.MigrationDataTransferMediumDetailsArgs{
-// 				DatabaseLinkDetails: &databasemigration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{
-// 					Name: pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_name),
-// 					WalletBucket: &databasemigration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{
-// 						Bucket:    pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_wallet_bucket_bucket),
-// 						Namespace: pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_wallet_bucket_namespace),
-// 					},
-// 				},
-// 				ObjectStorageDetails: &databasemigration.MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{
-// 					Bucket:    pulumi.Any(_var.Migration_data_transfer_medium_details_object_storage_details_bucket),
-// 					Namespace: pulumi.Any(_var.Migration_data_transfer_medium_details_object_storage_details_namespace),
-// 				},
-// 			},
-// 			DatapumpSettings: &databasemigration.MigrationDatapumpSettingsArgs{
-// 				DataPumpParameters: &databasemigration.MigrationDatapumpSettingsDataPumpParametersArgs{
-// 					Estimate:                pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_estimate),
-// 					ExcludeParameters:       pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_exclude_parameters),
-// 					ExportParallelismDegree: pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_export_parallelism_degree),
-// 					ImportParallelismDegree: pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_import_parallelism_degree),
-// 					IsCluster:               pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_is_cluster),
-// 					TableExistsAction:       pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_table_exists_action),
-// 				},
-// 				ExportDirectoryObject: &databasemigration.MigrationDatapumpSettingsExportDirectoryObjectArgs{
-// 					Name: pulumi.Any(_var.Migration_datapump_settings_export_directory_object_name),
-// 					Path: pulumi.Any(_var.Migration_datapump_settings_export_directory_object_path),
-// 				},
-// 				ImportDirectoryObject: &databasemigration.MigrationDatapumpSettingsImportDirectoryObjectArgs{
-// 					Name: pulumi.Any(_var.Migration_datapump_settings_import_directory_object_name),
-// 					Path: pulumi.Any(_var.Migration_datapump_settings_import_directory_object_path),
-// 				},
-// 				JobMode: pulumi.Any(_var.Migration_datapump_settings_job_mode),
-// 				MetadataRemaps: databasemigration.MigrationDatapumpSettingsMetadataRemapArray{
-// 					&databasemigration.MigrationDatapumpSettingsMetadataRemapArgs{
-// 						NewValue: pulumi.Any(_var.Migration_datapump_settings_metadata_remaps_new_value),
-// 						OldValue: pulumi.Any(_var.Migration_datapump_settings_metadata_remaps_old_value),
-// 						Type:     pulumi.Any(_var.Migration_datapump_settings_metadata_remaps_type),
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Migration_display_name),
-// 			DumpTransferDetails: &databasemigration.MigrationDumpTransferDetailsArgs{
-// 				Source: &databasemigration.MigrationDumpTransferDetailsSourceArgs{
-// 					Kind:    pulumi.Any(_var.Migration_dump_transfer_details_source_kind),
-// 					OciHome: pulumi.Any(_var.Migration_dump_transfer_details_source_oci_home),
-// 				},
-// 				Target: &databasemigration.MigrationDumpTransferDetailsTargetArgs{
-// 					Kind:    pulumi.Any(_var.Migration_dump_transfer_details_target_kind),
-// 					OciHome: pulumi.Any(_var.Migration_dump_transfer_details_target_oci_home),
-// 				},
-// 			},
-// 			ExcludeObjects: databasemigration.MigrationExcludeObjectArray{
-// 				&databasemigration.MigrationExcludeObjectArgs{
-// 					Object: pulumi.Any(_var.Migration_exclude_objects_object),
-// 					Owner:  pulumi.Any(_var.Migration_exclude_objects_owner),
-// 					Type:   pulumi.Any(_var.Migration_exclude_objects_type),
-// 				},
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			GoldenGateDetails: &databasemigration.MigrationGoldenGateDetailsArgs{
-// 				Hub: &databasemigration.MigrationGoldenGateDetailsHubArgs{
-// 					RestAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs{
-// 						Password: pulumi.Any(_var.Migration_golden_gate_details_hub_rest_admin_credentials_password),
-// 						Username: pulumi.Any(_var.Migration_golden_gate_details_hub_rest_admin_credentials_username),
-// 					},
-// 					SourceDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{
-// 						Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_db_admin_credentials_password),
-// 						Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_db_admin_credentials_username),
-// 					},
-// 					SourceMicroservicesDeploymentName: pulumi.Any(oci_apigateway_deployment.Test_deployment.Name),
-// 					TargetDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs{
-// 						Password: pulumi.Any(_var.Migration_golden_gate_details_hub_target_db_admin_credentials_password),
-// 						Username: pulumi.Any(_var.Migration_golden_gate_details_hub_target_db_admin_credentials_username),
-// 					},
-// 					TargetMicroservicesDeploymentName: pulumi.Any(oci_apigateway_deployment.Test_deployment.Name),
-// 					Url:                               pulumi.Any(_var.Migration_golden_gate_details_hub_url),
-// 					ComputeId:                         pulumi.Any(oci_database_migration_compute.Test_compute.Id),
-// 					SourceContainerDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{
-// 						Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password),
-// 						Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username),
-// 					},
-// 				},
-// 				Settings: &databasemigration.MigrationGoldenGateDetailsSettingsArgs{
-// 					AcceptableLag: pulumi.Any(_var.Migration_golden_gate_details_settings_acceptable_lag),
-// 					Extract: &databasemigration.MigrationGoldenGateDetailsSettingsExtractArgs{
-// 						LongTransDuration:  pulumi.Any(_var.Migration_golden_gate_details_settings_extract_long_trans_duration),
-// 						PerformanceProfile: pulumi.Any(_var.Migration_golden_gate_details_settings_extract_performance_profile),
-// 					},
-// 					Replicat: &databasemigration.MigrationGoldenGateDetailsSettingsReplicatArgs{
-// 						MapParallelism:      pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_map_parallelism),
-// 						MaxApplyParallelism: pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_max_apply_parallelism),
-// 						MinApplyParallelism: pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_min_apply_parallelism),
-// 					},
-// 				},
-// 			},
-// 			IncludeObjects: databasemigration.MigrationIncludeObjectArray{
-// 				&databasemigration.MigrationIncludeObjectArgs{
-// 					Object: pulumi.Any(_var.Migration_include_objects_object),
-// 					Owner:  pulumi.Any(_var.Migration_include_objects_owner),
-// 					Type:   pulumi.Any(_var.Migration_include_objects_type),
-// 				},
-// 			},
-// 			SourceContainerDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),
-// 			VaultDetails: &databasemigration.MigrationVaultDetailsArgs{
-// 				CompartmentId: pulumi.Any(_var.Compartment_id),
-// 				KeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-// 				VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseMigration.NewMigration(ctx, "testMigration", &DatabaseMigration.MigrationArgs{
+//				CompartmentId:              pulumi.Any(_var.Compartment_id),
+//				SourceDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),
+//				TargetDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),
+//				Type:                       pulumi.Any(_var.Migration_type),
+//				AdvisorSettings: &databasemigration.MigrationAdvisorSettingsArgs{
+//					IsIgnoreErrors: pulumi.Any(_var.Migration_advisor_settings_is_ignore_errors),
+//					IsSkipAdvisor:  pulumi.Any(_var.Migration_advisor_settings_is_skip_advisor),
+//				},
+//				AgentId: pulumi.Any(oci_database_migration_agent.Test_agent.Id),
+//				DataTransferMediumDetails: &databasemigration.MigrationDataTransferMediumDetailsArgs{
+//					DatabaseLinkDetails: &databasemigration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs{
+//						Name: pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_name),
+//						WalletBucket: &databasemigration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{
+//							Bucket:    pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_wallet_bucket_bucket),
+//							Namespace: pulumi.Any(_var.Migration_data_transfer_medium_details_database_link_details_wallet_bucket_namespace),
+//						},
+//					},
+//					ObjectStorageDetails: &databasemigration.MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{
+//						Bucket:    pulumi.Any(_var.Migration_data_transfer_medium_details_object_storage_details_bucket),
+//						Namespace: pulumi.Any(_var.Migration_data_transfer_medium_details_object_storage_details_namespace),
+//					},
+//				},
+//				DatapumpSettings: &databasemigration.MigrationDatapumpSettingsArgs{
+//					DataPumpParameters: &databasemigration.MigrationDatapumpSettingsDataPumpParametersArgs{
+//						Estimate:                pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_estimate),
+//						ExcludeParameters:       pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_exclude_parameters),
+//						ExportParallelismDegree: pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_export_parallelism_degree),
+//						ImportParallelismDegree: pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_import_parallelism_degree),
+//						IsCluster:               pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_is_cluster),
+//						TableExistsAction:       pulumi.Any(_var.Migration_datapump_settings_data_pump_parameters_table_exists_action),
+//					},
+//					ExportDirectoryObject: &databasemigration.MigrationDatapumpSettingsExportDirectoryObjectArgs{
+//						Name: pulumi.Any(_var.Migration_datapump_settings_export_directory_object_name),
+//						Path: pulumi.Any(_var.Migration_datapump_settings_export_directory_object_path),
+//					},
+//					ImportDirectoryObject: &databasemigration.MigrationDatapumpSettingsImportDirectoryObjectArgs{
+//						Name: pulumi.Any(_var.Migration_datapump_settings_import_directory_object_name),
+//						Path: pulumi.Any(_var.Migration_datapump_settings_import_directory_object_path),
+//					},
+//					JobMode: pulumi.Any(_var.Migration_datapump_settings_job_mode),
+//					MetadataRemaps: databasemigration.MigrationDatapumpSettingsMetadataRemapArray{
+//						&databasemigration.MigrationDatapumpSettingsMetadataRemapArgs{
+//							NewValue: pulumi.Any(_var.Migration_datapump_settings_metadata_remaps_new_value),
+//							OldValue: pulumi.Any(_var.Migration_datapump_settings_metadata_remaps_old_value),
+//							Type:     pulumi.Any(_var.Migration_datapump_settings_metadata_remaps_type),
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Migration_display_name),
+//				DumpTransferDetails: &databasemigration.MigrationDumpTransferDetailsArgs{
+//					Source: &databasemigration.MigrationDumpTransferDetailsSourceArgs{
+//						Kind:    pulumi.Any(_var.Migration_dump_transfer_details_source_kind),
+//						OciHome: pulumi.Any(_var.Migration_dump_transfer_details_source_oci_home),
+//					},
+//					Target: &databasemigration.MigrationDumpTransferDetailsTargetArgs{
+//						Kind:    pulumi.Any(_var.Migration_dump_transfer_details_target_kind),
+//						OciHome: pulumi.Any(_var.Migration_dump_transfer_details_target_oci_home),
+//					},
+//				},
+//				ExcludeObjects: databasemigration.MigrationExcludeObjectArray{
+//					&databasemigration.MigrationExcludeObjectArgs{
+//						Object: pulumi.Any(_var.Migration_exclude_objects_object),
+//						Owner:  pulumi.Any(_var.Migration_exclude_objects_owner),
+//						Type:   pulumi.Any(_var.Migration_exclude_objects_type),
+//					},
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				GoldenGateDetails: &databasemigration.MigrationGoldenGateDetailsArgs{
+//					Hub: &databasemigration.MigrationGoldenGateDetailsHubArgs{
+//						RestAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs{
+//							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_rest_admin_credentials_password),
+//							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_rest_admin_credentials_username),
+//						},
+//						SourceDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs{
+//							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_db_admin_credentials_password),
+//							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_db_admin_credentials_username),
+//						},
+//						SourceMicroservicesDeploymentName: pulumi.Any(oci_apigateway_deployment.Test_deployment.Name),
+//						TargetDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs{
+//							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_target_db_admin_credentials_password),
+//							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_target_db_admin_credentials_username),
+//						},
+//						TargetMicroservicesDeploymentName: pulumi.Any(oci_apigateway_deployment.Test_deployment.Name),
+//						Url:                               pulumi.Any(_var.Migration_golden_gate_details_hub_url),
+//						ComputeId:                         pulumi.Any(oci_database_migration_compute.Test_compute.Id),
+//						SourceContainerDbAdminCredentials: &databasemigration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs{
+//							Password: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password),
+//							Username: pulumi.Any(_var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username),
+//						},
+//					},
+//					Settings: &databasemigration.MigrationGoldenGateDetailsSettingsArgs{
+//						AcceptableLag: pulumi.Any(_var.Migration_golden_gate_details_settings_acceptable_lag),
+//						Extract: &databasemigration.MigrationGoldenGateDetailsSettingsExtractArgs{
+//							LongTransDuration:  pulumi.Any(_var.Migration_golden_gate_details_settings_extract_long_trans_duration),
+//							PerformanceProfile: pulumi.Any(_var.Migration_golden_gate_details_settings_extract_performance_profile),
+//						},
+//						Replicat: &databasemigration.MigrationGoldenGateDetailsSettingsReplicatArgs{
+//							MapParallelism:      pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_map_parallelism),
+//							MaxApplyParallelism: pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_max_apply_parallelism),
+//							MinApplyParallelism: pulumi.Any(_var.Migration_golden_gate_details_settings_replicat_min_apply_parallelism),
+//						},
+//					},
+//				},
+//				IncludeObjects: databasemigration.MigrationIncludeObjectArray{
+//					&databasemigration.MigrationIncludeObjectArgs{
+//						Object: pulumi.Any(_var.Migration_include_objects_object),
+//						Owner:  pulumi.Any(_var.Migration_include_objects_owner),
+//						Type:   pulumi.Any(_var.Migration_include_objects_type),
+//					},
+//				},
+//				SourceContainerDatabaseConnectionId: pulumi.Any(oci_database_migration_connection.Test_connection.Id),
+//				VaultDetails: &databasemigration.MigrationVaultDetailsArgs{
+//					CompartmentId: pulumi.Any(_var.Compartment_id),
+//					KeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
+//					VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -165,7 +168,9 @@ import (
 // Migrations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
+//
+//	$ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
+//
 // ```
 type Migration struct {
 	pulumi.CustomResourceState
@@ -479,7 +484,7 @@ func (i *Migration) ToMigrationOutputWithContext(ctx context.Context) MigrationO
 // MigrationArrayInput is an input type that accepts MigrationArray and MigrationArrayOutput values.
 // You can construct a concrete instance of `MigrationArrayInput` via:
 //
-//          MigrationArray{ MigrationArgs{...} }
+//	MigrationArray{ MigrationArgs{...} }
 type MigrationArrayInput interface {
 	pulumi.Input
 
@@ -504,7 +509,7 @@ func (i MigrationArray) ToMigrationArrayOutputWithContext(ctx context.Context) M
 // MigrationMapInput is an input type that accepts MigrationMap and MigrationMapOutput values.
 // You can construct a concrete instance of `MigrationMapInput` via:
 //
-//          MigrationMap{ "key": MigrationArgs{...} }
+//	MigrationMap{ "key": MigrationArgs{...} }
 type MigrationMapInput interface {
 	pulumi.Input
 

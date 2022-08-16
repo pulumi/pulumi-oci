@@ -273,7 +273,7 @@ func (i *ExadataInfrastructureStorage) ToExadataInfrastructureStorageOutputWithC
 // ExadataInfrastructureStorageArrayInput is an input type that accepts ExadataInfrastructureStorageArray and ExadataInfrastructureStorageArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageArrayInput` via:
 //
-//          ExadataInfrastructureStorageArray{ ExadataInfrastructureStorageArgs{...} }
+//	ExadataInfrastructureStorageArray{ ExadataInfrastructureStorageArgs{...} }
 type ExadataInfrastructureStorageArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +298,7 @@ func (i ExadataInfrastructureStorageArray) ToExadataInfrastructureStorageArrayOu
 // ExadataInfrastructureStorageMapInput is an input type that accepts ExadataInfrastructureStorageMap and ExadataInfrastructureStorageMapOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageMapInput` via:
 //
-//          ExadataInfrastructureStorageMap{ "key": ExadataInfrastructureStorageArgs{...} }
+//	ExadataInfrastructureStorageMap{ "key": ExadataInfrastructureStorageArgs{...} }
 type ExadataInfrastructureStorageMapInput interface {
 	pulumi.Input
 

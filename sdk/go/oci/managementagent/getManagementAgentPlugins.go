@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgentPlugins(ctx, &managementagent.GetManagementAgentPluginsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			AgentId:       pulumi.StringRef(_var.Management_agent_id),
-// 			DisplayName:   pulumi.StringRef(_var.Management_agent_plugin_display_name),
-// 			PlatformTypes: _var.Management_agent_plugin_platform_type,
-// 			State:         pulumi.StringRef(_var.Management_agent_plugin_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgentPlugins(ctx, &managementagent.GetManagementAgentPluginsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				AgentId:       pulumi.StringRef(_var.Management_agent_id),
+//				DisplayName:   pulumi.StringRef(_var.Management_agent_plugin_display_name),
+//				PlatformTypes: _var.Management_agent_plugin_platform_type,
+//				State:         pulumi.StringRef(_var.Management_agent_plugin_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementAgentPlugins(ctx *pulumi.Context, args *GetManagementAgentPluginsArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentPluginsResult, error) {
 	var rv GetManagementAgentPluginsResult

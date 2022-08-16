@@ -30,63 +30,72 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
-// 			Id: pulumi.StringRef(_var.Test_public_ip_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
+//				Id: pulumi.StringRef(_var.Test_public_ip_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Get a public ip by private ip id
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
-// 			PrivateIpId: pulumi.StringRef(_var.Test_public_ip_private_ip_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
+//				PrivateIpId: pulumi.StringRef(_var.Test_public_ip_private_ip_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Get a public ip by public ip address
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
-// 			IpAddress: pulumi.StringRef(_var.Test_public_ip_ip_address),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
+//				IpAddress: pulumi.StringRef(_var.Test_public_ip_ip_address),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupPublicIp(ctx *pulumi.Context, args *LookupPublicIpArgs, opts ...pulumi.InvokeOption) (*LookupPublicIpResult, error) {
 	var rv LookupPublicIpResult

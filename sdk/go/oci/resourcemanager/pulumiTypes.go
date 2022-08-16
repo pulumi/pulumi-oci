@@ -19,7 +19,7 @@ type GetPrivateEndpointsFilter struct {
 // GetPrivateEndpointsFilterInput is an input type that accepts GetPrivateEndpointsFilterArgs and GetPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterInput` via:
 //
-//          GetPrivateEndpointsFilterArgs{...}
+//	GetPrivateEndpointsFilterArgs{...}
 type GetPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -48,7 +48,7 @@ func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithCont
 // GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
 //
-//          GetPrivateEndpointsFilterArray{ GetPrivateEndpointsFilterArgs{...} }
+//	GetPrivateEndpointsFilterArray{ GetPrivateEndpointsFilterArgs{...} }
 type GetPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -123,7 +123,7 @@ type GetPrivateEndpointsPrivateEndpointCollection struct {
 // GetPrivateEndpointsPrivateEndpointCollectionInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArgs and GetPrivateEndpointsPrivateEndpointCollectionOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionArgs{...}
+//	GetPrivateEndpointsPrivateEndpointCollectionArgs{...}
 type GetPrivateEndpointsPrivateEndpointCollectionInput interface {
 	pulumi.Input
 
@@ -150,7 +150,7 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsP
 // GetPrivateEndpointsPrivateEndpointCollectionArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArray and GetPrivateEndpointsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionArrayInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionArray{ GetPrivateEndpointsPrivateEndpointCollectionArgs{...} }
+//	GetPrivateEndpointsPrivateEndpointCollectionArray{ GetPrivateEndpointsPrivateEndpointCollectionArgs{...} }
 type GetPrivateEndpointsPrivateEndpointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -246,7 +246,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 // GetPrivateEndpointsPrivateEndpointCollectionItemInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArgs and GetPrivateEndpointsPrivateEndpointCollectionItemOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...}
+//	GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...}
 type GetPrivateEndpointsPrivateEndpointCollectionItemInput interface {
 	pulumi.Input
 
@@ -300,7 +300,7 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpoi
 // GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArray and GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionItemArray{ GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...} }
+//	GetPrivateEndpointsPrivateEndpointCollectionItemArray{ GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...} }
 type GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -437,7 +437,7 @@ type GetStackConfigSource struct {
 // GetStackConfigSourceInput is an input type that accepts GetStackConfigSourceArgs and GetStackConfigSourceOutput values.
 // You can construct a concrete instance of `GetStackConfigSourceInput` via:
 //
-//          GetStackConfigSourceArgs{...}
+//	GetStackConfigSourceArgs{...}
 type GetStackConfigSourceInput interface {
 	pulumi.Input
 
@@ -466,7 +466,7 @@ func (i GetStackConfigSourceArgs) ToGetStackConfigSourceOutputWithContext(ctx co
 // GetStackConfigSourceArrayInput is an input type that accepts GetStackConfigSourceArray and GetStackConfigSourceArrayOutput values.
 // You can construct a concrete instance of `GetStackConfigSourceArrayInput` via:
 //
-//          GetStackConfigSourceArray{ GetStackConfigSourceArgs{...} }
+//	GetStackConfigSourceArray{ GetStackConfigSourceArgs{...} }
 type GetStackConfigSourceArrayInput interface {
 	pulumi.Input
 
@@ -543,7 +543,7 @@ type GetStacksFilter struct {
 // GetStacksFilterInput is an input type that accepts GetStacksFilterArgs and GetStacksFilterOutput values.
 // You can construct a concrete instance of `GetStacksFilterInput` via:
 //
-//          GetStacksFilterArgs{...}
+//	GetStacksFilterArgs{...}
 type GetStacksFilterInput interface {
 	pulumi.Input
 
@@ -572,7 +572,7 @@ func (i GetStacksFilterArgs) ToGetStacksFilterOutputWithContext(ctx context.Cont
 // GetStacksFilterArrayInput is an input type that accepts GetStacksFilterArray and GetStacksFilterArrayOutput values.
 // You can construct a concrete instance of `GetStacksFilterArrayInput` via:
 //
-//          GetStacksFilterArray{ GetStacksFilterArgs{...} }
+//	GetStacksFilterArray{ GetStacksFilterArgs{...} }
 type GetStacksFilterArrayInput interface {
 	pulumi.Input
 
@@ -664,7 +664,7 @@ type GetStacksStack struct {
 // GetStacksStackInput is an input type that accepts GetStacksStackArgs and GetStacksStackOutput values.
 // You can construct a concrete instance of `GetStacksStackInput` via:
 //
-//          GetStacksStackArgs{...}
+//	GetStacksStackArgs{...}
 type GetStacksStackInput interface {
 	pulumi.Input
 
@@ -708,7 +708,7 @@ func (i GetStacksStackArgs) ToGetStacksStackOutputWithContext(ctx context.Contex
 // GetStacksStackArrayInput is an input type that accepts GetStacksStackArray and GetStacksStackArrayOutput values.
 // You can construct a concrete instance of `GetStacksStackArrayInput` via:
 //
-//          GetStacksStackArray{ GetStacksStackArgs{...} }
+//	GetStacksStackArray{ GetStacksStackArgs{...} }
 type GetStacksStackArrayInput interface {
 	pulumi.Input
 
@@ -821,7 +821,7 @@ type GetStacksStackConfigSource struct {
 // GetStacksStackConfigSourceInput is an input type that accepts GetStacksStackConfigSourceArgs and GetStacksStackConfigSourceOutput values.
 // You can construct a concrete instance of `GetStacksStackConfigSourceInput` via:
 //
-//          GetStacksStackConfigSourceArgs{...}
+//	GetStacksStackConfigSourceArgs{...}
 type GetStacksStackConfigSourceInput interface {
 	pulumi.Input
 

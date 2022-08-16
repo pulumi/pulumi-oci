@@ -21,109 +21,112 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.NewRegistryConnection(ctx, "testRegistryConnection", &DataConnectivity.RegistryConnectionArgs{
-// 			Identifier: pulumi.Any(_var.Registry_connection_identifier),
-// 			Properties: pulumi.Any(_var.Registry_connection_properties),
-// 			RegistryId: pulumi.Any(oci_data_connectivity_registry.Test_registry.Id),
-// 			Type:       pulumi.Any(_var.Registry_connection_type),
-// 			ConnectionProperties: dataconnectivity.RegistryConnectionConnectionPropertyArray{
-// 				&dataconnectivity.RegistryConnectionConnectionPropertyArgs{
-// 					Name:  pulumi.Any(_var.Registry_connection_connection_properties_name),
-// 					Value: pulumi.Any(_var.Registry_connection_connection_properties_value),
-// 				},
-// 			},
-// 			Description: pulumi.Any(_var.Registry_connection_description),
-// 			IsDefault:   pulumi.Any(_var.Registry_connection_is_default),
-// 			Key:         pulumi.Any(_var.Registry_connection_key),
-// 			Metadata: &dataconnectivity.RegistryConnectionMetadataArgs{
-// 				Aggregator: &dataconnectivity.RegistryConnectionMetadataAggregatorArgs{
-// 					Description: pulumi.Any(_var.Registry_connection_metadata_aggregator_description),
-// 					Identifier:  pulumi.Any(_var.Registry_connection_metadata_aggregator_identifier),
-// 					Key:         pulumi.Any(_var.Registry_connection_metadata_aggregator_key),
-// 					Name:        pulumi.Any(_var.Registry_connection_metadata_aggregator_name),
-// 					Type:        pulumi.Any(_var.Registry_connection_metadata_aggregator_type),
-// 				},
-// 				AggregatorKey:   pulumi.Any(_var.Registry_connection_metadata_aggregator_key),
-// 				CreatedBy:       pulumi.Any(_var.Registry_connection_metadata_created_by),
-// 				CreatedByName:   pulumi.Any(_var.Registry_connection_metadata_created_by_name),
-// 				IdentifierPath:  pulumi.Any(_var.Registry_connection_metadata_identifier_path),
-// 				InfoFields:      pulumi.Any(_var.Registry_connection_metadata_info_fields),
-// 				IsFavorite:      pulumi.Any(_var.Registry_connection_metadata_is_favorite),
-// 				Labels:          pulumi.Any(_var.Registry_connection_metadata_labels),
-// 				RegistryVersion: pulumi.Any(_var.Registry_connection_metadata_registry_version),
-// 				TimeCreated:     pulumi.Any(_var.Registry_connection_metadata_time_created),
-// 				TimeUpdated:     pulumi.Any(_var.Registry_connection_metadata_time_updated),
-// 				UpdatedBy:       pulumi.Any(_var.Registry_connection_metadata_updated_by),
-// 				UpdatedByName:   pulumi.Any(_var.Registry_connection_metadata_updated_by_name),
-// 			},
-// 			ModelType:     pulumi.Any(_var.Registry_connection_model_type),
-// 			ModelVersion:  pulumi.Any(_var.Registry_connection_model_version),
-// 			ObjectStatus:  pulumi.Any(_var.Registry_connection_object_status),
-// 			ObjectVersion: pulumi.Any(_var.Registry_connection_object_version),
-// 			PrimarySchema: &dataconnectivity.RegistryConnectionPrimarySchemaArgs{
-// 				Identifier:        pulumi.Any(_var.Registry_connection_primary_schema_identifier),
-// 				Key:               pulumi.Any(_var.Registry_connection_primary_schema_key),
-// 				ModelType:         pulumi.Any(_var.Registry_connection_primary_schema_model_type),
-// 				Name:              pulumi.Any(_var.Registry_connection_primary_schema_name),
-// 				DefaultConnection: pulumi.Any(_var.Registry_connection_primary_schema_default_connection),
-// 				Description:       pulumi.Any(_var.Registry_connection_primary_schema_description),
-// 				ExternalKey:       pulumi.Any(_var.Registry_connection_primary_schema_external_key),
-// 				IsHasContainers:   pulumi.Any(_var.Registry_connection_primary_schema_is_has_containers),
-// 				Metadata: &dataconnectivity.RegistryConnectionPrimarySchemaMetadataArgs{
-// 					Aggregator: &dataconnectivity.RegistryConnectionPrimarySchemaMetadataAggregatorArgs{
-// 						Description: pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_description),
-// 						Identifier:  pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_identifier),
-// 						Key:         pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_key),
-// 						Name:        pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_name),
-// 						Type:        pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_type),
-// 					},
-// 					AggregatorKey:   pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_key),
-// 					CreatedBy:       pulumi.Any(_var.Registry_connection_primary_schema_metadata_created_by),
-// 					CreatedByName:   pulumi.Any(_var.Registry_connection_primary_schema_metadata_created_by_name),
-// 					IdentifierPath:  pulumi.Any(_var.Registry_connection_primary_schema_metadata_identifier_path),
-// 					InfoFields:      pulumi.Any(_var.Registry_connection_primary_schema_metadata_info_fields),
-// 					IsFavorite:      pulumi.Any(_var.Registry_connection_primary_schema_metadata_is_favorite),
-// 					Labels:          pulumi.Any(_var.Registry_connection_primary_schema_metadata_labels),
-// 					RegistryVersion: pulumi.Any(_var.Registry_connection_primary_schema_metadata_registry_version),
-// 					TimeCreated:     pulumi.Any(_var.Registry_connection_primary_schema_metadata_time_created),
-// 					TimeUpdated:     pulumi.Any(_var.Registry_connection_primary_schema_metadata_time_updated),
-// 					UpdatedBy:       pulumi.Any(_var.Registry_connection_primary_schema_metadata_updated_by),
-// 					UpdatedByName:   pulumi.Any(_var.Registry_connection_primary_schema_metadata_updated_by_name),
-// 				},
-// 				ModelVersion:  pulumi.Any(_var.Registry_connection_primary_schema_model_version),
-// 				ObjectStatus:  pulumi.Any(_var.Registry_connection_primary_schema_object_status),
-// 				ObjectVersion: pulumi.Any(_var.Registry_connection_primary_schema_object_version),
-// 				ParentRef: &dataconnectivity.RegistryConnectionPrimarySchemaParentRefArgs{
-// 					Parent: pulumi.Any(_var.Registry_connection_primary_schema_parent_ref_parent),
-// 				},
-// 				ResourceName: pulumi.Any(_var.Registry_connection_primary_schema_resource_name),
-// 			},
-// 			RegistryMetadata: &dataconnectivity.RegistryConnectionRegistryMetadataArgs{
-// 				AggregatorKey:     pulumi.Any(_var.Registry_connection_registry_metadata_aggregator_key),
-// 				CreatedByUserId:   pulumi.Any(oci_identity_user.Test_user.Id),
-// 				CreatedByUserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 				IsFavorite:        pulumi.Any(_var.Registry_connection_registry_metadata_is_favorite),
-// 				Key:               pulumi.Any(_var.Registry_connection_registry_metadata_key),
-// 				Labels:            pulumi.Any(_var.Registry_connection_registry_metadata_labels),
-// 				RegistryVersion:   pulumi.Any(_var.Registry_connection_registry_metadata_registry_version),
-// 				TimeCreated:       pulumi.Any(_var.Registry_connection_registry_metadata_time_created),
-// 				TimeUpdated:       pulumi.Any(_var.Registry_connection_registry_metadata_time_updated),
-// 				UpdatedByUserId:   pulumi.Any(oci_identity_user.Test_user.Id),
-// 				UpdatedByUserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.NewRegistryConnection(ctx, "testRegistryConnection", &DataConnectivity.RegistryConnectionArgs{
+//				Identifier: pulumi.Any(_var.Registry_connection_identifier),
+//				Properties: pulumi.Any(_var.Registry_connection_properties),
+//				RegistryId: pulumi.Any(oci_data_connectivity_registry.Test_registry.Id),
+//				Type:       pulumi.Any(_var.Registry_connection_type),
+//				ConnectionProperties: dataconnectivity.RegistryConnectionConnectionPropertyArray{
+//					&dataconnectivity.RegistryConnectionConnectionPropertyArgs{
+//						Name:  pulumi.Any(_var.Registry_connection_connection_properties_name),
+//						Value: pulumi.Any(_var.Registry_connection_connection_properties_value),
+//					},
+//				},
+//				Description: pulumi.Any(_var.Registry_connection_description),
+//				IsDefault:   pulumi.Any(_var.Registry_connection_is_default),
+//				Key:         pulumi.Any(_var.Registry_connection_key),
+//				Metadata: &dataconnectivity.RegistryConnectionMetadataArgs{
+//					Aggregator: &dataconnectivity.RegistryConnectionMetadataAggregatorArgs{
+//						Description: pulumi.Any(_var.Registry_connection_metadata_aggregator_description),
+//						Identifier:  pulumi.Any(_var.Registry_connection_metadata_aggregator_identifier),
+//						Key:         pulumi.Any(_var.Registry_connection_metadata_aggregator_key),
+//						Name:        pulumi.Any(_var.Registry_connection_metadata_aggregator_name),
+//						Type:        pulumi.Any(_var.Registry_connection_metadata_aggregator_type),
+//					},
+//					AggregatorKey:   pulumi.Any(_var.Registry_connection_metadata_aggregator_key),
+//					CreatedBy:       pulumi.Any(_var.Registry_connection_metadata_created_by),
+//					CreatedByName:   pulumi.Any(_var.Registry_connection_metadata_created_by_name),
+//					IdentifierPath:  pulumi.Any(_var.Registry_connection_metadata_identifier_path),
+//					InfoFields:      pulumi.Any(_var.Registry_connection_metadata_info_fields),
+//					IsFavorite:      pulumi.Any(_var.Registry_connection_metadata_is_favorite),
+//					Labels:          pulumi.Any(_var.Registry_connection_metadata_labels),
+//					RegistryVersion: pulumi.Any(_var.Registry_connection_metadata_registry_version),
+//					TimeCreated:     pulumi.Any(_var.Registry_connection_metadata_time_created),
+//					TimeUpdated:     pulumi.Any(_var.Registry_connection_metadata_time_updated),
+//					UpdatedBy:       pulumi.Any(_var.Registry_connection_metadata_updated_by),
+//					UpdatedByName:   pulumi.Any(_var.Registry_connection_metadata_updated_by_name),
+//				},
+//				ModelType:     pulumi.Any(_var.Registry_connection_model_type),
+//				ModelVersion:  pulumi.Any(_var.Registry_connection_model_version),
+//				ObjectStatus:  pulumi.Any(_var.Registry_connection_object_status),
+//				ObjectVersion: pulumi.Any(_var.Registry_connection_object_version),
+//				PrimarySchema: &dataconnectivity.RegistryConnectionPrimarySchemaArgs{
+//					Identifier:        pulumi.Any(_var.Registry_connection_primary_schema_identifier),
+//					Key:               pulumi.Any(_var.Registry_connection_primary_schema_key),
+//					ModelType:         pulumi.Any(_var.Registry_connection_primary_schema_model_type),
+//					Name:              pulumi.Any(_var.Registry_connection_primary_schema_name),
+//					DefaultConnection: pulumi.Any(_var.Registry_connection_primary_schema_default_connection),
+//					Description:       pulumi.Any(_var.Registry_connection_primary_schema_description),
+//					ExternalKey:       pulumi.Any(_var.Registry_connection_primary_schema_external_key),
+//					IsHasContainers:   pulumi.Any(_var.Registry_connection_primary_schema_is_has_containers),
+//					Metadata: &dataconnectivity.RegistryConnectionPrimarySchemaMetadataArgs{
+//						Aggregator: &dataconnectivity.RegistryConnectionPrimarySchemaMetadataAggregatorArgs{
+//							Description: pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_description),
+//							Identifier:  pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_identifier),
+//							Key:         pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_key),
+//							Name:        pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_name),
+//							Type:        pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_type),
+//						},
+//						AggregatorKey:   pulumi.Any(_var.Registry_connection_primary_schema_metadata_aggregator_key),
+//						CreatedBy:       pulumi.Any(_var.Registry_connection_primary_schema_metadata_created_by),
+//						CreatedByName:   pulumi.Any(_var.Registry_connection_primary_schema_metadata_created_by_name),
+//						IdentifierPath:  pulumi.Any(_var.Registry_connection_primary_schema_metadata_identifier_path),
+//						InfoFields:      pulumi.Any(_var.Registry_connection_primary_schema_metadata_info_fields),
+//						IsFavorite:      pulumi.Any(_var.Registry_connection_primary_schema_metadata_is_favorite),
+//						Labels:          pulumi.Any(_var.Registry_connection_primary_schema_metadata_labels),
+//						RegistryVersion: pulumi.Any(_var.Registry_connection_primary_schema_metadata_registry_version),
+//						TimeCreated:     pulumi.Any(_var.Registry_connection_primary_schema_metadata_time_created),
+//						TimeUpdated:     pulumi.Any(_var.Registry_connection_primary_schema_metadata_time_updated),
+//						UpdatedBy:       pulumi.Any(_var.Registry_connection_primary_schema_metadata_updated_by),
+//						UpdatedByName:   pulumi.Any(_var.Registry_connection_primary_schema_metadata_updated_by_name),
+//					},
+//					ModelVersion:  pulumi.Any(_var.Registry_connection_primary_schema_model_version),
+//					ObjectStatus:  pulumi.Any(_var.Registry_connection_primary_schema_object_status),
+//					ObjectVersion: pulumi.Any(_var.Registry_connection_primary_schema_object_version),
+//					ParentRef: &dataconnectivity.RegistryConnectionPrimarySchemaParentRefArgs{
+//						Parent: pulumi.Any(_var.Registry_connection_primary_schema_parent_ref_parent),
+//					},
+//					ResourceName: pulumi.Any(_var.Registry_connection_primary_schema_resource_name),
+//				},
+//				RegistryMetadata: &dataconnectivity.RegistryConnectionRegistryMetadataArgs{
+//					AggregatorKey:     pulumi.Any(_var.Registry_connection_registry_metadata_aggregator_key),
+//					CreatedByUserId:   pulumi.Any(oci_identity_user.Test_user.Id),
+//					CreatedByUserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//					IsFavorite:        pulumi.Any(_var.Registry_connection_registry_metadata_is_favorite),
+//					Key:               pulumi.Any(_var.Registry_connection_registry_metadata_key),
+//					Labels:            pulumi.Any(_var.Registry_connection_registry_metadata_labels),
+//					RegistryVersion:   pulumi.Any(_var.Registry_connection_registry_metadata_registry_version),
+//					TimeCreated:       pulumi.Any(_var.Registry_connection_registry_metadata_time_created),
+//					TimeUpdated:       pulumi.Any(_var.Registry_connection_registry_metadata_time_updated),
+//					UpdatedByUserId:   pulumi.Any(oci_identity_user.Test_user.Id),
+//					UpdatedByUserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -131,7 +134,9 @@ import (
 // RegistryConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataConnectivity/registryConnection:RegistryConnection test_registry_connection "registries/{registryId}/connections/{connectionKey}"
+//
+//	$ pulumi import oci:DataConnectivity/registryConnection:RegistryConnection test_registry_connection "registries/{registryId}/connections/{connectionKey}"
+//
 // ```
 type RegistryConnection struct {
 	pulumi.CustomResourceState
@@ -381,7 +386,7 @@ func (i *RegistryConnection) ToRegistryConnectionOutputWithContext(ctx context.C
 // RegistryConnectionArrayInput is an input type that accepts RegistryConnectionArray and RegistryConnectionArrayOutput values.
 // You can construct a concrete instance of `RegistryConnectionArrayInput` via:
 //
-//          RegistryConnectionArray{ RegistryConnectionArgs{...} }
+//	RegistryConnectionArray{ RegistryConnectionArgs{...} }
 type RegistryConnectionArrayInput interface {
 	pulumi.Input
 
@@ -406,7 +411,7 @@ func (i RegistryConnectionArray) ToRegistryConnectionArrayOutputWithContext(ctx 
 // RegistryConnectionMapInput is an input type that accepts RegistryConnectionMap and RegistryConnectionMapOutput values.
 // You can construct a concrete instance of `RegistryConnectionMapInput` via:
 //
-//          RegistryConnectionMap{ "key": RegistryConnectionArgs{...} }
+//	RegistryConnectionMap{ "key": RegistryConnectionArgs{...} }
 type RegistryConnectionMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousDatabaseInstanceWalletManagement(ctx, &database.GetAutonomousDatabaseInstanceWalletManagementArgs{
-// 			AutonomousDatabaseId: oci_database_autonomous_database.Test_autonomous_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDatabaseInstanceWalletManagement(ctx, &database.GetAutonomousDatabaseInstanceWalletManagementArgs{
+//				AutonomousDatabaseId: oci_database_autonomous_database.Test_autonomous_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAutonomousDatabaseInstanceWalletManagement(ctx *pulumi.Context, args *LookupAutonomousDatabaseInstanceWalletManagementArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousDatabaseInstanceWalletManagementResult, error) {
 	var rv LookupAutonomousDatabaseInstanceWalletManagementResult

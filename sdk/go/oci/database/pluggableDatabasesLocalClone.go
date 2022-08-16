@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewPluggableDatabasesLocalClone(ctx, "testPluggableDatabasesLocalClone", &Database.PluggableDatabasesLocalCloneArgs{
-// 			ClonedPdbName:                 pulumi.Any(_var.Pluggable_databases_local_clone_cloned_pdb_name),
-// 			PluggableDatabaseId:           pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
-// 			PdbAdminPassword:              pulumi.Any(_var.Pluggable_databases_local_clone_pdb_admin_password),
-// 			ShouldPdbAdminAccountBeLocked: pulumi.Any(_var.Pluggable_databases_local_clone_should_pdb_admin_account_be_locked),
-// 			TargetTdeWalletPassword:       pulumi.Any(_var.Pluggable_databases_local_clone_target_tde_wallet_password),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewPluggableDatabasesLocalClone(ctx, "testPluggableDatabasesLocalClone", &Database.PluggableDatabasesLocalCloneArgs{
+//				ClonedPdbName:                 pulumi.Any(_var.Pluggable_databases_local_clone_cloned_pdb_name),
+//				PluggableDatabaseId:           pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
+//				PdbAdminPassword:              pulumi.Any(_var.Pluggable_databases_local_clone_pdb_admin_password),
+//				ShouldPdbAdminAccountBeLocked: pulumi.Any(_var.Pluggable_databases_local_clone_should_pdb_admin_account_be_locked),
+//				TargetTdeWalletPassword:       pulumi.Any(_var.Pluggable_databases_local_clone_target_tde_wallet_password),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -243,7 +246,7 @@ func (i *PluggableDatabasesLocalClone) ToPluggableDatabasesLocalCloneOutputWithC
 // PluggableDatabasesLocalCloneArrayInput is an input type that accepts PluggableDatabasesLocalCloneArray and PluggableDatabasesLocalCloneArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabasesLocalCloneArrayInput` via:
 //
-//          PluggableDatabasesLocalCloneArray{ PluggableDatabasesLocalCloneArgs{...} }
+//	PluggableDatabasesLocalCloneArray{ PluggableDatabasesLocalCloneArgs{...} }
 type PluggableDatabasesLocalCloneArrayInput interface {
 	pulumi.Input
 
@@ -268,7 +271,7 @@ func (i PluggableDatabasesLocalCloneArray) ToPluggableDatabasesLocalCloneArrayOu
 // PluggableDatabasesLocalCloneMapInput is an input type that accepts PluggableDatabasesLocalCloneMap and PluggableDatabasesLocalCloneMapOutput values.
 // You can construct a concrete instance of `PluggableDatabasesLocalCloneMapInput` via:
 //
-//          PluggableDatabasesLocalCloneMap{ "key": PluggableDatabasesLocalCloneArgs{...} }
+//	PluggableDatabasesLocalCloneMap{ "key": PluggableDatabasesLocalCloneArgs{...} }
 type PluggableDatabasesLocalCloneMapInput interface {
 	pulumi.Input
 

@@ -11,6 +11,10 @@ from .get_fleet_blocklists import *
 from .get_fleets import *
 from .get_installation_site import *
 from .get_installation_sites import *
+from .get_java_families import *
+from .get_java_family import *
+from .get_java_release import *
+from .get_java_releases import *
 from .get_list_jre_usage import *
 from .get_summarize_resource_inventory import *
 from ._inputs import *

@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeGetArgs>? _includes;
 
         /// <summary>
-        /// Attributes to filter DevOps code repository events.
+        /// Attributes to filter GitLab self-hosted server events.
         /// </summary>
         public InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeGetArgs> Includes
         {

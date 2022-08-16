@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Jms.inputs.FleetInventoryLogArgs;
 import com.pulumi.oci.Jms.inputs.FleetOperationLogArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -98,15 +99,30 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */
-    @Import(name="inventoryLog")
-    private @Nullable Output<FleetInventoryLogArgs> inventoryLog;
+    @Import(name="inventoryLog", required=true)
+    private Output<FleetInventoryLogArgs> inventoryLog;
 
     /**
      * @return (Updatable) Custom Log for inventory or operation log.
      * 
      */
-    public Optional<Output<FleetInventoryLogArgs>> inventoryLog() {
-        return Optional.ofNullable(this.inventoryLog);
+    public Output<FleetInventoryLogArgs> inventoryLog() {
+        return this.inventoryLog;
+    }
+
+    /**
+     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    @Import(name="isAdvancedFeaturesEnabled")
+    private @Nullable Output<Boolean> isAdvancedFeaturesEnabled;
+
+    /**
+     * @return (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    public Optional<Output<Boolean>> isAdvancedFeaturesEnabled() {
+        return Optional.ofNullable(this.isAdvancedFeaturesEnabled);
     }
 
     /**
@@ -133,6 +149,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.inventoryLog = $.inventoryLog;
+        this.isAdvancedFeaturesEnabled = $.isAdvancedFeaturesEnabled;
         this.operationLog = $.operationLog;
     }
 
@@ -265,7 +282,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder inventoryLog(@Nullable Output<FleetInventoryLogArgs> inventoryLog) {
+        public Builder inventoryLog(Output<FleetInventoryLogArgs> inventoryLog) {
             $.inventoryLog = inventoryLog;
             return this;
         }
@@ -278,6 +295,27 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder inventoryLog(FleetInventoryLogArgs inventoryLog) {
             return inventoryLog(Output.of(inventoryLog));
+        }
+
+        /**
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAdvancedFeaturesEnabled(@Nullable Output<Boolean> isAdvancedFeaturesEnabled) {
+            $.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            return isAdvancedFeaturesEnabled(Output.of(isAdvancedFeaturesEnabled));
         }
 
         /**
@@ -304,6 +342,7 @@ public final class FleetArgs extends com.pulumi.resources.ResourceArgs {
         public FleetArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            $.inventoryLog = Objects.requireNonNull($.inventoryLog, "expected parameter 'inventoryLog' to be non-null");
             return $;
         }
     }

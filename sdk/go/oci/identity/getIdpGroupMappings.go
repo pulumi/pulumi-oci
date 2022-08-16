@@ -22,21 +22,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetIdpGroupMappings(ctx, &identity.GetIdpGroupMappingsArgs{
-// 			IdentityProviderId: oci_identity_identity_provider.Test_identity_provider.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetIdpGroupMappings(ctx, &identity.GetIdpGroupMappingsArgs{
+//				IdentityProviderId: oci_identity_identity_provider.Test_identity_provider.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIdpGroupMappings(ctx *pulumi.Context, args *GetIdpGroupMappingsArgs, opts ...pulumi.InvokeOption) (*GetIdpGroupMappingsResult, error) {
 	var rv GetIdpGroupMappingsResult

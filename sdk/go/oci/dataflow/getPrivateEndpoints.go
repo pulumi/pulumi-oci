@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataFlow.GetPrivateEndpoints(ctx, &dataflow.GetPrivateEndpointsArgs{
-// 			CompartmentId:         _var.Compartment_id,
-// 			DisplayName:           pulumi.StringRef(_var.Private_endpoint_display_name),
-// 			DisplayNameStartsWith: pulumi.StringRef(_var.Private_endpoint_display_name_starts_with),
-// 			OwnerPrincipalId:      pulumi.StringRef(_var.Owner_principal_id),
-// 			State:                 pulumi.StringRef(_var.Private_endpoint_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataFlow.GetPrivateEndpoints(ctx, &dataflow.GetPrivateEndpointsArgs{
+//				CompartmentId:         _var.Compartment_id,
+//				DisplayName:           pulumi.StringRef(_var.Private_endpoint_display_name),
+//				DisplayNameStartsWith: pulumi.StringRef(_var.Private_endpoint_display_name_starts_with),
+//				OwnerPrincipalId:      pulumi.StringRef(_var.Owner_principal_id),
+//				State:                 pulumi.StringRef(_var.Private_endpoint_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPrivateEndpoints(ctx *pulumi.Context, args *GetPrivateEndpointsArgs, opts ...pulumi.InvokeOption) (*GetPrivateEndpointsResult, error) {
 	var rv GetPrivateEndpointsResult

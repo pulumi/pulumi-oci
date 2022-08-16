@@ -22,33 +22,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewZone(ctx, "testZone", &Dns.ZoneArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ZoneType:      pulumi.Any(_var.Zone_zone_type),
-// 			DefinedTags:   pulumi.Any(_var.Zone_defined_tags),
-// 			ExternalMasters: dns.ZoneExternalMasterArray{
-// 				&dns.ZoneExternalMasterArgs{
-// 					Address:   pulumi.Any(_var.Zone_external_masters_address),
-// 					Port:      pulumi.Any(_var.Zone_external_masters_port),
-// 					TsigKeyId: pulumi.Any(oci_dns_tsig_key.Test_tsig_key.Id),
-// 				},
-// 			},
-// 			FreeformTags: pulumi.Any(_var.Zone_freeform_tags),
-// 			Scope:        pulumi.Any(_var.Zone_scope),
-// 			ViewId:       pulumi.Any(oci_dns_view.Test_view.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewZone(ctx, "testZone", &Dns.ZoneArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ZoneType:      pulumi.Any(_var.Zone_zone_type),
+//				DefinedTags:   pulumi.Any(_var.Zone_defined_tags),
+//				ExternalMasters: dns.ZoneExternalMasterArray{
+//					&dns.ZoneExternalMasterArgs{
+//						Address:   pulumi.Any(_var.Zone_external_masters_address),
+//						Port:      pulumi.Any(_var.Zone_external_masters_port),
+//						TsigKeyId: pulumi.Any(oci_dns_tsig_key.Test_tsig_key.Id),
+//					},
+//				},
+//				FreeformTags: pulumi.Any(_var.Zone_freeform_tags),
+//				Scope:        pulumi.Any(_var.Zone_scope),
+//				ViewId:       pulumi.Any(oci_dns_view.Test_view.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,16 +59,20 @@ import (
 // For legacy Zones that were created without using `scope`, these Zones can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/zone:Zone test_zone "id"
+//
+//	$ pulumi import oci:Dns/zone:Zone test_zone "id"
+//
 // ```
 //
-//  For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
+//	For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/zone:Zone test_zone "zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}"
+//
+//	$ pulumi import oci:Dns/zone:Zone test_zone "zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}"
+//
 // ```
 //
-//  skip adding `{view_id}` at the end if Zone was created without `view_id`.
+//	skip adding `{view_id}` at the end if Zone was created without `view_id`.
 type Zone struct {
 	pulumi.CustomResourceState
 
@@ -275,7 +282,7 @@ func (i *Zone) ToZoneOutputWithContext(ctx context.Context) ZoneOutput {
 // ZoneArrayInput is an input type that accepts ZoneArray and ZoneArrayOutput values.
 // You can construct a concrete instance of `ZoneArrayInput` via:
 //
-//          ZoneArray{ ZoneArgs{...} }
+//	ZoneArray{ ZoneArgs{...} }
 type ZoneArrayInput interface {
 	pulumi.Input
 
@@ -300,7 +307,7 @@ func (i ZoneArray) ToZoneArrayOutputWithContext(ctx context.Context) ZoneArrayOu
 // ZoneMapInput is an input type that accepts ZoneMap and ZoneMapOutput values.
 // You can construct a concrete instance of `ZoneMapInput` via:
 //
-//          ZoneMap{ "key": ZoneArgs{...} }
+//	ZoneMap{ "key": ZoneArgs{...} }
 type ZoneMapInput interface {
 	pulumi.Input
 

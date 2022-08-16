@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.GetDkim(ctx, &email.GetDkimArgs{
-// 			DkimId: oci_email_dkim.Test_dkim.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.GetDkim(ctx, &email.GetDkimArgs{
+//				DkimId: oci_email_dkim.Test_dkim.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDkim(ctx *pulumi.Context, args *LookupDkimArgs, opts ...pulumi.InvokeOption) (*LookupDkimResult, error) {
 	var rv LookupDkimResult

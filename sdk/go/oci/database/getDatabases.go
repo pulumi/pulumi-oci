@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDatabases(ctx, &database.GetDatabasesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DbHomeId:      pulumi.StringRef(oci_database_db_home.Test_db_home.Id),
-// 			DbName:        pulumi.StringRef(_var.Database_db_name),
-// 			State:         pulumi.StringRef(_var.Database_state),
-// 			SystemId:      pulumi.StringRef(oci_database_system.Test_system.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDatabases(ctx, &database.GetDatabasesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DbHomeId:      pulumi.StringRef(oci_database_db_home.Test_db_home.Id),
+//				DbName:        pulumi.StringRef(_var.Database_db_name),
+//				State:         pulumi.StringRef(_var.Database_state),
+//				SystemId:      pulumi.StringRef(oci_database_system.Test_system.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabases(ctx *pulumi.Context, args *GetDatabasesArgs, opts ...pulumi.InvokeOption) (*GetDatabasesResult, error) {
 	var rv GetDatabasesResult

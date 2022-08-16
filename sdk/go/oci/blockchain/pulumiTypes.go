@@ -20,7 +20,7 @@ type BlockchainPlatformComponentDetail struct {
 // BlockchainPlatformComponentDetailInput is an input type that accepts BlockchainPlatformComponentDetailArgs and BlockchainPlatformComponentDetailOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailInput` via:
 //
-//          BlockchainPlatformComponentDetailArgs{...}
+//	BlockchainPlatformComponentDetailArgs{...}
 type BlockchainPlatformComponentDetailInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i BlockchainPlatformComponentDetailArgs) ToBlockchainPlatformComponentDeta
 // BlockchainPlatformComponentDetailArrayInput is an input type that accepts BlockchainPlatformComponentDetailArray and BlockchainPlatformComponentDetailArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailArrayInput` via:
 //
-//          BlockchainPlatformComponentDetailArray{ BlockchainPlatformComponentDetailArgs{...} }
+//	BlockchainPlatformComponentDetailArray{ BlockchainPlatformComponentDetailArgs{...} }
 type BlockchainPlatformComponentDetailArrayInput interface {
 	pulumi.Input
 
@@ -130,7 +130,7 @@ type BlockchainPlatformComponentDetailOsn struct {
 // BlockchainPlatformComponentDetailOsnInput is an input type that accepts BlockchainPlatformComponentDetailOsnArgs and BlockchainPlatformComponentDetailOsnOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailOsnInput` via:
 //
-//          BlockchainPlatformComponentDetailOsnArgs{...}
+//	BlockchainPlatformComponentDetailOsnArgs{...}
 type BlockchainPlatformComponentDetailOsnInput interface {
 	pulumi.Input
 
@@ -164,7 +164,7 @@ func (i BlockchainPlatformComponentDetailOsnArgs) ToBlockchainPlatformComponentD
 // BlockchainPlatformComponentDetailOsnArrayInput is an input type that accepts BlockchainPlatformComponentDetailOsnArray and BlockchainPlatformComponentDetailOsnArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailOsnArrayInput` via:
 //
-//          BlockchainPlatformComponentDetailOsnArray{ BlockchainPlatformComponentDetailOsnArgs{...} }
+//	BlockchainPlatformComponentDetailOsnArray{ BlockchainPlatformComponentDetailOsnArgs{...} }
 type BlockchainPlatformComponentDetailOsnArrayInput interface {
 	pulumi.Input
 
@@ -250,7 +250,7 @@ type BlockchainPlatformComponentDetailOsnOcpuAllocationParam struct {
 // BlockchainPlatformComponentDetailOsnOcpuAllocationParamInput is an input type that accepts BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs and BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailOsnOcpuAllocationParamInput` via:
 //
-//          BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...}
+//	BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...}
 type BlockchainPlatformComponentDetailOsnOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -278,7 +278,7 @@ func (i BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs) ToBlockchai
 // BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput is an input type that accepts BlockchainPlatformComponentDetailOsnOcpuAllocationParamArray and BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput` via:
 //
-//          BlockchainPlatformComponentDetailOsnOcpuAllocationParamArray{ BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...} }
+//	BlockchainPlatformComponentDetailOsnOcpuAllocationParamArray{ BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...} }
 type BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -361,7 +361,7 @@ type BlockchainPlatformComponentDetailPeer struct {
 // BlockchainPlatformComponentDetailPeerInput is an input type that accepts BlockchainPlatformComponentDetailPeerArgs and BlockchainPlatformComponentDetailPeerOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailPeerInput` via:
 //
-//          BlockchainPlatformComponentDetailPeerArgs{...}
+//	BlockchainPlatformComponentDetailPeerArgs{...}
 type BlockchainPlatformComponentDetailPeerInput interface {
 	pulumi.Input
 
@@ -401,7 +401,7 @@ func (i BlockchainPlatformComponentDetailPeerArgs) ToBlockchainPlatformComponent
 // BlockchainPlatformComponentDetailPeerArrayInput is an input type that accepts BlockchainPlatformComponentDetailPeerArray and BlockchainPlatformComponentDetailPeerArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailPeerArrayInput` via:
 //
-//          BlockchainPlatformComponentDetailPeerArray{ BlockchainPlatformComponentDetailPeerArgs{...} }
+//	BlockchainPlatformComponentDetailPeerArray{ BlockchainPlatformComponentDetailPeerArgs{...} }
 type BlockchainPlatformComponentDetailPeerArrayInput interface {
 	pulumi.Input
 
@@ -502,7 +502,7 @@ type BlockchainPlatformComponentDetailPeerOcpuAllocationParam struct {
 // BlockchainPlatformComponentDetailPeerOcpuAllocationParamInput is an input type that accepts BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs and BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailPeerOcpuAllocationParamInput` via:
 //
-//          BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...}
+//	BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...}
 type BlockchainPlatformComponentDetailPeerOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -530,7 +530,7 @@ func (i BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs) ToBlockcha
 // BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput is an input type that accepts BlockchainPlatformComponentDetailPeerOcpuAllocationParamArray and BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput` via:
 //
-//          BlockchainPlatformComponentDetailPeerOcpuAllocationParamArray{ BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...} }
+//	BlockchainPlatformComponentDetailPeerOcpuAllocationParamArray{ BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...} }
 type BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -605,7 +605,7 @@ type BlockchainPlatformHostOcpuUtilizationInfo struct {
 // BlockchainPlatformHostOcpuUtilizationInfoInput is an input type that accepts BlockchainPlatformHostOcpuUtilizationInfoArgs and BlockchainPlatformHostOcpuUtilizationInfoOutput values.
 // You can construct a concrete instance of `BlockchainPlatformHostOcpuUtilizationInfoInput` via:
 //
-//          BlockchainPlatformHostOcpuUtilizationInfoArgs{...}
+//	BlockchainPlatformHostOcpuUtilizationInfoArgs{...}
 type BlockchainPlatformHostOcpuUtilizationInfoInput interface {
 	pulumi.Input
 
@@ -637,7 +637,7 @@ func (i BlockchainPlatformHostOcpuUtilizationInfoArgs) ToBlockchainPlatformHostO
 // BlockchainPlatformHostOcpuUtilizationInfoArrayInput is an input type that accepts BlockchainPlatformHostOcpuUtilizationInfoArray and BlockchainPlatformHostOcpuUtilizationInfoArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformHostOcpuUtilizationInfoArrayInput` via:
 //
-//          BlockchainPlatformHostOcpuUtilizationInfoArray{ BlockchainPlatformHostOcpuUtilizationInfoArgs{...} }
+//	BlockchainPlatformHostOcpuUtilizationInfoArray{ BlockchainPlatformHostOcpuUtilizationInfoArgs{...} }
 type BlockchainPlatformHostOcpuUtilizationInfoArrayInput interface {
 	pulumi.Input
 
@@ -720,7 +720,7 @@ type BlockchainPlatformReplicas struct {
 // BlockchainPlatformReplicasInput is an input type that accepts BlockchainPlatformReplicasArgs and BlockchainPlatformReplicasOutput values.
 // You can construct a concrete instance of `BlockchainPlatformReplicasInput` via:
 //
-//          BlockchainPlatformReplicasArgs{...}
+//	BlockchainPlatformReplicasArgs{...}
 type BlockchainPlatformReplicasInput interface {
 	pulumi.Input
 
@@ -760,11 +760,11 @@ func (i BlockchainPlatformReplicasArgs) ToBlockchainPlatformReplicasPtrOutputWit
 // BlockchainPlatformReplicasPtrInput is an input type that accepts BlockchainPlatformReplicasArgs, BlockchainPlatformReplicasPtr and BlockchainPlatformReplicasPtrOutput values.
 // You can construct a concrete instance of `BlockchainPlatformReplicasPtrInput` via:
 //
-//          BlockchainPlatformReplicasArgs{...}
+//	        BlockchainPlatformReplicasArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BlockchainPlatformReplicasPtrInput interface {
 	pulumi.Input
 
@@ -891,7 +891,7 @@ type OsnOcpuAllocationParam struct {
 // OsnOcpuAllocationParamInput is an input type that accepts OsnOcpuAllocationParamArgs and OsnOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `OsnOcpuAllocationParamInput` via:
 //
-//          OsnOcpuAllocationParamArgs{...}
+//	OsnOcpuAllocationParamArgs{...}
 type OsnOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -927,11 +927,11 @@ func (i OsnOcpuAllocationParamArgs) ToOsnOcpuAllocationParamPtrOutputWithContext
 // OsnOcpuAllocationParamPtrInput is an input type that accepts OsnOcpuAllocationParamArgs, OsnOcpuAllocationParamPtr and OsnOcpuAllocationParamPtrOutput values.
 // You can construct a concrete instance of `OsnOcpuAllocationParamPtrInput` via:
 //
-//          OsnOcpuAllocationParamArgs{...}
+//	        OsnOcpuAllocationParamArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type OsnOcpuAllocationParamPtrInput interface {
 	pulumi.Input
 
@@ -1028,7 +1028,7 @@ type PeerOcpuAllocationParam struct {
 // PeerOcpuAllocationParamInput is an input type that accepts PeerOcpuAllocationParamArgs and PeerOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `PeerOcpuAllocationParamInput` via:
 //
-//          PeerOcpuAllocationParamArgs{...}
+//	PeerOcpuAllocationParamArgs{...}
 type PeerOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -1064,11 +1064,11 @@ func (i PeerOcpuAllocationParamArgs) ToPeerOcpuAllocationParamPtrOutputWithConte
 // PeerOcpuAllocationParamPtrInput is an input type that accepts PeerOcpuAllocationParamArgs, PeerOcpuAllocationParamPtr and PeerOcpuAllocationParamPtrOutput values.
 // You can construct a concrete instance of `PeerOcpuAllocationParamPtrInput` via:
 //
-//          PeerOcpuAllocationParamArgs{...}
+//	        PeerOcpuAllocationParamArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PeerOcpuAllocationParamPtrInput interface {
 	pulumi.Input
 
@@ -1167,7 +1167,7 @@ type GetBlockchainPlatformComponentDetail struct {
 // GetBlockchainPlatformComponentDetailInput is an input type that accepts GetBlockchainPlatformComponentDetailArgs and GetBlockchainPlatformComponentDetailOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailInput` via:
 //
-//          GetBlockchainPlatformComponentDetailArgs{...}
+//	GetBlockchainPlatformComponentDetailArgs{...}
 type GetBlockchainPlatformComponentDetailInput interface {
 	pulumi.Input
 
@@ -1197,7 +1197,7 @@ func (i GetBlockchainPlatformComponentDetailArgs) ToGetBlockchainPlatformCompone
 // GetBlockchainPlatformComponentDetailArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailArray and GetBlockchainPlatformComponentDetailArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailArrayInput` via:
 //
-//          GetBlockchainPlatformComponentDetailArray{ GetBlockchainPlatformComponentDetailArgs{...} }
+//	GetBlockchainPlatformComponentDetailArray{ GetBlockchainPlatformComponentDetailArgs{...} }
 type GetBlockchainPlatformComponentDetailArrayInput interface {
 	pulumi.Input
 
@@ -1279,7 +1279,7 @@ type GetBlockchainPlatformComponentDetailOsn struct {
 // GetBlockchainPlatformComponentDetailOsnInput is an input type that accepts GetBlockchainPlatformComponentDetailOsnArgs and GetBlockchainPlatformComponentDetailOsnOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailOsnInput` via:
 //
-//          GetBlockchainPlatformComponentDetailOsnArgs{...}
+//	GetBlockchainPlatformComponentDetailOsnArgs{...}
 type GetBlockchainPlatformComponentDetailOsnInput interface {
 	pulumi.Input
 
@@ -1313,7 +1313,7 @@ func (i GetBlockchainPlatformComponentDetailOsnArgs) ToGetBlockchainPlatformComp
 // GetBlockchainPlatformComponentDetailOsnArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailOsnArray and GetBlockchainPlatformComponentDetailOsnArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailOsnArrayInput` via:
 //
-//          GetBlockchainPlatformComponentDetailOsnArray{ GetBlockchainPlatformComponentDetailOsnArgs{...} }
+//	GetBlockchainPlatformComponentDetailOsnArray{ GetBlockchainPlatformComponentDetailOsnArgs{...} }
 type GetBlockchainPlatformComponentDetailOsnArrayInput interface {
 	pulumi.Input
 
@@ -1399,7 +1399,7 @@ type GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam struct {
 // GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamInput is an input type that accepts GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs and GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamInput` via:
 //
-//          GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...}
+//	GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...}
 type GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -1427,7 +1427,7 @@ func (i GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs) ToGetBlo
 // GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArray and GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput` via:
 //
-//          GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArray{ GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...} }
+//	GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArray{ GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs{...} }
 type GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -1510,7 +1510,7 @@ type GetBlockchainPlatformComponentDetailPeer struct {
 // GetBlockchainPlatformComponentDetailPeerInput is an input type that accepts GetBlockchainPlatformComponentDetailPeerArgs and GetBlockchainPlatformComponentDetailPeerOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailPeerInput` via:
 //
-//          GetBlockchainPlatformComponentDetailPeerArgs{...}
+//	GetBlockchainPlatformComponentDetailPeerArgs{...}
 type GetBlockchainPlatformComponentDetailPeerInput interface {
 	pulumi.Input
 
@@ -1550,7 +1550,7 @@ func (i GetBlockchainPlatformComponentDetailPeerArgs) ToGetBlockchainPlatformCom
 // GetBlockchainPlatformComponentDetailPeerArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailPeerArray and GetBlockchainPlatformComponentDetailPeerArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailPeerArrayInput` via:
 //
-//          GetBlockchainPlatformComponentDetailPeerArray{ GetBlockchainPlatformComponentDetailPeerArgs{...} }
+//	GetBlockchainPlatformComponentDetailPeerArray{ GetBlockchainPlatformComponentDetailPeerArgs{...} }
 type GetBlockchainPlatformComponentDetailPeerArrayInput interface {
 	pulumi.Input
 
@@ -1651,7 +1651,7 @@ type GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam struct {
 // GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamInput is an input type that accepts GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs and GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamInput` via:
 //
-//          GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...}
+//	GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...}
 type GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -1679,7 +1679,7 @@ func (i GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs) ToGetBl
 // GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArray and GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput` via:
 //
-//          GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArray{ GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...} }
+//	GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArray{ GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs{...} }
 type GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -1754,7 +1754,7 @@ type GetBlockchainPlatformHostOcpuUtilizationInfo struct {
 // GetBlockchainPlatformHostOcpuUtilizationInfoInput is an input type that accepts GetBlockchainPlatformHostOcpuUtilizationInfoArgs and GetBlockchainPlatformHostOcpuUtilizationInfoOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformHostOcpuUtilizationInfoInput` via:
 //
-//          GetBlockchainPlatformHostOcpuUtilizationInfoArgs{...}
+//	GetBlockchainPlatformHostOcpuUtilizationInfoArgs{...}
 type GetBlockchainPlatformHostOcpuUtilizationInfoInput interface {
 	pulumi.Input
 
@@ -1786,7 +1786,7 @@ func (i GetBlockchainPlatformHostOcpuUtilizationInfoArgs) ToGetBlockchainPlatfor
 // GetBlockchainPlatformHostOcpuUtilizationInfoArrayInput is an input type that accepts GetBlockchainPlatformHostOcpuUtilizationInfoArray and GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformHostOcpuUtilizationInfoArrayInput` via:
 //
-//          GetBlockchainPlatformHostOcpuUtilizationInfoArray{ GetBlockchainPlatformHostOcpuUtilizationInfoArgs{...} }
+//	GetBlockchainPlatformHostOcpuUtilizationInfoArray{ GetBlockchainPlatformHostOcpuUtilizationInfoArgs{...} }
 type GetBlockchainPlatformHostOcpuUtilizationInfoArrayInput interface {
 	pulumi.Input
 
@@ -1865,7 +1865,7 @@ type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection struct {
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionInput` via:
 //
-//          GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs{...}
+//	GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs{...}
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionInput interface {
 	pulumi.Input
 
@@ -1893,7 +1893,7 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs) ToGet
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArray and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayInput` via:
 //
-//          GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArray{ GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs{...} }
+//	GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArray{ GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs{...} }
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1964,7 +1964,7 @@ type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem struct {
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemInput` via:
 //
-//          GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs{...}
+//	GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs{...}
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemInput interface {
 	pulumi.Input
 
@@ -1992,7 +1992,7 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs) T
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArray and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayInput` via:
 //
-//          GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArray{ GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs{...} }
+//	GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArray{ GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs{...} }
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2069,7 +2069,7 @@ type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem struc
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemInput` via:
 //
-//          GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs{...}
+//	GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs{...}
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -2103,7 +2103,7 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArg
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArray and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayInput` via:
 //
-//          GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArray{ GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs{...} }
+//	GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArray{ GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs{...} }
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -2194,7 +2194,7 @@ type GetBlockchainPlatformPatchesFilter struct {
 // GetBlockchainPlatformPatchesFilterInput is an input type that accepts GetBlockchainPlatformPatchesFilterArgs and GetBlockchainPlatformPatchesFilterOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesFilterInput` via:
 //
-//          GetBlockchainPlatformPatchesFilterArgs{...}
+//	GetBlockchainPlatformPatchesFilterArgs{...}
 type GetBlockchainPlatformPatchesFilterInput interface {
 	pulumi.Input
 
@@ -2223,7 +2223,7 @@ func (i GetBlockchainPlatformPatchesFilterArgs) ToGetBlockchainPlatformPatchesFi
 // GetBlockchainPlatformPatchesFilterArrayInput is an input type that accepts GetBlockchainPlatformPatchesFilterArray and GetBlockchainPlatformPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesFilterArrayInput` via:
 //
-//          GetBlockchainPlatformPatchesFilterArray{ GetBlockchainPlatformPatchesFilterArgs{...} }
+//	GetBlockchainPlatformPatchesFilterArray{ GetBlockchainPlatformPatchesFilterArgs{...} }
 type GetBlockchainPlatformPatchesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2303,7 +2303,7 @@ type GetBlockchainPlatformReplica struct {
 // GetBlockchainPlatformReplicaInput is an input type that accepts GetBlockchainPlatformReplicaArgs and GetBlockchainPlatformReplicaOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformReplicaInput` via:
 //
-//          GetBlockchainPlatformReplicaArgs{...}
+//	GetBlockchainPlatformReplicaArgs{...}
 type GetBlockchainPlatformReplicaInput interface {
 	pulumi.Input
 
@@ -2335,7 +2335,7 @@ func (i GetBlockchainPlatformReplicaArgs) ToGetBlockchainPlatformReplicaOutputWi
 // GetBlockchainPlatformReplicaArrayInput is an input type that accepts GetBlockchainPlatformReplicaArray and GetBlockchainPlatformReplicaArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformReplicaArrayInput` via:
 //
-//          GetBlockchainPlatformReplicaArray{ GetBlockchainPlatformReplicaArgs{...} }
+//	GetBlockchainPlatformReplicaArray{ GetBlockchainPlatformReplicaArgs{...} }
 type GetBlockchainPlatformReplicaArrayInput interface {
 	pulumi.Input
 
@@ -2413,7 +2413,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollection struct {
 // GetBlockchainPlatformsBlockchainPlatformCollectionInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionArgs and GetBlockchainPlatformsBlockchainPlatformCollectionOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionInput interface {
 	pulumi.Input
 
@@ -2440,7 +2440,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionArgs) ToGetBlockchainP
 // GetBlockchainPlatformsBlockchainPlatformCollectionArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionArray and GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionArray{ GetBlockchainPlatformsBlockchainPlatformCollectionArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionArray{ GetBlockchainPlatformsBlockchainPlatformCollectionArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2561,7 +2561,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItem struct {
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemInput interface {
 	pulumi.Input
 
@@ -2640,7 +2640,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs) ToGetBlockch
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2853,7 +2853,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail struc
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailInput interface {
 	pulumi.Input
 
@@ -2883,7 +2883,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArg
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayInput interface {
 	pulumi.Input
 
@@ -2967,7 +2967,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn st
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnInput interface {
 	pulumi.Input
 
@@ -3001,7 +3001,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayInput interface {
 	pulumi.Input
 
@@ -3091,7 +3091,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcp
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -3119,7 +3119,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -3202,7 +3202,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer s
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerInput interface {
 	pulumi.Input
 
@@ -3242,7 +3242,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayInput interface {
 	pulumi.Input
 
@@ -3353,7 +3353,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOc
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -3381,7 +3381,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -3456,7 +3456,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationIn
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoInput interface {
 	pulumi.Input
 
@@ -3488,7 +3488,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizatio
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayInput interface {
 	pulumi.Input
 
@@ -3577,7 +3577,7 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica struct {
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs and GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs{...}
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs{...}
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaInput interface {
 	pulumi.Input
 
@@ -3609,7 +3609,7 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs) ToGet
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayInput` via:
 //
-//          GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs{...} }
+//	GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArray{ GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs{...} }
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayInput interface {
 	pulumi.Input
 
@@ -3689,7 +3689,7 @@ type GetBlockchainPlatformsFilter struct {
 // GetBlockchainPlatformsFilterInput is an input type that accepts GetBlockchainPlatformsFilterArgs and GetBlockchainPlatformsFilterOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsFilterInput` via:
 //
-//          GetBlockchainPlatformsFilterArgs{...}
+//	GetBlockchainPlatformsFilterArgs{...}
 type GetBlockchainPlatformsFilterInput interface {
 	pulumi.Input
 
@@ -3718,7 +3718,7 @@ func (i GetBlockchainPlatformsFilterArgs) ToGetBlockchainPlatformsFilterOutputWi
 // GetBlockchainPlatformsFilterArrayInput is an input type that accepts GetBlockchainPlatformsFilterArray and GetBlockchainPlatformsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsFilterArrayInput` via:
 //
-//          GetBlockchainPlatformsFilterArray{ GetBlockchainPlatformsFilterArgs{...} }
+//	GetBlockchainPlatformsFilterArray{ GetBlockchainPlatformsFilterArgs{...} }
 type GetBlockchainPlatformsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3794,7 +3794,7 @@ type GetOsnOcpuAllocationParam struct {
 // GetOsnOcpuAllocationParamInput is an input type that accepts GetOsnOcpuAllocationParamArgs and GetOsnOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetOsnOcpuAllocationParamInput` via:
 //
-//          GetOsnOcpuAllocationParamArgs{...}
+//	GetOsnOcpuAllocationParamArgs{...}
 type GetOsnOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -3822,7 +3822,7 @@ func (i GetOsnOcpuAllocationParamArgs) ToGetOsnOcpuAllocationParamOutputWithCont
 // GetOsnOcpuAllocationParamArrayInput is an input type that accepts GetOsnOcpuAllocationParamArray and GetOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetOsnOcpuAllocationParamArrayInput` via:
 //
-//          GetOsnOcpuAllocationParamArray{ GetOsnOcpuAllocationParamArgs{...} }
+//	GetOsnOcpuAllocationParamArray{ GetOsnOcpuAllocationParamArgs{...} }
 type GetOsnOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -3892,7 +3892,7 @@ type GetOsnsFilter struct {
 // GetOsnsFilterInput is an input type that accepts GetOsnsFilterArgs and GetOsnsFilterOutput values.
 // You can construct a concrete instance of `GetOsnsFilterInput` via:
 //
-//          GetOsnsFilterArgs{...}
+//	GetOsnsFilterArgs{...}
 type GetOsnsFilterInput interface {
 	pulumi.Input
 
@@ -3921,7 +3921,7 @@ func (i GetOsnsFilterArgs) ToGetOsnsFilterOutputWithContext(ctx context.Context)
 // GetOsnsFilterArrayInput is an input type that accepts GetOsnsFilterArray and GetOsnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOsnsFilterArrayInput` via:
 //
-//          GetOsnsFilterArray{ GetOsnsFilterArgs{...} }
+//	GetOsnsFilterArray{ GetOsnsFilterArgs{...} }
 type GetOsnsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3996,7 +3996,7 @@ type GetOsnsOsnCollection struct {
 // GetOsnsOsnCollectionInput is an input type that accepts GetOsnsOsnCollectionArgs and GetOsnsOsnCollectionOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionInput` via:
 //
-//          GetOsnsOsnCollectionArgs{...}
+//	GetOsnsOsnCollectionArgs{...}
 type GetOsnsOsnCollectionInput interface {
 	pulumi.Input
 
@@ -4023,7 +4023,7 @@ func (i GetOsnsOsnCollectionArgs) ToGetOsnsOsnCollectionOutputWithContext(ctx co
 // GetOsnsOsnCollectionArrayInput is an input type that accepts GetOsnsOsnCollectionArray and GetOsnsOsnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionArrayInput` via:
 //
-//          GetOsnsOsnCollectionArray{ GetOsnsOsnCollectionArgs{...} }
+//	GetOsnsOsnCollectionArray{ GetOsnsOsnCollectionArgs{...} }
 type GetOsnsOsnCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4099,7 +4099,7 @@ type GetOsnsOsnCollectionItem struct {
 // GetOsnsOsnCollectionItemInput is an input type that accepts GetOsnsOsnCollectionItemArgs and GetOsnsOsnCollectionItemOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionItemInput` via:
 //
-//          GetOsnsOsnCollectionItemArgs{...}
+//	GetOsnsOsnCollectionItemArgs{...}
 type GetOsnsOsnCollectionItemInput interface {
 	pulumi.Input
 
@@ -4135,7 +4135,7 @@ func (i GetOsnsOsnCollectionItemArgs) ToGetOsnsOsnCollectionItemOutputWithContex
 // GetOsnsOsnCollectionItemArrayInput is an input type that accepts GetOsnsOsnCollectionItemArray and GetOsnsOsnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionItemArrayInput` via:
 //
-//          GetOsnsOsnCollectionItemArray{ GetOsnsOsnCollectionItemArgs{...} }
+//	GetOsnsOsnCollectionItemArray{ GetOsnsOsnCollectionItemArgs{...} }
 type GetOsnsOsnCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4226,7 +4226,7 @@ type GetOsnsOsnCollectionItemOcpuAllocationParam struct {
 // GetOsnsOsnCollectionItemOcpuAllocationParamInput is an input type that accepts GetOsnsOsnCollectionItemOcpuAllocationParamArgs and GetOsnsOsnCollectionItemOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionItemOcpuAllocationParamInput` via:
 //
-//          GetOsnsOsnCollectionItemOcpuAllocationParamArgs{...}
+//	GetOsnsOsnCollectionItemOcpuAllocationParamArgs{...}
 type GetOsnsOsnCollectionItemOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -4278,7 +4278,7 @@ type GetPeerOcpuAllocationParam struct {
 // GetPeerOcpuAllocationParamInput is an input type that accepts GetPeerOcpuAllocationParamArgs and GetPeerOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetPeerOcpuAllocationParamInput` via:
 //
-//          GetPeerOcpuAllocationParamArgs{...}
+//	GetPeerOcpuAllocationParamArgs{...}
 type GetPeerOcpuAllocationParamInput interface {
 	pulumi.Input
 
@@ -4306,7 +4306,7 @@ func (i GetPeerOcpuAllocationParamArgs) ToGetPeerOcpuAllocationParamOutputWithCo
 // GetPeerOcpuAllocationParamArrayInput is an input type that accepts GetPeerOcpuAllocationParamArray and GetPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetPeerOcpuAllocationParamArrayInput` via:
 //
-//          GetPeerOcpuAllocationParamArray{ GetPeerOcpuAllocationParamArgs{...} }
+//	GetPeerOcpuAllocationParamArray{ GetPeerOcpuAllocationParamArgs{...} }
 type GetPeerOcpuAllocationParamArrayInput interface {
 	pulumi.Input
 
@@ -4376,7 +4376,7 @@ type GetPeersFilter struct {
 // GetPeersFilterInput is an input type that accepts GetPeersFilterArgs and GetPeersFilterOutput values.
 // You can construct a concrete instance of `GetPeersFilterInput` via:
 //
-//          GetPeersFilterArgs{...}
+//	GetPeersFilterArgs{...}
 type GetPeersFilterInput interface {
 	pulumi.Input
 
@@ -4405,7 +4405,7 @@ func (i GetPeersFilterArgs) ToGetPeersFilterOutputWithContext(ctx context.Contex
 // GetPeersFilterArrayInput is an input type that accepts GetPeersFilterArray and GetPeersFilterArrayOutput values.
 // You can construct a concrete instance of `GetPeersFilterArrayInput` via:
 //
-//          GetPeersFilterArray{ GetPeersFilterArgs{...} }
+//	GetPeersFilterArray{ GetPeersFilterArgs{...} }
 type GetPeersFilterArrayInput interface {
 	pulumi.Input
 
@@ -4480,7 +4480,7 @@ type GetPeersPeerCollection struct {
 // GetPeersPeerCollectionInput is an input type that accepts GetPeersPeerCollectionArgs and GetPeersPeerCollectionOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionInput` via:
 //
-//          GetPeersPeerCollectionArgs{...}
+//	GetPeersPeerCollectionArgs{...}
 type GetPeersPeerCollectionInput interface {
 	pulumi.Input
 
@@ -4507,7 +4507,7 @@ func (i GetPeersPeerCollectionArgs) ToGetPeersPeerCollectionOutputWithContext(ct
 // GetPeersPeerCollectionArrayInput is an input type that accepts GetPeersPeerCollectionArray and GetPeersPeerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionArrayInput` via:
 //
-//          GetPeersPeerCollectionArray{ GetPeersPeerCollectionArgs{...} }
+//	GetPeersPeerCollectionArray{ GetPeersPeerCollectionArgs{...} }
 type GetPeersPeerCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4589,7 +4589,7 @@ type GetPeersPeerCollectionItem struct {
 // GetPeersPeerCollectionItemInput is an input type that accepts GetPeersPeerCollectionItemArgs and GetPeersPeerCollectionItemOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionItemInput` via:
 //
-//          GetPeersPeerCollectionItemArgs{...}
+//	GetPeersPeerCollectionItemArgs{...}
 type GetPeersPeerCollectionItemInput interface {
 	pulumi.Input
 
@@ -4631,7 +4631,7 @@ func (i GetPeersPeerCollectionItemArgs) ToGetPeersPeerCollectionItemOutputWithCo
 // GetPeersPeerCollectionItemArrayInput is an input type that accepts GetPeersPeerCollectionItemArray and GetPeersPeerCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionItemArrayInput` via:
 //
-//          GetPeersPeerCollectionItemArray{ GetPeersPeerCollectionItemArgs{...} }
+//	GetPeersPeerCollectionItemArray{ GetPeersPeerCollectionItemArgs{...} }
 type GetPeersPeerCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4737,7 +4737,7 @@ type GetPeersPeerCollectionItemOcpuAllocationParam struct {
 // GetPeersPeerCollectionItemOcpuAllocationParamInput is an input type that accepts GetPeersPeerCollectionItemOcpuAllocationParamArgs and GetPeersPeerCollectionItemOcpuAllocationParamOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionItemOcpuAllocationParamInput` via:
 //
-//          GetPeersPeerCollectionItemOcpuAllocationParamArgs{...}
+//	GetPeersPeerCollectionItemOcpuAllocationParamArgs{...}
 type GetPeersPeerCollectionItemOcpuAllocationParamInput interface {
 	pulumi.Input
 

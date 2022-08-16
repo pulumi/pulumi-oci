@@ -28,7 +28,7 @@ type CustomTableSavedCustomTable struct {
 // CustomTableSavedCustomTableInput is an input type that accepts CustomTableSavedCustomTableArgs and CustomTableSavedCustomTableOutput values.
 // You can construct a concrete instance of `CustomTableSavedCustomTableInput` via:
 //
-//          CustomTableSavedCustomTableArgs{...}
+//	CustomTableSavedCustomTableArgs{...}
 type CustomTableSavedCustomTableInput interface {
 	pulumi.Input
 
@@ -74,11 +74,11 @@ func (i CustomTableSavedCustomTableArgs) ToCustomTableSavedCustomTablePtrOutputW
 // CustomTableSavedCustomTablePtrInput is an input type that accepts CustomTableSavedCustomTableArgs, CustomTableSavedCustomTablePtr and CustomTableSavedCustomTablePtrOutput values.
 // You can construct a concrete instance of `CustomTableSavedCustomTablePtrInput` via:
 //
-//          CustomTableSavedCustomTableArgs{...}
+//	        CustomTableSavedCustomTableArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CustomTableSavedCustomTablePtrInput interface {
 	pulumi.Input
 
@@ -254,7 +254,7 @@ type CustomTableSavedCustomTableGroupByTag struct {
 // CustomTableSavedCustomTableGroupByTagInput is an input type that accepts CustomTableSavedCustomTableGroupByTagArgs and CustomTableSavedCustomTableGroupByTagOutput values.
 // You can construct a concrete instance of `CustomTableSavedCustomTableGroupByTagInput` via:
 //
-//          CustomTableSavedCustomTableGroupByTagArgs{...}
+//	CustomTableSavedCustomTableGroupByTagArgs{...}
 type CustomTableSavedCustomTableGroupByTagInput interface {
 	pulumi.Input
 
@@ -286,7 +286,7 @@ func (i CustomTableSavedCustomTableGroupByTagArgs) ToCustomTableSavedCustomTable
 // CustomTableSavedCustomTableGroupByTagArrayInput is an input type that accepts CustomTableSavedCustomTableGroupByTagArray and CustomTableSavedCustomTableGroupByTagArrayOutput values.
 // You can construct a concrete instance of `CustomTableSavedCustomTableGroupByTagArrayInput` via:
 //
-//          CustomTableSavedCustomTableGroupByTagArray{ CustomTableSavedCustomTableGroupByTagArgs{...} }
+//	CustomTableSavedCustomTableGroupByTagArray{ CustomTableSavedCustomTableGroupByTagArgs{...} }
 type CustomTableSavedCustomTableGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -371,7 +371,7 @@ type QueryQueryDefinition struct {
 // QueryQueryDefinitionInput is an input type that accepts QueryQueryDefinitionArgs and QueryQueryDefinitionOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionInput` via:
 //
-//          QueryQueryDefinitionArgs{...}
+//	QueryQueryDefinitionArgs{...}
 type QueryQueryDefinitionInput interface {
 	pulumi.Input
 
@@ -413,11 +413,11 @@ func (i QueryQueryDefinitionArgs) ToQueryQueryDefinitionPtrOutputWithContext(ctx
 // QueryQueryDefinitionPtrInput is an input type that accepts QueryQueryDefinitionArgs, QueryQueryDefinitionPtr and QueryQueryDefinitionPtrOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionPtrInput` via:
 //
-//          QueryQueryDefinitionArgs{...}
+//	        QueryQueryDefinitionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type QueryQueryDefinitionPtrInput interface {
 	pulumi.Input
 
@@ -561,7 +561,7 @@ type QueryQueryDefinitionCostAnalysisUi struct {
 // QueryQueryDefinitionCostAnalysisUiInput is an input type that accepts QueryQueryDefinitionCostAnalysisUiArgs and QueryQueryDefinitionCostAnalysisUiOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionCostAnalysisUiInput` via:
 //
-//          QueryQueryDefinitionCostAnalysisUiArgs{...}
+//	QueryQueryDefinitionCostAnalysisUiArgs{...}
 type QueryQueryDefinitionCostAnalysisUiInput interface {
 	pulumi.Input
 
@@ -599,11 +599,11 @@ func (i QueryQueryDefinitionCostAnalysisUiArgs) ToQueryQueryDefinitionCostAnalys
 // QueryQueryDefinitionCostAnalysisUiPtrInput is an input type that accepts QueryQueryDefinitionCostAnalysisUiArgs, QueryQueryDefinitionCostAnalysisUiPtr and QueryQueryDefinitionCostAnalysisUiPtrOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionCostAnalysisUiPtrInput` via:
 //
-//          QueryQueryDefinitionCostAnalysisUiArgs{...}
+//	        QueryQueryDefinitionCostAnalysisUiArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type QueryQueryDefinitionCostAnalysisUiPtrInput interface {
 	pulumi.Input
 
@@ -737,7 +737,7 @@ type QueryQueryDefinitionReportQuery struct {
 // QueryQueryDefinitionReportQueryInput is an input type that accepts QueryQueryDefinitionReportQueryArgs and QueryQueryDefinitionReportQueryOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryInput` via:
 //
-//          QueryQueryDefinitionReportQueryArgs{...}
+//	QueryQueryDefinitionReportQueryArgs{...}
 type QueryQueryDefinitionReportQueryInput interface {
 	pulumi.Input
 
@@ -795,11 +795,11 @@ func (i QueryQueryDefinitionReportQueryArgs) ToQueryQueryDefinitionReportQueryPt
 // QueryQueryDefinitionReportQueryPtrInput is an input type that accepts QueryQueryDefinitionReportQueryArgs, QueryQueryDefinitionReportQueryPtr and QueryQueryDefinitionReportQueryPtrOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryPtrInput` via:
 //
-//          QueryQueryDefinitionReportQueryArgs{...}
+//	        QueryQueryDefinitionReportQueryArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type QueryQueryDefinitionReportQueryPtrInput interface {
 	pulumi.Input
 
@@ -1067,7 +1067,7 @@ type QueryQueryDefinitionReportQueryForecast struct {
 // QueryQueryDefinitionReportQueryForecastInput is an input type that accepts QueryQueryDefinitionReportQueryForecastArgs and QueryQueryDefinitionReportQueryForecastOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryForecastInput` via:
 //
-//          QueryQueryDefinitionReportQueryForecastArgs{...}
+//	QueryQueryDefinitionReportQueryForecastArgs{...}
 type QueryQueryDefinitionReportQueryForecastInput interface {
 	pulumi.Input
 
@@ -1107,11 +1107,11 @@ func (i QueryQueryDefinitionReportQueryForecastArgs) ToQueryQueryDefinitionRepor
 // QueryQueryDefinitionReportQueryForecastPtrInput is an input type that accepts QueryQueryDefinitionReportQueryForecastArgs, QueryQueryDefinitionReportQueryForecastPtr and QueryQueryDefinitionReportQueryForecastPtrOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryForecastPtrInput` via:
 //
-//          QueryQueryDefinitionReportQueryForecastArgs{...}
+//	        QueryQueryDefinitionReportQueryForecastArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type QueryQueryDefinitionReportQueryForecastPtrInput interface {
 	pulumi.Input
 
@@ -1242,7 +1242,7 @@ type QueryQueryDefinitionReportQueryGroupByTag struct {
 // QueryQueryDefinitionReportQueryGroupByTagInput is an input type that accepts QueryQueryDefinitionReportQueryGroupByTagArgs and QueryQueryDefinitionReportQueryGroupByTagOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryGroupByTagInput` via:
 //
-//          QueryQueryDefinitionReportQueryGroupByTagArgs{...}
+//	QueryQueryDefinitionReportQueryGroupByTagArgs{...}
 type QueryQueryDefinitionReportQueryGroupByTagInput interface {
 	pulumi.Input
 
@@ -1274,7 +1274,7 @@ func (i QueryQueryDefinitionReportQueryGroupByTagArgs) ToQueryQueryDefinitionRep
 // QueryQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts QueryQueryDefinitionReportQueryGroupByTagArray and QueryQueryDefinitionReportQueryGroupByTagArrayOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryGroupByTagArrayInput` via:
 //
-//          QueryQueryDefinitionReportQueryGroupByTagArray{ QueryQueryDefinitionReportQueryGroupByTagArgs{...} }
+//	QueryQueryDefinitionReportQueryGroupByTagArray{ QueryQueryDefinitionReportQueryGroupByTagArgs{...} }
 type QueryQueryDefinitionReportQueryGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -1367,7 +1367,7 @@ type ScheduleQueryProperties struct {
 // ScheduleQueryPropertiesInput is an input type that accepts ScheduleQueryPropertiesArgs and ScheduleQueryPropertiesOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesInput` via:
 //
-//          ScheduleQueryPropertiesArgs{...}
+//	ScheduleQueryPropertiesArgs{...}
 type ScheduleQueryPropertiesInput interface {
 	pulumi.Input
 
@@ -1417,11 +1417,11 @@ func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesPtrOutputWithConte
 // ScheduleQueryPropertiesPtrInput is an input type that accepts ScheduleQueryPropertiesArgs, ScheduleQueryPropertiesPtr and ScheduleQueryPropertiesPtrOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesPtrInput` via:
 //
-//          ScheduleQueryPropertiesArgs{...}
+//	        ScheduleQueryPropertiesArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ScheduleQueryPropertiesPtrInput interface {
 	pulumi.Input
 
@@ -1628,7 +1628,7 @@ type ScheduleQueryPropertiesDateRange struct {
 // ScheduleQueryPropertiesDateRangeInput is an input type that accepts ScheduleQueryPropertiesDateRangeArgs and ScheduleQueryPropertiesDateRangeOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesDateRangeInput` via:
 //
-//          ScheduleQueryPropertiesDateRangeArgs{...}
+//	ScheduleQueryPropertiesDateRangeArgs{...}
 type ScheduleQueryPropertiesDateRangeInput interface {
 	pulumi.Input
 
@@ -1669,11 +1669,11 @@ func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRange
 // ScheduleQueryPropertiesDateRangePtrInput is an input type that accepts ScheduleQueryPropertiesDateRangeArgs, ScheduleQueryPropertiesDateRangePtr and ScheduleQueryPropertiesDateRangePtrOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesDateRangePtrInput` via:
 //
-//          ScheduleQueryPropertiesDateRangeArgs{...}
+//	        ScheduleQueryPropertiesDateRangeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ScheduleQueryPropertiesDateRangePtrInput interface {
 	pulumi.Input
 
@@ -1817,7 +1817,7 @@ type ScheduleQueryPropertiesGroupByTag struct {
 // ScheduleQueryPropertiesGroupByTagInput is an input type that accepts ScheduleQueryPropertiesGroupByTagArgs and ScheduleQueryPropertiesGroupByTagOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesGroupByTagInput` via:
 //
-//          ScheduleQueryPropertiesGroupByTagArgs{...}
+//	ScheduleQueryPropertiesGroupByTagArgs{...}
 type ScheduleQueryPropertiesGroupByTagInput interface {
 	pulumi.Input
 
@@ -1849,7 +1849,7 @@ func (i ScheduleQueryPropertiesGroupByTagArgs) ToScheduleQueryPropertiesGroupByT
 // ScheduleQueryPropertiesGroupByTagArrayInput is an input type that accepts ScheduleQueryPropertiesGroupByTagArray and ScheduleQueryPropertiesGroupByTagArrayOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesGroupByTagArrayInput` via:
 //
-//          ScheduleQueryPropertiesGroupByTagArray{ ScheduleQueryPropertiesGroupByTagArgs{...} }
+//	ScheduleQueryPropertiesGroupByTagArray{ ScheduleQueryPropertiesGroupByTagArgs{...} }
 type ScheduleQueryPropertiesGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -1934,7 +1934,7 @@ type ScheduleResultLocation struct {
 // ScheduleResultLocationInput is an input type that accepts ScheduleResultLocationArgs and ScheduleResultLocationOutput values.
 // You can construct a concrete instance of `ScheduleResultLocationInput` via:
 //
-//          ScheduleResultLocationArgs{...}
+//	ScheduleResultLocationArgs{...}
 type ScheduleResultLocationInput interface {
 	pulumi.Input
 
@@ -1976,11 +1976,11 @@ func (i ScheduleResultLocationArgs) ToScheduleResultLocationPtrOutputWithContext
 // ScheduleResultLocationPtrInput is an input type that accepts ScheduleResultLocationArgs, ScheduleResultLocationPtr and ScheduleResultLocationPtrOutput values.
 // You can construct a concrete instance of `ScheduleResultLocationPtrInput` via:
 //
-//          ScheduleResultLocationArgs{...}
+//	        ScheduleResultLocationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ScheduleResultLocationPtrInput interface {
 	pulumi.Input
 
@@ -2126,7 +2126,7 @@ type UsageForecast struct {
 // UsageForecastInput is an input type that accepts UsageForecastArgs and UsageForecastOutput values.
 // You can construct a concrete instance of `UsageForecastInput` via:
 //
-//          UsageForecastArgs{...}
+//	UsageForecastArgs{...}
 type UsageForecastInput interface {
 	pulumi.Input
 
@@ -2166,11 +2166,11 @@ func (i UsageForecastArgs) ToUsageForecastPtrOutputWithContext(ctx context.Conte
 // UsageForecastPtrInput is an input type that accepts UsageForecastArgs, UsageForecastPtr and UsageForecastPtrOutput values.
 // You can construct a concrete instance of `UsageForecastPtrInput` via:
 //
-//          UsageForecastArgs{...}
+//	        UsageForecastArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type UsageForecastPtrInput interface {
 	pulumi.Input
 
@@ -2301,7 +2301,7 @@ type UsageGroupByTag struct {
 // UsageGroupByTagInput is an input type that accepts UsageGroupByTagArgs and UsageGroupByTagOutput values.
 // You can construct a concrete instance of `UsageGroupByTagInput` via:
 //
-//          UsageGroupByTagArgs{...}
+//	UsageGroupByTagArgs{...}
 type UsageGroupByTagInput interface {
 	pulumi.Input
 
@@ -2333,7 +2333,7 @@ func (i UsageGroupByTagArgs) ToUsageGroupByTagOutputWithContext(ctx context.Cont
 // UsageGroupByTagArrayInput is an input type that accepts UsageGroupByTagArray and UsageGroupByTagArrayOutput values.
 // You can construct a concrete instance of `UsageGroupByTagArrayInput` via:
 //
-//          UsageGroupByTagArray{ UsageGroupByTagArgs{...} }
+//	UsageGroupByTagArray{ UsageGroupByTagArgs{...} }
 type UsageGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -2468,7 +2468,7 @@ type UsageItem struct {
 // UsageItemInput is an input type that accepts UsageItemArgs and UsageItemOutput values.
 // You can construct a concrete instance of `UsageItemInput` via:
 //
-//          UsageItemArgs{...}
+//	UsageItemArgs{...}
 type UsageItemInput interface {
 	pulumi.Input
 
@@ -2552,7 +2552,7 @@ func (i UsageItemArgs) ToUsageItemOutputWithContext(ctx context.Context) UsageIt
 // UsageItemArrayInput is an input type that accepts UsageItemArray and UsageItemArrayOutput values.
 // You can construct a concrete instance of `UsageItemArrayInput` via:
 //
-//          UsageItemArray{ UsageItemArgs{...} }
+//	UsageItemArray{ UsageItemArgs{...} }
 type UsageItemArrayInput interface {
 	pulumi.Input
 
@@ -2765,7 +2765,7 @@ type UsageItemTag struct {
 // UsageItemTagInput is an input type that accepts UsageItemTagArgs and UsageItemTagOutput values.
 // You can construct a concrete instance of `UsageItemTagInput` via:
 //
-//          UsageItemTagArgs{...}
+//	UsageItemTagArgs{...}
 type UsageItemTagInput interface {
 	pulumi.Input
 
@@ -2797,7 +2797,7 @@ func (i UsageItemTagArgs) ToUsageItemTagOutputWithContext(ctx context.Context) U
 // UsageItemTagArrayInput is an input type that accepts UsageItemTagArray and UsageItemTagArrayOutput values.
 // You can construct a concrete instance of `UsageItemTagArrayInput` via:
 //
-//          UsageItemTagArray{ UsageItemTagArgs{...} }
+//	UsageItemTagArray{ UsageItemTagArgs{...} }
 type UsageItemTagArrayInput interface {
 	pulumi.Input
 
@@ -2878,7 +2878,7 @@ type GetConfigurationItem struct {
 // GetConfigurationItemInput is an input type that accepts GetConfigurationItemArgs and GetConfigurationItemOutput values.
 // You can construct a concrete instance of `GetConfigurationItemInput` via:
 //
-//          GetConfigurationItemArgs{...}
+//	GetConfigurationItemArgs{...}
 type GetConfigurationItemInput interface {
 	pulumi.Input
 
@@ -2908,7 +2908,7 @@ func (i GetConfigurationItemArgs) ToGetConfigurationItemOutputWithContext(ctx co
 // GetConfigurationItemArrayInput is an input type that accepts GetConfigurationItemArray and GetConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `GetConfigurationItemArrayInput` via:
 //
-//          GetConfigurationItemArray{ GetConfigurationItemArgs{...} }
+//	GetConfigurationItemArray{ GetConfigurationItemArgs{...} }
 type GetConfigurationItemArrayInput interface {
 	pulumi.Input
 
@@ -2992,7 +2992,7 @@ type GetCustomTableSavedCustomTable struct {
 // GetCustomTableSavedCustomTableInput is an input type that accepts GetCustomTableSavedCustomTableArgs and GetCustomTableSavedCustomTableOutput values.
 // You can construct a concrete instance of `GetCustomTableSavedCustomTableInput` via:
 //
-//          GetCustomTableSavedCustomTableArgs{...}
+//	GetCustomTableSavedCustomTableArgs{...}
 type GetCustomTableSavedCustomTableInput interface {
 	pulumi.Input
 
@@ -3030,7 +3030,7 @@ func (i GetCustomTableSavedCustomTableArgs) ToGetCustomTableSavedCustomTableOutp
 // GetCustomTableSavedCustomTableArrayInput is an input type that accepts GetCustomTableSavedCustomTableArray and GetCustomTableSavedCustomTableArrayOutput values.
 // You can construct a concrete instance of `GetCustomTableSavedCustomTableArrayInput` via:
 //
-//          GetCustomTableSavedCustomTableArray{ GetCustomTableSavedCustomTableArgs{...} }
+//	GetCustomTableSavedCustomTableArray{ GetCustomTableSavedCustomTableArgs{...} }
 type GetCustomTableSavedCustomTableArrayInput interface {
 	pulumi.Input
 
@@ -3130,7 +3130,7 @@ type GetCustomTableSavedCustomTableGroupByTag struct {
 // GetCustomTableSavedCustomTableGroupByTagInput is an input type that accepts GetCustomTableSavedCustomTableGroupByTagArgs and GetCustomTableSavedCustomTableGroupByTagOutput values.
 // You can construct a concrete instance of `GetCustomTableSavedCustomTableGroupByTagInput` via:
 //
-//          GetCustomTableSavedCustomTableGroupByTagArgs{...}
+//	GetCustomTableSavedCustomTableGroupByTagArgs{...}
 type GetCustomTableSavedCustomTableGroupByTagInput interface {
 	pulumi.Input
 
@@ -3162,7 +3162,7 @@ func (i GetCustomTableSavedCustomTableGroupByTagArgs) ToGetCustomTableSavedCusto
 // GetCustomTableSavedCustomTableGroupByTagArrayInput is an input type that accepts GetCustomTableSavedCustomTableGroupByTagArray and GetCustomTableSavedCustomTableGroupByTagArrayOutput values.
 // You can construct a concrete instance of `GetCustomTableSavedCustomTableGroupByTagArrayInput` via:
 //
-//          GetCustomTableSavedCustomTableGroupByTagArray{ GetCustomTableSavedCustomTableGroupByTagArgs{...} }
+//	GetCustomTableSavedCustomTableGroupByTagArray{ GetCustomTableSavedCustomTableGroupByTagArgs{...} }
 type GetCustomTableSavedCustomTableGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -3240,7 +3240,7 @@ type GetCustomTablesCustomTableCollection struct {
 // GetCustomTablesCustomTableCollectionInput is an input type that accepts GetCustomTablesCustomTableCollectionArgs and GetCustomTablesCustomTableCollectionOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionInput` via:
 //
-//          GetCustomTablesCustomTableCollectionArgs{...}
+//	GetCustomTablesCustomTableCollectionArgs{...}
 type GetCustomTablesCustomTableCollectionInput interface {
 	pulumi.Input
 
@@ -3267,7 +3267,7 @@ func (i GetCustomTablesCustomTableCollectionArgs) ToGetCustomTablesCustomTableCo
 // GetCustomTablesCustomTableCollectionArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionArray and GetCustomTablesCustomTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionArrayInput` via:
 //
-//          GetCustomTablesCustomTableCollectionArray{ GetCustomTablesCustomTableCollectionArgs{...} }
+//	GetCustomTablesCustomTableCollectionArray{ GetCustomTablesCustomTableCollectionArgs{...} }
 type GetCustomTablesCustomTableCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3343,7 +3343,7 @@ type GetCustomTablesCustomTableCollectionItem struct {
 // GetCustomTablesCustomTableCollectionItemInput is an input type that accepts GetCustomTablesCustomTableCollectionItemArgs and GetCustomTablesCustomTableCollectionItemOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionItemInput` via:
 //
-//          GetCustomTablesCustomTableCollectionItemArgs{...}
+//	GetCustomTablesCustomTableCollectionItemArgs{...}
 type GetCustomTablesCustomTableCollectionItemInput interface {
 	pulumi.Input
 
@@ -3377,7 +3377,7 @@ func (i GetCustomTablesCustomTableCollectionItemArgs) ToGetCustomTablesCustomTab
 // GetCustomTablesCustomTableCollectionItemArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionItemArray and GetCustomTablesCustomTableCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionItemArrayInput` via:
 //
-//          GetCustomTablesCustomTableCollectionItemArray{ GetCustomTablesCustomTableCollectionItemArgs{...} }
+//	GetCustomTablesCustomTableCollectionItemArray{ GetCustomTablesCustomTableCollectionItemArgs{...} }
 type GetCustomTablesCustomTableCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3473,7 +3473,7 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTable struct {
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs and GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionItemSavedCustomTableInput` via:
 //
-//          GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs{...}
+//	GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs{...}
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableInput interface {
 	pulumi.Input
 
@@ -3511,7 +3511,7 @@ func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs) ToGetCusto
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableArray and GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayInput` via:
 //
-//          GetCustomTablesCustomTableCollectionItemSavedCustomTableArray{ GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs{...} }
+//	GetCustomTablesCustomTableCollectionItemSavedCustomTableArray{ GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs{...} }
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayInput interface {
 	pulumi.Input
 
@@ -3611,7 +3611,7 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag struct {
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs and GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagInput` via:
 //
-//          GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs{...}
+//	GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs{...}
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagInput interface {
 	pulumi.Input
 
@@ -3643,7 +3643,7 @@ func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs) 
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArray and GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayInput` via:
 //
-//          GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArray{ GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs{...} }
+//	GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArray{ GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs{...} }
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -3723,7 +3723,7 @@ type GetCustomTablesFilter struct {
 // GetCustomTablesFilterInput is an input type that accepts GetCustomTablesFilterArgs and GetCustomTablesFilterOutput values.
 // You can construct a concrete instance of `GetCustomTablesFilterInput` via:
 //
-//          GetCustomTablesFilterArgs{...}
+//	GetCustomTablesFilterArgs{...}
 type GetCustomTablesFilterInput interface {
 	pulumi.Input
 
@@ -3752,7 +3752,7 @@ func (i GetCustomTablesFilterArgs) ToGetCustomTablesFilterOutputWithContext(ctx 
 // GetCustomTablesFilterArrayInput is an input type that accepts GetCustomTablesFilterArray and GetCustomTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesFilterArrayInput` via:
 //
-//          GetCustomTablesFilterArray{ GetCustomTablesFilterArgs{...} }
+//	GetCustomTablesFilterArray{ GetCustomTablesFilterArgs{...} }
 type GetCustomTablesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3829,7 +3829,7 @@ type GetQueriesFilter struct {
 // GetQueriesFilterInput is an input type that accepts GetQueriesFilterArgs and GetQueriesFilterOutput values.
 // You can construct a concrete instance of `GetQueriesFilterInput` via:
 //
-//          GetQueriesFilterArgs{...}
+//	GetQueriesFilterArgs{...}
 type GetQueriesFilterInput interface {
 	pulumi.Input
 
@@ -3858,7 +3858,7 @@ func (i GetQueriesFilterArgs) ToGetQueriesFilterOutputWithContext(ctx context.Co
 // GetQueriesFilterArrayInput is an input type that accepts GetQueriesFilterArray and GetQueriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueriesFilterArrayInput` via:
 //
-//          GetQueriesFilterArray{ GetQueriesFilterArgs{...} }
+//	GetQueriesFilterArray{ GetQueriesFilterArgs{...} }
 type GetQueriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3933,7 +3933,7 @@ type GetQueriesQueryCollection struct {
 // GetQueriesQueryCollectionInput is an input type that accepts GetQueriesQueryCollectionArgs and GetQueriesQueryCollectionOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionInput` via:
 //
-//          GetQueriesQueryCollectionArgs{...}
+//	GetQueriesQueryCollectionArgs{...}
 type GetQueriesQueryCollectionInput interface {
 	pulumi.Input
 
@@ -3960,7 +3960,7 @@ func (i GetQueriesQueryCollectionArgs) ToGetQueriesQueryCollectionOutputWithCont
 // GetQueriesQueryCollectionArrayInput is an input type that accepts GetQueriesQueryCollectionArray and GetQueriesQueryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionArrayInput` via:
 //
-//          GetQueriesQueryCollectionArray{ GetQueriesQueryCollectionArgs{...} }
+//	GetQueriesQueryCollectionArray{ GetQueriesQueryCollectionArgs{...} }
 type GetQueriesQueryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4032,7 +4032,7 @@ type GetQueriesQueryCollectionItem struct {
 // GetQueriesQueryCollectionItemInput is an input type that accepts GetQueriesQueryCollectionItemArgs and GetQueriesQueryCollectionItemOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemInput` via:
 //
-//          GetQueriesQueryCollectionItemArgs{...}
+//	GetQueriesQueryCollectionItemArgs{...}
 type GetQueriesQueryCollectionItemInput interface {
 	pulumi.Input
 
@@ -4064,7 +4064,7 @@ func (i GetQueriesQueryCollectionItemArgs) ToGetQueriesQueryCollectionItemOutput
 // GetQueriesQueryCollectionItemArrayInput is an input type that accepts GetQueriesQueryCollectionItemArray and GetQueriesQueryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemArrayInput` via:
 //
-//          GetQueriesQueryCollectionItemArray{ GetQueriesQueryCollectionItemArgs{...} }
+//	GetQueriesQueryCollectionItemArray{ GetQueriesQueryCollectionItemArgs{...} }
 type GetQueriesQueryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4151,7 +4151,7 @@ type GetQueriesQueryCollectionItemQueryDefinition struct {
 // GetQueriesQueryCollectionItemQueryDefinitionInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionArgs and GetQueriesQueryCollectionItemQueryDefinitionOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionArgs{...}
+//	GetQueriesQueryCollectionItemQueryDefinitionArgs{...}
 type GetQueriesQueryCollectionItemQueryDefinitionInput interface {
 	pulumi.Input
 
@@ -4185,7 +4185,7 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionArgs) ToGetQueriesQueryColle
 // GetQueriesQueryCollectionItemQueryDefinitionArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionArray and GetQueriesQueryCollectionItemQueryDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionArrayInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionArray{ GetQueriesQueryCollectionItemQueryDefinitionArgs{...} }
+//	GetQueriesQueryCollectionItemQueryDefinitionArray{ GetQueriesQueryCollectionItemQueryDefinitionArgs{...} }
 type GetQueriesQueryCollectionItemQueryDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -4275,7 +4275,7 @@ type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi struct {
 // GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs and GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{...}
+//	GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{...}
 type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiInput interface {
 	pulumi.Input
 
@@ -4305,7 +4305,7 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ToGetQue
 // GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArray and GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArray{ GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{...} }
+//	GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArray{ GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{...} }
 type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput interface {
 	pulumi.Input
 
@@ -4401,7 +4401,7 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQuery struct {
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs and GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionReportQueryInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs{...}
+//	GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs{...}
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryInput interface {
 	pulumi.Input
 
@@ -4451,7 +4451,7 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs) ToGetQuerie
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryArray and GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionReportQueryArray{ GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs{...} }
+//	GetQueriesQueryCollectionItemQueryDefinitionReportQueryArray{ GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs{...} }
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayInput interface {
 	pulumi.Input
 
@@ -4583,7 +4583,7 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast struct {
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs and GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs{...}
+//	GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs{...}
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastInput interface {
 	pulumi.Input
 
@@ -4615,7 +4615,7 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs) ToG
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArray and GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArray{ GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs{...} }
+//	GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArray{ GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs{...} }
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput interface {
 	pulumi.Input
 
@@ -4702,7 +4702,7 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag struct {
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs and GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{...}
+//	GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{...}
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput interface {
 	pulumi.Input
 
@@ -4734,7 +4734,7 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) T
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray and GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput` via:
 //
-//          GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray{ GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{...} }
+//	GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray{ GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{...} }
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -4819,7 +4819,7 @@ type GetQueryQueryDefinition struct {
 // GetQueryQueryDefinitionInput is an input type that accepts GetQueryQueryDefinitionArgs and GetQueryQueryDefinitionOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionInput` via:
 //
-//          GetQueryQueryDefinitionArgs{...}
+//	GetQueryQueryDefinitionArgs{...}
 type GetQueryQueryDefinitionInput interface {
 	pulumi.Input
 
@@ -4853,7 +4853,7 @@ func (i GetQueryQueryDefinitionArgs) ToGetQueryQueryDefinitionOutputWithContext(
 // GetQueryQueryDefinitionArrayInput is an input type that accepts GetQueryQueryDefinitionArray and GetQueryQueryDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionArrayInput` via:
 //
-//          GetQueryQueryDefinitionArray{ GetQueryQueryDefinitionArgs{...} }
+//	GetQueryQueryDefinitionArray{ GetQueryQueryDefinitionArgs{...} }
 type GetQueryQueryDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -4939,7 +4939,7 @@ type GetQueryQueryDefinitionCostAnalysisUi struct {
 // GetQueryQueryDefinitionCostAnalysisUiInput is an input type that accepts GetQueryQueryDefinitionCostAnalysisUiArgs and GetQueryQueryDefinitionCostAnalysisUiOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionCostAnalysisUiInput` via:
 //
-//          GetQueryQueryDefinitionCostAnalysisUiArgs{...}
+//	GetQueryQueryDefinitionCostAnalysisUiArgs{...}
 type GetQueryQueryDefinitionCostAnalysisUiInput interface {
 	pulumi.Input
 
@@ -4969,7 +4969,7 @@ func (i GetQueryQueryDefinitionCostAnalysisUiArgs) ToGetQueryQueryDefinitionCost
 // GetQueryQueryDefinitionCostAnalysisUiArrayInput is an input type that accepts GetQueryQueryDefinitionCostAnalysisUiArray and GetQueryQueryDefinitionCostAnalysisUiArrayOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionCostAnalysisUiArrayInput` via:
 //
-//          GetQueryQueryDefinitionCostAnalysisUiArray{ GetQueryQueryDefinitionCostAnalysisUiArgs{...} }
+//	GetQueryQueryDefinitionCostAnalysisUiArray{ GetQueryQueryDefinitionCostAnalysisUiArgs{...} }
 type GetQueryQueryDefinitionCostAnalysisUiArrayInput interface {
 	pulumi.Input
 
@@ -5065,7 +5065,7 @@ type GetQueryQueryDefinitionReportQuery struct {
 // GetQueryQueryDefinitionReportQueryInput is an input type that accepts GetQueryQueryDefinitionReportQueryArgs and GetQueryQueryDefinitionReportQueryOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionReportQueryInput` via:
 //
-//          GetQueryQueryDefinitionReportQueryArgs{...}
+//	GetQueryQueryDefinitionReportQueryArgs{...}
 type GetQueryQueryDefinitionReportQueryInput interface {
 	pulumi.Input
 
@@ -5115,7 +5115,7 @@ func (i GetQueryQueryDefinitionReportQueryArgs) ToGetQueryQueryDefinitionReportQ
 // GetQueryQueryDefinitionReportQueryArrayInput is an input type that accepts GetQueryQueryDefinitionReportQueryArray and GetQueryQueryDefinitionReportQueryArrayOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionReportQueryArrayInput` via:
 //
-//          GetQueryQueryDefinitionReportQueryArray{ GetQueryQueryDefinitionReportQueryArgs{...} }
+//	GetQueryQueryDefinitionReportQueryArray{ GetQueryQueryDefinitionReportQueryArgs{...} }
 type GetQueryQueryDefinitionReportQueryArrayInput interface {
 	pulumi.Input
 
@@ -5247,7 +5247,7 @@ type GetQueryQueryDefinitionReportQueryForecast struct {
 // GetQueryQueryDefinitionReportQueryForecastInput is an input type that accepts GetQueryQueryDefinitionReportQueryForecastArgs and GetQueryQueryDefinitionReportQueryForecastOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionReportQueryForecastInput` via:
 //
-//          GetQueryQueryDefinitionReportQueryForecastArgs{...}
+//	GetQueryQueryDefinitionReportQueryForecastArgs{...}
 type GetQueryQueryDefinitionReportQueryForecastInput interface {
 	pulumi.Input
 
@@ -5279,7 +5279,7 @@ func (i GetQueryQueryDefinitionReportQueryForecastArgs) ToGetQueryQueryDefinitio
 // GetQueryQueryDefinitionReportQueryForecastArrayInput is an input type that accepts GetQueryQueryDefinitionReportQueryForecastArray and GetQueryQueryDefinitionReportQueryForecastArrayOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionReportQueryForecastArrayInput` via:
 //
-//          GetQueryQueryDefinitionReportQueryForecastArray{ GetQueryQueryDefinitionReportQueryForecastArgs{...} }
+//	GetQueryQueryDefinitionReportQueryForecastArray{ GetQueryQueryDefinitionReportQueryForecastArgs{...} }
 type GetQueryQueryDefinitionReportQueryForecastArrayInput interface {
 	pulumi.Input
 
@@ -5362,7 +5362,7 @@ type GetQueryQueryDefinitionReportQueryGroupByTag struct {
 // GetQueryQueryDefinitionReportQueryGroupByTagInput is an input type that accepts GetQueryQueryDefinitionReportQueryGroupByTagArgs and GetQueryQueryDefinitionReportQueryGroupByTagOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionReportQueryGroupByTagInput` via:
 //
-//          GetQueryQueryDefinitionReportQueryGroupByTagArgs{...}
+//	GetQueryQueryDefinitionReportQueryGroupByTagArgs{...}
 type GetQueryQueryDefinitionReportQueryGroupByTagInput interface {
 	pulumi.Input
 
@@ -5394,7 +5394,7 @@ func (i GetQueryQueryDefinitionReportQueryGroupByTagArgs) ToGetQueryQueryDefinit
 // GetQueryQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts GetQueryQueryDefinitionReportQueryGroupByTagArray and GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput values.
 // You can construct a concrete instance of `GetQueryQueryDefinitionReportQueryGroupByTagArrayInput` via:
 //
-//          GetQueryQueryDefinitionReportQueryGroupByTagArray{ GetQueryQueryDefinitionReportQueryGroupByTagArgs{...} }
+//	GetQueryQueryDefinitionReportQueryGroupByTagArray{ GetQueryQueryDefinitionReportQueryGroupByTagArgs{...} }
 type GetQueryQueryDefinitionReportQueryGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -5487,7 +5487,7 @@ type GetScheduleQueryProperty struct {
 // GetScheduleQueryPropertyInput is an input type that accepts GetScheduleQueryPropertyArgs and GetScheduleQueryPropertyOutput values.
 // You can construct a concrete instance of `GetScheduleQueryPropertyInput` via:
 //
-//          GetScheduleQueryPropertyArgs{...}
+//	GetScheduleQueryPropertyArgs{...}
 type GetScheduleQueryPropertyInput interface {
 	pulumi.Input
 
@@ -5529,7 +5529,7 @@ func (i GetScheduleQueryPropertyArgs) ToGetScheduleQueryPropertyOutputWithContex
 // GetScheduleQueryPropertyArrayInput is an input type that accepts GetScheduleQueryPropertyArray and GetScheduleQueryPropertyArrayOutput values.
 // You can construct a concrete instance of `GetScheduleQueryPropertyArrayInput` via:
 //
-//          GetScheduleQueryPropertyArray{ GetScheduleQueryPropertyArgs{...} }
+//	GetScheduleQueryPropertyArray{ GetScheduleQueryPropertyArgs{...} }
 type GetScheduleQueryPropertyArrayInput interface {
 	pulumi.Input
 
@@ -5638,7 +5638,7 @@ type GetScheduleQueryPropertyDateRange struct {
 // GetScheduleQueryPropertyDateRangeInput is an input type that accepts GetScheduleQueryPropertyDateRangeArgs and GetScheduleQueryPropertyDateRangeOutput values.
 // You can construct a concrete instance of `GetScheduleQueryPropertyDateRangeInput` via:
 //
-//          GetScheduleQueryPropertyDateRangeArgs{...}
+//	GetScheduleQueryPropertyDateRangeArgs{...}
 type GetScheduleQueryPropertyDateRangeInput interface {
 	pulumi.Input
 
@@ -5671,7 +5671,7 @@ func (i GetScheduleQueryPropertyDateRangeArgs) ToGetScheduleQueryPropertyDateRan
 // GetScheduleQueryPropertyDateRangeArrayInput is an input type that accepts GetScheduleQueryPropertyDateRangeArray and GetScheduleQueryPropertyDateRangeArrayOutput values.
 // You can construct a concrete instance of `GetScheduleQueryPropertyDateRangeArrayInput` via:
 //
-//          GetScheduleQueryPropertyDateRangeArray{ GetScheduleQueryPropertyDateRangeArgs{...} }
+//	GetScheduleQueryPropertyDateRangeArray{ GetScheduleQueryPropertyDateRangeArgs{...} }
 type GetScheduleQueryPropertyDateRangeArrayInput interface {
 	pulumi.Input
 
@@ -5758,7 +5758,7 @@ type GetScheduleQueryPropertyGroupByTag struct {
 // GetScheduleQueryPropertyGroupByTagInput is an input type that accepts GetScheduleQueryPropertyGroupByTagArgs and GetScheduleQueryPropertyGroupByTagOutput values.
 // You can construct a concrete instance of `GetScheduleQueryPropertyGroupByTagInput` via:
 //
-//          GetScheduleQueryPropertyGroupByTagArgs{...}
+//	GetScheduleQueryPropertyGroupByTagArgs{...}
 type GetScheduleQueryPropertyGroupByTagInput interface {
 	pulumi.Input
 
@@ -5790,7 +5790,7 @@ func (i GetScheduleQueryPropertyGroupByTagArgs) ToGetScheduleQueryPropertyGroupB
 // GetScheduleQueryPropertyGroupByTagArrayInput is an input type that accepts GetScheduleQueryPropertyGroupByTagArray and GetScheduleQueryPropertyGroupByTagArrayOutput values.
 // You can construct a concrete instance of `GetScheduleQueryPropertyGroupByTagArrayInput` via:
 //
-//          GetScheduleQueryPropertyGroupByTagArray{ GetScheduleQueryPropertyGroupByTagArgs{...} }
+//	GetScheduleQueryPropertyGroupByTagArray{ GetScheduleQueryPropertyGroupByTagArgs{...} }
 type GetScheduleQueryPropertyGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -5875,7 +5875,7 @@ type GetScheduleResultLocation struct {
 // GetScheduleResultLocationInput is an input type that accepts GetScheduleResultLocationArgs and GetScheduleResultLocationOutput values.
 // You can construct a concrete instance of `GetScheduleResultLocationInput` via:
 //
-//          GetScheduleResultLocationArgs{...}
+//	GetScheduleResultLocationArgs{...}
 type GetScheduleResultLocationInput interface {
 	pulumi.Input
 
@@ -5909,7 +5909,7 @@ func (i GetScheduleResultLocationArgs) ToGetScheduleResultLocationOutputWithCont
 // GetScheduleResultLocationArrayInput is an input type that accepts GetScheduleResultLocationArray and GetScheduleResultLocationArrayOutput values.
 // You can construct a concrete instance of `GetScheduleResultLocationArrayInput` via:
 //
-//          GetScheduleResultLocationArray{ GetScheduleResultLocationArgs{...} }
+//	GetScheduleResultLocationArray{ GetScheduleResultLocationArgs{...} }
 type GetScheduleResultLocationArrayInput interface {
 	pulumi.Input
 
@@ -5994,7 +5994,7 @@ type GetScheduledRunsFilter struct {
 // GetScheduledRunsFilterInput is an input type that accepts GetScheduledRunsFilterArgs and GetScheduledRunsFilterOutput values.
 // You can construct a concrete instance of `GetScheduledRunsFilterInput` via:
 //
-//          GetScheduledRunsFilterArgs{...}
+//	GetScheduledRunsFilterArgs{...}
 type GetScheduledRunsFilterInput interface {
 	pulumi.Input
 
@@ -6023,7 +6023,7 @@ func (i GetScheduledRunsFilterArgs) ToGetScheduledRunsFilterOutputWithContext(ct
 // GetScheduledRunsFilterArrayInput is an input type that accepts GetScheduledRunsFilterArray and GetScheduledRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetScheduledRunsFilterArrayInput` via:
 //
-//          GetScheduledRunsFilterArray{ GetScheduledRunsFilterArgs{...} }
+//	GetScheduledRunsFilterArray{ GetScheduledRunsFilterArgs{...} }
 type GetScheduledRunsFilterArrayInput interface {
 	pulumi.Input
 
@@ -6098,7 +6098,7 @@ type GetScheduledRunsScheduledRunCollection struct {
 // GetScheduledRunsScheduledRunCollectionInput is an input type that accepts GetScheduledRunsScheduledRunCollectionArgs and GetScheduledRunsScheduledRunCollectionOutput values.
 // You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionInput` via:
 //
-//          GetScheduledRunsScheduledRunCollectionArgs{...}
+//	GetScheduledRunsScheduledRunCollectionArgs{...}
 type GetScheduledRunsScheduledRunCollectionInput interface {
 	pulumi.Input
 
@@ -6125,7 +6125,7 @@ func (i GetScheduledRunsScheduledRunCollectionArgs) ToGetScheduledRunsScheduledR
 // GetScheduledRunsScheduledRunCollectionArrayInput is an input type that accepts GetScheduledRunsScheduledRunCollectionArray and GetScheduledRunsScheduledRunCollectionArrayOutput values.
 // You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionArrayInput` via:
 //
-//          GetScheduledRunsScheduledRunCollectionArray{ GetScheduledRunsScheduledRunCollectionArgs{...} }
+//	GetScheduledRunsScheduledRunCollectionArray{ GetScheduledRunsScheduledRunCollectionArgs{...} }
 type GetScheduledRunsScheduledRunCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6205,7 +6205,7 @@ type GetScheduledRunsScheduledRunCollectionItem struct {
 // GetScheduledRunsScheduledRunCollectionItemInput is an input type that accepts GetScheduledRunsScheduledRunCollectionItemArgs and GetScheduledRunsScheduledRunCollectionItemOutput values.
 // You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionItemInput` via:
 //
-//          GetScheduledRunsScheduledRunCollectionItemArgs{...}
+//	GetScheduledRunsScheduledRunCollectionItemArgs{...}
 type GetScheduledRunsScheduledRunCollectionItemInput interface {
 	pulumi.Input
 
@@ -6243,7 +6243,7 @@ func (i GetScheduledRunsScheduledRunCollectionItemArgs) ToGetScheduledRunsSchedu
 // GetScheduledRunsScheduledRunCollectionItemArrayInput is an input type that accepts GetScheduledRunsScheduledRunCollectionItemArray and GetScheduledRunsScheduledRunCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionItemArrayInput` via:
 //
-//          GetScheduledRunsScheduledRunCollectionItemArray{ GetScheduledRunsScheduledRunCollectionItemArgs{...} }
+//	GetScheduledRunsScheduledRunCollectionItemArray{ GetScheduledRunsScheduledRunCollectionItemArgs{...} }
 type GetScheduledRunsScheduledRunCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6339,7 +6339,7 @@ type GetSchedulesFilter struct {
 // GetSchedulesFilterInput is an input type that accepts GetSchedulesFilterArgs and GetSchedulesFilterOutput values.
 // You can construct a concrete instance of `GetSchedulesFilterInput` via:
 //
-//          GetSchedulesFilterArgs{...}
+//	GetSchedulesFilterArgs{...}
 type GetSchedulesFilterInput interface {
 	pulumi.Input
 
@@ -6369,7 +6369,7 @@ func (i GetSchedulesFilterArgs) ToGetSchedulesFilterOutputWithContext(ctx contex
 // GetSchedulesFilterArrayInput is an input type that accepts GetSchedulesFilterArray and GetSchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesFilterArrayInput` via:
 //
-//          GetSchedulesFilterArray{ GetSchedulesFilterArgs{...} }
+//	GetSchedulesFilterArray{ GetSchedulesFilterArgs{...} }
 type GetSchedulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -6445,7 +6445,7 @@ type GetSchedulesScheduleCollection struct {
 // GetSchedulesScheduleCollectionInput is an input type that accepts GetSchedulesScheduleCollectionArgs and GetSchedulesScheduleCollectionOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionInput` via:
 //
-//          GetSchedulesScheduleCollectionArgs{...}
+//	GetSchedulesScheduleCollectionArgs{...}
 type GetSchedulesScheduleCollectionInput interface {
 	pulumi.Input
 
@@ -6472,7 +6472,7 @@ func (i GetSchedulesScheduleCollectionArgs) ToGetSchedulesScheduleCollectionOutp
 // GetSchedulesScheduleCollectionArrayInput is an input type that accepts GetSchedulesScheduleCollectionArray and GetSchedulesScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionArrayInput` via:
 //
-//          GetSchedulesScheduleCollectionArray{ GetSchedulesScheduleCollectionArgs{...} }
+//	GetSchedulesScheduleCollectionArray{ GetSchedulesScheduleCollectionArgs{...} }
 type GetSchedulesScheduleCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6562,7 +6562,7 @@ type GetSchedulesScheduleCollectionItem struct {
 // GetSchedulesScheduleCollectionItemInput is an input type that accepts GetSchedulesScheduleCollectionItemArgs and GetSchedulesScheduleCollectionItemOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemInput` via:
 //
-//          GetSchedulesScheduleCollectionItemArgs{...}
+//	GetSchedulesScheduleCollectionItemArgs{...}
 type GetSchedulesScheduleCollectionItemInput interface {
 	pulumi.Input
 
@@ -6612,7 +6612,7 @@ func (i GetSchedulesScheduleCollectionItemArgs) ToGetSchedulesScheduleCollection
 // GetSchedulesScheduleCollectionItemArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemArray and GetSchedulesScheduleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemArrayInput` via:
 //
-//          GetSchedulesScheduleCollectionItemArray{ GetSchedulesScheduleCollectionItemArgs{...} }
+//	GetSchedulesScheduleCollectionItemArray{ GetSchedulesScheduleCollectionItemArgs{...} }
 type GetSchedulesScheduleCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6754,7 +6754,7 @@ type GetSchedulesScheduleCollectionItemQueryProperty struct {
 // GetSchedulesScheduleCollectionItemQueryPropertyInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyArgs and GetSchedulesScheduleCollectionItemQueryPropertyOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyInput` via:
 //
-//          GetSchedulesScheduleCollectionItemQueryPropertyArgs{...}
+//	GetSchedulesScheduleCollectionItemQueryPropertyArgs{...}
 type GetSchedulesScheduleCollectionItemQueryPropertyInput interface {
 	pulumi.Input
 
@@ -6796,7 +6796,7 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyArgs) ToGetSchedulesSched
 // GetSchedulesScheduleCollectionItemQueryPropertyArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyArray and GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyArrayInput` via:
 //
-//          GetSchedulesScheduleCollectionItemQueryPropertyArray{ GetSchedulesScheduleCollectionItemQueryPropertyArgs{...} }
+//	GetSchedulesScheduleCollectionItemQueryPropertyArray{ GetSchedulesScheduleCollectionItemQueryPropertyArgs{...} }
 type GetSchedulesScheduleCollectionItemQueryPropertyArrayInput interface {
 	pulumi.Input
 
@@ -6909,7 +6909,7 @@ type GetSchedulesScheduleCollectionItemQueryPropertyDateRange struct {
 // GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs and GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput` via:
 //
-//          GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{...}
+//	GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{...}
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput interface {
 	pulumi.Input
 
@@ -6942,7 +6942,7 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ToGetSched
 // GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray and GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput` via:
 //
-//          GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray{ GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{...} }
+//	GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray{ GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{...} }
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput interface {
 	pulumi.Input
 
@@ -7029,7 +7029,7 @@ type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag struct {
 // GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs and GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput` via:
 //
-//          GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{...}
+//	GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{...}
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput interface {
 	pulumi.Input
 
@@ -7061,7 +7061,7 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ToGetSche
 // GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray and GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput` via:
 //
-//          GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray{ GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{...} }
+//	GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray{ GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{...} }
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput interface {
 	pulumi.Input
 
@@ -7146,7 +7146,7 @@ type GetSchedulesScheduleCollectionItemResultLocation struct {
 // GetSchedulesScheduleCollectionItemResultLocationInput is an input type that accepts GetSchedulesScheduleCollectionItemResultLocationArgs and GetSchedulesScheduleCollectionItemResultLocationOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemResultLocationInput` via:
 //
-//          GetSchedulesScheduleCollectionItemResultLocationArgs{...}
+//	GetSchedulesScheduleCollectionItemResultLocationArgs{...}
 type GetSchedulesScheduleCollectionItemResultLocationInput interface {
 	pulumi.Input
 
@@ -7180,7 +7180,7 @@ func (i GetSchedulesScheduleCollectionItemResultLocationArgs) ToGetSchedulesSche
 // GetSchedulesScheduleCollectionItemResultLocationArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemResultLocationArray and GetSchedulesScheduleCollectionItemResultLocationArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionItemResultLocationArrayInput` via:
 //
-//          GetSchedulesScheduleCollectionItemResultLocationArray{ GetSchedulesScheduleCollectionItemResultLocationArgs{...} }
+//	GetSchedulesScheduleCollectionItemResultLocationArray{ GetSchedulesScheduleCollectionItemResultLocationArgs{...} }
 type GetSchedulesScheduleCollectionItemResultLocationArrayInput interface {
 	pulumi.Input
 

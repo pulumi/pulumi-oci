@@ -21,38 +21,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewComputeImageCapabilitySchema(ctx, "testComputeImageCapabilitySchema", &Core.ComputeImageCapabilitySchemaArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ComputeGlobalImageCapabilitySchemaVersionName: pulumi.Any(_var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name),
-// 			ImageId: pulumi.Any(oci_core_image.Test_image.Id),
-// 			SchemaData: pulumi.AnyMap{
-// 				pulumi.Any{
-// 					DescriptorType: _var.Compute_image_capability_schema_schema_data_descriptor_type,
-// 					Source:         _var.Compute_image_capability_schema_schema_data_source,
-// 					DefaultValue:   _var.Compute_image_capability_schema_schema_data_default_value,
-// 					Values:         _var.Compute_image_capability_schema_schema_data_values,
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Compute_image_capability_schema_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewComputeImageCapabilitySchema(ctx, "testComputeImageCapabilitySchema", &Core.ComputeImageCapabilitySchemaArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ComputeGlobalImageCapabilitySchemaVersionName: pulumi.Any(_var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name),
+//				ImageId: pulumi.Any(oci_core_image.Test_image.Id),
+//				SchemaData: pulumi.AnyMap{
+//					pulumi.Any{
+//						DescriptorType: _var.Compute_image_capability_schema_schema_data_descriptor_type,
+//						Source:         _var.Compute_image_capability_schema_schema_data_source,
+//						DefaultValue:   _var.Compute_image_capability_schema_schema_data_default_value,
+//						Values:         _var.Compute_image_capability_schema_schema_data_values,
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Compute_image_capability_schema_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
+//
+//	$ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
+//
 // ```
 type ComputeImageCapabilitySchema struct {
 	pulumi.CustomResourceState
@@ -232,7 +237,7 @@ func (i *ComputeImageCapabilitySchema) ToComputeImageCapabilitySchemaOutputWithC
 // ComputeImageCapabilitySchemaArrayInput is an input type that accepts ComputeImageCapabilitySchemaArray and ComputeImageCapabilitySchemaArrayOutput values.
 // You can construct a concrete instance of `ComputeImageCapabilitySchemaArrayInput` via:
 //
-//          ComputeImageCapabilitySchemaArray{ ComputeImageCapabilitySchemaArgs{...} }
+//	ComputeImageCapabilitySchemaArray{ ComputeImageCapabilitySchemaArgs{...} }
 type ComputeImageCapabilitySchemaArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +262,7 @@ func (i ComputeImageCapabilitySchemaArray) ToComputeImageCapabilitySchemaArrayOu
 // ComputeImageCapabilitySchemaMapInput is an input type that accepts ComputeImageCapabilitySchemaMap and ComputeImageCapabilitySchemaMapOutput values.
 // You can construct a concrete instance of `ComputeImageCapabilitySchemaMapInput` via:
 //
-//          ComputeImageCapabilitySchemaMap{ "key": ComputeImageCapabilitySchemaArgs{...} }
+//	ComputeImageCapabilitySchemaMap{ "key": ComputeImageCapabilitySchemaArgs{...} }
 type ComputeImageCapabilitySchemaMapInput interface {
 	pulumi.Input
 

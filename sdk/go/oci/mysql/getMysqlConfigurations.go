@@ -27,26 +27,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetMysqlConfigurations(ctx, &mysql.GetMysqlConfigurationsArgs{
-// 			CompartmentId:   _var.Compartment_id,
-// 			ConfigurationId: pulumi.StringRef(_var.Mysql_configuration_id),
-// 			DisplayName:     pulumi.StringRef(_var.Mysql_configuration_display_name),
-// 			ShapeName:       pulumi.StringRef(_var.Mysql_shape_name),
-// 			State:           pulumi.StringRef(_var.Mysql_configuration_state),
-// 			Types:           _var.Mysql_configuration_type,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetMysqlConfigurations(ctx, &mysql.GetMysqlConfigurationsArgs{
+//				CompartmentId:   _var.Compartment_id,
+//				ConfigurationId: pulumi.StringRef(_var.Mysql_configuration_id),
+//				DisplayName:     pulumi.StringRef(_var.Mysql_configuration_display_name),
+//				ShapeName:       pulumi.StringRef(_var.Mysql_shape_name),
+//				State:           pulumi.StringRef(_var.Mysql_configuration_state),
+//				Types:           _var.Mysql_configuration_type,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMysqlConfigurations(ctx *pulumi.Context, args *GetMysqlConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetMysqlConfigurationsResult, error) {
 	var rv GetMysqlConfigurationsResult

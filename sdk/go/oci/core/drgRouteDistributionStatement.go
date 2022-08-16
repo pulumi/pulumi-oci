@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrgRouteDistributionStatement(ctx, "testDrgRouteDistributionStatement", &Core.DrgRouteDistributionStatementArgs{
-// 			DrgRouteDistributionId: pulumi.Any(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
-// 			Action:                 pulumi.Any(_var.Drg_route_distribution_statement_statements_action),
-// 			MatchCriteria: &core.DrgRouteDistributionStatementMatchCriteriaArgs{
-// 				MatchType:       pulumi.Any(_var.Drg_route_distribution_statement_statements_match_criteria_match_type),
-// 				AttachmentType:  pulumi.Any(_var.Drg_route_distribution_statement_statements_match_criteria_attachment_type),
-// 				DrgAttachmentId: pulumi.Any(oci_core_drg_attachment.Test_drg_attachment.Id),
-// 			},
-// 			Priority: pulumi.Any(_var.Drg_route_distribution_statement_statements_priority),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrgRouteDistributionStatement(ctx, "testDrgRouteDistributionStatement", &Core.DrgRouteDistributionStatementArgs{
+//				DrgRouteDistributionId: pulumi.Any(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
+//				Action:                 pulumi.Any(_var.Drg_route_distribution_statement_statements_action),
+//				MatchCriteria: &core.DrgRouteDistributionStatementMatchCriteriaArgs{
+//					MatchType:       pulumi.Any(_var.Drg_route_distribution_statement_statements_match_criteria_match_type),
+//					AttachmentType:  pulumi.Any(_var.Drg_route_distribution_statement_statements_match_criteria_attachment_type),
+//					DrgAttachmentId: pulumi.Any(oci_core_drg_attachment.Test_drg_attachment.Id),
+//				},
+//				Priority: pulumi.Any(_var.Drg_route_distribution_statement_statements_priority),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // DrgRouteDistributionStatement can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
+//
+//	$ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
+//
 // ```
 type DrgRouteDistributionStatement struct {
 	pulumi.CustomResourceState
@@ -180,7 +185,7 @@ func (i *DrgRouteDistributionStatement) ToDrgRouteDistributionStatementOutputWit
 // DrgRouteDistributionStatementArrayInput is an input type that accepts DrgRouteDistributionStatementArray and DrgRouteDistributionStatementArrayOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionStatementArrayInput` via:
 //
-//          DrgRouteDistributionStatementArray{ DrgRouteDistributionStatementArgs{...} }
+//	DrgRouteDistributionStatementArray{ DrgRouteDistributionStatementArgs{...} }
 type DrgRouteDistributionStatementArrayInput interface {
 	pulumi.Input
 
@@ -205,7 +210,7 @@ func (i DrgRouteDistributionStatementArray) ToDrgRouteDistributionStatementArray
 // DrgRouteDistributionStatementMapInput is an input type that accepts DrgRouteDistributionStatementMap and DrgRouteDistributionStatementMapOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionStatementMapInput` via:
 //
-//          DrgRouteDistributionStatementMap{ "key": DrgRouteDistributionStatementArgs{...} }
+//	DrgRouteDistributionStatementMap{ "key": DrgRouteDistributionStatementArgs{...} }
 type DrgRouteDistributionStatementMapInput interface {
 	pulumi.Input
 

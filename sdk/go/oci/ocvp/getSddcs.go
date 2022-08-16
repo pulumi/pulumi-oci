@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.GetSddcs(ctx, &ocvp.GetSddcsArgs{
-// 			CompartmentId:             _var.Compartment_id,
-// 			ComputeAvailabilityDomain: pulumi.StringRef(_var.Sddc_compute_availability_domain),
-// 			DisplayName:               pulumi.StringRef(_var.Sddc_display_name),
-// 			State:                     pulumi.StringRef(_var.Sddc_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.GetSddcs(ctx, &ocvp.GetSddcsArgs{
+//				CompartmentId:             _var.Compartment_id,
+//				ComputeAvailabilityDomain: pulumi.StringRef(_var.Sddc_compute_availability_domain),
+//				DisplayName:               pulumi.StringRef(_var.Sddc_display_name),
+//				State:                     pulumi.StringRef(_var.Sddc_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSddcs(ctx *pulumi.Context, args *GetSddcsArgs, opts ...pulumi.InvokeOption) (*GetSddcsResult, error) {
 	var rv GetSddcsResult

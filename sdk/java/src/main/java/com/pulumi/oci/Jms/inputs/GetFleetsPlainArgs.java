@@ -46,6 +46,21 @@ public final class GetFleetsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * Filter the list with displayName contains the given value.
+     * 
+     */
+    @Import(name="displayNameContains")
+    private @Nullable String displayNameContains;
+
+    /**
+     * @return Filter the list with displayName contains the given value.
+     * 
+     */
+    public Optional<String> displayNameContains() {
+        return Optional.ofNullable(this.displayNameContains);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetFleetsFilter> filters;
 
@@ -88,6 +103,7 @@ public final class GetFleetsPlainArgs extends com.pulumi.resources.InvokeArgs {
     private GetFleetsPlainArgs(GetFleetsPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.displayNameContains = $.displayNameContains;
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
@@ -130,6 +146,17 @@ public final class GetFleetsPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder displayName(@Nullable String displayName) {
             $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param displayNameContains Filter the list with displayName contains the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder displayNameContains(@Nullable String displayNameContains) {
+            $.displayNameContains = displayNameContains;
             return this;
         }
 

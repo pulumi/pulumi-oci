@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmTraces.GetTraceAggregatedSnapshotData(ctx, &apmtraces.GetTraceAggregatedSnapshotDataArgs{
-// 			ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-// 			TraceKey:    _var.Trace_aggregated_snapshot_data_trace_key,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmTraces.GetTraceAggregatedSnapshotData(ctx, &apmtraces.GetTraceAggregatedSnapshotDataArgs{
+//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//				TraceKey:    _var.Trace_aggregated_snapshot_data_trace_key,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTraceAggregatedSnapshotData(ctx *pulumi.Context, args *GetTraceAggregatedSnapshotDataArgs, opts ...pulumi.InvokeOption) (*GetTraceAggregatedSnapshotDataResult, error) {
 	var rv GetTraceAggregatedSnapshotDataResult

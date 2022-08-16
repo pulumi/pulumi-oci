@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryDiffs(ctx, &devops.GetRepositoryDiffsArgs{
-// 			BaseVersion:               _var.Repository_diff_base_version,
-// 			RepositoryId:              oci_devops_repository.Test_repository.Id,
-// 			TargetVersion:             _var.Repository_diff_target_version,
-// 			IsComparisonFromMergeBase: pulumi.BoolRef(_var.Repository_diff_is_comparison_from_merge_base),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryDiffs(ctx, &devops.GetRepositoryDiffsArgs{
+//				BaseVersion:               _var.Repository_diff_base_version,
+//				RepositoryId:              oci_devops_repository.Test_repository.Id,
+//				TargetVersion:             _var.Repository_diff_target_version,
+//				IsComparisonFromMergeBase: pulumi.BoolRef(_var.Repository_diff_is_comparison_from_merge_base),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryDiffs(ctx *pulumi.Context, args *GetRepositoryDiffsArgs, opts ...pulumi.InvokeOption) (*GetRepositoryDiffsResult, error) {
 	var rv GetRepositoryDiffsResult

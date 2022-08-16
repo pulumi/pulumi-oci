@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.GetProtectionCapabilityGroupTags(ctx, &waf.GetProtectionCapabilityGroupTagsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Name:          pulumi.StringRef(_var.Protection_capability_group_tag_name),
-// 			Type:          pulumi.StringRef(_var.Protection_capability_group_tag_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.GetProtectionCapabilityGroupTags(ctx, &waf.GetProtectionCapabilityGroupTagsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Name:          pulumi.StringRef(_var.Protection_capability_group_tag_name),
+//				Type:          pulumi.StringRef(_var.Protection_capability_group_tag_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProtectionCapabilityGroupTags(ctx *pulumi.Context, args *GetProtectionCapabilityGroupTagsArgs, opts ...pulumi.InvokeOption) (*GetProtectionCapabilityGroupTagsResult, error) {
 	var rv GetProtectionCapabilityGroupTagsResult

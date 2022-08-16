@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataLabellingService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataLabellingService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataLabellingService.GetDatasets(ctx, &datalabellingservice.GetDatasetsArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			AnnotationFormat: pulumi.StringRef(_var.Dataset_annotation_format),
-// 			DisplayName:      pulumi.StringRef(_var.Dataset_display_name),
-// 			Id:               pulumi.StringRef(_var.Dataset_id),
-// 			State:            pulumi.StringRef(_var.Dataset_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataLabellingService.GetDatasets(ctx, &datalabellingservice.GetDatasetsArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				AnnotationFormat: pulumi.StringRef(_var.Dataset_annotation_format),
+//				DisplayName:      pulumi.StringRef(_var.Dataset_display_name),
+//				Id:               pulumi.StringRef(_var.Dataset_id),
+//				State:            pulumi.StringRef(_var.Dataset_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatasets(ctx *pulumi.Context, args *GetDatasetsArgs, opts ...pulumi.InvokeOption) (*GetDatasetsResult, error) {
 	var rv GetDatasetsResult

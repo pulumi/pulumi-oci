@@ -13,7 +13,7 @@ import (
 
 // This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
 //
-// Creates a new ExternalNonContainerDatabase resource
+// # Creates a new ExternalNonContainerDatabase resource
 //
 // ## Example Usage
 //
@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalNonContainerDatabase(ctx, "testExternalNonContainerDatabase", &Database.ExternalNonContainerDatabaseArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.External_non_container_database_display_name),
-// 			DefinedTags:   pulumi.Any(_var.External_non_container_database_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalNonContainerDatabase(ctx, "testExternalNonContainerDatabase", &Database.ExternalNonContainerDatabaseArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.External_non_container_database_display_name),
+//				DefinedTags:   pulumi.Any(_var.External_non_container_database_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // ExternalNonContainerDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
+//
+//	$ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"
+//
 // ```
 type ExternalNonContainerDatabase struct {
 	pulumi.CustomResourceState
@@ -262,7 +267,7 @@ func (i *ExternalNonContainerDatabase) ToExternalNonContainerDatabaseOutputWithC
 // ExternalNonContainerDatabaseArrayInput is an input type that accepts ExternalNonContainerDatabaseArray and ExternalNonContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseArrayInput` via:
 //
-//          ExternalNonContainerDatabaseArray{ ExternalNonContainerDatabaseArgs{...} }
+//	ExternalNonContainerDatabaseArray{ ExternalNonContainerDatabaseArgs{...} }
 type ExternalNonContainerDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -287,7 +292,7 @@ func (i ExternalNonContainerDatabaseArray) ToExternalNonContainerDatabaseArrayOu
 // ExternalNonContainerDatabaseMapInput is an input type that accepts ExternalNonContainerDatabaseMap and ExternalNonContainerDatabaseMapOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseMapInput` via:
 //
-//          ExternalNonContainerDatabaseMap{ "key": ExternalNonContainerDatabaseArgs{...} }
+//	ExternalNonContainerDatabaseMap{ "key": ExternalNonContainerDatabaseArgs{...} }
 type ExternalNonContainerDatabaseMapInput interface {
 	pulumi.Input
 

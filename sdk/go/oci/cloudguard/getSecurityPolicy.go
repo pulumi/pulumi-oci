@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetSecurityPolicy(ctx, &cloudguard.GetSecurityPolicyArgs{
-// 			SecurityPolicyId: oci_cloud_guard_security_policy.Test_security_policy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetSecurityPolicy(ctx, &cloudguard.GetSecurityPolicyArgs{
+//				SecurityPolicyId: oci_cloud_guard_security_policy.Test_security_policy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecurityPolicy(ctx *pulumi.Context, args *GetSecurityPolicyArgs, opts ...pulumi.InvokeOption) (*GetSecurityPolicyResult, error) {
 	var rv GetSecurityPolicyResult

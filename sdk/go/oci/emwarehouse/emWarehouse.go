@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EmWarehouse.NewEmWarehouse(ctx, "testEmWarehouse", &EmWarehouse.EmWarehouseArgs{
-// 			CompartmentId:                 pulumi.Any(_var.Compartment_id),
-// 			EmBridgeId:                    pulumi.Any(oci_em_warehouse_em_bridge.Test_em_bridge.Id),
-// 			OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Em_warehouse_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := EmWarehouse.NewEmWarehouse(ctx, "testEmWarehouse", &EmWarehouse.EmWarehouseArgs{
+//				CompartmentId:                 pulumi.Any(_var.Compartment_id),
+//				EmBridgeId:                    pulumi.Any(oci_em_warehouse_em_bridge.Test_em_bridge.Id),
+//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Em_warehouse_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // EmWarehouses can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
+//
+//	$ pulumi import oci:EmWarehouse/emWarehouse:EmWarehouse test_em_warehouse "id"
+//
 // ```
 type EmWarehouse struct {
 	pulumi.CustomResourceState
@@ -253,7 +258,7 @@ func (i *EmWarehouse) ToEmWarehouseOutputWithContext(ctx context.Context) EmWare
 // EmWarehouseArrayInput is an input type that accepts EmWarehouseArray and EmWarehouseArrayOutput values.
 // You can construct a concrete instance of `EmWarehouseArrayInput` via:
 //
-//          EmWarehouseArray{ EmWarehouseArgs{...} }
+//	EmWarehouseArray{ EmWarehouseArgs{...} }
 type EmWarehouseArrayInput interface {
 	pulumi.Input
 
@@ -278,7 +283,7 @@ func (i EmWarehouseArray) ToEmWarehouseArrayOutputWithContext(ctx context.Contex
 // EmWarehouseMapInput is an input type that accepts EmWarehouseMap and EmWarehouseMapOutput values.
 // You can construct a concrete instance of `EmWarehouseMapInput` via:
 //
-//          EmWarehouseMap{ "key": EmWarehouseArgs{...} }
+//	EmWarehouseMap{ "key": EmWarehouseArgs{...} }
 type EmWarehouseMapInput interface {
 	pulumi.Input
 

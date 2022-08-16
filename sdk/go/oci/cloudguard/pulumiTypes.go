@@ -20,7 +20,7 @@ type DataMaskRuleTargetSelected struct {
 // DataMaskRuleTargetSelectedInput is an input type that accepts DataMaskRuleTargetSelectedArgs and DataMaskRuleTargetSelectedOutput values.
 // You can construct a concrete instance of `DataMaskRuleTargetSelectedInput` via:
 //
-//          DataMaskRuleTargetSelectedArgs{...}
+//	DataMaskRuleTargetSelectedArgs{...}
 type DataMaskRuleTargetSelectedInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i DataMaskRuleTargetSelectedArgs) ToDataMaskRuleTargetSelectedPtrOutputWit
 // DataMaskRuleTargetSelectedPtrInput is an input type that accepts DataMaskRuleTargetSelectedArgs, DataMaskRuleTargetSelectedPtr and DataMaskRuleTargetSelectedPtrOutput values.
 // You can construct a concrete instance of `DataMaskRuleTargetSelectedPtrInput` via:
 //
-//          DataMaskRuleTargetSelectedArgs{...}
+//	        DataMaskRuleTargetSelectedArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DataMaskRuleTargetSelectedPtrInput interface {
 	pulumi.Input
 
@@ -200,7 +200,7 @@ type DetectorRecipeDetectorRule struct {
 // DetectorRecipeDetectorRuleInput is an input type that accepts DetectorRecipeDetectorRuleArgs and DetectorRecipeDetectorRuleOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleInput` via:
 //
-//          DetectorRecipeDetectorRuleArgs{...}
+//	DetectorRecipeDetectorRuleArgs{...}
 type DetectorRecipeDetectorRuleInput interface {
 	pulumi.Input
 
@@ -254,7 +254,7 @@ func (i DetectorRecipeDetectorRuleArgs) ToDetectorRecipeDetectorRuleOutputWithCo
 // DetectorRecipeDetectorRuleArrayInput is an input type that accepts DetectorRecipeDetectorRuleArray and DetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleArrayInput` via:
 //
-//          DetectorRecipeDetectorRuleArray{ DetectorRecipeDetectorRuleArgs{...} }
+//	DetectorRecipeDetectorRuleArray{ DetectorRecipeDetectorRuleArgs{...} }
 type DetectorRecipeDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -394,7 +394,7 @@ type DetectorRecipeDetectorRuleCandidateResponderRule struct {
 // DetectorRecipeDetectorRuleCandidateResponderRuleInput is an input type that accepts DetectorRecipeDetectorRuleCandidateResponderRuleArgs and DetectorRecipeDetectorRuleCandidateResponderRuleOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleCandidateResponderRuleInput` via:
 //
-//          DetectorRecipeDetectorRuleCandidateResponderRuleArgs{...}
+//	DetectorRecipeDetectorRuleCandidateResponderRuleArgs{...}
 type DetectorRecipeDetectorRuleCandidateResponderRuleInput interface {
 	pulumi.Input
 
@@ -426,7 +426,7 @@ func (i DetectorRecipeDetectorRuleCandidateResponderRuleArgs) ToDetectorRecipeDe
 // DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts DetectorRecipeDetectorRuleCandidateResponderRuleArray and DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput` via:
 //
-//          DetectorRecipeDetectorRuleCandidateResponderRuleArray{ DetectorRecipeDetectorRuleCandidateResponderRuleArgs{...} }
+//	DetectorRecipeDetectorRuleCandidateResponderRuleArray{ DetectorRecipeDetectorRuleCandidateResponderRuleArgs{...} }
 type DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -515,7 +515,7 @@ type DetectorRecipeDetectorRuleDetails struct {
 // DetectorRecipeDetectorRuleDetailsInput is an input type that accepts DetectorRecipeDetectorRuleDetailsArgs and DetectorRecipeDetectorRuleDetailsOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsInput` via:
 //
-//          DetectorRecipeDetectorRuleDetailsArgs{...}
+//	DetectorRecipeDetectorRuleDetailsArgs{...}
 type DetectorRecipeDetectorRuleDetailsInput interface {
 	pulumi.Input
 
@@ -612,7 +612,7 @@ type DetectorRecipeDetectorRuleDetailsConfiguration struct {
 // DetectorRecipeDetectorRuleDetailsConfigurationInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationArgs and DetectorRecipeDetectorRuleDetailsConfigurationOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationInput` via:
 //
-//          DetectorRecipeDetectorRuleDetailsConfigurationArgs{...}
+//	DetectorRecipeDetectorRuleDetailsConfigurationArgs{...}
 type DetectorRecipeDetectorRuleDetailsConfigurationInput interface {
 	pulumi.Input
 
@@ -648,7 +648,7 @@ func (i DetectorRecipeDetectorRuleDetailsConfigurationArgs) ToDetectorRecipeDete
 // DetectorRecipeDetectorRuleDetailsConfigurationArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationArray and DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationArrayInput` via:
 //
-//          DetectorRecipeDetectorRuleDetailsConfigurationArray{ DetectorRecipeDetectorRuleDetailsConfigurationArgs{...} }
+//	DetectorRecipeDetectorRuleDetailsConfigurationArray{ DetectorRecipeDetectorRuleDetailsConfigurationArgs{...} }
 type DetectorRecipeDetectorRuleDetailsConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -743,7 +743,7 @@ type DetectorRecipeDetectorRuleDetailsConfigurationValue struct {
 // DetectorRecipeDetectorRuleDetailsConfigurationValueInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationValueArgs and DetectorRecipeDetectorRuleDetailsConfigurationValueOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationValueInput` via:
 //
-//          DetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...}
+//	DetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...}
 type DetectorRecipeDetectorRuleDetailsConfigurationValueInput interface {
 	pulumi.Input
 
@@ -775,7 +775,7 @@ func (i DetectorRecipeDetectorRuleDetailsConfigurationValueArgs) ToDetectorRecip
 // DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationValueArray and DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput` via:
 //
-//          DetectorRecipeDetectorRuleDetailsConfigurationValueArray{ DetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...} }
+//	DetectorRecipeDetectorRuleDetailsConfigurationValueArray{ DetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...} }
 type DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -880,7 +880,7 @@ type DetectorRecipeEffectiveDetectorRule struct {
 // DetectorRecipeEffectiveDetectorRuleInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleArgs and DetectorRecipeEffectiveDetectorRuleOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleArgs{...}
+//	DetectorRecipeEffectiveDetectorRuleArgs{...}
 type DetectorRecipeEffectiveDetectorRuleInput interface {
 	pulumi.Input
 
@@ -934,7 +934,7 @@ func (i DetectorRecipeEffectiveDetectorRuleArgs) ToDetectorRecipeEffectiveDetect
 // DetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleArray and DetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleArray{ DetectorRecipeEffectiveDetectorRuleArgs{...} }
+//	DetectorRecipeEffectiveDetectorRuleArray{ DetectorRecipeEffectiveDetectorRuleArgs{...} }
 type DetectorRecipeEffectiveDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -1076,7 +1076,7 @@ type DetectorRecipeEffectiveDetectorRuleCandidateResponderRule struct {
 // DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs and DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...}
+//	DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...}
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput interface {
 	pulumi.Input
 
@@ -1108,7 +1108,7 @@ func (i DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs) ToDetecto
 // DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray and DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray{ DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...} }
+//	DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray{ DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...} }
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -1197,7 +1197,7 @@ type DetectorRecipeEffectiveDetectorRuleDetail struct {
 // DetectorRecipeEffectiveDetectorRuleDetailInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailArgs and DetectorRecipeEffectiveDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleDetailArgs{...}
+//	DetectorRecipeEffectiveDetectorRuleDetailArgs{...}
 type DetectorRecipeEffectiveDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -1235,7 +1235,7 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailArgs) ToDetectorRecipeEffective
 // DetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailArray and DetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleDetailArray{ DetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
+//	DetectorRecipeEffectiveDetectorRuleDetailArray{ DetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
 type DetectorRecipeEffectiveDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -1339,7 +1339,7 @@ type DetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
 // DetectorRecipeEffectiveDetectorRuleDetailConfigurationInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs and DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -1375,7 +1375,7 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToDetectorRe
 // DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -1470,7 +1470,7 @@ type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
 // DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs and DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -1502,7 +1502,7 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToDetec
 // DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -1603,7 +1603,7 @@ type ResponderRecipeEffectiveResponderRule struct {
 // ResponderRecipeEffectiveResponderRuleInput is an input type that accepts ResponderRecipeEffectiveResponderRuleArgs and ResponderRecipeEffectiveResponderRuleOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleInput` via:
 //
-//          ResponderRecipeEffectiveResponderRuleArgs{...}
+//	ResponderRecipeEffectiveResponderRuleArgs{...}
 type ResponderRecipeEffectiveResponderRuleInput interface {
 	pulumi.Input
 
@@ -1653,7 +1653,7 @@ func (i ResponderRecipeEffectiveResponderRuleArgs) ToResponderRecipeEffectiveRes
 // ResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts ResponderRecipeEffectiveResponderRuleArray and ResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
-//          ResponderRecipeEffectiveResponderRuleArray{ ResponderRecipeEffectiveResponderRuleArgs{...} }
+//	ResponderRecipeEffectiveResponderRuleArray{ ResponderRecipeEffectiveResponderRuleArgs{...} }
 type ResponderRecipeEffectiveResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -1785,7 +1785,7 @@ type ResponderRecipeEffectiveResponderRuleDetail struct {
 // ResponderRecipeEffectiveResponderRuleDetailInput is an input type that accepts ResponderRecipeEffectiveResponderRuleDetailArgs and ResponderRecipeEffectiveResponderRuleDetailOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleDetailInput` via:
 //
-//          ResponderRecipeEffectiveResponderRuleDetailArgs{...}
+//	ResponderRecipeEffectiveResponderRuleDetailArgs{...}
 type ResponderRecipeEffectiveResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -1819,7 +1819,7 @@ func (i ResponderRecipeEffectiveResponderRuleDetailArgs) ToResponderRecipeEffect
 // ResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts ResponderRecipeEffectiveResponderRuleDetailArray and ResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
-//          ResponderRecipeEffectiveResponderRuleDetailArray{ ResponderRecipeEffectiveResponderRuleDetailArgs{...} }
+//	ResponderRecipeEffectiveResponderRuleDetailArray{ ResponderRecipeEffectiveResponderRuleDetailArgs{...} }
 type ResponderRecipeEffectiveResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -1909,7 +1909,7 @@ type ResponderRecipeEffectiveResponderRuleDetailConfiguration struct {
 // ResponderRecipeEffectiveResponderRuleDetailConfigurationInput is an input type that accepts ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs and ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleDetailConfigurationInput` via:
 //
-//          ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
+//	ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
 type ResponderRecipeEffectiveResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -1941,7 +1941,7 @@ func (i ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToResponde
 // ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts ResponderRecipeEffectiveResponderRuleDetailConfigurationArray and ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
-//          ResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
+//	ResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
 type ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -2042,7 +2042,7 @@ type ResponderRecipeResponderRule struct {
 // ResponderRecipeResponderRuleInput is an input type that accepts ResponderRecipeResponderRuleArgs and ResponderRecipeResponderRuleOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleInput` via:
 //
-//          ResponderRecipeResponderRuleArgs{...}
+//	ResponderRecipeResponderRuleArgs{...}
 type ResponderRecipeResponderRuleInput interface {
 	pulumi.Input
 
@@ -2092,7 +2092,7 @@ func (i ResponderRecipeResponderRuleArgs) ToResponderRecipeResponderRuleOutputWi
 // ResponderRecipeResponderRuleArrayInput is an input type that accepts ResponderRecipeResponderRuleArray and ResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleArrayInput` via:
 //
-//          ResponderRecipeResponderRuleArray{ ResponderRecipeResponderRuleArgs{...} }
+//	ResponderRecipeResponderRuleArray{ ResponderRecipeResponderRuleArgs{...} }
 type ResponderRecipeResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -2222,7 +2222,7 @@ type ResponderRecipeResponderRuleDetails struct {
 // ResponderRecipeResponderRuleDetailsInput is an input type that accepts ResponderRecipeResponderRuleDetailsArgs and ResponderRecipeResponderRuleDetailsOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleDetailsInput` via:
 //
-//          ResponderRecipeResponderRuleDetailsArgs{...}
+//	ResponderRecipeResponderRuleDetailsArgs{...}
 type ResponderRecipeResponderRuleDetailsInput interface {
 	pulumi.Input
 
@@ -2301,7 +2301,7 @@ type ResponderRecipeResponderRuleDetailsConfiguration struct {
 // ResponderRecipeResponderRuleDetailsConfigurationInput is an input type that accepts ResponderRecipeResponderRuleDetailsConfigurationArgs and ResponderRecipeResponderRuleDetailsConfigurationOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleDetailsConfigurationInput` via:
 //
-//          ResponderRecipeResponderRuleDetailsConfigurationArgs{...}
+//	ResponderRecipeResponderRuleDetailsConfigurationArgs{...}
 type ResponderRecipeResponderRuleDetailsConfigurationInput interface {
 	pulumi.Input
 
@@ -2333,7 +2333,7 @@ func (i ResponderRecipeResponderRuleDetailsConfigurationArgs) ToResponderRecipeR
 // ResponderRecipeResponderRuleDetailsConfigurationArrayInput is an input type that accepts ResponderRecipeResponderRuleDetailsConfigurationArray and ResponderRecipeResponderRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleDetailsConfigurationArrayInput` via:
 //
-//          ResponderRecipeResponderRuleDetailsConfigurationArray{ ResponderRecipeResponderRuleDetailsConfigurationArgs{...} }
+//	ResponderRecipeResponderRuleDetailsConfigurationArray{ ResponderRecipeResponderRuleDetailsConfigurationArgs{...} }
 type ResponderRecipeResponderRuleDetailsConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -2418,7 +2418,7 @@ type TargetTargetDetail struct {
 // TargetTargetDetailInput is an input type that accepts TargetTargetDetailArgs and TargetTargetDetailOutput values.
 // You can construct a concrete instance of `TargetTargetDetailInput` via:
 //
-//          TargetTargetDetailArgs{...}
+//	TargetTargetDetailArgs{...}
 type TargetTargetDetailInput interface {
 	pulumi.Input
 
@@ -2452,7 +2452,7 @@ func (i TargetTargetDetailArgs) ToTargetTargetDetailOutputWithContext(ctx contex
 // TargetTargetDetailArrayInput is an input type that accepts TargetTargetDetailArray and TargetTargetDetailArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetailArrayInput` via:
 //
-//          TargetTargetDetailArray{ TargetTargetDetailArgs{...} }
+//	TargetTargetDetailArray{ TargetTargetDetailArgs{...} }
 type TargetTargetDetailArrayInput interface {
 	pulumi.Input
 
@@ -2562,7 +2562,7 @@ type TargetTargetDetailTargetSecurityZoneRecipe struct {
 // TargetTargetDetailTargetSecurityZoneRecipeInput is an input type that accepts TargetTargetDetailTargetSecurityZoneRecipeArgs and TargetTargetDetailTargetSecurityZoneRecipeOutput values.
 // You can construct a concrete instance of `TargetTargetDetailTargetSecurityZoneRecipeInput` via:
 //
-//          TargetTargetDetailTargetSecurityZoneRecipeArgs{...}
+//	TargetTargetDetailTargetSecurityZoneRecipeArgs{...}
 type TargetTargetDetailTargetSecurityZoneRecipeInput interface {
 	pulumi.Input
 
@@ -2614,7 +2614,7 @@ func (i TargetTargetDetailTargetSecurityZoneRecipeArgs) ToTargetTargetDetailTarg
 // TargetTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts TargetTargetDetailTargetSecurityZoneRecipeArray and TargetTargetDetailTargetSecurityZoneRecipeArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetailTargetSecurityZoneRecipeArrayInput` via:
 //
-//          TargetTargetDetailTargetSecurityZoneRecipeArray{ TargetTargetDetailTargetSecurityZoneRecipeArgs{...} }
+//	TargetTargetDetailTargetSecurityZoneRecipeArray{ TargetTargetDetailTargetSecurityZoneRecipeArgs{...} }
 type TargetTargetDetailTargetSecurityZoneRecipeArrayInput interface {
 	pulumi.Input
 
@@ -2765,7 +2765,7 @@ type TargetTargetDetectorRecipe struct {
 // TargetTargetDetectorRecipeInput is an input type that accepts TargetTargetDetectorRecipeArgs and TargetTargetDetectorRecipeOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeInput` via:
 //
-//          TargetTargetDetectorRecipeArgs{...}
+//	TargetTargetDetectorRecipeArgs{...}
 type TargetTargetDetectorRecipeInput interface {
 	pulumi.Input
 
@@ -2815,7 +2815,7 @@ func (i TargetTargetDetectorRecipeArgs) ToTargetTargetDetectorRecipeOutputWithCo
 // TargetTargetDetectorRecipeArrayInput is an input type that accepts TargetTargetDetectorRecipeArray and TargetTargetDetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeArrayInput` via:
 //
-//          TargetTargetDetectorRecipeArray{ TargetTargetDetectorRecipeArgs{...} }
+//	TargetTargetDetectorRecipeArray{ TargetTargetDetectorRecipeArgs{...} }
 type TargetTargetDetectorRecipeArrayInput interface {
 	pulumi.Input
 
@@ -2965,7 +2965,7 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 // TargetTargetDetectorRecipeDetectorRuleInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleArgs and TargetTargetDetectorRecipeDetectorRuleOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleArgs{...}
+//	TargetTargetDetectorRecipeDetectorRuleArgs{...}
 type TargetTargetDetectorRecipeDetectorRuleInput interface {
 	pulumi.Input
 
@@ -3017,7 +3017,7 @@ func (i TargetTargetDetectorRecipeDetectorRuleArgs) ToTargetTargetDetectorRecipe
 // TargetTargetDetectorRecipeDetectorRuleArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleArray and TargetTargetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleArrayInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleArray{ TargetTargetDetectorRecipeDetectorRuleArgs{...} }
+//	TargetTargetDetectorRecipeDetectorRuleArray{ TargetTargetDetectorRecipeDetectorRuleArgs{...} }
 type TargetTargetDetectorRecipeDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -3158,7 +3158,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetails struct {
 // TargetTargetDetectorRecipeDetectorRuleDetailsInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsArgs and TargetTargetDetectorRecipeDetectorRuleDetailsOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsArgs{...}
+//	TargetTargetDetectorRecipeDetectorRuleDetailsArgs{...}
 type TargetTargetDetectorRecipeDetectorRuleDetailsInput interface {
 	pulumi.Input
 
@@ -3251,7 +3251,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup struct {
 // TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs and TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{...}
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{...}
 type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupInput interface {
 	pulumi.Input
 
@@ -3281,7 +3281,7 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs) ToTarge
 // TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray and TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{...} }
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{...} }
 type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput interface {
 	pulumi.Input
 
@@ -3363,7 +3363,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration struct {
 // TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs{...}
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs{...}
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationInput interface {
 	pulumi.Input
 
@@ -3399,7 +3399,7 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs) ToTarget
 // TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs{...} }
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs{...} }
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3494,7 +3494,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue struct {
 // TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...}
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...}
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueInput interface {
 	pulumi.Input
 
@@ -3526,7 +3526,7 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs) ToT
 // TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput` via:
 //
-//          TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...} }
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs{...} }
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -3631,7 +3631,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 // TargetTargetDetectorRecipeEffectiveDetectorRuleInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...}
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...}
 type TargetTargetDetectorRecipeEffectiveDetectorRuleInput interface {
 	pulumi.Input
 
@@ -3683,7 +3683,7 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleArgs) ToTargetTargetDetec
 // TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleArray and TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...} }
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...} }
 type TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -3824,7 +3824,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetail struct {
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -3862,7 +3862,7 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToTargetTarge
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -3962,7 +3962,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup struct 
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...}
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...}
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput interface {
 	pulumi.Input
 
@@ -3992,7 +3992,7 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs)
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...} }
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...} }
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput interface {
 	pulumi.Input
 
@@ -4078,7 +4078,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -4114,7 +4114,7 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) 
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -4209,7 +4209,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue str
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -4241,7 +4241,7 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueA
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -4344,7 +4344,7 @@ type TargetTargetResponderRecipe struct {
 // TargetTargetResponderRecipeInput is an input type that accepts TargetTargetResponderRecipeArgs and TargetTargetResponderRecipeOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeInput` via:
 //
-//          TargetTargetResponderRecipeArgs{...}
+//	TargetTargetResponderRecipeArgs{...}
 type TargetTargetResponderRecipeInput interface {
 	pulumi.Input
 
@@ -4390,7 +4390,7 @@ func (i TargetTargetResponderRecipeArgs) ToTargetTargetResponderRecipeOutputWith
 // TargetTargetResponderRecipeArrayInput is an input type that accepts TargetTargetResponderRecipeArray and TargetTargetResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeArrayInput` via:
 //
-//          TargetTargetResponderRecipeArray{ TargetTargetResponderRecipeArgs{...} }
+//	TargetTargetResponderRecipeArray{ TargetTargetResponderRecipeArgs{...} }
 type TargetTargetResponderRecipeArrayInput interface {
 	pulumi.Input
 
@@ -4530,7 +4530,7 @@ type TargetTargetResponderRecipeEffectiveResponderRule struct {
 // TargetTargetResponderRecipeEffectiveResponderRuleInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleArgs and TargetTargetResponderRecipeEffectiveResponderRuleOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleInput` via:
 //
-//          TargetTargetResponderRecipeEffectiveResponderRuleArgs{...}
+//	TargetTargetResponderRecipeEffectiveResponderRuleArgs{...}
 type TargetTargetResponderRecipeEffectiveResponderRuleInput interface {
 	pulumi.Input
 
@@ -4580,7 +4580,7 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleArgs) ToTargetTargetRes
 // TargetTargetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleArray and TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
-//          TargetTargetResponderRecipeEffectiveResponderRuleArray{ TargetTargetResponderRecipeEffectiveResponderRuleArgs{...} }
+//	TargetTargetResponderRecipeEffectiveResponderRuleArray{ TargetTargetResponderRecipeEffectiveResponderRuleArgs{...} }
 type TargetTargetResponderRecipeEffectiveResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -4712,7 +4712,7 @@ type TargetTargetResponderRecipeEffectiveResponderRuleDetail struct {
 // TargetTargetResponderRecipeEffectiveResponderRuleDetailInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs and TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleDetailInput` via:
 //
-//          TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...}
+//	TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...}
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -4746,7 +4746,7 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToTargetTar
 // TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleDetailArray and TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
-//          TargetTargetResponderRecipeEffectiveResponderRuleDetailArray{ TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
+//	TargetTargetResponderRecipeEffectiveResponderRuleDetailArray{ TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -4836,7 +4836,7 @@ type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration struct
 // TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs and TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput` via:
 //
-//          TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
+//	TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -4868,7 +4868,7 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs
 // TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
-//          TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
+//	TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -4971,7 +4971,7 @@ type TargetTargetResponderRecipeResponderRule struct {
 // TargetTargetResponderRecipeResponderRuleInput is an input type that accepts TargetTargetResponderRecipeResponderRuleArgs and TargetTargetResponderRecipeResponderRuleOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleInput` via:
 //
-//          TargetTargetResponderRecipeResponderRuleArgs{...}
+//	TargetTargetResponderRecipeResponderRuleArgs{...}
 type TargetTargetResponderRecipeResponderRuleInput interface {
 	pulumi.Input
 
@@ -5021,7 +5021,7 @@ func (i TargetTargetResponderRecipeResponderRuleArgs) ToTargetTargetResponderRec
 // TargetTargetResponderRecipeResponderRuleArrayInput is an input type that accepts TargetTargetResponderRecipeResponderRuleArray and TargetTargetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleArrayInput` via:
 //
-//          TargetTargetResponderRecipeResponderRuleArray{ TargetTargetResponderRecipeResponderRuleArgs{...} }
+//	TargetTargetResponderRecipeResponderRuleArray{ TargetTargetResponderRecipeResponderRuleArgs{...} }
 type TargetTargetResponderRecipeResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -5153,7 +5153,7 @@ type TargetTargetResponderRecipeResponderRuleDetails struct {
 // TargetTargetResponderRecipeResponderRuleDetailsInput is an input type that accepts TargetTargetResponderRecipeResponderRuleDetailsArgs and TargetTargetResponderRecipeResponderRuleDetailsOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleDetailsInput` via:
 //
-//          TargetTargetResponderRecipeResponderRuleDetailsArgs{...}
+//	TargetTargetResponderRecipeResponderRuleDetailsArgs{...}
 type TargetTargetResponderRecipeResponderRuleDetailsInput interface {
 	pulumi.Input
 
@@ -5232,7 +5232,7 @@ type TargetTargetResponderRecipeResponderRuleDetailsConfiguration struct {
 // TargetTargetResponderRecipeResponderRuleDetailsConfigurationInput is an input type that accepts TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs and TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleDetailsConfigurationInput` via:
 //
-//          TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{...}
+//	TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{...}
 type TargetTargetResponderRecipeResponderRuleDetailsConfigurationInput interface {
 	pulumi.Input
 
@@ -5264,7 +5264,7 @@ func (i TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs) ToTarg
 // TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayInput is an input type that accepts TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray and TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayInput` via:
 //
-//          TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray{ TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{...} }
+//	TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray{ TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{...} }
 type TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -5345,7 +5345,7 @@ type GetDataMaskRuleTargetSelected struct {
 // GetDataMaskRuleTargetSelectedInput is an input type that accepts GetDataMaskRuleTargetSelectedArgs and GetDataMaskRuleTargetSelectedOutput values.
 // You can construct a concrete instance of `GetDataMaskRuleTargetSelectedInput` via:
 //
-//          GetDataMaskRuleTargetSelectedArgs{...}
+//	GetDataMaskRuleTargetSelectedArgs{...}
 type GetDataMaskRuleTargetSelectedInput interface {
 	pulumi.Input
 
@@ -5375,7 +5375,7 @@ func (i GetDataMaskRuleTargetSelectedArgs) ToGetDataMaskRuleTargetSelectedOutput
 // GetDataMaskRuleTargetSelectedArrayInput is an input type that accepts GetDataMaskRuleTargetSelectedArray and GetDataMaskRuleTargetSelectedArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRuleTargetSelectedArrayInput` via:
 //
-//          GetDataMaskRuleTargetSelectedArray{ GetDataMaskRuleTargetSelectedArgs{...} }
+//	GetDataMaskRuleTargetSelectedArray{ GetDataMaskRuleTargetSelectedArgs{...} }
 type GetDataMaskRuleTargetSelectedArrayInput interface {
 	pulumi.Input
 
@@ -5448,7 +5448,7 @@ type GetDataMaskRulesDataMaskRuleCollection struct {
 // GetDataMaskRulesDataMaskRuleCollectionInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionArgs and GetDataMaskRulesDataMaskRuleCollectionOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionInput` via:
 //
-//          GetDataMaskRulesDataMaskRuleCollectionArgs{...}
+//	GetDataMaskRulesDataMaskRuleCollectionArgs{...}
 type GetDataMaskRulesDataMaskRuleCollectionInput interface {
 	pulumi.Input
 
@@ -5475,7 +5475,7 @@ func (i GetDataMaskRulesDataMaskRuleCollectionArgs) ToGetDataMaskRulesDataMaskRu
 // GetDataMaskRulesDataMaskRuleCollectionArrayInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionArray and GetDataMaskRulesDataMaskRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionArrayInput` via:
 //
-//          GetDataMaskRulesDataMaskRuleCollectionArray{ GetDataMaskRulesDataMaskRuleCollectionArgs{...} }
+//	GetDataMaskRulesDataMaskRuleCollectionArray{ GetDataMaskRulesDataMaskRuleCollectionArgs{...} }
 type GetDataMaskRulesDataMaskRuleCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5573,7 +5573,7 @@ type GetDataMaskRulesDataMaskRuleCollectionItem struct {
 // GetDataMaskRulesDataMaskRuleCollectionItemInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionItemArgs and GetDataMaskRulesDataMaskRuleCollectionItemOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionItemInput` via:
 //
-//          GetDataMaskRulesDataMaskRuleCollectionItemArgs{...}
+//	GetDataMaskRulesDataMaskRuleCollectionItemArgs{...}
 type GetDataMaskRulesDataMaskRuleCollectionItemInput interface {
 	pulumi.Input
 
@@ -5629,7 +5629,7 @@ func (i GetDataMaskRulesDataMaskRuleCollectionItemArgs) ToGetDataMaskRulesDataMa
 // GetDataMaskRulesDataMaskRuleCollectionItemArrayInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionItemArray and GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionItemArrayInput` via:
 //
-//          GetDataMaskRulesDataMaskRuleCollectionItemArray{ GetDataMaskRulesDataMaskRuleCollectionItemArgs{...} }
+//	GetDataMaskRulesDataMaskRuleCollectionItemArray{ GetDataMaskRulesDataMaskRuleCollectionItemArgs{...} }
 type GetDataMaskRulesDataMaskRuleCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5772,7 +5772,7 @@ type GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected struct {
 // GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs and GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedInput` via:
 //
-//          GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs{...}
+//	GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs{...}
 type GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedInput interface {
 	pulumi.Input
 
@@ -5802,7 +5802,7 @@ func (i GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs) ToGetDataM
 // GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray and GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayInput` via:
 //
-//          GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray{ GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs{...} }
+//	GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray{ GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs{...} }
 type GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayInput interface {
 	pulumi.Input
 
@@ -5878,7 +5878,7 @@ type GetDataMaskRulesFilter struct {
 // GetDataMaskRulesFilterInput is an input type that accepts GetDataMaskRulesFilterArgs and GetDataMaskRulesFilterOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesFilterInput` via:
 //
-//          GetDataMaskRulesFilterArgs{...}
+//	GetDataMaskRulesFilterArgs{...}
 type GetDataMaskRulesFilterInput interface {
 	pulumi.Input
 
@@ -5908,7 +5908,7 @@ func (i GetDataMaskRulesFilterArgs) ToGetDataMaskRulesFilterOutputWithContext(ct
 // GetDataMaskRulesFilterArrayInput is an input type that accepts GetDataMaskRulesFilterArray and GetDataMaskRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesFilterArrayInput` via:
 //
-//          GetDataMaskRulesFilterArray{ GetDataMaskRulesFilterArgs{...} }
+//	GetDataMaskRulesFilterArray{ GetDataMaskRulesFilterArgs{...} }
 type GetDataMaskRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -6011,7 +6011,7 @@ type GetDetectorRecipeDetectorRule struct {
 // GetDetectorRecipeDetectorRuleInput is an input type that accepts GetDetectorRecipeDetectorRuleArgs and GetDetectorRecipeDetectorRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleInput` via:
 //
-//          GetDetectorRecipeDetectorRuleArgs{...}
+//	GetDetectorRecipeDetectorRuleArgs{...}
 type GetDetectorRecipeDetectorRuleInput interface {
 	pulumi.Input
 
@@ -6065,7 +6065,7 @@ func (i GetDetectorRecipeDetectorRuleArgs) ToGetDetectorRecipeDetectorRuleOutput
 // GetDetectorRecipeDetectorRuleArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleArray and GetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleArrayInput` via:
 //
-//          GetDetectorRecipeDetectorRuleArray{ GetDetectorRecipeDetectorRuleArgs{...} }
+//	GetDetectorRecipeDetectorRuleArray{ GetDetectorRecipeDetectorRuleArgs{...} }
 type GetDetectorRecipeDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -6205,7 +6205,7 @@ type GetDetectorRecipeDetectorRuleCandidateResponderRule struct {
 // GetDetectorRecipeDetectorRuleCandidateResponderRuleInput is an input type that accepts GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs and GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleCandidateResponderRuleInput` via:
 //
-//          GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs{...}
+//	GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs{...}
 type GetDetectorRecipeDetectorRuleCandidateResponderRuleInput interface {
 	pulumi.Input
 
@@ -6237,7 +6237,7 @@ func (i GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs) ToGetDetectorRe
 // GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleCandidateResponderRuleArray and GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput` via:
 //
-//          GetDetectorRecipeDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs{...} }
+//	GetDetectorRecipeDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs{...} }
 type GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -6326,7 +6326,7 @@ type GetDetectorRecipeDetectorRuleDetail struct {
 // GetDetectorRecipeDetectorRuleDetailInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailArgs and GetDetectorRecipeDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailInput` via:
 //
-//          GetDetectorRecipeDetectorRuleDetailArgs{...}
+//	GetDetectorRecipeDetectorRuleDetailArgs{...}
 type GetDetectorRecipeDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -6364,7 +6364,7 @@ func (i GetDetectorRecipeDetectorRuleDetailArgs) ToGetDetectorRecipeDetectorRule
 // GetDetectorRecipeDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailArray and GetDetectorRecipeDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailArrayInput` via:
 //
-//          GetDetectorRecipeDetectorRuleDetailArray{ GetDetectorRecipeDetectorRuleDetailArgs{...} }
+//	GetDetectorRecipeDetectorRuleDetailArray{ GetDetectorRecipeDetectorRuleDetailArgs{...} }
 type GetDetectorRecipeDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -6468,7 +6468,7 @@ type GetDetectorRecipeDetectorRuleDetailConfiguration struct {
 // GetDetectorRecipeDetectorRuleDetailConfigurationInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationArgs and GetDetectorRecipeDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationInput` via:
 //
-//          GetDetectorRecipeDetectorRuleDetailConfigurationArgs{...}
+//	GetDetectorRecipeDetectorRuleDetailConfigurationArgs{...}
 type GetDetectorRecipeDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -6504,7 +6504,7 @@ func (i GetDetectorRecipeDetectorRuleDetailConfigurationArgs) ToGetDetectorRecip
 // GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationArray and GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetDetectorRecipeDetectorRuleDetailConfigurationArray{ GetDetectorRecipeDetectorRuleDetailConfigurationArgs{...} }
+//	GetDetectorRecipeDetectorRuleDetailConfigurationArray{ GetDetectorRecipeDetectorRuleDetailConfigurationArgs{...} }
 type GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -6599,7 +6599,7 @@ type GetDetectorRecipeDetectorRuleDetailConfigurationValue struct {
 // GetDetectorRecipeDetectorRuleDetailConfigurationValueInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs and GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...}
+//	GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...}
 type GetDetectorRecipeDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -6631,7 +6631,7 @@ func (i GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs) ToGetDetector
 // GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationValueArray and GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetDetectorRecipeDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetDetectorRecipeDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...} }
 type GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -6736,7 +6736,7 @@ type GetDetectorRecipeEffectiveDetectorRule struct {
 // GetDetectorRecipeEffectiveDetectorRuleInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleArgs and GetDetectorRecipeEffectiveDetectorRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleArgs{...}
+//	GetDetectorRecipeEffectiveDetectorRuleArgs{...}
 type GetDetectorRecipeEffectiveDetectorRuleInput interface {
 	pulumi.Input
 
@@ -6790,7 +6790,7 @@ func (i GetDetectorRecipeEffectiveDetectorRuleArgs) ToGetDetectorRecipeEffective
 // GetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleArray and GetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleArray{ GetDetectorRecipeEffectiveDetectorRuleArgs{...} }
+//	GetDetectorRecipeEffectiveDetectorRuleArray{ GetDetectorRecipeEffectiveDetectorRuleArgs{...} }
 type GetDetectorRecipeEffectiveDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -6932,7 +6932,7 @@ type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule struct {
 // GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs and GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...}
+//	GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...}
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput interface {
 	pulumi.Input
 
@@ -6964,7 +6964,7 @@ func (i GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs) ToGetD
 // GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray and GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...} }
+//	GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{...} }
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -7053,7 +7053,7 @@ type GetDetectorRecipeEffectiveDetectorRuleDetail struct {
 // GetDetectorRecipeEffectiveDetectorRuleDetailInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailArgs and GetDetectorRecipeEffectiveDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
+//	GetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
 type GetDetectorRecipeEffectiveDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -7091,7 +7091,7 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToGetDetectorRecipeEff
 // GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailArray and GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleDetailArray{ GetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
+//	GetDetectorRecipeEffectiveDetectorRuleDetailArray{ GetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
 type GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -7195,7 +7195,7 @@ type GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
 // GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -7231,7 +7231,7 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToGetDete
 // GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -7326,7 +7326,7 @@ type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
 // GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -7358,7 +7358,7 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToGe
 // GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -7438,7 +7438,7 @@ type GetDetectorRecipesDetectorRecipeCollection struct {
 // GetDetectorRecipesDetectorRecipeCollectionInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionArgs and GetDetectorRecipesDetectorRecipeCollectionOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionInput interface {
 	pulumi.Input
 
@@ -7465,7 +7465,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionArgs) ToGetDetectorRecipesDete
 // GetDetectorRecipesDetectorRecipeCollectionArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionArray and GetDetectorRecipesDetectorRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionArray{ GetDetectorRecipesDetectorRecipeCollectionArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionArray{ GetDetectorRecipesDetectorRecipeCollectionArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -7563,7 +7563,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItem struct {
 // GetDetectorRecipesDetectorRecipeCollectionItemInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemArgs and GetDetectorRecipesDetectorRecipeCollectionItemOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemInput interface {
 	pulumi.Input
 
@@ -7619,7 +7619,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemArgs) ToGetDetectorRecipes
 // GetDetectorRecipesDetectorRecipeCollectionItemArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemArray and GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemArray{ GetDetectorRecipesDetectorRecipeCollectionItemArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemArray{ GetDetectorRecipesDetectorRecipeCollectionItemArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -7788,7 +7788,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule struct {
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleInput interface {
 	pulumi.Input
 
@@ -7842,7 +7842,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs) ToGetDet
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -7984,7 +7984,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponde
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleInput interface {
 	pulumi.Input
 
@@ -8016,7 +8016,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespo
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -8111,7 +8111,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail struct {
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -8149,7 +8149,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs) To
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -8255,7 +8255,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurati
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -8291,7 +8291,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -8394,7 +8394,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurati
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -8426,7 +8426,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -8537,7 +8537,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct 
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput interface {
 	pulumi.Input
 
@@ -8591,7 +8591,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs)
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -8753,7 +8753,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidat
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleInput interface {
 	pulumi.Input
 
@@ -8785,7 +8785,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandi
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -8880,7 +8880,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail s
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -8918,7 +8918,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -9032,7 +9032,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailCo
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -9068,7 +9068,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -9171,7 +9171,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailCo
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs{...}
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs{...}
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -9203,7 +9203,7 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -9291,7 +9291,7 @@ type GetDetectorRecipesFilter struct {
 // GetDetectorRecipesFilterInput is an input type that accepts GetDetectorRecipesFilterArgs and GetDetectorRecipesFilterOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesFilterInput` via:
 //
-//          GetDetectorRecipesFilterArgs{...}
+//	GetDetectorRecipesFilterArgs{...}
 type GetDetectorRecipesFilterInput interface {
 	pulumi.Input
 
@@ -9322,7 +9322,7 @@ func (i GetDetectorRecipesFilterArgs) ToGetDetectorRecipesFilterOutputWithContex
 // GetDetectorRecipesFilterArrayInput is an input type that accepts GetDetectorRecipesFilterArray and GetDetectorRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesFilterArrayInput` via:
 //
-//          GetDetectorRecipesFilterArray{ GetDetectorRecipesFilterArgs{...} }
+//	GetDetectorRecipesFilterArray{ GetDetectorRecipesFilterArgs{...} }
 type GetDetectorRecipesFilterArrayInput interface {
 	pulumi.Input
 
@@ -9406,7 +9406,7 @@ type GetGuardTargetTargetDetail struct {
 // GetGuardTargetTargetDetailInput is an input type that accepts GetGuardTargetTargetDetailArgs and GetGuardTargetTargetDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetailInput` via:
 //
-//          GetGuardTargetTargetDetailArgs{...}
+//	GetGuardTargetTargetDetailArgs{...}
 type GetGuardTargetTargetDetailInput interface {
 	pulumi.Input
 
@@ -9440,7 +9440,7 @@ func (i GetGuardTargetTargetDetailArgs) ToGetGuardTargetTargetDetailOutputWithCo
 // GetGuardTargetTargetDetailArrayInput is an input type that accepts GetGuardTargetTargetDetailArray and GetGuardTargetTargetDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetailArrayInput` via:
 //
-//          GetGuardTargetTargetDetailArray{ GetGuardTargetTargetDetailArgs{...} }
+//	GetGuardTargetTargetDetailArray{ GetGuardTargetTargetDetailArgs{...} }
 type GetGuardTargetTargetDetailArrayInput interface {
 	pulumi.Input
 
@@ -9550,7 +9550,7 @@ type GetGuardTargetTargetDetailTargetSecurityZoneRecipe struct {
 // GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput is an input type that accepts GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs and GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput` via:
 //
-//          GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{...}
+//	GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{...}
 type GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput interface {
 	pulumi.Input
 
@@ -9602,7 +9602,7 @@ func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs) ToGetGuardTarget
 // GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray and GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput` via:
 //
-//          GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray{ GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{...} }
+//	GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray{ GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{...} }
 type GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput interface {
 	pulumi.Input
 
@@ -9757,7 +9757,7 @@ type GetGuardTargetTargetDetectorRecipe struct {
 // GetGuardTargetTargetDetectorRecipeInput is an input type that accepts GetGuardTargetTargetDetectorRecipeArgs and GetGuardTargetTargetDetectorRecipeOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeArgs{...}
+//	GetGuardTargetTargetDetectorRecipeArgs{...}
 type GetGuardTargetTargetDetectorRecipeInput interface {
 	pulumi.Input
 
@@ -9807,7 +9807,7 @@ func (i GetGuardTargetTargetDetectorRecipeArgs) ToGetGuardTargetTargetDetectorRe
 // GetGuardTargetTargetDetectorRecipeArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeArray and GetGuardTargetTargetDetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeArray{ GetGuardTargetTargetDetectorRecipeArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeArray{ GetGuardTargetTargetDetectorRecipeArgs{...} }
 type GetGuardTargetTargetDetectorRecipeArrayInput interface {
 	pulumi.Input
 
@@ -9959,7 +9959,7 @@ type GetGuardTargetTargetDetectorRecipeDetectorRule struct {
 // GetGuardTargetTargetDetectorRecipeDetectorRuleInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleArgs{...}
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleArgs{...}
 type GetGuardTargetTargetDetectorRecipeDetectorRuleInput interface {
 	pulumi.Input
 
@@ -10011,7 +10011,7 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleArgs) ToGetGuardTargetTarg
 // GetGuardTargetTargetDetectorRecipeDetectorRuleArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleArray and GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleArgs{...} }
 type GetGuardTargetTargetDetectorRecipeDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -10152,7 +10152,7 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleDetail struct {
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs{...}
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs{...}
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -10190,7 +10190,7 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs) ToGetGuardTarg
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs{...} }
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -10290,7 +10290,7 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup struct {
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...}
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...}
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupInput interface {
 	pulumi.Input
 
@@ -10320,7 +10320,7 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs) 
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...} }
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput interface {
 	pulumi.Input
 
@@ -10404,7 +10404,7 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration struct {
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...}
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...}
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -10440,7 +10440,7 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs) T
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...} }
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -10535,7 +10535,7 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue stru
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...}
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...}
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -10567,7 +10567,7 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueAr
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...} }
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -10674,7 +10674,7 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...}
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...}
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput interface {
 	pulumi.Input
 
@@ -10726,7 +10726,7 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs) ToGetGuardT
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs{...} }
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -10867,7 +10867,7 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail struct {
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -10905,7 +10905,7 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToGet
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -11007,7 +11007,7 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...}
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...}
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput interface {
 	pulumi.Input
 
@@ -11037,7 +11037,7 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...} }
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput interface {
 	pulumi.Input
 
@@ -11123,7 +11123,7 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration 
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -11159,7 +11159,7 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -11262,7 +11262,7 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationV
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -11294,7 +11294,7 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -11397,7 +11397,7 @@ type GetGuardTargetTargetResponderRecipe struct {
 // GetGuardTargetTargetResponderRecipeInput is an input type that accepts GetGuardTargetTargetResponderRecipeArgs and GetGuardTargetTargetResponderRecipeOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeArgs{...}
+//	GetGuardTargetTargetResponderRecipeArgs{...}
 type GetGuardTargetTargetResponderRecipeInput interface {
 	pulumi.Input
 
@@ -11443,7 +11443,7 @@ func (i GetGuardTargetTargetResponderRecipeArgs) ToGetGuardTargetTargetResponder
 // GetGuardTargetTargetResponderRecipeArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeArray and GetGuardTargetTargetResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeArray{ GetGuardTargetTargetResponderRecipeArgs{...} }
+//	GetGuardTargetTargetResponderRecipeArray{ GetGuardTargetTargetResponderRecipeArgs{...} }
 type GetGuardTargetTargetResponderRecipeArrayInput interface {
 	pulumi.Input
 
@@ -11583,7 +11583,7 @@ type GetGuardTargetTargetResponderRecipeEffectiveResponderRule struct {
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs{...}
+//	GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs{...}
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleInput interface {
 	pulumi.Input
 
@@ -11633,7 +11633,7 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs) ToGetGuar
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArray and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArray{ GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs{...} }
+//	GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArray{ GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs{...} }
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -11765,7 +11765,7 @@ type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail struct {
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...}
+//	GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...}
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -11799,7 +11799,7 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToG
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArray and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArray{ GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
+//	GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArray{ GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -11889,7 +11889,7 @@ type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguratio
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
+//	GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -11921,7 +11921,7 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigura
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -12028,7 +12028,7 @@ type GetGuardTargetTargetResponderRecipeResponderRule struct {
 // GetGuardTargetTargetResponderRecipeResponderRuleInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleArgs and GetGuardTargetTargetResponderRecipeResponderRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeResponderRuleArgs{...}
+//	GetGuardTargetTargetResponderRecipeResponderRuleArgs{...}
 type GetGuardTargetTargetResponderRecipeResponderRuleInput interface {
 	pulumi.Input
 
@@ -12078,7 +12078,7 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleArgs) ToGetGuardTargetTa
 // GetGuardTargetTargetResponderRecipeResponderRuleArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleArray and GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeResponderRuleArray{ GetGuardTargetTargetResponderRecipeResponderRuleArgs{...} }
+//	GetGuardTargetTargetResponderRecipeResponderRuleArray{ GetGuardTargetTargetResponderRecipeResponderRuleArgs{...} }
 type GetGuardTargetTargetResponderRecipeResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -12210,7 +12210,7 @@ type GetGuardTargetTargetResponderRecipeResponderRuleDetail struct {
 // GetGuardTargetTargetResponderRecipeResponderRuleDetailInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs and GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleDetailInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs{...}
+//	GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs{...}
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -12244,7 +12244,7 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs) ToGetGuardTa
 // GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleDetailArray and GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeResponderRuleDetailArray{ GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs{...} }
+//	GetGuardTargetTargetResponderRecipeResponderRuleDetailArray{ GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs{...} }
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -12334,7 +12334,7 @@ type GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration struct 
 // GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs and GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs{...}
+//	GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs{...}
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -12366,7 +12366,7 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs)
 // GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray and GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray{ GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray{ GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs{...} }
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -12448,7 +12448,7 @@ type GetGuardTargetsFilter struct {
 // GetGuardTargetsFilterInput is an input type that accepts GetGuardTargetsFilterArgs and GetGuardTargetsFilterOutput values.
 // You can construct a concrete instance of `GetGuardTargetsFilterInput` via:
 //
-//          GetGuardTargetsFilterArgs{...}
+//	GetGuardTargetsFilterArgs{...}
 type GetGuardTargetsFilterInput interface {
 	pulumi.Input
 
@@ -12479,7 +12479,7 @@ func (i GetGuardTargetsFilterArgs) ToGetGuardTargetsFilterOutputWithContext(ctx 
 // GetGuardTargetsFilterArrayInput is an input type that accepts GetGuardTargetsFilterArray and GetGuardTargetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsFilterArrayInput` via:
 //
-//          GetGuardTargetsFilterArray{ GetGuardTargetsFilterArgs{...} }
+//	GetGuardTargetsFilterArray{ GetGuardTargetsFilterArgs{...} }
 type GetGuardTargetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -12556,7 +12556,7 @@ type GetGuardTargetsTargetCollection struct {
 // GetGuardTargetsTargetCollectionInput is an input type that accepts GetGuardTargetsTargetCollectionArgs and GetGuardTargetsTargetCollectionOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionInput` via:
 //
-//          GetGuardTargetsTargetCollectionArgs{...}
+//	GetGuardTargetsTargetCollectionArgs{...}
 type GetGuardTargetsTargetCollectionInput interface {
 	pulumi.Input
 
@@ -12583,7 +12583,7 @@ func (i GetGuardTargetsTargetCollectionArgs) ToGetGuardTargetsTargetCollectionOu
 // GetGuardTargetsTargetCollectionArrayInput is an input type that accepts GetGuardTargetsTargetCollectionArray and GetGuardTargetsTargetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionArray{ GetGuardTargetsTargetCollectionArgs{...} }
+//	GetGuardTargetsTargetCollectionArray{ GetGuardTargetsTargetCollectionArgs{...} }
 type GetGuardTargetsTargetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -12685,7 +12685,7 @@ type GetGuardTargetsTargetCollectionItem struct {
 // GetGuardTargetsTargetCollectionItemInput is an input type that accepts GetGuardTargetsTargetCollectionItemArgs and GetGuardTargetsTargetCollectionItemOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemArgs{...}
+//	GetGuardTargetsTargetCollectionItemArgs{...}
 type GetGuardTargetsTargetCollectionItemInput interface {
 	pulumi.Input
 
@@ -12747,7 +12747,7 @@ func (i GetGuardTargetsTargetCollectionItemArgs) ToGetGuardTargetsTargetCollecti
 // GetGuardTargetsTargetCollectionItemArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemArray and GetGuardTargetsTargetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemArray{ GetGuardTargetsTargetCollectionItemArgs{...} }
+//	GetGuardTargetsTargetCollectionItemArray{ GetGuardTargetsTargetCollectionItemArgs{...} }
 type GetGuardTargetsTargetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -12913,7 +12913,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetail struct {
 // GetGuardTargetsTargetCollectionItemTargetDetailInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailArgs and GetGuardTargetsTargetCollectionItemTargetDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetailArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetailArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetailInput interface {
 	pulumi.Input
 
@@ -12947,7 +12947,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetailArgs) ToGetGuardTargetsTa
 // GetGuardTargetsTargetCollectionItemTargetDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailArray and GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetailArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetailArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetailArrayInput interface {
 	pulumi.Input
 
@@ -13057,7 +13057,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe str
 // GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs and GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput interface {
 	pulumi.Input
 
@@ -13109,7 +13109,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeA
 // GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray and GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray{ GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray{ GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput interface {
 	pulumi.Input
 
@@ -13280,7 +13280,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipe struct {
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeInput interface {
 	pulumi.Input
 
@@ -13330,7 +13330,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs) ToGetGuardT
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput interface {
 	pulumi.Input
 
@@ -13482,7 +13482,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule struct 
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleInput interface {
 	pulumi.Input
 
@@ -13534,7 +13534,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs)
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -13695,7 +13695,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail s
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -13733,7 +13733,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -13841,7 +13841,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailCo
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupInput interface {
 	pulumi.Input
 
@@ -13871,7 +13871,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput interface {
 	pulumi.Input
 
@@ -13957,7 +13957,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailCo
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -13993,7 +13993,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -14096,7 +14096,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailCo
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -14128,7 +14128,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -14237,7 +14237,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleInput interface {
 	pulumi.Input
 
@@ -14289,7 +14289,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput interface {
 	pulumi.Input
 
@@ -14454,7 +14454,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailInput interface {
 	pulumi.Input
 
@@ -14492,7 +14492,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -14600,7 +14600,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput interface {
 	pulumi.Input
 
@@ -14630,7 +14630,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput interface {
 	pulumi.Input
 
@@ -14716,7 +14716,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -14752,7 +14752,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -14855,7 +14855,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput interface {
 	pulumi.Input
 
@@ -14887,7 +14887,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput interface {
 	pulumi.Input
 
@@ -14990,7 +14990,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipe struct {
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeInput interface {
 	pulumi.Input
 
@@ -15036,7 +15036,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs) ToGetGuard
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput interface {
 	pulumi.Input
 
@@ -15176,7 +15176,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleInput interface {
 	pulumi.Input
 
@@ -15226,7 +15226,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -15380,7 +15380,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -15414,7 +15414,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -15510,7 +15510,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -15542,7 +15542,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -15649,7 +15649,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule struc
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleInput interface {
 	pulumi.Input
 
@@ -15699,7 +15699,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArg
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -15849,7 +15849,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -15883,7 +15883,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -15979,7 +15979,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArgs and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArgs{...}
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArgs{...}
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -16011,7 +16011,7 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArgs{...} }
+//	GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArray{ GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArgs{...} }
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -16097,7 +16097,7 @@ type GetManagedListsFilter struct {
 // GetManagedListsFilterInput is an input type that accepts GetManagedListsFilterArgs and GetManagedListsFilterOutput values.
 // You can construct a concrete instance of `GetManagedListsFilterInput` via:
 //
-//          GetManagedListsFilterArgs{...}
+//	GetManagedListsFilterArgs{...}
 type GetManagedListsFilterInput interface {
 	pulumi.Input
 
@@ -16126,7 +16126,7 @@ func (i GetManagedListsFilterArgs) ToGetManagedListsFilterOutputWithContext(ctx 
 // GetManagedListsFilterArrayInput is an input type that accepts GetManagedListsFilterArray and GetManagedListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedListsFilterArrayInput` via:
 //
-//          GetManagedListsFilterArray{ GetManagedListsFilterArgs{...} }
+//	GetManagedListsFilterArray{ GetManagedListsFilterArgs{...} }
 type GetManagedListsFilterArrayInput interface {
 	pulumi.Input
 
@@ -16201,7 +16201,7 @@ type GetManagedListsManagedListCollection struct {
 // GetManagedListsManagedListCollectionInput is an input type that accepts GetManagedListsManagedListCollectionArgs and GetManagedListsManagedListCollectionOutput values.
 // You can construct a concrete instance of `GetManagedListsManagedListCollectionInput` via:
 //
-//          GetManagedListsManagedListCollectionArgs{...}
+//	GetManagedListsManagedListCollectionArgs{...}
 type GetManagedListsManagedListCollectionInput interface {
 	pulumi.Input
 
@@ -16228,7 +16228,7 @@ func (i GetManagedListsManagedListCollectionArgs) ToGetManagedListsManagedListCo
 // GetManagedListsManagedListCollectionArrayInput is an input type that accepts GetManagedListsManagedListCollectionArray and GetManagedListsManagedListCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedListsManagedListCollectionArrayInput` via:
 //
-//          GetManagedListsManagedListCollectionArray{ GetManagedListsManagedListCollectionArgs{...} }
+//	GetManagedListsManagedListCollectionArray{ GetManagedListsManagedListCollectionArgs{...} }
 type GetManagedListsManagedListCollectionArrayInput interface {
 	pulumi.Input
 
@@ -16328,7 +16328,7 @@ type GetManagedListsManagedListCollectionItem struct {
 // GetManagedListsManagedListCollectionItemInput is an input type that accepts GetManagedListsManagedListCollectionItemArgs and GetManagedListsManagedListCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedListsManagedListCollectionItemInput` via:
 //
-//          GetManagedListsManagedListCollectionItemArgs{...}
+//	GetManagedListsManagedListCollectionItemArgs{...}
 type GetManagedListsManagedListCollectionItemInput interface {
 	pulumi.Input
 
@@ -16386,7 +16386,7 @@ func (i GetManagedListsManagedListCollectionItemArgs) ToGetManagedListsManagedLi
 // GetManagedListsManagedListCollectionItemArrayInput is an input type that accepts GetManagedListsManagedListCollectionItemArray and GetManagedListsManagedListCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedListsManagedListCollectionItemArrayInput` via:
 //
-//          GetManagedListsManagedListCollectionItemArray{ GetManagedListsManagedListCollectionItemArgs{...} }
+//	GetManagedListsManagedListCollectionItemArray{ GetManagedListsManagedListCollectionItemArgs{...} }
 type GetManagedListsManagedListCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -16552,7 +16552,7 @@ type GetResponderRecipeEffectiveResponderRule struct {
 // GetResponderRecipeEffectiveResponderRuleInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleArgs and GetResponderRecipeEffectiveResponderRuleOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleInput` via:
 //
-//          GetResponderRecipeEffectiveResponderRuleArgs{...}
+//	GetResponderRecipeEffectiveResponderRuleArgs{...}
 type GetResponderRecipeEffectiveResponderRuleInput interface {
 	pulumi.Input
 
@@ -16602,7 +16602,7 @@ func (i GetResponderRecipeEffectiveResponderRuleArgs) ToGetResponderRecipeEffect
 // GetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleArray and GetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
-//          GetResponderRecipeEffectiveResponderRuleArray{ GetResponderRecipeEffectiveResponderRuleArgs{...} }
+//	GetResponderRecipeEffectiveResponderRuleArray{ GetResponderRecipeEffectiveResponderRuleArgs{...} }
 type GetResponderRecipeEffectiveResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -16734,7 +16734,7 @@ type GetResponderRecipeEffectiveResponderRuleDetail struct {
 // GetResponderRecipeEffectiveResponderRuleDetailInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleDetailArgs and GetResponderRecipeEffectiveResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleDetailInput` via:
 //
-//          GetResponderRecipeEffectiveResponderRuleDetailArgs{...}
+//	GetResponderRecipeEffectiveResponderRuleDetailArgs{...}
 type GetResponderRecipeEffectiveResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -16768,7 +16768,7 @@ func (i GetResponderRecipeEffectiveResponderRuleDetailArgs) ToGetResponderRecipe
 // GetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleDetailArray and GetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
-//          GetResponderRecipeEffectiveResponderRuleDetailArray{ GetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
+//	GetResponderRecipeEffectiveResponderRuleDetailArray{ GetResponderRecipeEffectiveResponderRuleDetailArgs{...} }
 type GetResponderRecipeEffectiveResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -16858,7 +16858,7 @@ type GetResponderRecipeEffectiveResponderRuleDetailConfiguration struct {
 // GetResponderRecipeEffectiveResponderRuleDetailConfigurationInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs and GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleDetailConfigurationInput` via:
 //
-//          GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
+//	GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...}
 type GetResponderRecipeEffectiveResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -16890,7 +16890,7 @@ func (i GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToGetRe
 // GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
+//	GetResponderRecipeEffectiveResponderRuleDetailConfigurationArray{ GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs{...} }
 type GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -16991,7 +16991,7 @@ type GetResponderRecipeResponderRule struct {
 // GetResponderRecipeResponderRuleInput is an input type that accepts GetResponderRecipeResponderRuleArgs and GetResponderRecipeResponderRuleOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleInput` via:
 //
-//          GetResponderRecipeResponderRuleArgs{...}
+//	GetResponderRecipeResponderRuleArgs{...}
 type GetResponderRecipeResponderRuleInput interface {
 	pulumi.Input
 
@@ -17041,7 +17041,7 @@ func (i GetResponderRecipeResponderRuleArgs) ToGetResponderRecipeResponderRuleOu
 // GetResponderRecipeResponderRuleArrayInput is an input type that accepts GetResponderRecipeResponderRuleArray and GetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleArrayInput` via:
 //
-//          GetResponderRecipeResponderRuleArray{ GetResponderRecipeResponderRuleArgs{...} }
+//	GetResponderRecipeResponderRuleArray{ GetResponderRecipeResponderRuleArgs{...} }
 type GetResponderRecipeResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -17171,7 +17171,7 @@ type GetResponderRecipeResponderRuleDetail struct {
 // GetResponderRecipeResponderRuleDetailInput is an input type that accepts GetResponderRecipeResponderRuleDetailArgs and GetResponderRecipeResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleDetailInput` via:
 //
-//          GetResponderRecipeResponderRuleDetailArgs{...}
+//	GetResponderRecipeResponderRuleDetailArgs{...}
 type GetResponderRecipeResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -17205,7 +17205,7 @@ func (i GetResponderRecipeResponderRuleDetailArgs) ToGetResponderRecipeResponder
 // GetResponderRecipeResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipeResponderRuleDetailArray and GetResponderRecipeResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleDetailArrayInput` via:
 //
-//          GetResponderRecipeResponderRuleDetailArray{ GetResponderRecipeResponderRuleDetailArgs{...} }
+//	GetResponderRecipeResponderRuleDetailArray{ GetResponderRecipeResponderRuleDetailArgs{...} }
 type GetResponderRecipeResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -17295,7 +17295,7 @@ type GetResponderRecipeResponderRuleDetailConfiguration struct {
 // GetResponderRecipeResponderRuleDetailConfigurationInput is an input type that accepts GetResponderRecipeResponderRuleDetailConfigurationArgs and GetResponderRecipeResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleDetailConfigurationInput` via:
 //
-//          GetResponderRecipeResponderRuleDetailConfigurationArgs{...}
+//	GetResponderRecipeResponderRuleDetailConfigurationArgs{...}
 type GetResponderRecipeResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -17327,7 +17327,7 @@ func (i GetResponderRecipeResponderRuleDetailConfigurationArgs) ToGetResponderRe
 // GetResponderRecipeResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipeResponderRuleDetailConfigurationArray and GetResponderRecipeResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetResponderRecipeResponderRuleDetailConfigurationArray{ GetResponderRecipeResponderRuleDetailConfigurationArgs{...} }
+//	GetResponderRecipeResponderRuleDetailConfigurationArray{ GetResponderRecipeResponderRuleDetailConfigurationArgs{...} }
 type GetResponderRecipeResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -17408,7 +17408,7 @@ type GetResponderRecipesFilter struct {
 // GetResponderRecipesFilterInput is an input type that accepts GetResponderRecipesFilterArgs and GetResponderRecipesFilterOutput values.
 // You can construct a concrete instance of `GetResponderRecipesFilterInput` via:
 //
-//          GetResponderRecipesFilterArgs{...}
+//	GetResponderRecipesFilterArgs{...}
 type GetResponderRecipesFilterInput interface {
 	pulumi.Input
 
@@ -17438,7 +17438,7 @@ func (i GetResponderRecipesFilterArgs) ToGetResponderRecipesFilterOutputWithCont
 // GetResponderRecipesFilterArrayInput is an input type that accepts GetResponderRecipesFilterArray and GetResponderRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesFilterArrayInput` via:
 //
-//          GetResponderRecipesFilterArray{ GetResponderRecipesFilterArgs{...} }
+//	GetResponderRecipesFilterArray{ GetResponderRecipesFilterArgs{...} }
 type GetResponderRecipesFilterArrayInput interface {
 	pulumi.Input
 
@@ -17514,7 +17514,7 @@ type GetResponderRecipesResponderRecipeCollection struct {
 // GetResponderRecipesResponderRecipeCollectionInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionArgs and GetResponderRecipesResponderRecipeCollectionOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionArgs{...}
 type GetResponderRecipesResponderRecipeCollectionInput interface {
 	pulumi.Input
 
@@ -17541,7 +17541,7 @@ func (i GetResponderRecipesResponderRecipeCollectionArgs) ToGetResponderRecipesR
 // GetResponderRecipesResponderRecipeCollectionArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionArray and GetResponderRecipesResponderRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionArray{ GetResponderRecipesResponderRecipeCollectionArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionArray{ GetResponderRecipesResponderRecipeCollectionArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -17639,7 +17639,7 @@ type GetResponderRecipesResponderRecipeCollectionItem struct {
 // GetResponderRecipesResponderRecipeCollectionItemInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemArgs and GetResponderRecipesResponderRecipeCollectionItemOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemInput interface {
 	pulumi.Input
 
@@ -17695,7 +17695,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemArgs) ToGetResponderReci
 // GetResponderRecipesResponderRecipeCollectionItemArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemArray and GetResponderRecipesResponderRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemArray{ GetResponderRecipesResponderRecipeCollectionItemArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemArray{ GetResponderRecipesResponderRecipeCollectionItemArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -17860,7 +17860,7 @@ type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule stru
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleInput interface {
 	pulumi.Input
 
@@ -17910,7 +17910,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleAr
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArray and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArray{ GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArray{ GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -18060,7 +18060,7 @@ type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetai
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -18094,7 +18094,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArray and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArray{ GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArray{ GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -18190,7 +18190,7 @@ type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetai
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArgs and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -18222,7 +18222,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArray and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArray{ GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArray{ GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -18329,7 +18329,7 @@ type GetResponderRecipesResponderRecipeCollectionItemResponderRule struct {
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs and GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleInput interface {
 	pulumi.Input
 
@@ -18379,7 +18379,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs) ToGet
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleArray and GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemResponderRuleArray{ GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemResponderRuleArray{ GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayInput interface {
 	pulumi.Input
 
@@ -18515,7 +18515,7 @@ type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail struct 
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs and GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailInput interface {
 	pulumi.Input
 
@@ -18549,7 +18549,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs)
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray and GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray{ GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray{ GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput interface {
 	pulumi.Input
 
@@ -18639,7 +18639,7 @@ type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigur
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs and GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs{...}
+//	GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs{...}
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationInput interface {
 	pulumi.Input
 
@@ -18671,7 +18671,7 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfi
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArray and GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput` via:
 //
-//          GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArray{ GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs{...} }
+//	GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArray{ GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs{...} }
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -18757,7 +18757,7 @@ type GetSecurityPoliciesFilter struct {
 // GetSecurityPoliciesFilterInput is an input type that accepts GetSecurityPoliciesFilterArgs and GetSecurityPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesFilterInput` via:
 //
-//          GetSecurityPoliciesFilterArgs{...}
+//	GetSecurityPoliciesFilterArgs{...}
 type GetSecurityPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -18786,7 +18786,7 @@ func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutputWithCont
 // GetSecurityPoliciesFilterArrayInput is an input type that accepts GetSecurityPoliciesFilterArray and GetSecurityPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesFilterArrayInput` via:
 //
-//          GetSecurityPoliciesFilterArray{ GetSecurityPoliciesFilterArgs{...} }
+//	GetSecurityPoliciesFilterArray{ GetSecurityPoliciesFilterArgs{...} }
 type GetSecurityPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -18861,7 +18861,7 @@ type GetSecurityPoliciesSecurityPolicyCollection struct {
 // GetSecurityPoliciesSecurityPolicyCollectionInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArgs and GetSecurityPoliciesSecurityPolicyCollectionOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionInput` via:
 //
-//          GetSecurityPoliciesSecurityPolicyCollectionArgs{...}
+//	GetSecurityPoliciesSecurityPolicyCollectionArgs{...}
 type GetSecurityPoliciesSecurityPolicyCollectionInput interface {
 	pulumi.Input
 
@@ -18888,7 +18888,7 @@ func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSe
 // GetSecurityPoliciesSecurityPolicyCollectionArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArray and GetSecurityPoliciesSecurityPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionArrayInput` via:
 //
-//          GetSecurityPoliciesSecurityPolicyCollectionArray{ GetSecurityPoliciesSecurityPolicyCollectionArgs{...} }
+//	GetSecurityPoliciesSecurityPolicyCollectionArray{ GetSecurityPoliciesSecurityPolicyCollectionArgs{...} }
 type GetSecurityPoliciesSecurityPolicyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -18986,7 +18986,7 @@ type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
 // GetSecurityPoliciesSecurityPolicyCollectionItemInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArgs and GetSecurityPoliciesSecurityPolicyCollectionItemOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemInput` via:
 //
-//          GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...}
+//	GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...}
 type GetSecurityPoliciesSecurityPolicyCollectionItemInput interface {
 	pulumi.Input
 
@@ -19042,7 +19042,7 @@ func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPolici
 // GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArray and GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput` via:
 //
-//          GetSecurityPoliciesSecurityPolicyCollectionItemArray{ GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...} }
+//	GetSecurityPoliciesSecurityPolicyCollectionItemArray{ GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...} }
 type GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -19182,7 +19182,7 @@ type GetSecurityRecipesFilter struct {
 // GetSecurityRecipesFilterInput is an input type that accepts GetSecurityRecipesFilterArgs and GetSecurityRecipesFilterOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesFilterInput` via:
 //
-//          GetSecurityRecipesFilterArgs{...}
+//	GetSecurityRecipesFilterArgs{...}
 type GetSecurityRecipesFilterInput interface {
 	pulumi.Input
 
@@ -19211,7 +19211,7 @@ func (i GetSecurityRecipesFilterArgs) ToGetSecurityRecipesFilterOutputWithContex
 // GetSecurityRecipesFilterArrayInput is an input type that accepts GetSecurityRecipesFilterArray and GetSecurityRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesFilterArrayInput` via:
 //
-//          GetSecurityRecipesFilterArray{ GetSecurityRecipesFilterArgs{...} }
+//	GetSecurityRecipesFilterArray{ GetSecurityRecipesFilterArgs{...} }
 type GetSecurityRecipesFilterArrayInput interface {
 	pulumi.Input
 
@@ -19286,7 +19286,7 @@ type GetSecurityRecipesSecurityRecipeCollection struct {
 // GetSecurityRecipesSecurityRecipeCollectionInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionArgs and GetSecurityRecipesSecurityRecipeCollectionOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionInput` via:
 //
-//          GetSecurityRecipesSecurityRecipeCollectionArgs{...}
+//	GetSecurityRecipesSecurityRecipeCollectionArgs{...}
 type GetSecurityRecipesSecurityRecipeCollectionInput interface {
 	pulumi.Input
 
@@ -19313,7 +19313,7 @@ func (i GetSecurityRecipesSecurityRecipeCollectionArgs) ToGetSecurityRecipesSecu
 // GetSecurityRecipesSecurityRecipeCollectionArrayInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionArray and GetSecurityRecipesSecurityRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionArrayInput` via:
 //
-//          GetSecurityRecipesSecurityRecipeCollectionArray{ GetSecurityRecipesSecurityRecipeCollectionArgs{...} }
+//	GetSecurityRecipesSecurityRecipeCollectionArray{ GetSecurityRecipesSecurityRecipeCollectionArgs{...} }
 type GetSecurityRecipesSecurityRecipeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -19407,7 +19407,7 @@ type GetSecurityRecipesSecurityRecipeCollectionItem struct {
 // GetSecurityRecipesSecurityRecipeCollectionItemInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionItemArgs and GetSecurityRecipesSecurityRecipeCollectionItemOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionItemInput` via:
 //
-//          GetSecurityRecipesSecurityRecipeCollectionItemArgs{...}
+//	GetSecurityRecipesSecurityRecipeCollectionItemArgs{...}
 type GetSecurityRecipesSecurityRecipeCollectionItemInput interface {
 	pulumi.Input
 
@@ -19459,7 +19459,7 @@ func (i GetSecurityRecipesSecurityRecipeCollectionItemArgs) ToGetSecurityRecipes
 // GetSecurityRecipesSecurityRecipeCollectionItemArrayInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionItemArray and GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionItemArrayInput` via:
 //
-//          GetSecurityRecipesSecurityRecipeCollectionItemArray{ GetSecurityRecipesSecurityRecipeCollectionItemArgs{...} }
+//	GetSecurityRecipesSecurityRecipeCollectionItemArray{ GetSecurityRecipesSecurityRecipeCollectionItemArgs{...} }
 type GetSecurityRecipesSecurityRecipeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -19589,7 +19589,7 @@ type GetSecurityZonesFilter struct {
 // GetSecurityZonesFilterInput is an input type that accepts GetSecurityZonesFilterArgs and GetSecurityZonesFilterOutput values.
 // You can construct a concrete instance of `GetSecurityZonesFilterInput` via:
 //
-//          GetSecurityZonesFilterArgs{...}
+//	GetSecurityZonesFilterArgs{...}
 type GetSecurityZonesFilterInput interface {
 	pulumi.Input
 
@@ -19618,7 +19618,7 @@ func (i GetSecurityZonesFilterArgs) ToGetSecurityZonesFilterOutputWithContext(ct
 // GetSecurityZonesFilterArrayInput is an input type that accepts GetSecurityZonesFilterArray and GetSecurityZonesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityZonesFilterArrayInput` via:
 //
-//          GetSecurityZonesFilterArray{ GetSecurityZonesFilterArgs{...} }
+//	GetSecurityZonesFilterArray{ GetSecurityZonesFilterArgs{...} }
 type GetSecurityZonesFilterArrayInput interface {
 	pulumi.Input
 
@@ -19693,7 +19693,7 @@ type GetSecurityZonesSecurityZoneCollection struct {
 // GetSecurityZonesSecurityZoneCollectionInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionArgs and GetSecurityZonesSecurityZoneCollectionOutput values.
 // You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionInput` via:
 //
-//          GetSecurityZonesSecurityZoneCollectionArgs{...}
+//	GetSecurityZonesSecurityZoneCollectionArgs{...}
 type GetSecurityZonesSecurityZoneCollectionInput interface {
 	pulumi.Input
 
@@ -19720,7 +19720,7 @@ func (i GetSecurityZonesSecurityZoneCollectionArgs) ToGetSecurityZonesSecurityZo
 // GetSecurityZonesSecurityZoneCollectionArrayInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionArray and GetSecurityZonesSecurityZoneCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionArrayInput` via:
 //
-//          GetSecurityZonesSecurityZoneCollectionArray{ GetSecurityZonesSecurityZoneCollectionArgs{...} }
+//	GetSecurityZonesSecurityZoneCollectionArray{ GetSecurityZonesSecurityZoneCollectionArgs{...} }
 type GetSecurityZonesSecurityZoneCollectionArrayInput interface {
 	pulumi.Input
 
@@ -19816,7 +19816,7 @@ type GetSecurityZonesSecurityZoneCollectionItem struct {
 // GetSecurityZonesSecurityZoneCollectionItemInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionItemArgs and GetSecurityZonesSecurityZoneCollectionItemOutput values.
 // You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionItemInput` via:
 //
-//          GetSecurityZonesSecurityZoneCollectionItemArgs{...}
+//	GetSecurityZonesSecurityZoneCollectionItemArgs{...}
 type GetSecurityZonesSecurityZoneCollectionItemInput interface {
 	pulumi.Input
 
@@ -19870,7 +19870,7 @@ func (i GetSecurityZonesSecurityZoneCollectionItemArgs) ToGetSecurityZonesSecuri
 // GetSecurityZonesSecurityZoneCollectionItemArrayInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionItemArray and GetSecurityZonesSecurityZoneCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionItemArrayInput` via:
 //
-//          GetSecurityZonesSecurityZoneCollectionItemArray{ GetSecurityZonesSecurityZoneCollectionItemArgs{...} }
+//	GetSecurityZonesSecurityZoneCollectionItemArray{ GetSecurityZonesSecurityZoneCollectionItemArgs{...} }
 type GetSecurityZonesSecurityZoneCollectionItemArrayInput interface {
 	pulumi.Input
 

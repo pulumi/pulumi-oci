@@ -22,22 +22,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewCompareSecurityAssessment(ctx, "testCompareSecurityAssessment", &DataSafe.CompareSecurityAssessmentArgs{
-// 			ComparisonSecurityAssessmentId: pulumi.Any(oci_data_safe_security_assessment.Test_security_assessment.Id),
-// 			SecurityAssessmentId:           pulumi.Any(oci_data_safe_security_assessment.Test_security_assessment.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewCompareSecurityAssessment(ctx, "testCompareSecurityAssessment", &DataSafe.CompareSecurityAssessmentArgs{
+//				ComparisonSecurityAssessmentId: pulumi.Any(oci_data_safe_security_assessment.Test_security_assessment.Id),
+//				SecurityAssessmentId:           pulumi.Any(oci_data_safe_security_assessment.Test_security_assessment.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // CompareSecurityAssessment can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment test_compare_security_assessment "id"
+//
+//	$ pulumi import oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment test_compare_security_assessment "id"
+//
 // ```
 type CompareSecurityAssessment struct {
 	pulumi.CustomResourceState
@@ -149,7 +154,7 @@ func (i *CompareSecurityAssessment) ToCompareSecurityAssessmentOutputWithContext
 // CompareSecurityAssessmentArrayInput is an input type that accepts CompareSecurityAssessmentArray and CompareSecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `CompareSecurityAssessmentArrayInput` via:
 //
-//          CompareSecurityAssessmentArray{ CompareSecurityAssessmentArgs{...} }
+//	CompareSecurityAssessmentArray{ CompareSecurityAssessmentArgs{...} }
 type CompareSecurityAssessmentArrayInput interface {
 	pulumi.Input
 
@@ -174,7 +179,7 @@ func (i CompareSecurityAssessmentArray) ToCompareSecurityAssessmentArrayOutputWi
 // CompareSecurityAssessmentMapInput is an input type that accepts CompareSecurityAssessmentMap and CompareSecurityAssessmentMapOutput values.
 // You can construct a concrete instance of `CompareSecurityAssessmentMapInput` via:
 //
-//          CompareSecurityAssessmentMap{ "key": CompareSecurityAssessmentArgs{...} }
+//	CompareSecurityAssessmentMap{ "key": CompareSecurityAssessmentArgs{...} }
 type CompareSecurityAssessmentMapInput interface {
 	pulumi.Input
 

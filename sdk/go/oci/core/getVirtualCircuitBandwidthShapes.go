@@ -23,21 +23,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVirtualCircuitBandwidthShapes(ctx, &core.GetVirtualCircuitBandwidthShapesArgs{
-// 			ProviderServiceId: data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVirtualCircuitBandwidthShapes(ctx, &core.GetVirtualCircuitBandwidthShapesArgs{
+//				ProviderServiceId: data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVirtualCircuitBandwidthShapes(ctx *pulumi.Context, args *GetVirtualCircuitBandwidthShapesArgs, opts ...pulumi.InvokeOption) (*GetVirtualCircuitBandwidthShapesResult, error) {
 	var rv GetVirtualCircuitBandwidthShapesResult

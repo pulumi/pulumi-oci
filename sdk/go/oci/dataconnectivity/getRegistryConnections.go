@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryConnections(ctx, &dataconnectivity.GetRegistryConnectionsArgs{
-// 			DataAssetKey:        _var.Registry_connection_data_asset_key,
-// 			RegistryId:          oci_data_connectivity_registry.Test_registry.Id,
-// 			FavoritesQueryParam: pulumi.StringRef(_var.Registry_connection_favorites_query_param),
-// 			Fields:              _var.Registry_connection_fields,
-// 			Name:                pulumi.StringRef(_var.Registry_connection_name),
-// 			Type:                pulumi.StringRef(_var.Registry_connection_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryConnections(ctx, &dataconnectivity.GetRegistryConnectionsArgs{
+//				DataAssetKey:        _var.Registry_connection_data_asset_key,
+//				RegistryId:          oci_data_connectivity_registry.Test_registry.Id,
+//				FavoritesQueryParam: pulumi.StringRef(_var.Registry_connection_favorites_query_param),
+//				Fields:              _var.Registry_connection_fields,
+//				Name:                pulumi.StringRef(_var.Registry_connection_name),
+//				Type:                pulumi.StringRef(_var.Registry_connection_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRegistryConnections(ctx *pulumi.Context, args *GetRegistryConnectionsArgs, opts ...pulumi.InvokeOption) (*GetRegistryConnectionsResult, error) {
 	var rv GetRegistryConnectionsResult

@@ -9,6 +9,7 @@ export * from "./autoScalingConfiguration";
 export * from "./bdsInstance";
 export * from "./bdsInstanceApiKey";
 export * from "./bdsInstanceMetastoreConfig";
+export * from "./bdsInstancePatchAction";
 export * from "./getAutoScalingConfiguration";
 export * from "./getAutoScalingConfigurations";
 export * from "./getBdsInstance";
@@ -16,6 +17,8 @@ export * from "./getBdsInstanceApiKey";
 export * from "./getBdsInstanceApiKeys";
 export * from "./getBdsInstanceMetastoreConfig";
 export * from "./getBdsInstanceMetastoreConfigs";
+export * from "./getBdsInstancePatchHistories";
+export * from "./getBdsInstancePatches";
 export * from "./getBdsInstances";
 
 // Import resources to register:
@@ -23,6 +26,7 @@ import { AutoScalingConfiguration } from "./autoScalingConfiguration";
 import { BdsInstance } from "./bdsInstance";
 import { BdsInstanceApiKey } from "./bdsInstanceApiKey";
 import { BdsInstanceMetastoreConfig } from "./bdsInstanceMetastoreConfig";
+import { BdsInstancePatchAction } from "./bdsInstancePatchAction";
 
 const _module = {
     version: utilities.getVersion(),
@@ -36,6 +40,8 @@ const _module = {
                 return new BdsInstanceApiKey(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
                 return new BdsInstanceMetastoreConfig(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
+                return new BdsInstancePatchAction(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -45,3 +51,4 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/autoScalingConfigur
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastoreConfig", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstancePatchAction", _module)

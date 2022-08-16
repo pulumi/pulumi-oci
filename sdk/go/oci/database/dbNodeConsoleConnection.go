@@ -23,22 +23,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDbNodeConsoleConnection(ctx, "testDbNodeConsoleConnection", &Database.DbNodeConsoleConnectionArgs{
-// 			DbNodeId:  pulumi.Any(oci_database_db_node.Test_db_node.Id),
-// 			PublicKey: pulumi.Any(_var.Db_node_console_connection_public_key),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDbNodeConsoleConnection(ctx, "testDbNodeConsoleConnection", &Database.DbNodeConsoleConnectionArgs{
+//				DbNodeId:  pulumi.Any(oci_database_db_node.Test_db_node.Id),
+//				PublicKey: pulumi.Any(_var.Db_node_console_connection_public_key),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // DbNodeConsoleConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
+//
+//	$ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
+//
 // ```
 type DbNodeConsoleConnection struct {
 	pulumi.CustomResourceState
@@ -174,7 +179,7 @@ func (i *DbNodeConsoleConnection) ToDbNodeConsoleConnectionOutputWithContext(ctx
 // DbNodeConsoleConnectionArrayInput is an input type that accepts DbNodeConsoleConnectionArray and DbNodeConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `DbNodeConsoleConnectionArrayInput` via:
 //
-//          DbNodeConsoleConnectionArray{ DbNodeConsoleConnectionArgs{...} }
+//	DbNodeConsoleConnectionArray{ DbNodeConsoleConnectionArgs{...} }
 type DbNodeConsoleConnectionArrayInput interface {
 	pulumi.Input
 
@@ -199,7 +204,7 @@ func (i DbNodeConsoleConnectionArray) ToDbNodeConsoleConnectionArrayOutputWithCo
 // DbNodeConsoleConnectionMapInput is an input type that accepts DbNodeConsoleConnectionMap and DbNodeConsoleConnectionMapOutput values.
 // You can construct a concrete instance of `DbNodeConsoleConnectionMapInput` via:
 //
-//          DbNodeConsoleConnectionMap{ "key": DbNodeConsoleConnectionArgs{...} }
+//	DbNodeConsoleConnectionMap{ "key": DbNodeConsoleConnectionArgs{...} }
 type DbNodeConsoleConnectionMapInput interface {
 	pulumi.Input
 

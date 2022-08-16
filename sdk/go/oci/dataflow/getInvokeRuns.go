@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataFlow.GetInvokeRuns(ctx, &dataflow.GetInvokeRunsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			ApplicationId:          pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-// 			DisplayName:            pulumi.StringRef(_var.Invoke_run_display_name),
-// 			DisplayNameStartsWith:  pulumi.StringRef(_var.Invoke_run_display_name_starts_with),
-// 			OwnerPrincipalId:       pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
-// 			State:                  pulumi.StringRef(_var.Invoke_run_state),
-// 			TimeCreatedGreaterThan: pulumi.StringRef(_var.Invoke_run_time_created_greater_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataFlow.GetInvokeRuns(ctx, &dataflow.GetInvokeRunsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				ApplicationId:          pulumi.StringRef(oci_dataflow_application.Test_application.Id),
+//				DisplayName:            pulumi.StringRef(_var.Invoke_run_display_name),
+//				DisplayNameStartsWith:  pulumi.StringRef(_var.Invoke_run_display_name_starts_with),
+//				OwnerPrincipalId:       pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
+//				State:                  pulumi.StringRef(_var.Invoke_run_state),
+//				TimeCreatedGreaterThan: pulumi.StringRef(_var.Invoke_run_time_created_greater_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInvokeRuns(ctx *pulumi.Context, args *GetInvokeRunsArgs, opts ...pulumi.InvokeOption) (*GetInvokeRunsResult, error) {
 	var rv GetInvokeRunsResult

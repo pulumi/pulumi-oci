@@ -131,7 +131,7 @@ func (i *DefaultSecurityList) ToDefaultSecurityListOutputWithContext(ctx context
 // DefaultSecurityListArrayInput is an input type that accepts DefaultSecurityListArray and DefaultSecurityListArrayOutput values.
 // You can construct a concrete instance of `DefaultSecurityListArrayInput` via:
 //
-//          DefaultSecurityListArray{ DefaultSecurityListArgs{...} }
+//	DefaultSecurityListArray{ DefaultSecurityListArgs{...} }
 type DefaultSecurityListArrayInput interface {
 	pulumi.Input
 
@@ -156,7 +156,7 @@ func (i DefaultSecurityListArray) ToDefaultSecurityListArrayOutputWithContext(ct
 // DefaultSecurityListMapInput is an input type that accepts DefaultSecurityListMap and DefaultSecurityListMapOutput values.
 // You can construct a concrete instance of `DefaultSecurityListMapInput` via:
 //
-//          DefaultSecurityListMap{ "key": DefaultSecurityListArgs{...} }
+//	DefaultSecurityListMap{ "key": DefaultSecurityListArgs{...} }
 type DefaultSecurityListMapInput interface {
 	pulumi.Input
 

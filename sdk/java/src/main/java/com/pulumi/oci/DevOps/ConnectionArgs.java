@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.ConnectionTlsVerifyConfigArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -45,6 +46,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> appPassword() {
         return Optional.ofNullable(this.appPassword);
+    }
+
+    /**
+     * (Updatable) The Base URL of the hosted BitbucketServer.
+     * 
+     */
+    @Import(name="baseUrl")
+    private @Nullable Output<String> baseUrl;
+
+    /**
+     * @return (Updatable) The Base URL of the hosted BitbucketServer.
+     * 
+     */
+    public Optional<Output<String>> baseUrl() {
+        return Optional.ofNullable(this.baseUrl);
     }
 
     /**
@@ -138,6 +154,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) TLS configuration used by build service to verify TLS connection.
+     * 
+     */
+    @Import(name="tlsVerifyConfig")
+    private @Nullable Output<ConnectionTlsVerifyConfigArgs> tlsVerifyConfig;
+
+    /**
+     * @return (Updatable) TLS configuration used by build service to verify TLS connection.
+     * 
+     */
+    public Optional<Output<ConnectionTlsVerifyConfigArgs>> tlsVerifyConfig() {
+        return Optional.ofNullable(this.tlsVerifyConfig);
+    }
+
+    /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      * 
      */
@@ -157,12 +188,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     private ConnectionArgs(ConnectionArgs $) {
         this.accessToken = $.accessToken;
         this.appPassword = $.appPassword;
+        this.baseUrl = $.baseUrl;
         this.connectionType = $.connectionType;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.projectId = $.projectId;
+        this.tlsVerifyConfig = $.tlsVerifyConfig;
         this.username = $.username;
     }
 
@@ -224,6 +257,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder appPassword(String appPassword) {
             return appPassword(Output.of(appPassword));
+        }
+
+        /**
+         * @param baseUrl (Updatable) The Base URL of the hosted BitbucketServer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baseUrl(@Nullable Output<String> baseUrl) {
+            $.baseUrl = baseUrl;
+            return this;
+        }
+
+        /**
+         * @param baseUrl (Updatable) The Base URL of the hosted BitbucketServer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baseUrl(String baseUrl) {
+            return baseUrl(Output.of(baseUrl));
         }
 
         /**
@@ -350,6 +404,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
+        }
+
+        /**
+         * @param tlsVerifyConfig (Updatable) TLS configuration used by build service to verify TLS connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsVerifyConfig(@Nullable Output<ConnectionTlsVerifyConfigArgs> tlsVerifyConfig) {
+            $.tlsVerifyConfig = tlsVerifyConfig;
+            return this;
+        }
+
+        /**
+         * @param tlsVerifyConfig (Updatable) TLS configuration used by build service to verify TLS connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tlsVerifyConfig(ConnectionTlsVerifyConfigArgs tlsVerifyConfig) {
+            return tlsVerifyConfig(Output.of(tlsVerifyConfig));
         }
 
         /**

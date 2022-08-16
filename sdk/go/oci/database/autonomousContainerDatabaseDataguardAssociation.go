@@ -20,7 +20,9 @@ import (
 // AutonomousContainerDatabaseDataguardAssociations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
+//
+//	$ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
+//
 // ```
 type AutonomousContainerDatabaseDataguardAssociation struct {
 	pulumi.CustomResourceState
@@ -218,7 +220,7 @@ func (i *AutonomousContainerDatabaseDataguardAssociation) ToAutonomousContainerD
 // AutonomousContainerDatabaseDataguardAssociationArrayInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationArray and AutonomousContainerDatabaseDataguardAssociationArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardAssociationArrayInput` via:
 //
-//          AutonomousContainerDatabaseDataguardAssociationArray{ AutonomousContainerDatabaseDataguardAssociationArgs{...} }
+//	AutonomousContainerDatabaseDataguardAssociationArray{ AutonomousContainerDatabaseDataguardAssociationArgs{...} }
 type AutonomousContainerDatabaseDataguardAssociationArrayInput interface {
 	pulumi.Input
 
@@ -243,7 +245,7 @@ func (i AutonomousContainerDatabaseDataguardAssociationArray) ToAutonomousContai
 // AutonomousContainerDatabaseDataguardAssociationMapInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationMap and AutonomousContainerDatabaseDataguardAssociationMapOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardAssociationMapInput` via:
 //
-//          AutonomousContainerDatabaseDataguardAssociationMap{ "key": AutonomousContainerDatabaseDataguardAssociationArgs{...} }
+//	AutonomousContainerDatabaseDataguardAssociationMap{ "key": AutonomousContainerDatabaseDataguardAssociationArgs{...} }
 type AutonomousContainerDatabaseDataguardAssociationMapInput interface {
 	pulumi.Input
 

@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
 public class Config extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The APM domain ID the request is intended for.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="apmDomainId", type=String.class, parameters={})
@@ -47,10 +48,27 @@ public class Config extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) The APM domain ID the request is intended for.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> apmDomainId() {
         return this.apmDomainId;
+    }
+    /**
+     * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * ===
+     * 
+     */
+    @Export(name="batchIntervalInSeconds", type=Integer.class, parameters={})
+    private Output<Integer> batchIntervalInSeconds;
+
+    /**
+     * @return (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * ===
+     * 
+     */
+    public Output<Integer> batchIntervalInSeconds() {
+        return this.batchIntervalInSeconds;
     }
     /**
      * (Updatable) Details of monitor configuration.
@@ -109,6 +127,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * 
+     */
+    @Export(name="isRunNow", type=Boolean.class, parameters={})
+    private Output<Boolean> isRunNow;
+
+    /**
+     * @return (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * 
+     */
+    public Output<Boolean> isRunNow() {
+        return this.isRunNow;
+    }
+    /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      * 
      */
@@ -149,6 +181,20 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> repeatIntervalInSeconds() {
         return this.repeatIntervalInSeconds;
+    }
+    /**
+     * (Updatable) Scheduling policy on Vantage points.
+     * 
+     */
+    @Export(name="schedulingPolicy", type=String.class, parameters={})
+    private Output<String> schedulingPolicy;
+
+    /**
+     * @return (Updatable) Scheduling policy on Vantage points.
+     * 
+     */
+    public Output<String> schedulingPolicy() {
+        return this.schedulingPolicy;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.

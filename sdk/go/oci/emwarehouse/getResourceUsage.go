@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
 //
-// Gets a EmWarehouseResourceUsage by identifier
+// # Gets a EmWarehouseResourceUsage by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/EmWarehouse"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := EmWarehouse.GetResourceUsage(ctx, &emwarehouse.GetResourceUsageArgs{
-// 			EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := EmWarehouse.GetResourceUsage(ctx, &emwarehouse.GetResourceUsageArgs{
+//				EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetResourceUsage(ctx *pulumi.Context, args *GetResourceUsageArgs, opts ...pulumi.InvokeOption) (*GetResourceUsageResult, error) {
 	var rv GetResourceUsageResult

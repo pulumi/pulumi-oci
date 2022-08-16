@@ -16,13 +16,13 @@ import (
 // Updates the specified tunnel. This operation lets you change tunnel attributes such as the
 // routing type (BGP dynamic routing or static routing). Here are some important notes:
 //
-//     * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
+//   - If you change the tunnel's routing type or BGP session configuration, the tunnel will go
 //     down while it's reprovisioned.
 //
-//     * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
+//   - If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
 //     BGP session configuration attributes have been set (bgpSessionConfig).
 //
-//     * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
+//   - If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
 //     IPSecConnection already has at least one valid CIDR
 //     static route.
 //
@@ -35,37 +35,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewIpsecConnectionTunnelManagement(ctx, "testIpSecConnectionTunnel", &Core.IpsecConnectionTunnelManagementArgs{
-// 			IpsecId:  pulumi.Any(oci_core_ipsec.Test_ipsec.Id),
-// 			TunnelId: pulumi.Any(data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id),
-// 			Routing:  pulumi.Any(_var.Ip_sec_connection_tunnel_management_routing),
-// 			BgpSessionInfos: core.IpsecConnectionTunnelManagementBgpSessionInfoArray{
-// 				&core.IpsecConnectionTunnelManagementBgpSessionInfoArgs{
-// 					CustomerBgpAsn:      pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn),
-// 					CustomerInterfaceIp: pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip),
-// 					OracleInterfaceIp:   pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip),
-// 				},
-// 			},
-// 			DisplayName: pulumi.Any(_var.Ip_sec_connection_tunnel_management_display_name),
-// 			EncryptionDomainConfig: &core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs{
-// 				CpeTrafficSelectors:    pulumi.Any(_var.Ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector),
-// 				OracleTrafficSelectors: pulumi.Any(_var.Ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector),
-// 			},
-// 			SharedSecret: pulumi.Any(_var.Ip_sec_connection_tunnel_management_shared_secret),
-// 			IkeVersion:   pulumi.String("V1"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewIpsecConnectionTunnelManagement(ctx, "testIpSecConnectionTunnel", &Core.IpsecConnectionTunnelManagementArgs{
+//				IpsecId:  pulumi.Any(oci_core_ipsec.Test_ipsec.Id),
+//				TunnelId: pulumi.Any(data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id),
+//				Routing:  pulumi.Any(_var.Ip_sec_connection_tunnel_management_routing),
+//				BgpSessionInfos: core.IpsecConnectionTunnelManagementBgpSessionInfoArray{
+//					&core.IpsecConnectionTunnelManagementBgpSessionInfoArgs{
+//						CustomerBgpAsn:      pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn),
+//						CustomerInterfaceIp: pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip),
+//						OracleInterfaceIp:   pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip),
+//					},
+//				},
+//				DisplayName: pulumi.Any(_var.Ip_sec_connection_tunnel_management_display_name),
+//				EncryptionDomainConfig: &core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs{
+//					CpeTrafficSelectors:    pulumi.Any(_var.Ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector),
+//					OracleTrafficSelectors: pulumi.Any(_var.Ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector),
+//				},
+//				SharedSecret: pulumi.Any(_var.Ip_sec_connection_tunnel_management_shared_secret),
+//				IkeVersion:   pulumi.String("V1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type IpsecConnectionTunnelManagement struct {
 	pulumi.CustomResourceState
@@ -297,7 +300,7 @@ func (i *IpsecConnectionTunnelManagement) ToIpsecConnectionTunnelManagementOutpu
 // IpsecConnectionTunnelManagementArrayInput is an input type that accepts IpsecConnectionTunnelManagementArray and IpsecConnectionTunnelManagementArrayOutput values.
 // You can construct a concrete instance of `IpsecConnectionTunnelManagementArrayInput` via:
 //
-//          IpsecConnectionTunnelManagementArray{ IpsecConnectionTunnelManagementArgs{...} }
+//	IpsecConnectionTunnelManagementArray{ IpsecConnectionTunnelManagementArgs{...} }
 type IpsecConnectionTunnelManagementArrayInput interface {
 	pulumi.Input
 
@@ -322,7 +325,7 @@ func (i IpsecConnectionTunnelManagementArray) ToIpsecConnectionTunnelManagementA
 // IpsecConnectionTunnelManagementMapInput is an input type that accepts IpsecConnectionTunnelManagementMap and IpsecConnectionTunnelManagementMapOutput values.
 // You can construct a concrete instance of `IpsecConnectionTunnelManagementMapInput` via:
 //
-//          IpsecConnectionTunnelManagementMap{ "key": IpsecConnectionTunnelManagementArgs{...} }
+//	IpsecConnectionTunnelManagementMap{ "key": IpsecConnectionTunnelManagementArgs{...} }
 type IpsecConnectionTunnelManagementMapInput interface {
 	pulumi.Input
 

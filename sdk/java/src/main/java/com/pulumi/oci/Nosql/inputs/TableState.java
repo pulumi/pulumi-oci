@@ -172,14 +172,14 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Throughput and storage limits configuration of a table.
+     * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
     @Import(name="tableLimits")
     private @Nullable Output<TableTableLimitsArgs> tableLimits;
 
     /**
-     * @return (Updatable) Throughput and storage limits configuration of a table.
+     * @return (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
     public Optional<Output<TableTableLimitsArgs>> tableLimits() {
@@ -489,7 +489,7 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table.
+         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table.
+         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
          * 
          * @return builder
          * 

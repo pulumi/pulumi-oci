@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSensitiveDataModelsSensitiveColumn(ctx, &datasafe.GetSensitiveDataModelsSensitiveColumnArgs{
-// 			SensitiveColumnKey:   _var.Sensitive_data_models_sensitive_column_sensitive_column_key,
-// 			SensitiveDataModelId: oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSensitiveDataModelsSensitiveColumn(ctx, &datasafe.GetSensitiveDataModelsSensitiveColumnArgs{
+//				SensitiveColumnKey:   _var.Sensitive_data_models_sensitive_column_sensitive_column_key,
+//				SensitiveDataModelId: oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSensitiveDataModelsSensitiveColumn(ctx *pulumi.Context, args *LookupSensitiveDataModelsSensitiveColumnArgs, opts ...pulumi.InvokeOption) (*LookupSensitiveDataModelsSensitiveColumnResult, error) {
 	var rv LookupSensitiveDataModelsSensitiveColumnResult

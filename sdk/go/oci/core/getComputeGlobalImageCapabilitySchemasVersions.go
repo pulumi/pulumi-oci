@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeGlobalImageCapabilitySchemasVersions(ctx, &core.GetComputeGlobalImageCapabilitySchemasVersionsArgs{
-// 			ComputeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-// 			DisplayName:                          pulumi.StringRef(_var.Compute_global_image_capability_schemas_version_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeGlobalImageCapabilitySchemasVersions(ctx, &core.GetComputeGlobalImageCapabilitySchemasVersionsArgs{
+//				ComputeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+//				DisplayName:                          pulumi.StringRef(_var.Compute_global_image_capability_schemas_version_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetComputeGlobalImageCapabilitySchemasVersions(ctx *pulumi.Context, args *GetComputeGlobalImageCapabilitySchemasVersionsArgs, opts ...pulumi.InvokeOption) (*GetComputeGlobalImageCapabilitySchemasVersionsResult, error) {
 	var rv GetComputeGlobalImageCapabilitySchemasVersionsResult

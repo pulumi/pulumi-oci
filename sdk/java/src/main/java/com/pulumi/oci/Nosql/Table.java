@@ -178,14 +178,14 @@ public class Table extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * (Updatable) Throughput and storage limits configuration of a table.
+     * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
     @Export(name="tableLimits", type=TableTableLimits.class, parameters={})
     private Output<TableTableLimits> tableLimits;
 
     /**
-     * @return (Updatable) Throughput and storage limits configuration of a table.
+     * @return (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
     public Output<TableTableLimits> tableLimits() {

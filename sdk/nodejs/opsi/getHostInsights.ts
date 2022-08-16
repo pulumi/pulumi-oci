@@ -66,12 +66,14 @@ export interface GetHostInsightsArgs {
      */
     enterpriseManagerBridgeId?: string;
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+     * <<<<<<< ours
      */
     exadataInsightId?: string;
     filters?: inputs.Opsi.GetHostInsightsFilter[];
     /**
      * Filter by one or more host types. Possible value is EXTERNAL-HOST.
+     * >>>>>>> theirs
      */
     hostTypes?: string[];
     /**
@@ -149,12 +151,14 @@ export interface GetHostInsightsOutputArgs {
      */
     enterpriseManagerBridgeId?: pulumi.Input<string>;
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+     * <<<<<<< ours
      */
     exadataInsightId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetHostInsightsFilterArgs>[]>;
     /**
      * Filter by one or more host types. Possible value is EXTERNAL-HOST.
+     * >>>>>>> theirs
      */
     hostTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

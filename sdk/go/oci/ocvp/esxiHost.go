@@ -25,7 +25,9 @@ import (
 // EsxiHosts can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
+//
+//	$ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
+//
 // ```
 type EsxiHost struct {
 	pulumi.CustomResourceState
@@ -264,7 +266,7 @@ func (i *EsxiHost) ToEsxiHostOutputWithContext(ctx context.Context) EsxiHostOutp
 // EsxiHostArrayInput is an input type that accepts EsxiHostArray and EsxiHostArrayOutput values.
 // You can construct a concrete instance of `EsxiHostArrayInput` via:
 //
-//          EsxiHostArray{ EsxiHostArgs{...} }
+//	EsxiHostArray{ EsxiHostArgs{...} }
 type EsxiHostArrayInput interface {
 	pulumi.Input
 
@@ -289,7 +291,7 @@ func (i EsxiHostArray) ToEsxiHostArrayOutputWithContext(ctx context.Context) Esx
 // EsxiHostMapInput is an input type that accepts EsxiHostMap and EsxiHostMapOutput values.
 // You can construct a concrete instance of `EsxiHostMapInput` via:
 //
-//          EsxiHostMap{ "key": EsxiHostArgs{...} }
+//	EsxiHostMap{ "key": EsxiHostArgs{...} }
 type EsxiHostMapInput interface {
 	pulumi.Input
 

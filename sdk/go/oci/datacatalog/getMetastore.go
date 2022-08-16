@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetMetastore(ctx, &datacatalog.GetMetastoreArgs{
-// 			MetastoreId: oci_datacatalog_metastore.Test_metastore.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetMetastore(ctx, &datacatalog.GetMetastoreArgs{
+//				MetastoreId: oci_datacatalog_metastore.Test_metastore.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupMetastore(ctx *pulumi.Context, args *LookupMetastoreArgs, opts ...pulumi.InvokeOption) (*LookupMetastoreResult, error) {
 	var rv LookupMetastoreResult

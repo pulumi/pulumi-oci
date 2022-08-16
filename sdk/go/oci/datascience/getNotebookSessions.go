@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetNotebookSessions(ctx, &datascience.GetNotebookSessionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			CreatedBy:     pulumi.StringRef(_var.Notebook_session_created_by),
-// 			DisplayName:   pulumi.StringRef(_var.Notebook_session_display_name),
-// 			Id:            pulumi.StringRef(_var.Notebook_session_id),
-// 			ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
-// 			State:         pulumi.StringRef(_var.Notebook_session_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetNotebookSessions(ctx, &datascience.GetNotebookSessionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				CreatedBy:     pulumi.StringRef(_var.Notebook_session_created_by),
+//				DisplayName:   pulumi.StringRef(_var.Notebook_session_display_name),
+//				Id:            pulumi.StringRef(_var.Notebook_session_id),
+//				ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
+//				State:         pulumi.StringRef(_var.Notebook_session_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNotebookSessions(ctx *pulumi.Context, args *GetNotebookSessionsArgs, opts ...pulumi.InvokeOption) (*GetNotebookSessionsResult, error) {
 	var rv GetNotebookSessionsResult

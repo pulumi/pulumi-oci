@@ -22,8 +22,13 @@ import * as utilities from "../utilities";
  *     monitorType: _var.monitor_monitor_type,
  *     repeatIntervalInSeconds: _var.monitor_repeat_interval_in_seconds,
  *     vantagePoints: [],
+ *     batchIntervalInSeconds: _var.monitor_batch_interval_in_seconds,
  *     configuration: {
  *         configType: _var.monitor_configuration_config_type,
+ *         dnsConfiguration: {
+ *             isOverrideDns: _var.monitor_configuration_dns_configuration_is_override_dns,
+ *             overrideDnsIp: _var.monitor_configuration_dns_configuration_override_dns_ip,
+ *         },
  *         isCertificateValidationEnabled: _var.monitor_configuration_is_certificate_validation_enabled,
  *         isFailureRetried: _var.monitor_configuration_is_failure_retried,
  *         isRedirectionEnabled: _var.monitor_configuration_is_redirection_enabled,
@@ -70,7 +75,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     isRunNow: _var.monitor_is_run_now,
  *     isRunOnce: _var.monitor_is_run_once,
+ *     schedulingPolicy: _var.monitor_scheduling_policy,
  *     scriptId: oci_apm_synthetics_script.test_script.id,
  *     scriptParameters: [{
  *         paramName: _var.monitor_script_parameters_param_name,
@@ -119,9 +126,15 @@ export class Config extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The APM domain ID the request is intended for.
+     * (Updatable) The APM domain ID the request is intended for. 
+     * <<<<<<< ours
      */
     public readonly apmDomainId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * =======
+     */
+    public readonly batchIntervalInSeconds!: pulumi.Output<number>;
     /**
      * (Updatable) Details of monitor configuration.
      */
@@ -139,6 +152,10 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     */
+    public readonly isRunNow!: pulumi.Output<boolean>;
+    /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
     public readonly isRunOnce!: pulumi.Output<boolean>;
@@ -150,6 +167,10 @@ export class Config extends pulumi.CustomResource {
      * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     public readonly repeatIntervalInSeconds!: pulumi.Output<number>;
+    /**
+     * (Updatable) Scheduling policy on Vantage points.
+     */
+    public readonly schedulingPolicy!: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
@@ -205,13 +226,16 @@ export class Config extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ConfigState | undefined;
             resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
+            resourceInputs["batchIntervalInSeconds"] = state ? state.batchIntervalInSeconds : undefined;
             resourceInputs["configuration"] = state ? state.configuration : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isRunNow"] = state ? state.isRunNow : undefined;
             resourceInputs["isRunOnce"] = state ? state.isRunOnce : undefined;
             resourceInputs["monitorType"] = state ? state.monitorType : undefined;
             resourceInputs["repeatIntervalInSeconds"] = state ? state.repeatIntervalInSeconds : undefined;
+            resourceInputs["schedulingPolicy"] = state ? state.schedulingPolicy : undefined;
             resourceInputs["scriptId"] = state ? state.scriptId : undefined;
             resourceInputs["scriptName"] = state ? state.scriptName : undefined;
             resourceInputs["scriptParameters"] = state ? state.scriptParameters : undefined;
@@ -240,13 +264,16 @@ export class Config extends pulumi.CustomResource {
                 throw new Error("Missing required property 'vantagePoints'");
             }
             resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
+            resourceInputs["batchIntervalInSeconds"] = args ? args.batchIntervalInSeconds : undefined;
             resourceInputs["configuration"] = args ? args.configuration : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isRunNow"] = args ? args.isRunNow : undefined;
             resourceInputs["isRunOnce"] = args ? args.isRunOnce : undefined;
             resourceInputs["monitorType"] = args ? args.monitorType : undefined;
             resourceInputs["repeatIntervalInSeconds"] = args ? args.repeatIntervalInSeconds : undefined;
+            resourceInputs["schedulingPolicy"] = args ? args.schedulingPolicy : undefined;
             resourceInputs["scriptId"] = args ? args.scriptId : undefined;
             resourceInputs["scriptName"] = args ? args.scriptName : undefined;
             resourceInputs["scriptParameters"] = args ? args.scriptParameters : undefined;
@@ -268,9 +295,15 @@ export class Config extends pulumi.CustomResource {
  */
 export interface ConfigState {
     /**
-     * (Updatable) The APM domain ID the request is intended for.
+     * (Updatable) The APM domain ID the request is intended for. 
+     * <<<<<<< ours
      */
     apmDomainId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * =======
+     */
+    batchIntervalInSeconds?: pulumi.Input<number>;
     /**
      * (Updatable) Details of monitor configuration.
      */
@@ -288,6 +321,10 @@ export interface ConfigState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     */
+    isRunNow?: pulumi.Input<boolean>;
+    /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
     isRunOnce?: pulumi.Input<boolean>;
@@ -299,6 +336,10 @@ export interface ConfigState {
      * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     repeatIntervalInSeconds?: pulumi.Input<number>;
+    /**
+     * (Updatable) Scheduling policy on Vantage points.
+     */
+    schedulingPolicy?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
@@ -346,9 +387,15 @@ export interface ConfigState {
  */
 export interface ConfigArgs {
     /**
-     * (Updatable) The APM domain ID the request is intended for.
+     * (Updatable) The APM domain ID the request is intended for. 
+     * <<<<<<< ours
      */
     apmDomainId: pulumi.Input<string>;
+    /**
+     * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * =======
+     */
+    batchIntervalInSeconds?: pulumi.Input<number>;
     /**
      * (Updatable) Details of monitor configuration.
      */
@@ -366,6 +413,10 @@ export interface ConfigArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     */
+    isRunNow?: pulumi.Input<boolean>;
+    /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
     isRunOnce?: pulumi.Input<boolean>;
@@ -377,6 +428,10 @@ export interface ConfigArgs {
      * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     repeatIntervalInSeconds: pulumi.Input<number>;
+    /**
+     * (Updatable) Scheduling policy on Vantage points.
+     */
+    schedulingPolicy?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */

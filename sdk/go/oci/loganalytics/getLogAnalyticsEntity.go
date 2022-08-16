@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsEntity(ctx, &loganalytics.GetLogAnalyticsEntityArgs{
-// 			LogAnalyticsEntityId: oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-// 			Namespace:            _var.Log_analytics_entity_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsEntity(ctx, &loganalytics.GetLogAnalyticsEntityArgs{
+//				LogAnalyticsEntityId: oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
+//				Namespace:            _var.Log_analytics_entity_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupLogAnalyticsEntity(ctx *pulumi.Context, args *LookupLogAnalyticsEntityArgs, opts ...pulumi.InvokeOption) (*LookupLogAnalyticsEntityResult, error) {
 	var rv LookupLogAnalyticsEntityResult

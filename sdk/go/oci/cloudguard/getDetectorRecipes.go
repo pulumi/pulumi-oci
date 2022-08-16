@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a list of all Detector Recipes in a compartment
+// # Returns a list of all Detector Recipes in a compartment
 //
 // The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
 // The list does not include any subcompartments of the compartmentId passed.
@@ -34,26 +34,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetDetectorRecipes(ctx, &cloudguard.GetDetectorRecipesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Detector_recipe_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Detector_recipe_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Detector_recipe_display_name),
-// 			ResourceMetadataOnly:   pulumi.BoolRef(_var.Detector_recipe_resource_metadata_only),
-// 			State:                  pulumi.StringRef(_var.Detector_recipe_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetDetectorRecipes(ctx, &cloudguard.GetDetectorRecipesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Detector_recipe_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Detector_recipe_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Detector_recipe_display_name),
+//				ResourceMetadataOnly:   pulumi.BoolRef(_var.Detector_recipe_resource_metadata_only),
+//				State:                  pulumi.StringRef(_var.Detector_recipe_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDetectorRecipes(ctx *pulumi.Context, args *GetDetectorRecipesArgs, opts ...pulumi.InvokeOption) (*GetDetectorRecipesResult, error) {
 	var rv GetDetectorRecipesResult

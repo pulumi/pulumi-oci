@@ -21,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolumeAttachment(ctx, "testVolumeAttachment", &Core.VolumeAttachmentArgs{
-// 			AttachmentType:                 pulumi.Any(_var.Volume_attachment_attachment_type),
-// 			InstanceId:                     pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			VolumeId:                       pulumi.Any(oci_core_volume.Test_volume.Id),
-// 			Device:                         pulumi.Any(_var.Volume_attachment_device),
-// 			DisplayName:                    pulumi.Any(_var.Volume_attachment_display_name),
-// 			EncryptionInTransitType:        pulumi.Any(_var.Volume_attachment_encryption_in_transit_type),
-// 			IsAgentAutoIscsiLoginEnabled:   pulumi.Any(_var.Volume_attachment_is_agent_auto_iscsi_login_enabled),
-// 			IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Volume_attachment_is_pv_encryption_in_transit_enabled),
-// 			IsReadOnly:                     pulumi.Any(_var.Volume_attachment_is_read_only),
-// 			IsShareable:                    pulumi.Any(_var.Volume_attachment_is_shareable),
-// 			UseChap:                        pulumi.Any(_var.Volume_attachment_use_chap),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolumeAttachment(ctx, "testVolumeAttachment", &Core.VolumeAttachmentArgs{
+//				AttachmentType:                 pulumi.Any(_var.Volume_attachment_attachment_type),
+//				InstanceId:                     pulumi.Any(oci_core_instance.Test_instance.Id),
+//				VolumeId:                       pulumi.Any(oci_core_volume.Test_volume.Id),
+//				Device:                         pulumi.Any(_var.Volume_attachment_device),
+//				DisplayName:                    pulumi.Any(_var.Volume_attachment_display_name),
+//				EncryptionInTransitType:        pulumi.Any(_var.Volume_attachment_encryption_in_transit_type),
+//				IsAgentAutoIscsiLoginEnabled:   pulumi.Any(_var.Volume_attachment_is_agent_auto_iscsi_login_enabled),
+//				IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Volume_attachment_is_pv_encryption_in_transit_enabled),
+//				IsReadOnly:                     pulumi.Any(_var.Volume_attachment_is_read_only),
+//				IsShareable:                    pulumi.Any(_var.Volume_attachment_is_shareable),
+//				UseChap:                        pulumi.Any(_var.Volume_attachment_use_chap),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // VolumeAttachments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
+//
+//	$ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
+//
 // ```
 type VolumeAttachment struct {
 	pulumi.CustomResourceState
@@ -336,7 +341,7 @@ func (i *VolumeAttachment) ToVolumeAttachmentOutputWithContext(ctx context.Conte
 // VolumeAttachmentArrayInput is an input type that accepts VolumeAttachmentArray and VolumeAttachmentArrayOutput values.
 // You can construct a concrete instance of `VolumeAttachmentArrayInput` via:
 //
-//          VolumeAttachmentArray{ VolumeAttachmentArgs{...} }
+//	VolumeAttachmentArray{ VolumeAttachmentArgs{...} }
 type VolumeAttachmentArrayInput interface {
 	pulumi.Input
 
@@ -361,7 +366,7 @@ func (i VolumeAttachmentArray) ToVolumeAttachmentArrayOutputWithContext(ctx cont
 // VolumeAttachmentMapInput is an input type that accepts VolumeAttachmentMap and VolumeAttachmentMapOutput values.
 // You can construct a concrete instance of `VolumeAttachmentMapInput` via:
 //
-//          VolumeAttachmentMap{ "key": VolumeAttachmentArgs{...} }
+//	VolumeAttachmentMap{ "key": VolumeAttachmentArgs{...} }
 type VolumeAttachmentMapInput interface {
 	pulumi.Input
 

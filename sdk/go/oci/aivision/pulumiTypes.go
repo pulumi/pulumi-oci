@@ -26,7 +26,7 @@ type ModelTestingDataset struct {
 // ModelTestingDatasetInput is an input type that accepts ModelTestingDatasetArgs and ModelTestingDatasetOutput values.
 // You can construct a concrete instance of `ModelTestingDatasetInput` via:
 //
-//          ModelTestingDatasetArgs{...}
+//	ModelTestingDatasetArgs{...}
 type ModelTestingDatasetInput interface {
 	pulumi.Input
 
@@ -70,11 +70,11 @@ func (i ModelTestingDatasetArgs) ToModelTestingDatasetPtrOutputWithContext(ctx c
 // ModelTestingDatasetPtrInput is an input type that accepts ModelTestingDatasetArgs, ModelTestingDatasetPtr and ModelTestingDatasetPtrOutput values.
 // You can construct a concrete instance of `ModelTestingDatasetPtrInput` via:
 //
-//          ModelTestingDatasetArgs{...}
+//	        ModelTestingDatasetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelTestingDatasetPtrInput interface {
 	pulumi.Input
 
@@ -239,7 +239,7 @@ type ModelTrainingDataset struct {
 // ModelTrainingDatasetInput is an input type that accepts ModelTrainingDatasetArgs and ModelTrainingDatasetOutput values.
 // You can construct a concrete instance of `ModelTrainingDatasetInput` via:
 //
-//          ModelTrainingDatasetArgs{...}
+//	ModelTrainingDatasetArgs{...}
 type ModelTrainingDatasetInput interface {
 	pulumi.Input
 
@@ -283,11 +283,11 @@ func (i ModelTrainingDatasetArgs) ToModelTrainingDatasetPtrOutputWithContext(ctx
 // ModelTrainingDatasetPtrInput is an input type that accepts ModelTrainingDatasetArgs, ModelTrainingDatasetPtr and ModelTrainingDatasetPtrOutput values.
 // You can construct a concrete instance of `ModelTrainingDatasetPtrInput` via:
 //
-//          ModelTrainingDatasetArgs{...}
+//	        ModelTrainingDatasetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelTrainingDatasetPtrInput interface {
 	pulumi.Input
 
@@ -452,7 +452,7 @@ type ModelValidationDataset struct {
 // ModelValidationDatasetInput is an input type that accepts ModelValidationDatasetArgs and ModelValidationDatasetOutput values.
 // You can construct a concrete instance of `ModelValidationDatasetInput` via:
 //
-//          ModelValidationDatasetArgs{...}
+//	ModelValidationDatasetArgs{...}
 type ModelValidationDatasetInput interface {
 	pulumi.Input
 
@@ -496,11 +496,11 @@ func (i ModelValidationDatasetArgs) ToModelValidationDatasetPtrOutputWithContext
 // ModelValidationDatasetPtrInput is an input type that accepts ModelValidationDatasetArgs, ModelValidationDatasetPtr and ModelValidationDatasetPtrOutput values.
 // You can construct a concrete instance of `ModelValidationDatasetPtrInput` via:
 //
-//          ModelValidationDatasetArgs{...}
+//	        ModelValidationDatasetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ModelValidationDatasetPtrInput interface {
 	pulumi.Input
 
@@ -665,7 +665,7 @@ type GetModelTestingDataset struct {
 // GetModelTestingDatasetInput is an input type that accepts GetModelTestingDatasetArgs and GetModelTestingDatasetOutput values.
 // You can construct a concrete instance of `GetModelTestingDatasetInput` via:
 //
-//          GetModelTestingDatasetArgs{...}
+//	GetModelTestingDatasetArgs{...}
 type GetModelTestingDatasetInput interface {
 	pulumi.Input
 
@@ -701,7 +701,7 @@ func (i GetModelTestingDatasetArgs) ToGetModelTestingDatasetOutputWithContext(ct
 // GetModelTestingDatasetArrayInput is an input type that accepts GetModelTestingDatasetArray and GetModelTestingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelTestingDatasetArrayInput` via:
 //
-//          GetModelTestingDatasetArray{ GetModelTestingDatasetArgs{...} }
+//	GetModelTestingDatasetArray{ GetModelTestingDatasetArgs{...} }
 type GetModelTestingDatasetArrayInput interface {
 	pulumi.Input
 
@@ -798,7 +798,7 @@ type GetModelTrainingDataset struct {
 // GetModelTrainingDatasetInput is an input type that accepts GetModelTrainingDatasetArgs and GetModelTrainingDatasetOutput values.
 // You can construct a concrete instance of `GetModelTrainingDatasetInput` via:
 //
-//          GetModelTrainingDatasetArgs{...}
+//	GetModelTrainingDatasetArgs{...}
 type GetModelTrainingDatasetInput interface {
 	pulumi.Input
 
@@ -834,7 +834,7 @@ func (i GetModelTrainingDatasetArgs) ToGetModelTrainingDatasetOutputWithContext(
 // GetModelTrainingDatasetArrayInput is an input type that accepts GetModelTrainingDatasetArray and GetModelTrainingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelTrainingDatasetArrayInput` via:
 //
-//          GetModelTrainingDatasetArray{ GetModelTrainingDatasetArgs{...} }
+//	GetModelTrainingDatasetArray{ GetModelTrainingDatasetArgs{...} }
 type GetModelTrainingDatasetArrayInput interface {
 	pulumi.Input
 
@@ -931,7 +931,7 @@ type GetModelValidationDataset struct {
 // GetModelValidationDatasetInput is an input type that accepts GetModelValidationDatasetArgs and GetModelValidationDatasetOutput values.
 // You can construct a concrete instance of `GetModelValidationDatasetInput` via:
 //
-//          GetModelValidationDatasetArgs{...}
+//	GetModelValidationDatasetArgs{...}
 type GetModelValidationDatasetInput interface {
 	pulumi.Input
 
@@ -967,7 +967,7 @@ func (i GetModelValidationDatasetArgs) ToGetModelValidationDatasetOutputWithCont
 // GetModelValidationDatasetArrayInput is an input type that accepts GetModelValidationDatasetArray and GetModelValidationDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelValidationDatasetArrayInput` via:
 //
-//          GetModelValidationDatasetArray{ GetModelValidationDatasetArgs{...} }
+//	GetModelValidationDatasetArray{ GetModelValidationDatasetArgs{...} }
 type GetModelValidationDatasetArrayInput interface {
 	pulumi.Input
 
@@ -1057,7 +1057,7 @@ type GetModelsFilter struct {
 // GetModelsFilterInput is an input type that accepts GetModelsFilterArgs and GetModelsFilterOutput values.
 // You can construct a concrete instance of `GetModelsFilterInput` via:
 //
-//          GetModelsFilterArgs{...}
+//	GetModelsFilterArgs{...}
 type GetModelsFilterInput interface {
 	pulumi.Input
 
@@ -1086,7 +1086,7 @@ func (i GetModelsFilterArgs) ToGetModelsFilterOutputWithContext(ctx context.Cont
 // GetModelsFilterArrayInput is an input type that accepts GetModelsFilterArray and GetModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetModelsFilterArrayInput` via:
 //
-//          GetModelsFilterArray{ GetModelsFilterArgs{...} }
+//	GetModelsFilterArray{ GetModelsFilterArgs{...} }
 type GetModelsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1161,7 +1161,7 @@ type GetModelsModelCollection struct {
 // GetModelsModelCollectionInput is an input type that accepts GetModelsModelCollectionArgs and GetModelsModelCollectionOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionInput` via:
 //
-//          GetModelsModelCollectionArgs{...}
+//	GetModelsModelCollectionArgs{...}
 type GetModelsModelCollectionInput interface {
 	pulumi.Input
 
@@ -1188,7 +1188,7 @@ func (i GetModelsModelCollectionArgs) ToGetModelsModelCollectionOutputWithContex
 // GetModelsModelCollectionArrayInput is an input type that accepts GetModelsModelCollectionArray and GetModelsModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionArrayInput` via:
 //
-//          GetModelsModelCollectionArray{ GetModelsModelCollectionArgs{...} }
+//	GetModelsModelCollectionArray{ GetModelsModelCollectionArgs{...} }
 type GetModelsModelCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1308,7 +1308,7 @@ type GetModelsModelCollectionItem struct {
 // GetModelsModelCollectionItemInput is an input type that accepts GetModelsModelCollectionItemArgs and GetModelsModelCollectionItemOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemInput` via:
 //
-//          GetModelsModelCollectionItemArgs{...}
+//	GetModelsModelCollectionItemArgs{...}
 type GetModelsModelCollectionItemInput interface {
 	pulumi.Input
 
@@ -1388,7 +1388,7 @@ func (i GetModelsModelCollectionItemArgs) ToGetModelsModelCollectionItemOutputWi
 // GetModelsModelCollectionItemArrayInput is an input type that accepts GetModelsModelCollectionItemArray and GetModelsModelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemArrayInput` via:
 //
-//          GetModelsModelCollectionItemArray{ GetModelsModelCollectionItemArgs{...} }
+//	GetModelsModelCollectionItemArray{ GetModelsModelCollectionItemArgs{...} }
 type GetModelsModelCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1600,7 +1600,7 @@ type GetModelsModelCollectionItemTestingDataset struct {
 // GetModelsModelCollectionItemTestingDatasetInput is an input type that accepts GetModelsModelCollectionItemTestingDatasetArgs and GetModelsModelCollectionItemTestingDatasetOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemTestingDatasetInput` via:
 //
-//          GetModelsModelCollectionItemTestingDatasetArgs{...}
+//	GetModelsModelCollectionItemTestingDatasetArgs{...}
 type GetModelsModelCollectionItemTestingDatasetInput interface {
 	pulumi.Input
 
@@ -1635,7 +1635,7 @@ func (i GetModelsModelCollectionItemTestingDatasetArgs) ToGetModelsModelCollecti
 // GetModelsModelCollectionItemTestingDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemTestingDatasetArray and GetModelsModelCollectionItemTestingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemTestingDatasetArrayInput` via:
 //
-//          GetModelsModelCollectionItemTestingDatasetArray{ GetModelsModelCollectionItemTestingDatasetArgs{...} }
+//	GetModelsModelCollectionItemTestingDatasetArray{ GetModelsModelCollectionItemTestingDatasetArgs{...} }
 type GetModelsModelCollectionItemTestingDatasetArrayInput interface {
 	pulumi.Input
 
@@ -1730,7 +1730,7 @@ type GetModelsModelCollectionItemTrainingDataset struct {
 // GetModelsModelCollectionItemTrainingDatasetInput is an input type that accepts GetModelsModelCollectionItemTrainingDatasetArgs and GetModelsModelCollectionItemTrainingDatasetOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemTrainingDatasetInput` via:
 //
-//          GetModelsModelCollectionItemTrainingDatasetArgs{...}
+//	GetModelsModelCollectionItemTrainingDatasetArgs{...}
 type GetModelsModelCollectionItemTrainingDatasetInput interface {
 	pulumi.Input
 
@@ -1765,7 +1765,7 @@ func (i GetModelsModelCollectionItemTrainingDatasetArgs) ToGetModelsModelCollect
 // GetModelsModelCollectionItemTrainingDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemTrainingDatasetArray and GetModelsModelCollectionItemTrainingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemTrainingDatasetArrayInput` via:
 //
-//          GetModelsModelCollectionItemTrainingDatasetArray{ GetModelsModelCollectionItemTrainingDatasetArgs{...} }
+//	GetModelsModelCollectionItemTrainingDatasetArray{ GetModelsModelCollectionItemTrainingDatasetArgs{...} }
 type GetModelsModelCollectionItemTrainingDatasetArrayInput interface {
 	pulumi.Input
 
@@ -1860,7 +1860,7 @@ type GetModelsModelCollectionItemValidationDataset struct {
 // GetModelsModelCollectionItemValidationDatasetInput is an input type that accepts GetModelsModelCollectionItemValidationDatasetArgs and GetModelsModelCollectionItemValidationDatasetOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemValidationDatasetInput` via:
 //
-//          GetModelsModelCollectionItemValidationDatasetArgs{...}
+//	GetModelsModelCollectionItemValidationDatasetArgs{...}
 type GetModelsModelCollectionItemValidationDatasetInput interface {
 	pulumi.Input
 
@@ -1895,7 +1895,7 @@ func (i GetModelsModelCollectionItemValidationDatasetArgs) ToGetModelsModelColle
 // GetModelsModelCollectionItemValidationDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemValidationDatasetArray and GetModelsModelCollectionItemValidationDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemValidationDatasetArrayInput` via:
 //
-//          GetModelsModelCollectionItemValidationDatasetArray{ GetModelsModelCollectionItemValidationDatasetArgs{...} }
+//	GetModelsModelCollectionItemValidationDatasetArray{ GetModelsModelCollectionItemValidationDatasetArgs{...} }
 type GetModelsModelCollectionItemValidationDatasetArrayInput interface {
 	pulumi.Input
 
@@ -1984,7 +1984,7 @@ type GetProjectsFilter struct {
 // GetProjectsFilterInput is an input type that accepts GetProjectsFilterArgs and GetProjectsFilterOutput values.
 // You can construct a concrete instance of `GetProjectsFilterInput` via:
 //
-//          GetProjectsFilterArgs{...}
+//	GetProjectsFilterArgs{...}
 type GetProjectsFilterInput interface {
 	pulumi.Input
 
@@ -2013,7 +2013,7 @@ func (i GetProjectsFilterArgs) ToGetProjectsFilterOutputWithContext(ctx context.
 // GetProjectsFilterArrayInput is an input type that accepts GetProjectsFilterArray and GetProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProjectsFilterArrayInput` via:
 //
-//          GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
+//	GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
 type GetProjectsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2088,7 +2088,7 @@ type GetProjectsProjectCollection struct {
 // GetProjectsProjectCollectionInput is an input type that accepts GetProjectsProjectCollectionArgs and GetProjectsProjectCollectionOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionInput` via:
 //
-//          GetProjectsProjectCollectionArgs{...}
+//	GetProjectsProjectCollectionArgs{...}
 type GetProjectsProjectCollectionInput interface {
 	pulumi.Input
 
@@ -2115,7 +2115,7 @@ func (i GetProjectsProjectCollectionArgs) ToGetProjectsProjectCollectionOutputWi
 // GetProjectsProjectCollectionArrayInput is an input type that accepts GetProjectsProjectCollectionArray and GetProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionArrayInput` via:
 //
-//          GetProjectsProjectCollectionArray{ GetProjectsProjectCollectionArgs{...} }
+//	GetProjectsProjectCollectionArray{ GetProjectsProjectCollectionArgs{...} }
 type GetProjectsProjectCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2203,7 +2203,7 @@ type GetProjectsProjectCollectionItem struct {
 // GetProjectsProjectCollectionItemInput is an input type that accepts GetProjectsProjectCollectionItemArgs and GetProjectsProjectCollectionItemOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemInput` via:
 //
-//          GetProjectsProjectCollectionItemArgs{...}
+//	GetProjectsProjectCollectionItemArgs{...}
 type GetProjectsProjectCollectionItemInput interface {
 	pulumi.Input
 
@@ -2251,7 +2251,7 @@ func (i GetProjectsProjectCollectionItemArgs) ToGetProjectsProjectCollectionItem
 // GetProjectsProjectCollectionItemArrayInput is an input type that accepts GetProjectsProjectCollectionItemArray and GetProjectsProjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemArrayInput` via:
 //
-//          GetProjectsProjectCollectionItemArray{ GetProjectsProjectCollectionItemArgs{...} }
+//	GetProjectsProjectCollectionItemArray{ GetProjectsProjectCollectionItemArgs{...} }
 type GetProjectsProjectCollectionItemArrayInput interface {
 	pulumi.Input
 

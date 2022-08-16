@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDedicatedVmHostShapes(ctx, &core.GetDedicatedVmHostShapesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Dedicated_vm_host_shape_availability_domain),
-// 			InstanceShapeName:  pulumi.StringRef(_var.Dedicated_vm_host_shape_instance_shape_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDedicatedVmHostShapes(ctx, &core.GetDedicatedVmHostShapesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Dedicated_vm_host_shape_availability_domain),
+//				InstanceShapeName:  pulumi.StringRef(_var.Dedicated_vm_host_shape_instance_shape_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDedicatedVmHostShapes(ctx *pulumi.Context, args *GetDedicatedVmHostShapesArgs, opts ...pulumi.InvokeOption) (*GetDedicatedVmHostShapesResult, error) {
 	var rv GetDedicatedVmHostShapesResult

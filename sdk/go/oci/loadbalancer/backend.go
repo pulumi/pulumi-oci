@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewBackend(ctx, "testBackend", &LoadBalancer.BackendArgs{
-// 			BackendsetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-// 			IpAddress:      pulumi.Any(_var.Backend_ip_address),
-// 			LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			Port:           pulumi.Any(_var.Backend_port),
-// 			Backup:         pulumi.Any(_var.Backend_backup),
-// 			Drain:          pulumi.Any(_var.Backend_drain),
-// 			Offline:        pulumi.Any(_var.Backend_offline),
-// 			Weight:         pulumi.Any(_var.Backend_weight),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewBackend(ctx, "testBackend", &LoadBalancer.BackendArgs{
+//				BackendsetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
+//				IpAddress:      pulumi.Any(_var.Backend_ip_address),
+//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				Port:           pulumi.Any(_var.Backend_port),
+//				Backup:         pulumi.Any(_var.Backend_backup),
+//				Drain:          pulumi.Any(_var.Backend_drain),
+//				Offline:        pulumi.Any(_var.Backend_offline),
+//				Weight:         pulumi.Any(_var.Backend_weight),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // Backends can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+//
+//	$ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
+//
 // ```
 type Backend struct {
 	pulumi.CustomResourceState
@@ -229,7 +234,7 @@ func (i *Backend) ToBackendOutputWithContext(ctx context.Context) BackendOutput 
 // BackendArrayInput is an input type that accepts BackendArray and BackendArrayOutput values.
 // You can construct a concrete instance of `BackendArrayInput` via:
 //
-//          BackendArray{ BackendArgs{...} }
+//	BackendArray{ BackendArgs{...} }
 type BackendArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +259,7 @@ func (i BackendArray) ToBackendArrayOutputWithContext(ctx context.Context) Backe
 // BackendMapInput is an input type that accepts BackendMap and BackendMapOutput values.
 // You can construct a concrete instance of `BackendMapInput` via:
 //
-//          BackendMap{ "key": BackendArgs{...} }
+//	BackendMap{ "key": BackendArgs{...} }
 type BackendMapInput interface {
 	pulumi.Input
 

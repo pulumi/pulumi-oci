@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.NewSecurityZone(ctx, "testSecurityZone", &CloudGuard.SecurityZoneArgs{
-// 			CompartmentId:        pulumi.Any(_var.Compartment_id),
-// 			DisplayName:          pulumi.Any(_var.Security_zone_display_name),
-// 			SecurityZoneRecipeId: pulumi.Any(oci_cloud_guard_security_zone_recipe.Test_security_zone_recipe.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Security_zone_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.NewSecurityZone(ctx, "testSecurityZone", &CloudGuard.SecurityZoneArgs{
+//				CompartmentId:        pulumi.Any(_var.Compartment_id),
+//				DisplayName:          pulumi.Any(_var.Security_zone_display_name),
+//				SecurityZoneRecipeId: pulumi.Any(oci_cloud_guard_security_zone_recipe.Test_security_zone_recipe.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Security_zone_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // SecurityZones can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
+//
+//	$ pulumi import oci:CloudGuard/securityZone:SecurityZone test_security_zone "id"
+//
 // ```
 type SecurityZone struct {
 	pulumi.CustomResourceState
@@ -241,7 +246,7 @@ func (i *SecurityZone) ToSecurityZoneOutputWithContext(ctx context.Context) Secu
 // SecurityZoneArrayInput is an input type that accepts SecurityZoneArray and SecurityZoneArrayOutput values.
 // You can construct a concrete instance of `SecurityZoneArrayInput` via:
 //
-//          SecurityZoneArray{ SecurityZoneArgs{...} }
+//	SecurityZoneArray{ SecurityZoneArgs{...} }
 type SecurityZoneArrayInput interface {
 	pulumi.Input
 
@@ -266,7 +271,7 @@ func (i SecurityZoneArray) ToSecurityZoneArrayOutputWithContext(ctx context.Cont
 // SecurityZoneMapInput is an input type that accepts SecurityZoneMap and SecurityZoneMapOutput values.
 // You can construct a concrete instance of `SecurityZoneMapInput` via:
 //
-//          SecurityZoneMap{ "key": SecurityZoneArgs{...} }
+//	SecurityZoneMap{ "key": SecurityZoneArgs{...} }
 type SecurityZoneMapInput interface {
 	pulumi.Input
 

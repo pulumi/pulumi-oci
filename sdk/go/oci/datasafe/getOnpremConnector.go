@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetOnpremConnector(ctx, &datasafe.GetOnpremConnectorArgs{
-// 			OnPremConnectorId: oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetOnpremConnector(ctx, &datasafe.GetOnpremConnectorArgs{
+//				OnPremConnectorId: oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetOnpremConnector(ctx *pulumi.Context, args *GetOnpremConnectorArgs, opts ...pulumi.InvokeOption) (*GetOnpremConnectorResult, error) {
 	var rv GetOnpremConnectorResult

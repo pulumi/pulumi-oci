@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbHomePatches(ctx, &database.GetDbHomePatchesArgs{
-// 			DbHomeId: oci_database_db_home.Test_db_home.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbHomePatches(ctx, &database.GetDbHomePatchesArgs{
+//				DbHomeId: oci_database_db_home.Test_db_home.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbHomePatches(ctx *pulumi.Context, args *GetDbHomePatchesArgs, opts ...pulumi.InvokeOption) (*GetDbHomePatchesResult, error) {
 	var rv GetDbHomePatchesResult

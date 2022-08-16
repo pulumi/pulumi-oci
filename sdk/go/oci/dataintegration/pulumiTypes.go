@@ -20,7 +20,7 @@ type GetWorkspacesFilter struct {
 // GetWorkspacesFilterInput is an input type that accepts GetWorkspacesFilterArgs and GetWorkspacesFilterOutput values.
 // You can construct a concrete instance of `GetWorkspacesFilterInput` via:
 //
-//          GetWorkspacesFilterArgs{...}
+//	GetWorkspacesFilterArgs{...}
 type GetWorkspacesFilterInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i GetWorkspacesFilterArgs) ToGetWorkspacesFilterOutputWithContext(ctx cont
 // GetWorkspacesFilterArrayInput is an input type that accepts GetWorkspacesFilterArray and GetWorkspacesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspacesFilterArrayInput` via:
 //
-//          GetWorkspacesFilterArray{ GetWorkspacesFilterArgs{...} }
+//	GetWorkspacesFilterArray{ GetWorkspacesFilterArgs{...} }
 type GetWorkspacesFilterArrayInput interface {
 	pulumi.Input
 
@@ -157,7 +157,7 @@ type GetWorkspacesWorkspace struct {
 // GetWorkspacesWorkspaceInput is an input type that accepts GetWorkspacesWorkspaceArgs and GetWorkspacesWorkspaceOutput values.
 // You can construct a concrete instance of `GetWorkspacesWorkspaceInput` via:
 //
-//          GetWorkspacesWorkspaceArgs{...}
+//	GetWorkspacesWorkspaceArgs{...}
 type GetWorkspacesWorkspaceInput interface {
 	pulumi.Input
 
@@ -215,7 +215,7 @@ func (i GetWorkspacesWorkspaceArgs) ToGetWorkspacesWorkspaceOutputWithContext(ct
 // GetWorkspacesWorkspaceArrayInput is an input type that accepts GetWorkspacesWorkspaceArray and GetWorkspacesWorkspaceArrayOutput values.
 // You can construct a concrete instance of `GetWorkspacesWorkspaceArrayInput` via:
 //
-//          GetWorkspacesWorkspaceArray{ GetWorkspacesWorkspaceArgs{...} }
+//	GetWorkspacesWorkspaceArray{ GetWorkspacesWorkspaceArgs{...} }
 type GetWorkspacesWorkspaceArrayInput interface {
 	pulumi.Input
 

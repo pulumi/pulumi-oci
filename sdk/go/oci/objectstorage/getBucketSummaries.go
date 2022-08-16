@@ -28,22 +28,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetBucketSummaries(ctx, &objectstorage.GetBucketSummariesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Namespace:     _var.Bucket_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetBucketSummaries(ctx, &objectstorage.GetBucketSummariesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Namespace:     _var.Bucket_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBucketSummaries(ctx *pulumi.Context, args *GetBucketSummariesArgs, opts ...pulumi.InvokeOption) (*GetBucketSummariesResult, error) {
 	var rv GetBucketSummariesResult

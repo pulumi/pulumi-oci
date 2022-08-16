@@ -21,65 +21,68 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewReportDefinition(ctx, "testReportDefinition", &DataSafe.ReportDefinitionArgs{
-// 			ColumnFilters: datasafe.ReportDefinitionColumnFilterArray{
-// 				&datasafe.ReportDefinitionColumnFilterArgs{
-// 					Expressions: pulumi.Any(_var.Report_definition_column_filters_expressions),
-// 					FieldName:   pulumi.Any(_var.Report_definition_column_filters_field_name),
-// 					IsEnabled:   pulumi.Any(_var.Report_definition_column_filters_is_enabled),
-// 					IsHidden:    pulumi.Any(_var.Report_definition_column_filters_is_hidden),
-// 					Operator:    pulumi.Any(_var.Report_definition_column_filters_operator),
-// 				},
-// 			},
-// 			ColumnInfos: datasafe.ReportDefinitionColumnInfoArray{
-// 				&datasafe.ReportDefinitionColumnInfoArgs{
-// 					DisplayName:  pulumi.Any(_var.Report_definition_column_info_display_name),
-// 					DisplayOrder: pulumi.Any(_var.Report_definition_column_info_display_order),
-// 					FieldName:    pulumi.Any(_var.Report_definition_column_info_field_name),
-// 					IsHidden:     pulumi.Any(_var.Report_definition_column_info_is_hidden),
-// 					DataType:     pulumi.Any(_var.Report_definition_column_info_data_type),
-// 				},
-// 			},
-// 			ColumnSortings: datasafe.ReportDefinitionColumnSortingArray{
-// 				&datasafe.ReportDefinitionColumnSortingArgs{
-// 					FieldName:    pulumi.Any(_var.Report_definition_column_sortings_field_name),
-// 					IsAscending:  pulumi.Any(_var.Report_definition_column_sortings_is_ascending),
-// 					SortingOrder: pulumi.Any(_var.Report_definition_column_sortings_sorting_order),
-// 				},
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Report_definition_display_name),
-// 			ParentId:      pulumi.Any(oci_data_safe_parent.Test_parent.Id),
-// 			Summaries: datasafe.ReportDefinitionSummaryArray{
-// 				&datasafe.ReportDefinitionSummaryArgs{
-// 					DisplayOrder:     pulumi.Any(_var.Report_definition_summary_display_order),
-// 					Name:             pulumi.Any(_var.Report_definition_summary_name),
-// 					CountOf:          pulumi.Any(_var.Report_definition_summary_count_of),
-// 					GroupByFieldName: pulumi.Any(_var.Report_definition_summary_group_by_field_name),
-// 					IsHidden:         pulumi.Any(_var.Report_definition_summary_is_hidden),
-// 					ScimFilter:       pulumi.Any(_var.Report_definition_summary_scim_filter),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Report_definition_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewReportDefinition(ctx, "testReportDefinition", &DataSafe.ReportDefinitionArgs{
+//				ColumnFilters: datasafe.ReportDefinitionColumnFilterArray{
+//					&datasafe.ReportDefinitionColumnFilterArgs{
+//						Expressions: pulumi.Any(_var.Report_definition_column_filters_expressions),
+//						FieldName:   pulumi.Any(_var.Report_definition_column_filters_field_name),
+//						IsEnabled:   pulumi.Any(_var.Report_definition_column_filters_is_enabled),
+//						IsHidden:    pulumi.Any(_var.Report_definition_column_filters_is_hidden),
+//						Operator:    pulumi.Any(_var.Report_definition_column_filters_operator),
+//					},
+//				},
+//				ColumnInfos: datasafe.ReportDefinitionColumnInfoArray{
+//					&datasafe.ReportDefinitionColumnInfoArgs{
+//						DisplayName:  pulumi.Any(_var.Report_definition_column_info_display_name),
+//						DisplayOrder: pulumi.Any(_var.Report_definition_column_info_display_order),
+//						FieldName:    pulumi.Any(_var.Report_definition_column_info_field_name),
+//						IsHidden:     pulumi.Any(_var.Report_definition_column_info_is_hidden),
+//						DataType:     pulumi.Any(_var.Report_definition_column_info_data_type),
+//					},
+//				},
+//				ColumnSortings: datasafe.ReportDefinitionColumnSortingArray{
+//					&datasafe.ReportDefinitionColumnSortingArgs{
+//						FieldName:    pulumi.Any(_var.Report_definition_column_sortings_field_name),
+//						IsAscending:  pulumi.Any(_var.Report_definition_column_sortings_is_ascending),
+//						SortingOrder: pulumi.Any(_var.Report_definition_column_sortings_sorting_order),
+//					},
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Report_definition_display_name),
+//				ParentId:      pulumi.Any(oci_data_safe_parent.Test_parent.Id),
+//				Summaries: datasafe.ReportDefinitionSummaryArray{
+//					&datasafe.ReportDefinitionSummaryArgs{
+//						DisplayOrder:     pulumi.Any(_var.Report_definition_summary_display_order),
+//						Name:             pulumi.Any(_var.Report_definition_summary_name),
+//						CountOf:          pulumi.Any(_var.Report_definition_summary_count_of),
+//						GroupByFieldName: pulumi.Any(_var.Report_definition_summary_group_by_field_name),
+//						IsHidden:         pulumi.Any(_var.Report_definition_summary_is_hidden),
+//						ScimFilter:       pulumi.Any(_var.Report_definition_summary_scim_filter),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Report_definition_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -87,7 +90,9 @@ import (
 // ReportDefinitions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
+//
+//	$ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
+//
 // ```
 type ReportDefinition struct {
 	pulumi.CustomResourceState
@@ -340,7 +345,7 @@ func (i *ReportDefinition) ToReportDefinitionOutputWithContext(ctx context.Conte
 // ReportDefinitionArrayInput is an input type that accepts ReportDefinitionArray and ReportDefinitionArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionArrayInput` via:
 //
-//          ReportDefinitionArray{ ReportDefinitionArgs{...} }
+//	ReportDefinitionArray{ ReportDefinitionArgs{...} }
 type ReportDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -365,7 +370,7 @@ func (i ReportDefinitionArray) ToReportDefinitionArrayOutputWithContext(ctx cont
 // ReportDefinitionMapInput is an input type that accepts ReportDefinitionMap and ReportDefinitionMapOutput values.
 // You can construct a concrete instance of `ReportDefinitionMapInput` via:
 //
-//          ReportDefinitionMap{ "key": ReportDefinitionArgs{...} }
+//	ReportDefinitionMap{ "key": ReportDefinitionArgs{...} }
 type ReportDefinitionMapInput interface {
 	pulumi.Input
 

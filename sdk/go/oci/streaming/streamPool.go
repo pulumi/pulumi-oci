@@ -23,39 +23,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Streaming.NewStreamPool(ctx, "testStreamPool", &Streaming.StreamPoolArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			CustomEncryptionKey: &streaming.StreamPoolCustomEncryptionKeyArgs{
-// 				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
-// 			},
-// 			DefinedTags: pulumi.Any(_var.Stream_pool_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			KafkaSettings: &streaming.StreamPoolKafkaSettingsArgs{
-// 				AutoCreateTopicsEnable: pulumi.Any(_var.Stream_pool_kafka_settings_auto_create_topics_enable),
-// 				BootstrapServers:       pulumi.Any(_var.Stream_pool_kafka_settings_bootstrap_servers),
-// 				LogRetentionHours:      pulumi.Any(_var.Stream_pool_kafka_settings_log_retention_hours),
-// 				NumPartitions:          pulumi.Any(_var.Stream_pool_kafka_settings_num_partitions),
-// 			},
-// 			PrivateEndpointSettings: &streaming.StreamPoolPrivateEndpointSettingsArgs{
-// 				NsgIds:            pulumi.Any(_var.Stream_pool_private_endpoint_settings_nsg_ids),
-// 				PrivateEndpointIp: pulumi.Any(_var.Stream_pool_private_endpoint_settings_private_endpoint_ip),
-// 				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Streaming.NewStreamPool(ctx, "testStreamPool", &Streaming.StreamPoolArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				CustomEncryptionKey: &streaming.StreamPoolCustomEncryptionKeyArgs{
+//					KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//				},
+//				DefinedTags: pulumi.Any(_var.Stream_pool_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				KafkaSettings: &streaming.StreamPoolKafkaSettingsArgs{
+//					AutoCreateTopicsEnable: pulumi.Any(_var.Stream_pool_kafka_settings_auto_create_topics_enable),
+//					BootstrapServers:       pulumi.Any(_var.Stream_pool_kafka_settings_bootstrap_servers),
+//					LogRetentionHours:      pulumi.Any(_var.Stream_pool_kafka_settings_log_retention_hours),
+//					NumPartitions:          pulumi.Any(_var.Stream_pool_kafka_settings_num_partitions),
+//				},
+//				PrivateEndpointSettings: &streaming.StreamPoolPrivateEndpointSettingsArgs{
+//					NsgIds:            pulumi.Any(_var.Stream_pool_private_endpoint_settings_nsg_ids),
+//					PrivateEndpointIp: pulumi.Any(_var.Stream_pool_private_endpoint_settings_private_endpoint_ip),
+//					SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -63,7 +66,9 @@ import (
 // StreamPools can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
+//
+//	$ pulumi import oci:Streaming/streamPool:StreamPool test_stream_pool "id"
+//
 // ```
 type StreamPool struct {
 	pulumi.CustomResourceState
@@ -244,7 +249,7 @@ func (i *StreamPool) ToStreamPoolOutputWithContext(ctx context.Context) StreamPo
 // StreamPoolArrayInput is an input type that accepts StreamPoolArray and StreamPoolArrayOutput values.
 // You can construct a concrete instance of `StreamPoolArrayInput` via:
 //
-//          StreamPoolArray{ StreamPoolArgs{...} }
+//	StreamPoolArray{ StreamPoolArgs{...} }
 type StreamPoolArrayInput interface {
 	pulumi.Input
 
@@ -269,7 +274,7 @@ func (i StreamPoolArray) ToStreamPoolArrayOutputWithContext(ctx context.Context)
 // StreamPoolMapInput is an input type that accepts StreamPoolMap and StreamPoolMapOutput values.
 // You can construct a concrete instance of `StreamPoolMapInput` via:
 //
-//          StreamPoolMap{ "key": StreamPoolArgs{...} }
+//	StreamPoolMap{ "key": StreamPoolArgs{...} }
 type StreamPoolMapInput interface {
 	pulumi.Input
 

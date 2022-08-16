@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.NewContainerImageSignature(ctx, "testContainerImageSignature", &Artifacts.ContainerImageSignatureArgs{
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			ImageId:          pulumi.Any(oci_core_image.Test_image.Id),
-// 			KmsKeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-// 			KmsKeyVersionId:  pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 			Message:          pulumi.Any(_var.Container_image_signature_message),
-// 			Signature:        pulumi.Any(_var.Container_image_signature_signature),
-// 			SigningAlgorithm: pulumi.Any(_var.Container_image_signature_signing_algorithm),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.NewContainerImageSignature(ctx, "testContainerImageSignature", &Artifacts.ContainerImageSignatureArgs{
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				ImageId:          pulumi.Any(oci_core_image.Test_image.Id),
+//				KmsKeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
+//				KmsKeyVersionId:  pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//				Message:          pulumi.Any(_var.Container_image_signature_message),
+//				Signature:        pulumi.Any(_var.Container_image_signature_signature),
+//				SigningAlgorithm: pulumi.Any(_var.Container_image_signature_signing_algorithm),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -49,7 +52,9 @@ import (
 // ContainerImageSignatures can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
+//
+//	$ pulumi import oci:Artifacts/containerImageSignature:ContainerImageSignature test_container_image_signature "container/imageSignatures/{imageSignatureId}"
+//
 // ```
 type ContainerImageSignature struct {
 	pulumi.CustomResourceState
@@ -236,7 +241,7 @@ func (i *ContainerImageSignature) ToContainerImageSignatureOutputWithContext(ctx
 // ContainerImageSignatureArrayInput is an input type that accepts ContainerImageSignatureArray and ContainerImageSignatureArrayOutput values.
 // You can construct a concrete instance of `ContainerImageSignatureArrayInput` via:
 //
-//          ContainerImageSignatureArray{ ContainerImageSignatureArgs{...} }
+//	ContainerImageSignatureArray{ ContainerImageSignatureArgs{...} }
 type ContainerImageSignatureArrayInput interface {
 	pulumi.Input
 
@@ -261,7 +266,7 @@ func (i ContainerImageSignatureArray) ToContainerImageSignatureArrayOutputWithCo
 // ContainerImageSignatureMapInput is an input type that accepts ContainerImageSignatureMap and ContainerImageSignatureMapOutput values.
 // You can construct a concrete instance of `ContainerImageSignatureMapInput` via:
 //
-//          ContainerImageSignatureMap{ "key": ContainerImageSignatureArgs{...} }
+//	ContainerImageSignatureMap{ "key": ContainerImageSignatureArgs{...} }
 type ContainerImageSignatureMapInput interface {
 	pulumi.Input
 

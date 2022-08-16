@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetEnterpriseManagerBridges(ctx, &opsi.GetEnterpriseManagerBridgesArgs{
-// 			CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Enterprise_manager_bridge_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Enterprise_manager_bridge_display_name),
-// 			Id:                     pulumi.StringRef(_var.Enterprise_manager_bridge_id),
-// 			States:                 _var.Enterprise_manager_bridge_state,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetEnterpriseManagerBridges(ctx, &opsi.GetEnterpriseManagerBridgesArgs{
+//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Enterprise_manager_bridge_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Enterprise_manager_bridge_display_name),
+//				Id:                     pulumi.StringRef(_var.Enterprise_manager_bridge_id),
+//				States:                 _var.Enterprise_manager_bridge_state,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetEnterpriseManagerBridges(ctx *pulumi.Context, args *GetEnterpriseManagerBridgesArgs, opts ...pulumi.InvokeOption) (*GetEnterpriseManagerBridgesResult, error) {
 	var rv GetEnterpriseManagerBridgesResult

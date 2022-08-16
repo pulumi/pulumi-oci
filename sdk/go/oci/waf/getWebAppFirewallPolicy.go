@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.GetWebAppFirewallPolicy(ctx, &waf.GetWebAppFirewallPolicyArgs{
-// 			WebAppFirewallPolicyId: oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.GetWebAppFirewallPolicy(ctx, &waf.GetWebAppFirewallPolicyArgs{
+//				WebAppFirewallPolicyId: oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetWebAppFirewallPolicy(ctx *pulumi.Context, args *GetWebAppFirewallPolicyArgs, opts ...pulumi.InvokeOption) (*GetWebAppFirewallPolicyResult, error) {
 	var rv GetWebAppFirewallPolicyResult

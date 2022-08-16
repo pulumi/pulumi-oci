@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetMaintenanceRun(ctx, &database.GetMaintenanceRunArgs{
-// 			MaintenanceRunId: oci_database_maintenance_run.Test_maintenance_run.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetMaintenanceRun(ctx, &database.GetMaintenanceRunArgs{
+//				MaintenanceRunId: oci_database_maintenance_run.Test_maintenance_run.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupMaintenanceRun(ctx *pulumi.Context, args *LookupMaintenanceRunArgs, opts ...pulumi.InvokeOption) (*LookupMaintenanceRunResult, error) {
 	var rv LookupMaintenanceRunResult

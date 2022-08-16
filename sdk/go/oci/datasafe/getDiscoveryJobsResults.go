@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetDiscoveryJobsResults(ctx, &datasafe.GetDiscoveryJobsResultsArgs{
-// 			DiscoveryJobId:  oci_data_safe_discovery_job.Test_discovery_job.Id,
-// 			ColumnNames:     _var.Discovery_jobs_result_column_name,
-// 			DiscoveryType:   pulumi.StringRef(_var.Discovery_jobs_result_discovery_type),
-// 			IsResultApplied: pulumi.BoolRef(_var.Discovery_jobs_result_is_result_applied),
-// 			Objects:         _var.Discovery_jobs_result_object,
-// 			PlannedAction:   pulumi.StringRef(_var.Discovery_jobs_result_planned_action),
-// 			SchemaNames:     _var.Discovery_jobs_result_schema_name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetDiscoveryJobsResults(ctx, &datasafe.GetDiscoveryJobsResultsArgs{
+//				DiscoveryJobId:  oci_data_safe_discovery_job.Test_discovery_job.Id,
+//				ColumnNames:     _var.Discovery_jobs_result_column_name,
+//				DiscoveryType:   pulumi.StringRef(_var.Discovery_jobs_result_discovery_type),
+//				IsResultApplied: pulumi.BoolRef(_var.Discovery_jobs_result_is_result_applied),
+//				Objects:         _var.Discovery_jobs_result_object,
+//				PlannedAction:   pulumi.StringRef(_var.Discovery_jobs_result_planned_action),
+//				SchemaNames:     _var.Discovery_jobs_result_schema_name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDiscoveryJobsResults(ctx *pulumi.Context, args *GetDiscoveryJobsResultsArgs, opts ...pulumi.InvokeOption) (*GetDiscoveryJobsResultsResult, error) {
 	var rv GetDiscoveryJobsResultsResult

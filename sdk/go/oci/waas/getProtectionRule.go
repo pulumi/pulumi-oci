@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.GetProtectionRule(ctx, &waas.GetProtectionRuleArgs{
-// 			ProtectionRuleKey: _var.Protection_rule_protection_rule_key,
-// 			WaasPolicyId:      oci_waas_waas_policy.Test_waas_policy.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.GetProtectionRule(ctx, &waas.GetProtectionRuleArgs{
+//				ProtectionRuleKey: _var.Protection_rule_protection_rule_key,
+//				WaasPolicyId:      oci_waas_waas_policy.Test_waas_policy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupProtectionRule(ctx *pulumi.Context, args *LookupProtectionRuleArgs, opts ...pulumi.InvokeOption) (*LookupProtectionRuleResult, error) {
 	var rv LookupProtectionRuleResult

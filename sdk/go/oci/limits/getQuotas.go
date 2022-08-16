@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Limits.GetQuotas(ctx, &limits.GetQuotasArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 			Name:          pulumi.StringRef(_var.Quota_name),
-// 			State:         pulumi.StringRef(_var.Quota_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Limits.GetQuotas(ctx, &limits.GetQuotasArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//				Name:          pulumi.StringRef(_var.Quota_name),
+//				State:         pulumi.StringRef(_var.Quota_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetQuotas(ctx *pulumi.Context, args *GetQuotasArgs, opts ...pulumi.InvokeOption) (*GetQuotasResult, error) {
 	var rv GetQuotasResult

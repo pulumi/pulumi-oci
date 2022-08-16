@@ -34,29 +34,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewTagNamespace(ctx, "testTagNamespace", &Identity.TagNamespaceArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Description:   pulumi.Any(_var.Tag_namespace_description),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsRetired: pulumi.Bool(false),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewTagNamespace(ctx, "testTagNamespace", &Identity.TagNamespaceArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Description:   pulumi.Any(_var.Tag_namespace_description),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsRetired: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -64,7 +67,9 @@ import (
 // TagNamespaces can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
+//
+//	$ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
+//
 // ```
 type TagNamespace struct {
 	pulumi.CustomResourceState
@@ -220,7 +225,7 @@ func (i *TagNamespace) ToTagNamespaceOutputWithContext(ctx context.Context) TagN
 // TagNamespaceArrayInput is an input type that accepts TagNamespaceArray and TagNamespaceArrayOutput values.
 // You can construct a concrete instance of `TagNamespaceArrayInput` via:
 //
-//          TagNamespaceArray{ TagNamespaceArgs{...} }
+//	TagNamespaceArray{ TagNamespaceArgs{...} }
 type TagNamespaceArrayInput interface {
 	pulumi.Input
 
@@ -245,7 +250,7 @@ func (i TagNamespaceArray) ToTagNamespaceArrayOutputWithContext(ctx context.Cont
 // TagNamespaceMapInput is an input type that accepts TagNamespaceMap and TagNamespaceMapOutput values.
 // You can construct a concrete instance of `TagNamespaceMapInput` via:
 //
-//          TagNamespaceMap{ "key": TagNamespaceArgs{...} }
+//	TagNamespaceMap{ "key": TagNamespaceArgs{...} }
 type TagNamespaceMapInput interface {
 	pulumi.Input
 

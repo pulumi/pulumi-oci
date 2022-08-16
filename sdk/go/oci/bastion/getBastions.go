@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Bastion"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Bastion.GetBastions(ctx, &bastion.GetBastionsArgs{
-// 			CompartmentId:         _var.Compartment_id,
-// 			BastionId:             pulumi.StringRef(oci_bastion_bastion.Test_bastion.Id),
-// 			BastionLifecycleState: pulumi.StringRef(_var.Bastion_bastion_lifecycle_state),
-// 			Name:                  pulumi.StringRef(_var.Bastion_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Bastion.GetBastions(ctx, &bastion.GetBastionsArgs{
+//				CompartmentId:         _var.Compartment_id,
+//				BastionId:             pulumi.StringRef(oci_bastion_bastion.Test_bastion.Id),
+//				BastionLifecycleState: pulumi.StringRef(_var.Bastion_bastion_lifecycle_state),
+//				Name:                  pulumi.StringRef(_var.Bastion_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBastions(ctx *pulumi.Context, args *GetBastionsArgs, opts ...pulumi.InvokeOption) (*GetBastionsResult, error) {
 	var rv GetBastionsResult

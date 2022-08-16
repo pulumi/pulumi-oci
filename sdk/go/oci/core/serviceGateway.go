@@ -29,35 +29,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewServiceGateway(ctx, "testServiceGateway", &Core.ServiceGatewayArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Services: core.ServiceGatewayServiceArray{
-// 				&core.ServiceGatewayServiceArgs{
-// 					ServiceId: pulumi.Any(data.Oci_core_services.Test_services.Services[0].Id),
-// 				},
-// 			},
-// 			VcnId: pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Service_gateway_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewServiceGateway(ctx, "testServiceGateway", &Core.ServiceGatewayArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Services: core.ServiceGatewayServiceArray{
+//					&core.ServiceGatewayServiceArgs{
+//						ServiceId: pulumi.Any(data.Oci_core_services.Test_services.Services[0].Id),
+//					},
+//				},
+//				VcnId: pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Service_gateway_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -65,7 +68,9 @@ import (
 // ServiceGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
+//
+//	$ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
+//
 // ```
 type ServiceGateway struct {
 	pulumi.CustomResourceState
@@ -240,7 +245,7 @@ func (i *ServiceGateway) ToServiceGatewayOutputWithContext(ctx context.Context) 
 // ServiceGatewayArrayInput is an input type that accepts ServiceGatewayArray and ServiceGatewayArrayOutput values.
 // You can construct a concrete instance of `ServiceGatewayArrayInput` via:
 //
-//          ServiceGatewayArray{ ServiceGatewayArgs{...} }
+//	ServiceGatewayArray{ ServiceGatewayArgs{...} }
 type ServiceGatewayArrayInput interface {
 	pulumi.Input
 
@@ -265,7 +270,7 @@ func (i ServiceGatewayArray) ToServiceGatewayArrayOutputWithContext(ctx context.
 // ServiceGatewayMapInput is an input type that accepts ServiceGatewayMap and ServiceGatewayMapOutput values.
 // You can construct a concrete instance of `ServiceGatewayMapInput` via:
 //
-//          ServiceGatewayMap{ "key": ServiceGatewayArgs{...} }
+//	ServiceGatewayMap{ "key": ServiceGatewayArgs{...} }
 type ServiceGatewayMapInput interface {
 	pulumi.Input
 

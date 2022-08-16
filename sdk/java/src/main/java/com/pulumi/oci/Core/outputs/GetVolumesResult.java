@@ -23,7 +23,7 @@ public final class GetVolumesResult {
      * @return The OCID of the compartment that contains the volume.
      * 
      */
-    private final String compartmentId;
+    private final @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -54,7 +54,7 @@ public final class GetVolumesResult {
     @CustomType.Constructor
     private GetVolumesResult(
         @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
+        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
         @CustomType.Parameter("displayName") @Nullable String displayName,
         @CustomType.Parameter("filters") @Nullable List<GetVolumesFilter> filters,
         @CustomType.Parameter("id") String id,
@@ -82,8 +82,8 @@ public final class GetVolumesResult {
      * @return The OCID of the compartment that contains the volume.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -134,7 +134,7 @@ public final class GetVolumesResult {
 
     public static final class Builder {
         private @Nullable String availabilityDomain;
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumesFilter> filters;
         private String id;
@@ -162,8 +162,8 @@ public final class GetVolumesResult {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         public Builder displayName(@Nullable String displayName) {

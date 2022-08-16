@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
 //
-// This is an API which returns Computed Usage corresponding to the id passed
+// # This is an API which returns Computed Usage corresponding to the id passed
 //
 // ## Example Usage
 //
@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetComputedUsage(ctx, &onesubsription.GetComputedUsageArgs{
-// 			CompartmentId:   _var.Compartment_id,
-// 			ComputedUsageId: oci_onesubscription_computed_usage.Test_computed_usage.Id,
-// 			Fields:          _var.Computed_usage_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetComputedUsage(ctx, &onesubsription.GetComputedUsageArgs{
+//				CompartmentId:   _var.Compartment_id,
+//				ComputedUsageId: oci_onesubscription_computed_usage.Test_computed_usage.Id,
+//				Fields:          _var.Computed_usage_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetComputedUsage(ctx *pulumi.Context, args *GetComputedUsageArgs, opts ...pulumi.InvokeOption) (*GetComputedUsageResult, error) {
 	var rv GetComputedUsageResult

@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetIngressGatewayRouteTables(ctx, &servicemesh.GetIngressGatewayRouteTablesArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			Id:               pulumi.StringRef(_var.Ingress_gateway_route_table_id),
-// 			IngressGatewayId: pulumi.StringRef(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-// 			Name:             pulumi.StringRef(_var.Ingress_gateway_route_table_name),
-// 			State:            pulumi.StringRef(_var.Ingress_gateway_route_table_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetIngressGatewayRouteTables(ctx, &servicemesh.GetIngressGatewayRouteTablesArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				Id:               pulumi.StringRef(_var.Ingress_gateway_route_table_id),
+//				IngressGatewayId: pulumi.StringRef(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
+//				Name:             pulumi.StringRef(_var.Ingress_gateway_route_table_name),
+//				State:            pulumi.StringRef(_var.Ingress_gateway_route_table_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIngressGatewayRouteTables(ctx *pulumi.Context, args *GetIngressGatewayRouteTablesArgs, opts ...pulumi.InvokeOption) (*GetIngressGatewayRouteTablesResult, error) {
 	var rv GetIngressGatewayRouteTablesResult

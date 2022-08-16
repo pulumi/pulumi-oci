@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.GetRuleSet(ctx, &loadbalancer.GetRuleSetArgs{
-// 			LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
-// 			Name:           _var.Rule_set_name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.GetRuleSet(ctx, &loadbalancer.GetRuleSetArgs{
+//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//				Name:           _var.Rule_set_name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupRuleSet(ctx *pulumi.Context, args *LookupRuleSetArgs, opts ...pulumi.InvokeOption) (*LookupRuleSetResult, error) {
 	var rv LookupRuleSetResult

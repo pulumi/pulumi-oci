@@ -24,29 +24,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrgRouteDistribution(ctx, "testDrgRouteDistribution", &Core.DrgRouteDistributionArgs{
-// 			DistributionType: pulumi.Any(_var.Drg_route_distribution_distribution_type),
-// 			DrgId:            pulumi.Any(oci_core_drg.Test_drg.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Drg_route_distribution_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrgRouteDistribution(ctx, "testDrgRouteDistribution", &Core.DrgRouteDistributionArgs{
+//				DistributionType: pulumi.Any(_var.Drg_route_distribution_distribution_type),
+//				DrgId:            pulumi.Any(oci_core_drg.Test_drg.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Drg_route_distribution_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // DrgRouteDistributions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
+//
+//	$ pulumi import oci:Core/drgRouteDistribution:DrgRouteDistribution test_drg_route_distribution "id"
+//
 // ```
 type DrgRouteDistribution struct {
 	pulumi.CustomResourceState
@@ -206,7 +211,7 @@ func (i *DrgRouteDistribution) ToDrgRouteDistributionOutputWithContext(ctx conte
 // DrgRouteDistributionArrayInput is an input type that accepts DrgRouteDistributionArray and DrgRouteDistributionArrayOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionArrayInput` via:
 //
-//          DrgRouteDistributionArray{ DrgRouteDistributionArgs{...} }
+//	DrgRouteDistributionArray{ DrgRouteDistributionArgs{...} }
 type DrgRouteDistributionArrayInput interface {
 	pulumi.Input
 
@@ -231,7 +236,7 @@ func (i DrgRouteDistributionArray) ToDrgRouteDistributionArrayOutputWithContext(
 // DrgRouteDistributionMapInput is an input type that accepts DrgRouteDistributionMap and DrgRouteDistributionMapOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionMapInput` via:
 //
-//          DrgRouteDistributionMap{ "key": DrgRouteDistributionArgs{...} }
+//	DrgRouteDistributionMap{ "key": DrgRouteDistributionArgs{...} }
 type DrgRouteDistributionMapInput interface {
 	pulumi.Input
 

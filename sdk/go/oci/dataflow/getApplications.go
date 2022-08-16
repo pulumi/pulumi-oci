@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataFlow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataFlow.GetApplications(ctx, &dataflow.GetApplicationsArgs{
-// 			CompartmentId:         _var.Compartment_id,
-// 			DisplayName:           pulumi.StringRef(_var.Application_display_name),
-// 			DisplayNameStartsWith: pulumi.StringRef(_var.Application_display_name_starts_with),
-// 			OwnerPrincipalId:      pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
-// 			SparkVersion:          pulumi.StringRef(_var.Application_spark_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataFlow.GetApplications(ctx, &dataflow.GetApplicationsArgs{
+//				CompartmentId:         _var.Compartment_id,
+//				DisplayName:           pulumi.StringRef(_var.Application_display_name),
+//				DisplayNameStartsWith: pulumi.StringRef(_var.Application_display_name_starts_with),
+//				OwnerPrincipalId:      pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
+//				SparkVersion:          pulumi.StringRef(_var.Application_spark_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetApplications(ctx *pulumi.Context, args *GetApplicationsArgs, opts ...pulumi.InvokeOption) (*GetApplicationsResult, error) {
 	var rv GetApplicationsResult

@@ -26,7 +26,7 @@ type ProductLicenseImage struct {
 // ProductLicenseImageInput is an input type that accepts ProductLicenseImageArgs and ProductLicenseImageOutput values.
 // You can construct a concrete instance of `ProductLicenseImageInput` via:
 //
-//          ProductLicenseImageArgs{...}
+//	ProductLicenseImageArgs{...}
 type ProductLicenseImageInput interface {
 	pulumi.Input
 
@@ -62,7 +62,7 @@ func (i ProductLicenseImageArgs) ToProductLicenseImageOutputWithContext(ctx cont
 // ProductLicenseImageArrayInput is an input type that accepts ProductLicenseImageArray and ProductLicenseImageArrayOutput values.
 // You can construct a concrete instance of `ProductLicenseImageArrayInput` via:
 //
-//          ProductLicenseImageArray{ ProductLicenseImageArgs{...} }
+//	ProductLicenseImageArray{ ProductLicenseImageArgs{...} }
 type ProductLicenseImageArrayInput interface {
 	pulumi.Input
 
@@ -152,7 +152,7 @@ type GetLicenseRecordsFilter struct {
 // GetLicenseRecordsFilterInput is an input type that accepts GetLicenseRecordsFilterArgs and GetLicenseRecordsFilterOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsFilterInput` via:
 //
-//          GetLicenseRecordsFilterArgs{...}
+//	GetLicenseRecordsFilterArgs{...}
 type GetLicenseRecordsFilterInput interface {
 	pulumi.Input
 
@@ -181,7 +181,7 @@ func (i GetLicenseRecordsFilterArgs) ToGetLicenseRecordsFilterOutputWithContext(
 // GetLicenseRecordsFilterArrayInput is an input type that accepts GetLicenseRecordsFilterArray and GetLicenseRecordsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsFilterArrayInput` via:
 //
-//          GetLicenseRecordsFilterArray{ GetLicenseRecordsFilterArgs{...} }
+//	GetLicenseRecordsFilterArray{ GetLicenseRecordsFilterArgs{...} }
 type GetLicenseRecordsFilterArrayInput interface {
 	pulumi.Input
 
@@ -256,7 +256,7 @@ type GetLicenseRecordsLicenseRecordCollection struct {
 // GetLicenseRecordsLicenseRecordCollectionInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionArgs and GetLicenseRecordsLicenseRecordCollectionOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionInput` via:
 //
-//          GetLicenseRecordsLicenseRecordCollectionArgs{...}
+//	GetLicenseRecordsLicenseRecordCollectionArgs{...}
 type GetLicenseRecordsLicenseRecordCollectionInput interface {
 	pulumi.Input
 
@@ -283,7 +283,7 @@ func (i GetLicenseRecordsLicenseRecordCollectionArgs) ToGetLicenseRecordsLicense
 // GetLicenseRecordsLicenseRecordCollectionArrayInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionArray and GetLicenseRecordsLicenseRecordCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionArrayInput` via:
 //
-//          GetLicenseRecordsLicenseRecordCollectionArray{ GetLicenseRecordsLicenseRecordCollectionArgs{...} }
+//	GetLicenseRecordsLicenseRecordCollectionArray{ GetLicenseRecordsLicenseRecordCollectionArgs{...} }
 type GetLicenseRecordsLicenseRecordCollectionArrayInput interface {
 	pulumi.Input
 
@@ -387,7 +387,7 @@ type GetLicenseRecordsLicenseRecordCollectionItem struct {
 // GetLicenseRecordsLicenseRecordCollectionItemInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionItemArgs and GetLicenseRecordsLicenseRecordCollectionItemOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionItemInput` via:
 //
-//          GetLicenseRecordsLicenseRecordCollectionItemArgs{...}
+//	GetLicenseRecordsLicenseRecordCollectionItemArgs{...}
 type GetLicenseRecordsLicenseRecordCollectionItemInput interface {
 	pulumi.Input
 
@@ -449,7 +449,7 @@ func (i GetLicenseRecordsLicenseRecordCollectionItemArgs) ToGetLicenseRecordsLic
 // GetLicenseRecordsLicenseRecordCollectionItemArrayInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionItemArray and GetLicenseRecordsLicenseRecordCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionItemArrayInput` via:
 //
-//          GetLicenseRecordsLicenseRecordCollectionItemArray{ GetLicenseRecordsLicenseRecordCollectionItemArgs{...} }
+//	GetLicenseRecordsLicenseRecordCollectionItemArray{ GetLicenseRecordsLicenseRecordCollectionItemArgs{...} }
 type GetLicenseRecordsLicenseRecordCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -625,7 +625,7 @@ type GetProductLicenseConsumersItem struct {
 // GetProductLicenseConsumersItemInput is an input type that accepts GetProductLicenseConsumersItemArgs and GetProductLicenseConsumersItemOutput values.
 // You can construct a concrete instance of `GetProductLicenseConsumersItemInput` via:
 //
-//          GetProductLicenseConsumersItemArgs{...}
+//	GetProductLicenseConsumersItemArgs{...}
 type GetProductLicenseConsumersItemInput interface {
 	pulumi.Input
 
@@ -675,7 +675,7 @@ func (i GetProductLicenseConsumersItemArgs) ToGetProductLicenseConsumersItemOutp
 // GetProductLicenseConsumersItemArrayInput is an input type that accepts GetProductLicenseConsumersItemArray and GetProductLicenseConsumersItemArrayOutput values.
 // You can construct a concrete instance of `GetProductLicenseConsumersItemArrayInput` via:
 //
-//          GetProductLicenseConsumersItemArray{ GetProductLicenseConsumersItemArgs{...} }
+//	GetProductLicenseConsumersItemArray{ GetProductLicenseConsumersItemArgs{...} }
 type GetProductLicenseConsumersItemArrayInput interface {
 	pulumi.Input
 
@@ -805,7 +805,7 @@ type GetProductLicenseConsumersItemMissingProduct struct {
 // GetProductLicenseConsumersItemMissingProductInput is an input type that accepts GetProductLicenseConsumersItemMissingProductArgs and GetProductLicenseConsumersItemMissingProductOutput values.
 // You can construct a concrete instance of `GetProductLicenseConsumersItemMissingProductInput` via:
 //
-//          GetProductLicenseConsumersItemMissingProductArgs{...}
+//	GetProductLicenseConsumersItemMissingProductArgs{...}
 type GetProductLicenseConsumersItemMissingProductInput interface {
 	pulumi.Input
 
@@ -837,7 +837,7 @@ func (i GetProductLicenseConsumersItemMissingProductArgs) ToGetProductLicenseCon
 // GetProductLicenseConsumersItemMissingProductArrayInput is an input type that accepts GetProductLicenseConsumersItemMissingProductArray and GetProductLicenseConsumersItemMissingProductArrayOutput values.
 // You can construct a concrete instance of `GetProductLicenseConsumersItemMissingProductArrayInput` via:
 //
-//          GetProductLicenseConsumersItemMissingProductArray{ GetProductLicenseConsumersItemMissingProductArgs{...} }
+//	GetProductLicenseConsumersItemMissingProductArray{ GetProductLicenseConsumersItemMissingProductArgs{...} }
 type GetProductLicenseConsumersItemMissingProductArrayInput interface {
 	pulumi.Input
 
@@ -924,7 +924,7 @@ type GetProductLicenseImage struct {
 // GetProductLicenseImageInput is an input type that accepts GetProductLicenseImageArgs and GetProductLicenseImageOutput values.
 // You can construct a concrete instance of `GetProductLicenseImageInput` via:
 //
-//          GetProductLicenseImageArgs{...}
+//	GetProductLicenseImageArgs{...}
 type GetProductLicenseImageInput interface {
 	pulumi.Input
 
@@ -960,7 +960,7 @@ func (i GetProductLicenseImageArgs) ToGetProductLicenseImageOutputWithContext(ct
 // GetProductLicenseImageArrayInput is an input type that accepts GetProductLicenseImageArray and GetProductLicenseImageArrayOutput values.
 // You can construct a concrete instance of `GetProductLicenseImageArrayInput` via:
 //
-//          GetProductLicenseImageArray{ GetProductLicenseImageArgs{...} }
+//	GetProductLicenseImageArray{ GetProductLicenseImageArgs{...} }
 type GetProductLicenseImageArrayInput interface {
 	pulumi.Input
 
@@ -1050,7 +1050,7 @@ type GetProductLicensesFilter struct {
 // GetProductLicensesFilterInput is an input type that accepts GetProductLicensesFilterArgs and GetProductLicensesFilterOutput values.
 // You can construct a concrete instance of `GetProductLicensesFilterInput` via:
 //
-//          GetProductLicensesFilterArgs{...}
+//	GetProductLicensesFilterArgs{...}
 type GetProductLicensesFilterInput interface {
 	pulumi.Input
 
@@ -1079,7 +1079,7 @@ func (i GetProductLicensesFilterArgs) ToGetProductLicensesFilterOutputWithContex
 // GetProductLicensesFilterArrayInput is an input type that accepts GetProductLicensesFilterArray and GetProductLicensesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesFilterArrayInput` via:
 //
-//          GetProductLicensesFilterArray{ GetProductLicensesFilterArgs{...} }
+//	GetProductLicensesFilterArray{ GetProductLicensesFilterArgs{...} }
 type GetProductLicensesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1154,7 +1154,7 @@ type GetProductLicensesProductLicenseCollection struct {
 // GetProductLicensesProductLicenseCollectionInput is an input type that accepts GetProductLicensesProductLicenseCollectionArgs and GetProductLicensesProductLicenseCollectionOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionInput` via:
 //
-//          GetProductLicensesProductLicenseCollectionArgs{...}
+//	GetProductLicensesProductLicenseCollectionArgs{...}
 type GetProductLicensesProductLicenseCollectionInput interface {
 	pulumi.Input
 
@@ -1181,7 +1181,7 @@ func (i GetProductLicensesProductLicenseCollectionArgs) ToGetProductLicensesProd
 // GetProductLicensesProductLicenseCollectionArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionArray and GetProductLicensesProductLicenseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionArrayInput` via:
 //
-//          GetProductLicensesProductLicenseCollectionArray{ GetProductLicensesProductLicenseCollectionArgs{...} }
+//	GetProductLicensesProductLicenseCollectionArray{ GetProductLicensesProductLicenseCollectionArgs{...} }
 type GetProductLicensesProductLicenseCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1291,7 +1291,7 @@ type GetProductLicensesProductLicenseCollectionItem struct {
 // GetProductLicensesProductLicenseCollectionItemInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemArgs and GetProductLicensesProductLicenseCollectionItemOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionItemInput` via:
 //
-//          GetProductLicensesProductLicenseCollectionItemArgs{...}
+//	GetProductLicensesProductLicenseCollectionItemArgs{...}
 type GetProductLicensesProductLicenseCollectionItemInput interface {
 	pulumi.Input
 
@@ -1359,7 +1359,7 @@ func (i GetProductLicensesProductLicenseCollectionItemArgs) ToGetProductLicenses
 // GetProductLicensesProductLicenseCollectionItemArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemArray and GetProductLicensesProductLicenseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionItemArrayInput` via:
 //
-//          GetProductLicensesProductLicenseCollectionItemArray{ GetProductLicensesProductLicenseCollectionItemArgs{...} }
+//	GetProductLicensesProductLicenseCollectionItemArray{ GetProductLicensesProductLicenseCollectionItemArgs{...} }
 type GetProductLicensesProductLicenseCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1538,7 +1538,7 @@ type GetProductLicensesProductLicenseCollectionItemImage struct {
 // GetProductLicensesProductLicenseCollectionItemImageInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemImageArgs and GetProductLicensesProductLicenseCollectionItemImageOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionItemImageInput` via:
 //
-//          GetProductLicensesProductLicenseCollectionItemImageArgs{...}
+//	GetProductLicensesProductLicenseCollectionItemImageArgs{...}
 type GetProductLicensesProductLicenseCollectionItemImageInput interface {
 	pulumi.Input
 
@@ -1574,7 +1574,7 @@ func (i GetProductLicensesProductLicenseCollectionItemImageArgs) ToGetProductLic
 // GetProductLicensesProductLicenseCollectionItemImageArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemImageArray and GetProductLicensesProductLicenseCollectionItemImageArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionItemImageArrayInput` via:
 //
-//          GetProductLicensesProductLicenseCollectionItemImageArray{ GetProductLicensesProductLicenseCollectionItemImageArgs{...} }
+//	GetProductLicensesProductLicenseCollectionItemImageArray{ GetProductLicensesProductLicenseCollectionItemImageArgs{...} }
 type GetProductLicensesProductLicenseCollectionItemImageArrayInput interface {
 	pulumi.Input
 
@@ -1675,7 +1675,7 @@ type GetTopUtilizedProductLicensesItem struct {
 // GetTopUtilizedProductLicensesItemInput is an input type that accepts GetTopUtilizedProductLicensesItemArgs and GetTopUtilizedProductLicensesItemOutput values.
 // You can construct a concrete instance of `GetTopUtilizedProductLicensesItemInput` via:
 //
-//          GetTopUtilizedProductLicensesItemArgs{...}
+//	GetTopUtilizedProductLicensesItemArgs{...}
 type GetTopUtilizedProductLicensesItemInput interface {
 	pulumi.Input
 
@@ -1715,7 +1715,7 @@ func (i GetTopUtilizedProductLicensesItemArgs) ToGetTopUtilizedProductLicensesIt
 // GetTopUtilizedProductLicensesItemArrayInput is an input type that accepts GetTopUtilizedProductLicensesItemArray and GetTopUtilizedProductLicensesItemArrayOutput values.
 // You can construct a concrete instance of `GetTopUtilizedProductLicensesItemArrayInput` via:
 //
-//          GetTopUtilizedProductLicensesItemArray{ GetTopUtilizedProductLicensesItemArgs{...} }
+//	GetTopUtilizedProductLicensesItemArray{ GetTopUtilizedProductLicensesItemArgs{...} }
 type GetTopUtilizedProductLicensesItemArrayInput interface {
 	pulumi.Input
 
@@ -1824,7 +1824,7 @@ type GetTopUtilizedResourcesItem struct {
 // GetTopUtilizedResourcesItemInput is an input type that accepts GetTopUtilizedResourcesItemArgs and GetTopUtilizedResourcesItemOutput values.
 // You can construct a concrete instance of `GetTopUtilizedResourcesItemInput` via:
 //
-//          GetTopUtilizedResourcesItemArgs{...}
+//	GetTopUtilizedResourcesItemArgs{...}
 type GetTopUtilizedResourcesItemInput interface {
 	pulumi.Input
 
@@ -1862,7 +1862,7 @@ func (i GetTopUtilizedResourcesItemArgs) ToGetTopUtilizedResourcesItemOutputWith
 // GetTopUtilizedResourcesItemArrayInput is an input type that accepts GetTopUtilizedResourcesItemArray and GetTopUtilizedResourcesItemArrayOutput values.
 // You can construct a concrete instance of `GetTopUtilizedResourcesItemArrayInput` via:
 //
-//          GetTopUtilizedResourcesItemArray{ GetTopUtilizedResourcesItemArgs{...} }
+//	GetTopUtilizedResourcesItemArray{ GetTopUtilizedResourcesItemArgs{...} }
 type GetTopUtilizedResourcesItemArrayInput interface {
 	pulumi.Input
 

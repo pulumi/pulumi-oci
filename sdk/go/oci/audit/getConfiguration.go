@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
 //
-// Get the configuration
+// # Get the configuration
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Audit"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Audit"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Audit.GetConfiguration(ctx, &audit.GetConfigurationArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Audit.GetConfiguration(ctx, &audit.GetConfigurationArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupConfiguration(ctx *pulumi.Context, args *LookupConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupConfigurationResult, error) {
 	var rv LookupConfigurationResult

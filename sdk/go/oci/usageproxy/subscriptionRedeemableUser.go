@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/UsageProxy"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/UsageProxy"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := UsageProxy.NewSubscriptionRedeemableUser(ctx, "testSubscriptionRedeemableUser", &UsageProxy.SubscriptionRedeemableUserArgs{
-// 			SubscriptionId: pulumi.Any(oci_ons_subscription.Test_subscription.Id),
-// 			TenancyId:      pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
-// 			Items: usageproxy.SubscriptionRedeemableUserItemArray{
-// 				&usageproxy.SubscriptionRedeemableUserItemArgs{
-// 					EmailId: pulumi.Any(oci_usage_proxy_email.Test_email.Id),
-// 				},
-// 			},
-// 			UserId: pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := UsageProxy.NewSubscriptionRedeemableUser(ctx, "testSubscriptionRedeemableUser", &UsageProxy.SubscriptionRedeemableUserArgs{
+//				SubscriptionId: pulumi.Any(oci_ons_subscription.Test_subscription.Id),
+//				TenancyId:      pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
+//				Items: usageproxy.SubscriptionRedeemableUserItemArray{
+//					&usageproxy.SubscriptionRedeemableUserItemArgs{
+//						EmailId: pulumi.Any(oci_usage_proxy_email.Test_email.Id),
+//					},
+//				},
+//				UserId: pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // SubscriptionRedeemableUsers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
+//
+//	$ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
+//
 // ```
 type SubscriptionRedeemableUser struct {
 	pulumi.CustomResourceState
@@ -177,7 +182,7 @@ func (i *SubscriptionRedeemableUser) ToSubscriptionRedeemableUserOutputWithConte
 // SubscriptionRedeemableUserArrayInput is an input type that accepts SubscriptionRedeemableUserArray and SubscriptionRedeemableUserArrayOutput values.
 // You can construct a concrete instance of `SubscriptionRedeemableUserArrayInput` via:
 //
-//          SubscriptionRedeemableUserArray{ SubscriptionRedeemableUserArgs{...} }
+//	SubscriptionRedeemableUserArray{ SubscriptionRedeemableUserArgs{...} }
 type SubscriptionRedeemableUserArrayInput interface {
 	pulumi.Input
 
@@ -202,7 +207,7 @@ func (i SubscriptionRedeemableUserArray) ToSubscriptionRedeemableUserArrayOutput
 // SubscriptionRedeemableUserMapInput is an input type that accepts SubscriptionRedeemableUserMap and SubscriptionRedeemableUserMapOutput values.
 // You can construct a concrete instance of `SubscriptionRedeemableUserMapInput` via:
 //
-//          SubscriptionRedeemableUserMap{ "key": SubscriptionRedeemableUserArgs{...} }
+//	SubscriptionRedeemableUserMap{ "key": SubscriptionRedeemableUserArgs{...} }
 type SubscriptionRedeemableUserMapInput interface {
 	pulumi.Input
 

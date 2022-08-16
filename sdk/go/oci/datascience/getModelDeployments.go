@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetModelDeployments(ctx, &datascience.GetModelDeploymentsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			CreatedBy:     pulumi.StringRef(_var.Model_deployment_created_by),
-// 			DisplayName:   pulumi.StringRef(_var.Model_deployment_display_name),
-// 			Id:            pulumi.StringRef(_var.Model_deployment_id),
-// 			ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
-// 			State:         pulumi.StringRef(_var.Model_deployment_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetModelDeployments(ctx, &datascience.GetModelDeploymentsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				CreatedBy:     pulumi.StringRef(_var.Model_deployment_created_by),
+//				DisplayName:   pulumi.StringRef(_var.Model_deployment_display_name),
+//				Id:            pulumi.StringRef(_var.Model_deployment_id),
+//				ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
+//				State:         pulumi.StringRef(_var.Model_deployment_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetModelDeployments(ctx *pulumi.Context, args *GetModelDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetModelDeploymentsResult, error) {
 	var rv GetModelDeploymentsResult

@@ -127,6 +127,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<bool> IsLogForwarded { get; private set; } = null!;
 
         /// <summary>
+        /// More in detail about the lifeCycleState.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the operator control that is being assigned to a target resource.
         /// </summary>
         [Output("operatorControlId")]
@@ -454,6 +460,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Input("isLogForwarded")]
         public Input<bool>? IsLogForwarded { get; set; }
+
+        /// <summary>
+        /// More in detail about the lifeCycleState.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
         /// The OCID of the operator control that is being assigned to a target resource.

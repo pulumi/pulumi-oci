@@ -20,7 +20,7 @@ class GetAccessRequestResult:
     """
     A collection of values returned by getAccessRequest.
     """
-    def __init__(__self__, access_reason_summary=None, access_request_id=None, action_requests_lists=None, approver_comment=None, audit_types=None, closure_comment=None, compartment_id=None, defined_tags=None, duration=None, extend_duration=None, freeform_tags=None, id=None, is_auto_approved=None, opctl_additional_message=None, opctl_id=None, opctl_name=None, operator_id=None, reason=None, request_id=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, system_message=None, time_of_creation=None, time_of_modification=None, time_of_user_creation=None, user_id=None, workflow_ids=None):
+    def __init__(__self__, access_reason_summary=None, access_request_id=None, action_requests_lists=None, approver_comment=None, audit_types=None, closure_comment=None, compartment_id=None, defined_tags=None, duration=None, extend_duration=None, freeform_tags=None, id=None, is_auto_approved=None, lifecycle_details=None, opctl_additional_message=None, opctl_id=None, opctl_name=None, operator_id=None, reason=None, request_id=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, system_message=None, time_of_creation=None, time_of_modification=None, time_of_user_creation=None, user_id=None, workflow_ids=None):
         if access_reason_summary and not isinstance(access_reason_summary, str):
             raise TypeError("Expected argument 'access_reason_summary' to be a str")
         pulumi.set(__self__, "access_reason_summary", access_reason_summary)
@@ -60,6 +60,9 @@ class GetAccessRequestResult:
         if is_auto_approved and not isinstance(is_auto_approved, bool):
             raise TypeError("Expected argument 'is_auto_approved' to be a bool")
         pulumi.set(__self__, "is_auto_approved", is_auto_approved)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if opctl_additional_message and not isinstance(opctl_additional_message, str):
             raise TypeError("Expected argument 'opctl_additional_message' to be a str")
         pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
@@ -212,6 +215,14 @@ class GetAccessRequestResult:
         Whether the access request was automatically approved.
         """
         return pulumi.get(self, "is_auto_approved")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        more in detail about the lifeCycleState.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opctlAdditionalMessage")
@@ -369,6 +380,7 @@ class AwaitableGetAccessRequestResult(GetAccessRequestResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_auto_approved=self.is_auto_approved,
+            lifecycle_details=self.lifecycle_details,
             opctl_additional_message=self.opctl_additional_message,
             opctl_id=self.opctl_id,
             opctl_name=self.opctl_name,
@@ -429,6 +441,7 @@ def get_access_request(access_request_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_auto_approved=__ret__.is_auto_approved,
+        lifecycle_details=__ret__.lifecycle_details,
         opctl_additional_message=__ret__.opctl_additional_message,
         opctl_id=__ret__.opctl_id,
         opctl_name=__ret__.opctl_name,

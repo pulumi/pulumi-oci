@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IntegrationInstanceCustomEndpoint {
     /**
+     * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     * 
+     */
+    private final @Nullable String alias;
+    /**
      * @return (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
      * 
      */
@@ -30,14 +35,23 @@ public final class IntegrationInstanceCustomEndpoint {
 
     @CustomType.Constructor
     private IntegrationInstanceCustomEndpoint(
+        @CustomType.Parameter("alias") @Nullable String alias,
         @CustomType.Parameter("certificateSecretId") @Nullable String certificateSecretId,
         @CustomType.Parameter("certificateSecretVersion") @Nullable Integer certificateSecretVersion,
         @CustomType.Parameter("hostname") String hostname) {
+        this.alias = alias;
         this.certificateSecretId = certificateSecretId;
         this.certificateSecretVersion = certificateSecretVersion;
         this.hostname = hostname;
     }
 
+    /**
+     * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     * 
+     */
+    public Optional<String> alias() {
+        return Optional.ofNullable(this.alias);
+    }
     /**
      * @return (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
      * 
@@ -69,6 +83,7 @@ public final class IntegrationInstanceCustomEndpoint {
     }
 
     public static final class Builder {
+        private @Nullable String alias;
         private @Nullable String certificateSecretId;
         private @Nullable Integer certificateSecretVersion;
         private String hostname;
@@ -79,11 +94,16 @@ public final class IntegrationInstanceCustomEndpoint {
 
         public Builder(IntegrationInstanceCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alias = defaults.alias;
     	      this.certificateSecretId = defaults.certificateSecretId;
     	      this.certificateSecretVersion = defaults.certificateSecretVersion;
     	      this.hostname = defaults.hostname;
         }
 
+        public Builder alias(@Nullable String alias) {
+            this.alias = alias;
+            return this;
+        }
         public Builder certificateSecretId(@Nullable String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             return this;
@@ -96,7 +116,7 @@ public final class IntegrationInstanceCustomEndpoint {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }        public IntegrationInstanceCustomEndpoint build() {
-            return new IntegrationInstanceCustomEndpoint(certificateSecretId, certificateSecretVersion, hostname);
+            return new IntegrationInstanceCustomEndpoint(alias, certificateSecretId, certificateSecretVersion, hostname);
         }
     }
 }

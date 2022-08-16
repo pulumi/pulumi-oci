@@ -23,31 +23,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewUserAssessment(ctx, "testUserAssessment", &DataSafe.UserAssessmentArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.User_assessment_description),
-// 			DisplayName: pulumi.Any(_var.User_assessment_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Schedule: pulumi.Any(_var.User_assessment_schedule),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewUserAssessment(ctx, "testUserAssessment", &DataSafe.UserAssessmentArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.User_assessment_description),
+//				DisplayName: pulumi.Any(_var.User_assessment_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Schedule: pulumi.Any(_var.User_assessment_schedule),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // UserAssessments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
+//
+//	$ pulumi import oci:DataSafe/userAssessment:UserAssessment test_user_assessment "id"
+//
 // ```
 type UserAssessment struct {
 	pulumi.CustomResourceState
@@ -299,7 +304,7 @@ func (i *UserAssessment) ToUserAssessmentOutputWithContext(ctx context.Context) 
 // UserAssessmentArrayInput is an input type that accepts UserAssessmentArray and UserAssessmentArrayOutput values.
 // You can construct a concrete instance of `UserAssessmentArrayInput` via:
 //
-//          UserAssessmentArray{ UserAssessmentArgs{...} }
+//	UserAssessmentArray{ UserAssessmentArgs{...} }
 type UserAssessmentArrayInput interface {
 	pulumi.Input
 
@@ -324,7 +329,7 @@ func (i UserAssessmentArray) ToUserAssessmentArrayOutputWithContext(ctx context.
 // UserAssessmentMapInput is an input type that accepts UserAssessmentMap and UserAssessmentMapOutput values.
 // You can construct a concrete instance of `UserAssessmentMapInput` via:
 //
-//          UserAssessmentMap{ "key": UserAssessmentArgs{...} }
+//	UserAssessmentMap{ "key": UserAssessmentArgs{...} }
 type UserAssessmentMapInput interface {
 	pulumi.Input
 

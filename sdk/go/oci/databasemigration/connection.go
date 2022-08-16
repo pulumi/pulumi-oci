@@ -22,59 +22,62 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseMigration.NewConnection(ctx, "testConnection", &DatabaseMigration.ConnectionArgs{
-// 			AdminCredentials: &databasemigration.ConnectionAdminCredentialsArgs{
-// 				Password: pulumi.Any(_var.Connection_admin_credentials_password),
-// 				Username: pulumi.Any(_var.Connection_admin_credentials_username),
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DatabaseType:  pulumi.Any(_var.Connection_database_type),
-// 			VaultDetails: &databasemigration.ConnectionVaultDetailsArgs{
-// 				CompartmentId: pulumi.Any(_var.Compartment_id),
-// 				KeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-// 				VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			},
-// 			CertificateTdn: pulumi.Any(_var.Connection_certificate_tdn),
-// 			ConnectDescriptor: &databasemigration.ConnectionConnectDescriptorArgs{
-// 				ConnectString:       pulumi.Any(_var.Connection_connect_descriptor_connect_string),
-// 				DatabaseServiceName: pulumi.Any(oci_core_service.Test_service.Name),
-// 				Host:                pulumi.Any(_var.Connection_connect_descriptor_host),
-// 				Port:                pulumi.Any(_var.Connection_connect_descriptor_port),
-// 			},
-// 			DatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Connection_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			PrivateEndpoint: &databasemigration.ConnectionPrivateEndpointArgs{
-// 				CompartmentId: pulumi.Any(_var.Compartment_id),
-// 				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			},
-// 			SshDetails: &databasemigration.ConnectionSshDetailsArgs{
-// 				Host:         pulumi.Any(_var.Connection_ssh_details_host),
-// 				Sshkey:       pulumi.Any(_var.Connection_ssh_details_sshkey),
-// 				User:         pulumi.Any(_var.Connection_ssh_details_user),
-// 				SudoLocation: pulumi.Any(_var.Connection_ssh_details_sudo_location),
-// 			},
-// 			TlsKeystore: pulumi.Any(_var.Connection_tls_keystore),
-// 			TlsWallet:   pulumi.Any(_var.Connection_tls_wallet),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseMigration.NewConnection(ctx, "testConnection", &DatabaseMigration.ConnectionArgs{
+//				AdminCredentials: &databasemigration.ConnectionAdminCredentialsArgs{
+//					Password: pulumi.Any(_var.Connection_admin_credentials_password),
+//					Username: pulumi.Any(_var.Connection_admin_credentials_username),
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DatabaseType:  pulumi.Any(_var.Connection_database_type),
+//				VaultDetails: &databasemigration.ConnectionVaultDetailsArgs{
+//					CompartmentId: pulumi.Any(_var.Compartment_id),
+//					KeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
+//					VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				},
+//				CertificateTdn: pulumi.Any(_var.Connection_certificate_tdn),
+//				ConnectDescriptor: &databasemigration.ConnectionConnectDescriptorArgs{
+//					ConnectString:       pulumi.Any(_var.Connection_connect_descriptor_connect_string),
+//					DatabaseServiceName: pulumi.Any(oci_core_service.Test_service.Name),
+//					Host:                pulumi.Any(_var.Connection_connect_descriptor_host),
+//					Port:                pulumi.Any(_var.Connection_connect_descriptor_port),
+//				},
+//				DatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Connection_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				PrivateEndpoint: &databasemigration.ConnectionPrivateEndpointArgs{
+//					CompartmentId: pulumi.Any(_var.Compartment_id),
+//					SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				},
+//				SshDetails: &databasemigration.ConnectionSshDetailsArgs{
+//					Host:         pulumi.Any(_var.Connection_ssh_details_host),
+//					Sshkey:       pulumi.Any(_var.Connection_ssh_details_sshkey),
+//					User:         pulumi.Any(_var.Connection_ssh_details_user),
+//					SudoLocation: pulumi.Any(_var.Connection_ssh_details_sudo_location),
+//				},
+//				TlsKeystore: pulumi.Any(_var.Connection_tls_keystore),
+//				TlsWallet:   pulumi.Any(_var.Connection_tls_wallet),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -82,7 +85,9 @@ import (
 // Connections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseMigration/connection:Connection test_connection "id"
+//
+//	$ pulumi import oci:DatabaseMigration/connection:Connection test_connection "id"
+//
 // ```
 type Connection struct {
 	pulumi.CustomResourceState
@@ -348,7 +353,7 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
-//          ConnectionArray{ ConnectionArgs{...} }
+//	ConnectionArray{ ConnectionArgs{...} }
 type ConnectionArrayInput interface {
 	pulumi.Input
 
@@ -373,7 +378,7 @@ func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context)
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
 // You can construct a concrete instance of `ConnectionMapInput` via:
 //
-//          ConnectionMap{ "key": ConnectionArgs{...} }
+//	ConnectionMap{ "key": ConnectionArgs{...} }
 type ConnectionMapInput interface {
 	pulumi.Input
 

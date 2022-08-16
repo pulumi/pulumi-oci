@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetAwrHubAwrSourcesSummary(ctx, &opsi.GetAwrHubAwrSourcesSummaryArgs{
-// 			AwrHubId:      oci_opsi_awr_hub.Test_awr_hub.Id,
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			Name:          pulumi.StringRef(_var.Awr_hub_awr_sources_summary_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetAwrHubAwrSourcesSummary(ctx, &opsi.GetAwrHubAwrSourcesSummaryArgs{
+//				AwrHubId:      oci_opsi_awr_hub.Test_awr_hub.Id,
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				Name:          pulumi.StringRef(_var.Awr_hub_awr_sources_summary_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAwrHubAwrSourcesSummary(ctx *pulumi.Context, args *GetAwrHubAwrSourcesSummaryArgs, opts ...pulumi.InvokeOption) (*GetAwrHubAwrSourcesSummaryResult, error) {
 	var rv GetAwrHubAwrSourcesSummaryResult

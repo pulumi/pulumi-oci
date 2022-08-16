@@ -28,7 +28,7 @@ type CertificateAuthorityCertificateAuthorityConfig struct {
 // CertificateAuthorityCertificateAuthorityConfigInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigArgs and CertificateAuthorityCertificateAuthorityConfigOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityConfigArgs{...}
+//	CertificateAuthorityCertificateAuthorityConfigArgs{...}
 type CertificateAuthorityCertificateAuthorityConfigInput interface {
 	pulumi.Input
 
@@ -74,11 +74,11 @@ func (i CertificateAuthorityCertificateAuthorityConfigArgs) ToCertificateAuthori
 // CertificateAuthorityCertificateAuthorityConfigPtrInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigArgs, CertificateAuthorityCertificateAuthorityConfigPtr and CertificateAuthorityCertificateAuthorityConfigPtrOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigPtrInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityConfigArgs{...}
+//	        CertificateAuthorityCertificateAuthorityConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateAuthorityCertificateAuthorityConfigPtrInput interface {
 	pulumi.Input
 
@@ -286,7 +286,7 @@ type CertificateAuthorityCertificateAuthorityConfigSubject struct {
 // CertificateAuthorityCertificateAuthorityConfigSubjectInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigSubjectArgs and CertificateAuthorityCertificateAuthorityConfigSubjectOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigSubjectInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityConfigSubjectArgs{...}
+//	CertificateAuthorityCertificateAuthorityConfigSubjectArgs{...}
 type CertificateAuthorityCertificateAuthorityConfigSubjectInput interface {
 	pulumi.Input
 
@@ -354,11 +354,11 @@ func (i CertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToCertificate
 // CertificateAuthorityCertificateAuthorityConfigSubjectPtrInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigSubjectArgs, CertificateAuthorityCertificateAuthorityConfigSubjectPtr and CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigSubjectPtrInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityConfigSubjectArgs{...}
+//	        CertificateAuthorityCertificateAuthorityConfigSubjectArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateAuthorityCertificateAuthorityConfigSubjectPtrInput interface {
 	pulumi.Input
 
@@ -699,7 +699,7 @@ type CertificateAuthorityCertificateAuthorityConfigValidity struct {
 // CertificateAuthorityCertificateAuthorityConfigValidityInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigValidityArgs and CertificateAuthorityCertificateAuthorityConfigValidityOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigValidityInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityConfigValidityArgs{...}
+//	CertificateAuthorityCertificateAuthorityConfigValidityArgs{...}
 type CertificateAuthorityCertificateAuthorityConfigValidityInput interface {
 	pulumi.Input
 
@@ -737,11 +737,11 @@ func (i CertificateAuthorityCertificateAuthorityConfigValidityArgs) ToCertificat
 // CertificateAuthorityCertificateAuthorityConfigValidityPtrInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigValidityArgs, CertificateAuthorityCertificateAuthorityConfigValidityPtr and CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigValidityPtrInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityConfigValidityArgs{...}
+//	        CertificateAuthorityCertificateAuthorityConfigValidityArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateAuthorityCertificateAuthorityConfigValidityPtrInput interface {
 	pulumi.Input
 
@@ -859,7 +859,7 @@ type CertificateAuthorityCertificateAuthorityRule struct {
 // CertificateAuthorityCertificateAuthorityRuleInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleArgs and CertificateAuthorityCertificateAuthorityRuleOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityRuleArgs{...}
+//	CertificateAuthorityCertificateAuthorityRuleArgs{...}
 type CertificateAuthorityCertificateAuthorityRuleInput interface {
 	pulumi.Input
 
@@ -891,7 +891,7 @@ func (i CertificateAuthorityCertificateAuthorityRuleArgs) ToCertificateAuthority
 // CertificateAuthorityCertificateAuthorityRuleArrayInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleArray and CertificateAuthorityCertificateAuthorityRuleArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleArrayInput` via:
 //
-//          CertificateAuthorityCertificateAuthorityRuleArray{ CertificateAuthorityCertificateAuthorityRuleArgs{...} }
+//	CertificateAuthorityCertificateAuthorityRuleArray{ CertificateAuthorityCertificateAuthorityRuleArgs{...} }
 type CertificateAuthorityCertificateAuthorityRuleArrayInput interface {
 	pulumi.Input
 
@@ -976,7 +976,7 @@ type CertificateAuthorityCertificateRevocationListDetails struct {
 // CertificateAuthorityCertificateRevocationListDetailsInput is an input type that accepts CertificateAuthorityCertificateRevocationListDetailsArgs and CertificateAuthorityCertificateRevocationListDetailsOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateRevocationListDetailsInput` via:
 //
-//          CertificateAuthorityCertificateRevocationListDetailsArgs{...}
+//	CertificateAuthorityCertificateRevocationListDetailsArgs{...}
 type CertificateAuthorityCertificateRevocationListDetailsInput interface {
 	pulumi.Input
 
@@ -1014,11 +1014,11 @@ func (i CertificateAuthorityCertificateRevocationListDetailsArgs) ToCertificateA
 // CertificateAuthorityCertificateRevocationListDetailsPtrInput is an input type that accepts CertificateAuthorityCertificateRevocationListDetailsArgs, CertificateAuthorityCertificateRevocationListDetailsPtr and CertificateAuthorityCertificateRevocationListDetailsPtrOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateRevocationListDetailsPtrInput` via:
 //
-//          CertificateAuthorityCertificateRevocationListDetailsArgs{...}
+//	        CertificateAuthorityCertificateRevocationListDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateAuthorityCertificateRevocationListDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1136,7 +1136,7 @@ type CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig str
 // CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigInput is an input type that accepts CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs and CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigInput` via:
 //
-//          CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs{...}
+//	CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs{...}
 type CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigInput interface {
 	pulumi.Input
 
@@ -1176,11 +1176,11 @@ func (i CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigA
 // CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrInput is an input type that accepts CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs, CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtr and CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrInput` via:
 //
-//          CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs{...}
+//	        CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrInput interface {
 	pulumi.Input
 
@@ -1331,7 +1331,7 @@ type CertificateAuthorityCurrentVersion struct {
 // CertificateAuthorityCurrentVersionInput is an input type that accepts CertificateAuthorityCurrentVersionArgs and CertificateAuthorityCurrentVersionOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionInput` via:
 //
-//          CertificateAuthorityCurrentVersionArgs{...}
+//	CertificateAuthorityCurrentVersionArgs{...}
 type CertificateAuthorityCurrentVersionInput interface {
 	pulumi.Input
 
@@ -1377,7 +1377,7 @@ func (i CertificateAuthorityCurrentVersionArgs) ToCertificateAuthorityCurrentVer
 // CertificateAuthorityCurrentVersionArrayInput is an input type that accepts CertificateAuthorityCurrentVersionArray and CertificateAuthorityCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionArrayInput` via:
 //
-//          CertificateAuthorityCurrentVersionArray{ CertificateAuthorityCurrentVersionArgs{...} }
+//	CertificateAuthorityCurrentVersionArray{ CertificateAuthorityCurrentVersionArgs{...} }
 type CertificateAuthorityCurrentVersionArrayInput interface {
 	pulumi.Input
 
@@ -1497,7 +1497,7 @@ type CertificateAuthorityCurrentVersionRevocationStatus struct {
 // CertificateAuthorityCurrentVersionRevocationStatusInput is an input type that accepts CertificateAuthorityCurrentVersionRevocationStatusArgs and CertificateAuthorityCurrentVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionRevocationStatusInput` via:
 //
-//          CertificateAuthorityCurrentVersionRevocationStatusArgs{...}
+//	CertificateAuthorityCurrentVersionRevocationStatusArgs{...}
 type CertificateAuthorityCurrentVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -1527,7 +1527,7 @@ func (i CertificateAuthorityCurrentVersionRevocationStatusArgs) ToCertificateAut
 // CertificateAuthorityCurrentVersionRevocationStatusArrayInput is an input type that accepts CertificateAuthorityCurrentVersionRevocationStatusArray and CertificateAuthorityCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionRevocationStatusArrayInput` via:
 //
-//          CertificateAuthorityCurrentVersionRevocationStatusArray{ CertificateAuthorityCurrentVersionRevocationStatusArgs{...} }
+//	CertificateAuthorityCurrentVersionRevocationStatusArray{ CertificateAuthorityCurrentVersionRevocationStatusArgs{...} }
 type CertificateAuthorityCurrentVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -1603,7 +1603,7 @@ type CertificateAuthorityCurrentVersionValidity struct {
 // CertificateAuthorityCurrentVersionValidityInput is an input type that accepts CertificateAuthorityCurrentVersionValidityArgs and CertificateAuthorityCurrentVersionValidityOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionValidityInput` via:
 //
-//          CertificateAuthorityCurrentVersionValidityArgs{...}
+//	CertificateAuthorityCurrentVersionValidityArgs{...}
 type CertificateAuthorityCurrentVersionValidityInput interface {
 	pulumi.Input
 
@@ -1633,7 +1633,7 @@ func (i CertificateAuthorityCurrentVersionValidityArgs) ToCertificateAuthorityCu
 // CertificateAuthorityCurrentVersionValidityArrayInput is an input type that accepts CertificateAuthorityCurrentVersionValidityArray and CertificateAuthorityCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionValidityArrayInput` via:
 //
-//          CertificateAuthorityCurrentVersionValidityArray{ CertificateAuthorityCurrentVersionValidityArgs{...} }
+//	CertificateAuthorityCurrentVersionValidityArray{ CertificateAuthorityCurrentVersionValidityArgs{...} }
 type CertificateAuthorityCurrentVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -1739,7 +1739,7 @@ type CertificateAuthoritySubject struct {
 // CertificateAuthoritySubjectInput is an input type that accepts CertificateAuthoritySubjectArgs and CertificateAuthoritySubjectOutput values.
 // You can construct a concrete instance of `CertificateAuthoritySubjectInput` via:
 //
-//          CertificateAuthoritySubjectArgs{...}
+//	CertificateAuthoritySubjectArgs{...}
 type CertificateAuthoritySubjectInput interface {
 	pulumi.Input
 
@@ -1799,7 +1799,7 @@ func (i CertificateAuthoritySubjectArgs) ToCertificateAuthoritySubjectOutputWith
 // CertificateAuthoritySubjectArrayInput is an input type that accepts CertificateAuthoritySubjectArray and CertificateAuthoritySubjectArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthoritySubjectArrayInput` via:
 //
-//          CertificateAuthoritySubjectArray{ CertificateAuthoritySubjectArgs{...} }
+//	CertificateAuthoritySubjectArray{ CertificateAuthoritySubjectArgs{...} }
 type CertificateAuthoritySubjectArrayInput interface {
 	pulumi.Input
 
@@ -1966,7 +1966,7 @@ type CertificateCertificateConfig struct {
 // CertificateCertificateConfigInput is an input type that accepts CertificateCertificateConfigArgs and CertificateCertificateConfigOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigInput` via:
 //
-//          CertificateCertificateConfigArgs{...}
+//	CertificateCertificateConfigArgs{...}
 type CertificateCertificateConfigInput interface {
 	pulumi.Input
 
@@ -2020,11 +2020,11 @@ func (i CertificateCertificateConfigArgs) ToCertificateCertificateConfigPtrOutpu
 // CertificateCertificateConfigPtrInput is an input type that accepts CertificateCertificateConfigArgs, CertificateCertificateConfigPtr and CertificateCertificateConfigPtrOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigPtrInput` via:
 //
-//          CertificateCertificateConfigArgs{...}
+//	        CertificateCertificateConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateCertificateConfigPtrInput interface {
 	pulumi.Input
 
@@ -2290,7 +2290,7 @@ type CertificateCertificateConfigSubject struct {
 // CertificateCertificateConfigSubjectInput is an input type that accepts CertificateCertificateConfigSubjectArgs and CertificateCertificateConfigSubjectOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigSubjectInput` via:
 //
-//          CertificateCertificateConfigSubjectArgs{...}
+//	CertificateCertificateConfigSubjectArgs{...}
 type CertificateCertificateConfigSubjectInput interface {
 	pulumi.Input
 
@@ -2358,11 +2358,11 @@ func (i CertificateCertificateConfigSubjectArgs) ToCertificateCertificateConfigS
 // CertificateCertificateConfigSubjectPtrInput is an input type that accepts CertificateCertificateConfigSubjectArgs, CertificateCertificateConfigSubjectPtr and CertificateCertificateConfigSubjectPtrOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigSubjectPtrInput` via:
 //
-//          CertificateCertificateConfigSubjectArgs{...}
+//	        CertificateCertificateConfigSubjectArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateCertificateConfigSubjectPtrInput interface {
 	pulumi.Input
 
@@ -2701,7 +2701,7 @@ type CertificateCertificateConfigSubjectAlternativeName struct {
 // CertificateCertificateConfigSubjectAlternativeNameInput is an input type that accepts CertificateCertificateConfigSubjectAlternativeNameArgs and CertificateCertificateConfigSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigSubjectAlternativeNameInput` via:
 //
-//          CertificateCertificateConfigSubjectAlternativeNameArgs{...}
+//	CertificateCertificateConfigSubjectAlternativeNameArgs{...}
 type CertificateCertificateConfigSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -2731,7 +2731,7 @@ func (i CertificateCertificateConfigSubjectAlternativeNameArgs) ToCertificateCer
 // CertificateCertificateConfigSubjectAlternativeNameArrayInput is an input type that accepts CertificateCertificateConfigSubjectAlternativeNameArray and CertificateCertificateConfigSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigSubjectAlternativeNameArrayInput` via:
 //
-//          CertificateCertificateConfigSubjectAlternativeNameArray{ CertificateCertificateConfigSubjectAlternativeNameArgs{...} }
+//	CertificateCertificateConfigSubjectAlternativeNameArray{ CertificateCertificateConfigSubjectAlternativeNameArgs{...} }
 type CertificateCertificateConfigSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -2807,7 +2807,7 @@ type CertificateCertificateConfigValidity struct {
 // CertificateCertificateConfigValidityInput is an input type that accepts CertificateCertificateConfigValidityArgs and CertificateCertificateConfigValidityOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigValidityInput` via:
 //
-//          CertificateCertificateConfigValidityArgs{...}
+//	CertificateCertificateConfigValidityArgs{...}
 type CertificateCertificateConfigValidityInput interface {
 	pulumi.Input
 
@@ -2845,11 +2845,11 @@ func (i CertificateCertificateConfigValidityArgs) ToCertificateCertificateConfig
 // CertificateCertificateConfigValidityPtrInput is an input type that accepts CertificateCertificateConfigValidityArgs, CertificateCertificateConfigValidityPtr and CertificateCertificateConfigValidityPtrOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigValidityPtrInput` via:
 //
-//          CertificateCertificateConfigValidityArgs{...}
+//	        CertificateCertificateConfigValidityArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type CertificateCertificateConfigValidityPtrInput interface {
 	pulumi.Input
 
@@ -2963,7 +2963,7 @@ type CertificateCertificateRevocationListDetail struct {
 // CertificateCertificateRevocationListDetailInput is an input type that accepts CertificateCertificateRevocationListDetailArgs and CertificateCertificateRevocationListDetailOutput values.
 // You can construct a concrete instance of `CertificateCertificateRevocationListDetailInput` via:
 //
-//          CertificateCertificateRevocationListDetailArgs{...}
+//	CertificateCertificateRevocationListDetailArgs{...}
 type CertificateCertificateRevocationListDetailInput interface {
 	pulumi.Input
 
@@ -2993,7 +2993,7 @@ func (i CertificateCertificateRevocationListDetailArgs) ToCertificateCertificate
 // CertificateCertificateRevocationListDetailArrayInput is an input type that accepts CertificateCertificateRevocationListDetailArray and CertificateCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateRevocationListDetailArrayInput` via:
 //
-//          CertificateCertificateRevocationListDetailArray{ CertificateCertificateRevocationListDetailArgs{...} }
+//	CertificateCertificateRevocationListDetailArray{ CertificateCertificateRevocationListDetailArgs{...} }
 type CertificateCertificateRevocationListDetailArrayInput interface {
 	pulumi.Input
 
@@ -3073,7 +3073,7 @@ type CertificateCertificateRevocationListDetailObjectStorageConfig struct {
 // CertificateCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts CertificateCertificateRevocationListDetailObjectStorageConfigArgs and CertificateCertificateRevocationListDetailObjectStorageConfigOutput values.
 // You can construct a concrete instance of `CertificateCertificateRevocationListDetailObjectStorageConfigInput` via:
 //
-//          CertificateCertificateRevocationListDetailObjectStorageConfigArgs{...}
+//	CertificateCertificateRevocationListDetailObjectStorageConfigArgs{...}
 type CertificateCertificateRevocationListDetailObjectStorageConfigInput interface {
 	pulumi.Input
 
@@ -3105,7 +3105,7 @@ func (i CertificateCertificateRevocationListDetailObjectStorageConfigArgs) ToCer
 // CertificateCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts CertificateCertificateRevocationListDetailObjectStorageConfigArray and CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateRevocationListDetailObjectStorageConfigArrayInput` via:
 //
-//          CertificateCertificateRevocationListDetailObjectStorageConfigArray{ CertificateCertificateRevocationListDetailObjectStorageConfigArgs{...} }
+//	CertificateCertificateRevocationListDetailObjectStorageConfigArray{ CertificateCertificateRevocationListDetailObjectStorageConfigArgs{...} }
 type CertificateCertificateRevocationListDetailObjectStorageConfigArrayInput interface {
 	pulumi.Input
 
@@ -3194,7 +3194,7 @@ type CertificateCertificateRule struct {
 // CertificateCertificateRuleInput is an input type that accepts CertificateCertificateRuleArgs and CertificateCertificateRuleOutput values.
 // You can construct a concrete instance of `CertificateCertificateRuleInput` via:
 //
-//          CertificateCertificateRuleArgs{...}
+//	CertificateCertificateRuleArgs{...}
 type CertificateCertificateRuleInput interface {
 	pulumi.Input
 
@@ -3226,7 +3226,7 @@ func (i CertificateCertificateRuleArgs) ToCertificateCertificateRuleOutputWithCo
 // CertificateCertificateRuleArrayInput is an input type that accepts CertificateCertificateRuleArray and CertificateCertificateRuleArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateRuleArrayInput` via:
 //
-//          CertificateCertificateRuleArray{ CertificateCertificateRuleArgs{...} }
+//	CertificateCertificateRuleArray{ CertificateCertificateRuleArgs{...} }
 type CertificateCertificateRuleArrayInput interface {
 	pulumi.Input
 
@@ -3325,7 +3325,7 @@ type CertificateCurrentVersion struct {
 // CertificateCurrentVersionInput is an input type that accepts CertificateCurrentVersionArgs and CertificateCurrentVersionOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionInput` via:
 //
-//          CertificateCurrentVersionArgs{...}
+//	CertificateCurrentVersionArgs{...}
 type CertificateCurrentVersionInput interface {
 	pulumi.Input
 
@@ -3373,7 +3373,7 @@ func (i CertificateCurrentVersionArgs) ToCertificateCurrentVersionOutputWithCont
 // CertificateCurrentVersionArrayInput is an input type that accepts CertificateCurrentVersionArray and CertificateCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionArrayInput` via:
 //
-//          CertificateCurrentVersionArray{ CertificateCurrentVersionArgs{...} }
+//	CertificateCurrentVersionArray{ CertificateCurrentVersionArgs{...} }
 type CertificateCurrentVersionArrayInput interface {
 	pulumi.Input
 
@@ -3498,7 +3498,7 @@ type CertificateCurrentVersionRevocationStatus struct {
 // CertificateCurrentVersionRevocationStatusInput is an input type that accepts CertificateCurrentVersionRevocationStatusArgs and CertificateCurrentVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionRevocationStatusInput` via:
 //
-//          CertificateCurrentVersionRevocationStatusArgs{...}
+//	CertificateCurrentVersionRevocationStatusArgs{...}
 type CertificateCurrentVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -3528,7 +3528,7 @@ func (i CertificateCurrentVersionRevocationStatusArgs) ToCertificateCurrentVersi
 // CertificateCurrentVersionRevocationStatusArrayInput is an input type that accepts CertificateCurrentVersionRevocationStatusArray and CertificateCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionRevocationStatusArrayInput` via:
 //
-//          CertificateCurrentVersionRevocationStatusArray{ CertificateCurrentVersionRevocationStatusArgs{...} }
+//	CertificateCurrentVersionRevocationStatusArray{ CertificateCurrentVersionRevocationStatusArgs{...} }
 type CertificateCurrentVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -3604,7 +3604,7 @@ type CertificateCurrentVersionSubjectAlternativeName struct {
 // CertificateCurrentVersionSubjectAlternativeNameInput is an input type that accepts CertificateCurrentVersionSubjectAlternativeNameArgs and CertificateCurrentVersionSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionSubjectAlternativeNameInput` via:
 //
-//          CertificateCurrentVersionSubjectAlternativeNameArgs{...}
+//	CertificateCurrentVersionSubjectAlternativeNameArgs{...}
 type CertificateCurrentVersionSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -3634,7 +3634,7 @@ func (i CertificateCurrentVersionSubjectAlternativeNameArgs) ToCertificateCurren
 // CertificateCurrentVersionSubjectAlternativeNameArrayInput is an input type that accepts CertificateCurrentVersionSubjectAlternativeNameArray and CertificateCurrentVersionSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionSubjectAlternativeNameArrayInput` via:
 //
-//          CertificateCurrentVersionSubjectAlternativeNameArray{ CertificateCurrentVersionSubjectAlternativeNameArgs{...} }
+//	CertificateCurrentVersionSubjectAlternativeNameArray{ CertificateCurrentVersionSubjectAlternativeNameArgs{...} }
 type CertificateCurrentVersionSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -3710,7 +3710,7 @@ type CertificateCurrentVersionValidity struct {
 // CertificateCurrentVersionValidityInput is an input type that accepts CertificateCurrentVersionValidityArgs and CertificateCurrentVersionValidityOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionValidityInput` via:
 //
-//          CertificateCurrentVersionValidityArgs{...}
+//	CertificateCurrentVersionValidityArgs{...}
 type CertificateCurrentVersionValidityInput interface {
 	pulumi.Input
 
@@ -3740,7 +3740,7 @@ func (i CertificateCurrentVersionValidityArgs) ToCertificateCurrentVersionValidi
 // CertificateCurrentVersionValidityArrayInput is an input type that accepts CertificateCurrentVersionValidityArray and CertificateCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionValidityArrayInput` via:
 //
-//          CertificateCurrentVersionValidityArray{ CertificateCurrentVersionValidityArgs{...} }
+//	CertificateCurrentVersionValidityArray{ CertificateCurrentVersionValidityArgs{...} }
 type CertificateCurrentVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -3846,7 +3846,7 @@ type CertificateSubject struct {
 // CertificateSubjectInput is an input type that accepts CertificateSubjectArgs and CertificateSubjectOutput values.
 // You can construct a concrete instance of `CertificateSubjectInput` via:
 //
-//          CertificateSubjectArgs{...}
+//	CertificateSubjectArgs{...}
 type CertificateSubjectInput interface {
 	pulumi.Input
 
@@ -3906,7 +3906,7 @@ func (i CertificateSubjectArgs) ToCertificateSubjectOutputWithContext(ctx contex
 // CertificateSubjectArrayInput is an input type that accepts CertificateSubjectArray and CertificateSubjectArrayOutput values.
 // You can construct a concrete instance of `CertificateSubjectArrayInput` via:
 //
-//          CertificateSubjectArray{ CertificateSubjectArgs{...} }
+//	CertificateSubjectArray{ CertificateSubjectArgs{...} }
 type CertificateSubjectArrayInput interface {
 	pulumi.Input
 
@@ -4054,7 +4054,7 @@ type GetAssociationsAssociationCollection struct {
 // GetAssociationsAssociationCollectionInput is an input type that accepts GetAssociationsAssociationCollectionArgs and GetAssociationsAssociationCollectionOutput values.
 // You can construct a concrete instance of `GetAssociationsAssociationCollectionInput` via:
 //
-//          GetAssociationsAssociationCollectionArgs{...}
+//	GetAssociationsAssociationCollectionArgs{...}
 type GetAssociationsAssociationCollectionInput interface {
 	pulumi.Input
 
@@ -4081,7 +4081,7 @@ func (i GetAssociationsAssociationCollectionArgs) ToGetAssociationsAssociationCo
 // GetAssociationsAssociationCollectionArrayInput is an input type that accepts GetAssociationsAssociationCollectionArray and GetAssociationsAssociationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAssociationsAssociationCollectionArrayInput` via:
 //
-//          GetAssociationsAssociationCollectionArray{ GetAssociationsAssociationCollectionArgs{...} }
+//	GetAssociationsAssociationCollectionArray{ GetAssociationsAssociationCollectionArgs{...} }
 type GetAssociationsAssociationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4165,7 +4165,7 @@ type GetAssociationsAssociationCollectionItem struct {
 // GetAssociationsAssociationCollectionItemInput is an input type that accepts GetAssociationsAssociationCollectionItemArgs and GetAssociationsAssociationCollectionItemOutput values.
 // You can construct a concrete instance of `GetAssociationsAssociationCollectionItemInput` via:
 //
-//          GetAssociationsAssociationCollectionItemArgs{...}
+//	GetAssociationsAssociationCollectionItemArgs{...}
 type GetAssociationsAssociationCollectionItemInput interface {
 	pulumi.Input
 
@@ -4207,7 +4207,7 @@ func (i GetAssociationsAssociationCollectionItemArgs) ToGetAssociationsAssociati
 // GetAssociationsAssociationCollectionItemArrayInput is an input type that accepts GetAssociationsAssociationCollectionItemArray and GetAssociationsAssociationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAssociationsAssociationCollectionItemArrayInput` via:
 //
-//          GetAssociationsAssociationCollectionItemArray{ GetAssociationsAssociationCollectionItemArgs{...} }
+//	GetAssociationsAssociationCollectionItemArray{ GetAssociationsAssociationCollectionItemArgs{...} }
 type GetAssociationsAssociationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4313,7 +4313,7 @@ type GetAssociationsFilter struct {
 // GetAssociationsFilterInput is an input type that accepts GetAssociationsFilterArgs and GetAssociationsFilterOutput values.
 // You can construct a concrete instance of `GetAssociationsFilterInput` via:
 //
-//          GetAssociationsFilterArgs{...}
+//	GetAssociationsFilterArgs{...}
 type GetAssociationsFilterInput interface {
 	pulumi.Input
 
@@ -4343,7 +4343,7 @@ func (i GetAssociationsFilterArgs) ToGetAssociationsFilterOutputWithContext(ctx 
 // GetAssociationsFilterArrayInput is an input type that accepts GetAssociationsFilterArray and GetAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAssociationsFilterArrayInput` via:
 //
-//          GetAssociationsFilterArray{ GetAssociationsFilterArgs{...} }
+//	GetAssociationsFilterArray{ GetAssociationsFilterArgs{...} }
 type GetAssociationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4419,7 +4419,7 @@ type GetCaBundlesCaBundleCollection struct {
 // GetCaBundlesCaBundleCollectionInput is an input type that accepts GetCaBundlesCaBundleCollectionArgs and GetCaBundlesCaBundleCollectionOutput values.
 // You can construct a concrete instance of `GetCaBundlesCaBundleCollectionInput` via:
 //
-//          GetCaBundlesCaBundleCollectionArgs{...}
+//	GetCaBundlesCaBundleCollectionArgs{...}
 type GetCaBundlesCaBundleCollectionInput interface {
 	pulumi.Input
 
@@ -4446,7 +4446,7 @@ func (i GetCaBundlesCaBundleCollectionArgs) ToGetCaBundlesCaBundleCollectionOutp
 // GetCaBundlesCaBundleCollectionArrayInput is an input type that accepts GetCaBundlesCaBundleCollectionArray and GetCaBundlesCaBundleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCaBundlesCaBundleCollectionArrayInput` via:
 //
-//          GetCaBundlesCaBundleCollectionArray{ GetCaBundlesCaBundleCollectionArgs{...} }
+//	GetCaBundlesCaBundleCollectionArray{ GetCaBundlesCaBundleCollectionArgs{...} }
 type GetCaBundlesCaBundleCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4531,7 +4531,7 @@ type GetCaBundlesCaBundleCollectionItem struct {
 // GetCaBundlesCaBundleCollectionItemInput is an input type that accepts GetCaBundlesCaBundleCollectionItemArgs and GetCaBundlesCaBundleCollectionItemOutput values.
 // You can construct a concrete instance of `GetCaBundlesCaBundleCollectionItemInput` via:
 //
-//          GetCaBundlesCaBundleCollectionItemArgs{...}
+//	GetCaBundlesCaBundleCollectionItemArgs{...}
 type GetCaBundlesCaBundleCollectionItemInput interface {
 	pulumi.Input
 
@@ -4576,7 +4576,7 @@ func (i GetCaBundlesCaBundleCollectionItemArgs) ToGetCaBundlesCaBundleCollection
 // GetCaBundlesCaBundleCollectionItemArrayInput is an input type that accepts GetCaBundlesCaBundleCollectionItemArray and GetCaBundlesCaBundleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCaBundlesCaBundleCollectionItemArrayInput` via:
 //
-//          GetCaBundlesCaBundleCollectionItemArray{ GetCaBundlesCaBundleCollectionItemArgs{...} }
+//	GetCaBundlesCaBundleCollectionItemArray{ GetCaBundlesCaBundleCollectionItemArgs{...} }
 type GetCaBundlesCaBundleCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4691,7 +4691,7 @@ type GetCaBundlesFilter struct {
 // GetCaBundlesFilterInput is an input type that accepts GetCaBundlesFilterArgs and GetCaBundlesFilterOutput values.
 // You can construct a concrete instance of `GetCaBundlesFilterInput` via:
 //
-//          GetCaBundlesFilterArgs{...}
+//	GetCaBundlesFilterArgs{...}
 type GetCaBundlesFilterInput interface {
 	pulumi.Input
 
@@ -4721,7 +4721,7 @@ func (i GetCaBundlesFilterArgs) ToGetCaBundlesFilterOutputWithContext(ctx contex
 // GetCaBundlesFilterArrayInput is an input type that accepts GetCaBundlesFilterArray and GetCaBundlesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCaBundlesFilterArrayInput` via:
 //
-//          GetCaBundlesFilterArray{ GetCaBundlesFilterArgs{...} }
+//	GetCaBundlesFilterArray{ GetCaBundlesFilterArgs{...} }
 type GetCaBundlesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4797,7 +4797,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollection struct {
 // GetCertificateAuthoritiesCertificateAuthorityCollectionInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionInput interface {
 	pulumi.Input
 
@@ -4824,7 +4824,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionArgs) ToGetCertif
 // GetCertificateAuthoritiesCertificateAuthorityCollectionArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionArray and GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4929,7 +4929,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItem struct {
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemInput interface {
 	pulumi.Input
 
@@ -4992,7 +4992,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs) ToGetCe
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5176,7 +5176,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigInput interface {
 	pulumi.Input
 
@@ -5214,7 +5214,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayInput interface {
 	pulumi.Input
 
@@ -5352,7 +5352,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectInput interface {
 	pulumi.Input
 
@@ -5412,7 +5412,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayInput interface {
 	pulumi.Input
 
@@ -5597,7 +5597,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityInput interface {
 	pulumi.Input
 
@@ -5627,7 +5627,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayInput interface {
 	pulumi.Input
 
@@ -5709,7 +5709,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleInput interface {
 	pulumi.Input
 
@@ -5741,7 +5741,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayInput interface {
 	pulumi.Input
 
@@ -5828,7 +5828,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevoc
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailInput interface {
 	pulumi.Input
 
@@ -5858,7 +5858,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput interface {
 	pulumi.Input
 
@@ -5940,7 +5940,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevoc
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigInput interface {
 	pulumi.Input
 
@@ -5972,7 +5972,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput interface {
 	pulumi.Input
 
@@ -6075,7 +6075,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion s
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionInput interface {
 	pulumi.Input
 
@@ -6121,7 +6121,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayInput interface {
 	pulumi.Input
 
@@ -6257,7 +6257,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRe
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -6287,7 +6287,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -6367,7 +6367,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionVa
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityInput interface {
 	pulumi.Input
 
@@ -6397,7 +6397,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -6507,7 +6507,7 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject struct {
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs{...}
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs{...}
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectInput interface {
 	pulumi.Input
 
@@ -6567,7 +6567,7 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs) 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayInput` via:
 //
-//          GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs{...} }
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs{...} }
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayInput interface {
 	pulumi.Input
 
@@ -6734,7 +6734,7 @@ type GetCertificateAuthoritiesFilter struct {
 // GetCertificateAuthoritiesFilterInput is an input type that accepts GetCertificateAuthoritiesFilterArgs and GetCertificateAuthoritiesFilterOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesFilterInput` via:
 //
-//          GetCertificateAuthoritiesFilterArgs{...}
+//	GetCertificateAuthoritiesFilterArgs{...}
 type GetCertificateAuthoritiesFilterInput interface {
 	pulumi.Input
 
@@ -6764,7 +6764,7 @@ func (i GetCertificateAuthoritiesFilterArgs) ToGetCertificateAuthoritiesFilterOu
 // GetCertificateAuthoritiesFilterArrayInput is an input type that accepts GetCertificateAuthoritiesFilterArray and GetCertificateAuthoritiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesFilterArrayInput` via:
 //
-//          GetCertificateAuthoritiesFilterArray{ GetCertificateAuthoritiesFilterArgs{...} }
+//	GetCertificateAuthoritiesFilterArray{ GetCertificateAuthoritiesFilterArgs{...} }
 type GetCertificateAuthoritiesFilterArrayInput interface {
 	pulumi.Input
 
@@ -6851,7 +6851,7 @@ type GetCertificateAuthorityCertificateAuthorityConfig struct {
 // GetCertificateAuthorityCertificateAuthorityConfigInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigArgs and GetCertificateAuthorityCertificateAuthorityConfigOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityConfigArgs{...}
+//	GetCertificateAuthorityCertificateAuthorityConfigArgs{...}
 type GetCertificateAuthorityCertificateAuthorityConfigInput interface {
 	pulumi.Input
 
@@ -6889,7 +6889,7 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigArgs) ToGetCertificateA
 // GetCertificateAuthorityCertificateAuthorityConfigArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigArray and GetCertificateAuthorityCertificateAuthorityConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigArrayInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityConfigArray{ GetCertificateAuthorityCertificateAuthorityConfigArgs{...} }
+//	GetCertificateAuthorityCertificateAuthorityConfigArray{ GetCertificateAuthorityCertificateAuthorityConfigArgs{...} }
 type GetCertificateAuthorityCertificateAuthorityConfigArrayInput interface {
 	pulumi.Input
 
@@ -7021,7 +7021,7 @@ type GetCertificateAuthorityCertificateAuthorityConfigSubject struct {
 // GetCertificateAuthorityCertificateAuthorityConfigSubjectInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs and GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigSubjectInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs{...}
+//	GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs{...}
 type GetCertificateAuthorityCertificateAuthorityConfigSubjectInput interface {
 	pulumi.Input
 
@@ -7081,7 +7081,7 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToGetCerti
 // GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigSubjectArray and GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityConfigSubjectArray{ GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs{...} }
+//	GetCertificateAuthorityCertificateAuthorityConfigSubjectArray{ GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs{...} }
 type GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayInput interface {
 	pulumi.Input
 
@@ -7234,7 +7234,7 @@ type GetCertificateAuthorityCertificateAuthorityConfigValidity struct {
 // GetCertificateAuthorityCertificateAuthorityConfigValidityInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigValidityArgs and GetCertificateAuthorityCertificateAuthorityConfigValidityOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigValidityInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityConfigValidityArgs{...}
+//	GetCertificateAuthorityCertificateAuthorityConfigValidityArgs{...}
 type GetCertificateAuthorityCertificateAuthorityConfigValidityInput interface {
 	pulumi.Input
 
@@ -7264,7 +7264,7 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigValidityArgs) ToGetCert
 // GetCertificateAuthorityCertificateAuthorityConfigValidityArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigValidityArray and GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigValidityArrayInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityConfigValidityArray{ GetCertificateAuthorityCertificateAuthorityConfigValidityArgs{...} }
+//	GetCertificateAuthorityCertificateAuthorityConfigValidityArray{ GetCertificateAuthorityCertificateAuthorityConfigValidityArgs{...} }
 type GetCertificateAuthorityCertificateAuthorityConfigValidityArrayInput interface {
 	pulumi.Input
 
@@ -7346,7 +7346,7 @@ type GetCertificateAuthorityCertificateAuthorityRule struct {
 // GetCertificateAuthorityCertificateAuthorityRuleInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleArgs and GetCertificateAuthorityCertificateAuthorityRuleOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityRuleArgs{...}
+//	GetCertificateAuthorityCertificateAuthorityRuleArgs{...}
 type GetCertificateAuthorityCertificateAuthorityRuleInput interface {
 	pulumi.Input
 
@@ -7378,7 +7378,7 @@ func (i GetCertificateAuthorityCertificateAuthorityRuleArgs) ToGetCertificateAut
 // GetCertificateAuthorityCertificateAuthorityRuleArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleArray and GetCertificateAuthorityCertificateAuthorityRuleArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleArrayInput` via:
 //
-//          GetCertificateAuthorityCertificateAuthorityRuleArray{ GetCertificateAuthorityCertificateAuthorityRuleArgs{...} }
+//	GetCertificateAuthorityCertificateAuthorityRuleArray{ GetCertificateAuthorityCertificateAuthorityRuleArgs{...} }
 type GetCertificateAuthorityCertificateAuthorityRuleArrayInput interface {
 	pulumi.Input
 
@@ -7463,7 +7463,7 @@ type GetCertificateAuthorityCertificateRevocationListDetail struct {
 // GetCertificateAuthorityCertificateRevocationListDetailInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailArgs and GetCertificateAuthorityCertificateRevocationListDetailOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateRevocationListDetailInput` via:
 //
-//          GetCertificateAuthorityCertificateRevocationListDetailArgs{...}
+//	GetCertificateAuthorityCertificateRevocationListDetailArgs{...}
 type GetCertificateAuthorityCertificateRevocationListDetailInput interface {
 	pulumi.Input
 
@@ -7493,7 +7493,7 @@ func (i GetCertificateAuthorityCertificateRevocationListDetailArgs) ToGetCertifi
 // GetCertificateAuthorityCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailArray and GetCertificateAuthorityCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateRevocationListDetailArrayInput` via:
 //
-//          GetCertificateAuthorityCertificateRevocationListDetailArray{ GetCertificateAuthorityCertificateRevocationListDetailArgs{...} }
+//	GetCertificateAuthorityCertificateRevocationListDetailArray{ GetCertificateAuthorityCertificateRevocationListDetailArgs{...} }
 type GetCertificateAuthorityCertificateRevocationListDetailArrayInput interface {
 	pulumi.Input
 
@@ -7573,7 +7573,7 @@ type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig s
 // GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigInput` via:
 //
-//          GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs{...}
+//	GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs{...}
 type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigInput interface {
 	pulumi.Input
 
@@ -7605,7 +7605,7 @@ func (i GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfi
 // GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArray and GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayInput` via:
 //
-//          GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs{...} }
+//	GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs{...} }
 type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayInput interface {
 	pulumi.Input
 
@@ -7708,7 +7708,7 @@ type GetCertificateAuthorityCurrentVersion struct {
 // GetCertificateAuthorityCurrentVersionInput is an input type that accepts GetCertificateAuthorityCurrentVersionArgs and GetCertificateAuthorityCurrentVersionOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCurrentVersionInput` via:
 //
-//          GetCertificateAuthorityCurrentVersionArgs{...}
+//	GetCertificateAuthorityCurrentVersionArgs{...}
 type GetCertificateAuthorityCurrentVersionInput interface {
 	pulumi.Input
 
@@ -7754,7 +7754,7 @@ func (i GetCertificateAuthorityCurrentVersionArgs) ToGetCertificateAuthorityCurr
 // GetCertificateAuthorityCurrentVersionArrayInput is an input type that accepts GetCertificateAuthorityCurrentVersionArray and GetCertificateAuthorityCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCurrentVersionArrayInput` via:
 //
-//          GetCertificateAuthorityCurrentVersionArray{ GetCertificateAuthorityCurrentVersionArgs{...} }
+//	GetCertificateAuthorityCurrentVersionArray{ GetCertificateAuthorityCurrentVersionArgs{...} }
 type GetCertificateAuthorityCurrentVersionArrayInput interface {
 	pulumi.Input
 
@@ -7874,7 +7874,7 @@ type GetCertificateAuthorityCurrentVersionRevocationStatus struct {
 // GetCertificateAuthorityCurrentVersionRevocationStatusInput is an input type that accepts GetCertificateAuthorityCurrentVersionRevocationStatusArgs and GetCertificateAuthorityCurrentVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCurrentVersionRevocationStatusInput` via:
 //
-//          GetCertificateAuthorityCurrentVersionRevocationStatusArgs{...}
+//	GetCertificateAuthorityCurrentVersionRevocationStatusArgs{...}
 type GetCertificateAuthorityCurrentVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -7904,7 +7904,7 @@ func (i GetCertificateAuthorityCurrentVersionRevocationStatusArgs) ToGetCertific
 // GetCertificateAuthorityCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificateAuthorityCurrentVersionRevocationStatusArray and GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCurrentVersionRevocationStatusArrayInput` via:
 //
-//          GetCertificateAuthorityCurrentVersionRevocationStatusArray{ GetCertificateAuthorityCurrentVersionRevocationStatusArgs{...} }
+//	GetCertificateAuthorityCurrentVersionRevocationStatusArray{ GetCertificateAuthorityCurrentVersionRevocationStatusArgs{...} }
 type GetCertificateAuthorityCurrentVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -7980,7 +7980,7 @@ type GetCertificateAuthorityCurrentVersionValidity struct {
 // GetCertificateAuthorityCurrentVersionValidityInput is an input type that accepts GetCertificateAuthorityCurrentVersionValidityArgs and GetCertificateAuthorityCurrentVersionValidityOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCurrentVersionValidityInput` via:
 //
-//          GetCertificateAuthorityCurrentVersionValidityArgs{...}
+//	GetCertificateAuthorityCurrentVersionValidityArgs{...}
 type GetCertificateAuthorityCurrentVersionValidityInput interface {
 	pulumi.Input
 
@@ -8010,7 +8010,7 @@ func (i GetCertificateAuthorityCurrentVersionValidityArgs) ToGetCertificateAutho
 // GetCertificateAuthorityCurrentVersionValidityArrayInput is an input type that accepts GetCertificateAuthorityCurrentVersionValidityArray and GetCertificateAuthorityCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCurrentVersionValidityArrayInput` via:
 //
-//          GetCertificateAuthorityCurrentVersionValidityArray{ GetCertificateAuthorityCurrentVersionValidityArgs{...} }
+//	GetCertificateAuthorityCurrentVersionValidityArray{ GetCertificateAuthorityCurrentVersionValidityArgs{...} }
 type GetCertificateAuthorityCurrentVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -8116,7 +8116,7 @@ type GetCertificateAuthoritySubject struct {
 // GetCertificateAuthoritySubjectInput is an input type that accepts GetCertificateAuthoritySubjectArgs and GetCertificateAuthoritySubjectOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritySubjectInput` via:
 //
-//          GetCertificateAuthoritySubjectArgs{...}
+//	GetCertificateAuthoritySubjectArgs{...}
 type GetCertificateAuthoritySubjectInput interface {
 	pulumi.Input
 
@@ -8176,7 +8176,7 @@ func (i GetCertificateAuthoritySubjectArgs) ToGetCertificateAuthoritySubjectOutp
 // GetCertificateAuthoritySubjectArrayInput is an input type that accepts GetCertificateAuthoritySubjectArray and GetCertificateAuthoritySubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritySubjectArrayInput` via:
 //
-//          GetCertificateAuthoritySubjectArray{ GetCertificateAuthoritySubjectArgs{...} }
+//	GetCertificateAuthoritySubjectArray{ GetCertificateAuthoritySubjectArgs{...} }
 type GetCertificateAuthoritySubjectArrayInput interface {
 	pulumi.Input
 
@@ -8327,7 +8327,7 @@ type GetCertificateAuthorityVersionRevocationStatus struct {
 // GetCertificateAuthorityVersionRevocationStatusInput is an input type that accepts GetCertificateAuthorityVersionRevocationStatusArgs and GetCertificateAuthorityVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionRevocationStatusInput` via:
 //
-//          GetCertificateAuthorityVersionRevocationStatusArgs{...}
+//	GetCertificateAuthorityVersionRevocationStatusArgs{...}
 type GetCertificateAuthorityVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -8357,7 +8357,7 @@ func (i GetCertificateAuthorityVersionRevocationStatusArgs) ToGetCertificateAuth
 // GetCertificateAuthorityVersionRevocationStatusArrayInput is an input type that accepts GetCertificateAuthorityVersionRevocationStatusArray and GetCertificateAuthorityVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionRevocationStatusArrayInput` via:
 //
-//          GetCertificateAuthorityVersionRevocationStatusArray{ GetCertificateAuthorityVersionRevocationStatusArgs{...} }
+//	GetCertificateAuthorityVersionRevocationStatusArray{ GetCertificateAuthorityVersionRevocationStatusArgs{...} }
 type GetCertificateAuthorityVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -8431,7 +8431,7 @@ type GetCertificateAuthorityVersionSubjectAlternativeName struct {
 // GetCertificateAuthorityVersionSubjectAlternativeNameInput is an input type that accepts GetCertificateAuthorityVersionSubjectAlternativeNameArgs and GetCertificateAuthorityVersionSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionSubjectAlternativeNameInput` via:
 //
-//          GetCertificateAuthorityVersionSubjectAlternativeNameArgs{...}
+//	GetCertificateAuthorityVersionSubjectAlternativeNameArgs{...}
 type GetCertificateAuthorityVersionSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -8459,7 +8459,7 @@ func (i GetCertificateAuthorityVersionSubjectAlternativeNameArgs) ToGetCertifica
 // GetCertificateAuthorityVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateAuthorityVersionSubjectAlternativeNameArray and GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificateAuthorityVersionSubjectAlternativeNameArray{ GetCertificateAuthorityVersionSubjectAlternativeNameArgs{...} }
+//	GetCertificateAuthorityVersionSubjectAlternativeNameArray{ GetCertificateAuthorityVersionSubjectAlternativeNameArgs{...} }
 type GetCertificateAuthorityVersionSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -8533,7 +8533,7 @@ type GetCertificateAuthorityVersionValidity struct {
 // GetCertificateAuthorityVersionValidityInput is an input type that accepts GetCertificateAuthorityVersionValidityArgs and GetCertificateAuthorityVersionValidityOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionValidityInput` via:
 //
-//          GetCertificateAuthorityVersionValidityArgs{...}
+//	GetCertificateAuthorityVersionValidityArgs{...}
 type GetCertificateAuthorityVersionValidityInput interface {
 	pulumi.Input
 
@@ -8563,7 +8563,7 @@ func (i GetCertificateAuthorityVersionValidityArgs) ToGetCertificateAuthorityVer
 // GetCertificateAuthorityVersionValidityArrayInput is an input type that accepts GetCertificateAuthorityVersionValidityArray and GetCertificateAuthorityVersionValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionValidityArrayInput` via:
 //
-//          GetCertificateAuthorityVersionValidityArray{ GetCertificateAuthorityVersionValidityArgs{...} }
+//	GetCertificateAuthorityVersionValidityArray{ GetCertificateAuthorityVersionValidityArgs{...} }
 type GetCertificateAuthorityVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -8637,7 +8637,7 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection struct
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs{...}
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs{...}
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionInput interface {
 	pulumi.Input
 
@@ -8665,7 +8665,7 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs{...} }
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs{...} }
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -8754,7 +8754,7 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem st
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs{...}
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs{...}
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemInput interface {
 	pulumi.Input
 
@@ -8800,7 +8800,7 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs{...} }
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs{...} }
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -8936,7 +8936,7 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRev
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs{...}
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs{...}
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusInput interface {
 	pulumi.Input
 
@@ -8966,7 +8966,7 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs{...} }
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs{...} }
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -9046,7 +9046,7 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemVal
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs{...}
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs{...}
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityInput interface {
 	pulumi.Input
 
@@ -9076,7 +9076,7 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayInput` via:
 //
-//          GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs{...} }
+//	GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArray{ GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs{...} }
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayInput interface {
 	pulumi.Input
 
@@ -9155,7 +9155,7 @@ type GetCertificateAuthorityVersionsFilter struct {
 // GetCertificateAuthorityVersionsFilterInput is an input type that accepts GetCertificateAuthorityVersionsFilterArgs and GetCertificateAuthorityVersionsFilterOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsFilterInput` via:
 //
-//          GetCertificateAuthorityVersionsFilterArgs{...}
+//	GetCertificateAuthorityVersionsFilterArgs{...}
 type GetCertificateAuthorityVersionsFilterInput interface {
 	pulumi.Input
 
@@ -9184,7 +9184,7 @@ func (i GetCertificateAuthorityVersionsFilterArgs) ToGetCertificateAuthorityVers
 // GetCertificateAuthorityVersionsFilterArrayInput is an input type that accepts GetCertificateAuthorityVersionsFilterArray and GetCertificateAuthorityVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsFilterArrayInput` via:
 //
-//          GetCertificateAuthorityVersionsFilterArray{ GetCertificateAuthorityVersionsFilterArgs{...} }
+//	GetCertificateAuthorityVersionsFilterArray{ GetCertificateAuthorityVersionsFilterArgs{...} }
 type GetCertificateAuthorityVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -9277,7 +9277,7 @@ type GetCertificateCertificateConfig struct {
 // GetCertificateCertificateConfigInput is an input type that accepts GetCertificateCertificateConfigArgs and GetCertificateCertificateConfigOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigInput` via:
 //
-//          GetCertificateCertificateConfigArgs{...}
+//	GetCertificateCertificateConfigArgs{...}
 type GetCertificateCertificateConfigInput interface {
 	pulumi.Input
 
@@ -9322,7 +9322,7 @@ func (i GetCertificateCertificateConfigArgs) ToGetCertificateCertificateConfigOu
 // GetCertificateCertificateConfigArrayInput is an input type that accepts GetCertificateCertificateConfigArray and GetCertificateCertificateConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigArrayInput` via:
 //
-//          GetCertificateCertificateConfigArray{ GetCertificateCertificateConfigArgs{...} }
+//	GetCertificateCertificateConfigArray{ GetCertificateCertificateConfigArgs{...} }
 type GetCertificateCertificateConfigArrayInput interface {
 	pulumi.Input
 
@@ -9469,7 +9469,7 @@ type GetCertificateCertificateConfigSubject struct {
 // GetCertificateCertificateConfigSubjectInput is an input type that accepts GetCertificateCertificateConfigSubjectArgs and GetCertificateCertificateConfigSubjectOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigSubjectInput` via:
 //
-//          GetCertificateCertificateConfigSubjectArgs{...}
+//	GetCertificateCertificateConfigSubjectArgs{...}
 type GetCertificateCertificateConfigSubjectInput interface {
 	pulumi.Input
 
@@ -9529,7 +9529,7 @@ func (i GetCertificateCertificateConfigSubjectArgs) ToGetCertificateCertificateC
 // GetCertificateCertificateConfigSubjectArrayInput is an input type that accepts GetCertificateCertificateConfigSubjectArray and GetCertificateCertificateConfigSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigSubjectArrayInput` via:
 //
-//          GetCertificateCertificateConfigSubjectArray{ GetCertificateCertificateConfigSubjectArgs{...} }
+//	GetCertificateCertificateConfigSubjectArray{ GetCertificateCertificateConfigSubjectArgs{...} }
 type GetCertificateCertificateConfigSubjectArrayInput interface {
 	pulumi.Input
 
@@ -9680,7 +9680,7 @@ type GetCertificateCertificateConfigSubjectAlternativeName struct {
 // GetCertificateCertificateConfigSubjectAlternativeNameInput is an input type that accepts GetCertificateCertificateConfigSubjectAlternativeNameArgs and GetCertificateCertificateConfigSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigSubjectAlternativeNameInput` via:
 //
-//          GetCertificateCertificateConfigSubjectAlternativeNameArgs{...}
+//	GetCertificateCertificateConfigSubjectAlternativeNameArgs{...}
 type GetCertificateCertificateConfigSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -9710,7 +9710,7 @@ func (i GetCertificateCertificateConfigSubjectAlternativeNameArgs) ToGetCertific
 // GetCertificateCertificateConfigSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateCertificateConfigSubjectAlternativeNameArray and GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificateCertificateConfigSubjectAlternativeNameArray{ GetCertificateCertificateConfigSubjectAlternativeNameArgs{...} }
+//	GetCertificateCertificateConfigSubjectAlternativeNameArray{ GetCertificateCertificateConfigSubjectAlternativeNameArgs{...} }
 type GetCertificateCertificateConfigSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -9786,7 +9786,7 @@ type GetCertificateCertificateConfigValidity struct {
 // GetCertificateCertificateConfigValidityInput is an input type that accepts GetCertificateCertificateConfigValidityArgs and GetCertificateCertificateConfigValidityOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigValidityInput` via:
 //
-//          GetCertificateCertificateConfigValidityArgs{...}
+//	GetCertificateCertificateConfigValidityArgs{...}
 type GetCertificateCertificateConfigValidityInput interface {
 	pulumi.Input
 
@@ -9816,7 +9816,7 @@ func (i GetCertificateCertificateConfigValidityArgs) ToGetCertificateCertificate
 // GetCertificateCertificateConfigValidityArrayInput is an input type that accepts GetCertificateCertificateConfigValidityArray and GetCertificateCertificateConfigValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateConfigValidityArrayInput` via:
 //
-//          GetCertificateCertificateConfigValidityArray{ GetCertificateCertificateConfigValidityArgs{...} }
+//	GetCertificateCertificateConfigValidityArray{ GetCertificateCertificateConfigValidityArgs{...} }
 type GetCertificateCertificateConfigValidityArrayInput interface {
 	pulumi.Input
 
@@ -9892,7 +9892,7 @@ type GetCertificateCertificateRevocationListDetail struct {
 // GetCertificateCertificateRevocationListDetailInput is an input type that accepts GetCertificateCertificateRevocationListDetailArgs and GetCertificateCertificateRevocationListDetailOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRevocationListDetailInput` via:
 //
-//          GetCertificateCertificateRevocationListDetailArgs{...}
+//	GetCertificateCertificateRevocationListDetailArgs{...}
 type GetCertificateCertificateRevocationListDetailInput interface {
 	pulumi.Input
 
@@ -9922,7 +9922,7 @@ func (i GetCertificateCertificateRevocationListDetailArgs) ToGetCertificateCerti
 // GetCertificateCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificateCertificateRevocationListDetailArray and GetCertificateCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRevocationListDetailArrayInput` via:
 //
-//          GetCertificateCertificateRevocationListDetailArray{ GetCertificateCertificateRevocationListDetailArgs{...} }
+//	GetCertificateCertificateRevocationListDetailArray{ GetCertificateCertificateRevocationListDetailArgs{...} }
 type GetCertificateCertificateRevocationListDetailArrayInput interface {
 	pulumi.Input
 
@@ -10002,7 +10002,7 @@ type GetCertificateCertificateRevocationListDetailObjectStorageConfig struct {
 // GetCertificateCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRevocationListDetailObjectStorageConfigInput` via:
 //
-//          GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs{...}
+//	GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs{...}
 type GetCertificateCertificateRevocationListDetailObjectStorageConfigInput interface {
 	pulumi.Input
 
@@ -10034,7 +10034,7 @@ func (i GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs) To
 // GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificateCertificateRevocationListDetailObjectStorageConfigArray and GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayInput` via:
 //
-//          GetCertificateCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs{...} }
+//	GetCertificateCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs{...} }
 type GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayInput interface {
 	pulumi.Input
 
@@ -10123,7 +10123,7 @@ type GetCertificateCertificateRule struct {
 // GetCertificateCertificateRuleInput is an input type that accepts GetCertificateCertificateRuleArgs and GetCertificateCertificateRuleOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRuleInput` via:
 //
-//          GetCertificateCertificateRuleArgs{...}
+//	GetCertificateCertificateRuleArgs{...}
 type GetCertificateCertificateRuleInput interface {
 	pulumi.Input
 
@@ -10155,7 +10155,7 @@ func (i GetCertificateCertificateRuleArgs) ToGetCertificateCertificateRuleOutput
 // GetCertificateCertificateRuleArrayInput is an input type that accepts GetCertificateCertificateRuleArray and GetCertificateCertificateRuleArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRuleArrayInput` via:
 //
-//          GetCertificateCertificateRuleArray{ GetCertificateCertificateRuleArgs{...} }
+//	GetCertificateCertificateRuleArray{ GetCertificateCertificateRuleArgs{...} }
 type GetCertificateCertificateRuleArrayInput interface {
 	pulumi.Input
 
@@ -10254,7 +10254,7 @@ type GetCertificateCurrentVersion struct {
 // GetCertificateCurrentVersionInput is an input type that accepts GetCertificateCurrentVersionArgs and GetCertificateCurrentVersionOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionInput` via:
 //
-//          GetCertificateCurrentVersionArgs{...}
+//	GetCertificateCurrentVersionArgs{...}
 type GetCertificateCurrentVersionInput interface {
 	pulumi.Input
 
@@ -10302,7 +10302,7 @@ func (i GetCertificateCurrentVersionArgs) ToGetCertificateCurrentVersionOutputWi
 // GetCertificateCurrentVersionArrayInput is an input type that accepts GetCertificateCurrentVersionArray and GetCertificateCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionArrayInput` via:
 //
-//          GetCertificateCurrentVersionArray{ GetCertificateCurrentVersionArgs{...} }
+//	GetCertificateCurrentVersionArray{ GetCertificateCurrentVersionArgs{...} }
 type GetCertificateCurrentVersionArrayInput interface {
 	pulumi.Input
 
@@ -10427,7 +10427,7 @@ type GetCertificateCurrentVersionRevocationStatus struct {
 // GetCertificateCurrentVersionRevocationStatusInput is an input type that accepts GetCertificateCurrentVersionRevocationStatusArgs and GetCertificateCurrentVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionRevocationStatusInput` via:
 //
-//          GetCertificateCurrentVersionRevocationStatusArgs{...}
+//	GetCertificateCurrentVersionRevocationStatusArgs{...}
 type GetCertificateCurrentVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -10457,7 +10457,7 @@ func (i GetCertificateCurrentVersionRevocationStatusArgs) ToGetCertificateCurren
 // GetCertificateCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificateCurrentVersionRevocationStatusArray and GetCertificateCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionRevocationStatusArrayInput` via:
 //
-//          GetCertificateCurrentVersionRevocationStatusArray{ GetCertificateCurrentVersionRevocationStatusArgs{...} }
+//	GetCertificateCurrentVersionRevocationStatusArray{ GetCertificateCurrentVersionRevocationStatusArgs{...} }
 type GetCertificateCurrentVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -10533,7 +10533,7 @@ type GetCertificateCurrentVersionSubjectAlternativeName struct {
 // GetCertificateCurrentVersionSubjectAlternativeNameInput is an input type that accepts GetCertificateCurrentVersionSubjectAlternativeNameArgs and GetCertificateCurrentVersionSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionSubjectAlternativeNameInput` via:
 //
-//          GetCertificateCurrentVersionSubjectAlternativeNameArgs{...}
+//	GetCertificateCurrentVersionSubjectAlternativeNameArgs{...}
 type GetCertificateCurrentVersionSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -10563,7 +10563,7 @@ func (i GetCertificateCurrentVersionSubjectAlternativeNameArgs) ToGetCertificate
 // GetCertificateCurrentVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateCurrentVersionSubjectAlternativeNameArray and GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificateCurrentVersionSubjectAlternativeNameArray{ GetCertificateCurrentVersionSubjectAlternativeNameArgs{...} }
+//	GetCertificateCurrentVersionSubjectAlternativeNameArray{ GetCertificateCurrentVersionSubjectAlternativeNameArgs{...} }
 type GetCertificateCurrentVersionSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -10639,7 +10639,7 @@ type GetCertificateCurrentVersionValidity struct {
 // GetCertificateCurrentVersionValidityInput is an input type that accepts GetCertificateCurrentVersionValidityArgs and GetCertificateCurrentVersionValidityOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionValidityInput` via:
 //
-//          GetCertificateCurrentVersionValidityArgs{...}
+//	GetCertificateCurrentVersionValidityArgs{...}
 type GetCertificateCurrentVersionValidityInput interface {
 	pulumi.Input
 
@@ -10669,7 +10669,7 @@ func (i GetCertificateCurrentVersionValidityArgs) ToGetCertificateCurrentVersion
 // GetCertificateCurrentVersionValidityArrayInput is an input type that accepts GetCertificateCurrentVersionValidityArray and GetCertificateCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCurrentVersionValidityArrayInput` via:
 //
-//          GetCertificateCurrentVersionValidityArray{ GetCertificateCurrentVersionValidityArgs{...} }
+//	GetCertificateCurrentVersionValidityArray{ GetCertificateCurrentVersionValidityArgs{...} }
 type GetCertificateCurrentVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -10775,7 +10775,7 @@ type GetCertificateSubject struct {
 // GetCertificateSubjectInput is an input type that accepts GetCertificateSubjectArgs and GetCertificateSubjectOutput values.
 // You can construct a concrete instance of `GetCertificateSubjectInput` via:
 //
-//          GetCertificateSubjectArgs{...}
+//	GetCertificateSubjectArgs{...}
 type GetCertificateSubjectInput interface {
 	pulumi.Input
 
@@ -10835,7 +10835,7 @@ func (i GetCertificateSubjectArgs) ToGetCertificateSubjectOutputWithContext(ctx 
 // GetCertificateSubjectArrayInput is an input type that accepts GetCertificateSubjectArray and GetCertificateSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificateSubjectArrayInput` via:
 //
-//          GetCertificateSubjectArray{ GetCertificateSubjectArgs{...} }
+//	GetCertificateSubjectArray{ GetCertificateSubjectArgs{...} }
 type GetCertificateSubjectArrayInput interface {
 	pulumi.Input
 
@@ -10986,7 +10986,7 @@ type GetCertificateVersionRevocationStatus struct {
 // GetCertificateVersionRevocationStatusInput is an input type that accepts GetCertificateVersionRevocationStatusArgs and GetCertificateVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateVersionRevocationStatusInput` via:
 //
-//          GetCertificateVersionRevocationStatusArgs{...}
+//	GetCertificateVersionRevocationStatusArgs{...}
 type GetCertificateVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -11016,7 +11016,7 @@ func (i GetCertificateVersionRevocationStatusArgs) ToGetCertificateVersionRevoca
 // GetCertificateVersionRevocationStatusArrayInput is an input type that accepts GetCertificateVersionRevocationStatusArray and GetCertificateVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionRevocationStatusArrayInput` via:
 //
-//          GetCertificateVersionRevocationStatusArray{ GetCertificateVersionRevocationStatusArgs{...} }
+//	GetCertificateVersionRevocationStatusArray{ GetCertificateVersionRevocationStatusArgs{...} }
 type GetCertificateVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -11092,7 +11092,7 @@ type GetCertificateVersionSubjectAlternativeName struct {
 // GetCertificateVersionSubjectAlternativeNameInput is an input type that accepts GetCertificateVersionSubjectAlternativeNameArgs and GetCertificateVersionSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificateVersionSubjectAlternativeNameInput` via:
 //
-//          GetCertificateVersionSubjectAlternativeNameArgs{...}
+//	GetCertificateVersionSubjectAlternativeNameArgs{...}
 type GetCertificateVersionSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -11122,7 +11122,7 @@ func (i GetCertificateVersionSubjectAlternativeNameArgs) ToGetCertificateVersion
 // GetCertificateVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateVersionSubjectAlternativeNameArray and GetCertificateVersionSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificateVersionSubjectAlternativeNameArray{ GetCertificateVersionSubjectAlternativeNameArgs{...} }
+//	GetCertificateVersionSubjectAlternativeNameArray{ GetCertificateVersionSubjectAlternativeNameArgs{...} }
 type GetCertificateVersionSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -11198,7 +11198,7 @@ type GetCertificateVersionValidity struct {
 // GetCertificateVersionValidityInput is an input type that accepts GetCertificateVersionValidityArgs and GetCertificateVersionValidityOutput values.
 // You can construct a concrete instance of `GetCertificateVersionValidityInput` via:
 //
-//          GetCertificateVersionValidityArgs{...}
+//	GetCertificateVersionValidityArgs{...}
 type GetCertificateVersionValidityInput interface {
 	pulumi.Input
 
@@ -11228,7 +11228,7 @@ func (i GetCertificateVersionValidityArgs) ToGetCertificateVersionValidityOutput
 // GetCertificateVersionValidityArrayInput is an input type that accepts GetCertificateVersionValidityArray and GetCertificateVersionValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionValidityArrayInput` via:
 //
-//          GetCertificateVersionValidityArray{ GetCertificateVersionValidityArgs{...} }
+//	GetCertificateVersionValidityArray{ GetCertificateVersionValidityArgs{...} }
 type GetCertificateVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -11302,7 +11302,7 @@ type GetCertificateVersionsCertificateVersionCollection struct {
 // GetCertificateVersionsCertificateVersionCollectionInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionArgs and GetCertificateVersionsCertificateVersionCollectionOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionArgs{...}
+//	GetCertificateVersionsCertificateVersionCollectionArgs{...}
 type GetCertificateVersionsCertificateVersionCollectionInput interface {
 	pulumi.Input
 
@@ -11330,7 +11330,7 @@ func (i GetCertificateVersionsCertificateVersionCollectionArgs) ToGetCertificate
 // GetCertificateVersionsCertificateVersionCollectionArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionArray and GetCertificateVersionsCertificateVersionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionArrayInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionArray{ GetCertificateVersionsCertificateVersionCollectionArgs{...} }
+//	GetCertificateVersionsCertificateVersionCollectionArray{ GetCertificateVersionsCertificateVersionCollectionArgs{...} }
 type GetCertificateVersionsCertificateVersionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11421,7 +11421,7 @@ type GetCertificateVersionsCertificateVersionCollectionItem struct {
 // GetCertificateVersionsCertificateVersionCollectionItemInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemArgs and GetCertificateVersionsCertificateVersionCollectionItemOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemArgs{...}
+//	GetCertificateVersionsCertificateVersionCollectionItemArgs{...}
 type GetCertificateVersionsCertificateVersionCollectionItemInput interface {
 	pulumi.Input
 
@@ -11469,7 +11469,7 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemArgs) ToGetCertifi
 // GetCertificateVersionsCertificateVersionCollectionItemArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemArray and GetCertificateVersionsCertificateVersionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemArrayInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemArray{ GetCertificateVersionsCertificateVersionCollectionItemArgs{...} }
+//	GetCertificateVersionsCertificateVersionCollectionItemArray{ GetCertificateVersionsCertificateVersionCollectionItemArgs{...} }
 type GetCertificateVersionsCertificateVersionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11596,7 +11596,7 @@ type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus stru
 // GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs and GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs{...}
+//	GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs{...}
 type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusInput interface {
 	pulumi.Input
 
@@ -11626,7 +11626,7 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusAr
 // GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArray and GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArray{ GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs{...} }
+//	GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArray{ GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs{...} }
 type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -11706,7 +11706,7 @@ type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNam
 // GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs and GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs{...}
+//	GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs{...}
 type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -11736,7 +11736,7 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternative
 // GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArray and GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArray{ GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs{...} }
+//	GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArray{ GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs{...} }
 type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -11816,7 +11816,7 @@ type GetCertificateVersionsCertificateVersionCollectionItemValidity struct {
 // GetCertificateVersionsCertificateVersionCollectionItemValidityInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemValidityArgs and GetCertificateVersionsCertificateVersionCollectionItemValidityOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemValidityInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemValidityArgs{...}
+//	GetCertificateVersionsCertificateVersionCollectionItemValidityArgs{...}
 type GetCertificateVersionsCertificateVersionCollectionItemValidityInput interface {
 	pulumi.Input
 
@@ -11846,7 +11846,7 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemValidityArgs) ToGe
 // GetCertificateVersionsCertificateVersionCollectionItemValidityArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemValidityArray and GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionItemValidityArrayInput` via:
 //
-//          GetCertificateVersionsCertificateVersionCollectionItemValidityArray{ GetCertificateVersionsCertificateVersionCollectionItemValidityArgs{...} }
+//	GetCertificateVersionsCertificateVersionCollectionItemValidityArray{ GetCertificateVersionsCertificateVersionCollectionItemValidityArgs{...} }
 type GetCertificateVersionsCertificateVersionCollectionItemValidityArrayInput interface {
 	pulumi.Input
 
@@ -11925,7 +11925,7 @@ type GetCertificateVersionsFilter struct {
 // GetCertificateVersionsFilterInput is an input type that accepts GetCertificateVersionsFilterArgs and GetCertificateVersionsFilterOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsFilterInput` via:
 //
-//          GetCertificateVersionsFilterArgs{...}
+//	GetCertificateVersionsFilterArgs{...}
 type GetCertificateVersionsFilterInput interface {
 	pulumi.Input
 
@@ -11954,7 +11954,7 @@ func (i GetCertificateVersionsFilterArgs) ToGetCertificateVersionsFilterOutputWi
 // GetCertificateVersionsFilterArrayInput is an input type that accepts GetCertificateVersionsFilterArray and GetCertificateVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsFilterArrayInput` via:
 //
-//          GetCertificateVersionsFilterArray{ GetCertificateVersionsFilterArgs{...} }
+//	GetCertificateVersionsFilterArray{ GetCertificateVersionsFilterArgs{...} }
 type GetCertificateVersionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -12029,7 +12029,7 @@ type GetCertificatesCertificateCollection struct {
 // GetCertificatesCertificateCollectionInput is an input type that accepts GetCertificatesCertificateCollectionArgs and GetCertificatesCertificateCollectionOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionInput` via:
 //
-//          GetCertificatesCertificateCollectionArgs{...}
+//	GetCertificatesCertificateCollectionArgs{...}
 type GetCertificatesCertificateCollectionInput interface {
 	pulumi.Input
 
@@ -12056,7 +12056,7 @@ func (i GetCertificatesCertificateCollectionArgs) ToGetCertificatesCertificateCo
 // GetCertificatesCertificateCollectionArrayInput is an input type that accepts GetCertificatesCertificateCollectionArray and GetCertificatesCertificateCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionArray{ GetCertificatesCertificateCollectionArgs{...} }
+//	GetCertificatesCertificateCollectionArray{ GetCertificatesCertificateCollectionArgs{...} }
 type GetCertificatesCertificateCollectionArrayInput interface {
 	pulumi.Input
 
@@ -12163,7 +12163,7 @@ type GetCertificatesCertificateCollectionItem struct {
 // GetCertificatesCertificateCollectionItemInput is an input type that accepts GetCertificatesCertificateCollectionItemArgs and GetCertificatesCertificateCollectionItemOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemInput` via:
 //
-//          GetCertificatesCertificateCollectionItemArgs{...}
+//	GetCertificatesCertificateCollectionItemArgs{...}
 type GetCertificatesCertificateCollectionItemInput interface {
 	pulumi.Input
 
@@ -12228,7 +12228,7 @@ func (i GetCertificatesCertificateCollectionItemArgs) ToGetCertificatesCertifica
 // GetCertificatesCertificateCollectionItemArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemArray and GetCertificatesCertificateCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemArray{ GetCertificatesCertificateCollectionItemArgs{...} }
+//	GetCertificatesCertificateCollectionItemArray{ GetCertificatesCertificateCollectionItemArgs{...} }
 type GetCertificatesCertificateCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -12418,7 +12418,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfig struct {
 // GetCertificatesCertificateCollectionItemCertificateConfigInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigArgs and GetCertificatesCertificateCollectionItemCertificateConfigOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateConfigArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateConfigInput interface {
 	pulumi.Input
 
@@ -12463,7 +12463,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigArgs) ToGetCert
 // GetCertificatesCertificateCollectionItemCertificateConfigArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigArray and GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigArray{ GetCertificatesCertificateCollectionItemCertificateConfigArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateConfigArray{ GetCertificatesCertificateCollectionItemCertificateConfigArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateConfigArrayInput interface {
 	pulumi.Input
 
@@ -12618,7 +12618,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfigSubject struct {
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs and GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigSubjectInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectInput interface {
 	pulumi.Input
 
@@ -12678,7 +12678,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs) To
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectArray and GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigSubjectArray{ GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateConfigSubjectArray{ GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayInput interface {
 	pulumi.Input
 
@@ -12839,7 +12839,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternative
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs and GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -12869,7 +12869,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternat
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArray and GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArray{ GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArray{ GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -12949,7 +12949,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfigValidity struct {
 // GetCertificatesCertificateCollectionItemCertificateConfigValidityInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs and GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigValidityInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateConfigValidityInput interface {
 	pulumi.Input
 
@@ -12979,7 +12979,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs) T
 // GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigValidityArray and GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateConfigValidityArray{ GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateConfigValidityArray{ GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayInput interface {
 	pulumi.Input
 
@@ -13059,7 +13059,7 @@ type GetCertificatesCertificateCollectionItemCertificateRevocationListDetail str
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRevocationListDetailInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailInput interface {
 	pulumi.Input
 
@@ -13089,7 +13089,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailA
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArray and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArray{ GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArray{ GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayInput interface {
 	pulumi.Input
 
@@ -13171,7 +13171,7 @@ type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObje
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigInput interface {
 	pulumi.Input
 
@@ -13203,7 +13203,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArray and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArray{ GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput interface {
 	pulumi.Input
 
@@ -13292,7 +13292,7 @@ type GetCertificatesCertificateCollectionItemCertificateRule struct {
 // GetCertificatesCertificateCollectionItemCertificateRuleInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRuleArgs and GetCertificatesCertificateCollectionItemCertificateRuleOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRuleInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateRuleArgs{...}
+//	GetCertificatesCertificateCollectionItemCertificateRuleArgs{...}
 type GetCertificatesCertificateCollectionItemCertificateRuleInput interface {
 	pulumi.Input
 
@@ -13324,7 +13324,7 @@ func (i GetCertificatesCertificateCollectionItemCertificateRuleArgs) ToGetCertif
 // GetCertificatesCertificateCollectionItemCertificateRuleArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRuleArray and GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRuleArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCertificateRuleArray{ GetCertificatesCertificateCollectionItemCertificateRuleArgs{...} }
+//	GetCertificatesCertificateCollectionItemCertificateRuleArray{ GetCertificatesCertificateCollectionItemCertificateRuleArgs{...} }
 type GetCertificatesCertificateCollectionItemCertificateRuleArrayInput interface {
 	pulumi.Input
 
@@ -13423,7 +13423,7 @@ type GetCertificatesCertificateCollectionItemCurrentVersion struct {
 // GetCertificatesCertificateCollectionItemCurrentVersionInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionArgs and GetCertificatesCertificateCollectionItemCurrentVersionOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionArgs{...}
+//	GetCertificatesCertificateCollectionItemCurrentVersionArgs{...}
 type GetCertificatesCertificateCollectionItemCurrentVersionInput interface {
 	pulumi.Input
 
@@ -13471,7 +13471,7 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionArgs) ToGetCertifi
 // GetCertificatesCertificateCollectionItemCurrentVersionArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionArray and GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionArray{ GetCertificatesCertificateCollectionItemCurrentVersionArgs{...} }
+//	GetCertificatesCertificateCollectionItemCurrentVersionArray{ GetCertificatesCertificateCollectionItemCurrentVersionArgs{...} }
 type GetCertificatesCertificateCollectionItemCurrentVersionArrayInput interface {
 	pulumi.Input
 
@@ -13598,7 +13598,7 @@ type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus stru
 // GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs and GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs{...}
+//	GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs{...}
 type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusInput interface {
 	pulumi.Input
 
@@ -13628,7 +13628,7 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusAr
 // GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArray and GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArray{ GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs{...} }
+//	GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArray{ GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs{...} }
 type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayInput interface {
 	pulumi.Input
 
@@ -13708,7 +13708,7 @@ type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNam
 // GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs and GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs{...}
+//	GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs{...}
 type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameInput interface {
 	pulumi.Input
 
@@ -13738,7 +13738,7 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternative
 // GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArray and GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArray{ GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs{...} }
+//	GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArray{ GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs{...} }
 type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayInput interface {
 	pulumi.Input
 
@@ -13818,7 +13818,7 @@ type GetCertificatesCertificateCollectionItemCurrentVersionValidity struct {
 // GetCertificatesCertificateCollectionItemCurrentVersionValidityInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs and GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionValidityInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs{...}
+//	GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs{...}
 type GetCertificatesCertificateCollectionItemCurrentVersionValidityInput interface {
 	pulumi.Input
 
@@ -13848,7 +13848,7 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs) ToGe
 // GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionValidityArray and GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemCurrentVersionValidityArray{ GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs{...} }
+//	GetCertificatesCertificateCollectionItemCurrentVersionValidityArray{ GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs{...} }
 type GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayInput interface {
 	pulumi.Input
 
@@ -13958,7 +13958,7 @@ type GetCertificatesCertificateCollectionItemSubject struct {
 // GetCertificatesCertificateCollectionItemSubjectInput is an input type that accepts GetCertificatesCertificateCollectionItemSubjectArgs and GetCertificatesCertificateCollectionItemSubjectOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemSubjectInput` via:
 //
-//          GetCertificatesCertificateCollectionItemSubjectArgs{...}
+//	GetCertificatesCertificateCollectionItemSubjectArgs{...}
 type GetCertificatesCertificateCollectionItemSubjectInput interface {
 	pulumi.Input
 
@@ -14018,7 +14018,7 @@ func (i GetCertificatesCertificateCollectionItemSubjectArgs) ToGetCertificatesCe
 // GetCertificatesCertificateCollectionItemSubjectArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemSubjectArray and GetCertificatesCertificateCollectionItemSubjectArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemSubjectArrayInput` via:
 //
-//          GetCertificatesCertificateCollectionItemSubjectArray{ GetCertificatesCertificateCollectionItemSubjectArgs{...} }
+//	GetCertificatesCertificateCollectionItemSubjectArray{ GetCertificatesCertificateCollectionItemSubjectArgs{...} }
 type GetCertificatesCertificateCollectionItemSubjectArrayInput interface {
 	pulumi.Input
 
@@ -14169,7 +14169,7 @@ type GetCertificatesFilter struct {
 // GetCertificatesFilterInput is an input type that accepts GetCertificatesFilterArgs and GetCertificatesFilterOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterInput` via:
 //
-//          GetCertificatesFilterArgs{...}
+//	GetCertificatesFilterArgs{...}
 type GetCertificatesFilterInput interface {
 	pulumi.Input
 
@@ -14199,7 +14199,7 @@ func (i GetCertificatesFilterArgs) ToGetCertificatesFilterOutputWithContext(ctx 
 // GetCertificatesFilterArrayInput is an input type that accepts GetCertificatesFilterArray and GetCertificatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterArrayInput` via:
 //
-//          GetCertificatesFilterArray{ GetCertificatesFilterArgs{...} }
+//	GetCertificatesFilterArray{ GetCertificatesFilterArgs{...} }
 type GetCertificatesFilterArrayInput interface {
 	pulumi.Input
 

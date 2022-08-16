@@ -21,58 +21,61 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.NewModelDeployment(ctx, "testModelDeployment", &DataScience.ModelDeploymentArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ModelDeploymentConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsArgs{
-// 				DeploymentType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_deployment_type),
-// 				ModelConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{
-// 					InstanceConfiguration: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{
-// 						InstanceShapeName: pulumi.Any(oci_core_shape.Test_shape.Name),
-// 						ModelDeploymentInstanceShapeConfigDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{
-// 							MemoryInGbs: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs),
-// 							Ocpus:       pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus),
-// 						},
-// 					},
-// 					ModelId:       pulumi.Any(oci_datascience_model.Test_model.Id),
-// 					BandwidthMbps: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps),
-// 					ScalingPolicy: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{
-// 						InstanceCount: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count),
-// 						PolicyType:    pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type),
-// 					},
-// 				},
-// 			},
-// 			ProjectId: pulumi.Any(oci_datascience_project.Test_project.Id),
-// 			CategoryLogDetails: &datascience.ModelDeploymentCategoryLogDetailsArgs{
-// 				Access: &datascience.ModelDeploymentCategoryLogDetailsAccessArgs{
-// 					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
-// 				},
-// 				Predict: &datascience.ModelDeploymentCategoryLogDetailsPredictArgs{
-// 					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Model_deployment_description),
-// 			DisplayName: pulumi.Any(_var.Model_deployment_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.NewModelDeployment(ctx, "testModelDeployment", &DataScience.ModelDeploymentArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ModelDeploymentConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsArgs{
+//					DeploymentType: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_deployment_type),
+//					ModelConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{
+//						InstanceConfiguration: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{
+//							InstanceShapeName: pulumi.Any(oci_core_shape.Test_shape.Name),
+//							ModelDeploymentInstanceShapeConfigDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{
+//								MemoryInGbs: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs),
+//								Ocpus:       pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus),
+//							},
+//						},
+//						ModelId:       pulumi.Any(oci_datascience_model.Test_model.Id),
+//						BandwidthMbps: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps),
+//						ScalingPolicy: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs{
+//							InstanceCount: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count),
+//							PolicyType:    pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type),
+//						},
+//					},
+//				},
+//				ProjectId: pulumi.Any(oci_datascience_project.Test_project.Id),
+//				CategoryLogDetails: &datascience.ModelDeploymentCategoryLogDetailsArgs{
+//					Access: &datascience.ModelDeploymentCategoryLogDetailsAccessArgs{
+//						LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//						LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//					},
+//					Predict: &datascience.ModelDeploymentCategoryLogDetailsPredictArgs{
+//						LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//						LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Model_deployment_description),
+//				DisplayName: pulumi.Any(_var.Model_deployment_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -80,7 +83,9 @@ import (
 // ModelDeployments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
+//
+//	$ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
+//
 // ```
 type ModelDeployment struct {
 	pulumi.CustomResourceState
@@ -277,7 +282,7 @@ func (i *ModelDeployment) ToModelDeploymentOutputWithContext(ctx context.Context
 // ModelDeploymentArrayInput is an input type that accepts ModelDeploymentArray and ModelDeploymentArrayOutput values.
 // You can construct a concrete instance of `ModelDeploymentArrayInput` via:
 //
-//          ModelDeploymentArray{ ModelDeploymentArgs{...} }
+//	ModelDeploymentArray{ ModelDeploymentArgs{...} }
 type ModelDeploymentArrayInput interface {
 	pulumi.Input
 
@@ -302,7 +307,7 @@ func (i ModelDeploymentArray) ToModelDeploymentArrayOutputWithContext(ctx contex
 // ModelDeploymentMapInput is an input type that accepts ModelDeploymentMap and ModelDeploymentMapOutput values.
 // You can construct a concrete instance of `ModelDeploymentMapInput` via:
 //
-//          ModelDeploymentMap{ "key": ModelDeploymentArgs{...} }
+//	ModelDeploymentMap{ "key": ModelDeploymentArgs{...} }
 type ModelDeploymentMapInput interface {
 	pulumi.Input
 

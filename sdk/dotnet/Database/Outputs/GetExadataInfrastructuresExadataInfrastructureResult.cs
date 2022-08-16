@@ -136,6 +136,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int MemorySizeInGbs;
         /// <summary>
+        /// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        /// </summary>
+        public readonly string MonthlyDbServerVersion;
+        /// <summary>
         /// The netmask for the control plane network.
         /// </summary>
         public readonly string Netmask;
@@ -234,6 +238,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int memorySizeInGbs,
 
+            string monthlyDbServerVersion,
+
             string netmask,
 
             ImmutableArray<string> ntpServers,
@@ -282,6 +288,7 @@ namespace Pulumi.Oci.Database.Outputs
             MaxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             MaxMemoryInGbs = maxMemoryInGbs;
             MemorySizeInGbs = memorySizeInGbs;
+            MonthlyDbServerVersion = monthlyDbServerVersion;
             Netmask = netmask;
             NtpServers = ntpServers;
             Shape = shape;

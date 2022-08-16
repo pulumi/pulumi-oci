@@ -21,35 +21,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsEntity(ctx, "testLogAnalyticsEntity", &LogAnalytics.LogAnalyticsEntityArgs{
-// 			CompartmentId:   pulumi.Any(_var.Compartment_id),
-// 			EntityTypeName:  pulumi.Any(_var.Log_analytics_entity_entity_type_name),
-// 			Namespace:       pulumi.Any(_var.Log_analytics_entity_namespace),
-// 			CloudResourceId: pulumi.Any(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Hostname:          pulumi.Any(_var.Log_analytics_entity_hostname),
-// 			ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
-// 			Properties:        pulumi.Any(_var.Log_analytics_entity_properties),
-// 			SourceId:          pulumi.Any(oci_log_analytics_source.Test_source.Id),
-// 			TimezoneRegion:    pulumi.Any(_var.Log_analytics_entity_timezone_region),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsEntity(ctx, "testLogAnalyticsEntity", &LogAnalytics.LogAnalyticsEntityArgs{
+//				CompartmentId:   pulumi.Any(_var.Compartment_id),
+//				EntityTypeName:  pulumi.Any(_var.Log_analytics_entity_entity_type_name),
+//				Namespace:       pulumi.Any(_var.Log_analytics_entity_namespace),
+//				CloudResourceId: pulumi.Any(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Hostname:          pulumi.Any(_var.Log_analytics_entity_hostname),
+//				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				Properties:        pulumi.Any(_var.Log_analytics_entity_properties),
+//				SourceId:          pulumi.Any(oci_log_analytics_source.Test_source.Id),
+//				TimezoneRegion:    pulumi.Any(_var.Log_analytics_entity_timezone_region),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -57,7 +60,9 @@ import (
 // LogAnalyticsEntities can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
+//
+//	$ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
+//
 // ```
 type LogAnalyticsEntity struct {
 	pulumi.CustomResourceState
@@ -312,7 +317,7 @@ func (i *LogAnalyticsEntity) ToLogAnalyticsEntityOutputWithContext(ctx context.C
 // LogAnalyticsEntityArrayInput is an input type that accepts LogAnalyticsEntityArray and LogAnalyticsEntityArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsEntityArrayInput` via:
 //
-//          LogAnalyticsEntityArray{ LogAnalyticsEntityArgs{...} }
+//	LogAnalyticsEntityArray{ LogAnalyticsEntityArgs{...} }
 type LogAnalyticsEntityArrayInput interface {
 	pulumi.Input
 
@@ -337,7 +342,7 @@ func (i LogAnalyticsEntityArray) ToLogAnalyticsEntityArrayOutputWithContext(ctx 
 // LogAnalyticsEntityMapInput is an input type that accepts LogAnalyticsEntityMap and LogAnalyticsEntityMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsEntityMapInput` via:
 //
-//          LogAnalyticsEntityMap{ "key": LogAnalyticsEntityArgs{...} }
+//	LogAnalyticsEntityMap{ "key": LogAnalyticsEntityArgs{...} }
 type LogAnalyticsEntityMapInput interface {
 	pulumi.Input
 

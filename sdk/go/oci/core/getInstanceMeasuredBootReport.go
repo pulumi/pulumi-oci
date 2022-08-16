@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetInstanceMeasuredBootReport(ctx, &core.GetInstanceMeasuredBootReportArgs{
-// 			InstanceId: oci_core_instance.Test_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetInstanceMeasuredBootReport(ctx, &core.GetInstanceMeasuredBootReportArgs{
+//				InstanceId: oci_core_instance.Test_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstanceMeasuredBootReport(ctx *pulumi.Context, args *GetInstanceMeasuredBootReportArgs, opts ...pulumi.InvokeOption) (*GetInstanceMeasuredBootReportResult, error) {
 	var rv GetInstanceMeasuredBootReportResult

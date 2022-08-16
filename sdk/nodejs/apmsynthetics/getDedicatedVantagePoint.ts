@@ -63,7 +63,7 @@ export interface GetDedicatedVantagePointResult {
      */
     readonly displayName: string;
     /**
-     * Details of DVP Stack.
+     * Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
     readonly dvpStackDetails: outputs.ApmSynthetics.GetDedicatedVantagePointDvpStackDetail[];
     /**

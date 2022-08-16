@@ -21,53 +21,56 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousVmCluster(ctx, "testAutonomousVmCluster", &Database.AutonomousVmClusterArgs{
-// 			CompartmentId:                  pulumi.Any(_var.Compartment_id),
-// 			DisplayName:                    pulumi.Any(_var.Autonomous_vm_cluster_display_name),
-// 			ExadataInfrastructureId:        pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-// 			VmClusterNetworkId:             pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
-// 			AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
-// 			CpuCoreCountPerNode:            pulumi.Any(_var.Autonomous_vm_cluster_cpu_core_count_per_node),
-// 			DefinedTags:                    pulumi.Any(_var.Autonomous_vm_cluster_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsLocalBackupEnabled: pulumi.Any(_var.Autonomous_vm_cluster_is_local_backup_enabled),
-// 			LicenseModel:         pulumi.Any(_var.Autonomous_vm_cluster_license_model),
-// 			MaintenanceWindowDetails: database.AutonomousVmClusterMaintenanceWindowDetailArray{
-// 				&database.AutonomousVmClusterMaintenanceWindowDetailArgs{
-// 					Preference: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_preference),
-// 					DaysOfWeeks: database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{
-// 						&database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{
-// 							Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_days_of_week_name),
-// 						},
-// 					},
-// 					HoursOfDays:     pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_hours_of_day),
-// 					LeadTimeInWeeks: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks),
-// 					Months: database.AutonomousVmClusterMaintenanceWindowDetailMonthArray{
-// 						&database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs{
-// 							Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_months_name),
-// 						},
-// 					},
-// 					WeeksOfMonths: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month),
-// 				},
-// 			},
-// 			MemoryPerOracleComputeUnitInGbs: pulumi.Any(_var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
-// 			TimeZone:                        pulumi.Any(_var.Autonomous_vm_cluster_time_zone),
-// 			TotalContainerDatabases:         pulumi.Any(_var.Autonomous_vm_cluster_total_container_databases),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousVmCluster(ctx, "testAutonomousVmCluster", &Database.AutonomousVmClusterArgs{
+//				CompartmentId:                  pulumi.Any(_var.Compartment_id),
+//				DisplayName:                    pulumi.Any(_var.Autonomous_vm_cluster_display_name),
+//				ExadataInfrastructureId:        pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
+//				VmClusterNetworkId:             pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
+//				AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
+//				CpuCoreCountPerNode:            pulumi.Any(_var.Autonomous_vm_cluster_cpu_core_count_per_node),
+//				DefinedTags:                    pulumi.Any(_var.Autonomous_vm_cluster_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsLocalBackupEnabled: pulumi.Any(_var.Autonomous_vm_cluster_is_local_backup_enabled),
+//				LicenseModel:         pulumi.Any(_var.Autonomous_vm_cluster_license_model),
+//				MaintenanceWindowDetails: database.AutonomousVmClusterMaintenanceWindowDetailArray{
+//					&database.AutonomousVmClusterMaintenanceWindowDetailArgs{
+//						Preference: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_preference),
+//						DaysOfWeeks: database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{
+//							&database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{
+//								Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_days_of_week_name),
+//							},
+//						},
+//						HoursOfDays:     pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_hours_of_day),
+//						LeadTimeInWeeks: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks),
+//						Months: database.AutonomousVmClusterMaintenanceWindowDetailMonthArray{
+//							&database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs{
+//								Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_months_name),
+//							},
+//						},
+//						WeeksOfMonths: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month),
+//					},
+//				},
+//				MemoryPerOracleComputeUnitInGbs: pulumi.Any(_var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
+//				TimeZone:                        pulumi.Any(_var.Autonomous_vm_cluster_time_zone),
+//				TotalContainerDatabases:         pulumi.Any(_var.Autonomous_vm_cluster_total_container_databases),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -75,7 +78,9 @@ import (
 // AutonomousVmClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
+//
+//	$ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
+//
 // ```
 type AutonomousVmCluster struct {
 	pulumi.CustomResourceState
@@ -404,7 +409,7 @@ func (i *AutonomousVmCluster) ToAutonomousVmClusterOutputWithContext(ctx context
 // AutonomousVmClusterArrayInput is an input type that accepts AutonomousVmClusterArray and AutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterArrayInput` via:
 //
-//          AutonomousVmClusterArray{ AutonomousVmClusterArgs{...} }
+//	AutonomousVmClusterArray{ AutonomousVmClusterArgs{...} }
 type AutonomousVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -429,7 +434,7 @@ func (i AutonomousVmClusterArray) ToAutonomousVmClusterArrayOutputWithContext(ct
 // AutonomousVmClusterMapInput is an input type that accepts AutonomousVmClusterMap and AutonomousVmClusterMapOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterMapInput` via:
 //
-//          AutonomousVmClusterMap{ "key": AutonomousVmClusterArgs{...} }
+//	AutonomousVmClusterMap{ "key": AutonomousVmClusterArgs{...} }
 type AutonomousVmClusterMapInput interface {
 	pulumi.Input
 

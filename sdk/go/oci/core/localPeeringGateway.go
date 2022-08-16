@@ -21,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewLocalPeeringGateway(ctx, "testLocalPeeringGateway", &Core.LocalPeeringGatewayArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Local_peering_gateway_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			PeerId:       pulumi.Any(oci_core_local_peering_gateway.Test_local_peering_gateway2.Id),
-// 			RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewLocalPeeringGateway(ctx, "testLocalPeeringGateway", &Core.LocalPeeringGatewayArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Local_peering_gateway_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				PeerId:       pulumi.Any(oci_core_local_peering_gateway.Test_local_peering_gateway2.Id),
+//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // LocalPeeringGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/localPeeringGateway:LocalPeeringGateway test_local_peering_gateway "id"
+//
+//	$ pulumi import oci:Core/localPeeringGateway:LocalPeeringGateway test_local_peering_gateway "id"
+//
 // ```
 type LocalPeeringGateway struct {
 	pulumi.CustomResourceState
@@ -249,7 +254,7 @@ func (i *LocalPeeringGateway) ToLocalPeeringGatewayOutputWithContext(ctx context
 // LocalPeeringGatewayArrayInput is an input type that accepts LocalPeeringGatewayArray and LocalPeeringGatewayArrayOutput values.
 // You can construct a concrete instance of `LocalPeeringGatewayArrayInput` via:
 //
-//          LocalPeeringGatewayArray{ LocalPeeringGatewayArgs{...} }
+//	LocalPeeringGatewayArray{ LocalPeeringGatewayArgs{...} }
 type LocalPeeringGatewayArrayInput interface {
 	pulumi.Input
 
@@ -274,7 +279,7 @@ func (i LocalPeeringGatewayArray) ToLocalPeeringGatewayArrayOutputWithContext(ct
 // LocalPeeringGatewayMapInput is an input type that accepts LocalPeeringGatewayMap and LocalPeeringGatewayMapOutput values.
 // You can construct a concrete instance of `LocalPeeringGatewayMapInput` via:
 //
-//          LocalPeeringGatewayMap{ "key": LocalPeeringGatewayArgs{...} }
+//	LocalPeeringGatewayMap{ "key": LocalPeeringGatewayArgs{...} }
 type LocalPeeringGatewayMapInput interface {
 	pulumi.Input
 

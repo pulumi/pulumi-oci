@@ -21,67 +21,75 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewBuildPipelineStage(ctx, "testBuildPipelineStage", &DevOps.BuildPipelineStageArgs{
-// 			BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
-// 			BuildPipelineStagePredecessorCollection: &devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{
-// 				Items: devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{
-// 					&devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{
-// 						Id: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id),
-// 					},
-// 				},
-// 			},
-// 			BuildPipelineStageType: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_type),
-// 			BuildSourceCollection: &devops.BuildPipelineStageBuildSourceCollectionArgs{
-// 				Items: devops.BuildPipelineStageBuildSourceCollectionItemArray{
-// 					&devops.BuildPipelineStageBuildSourceCollectionItemArgs{
-// 						ConnectionType: pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_connection_type),
-// 						Branch:         pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_branch),
-// 						ConnectionId:   pulumi.Any(oci_devops_connection.Test_connection.Id),
-// 						Name:           pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_name),
-// 						RepositoryId:   pulumi.Any(oci_artifacts_repository.Test_repository.Id),
-// 						RepositoryUrl:  pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_repository_url),
-// 					},
-// 				},
-// 			},
-// 			BuildSpecFile: pulumi.Any(_var.Build_pipeline_stage_build_spec_file),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DeliverArtifactCollection: &devops.BuildPipelineStageDeliverArtifactCollectionArgs{
-// 				Items: devops.BuildPipelineStageDeliverArtifactCollectionItemArray{
-// 					&devops.BuildPipelineStageDeliverArtifactCollectionItemArgs{
-// 						ArtifactId:   pulumi.Any(oci_devops_artifact.Test_artifact.Id),
-// 						ArtifactName: pulumi.Any(_var.Build_pipeline_stage_deliver_artifact_collection_items_artifact_name),
-// 					},
-// 				},
-// 			},
-// 			DeployPipelineId: pulumi.Any(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
-// 			Description:      pulumi.Any(_var.Build_pipeline_stage_description),
-// 			DisplayName:      pulumi.Any(_var.Build_pipeline_stage_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Image:                          pulumi.Any(_var.Build_pipeline_stage_image),
-// 			IsPassAllParametersEnabled:     pulumi.Any(_var.Build_pipeline_stage_is_pass_all_parameters_enabled),
-// 			PrimaryBuildSource:             pulumi.Any(_var.Build_pipeline_stage_primary_build_source),
-// 			StageExecutionTimeoutInSeconds: pulumi.Any(_var.Build_pipeline_stage_stage_execution_timeout_in_seconds),
-// 			WaitCriteria: &devops.BuildPipelineStageWaitCriteriaArgs{
-// 				WaitDuration: pulumi.Any(_var.Build_pipeline_stage_wait_criteria_wait_duration),
-// 				WaitType:     pulumi.Any(_var.Build_pipeline_stage_wait_criteria_wait_type),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewBuildPipelineStage(ctx, "testBuildPipelineStage", &DevOps.BuildPipelineStageArgs{
+//				BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
+//				BuildPipelineStagePredecessorCollection: &devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{
+//					Items: devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{
+//						&devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{
+//							Id: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id),
+//						},
+//					},
+//				},
+//				BuildPipelineStageType: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_type),
+//				BuildSourceCollection: &devops.BuildPipelineStageBuildSourceCollectionArgs{
+//					Items: devops.BuildPipelineStageBuildSourceCollectionItemArray{
+//						&devops.BuildPipelineStageBuildSourceCollectionItemArgs{
+//							ConnectionType: pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_connection_type),
+//							Branch:         pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_branch),
+//							ConnectionId:   pulumi.Any(oci_devops_connection.Test_connection.Id),
+//							Name:           pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_name),
+//							RepositoryId:   pulumi.Any(oci_artifacts_repository.Test_repository.Id),
+//							RepositoryUrl:  pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_repository_url),
+//						},
+//					},
+//				},
+//				BuildSpecFile: pulumi.Any(_var.Build_pipeline_stage_build_spec_file),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DeliverArtifactCollection: &devops.BuildPipelineStageDeliverArtifactCollectionArgs{
+//					Items: devops.BuildPipelineStageDeliverArtifactCollectionItemArray{
+//						&devops.BuildPipelineStageDeliverArtifactCollectionItemArgs{
+//							ArtifactId:   pulumi.Any(oci_devops_artifact.Test_artifact.Id),
+//							ArtifactName: pulumi.Any(_var.Build_pipeline_stage_deliver_artifact_collection_items_artifact_name),
+//						},
+//					},
+//				},
+//				DeployPipelineId: pulumi.Any(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
+//				Description:      pulumi.Any(_var.Build_pipeline_stage_description),
+//				DisplayName:      pulumi.Any(_var.Build_pipeline_stage_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Image:                      pulumi.Any(_var.Build_pipeline_stage_image),
+//				IsPassAllParametersEnabled: pulumi.Any(_var.Build_pipeline_stage_is_pass_all_parameters_enabled),
+//				PrimaryBuildSource:         pulumi.Any(_var.Build_pipeline_stage_primary_build_source),
+//				PrivateAccessConfig: &devops.BuildPipelineStagePrivateAccessConfigArgs{
+//					NetworkChannelType: pulumi.Any(_var.Build_pipeline_stage_private_access_config_network_channel_type),
+//					SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					NsgIds:             pulumi.Any(_var.Build_pipeline_stage_private_access_config_nsg_ids),
+//				},
+//				StageExecutionTimeoutInSeconds: pulumi.Any(_var.Build_pipeline_stage_stage_execution_timeout_in_seconds),
+//				WaitCriteria: &devops.BuildPipelineStageWaitCriteriaArgs{
+//					WaitDuration: pulumi.Any(_var.Build_pipeline_stage_wait_criteria_wait_duration),
+//					WaitType:     pulumi.Any(_var.Build_pipeline_stage_wait_criteria_wait_type),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -89,7 +97,9 @@ import (
 // BuildPipelineStages can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
+//
+//	$ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
+//
 // ```
 type BuildPipelineStage struct {
 	pulumi.CustomResourceState
@@ -126,6 +136,8 @@ type BuildPipelineStage struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource pulumi.StringOutput `pulumi:"primaryBuildSource"`
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig BuildPipelineStagePrivateAccessConfigOutput `pulumi:"privateAccessConfig"`
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// (Updatable) Timeout for the build stage execution. Specify value in seconds.
@@ -212,6 +224,8 @@ type buildPipelineStageState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource *string `pulumi:"primaryBuildSource"`
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig *BuildPipelineStagePrivateAccessConfig `pulumi:"privateAccessConfig"`
 	// The OCID of the DevOps project.
 	ProjectId *string `pulumi:"projectId"`
 	// (Updatable) Timeout for the build stage execution. Specify value in seconds.
@@ -261,6 +275,8 @@ type BuildPipelineStageState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource pulumi.StringPtrInput
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig BuildPipelineStagePrivateAccessConfigPtrInput
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringPtrInput
 	// (Updatable) Timeout for the build stage execution. Specify value in seconds.
@@ -310,6 +326,8 @@ type buildPipelineStageArgs struct {
 	IsPassAllParametersEnabled *bool `pulumi:"isPassAllParametersEnabled"`
 	// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource *string `pulumi:"primaryBuildSource"`
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig *BuildPipelineStagePrivateAccessConfig `pulumi:"privateAccessConfig"`
 	// (Updatable) Timeout for the build stage execution. Specify value in seconds.
 	StageExecutionTimeoutInSeconds *int `pulumi:"stageExecutionTimeoutInSeconds"`
 	// (Updatable) Specifies wait criteria for the Wait stage.
@@ -346,6 +364,8 @@ type BuildPipelineStageArgs struct {
 	IsPassAllParametersEnabled pulumi.BoolPtrInput
 	// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource pulumi.StringPtrInput
+	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig BuildPipelineStagePrivateAccessConfigPtrInput
 	// (Updatable) Timeout for the build stage execution. Specify value in seconds.
 	StageExecutionTimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Specifies wait criteria for the Wait stage.
@@ -378,7 +398,7 @@ func (i *BuildPipelineStage) ToBuildPipelineStageOutputWithContext(ctx context.C
 // BuildPipelineStageArrayInput is an input type that accepts BuildPipelineStageArray and BuildPipelineStageArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineStageArrayInput` via:
 //
-//          BuildPipelineStageArray{ BuildPipelineStageArgs{...} }
+//	BuildPipelineStageArray{ BuildPipelineStageArgs{...} }
 type BuildPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -403,7 +423,7 @@ func (i BuildPipelineStageArray) ToBuildPipelineStageArrayOutputWithContext(ctx 
 // BuildPipelineStageMapInput is an input type that accepts BuildPipelineStageMap and BuildPipelineStageMapOutput values.
 // You can construct a concrete instance of `BuildPipelineStageMapInput` via:
 //
-//          BuildPipelineStageMap{ "key": BuildPipelineStageArgs{...} }
+//	BuildPipelineStageMap{ "key": BuildPipelineStageArgs{...} }
 type BuildPipelineStageMapInput interface {
 	pulumi.Input
 

@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
 //
-// This API returns the subscribed service details corresponding to the id provided
+// # This API returns the subscribed service details corresponding to the id provided
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetSubscribedService(ctx, &onesubsription.GetSubscribedServiceArgs{
-// 			SubscribedServiceId: oci_onesubscription_subscribed_service.Test_subscribed_service.Id,
-// 			Fields:              _var.Subscribed_service_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetSubscribedService(ctx, &onesubsription.GetSubscribedServiceArgs{
+//				SubscribedServiceId: oci_onesubscription_subscribed_service.Test_subscribed_service.Id,
+//				Fields:              _var.Subscribed_service_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubscribedService(ctx *pulumi.Context, args *GetSubscribedServiceArgs, opts ...pulumi.InvokeOption) (*GetSubscribedServiceResult, error) {
 	var rv GetSubscribedServiceResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Apm"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Apm"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Apm.GetApmDomains(ctx, &apm.GetApmDomainsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Apm_domain_display_name),
-// 			State:         pulumi.StringRef(_var.Apm_domain_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Apm.GetApmDomains(ctx, &apm.GetApmDomainsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Apm_domain_display_name),
+//				State:         pulumi.StringRef(_var.Apm_domain_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetApmDomains(ctx *pulumi.Context, args *GetApmDomainsArgs, opts ...pulumi.InvokeOption) (*GetApmDomainsResult, error) {
 	var rv GetApmDomainsResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.GetSddc(ctx, &ocvp.GetSddcArgs{
-// 			SddcId: oci_ocvp_sddc.Test_sddc.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.GetSddc(ctx, &ocvp.GetSddcArgs{
+//				SddcId: oci_ocvp_sddc.Test_sddc.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSddc(ctx *pulumi.Context, args *LookupSddcArgs, opts ...pulumi.InvokeOption) (*LookupSddcResult, error) {
 	var rv LookupSddcResult

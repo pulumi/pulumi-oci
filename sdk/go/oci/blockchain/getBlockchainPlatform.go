@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
 //
-// Gets information about a Blockchain Platform identified by the specific id
+// # Gets information about a Blockchain Platform identified by the specific id
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.GetBlockchainPlatform(ctx, &blockchain.GetBlockchainPlatformArgs{
-// 			BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.GetBlockchainPlatform(ctx, &blockchain.GetBlockchainPlatformArgs{
+//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBlockchainPlatform(ctx *pulumi.Context, args *LookupBlockchainPlatformArgs, opts ...pulumi.InvokeOption) (*LookupBlockchainPlatformResult, error) {
 	var rv LookupBlockchainPlatformResult

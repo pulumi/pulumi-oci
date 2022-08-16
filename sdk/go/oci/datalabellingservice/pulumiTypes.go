@@ -20,7 +20,7 @@ type DatasetDatasetFormatDetails struct {
 // DatasetDatasetFormatDetailsInput is an input type that accepts DatasetDatasetFormatDetailsArgs and DatasetDatasetFormatDetailsOutput values.
 // You can construct a concrete instance of `DatasetDatasetFormatDetailsInput` via:
 //
-//          DatasetDatasetFormatDetailsArgs{...}
+//	DatasetDatasetFormatDetailsArgs{...}
 type DatasetDatasetFormatDetailsInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i DatasetDatasetFormatDetailsArgs) ToDatasetDatasetFormatDetailsPtrOutputW
 // DatasetDatasetFormatDetailsPtrInput is an input type that accepts DatasetDatasetFormatDetailsArgs, DatasetDatasetFormatDetailsPtr and DatasetDatasetFormatDetailsPtrOutput values.
 // You can construct a concrete instance of `DatasetDatasetFormatDetailsPtrInput` via:
 //
-//          DatasetDatasetFormatDetailsArgs{...}
+//	        DatasetDatasetFormatDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatasetDatasetFormatDetailsPtrInput interface {
 	pulumi.Input
 
@@ -186,7 +186,7 @@ type DatasetDatasetFormatDetailsTextFileTypeMetadata struct {
 // DatasetDatasetFormatDetailsTextFileTypeMetadataInput is an input type that accepts DatasetDatasetFormatDetailsTextFileTypeMetadataArgs and DatasetDatasetFormatDetailsTextFileTypeMetadataOutput values.
 // You can construct a concrete instance of `DatasetDatasetFormatDetailsTextFileTypeMetadataInput` via:
 //
-//          DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{...}
+//	DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{...}
 type DatasetDatasetFormatDetailsTextFileTypeMetadataInput interface {
 	pulumi.Input
 
@@ -232,11 +232,11 @@ func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFor
 // DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput is an input type that accepts DatasetDatasetFormatDetailsTextFileTypeMetadataArgs, DatasetDatasetFormatDetailsTextFileTypeMetadataPtr and DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput values.
 // You can construct a concrete instance of `DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput` via:
 //
-//          DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{...}
+//	        DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput interface {
 	pulumi.Input
 
@@ -414,7 +414,7 @@ type DatasetDatasetSourceDetails struct {
 // DatasetDatasetSourceDetailsInput is an input type that accepts DatasetDatasetSourceDetailsArgs and DatasetDatasetSourceDetailsOutput values.
 // You can construct a concrete instance of `DatasetDatasetSourceDetailsInput` via:
 //
-//          DatasetDatasetSourceDetailsArgs{...}
+//	DatasetDatasetSourceDetailsArgs{...}
 type DatasetDatasetSourceDetailsInput interface {
 	pulumi.Input
 
@@ -456,11 +456,11 @@ func (i DatasetDatasetSourceDetailsArgs) ToDatasetDatasetSourceDetailsPtrOutputW
 // DatasetDatasetSourceDetailsPtrInput is an input type that accepts DatasetDatasetSourceDetailsArgs, DatasetDatasetSourceDetailsPtr and DatasetDatasetSourceDetailsPtrOutput values.
 // You can construct a concrete instance of `DatasetDatasetSourceDetailsPtrInput` via:
 //
-//          DatasetDatasetSourceDetailsArgs{...}
+//	        DatasetDatasetSourceDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatasetDatasetSourceDetailsPtrInput interface {
 	pulumi.Input
 
@@ -600,7 +600,7 @@ type DatasetInitialRecordGenerationConfiguration struct {
 // DatasetInitialRecordGenerationConfigurationInput is an input type that accepts DatasetInitialRecordGenerationConfigurationArgs and DatasetInitialRecordGenerationConfigurationOutput values.
 // You can construct a concrete instance of `DatasetInitialRecordGenerationConfigurationInput` via:
 //
-//          DatasetInitialRecordGenerationConfigurationArgs{...}
+//	DatasetInitialRecordGenerationConfigurationArgs{...}
 type DatasetInitialRecordGenerationConfigurationInput interface {
 	pulumi.Input
 
@@ -634,11 +634,11 @@ func (i DatasetInitialRecordGenerationConfigurationArgs) ToDatasetInitialRecordG
 // DatasetInitialRecordGenerationConfigurationPtrInput is an input type that accepts DatasetInitialRecordGenerationConfigurationArgs, DatasetInitialRecordGenerationConfigurationPtr and DatasetInitialRecordGenerationConfigurationPtrOutput values.
 // You can construct a concrete instance of `DatasetInitialRecordGenerationConfigurationPtrInput` via:
 //
-//          DatasetInitialRecordGenerationConfigurationArgs{...}
+//	        DatasetInitialRecordGenerationConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatasetInitialRecordGenerationConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -720,7 +720,7 @@ type DatasetLabelSet struct {
 // DatasetLabelSetInput is an input type that accepts DatasetLabelSetArgs and DatasetLabelSetOutput values.
 // You can construct a concrete instance of `DatasetLabelSetInput` via:
 //
-//          DatasetLabelSetArgs{...}
+//	DatasetLabelSetArgs{...}
 type DatasetLabelSetInput interface {
 	pulumi.Input
 
@@ -756,11 +756,11 @@ func (i DatasetLabelSetArgs) ToDatasetLabelSetPtrOutputWithContext(ctx context.C
 // DatasetLabelSetPtrInput is an input type that accepts DatasetLabelSetArgs, DatasetLabelSetPtr and DatasetLabelSetPtrOutput values.
 // You can construct a concrete instance of `DatasetLabelSetPtrInput` via:
 //
-//          DatasetLabelSetArgs{...}
+//	        DatasetLabelSetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatasetLabelSetPtrInput interface {
 	pulumi.Input
 
@@ -857,7 +857,7 @@ type DatasetLabelSetItem struct {
 // DatasetLabelSetItemInput is an input type that accepts DatasetLabelSetItemArgs and DatasetLabelSetItemOutput values.
 // You can construct a concrete instance of `DatasetLabelSetItemInput` via:
 //
-//          DatasetLabelSetItemArgs{...}
+//	DatasetLabelSetItemArgs{...}
 type DatasetLabelSetItemInput interface {
 	pulumi.Input
 
@@ -885,7 +885,7 @@ func (i DatasetLabelSetItemArgs) ToDatasetLabelSetItemOutputWithContext(ctx cont
 // DatasetLabelSetItemArrayInput is an input type that accepts DatasetLabelSetItemArray and DatasetLabelSetItemArrayOutput values.
 // You can construct a concrete instance of `DatasetLabelSetItemArrayInput` via:
 //
-//          DatasetLabelSetItemArray{ DatasetLabelSetItemArgs{...} }
+//	DatasetLabelSetItemArray{ DatasetLabelSetItemArgs{...} }
 type DatasetLabelSetItemArrayInput interface {
 	pulumi.Input
 
@@ -954,7 +954,7 @@ type GetAnnotationFormatItem struct {
 // GetAnnotationFormatItemInput is an input type that accepts GetAnnotationFormatItemArgs and GetAnnotationFormatItemOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatItemInput` via:
 //
-//          GetAnnotationFormatItemArgs{...}
+//	GetAnnotationFormatItemArgs{...}
 type GetAnnotationFormatItemInput interface {
 	pulumi.Input
 
@@ -982,7 +982,7 @@ func (i GetAnnotationFormatItemArgs) ToGetAnnotationFormatItemOutputWithContext(
 // GetAnnotationFormatItemArrayInput is an input type that accepts GetAnnotationFormatItemArray and GetAnnotationFormatItemArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatItemArrayInput` via:
 //
-//          GetAnnotationFormatItemArray{ GetAnnotationFormatItemArgs{...} }
+//	GetAnnotationFormatItemArray{ GetAnnotationFormatItemArgs{...} }
 type GetAnnotationFormatItemArrayInput interface {
 	pulumi.Input
 
@@ -1051,7 +1051,7 @@ type GetAnnotationFormatsAnnotationFormatCollection struct {
 // GetAnnotationFormatsAnnotationFormatCollectionInput is an input type that accepts GetAnnotationFormatsAnnotationFormatCollectionArgs and GetAnnotationFormatsAnnotationFormatCollectionOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsAnnotationFormatCollectionInput` via:
 //
-//          GetAnnotationFormatsAnnotationFormatCollectionArgs{...}
+//	GetAnnotationFormatsAnnotationFormatCollectionArgs{...}
 type GetAnnotationFormatsAnnotationFormatCollectionInput interface {
 	pulumi.Input
 
@@ -1079,7 +1079,7 @@ func (i GetAnnotationFormatsAnnotationFormatCollectionArgs) ToGetAnnotationForma
 // GetAnnotationFormatsAnnotationFormatCollectionArrayInput is an input type that accepts GetAnnotationFormatsAnnotationFormatCollectionArray and GetAnnotationFormatsAnnotationFormatCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsAnnotationFormatCollectionArrayInput` via:
 //
-//          GetAnnotationFormatsAnnotationFormatCollectionArray{ GetAnnotationFormatsAnnotationFormatCollectionArgs{...} }
+//	GetAnnotationFormatsAnnotationFormatCollectionArray{ GetAnnotationFormatsAnnotationFormatCollectionArgs{...} }
 type GetAnnotationFormatsAnnotationFormatCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1150,7 +1150,7 @@ type GetAnnotationFormatsAnnotationFormatCollectionItem struct {
 // GetAnnotationFormatsAnnotationFormatCollectionItemInput is an input type that accepts GetAnnotationFormatsAnnotationFormatCollectionItemArgs and GetAnnotationFormatsAnnotationFormatCollectionItemOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsAnnotationFormatCollectionItemInput` via:
 //
-//          GetAnnotationFormatsAnnotationFormatCollectionItemArgs{...}
+//	GetAnnotationFormatsAnnotationFormatCollectionItemArgs{...}
 type GetAnnotationFormatsAnnotationFormatCollectionItemInput interface {
 	pulumi.Input
 
@@ -1178,7 +1178,7 @@ func (i GetAnnotationFormatsAnnotationFormatCollectionItemArgs) ToGetAnnotationF
 // GetAnnotationFormatsAnnotationFormatCollectionItemArrayInput is an input type that accepts GetAnnotationFormatsAnnotationFormatCollectionItemArray and GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsAnnotationFormatCollectionItemArrayInput` via:
 //
-//          GetAnnotationFormatsAnnotationFormatCollectionItemArray{ GetAnnotationFormatsAnnotationFormatCollectionItemArgs{...} }
+//	GetAnnotationFormatsAnnotationFormatCollectionItemArray{ GetAnnotationFormatsAnnotationFormatCollectionItemArgs{...} }
 type GetAnnotationFormatsAnnotationFormatCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1249,7 +1249,7 @@ type GetAnnotationFormatsFilter struct {
 // GetAnnotationFormatsFilterInput is an input type that accepts GetAnnotationFormatsFilterArgs and GetAnnotationFormatsFilterOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsFilterInput` via:
 //
-//          GetAnnotationFormatsFilterArgs{...}
+//	GetAnnotationFormatsFilterArgs{...}
 type GetAnnotationFormatsFilterInput interface {
 	pulumi.Input
 
@@ -1279,7 +1279,7 @@ func (i GetAnnotationFormatsFilterArgs) ToGetAnnotationFormatsFilterOutputWithCo
 // GetAnnotationFormatsFilterArrayInput is an input type that accepts GetAnnotationFormatsFilterArray and GetAnnotationFormatsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsFilterArrayInput` via:
 //
-//          GetAnnotationFormatsFilterArray{ GetAnnotationFormatsFilterArgs{...} }
+//	GetAnnotationFormatsFilterArray{ GetAnnotationFormatsFilterArgs{...} }
 type GetAnnotationFormatsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1358,7 +1358,7 @@ type GetDatasetDatasetFormatDetail struct {
 // GetDatasetDatasetFormatDetailInput is an input type that accepts GetDatasetDatasetFormatDetailArgs and GetDatasetDatasetFormatDetailOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetFormatDetailInput` via:
 //
-//          GetDatasetDatasetFormatDetailArgs{...}
+//	GetDatasetDatasetFormatDetailArgs{...}
 type GetDatasetDatasetFormatDetailInput interface {
 	pulumi.Input
 
@@ -1388,7 +1388,7 @@ func (i GetDatasetDatasetFormatDetailArgs) ToGetDatasetDatasetFormatDetailOutput
 // GetDatasetDatasetFormatDetailArrayInput is an input type that accepts GetDatasetDatasetFormatDetailArray and GetDatasetDatasetFormatDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetFormatDetailArrayInput` via:
 //
-//          GetDatasetDatasetFormatDetailArray{ GetDatasetDatasetFormatDetailArgs{...} }
+//	GetDatasetDatasetFormatDetailArray{ GetDatasetDatasetFormatDetailArgs{...} }
 type GetDatasetDatasetFormatDetailArrayInput interface {
 	pulumi.Input
 
@@ -1474,7 +1474,7 @@ type GetDatasetDatasetFormatDetailTextFileTypeMetadata struct {
 // GetDatasetDatasetFormatDetailTextFileTypeMetadataInput is an input type that accepts GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs and GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetFormatDetailTextFileTypeMetadataInput` via:
 //
-//          GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{...}
+//	GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{...}
 type GetDatasetDatasetFormatDetailTextFileTypeMetadataInput interface {
 	pulumi.Input
 
@@ -1512,7 +1512,7 @@ func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs) ToGetDatasetDatas
 // GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput is an input type that accepts GetDatasetDatasetFormatDetailTextFileTypeMetadataArray and GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput` via:
 //
-//          GetDatasetDatasetFormatDetailTextFileTypeMetadataArray{ GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{...} }
+//	GetDatasetDatasetFormatDetailTextFileTypeMetadataArray{ GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{...} }
 type GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput interface {
 	pulumi.Input
 
@@ -1612,7 +1612,7 @@ type GetDatasetDatasetSourceDetail struct {
 // GetDatasetDatasetSourceDetailInput is an input type that accepts GetDatasetDatasetSourceDetailArgs and GetDatasetDatasetSourceDetailOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetSourceDetailInput` via:
 //
-//          GetDatasetDatasetSourceDetailArgs{...}
+//	GetDatasetDatasetSourceDetailArgs{...}
 type GetDatasetDatasetSourceDetailInput interface {
 	pulumi.Input
 
@@ -1646,7 +1646,7 @@ func (i GetDatasetDatasetSourceDetailArgs) ToGetDatasetDatasetSourceDetailOutput
 // GetDatasetDatasetSourceDetailArrayInput is an input type that accepts GetDatasetDatasetSourceDetailArray and GetDatasetDatasetSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetSourceDetailArrayInput` via:
 //
-//          GetDatasetDatasetSourceDetailArray{ GetDatasetDatasetSourceDetailArgs{...} }
+//	GetDatasetDatasetSourceDetailArray{ GetDatasetDatasetSourceDetailArgs{...} }
 type GetDatasetDatasetSourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -1728,7 +1728,7 @@ type GetDatasetInitialRecordGenerationConfiguration struct {
 // GetDatasetInitialRecordGenerationConfigurationInput is an input type that accepts GetDatasetInitialRecordGenerationConfigurationArgs and GetDatasetInitialRecordGenerationConfigurationOutput values.
 // You can construct a concrete instance of `GetDatasetInitialRecordGenerationConfigurationInput` via:
 //
-//          GetDatasetInitialRecordGenerationConfigurationArgs{...}
+//	GetDatasetInitialRecordGenerationConfigurationArgs{...}
 type GetDatasetInitialRecordGenerationConfigurationInput interface {
 	pulumi.Input
 
@@ -1754,7 +1754,7 @@ func (i GetDatasetInitialRecordGenerationConfigurationArgs) ToGetDatasetInitialR
 // GetDatasetInitialRecordGenerationConfigurationArrayInput is an input type that accepts GetDatasetInitialRecordGenerationConfigurationArray and GetDatasetInitialRecordGenerationConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatasetInitialRecordGenerationConfigurationArrayInput` via:
 //
-//          GetDatasetInitialRecordGenerationConfigurationArray{ GetDatasetInitialRecordGenerationConfigurationArgs{...} }
+//	GetDatasetInitialRecordGenerationConfigurationArray{ GetDatasetInitialRecordGenerationConfigurationArgs{...} }
 type GetDatasetInitialRecordGenerationConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -1818,7 +1818,7 @@ type GetDatasetLabelSet struct {
 // GetDatasetLabelSetInput is an input type that accepts GetDatasetLabelSetArgs and GetDatasetLabelSetOutput values.
 // You can construct a concrete instance of `GetDatasetLabelSetInput` via:
 //
-//          GetDatasetLabelSetArgs{...}
+//	GetDatasetLabelSetArgs{...}
 type GetDatasetLabelSetInput interface {
 	pulumi.Input
 
@@ -1846,7 +1846,7 @@ func (i GetDatasetLabelSetArgs) ToGetDatasetLabelSetOutputWithContext(ctx contex
 // GetDatasetLabelSetArrayInput is an input type that accepts GetDatasetLabelSetArray and GetDatasetLabelSetArrayOutput values.
 // You can construct a concrete instance of `GetDatasetLabelSetArrayInput` via:
 //
-//          GetDatasetLabelSetArray{ GetDatasetLabelSetArgs{...} }
+//	GetDatasetLabelSetArray{ GetDatasetLabelSetArgs{...} }
 type GetDatasetLabelSetArrayInput interface {
 	pulumi.Input
 
@@ -1915,7 +1915,7 @@ type GetDatasetLabelSetItem struct {
 // GetDatasetLabelSetItemInput is an input type that accepts GetDatasetLabelSetItemArgs and GetDatasetLabelSetItemOutput values.
 // You can construct a concrete instance of `GetDatasetLabelSetItemInput` via:
 //
-//          GetDatasetLabelSetItemArgs{...}
+//	GetDatasetLabelSetItemArgs{...}
 type GetDatasetLabelSetItemInput interface {
 	pulumi.Input
 
@@ -1943,7 +1943,7 @@ func (i GetDatasetLabelSetItemArgs) ToGetDatasetLabelSetItemOutputWithContext(ct
 // GetDatasetLabelSetItemArrayInput is an input type that accepts GetDatasetLabelSetItemArray and GetDatasetLabelSetItemArrayOutput values.
 // You can construct a concrete instance of `GetDatasetLabelSetItemArrayInput` via:
 //
-//          GetDatasetLabelSetItemArray{ GetDatasetLabelSetItemArgs{...} }
+//	GetDatasetLabelSetItemArray{ GetDatasetLabelSetItemArgs{...} }
 type GetDatasetLabelSetItemArrayInput interface {
 	pulumi.Input
 
@@ -2012,7 +2012,7 @@ type GetDatasetsDatasetCollection struct {
 // GetDatasetsDatasetCollectionInput is an input type that accepts GetDatasetsDatasetCollectionArgs and GetDatasetsDatasetCollectionOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionInput` via:
 //
-//          GetDatasetsDatasetCollectionArgs{...}
+//	GetDatasetsDatasetCollectionArgs{...}
 type GetDatasetsDatasetCollectionInput interface {
 	pulumi.Input
 
@@ -2040,7 +2040,7 @@ func (i GetDatasetsDatasetCollectionArgs) ToGetDatasetsDatasetCollectionOutputWi
 // GetDatasetsDatasetCollectionArrayInput is an input type that accepts GetDatasetsDatasetCollectionArray and GetDatasetsDatasetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionArray{ GetDatasetsDatasetCollectionArgs{...} }
+//	GetDatasetsDatasetCollectionArray{ GetDatasetsDatasetCollectionArgs{...} }
 type GetDatasetsDatasetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2139,7 +2139,7 @@ type GetDatasetsDatasetCollectionItem struct {
 // GetDatasetsDatasetCollectionItemInput is an input type that accepts GetDatasetsDatasetCollectionItemArgs and GetDatasetsDatasetCollectionItemOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInput` via:
 //
-//          GetDatasetsDatasetCollectionItemArgs{...}
+//	GetDatasetsDatasetCollectionItemArgs{...}
 type GetDatasetsDatasetCollectionItemInput interface {
 	pulumi.Input
 
@@ -2197,7 +2197,7 @@ func (i GetDatasetsDatasetCollectionItemArgs) ToGetDatasetsDatasetCollectionItem
 // GetDatasetsDatasetCollectionItemArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemArray and GetDatasetsDatasetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemArray{ GetDatasetsDatasetCollectionItemArgs{...} }
+//	GetDatasetsDatasetCollectionItemArray{ GetDatasetsDatasetCollectionItemArgs{...} }
 type GetDatasetsDatasetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2351,7 +2351,7 @@ type GetDatasetsDatasetCollectionItemDatasetFormatDetail struct {
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs and GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailInput` via:
 //
-//          GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs{...}
+//	GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs{...}
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailInput interface {
 	pulumi.Input
 
@@ -2381,7 +2381,7 @@ func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs) ToGetDatasetsDa
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailArray and GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemDatasetFormatDetailArray{ GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs{...} }
+//	GetDatasetsDatasetCollectionItemDatasetFormatDetailArray{ GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs{...} }
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput interface {
 	pulumi.Input
 
@@ -2467,7 +2467,7 @@ type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata str
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs and GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput` via:
 //
-//          GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{...}
+//	GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{...}
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput interface {
 	pulumi.Input
 
@@ -2505,7 +2505,7 @@ func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataA
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray and GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray{ GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{...} }
+//	GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray{ GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{...} }
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput interface {
 	pulumi.Input
 
@@ -2617,7 +2617,7 @@ type GetDatasetsDatasetCollectionItemDatasetSourceDetail struct {
 // GetDatasetsDatasetCollectionItemDatasetSourceDetailInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs and GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetSourceDetailInput` via:
 //
-//          GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs{...}
+//	GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs{...}
 type GetDatasetsDatasetCollectionItemDatasetSourceDetailInput interface {
 	pulumi.Input
 
@@ -2651,7 +2651,7 @@ func (i GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs) ToGetDatasetsDa
 // GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetSourceDetailArray and GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemDatasetSourceDetailArray{ GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs{...} }
+//	GetDatasetsDatasetCollectionItemDatasetSourceDetailArray{ GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs{...} }
 type GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2733,7 +2733,7 @@ type GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration struct
 // GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs and GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationInput` via:
 //
-//          GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs{...}
+//	GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs{...}
 type GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationInput interface {
 	pulumi.Input
 
@@ -2759,7 +2759,7 @@ func (i GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs
 // GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArray and GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArray{ GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs{...} }
+//	GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArray{ GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs{...} }
 type GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -2823,7 +2823,7 @@ type GetDatasetsDatasetCollectionItemLabelSet struct {
 // GetDatasetsDatasetCollectionItemLabelSetInput is an input type that accepts GetDatasetsDatasetCollectionItemLabelSetArgs and GetDatasetsDatasetCollectionItemLabelSetOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemLabelSetInput` via:
 //
-//          GetDatasetsDatasetCollectionItemLabelSetArgs{...}
+//	GetDatasetsDatasetCollectionItemLabelSetArgs{...}
 type GetDatasetsDatasetCollectionItemLabelSetInput interface {
 	pulumi.Input
 
@@ -2851,7 +2851,7 @@ func (i GetDatasetsDatasetCollectionItemLabelSetArgs) ToGetDatasetsDatasetCollec
 // GetDatasetsDatasetCollectionItemLabelSetArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemLabelSetArray and GetDatasetsDatasetCollectionItemLabelSetArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemLabelSetArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemLabelSetArray{ GetDatasetsDatasetCollectionItemLabelSetArgs{...} }
+//	GetDatasetsDatasetCollectionItemLabelSetArray{ GetDatasetsDatasetCollectionItemLabelSetArgs{...} }
 type GetDatasetsDatasetCollectionItemLabelSetArrayInput interface {
 	pulumi.Input
 
@@ -2922,7 +2922,7 @@ type GetDatasetsDatasetCollectionItemLabelSetItem struct {
 // GetDatasetsDatasetCollectionItemLabelSetItemInput is an input type that accepts GetDatasetsDatasetCollectionItemLabelSetItemArgs and GetDatasetsDatasetCollectionItemLabelSetItemOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemLabelSetItemInput` via:
 //
-//          GetDatasetsDatasetCollectionItemLabelSetItemArgs{...}
+//	GetDatasetsDatasetCollectionItemLabelSetItemArgs{...}
 type GetDatasetsDatasetCollectionItemLabelSetItemInput interface {
 	pulumi.Input
 
@@ -2950,7 +2950,7 @@ func (i GetDatasetsDatasetCollectionItemLabelSetItemArgs) ToGetDatasetsDatasetCo
 // GetDatasetsDatasetCollectionItemLabelSetItemArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemLabelSetItemArray and GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemLabelSetItemArrayInput` via:
 //
-//          GetDatasetsDatasetCollectionItemLabelSetItemArray{ GetDatasetsDatasetCollectionItemLabelSetItemArgs{...} }
+//	GetDatasetsDatasetCollectionItemLabelSetItemArray{ GetDatasetsDatasetCollectionItemLabelSetItemArgs{...} }
 type GetDatasetsDatasetCollectionItemLabelSetItemArrayInput interface {
 	pulumi.Input
 
@@ -3021,7 +3021,7 @@ type GetDatasetsFilter struct {
 // GetDatasetsFilterInput is an input type that accepts GetDatasetsFilterArgs and GetDatasetsFilterOutput values.
 // You can construct a concrete instance of `GetDatasetsFilterInput` via:
 //
-//          GetDatasetsFilterArgs{...}
+//	GetDatasetsFilterArgs{...}
 type GetDatasetsFilterInput interface {
 	pulumi.Input
 
@@ -3051,7 +3051,7 @@ func (i GetDatasetsFilterArgs) ToGetDatasetsFilterOutputWithContext(ctx context.
 // GetDatasetsFilterArrayInput is an input type that accepts GetDatasetsFilterArray and GetDatasetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsFilterArrayInput` via:
 //
-//          GetDatasetsFilterArray{ GetDatasetsFilterArgs{...} }
+//	GetDatasetsFilterArray{ GetDatasetsFilterArgs{...} }
 type GetDatasetsFilterArrayInput interface {
 	pulumi.Input
 

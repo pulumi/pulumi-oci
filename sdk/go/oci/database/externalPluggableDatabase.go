@@ -22,28 +22,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalPluggableDatabase(ctx, "testExternalPluggableDatabase", &Database.ExternalPluggableDatabaseArgs{
-// 			CompartmentId:               pulumi.Any(_var.Compartment_id),
-// 			DisplayName:                 pulumi.Any(_var.External_pluggable_database_display_name),
-// 			ExternalContainerDatabaseId: pulumi.Any(oci_database_external_container_database.Test_external_container_database.Id),
-// 			DefinedTags:                 pulumi.Any(_var.External_pluggable_database_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			SourceId: pulumi.Any(oci_database_source.Test_source.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalPluggableDatabase(ctx, "testExternalPluggableDatabase", &Database.ExternalPluggableDatabaseArgs{
+//				CompartmentId:               pulumi.Any(_var.Compartment_id),
+//				DisplayName:                 pulumi.Any(_var.External_pluggable_database_display_name),
+//				ExternalContainerDatabaseId: pulumi.Any(oci_database_external_container_database.Test_external_container_database.Id),
+//				DefinedTags:                 pulumi.Any(_var.External_pluggable_database_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				SourceId: pulumi.Any(oci_database_source.Test_source.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // ExternalPluggableDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
+//
+//	$ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
+//
 // ```
 type ExternalPluggableDatabase struct {
 	pulumi.CustomResourceState
@@ -288,7 +293,7 @@ func (i *ExternalPluggableDatabase) ToExternalPluggableDatabaseOutputWithContext
 // ExternalPluggableDatabaseArrayInput is an input type that accepts ExternalPluggableDatabaseArray and ExternalPluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseArrayInput` via:
 //
-//          ExternalPluggableDatabaseArray{ ExternalPluggableDatabaseArgs{...} }
+//	ExternalPluggableDatabaseArray{ ExternalPluggableDatabaseArgs{...} }
 type ExternalPluggableDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -313,7 +318,7 @@ func (i ExternalPluggableDatabaseArray) ToExternalPluggableDatabaseArrayOutputWi
 // ExternalPluggableDatabaseMapInput is an input type that accepts ExternalPluggableDatabaseMap and ExternalPluggableDatabaseMapOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseMapInput` via:
 //
-//          ExternalPluggableDatabaseMap{ "key": ExternalPluggableDatabaseArgs{...} }
+//	ExternalPluggableDatabaseMap{ "key": ExternalPluggableDatabaseArgs{...} }
 type ExternalPluggableDatabaseMapInput interface {
 	pulumi.Input
 

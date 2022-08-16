@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.NewBlockchainPlatform(ctx, "testBlockchainPlatform", &Blockchain.BlockchainPlatformArgs{
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			ComputeShape:      pulumi.Any(_var.Blockchain_platform_compute_shape),
-// 			DisplayName:       pulumi.Any(_var.Blockchain_platform_display_name),
-// 			IdcsAccessToken:   pulumi.Any(_var.Blockchain_platform_idcs_access_token),
-// 			PlatformRole:      pulumi.Any(_var.Blockchain_platform_platform_role),
-// 			CaCertArchiveText: pulumi.Any(_var.Blockchain_platform_ca_cert_archive_text),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description:     pulumi.Any(_var.Blockchain_platform_description),
-// 			FederatedUserId: pulumi.Any(oci_identity_user.Test_user.Id),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsByol:          pulumi.Any(_var.Blockchain_platform_is_byol),
-// 			PlatformVersion: pulumi.Any(_var.Blockchain_platform_platform_version),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.NewBlockchainPlatform(ctx, "testBlockchainPlatform", &Blockchain.BlockchainPlatformArgs{
+//				CompartmentId:     pulumi.Any(_var.Compartment_id),
+//				ComputeShape:      pulumi.Any(_var.Blockchain_platform_compute_shape),
+//				DisplayName:       pulumi.Any(_var.Blockchain_platform_display_name),
+//				IdcsAccessToken:   pulumi.Any(_var.Blockchain_platform_idcs_access_token),
+//				PlatformRole:      pulumi.Any(_var.Blockchain_platform_platform_role),
+//				CaCertArchiveText: pulumi.Any(_var.Blockchain_platform_ca_cert_archive_text),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description:     pulumi.Any(_var.Blockchain_platform_description),
+//				FederatedUserId: pulumi.Any(oci_identity_user.Test_user.Id),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsByol:          pulumi.Any(_var.Blockchain_platform_is_byol),
+//				PlatformVersion: pulumi.Any(_var.Blockchain_platform_platform_version),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // BlockchainPlatforms can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
+//
+//	$ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
+//
 // ```
 type BlockchainPlatform struct {
 	pulumi.CustomResourceState
@@ -377,7 +382,7 @@ func (i *BlockchainPlatform) ToBlockchainPlatformOutputWithContext(ctx context.C
 // BlockchainPlatformArrayInput is an input type that accepts BlockchainPlatformArray and BlockchainPlatformArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformArrayInput` via:
 //
-//          BlockchainPlatformArray{ BlockchainPlatformArgs{...} }
+//	BlockchainPlatformArray{ BlockchainPlatformArgs{...} }
 type BlockchainPlatformArrayInput interface {
 	pulumi.Input
 
@@ -402,7 +407,7 @@ func (i BlockchainPlatformArray) ToBlockchainPlatformArrayOutputWithContext(ctx 
 // BlockchainPlatformMapInput is an input type that accepts BlockchainPlatformMap and BlockchainPlatformMapOutput values.
 // You can construct a concrete instance of `BlockchainPlatformMapInput` via:
 //
-//          BlockchainPlatformMap{ "key": BlockchainPlatformArgs{...} }
+//	BlockchainPlatformMap{ "key": BlockchainPlatformArgs{...} }
 type BlockchainPlatformMapInput interface {
 	pulumi.Input
 

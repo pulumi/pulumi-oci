@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDatabasePdbConversionHistoryEntry(ctx, &database.GetDatabasePdbConversionHistoryEntryArgs{
-// 			DatabaseId:                  oci_database_database.Test_database.Id,
-// 			PdbConversionHistoryEntryId: oci_database_pdb_conversion_history_entry.Test_pdb_conversion_history_entry.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDatabasePdbConversionHistoryEntry(ctx, &database.GetDatabasePdbConversionHistoryEntryArgs{
+//				DatabaseId:                  oci_database_database.Test_database.Id,
+//				PdbConversionHistoryEntryId: oci_database_pdb_conversion_history_entry.Test_pdb_conversion_history_entry.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabasePdbConversionHistoryEntry(ctx *pulumi.Context, args *GetDatabasePdbConversionHistoryEntryArgs, opts ...pulumi.InvokeOption) (*GetDatabasePdbConversionHistoryEntryResult, error) {
 	var rv GetDatabasePdbConversionHistoryEntryResult

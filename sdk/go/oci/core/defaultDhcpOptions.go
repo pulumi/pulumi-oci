@@ -134,7 +134,7 @@ func (i *DefaultDhcpOptions) ToDefaultDhcpOptionsOutputWithContext(ctx context.C
 // DefaultDhcpOptionsArrayInput is an input type that accepts DefaultDhcpOptionsArray and DefaultDhcpOptionsArrayOutput values.
 // You can construct a concrete instance of `DefaultDhcpOptionsArrayInput` via:
 //
-//          DefaultDhcpOptionsArray{ DefaultDhcpOptionsArgs{...} }
+//	DefaultDhcpOptionsArray{ DefaultDhcpOptionsArgs{...} }
 type DefaultDhcpOptionsArrayInput interface {
 	pulumi.Input
 
@@ -159,7 +159,7 @@ func (i DefaultDhcpOptionsArray) ToDefaultDhcpOptionsArrayOutputWithContext(ctx 
 // DefaultDhcpOptionsMapInput is an input type that accepts DefaultDhcpOptionsMap and DefaultDhcpOptionsMapOutput values.
 // You can construct a concrete instance of `DefaultDhcpOptionsMapInput` via:
 //
-//          DefaultDhcpOptionsMap{ "key": DefaultDhcpOptionsArgs{...} }
+//	DefaultDhcpOptionsMap{ "key": DefaultDhcpOptionsArgs{...} }
 type DefaultDhcpOptionsMapInput interface {
 	pulumi.Input
 

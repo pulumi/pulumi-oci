@@ -25,7 +25,7 @@ type NetworkFirewallPolicyApplicationList struct {
 // NetworkFirewallPolicyApplicationListInput is an input type that accepts NetworkFirewallPolicyApplicationListArgs and NetworkFirewallPolicyApplicationListOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyApplicationListInput` via:
 //
-//          NetworkFirewallPolicyApplicationListArgs{...}
+//	NetworkFirewallPolicyApplicationListArgs{...}
 type NetworkFirewallPolicyApplicationListInput interface {
 	pulumi.Input
 
@@ -60,7 +60,7 @@ func (i NetworkFirewallPolicyApplicationListArgs) ToNetworkFirewallPolicyApplica
 // NetworkFirewallPolicyApplicationListArrayInput is an input type that accepts NetworkFirewallPolicyApplicationListArray and NetworkFirewallPolicyApplicationListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyApplicationListArrayInput` via:
 //
-//          NetworkFirewallPolicyApplicationListArray{ NetworkFirewallPolicyApplicationListArgs{...} }
+//	NetworkFirewallPolicyApplicationListArray{ NetworkFirewallPolicyApplicationListArgs{...} }
 type NetworkFirewallPolicyApplicationListArrayInput interface {
 	pulumi.Input
 
@@ -172,7 +172,7 @@ type NetworkFirewallPolicyDecryptionProfile struct {
 // NetworkFirewallPolicyDecryptionProfileInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileArgs and NetworkFirewallPolicyDecryptionProfileOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionProfileInput` via:
 //
-//          NetworkFirewallPolicyDecryptionProfileArgs{...}
+//	NetworkFirewallPolicyDecryptionProfileArgs{...}
 type NetworkFirewallPolicyDecryptionProfileInput interface {
 	pulumi.Input
 
@@ -221,7 +221,7 @@ func (i NetworkFirewallPolicyDecryptionProfileArgs) ToNetworkFirewallPolicyDecry
 // NetworkFirewallPolicyDecryptionProfileArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileArray and NetworkFirewallPolicyDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionProfileArrayInput` via:
 //
-//          NetworkFirewallPolicyDecryptionProfileArray{ NetworkFirewallPolicyDecryptionProfileArgs{...} }
+//	NetworkFirewallPolicyDecryptionProfileArray{ NetworkFirewallPolicyDecryptionProfileArgs{...} }
 type NetworkFirewallPolicyDecryptionProfileArrayInput interface {
 	pulumi.Input
 
@@ -353,7 +353,7 @@ type NetworkFirewallPolicyDecryptionRule struct {
 // NetworkFirewallPolicyDecryptionRuleInput is an input type that accepts NetworkFirewallPolicyDecryptionRuleArgs and NetworkFirewallPolicyDecryptionRuleOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionRuleInput` via:
 //
-//          NetworkFirewallPolicyDecryptionRuleArgs{...}
+//	NetworkFirewallPolicyDecryptionRuleArgs{...}
 type NetworkFirewallPolicyDecryptionRuleInput interface {
 	pulumi.Input
 
@@ -393,7 +393,7 @@ func (i NetworkFirewallPolicyDecryptionRuleArgs) ToNetworkFirewallPolicyDecrypti
 // NetworkFirewallPolicyDecryptionRuleArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionRuleArray and NetworkFirewallPolicyDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionRuleArrayInput` via:
 //
-//          NetworkFirewallPolicyDecryptionRuleArray{ NetworkFirewallPolicyDecryptionRuleArgs{...} }
+//	NetworkFirewallPolicyDecryptionRuleArray{ NetworkFirewallPolicyDecryptionRuleArgs{...} }
 type NetworkFirewallPolicyDecryptionRuleArrayInput interface {
 	pulumi.Input
 
@@ -490,7 +490,7 @@ type NetworkFirewallPolicyDecryptionRuleCondition struct {
 // NetworkFirewallPolicyDecryptionRuleConditionInput is an input type that accepts NetworkFirewallPolicyDecryptionRuleConditionArgs and NetworkFirewallPolicyDecryptionRuleConditionOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionRuleConditionInput` via:
 //
-//          NetworkFirewallPolicyDecryptionRuleConditionArgs{...}
+//	NetworkFirewallPolicyDecryptionRuleConditionArgs{...}
 type NetworkFirewallPolicyDecryptionRuleConditionInput interface {
 	pulumi.Input
 
@@ -549,7 +549,7 @@ type NetworkFirewallPolicyIpAddressList struct {
 // NetworkFirewallPolicyIpAddressListInput is an input type that accepts NetworkFirewallPolicyIpAddressListArgs and NetworkFirewallPolicyIpAddressListOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyIpAddressListInput` via:
 //
-//          NetworkFirewallPolicyIpAddressListArgs{...}
+//	NetworkFirewallPolicyIpAddressListArgs{...}
 type NetworkFirewallPolicyIpAddressListInput interface {
 	pulumi.Input
 
@@ -577,7 +577,7 @@ func (i NetworkFirewallPolicyIpAddressListArgs) ToNetworkFirewallPolicyIpAddress
 // NetworkFirewallPolicyIpAddressListArrayInput is an input type that accepts NetworkFirewallPolicyIpAddressListArray and NetworkFirewallPolicyIpAddressListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyIpAddressListArrayInput` via:
 //
-//          NetworkFirewallPolicyIpAddressListArray{ NetworkFirewallPolicyIpAddressListArgs{...} }
+//	NetworkFirewallPolicyIpAddressListArray{ NetworkFirewallPolicyIpAddressListArgs{...} }
 type NetworkFirewallPolicyIpAddressListArrayInput interface {
 	pulumi.Input
 
@@ -656,7 +656,7 @@ type NetworkFirewallPolicyMappedSecret struct {
 // NetworkFirewallPolicyMappedSecretInput is an input type that accepts NetworkFirewallPolicyMappedSecretArgs and NetworkFirewallPolicyMappedSecretOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyMappedSecretInput` via:
 //
-//          NetworkFirewallPolicyMappedSecretArgs{...}
+//	NetworkFirewallPolicyMappedSecretArgs{...}
 type NetworkFirewallPolicyMappedSecretInput interface {
 	pulumi.Input
 
@@ -691,7 +691,7 @@ func (i NetworkFirewallPolicyMappedSecretArgs) ToNetworkFirewallPolicyMappedSecr
 // NetworkFirewallPolicyMappedSecretArrayInput is an input type that accepts NetworkFirewallPolicyMappedSecretArray and NetworkFirewallPolicyMappedSecretArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyMappedSecretArrayInput` via:
 //
-//          NetworkFirewallPolicyMappedSecretArray{ NetworkFirewallPolicyMappedSecretArgs{...} }
+//	NetworkFirewallPolicyMappedSecretArray{ NetworkFirewallPolicyMappedSecretArgs{...} }
 type NetworkFirewallPolicyMappedSecretArrayInput interface {
 	pulumi.Input
 
@@ -788,7 +788,7 @@ type NetworkFirewallPolicySecurityRule struct {
 // NetworkFirewallPolicySecurityRuleInput is an input type that accepts NetworkFirewallPolicySecurityRuleArgs and NetworkFirewallPolicySecurityRuleOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicySecurityRuleInput` via:
 //
-//          NetworkFirewallPolicySecurityRuleArgs{...}
+//	NetworkFirewallPolicySecurityRuleArgs{...}
 type NetworkFirewallPolicySecurityRuleInput interface {
 	pulumi.Input
 
@@ -828,7 +828,7 @@ func (i NetworkFirewallPolicySecurityRuleArgs) ToNetworkFirewallPolicySecurityRu
 // NetworkFirewallPolicySecurityRuleArrayInput is an input type that accepts NetworkFirewallPolicySecurityRuleArray and NetworkFirewallPolicySecurityRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicySecurityRuleArrayInput` via:
 //
-//          NetworkFirewallPolicySecurityRuleArray{ NetworkFirewallPolicySecurityRuleArgs{...} }
+//	NetworkFirewallPolicySecurityRuleArray{ NetworkFirewallPolicySecurityRuleArgs{...} }
 type NetworkFirewallPolicySecurityRuleArrayInput interface {
 	pulumi.Input
 
@@ -926,7 +926,7 @@ type NetworkFirewallPolicySecurityRuleCondition struct {
 // NetworkFirewallPolicySecurityRuleConditionInput is an input type that accepts NetworkFirewallPolicySecurityRuleConditionArgs and NetworkFirewallPolicySecurityRuleConditionOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicySecurityRuleConditionInput` via:
 //
-//          NetworkFirewallPolicySecurityRuleConditionArgs{...}
+//	NetworkFirewallPolicySecurityRuleConditionArgs{...}
 type NetworkFirewallPolicySecurityRuleConditionInput interface {
 	pulumi.Input
 
@@ -1003,7 +1003,7 @@ type NetworkFirewallPolicyUrlList struct {
 // NetworkFirewallPolicyUrlListInput is an input type that accepts NetworkFirewallPolicyUrlListArgs and NetworkFirewallPolicyUrlListOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyUrlListInput` via:
 //
-//          NetworkFirewallPolicyUrlListArgs{...}
+//	NetworkFirewallPolicyUrlListArgs{...}
 type NetworkFirewallPolicyUrlListInput interface {
 	pulumi.Input
 
@@ -1035,7 +1035,7 @@ func (i NetworkFirewallPolicyUrlListArgs) ToNetworkFirewallPolicyUrlListOutputWi
 // NetworkFirewallPolicyUrlListArrayInput is an input type that accepts NetworkFirewallPolicyUrlListArray and NetworkFirewallPolicyUrlListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyUrlListArrayInput` via:
 //
-//          NetworkFirewallPolicyUrlListArray{ NetworkFirewallPolicyUrlListArgs{...} }
+//	NetworkFirewallPolicyUrlListArray{ NetworkFirewallPolicyUrlListArgs{...} }
 type NetworkFirewallPolicyUrlListArrayInput interface {
 	pulumi.Input
 
@@ -1116,7 +1116,7 @@ type GetNetworkFirewallPoliciesFilter struct {
 // GetNetworkFirewallPoliciesFilterInput is an input type that accepts GetNetworkFirewallPoliciesFilterArgs and GetNetworkFirewallPoliciesFilterOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesFilterInput` via:
 //
-//          GetNetworkFirewallPoliciesFilterArgs{...}
+//	GetNetworkFirewallPoliciesFilterArgs{...}
 type GetNetworkFirewallPoliciesFilterInput interface {
 	pulumi.Input
 
@@ -1146,7 +1146,7 @@ func (i GetNetworkFirewallPoliciesFilterArgs) ToGetNetworkFirewallPoliciesFilter
 // GetNetworkFirewallPoliciesFilterArrayInput is an input type that accepts GetNetworkFirewallPoliciesFilterArray and GetNetworkFirewallPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesFilterArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesFilterArray{ GetNetworkFirewallPoliciesFilterArgs{...} }
+//	GetNetworkFirewallPoliciesFilterArray{ GetNetworkFirewallPoliciesFilterArgs{...} }
 type GetNetworkFirewallPoliciesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1222,7 +1222,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection struct {
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionInput interface {
 	pulumi.Input
 
@@ -1249,7 +1249,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs) To
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1353,7 +1353,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem struct
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -1415,7 +1415,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1608,7 +1608,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplica
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListInput interface {
 	pulumi.Input
 
@@ -1643,7 +1643,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayInput interface {
 	pulumi.Input
 
@@ -1767,7 +1767,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecrypt
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileInput interface {
 	pulumi.Input
 
@@ -1816,7 +1816,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayInput interface {
 	pulumi.Input
 
@@ -1970,7 +1970,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecrypt
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleInput interface {
 	pulumi.Input
 
@@ -2010,7 +2010,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayInput interface {
 	pulumi.Input
 
@@ -2115,7 +2115,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecrypt
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionInput interface {
 	pulumi.Input
 
@@ -2145,7 +2145,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayInput interface {
 	pulumi.Input
 
@@ -2223,7 +2223,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddre
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListInput interface {
 	pulumi.Input
 
@@ -2251,7 +2251,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAd
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayInput interface {
 	pulumi.Input
 
@@ -2334,7 +2334,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedS
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretInput interface {
 	pulumi.Input
 
@@ -2369,7 +2369,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapp
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayInput interface {
 	pulumi.Input
 
@@ -2474,7 +2474,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurit
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleInput interface {
 	pulumi.Input
 
@@ -2514,7 +2514,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayInput interface {
 	pulumi.Input
 
@@ -2618,7 +2618,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurit
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionInput interface {
 	pulumi.Input
 
@@ -2652,7 +2652,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayInput interface {
 	pulumi.Input
 
@@ -2748,7 +2748,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs{...}
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs{...}
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListInput interface {
 	pulumi.Input
 
@@ -2780,7 +2780,7 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayInput` via:
 //
-//          GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs{...} }
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs{...} }
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayInput interface {
 	pulumi.Input
 
@@ -2872,7 +2872,7 @@ type GetNetworkFirewallPolicyApplicationList struct {
 // GetNetworkFirewallPolicyApplicationListInput is an input type that accepts GetNetworkFirewallPolicyApplicationListArgs and GetNetworkFirewallPolicyApplicationListOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyApplicationListInput` via:
 //
-//          GetNetworkFirewallPolicyApplicationListArgs{...}
+//	GetNetworkFirewallPolicyApplicationListArgs{...}
 type GetNetworkFirewallPolicyApplicationListInput interface {
 	pulumi.Input
 
@@ -2907,7 +2907,7 @@ func (i GetNetworkFirewallPolicyApplicationListArgs) ToGetNetworkFirewallPolicyA
 // GetNetworkFirewallPolicyApplicationListArrayInput is an input type that accepts GetNetworkFirewallPolicyApplicationListArray and GetNetworkFirewallPolicyApplicationListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyApplicationListArrayInput` via:
 //
-//          GetNetworkFirewallPolicyApplicationListArray{ GetNetworkFirewallPolicyApplicationListArgs{...} }
+//	GetNetworkFirewallPolicyApplicationListArray{ GetNetworkFirewallPolicyApplicationListArgs{...} }
 type GetNetworkFirewallPolicyApplicationListArrayInput interface {
 	pulumi.Input
 
@@ -3019,7 +3019,7 @@ type GetNetworkFirewallPolicyDecryptionProfile struct {
 // GetNetworkFirewallPolicyDecryptionProfileInput is an input type that accepts GetNetworkFirewallPolicyDecryptionProfileArgs and GetNetworkFirewallPolicyDecryptionProfileOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionProfileInput` via:
 //
-//          GetNetworkFirewallPolicyDecryptionProfileArgs{...}
+//	GetNetworkFirewallPolicyDecryptionProfileArgs{...}
 type GetNetworkFirewallPolicyDecryptionProfileInput interface {
 	pulumi.Input
 
@@ -3068,7 +3068,7 @@ func (i GetNetworkFirewallPolicyDecryptionProfileArgs) ToGetNetworkFirewallPolic
 // GetNetworkFirewallPolicyDecryptionProfileArrayInput is an input type that accepts GetNetworkFirewallPolicyDecryptionProfileArray and GetNetworkFirewallPolicyDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionProfileArrayInput` via:
 //
-//          GetNetworkFirewallPolicyDecryptionProfileArray{ GetNetworkFirewallPolicyDecryptionProfileArgs{...} }
+//	GetNetworkFirewallPolicyDecryptionProfileArray{ GetNetworkFirewallPolicyDecryptionProfileArgs{...} }
 type GetNetworkFirewallPolicyDecryptionProfileArrayInput interface {
 	pulumi.Input
 
@@ -3200,7 +3200,7 @@ type GetNetworkFirewallPolicyDecryptionRule struct {
 // GetNetworkFirewallPolicyDecryptionRuleInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRuleArgs and GetNetworkFirewallPolicyDecryptionRuleOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionRuleInput` via:
 //
-//          GetNetworkFirewallPolicyDecryptionRuleArgs{...}
+//	GetNetworkFirewallPolicyDecryptionRuleArgs{...}
 type GetNetworkFirewallPolicyDecryptionRuleInput interface {
 	pulumi.Input
 
@@ -3240,7 +3240,7 @@ func (i GetNetworkFirewallPolicyDecryptionRuleArgs) ToGetNetworkFirewallPolicyDe
 // GetNetworkFirewallPolicyDecryptionRuleArrayInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRuleArray and GetNetworkFirewallPolicyDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionRuleArrayInput` via:
 //
-//          GetNetworkFirewallPolicyDecryptionRuleArray{ GetNetworkFirewallPolicyDecryptionRuleArgs{...} }
+//	GetNetworkFirewallPolicyDecryptionRuleArray{ GetNetworkFirewallPolicyDecryptionRuleArgs{...} }
 type GetNetworkFirewallPolicyDecryptionRuleArrayInput interface {
 	pulumi.Input
 
@@ -3337,7 +3337,7 @@ type GetNetworkFirewallPolicyDecryptionRuleCondition struct {
 // GetNetworkFirewallPolicyDecryptionRuleConditionInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRuleConditionArgs and GetNetworkFirewallPolicyDecryptionRuleConditionOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionRuleConditionInput` via:
 //
-//          GetNetworkFirewallPolicyDecryptionRuleConditionArgs{...}
+//	GetNetworkFirewallPolicyDecryptionRuleConditionArgs{...}
 type GetNetworkFirewallPolicyDecryptionRuleConditionInput interface {
 	pulumi.Input
 
@@ -3367,7 +3367,7 @@ func (i GetNetworkFirewallPolicyDecryptionRuleConditionArgs) ToGetNetworkFirewal
 // GetNetworkFirewallPolicyDecryptionRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRuleConditionArray and GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionRuleConditionArrayInput` via:
 //
-//          GetNetworkFirewallPolicyDecryptionRuleConditionArray{ GetNetworkFirewallPolicyDecryptionRuleConditionArgs{...} }
+//	GetNetworkFirewallPolicyDecryptionRuleConditionArray{ GetNetworkFirewallPolicyDecryptionRuleConditionArgs{...} }
 type GetNetworkFirewallPolicyDecryptionRuleConditionArrayInput interface {
 	pulumi.Input
 
@@ -3441,7 +3441,7 @@ type GetNetworkFirewallPolicyIpAddressList struct {
 // GetNetworkFirewallPolicyIpAddressListInput is an input type that accepts GetNetworkFirewallPolicyIpAddressListArgs and GetNetworkFirewallPolicyIpAddressListOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyIpAddressListInput` via:
 //
-//          GetNetworkFirewallPolicyIpAddressListArgs{...}
+//	GetNetworkFirewallPolicyIpAddressListArgs{...}
 type GetNetworkFirewallPolicyIpAddressListInput interface {
 	pulumi.Input
 
@@ -3469,7 +3469,7 @@ func (i GetNetworkFirewallPolicyIpAddressListArgs) ToGetNetworkFirewallPolicyIpA
 // GetNetworkFirewallPolicyIpAddressListArrayInput is an input type that accepts GetNetworkFirewallPolicyIpAddressListArray and GetNetworkFirewallPolicyIpAddressListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyIpAddressListArrayInput` via:
 //
-//          GetNetworkFirewallPolicyIpAddressListArray{ GetNetworkFirewallPolicyIpAddressListArgs{...} }
+//	GetNetworkFirewallPolicyIpAddressListArray{ GetNetworkFirewallPolicyIpAddressListArgs{...} }
 type GetNetworkFirewallPolicyIpAddressListArrayInput interface {
 	pulumi.Input
 
@@ -3548,7 +3548,7 @@ type GetNetworkFirewallPolicyMappedSecret struct {
 // GetNetworkFirewallPolicyMappedSecretInput is an input type that accepts GetNetworkFirewallPolicyMappedSecretArgs and GetNetworkFirewallPolicyMappedSecretOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyMappedSecretInput` via:
 //
-//          GetNetworkFirewallPolicyMappedSecretArgs{...}
+//	GetNetworkFirewallPolicyMappedSecretArgs{...}
 type GetNetworkFirewallPolicyMappedSecretInput interface {
 	pulumi.Input
 
@@ -3583,7 +3583,7 @@ func (i GetNetworkFirewallPolicyMappedSecretArgs) ToGetNetworkFirewallPolicyMapp
 // GetNetworkFirewallPolicyMappedSecretArrayInput is an input type that accepts GetNetworkFirewallPolicyMappedSecretArray and GetNetworkFirewallPolicyMappedSecretArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyMappedSecretArrayInput` via:
 //
-//          GetNetworkFirewallPolicyMappedSecretArray{ GetNetworkFirewallPolicyMappedSecretArgs{...} }
+//	GetNetworkFirewallPolicyMappedSecretArray{ GetNetworkFirewallPolicyMappedSecretArgs{...} }
 type GetNetworkFirewallPolicyMappedSecretArrayInput interface {
 	pulumi.Input
 
@@ -3680,7 +3680,7 @@ type GetNetworkFirewallPolicySecurityRule struct {
 // GetNetworkFirewallPolicySecurityRuleInput is an input type that accepts GetNetworkFirewallPolicySecurityRuleArgs and GetNetworkFirewallPolicySecurityRuleOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicySecurityRuleInput` via:
 //
-//          GetNetworkFirewallPolicySecurityRuleArgs{...}
+//	GetNetworkFirewallPolicySecurityRuleArgs{...}
 type GetNetworkFirewallPolicySecurityRuleInput interface {
 	pulumi.Input
 
@@ -3720,7 +3720,7 @@ func (i GetNetworkFirewallPolicySecurityRuleArgs) ToGetNetworkFirewallPolicySecu
 // GetNetworkFirewallPolicySecurityRuleArrayInput is an input type that accepts GetNetworkFirewallPolicySecurityRuleArray and GetNetworkFirewallPolicySecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicySecurityRuleArrayInput` via:
 //
-//          GetNetworkFirewallPolicySecurityRuleArray{ GetNetworkFirewallPolicySecurityRuleArgs{...} }
+//	GetNetworkFirewallPolicySecurityRuleArray{ GetNetworkFirewallPolicySecurityRuleArgs{...} }
 type GetNetworkFirewallPolicySecurityRuleArrayInput interface {
 	pulumi.Input
 
@@ -3818,7 +3818,7 @@ type GetNetworkFirewallPolicySecurityRuleCondition struct {
 // GetNetworkFirewallPolicySecurityRuleConditionInput is an input type that accepts GetNetworkFirewallPolicySecurityRuleConditionArgs and GetNetworkFirewallPolicySecurityRuleConditionOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicySecurityRuleConditionInput` via:
 //
-//          GetNetworkFirewallPolicySecurityRuleConditionArgs{...}
+//	GetNetworkFirewallPolicySecurityRuleConditionArgs{...}
 type GetNetworkFirewallPolicySecurityRuleConditionInput interface {
 	pulumi.Input
 
@@ -3852,7 +3852,7 @@ func (i GetNetworkFirewallPolicySecurityRuleConditionArgs) ToGetNetworkFirewallP
 // GetNetworkFirewallPolicySecurityRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPolicySecurityRuleConditionArray and GetNetworkFirewallPolicySecurityRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicySecurityRuleConditionArrayInput` via:
 //
-//          GetNetworkFirewallPolicySecurityRuleConditionArray{ GetNetworkFirewallPolicySecurityRuleConditionArgs{...} }
+//	GetNetworkFirewallPolicySecurityRuleConditionArray{ GetNetworkFirewallPolicySecurityRuleConditionArgs{...} }
 type GetNetworkFirewallPolicySecurityRuleConditionArrayInput interface {
 	pulumi.Input
 
@@ -3940,7 +3940,7 @@ type GetNetworkFirewallPolicyUrlList struct {
 // GetNetworkFirewallPolicyUrlListInput is an input type that accepts GetNetworkFirewallPolicyUrlListArgs and GetNetworkFirewallPolicyUrlListOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyUrlListInput` via:
 //
-//          GetNetworkFirewallPolicyUrlListArgs{...}
+//	GetNetworkFirewallPolicyUrlListArgs{...}
 type GetNetworkFirewallPolicyUrlListInput interface {
 	pulumi.Input
 
@@ -3972,7 +3972,7 @@ func (i GetNetworkFirewallPolicyUrlListArgs) ToGetNetworkFirewallPolicyUrlListOu
 // GetNetworkFirewallPolicyUrlListArrayInput is an input type that accepts GetNetworkFirewallPolicyUrlListArray and GetNetworkFirewallPolicyUrlListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyUrlListArrayInput` via:
 //
-//          GetNetworkFirewallPolicyUrlListArray{ GetNetworkFirewallPolicyUrlListArgs{...} }
+//	GetNetworkFirewallPolicyUrlListArray{ GetNetworkFirewallPolicyUrlListArgs{...} }
 type GetNetworkFirewallPolicyUrlListArrayInput interface {
 	pulumi.Input
 
@@ -4052,7 +4052,7 @@ type GetNetworkFirewallsFilter struct {
 // GetNetworkFirewallsFilterInput is an input type that accepts GetNetworkFirewallsFilterArgs and GetNetworkFirewallsFilterOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsFilterInput` via:
 //
-//          GetNetworkFirewallsFilterArgs{...}
+//	GetNetworkFirewallsFilterArgs{...}
 type GetNetworkFirewallsFilterInput interface {
 	pulumi.Input
 
@@ -4081,7 +4081,7 @@ func (i GetNetworkFirewallsFilterArgs) ToGetNetworkFirewallsFilterOutputWithCont
 // GetNetworkFirewallsFilterArrayInput is an input type that accepts GetNetworkFirewallsFilterArray and GetNetworkFirewallsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsFilterArrayInput` via:
 //
-//          GetNetworkFirewallsFilterArray{ GetNetworkFirewallsFilterArgs{...} }
+//	GetNetworkFirewallsFilterArray{ GetNetworkFirewallsFilterArgs{...} }
 type GetNetworkFirewallsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4156,7 +4156,7 @@ type GetNetworkFirewallsNetworkFirewallCollection struct {
 // GetNetworkFirewallsNetworkFirewallCollectionInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionArgs and GetNetworkFirewallsNetworkFirewallCollectionOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionInput` via:
 //
-//          GetNetworkFirewallsNetworkFirewallCollectionArgs{...}
+//	GetNetworkFirewallsNetworkFirewallCollectionArgs{...}
 type GetNetworkFirewallsNetworkFirewallCollectionInput interface {
 	pulumi.Input
 
@@ -4183,7 +4183,7 @@ func (i GetNetworkFirewallsNetworkFirewallCollectionArgs) ToGetNetworkFirewallsN
 // GetNetworkFirewallsNetworkFirewallCollectionArrayInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionArray and GetNetworkFirewallsNetworkFirewallCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionArrayInput` via:
 //
-//          GetNetworkFirewallsNetworkFirewallCollectionArray{ GetNetworkFirewallsNetworkFirewallCollectionArgs{...} }
+//	GetNetworkFirewallsNetworkFirewallCollectionArray{ GetNetworkFirewallsNetworkFirewallCollectionArgs{...} }
 type GetNetworkFirewallsNetworkFirewallCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4283,7 +4283,7 @@ type GetNetworkFirewallsNetworkFirewallCollectionItem struct {
 // GetNetworkFirewallsNetworkFirewallCollectionItemInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionItemArgs and GetNetworkFirewallsNetworkFirewallCollectionItemOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionItemInput` via:
 //
-//          GetNetworkFirewallsNetworkFirewallCollectionItemArgs{...}
+//	GetNetworkFirewallsNetworkFirewallCollectionItemArgs{...}
 type GetNetworkFirewallsNetworkFirewallCollectionItemInput interface {
 	pulumi.Input
 
@@ -4341,7 +4341,7 @@ func (i GetNetworkFirewallsNetworkFirewallCollectionItemArgs) ToGetNetworkFirewa
 // GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionItemArray and GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput` via:
 //
-//          GetNetworkFirewallsNetworkFirewallCollectionItemArray{ GetNetworkFirewallsNetworkFirewallCollectionItemArgs{...} }
+//	GetNetworkFirewallsNetworkFirewallCollectionItemArray{ GetNetworkFirewallsNetworkFirewallCollectionItemArgs{...} }
 type GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput interface {
 	pulumi.Input
 

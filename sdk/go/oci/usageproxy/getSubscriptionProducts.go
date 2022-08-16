@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/UsageProxy"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/UsageProxy"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := UsageProxy.GetSubscriptionProducts(ctx, &usageproxy.GetSubscriptionProductsArgs{
-// 			SubscriptionId: oci_ons_subscription.Test_subscription.Id,
-// 			TenancyId:      oci_identity_tenancy.Test_tenancy.Id,
-// 			UsagePeriodKey: _var.Subscription_product_usage_period_key,
-// 			Producttype:    pulumi.StringRef(_var.Subscription_product_producttype),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := UsageProxy.GetSubscriptionProducts(ctx, &usageproxy.GetSubscriptionProductsArgs{
+//				SubscriptionId: oci_ons_subscription.Test_subscription.Id,
+//				TenancyId:      oci_identity_tenancy.Test_tenancy.Id,
+//				UsagePeriodKey: _var.Subscription_product_usage_period_key,
+//				Producttype:    pulumi.StringRef(_var.Subscription_product_producttype),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubscriptionProducts(ctx *pulumi.Context, args *GetSubscriptionProductsArgs, opts ...pulumi.InvokeOption) (*GetSubscriptionProductsResult, error) {
 	var rv GetSubscriptionProductsResult

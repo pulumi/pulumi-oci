@@ -18,10 +18,10 @@ import (
 //   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //   - Both private IP address and subnet OCID: This lets
-//       you get a `privateIP` object based on its private IP
-//       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-//       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
-//       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+//     you get a `privateIP` object based on its private IP
+//     address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+//     [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+//     requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //
 // If you're listing all the private IPs associated with a given subnet
 // or VNIC, the response includes both primary and secondary private IPs.
@@ -35,64 +35,73 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
-// 			SubnetId: pulumi.StringRef(_var.Private_ip_subnet_id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
+//				SubnetId: pulumi.StringRef(_var.Private_ip_subnet_id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
-// 			VnicId: pulumi.StringRef(oci_core_vnic.Test_vnic.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
+//				VnicId: pulumi.StringRef(oci_core_vnic.Test_vnic.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
-// 			IpAddress: pulumi.StringRef(_var.Private_ip_ip_address),
-// 			SubnetId:  pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
-// 			VlanId:    pulumi.StringRef(oci_core_vlan.Test_vlan.Id),
-// 			VnicId:    pulumi.StringRef(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
+//				IpAddress: pulumi.StringRef(_var.Private_ip_ip_address),
+//				SubnetId:  pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
+//				VlanId:    pulumi.StringRef(oci_core_vlan.Test_vlan.Id),
+//				VnicId:    pulumi.StringRef(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPrivateIps(ctx *pulumi.Context, args *GetPrivateIpsArgs, opts ...pulumi.InvokeOption) (*GetPrivateIpsResult, error) {
 	var rv GetPrivateIpsResult

@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewIpv6(ctx, "testIpv6", &Core.Ipv6Args{
-// 			VnicId: pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Ipv6_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IpAddress:      pulumi.Any(_var.Ipv6_ip_address),
-// 			Ipv6subnetCidr: pulumi.Any(_var.Ipv6_ipv6subnet_cidr),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewIpv6(ctx, "testIpv6", &Core.Ipv6Args{
+//				VnicId: pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Ipv6_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IpAddress:      pulumi.Any(_var.Ipv6_ip_address),
+//				Ipv6subnetCidr: pulumi.Any(_var.Ipv6_ipv6subnet_cidr),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // Ipv6 can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
+//
+//	$ pulumi import oci:Core/ipv6:Ipv6 test_ipv6 "id"
+//
 // ```
 type Ipv6 struct {
 	pulumi.CustomResourceState
@@ -217,7 +222,7 @@ func (i *Ipv6) ToIpv6OutputWithContext(ctx context.Context) Ipv6Output {
 // Ipv6ArrayInput is an input type that accepts Ipv6Array and Ipv6ArrayOutput values.
 // You can construct a concrete instance of `Ipv6ArrayInput` via:
 //
-//          Ipv6Array{ Ipv6Args{...} }
+//	Ipv6Array{ Ipv6Args{...} }
 type Ipv6ArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +247,7 @@ func (i Ipv6Array) ToIpv6ArrayOutputWithContext(ctx context.Context) Ipv6ArrayOu
 // Ipv6MapInput is an input type that accepts Ipv6Map and Ipv6MapOutput values.
 // You can construct a concrete instance of `Ipv6MapInput` via:
 //
-//          Ipv6Map{ "key": Ipv6Args{...} }
+//	Ipv6Map{ "key": Ipv6Args{...} }
 type Ipv6MapInput interface {
 	pulumi.Input
 

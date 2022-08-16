@@ -25,29 +25,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewBootVolumeBackup(ctx, "testBootVolumeBackup", &Core.BootVolumeBackupArgs{
-// 			BootVolumeId: pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Boot_volume_backup_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Type: pulumi.Any(_var.Boot_volume_backup_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewBootVolumeBackup(ctx, "testBootVolumeBackup", &Core.BootVolumeBackupArgs{
+//				BootVolumeId: pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Boot_volume_backup_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Type: pulumi.Any(_var.Boot_volume_backup_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // BootVolumeBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
+//
+//	$ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
+//
 // ```
 type BootVolumeBackup struct {
 	pulumi.CustomResourceState
@@ -269,7 +274,7 @@ func (i *BootVolumeBackup) ToBootVolumeBackupOutputWithContext(ctx context.Conte
 // BootVolumeBackupArrayInput is an input type that accepts BootVolumeBackupArray and BootVolumeBackupArrayOutput values.
 // You can construct a concrete instance of `BootVolumeBackupArrayInput` via:
 //
-//          BootVolumeBackupArray{ BootVolumeBackupArgs{...} }
+//	BootVolumeBackupArray{ BootVolumeBackupArgs{...} }
 type BootVolumeBackupArrayInput interface {
 	pulumi.Input
 
@@ -294,7 +299,7 @@ func (i BootVolumeBackupArray) ToBootVolumeBackupArrayOutputWithContext(ctx cont
 // BootVolumeBackupMapInput is an input type that accepts BootVolumeBackupMap and BootVolumeBackupMapOutput values.
 // You can construct a concrete instance of `BootVolumeBackupMapInput` via:
 //
-//          BootVolumeBackupMap{ "key": BootVolumeBackupArgs{...} }
+//	BootVolumeBackupMap{ "key": BootVolumeBackupArgs{...} }
 type BootVolumeBackupMapInput interface {
 	pulumi.Input
 

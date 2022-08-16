@@ -22,7 +22,7 @@ type PrivateApplicationLogo struct {
 // PrivateApplicationLogoInput is an input type that accepts PrivateApplicationLogoArgs and PrivateApplicationLogoOutput values.
 // You can construct a concrete instance of `PrivateApplicationLogoInput` via:
 //
-//          PrivateApplicationLogoArgs{...}
+//	PrivateApplicationLogoArgs{...}
 type PrivateApplicationLogoInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i PrivateApplicationLogoArgs) ToPrivateApplicationLogoOutputWithContext(ct
 // PrivateApplicationLogoArrayInput is an input type that accepts PrivateApplicationLogoArray and PrivateApplicationLogoArrayOutput values.
 // You can construct a concrete instance of `PrivateApplicationLogoArrayInput` via:
 //
-//          PrivateApplicationLogoArray{ PrivateApplicationLogoArgs{...} }
+//	PrivateApplicationLogoArray{ PrivateApplicationLogoArgs{...} }
 type PrivateApplicationLogoArrayInput interface {
 	pulumi.Input
 
@@ -136,7 +136,7 @@ type PrivateApplicationPackageDetails struct {
 // PrivateApplicationPackageDetailsInput is an input type that accepts PrivateApplicationPackageDetailsArgs and PrivateApplicationPackageDetailsOutput values.
 // You can construct a concrete instance of `PrivateApplicationPackageDetailsInput` via:
 //
-//          PrivateApplicationPackageDetailsArgs{...}
+//	PrivateApplicationPackageDetailsArgs{...}
 type PrivateApplicationPackageDetailsInput interface {
 	pulumi.Input
 
@@ -175,11 +175,11 @@ func (i PrivateApplicationPackageDetailsArgs) ToPrivateApplicationPackageDetails
 // PrivateApplicationPackageDetailsPtrInput is an input type that accepts PrivateApplicationPackageDetailsArgs, PrivateApplicationPackageDetailsPtr and PrivateApplicationPackageDetailsPtrOutput values.
 // You can construct a concrete instance of `PrivateApplicationPackageDetailsPtrInput` via:
 //
-//          PrivateApplicationPackageDetailsArgs{...}
+//	        PrivateApplicationPackageDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type PrivateApplicationPackageDetailsPtrInput interface {
 	pulumi.Input
 
@@ -308,7 +308,7 @@ type GetPrivateApplicationLogo struct {
 // GetPrivateApplicationLogoInput is an input type that accepts GetPrivateApplicationLogoArgs and GetPrivateApplicationLogoOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationLogoInput` via:
 //
-//          GetPrivateApplicationLogoArgs{...}
+//	GetPrivateApplicationLogoArgs{...}
 type GetPrivateApplicationLogoInput interface {
 	pulumi.Input
 
@@ -340,7 +340,7 @@ func (i GetPrivateApplicationLogoArgs) ToGetPrivateApplicationLogoOutputWithCont
 // GetPrivateApplicationLogoArrayInput is an input type that accepts GetPrivateApplicationLogoArray and GetPrivateApplicationLogoArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationLogoArrayInput` via:
 //
-//          GetPrivateApplicationLogoArray{ GetPrivateApplicationLogoArgs{...} }
+//	GetPrivateApplicationLogoArray{ GetPrivateApplicationLogoArgs{...} }
 type GetPrivateApplicationLogoArrayInput interface {
 	pulumi.Input
 
@@ -421,7 +421,7 @@ type GetPrivateApplicationPackageDetail struct {
 // GetPrivateApplicationPackageDetailInput is an input type that accepts GetPrivateApplicationPackageDetailArgs and GetPrivateApplicationPackageDetailOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackageDetailInput` via:
 //
-//          GetPrivateApplicationPackageDetailArgs{...}
+//	GetPrivateApplicationPackageDetailArgs{...}
 type GetPrivateApplicationPackageDetailInput interface {
 	pulumi.Input
 
@@ -451,7 +451,7 @@ func (i GetPrivateApplicationPackageDetailArgs) ToGetPrivateApplicationPackageDe
 // GetPrivateApplicationPackageDetailArrayInput is an input type that accepts GetPrivateApplicationPackageDetailArray and GetPrivateApplicationPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackageDetailArrayInput` via:
 //
-//          GetPrivateApplicationPackageDetailArray{ GetPrivateApplicationPackageDetailArgs{...} }
+//	GetPrivateApplicationPackageDetailArray{ GetPrivateApplicationPackageDetailArgs{...} }
 type GetPrivateApplicationPackageDetailArrayInput interface {
 	pulumi.Input
 
@@ -529,7 +529,7 @@ type GetPrivateApplicationPackagesFilter struct {
 // GetPrivateApplicationPackagesFilterInput is an input type that accepts GetPrivateApplicationPackagesFilterArgs and GetPrivateApplicationPackagesFilterOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesFilterInput` via:
 //
-//          GetPrivateApplicationPackagesFilterArgs{...}
+//	GetPrivateApplicationPackagesFilterArgs{...}
 type GetPrivateApplicationPackagesFilterInput interface {
 	pulumi.Input
 
@@ -558,7 +558,7 @@ func (i GetPrivateApplicationPackagesFilterArgs) ToGetPrivateApplicationPackages
 // GetPrivateApplicationPackagesFilterArrayInput is an input type that accepts GetPrivateApplicationPackagesFilterArray and GetPrivateApplicationPackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesFilterArrayInput` via:
 //
-//          GetPrivateApplicationPackagesFilterArray{ GetPrivateApplicationPackagesFilterArgs{...} }
+//	GetPrivateApplicationPackagesFilterArray{ GetPrivateApplicationPackagesFilterArgs{...} }
 type GetPrivateApplicationPackagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -633,7 +633,7 @@ type GetPrivateApplicationPackagesPrivateApplicationPackageCollection struct {
 // GetPrivateApplicationPackagesPrivateApplicationPackageCollectionInput is an input type that accepts GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs and GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesPrivateApplicationPackageCollectionInput` via:
 //
-//          GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs{...}
+//	GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs{...}
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionInput interface {
 	pulumi.Input
 
@@ -660,7 +660,7 @@ func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs) To
 // GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayInput is an input type that accepts GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArray and GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayInput` via:
 //
-//          GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArray{ GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs{...} }
+//	GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArray{ GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs{...} }
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayInput interface {
 	pulumi.Input
 
@@ -742,7 +742,7 @@ type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem struct
 // GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemInput is an input type that accepts GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs and GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemInput` via:
 //
-//          GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs{...}
+//	GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs{...}
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemInput interface {
 	pulumi.Input
 
@@ -782,7 +782,7 @@ func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs
 // GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayInput is an input type that accepts GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArray and GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayInput` via:
 //
-//          GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArray{ GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs{...} }
+//	GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArray{ GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs{...} }
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -895,7 +895,7 @@ type GetPrivateApplicationsFilter struct {
 // GetPrivateApplicationsFilterInput is an input type that accepts GetPrivateApplicationsFilterArgs and GetPrivateApplicationsFilterOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsFilterInput` via:
 //
-//          GetPrivateApplicationsFilterArgs{...}
+//	GetPrivateApplicationsFilterArgs{...}
 type GetPrivateApplicationsFilterInput interface {
 	pulumi.Input
 
@@ -924,7 +924,7 @@ func (i GetPrivateApplicationsFilterArgs) ToGetPrivateApplicationsFilterOutputWi
 // GetPrivateApplicationsFilterArrayInput is an input type that accepts GetPrivateApplicationsFilterArray and GetPrivateApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsFilterArrayInput` via:
 //
-//          GetPrivateApplicationsFilterArray{ GetPrivateApplicationsFilterArgs{...} }
+//	GetPrivateApplicationsFilterArray{ GetPrivateApplicationsFilterArgs{...} }
 type GetPrivateApplicationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -999,7 +999,7 @@ type GetPrivateApplicationsPrivateApplicationCollection struct {
 // GetPrivateApplicationsPrivateApplicationCollectionInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionArgs and GetPrivateApplicationsPrivateApplicationCollectionOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionArgs{...}
+//	GetPrivateApplicationsPrivateApplicationCollectionArgs{...}
 type GetPrivateApplicationsPrivateApplicationCollectionInput interface {
 	pulumi.Input
 
@@ -1026,7 +1026,7 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionArgs) ToGetPrivateAppl
 // GetPrivateApplicationsPrivateApplicationCollectionArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionArray and GetPrivateApplicationsPrivateApplicationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionArrayInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionArray{ GetPrivateApplicationsPrivateApplicationCollectionArgs{...} }
+//	GetPrivateApplicationsPrivateApplicationCollectionArray{ GetPrivateApplicationsPrivateApplicationCollectionArgs{...} }
 type GetPrivateApplicationsPrivateApplicationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1120,7 +1120,7 @@ type GetPrivateApplicationsPrivateApplicationCollectionItem struct {
 // GetPrivateApplicationsPrivateApplicationCollectionItemInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemArgs and GetPrivateApplicationsPrivateApplicationCollectionItemOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionItemArgs{...}
+//	GetPrivateApplicationsPrivateApplicationCollectionItemArgs{...}
 type GetPrivateApplicationsPrivateApplicationCollectionItemInput interface {
 	pulumi.Input
 
@@ -1172,7 +1172,7 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemArgs) ToGetPrivate
 // GetPrivateApplicationsPrivateApplicationCollectionItemArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemArray and GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemArrayInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionItemArray{ GetPrivateApplicationsPrivateApplicationCollectionItemArgs{...} }
+//	GetPrivateApplicationsPrivateApplicationCollectionItemArray{ GetPrivateApplicationsPrivateApplicationCollectionItemArgs{...} }
 type GetPrivateApplicationsPrivateApplicationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1316,7 +1316,7 @@ type GetPrivateApplicationsPrivateApplicationCollectionItemLogo struct {
 // GetPrivateApplicationsPrivateApplicationCollectionItemLogoInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs and GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemLogoInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs{...}
+//	GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs{...}
 type GetPrivateApplicationsPrivateApplicationCollectionItemLogoInput interface {
 	pulumi.Input
 
@@ -1348,7 +1348,7 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs) ToGetPri
 // GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemLogoArray and GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionItemLogoArray{ GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs{...} }
+//	GetPrivateApplicationsPrivateApplicationCollectionItemLogoArray{ GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs{...} }
 type GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayInput interface {
 	pulumi.Input
 
@@ -1429,7 +1429,7 @@ type GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail struct 
 // GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs and GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs{...}
+//	GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs{...}
 type GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailInput interface {
 	pulumi.Input
 
@@ -1459,7 +1459,7 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs)
 // GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray and GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayInput` via:
 //
-//          GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray{ GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs{...} }
+//	GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray{ GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs{...} }
 type GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayInput interface {
 	pulumi.Input
 
@@ -1541,7 +1541,7 @@ type GetServiceCatalogAssociationsFilter struct {
 // GetServiceCatalogAssociationsFilterInput is an input type that accepts GetServiceCatalogAssociationsFilterArgs and GetServiceCatalogAssociationsFilterOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsFilterInput` via:
 //
-//          GetServiceCatalogAssociationsFilterArgs{...}
+//	GetServiceCatalogAssociationsFilterArgs{...}
 type GetServiceCatalogAssociationsFilterInput interface {
 	pulumi.Input
 
@@ -1570,7 +1570,7 @@ func (i GetServiceCatalogAssociationsFilterArgs) ToGetServiceCatalogAssociations
 // GetServiceCatalogAssociationsFilterArrayInput is an input type that accepts GetServiceCatalogAssociationsFilterArray and GetServiceCatalogAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsFilterArrayInput` via:
 //
-//          GetServiceCatalogAssociationsFilterArray{ GetServiceCatalogAssociationsFilterArgs{...} }
+//	GetServiceCatalogAssociationsFilterArray{ GetServiceCatalogAssociationsFilterArgs{...} }
 type GetServiceCatalogAssociationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1645,7 +1645,7 @@ type GetServiceCatalogAssociationsServiceCatalogAssociationCollection struct {
 // GetServiceCatalogAssociationsServiceCatalogAssociationCollectionInput is an input type that accepts GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs and GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsServiceCatalogAssociationCollectionInput` via:
 //
-//          GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs{...}
+//	GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs{...}
 type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionInput interface {
 	pulumi.Input
 
@@ -1672,7 +1672,7 @@ func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs) To
 // GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayInput is an input type that accepts GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArray and GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayInput` via:
 //
-//          GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArray{ GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs{...} }
+//	GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArray{ GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs{...} }
 type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1750,7 +1750,7 @@ type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem struct
 // GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemInput is an input type that accepts GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs and GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemInput` via:
 //
-//          GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs{...}
+//	GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs{...}
 type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemInput interface {
 	pulumi.Input
 
@@ -1786,7 +1786,7 @@ func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs
 // GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayInput is an input type that accepts GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArray and GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayInput` via:
 //
-//          GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArray{ GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs{...} }
+//	GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArray{ GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs{...} }
 type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1882,7 +1882,7 @@ type GetServiceCatalogsFilter struct {
 // GetServiceCatalogsFilterInput is an input type that accepts GetServiceCatalogsFilterArgs and GetServiceCatalogsFilterOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsFilterInput` via:
 //
-//          GetServiceCatalogsFilterArgs{...}
+//	GetServiceCatalogsFilterArgs{...}
 type GetServiceCatalogsFilterInput interface {
 	pulumi.Input
 
@@ -1911,7 +1911,7 @@ func (i GetServiceCatalogsFilterArgs) ToGetServiceCatalogsFilterOutputWithContex
 // GetServiceCatalogsFilterArrayInput is an input type that accepts GetServiceCatalogsFilterArray and GetServiceCatalogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsFilterArrayInput` via:
 //
-//          GetServiceCatalogsFilterArray{ GetServiceCatalogsFilterArgs{...} }
+//	GetServiceCatalogsFilterArray{ GetServiceCatalogsFilterArgs{...} }
 type GetServiceCatalogsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1986,7 +1986,7 @@ type GetServiceCatalogsServiceCatalogCollection struct {
 // GetServiceCatalogsServiceCatalogCollectionInput is an input type that accepts GetServiceCatalogsServiceCatalogCollectionArgs and GetServiceCatalogsServiceCatalogCollectionOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsServiceCatalogCollectionInput` via:
 //
-//          GetServiceCatalogsServiceCatalogCollectionArgs{...}
+//	GetServiceCatalogsServiceCatalogCollectionArgs{...}
 type GetServiceCatalogsServiceCatalogCollectionInput interface {
 	pulumi.Input
 
@@ -2013,7 +2013,7 @@ func (i GetServiceCatalogsServiceCatalogCollectionArgs) ToGetServiceCatalogsServ
 // GetServiceCatalogsServiceCatalogCollectionArrayInput is an input type that accepts GetServiceCatalogsServiceCatalogCollectionArray and GetServiceCatalogsServiceCatalogCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsServiceCatalogCollectionArrayInput` via:
 //
-//          GetServiceCatalogsServiceCatalogCollectionArray{ GetServiceCatalogsServiceCatalogCollectionArgs{...} }
+//	GetServiceCatalogsServiceCatalogCollectionArray{ GetServiceCatalogsServiceCatalogCollectionArgs{...} }
 type GetServiceCatalogsServiceCatalogCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2097,7 +2097,7 @@ type GetServiceCatalogsServiceCatalogCollectionItem struct {
 // GetServiceCatalogsServiceCatalogCollectionItemInput is an input type that accepts GetServiceCatalogsServiceCatalogCollectionItemArgs and GetServiceCatalogsServiceCatalogCollectionItemOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsServiceCatalogCollectionItemInput` via:
 //
-//          GetServiceCatalogsServiceCatalogCollectionItemArgs{...}
+//	GetServiceCatalogsServiceCatalogCollectionItemArgs{...}
 type GetServiceCatalogsServiceCatalogCollectionItemInput interface {
 	pulumi.Input
 
@@ -2139,7 +2139,7 @@ func (i GetServiceCatalogsServiceCatalogCollectionItemArgs) ToGetServiceCatalogs
 // GetServiceCatalogsServiceCatalogCollectionItemArrayInput is an input type that accepts GetServiceCatalogsServiceCatalogCollectionItemArray and GetServiceCatalogsServiceCatalogCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsServiceCatalogCollectionItemArrayInput` via:
 //
-//          GetServiceCatalogsServiceCatalogCollectionItemArray{ GetServiceCatalogsServiceCatalogCollectionItemArgs{...} }
+//	GetServiceCatalogsServiceCatalogCollectionItemArray{ GetServiceCatalogsServiceCatalogCollectionItemArgs{...} }
 type GetServiceCatalogsServiceCatalogCollectionItemArrayInput interface {
 	pulumi.Input
 

@@ -29,29 +29,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewVault(ctx, "testVault", &Kms.VaultArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Vault_display_name),
-// 			VaultType:     pulumi.Any(_var.Vault_vault_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewVault(ctx, "testVault", &Kms.VaultArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Vault_display_name),
+//				VaultType:     pulumi.Any(_var.Vault_vault_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // Vaults can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Kms/vault:Vault test_vault "id"
+//
+//	$ pulumi import oci:Kms/vault:Vault test_vault "id"
+//
 // ```
 type Vault struct {
 	pulumi.CustomResourceState
@@ -273,7 +278,7 @@ func (i *Vault) ToVaultOutputWithContext(ctx context.Context) VaultOutput {
 // VaultArrayInput is an input type that accepts VaultArray and VaultArrayOutput values.
 // You can construct a concrete instance of `VaultArrayInput` via:
 //
-//          VaultArray{ VaultArgs{...} }
+//	VaultArray{ VaultArgs{...} }
 type VaultArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +303,7 @@ func (i VaultArray) ToVaultArrayOutputWithContext(ctx context.Context) VaultArra
 // VaultMapInput is an input type that accepts VaultMap and VaultMapOutput values.
 // You can construct a concrete instance of `VaultMapInput` via:
 //
-//          VaultMap{ "key": VaultArgs{...} }
+//	VaultMap{ "key": VaultArgs{...} }
 type VaultMapInput interface {
 	pulumi.Input
 

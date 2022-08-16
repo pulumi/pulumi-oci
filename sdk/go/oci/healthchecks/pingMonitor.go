@@ -23,35 +23,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.NewPingMonitor(ctx, "testPingMonitor", &HealthChecks.PingMonitorArgs{
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			DisplayName:       pulumi.Any(_var.Ping_monitor_display_name),
-// 			IntervalInSeconds: pulumi.Any(_var.Ping_monitor_interval_in_seconds),
-// 			Protocol:          pulumi.Any(_var.Ping_monitor_protocol),
-// 			Targets:           pulumi.Any(_var.Ping_monitor_targets),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsEnabled:         pulumi.Any(_var.Ping_monitor_is_enabled),
-// 			Port:              pulumi.Any(_var.Ping_monitor_port),
-// 			TimeoutInSeconds:  pulumi.Any(_var.Ping_monitor_timeout_in_seconds),
-// 			VantagePointNames: pulumi.Any(_var.Ping_monitor_vantage_point_names),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.NewPingMonitor(ctx, "testPingMonitor", &HealthChecks.PingMonitorArgs{
+//				CompartmentId:     pulumi.Any(_var.Compartment_id),
+//				DisplayName:       pulumi.Any(_var.Ping_monitor_display_name),
+//				IntervalInSeconds: pulumi.Any(_var.Ping_monitor_interval_in_seconds),
+//				Protocol:          pulumi.Any(_var.Ping_monitor_protocol),
+//				Targets:           pulumi.Any(_var.Ping_monitor_targets),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsEnabled:         pulumi.Any(_var.Ping_monitor_is_enabled),
+//				Port:              pulumi.Any(_var.Ping_monitor_port),
+//				TimeoutInSeconds:  pulumi.Any(_var.Ping_monitor_timeout_in_seconds),
+//				VantagePointNames: pulumi.Any(_var.Ping_monitor_vantage_point_names),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // PingMonitors can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
+//
+//	$ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
+//
 // ```
 type PingMonitor struct {
 	pulumi.CustomResourceState
@@ -280,7 +285,7 @@ func (i *PingMonitor) ToPingMonitorOutputWithContext(ctx context.Context) PingMo
 // PingMonitorArrayInput is an input type that accepts PingMonitorArray and PingMonitorArrayOutput values.
 // You can construct a concrete instance of `PingMonitorArrayInput` via:
 //
-//          PingMonitorArray{ PingMonitorArgs{...} }
+//	PingMonitorArray{ PingMonitorArgs{...} }
 type PingMonitorArrayInput interface {
 	pulumi.Input
 
@@ -305,7 +310,7 @@ func (i PingMonitorArray) ToPingMonitorArrayOutputWithContext(ctx context.Contex
 // PingMonitorMapInput is an input type that accepts PingMonitorMap and PingMonitorMapOutput values.
 // You can construct a concrete instance of `PingMonitorMapInput` via:
 //
-//          PingMonitorMap{ "key": PingMonitorArgs{...} }
+//	PingMonitorMap{ "key": PingMonitorArgs{...} }
 type PingMonitorMapInput interface {
 	pulumi.Input
 

@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewUserGroupMembership(ctx, "testUserGroupMembership", &Identity.UserGroupMembershipArgs{
-// 			GroupId: pulumi.Any(oci_identity_group.Test_group.Id),
-// 			UserId:  pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewUserGroupMembership(ctx, "testUserGroupMembership", &Identity.UserGroupMembershipArgs{
+//				GroupId: pulumi.Any(oci_identity_group.Test_group.Id),
+//				UserId:  pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // UserGroupMemberships can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
+//
+//	$ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
+//
 // ```
 type UserGroupMembership struct {
 	pulumi.CustomResourceState
@@ -176,7 +181,7 @@ func (i *UserGroupMembership) ToUserGroupMembershipOutputWithContext(ctx context
 // UserGroupMembershipArrayInput is an input type that accepts UserGroupMembershipArray and UserGroupMembershipArrayOutput values.
 // You can construct a concrete instance of `UserGroupMembershipArrayInput` via:
 //
-//          UserGroupMembershipArray{ UserGroupMembershipArgs{...} }
+//	UserGroupMembershipArray{ UserGroupMembershipArgs{...} }
 type UserGroupMembershipArrayInput interface {
 	pulumi.Input
 
@@ -201,7 +206,7 @@ func (i UserGroupMembershipArray) ToUserGroupMembershipArrayOutputWithContext(ct
 // UserGroupMembershipMapInput is an input type that accepts UserGroupMembershipMap and UserGroupMembershipMapOutput values.
 // You can construct a concrete instance of `UserGroupMembershipMapInput` via:
 //
-//          UserGroupMembershipMap{ "key": UserGroupMembershipArgs{...} }
+//	UserGroupMembershipMap{ "key": UserGroupMembershipArgs{...} }
 type UserGroupMembershipMapInput interface {
 	pulumi.Input
 

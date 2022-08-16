@@ -33,28 +33,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditTrails(ctx, &datasafe.GetAuditTrailsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Audit_trail_access_level),
-// 			AuditTrailId:           pulumi.StringRef(oci_data_safe_audit_trail.Test_audit_trail.Id),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_trail_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Audit_trail_display_name),
-// 			State:                  pulumi.StringRef(_var.Audit_trail_state),
-// 			Status:                 pulumi.StringRef(_var.Audit_trail_status),
-// 			TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditTrails(ctx, &datasafe.GetAuditTrailsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Audit_trail_access_level),
+//				AuditTrailId:           pulumi.StringRef(oci_data_safe_audit_trail.Test_audit_trail.Id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_trail_compartment_id_in_subtree),
+//				DisplayName:            pulumi.StringRef(_var.Audit_trail_display_name),
+//				State:                  pulumi.StringRef(_var.Audit_trail_state),
+//				Status:                 pulumi.StringRef(_var.Audit_trail_status),
+//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAuditTrails(ctx *pulumi.Context, args *GetAuditTrailsArgs, opts ...pulumi.InvokeOption) (*GetAuditTrailsResult, error) {
 	var rv GetAuditTrailsResult

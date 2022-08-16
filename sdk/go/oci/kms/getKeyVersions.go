@@ -26,22 +26,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetKeyVersions(ctx, &kms.GetKeyVersionsArgs{
-// 			KeyId:              oci_kms_key.Test_key.Id,
-// 			ManagementEndpoint: _var.Key_version_management_endpoint,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetKeyVersions(ctx, &kms.GetKeyVersionsArgs{
+//				KeyId:              oci_kms_key.Test_key.Id,
+//				ManagementEndpoint: _var.Key_version_management_endpoint,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKeyVersions(ctx *pulumi.Context, args *GetKeyVersionsArgs, opts ...pulumi.InvokeOption) (*GetKeyVersionsResult, error) {
 	var rv GetKeyVersionsResult

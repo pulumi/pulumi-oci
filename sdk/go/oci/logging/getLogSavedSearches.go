@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Logging"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Logging.GetLogSavedSearches(ctx, &logging.GetLogSavedSearchesArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			LogSavedSearchId: pulumi.StringRef(oci_logging_log_saved_search.Test_log_saved_search.Id),
-// 			Name:             pulumi.StringRef(_var.Log_saved_search_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Logging.GetLogSavedSearches(ctx, &logging.GetLogSavedSearchesArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				LogSavedSearchId: pulumi.StringRef(oci_logging_log_saved_search.Test_log_saved_search.Id),
+//				Name:             pulumi.StringRef(_var.Log_saved_search_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogSavedSearches(ctx *pulumi.Context, args *GetLogSavedSearchesArgs, opts ...pulumi.InvokeOption) (*GetLogSavedSearchesResult, error) {
 	var rv GetLogSavedSearchesResult

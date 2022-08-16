@@ -14,6 +14,12 @@ namespace Pulumi.Oci.Jms
     /// 
     /// Create a new Fleet using the information provided.
     /// 
+    /// `inventoryLog` is now a required parameter for CreateFleet API.
+    /// Update existing applications using this API
+    /// before July 15, 2022 to ensure the applications continue to work.
+    /// See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+    /// Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -28,6 +34,11 @@ namespace Pulumi.Oci.Jms
     ///         {
     ///             CompartmentId = @var.Compartment_id,
     ///             DisplayName = @var.Fleet_display_name,
+    ///             InventoryLog = new Oci.Jms.Inputs.FleetInventoryLogArgs
+    ///             {
+    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///                 LogId = oci_logging_log.Test_log.Id,
+    ///             },
     ///             DefinedTags = 
     ///             {
     ///                 { "foo-namespace.bar-key", "value" },
@@ -37,11 +48,7 @@ namespace Pulumi.Oci.Jms
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
-    ///             InventoryLog = new Oci.Jms.Inputs.FleetInventoryLogArgs
-    ///             {
-    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                 LogId = oci_logging_log.Test_log.Id,
-    ///             },
+    ///             IsAdvancedFeaturesEnabled = @var.Fleet_is_advanced_features_enabled,
     ///             OperationLog = new Oci.Jms.Inputs.FleetOperationLogArgs
     ///             {
     ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
@@ -123,6 +130,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Output("inventoryLog")]
         public Output<Outputs.FleetInventoryLog> InventoryLog { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// </summary>
+        [Output("isAdvancedFeaturesEnabled")]
+        public Output<bool> IsAdvancedFeaturesEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.
@@ -239,8 +252,14 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.
         /// </summary>
-        [Input("inventoryLog")]
-        public Input<Inputs.FleetInventoryLogArgs>? InventoryLog { get; set; }
+        [Input("inventoryLog", required: true)]
+        public Input<Inputs.FleetInventoryLogArgs> InventoryLog { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// </summary>
+        [Input("isAdvancedFeaturesEnabled")]
+        public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.
@@ -326,6 +345,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("inventoryLog")]
         public Input<Inputs.FleetInventoryLogGetArgs>? InventoryLog { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// </summary>
+        [Input("isAdvancedFeaturesEnabled")]
+        public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.

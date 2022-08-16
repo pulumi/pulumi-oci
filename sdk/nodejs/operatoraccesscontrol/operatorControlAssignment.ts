@@ -117,6 +117,10 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      */
     public readonly isLogForwarded!: pulumi.Output<boolean>;
     /**
+     * More in detail about the lifeCycleState.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
     public readonly operatorControlId!: pulumi.Output<string>;
@@ -197,6 +201,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["isAutoApproveDuringMaintenance"] = state ? state.isAutoApproveDuringMaintenance : undefined;
             resourceInputs["isEnforcedAlways"] = state ? state.isEnforcedAlways : undefined;
             resourceInputs["isLogForwarded"] = state ? state.isLogForwarded : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["operatorControlId"] = state ? state.operatorControlId : undefined;
             resourceInputs["remoteSyslogServerAddress"] = state ? state.remoteSyslogServerAddress : undefined;
             resourceInputs["remoteSyslogServerCaCert"] = state ? state.remoteSyslogServerCaCert : undefined;
@@ -255,6 +260,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
             resourceInputs["detachmentDescription"] = undefined /*out*/;
             resourceInputs["errorCode"] = undefined /*out*/;
             resourceInputs["errorMessage"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeOfAssignment"] = undefined /*out*/;
             resourceInputs["timeOfDeletion"] = undefined /*out*/;
@@ -313,6 +319,10 @@ export interface OperatorControlAssignmentState {
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
     isLogForwarded?: pulumi.Input<boolean>;
+    /**
+     * More in detail about the lifeCycleState.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */

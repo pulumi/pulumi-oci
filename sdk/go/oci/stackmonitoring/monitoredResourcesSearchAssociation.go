@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.NewMonitoredResourcesSearchAssociation(ctx, "testMonitoredResourcesSearchAssociation", &StackMonitoring.MonitoredResourcesSearchAssociationArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			AssociationType:         pulumi.Any(_var.Monitored_resources_search_association_association_type),
-// 			DestinationResourceId:   pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
-// 			DestinationResourceName: pulumi.Any(_var.Monitored_resources_search_association_destination_resource_name),
-// 			DestinationResourceType: pulumi.Any(_var.Monitored_resources_search_association_destination_resource_type),
-// 			SourceResourceId:        pulumi.Any(oci_stack_monitoring_source_resource.Test_source_resource.Id),
-// 			SourceResourceName:      pulumi.Any(_var.Monitored_resources_search_association_source_resource_name),
-// 			SourceResourceType:      pulumi.Any(_var.Monitored_resources_search_association_source_resource_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.NewMonitoredResourcesSearchAssociation(ctx, "testMonitoredResourcesSearchAssociation", &StackMonitoring.MonitoredResourcesSearchAssociationArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				AssociationType:         pulumi.Any(_var.Monitored_resources_search_association_association_type),
+//				DestinationResourceId:   pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
+//				DestinationResourceName: pulumi.Any(_var.Monitored_resources_search_association_destination_resource_name),
+//				DestinationResourceType: pulumi.Any(_var.Monitored_resources_search_association_destination_resource_type),
+//				SourceResourceId:        pulumi.Any(oci_stack_monitoring_source_resource.Test_source_resource.Id),
+//				SourceResourceName:      pulumi.Any(_var.Monitored_resources_search_association_source_resource_name),
+//				SourceResourceType:      pulumi.Any(_var.Monitored_resources_search_association_source_resource_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // MonitoredResourcesSearchAssociations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
+//
+//	$ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
+//
 // ```
 type MonitoredResourcesSearchAssociation struct {
 	pulumi.CustomResourceState
@@ -217,7 +222,7 @@ func (i *MonitoredResourcesSearchAssociation) ToMonitoredResourcesSearchAssociat
 // MonitoredResourcesSearchAssociationArrayInput is an input type that accepts MonitoredResourcesSearchAssociationArray and MonitoredResourcesSearchAssociationArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationArrayInput` via:
 //
-//          MonitoredResourcesSearchAssociationArray{ MonitoredResourcesSearchAssociationArgs{...} }
+//	MonitoredResourcesSearchAssociationArray{ MonitoredResourcesSearchAssociationArgs{...} }
 type MonitoredResourcesSearchAssociationArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +247,7 @@ func (i MonitoredResourcesSearchAssociationArray) ToMonitoredResourcesSearchAsso
 // MonitoredResourcesSearchAssociationMapInput is an input type that accepts MonitoredResourcesSearchAssociationMap and MonitoredResourcesSearchAssociationMapOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationMapInput` via:
 //
-//          MonitoredResourcesSearchAssociationMap{ "key": MonitoredResourcesSearchAssociationArgs{...} }
+//	MonitoredResourcesSearchAssociationMap{ "key": MonitoredResourcesSearchAssociationArgs{...} }
 type MonitoredResourcesSearchAssociationMapInput interface {
 	pulumi.Input
 

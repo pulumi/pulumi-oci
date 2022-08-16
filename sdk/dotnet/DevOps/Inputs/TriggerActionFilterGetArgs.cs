@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Attributes to filter DevOps code repository events.
+        /// (Updatable) Attributes to filter GitLab self-hosted server events.
         /// </summary>
         [Input("include")]
         public Input<Inputs.TriggerActionFilterIncludeGetArgs>? Include { get; set; }

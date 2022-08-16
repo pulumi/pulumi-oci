@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
 //
-// Create Blockchain Platform Osn
+// # Create Blockchain Platform Osn
 //
 // ## Example Usage
 //
@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.NewOsn(ctx, "testOsn", &Blockchain.OsnArgs{
-// 			Ad:                   pulumi.Any(_var.Osn_ad),
-// 			BlockchainPlatformId: pulumi.Any(oci_blockchain_blockchain_platform.Test_blockchain_platform.Id),
-// 			OcpuAllocationParam: &blockchain.OsnOcpuAllocationParamArgs{
-// 				OcpuAllocationNumber: pulumi.Any(_var.Osn_ocpu_allocation_param_ocpu_allocation_number),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.NewOsn(ctx, "testOsn", &Blockchain.OsnArgs{
+//				Ad:                   pulumi.Any(_var.Osn_ad),
+//				BlockchainPlatformId: pulumi.Any(oci_blockchain_blockchain_platform.Test_blockchain_platform.Id),
+//				OcpuAllocationParam: &blockchain.OsnOcpuAllocationParamArgs{
+//					OcpuAllocationNumber: pulumi.Any(_var.Osn_ocpu_allocation_param_ocpu_allocation_number),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // Osns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
+//
+//	$ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
+//
 // ```
 type Osn struct {
 	pulumi.CustomResourceState
@@ -173,7 +178,7 @@ func (i *Osn) ToOsnOutputWithContext(ctx context.Context) OsnOutput {
 // OsnArrayInput is an input type that accepts OsnArray and OsnArrayOutput values.
 // You can construct a concrete instance of `OsnArrayInput` via:
 //
-//          OsnArray{ OsnArgs{...} }
+//	OsnArray{ OsnArgs{...} }
 type OsnArrayInput interface {
 	pulumi.Input
 
@@ -198,7 +203,7 @@ func (i OsnArray) ToOsnArrayOutputWithContext(ctx context.Context) OsnArrayOutpu
 // OsnMapInput is an input type that accepts OsnMap and OsnMapOutput values.
 // You can construct a concrete instance of `OsnMapInput` via:
 //
-//          OsnMap{ "key": OsnArgs{...} }
+//	OsnMap{ "key": OsnArgs{...} }
 type OsnMapInput interface {
 	pulumi.Input
 

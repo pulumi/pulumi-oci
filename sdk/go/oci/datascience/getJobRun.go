@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetJobRun(ctx, &datascience.GetJobRunArgs{
-// 			JobRunId: oci_datascience_job_run.Test_job_run.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetJobRun(ctx, &datascience.GetJobRunArgs{
+//				JobRunId: oci_datascience_job_run.Test_job_run.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupJobRun(ctx *pulumi.Context, args *LookupJobRunArgs, opts ...pulumi.InvokeOption) (*LookupJobRunResult, error) {
 	var rv LookupJobRunResult

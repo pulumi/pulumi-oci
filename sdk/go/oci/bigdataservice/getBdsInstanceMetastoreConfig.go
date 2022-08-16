@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.GetBdsInstanceMetastoreConfig(ctx, &bigdataservice.GetBdsInstanceMetastoreConfigArgs{
-// 			BdsInstanceId:     oci_bds_bds_instance.Test_bds_instance.Id,
-// 			MetastoreConfigId: oci_apm_config_config.Test_config.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.GetBdsInstanceMetastoreConfig(ctx, &bigdataservice.GetBdsInstanceMetastoreConfigArgs{
+//				BdsInstanceId:     oci_bds_bds_instance.Test_bds_instance.Id,
+//				MetastoreConfigId: oci_apm_config_config.Test_config.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBdsInstanceMetastoreConfig(ctx *pulumi.Context, args *LookupBdsInstanceMetastoreConfigArgs, opts ...pulumi.InvokeOption) (*LookupBdsInstanceMetastoreConfigResult, error) {
 	var rv LookupBdsInstanceMetastoreConfigResult

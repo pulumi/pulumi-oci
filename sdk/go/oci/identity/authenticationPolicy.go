@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
 //
-// Updates authentication policy for the specified tenancy
+// # Updates authentication policy for the specified tenancy
 //
 // ## Example Usage
 //
@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewAuthenticationPolicy(ctx, "testAuthenticationPolicy", &Identity.AuthenticationPolicyArgs{
-// 			CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-// 			NetworkPolicy: &identity.AuthenticationPolicyNetworkPolicyArgs{
-// 				NetworkSourceIds: pulumi.Any(_var.Authentication_policy_network_policy_network_source_ids),
-// 			},
-// 			PasswordPolicy: &identity.AuthenticationPolicyPasswordPolicyArgs{
-// 				IsLowercaseCharactersRequired: pulumi.Any(_var.Authentication_policy_password_policy_is_lowercase_characters_required),
-// 				IsNumericCharactersRequired:   pulumi.Any(_var.Authentication_policy_password_policy_is_numeric_characters_required),
-// 				IsSpecialCharactersRequired:   pulumi.Any(_var.Authentication_policy_password_policy_is_special_characters_required),
-// 				IsUppercaseCharactersRequired: pulumi.Any(_var.Authentication_policy_password_policy_is_uppercase_characters_required),
-// 				IsUsernameContainmentAllowed:  pulumi.Any(_var.Authentication_policy_password_policy_is_username_containment_allowed),
-// 				MinimumPasswordLength:         pulumi.Any(_var.Authentication_policy_password_policy_minimum_password_length),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewAuthenticationPolicy(ctx, "testAuthenticationPolicy", &Identity.AuthenticationPolicyArgs{
+//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//				NetworkPolicy: &identity.AuthenticationPolicyNetworkPolicyArgs{
+//					NetworkSourceIds: pulumi.Any(_var.Authentication_policy_network_policy_network_source_ids),
+//				},
+//				PasswordPolicy: &identity.AuthenticationPolicyPasswordPolicyArgs{
+//					IsLowercaseCharactersRequired: pulumi.Any(_var.Authentication_policy_password_policy_is_lowercase_characters_required),
+//					IsNumericCharactersRequired:   pulumi.Any(_var.Authentication_policy_password_policy_is_numeric_characters_required),
+//					IsSpecialCharactersRequired:   pulumi.Any(_var.Authentication_policy_password_policy_is_special_characters_required),
+//					IsUppercaseCharactersRequired: pulumi.Any(_var.Authentication_policy_password_policy_is_uppercase_characters_required),
+//					IsUsernameContainmentAllowed:  pulumi.Any(_var.Authentication_policy_password_policy_is_username_containment_allowed),
+//					MinimumPasswordLength:         pulumi.Any(_var.Authentication_policy_password_policy_minimum_password_length),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // AuthenticationPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
+//
+//	$ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
+//
 // ```
 type AuthenticationPolicy struct {
 	pulumi.CustomResourceState
@@ -165,7 +170,7 @@ func (i *AuthenticationPolicy) ToAuthenticationPolicyOutputWithContext(ctx conte
 // AuthenticationPolicyArrayInput is an input type that accepts AuthenticationPolicyArray and AuthenticationPolicyArrayOutput values.
 // You can construct a concrete instance of `AuthenticationPolicyArrayInput` via:
 //
-//          AuthenticationPolicyArray{ AuthenticationPolicyArgs{...} }
+//	AuthenticationPolicyArray{ AuthenticationPolicyArgs{...} }
 type AuthenticationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -190,7 +195,7 @@ func (i AuthenticationPolicyArray) ToAuthenticationPolicyArrayOutputWithContext(
 // AuthenticationPolicyMapInput is an input type that accepts AuthenticationPolicyMap and AuthenticationPolicyMapOutput values.
 // You can construct a concrete instance of `AuthenticationPolicyMapInput` via:
 //
-//          AuthenticationPolicyMap{ "key": AuthenticationPolicyArgs{...} }
+//	AuthenticationPolicyMap{ "key": AuthenticationPolicyArgs{...} }
 type AuthenticationPolicyMapInput interface {
 	pulumi.Input
 

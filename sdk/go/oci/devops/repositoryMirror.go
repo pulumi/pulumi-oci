@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewRepositoryMirror(ctx, "testRepositoryMirror", &DevOps.RepositoryMirrorArgs{
-// 			RepositoryId: pulumi.Any(oci_devops_repository.Test_repository.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewRepositoryMirror(ctx, "testRepositoryMirror", &DevOps.RepositoryMirrorArgs{
+//				RepositoryId: pulumi.Any(oci_devops_repository.Test_repository.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -43,7 +46,9 @@ import (
 // RepositoryMirror can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
+//
+//	$ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
+//
 // ```
 type RepositoryMirror struct {
 	pulumi.CustomResourceState
@@ -134,7 +139,7 @@ func (i *RepositoryMirror) ToRepositoryMirrorOutputWithContext(ctx context.Conte
 // RepositoryMirrorArrayInput is an input type that accepts RepositoryMirrorArray and RepositoryMirrorArrayOutput values.
 // You can construct a concrete instance of `RepositoryMirrorArrayInput` via:
 //
-//          RepositoryMirrorArray{ RepositoryMirrorArgs{...} }
+//	RepositoryMirrorArray{ RepositoryMirrorArgs{...} }
 type RepositoryMirrorArrayInput interface {
 	pulumi.Input
 
@@ -159,7 +164,7 @@ func (i RepositoryMirrorArray) ToRepositoryMirrorArrayOutputWithContext(ctx cont
 // RepositoryMirrorMapInput is an input type that accepts RepositoryMirrorMap and RepositoryMirrorMapOutput values.
 // You can construct a concrete instance of `RepositoryMirrorMapInput` via:
 //
-//          RepositoryMirrorMap{ "key": RepositoryMirrorArgs{...} }
+//	RepositoryMirrorMap{ "key": RepositoryMirrorArgs{...} }
 type RepositoryMirrorMapInput interface {
 	pulumi.Input
 

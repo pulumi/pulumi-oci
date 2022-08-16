@@ -116,6 +116,10 @@ export interface GetBuildPipelineStageResult {
      */
     readonly primaryBuildSource: string;
     /**
+     * Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+     */
+    readonly privateAccessConfigs: outputs.DevOps.GetBuildPipelineStagePrivateAccessConfig[];
+    /**
      * The OCID of the DevOps project.
      */
     readonly projectId: string;

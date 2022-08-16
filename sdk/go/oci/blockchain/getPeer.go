@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
 //
-// Gets information about a peer identified by the specific id
+// # Gets information about a peer identified by the specific id
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.GetPeer(ctx, &blockchain.GetPeerArgs{
-// 			BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-// 			PeerId:               oci_blockchain_peer.Test_peer.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.GetPeer(ctx, &blockchain.GetPeerArgs{
+//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+//				PeerId:               oci_blockchain_peer.Test_peer.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupPeer(ctx *pulumi.Context, args *LookupPeerArgs, opts ...pulumi.InvokeOption) (*LookupPeerResult, error) {
 	var rv LookupPeerResult

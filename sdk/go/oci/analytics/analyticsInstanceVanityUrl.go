@@ -22,27 +22,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Analytics.NewAnalyticsInstanceVanityUrl(ctx, "testAnalyticsInstanceVanityUrl", &Analytics.AnalyticsInstanceVanityUrlArgs{
-// 			AnalyticsInstanceId: pulumi.Any(oci_analytics_analytics_instance.Test_analytics_instance.Id),
-// 			CaCertificate:       pulumi.Any(_var.Analytics_instance_vanity_url_ca_certificate),
-// 			Hosts:               pulumi.Any(_var.Analytics_instance_vanity_url_hosts),
-// 			PrivateKey:          pulumi.Any(_var.Analytics_instance_vanity_url_private_key),
-// 			PublicCertificate:   pulumi.Any(_var.Analytics_instance_vanity_url_public_certificate),
-// 			Description:         pulumi.Any(_var.Analytics_instance_vanity_url_description),
-// 			Passphrase:          pulumi.Any(_var.Analytics_instance_vanity_url_passphrase),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Analytics.NewAnalyticsInstanceVanityUrl(ctx, "testAnalyticsInstanceVanityUrl", &Analytics.AnalyticsInstanceVanityUrlArgs{
+//				AnalyticsInstanceId: pulumi.Any(oci_analytics_analytics_instance.Test_analytics_instance.Id),
+//				CaCertificate:       pulumi.Any(_var.Analytics_instance_vanity_url_ca_certificate),
+//				Hosts:               pulumi.Any(_var.Analytics_instance_vanity_url_hosts),
+//				PrivateKey:          pulumi.Any(_var.Analytics_instance_vanity_url_private_key),
+//				PublicCertificate:   pulumi.Any(_var.Analytics_instance_vanity_url_public_certificate),
+//				Description:         pulumi.Any(_var.Analytics_instance_vanity_url_description),
+//				Passphrase:          pulumi.Any(_var.Analytics_instance_vanity_url_passphrase),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
+//
+//	$ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
+//
 // ```
 type AnalyticsInstanceVanityUrl struct {
 	pulumi.CustomResourceState
@@ -213,7 +218,7 @@ func (i *AnalyticsInstanceVanityUrl) ToAnalyticsInstanceVanityUrlOutputWithConte
 // AnalyticsInstanceVanityUrlArrayInput is an input type that accepts AnalyticsInstanceVanityUrlArray and AnalyticsInstanceVanityUrlArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceVanityUrlArrayInput` via:
 //
-//          AnalyticsInstanceVanityUrlArray{ AnalyticsInstanceVanityUrlArgs{...} }
+//	AnalyticsInstanceVanityUrlArray{ AnalyticsInstanceVanityUrlArgs{...} }
 type AnalyticsInstanceVanityUrlArrayInput interface {
 	pulumi.Input
 
@@ -238,7 +243,7 @@ func (i AnalyticsInstanceVanityUrlArray) ToAnalyticsInstanceVanityUrlArrayOutput
 // AnalyticsInstanceVanityUrlMapInput is an input type that accepts AnalyticsInstanceVanityUrlMap and AnalyticsInstanceVanityUrlMapOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceVanityUrlMapInput` via:
 //
-//          AnalyticsInstanceVanityUrlMap{ "key": AnalyticsInstanceVanityUrlArgs{...} }
+//	AnalyticsInstanceVanityUrlMap{ "key": AnalyticsInstanceVanityUrlArgs{...} }
 type AnalyticsInstanceVanityUrlMapInput interface {
 	pulumi.Input
 

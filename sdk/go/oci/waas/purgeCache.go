@@ -22,22 +22,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.NewPurgeCache(ctx, "testPurgeCache", &Waas.PurgeCacheArgs{
-// 			WaasPolicyId: pulumi.Any(oci_waas_waas_policy.Test_waas_policy.Id),
-// 			Resources:    pulumi.Any(_var.Purge_cache_resources),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.NewPurgeCache(ctx, "testPurgeCache", &Waas.PurgeCacheArgs{
+//				WaasPolicyId: pulumi.Any(oci_waas_waas_policy.Test_waas_policy.Id),
+//				Resources:    pulumi.Any(_var.Purge_cache_resources),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -142,7 +145,7 @@ func (i *PurgeCache) ToPurgeCacheOutputWithContext(ctx context.Context) PurgeCac
 // PurgeCacheArrayInput is an input type that accepts PurgeCacheArray and PurgeCacheArrayOutput values.
 // You can construct a concrete instance of `PurgeCacheArrayInput` via:
 //
-//          PurgeCacheArray{ PurgeCacheArgs{...} }
+//	PurgeCacheArray{ PurgeCacheArgs{...} }
 type PurgeCacheArrayInput interface {
 	pulumi.Input
 
@@ -167,7 +170,7 @@ func (i PurgeCacheArray) ToPurgeCacheArrayOutputWithContext(ctx context.Context)
 // PurgeCacheMapInput is an input type that accepts PurgeCacheMap and PurgeCacheMapOutput values.
 // You can construct a concrete instance of `PurgeCacheMapInput` via:
 //
-//          PurgeCacheMap{ "key": PurgeCacheArgs{...} }
+//	PurgeCacheMap{ "key": PurgeCacheArgs{...} }
 type PurgeCacheMapInput interface {
 	pulumi.Input
 

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.GetNetworkLoadBalancers(ctx, &networkloadbalancer.GetNetworkLoadBalancersArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Network_load_balancer_display_name),
-// 			State:         pulumi.StringRef(_var.Network_load_balancer_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.GetNetworkLoadBalancers(ctx, &networkloadbalancer.GetNetworkLoadBalancersArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Network_load_balancer_display_name),
+//				State:         pulumi.StringRef(_var.Network_load_balancer_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkLoadBalancers(ctx *pulumi.Context, args *GetNetworkLoadBalancersArgs, opts ...pulumi.InvokeOption) (*GetNetworkLoadBalancersResult, error) {
 	var rv GetNetworkLoadBalancersResult

@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetProfileLevels(ctx, &optimizer.GetProfileLevelsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: _var.Profile_level_compartment_id_in_subtree,
-// 			Name:                   pulumi.StringRef(_var.Profile_level_name),
-// 			RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetProfileLevels(ctx, &optimizer.GetProfileLevelsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: _var.Profile_level_compartment_id_in_subtree,
+//				Name:                   pulumi.StringRef(_var.Profile_level_name),
+//				RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProfileLevels(ctx *pulumi.Context, args *GetProfileLevelsArgs, opts ...pulumi.InvokeOption) (*GetProfileLevelsResult, error) {
 	var rv GetProfileLevelsResult

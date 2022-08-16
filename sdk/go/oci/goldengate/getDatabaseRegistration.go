@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GoldenGate"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GoldenGate.GetDatabaseRegistration(ctx, &goldengate.GetDatabaseRegistrationArgs{
-// 			DatabaseRegistrationId: oci_golden_gate_database_registration.Test_database_registration.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GoldenGate.GetDatabaseRegistration(ctx, &goldengate.GetDatabaseRegistrationArgs{
+//				DatabaseRegistrationId: oci_golden_gate_database_registration.Test_database_registration.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDatabaseRegistration(ctx *pulumi.Context, args *LookupDatabaseRegistrationArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseRegistrationResult, error) {
 	var rv LookupDatabaseRegistrationResult

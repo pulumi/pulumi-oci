@@ -126,7 +126,7 @@ func (i *DefaultRouteTable) ToDefaultRouteTableOutputWithContext(ctx context.Con
 // DefaultRouteTableArrayInput is an input type that accepts DefaultRouteTableArray and DefaultRouteTableArrayOutput values.
 // You can construct a concrete instance of `DefaultRouteTableArrayInput` via:
 //
-//          DefaultRouteTableArray{ DefaultRouteTableArgs{...} }
+//	DefaultRouteTableArray{ DefaultRouteTableArgs{...} }
 type DefaultRouteTableArrayInput interface {
 	pulumi.Input
 
@@ -151,7 +151,7 @@ func (i DefaultRouteTableArray) ToDefaultRouteTableArrayOutputWithContext(ctx co
 // DefaultRouteTableMapInput is an input type that accepts DefaultRouteTableMap and DefaultRouteTableMapOutput values.
 // You can construct a concrete instance of `DefaultRouteTableMapInput` via:
 //
-//          DefaultRouteTableMap{ "key": DefaultRouteTableArgs{...} }
+//	DefaultRouteTableMap{ "key": DefaultRouteTableArgs{...} }
 type DefaultRouteTableMapInput interface {
 	pulumi.Input
 

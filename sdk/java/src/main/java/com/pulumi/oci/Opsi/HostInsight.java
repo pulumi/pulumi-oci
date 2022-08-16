@@ -47,6 +47,20 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * 
+     */
+    @Export(name="computeId", type=String.class, parameters={})
+    private Output<String> computeId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * 
+     */
+    public Output<String> computeId() {
+        return this.computeId;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */

@@ -24,6 +24,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) The APM domain ID the request is intended for.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="apmDomainId")
@@ -31,10 +32,28 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) The APM domain ID the request is intended for.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<String>> apmDomainId() {
         return Optional.ofNullable(this.apmDomainId);
+    }
+
+    /**
+     * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * ===
+     * 
+     */
+    @Import(name="batchIntervalInSeconds")
+    private @Nullable Output<Integer> batchIntervalInSeconds;
+
+    /**
+     * @return (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * ===
+     * 
+     */
+    public Optional<Output<Integer>> batchIntervalInSeconds() {
+        return Optional.ofNullable(this.batchIntervalInSeconds);
     }
 
     /**
@@ -98,6 +117,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * 
+     */
+    @Import(name="isRunNow")
+    private @Nullable Output<Boolean> isRunNow;
+
+    /**
+     * @return (Updatable) If isRunNow is enabled, then the monitor will run now.
+     * 
+     */
+    public Optional<Output<Boolean>> isRunNow() {
+        return Optional.ofNullable(this.isRunNow);
+    }
+
+    /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      * 
      */
@@ -140,6 +174,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> repeatIntervalInSeconds() {
         return Optional.ofNullable(this.repeatIntervalInSeconds);
+    }
+
+    /**
+     * (Updatable) Scheduling policy on Vantage points.
+     * 
+     */
+    @Import(name="schedulingPolicy")
+    private @Nullable Output<String> schedulingPolicy;
+
+    /**
+     * @return (Updatable) Scheduling policy on Vantage points.
+     * 
+     */
+    public Optional<Output<String>> schedulingPolicy() {
+        return Optional.ofNullable(this.schedulingPolicy);
     }
 
     /**
@@ -296,13 +345,16 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
     private ConfigState(ConfigState $) {
         this.apmDomainId = $.apmDomainId;
+        this.batchIntervalInSeconds = $.batchIntervalInSeconds;
         this.configuration = $.configuration;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isRunNow = $.isRunNow;
         this.isRunOnce = $.isRunOnce;
         this.monitorType = $.monitorType;
         this.repeatIntervalInSeconds = $.repeatIntervalInSeconds;
+        this.schedulingPolicy = $.schedulingPolicy;
         this.scriptId = $.scriptId;
         this.scriptName = $.scriptName;
         this.scriptParameters = $.scriptParameters;
@@ -335,6 +387,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param apmDomainId (Updatable) The APM domain ID the request is intended for.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -346,12 +399,36 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param apmDomainId (Updatable) The APM domain ID the request is intended for.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
          */
         public Builder apmDomainId(String apmDomainId) {
             return apmDomainId(Output.of(apmDomainId));
+        }
+
+        /**
+         * @param batchIntervalInSeconds (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * ===
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchIntervalInSeconds(@Nullable Output<Integer> batchIntervalInSeconds) {
+            $.batchIntervalInSeconds = batchIntervalInSeconds;
+            return this;
+        }
+
+        /**
+         * @param batchIntervalInSeconds (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * ===
+         * 
+         * @return builder
+         * 
+         */
+        public Builder batchIntervalInSeconds(Integer batchIntervalInSeconds) {
+            return batchIntervalInSeconds(Output.of(batchIntervalInSeconds));
         }
 
         /**
@@ -439,6 +516,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run now.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRunNow(@Nullable Output<Boolean> isRunNow) {
+            $.isRunNow = isRunNow;
+            return this;
+        }
+
+        /**
+         * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run now.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRunNow(Boolean isRunNow) {
+            return isRunNow(Output.of(isRunNow));
+        }
+
+        /**
          * @param isRunOnce (Updatable) If runOnce is enabled, then the monitor will run once.
          * 
          * @return builder
@@ -499,6 +597,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder repeatIntervalInSeconds(Integer repeatIntervalInSeconds) {
             return repeatIntervalInSeconds(Output.of(repeatIntervalInSeconds));
+        }
+
+        /**
+         * @param schedulingPolicy (Updatable) Scheduling policy on Vantage points.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schedulingPolicy(@Nullable Output<String> schedulingPolicy) {
+            $.schedulingPolicy = schedulingPolicy;
+            return this;
+        }
+
+        /**
+         * @param schedulingPolicy (Updatable) Scheduling policy on Vantage points.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schedulingPolicy(String schedulingPolicy) {
+            return schedulingPolicy(Output.of(schedulingPolicy));
         }
 
         /**

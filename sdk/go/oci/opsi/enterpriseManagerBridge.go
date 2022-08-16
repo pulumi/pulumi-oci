@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewEnterpriseManagerBridge(ctx, "testEnterpriseManagerBridge", &Opsi.EnterpriseManagerBridgeArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			DisplayName:             pulumi.Any(_var.Enterprise_manager_bridge_display_name),
-// 			ObjectStorageBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Enterprise_manager_bridge_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewEnterpriseManagerBridge(ctx, "testEnterpriseManagerBridge", &Opsi.EnterpriseManagerBridgeArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				DisplayName:             pulumi.Any(_var.Enterprise_manager_bridge_display_name),
+//				ObjectStorageBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Enterprise_manager_bridge_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // EnterpriseManagerBridges can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge "id"
+//
+//	$ pulumi import oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge test_enterprise_manager_bridge "id"
+//
 // ```
 type EnterpriseManagerBridge struct {
 	pulumi.CustomResourceState
@@ -241,7 +246,7 @@ func (i *EnterpriseManagerBridge) ToEnterpriseManagerBridgeOutputWithContext(ctx
 // EnterpriseManagerBridgeArrayInput is an input type that accepts EnterpriseManagerBridgeArray and EnterpriseManagerBridgeArrayOutput values.
 // You can construct a concrete instance of `EnterpriseManagerBridgeArrayInput` via:
 //
-//          EnterpriseManagerBridgeArray{ EnterpriseManagerBridgeArgs{...} }
+//	EnterpriseManagerBridgeArray{ EnterpriseManagerBridgeArgs{...} }
 type EnterpriseManagerBridgeArrayInput interface {
 	pulumi.Input
 
@@ -266,7 +271,7 @@ func (i EnterpriseManagerBridgeArray) ToEnterpriseManagerBridgeArrayOutputWithCo
 // EnterpriseManagerBridgeMapInput is an input type that accepts EnterpriseManagerBridgeMap and EnterpriseManagerBridgeMapOutput values.
 // You can construct a concrete instance of `EnterpriseManagerBridgeMapInput` via:
 //
-//          EnterpriseManagerBridgeMap{ "key": EnterpriseManagerBridgeArgs{...} }
+//	EnterpriseManagerBridgeMap{ "key": EnterpriseManagerBridgeArgs{...} }
 type EnterpriseManagerBridgeMapInput interface {
 	pulumi.Input
 

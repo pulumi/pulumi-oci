@@ -22,28 +22,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.NewCatalog(ctx, "testCatalog", &DataCatalog.CatalogArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Catalog_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.NewCatalog(ctx, "testCatalog", &DataCatalog.CatalogArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Catalog_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // Catalogs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
+//
+//	$ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"
+//
 // ```
 type Catalog struct {
 	pulumi.CustomResourceState
@@ -224,7 +229,7 @@ func (i *Catalog) ToCatalogOutputWithContext(ctx context.Context) CatalogOutput 
 // CatalogArrayInput is an input type that accepts CatalogArray and CatalogArrayOutput values.
 // You can construct a concrete instance of `CatalogArrayInput` via:
 //
-//          CatalogArray{ CatalogArgs{...} }
+//	CatalogArray{ CatalogArgs{...} }
 type CatalogArrayInput interface {
 	pulumi.Input
 
@@ -249,7 +254,7 @@ func (i CatalogArray) ToCatalogArrayOutputWithContext(ctx context.Context) Catal
 // CatalogMapInput is an input type that accepts CatalogMap and CatalogMapOutput values.
 // You can construct a concrete instance of `CatalogMapInput` via:
 //
-//          CatalogMap{ "key": CatalogArgs{...} }
+//	CatalogMap{ "key": CatalogArgs{...} }
 type CatalogMapInput interface {
 	pulumi.Input
 

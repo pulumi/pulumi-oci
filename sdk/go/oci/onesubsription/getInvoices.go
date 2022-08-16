@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetInvoices(ctx, &onesubsription.GetInvoicesArgs{
-// 			ArCustomerTransactionId: oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
-// 			CompartmentId:           _var.Compartment_id,
-// 			Fields:                  _var.Invoice_fields,
-// 			TimeFrom:                pulumi.StringRef(_var.Invoice_time_from),
-// 			TimeTo:                  pulumi.StringRef(_var.Invoice_time_to),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetInvoices(ctx, &onesubsription.GetInvoicesArgs{
+//				ArCustomerTransactionId: oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
+//				CompartmentId:           _var.Compartment_id,
+//				Fields:                  _var.Invoice_fields,
+//				TimeFrom:                pulumi.StringRef(_var.Invoice_time_from),
+//				TimeTo:                  pulumi.StringRef(_var.Invoice_time_to),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInvoices(ctx *pulumi.Context, args *GetInvoicesArgs, opts ...pulumi.InvokeOption) (*GetInvoicesResult, error) {
 	var rv GetInvoicesResult

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDatabasePdbConversionHistoryEntries(ctx, &database.GetDatabasePdbConversionHistoryEntriesArgs{
-// 			DatabaseId:          oci_database_database.Test_database.Id,
-// 			PdbConversionAction: pulumi.StringRef(_var.Database_pdb_conversion_history_entry_pdb_conversion_action),
-// 			State:               pulumi.StringRef(_var.Database_pdb_conversion_history_entry_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDatabasePdbConversionHistoryEntries(ctx, &database.GetDatabasePdbConversionHistoryEntriesArgs{
+//				DatabaseId:          oci_database_database.Test_database.Id,
+//				PdbConversionAction: pulumi.StringRef(_var.Database_pdb_conversion_history_entry_pdb_conversion_action),
+//				State:               pulumi.StringRef(_var.Database_pdb_conversion_history_entry_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabasePdbConversionHistoryEntries(ctx *pulumi.Context, args *GetDatabasePdbConversionHistoryEntriesArgs, opts ...pulumi.InvokeOption) (*GetDatabasePdbConversionHistoryEntriesResult, error) {
 	var rv GetDatabasePdbConversionHistoryEntriesResult

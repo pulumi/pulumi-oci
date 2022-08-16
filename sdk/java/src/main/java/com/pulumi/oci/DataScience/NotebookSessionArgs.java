@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -110,6 +111,21 @@ public final class NotebookSessionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Notebook Session runtime configuration details.
+     * 
+     */
+    @Import(name="notebookSessionRuntimeConfigDetails")
+    private @Nullable Output<NotebookSessionNotebookSessionRuntimeConfigDetailsArgs> notebookSessionRuntimeConfigDetails;
+
+    /**
+     * @return (Updatable) Notebook Session runtime configuration details.
+     * 
+     */
+    public Optional<Output<NotebookSessionNotebookSessionRuntimeConfigDetailsArgs>> notebookSessionRuntimeConfigDetails() {
+        return Optional.ofNullable(this.notebookSessionRuntimeConfigDetails);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      * 
      */
@@ -148,6 +164,7 @@ public final class NotebookSessionArgs extends com.pulumi.resources.ResourceArgs
         this.freeformTags = $.freeformTags;
         this.notebookSessionConfigDetails = $.notebookSessionConfigDetails;
         this.notebookSessionConfigurationDetails = $.notebookSessionConfigurationDetails;
+        this.notebookSessionRuntimeConfigDetails = $.notebookSessionRuntimeConfigDetails;
         this.projectId = $.projectId;
         this.state = $.state;
     }
@@ -294,6 +311,27 @@ public final class NotebookSessionArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder notebookSessionConfigurationDetails(NotebookSessionNotebookSessionConfigurationDetailsArgs notebookSessionConfigurationDetails) {
             return notebookSessionConfigurationDetails(Output.of(notebookSessionConfigurationDetails));
+        }
+
+        /**
+         * @param notebookSessionRuntimeConfigDetails (Updatable) Notebook Session runtime configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionRuntimeConfigDetails(@Nullable Output<NotebookSessionNotebookSessionRuntimeConfigDetailsArgs> notebookSessionRuntimeConfigDetails) {
+            $.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+            return this;
+        }
+
+        /**
+         * @param notebookSessionRuntimeConfigDetails (Updatable) Notebook Session runtime configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notebookSessionRuntimeConfigDetails(NotebookSessionNotebookSessionRuntimeConfigDetailsArgs notebookSessionRuntimeConfigDetails) {
+            return notebookSessionRuntimeConfigDetails(Output.of(notebookSessionRuntimeConfigDetails));
         }
 
         /**

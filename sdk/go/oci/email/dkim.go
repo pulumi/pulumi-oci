@@ -25,28 +25,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.NewDkim(ctx, "testDkim", &Email.DkimArgs{
-// 			EmailDomainId: pulumi.Any(oci_email_email_domain.Test_email_domain.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Dkim_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.NewDkim(ctx, "testDkim", &Email.DkimArgs{
+//				EmailDomainId: pulumi.Any(oci_email_email_domain.Test_email_domain.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Dkim_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // Dkims can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Email/dkim:Dkim test_dkim "id"
+//
+//	$ pulumi import oci:Email/dkim:Dkim test_dkim "id"
+//
 // ```
 type Dkim struct {
 	pulumi.CustomResourceState
@@ -239,7 +244,7 @@ func (i *Dkim) ToDkimOutputWithContext(ctx context.Context) DkimOutput {
 // DkimArrayInput is an input type that accepts DkimArray and DkimArrayOutput values.
 // You can construct a concrete instance of `DkimArrayInput` via:
 //
-//          DkimArray{ DkimArgs{...} }
+//	DkimArray{ DkimArgs{...} }
 type DkimArrayInput interface {
 	pulumi.Input
 
@@ -264,7 +269,7 @@ func (i DkimArray) ToDkimArrayOutputWithContext(ctx context.Context) DkimArrayOu
 // DkimMapInput is an input type that accepts DkimMap and DkimMapOutput values.
 // You can construct a concrete instance of `DkimMapInput` via:
 //
-//          DkimMap{ "key": DkimArgs{...} }
+//	DkimMap{ "key": DkimArgs{...} }
 type DkimMapInput interface {
 	pulumi.Input
 

@@ -22,25 +22,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetInstances(ctx, &core.GetInstancesArgs{
-// 			CompartmentId:         _var.Compartment_id,
-// 			AvailabilityDomain:    pulumi.StringRef(_var.Instance_availability_domain),
-// 			CapacityReservationId: pulumi.StringRef(oci_core_capacity_reservation.Test_capacity_reservation.Id),
-// 			DisplayName:           pulumi.StringRef(_var.Instance_display_name),
-// 			State:                 pulumi.StringRef(_var.Instance_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetInstances(ctx, &core.GetInstancesArgs{
+//				CompartmentId:         _var.Compartment_id,
+//				AvailabilityDomain:    pulumi.StringRef(_var.Instance_availability_domain),
+//				CapacityReservationId: pulumi.StringRef(oci_core_capacity_reservation.Test_capacity_reservation.Id),
+//				DisplayName:           pulumi.StringRef(_var.Instance_display_name),
+//				State:                 pulumi.StringRef(_var.Instance_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstances(ctx *pulumi.Context, args *GetInstancesArgs, opts ...pulumi.InvokeOption) (*GetInstancesResult, error) {
 	var rv GetInstancesResult

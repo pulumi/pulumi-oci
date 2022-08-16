@@ -36,33 +36,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewIdentityProvider(ctx, "testIdentityProvider", &Identity.IdentityProviderArgs{
-// 			CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-// 			Description:   pulumi.Any(_var.Identity_provider_description),
-// 			Metadata:      pulumi.Any(_var.Identity_provider_metadata),
-// 			MetadataUrl:   pulumi.Any(_var.Identity_provider_metadata_url),
-// 			ProductType:   pulumi.Any(_var.Identity_provider_product_type),
-// 			Protocol:      pulumi.Any(_var.Identity_provider_protocol),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformAttributes: pulumi.Any(_var.Identity_provider_freeform_attributes),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewIdentityProvider(ctx, "testIdentityProvider", &Identity.IdentityProviderArgs{
+//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//				Description:   pulumi.Any(_var.Identity_provider_description),
+//				Metadata:      pulumi.Any(_var.Identity_provider_metadata),
+//				MetadataUrl:   pulumi.Any(_var.Identity_provider_metadata_url),
+//				ProductType:   pulumi.Any(_var.Identity_provider_product_type),
+//				Protocol:      pulumi.Any(_var.Identity_provider_protocol),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformAttributes: pulumi.Any(_var.Identity_provider_freeform_attributes),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -70,7 +73,9 @@ import (
 // IdentityProviders can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
+//
+//	$ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
+//
 // ```
 type IdentityProvider struct {
 	pulumi.CustomResourceState
@@ -296,7 +301,7 @@ func (i *IdentityProvider) ToIdentityProviderOutputWithContext(ctx context.Conte
 // IdentityProviderArrayInput is an input type that accepts IdentityProviderArray and IdentityProviderArrayOutput values.
 // You can construct a concrete instance of `IdentityProviderArrayInput` via:
 //
-//          IdentityProviderArray{ IdentityProviderArgs{...} }
+//	IdentityProviderArray{ IdentityProviderArgs{...} }
 type IdentityProviderArrayInput interface {
 	pulumi.Input
 
@@ -321,7 +326,7 @@ func (i IdentityProviderArray) ToIdentityProviderArrayOutputWithContext(ctx cont
 // IdentityProviderMapInput is an input type that accepts IdentityProviderMap and IdentityProviderMapOutput values.
 // You can construct a concrete instance of `IdentityProviderMapInput` via:
 //
-//          IdentityProviderMap{ "key": IdentityProviderArgs{...} }
+//	IdentityProviderMap{ "key": IdentityProviderArgs{...} }
 type IdentityProviderMapInput interface {
 	pulumi.Input
 

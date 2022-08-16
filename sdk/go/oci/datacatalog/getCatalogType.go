@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetCatalogType(ctx, &datacatalog.GetCatalogTypeArgs{
-// 			CatalogId: oci_datacatalog_catalog.Test_catalog.Id,
-// 			TypeKey:   _var.Catalog_type_type_key,
-// 			Fields:    _var.Catalog_type_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetCatalogType(ctx, &datacatalog.GetCatalogTypeArgs{
+//				CatalogId: oci_datacatalog_catalog.Test_catalog.Id,
+//				TypeKey:   _var.Catalog_type_type_key,
+//				Fields:    _var.Catalog_type_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCatalogType(ctx *pulumi.Context, args *GetCatalogTypeArgs, opts ...pulumi.InvokeOption) (*GetCatalogTypeResult, error) {
 	var rv GetCatalogTypeResult

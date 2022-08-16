@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewOnPremConnector(ctx, "testOnPremConnector", &DataSafe.OnPremConnectorArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.On_prem_connector_description),
-// 			DisplayName: pulumi.Any(_var.On_prem_connector_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewOnPremConnector(ctx, "testOnPremConnector", &DataSafe.OnPremConnectorArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.On_prem_connector_description),
+//				DisplayName: pulumi.Any(_var.On_prem_connector_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // OnPremConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
+//
+//	$ pulumi import oci:DataSafe/onPremConnector:OnPremConnector test_on_prem_connector "id"
+//
 // ```
 type OnPremConnector struct {
 	pulumi.CustomResourceState
@@ -218,7 +223,7 @@ func (i *OnPremConnector) ToOnPremConnectorOutputWithContext(ctx context.Context
 // OnPremConnectorArrayInput is an input type that accepts OnPremConnectorArray and OnPremConnectorArrayOutput values.
 // You can construct a concrete instance of `OnPremConnectorArrayInput` via:
 //
-//          OnPremConnectorArray{ OnPremConnectorArgs{...} }
+//	OnPremConnectorArray{ OnPremConnectorArgs{...} }
 type OnPremConnectorArrayInput interface {
 	pulumi.Input
 
@@ -243,7 +248,7 @@ func (i OnPremConnectorArray) ToOnPremConnectorArrayOutputWithContext(ctx contex
 // OnPremConnectorMapInput is an input type that accepts OnPremConnectorMap and OnPremConnectorMapOutput values.
 // You can construct a concrete instance of `OnPremConnectorMapInput` via:
 //
-//          OnPremConnectorMap{ "key": OnPremConnectorArgs{...} }
+//	OnPremConnectorMap{ "key": OnPremConnectorArgs{...} }
 type OnPremConnectorMapInput interface {
 	pulumi.Input
 

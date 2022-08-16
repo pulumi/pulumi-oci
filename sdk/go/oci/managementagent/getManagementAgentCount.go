@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgentCount(ctx, &managementagent.GetManagementAgentCountArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			GroupBies:     _var.Management_agent_count_group_by,
-// 			HasPlugins:    pulumi.BoolRef(_var.Management_agent_count_has_plugins),
-// 			InstallType:   pulumi.StringRef(_var.Management_agent_count_install_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgentCount(ctx, &managementagent.GetManagementAgentCountArgs{
+//				CompartmentId: _var.Compartment_id,
+//				GroupBies:     _var.Management_agent_count_group_by,
+//				HasPlugins:    pulumi.BoolRef(_var.Management_agent_count_has_plugins),
+//				InstallType:   pulumi.StringRef(_var.Management_agent_count_install_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementAgentCount(ctx *pulumi.Context, args *GetManagementAgentCountArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentCountResult, error) {
 	var rv GetManagementAgentCountResult

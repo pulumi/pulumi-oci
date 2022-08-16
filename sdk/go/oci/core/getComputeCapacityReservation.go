@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeCapacityReservation(ctx, &core.GetComputeCapacityReservationArgs{
-// 			CapacityReservationId: oci_core_capacity_reservation.Test_capacity_reservation.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeCapacityReservation(ctx, &core.GetComputeCapacityReservationArgs{
+//				CapacityReservationId: oci_core_capacity_reservation.Test_capacity_reservation.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupComputeCapacityReservation(ctx *pulumi.Context, args *LookupComputeCapacityReservationArgs, opts ...pulumi.InvokeOption) (*LookupComputeCapacityReservationResult, error) {
 	var rv LookupComputeCapacityReservationResult

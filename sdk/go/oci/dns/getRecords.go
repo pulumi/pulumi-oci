@@ -16,28 +16,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetRecords(ctx, &dns.GetRecordsArgs{
-// 			ZoneNameOrId:   oci_dns_zone_name_or.Test_zone_name_or.Id,
-// 			CompartmentId:  pulumi.StringRef(_var.Compartment_id),
-// 			Domain:         pulumi.StringRef(_var.Record_domain),
-// 			DomainContains: pulumi.StringRef(_var.Record_domain_contains),
-// 			Rtype:          pulumi.StringRef(_var.Record_rtype),
-// 			Scope:          _var.Record_scope,
-// 			ViewId:         oci_dns_view.Test_view.Id,
-// 			ZoneVersion:    pulumi.StringRef(_var.Record_zone_version),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetRecords(ctx, &dns.GetRecordsArgs{
+//				ZoneNameOrId:   oci_dns_zone_name_or.Test_zone_name_or.Id,
+//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
+//				Domain:         pulumi.StringRef(_var.Record_domain),
+//				DomainContains: pulumi.StringRef(_var.Record_domain_contains),
+//				Rtype:          pulumi.StringRef(_var.Record_rtype),
+//				Scope:          _var.Record_scope,
+//				ViewId:         oci_dns_view.Test_view.Id,
+//				ZoneVersion:    pulumi.StringRef(_var.Record_zone_version),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRecords(ctx *pulumi.Context, args *GetRecordsArgs, opts ...pulumi.InvokeOption) (*GetRecordsResult, error) {
 	var rv GetRecordsResult

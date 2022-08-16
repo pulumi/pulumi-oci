@@ -20,66 +20,69 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewDbHome(ctx, "testDbHome", &Database.DbHomeArgs{
-// 			Database: &database.DbHomeDatabaseArgs{
-// 				AdminPassword:           pulumi.Any(_var.Db_home_database_admin_password),
-// 				BackupId:                pulumi.Any(oci_database_backup.Test_backup.Id),
-// 				BackupTdePassword:       pulumi.Any(_var.Db_home_database_backup_tde_password),
-// 				CharacterSet:            pulumi.Any(_var.Db_home_database_character_set),
-// 				DatabaseId:              pulumi.Any(oci_database_database.Test_database.Id),
-// 				DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
-// 				DbBackupConfig: &database.DbHomeDatabaseDbBackupConfigArgs{
-// 					AutoBackupEnabled: pulumi.Any(_var.Db_home_database_db_backup_config_auto_backup_enabled),
-// 					AutoBackupWindow:  pulumi.Any(_var.Db_home_database_db_backup_config_auto_backup_window),
-// 					BackupDestinationDetails: database.DbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{
-// 						&database.DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{
-// 							Id:   pulumi.Any(_var.Db_home_database_db_backup_config_backup_destination_details_id),
-// 							Type: pulumi.Any(_var.Db_home_database_db_backup_config_backup_destination_details_type),
-// 						},
-// 					},
-// 					RecoveryWindowInDays: pulumi.Any(_var.Db_home_database_db_backup_config_recovery_window_in_days),
-// 				},
-// 				DbName:                          pulumi.Any(_var.Db_home_database_db_name),
-// 				DbWorkload:                      pulumi.Any(_var.Db_home_database_db_workload),
-// 				DefinedTags:                     pulumi.Any(_var.Db_home_database_defined_tags),
-// 				FreeformTags:                    pulumi.Any(_var.Db_home_database_freeform_tags),
-// 				KmsKeyId:                        pulumi.Any(oci_kms_key.Test_key.Id),
-// 				KmsKeyVersionId:                 pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 				NcharacterSet:                   pulumi.Any(_var.Db_home_database_ncharacter_set),
-// 				PdbName:                         pulumi.Any(_var.Db_home_database_pdb_name),
-// 				SidPrefix:                       pulumi.Any(_var.Db_home_database_sid_prefix),
-// 				TdeWalletPassword:               pulumi.Any(_var.Db_home_database_tde_wallet_password),
-// 				TimeStampForPointInTimeRecovery: pulumi.Any(_var.Db_home_database_time_stamp_for_point_in_time_recovery),
-// 				VaultId:                         pulumi.Any(oci_kms_vault.Test_vault.Id),
-// 			},
-// 			DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
-// 			DbSystemId:              pulumi.Any(oci_database_db_system.Test_db_system.Id),
-// 			DbVersion: pulumi.String{
-// 				nil,
-// 			},
-// 			DefinedTags: pulumi.Any(_var.Db_home_defined_tags),
-// 			DisplayName: pulumi.Any(_var.Db_home_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsDesupportedVersion: pulumi.Any(_var.Db_home_is_desupported_version),
-// 			KmsKeyId:             pulumi.Any(oci_kms_key.Test_key.Id),
-// 			KmsKeyVersionId:      pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 			Source:               pulumi.Any(_var.Db_home_source),
-// 			VmClusterId:          pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewDbHome(ctx, "testDbHome", &Database.DbHomeArgs{
+//				Database: &database.DbHomeDatabaseArgs{
+//					AdminPassword:           pulumi.Any(_var.Db_home_database_admin_password),
+//					BackupId:                pulumi.Any(oci_database_backup.Test_backup.Id),
+//					BackupTdePassword:       pulumi.Any(_var.Db_home_database_backup_tde_password),
+//					CharacterSet:            pulumi.Any(_var.Db_home_database_character_set),
+//					DatabaseId:              pulumi.Any(oci_database_database.Test_database.Id),
+//					DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
+//					DbBackupConfig: &database.DbHomeDatabaseDbBackupConfigArgs{
+//						AutoBackupEnabled: pulumi.Any(_var.Db_home_database_db_backup_config_auto_backup_enabled),
+//						AutoBackupWindow:  pulumi.Any(_var.Db_home_database_db_backup_config_auto_backup_window),
+//						BackupDestinationDetails: database.DbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{
+//							&database.DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs{
+//								Id:   pulumi.Any(_var.Db_home_database_db_backup_config_backup_destination_details_id),
+//								Type: pulumi.Any(_var.Db_home_database_db_backup_config_backup_destination_details_type),
+//							},
+//						},
+//						RecoveryWindowInDays: pulumi.Any(_var.Db_home_database_db_backup_config_recovery_window_in_days),
+//					},
+//					DbName:                          pulumi.Any(_var.Db_home_database_db_name),
+//					DbWorkload:                      pulumi.Any(_var.Db_home_database_db_workload),
+//					DefinedTags:                     pulumi.Any(_var.Db_home_database_defined_tags),
+//					FreeformTags:                    pulumi.Any(_var.Db_home_database_freeform_tags),
+//					KmsKeyId:                        pulumi.Any(oci_kms_key.Test_key.Id),
+//					KmsKeyVersionId:                 pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//					NcharacterSet:                   pulumi.Any(_var.Db_home_database_ncharacter_set),
+//					PdbName:                         pulumi.Any(_var.Db_home_database_pdb_name),
+//					SidPrefix:                       pulumi.Any(_var.Db_home_database_sid_prefix),
+//					TdeWalletPassword:               pulumi.Any(_var.Db_home_database_tde_wallet_password),
+//					TimeStampForPointInTimeRecovery: pulumi.Any(_var.Db_home_database_time_stamp_for_point_in_time_recovery),
+//					VaultId:                         pulumi.Any(oci_kms_vault.Test_vault.Id),
+//				},
+//				DatabaseSoftwareImageId: pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
+//				DbSystemId:              pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				DbVersion: pulumi.String{
+//					nil,
+//				},
+//				DefinedTags: pulumi.Any(_var.Db_home_defined_tags),
+//				DisplayName: pulumi.Any(_var.Db_home_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsDesupportedVersion: pulumi.Any(_var.Db_home_is_desupported_version),
+//				KmsKeyId:             pulumi.Any(oci_kms_key.Test_key.Id),
+//				KmsKeyVersionId:      pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//				Source:               pulumi.Any(_var.Db_home_source),
+//				VmClusterId:          pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -87,16 +90,18 @@ import (
 // DbHomes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/dbHome:DbHome test_db_home "id"
+//
+//	$ pulumi import oci:Database/dbHome:DbHome test_db_home "id"
+//
 // ```
 //
-//  Import is only supported for source=NONE database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
+//	Import is only supported for source=NONE database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
 //
-//  lifecycle {
+//	lifecycle {
 //
-//  ignore_changes = ["database.0.admin_password"]
+//	ignore_changes = ["database.0.admin_password"]
 //
-//  } The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
+//	} The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
 type DbHome struct {
 	pulumi.CustomResourceState
 
@@ -329,7 +334,7 @@ func (i *DbHome) ToDbHomeOutputWithContext(ctx context.Context) DbHomeOutput {
 // DbHomeArrayInput is an input type that accepts DbHomeArray and DbHomeArrayOutput values.
 // You can construct a concrete instance of `DbHomeArrayInput` via:
 //
-//          DbHomeArray{ DbHomeArgs{...} }
+//	DbHomeArray{ DbHomeArgs{...} }
 type DbHomeArrayInput interface {
 	pulumi.Input
 
@@ -354,7 +359,7 @@ func (i DbHomeArray) ToDbHomeArrayOutputWithContext(ctx context.Context) DbHomeA
 // DbHomeMapInput is an input type that accepts DbHomeMap and DbHomeMapOutput values.
 // You can construct a concrete instance of `DbHomeMapInput` via:
 //
-//          DbHomeMap{ "key": DbHomeArgs{...} }
+//	DbHomeMap{ "key": DbHomeArgs{...} }
 type DbHomeMapInput interface {
 	pulumi.Input
 

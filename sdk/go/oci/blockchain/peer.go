@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
 //
-// Create Blockchain Platform Peer
+// # Create Blockchain Platform Peer
 //
 // ## Example Usage
 //
@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Blockchain"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Blockchain.NewPeer(ctx, "testPeer", &Blockchain.PeerArgs{
-// 			Ad:                   pulumi.Any(_var.Peer_ad),
-// 			BlockchainPlatformId: pulumi.Any(oci_blockchain_blockchain_platform.Test_blockchain_platform.Id),
-// 			OcpuAllocationParam: &blockchain.PeerOcpuAllocationParamArgs{
-// 				OcpuAllocationNumber: pulumi.Any(_var.Peer_ocpu_allocation_param_ocpu_allocation_number),
-// 			},
-// 			Role:  pulumi.Any(_var.Peer_role),
-// 			Alias: pulumi.Any(_var.Peer_alias),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Blockchain.NewPeer(ctx, "testPeer", &Blockchain.PeerArgs{
+//				Ad:                   pulumi.Any(_var.Peer_ad),
+//				BlockchainPlatformId: pulumi.Any(oci_blockchain_blockchain_platform.Test_blockchain_platform.Id),
+//				OcpuAllocationParam: &blockchain.PeerOcpuAllocationParamArgs{
+//					OcpuAllocationNumber: pulumi.Any(_var.Peer_ocpu_allocation_param_ocpu_allocation_number),
+//				},
+//				Role:  pulumi.Any(_var.Peer_role),
+//				Alias: pulumi.Any(_var.Peer_alias),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -49,7 +52,9 @@ import (
 // Peers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
+//
+//	$ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
+//
 // ```
 type Peer struct {
 	pulumi.CustomResourceState
@@ -207,7 +212,7 @@ func (i *Peer) ToPeerOutputWithContext(ctx context.Context) PeerOutput {
 // PeerArrayInput is an input type that accepts PeerArray and PeerArrayOutput values.
 // You can construct a concrete instance of `PeerArrayInput` via:
 //
-//          PeerArray{ PeerArgs{...} }
+//	PeerArray{ PeerArgs{...} }
 type PeerArrayInput interface {
 	pulumi.Input
 
@@ -232,7 +237,7 @@ func (i PeerArray) ToPeerArrayOutputWithContext(ctx context.Context) PeerArrayOu
 // PeerMapInput is an input type that accepts PeerMap and PeerMapOutput values.
 // You can construct a concrete instance of `PeerMapInput` via:
 //
-//          PeerMap{ "key": PeerArgs{...} }
+//	PeerMap{ "key": PeerArgs{...} }
 type PeerMapInput interface {
 	pulumi.Input
 

@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Apm"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Apm"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Apm.GetDataKeys(ctx, &apm.GetDataKeysArgs{
-// 			ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-// 			DataKeyType: pulumi.StringRef(_var.Data_key_data_key_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Apm.GetDataKeys(ctx, &apm.GetDataKeysArgs{
+//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//				DataKeyType: pulumi.StringRef(_var.Data_key_data_key_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDataKeys(ctx *pulumi.Context, args *GetDataKeysArgs, opts ...pulumi.InvokeOption) (*GetDataKeysResult, error) {
 	var rv GetDataKeysResult

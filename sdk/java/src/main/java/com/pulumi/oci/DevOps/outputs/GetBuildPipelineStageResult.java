@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStageBuildPipelineStagePredecessorCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStageBuildSourceCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStageDeliverArtifactCollection;
+import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagePrivateAccessConfig;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStageWaitCriteria;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -105,6 +106,11 @@ public final class GetBuildPipelineStageResult {
      */
     private final String primaryBuildSource;
     /**
+     * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+     * 
+     */
+    private final List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs;
+    /**
      * @return The OCID of the DevOps project.
      * 
      */
@@ -160,6 +166,7 @@ public final class GetBuildPipelineStageResult {
         @CustomType.Parameter("isPassAllParametersEnabled") Boolean isPassAllParametersEnabled,
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("primaryBuildSource") String primaryBuildSource,
+        @CustomType.Parameter("privateAccessConfigs") List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs,
         @CustomType.Parameter("projectId") String projectId,
         @CustomType.Parameter("stageExecutionTimeoutInSeconds") Integer stageExecutionTimeoutInSeconds,
         @CustomType.Parameter("state") String state,
@@ -185,6 +192,7 @@ public final class GetBuildPipelineStageResult {
         this.isPassAllParametersEnabled = isPassAllParametersEnabled;
         this.lifecycleDetails = lifecycleDetails;
         this.primaryBuildSource = primaryBuildSource;
+        this.privateAccessConfigs = privateAccessConfigs;
         this.projectId = projectId;
         this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
         this.state = state;
@@ -317,6 +325,13 @@ public final class GetBuildPipelineStageResult {
         return this.primaryBuildSource;
     }
     /**
+     * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+     * 
+     */
+    public List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs() {
+        return this.privateAccessConfigs;
+    }
+    /**
      * @return The OCID of the DevOps project.
      * 
      */
@@ -393,6 +408,7 @@ public final class GetBuildPipelineStageResult {
         private Boolean isPassAllParametersEnabled;
         private String lifecycleDetails;
         private String primaryBuildSource;
+        private List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs;
         private String projectId;
         private Integer stageExecutionTimeoutInSeconds;
         private String state;
@@ -425,6 +441,7 @@ public final class GetBuildPipelineStageResult {
     	      this.isPassAllParametersEnabled = defaults.isPassAllParametersEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.primaryBuildSource = defaults.primaryBuildSource;
+    	      this.privateAccessConfigs = defaults.privateAccessConfigs;
     	      this.projectId = defaults.projectId;
     	      this.stageExecutionTimeoutInSeconds = defaults.stageExecutionTimeoutInSeconds;
     	      this.state = defaults.state;
@@ -515,6 +532,13 @@ public final class GetBuildPipelineStageResult {
             this.primaryBuildSource = Objects.requireNonNull(primaryBuildSource);
             return this;
         }
+        public Builder privateAccessConfigs(List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs) {
+            this.privateAccessConfigs = Objects.requireNonNull(privateAccessConfigs);
+            return this;
+        }
+        public Builder privateAccessConfigs(GetBuildPipelineStagePrivateAccessConfig... privateAccessConfigs) {
+            return privateAccessConfigs(List.of(privateAccessConfigs));
+        }
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
@@ -546,7 +570,7 @@ public final class GetBuildPipelineStageResult {
         public Builder waitCriterias(GetBuildPipelineStageWaitCriteria... waitCriterias) {
             return waitCriterias(List.of(waitCriterias));
         }        public GetBuildPipelineStageResult build() {
-            return new GetBuildPipelineStageResult(buildPipelineId, buildPipelineStageId, buildPipelineStagePredecessorCollections, buildPipelineStageType, buildSourceCollections, buildSpecFile, compartmentId, definedTags, deliverArtifactCollections, deployPipelineId, description, displayName, freeformTags, id, image, isPassAllParametersEnabled, lifecycleDetails, primaryBuildSource, projectId, stageExecutionTimeoutInSeconds, state, systemTags, timeCreated, timeUpdated, waitCriterias);
+            return new GetBuildPipelineStageResult(buildPipelineId, buildPipelineStageId, buildPipelineStagePredecessorCollections, buildPipelineStageType, buildSourceCollections, buildSpecFile, compartmentId, definedTags, deliverArtifactCollections, deployPipelineId, description, displayName, freeformTags, id, image, isPassAllParametersEnabled, lifecycleDetails, primaryBuildSource, privateAccessConfigs, projectId, stageExecutionTimeoutInSeconds, state, systemTags, timeCreated, timeUpdated, waitCriterias);
         }
     }
 }

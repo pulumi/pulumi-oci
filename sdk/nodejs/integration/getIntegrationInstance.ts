@@ -51,6 +51,10 @@ export interface GetIntegrationInstanceResult {
      */
     readonly alternateCustomEndpoints: outputs.Integration.GetIntegrationInstanceAlternateCustomEndpoint[];
     /**
+     * A list of associated attachments to other services
+     */
+    readonly attachments: outputs.Integration.GetIntegrationInstanceAttachment[];
+    /**
      * Compartment Identifier.
      */
     readonly compartmentId: string;
@@ -79,6 +83,10 @@ export interface GetIntegrationInstanceResult {
      */
     readonly id: string;
     readonly idcsAt: string;
+    /**
+     * Information for IDCS access
+     */
+    readonly idcsInfos: outputs.Integration.GetIntegrationInstanceIdcsInfo[];
     /**
      * The Integration Instance URL.
      */

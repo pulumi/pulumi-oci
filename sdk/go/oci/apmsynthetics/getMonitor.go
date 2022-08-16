@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.GetMonitor(ctx, &apmsynthetics.GetMonitorArgs{
-// 			ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-// 			MonitorId:   oci_apm_synthetics_monitor.Test_monitor.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.GetMonitor(ctx, &apmsynthetics.GetMonitorArgs{
+//				ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+//				MonitorId:   oci_apm_synthetics_monitor.Test_monitor.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMonitor(ctx *pulumi.Context, args *GetMonitorArgs, opts ...pulumi.InvokeOption) (*GetMonitorResult, error) {
 	var rv GetMonitorResult
@@ -57,6 +60,8 @@ type GetMonitorArgs struct {
 // A collection of values returned by getMonitor.
 type GetMonitorResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -67,6 +72,8 @@ type GetMonitorResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run now.
+	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool   `pulumi:"isRunOnce"`
 	MonitorId string `pulumi:"monitorId"`
@@ -74,6 +81,8 @@ type GetMonitorResult struct {
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
+	// Scheduling policy on Vantage points.
+	SchedulingPolicy string `pulumi:"schedulingPolicy"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId string `pulumi:"scriptId"`
 	// Name of the script.
@@ -140,6 +149,11 @@ func (o GetMonitorResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
+// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+func (o GetMonitorResultOutput) BatchIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorResult) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
+}
+
 // Details of monitor configuration.
 func (o GetMonitorResultOutput) Configurations() GetMonitorConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorResult) []GetMonitorConfiguration { return v.Configurations }).(GetMonitorConfigurationArrayOutput)
@@ -165,6 +179,11 @@ func (o GetMonitorResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// If isRunNow is enabled, then the monitor will run now.
+func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunNow }).(pulumi.BoolOutput)
+}
+
 // If runOnce is enabled, then the monitor will run once.
 func (o GetMonitorResultOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
@@ -182,6 +201,11 @@ func (o GetMonitorResultOutput) MonitorType() pulumi.StringOutput {
 // Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 func (o GetMonitorResultOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
+}
+
+// Scheduling policy on Vantage points.
+func (o GetMonitorResultOutput) SchedulingPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorResult) string { return v.SchedulingPolicy }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.

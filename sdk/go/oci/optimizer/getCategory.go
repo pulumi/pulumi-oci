@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetCategory(ctx, &optimizer.GetCategoryArgs{
-// 			CategoryId: oci_optimizer_category.Test_category.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetCategory(ctx, &optimizer.GetCategoryArgs{
+//				CategoryId: oci_optimizer_category.Test_category.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCategory(ctx *pulumi.Context, args *GetCategoryArgs, opts ...pulumi.InvokeOption) (*GetCategoryResult, error) {
 	var rv GetCategoryResult

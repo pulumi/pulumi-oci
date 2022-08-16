@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousContainerDatabaseDataguardAssociation(ctx, &database.GetAutonomousContainerDatabaseDataguardAssociationArgs{
-// 			AutonomousContainerDatabaseDataguardAssociationId: oci_database_autonomous_container_database_dataguard_association.Test_autonomous_container_database_dataguard_association.Id,
-// 			AutonomousContainerDatabaseId:                     oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousContainerDatabaseDataguardAssociation(ctx, &database.GetAutonomousContainerDatabaseDataguardAssociationArgs{
+//				AutonomousContainerDatabaseDataguardAssociationId: oci_database_autonomous_container_database_dataguard_association.Test_autonomous_container_database_dataguard_association.Id,
+//				AutonomousContainerDatabaseId:                     oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAutonomousContainerDatabaseDataguardAssociation(ctx *pulumi.Context, args *LookupAutonomousContainerDatabaseDataguardAssociationArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousContainerDatabaseDataguardAssociationResult, error) {
 	var rv LookupAutonomousContainerDatabaseDataguardAssociationResult

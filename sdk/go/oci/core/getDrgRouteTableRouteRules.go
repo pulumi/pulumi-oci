@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetDrgRouteTableRouteRules(ctx, &core.GetDrgRouteTableRouteRulesArgs{
-// 			DrgRouteTableId: oci_core_drg_route_table.Test_drg_route_table.Id,
-// 			RouteType:       pulumi.StringRef(_var.Drg_route_table_route_rule_route_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetDrgRouteTableRouteRules(ctx, &core.GetDrgRouteTableRouteRulesArgs{
+//				DrgRouteTableId: oci_core_drg_route_table.Test_drg_route_table.Id,
+//				RouteType:       pulumi.StringRef(_var.Drg_route_table_route_rule_route_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDrgRouteTableRouteRules(ctx *pulumi.Context, args *GetDrgRouteTableRouteRulesArgs, opts ...pulumi.InvokeOption) (*GetDrgRouteTableRouteRulesResult, error) {
 	var rv GetDrgRouteTableRouteRulesResult

@@ -19,7 +19,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
      */
     private final @Nullable List<String> events;
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     private final @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes;
@@ -47,7 +47,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
         return this.events == null ? List.of() : this.events;
     }
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes() {

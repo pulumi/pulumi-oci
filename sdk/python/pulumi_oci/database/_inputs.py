@@ -141,6 +141,7 @@ __all__ = [
     'GetCloudExadataInfrastructuresFilterArgs',
     'GetCloudVmClustersFilterArgs',
     'GetDataGuardAssociationsFilterArgs',
+    'GetDatabaseMaintenanceRunHistoriesFilterArgs',
     'GetDatabasePdbConversionHistoryEntriesFilterArgs',
     'GetDatabaseSoftwareImagesFilterArgs',
     'GetDatabaseUpgradeHistoryEntriesFilterArgs',
@@ -8529,6 +8530,45 @@ class GetCloudVmClustersFilterArgs:
 
 @pulumi.input_type
 class GetDataGuardAssociationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetDatabaseMaintenanceRunHistoriesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

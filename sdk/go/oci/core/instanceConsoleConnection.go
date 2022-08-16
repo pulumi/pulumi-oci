@@ -25,28 +25,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewInstanceConsoleConnection(ctx, "testInstanceConsoleConnection", &Core.InstanceConsoleConnectionArgs{
-// 			InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			PublicKey:  pulumi.Any(_var.Instance_console_connection_public_key),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewInstanceConsoleConnection(ctx, "testInstanceConsoleConnection", &Core.InstanceConsoleConnectionArgs{
+//				InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
+//				PublicKey:  pulumi.Any(_var.Instance_console_connection_public_key),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // InstanceConsoleConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
+//
+//	$ pulumi import oci:Core/instanceConsoleConnection:InstanceConsoleConnection test_instance_console_connection "id"
+//
 // ```
 type InstanceConsoleConnection struct {
 	pulumi.CustomResourceState
@@ -214,7 +219,7 @@ func (i *InstanceConsoleConnection) ToInstanceConsoleConnectionOutputWithContext
 // InstanceConsoleConnectionArrayInput is an input type that accepts InstanceConsoleConnectionArray and InstanceConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `InstanceConsoleConnectionArrayInput` via:
 //
-//          InstanceConsoleConnectionArray{ InstanceConsoleConnectionArgs{...} }
+//	InstanceConsoleConnectionArray{ InstanceConsoleConnectionArgs{...} }
 type InstanceConsoleConnectionArrayInput interface {
 	pulumi.Input
 
@@ -239,7 +244,7 @@ func (i InstanceConsoleConnectionArray) ToInstanceConsoleConnectionArrayOutputWi
 // InstanceConsoleConnectionMapInput is an input type that accepts InstanceConsoleConnectionMap and InstanceConsoleConnectionMapOutput values.
 // You can construct a concrete instance of `InstanceConsoleConnectionMapInput` via:
 //
-//          InstanceConsoleConnectionMap{ "key": InstanceConsoleConnectionArgs{...} }
+//	InstanceConsoleConnectionMap{ "key": InstanceConsoleConnectionArgs{...} }
 type InstanceConsoleConnectionMapInput interface {
 	pulumi.Input
 

@@ -23,24 +23,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetResolverEndpoints(ctx, &dns.GetResolverEndpointsArgs{
-// 			ResolverId: oci_dns_resolver.Test_resolver.Id,
-// 			Scope:      "PRIVATE",
-// 			Name:       pulumi.StringRef(_var.Resolver_endpoint_name),
-// 			State:      pulumi.StringRef(_var.Resolver_endpoint_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetResolverEndpoints(ctx, &dns.GetResolverEndpointsArgs{
+//				ResolverId: oci_dns_resolver.Test_resolver.Id,
+//				Scope:      "PRIVATE",
+//				Name:       pulumi.StringRef(_var.Resolver_endpoint_name),
+//				State:      pulumi.StringRef(_var.Resolver_endpoint_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetResolverEndpoints(ctx *pulumi.Context, args *GetResolverEndpointsArgs, opts ...pulumi.InvokeOption) (*GetResolverEndpointsResult, error) {
 	var rv GetResolverEndpointsResult

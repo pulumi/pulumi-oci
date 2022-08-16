@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetVmClusterUpdates(ctx, &database.GetVmClusterUpdatesArgs{
-// 			VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
-// 			State:       pulumi.StringRef(_var.Vm_cluster_update_state),
-// 			UpdateType:  pulumi.StringRef(_var.Vm_cluster_update_update_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetVmClusterUpdates(ctx, &database.GetVmClusterUpdatesArgs{
+//				VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
+//				State:       pulumi.StringRef(_var.Vm_cluster_update_state),
+//				UpdateType:  pulumi.StringRef(_var.Vm_cluster_update_update_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVmClusterUpdates(ctx *pulumi.Context, args *GetVmClusterUpdatesArgs, opts ...pulumi.InvokeOption) (*GetVmClusterUpdatesResult, error) {
 	var rv GetVmClusterUpdatesResult

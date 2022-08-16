@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVolumeGroups(ctx, &core.GetVolumeGroupsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Volume_group_availability_domain),
-// 			DisplayName:        pulumi.StringRef(_var.Volume_group_display_name),
-// 			State:              pulumi.StringRef(_var.Volume_group_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVolumeGroups(ctx, &core.GetVolumeGroupsArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Volume_group_availability_domain),
+//				DisplayName:        pulumi.StringRef(_var.Volume_group_display_name),
+//				State:              pulumi.StringRef(_var.Volume_group_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVolumeGroups(ctx *pulumi.Context, args *GetVolumeGroupsArgs, opts ...pulumi.InvokeOption) (*GetVolumeGroupsResult, error) {
 	var rv GetVolumeGroupsResult

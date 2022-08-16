@@ -23,23 +23,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.GetPingMonitors(ctx, &healthchecks.GetPingMonitorsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Ping_monitor_display_name),
-// 			HomeRegion:    pulumi.StringRef(_var.Ping_monitor_home_region),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.GetPingMonitors(ctx, &healthchecks.GetPingMonitorsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Ping_monitor_display_name),
+//				HomeRegion:    pulumi.StringRef(_var.Ping_monitor_home_region),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPingMonitors(ctx *pulumi.Context, args *GetPingMonitorsArgs, opts ...pulumi.InvokeOption) (*GetPingMonitorsResult, error) {
 	var rv GetPingMonitorsResult

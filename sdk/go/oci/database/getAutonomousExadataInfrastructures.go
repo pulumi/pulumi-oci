@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousExadataInfrastructures(ctx, &database.GetAutonomousExadataInfrastructuresArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Autonomous_exadata_infrastructure_availability_domain),
-// 			DisplayName:        pulumi.StringRef(_var.Autonomous_exadata_infrastructure_display_name),
-// 			State:              pulumi.StringRef(_var.Autonomous_exadata_infrastructure_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousExadataInfrastructures(ctx, &database.GetAutonomousExadataInfrastructuresArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Autonomous_exadata_infrastructure_availability_domain),
+//				DisplayName:        pulumi.StringRef(_var.Autonomous_exadata_infrastructure_display_name),
+//				State:              pulumi.StringRef(_var.Autonomous_exadata_infrastructure_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousExadataInfrastructures(ctx *pulumi.Context, args *GetAutonomousExadataInfrastructuresArgs, opts ...pulumi.InvokeOption) (*GetAutonomousExadataInfrastructuresResult, error) {
 	var rv GetAutonomousExadataInfrastructuresResult

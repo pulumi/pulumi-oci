@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetInstanceDevices(ctx, &core.GetInstanceDevicesArgs{
-// 			InstanceId:  oci_core_instance.Test_instance.Id,
-// 			IsAvailable: pulumi.BoolRef(_var.Instance_device_is_available),
-// 			Name:        pulumi.StringRef(_var.Instance_device_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetInstanceDevices(ctx, &core.GetInstanceDevicesArgs{
+//				InstanceId:  oci_core_instance.Test_instance.Id,
+//				IsAvailable: pulumi.BoolRef(_var.Instance_device_is_available),
+//				Name:        pulumi.StringRef(_var.Instance_device_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInstanceDevices(ctx *pulumi.Context, args *GetInstanceDevicesArgs, opts ...pulumi.InvokeOption) (*GetInstanceDevicesResult, error) {
 	var rv GetInstanceDevicesResult

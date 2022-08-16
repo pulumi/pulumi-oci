@@ -22,32 +22,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewOperationsInsightsWarehouseUser(ctx, "testOperationsInsightsWarehouseUser", &Opsi.OperationsInsightsWarehouseUserArgs{
-// 			CompartmentId:                 pulumi.Any(_var.Compartment_id),
-// 			ConnectionPassword:            pulumi.Any(_var.Operations_insights_warehouse_user_connection_password),
-// 			IsAwrDataAccess:               pulumi.Any(_var.Operations_insights_warehouse_user_is_awr_data_access),
-// 			OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsEmDataAccess:   pulumi.Any(_var.Operations_insights_warehouse_user_is_em_data_access),
-// 			IsOpsiDataAccess: pulumi.Any(_var.Operations_insights_warehouse_user_is_opsi_data_access),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewOperationsInsightsWarehouseUser(ctx, "testOperationsInsightsWarehouseUser", &Opsi.OperationsInsightsWarehouseUserArgs{
+//				CompartmentId:                 pulumi.Any(_var.Compartment_id),
+//				ConnectionPassword:            pulumi.Any(_var.Operations_insights_warehouse_user_connection_password),
+//				IsAwrDataAccess:               pulumi.Any(_var.Operations_insights_warehouse_user_is_awr_data_access),
+//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsEmDataAccess:   pulumi.Any(_var.Operations_insights_warehouse_user_is_em_data_access),
+//				IsOpsiDataAccess: pulumi.Any(_var.Operations_insights_warehouse_user_is_opsi_data_access),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
+//
+//	$ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
+//
 // ```
 type OperationsInsightsWarehouseUser struct {
 	pulumi.CustomResourceState
@@ -265,7 +270,7 @@ func (i *OperationsInsightsWarehouseUser) ToOperationsInsightsWarehouseUserOutpu
 // OperationsInsightsWarehouseUserArrayInput is an input type that accepts OperationsInsightsWarehouseUserArray and OperationsInsightsWarehouseUserArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseUserArrayInput` via:
 //
-//          OperationsInsightsWarehouseUserArray{ OperationsInsightsWarehouseUserArgs{...} }
+//	OperationsInsightsWarehouseUserArray{ OperationsInsightsWarehouseUserArgs{...} }
 type OperationsInsightsWarehouseUserArrayInput interface {
 	pulumi.Input
 
@@ -290,7 +295,7 @@ func (i OperationsInsightsWarehouseUserArray) ToOperationsInsightsWarehouseUserA
 // OperationsInsightsWarehouseUserMapInput is an input type that accepts OperationsInsightsWarehouseUserMap and OperationsInsightsWarehouseUserMapOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseUserMapInput` via:
 //
-//          OperationsInsightsWarehouseUserMap{ "key": OperationsInsightsWarehouseUserArgs{...} }
+//	OperationsInsightsWarehouseUserMap{ "key": OperationsInsightsWarehouseUserArgs{...} }
 type OperationsInsightsWarehouseUserMapInput interface {
 	pulumi.Input
 

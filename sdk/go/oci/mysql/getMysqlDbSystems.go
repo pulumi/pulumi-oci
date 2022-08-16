@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetMysqlDbSystems(ctx, &mysql.GetMysqlDbSystemsArgs{
-// 			CompartmentId:              _var.Compartment_id,
-// 			ConfigurationId:            pulumi.StringRef(_var.Mysql_configuration_id),
-// 			DbSystemId:                 pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
-// 			DisplayName:                pulumi.StringRef(_var.Mysql_db_system_display_name),
-// 			IsAnalyticsClusterAttached: pulumi.BoolRef(_var.Mysql_db_system_is_analytics_cluster_attached),
-// 			IsHeatWaveClusterAttached:  pulumi.BoolRef(_var.Mysql_db_system_is_heat_wave_cluster_attached),
-// 			IsUpToDate:                 pulumi.BoolRef(_var.Mysql_db_system_is_up_to_date),
-// 			State:                      pulumi.StringRef(_var.Mysql_db_system_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetMysqlDbSystems(ctx, &mysql.GetMysqlDbSystemsArgs{
+//				CompartmentId:              _var.Compartment_id,
+//				ConfigurationId:            pulumi.StringRef(_var.Mysql_configuration_id),
+//				DbSystemId:                 pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
+//				DisplayName:                pulumi.StringRef(_var.Mysql_db_system_display_name),
+//				IsAnalyticsClusterAttached: pulumi.BoolRef(_var.Mysql_db_system_is_analytics_cluster_attached),
+//				IsHeatWaveClusterAttached:  pulumi.BoolRef(_var.Mysql_db_system_is_heat_wave_cluster_attached),
+//				IsUpToDate:                 pulumi.BoolRef(_var.Mysql_db_system_is_up_to_date),
+//				State:                      pulumi.StringRef(_var.Mysql_db_system_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMysqlDbSystems(ctx *pulumi.Context, args *GetMysqlDbSystemsArgs, opts ...pulumi.InvokeOption) (*GetMysqlDbSystemsResult, error) {
 	var rv GetMysqlDbSystemsResult

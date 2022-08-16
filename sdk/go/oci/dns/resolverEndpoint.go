@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.NewResolverEndpoint(ctx, "testResolverEndpoint", &Dns.ResolverEndpointArgs{
-// 			IsForwarding:      pulumi.Any(_var.Resolver_endpoint_is_forwarding),
-// 			IsListening:       pulumi.Any(_var.Resolver_endpoint_is_listening),
-// 			ResolverId:        pulumi.Any(oci_dns_resolver.Test_resolver.Id),
-// 			SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			Scope:             pulumi.String("PRIVATE"),
-// 			EndpointType:      pulumi.Any(_var.Resolver_endpoint_endpoint_type),
-// 			ForwardingAddress: pulumi.Any(_var.Resolver_endpoint_forwarding_address),
-// 			ListeningAddress:  pulumi.Any(_var.Resolver_endpoint_listening_address),
-// 			NsgIds:            pulumi.Any(_var.Resolver_endpoint_nsg_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.NewResolverEndpoint(ctx, "testResolverEndpoint", &Dns.ResolverEndpointArgs{
+//				IsForwarding:      pulumi.Any(_var.Resolver_endpoint_is_forwarding),
+//				IsListening:       pulumi.Any(_var.Resolver_endpoint_is_listening),
+//				ResolverId:        pulumi.Any(oci_dns_resolver.Test_resolver.Id),
+//				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				Scope:             pulumi.String("PRIVATE"),
+//				EndpointType:      pulumi.Any(_var.Resolver_endpoint_endpoint_type),
+//				ForwardingAddress: pulumi.Any(_var.Resolver_endpoint_forwarding_address),
+//				ListeningAddress:  pulumi.Any(_var.Resolver_endpoint_listening_address),
+//				NsgIds:            pulumi.Any(_var.Resolver_endpoint_nsg_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,13 +54,17 @@ import (
 // For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
+//
+//	$ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
+//
 // ```
 //
-//  For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
+//	For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
+//
+//	$ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
+//
 // ```
 type ResolverEndpoint struct {
 	pulumi.CustomResourceState
@@ -280,7 +287,7 @@ func (i *ResolverEndpoint) ToResolverEndpointOutputWithContext(ctx context.Conte
 // ResolverEndpointArrayInput is an input type that accepts ResolverEndpointArray and ResolverEndpointArrayOutput values.
 // You can construct a concrete instance of `ResolverEndpointArrayInput` via:
 //
-//          ResolverEndpointArray{ ResolverEndpointArgs{...} }
+//	ResolverEndpointArray{ ResolverEndpointArgs{...} }
 type ResolverEndpointArrayInput interface {
 	pulumi.Input
 
@@ -305,7 +312,7 @@ func (i ResolverEndpointArray) ToResolverEndpointArrayOutputWithContext(ctx cont
 // ResolverEndpointMapInput is an input type that accepts ResolverEndpointMap and ResolverEndpointMapOutput values.
 // You can construct a concrete instance of `ResolverEndpointMapInput` via:
 //
-//          ResolverEndpointMap{ "key": ResolverEndpointArgs{...} }
+//	ResolverEndpointMap{ "key": ResolverEndpointArgs{...} }
 type ResolverEndpointMapInput interface {
 	pulumi.Input
 

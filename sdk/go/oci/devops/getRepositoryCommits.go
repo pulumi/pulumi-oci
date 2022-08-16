@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryCommits(ctx, &devops.GetRepositoryCommitsArgs{
-// 			RepositoryId:                  oci_devops_repository.Test_repository.Id,
-// 			AuthorName:                    pulumi.StringRef(_var.Repository_commit_author_name),
-// 			CommitMessage:                 pulumi.StringRef(_var.Repository_commit_commit_message),
-// 			ExcludeRefName:                pulumi.StringRef(_var.Repository_commit_exclude_ref_name),
-// 			FilePath:                      pulumi.StringRef(_var.Repository_commit_file_path),
-// 			RefName:                       pulumi.StringRef(_var.Repository_commit_ref_name),
-// 			TimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Repository_commit_timestamp_greater_than_or_equal_to),
-// 			TimestampLessThanOrEqualTo:    pulumi.StringRef(_var.Repository_commit_timestamp_less_than_or_equal_to),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryCommits(ctx, &devops.GetRepositoryCommitsArgs{
+//				RepositoryId:                  oci_devops_repository.Test_repository.Id,
+//				AuthorName:                    pulumi.StringRef(_var.Repository_commit_author_name),
+//				CommitMessage:                 pulumi.StringRef(_var.Repository_commit_commit_message),
+//				ExcludeRefName:                pulumi.StringRef(_var.Repository_commit_exclude_ref_name),
+//				FilePath:                      pulumi.StringRef(_var.Repository_commit_file_path),
+//				RefName:                       pulumi.StringRef(_var.Repository_commit_ref_name),
+//				TimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Repository_commit_timestamp_greater_than_or_equal_to),
+//				TimestampLessThanOrEqualTo:    pulumi.StringRef(_var.Repository_commit_timestamp_less_than_or_equal_to),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryCommits(ctx *pulumi.Context, args *GetRepositoryCommitsArgs, opts ...pulumi.InvokeOption) (*GetRepositoryCommitsResult, error) {
 	var rv GetRepositoryCommitsResult

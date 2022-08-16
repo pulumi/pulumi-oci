@@ -18,7 +18,7 @@ type ProfileLevelsConfiguration struct {
 // ProfileLevelsConfigurationInput is an input type that accepts ProfileLevelsConfigurationArgs and ProfileLevelsConfigurationOutput values.
 // You can construct a concrete instance of `ProfileLevelsConfigurationInput` via:
 //
-//          ProfileLevelsConfigurationArgs{...}
+//	ProfileLevelsConfigurationArgs{...}
 type ProfileLevelsConfigurationInput interface {
 	pulumi.Input
 
@@ -54,11 +54,11 @@ func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationPtrOutputWit
 // ProfileLevelsConfigurationPtrInput is an input type that accepts ProfileLevelsConfigurationArgs, ProfileLevelsConfigurationPtr and ProfileLevelsConfigurationPtrOutput values.
 // You can construct a concrete instance of `ProfileLevelsConfigurationPtrInput` via:
 //
-//          ProfileLevelsConfigurationArgs{...}
+//	        ProfileLevelsConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProfileLevelsConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -157,7 +157,7 @@ type ProfileLevelsConfigurationItem struct {
 // ProfileLevelsConfigurationItemInput is an input type that accepts ProfileLevelsConfigurationItemArgs and ProfileLevelsConfigurationItemOutput values.
 // You can construct a concrete instance of `ProfileLevelsConfigurationItemInput` via:
 //
-//          ProfileLevelsConfigurationItemArgs{...}
+//	ProfileLevelsConfigurationItemArgs{...}
 type ProfileLevelsConfigurationItemInput interface {
 	pulumi.Input
 
@@ -187,7 +187,7 @@ func (i ProfileLevelsConfigurationItemArgs) ToProfileLevelsConfigurationItemOutp
 // ProfileLevelsConfigurationItemArrayInput is an input type that accepts ProfileLevelsConfigurationItemArray and ProfileLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `ProfileLevelsConfigurationItemArrayInput` via:
 //
-//          ProfileLevelsConfigurationItemArray{ ProfileLevelsConfigurationItemArgs{...} }
+//	ProfileLevelsConfigurationItemArray{ ProfileLevelsConfigurationItemArgs{...} }
 type ProfileLevelsConfigurationItemArrayInput interface {
 	pulumi.Input
 
@@ -261,7 +261,7 @@ type ProfileTargetCompartments struct {
 // ProfileTargetCompartmentsInput is an input type that accepts ProfileTargetCompartmentsArgs and ProfileTargetCompartmentsOutput values.
 // You can construct a concrete instance of `ProfileTargetCompartmentsInput` via:
 //
-//          ProfileTargetCompartmentsArgs{...}
+//	ProfileTargetCompartmentsArgs{...}
 type ProfileTargetCompartmentsInput interface {
 	pulumi.Input
 
@@ -297,11 +297,11 @@ func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsPtrOutputWithC
 // ProfileTargetCompartmentsPtrInput is an input type that accepts ProfileTargetCompartmentsArgs, ProfileTargetCompartmentsPtr and ProfileTargetCompartmentsPtrOutput values.
 // You can construct a concrete instance of `ProfileTargetCompartmentsPtrInput` via:
 //
-//          ProfileTargetCompartmentsArgs{...}
+//	        ProfileTargetCompartmentsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProfileTargetCompartmentsPtrInput interface {
 	pulumi.Input
 
@@ -398,7 +398,7 @@ type ProfileTargetTags struct {
 // ProfileTargetTagsInput is an input type that accepts ProfileTargetTagsArgs and ProfileTargetTagsOutput values.
 // You can construct a concrete instance of `ProfileTargetTagsInput` via:
 //
-//          ProfileTargetTagsArgs{...}
+//	ProfileTargetTagsArgs{...}
 type ProfileTargetTagsInput interface {
 	pulumi.Input
 
@@ -434,11 +434,11 @@ func (i ProfileTargetTagsArgs) ToProfileTargetTagsPtrOutputWithContext(ctx conte
 // ProfileTargetTagsPtrInput is an input type that accepts ProfileTargetTagsArgs, ProfileTargetTagsPtr and ProfileTargetTagsPtrOutput values.
 // You can construct a concrete instance of `ProfileTargetTagsPtrInput` via:
 //
-//          ProfileTargetTagsArgs{...}
+//	        ProfileTargetTagsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProfileTargetTagsPtrInput interface {
 	pulumi.Input
 
@@ -541,7 +541,7 @@ type ProfileTargetTagsItem struct {
 // ProfileTargetTagsItemInput is an input type that accepts ProfileTargetTagsItemArgs and ProfileTargetTagsItemOutput values.
 // You can construct a concrete instance of `ProfileTargetTagsItemInput` via:
 //
-//          ProfileTargetTagsItemArgs{...}
+//	ProfileTargetTagsItemArgs{...}
 type ProfileTargetTagsItemInput interface {
 	pulumi.Input
 
@@ -575,7 +575,7 @@ func (i ProfileTargetTagsItemArgs) ToProfileTargetTagsItemOutputWithContext(ctx 
 // ProfileTargetTagsItemArrayInput is an input type that accepts ProfileTargetTagsItemArray and ProfileTargetTagsItemArrayOutput values.
 // You can construct a concrete instance of `ProfileTargetTagsItemArrayInput` via:
 //
-//          ProfileTargetTagsItemArray{ ProfileTargetTagsItemArgs{...} }
+//	ProfileTargetTagsItemArray{ ProfileTargetTagsItemArgs{...} }
 type ProfileTargetTagsItemArrayInput interface {
 	pulumi.Input
 
@@ -661,7 +661,7 @@ type RecommendationResourceCount struct {
 // RecommendationResourceCountInput is an input type that accepts RecommendationResourceCountArgs and RecommendationResourceCountOutput values.
 // You can construct a concrete instance of `RecommendationResourceCountInput` via:
 //
-//          RecommendationResourceCountArgs{...}
+//	RecommendationResourceCountArgs{...}
 type RecommendationResourceCountInput interface {
 	pulumi.Input
 
@@ -691,7 +691,7 @@ func (i RecommendationResourceCountArgs) ToRecommendationResourceCountOutputWith
 // RecommendationResourceCountArrayInput is an input type that accepts RecommendationResourceCountArray and RecommendationResourceCountArrayOutput values.
 // You can construct a concrete instance of `RecommendationResourceCountArrayInput` via:
 //
-//          RecommendationResourceCountArray{ RecommendationResourceCountArgs{...} }
+//	RecommendationResourceCountArray{ RecommendationResourceCountArgs{...} }
 type RecommendationResourceCountArrayInput interface {
 	pulumi.Input
 
@@ -765,7 +765,7 @@ type RecommendationSupportedLevel struct {
 // RecommendationSupportedLevelInput is an input type that accepts RecommendationSupportedLevelArgs and RecommendationSupportedLevelOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelInput` via:
 //
-//          RecommendationSupportedLevelArgs{...}
+//	RecommendationSupportedLevelArgs{...}
 type RecommendationSupportedLevelInput interface {
 	pulumi.Input
 
@@ -793,7 +793,7 @@ func (i RecommendationSupportedLevelArgs) ToRecommendationSupportedLevelOutputWi
 // RecommendationSupportedLevelArrayInput is an input type that accepts RecommendationSupportedLevelArray and RecommendationSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelArrayInput` via:
 //
-//          RecommendationSupportedLevelArray{ RecommendationSupportedLevelArgs{...} }
+//	RecommendationSupportedLevelArray{ RecommendationSupportedLevelArgs{...} }
 type RecommendationSupportedLevelArrayInput interface {
 	pulumi.Input
 
@@ -862,7 +862,7 @@ type RecommendationSupportedLevelItem struct {
 // RecommendationSupportedLevelItemInput is an input type that accepts RecommendationSupportedLevelItemArgs and RecommendationSupportedLevelItemOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelItemInput` via:
 //
-//          RecommendationSupportedLevelItemArgs{...}
+//	RecommendationSupportedLevelItemArgs{...}
 type RecommendationSupportedLevelItemInput interface {
 	pulumi.Input
 
@@ -890,7 +890,7 @@ func (i RecommendationSupportedLevelItemArgs) ToRecommendationSupportedLevelItem
 // RecommendationSupportedLevelItemArrayInput is an input type that accepts RecommendationSupportedLevelItemArray and RecommendationSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelItemArrayInput` via:
 //
-//          RecommendationSupportedLevelItemArray{ RecommendationSupportedLevelItemArgs{...} }
+//	RecommendationSupportedLevelItemArray{ RecommendationSupportedLevelItemArgs{...} }
 type RecommendationSupportedLevelItemArrayInput interface {
 	pulumi.Input
 
@@ -963,7 +963,7 @@ type ResourceActionAction struct {
 // ResourceActionActionInput is an input type that accepts ResourceActionActionArgs and ResourceActionActionOutput values.
 // You can construct a concrete instance of `ResourceActionActionInput` via:
 //
-//          ResourceActionActionArgs{...}
+//	ResourceActionActionArgs{...}
 type ResourceActionActionInput interface {
 	pulumi.Input
 
@@ -995,7 +995,7 @@ func (i ResourceActionActionArgs) ToResourceActionActionOutputWithContext(ctx co
 // ResourceActionActionArrayInput is an input type that accepts ResourceActionActionArray and ResourceActionActionArrayOutput values.
 // You can construct a concrete instance of `ResourceActionActionArrayInput` via:
 //
-//          ResourceActionActionArray{ ResourceActionActionArgs{...} }
+//	ResourceActionActionArray{ ResourceActionActionArgs{...} }
 type ResourceActionActionArrayInput interface {
 	pulumi.Input
 
@@ -1073,7 +1073,7 @@ type GetCategoriesCategoryCollection struct {
 // GetCategoriesCategoryCollectionInput is an input type that accepts GetCategoriesCategoryCollectionArgs and GetCategoriesCategoryCollectionOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionInput` via:
 //
-//          GetCategoriesCategoryCollectionArgs{...}
+//	GetCategoriesCategoryCollectionArgs{...}
 type GetCategoriesCategoryCollectionInput interface {
 	pulumi.Input
 
@@ -1100,7 +1100,7 @@ func (i GetCategoriesCategoryCollectionArgs) ToGetCategoriesCategoryCollectionOu
 // GetCategoriesCategoryCollectionArrayInput is an input type that accepts GetCategoriesCategoryCollectionArray and GetCategoriesCategoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionArrayInput` via:
 //
-//          GetCategoriesCategoryCollectionArray{ GetCategoriesCategoryCollectionArgs{...} }
+//	GetCategoriesCategoryCollectionArray{ GetCategoriesCategoryCollectionArgs{...} }
 type GetCategoriesCategoryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1188,7 +1188,7 @@ type GetCategoriesCategoryCollectionItem struct {
 // GetCategoriesCategoryCollectionItemInput is an input type that accepts GetCategoriesCategoryCollectionItemArgs and GetCategoriesCategoryCollectionItemOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemInput` via:
 //
-//          GetCategoriesCategoryCollectionItemArgs{...}
+//	GetCategoriesCategoryCollectionItemArgs{...}
 type GetCategoriesCategoryCollectionItemInput interface {
 	pulumi.Input
 
@@ -1236,7 +1236,7 @@ func (i GetCategoriesCategoryCollectionItemArgs) ToGetCategoriesCategoryCollecti
 // GetCategoriesCategoryCollectionItemArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemArray and GetCategoriesCategoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemArrayInput` via:
 //
-//          GetCategoriesCategoryCollectionItemArray{ GetCategoriesCategoryCollectionItemArgs{...} }
+//	GetCategoriesCategoryCollectionItemArray{ GetCategoriesCategoryCollectionItemArgs{...} }
 type GetCategoriesCategoryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1361,7 +1361,7 @@ type GetCategoriesCategoryCollectionItemRecommendationCount struct {
 // GetCategoriesCategoryCollectionItemRecommendationCountInput is an input type that accepts GetCategoriesCategoryCollectionItemRecommendationCountArgs and GetCategoriesCategoryCollectionItemRecommendationCountOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemRecommendationCountInput` via:
 //
-//          GetCategoriesCategoryCollectionItemRecommendationCountArgs{...}
+//	GetCategoriesCategoryCollectionItemRecommendationCountArgs{...}
 type GetCategoriesCategoryCollectionItemRecommendationCountInput interface {
 	pulumi.Input
 
@@ -1391,7 +1391,7 @@ func (i GetCategoriesCategoryCollectionItemRecommendationCountArgs) ToGetCategor
 // GetCategoriesCategoryCollectionItemRecommendationCountArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemRecommendationCountArray and GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemRecommendationCountArrayInput` via:
 //
-//          GetCategoriesCategoryCollectionItemRecommendationCountArray{ GetCategoriesCategoryCollectionItemRecommendationCountArgs{...} }
+//	GetCategoriesCategoryCollectionItemRecommendationCountArray{ GetCategoriesCategoryCollectionItemRecommendationCountArgs{...} }
 type GetCategoriesCategoryCollectionItemRecommendationCountArrayInput interface {
 	pulumi.Input
 
@@ -1467,7 +1467,7 @@ type GetCategoriesCategoryCollectionItemResourceCount struct {
 // GetCategoriesCategoryCollectionItemResourceCountInput is an input type that accepts GetCategoriesCategoryCollectionItemResourceCountArgs and GetCategoriesCategoryCollectionItemResourceCountOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemResourceCountInput` via:
 //
-//          GetCategoriesCategoryCollectionItemResourceCountArgs{...}
+//	GetCategoriesCategoryCollectionItemResourceCountArgs{...}
 type GetCategoriesCategoryCollectionItemResourceCountInput interface {
 	pulumi.Input
 
@@ -1497,7 +1497,7 @@ func (i GetCategoriesCategoryCollectionItemResourceCountArgs) ToGetCategoriesCat
 // GetCategoriesCategoryCollectionItemResourceCountArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemResourceCountArray and GetCategoriesCategoryCollectionItemResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemResourceCountArrayInput` via:
 //
-//          GetCategoriesCategoryCollectionItemResourceCountArray{ GetCategoriesCategoryCollectionItemResourceCountArgs{...} }
+//	GetCategoriesCategoryCollectionItemResourceCountArray{ GetCategoriesCategoryCollectionItemResourceCountArgs{...} }
 type GetCategoriesCategoryCollectionItemResourceCountArrayInput interface {
 	pulumi.Input
 
@@ -1573,7 +1573,7 @@ type GetCategoriesFilter struct {
 // GetCategoriesFilterInput is an input type that accepts GetCategoriesFilterArgs and GetCategoriesFilterOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterInput` via:
 //
-//          GetCategoriesFilterArgs{...}
+//	GetCategoriesFilterArgs{...}
 type GetCategoriesFilterInput interface {
 	pulumi.Input
 
@@ -1603,7 +1603,7 @@ func (i GetCategoriesFilterArgs) ToGetCategoriesFilterOutputWithContext(ctx cont
 // GetCategoriesFilterArrayInput is an input type that accepts GetCategoriesFilterArray and GetCategoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterArrayInput` via:
 //
-//          GetCategoriesFilterArray{ GetCategoriesFilterArgs{...} }
+//	GetCategoriesFilterArray{ GetCategoriesFilterArgs{...} }
 type GetCategoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1682,7 +1682,7 @@ type GetCategoryRecommendationCount struct {
 // GetCategoryRecommendationCountInput is an input type that accepts GetCategoryRecommendationCountArgs and GetCategoryRecommendationCountOutput values.
 // You can construct a concrete instance of `GetCategoryRecommendationCountInput` via:
 //
-//          GetCategoryRecommendationCountArgs{...}
+//	GetCategoryRecommendationCountArgs{...}
 type GetCategoryRecommendationCountInput interface {
 	pulumi.Input
 
@@ -1712,7 +1712,7 @@ func (i GetCategoryRecommendationCountArgs) ToGetCategoryRecommendationCountOutp
 // GetCategoryRecommendationCountArrayInput is an input type that accepts GetCategoryRecommendationCountArray and GetCategoryRecommendationCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoryRecommendationCountArrayInput` via:
 //
-//          GetCategoryRecommendationCountArray{ GetCategoryRecommendationCountArgs{...} }
+//	GetCategoryRecommendationCountArray{ GetCategoryRecommendationCountArgs{...} }
 type GetCategoryRecommendationCountArrayInput interface {
 	pulumi.Input
 
@@ -1788,7 +1788,7 @@ type GetCategoryResourceCount struct {
 // GetCategoryResourceCountInput is an input type that accepts GetCategoryResourceCountArgs and GetCategoryResourceCountOutput values.
 // You can construct a concrete instance of `GetCategoryResourceCountInput` via:
 //
-//          GetCategoryResourceCountArgs{...}
+//	GetCategoryResourceCountArgs{...}
 type GetCategoryResourceCountInput interface {
 	pulumi.Input
 
@@ -1818,7 +1818,7 @@ func (i GetCategoryResourceCountArgs) ToGetCategoryResourceCountOutputWithContex
 // GetCategoryResourceCountArrayInput is an input type that accepts GetCategoryResourceCountArray and GetCategoryResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoryResourceCountArrayInput` via:
 //
-//          GetCategoryResourceCountArray{ GetCategoryResourceCountArgs{...} }
+//	GetCategoryResourceCountArray{ GetCategoryResourceCountArgs{...} }
 type GetCategoryResourceCountArrayInput interface {
 	pulumi.Input
 
@@ -1891,7 +1891,7 @@ type GetEnrollmentStatusesEnrollmentStatusCollection struct {
 // GetEnrollmentStatusesEnrollmentStatusCollectionInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionArgs and GetEnrollmentStatusesEnrollmentStatusCollectionOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionInput` via:
 //
-//          GetEnrollmentStatusesEnrollmentStatusCollectionArgs{...}
+//	GetEnrollmentStatusesEnrollmentStatusCollectionArgs{...}
 type GetEnrollmentStatusesEnrollmentStatusCollectionInput interface {
 	pulumi.Input
 
@@ -1918,7 +1918,7 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionArgs) ToGetEnrollmentStat
 // GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionArray and GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput` via:
 //
-//          GetEnrollmentStatusesEnrollmentStatusCollectionArray{ GetEnrollmentStatusesEnrollmentStatusCollectionArgs{...} }
+//	GetEnrollmentStatusesEnrollmentStatusCollectionArray{ GetEnrollmentStatusesEnrollmentStatusCollectionArgs{...} }
 type GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2001,7 +2001,7 @@ type GetEnrollmentStatusesEnrollmentStatusCollectionItem struct {
 // GetEnrollmentStatusesEnrollmentStatusCollectionItemInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs and GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionItemInput` via:
 //
-//          GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs{...}
+//	GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs{...}
 type GetEnrollmentStatusesEnrollmentStatusCollectionItemInput interface {
 	pulumi.Input
 
@@ -2042,7 +2042,7 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ToGetEnrollment
 // GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionItemArray and GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayInput` via:
 //
-//          GetEnrollmentStatusesEnrollmentStatusCollectionItemArray{ GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs{...} }
+//	GetEnrollmentStatusesEnrollmentStatusCollectionItemArray{ GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs{...} }
 type GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2146,7 +2146,7 @@ type GetEnrollmentStatusesFilter struct {
 // GetEnrollmentStatusesFilterInput is an input type that accepts GetEnrollmentStatusesFilterArgs and GetEnrollmentStatusesFilterOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesFilterInput` via:
 //
-//          GetEnrollmentStatusesFilterArgs{...}
+//	GetEnrollmentStatusesFilterArgs{...}
 type GetEnrollmentStatusesFilterInput interface {
 	pulumi.Input
 
@@ -2175,7 +2175,7 @@ func (i GetEnrollmentStatusesFilterArgs) ToGetEnrollmentStatusesFilterOutputWith
 // GetEnrollmentStatusesFilterArrayInput is an input type that accepts GetEnrollmentStatusesFilterArray and GetEnrollmentStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesFilterArrayInput` via:
 //
-//          GetEnrollmentStatusesFilterArray{ GetEnrollmentStatusesFilterArgs{...} }
+//	GetEnrollmentStatusesFilterArray{ GetEnrollmentStatusesFilterArgs{...} }
 type GetEnrollmentStatusesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2253,7 +2253,7 @@ type GetHistoriesFilter struct {
 // GetHistoriesFilterInput is an input type that accepts GetHistoriesFilterArgs and GetHistoriesFilterOutput values.
 // You can construct a concrete instance of `GetHistoriesFilterInput` via:
 //
-//          GetHistoriesFilterArgs{...}
+//	GetHistoriesFilterArgs{...}
 type GetHistoriesFilterInput interface {
 	pulumi.Input
 
@@ -2283,7 +2283,7 @@ func (i GetHistoriesFilterArgs) ToGetHistoriesFilterOutputWithContext(ctx contex
 // GetHistoriesFilterArrayInput is an input type that accepts GetHistoriesFilterArray and GetHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesFilterArrayInput` via:
 //
-//          GetHistoriesFilterArray{ GetHistoriesFilterArgs{...} }
+//	GetHistoriesFilterArray{ GetHistoriesFilterArgs{...} }
 type GetHistoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2360,7 +2360,7 @@ type GetHistoriesHistoryCollection struct {
 // GetHistoriesHistoryCollectionInput is an input type that accepts GetHistoriesHistoryCollectionArgs and GetHistoriesHistoryCollectionOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionInput` via:
 //
-//          GetHistoriesHistoryCollectionArgs{...}
+//	GetHistoriesHistoryCollectionArgs{...}
 type GetHistoriesHistoryCollectionInput interface {
 	pulumi.Input
 
@@ -2388,7 +2388,7 @@ func (i GetHistoriesHistoryCollectionArgs) ToGetHistoriesHistoryCollectionOutput
 // GetHistoriesHistoryCollectionArrayInput is an input type that accepts GetHistoriesHistoryCollectionArray and GetHistoriesHistoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionArrayInput` via:
 //
-//          GetHistoriesHistoryCollectionArray{ GetHistoriesHistoryCollectionArgs{...} }
+//	GetHistoriesHistoryCollectionArray{ GetHistoriesHistoryCollectionArgs{...} }
 type GetHistoriesHistoryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2489,7 +2489,7 @@ type GetHistoriesHistoryCollectionItem struct {
 // GetHistoriesHistoryCollectionItemInput is an input type that accepts GetHistoriesHistoryCollectionItemArgs and GetHistoriesHistoryCollectionItemOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionItemInput` via:
 //
-//          GetHistoriesHistoryCollectionItemArgs{...}
+//	GetHistoriesHistoryCollectionItemArgs{...}
 type GetHistoriesHistoryCollectionItemInput interface {
 	pulumi.Input
 
@@ -2549,7 +2549,7 @@ func (i GetHistoriesHistoryCollectionItemArgs) ToGetHistoriesHistoryCollectionIt
 // GetHistoriesHistoryCollectionItemArrayInput is an input type that accepts GetHistoriesHistoryCollectionItemArray and GetHistoriesHistoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionItemArrayInput` via:
 //
-//          GetHistoriesHistoryCollectionItemArray{ GetHistoriesHistoryCollectionItemArgs{...} }
+//	GetHistoriesHistoryCollectionItemArray{ GetHistoriesHistoryCollectionItemArgs{...} }
 type GetHistoriesHistoryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2702,7 +2702,7 @@ type GetHistoriesHistoryCollectionItemAction struct {
 // GetHistoriesHistoryCollectionItemActionInput is an input type that accepts GetHistoriesHistoryCollectionItemActionArgs and GetHistoriesHistoryCollectionItemActionOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionItemActionInput` via:
 //
-//          GetHistoriesHistoryCollectionItemActionArgs{...}
+//	GetHistoriesHistoryCollectionItemActionArgs{...}
 type GetHistoriesHistoryCollectionItemActionInput interface {
 	pulumi.Input
 
@@ -2734,7 +2734,7 @@ func (i GetHistoriesHistoryCollectionItemActionArgs) ToGetHistoriesHistoryCollec
 // GetHistoriesHistoryCollectionItemActionArrayInput is an input type that accepts GetHistoriesHistoryCollectionItemActionArray and GetHistoriesHistoryCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionItemActionArrayInput` via:
 //
-//          GetHistoriesHistoryCollectionItemActionArray{ GetHistoriesHistoryCollectionItemActionArgs{...} }
+//	GetHistoriesHistoryCollectionItemActionArray{ GetHistoriesHistoryCollectionItemActionArgs{...} }
 type GetHistoriesHistoryCollectionItemActionArrayInput interface {
 	pulumi.Input
 
@@ -2825,7 +2825,7 @@ type GetProfileLevelItem struct {
 // GetProfileLevelItemInput is an input type that accepts GetProfileLevelItemArgs and GetProfileLevelItemOutput values.
 // You can construct a concrete instance of `GetProfileLevelItemInput` via:
 //
-//          GetProfileLevelItemArgs{...}
+//	GetProfileLevelItemArgs{...}
 type GetProfileLevelItemInput interface {
 	pulumi.Input
 
@@ -2865,7 +2865,7 @@ func (i GetProfileLevelItemArgs) ToGetProfileLevelItemOutputWithContext(ctx cont
 // GetProfileLevelItemArrayInput is an input type that accepts GetProfileLevelItemArray and GetProfileLevelItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelItemArrayInput` via:
 //
-//          GetProfileLevelItemArray{ GetProfileLevelItemArgs{...} }
+//	GetProfileLevelItemArray{ GetProfileLevelItemArgs{...} }
 type GetProfileLevelItemArrayInput interface {
 	pulumi.Input
 
@@ -2970,7 +2970,7 @@ type GetProfileLevelItemMetric struct {
 // GetProfileLevelItemMetricInput is an input type that accepts GetProfileLevelItemMetricArgs and GetProfileLevelItemMetricOutput values.
 // You can construct a concrete instance of `GetProfileLevelItemMetricInput` via:
 //
-//          GetProfileLevelItemMetricArgs{...}
+//	GetProfileLevelItemMetricArgs{...}
 type GetProfileLevelItemMetricInput interface {
 	pulumi.Input
 
@@ -3004,7 +3004,7 @@ func (i GetProfileLevelItemMetricArgs) ToGetProfileLevelItemMetricOutputWithCont
 // GetProfileLevelItemMetricArrayInput is an input type that accepts GetProfileLevelItemMetricArray and GetProfileLevelItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelItemMetricArrayInput` via:
 //
-//          GetProfileLevelItemMetricArray{ GetProfileLevelItemMetricArgs{...} }
+//	GetProfileLevelItemMetricArray{ GetProfileLevelItemMetricArgs{...} }
 type GetProfileLevelItemMetricArrayInput interface {
 	pulumi.Input
 
@@ -3088,7 +3088,7 @@ type GetProfileLevelsConfiguration struct {
 // GetProfileLevelsConfigurationInput is an input type that accepts GetProfileLevelsConfigurationArgs and GetProfileLevelsConfigurationOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationInput` via:
 //
-//          GetProfileLevelsConfigurationArgs{...}
+//	GetProfileLevelsConfigurationArgs{...}
 type GetProfileLevelsConfigurationInput interface {
 	pulumi.Input
 
@@ -3116,7 +3116,7 @@ func (i GetProfileLevelsConfigurationArgs) ToGetProfileLevelsConfigurationOutput
 // GetProfileLevelsConfigurationArrayInput is an input type that accepts GetProfileLevelsConfigurationArray and GetProfileLevelsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationArrayInput` via:
 //
-//          GetProfileLevelsConfigurationArray{ GetProfileLevelsConfigurationArgs{...} }
+//	GetProfileLevelsConfigurationArray{ GetProfileLevelsConfigurationArgs{...} }
 type GetProfileLevelsConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3187,7 +3187,7 @@ type GetProfileLevelsConfigurationItem struct {
 // GetProfileLevelsConfigurationItemInput is an input type that accepts GetProfileLevelsConfigurationItemArgs and GetProfileLevelsConfigurationItemOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationItemInput` via:
 //
-//          GetProfileLevelsConfigurationItemArgs{...}
+//	GetProfileLevelsConfigurationItemArgs{...}
 type GetProfileLevelsConfigurationItemInput interface {
 	pulumi.Input
 
@@ -3217,7 +3217,7 @@ func (i GetProfileLevelsConfigurationItemArgs) ToGetProfileLevelsConfigurationIt
 // GetProfileLevelsConfigurationItemArrayInput is an input type that accepts GetProfileLevelsConfigurationItemArray and GetProfileLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationItemArrayInput` via:
 //
-//          GetProfileLevelsConfigurationItemArray{ GetProfileLevelsConfigurationItemArgs{...} }
+//	GetProfileLevelsConfigurationItemArray{ GetProfileLevelsConfigurationItemArgs{...} }
 type GetProfileLevelsConfigurationItemArrayInput interface {
 	pulumi.Input
 
@@ -3293,7 +3293,7 @@ type GetProfileLevelsFilter struct {
 // GetProfileLevelsFilterInput is an input type that accepts GetProfileLevelsFilterArgs and GetProfileLevelsFilterOutput values.
 // You can construct a concrete instance of `GetProfileLevelsFilterInput` via:
 //
-//          GetProfileLevelsFilterArgs{...}
+//	GetProfileLevelsFilterArgs{...}
 type GetProfileLevelsFilterInput interface {
 	pulumi.Input
 
@@ -3323,7 +3323,7 @@ func (i GetProfileLevelsFilterArgs) ToGetProfileLevelsFilterOutputWithContext(ct
 // GetProfileLevelsFilterArrayInput is an input type that accepts GetProfileLevelsFilterArray and GetProfileLevelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsFilterArrayInput` via:
 //
-//          GetProfileLevelsFilterArray{ GetProfileLevelsFilterArgs{...} }
+//	GetProfileLevelsFilterArray{ GetProfileLevelsFilterArgs{...} }
 type GetProfileLevelsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3400,7 +3400,7 @@ type GetProfileLevelsProfileLevelCollection struct {
 // GetProfileLevelsProfileLevelCollectionInput is an input type that accepts GetProfileLevelsProfileLevelCollectionArgs and GetProfileLevelsProfileLevelCollectionOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionInput` via:
 //
-//          GetProfileLevelsProfileLevelCollectionArgs{...}
+//	GetProfileLevelsProfileLevelCollectionArgs{...}
 type GetProfileLevelsProfileLevelCollectionInput interface {
 	pulumi.Input
 
@@ -3428,7 +3428,7 @@ func (i GetProfileLevelsProfileLevelCollectionArgs) ToGetProfileLevelsProfileLev
 // GetProfileLevelsProfileLevelCollectionArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionArray and GetProfileLevelsProfileLevelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionArrayInput` via:
 //
-//          GetProfileLevelsProfileLevelCollectionArray{ GetProfileLevelsProfileLevelCollectionArgs{...} }
+//	GetProfileLevelsProfileLevelCollectionArray{ GetProfileLevelsProfileLevelCollectionArgs{...} }
 type GetProfileLevelsProfileLevelCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3511,7 +3511,7 @@ type GetProfileLevelsProfileLevelCollectionItem struct {
 // GetProfileLevelsProfileLevelCollectionItemInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemArgs and GetProfileLevelsProfileLevelCollectionItemOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionItemInput` via:
 //
-//          GetProfileLevelsProfileLevelCollectionItemArgs{...}
+//	GetProfileLevelsProfileLevelCollectionItemArgs{...}
 type GetProfileLevelsProfileLevelCollectionItemInput interface {
 	pulumi.Input
 
@@ -3551,7 +3551,7 @@ func (i GetProfileLevelsProfileLevelCollectionItemArgs) ToGetProfileLevelsProfil
 // GetProfileLevelsProfileLevelCollectionItemArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemArray and GetProfileLevelsProfileLevelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionItemArrayInput` via:
 //
-//          GetProfileLevelsProfileLevelCollectionItemArray{ GetProfileLevelsProfileLevelCollectionItemArgs{...} }
+//	GetProfileLevelsProfileLevelCollectionItemArray{ GetProfileLevelsProfileLevelCollectionItemArgs{...} }
 type GetProfileLevelsProfileLevelCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3658,7 +3658,7 @@ type GetProfileLevelsProfileLevelCollectionItemMetric struct {
 // GetProfileLevelsProfileLevelCollectionItemMetricInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemMetricArgs and GetProfileLevelsProfileLevelCollectionItemMetricOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionItemMetricInput` via:
 //
-//          GetProfileLevelsProfileLevelCollectionItemMetricArgs{...}
+//	GetProfileLevelsProfileLevelCollectionItemMetricArgs{...}
 type GetProfileLevelsProfileLevelCollectionItemMetricInput interface {
 	pulumi.Input
 
@@ -3692,7 +3692,7 @@ func (i GetProfileLevelsProfileLevelCollectionItemMetricArgs) ToGetProfileLevels
 // GetProfileLevelsProfileLevelCollectionItemMetricArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemMetricArray and GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionItemMetricArrayInput` via:
 //
-//          GetProfileLevelsProfileLevelCollectionItemMetricArray{ GetProfileLevelsProfileLevelCollectionItemMetricArgs{...} }
+//	GetProfileLevelsProfileLevelCollectionItemMetricArray{ GetProfileLevelsProfileLevelCollectionItemMetricArgs{...} }
 type GetProfileLevelsProfileLevelCollectionItemMetricArrayInput interface {
 	pulumi.Input
 
@@ -3776,7 +3776,7 @@ type GetProfileTargetCompartment struct {
 // GetProfileTargetCompartmentInput is an input type that accepts GetProfileTargetCompartmentArgs and GetProfileTargetCompartmentOutput values.
 // You can construct a concrete instance of `GetProfileTargetCompartmentInput` via:
 //
-//          GetProfileTargetCompartmentArgs{...}
+//	GetProfileTargetCompartmentArgs{...}
 type GetProfileTargetCompartmentInput interface {
 	pulumi.Input
 
@@ -3804,7 +3804,7 @@ func (i GetProfileTargetCompartmentArgs) ToGetProfileTargetCompartmentOutputWith
 // GetProfileTargetCompartmentArrayInput is an input type that accepts GetProfileTargetCompartmentArray and GetProfileTargetCompartmentArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetCompartmentArrayInput` via:
 //
-//          GetProfileTargetCompartmentArray{ GetProfileTargetCompartmentArgs{...} }
+//	GetProfileTargetCompartmentArray{ GetProfileTargetCompartmentArgs{...} }
 type GetProfileTargetCompartmentArrayInput interface {
 	pulumi.Input
 
@@ -3873,7 +3873,7 @@ type GetProfileTargetTag struct {
 // GetProfileTargetTagInput is an input type that accepts GetProfileTargetTagArgs and GetProfileTargetTagOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagInput` via:
 //
-//          GetProfileTargetTagArgs{...}
+//	GetProfileTargetTagArgs{...}
 type GetProfileTargetTagInput interface {
 	pulumi.Input
 
@@ -3901,7 +3901,7 @@ func (i GetProfileTargetTagArgs) ToGetProfileTargetTagOutputWithContext(ctx cont
 // GetProfileTargetTagArrayInput is an input type that accepts GetProfileTargetTagArray and GetProfileTargetTagArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagArrayInput` via:
 //
-//          GetProfileTargetTagArray{ GetProfileTargetTagArgs{...} }
+//	GetProfileTargetTagArray{ GetProfileTargetTagArgs{...} }
 type GetProfileTargetTagArrayInput interface {
 	pulumi.Input
 
@@ -3976,7 +3976,7 @@ type GetProfileTargetTagItem struct {
 // GetProfileTargetTagItemInput is an input type that accepts GetProfileTargetTagItemArgs and GetProfileTargetTagItemOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagItemInput` via:
 //
-//          GetProfileTargetTagItemArgs{...}
+//	GetProfileTargetTagItemArgs{...}
 type GetProfileTargetTagItemInput interface {
 	pulumi.Input
 
@@ -4010,7 +4010,7 @@ func (i GetProfileTargetTagItemArgs) ToGetProfileTargetTagItemOutputWithContext(
 // GetProfileTargetTagItemArrayInput is an input type that accepts GetProfileTargetTagItemArray and GetProfileTargetTagItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagItemArrayInput` via:
 //
-//          GetProfileTargetTagItemArray{ GetProfileTargetTagItemArgs{...} }
+//	GetProfileTargetTagItemArray{ GetProfileTargetTagItemArgs{...} }
 type GetProfileTargetTagItemArrayInput interface {
 	pulumi.Input
 
@@ -4096,7 +4096,7 @@ type GetProfilesFilter struct {
 // GetProfilesFilterInput is an input type that accepts GetProfilesFilterArgs and GetProfilesFilterOutput values.
 // You can construct a concrete instance of `GetProfilesFilterInput` via:
 //
-//          GetProfilesFilterArgs{...}
+//	GetProfilesFilterArgs{...}
 type GetProfilesFilterInput interface {
 	pulumi.Input
 
@@ -4126,7 +4126,7 @@ func (i GetProfilesFilterArgs) ToGetProfilesFilterOutputWithContext(ctx context.
 // GetProfilesFilterArrayInput is an input type that accepts GetProfilesFilterArray and GetProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfilesFilterArrayInput` via:
 //
-//          GetProfilesFilterArray{ GetProfilesFilterArgs{...} }
+//	GetProfilesFilterArray{ GetProfilesFilterArgs{...} }
 type GetProfilesFilterArrayInput interface {
 	pulumi.Input
 
@@ -4203,7 +4203,7 @@ type GetProfilesProfileCollection struct {
 // GetProfilesProfileCollectionInput is an input type that accepts GetProfilesProfileCollectionArgs and GetProfilesProfileCollectionOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionInput` via:
 //
-//          GetProfilesProfileCollectionArgs{...}
+//	GetProfilesProfileCollectionArgs{...}
 type GetProfilesProfileCollectionInput interface {
 	pulumi.Input
 
@@ -4231,7 +4231,7 @@ func (i GetProfilesProfileCollectionArgs) ToGetProfilesProfileCollectionOutputWi
 // GetProfilesProfileCollectionArrayInput is an input type that accepts GetProfilesProfileCollectionArray and GetProfilesProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionArrayInput` via:
 //
-//          GetProfilesProfileCollectionArray{ GetProfilesProfileCollectionArgs{...} }
+//	GetProfilesProfileCollectionArray{ GetProfilesProfileCollectionArgs{...} }
 type GetProfilesProfileCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4324,7 +4324,7 @@ type GetProfilesProfileCollectionItem struct {
 // GetProfilesProfileCollectionItemInput is an input type that accepts GetProfilesProfileCollectionItemArgs and GetProfilesProfileCollectionItemOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemInput` via:
 //
-//          GetProfilesProfileCollectionItemArgs{...}
+//	GetProfilesProfileCollectionItemArgs{...}
 type GetProfilesProfileCollectionItemInput interface {
 	pulumi.Input
 
@@ -4376,7 +4376,7 @@ func (i GetProfilesProfileCollectionItemArgs) ToGetProfilesProfileCollectionItem
 // GetProfilesProfileCollectionItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemArray and GetProfilesProfileCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemArrayInput` via:
 //
-//          GetProfilesProfileCollectionItemArray{ GetProfilesProfileCollectionItemArgs{...} }
+//	GetProfilesProfileCollectionItemArray{ GetProfilesProfileCollectionItemArgs{...} }
 type GetProfilesProfileCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4511,7 +4511,7 @@ type GetProfilesProfileCollectionItemLevelsConfiguration struct {
 // GetProfilesProfileCollectionItemLevelsConfigurationInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationArgs and GetProfilesProfileCollectionItemLevelsConfigurationOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationInput` via:
 //
-//          GetProfilesProfileCollectionItemLevelsConfigurationArgs{...}
+//	GetProfilesProfileCollectionItemLevelsConfigurationArgs{...}
 type GetProfilesProfileCollectionItemLevelsConfigurationInput interface {
 	pulumi.Input
 
@@ -4539,7 +4539,7 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationArgs) ToGetProfilesPr
 // GetProfilesProfileCollectionItemLevelsConfigurationArrayInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationArray and GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationArrayInput` via:
 //
-//          GetProfilesProfileCollectionItemLevelsConfigurationArray{ GetProfilesProfileCollectionItemLevelsConfigurationArgs{...} }
+//	GetProfilesProfileCollectionItemLevelsConfigurationArray{ GetProfilesProfileCollectionItemLevelsConfigurationArgs{...} }
 type GetProfilesProfileCollectionItemLevelsConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -4612,7 +4612,7 @@ type GetProfilesProfileCollectionItemLevelsConfigurationItem struct {
 // GetProfilesProfileCollectionItemLevelsConfigurationItemInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationItemArgs and GetProfilesProfileCollectionItemLevelsConfigurationItemOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationItemInput` via:
 //
-//          GetProfilesProfileCollectionItemLevelsConfigurationItemArgs{...}
+//	GetProfilesProfileCollectionItemLevelsConfigurationItemArgs{...}
 type GetProfilesProfileCollectionItemLevelsConfigurationItemInput interface {
 	pulumi.Input
 
@@ -4642,7 +4642,7 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ToGetProfil
 // GetProfilesProfileCollectionItemLevelsConfigurationItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationItemArray and GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationItemArrayInput` via:
 //
-//          GetProfilesProfileCollectionItemLevelsConfigurationItemArray{ GetProfilesProfileCollectionItemLevelsConfigurationItemArgs{...} }
+//	GetProfilesProfileCollectionItemLevelsConfigurationItemArray{ GetProfilesProfileCollectionItemLevelsConfigurationItemArgs{...} }
 type GetProfilesProfileCollectionItemLevelsConfigurationItemArrayInput interface {
 	pulumi.Input
 
@@ -4716,7 +4716,7 @@ type GetProfilesProfileCollectionItemTargetCompartment struct {
 // GetProfilesProfileCollectionItemTargetCompartmentInput is an input type that accepts GetProfilesProfileCollectionItemTargetCompartmentArgs and GetProfilesProfileCollectionItemTargetCompartmentOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetCompartmentInput` via:
 //
-//          GetProfilesProfileCollectionItemTargetCompartmentArgs{...}
+//	GetProfilesProfileCollectionItemTargetCompartmentArgs{...}
 type GetProfilesProfileCollectionItemTargetCompartmentInput interface {
 	pulumi.Input
 
@@ -4744,7 +4744,7 @@ func (i GetProfilesProfileCollectionItemTargetCompartmentArgs) ToGetProfilesProf
 // GetProfilesProfileCollectionItemTargetCompartmentArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetCompartmentArray and GetProfilesProfileCollectionItemTargetCompartmentArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetCompartmentArrayInput` via:
 //
-//          GetProfilesProfileCollectionItemTargetCompartmentArray{ GetProfilesProfileCollectionItemTargetCompartmentArgs{...} }
+//	GetProfilesProfileCollectionItemTargetCompartmentArray{ GetProfilesProfileCollectionItemTargetCompartmentArgs{...} }
 type GetProfilesProfileCollectionItemTargetCompartmentArrayInput interface {
 	pulumi.Input
 
@@ -4813,7 +4813,7 @@ type GetProfilesProfileCollectionItemTargetTag struct {
 // GetProfilesProfileCollectionItemTargetTagInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagArgs and GetProfilesProfileCollectionItemTargetTagOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagInput` via:
 //
-//          GetProfilesProfileCollectionItemTargetTagArgs{...}
+//	GetProfilesProfileCollectionItemTargetTagArgs{...}
 type GetProfilesProfileCollectionItemTargetTagInput interface {
 	pulumi.Input
 
@@ -4841,7 +4841,7 @@ func (i GetProfilesProfileCollectionItemTargetTagArgs) ToGetProfilesProfileColle
 // GetProfilesProfileCollectionItemTargetTagArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagArray and GetProfilesProfileCollectionItemTargetTagArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagArrayInput` via:
 //
-//          GetProfilesProfileCollectionItemTargetTagArray{ GetProfilesProfileCollectionItemTargetTagArgs{...} }
+//	GetProfilesProfileCollectionItemTargetTagArray{ GetProfilesProfileCollectionItemTargetTagArgs{...} }
 type GetProfilesProfileCollectionItemTargetTagArrayInput interface {
 	pulumi.Input
 
@@ -4918,7 +4918,7 @@ type GetProfilesProfileCollectionItemTargetTagItem struct {
 // GetProfilesProfileCollectionItemTargetTagItemInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagItemArgs and GetProfilesProfileCollectionItemTargetTagItemOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagItemInput` via:
 //
-//          GetProfilesProfileCollectionItemTargetTagItemArgs{...}
+//	GetProfilesProfileCollectionItemTargetTagItemArgs{...}
 type GetProfilesProfileCollectionItemTargetTagItemInput interface {
 	pulumi.Input
 
@@ -4952,7 +4952,7 @@ func (i GetProfilesProfileCollectionItemTargetTagItemArgs) ToGetProfilesProfileC
 // GetProfilesProfileCollectionItemTargetTagItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagItemArray and GetProfilesProfileCollectionItemTargetTagItemArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagItemArrayInput` via:
 //
-//          GetProfilesProfileCollectionItemTargetTagItemArray{ GetProfilesProfileCollectionItemTargetTagItemArgs{...} }
+//	GetProfilesProfileCollectionItemTargetTagItemArray{ GetProfilesProfileCollectionItemTargetTagItemArgs{...} }
 type GetProfilesProfileCollectionItemTargetTagItemArrayInput interface {
 	pulumi.Input
 
@@ -5038,7 +5038,7 @@ type GetRecommendationResourceCount struct {
 // GetRecommendationResourceCountInput is an input type that accepts GetRecommendationResourceCountArgs and GetRecommendationResourceCountOutput values.
 // You can construct a concrete instance of `GetRecommendationResourceCountInput` via:
 //
-//          GetRecommendationResourceCountArgs{...}
+//	GetRecommendationResourceCountArgs{...}
 type GetRecommendationResourceCountInput interface {
 	pulumi.Input
 
@@ -5068,7 +5068,7 @@ func (i GetRecommendationResourceCountArgs) ToGetRecommendationResourceCountOutp
 // GetRecommendationResourceCountArrayInput is an input type that accepts GetRecommendationResourceCountArray and GetRecommendationResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationResourceCountArrayInput` via:
 //
-//          GetRecommendationResourceCountArray{ GetRecommendationResourceCountArgs{...} }
+//	GetRecommendationResourceCountArray{ GetRecommendationResourceCountArgs{...} }
 type GetRecommendationResourceCountArrayInput interface {
 	pulumi.Input
 
@@ -5144,7 +5144,7 @@ type GetRecommendationStrategiesFilter struct {
 // GetRecommendationStrategiesFilterInput is an input type that accepts GetRecommendationStrategiesFilterArgs and GetRecommendationStrategiesFilterOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesFilterInput` via:
 //
-//          GetRecommendationStrategiesFilterArgs{...}
+//	GetRecommendationStrategiesFilterArgs{...}
 type GetRecommendationStrategiesFilterInput interface {
 	pulumi.Input
 
@@ -5174,7 +5174,7 @@ func (i GetRecommendationStrategiesFilterArgs) ToGetRecommendationStrategiesFilt
 // GetRecommendationStrategiesFilterArrayInput is an input type that accepts GetRecommendationStrategiesFilterArray and GetRecommendationStrategiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesFilterArrayInput` via:
 //
-//          GetRecommendationStrategiesFilterArray{ GetRecommendationStrategiesFilterArgs{...} }
+//	GetRecommendationStrategiesFilterArray{ GetRecommendationStrategiesFilterArgs{...} }
 type GetRecommendationStrategiesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5251,7 +5251,7 @@ type GetRecommendationStrategiesRecommendationStrategyCollection struct {
 // GetRecommendationStrategiesRecommendationStrategyCollectionInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionArgs and GetRecommendationStrategiesRecommendationStrategyCollectionOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionArgs{...}
+//	GetRecommendationStrategiesRecommendationStrategyCollectionArgs{...}
 type GetRecommendationStrategiesRecommendationStrategyCollectionInput interface {
 	pulumi.Input
 
@@ -5279,7 +5279,7 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionArgs) ToGetRe
 // GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionArray and GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionArray{ GetRecommendationStrategiesRecommendationStrategyCollectionArgs{...} }
+//	GetRecommendationStrategiesRecommendationStrategyCollectionArray{ GetRecommendationStrategiesRecommendationStrategyCollectionArgs{...} }
 type GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5352,7 +5352,7 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItem struct {
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs and GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs{...}
+//	GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs{...}
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemInput interface {
 	pulumi.Input
 
@@ -5382,7 +5382,7 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs) ToG
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionItemArray{ GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs{...} }
+//	GetRecommendationStrategiesRecommendationStrategyCollectionItemArray{ GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs{...} }
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5462,7 +5462,7 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy str
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs{...}
+//	GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs{...}
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyInput interface {
 	pulumi.Input
 
@@ -5494,7 +5494,7 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray{ GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs{...} }
+//	GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray{ GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs{...} }
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput interface {
 	pulumi.Input
 
@@ -5589,7 +5589,7 @@ type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyPara
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs{...}
+//	GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs{...}
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionInput interface {
 	pulumi.Input
 
@@ -5627,7 +5627,7 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput` via:
 //
-//          GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray{ GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs{...} }
+//	GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray{ GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs{...} }
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -5735,7 +5735,7 @@ type GetRecommendationStrategyItem struct {
 // GetRecommendationStrategyItemInput is an input type that accepts GetRecommendationStrategyItemArgs and GetRecommendationStrategyItemOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemInput` via:
 //
-//          GetRecommendationStrategyItemArgs{...}
+//	GetRecommendationStrategyItemArgs{...}
 type GetRecommendationStrategyItemInput interface {
 	pulumi.Input
 
@@ -5765,7 +5765,7 @@ func (i GetRecommendationStrategyItemArgs) ToGetRecommendationStrategyItemOutput
 // GetRecommendationStrategyItemArrayInput is an input type that accepts GetRecommendationStrategyItemArray and GetRecommendationStrategyItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemArrayInput` via:
 //
-//          GetRecommendationStrategyItemArray{ GetRecommendationStrategyItemArgs{...} }
+//	GetRecommendationStrategyItemArray{ GetRecommendationStrategyItemArgs{...} }
 type GetRecommendationStrategyItemArrayInput interface {
 	pulumi.Input
 
@@ -5843,7 +5843,7 @@ type GetRecommendationStrategyItemStrategy struct {
 // GetRecommendationStrategyItemStrategyInput is an input type that accepts GetRecommendationStrategyItemStrategyArgs and GetRecommendationStrategyItemStrategyOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemStrategyInput` via:
 //
-//          GetRecommendationStrategyItemStrategyArgs{...}
+//	GetRecommendationStrategyItemStrategyArgs{...}
 type GetRecommendationStrategyItemStrategyInput interface {
 	pulumi.Input
 
@@ -5875,7 +5875,7 @@ func (i GetRecommendationStrategyItemStrategyArgs) ToGetRecommendationStrategyIt
 // GetRecommendationStrategyItemStrategyArrayInput is an input type that accepts GetRecommendationStrategyItemStrategyArray and GetRecommendationStrategyItemStrategyArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemStrategyArrayInput` via:
 //
-//          GetRecommendationStrategyItemStrategyArray{ GetRecommendationStrategyItemStrategyArgs{...} }
+//	GetRecommendationStrategyItemStrategyArray{ GetRecommendationStrategyItemStrategyArgs{...} }
 type GetRecommendationStrategyItemStrategyArrayInput interface {
 	pulumi.Input
 
@@ -5966,7 +5966,7 @@ type GetRecommendationStrategyItemStrategyParametersDefinition struct {
 // GetRecommendationStrategyItemStrategyParametersDefinitionInput is an input type that accepts GetRecommendationStrategyItemStrategyParametersDefinitionArgs and GetRecommendationStrategyItemStrategyParametersDefinitionOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemStrategyParametersDefinitionInput` via:
 //
-//          GetRecommendationStrategyItemStrategyParametersDefinitionArgs{...}
+//	GetRecommendationStrategyItemStrategyParametersDefinitionArgs{...}
 type GetRecommendationStrategyItemStrategyParametersDefinitionInput interface {
 	pulumi.Input
 
@@ -6004,7 +6004,7 @@ func (i GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ToGetReco
 // GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput is an input type that accepts GetRecommendationStrategyItemStrategyParametersDefinitionArray and GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput` via:
 //
-//          GetRecommendationStrategyItemStrategyParametersDefinitionArray{ GetRecommendationStrategyItemStrategyParametersDefinitionArgs{...} }
+//	GetRecommendationStrategyItemStrategyParametersDefinitionArray{ GetRecommendationStrategyItemStrategyParametersDefinitionArgs{...} }
 type GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -6102,7 +6102,7 @@ type GetRecommendationSupportedLevel struct {
 // GetRecommendationSupportedLevelInput is an input type that accepts GetRecommendationSupportedLevelArgs and GetRecommendationSupportedLevelOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelInput` via:
 //
-//          GetRecommendationSupportedLevelArgs{...}
+//	GetRecommendationSupportedLevelArgs{...}
 type GetRecommendationSupportedLevelInput interface {
 	pulumi.Input
 
@@ -6130,7 +6130,7 @@ func (i GetRecommendationSupportedLevelArgs) ToGetRecommendationSupportedLevelOu
 // GetRecommendationSupportedLevelArrayInput is an input type that accepts GetRecommendationSupportedLevelArray and GetRecommendationSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelArrayInput` via:
 //
-//          GetRecommendationSupportedLevelArray{ GetRecommendationSupportedLevelArgs{...} }
+//	GetRecommendationSupportedLevelArray{ GetRecommendationSupportedLevelArgs{...} }
 type GetRecommendationSupportedLevelArrayInput interface {
 	pulumi.Input
 
@@ -6199,7 +6199,7 @@ type GetRecommendationSupportedLevelItem struct {
 // GetRecommendationSupportedLevelItemInput is an input type that accepts GetRecommendationSupportedLevelItemArgs and GetRecommendationSupportedLevelItemOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelItemInput` via:
 //
-//          GetRecommendationSupportedLevelItemArgs{...}
+//	GetRecommendationSupportedLevelItemArgs{...}
 type GetRecommendationSupportedLevelItemInput interface {
 	pulumi.Input
 
@@ -6227,7 +6227,7 @@ func (i GetRecommendationSupportedLevelItemArgs) ToGetRecommendationSupportedLev
 // GetRecommendationSupportedLevelItemArrayInput is an input type that accepts GetRecommendationSupportedLevelItemArray and GetRecommendationSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelItemArrayInput` via:
 //
-//          GetRecommendationSupportedLevelItemArray{ GetRecommendationSupportedLevelItemArgs{...} }
+//	GetRecommendationSupportedLevelItemArray{ GetRecommendationSupportedLevelItemArgs{...} }
 type GetRecommendationSupportedLevelItemArrayInput interface {
 	pulumi.Input
 
@@ -6298,7 +6298,7 @@ type GetRecommendationsFilter struct {
 // GetRecommendationsFilterInput is an input type that accepts GetRecommendationsFilterArgs and GetRecommendationsFilterOutput values.
 // You can construct a concrete instance of `GetRecommendationsFilterInput` via:
 //
-//          GetRecommendationsFilterArgs{...}
+//	GetRecommendationsFilterArgs{...}
 type GetRecommendationsFilterInput interface {
 	pulumi.Input
 
@@ -6328,7 +6328,7 @@ func (i GetRecommendationsFilterArgs) ToGetRecommendationsFilterOutputWithContex
 // GetRecommendationsFilterArrayInput is an input type that accepts GetRecommendationsFilterArray and GetRecommendationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsFilterArrayInput` via:
 //
-//          GetRecommendationsFilterArray{ GetRecommendationsFilterArgs{...} }
+//	GetRecommendationsFilterArray{ GetRecommendationsFilterArgs{...} }
 type GetRecommendationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -6405,7 +6405,7 @@ type GetRecommendationsRecommendationCollection struct {
 // GetRecommendationsRecommendationCollectionInput is an input type that accepts GetRecommendationsRecommendationCollectionArgs and GetRecommendationsRecommendationCollectionOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionInput` via:
 //
-//          GetRecommendationsRecommendationCollectionArgs{...}
+//	GetRecommendationsRecommendationCollectionArgs{...}
 type GetRecommendationsRecommendationCollectionInput interface {
 	pulumi.Input
 
@@ -6433,7 +6433,7 @@ func (i GetRecommendationsRecommendationCollectionArgs) ToGetRecommendationsReco
 // GetRecommendationsRecommendationCollectionArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionArray and GetRecommendationsRecommendationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionArrayInput` via:
 //
-//          GetRecommendationsRecommendationCollectionArray{ GetRecommendationsRecommendationCollectionArgs{...} }
+//	GetRecommendationsRecommendationCollectionArray{ GetRecommendationsRecommendationCollectionArgs{...} }
 type GetRecommendationsRecommendationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6535,7 +6535,7 @@ type GetRecommendationsRecommendationCollectionItem struct {
 // GetRecommendationsRecommendationCollectionItemInput is an input type that accepts GetRecommendationsRecommendationCollectionItemArgs and GetRecommendationsRecommendationCollectionItemOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemArgs{...}
+//	GetRecommendationsRecommendationCollectionItemArgs{...}
 type GetRecommendationsRecommendationCollectionItemInput interface {
 	pulumi.Input
 
@@ -6594,7 +6594,7 @@ func (i GetRecommendationsRecommendationCollectionItemArgs) ToGetRecommendations
 // GetRecommendationsRecommendationCollectionItemArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemArray and GetRecommendationsRecommendationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemArrayInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemArray{ GetRecommendationsRecommendationCollectionItemArgs{...} }
+//	GetRecommendationsRecommendationCollectionItemArray{ GetRecommendationsRecommendationCollectionItemArgs{...} }
 type GetRecommendationsRecommendationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6750,7 +6750,7 @@ type GetRecommendationsRecommendationCollectionItemResourceCount struct {
 // GetRecommendationsRecommendationCollectionItemResourceCountInput is an input type that accepts GetRecommendationsRecommendationCollectionItemResourceCountArgs and GetRecommendationsRecommendationCollectionItemResourceCountOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemResourceCountInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemResourceCountArgs{...}
+//	GetRecommendationsRecommendationCollectionItemResourceCountArgs{...}
 type GetRecommendationsRecommendationCollectionItemResourceCountInput interface {
 	pulumi.Input
 
@@ -6780,7 +6780,7 @@ func (i GetRecommendationsRecommendationCollectionItemResourceCountArgs) ToGetRe
 // GetRecommendationsRecommendationCollectionItemResourceCountArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemResourceCountArray and GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemResourceCountArrayInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemResourceCountArray{ GetRecommendationsRecommendationCollectionItemResourceCountArgs{...} }
+//	GetRecommendationsRecommendationCollectionItemResourceCountArray{ GetRecommendationsRecommendationCollectionItemResourceCountArgs{...} }
 type GetRecommendationsRecommendationCollectionItemResourceCountArrayInput interface {
 	pulumi.Input
 
@@ -6854,7 +6854,7 @@ type GetRecommendationsRecommendationCollectionItemSupportedLevel struct {
 // GetRecommendationsRecommendationCollectionItemSupportedLevelInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelArgs and GetRecommendationsRecommendationCollectionItemSupportedLevelOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemSupportedLevelArgs{...}
+//	GetRecommendationsRecommendationCollectionItemSupportedLevelArgs{...}
 type GetRecommendationsRecommendationCollectionItemSupportedLevelInput interface {
 	pulumi.Input
 
@@ -6882,7 +6882,7 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArgs) ToGetR
 // GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelArray and GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemSupportedLevelArray{ GetRecommendationsRecommendationCollectionItemSupportedLevelArgs{...} }
+//	GetRecommendationsRecommendationCollectionItemSupportedLevelArray{ GetRecommendationsRecommendationCollectionItemSupportedLevelArgs{...} }
 type GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput interface {
 	pulumi.Input
 
@@ -6953,7 +6953,7 @@ type GetRecommendationsRecommendationCollectionItemSupportedLevelItem struct {
 // GetRecommendationsRecommendationCollectionItemSupportedLevelItemInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs and GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelItemInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs{...}
+//	GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs{...}
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItemInput interface {
 	pulumi.Input
 
@@ -6981,7 +6981,7 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) To
 // GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray and GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayInput` via:
 //
-//          GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray{ GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs{...} }
+//	GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray{ GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs{...} }
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayInput interface {
 	pulumi.Input
 
@@ -7054,7 +7054,7 @@ type GetResourceActionAction struct {
 // GetResourceActionActionInput is an input type that accepts GetResourceActionActionArgs and GetResourceActionActionOutput values.
 // You can construct a concrete instance of `GetResourceActionActionInput` via:
 //
-//          GetResourceActionActionArgs{...}
+//	GetResourceActionActionArgs{...}
 type GetResourceActionActionInput interface {
 	pulumi.Input
 
@@ -7086,7 +7086,7 @@ func (i GetResourceActionActionArgs) ToGetResourceActionActionOutputWithContext(
 // GetResourceActionActionArrayInput is an input type that accepts GetResourceActionActionArray and GetResourceActionActionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionActionArrayInput` via:
 //
-//          GetResourceActionActionArray{ GetResourceActionActionArgs{...} }
+//	GetResourceActionActionArray{ GetResourceActionActionArgs{...} }
 type GetResourceActionActionArrayInput interface {
 	pulumi.Input
 
@@ -7167,7 +7167,7 @@ type GetResourceActionsFilter struct {
 // GetResourceActionsFilterInput is an input type that accepts GetResourceActionsFilterArgs and GetResourceActionsFilterOutput values.
 // You can construct a concrete instance of `GetResourceActionsFilterInput` via:
 //
-//          GetResourceActionsFilterArgs{...}
+//	GetResourceActionsFilterArgs{...}
 type GetResourceActionsFilterInput interface {
 	pulumi.Input
 
@@ -7197,7 +7197,7 @@ func (i GetResourceActionsFilterArgs) ToGetResourceActionsFilterOutputWithContex
 // GetResourceActionsFilterArrayInput is an input type that accepts GetResourceActionsFilterArray and GetResourceActionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsFilterArrayInput` via:
 //
-//          GetResourceActionsFilterArray{ GetResourceActionsFilterArgs{...} }
+//	GetResourceActionsFilterArray{ GetResourceActionsFilterArgs{...} }
 type GetResourceActionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7273,7 +7273,7 @@ type GetResourceActionsResourceActionCollection struct {
 // GetResourceActionsResourceActionCollectionInput is an input type that accepts GetResourceActionsResourceActionCollectionArgs and GetResourceActionsResourceActionCollectionOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionInput` via:
 //
-//          GetResourceActionsResourceActionCollectionArgs{...}
+//	GetResourceActionsResourceActionCollectionArgs{...}
 type GetResourceActionsResourceActionCollectionInput interface {
 	pulumi.Input
 
@@ -7300,7 +7300,7 @@ func (i GetResourceActionsResourceActionCollectionArgs) ToGetResourceActionsReso
 // GetResourceActionsResourceActionCollectionArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionArray and GetResourceActionsResourceActionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionArrayInput` via:
 //
-//          GetResourceActionsResourceActionCollectionArray{ GetResourceActionsResourceActionCollectionArgs{...} }
+//	GetResourceActionsResourceActionCollectionArray{ GetResourceActionsResourceActionCollectionArgs{...} }
 type GetResourceActionsResourceActionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -7405,7 +7405,7 @@ type GetResourceActionsResourceActionCollectionItem struct {
 // GetResourceActionsResourceActionCollectionItemInput is an input type that accepts GetResourceActionsResourceActionCollectionItemArgs and GetResourceActionsResourceActionCollectionItemOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionItemInput` via:
 //
-//          GetResourceActionsResourceActionCollectionItemArgs{...}
+//	GetResourceActionsResourceActionCollectionItemArgs{...}
 type GetResourceActionsResourceActionCollectionItemInput interface {
 	pulumi.Input
 
@@ -7468,7 +7468,7 @@ func (i GetResourceActionsResourceActionCollectionItemArgs) ToGetResourceActions
 // GetResourceActionsResourceActionCollectionItemArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionItemArray and GetResourceActionsResourceActionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionItemArrayInput` via:
 //
-//          GetResourceActionsResourceActionCollectionItemArray{ GetResourceActionsResourceActionCollectionItemArgs{...} }
+//	GetResourceActionsResourceActionCollectionItemArray{ GetResourceActionsResourceActionCollectionItemArgs{...} }
 type GetResourceActionsResourceActionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -7634,7 +7634,7 @@ type GetResourceActionsResourceActionCollectionItemAction struct {
 // GetResourceActionsResourceActionCollectionItemActionInput is an input type that accepts GetResourceActionsResourceActionCollectionItemActionArgs and GetResourceActionsResourceActionCollectionItemActionOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionItemActionInput` via:
 //
-//          GetResourceActionsResourceActionCollectionItemActionArgs{...}
+//	GetResourceActionsResourceActionCollectionItemActionArgs{...}
 type GetResourceActionsResourceActionCollectionItemActionInput interface {
 	pulumi.Input
 
@@ -7666,7 +7666,7 @@ func (i GetResourceActionsResourceActionCollectionItemActionArgs) ToGetResourceA
 // GetResourceActionsResourceActionCollectionItemActionArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionItemActionArray and GetResourceActionsResourceActionCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionItemActionArrayInput` via:
 //
-//          GetResourceActionsResourceActionCollectionItemActionArray{ GetResourceActionsResourceActionCollectionItemActionArgs{...} }
+//	GetResourceActionsResourceActionCollectionItemActionArray{ GetResourceActionsResourceActionCollectionItemActionArgs{...} }
 type GetResourceActionsResourceActionCollectionItemActionArrayInput interface {
 	pulumi.Input
 

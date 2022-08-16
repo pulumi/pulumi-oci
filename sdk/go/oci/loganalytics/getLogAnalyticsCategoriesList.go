@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsCategoriesList(ctx, &loganalytics.GetLogAnalyticsCategoriesListArgs{
-// 			Namespace:           _var.Log_analytics_categories_list_namespace,
-// 			CategoryDisplayText: pulumi.StringRef(_var.Log_analytics_categories_list_category_display_text),
-// 			CategoryType:        pulumi.StringRef(_var.Log_analytics_categories_list_category_type),
-// 			Name:                pulumi.StringRef(_var.Log_analytics_categories_list_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsCategoriesList(ctx, &loganalytics.GetLogAnalyticsCategoriesListArgs{
+//				Namespace:           _var.Log_analytics_categories_list_namespace,
+//				CategoryDisplayText: pulumi.StringRef(_var.Log_analytics_categories_list_category_display_text),
+//				CategoryType:        pulumi.StringRef(_var.Log_analytics_categories_list_category_type),
+//				Name:                pulumi.StringRef(_var.Log_analytics_categories_list_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsCategoriesList(ctx *pulumi.Context, args *GetLogAnalyticsCategoriesListArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsCategoriesListResult, error) {
 	var rv GetLogAnalyticsCategoriesListResult

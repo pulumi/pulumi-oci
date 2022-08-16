@@ -21,49 +21,52 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.NewUsagePlan(ctx, "testUsagePlan", &ApiGateway.UsagePlanArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Entitlements: apigateway.UsagePlanEntitlementArray{
-// 				&apigateway.UsagePlanEntitlementArgs{
-// 					Name:        pulumi.Any(_var.Usage_plan_entitlements_name),
-// 					Description: pulumi.Any(_var.Usage_plan_entitlements_description),
-// 					Quota: &apigateway.UsagePlanEntitlementQuotaArgs{
-// 						OperationOnBreach: pulumi.Any(_var.Usage_plan_entitlements_quota_operation_on_breach),
-// 						ResetPolicy:       pulumi.Any(_var.Usage_plan_entitlements_quota_reset_policy),
-// 						Unit:              pulumi.Any(_var.Usage_plan_entitlements_quota_unit),
-// 						Value:             pulumi.Any(_var.Usage_plan_entitlements_quota_value),
-// 					},
-// 					RateLimit: &apigateway.UsagePlanEntitlementRateLimitArgs{
-// 						Unit:  pulumi.Any(_var.Usage_plan_entitlements_rate_limit_unit),
-// 						Value: pulumi.Any(_var.Usage_plan_entitlements_rate_limit_value),
-// 					},
-// 					Targets: apigateway.UsagePlanEntitlementTargetArray{
-// 						&apigateway.UsagePlanEntitlementTargetArgs{
-// 							DeploymentId: pulumi.Any(oci_apigateway_deployment.Test_deployment.Id),
-// 						},
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Usage_plan_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.NewUsagePlan(ctx, "testUsagePlan", &ApiGateway.UsagePlanArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Entitlements: apigateway.UsagePlanEntitlementArray{
+//					&apigateway.UsagePlanEntitlementArgs{
+//						Name:        pulumi.Any(_var.Usage_plan_entitlements_name),
+//						Description: pulumi.Any(_var.Usage_plan_entitlements_description),
+//						Quota: &apigateway.UsagePlanEntitlementQuotaArgs{
+//							OperationOnBreach: pulumi.Any(_var.Usage_plan_entitlements_quota_operation_on_breach),
+//							ResetPolicy:       pulumi.Any(_var.Usage_plan_entitlements_quota_reset_policy),
+//							Unit:              pulumi.Any(_var.Usage_plan_entitlements_quota_unit),
+//							Value:             pulumi.Any(_var.Usage_plan_entitlements_quota_value),
+//						},
+//						RateLimit: &apigateway.UsagePlanEntitlementRateLimitArgs{
+//							Unit:  pulumi.Any(_var.Usage_plan_entitlements_rate_limit_unit),
+//							Value: pulumi.Any(_var.Usage_plan_entitlements_rate_limit_value),
+//						},
+//						Targets: apigateway.UsagePlanEntitlementTargetArray{
+//							&apigateway.UsagePlanEntitlementTargetArgs{
+//								DeploymentId: pulumi.Any(oci_apigateway_deployment.Test_deployment.Id),
+//							},
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Usage_plan_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -71,7 +74,9 @@ import (
 // UsagePlans can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
+//
+//	$ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
+//
 // ```
 type UsagePlan struct {
 	pulumi.CustomResourceState
@@ -229,7 +234,7 @@ func (i *UsagePlan) ToUsagePlanOutputWithContext(ctx context.Context) UsagePlanO
 // UsagePlanArrayInput is an input type that accepts UsagePlanArray and UsagePlanArrayOutput values.
 // You can construct a concrete instance of `UsagePlanArrayInput` via:
 //
-//          UsagePlanArray{ UsagePlanArgs{...} }
+//	UsagePlanArray{ UsagePlanArgs{...} }
 type UsagePlanArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +259,7 @@ func (i UsagePlanArray) ToUsagePlanArrayOutputWithContext(ctx context.Context) U
 // UsagePlanMapInput is an input type that accepts UsagePlanMap and UsagePlanMapOutput values.
 // You can construct a concrete instance of `UsagePlanMapInput` via:
 //
-//          UsagePlanMap{ "key": UsagePlanArgs{...} }
+//	UsagePlanMap{ "key": UsagePlanArgs{...} }
 type UsagePlanMapInput interface {
 	pulumi.Input
 

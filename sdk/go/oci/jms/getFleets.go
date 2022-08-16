@@ -21,24 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Jms.GetFleets(ctx, &jms.GetFleetsArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Fleet_display_name),
-// 			Id:            pulumi.StringRef(_var.Fleet_id),
-// 			State:         pulumi.StringRef(_var.Fleet_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Jms.GetFleets(ctx, &jms.GetFleetsArgs{
+//				CompartmentId:       pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:         pulumi.StringRef(_var.Fleet_display_name),
+//				DisplayNameContains: pulumi.StringRef(_var.Fleet_display_name_contains),
+//				Id:                  pulumi.StringRef(_var.Fleet_id),
+//				State:               pulumi.StringRef(_var.Fleet_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFleets(ctx *pulumi.Context, args *GetFleetsArgs, opts ...pulumi.InvokeOption) (*GetFleetsResult, error) {
 	var rv GetFleetsResult
@@ -54,8 +58,10 @@ type GetFleetsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The display name.
-	DisplayName *string           `pulumi:"displayName"`
-	Filters     []GetFleetsFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// Filter the list with displayName contains the given value.
+	DisplayNameContains *string           `pulumi:"displayNameContains"`
+	Filters             []GetFleetsFilter `pulumi:"filters"`
 	// The ID of the Fleet.
 	Id *string `pulumi:"id"`
 	// The state of the lifecycle.
@@ -67,8 +73,9 @@ type GetFleetsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the Fleet.
-	DisplayName *string           `pulumi:"displayName"`
-	Filters     []GetFleetsFilter `pulumi:"filters"`
+	DisplayName         *string           `pulumi:"displayName"`
+	DisplayNameContains *string           `pulumi:"displayNameContains"`
+	Filters             []GetFleetsFilter `pulumi:"filters"`
 	// The list of fleet_collection.
 	FleetCollections []GetFleetsFleetCollection `pulumi:"fleetCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -95,8 +102,10 @@ type GetFleetsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The display name.
-	DisplayName pulumi.StringPtrInput     `pulumi:"displayName"`
-	Filters     GetFleetsFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Filter the list with displayName contains the given value.
+	DisplayNameContains pulumi.StringPtrInput     `pulumi:"displayNameContains"`
+	Filters             GetFleetsFilterArrayInput `pulumi:"filters"`
 	// The ID of the Fleet.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The state of the lifecycle.
@@ -130,6 +139,10 @@ func (o GetFleetsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 // The name of the Fleet.
 func (o GetFleetsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetFleetsResultOutput) DisplayNameContains() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetsResult) *string { return v.DisplayNameContains }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFleetsResultOutput) Filters() GetFleetsFilterArrayOutput {

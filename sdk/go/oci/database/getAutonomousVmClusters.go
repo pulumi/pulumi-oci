@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousVmClusters(ctx, &database.GetAutonomousVmClustersArgs{
-// 			CompartmentId:           _var.Compartment_id,
-// 			DisplayName:             pulumi.StringRef(_var.Autonomous_vm_cluster_display_name),
-// 			ExadataInfrastructureId: pulumi.StringRef(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-// 			State:                   pulumi.StringRef(_var.Autonomous_vm_cluster_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousVmClusters(ctx, &database.GetAutonomousVmClustersArgs{
+//				CompartmentId:           _var.Compartment_id,
+//				DisplayName:             pulumi.StringRef(_var.Autonomous_vm_cluster_display_name),
+//				ExadataInfrastructureId: pulumi.StringRef(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
+//				State:                   pulumi.StringRef(_var.Autonomous_vm_cluster_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousVmClusters(ctx *pulumi.Context, args *GetAutonomousVmClustersArgs, opts ...pulumi.InvokeOption) (*GetAutonomousVmClustersResult, error) {
 	var rv GetAutonomousVmClustersResult

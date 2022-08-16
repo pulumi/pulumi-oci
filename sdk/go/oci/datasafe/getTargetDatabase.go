@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetTargetDatabase(ctx, &datasafe.GetTargetDatabaseArgs{
-// 			TargetDatabaseId: oci_data_safe_target_database.Test_target_database.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetTargetDatabase(ctx, &datasafe.GetTargetDatabaseArgs{
+//				TargetDatabaseId: oci_data_safe_target_database.Test_target_database.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupTargetDatabase(ctx *pulumi.Context, args *LookupTargetDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupTargetDatabaseResult, error) {
 	var rv LookupTargetDatabaseResult

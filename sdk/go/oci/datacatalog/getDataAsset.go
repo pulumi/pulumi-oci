@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetDataAsset(ctx, &datacatalog.GetDataAssetArgs{
-// 			CatalogId:    oci_datacatalog_catalog.Test_catalog.Id,
-// 			DataAssetKey: _var.Data_asset_data_asset_key,
-// 			Fields:       _var.Data_asset_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetDataAsset(ctx, &datacatalog.GetDataAssetArgs{
+//				CatalogId:    oci_datacatalog_catalog.Test_catalog.Id,
+//				DataAssetKey: _var.Data_asset_data_asset_key,
+//				Fields:       _var.Data_asset_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDataAsset(ctx *pulumi.Context, args *LookupDataAssetArgs, opts ...pulumi.InvokeOption) (*LookupDataAssetResult, error) {
 	var rv LookupDataAssetResult

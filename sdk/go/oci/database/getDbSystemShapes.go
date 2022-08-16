@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbSystemShapes(ctx, &database.GetDbSystemShapesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Db_system_shape_availability_domain),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbSystemShapes(ctx, &database.GetDbSystemShapesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Db_system_shape_availability_domain),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbSystemShapes(ctx *pulumi.Context, args *GetDbSystemShapesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemShapesResult, error) {
 	var rv GetDbSystemShapesResult

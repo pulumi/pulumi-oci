@@ -12,6 +12,7 @@ import com.pulumi.oci.Jms.inputs.FleetState;
 import com.pulumi.oci.Jms.outputs.FleetInventoryLog;
 import com.pulumi.oci.Jms.outputs.FleetOperationLog;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -22,6 +23,12 @@ import javax.annotation.Nullable;
  * This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
  * 
  * Create a new Fleet using the information provided.
+ * 
+ * `inventoryLog` is now a required parameter for CreateFleet API.
+ * Update existing applications using this API
+ * before July 15, 2022 to ensure the applications continue to work.
+ * See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+ * Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
  * 
  * ## Example Usage
  * 
@@ -175,6 +182,20 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      */
     public Output<FleetInventoryLog> inventoryLog() {
         return this.inventoryLog;
+    }
+    /**
+     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    @Export(name="isAdvancedFeaturesEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isAdvancedFeaturesEnabled;
+
+    /**
+     * @return (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    public Output<Boolean> isAdvancedFeaturesEnabled() {
+        return this.isAdvancedFeaturesEnabled;
     }
     /**
      * (Updatable) Custom Log for inventory or operation log.

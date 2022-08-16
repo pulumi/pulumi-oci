@@ -17,7 +17,7 @@ public final class GetTriggersTriggerCollectionItemActionFilter {
      */
     private final List<String> events;
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     private final List<GetTriggersTriggerCollectionItemActionFilterInclude> includes;
@@ -45,7 +45,7 @@ public final class GetTriggersTriggerCollectionItemActionFilter {
         return this.events;
     }
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public List<GetTriggersTriggerCollectionItemActionFilterInclude> includes() {

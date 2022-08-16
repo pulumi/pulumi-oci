@@ -22,33 +22,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewOperationsInsightsPrivateEndpoint(ctx, "testOperationsInsightsPrivateEndpoint", &Opsi.OperationsInsightsPrivateEndpointArgs{
-// 			CompartmentId:   pulumi.Any(_var.Compartment_id),
-// 			DisplayName:     pulumi.Any(_var.Operations_insights_private_endpoint_display_name),
-// 			IsUsedForRacDbs: pulumi.Any(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
-// 			SubnetId:        pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			VcnId:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Operations_insights_private_endpoint_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			NsgIds: pulumi.Any(_var.Operations_insights_private_endpoint_nsg_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewOperationsInsightsPrivateEndpoint(ctx, "testOperationsInsightsPrivateEndpoint", &Opsi.OperationsInsightsPrivateEndpointArgs{
+//				CompartmentId:   pulumi.Any(_var.Compartment_id),
+//				DisplayName:     pulumi.Any(_var.Operations_insights_private_endpoint_display_name),
+//				IsUsedForRacDbs: pulumi.Any(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
+//				SubnetId:        pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				VcnId:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Operations_insights_private_endpoint_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				NsgIds: pulumi.Any(_var.Operations_insights_private_endpoint_nsg_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // OperationsInsightsPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint "id"
+//
+//	$ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint "id"
+//
 // ```
 type OperationsInsightsPrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -279,7 +284,7 @@ func (i *OperationsInsightsPrivateEndpoint) ToOperationsInsightsPrivateEndpointO
 // OperationsInsightsPrivateEndpointArrayInput is an input type that accepts OperationsInsightsPrivateEndpointArray and OperationsInsightsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsPrivateEndpointArrayInput` via:
 //
-//          OperationsInsightsPrivateEndpointArray{ OperationsInsightsPrivateEndpointArgs{...} }
+//	OperationsInsightsPrivateEndpointArray{ OperationsInsightsPrivateEndpointArgs{...} }
 type OperationsInsightsPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -304,7 +309,7 @@ func (i OperationsInsightsPrivateEndpointArray) ToOperationsInsightsPrivateEndpo
 // OperationsInsightsPrivateEndpointMapInput is an input type that accepts OperationsInsightsPrivateEndpointMap and OperationsInsightsPrivateEndpointMapOutput values.
 // You can construct a concrete instance of `OperationsInsightsPrivateEndpointMapInput` via:
 //
-//          OperationsInsightsPrivateEndpointMap{ "key": OperationsInsightsPrivateEndpointArgs{...} }
+//	OperationsInsightsPrivateEndpointMap{ "key": OperationsInsightsPrivateEndpointArgs{...} }
 type OperationsInsightsPrivateEndpointMapInput interface {
 	pulumi.Input
 

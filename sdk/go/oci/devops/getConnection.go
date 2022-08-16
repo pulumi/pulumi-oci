@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetConnection(ctx, &devops.GetConnectionArgs{
-// 			ConnectionId: oci_devops_connection.Test_connection.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetConnection(ctx, &devops.GetConnectionArgs{
+//				ConnectionId: oci_devops_connection.Test_connection.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupConnection(ctx *pulumi.Context, args *LookupConnectionArgs, opts ...pulumi.InvokeOption) (*LookupConnectionResult, error) {
 	var rv LookupConnectionResult
@@ -57,6 +60,8 @@ type LookupConnectionResult struct {
 	AccessToken string `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword string `pulumi:"appPassword"`
+	// The Base URL of the hosted BitbucketServer.
+	BaseUrl string `pulumi:"baseUrl"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId string `pulumi:"compartmentId"`
 	ConnectionId  string `pulumi:"connectionId"`
@@ -82,6 +87,8 @@ type LookupConnectionResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfigs []GetConnectionTlsVerifyConfig `pulumi:"tlsVerifyConfigs"`
 	// Public Bitbucket Cloud Username in plain text
 	Username string `pulumi:"username"`
 }
@@ -132,6 +139,11 @@ func (o LookupConnectionResultOutput) AccessToken() pulumi.StringOutput {
 // OCID of personal Bitbucket Cloud AppPassword saved in secret store
 func (o LookupConnectionResultOutput) AppPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AppPassword }).(pulumi.StringOutput)
+}
+
+// The Base URL of the hosted BitbucketServer.
+func (o LookupConnectionResultOutput) BaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.BaseUrl }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment containing the connection.
@@ -196,6 +208,11 @@ func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringOutput {
 // The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// TLS configuration used by build service to verify TLS connection.
+func (o LookupConnectionResultOutput) TlsVerifyConfigs() GetConnectionTlsVerifyConfigArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionTlsVerifyConfig { return v.TlsVerifyConfigs }).(GetConnectionTlsVerifyConfigArrayOutput)
 }
 
 // Public Bitbucket Cloud Username in plain text

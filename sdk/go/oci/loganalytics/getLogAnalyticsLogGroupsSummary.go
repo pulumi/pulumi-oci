@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsLogGroupsSummary(ctx, &loganalytics.GetLogAnalyticsLogGroupsSummaryArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Namespace:     _var.Log_analytics_log_groups_summary_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsLogGroupsSummary(ctx, &loganalytics.GetLogAnalyticsLogGroupsSummaryArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Namespace:     _var.Log_analytics_log_groups_summary_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsLogGroupsSummary(ctx *pulumi.Context, args *GetLogAnalyticsLogGroupsSummaryArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsLogGroupsSummaryResult, error) {
 	var rv GetLogAnalyticsLogGroupsSummaryResult

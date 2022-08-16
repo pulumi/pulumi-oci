@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseUserRole(ctx, &databasemanagement.GetManagedDatabaseUserRoleArgs{
-// 			ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-// 			UserName:          oci_identity_user.Test_user.Name,
-// 			Name:              pulumi.StringRef(_var.Managed_database_user_role_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseUserRole(ctx, &databasemanagement.GetManagedDatabaseUserRoleArgs{
+//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				UserName:          oci_identity_user.Test_user.Name,
+//				Name:              pulumi.StringRef(_var.Managed_database_user_role_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseUserRole(ctx *pulumi.Context, args *GetManagedDatabaseUserRoleArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseUserRoleResult, error) {
 	var rv GetManagedDatabaseUserRoleResult

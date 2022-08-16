@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
 //
-// This list API returns all commitments for a particular Subscribed Service
+// # This list API returns all commitments for a particular Subscribed Service
 //
 // ## Example Usage
 //
@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsubSubscription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsubSubscription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsubSubscription.GetCommitments(ctx, &osubsubscription.GetCommitmentsArgs{
-// 			CompartmentId:             _var.Compartment_id,
-// 			SubscribedServiceId:       oci_core_service.Test_service.Id,
-// 			XOneGatewaySubscriptionId: pulumi.StringRef(_var.Commitment_x_one_gateway_subscription_id),
-// 			XOneOriginRegion:          pulumi.StringRef(_var.Commitment_x_one_origin_region),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsubSubscription.GetCommitments(ctx, &osubsubscription.GetCommitmentsArgs{
+//				CompartmentId:             _var.Compartment_id,
+//				SubscribedServiceId:       oci_core_service.Test_service.Id,
+//				XOneGatewaySubscriptionId: pulumi.StringRef(_var.Commitment_x_one_gateway_subscription_id),
+//				XOneOriginRegion:          pulumi.StringRef(_var.Commitment_x_one_origin_region),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCommitments(ctx *pulumi.Context, args *GetCommitmentsArgs, opts ...pulumi.InvokeOption) (*GetCommitmentsResult, error) {
 	var rv GetCommitmentsResult

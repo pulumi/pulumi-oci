@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.GetSubscriber(ctx, &apigateway.GetSubscriberArgs{
-// 			SubscriberId: oci_apigateway_subscriber.Test_subscriber.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.GetSubscriber(ctx, &apigateway.GetSubscriberArgs{
+//				SubscriberId: oci_apigateway_subscriber.Test_subscriber.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSubscriber(ctx *pulumi.Context, args *LookupSubscriberArgs, opts ...pulumi.InvokeOption) (*LookupSubscriberResult, error) {
 	var rv LookupSubscriberResult

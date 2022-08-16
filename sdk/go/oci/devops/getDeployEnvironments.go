@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetDeployEnvironments(ctx, &devops.GetDeployEnvironmentsArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:   pulumi.StringRef(_var.Deploy_environment_display_name),
-// 			Id:            pulumi.StringRef(_var.Deploy_environment_id),
-// 			ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
-// 			State:         pulumi.StringRef(_var.Deploy_environment_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetDeployEnvironments(ctx, &devops.GetDeployEnvironmentsArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:   pulumi.StringRef(_var.Deploy_environment_display_name),
+//				Id:            pulumi.StringRef(_var.Deploy_environment_id),
+//				ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
+//				State:         pulumi.StringRef(_var.Deploy_environment_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDeployEnvironments(ctx *pulumi.Context, args *GetDeployEnvironmentsArgs, opts ...pulumi.InvokeOption) (*GetDeployEnvironmentsResult, error) {
 	var rv GetDeployEnvironmentsResult

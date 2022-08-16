@@ -22,56 +22,59 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewVmClusterNetwork(ctx, "testVmClusterNetwork", &Database.VmClusterNetworkArgs{
-// 			CompartmentId:           pulumi.Any(_var.Compartment_id),
-// 			DisplayName:             pulumi.Any(_var.Vm_cluster_network_display_name),
-// 			ExadataInfrastructureId: pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-// 			Scans: database.VmClusterNetworkScanArray{
-// 				&database.VmClusterNetworkScanArgs{
-// 					Hostname:               pulumi.Any(_var.Vm_cluster_network_scans_hostname),
-// 					Ips:                    pulumi.Any(_var.Vm_cluster_network_scans_ips),
-// 					Port:                   pulumi.Any(_var.Vm_cluster_network_scans_port),
-// 					ScanListenerPortTcp:    pulumi.Any(_var.Vm_cluster_network_scans_scan_listener_port_tcp),
-// 					ScanListenerPortTcpSsl: pulumi.Any(_var.Vm_cluster_network_scans_scan_listener_port_tcp_ssl),
-// 				},
-// 			},
-// 			VmNetworks: database.VmClusterNetworkVmNetworkArray{
-// 				&database.VmClusterNetworkVmNetworkArgs{
-// 					DomainName:  pulumi.Any(_var.Vm_cluster_network_vm_networks_domain_name),
-// 					Gateway:     pulumi.Any(_var.Vm_cluster_network_vm_networks_gateway),
-// 					Netmask:     pulumi.Any(_var.Vm_cluster_network_vm_networks_netmask),
-// 					NetworkType: pulumi.Any(_var.Vm_cluster_network_vm_networks_network_type),
-// 					Nodes: database.VmClusterNetworkVmNetworkNodeArray{
-// 						&database.VmClusterNetworkVmNetworkNodeArgs{
-// 							Hostname:    pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_hostname),
-// 							Ip:          pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_ip),
-// 							Vip:         pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_vip),
-// 							VipHostname: pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_vip_hostname),
-// 						},
-// 					},
-// 					VlanId: pulumi.Any(_var.Vm_cluster_network_vm_networks_vlan_id),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.Any(_var.Vm_cluster_network_defined_tags),
-// 			Dns:         pulumi.Any(_var.Vm_cluster_network_dns),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Ntps:                     pulumi.Any(_var.Vm_cluster_network_ntp),
-// 			ValidateVmClusterNetwork: pulumi.Any(_var.Vm_cluster_network_validate_vm_cluster_network),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewVmClusterNetwork(ctx, "testVmClusterNetwork", &Database.VmClusterNetworkArgs{
+//				CompartmentId:           pulumi.Any(_var.Compartment_id),
+//				DisplayName:             pulumi.Any(_var.Vm_cluster_network_display_name),
+//				ExadataInfrastructureId: pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
+//				Scans: database.VmClusterNetworkScanArray{
+//					&database.VmClusterNetworkScanArgs{
+//						Hostname:               pulumi.Any(_var.Vm_cluster_network_scans_hostname),
+//						Ips:                    pulumi.Any(_var.Vm_cluster_network_scans_ips),
+//						Port:                   pulumi.Any(_var.Vm_cluster_network_scans_port),
+//						ScanListenerPortTcp:    pulumi.Any(_var.Vm_cluster_network_scans_scan_listener_port_tcp),
+//						ScanListenerPortTcpSsl: pulumi.Any(_var.Vm_cluster_network_scans_scan_listener_port_tcp_ssl),
+//					},
+//				},
+//				VmNetworks: database.VmClusterNetworkVmNetworkArray{
+//					&database.VmClusterNetworkVmNetworkArgs{
+//						DomainName:  pulumi.Any(_var.Vm_cluster_network_vm_networks_domain_name),
+//						Gateway:     pulumi.Any(_var.Vm_cluster_network_vm_networks_gateway),
+//						Netmask:     pulumi.Any(_var.Vm_cluster_network_vm_networks_netmask),
+//						NetworkType: pulumi.Any(_var.Vm_cluster_network_vm_networks_network_type),
+//						Nodes: database.VmClusterNetworkVmNetworkNodeArray{
+//							&database.VmClusterNetworkVmNetworkNodeArgs{
+//								Hostname:    pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_hostname),
+//								Ip:          pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_ip),
+//								Vip:         pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_vip),
+//								VipHostname: pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_vip_hostname),
+//							},
+//						},
+//						VlanId: pulumi.Any(_var.Vm_cluster_network_vm_networks_vlan_id),
+//					},
+//				},
+//				DefinedTags: pulumi.Any(_var.Vm_cluster_network_defined_tags),
+//				Dns:         pulumi.Any(_var.Vm_cluster_network_dns),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Ntps:                     pulumi.Any(_var.Vm_cluster_network_ntp),
+//				ValidateVmClusterNetwork: pulumi.Any(_var.Vm_cluster_network_validate_vm_cluster_network),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -79,7 +82,9 @@ import (
 // VmClusterNetworks can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
+//
+//	$ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
+//
 // ```
 type VmClusterNetwork struct {
 	pulumi.CustomResourceState
@@ -291,7 +296,7 @@ func (i *VmClusterNetwork) ToVmClusterNetworkOutputWithContext(ctx context.Conte
 // VmClusterNetworkArrayInput is an input type that accepts VmClusterNetworkArray and VmClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `VmClusterNetworkArrayInput` via:
 //
-//          VmClusterNetworkArray{ VmClusterNetworkArgs{...} }
+//	VmClusterNetworkArray{ VmClusterNetworkArgs{...} }
 type VmClusterNetworkArrayInput interface {
 	pulumi.Input
 
@@ -316,7 +321,7 @@ func (i VmClusterNetworkArray) ToVmClusterNetworkArrayOutputWithContext(ctx cont
 // VmClusterNetworkMapInput is an input type that accepts VmClusterNetworkMap and VmClusterNetworkMapOutput values.
 // You can construct a concrete instance of `VmClusterNetworkMapInput` via:
 //
-//          VmClusterNetworkMap{ "key": VmClusterNetworkArgs{...} }
+//	VmClusterNetworkMap{ "key": VmClusterNetworkArgs{...} }
 type VmClusterNetworkMapInput interface {
 	pulumi.Input
 

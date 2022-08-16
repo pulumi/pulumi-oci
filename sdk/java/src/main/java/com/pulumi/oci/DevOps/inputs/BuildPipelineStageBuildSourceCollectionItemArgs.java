@@ -31,14 +31,14 @@ public final class BuildPipelineStageBuildSourceCollectionItemArgs extends com.p
     }
 
     /**
-     * (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+     * (Updatable) Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
     @Import(name="connectionId")
     private @Nullable Output<String> connectionId;
 
     /**
-     * @return (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+     * @return (Updatable) Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
     public Optional<Output<String>> connectionId() {
@@ -156,7 +156,7 @@ public final class BuildPipelineStageBuildSourceCollectionItemArgs extends com.p
         }
 
         /**
-         * @param connectionId (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+         * @param connectionId (Updatable) Connection identifier pertinent to Bitbucket Server source provider
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class BuildPipelineStageBuildSourceCollectionItemArgs extends com.p
         }
 
         /**
-         * @param connectionId (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+         * @param connectionId (Updatable) Connection identifier pertinent to Bitbucket Server source provider
          * 
          * @return builder
          * 

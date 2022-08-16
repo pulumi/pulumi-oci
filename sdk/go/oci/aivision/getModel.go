@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
 //
-// Gets a Model by identifier
+// # Gets a Model by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiVision"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiVision"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiVision.GetModel(ctx, &aivision.GetModelArgs{
-// 			ModelId: oci_ai_vision_model.Test_model.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiVision.GetModel(ctx, &aivision.GetModelArgs{
+//				ModelId: oci_ai_vision_model.Test_model.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupModel(ctx *pulumi.Context, args *LookupModelArgs, opts ...pulumi.InvokeOption) (*LookupModelResult, error) {
 	var rv LookupModelResult

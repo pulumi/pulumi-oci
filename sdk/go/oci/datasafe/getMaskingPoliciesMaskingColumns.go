@@ -20,35 +20,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetMaskingPoliciesMaskingColumns(ctx, &datasafe.GetMaskingPoliciesMaskingColumnsArgs{
-// 			MaskingPolicyId:                 oci_data_safe_masking_policy.Test_masking_policy.Id,
-// 			ColumnNames:                     _var.Masking_policies_masking_column_column_name,
-// 			DataTypes:                       _var.Masking_policies_masking_column_data_type,
-// 			IsMaskingEnabled:                pulumi.BoolRef(_var.Masking_policies_masking_column_is_masking_enabled),
-// 			IsSeedRequired:                  pulumi.BoolRef(_var.Masking_policies_masking_column_is_seed_required),
-// 			MaskingColumnGroups:             _var.Masking_policies_masking_column_masking_column_group,
-// 			MaskingColumnLifecycleState:     pulumi.StringRef(_var.Masking_policies_masking_column_masking_column_lifecycle_state),
-// 			Objects:                         _var.Masking_policies_masking_column_object,
-// 			ObjectTypes:                     _var.Masking_policies_masking_column_object_type,
-// 			SchemaNames:                     _var.Masking_policies_masking_column_schema_name,
-// 			SensitiveTypeId:                 pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Masking_policies_masking_column_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Masking_policies_masking_column_time_created_less_than),
-// 			TimeUpdatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Masking_policies_masking_column_time_updated_greater_than_or_equal_to),
-// 			TimeUpdatedLessThan:             pulumi.StringRef(_var.Masking_policies_masking_column_time_updated_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetMaskingPoliciesMaskingColumns(ctx, &datasafe.GetMaskingPoliciesMaskingColumnsArgs{
+//				MaskingPolicyId:                 oci_data_safe_masking_policy.Test_masking_policy.Id,
+//				ColumnNames:                     _var.Masking_policies_masking_column_column_name,
+//				DataTypes:                       _var.Masking_policies_masking_column_data_type,
+//				IsMaskingEnabled:                pulumi.BoolRef(_var.Masking_policies_masking_column_is_masking_enabled),
+//				IsSeedRequired:                  pulumi.BoolRef(_var.Masking_policies_masking_column_is_seed_required),
+//				MaskingColumnGroups:             _var.Masking_policies_masking_column_masking_column_group,
+//				MaskingColumnLifecycleState:     pulumi.StringRef(_var.Masking_policies_masking_column_masking_column_lifecycle_state),
+//				Objects:                         _var.Masking_policies_masking_column_object,
+//				ObjectTypes:                     _var.Masking_policies_masking_column_object_type,
+//				SchemaNames:                     _var.Masking_policies_masking_column_schema_name,
+//				SensitiveTypeId:                 pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Masking_policies_masking_column_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Masking_policies_masking_column_time_created_less_than),
+//				TimeUpdatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Masking_policies_masking_column_time_updated_greater_than_or_equal_to),
+//				TimeUpdatedLessThan:             pulumi.StringRef(_var.Masking_policies_masking_column_time_updated_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMaskingPoliciesMaskingColumns(ctx *pulumi.Context, args *GetMaskingPoliciesMaskingColumnsArgs, opts ...pulumi.InvokeOption) (*GetMaskingPoliciesMaskingColumnsResult, error) {
 	var rv GetMaskingPoliciesMaskingColumnsResult

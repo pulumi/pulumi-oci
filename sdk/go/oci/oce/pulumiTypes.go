@@ -20,7 +20,7 @@ type GetOceInstancesFilter struct {
 // GetOceInstancesFilterInput is an input type that accepts GetOceInstancesFilterArgs and GetOceInstancesFilterOutput values.
 // You can construct a concrete instance of `GetOceInstancesFilterInput` via:
 //
-//          GetOceInstancesFilterArgs{...}
+//	GetOceInstancesFilterArgs{...}
 type GetOceInstancesFilterInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i GetOceInstancesFilterArgs) ToGetOceInstancesFilterOutputWithContext(ctx 
 // GetOceInstancesFilterArrayInput is an input type that accepts GetOceInstancesFilterArray and GetOceInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOceInstancesFilterArrayInput` via:
 //
-//          GetOceInstancesFilterArray{ GetOceInstancesFilterArgs{...} }
+//	GetOceInstancesFilterArray{ GetOceInstancesFilterArgs{...} }
 type GetOceInstancesFilterArrayInput interface {
 	pulumi.Input
 
@@ -176,7 +176,7 @@ type GetOceInstancesOceInstance struct {
 // GetOceInstancesOceInstanceInput is an input type that accepts GetOceInstancesOceInstanceArgs and GetOceInstancesOceInstanceOutput values.
 // You can construct a concrete instance of `GetOceInstancesOceInstanceInput` via:
 //
-//          GetOceInstancesOceInstanceArgs{...}
+//	GetOceInstancesOceInstanceArgs{...}
 type GetOceInstancesOceInstanceInput interface {
 	pulumi.Input
 
@@ -253,7 +253,7 @@ func (i GetOceInstancesOceInstanceArgs) ToGetOceInstancesOceInstanceOutputWithCo
 // GetOceInstancesOceInstanceArrayInput is an input type that accepts GetOceInstancesOceInstanceArray and GetOceInstancesOceInstanceArrayOutput values.
 // You can construct a concrete instance of `GetOceInstancesOceInstanceArrayInput` via:
 //
-//          GetOceInstancesOceInstanceArray{ GetOceInstancesOceInstanceArgs{...} }
+//	GetOceInstancesOceInstanceArray{ GetOceInstancesOceInstanceArgs{...} }
 type GetOceInstancesOceInstanceArrayInput interface {
 	pulumi.Input
 

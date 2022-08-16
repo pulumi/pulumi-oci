@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildSourceCollectionArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageDeliverArtifactCollectionArgs;
+import com.pulumi.oci.DevOps.inputs.BuildPipelineStagePrivateAccessConfigArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageWaitCriteriaArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -234,6 +235,21 @@ public final class BuildPipelineStageArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+     * 
+     */
+    @Import(name="privateAccessConfig")
+    private @Nullable Output<BuildPipelineStagePrivateAccessConfigArgs> privateAccessConfig;
+
+    /**
+     * @return (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+     * 
+     */
+    public Optional<Output<BuildPipelineStagePrivateAccessConfigArgs>> privateAccessConfig() {
+        return Optional.ofNullable(this.privateAccessConfig);
+    }
+
+    /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      * 
      */
@@ -280,6 +296,7 @@ public final class BuildPipelineStageArgs extends com.pulumi.resources.ResourceA
         this.image = $.image;
         this.isPassAllParametersEnabled = $.isPassAllParametersEnabled;
         this.primaryBuildSource = $.primaryBuildSource;
+        this.privateAccessConfig = $.privateAccessConfig;
         this.stageExecutionTimeoutInSeconds = $.stageExecutionTimeoutInSeconds;
         this.waitCriteria = $.waitCriteria;
     }
@@ -594,6 +611,27 @@ public final class BuildPipelineStageArgs extends com.pulumi.resources.ResourceA
          */
         public Builder primaryBuildSource(String primaryBuildSource) {
             return primaryBuildSource(Output.of(primaryBuildSource));
+        }
+
+        /**
+         * @param privateAccessConfig (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateAccessConfig(@Nullable Output<BuildPipelineStagePrivateAccessConfigArgs> privateAccessConfig) {
+            $.privateAccessConfig = privateAccessConfig;
+            return this;
+        }
+
+        /**
+         * @param privateAccessConfig (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateAccessConfig(BuildPipelineStagePrivateAccessConfigArgs privateAccessConfig) {
+            return privateAccessConfig(Output.of(privateAccessConfig));
         }
 
         /**

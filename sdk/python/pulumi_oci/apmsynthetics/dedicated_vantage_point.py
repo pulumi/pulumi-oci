@@ -26,7 +26,7 @@ class DedicatedVantagePointArgs:
         The set of arguments for constructing a DedicatedVantagePoint resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        :param pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'] dvp_stack_details: (Updatable) Details of DVP Stack.
+        :param pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param pulumi.Input[str] region: (Updatable) Name of the region.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -71,7 +71,7 @@ class DedicatedVantagePointArgs:
     @pulumi.getter(name="dvpStackDetails")
     def dvp_stack_details(self) -> pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']:
         """
-        (Updatable) Details of DVP Stack.
+        (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         """
         return pulumi.get(self, "dvp_stack_details")
 
@@ -147,7 +147,7 @@ class _DedicatedVantagePointState:
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        :param pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'] dvp_stack_details: (Updatable) Details of DVP Stack.
+        :param pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         :param pulumi.Input[str] name: Unique permanent name of the dedicated vantage point. This is the same as the displayName.
@@ -219,7 +219,7 @@ class _DedicatedVantagePointState:
     @pulumi.getter(name="dvpStackDetails")
     def dvp_stack_details(self) -> Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']]:
         """
-        (Updatable) Details of DVP Stack.
+        (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         """
         return pulumi.get(self, "dvp_stack_details")
 
@@ -368,7 +368,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        :param pulumi.Input[pulumi.InputType['DedicatedVantagePointDvpStackDetailsArgs']] dvp_stack_details: (Updatable) Details of DVP Stack.
+        :param pulumi.Input[pulumi.InputType['DedicatedVantagePointDvpStackDetailsArgs']] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] region: (Updatable) Name of the region.
         :param pulumi.Input[str] status: (Updatable) Status of the dedicated vantage point.
@@ -501,7 +501,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-        :param pulumi.Input[pulumi.InputType['DedicatedVantagePointDvpStackDetailsArgs']] dvp_stack_details: (Updatable) Details of DVP Stack.
+        :param pulumi.Input[pulumi.InputType['DedicatedVantagePointDvpStackDetailsArgs']] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DedicatedVantagePointMonitorStatusCountMapArgs']]]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         :param pulumi.Input[str] name: Unique permanent name of the dedicated vantage point. This is the same as the displayName.
@@ -555,7 +555,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
     @pulumi.getter(name="dvpStackDetails")
     def dvp_stack_details(self) -> pulumi.Output['outputs.DedicatedVantagePointDvpStackDetails']:
         """
-        (Updatable) Details of DVP Stack.
+        (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         """
         return pulumi.get(self, "dvp_stack_details")
 

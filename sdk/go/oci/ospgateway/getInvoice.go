@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
 //
-// Returns an invoice by invoice id
+// # Returns an invoice by invoice id
 //
 // ## Example Usage
 //
@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OspGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OspGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OspGateway.GetInvoice(ctx, &ospgateway.GetInvoiceArgs{
-// 			CompartmentId:     _var.Compartment_id,
-// 			InternalInvoiceId: oci_osp_gateway_invoice.Test_invoice.Id,
-// 			OspHomeRegion:     _var.Invoice_osp_home_region,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OspGateway.GetInvoice(ctx, &ospgateway.GetInvoiceArgs{
+//				CompartmentId:     _var.Compartment_id,
+//				InternalInvoiceId: oci_osp_gateway_invoice.Test_invoice.Id,
+//				OspHomeRegion:     _var.Invoice_osp_home_region,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetInvoice(ctx *pulumi.Context, args *GetInvoiceArgs, opts ...pulumi.InvokeOption) (*GetInvoiceResult, error) {
 	var rv GetInvoiceResult

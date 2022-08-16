@@ -12,6 +12,9 @@ namespace Pulumi.Oci.BigDataService.Inputs
 
     public sealed class BdsInstanceClusterDetailArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The URL of Ambari
+        /// </summary>
         [Input("ambariUrl")]
         public Input<string>? AmbariUrl { get; set; }
 
@@ -74,6 +77,12 @@ namespace Pulumi.Oci.BigDataService.Inputs
         /// </summary>
         [Input("jupyterHubUrl")]
         public Input<string>? JupyterHubUrl { get; set; }
+
+        /// <summary>
+        /// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+        /// </summary>
+        [Input("odhVersion")]
+        public Input<string>? OdhVersion { get; set; }
 
         /// <summary>
         /// Oracle Linux version installed in the cluster

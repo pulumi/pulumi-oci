@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
 //
-// Gets a Dataset by identifier
+// # Gets a Dataset by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataLabellingService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataLabellingService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataLabellingService.GetDataset(ctx, &datalabellingservice.GetDatasetArgs{
-// 			DatasetId: oci_data_labeling_service_dataset.Test_dataset.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataLabellingService.GetDataset(ctx, &datalabellingservice.GetDatasetArgs{
+//				DatasetId: oci_data_labeling_service_dataset.Test_dataset.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDataset(ctx *pulumi.Context, args *LookupDatasetArgs, opts ...pulumi.InvokeOption) (*LookupDatasetResult, error) {
 	var rv LookupDatasetResult

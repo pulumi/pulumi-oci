@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolumeGroupBackup(ctx, "testVolumeGroupBackup", &Core.VolumeGroupBackupArgs{
-// 			VolumeGroupId: pulumi.Any(oci_core_volume_group.Test_volume_group.Id),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Volume_group_backup_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Type: pulumi.Any(_var.Volume_group_backup_type),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolumeGroupBackup(ctx, "testVolumeGroupBackup", &Core.VolumeGroupBackupArgs{
+//				VolumeGroupId: pulumi.Any(oci_core_volume_group.Test_volume_group.Id),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Volume_group_backup_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Type: pulumi.Any(_var.Volume_group_backup_type),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // VolumeGroupBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
+//
+//	$ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
+//
 // ```
 type VolumeGroupBackup struct {
 	pulumi.CustomResourceState
@@ -281,7 +286,7 @@ func (i *VolumeGroupBackup) ToVolumeGroupBackupOutputWithContext(ctx context.Con
 // VolumeGroupBackupArrayInput is an input type that accepts VolumeGroupBackupArray and VolumeGroupBackupArrayOutput values.
 // You can construct a concrete instance of `VolumeGroupBackupArrayInput` via:
 //
-//          VolumeGroupBackupArray{ VolumeGroupBackupArgs{...} }
+//	VolumeGroupBackupArray{ VolumeGroupBackupArgs{...} }
 type VolumeGroupBackupArrayInput interface {
 	pulumi.Input
 
@@ -306,7 +311,7 @@ func (i VolumeGroupBackupArray) ToVolumeGroupBackupArrayOutputWithContext(ctx co
 // VolumeGroupBackupMapInput is an input type that accepts VolumeGroupBackupMap and VolumeGroupBackupMapOutput values.
 // You can construct a concrete instance of `VolumeGroupBackupMapInput` via:
 //
-//          VolumeGroupBackupMap{ "key": VolumeGroupBackupArgs{...} }
+//	VolumeGroupBackupMap{ "key": VolumeGroupBackupArgs{...} }
 type VolumeGroupBackupMapInput interface {
 	pulumi.Input
 

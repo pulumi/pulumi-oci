@@ -20,7 +20,9 @@ import (
 // Alerts can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/alert:Alert test_alert "id"
+//
+//	$ pulumi import oci:DataSafe/alert:Alert test_alert "id"
+//
 // ```
 type Alert struct {
 	pulumi.CustomResourceState
@@ -257,7 +259,7 @@ func (i *Alert) ToAlertOutputWithContext(ctx context.Context) AlertOutput {
 // AlertArrayInput is an input type that accepts AlertArray and AlertArrayOutput values.
 // You can construct a concrete instance of `AlertArrayInput` via:
 //
-//          AlertArray{ AlertArgs{...} }
+//	AlertArray{ AlertArgs{...} }
 type AlertArrayInput interface {
 	pulumi.Input
 
@@ -282,7 +284,7 @@ func (i AlertArray) ToAlertArrayOutputWithContext(ctx context.Context) AlertArra
 // AlertMapInput is an input type that accepts AlertMap and AlertMapOutput values.
 // You can construct a concrete instance of `AlertMapInput` via:
 //
-//          AlertMap{ "key": AlertArgs{...} }
+//	AlertMap{ "key": AlertArgs{...} }
 type AlertMapInput interface {
 	pulumi.Input
 

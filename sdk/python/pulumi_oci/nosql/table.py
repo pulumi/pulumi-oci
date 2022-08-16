@@ -17,24 +17,23 @@ class TableArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  ddl_statement: pulumi.Input[str],
-                 table_limits: pulumi.Input['TableTableLimitsArgs'],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
-                 name: Optional[pulumi.Input[str]] = None):
+                 name: Optional[pulumi.Input[str]] = None,
+                 table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None):
         """
         The set of arguments for constructing a Table resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] ddl_statement: (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
-        :param pulumi.Input['TableTableLimitsArgs'] table_limits: (Updatable) Throughput and storage limits configuration of a table.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
         :param pulumi.Input[str] name: Table name.
+        :param pulumi.Input['TableTableLimitsArgs'] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "ddl_statement", ddl_statement)
-        pulumi.set(__self__, "table_limits", table_limits)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -43,6 +42,8 @@ class TableArgs:
             pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if table_limits is not None:
+            pulumi.set(__self__, "table_limits", table_limits)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -67,18 +68,6 @@ class TableArgs:
     @ddl_statement.setter
     def ddl_statement(self, value: pulumi.Input[str]):
         pulumi.set(self, "ddl_statement", value)
-
-    @property
-    @pulumi.getter(name="tableLimits")
-    def table_limits(self) -> pulumi.Input['TableTableLimitsArgs']:
-        """
-        (Updatable) Throughput and storage limits configuration of a table.
-        """
-        return pulumi.get(self, "table_limits")
-
-    @table_limits.setter
-    def table_limits(self, value: pulumi.Input['TableTableLimitsArgs']):
-        pulumi.set(self, "table_limits", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -128,6 +117,18 @@ class TableArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+    @property
+    @pulumi.getter(name="tableLimits")
+    def table_limits(self) -> Optional[pulumi.Input['TableTableLimitsArgs']]:
+        """
+        (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+        """
+        return pulumi.get(self, "table_limits")
+
+    @table_limits.setter
+    def table_limits(self, value: Optional[pulumi.Input['TableTableLimitsArgs']]):
+        pulumi.set(self, "table_limits", value)
+
 
 @pulumi.input_type
 class _TableState:
@@ -158,7 +159,7 @@ class _TableState:
         :param pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]] schemas: The table schema information as a JSON object.
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-        :param pulumi.Input['TableTableLimitsArgs'] table_limits: (Updatable) Throughput and storage limits configuration of a table.
+        :param pulumi.Input['TableTableLimitsArgs'] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         :param pulumi.Input[str] time_created: The time the the table was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
@@ -316,7 +317,7 @@ class _TableState:
     @pulumi.getter(name="tableLimits")
     def table_limits(self) -> Optional[pulumi.Input['TableTableLimitsArgs']]:
         """
-        (Updatable) Throughput and storage limits configuration of a table.
+        (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         return pulumi.get(self, "table_limits")
 
@@ -388,17 +389,17 @@ class Table(pulumi.CustomResource):
         test_table = oci.nosql.Table("testTable",
             compartment_id=var["compartment_id"],
             ddl_statement=var["table_ddl_statement"],
+            defined_tags=var["table_defined_tags"],
+            freeform_tags={
+                "bar-key": "value",
+            },
+            is_auto_reclaimable=var["table_is_auto_reclaimable"],
             table_limits=oci.nosql.TableTableLimitsArgs(
                 max_read_units=var["table_table_limits_max_read_units"],
                 max_storage_in_gbs=var["table_table_limits_max_storage_in_gbs"],
                 max_write_units=var["table_table_limits_max_write_units"],
                 capacity_mode=var["table_table_limits_capacity_mode"],
-            ),
-            defined_tags=var["table_defined_tags"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_auto_reclaimable=var["table_is_auto_reclaimable"])
+            ))
         ```
 
         ## Import
@@ -417,7 +418,7 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
         :param pulumi.Input[str] name: Table name.
-        :param pulumi.Input[pulumi.InputType['TableTableLimitsArgs']] table_limits: (Updatable) Throughput and storage limits configuration of a table.
+        :param pulumi.Input[pulumi.InputType['TableTableLimitsArgs']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         ...
     @overload
@@ -439,17 +440,17 @@ class Table(pulumi.CustomResource):
         test_table = oci.nosql.Table("testTable",
             compartment_id=var["compartment_id"],
             ddl_statement=var["table_ddl_statement"],
+            defined_tags=var["table_defined_tags"],
+            freeform_tags={
+                "bar-key": "value",
+            },
+            is_auto_reclaimable=var["table_is_auto_reclaimable"],
             table_limits=oci.nosql.TableTableLimitsArgs(
                 max_read_units=var["table_table_limits_max_read_units"],
                 max_storage_in_gbs=var["table_table_limits_max_storage_in_gbs"],
                 max_write_units=var["table_table_limits_max_write_units"],
                 capacity_mode=var["table_table_limits_capacity_mode"],
-            ),
-            defined_tags=var["table_defined_tags"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_auto_reclaimable=var["table_is_auto_reclaimable"])
+            ))
         ```
 
         ## Import
@@ -504,8 +505,6 @@ class Table(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_reclaimable"] = is_auto_reclaimable
             __props__.__dict__["name"] = name
-            if table_limits is None and not opts.urn:
-                raise TypeError("Missing required property 'table_limits'")
             __props__.__dict__["table_limits"] = table_limits
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["schemas"] = None
@@ -555,7 +554,7 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableSchemaArgs']]]] schemas: The table schema information as a JSON object.
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-        :param pulumi.Input[pulumi.InputType['TableTableLimitsArgs']] table_limits: (Updatable) Throughput and storage limits configuration of a table.
+        :param pulumi.Input[pulumi.InputType['TableTableLimitsArgs']] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         :param pulumi.Input[str] time_created: The time the the table was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
@@ -664,7 +663,7 @@ class Table(pulumi.CustomResource):
     @pulumi.getter(name="tableLimits")
     def table_limits(self) -> pulumi.Output['outputs.TableTableLimits']:
         """
-        (Updatable) Throughput and storage limits configuration of a table.
+        (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         return pulumi.get(self, "table_limits")
 

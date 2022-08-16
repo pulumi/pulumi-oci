@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
 //
-// Lists the replicas for a vault
+// # Lists the replicas for a vault
 //
 // As a provisioning operation, this call is subject to a Key Management limit that applies to
 // the total number of requests across all provisioning write operations. Key Management might
@@ -25,21 +25,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetVaultReplicas(ctx, &kms.GetVaultReplicasArgs{
-// 			VaultId: oci_kms_vault.Test_vault.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetVaultReplicas(ctx, &kms.GetVaultReplicasArgs{
+//				VaultId: oci_kms_vault.Test_vault.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVaultReplicas(ctx *pulumi.Context, args *GetVaultReplicasArgs, opts ...pulumi.InvokeOption) (*GetVaultReplicasResult, error) {
 	var rv GetVaultReplicasResult

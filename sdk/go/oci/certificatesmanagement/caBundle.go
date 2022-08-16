@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.NewCaBundle(ctx, "testCaBundle", &CertificatesManagement.CaBundleArgs{
-// 			CaBundlePem:   pulumi.Any(_var.Ca_bundle_ca_bundle_pem),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Ca_bundle_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.NewCaBundle(ctx, "testCaBundle", &CertificatesManagement.CaBundleArgs{
+//				CaBundlePem:   pulumi.Any(_var.Ca_bundle_ca_bundle_pem),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Ca_bundle_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // CaBundles can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle "id"
+//
+//	$ pulumi import oci:CertificatesManagement/caBundle:CaBundle test_ca_bundle "id"
+//
 // ```
 type CaBundle struct {
 	pulumi.CustomResourceState
@@ -213,7 +218,7 @@ func (i *CaBundle) ToCaBundleOutputWithContext(ctx context.Context) CaBundleOutp
 // CaBundleArrayInput is an input type that accepts CaBundleArray and CaBundleArrayOutput values.
 // You can construct a concrete instance of `CaBundleArrayInput` via:
 //
-//          CaBundleArray{ CaBundleArgs{...} }
+//	CaBundleArray{ CaBundleArgs{...} }
 type CaBundleArrayInput interface {
 	pulumi.Input
 
@@ -238,7 +243,7 @@ func (i CaBundleArray) ToCaBundleArrayOutputWithContext(ctx context.Context) CaB
 // CaBundleMapInput is an input type that accepts CaBundleMap and CaBundleMapOutput values.
 // You can construct a concrete instance of `CaBundleMapInput` via:
 //
-//          CaBundleMap{ "key": CaBundleArgs{...} }
+//	CaBundleMap{ "key": CaBundleArgs{...} }
 type CaBundleMapInput interface {
 	pulumi.Input
 

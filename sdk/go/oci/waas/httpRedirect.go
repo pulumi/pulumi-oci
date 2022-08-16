@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.NewHttpRedirect(ctx, "testHttpRedirect", &Waas.HttpRedirectArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Domain:        pulumi.Any(_var.Http_redirect_domain),
-// 			Target: &waas.HttpRedirectTargetArgs{
-// 				Host:     pulumi.Any(_var.Http_redirect_target_host),
-// 				Path:     pulumi.Any(_var.Http_redirect_target_path),
-// 				Protocol: pulumi.Any(_var.Http_redirect_target_protocol),
-// 				Query:    pulumi.Any(_var.Http_redirect_target_query),
-// 				Port:     pulumi.Any(_var.Http_redirect_target_port),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Http_redirect_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			ResponseCode: pulumi.Any(_var.Http_redirect_response_code),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.NewHttpRedirect(ctx, "testHttpRedirect", &Waas.HttpRedirectArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Domain:        pulumi.Any(_var.Http_redirect_domain),
+//				Target: &waas.HttpRedirectTargetArgs{
+//					Host:     pulumi.Any(_var.Http_redirect_target_host),
+//					Path:     pulumi.Any(_var.Http_redirect_target_path),
+//					Protocol: pulumi.Any(_var.Http_redirect_target_protocol),
+//					Query:    pulumi.Any(_var.Http_redirect_target_query),
+//					Port:     pulumi.Any(_var.Http_redirect_target_port),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Http_redirect_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ResponseCode: pulumi.Any(_var.Http_redirect_response_code),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // HttpRedirects can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
+//
+//	$ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
+//
 // ```
 type HttpRedirect struct {
 	pulumi.CustomResourceState
@@ -228,7 +233,7 @@ func (i *HttpRedirect) ToHttpRedirectOutputWithContext(ctx context.Context) Http
 // HttpRedirectArrayInput is an input type that accepts HttpRedirectArray and HttpRedirectArrayOutput values.
 // You can construct a concrete instance of `HttpRedirectArrayInput` via:
 //
-//          HttpRedirectArray{ HttpRedirectArgs{...} }
+//	HttpRedirectArray{ HttpRedirectArgs{...} }
 type HttpRedirectArrayInput interface {
 	pulumi.Input
 
@@ -253,7 +258,7 @@ func (i HttpRedirectArray) ToHttpRedirectArrayOutputWithContext(ctx context.Cont
 // HttpRedirectMapInput is an input type that accepts HttpRedirectMap and HttpRedirectMapOutput values.
 // You can construct a concrete instance of `HttpRedirectMapInput` via:
 //
-//          HttpRedirectMap{ "key": HttpRedirectArgs{...} }
+//	HttpRedirectMap{ "key": HttpRedirectArgs{...} }
 type HttpRedirectMapInput interface {
 	pulumi.Input
 

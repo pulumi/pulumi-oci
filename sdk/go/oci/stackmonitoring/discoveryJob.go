@@ -21,51 +21,54 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.NewDiscoveryJob(ctx, "testDiscoveryJob", &StackMonitoring.DiscoveryJobArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DiscoveryDetails: &stackmonitoring.DiscoveryJobDiscoveryDetailsArgs{
-// 				AgentId: pulumi.Any(_var.Management_agent_id),
-// 				Properties: &stackmonitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs{
-// 					PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_properties_properties_map),
-// 				},
-// 				ResourceName: pulumi.Any(_var.Discovery_job_discovery_details_resource_name),
-// 				ResourceType: pulumi.Any(_var.Discovery_job_discovery_details_resource_type),
-// 				Credentials: &stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs{
-// 					Items: stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArray{
-// 						&stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs{
-// 							CredentialName: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_credential_name),
-// 							CredentialType: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_credential_type),
-// 							Properties: &stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs{
-// 								PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_properties_properties_map),
-// 							},
-// 						},
-// 					},
-// 				},
-// 				Tags: &stackmonitoring.DiscoveryJobDiscoveryDetailsTagsArgs{
-// 					PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_tags_properties_map),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DiscoveryClient: pulumi.Any(_var.Discovery_job_discovery_client),
-// 			DiscoveryType:   pulumi.Any(_var.Discovery_job_discovery_type),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.NewDiscoveryJob(ctx, "testDiscoveryJob", &StackMonitoring.DiscoveryJobArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DiscoveryDetails: &stackmonitoring.DiscoveryJobDiscoveryDetailsArgs{
+//					AgentId: pulumi.Any(_var.Management_agent_id),
+//					Properties: &stackmonitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs{
+//						PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_properties_properties_map),
+//					},
+//					ResourceName: pulumi.Any(_var.Discovery_job_discovery_details_resource_name),
+//					ResourceType: pulumi.Any(_var.Discovery_job_discovery_details_resource_type),
+//					Credentials: &stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs{
+//						Items: stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArray{
+//							&stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs{
+//								CredentialName: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_credential_name),
+//								CredentialType: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_credential_type),
+//								Properties: &stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs{
+//									PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_properties_properties_map),
+//								},
+//							},
+//						},
+//					},
+//					Tags: &stackmonitoring.DiscoveryJobDiscoveryDetailsTagsArgs{
+//						PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_tags_properties_map),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DiscoveryClient: pulumi.Any(_var.Discovery_job_discovery_client),
+//				DiscoveryType:   pulumi.Any(_var.Discovery_job_discovery_type),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -73,7 +76,9 @@ import (
 // DiscoveryJobs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
+//
+//	$ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
+//
 // ```
 type DiscoveryJob struct {
 	pulumi.CustomResourceState
@@ -259,7 +264,7 @@ func (i *DiscoveryJob) ToDiscoveryJobOutputWithContext(ctx context.Context) Disc
 // DiscoveryJobArrayInput is an input type that accepts DiscoveryJobArray and DiscoveryJobArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobArrayInput` via:
 //
-//          DiscoveryJobArray{ DiscoveryJobArgs{...} }
+//	DiscoveryJobArray{ DiscoveryJobArgs{...} }
 type DiscoveryJobArrayInput interface {
 	pulumi.Input
 
@@ -284,7 +289,7 @@ func (i DiscoveryJobArray) ToDiscoveryJobArrayOutputWithContext(ctx context.Cont
 // DiscoveryJobMapInput is an input type that accepts DiscoveryJobMap and DiscoveryJobMapOutput values.
 // You can construct a concrete instance of `DiscoveryJobMapInput` via:
 //
-//          DiscoveryJobMap{ "key": DiscoveryJobArgs{...} }
+//	DiscoveryJobMap{ "key": DiscoveryJobArgs{...} }
 type DiscoveryJobMapInput interface {
 	pulumi.Input
 

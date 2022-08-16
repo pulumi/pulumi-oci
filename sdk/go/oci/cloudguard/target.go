@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a new Target
+// # Creates a new Target
 //
 // ## Example Usage
 //
@@ -21,71 +21,74 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.NewTarget(ctx, "testTarget", &CloudGuard.TargetArgs{
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			DisplayName:        pulumi.Any(_var.Target_display_name),
-// 			TargetResourceId:   pulumi.Any(oci_cloud_guard_target_resource.Test_target_resource.Id),
-// 			TargetResourceType: pulumi.Any(_var.Target_target_resource_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Target_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			State: pulumi.Any(_var.Target_state),
-// 			TargetDetectorRecipes: cloudguard.TargetTargetDetectorRecipeArray{
-// 				&cloudguard.TargetTargetDetectorRecipeArgs{
-// 					DetectorRecipeId: pulumi.Any(oci_cloud_guard_detector_recipe.Test_detector_recipe.Id),
-// 					DetectorRules: cloudguard.TargetTargetDetectorRecipeDetectorRuleArray{
-// 						&cloudguard.TargetTargetDetectorRecipeDetectorRuleArgs{
-// 							Details: &cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsArgs{
-// 								ConditionGroups: cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray{
-// 									&cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{
-// 										CompartmentId: pulumi.Any(_var.Compartment_id),
-// 										Condition:     pulumi.Any(_var.Target_target_detector_recipes_detector_rules_details_condition_groups_condition),
-// 									},
-// 								},
-// 							},
-// 							DetectorRuleId: pulumi.Any(oci_events_rule.Test_rule.Id),
-// 						},
-// 					},
-// 				},
-// 			},
-// 			TargetResponderRecipes: cloudguard.TargetTargetResponderRecipeArray{
-// 				&cloudguard.TargetTargetResponderRecipeArgs{
-// 					ResponderRecipeId: pulumi.Any(oci_cloud_guard_responder_recipe.Test_responder_recipe.Id),
-// 					ResponderRules: cloudguard.TargetTargetResponderRecipeResponderRuleArray{
-// 						&cloudguard.TargetTargetResponderRecipeResponderRuleArgs{
-// 							Details: &cloudguard.TargetTargetResponderRecipeResponderRuleDetailsArgs{
-// 								Condition: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_condition),
-// 								Configurations: cloudguard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray{
-// 									&cloudguard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{
-// 										ConfigKey: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_config_key),
-// 										Name:      pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_name),
-// 										Value:     pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_value),
-// 									},
-// 								},
-// 								Mode: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_mode),
-// 							},
-// 							ResponderRuleId: pulumi.Any(oci_events_rule.Test_rule.Id),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.NewTarget(ctx, "testTarget", &CloudGuard.TargetArgs{
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				DisplayName:        pulumi.Any(_var.Target_display_name),
+//				TargetResourceId:   pulumi.Any(oci_cloud_guard_target_resource.Test_target_resource.Id),
+//				TargetResourceType: pulumi.Any(_var.Target_target_resource_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Target_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				State: pulumi.Any(_var.Target_state),
+//				TargetDetectorRecipes: cloudguard.TargetTargetDetectorRecipeArray{
+//					&cloudguard.TargetTargetDetectorRecipeArgs{
+//						DetectorRecipeId: pulumi.Any(oci_cloud_guard_detector_recipe.Test_detector_recipe.Id),
+//						DetectorRules: cloudguard.TargetTargetDetectorRecipeDetectorRuleArray{
+//							&cloudguard.TargetTargetDetectorRecipeDetectorRuleArgs{
+//								Details: &cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsArgs{
+//									ConditionGroups: cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray{
+//										&cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{
+//											CompartmentId: pulumi.Any(_var.Compartment_id),
+//											Condition:     pulumi.Any(_var.Target_target_detector_recipes_detector_rules_details_condition_groups_condition),
+//										},
+//									},
+//								},
+//								DetectorRuleId: pulumi.Any(oci_events_rule.Test_rule.Id),
+//							},
+//						},
+//					},
+//				},
+//				TargetResponderRecipes: cloudguard.TargetTargetResponderRecipeArray{
+//					&cloudguard.TargetTargetResponderRecipeArgs{
+//						ResponderRecipeId: pulumi.Any(oci_cloud_guard_responder_recipe.Test_responder_recipe.Id),
+//						ResponderRules: cloudguard.TargetTargetResponderRecipeResponderRuleArray{
+//							&cloudguard.TargetTargetResponderRecipeResponderRuleArgs{
+//								Details: &cloudguard.TargetTargetResponderRecipeResponderRuleDetailsArgs{
+//									Condition: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_condition),
+//									Configurations: cloudguard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray{
+//										&cloudguard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{
+//											ConfigKey: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_config_key),
+//											Name:      pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_name),
+//											Value:     pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_value),
+//										},
+//									},
+//									Mode: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_mode),
+//								},
+//								ResponderRuleId: pulumi.Any(oci_events_rule.Test_rule.Id),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -93,7 +96,9 @@ import (
 // Targets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CloudGuard/target:Target test_target "id"
+//
+//	$ pulumi import oci:CloudGuard/target:Target test_target "id"
+//
 // ```
 type Target struct {
 	pulumi.CustomResourceState
@@ -325,7 +330,7 @@ func (i *Target) ToTargetOutputWithContext(ctx context.Context) TargetOutput {
 // TargetArrayInput is an input type that accepts TargetArray and TargetArrayOutput values.
 // You can construct a concrete instance of `TargetArrayInput` via:
 //
-//          TargetArray{ TargetArgs{...} }
+//	TargetArray{ TargetArgs{...} }
 type TargetArrayInput interface {
 	pulumi.Input
 
@@ -350,7 +355,7 @@ func (i TargetArray) ToTargetArrayOutputWithContext(ctx context.Context) TargetA
 // TargetMapInput is an input type that accepts TargetMap and TargetMapOutput values.
 // You can construct a concrete instance of `TargetMapInput` via:
 //
-//          TargetMap{ "key": TargetArgs{...} }
+//	TargetMap{ "key": TargetArgs{...} }
 type TargetMapInput interface {
 	pulumi.Input
 

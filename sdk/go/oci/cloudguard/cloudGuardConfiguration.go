@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.NewCloudGuardConfiguration(ctx, "testCloudGuardConfiguration", &CloudGuard.CloudGuardConfigurationArgs{
-// 			CompartmentId:       pulumi.Any(_var.Compartment_id),
-// 			ReportingRegion:     pulumi.Any(_var.Cloud_guard_configuration_reporting_region),
-// 			Status:              pulumi.Any(_var.Cloud_guard_configuration_status),
-// 			SelfManageResources: pulumi.Any(_var.Cloud_guard_configuration_self_manage_resources),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.NewCloudGuardConfiguration(ctx, "testCloudGuardConfiguration", &CloudGuard.CloudGuardConfigurationArgs{
+//				CompartmentId:       pulumi.Any(_var.Compartment_id),
+//				ReportingRegion:     pulumi.Any(_var.Cloud_guard_configuration_reporting_region),
+//				Status:              pulumi.Any(_var.Cloud_guard_configuration_status),
+//				SelfManageResources: pulumi.Any(_var.Cloud_guard_configuration_self_manage_resources),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -169,7 +172,7 @@ func (i *CloudGuardConfiguration) ToCloudGuardConfigurationOutputWithContext(ctx
 // CloudGuardConfigurationArrayInput is an input type that accepts CloudGuardConfigurationArray and CloudGuardConfigurationArrayOutput values.
 // You can construct a concrete instance of `CloudGuardConfigurationArrayInput` via:
 //
-//          CloudGuardConfigurationArray{ CloudGuardConfigurationArgs{...} }
+//	CloudGuardConfigurationArray{ CloudGuardConfigurationArgs{...} }
 type CloudGuardConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -194,7 +197,7 @@ func (i CloudGuardConfigurationArray) ToCloudGuardConfigurationArrayOutputWithCo
 // CloudGuardConfigurationMapInput is an input type that accepts CloudGuardConfigurationMap and CloudGuardConfigurationMapOutput values.
 // You can construct a concrete instance of `CloudGuardConfigurationMapInput` via:
 //
-//          CloudGuardConfigurationMap{ "key": CloudGuardConfigurationArgs{...} }
+//	CloudGuardConfigurationMap{ "key": CloudGuardConfigurationArgs{...} }
 type CloudGuardConfigurationMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetModelProvenance(ctx, &datascience.GetModelProvenanceArgs{
-// 			ModelId: oci_datascience_model.Test_model.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetModelProvenance(ctx, &datascience.GetModelProvenanceArgs{
+//				ModelId: oci_datascience_model.Test_model.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupModelProvenance(ctx *pulumi.Context, args *LookupModelProvenanceArgs, opts ...pulumi.InvokeOption) (*LookupModelProvenanceResult, error) {
 	var rv LookupModelProvenanceResult

@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsubBillingSchedule"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsubBillingSchedule"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsubBillingSchedule.GetBillingSchedule(ctx, &osubbillingschedule.GetBillingScheduleArgs{
-// 			CompartmentId:       _var.Compartment_id,
-// 			SubscriptionId:      oci_ons_subscription.Test_subscription.Id,
-// 			SubscribedServiceId: pulumi.StringRef(oci_core_service.Test_service.Id),
-// 			XOneOriginRegion:    pulumi.StringRef(_var.Billing_schedule_x_one_origin_region),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsubBillingSchedule.GetBillingSchedule(ctx, &osubbillingschedule.GetBillingScheduleArgs{
+//				CompartmentId:       _var.Compartment_id,
+//				SubscriptionId:      oci_ons_subscription.Test_subscription.Id,
+//				SubscribedServiceId: pulumi.StringRef(oci_core_service.Test_service.Id),
+//				XOneOriginRegion:    pulumi.StringRef(_var.Billing_schedule_x_one_origin_region),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBillingSchedule(ctx *pulumi.Context, args *GetBillingScheduleArgs, opts ...pulumi.InvokeOption) (*GetBillingScheduleResult, error) {
 	var rv GetBillingScheduleResult

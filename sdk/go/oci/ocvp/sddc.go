@@ -26,54 +26,57 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.NewSddc(ctx, "testSddc", &Ocvp.SddcArgs{
-// 			CompartmentId:             pulumi.Any(_var.Compartment_id),
-// 			ComputeAvailabilityDomain: pulumi.Any(_var.Sddc_compute_availability_domain),
-// 			EsxiHostsCount:            pulumi.Any(_var.Sddc_esxi_hosts_count),
-// 			NsxEdgeUplink1vlanId:      pulumi.Any(oci_core_vlan.Test_nsx_edge_uplink1vlan.Id),
-// 			NsxEdgeUplink2vlanId:      pulumi.Any(oci_core_vlan.Test_nsx_edge_uplink2vlan.Id),
-// 			NsxEdgeVtepVlanId:         pulumi.Any(oci_core_vlan.Test_nsx_edge_vtep_vlan.Id),
-// 			NsxVtepVlanId:             pulumi.Any(oci_core_vlan.Test_nsx_vtep_vlan.Id),
-// 			ProvisioningSubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			SshAuthorizedKeys:         pulumi.Any(_var.Sddc_ssh_authorized_keys),
-// 			VmotionVlanId:             pulumi.Any(oci_core_vlan.Test_vmotion_vlan.Id),
-// 			VmwareSoftwareVersion:     pulumi.Any(_var.Sddc_vmware_software_version),
-// 			VsanVlanId:                pulumi.Any(oci_core_vlan.Test_vsan_vlan.Id),
-// 			VsphereVlanId:             pulumi.Any(oci_core_vlan.Test_vsphere_vlan.Id),
-// 			CapacityReservationId:     pulumi.Any(oci_ocvp_capacity_reservation.Test_capacity_reservation.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Sddc_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			HcxAction:                        pulumi.Any(_var.Hcx_action),
-// 			HcxVlanId:                        pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 			InitialHostOcpuCount:             pulumi.Any(_var.Sddc_initial_host_ocpu_count),
-// 			InitialHostShapeName:             pulumi.Any(oci_core_shape.Test_shape.Name),
-// 			InitialSku:                       pulumi.Any(_var.Sddc_initial_sku),
-// 			InstanceDisplayNamePrefix:        pulumi.Any(_var.Sddc_instance_display_name_prefix),
-// 			IsHcxEnabled:                     pulumi.Any(_var.Sddc_is_hcx_enabled),
-// 			IsShieldedInstanceEnabled:        pulumi.Any(_var.Sddc_is_shielded_instance_enabled),
-// 			ProvisioningVlanId:               pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 			RefreshHcxLicenseStatus:          pulumi.Bool(true),
-// 			ReplicationVlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 			ReservingHcxOnPremiseLicenseKeys: pulumi.Any(_var.Reserving_hcx_on_premise_license_keys),
-// 			WorkloadNetworkCidr:              pulumi.Any(_var.Sddc_workload_network_cidr),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.NewSddc(ctx, "testSddc", &Ocvp.SddcArgs{
+//				CompartmentId:             pulumi.Any(_var.Compartment_id),
+//				ComputeAvailabilityDomain: pulumi.Any(_var.Sddc_compute_availability_domain),
+//				EsxiHostsCount:            pulumi.Any(_var.Sddc_esxi_hosts_count),
+//				NsxEdgeUplink1vlanId:      pulumi.Any(oci_core_vlan.Test_nsx_edge_uplink1vlan.Id),
+//				NsxEdgeUplink2vlanId:      pulumi.Any(oci_core_vlan.Test_nsx_edge_uplink2vlan.Id),
+//				NsxEdgeVtepVlanId:         pulumi.Any(oci_core_vlan.Test_nsx_edge_vtep_vlan.Id),
+//				NsxVtepVlanId:             pulumi.Any(oci_core_vlan.Test_nsx_vtep_vlan.Id),
+//				ProvisioningSubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				SshAuthorizedKeys:         pulumi.Any(_var.Sddc_ssh_authorized_keys),
+//				VmotionVlanId:             pulumi.Any(oci_core_vlan.Test_vmotion_vlan.Id),
+//				VmwareSoftwareVersion:     pulumi.Any(_var.Sddc_vmware_software_version),
+//				VsanVlanId:                pulumi.Any(oci_core_vlan.Test_vsan_vlan.Id),
+//				VsphereVlanId:             pulumi.Any(oci_core_vlan.Test_vsphere_vlan.Id),
+//				CapacityReservationId:     pulumi.Any(oci_ocvp_capacity_reservation.Test_capacity_reservation.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Sddc_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				HcxAction:                        pulumi.Any(_var.Hcx_action),
+//				HcxVlanId:                        pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//				InitialHostOcpuCount:             pulumi.Any(_var.Sddc_initial_host_ocpu_count),
+//				InitialHostShapeName:             pulumi.Any(oci_core_shape.Test_shape.Name),
+//				InitialSku:                       pulumi.Any(_var.Sddc_initial_sku),
+//				InstanceDisplayNamePrefix:        pulumi.Any(_var.Sddc_instance_display_name_prefix),
+//				IsHcxEnabled:                     pulumi.Any(_var.Sddc_is_hcx_enabled),
+//				IsShieldedInstanceEnabled:        pulumi.Any(_var.Sddc_is_shielded_instance_enabled),
+//				ProvisioningVlanId:               pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//				RefreshHcxLicenseStatus:          pulumi.Bool(true),
+//				ReplicationVlanId:                pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//				ReservingHcxOnPremiseLicenseKeys: pulumi.Any(_var.Reserving_hcx_on_premise_license_keys),
+//				WorkloadNetworkCidr:              pulumi.Any(_var.Sddc_workload_network_cidr),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -81,7 +84,9 @@ import (
 // Sddcs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
+//
+//	$ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
+//
 // ```
 type Sddc struct {
 	pulumi.CustomResourceState
@@ -636,7 +641,7 @@ func (i *Sddc) ToSddcOutputWithContext(ctx context.Context) SddcOutput {
 // SddcArrayInput is an input type that accepts SddcArray and SddcArrayOutput values.
 // You can construct a concrete instance of `SddcArrayInput` via:
 //
-//          SddcArray{ SddcArgs{...} }
+//	SddcArray{ SddcArgs{...} }
 type SddcArrayInput interface {
 	pulumi.Input
 
@@ -661,7 +666,7 @@ func (i SddcArray) ToSddcArrayOutputWithContext(ctx context.Context) SddcArrayOu
 // SddcMapInput is an input type that accepts SddcMap and SddcMapOutput values.
 // You can construct a concrete instance of `SddcMapInput` via:
 //
-//          SddcMap{ "key": SddcArgs{...} }
+//	SddcMap{ "key": SddcArgs{...} }
 type SddcMapInput interface {
 	pulumi.Input
 

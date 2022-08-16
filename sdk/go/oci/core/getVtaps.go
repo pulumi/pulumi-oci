@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVtaps(ctx, &core.GetVtapsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Vtap_display_name),
-// 			IsVtapEnabled: pulumi.BoolRef(_var.Vtap_is_vtap_enabled),
-// 			Source:        pulumi.StringRef(_var.Vtap_source),
-// 			State:         pulumi.StringRef(_var.Vtap_state),
-// 			TargetId:      pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 			TargetIp:      pulumi.StringRef(_var.Vtap_target_ip),
-// 			VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVtaps(ctx, &core.GetVtapsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Vtap_display_name),
+//				IsVtapEnabled: pulumi.BoolRef(_var.Vtap_is_vtap_enabled),
+//				Source:        pulumi.StringRef(_var.Vtap_source),
+//				State:         pulumi.StringRef(_var.Vtap_state),
+//				TargetId:      pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				TargetIp:      pulumi.StringRef(_var.Vtap_target_ip),
+//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVtaps(ctx *pulumi.Context, args *GetVtapsArgs, opts ...pulumi.InvokeOption) (*GetVtapsResult, error) {
 	var rv GetVtapsResult

@@ -22,27 +22,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.NewManagedDatabaseGroup(ctx, "testManagedDatabaseGroup", &DatabaseManagement.ManagedDatabaseGroupArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Description:   pulumi.Any(_var.Managed_database_group_description),
-// 			ManagedDatabases: databasemanagement.ManagedDatabaseGroupManagedDatabaseArray{
-// 				&databasemanagement.ManagedDatabaseGroupManagedDatabaseArgs{
-// 					Id: pulumi.Any(_var.Managed_database_id),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.NewManagedDatabaseGroup(ctx, "testManagedDatabaseGroup", &DatabaseManagement.ManagedDatabaseGroupArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Description:   pulumi.Any(_var.Managed_database_group_description),
+//				ManagedDatabases: databasemanagement.ManagedDatabaseGroupManagedDatabaseArray{
+//					&databasemanagement.ManagedDatabaseGroupManagedDatabaseArgs{
+//						Id: pulumi.Any(_var.Managed_database_id),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // ManagedDatabaseGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
+//
+//	$ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
+//
 // ```
 type ManagedDatabaseGroup struct {
 	pulumi.CustomResourceState
@@ -189,7 +194,7 @@ func (i *ManagedDatabaseGroup) ToManagedDatabaseGroupOutputWithContext(ctx conte
 // ManagedDatabaseGroupArrayInput is an input type that accepts ManagedDatabaseGroupArray and ManagedDatabaseGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabaseGroupArrayInput` via:
 //
-//          ManagedDatabaseGroupArray{ ManagedDatabaseGroupArgs{...} }
+//	ManagedDatabaseGroupArray{ ManagedDatabaseGroupArgs{...} }
 type ManagedDatabaseGroupArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +219,7 @@ func (i ManagedDatabaseGroupArray) ToManagedDatabaseGroupArrayOutputWithContext(
 // ManagedDatabaseGroupMapInput is an input type that accepts ManagedDatabaseGroupMap and ManagedDatabaseGroupMapOutput values.
 // You can construct a concrete instance of `ManagedDatabaseGroupMapInput` via:
 //
-//          ManagedDatabaseGroupMap{ "key": ManagedDatabaseGroupArgs{...} }
+//	ManagedDatabaseGroupMap{ "key": ManagedDatabaseGroupArgs{...} }
 type ManagedDatabaseGroupMapInput interface {
 	pulumi.Input
 

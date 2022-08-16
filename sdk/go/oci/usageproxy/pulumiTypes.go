@@ -18,7 +18,7 @@ type SubscriptionRedeemableUserItem struct {
 // SubscriptionRedeemableUserItemInput is an input type that accepts SubscriptionRedeemableUserItemArgs and SubscriptionRedeemableUserItemOutput values.
 // You can construct a concrete instance of `SubscriptionRedeemableUserItemInput` via:
 //
-//          SubscriptionRedeemableUserItemArgs{...}
+//	SubscriptionRedeemableUserItemArgs{...}
 type SubscriptionRedeemableUserItemInput interface {
 	pulumi.Input
 
@@ -46,7 +46,7 @@ func (i SubscriptionRedeemableUserItemArgs) ToSubscriptionRedeemableUserItemOutp
 // SubscriptionRedeemableUserItemArrayInput is an input type that accepts SubscriptionRedeemableUserItemArray and SubscriptionRedeemableUserItemArrayOutput values.
 // You can construct a concrete instance of `SubscriptionRedeemableUserItemArrayInput` via:
 //
-//          SubscriptionRedeemableUserItemArray{ SubscriptionRedeemableUserItemArgs{...} }
+//	SubscriptionRedeemableUserItemArray{ SubscriptionRedeemableUserItemArgs{...} }
 type SubscriptionRedeemableUserItemArrayInput interface {
 	pulumi.Input
 
@@ -123,7 +123,7 @@ type GetSubscriptionProductItem struct {
 // GetSubscriptionProductItemInput is an input type that accepts GetSubscriptionProductItemArgs and GetSubscriptionProductItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductItemInput` via:
 //
-//          GetSubscriptionProductItemArgs{...}
+//	GetSubscriptionProductItemArgs{...}
 type GetSubscriptionProductItemInput interface {
 	pulumi.Input
 
@@ -159,7 +159,7 @@ func (i GetSubscriptionProductItemArgs) ToGetSubscriptionProductItemOutputWithCo
 // GetSubscriptionProductItemArrayInput is an input type that accepts GetSubscriptionProductItemArray and GetSubscriptionProductItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductItemArrayInput` via:
 //
-//          GetSubscriptionProductItemArray{ GetSubscriptionProductItemArgs{...} }
+//	GetSubscriptionProductItemArray{ GetSubscriptionProductItemArgs{...} }
 type GetSubscriptionProductItemArrayInput interface {
 	pulumi.Input
 
@@ -249,7 +249,7 @@ type GetSubscriptionProductsFilter struct {
 // GetSubscriptionProductsFilterInput is an input type that accepts GetSubscriptionProductsFilterArgs and GetSubscriptionProductsFilterOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsFilterInput` via:
 //
-//          GetSubscriptionProductsFilterArgs{...}
+//	GetSubscriptionProductsFilterArgs{...}
 type GetSubscriptionProductsFilterInput interface {
 	pulumi.Input
 
@@ -278,7 +278,7 @@ func (i GetSubscriptionProductsFilterArgs) ToGetSubscriptionProductsFilterOutput
 // GetSubscriptionProductsFilterArrayInput is an input type that accepts GetSubscriptionProductsFilterArray and GetSubscriptionProductsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsFilterArrayInput` via:
 //
-//          GetSubscriptionProductsFilterArray{ GetSubscriptionProductsFilterArgs{...} }
+//	GetSubscriptionProductsFilterArray{ GetSubscriptionProductsFilterArgs{...} }
 type GetSubscriptionProductsFilterArrayInput interface {
 	pulumi.Input
 
@@ -354,7 +354,7 @@ type GetSubscriptionProductsProductCollection struct {
 // GetSubscriptionProductsProductCollectionInput is an input type that accepts GetSubscriptionProductsProductCollectionArgs and GetSubscriptionProductsProductCollectionOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionInput` via:
 //
-//          GetSubscriptionProductsProductCollectionArgs{...}
+//	GetSubscriptionProductsProductCollectionArgs{...}
 type GetSubscriptionProductsProductCollectionInput interface {
 	pulumi.Input
 
@@ -382,7 +382,7 @@ func (i GetSubscriptionProductsProductCollectionArgs) ToGetSubscriptionProductsP
 // GetSubscriptionProductsProductCollectionArrayInput is an input type that accepts GetSubscriptionProductsProductCollectionArray and GetSubscriptionProductsProductCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionArrayInput` via:
 //
-//          GetSubscriptionProductsProductCollectionArray{ GetSubscriptionProductsProductCollectionArgs{...} }
+//	GetSubscriptionProductsProductCollectionArray{ GetSubscriptionProductsProductCollectionArgs{...} }
 type GetSubscriptionProductsProductCollectionArrayInput interface {
 	pulumi.Input
 
@@ -453,7 +453,7 @@ type GetSubscriptionProductsProductCollectionItem struct {
 // GetSubscriptionProductsProductCollectionItemInput is an input type that accepts GetSubscriptionProductsProductCollectionItemArgs and GetSubscriptionProductsProductCollectionItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionItemInput` via:
 //
-//          GetSubscriptionProductsProductCollectionItemArgs{...}
+//	GetSubscriptionProductsProductCollectionItemArgs{...}
 type GetSubscriptionProductsProductCollectionItemInput interface {
 	pulumi.Input
 
@@ -481,7 +481,7 @@ func (i GetSubscriptionProductsProductCollectionItemArgs) ToGetSubscriptionProdu
 // GetSubscriptionProductsProductCollectionItemArrayInput is an input type that accepts GetSubscriptionProductsProductCollectionItemArray and GetSubscriptionProductsProductCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionItemArrayInput` via:
 //
-//          GetSubscriptionProductsProductCollectionItemArray{ GetSubscriptionProductsProductCollectionItemArgs{...} }
+//	GetSubscriptionProductsProductCollectionItemArray{ GetSubscriptionProductsProductCollectionItemArgs{...} }
 type GetSubscriptionProductsProductCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -560,7 +560,7 @@ type GetSubscriptionProductsProductCollectionItemItem struct {
 // GetSubscriptionProductsProductCollectionItemItemInput is an input type that accepts GetSubscriptionProductsProductCollectionItemItemArgs and GetSubscriptionProductsProductCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionItemItemInput` via:
 //
-//          GetSubscriptionProductsProductCollectionItemItemArgs{...}
+//	GetSubscriptionProductsProductCollectionItemItemArgs{...}
 type GetSubscriptionProductsProductCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -596,7 +596,7 @@ func (i GetSubscriptionProductsProductCollectionItemItemArgs) ToGetSubscriptionP
 // GetSubscriptionProductsProductCollectionItemItemArrayInput is an input type that accepts GetSubscriptionProductsProductCollectionItemItemArray and GetSubscriptionProductsProductCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionItemItemArrayInput` via:
 //
-//          GetSubscriptionProductsProductCollectionItemItemArray{ GetSubscriptionProductsProductCollectionItemItemArgs{...} }
+//	GetSubscriptionProductsProductCollectionItemItemArray{ GetSubscriptionProductsProductCollectionItemItemArgs{...} }
 type GetSubscriptionProductsProductCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -685,7 +685,7 @@ type GetSubscriptionRedeemableUserItem struct {
 // GetSubscriptionRedeemableUserItemInput is an input type that accepts GetSubscriptionRedeemableUserItemArgs and GetSubscriptionRedeemableUserItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUserItemInput` via:
 //
-//          GetSubscriptionRedeemableUserItemArgs{...}
+//	GetSubscriptionRedeemableUserItemArgs{...}
 type GetSubscriptionRedeemableUserItemInput interface {
 	pulumi.Input
 
@@ -713,7 +713,7 @@ func (i GetSubscriptionRedeemableUserItemArgs) ToGetSubscriptionRedeemableUserIt
 // GetSubscriptionRedeemableUserItemArrayInput is an input type that accepts GetSubscriptionRedeemableUserItemArray and GetSubscriptionRedeemableUserItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUserItemArrayInput` via:
 //
-//          GetSubscriptionRedeemableUserItemArray{ GetSubscriptionRedeemableUserItemArgs{...} }
+//	GetSubscriptionRedeemableUserItemArray{ GetSubscriptionRedeemableUserItemArgs{...} }
 type GetSubscriptionRedeemableUserItemArrayInput interface {
 	pulumi.Input
 
@@ -783,7 +783,7 @@ type GetSubscriptionRedeemableUsersFilter struct {
 // GetSubscriptionRedeemableUsersFilterInput is an input type that accepts GetSubscriptionRedeemableUsersFilterArgs and GetSubscriptionRedeemableUsersFilterOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersFilterInput` via:
 //
-//          GetSubscriptionRedeemableUsersFilterArgs{...}
+//	GetSubscriptionRedeemableUsersFilterArgs{...}
 type GetSubscriptionRedeemableUsersFilterInput interface {
 	pulumi.Input
 
@@ -812,7 +812,7 @@ func (i GetSubscriptionRedeemableUsersFilterArgs) ToGetSubscriptionRedeemableUse
 // GetSubscriptionRedeemableUsersFilterArrayInput is an input type that accepts GetSubscriptionRedeemableUsersFilterArray and GetSubscriptionRedeemableUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersFilterArrayInput` via:
 //
-//          GetSubscriptionRedeemableUsersFilterArray{ GetSubscriptionRedeemableUsersFilterArgs{...} }
+//	GetSubscriptionRedeemableUsersFilterArray{ GetSubscriptionRedeemableUsersFilterArgs{...} }
 type GetSubscriptionRedeemableUsersFilterArrayInput interface {
 	pulumi.Input
 
@@ -888,7 +888,7 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollection struct {
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs and GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionInput` via:
 //
-//          GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs{...}
+//	GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs{...}
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionInput interface {
 	pulumi.Input
 
@@ -916,7 +916,7 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs) ToGetSubscri
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionArray and GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayInput` via:
 //
-//          GetSubscriptionRedeemableUsersRedeemableUserCollectionArray{ GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs{...} }
+//	GetSubscriptionRedeemableUsersRedeemableUserCollectionArray{ GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs{...} }
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayInput interface {
 	pulumi.Input
 
@@ -992,7 +992,7 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItem struct {
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionItemInput` via:
 //
-//          GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs{...}
+//	GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs{...}
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemInput interface {
 	pulumi.Input
 
@@ -1025,7 +1025,7 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs) ToGetSub
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayInput` via:
 //
-//          GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray{ GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs{...} }
+//	GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray{ GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs{...} }
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1110,7 +1110,7 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem struct {
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput` via:
 //
-//          GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs{...}
+//	GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs{...}
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -1138,7 +1138,7 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs) ToGe
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayInput` via:
 //
-//          GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray{ GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs{...} }
+//	GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray{ GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs{...} }
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -1229,7 +1229,7 @@ type GetSubscriptionRewardItem struct {
 // GetSubscriptionRewardItemInput is an input type that accepts GetSubscriptionRewardItemArgs and GetSubscriptionRewardItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardItemInput` via:
 //
-//          GetSubscriptionRewardItemArgs{...}
+//	GetSubscriptionRewardItemArgs{...}
 type GetSubscriptionRewardItemInput interface {
 	pulumi.Input
 
@@ -1279,7 +1279,7 @@ func (i GetSubscriptionRewardItemArgs) ToGetSubscriptionRewardItemOutputWithCont
 // GetSubscriptionRewardItemArrayInput is an input type that accepts GetSubscriptionRewardItemArray and GetSubscriptionRewardItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardItemArrayInput` via:
 //
-//          GetSubscriptionRewardItemArray{ GetSubscriptionRewardItemArgs{...} }
+//	GetSubscriptionRewardItemArray{ GetSubscriptionRewardItemArgs{...} }
 type GetSubscriptionRewardItemArrayInput interface {
 	pulumi.Input
 
@@ -1413,7 +1413,7 @@ type GetSubscriptionRewardSummary struct {
 // GetSubscriptionRewardSummaryInput is an input type that accepts GetSubscriptionRewardSummaryArgs and GetSubscriptionRewardSummaryOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardSummaryInput` via:
 //
-//          GetSubscriptionRewardSummaryArgs{...}
+//	GetSubscriptionRewardSummaryArgs{...}
 type GetSubscriptionRewardSummaryInput interface {
 	pulumi.Input
 
@@ -1451,7 +1451,7 @@ func (i GetSubscriptionRewardSummaryArgs) ToGetSubscriptionRewardSummaryOutputWi
 // GetSubscriptionRewardSummaryArrayInput is an input type that accepts GetSubscriptionRewardSummaryArray and GetSubscriptionRewardSummaryArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardSummaryArrayInput` via:
 //
-//          GetSubscriptionRewardSummaryArray{ GetSubscriptionRewardSummaryArgs{...} }
+//	GetSubscriptionRewardSummaryArray{ GetSubscriptionRewardSummaryArgs{...} }
 type GetSubscriptionRewardSummaryArrayInput interface {
 	pulumi.Input
 
@@ -1546,7 +1546,7 @@ type GetSubscriptionRewardsFilter struct {
 // GetSubscriptionRewardsFilterInput is an input type that accepts GetSubscriptionRewardsFilterArgs and GetSubscriptionRewardsFilterOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsFilterInput` via:
 //
-//          GetSubscriptionRewardsFilterArgs{...}
+//	GetSubscriptionRewardsFilterArgs{...}
 type GetSubscriptionRewardsFilterInput interface {
 	pulumi.Input
 
@@ -1575,7 +1575,7 @@ func (i GetSubscriptionRewardsFilterArgs) ToGetSubscriptionRewardsFilterOutputWi
 // GetSubscriptionRewardsFilterArrayInput is an input type that accepts GetSubscriptionRewardsFilterArray and GetSubscriptionRewardsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsFilterArrayInput` via:
 //
-//          GetSubscriptionRewardsFilterArray{ GetSubscriptionRewardsFilterArgs{...} }
+//	GetSubscriptionRewardsFilterArray{ GetSubscriptionRewardsFilterArgs{...} }
 type GetSubscriptionRewardsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1651,7 +1651,7 @@ type GetSubscriptionRewardsRewardCollection struct {
 // GetSubscriptionRewardsRewardCollectionInput is an input type that accepts GetSubscriptionRewardsRewardCollectionArgs and GetSubscriptionRewardsRewardCollectionOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionArgs{...}
+//	GetSubscriptionRewardsRewardCollectionArgs{...}
 type GetSubscriptionRewardsRewardCollectionInput interface {
 	pulumi.Input
 
@@ -1679,7 +1679,7 @@ func (i GetSubscriptionRewardsRewardCollectionArgs) ToGetSubscriptionRewardsRewa
 // GetSubscriptionRewardsRewardCollectionArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionArray and GetSubscriptionRewardsRewardCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionArrayInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionArray{ GetSubscriptionRewardsRewardCollectionArgs{...} }
+//	GetSubscriptionRewardsRewardCollectionArray{ GetSubscriptionRewardsRewardCollectionArgs{...} }
 type GetSubscriptionRewardsRewardCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1752,7 +1752,7 @@ type GetSubscriptionRewardsRewardCollectionItem struct {
 // GetSubscriptionRewardsRewardCollectionItemInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemArgs and GetSubscriptionRewardsRewardCollectionItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionItemArgs{...}
+//	GetSubscriptionRewardsRewardCollectionItemArgs{...}
 type GetSubscriptionRewardsRewardCollectionItemInput interface {
 	pulumi.Input
 
@@ -1782,7 +1782,7 @@ func (i GetSubscriptionRewardsRewardCollectionItemArgs) ToGetSubscriptionRewards
 // GetSubscriptionRewardsRewardCollectionItemArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemArray and GetSubscriptionRewardsRewardCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemArrayInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionItemArray{ GetSubscriptionRewardsRewardCollectionItemArgs{...} }
+//	GetSubscriptionRewardsRewardCollectionItemArray{ GetSubscriptionRewardsRewardCollectionItemArgs{...} }
 type GetSubscriptionRewardsRewardCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1882,7 +1882,7 @@ type GetSubscriptionRewardsRewardCollectionItemItem struct {
 // GetSubscriptionRewardsRewardCollectionItemItemInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemItemArgs and GetSubscriptionRewardsRewardCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemItemInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionItemItemArgs{...}
+//	GetSubscriptionRewardsRewardCollectionItemItemArgs{...}
 type GetSubscriptionRewardsRewardCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -1932,7 +1932,7 @@ func (i GetSubscriptionRewardsRewardCollectionItemItemArgs) ToGetSubscriptionRew
 // GetSubscriptionRewardsRewardCollectionItemItemArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemItemArray and GetSubscriptionRewardsRewardCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemItemArrayInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionItemItemArray{ GetSubscriptionRewardsRewardCollectionItemItemArgs{...} }
+//	GetSubscriptionRewardsRewardCollectionItemItemArray{ GetSubscriptionRewardsRewardCollectionItemItemArgs{...} }
 type GetSubscriptionRewardsRewardCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -2066,7 +2066,7 @@ type GetSubscriptionRewardsRewardCollectionItemSummary struct {
 // GetSubscriptionRewardsRewardCollectionItemSummaryInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemSummaryArgs and GetSubscriptionRewardsRewardCollectionItemSummaryOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemSummaryInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionItemSummaryArgs{...}
+//	GetSubscriptionRewardsRewardCollectionItemSummaryArgs{...}
 type GetSubscriptionRewardsRewardCollectionItemSummaryInput interface {
 	pulumi.Input
 
@@ -2104,7 +2104,7 @@ func (i GetSubscriptionRewardsRewardCollectionItemSummaryArgs) ToGetSubscription
 // GetSubscriptionRewardsRewardCollectionItemSummaryArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemSummaryArray and GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemSummaryArrayInput` via:
 //
-//          GetSubscriptionRewardsRewardCollectionItemSummaryArray{ GetSubscriptionRewardsRewardCollectionItemSummaryArgs{...} }
+//	GetSubscriptionRewardsRewardCollectionItemSummaryArray{ GetSubscriptionRewardsRewardCollectionItemSummaryArgs{...} }
 type GetSubscriptionRewardsRewardCollectionItemSummaryArrayInput interface {
 	pulumi.Input
 

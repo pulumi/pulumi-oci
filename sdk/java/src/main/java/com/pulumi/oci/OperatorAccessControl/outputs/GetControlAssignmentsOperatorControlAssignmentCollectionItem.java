@@ -74,6 +74,11 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      */
     private final Boolean isLogForwarded;
     /**
+     * @return More in detail about the lifeCycleState.
+     * 
+     */
+    private final String lifecycleDetails;
+    /**
      * @return The OCID of the operator control.
      * 
      */
@@ -158,6 +163,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         @CustomType.Parameter("isAutoApproveDuringMaintenance") Boolean isAutoApproveDuringMaintenance,
         @CustomType.Parameter("isEnforcedAlways") Boolean isEnforcedAlways,
         @CustomType.Parameter("isLogForwarded") Boolean isLogForwarded,
+        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("operatorControlId") String operatorControlId,
         @CustomType.Parameter("remoteSyslogServerAddress") String remoteSyslogServerAddress,
         @CustomType.Parameter("remoteSyslogServerCaCert") String remoteSyslogServerCaCert,
@@ -184,6 +190,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
         this.isEnforcedAlways = isEnforcedAlways;
         this.isLogForwarded = isLogForwarded;
+        this.lifecycleDetails = lifecycleDetails;
         this.operatorControlId = operatorControlId;
         this.remoteSyslogServerAddress = remoteSyslogServerAddress;
         this.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
@@ -283,6 +290,13 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      */
     public Boolean isLogForwarded() {
         return this.isLogForwarded;
+    }
+    /**
+     * @return More in detail about the lifeCycleState.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * @return The OCID of the operator control.
@@ -404,6 +418,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         private Boolean isAutoApproveDuringMaintenance;
         private Boolean isEnforcedAlways;
         private Boolean isLogForwarded;
+        private String lifecycleDetails;
         private String operatorControlId;
         private String remoteSyslogServerAddress;
         private String remoteSyslogServerCaCert;
@@ -437,6 +452,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
     	      this.isAutoApproveDuringMaintenance = defaults.isAutoApproveDuringMaintenance;
     	      this.isEnforcedAlways = defaults.isEnforcedAlways;
     	      this.isLogForwarded = defaults.isLogForwarded;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.operatorControlId = defaults.operatorControlId;
     	      this.remoteSyslogServerAddress = defaults.remoteSyslogServerAddress;
     	      this.remoteSyslogServerCaCert = defaults.remoteSyslogServerCaCert;
@@ -501,6 +517,10 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             this.isLogForwarded = Objects.requireNonNull(isLogForwarded);
             return this;
         }
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
         public Builder operatorControlId(String operatorControlId) {
             this.operatorControlId = Objects.requireNonNull(operatorControlId);
             return this;
@@ -557,7 +577,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             this.unassignerId = Objects.requireNonNull(unassignerId);
             return this;
         }        public GetControlAssignmentsOperatorControlAssignmentCollectionItem build() {
-            return new GetControlAssignmentsOperatorControlAssignmentCollectionItem(assignerId, comment, compartmentId, definedTags, detachmentDescription, errorCode, errorMessage, freeformTags, id, isAutoApproveDuringMaintenance, isEnforcedAlways, isLogForwarded, operatorControlId, remoteSyslogServerAddress, remoteSyslogServerCaCert, remoteSyslogServerPort, resourceCompartmentId, resourceId, resourceName, resourceType, state, timeAssignmentFrom, timeAssignmentTo, timeOfAssignment, timeOfDeletion, unassignerId);
+            return new GetControlAssignmentsOperatorControlAssignmentCollectionItem(assignerId, comment, compartmentId, definedTags, detachmentDescription, errorCode, errorMessage, freeformTags, id, isAutoApproveDuringMaintenance, isEnforcedAlways, isLogForwarded, lifecycleDetails, operatorControlId, remoteSyslogServerAddress, remoteSyslogServerCaCert, remoteSyslogServerPort, resourceCompartmentId, resourceId, resourceName, resourceType, state, timeAssignmentFrom, timeAssignmentTo, timeOfAssignment, timeOfDeletion, unassignerId);
         }
     }
 }

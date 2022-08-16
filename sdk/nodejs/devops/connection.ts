@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -20,6 +21,7 @@ import * as utilities from "../utilities";
  *     projectId: oci_devops_project.test_project.id,
  *     accessToken: _var.connection_access_token,
  *     appPassword: _var.connection_app_password,
+ *     baseUrl: _var.connection_base_url,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -27,6 +29,10 @@ import * as utilities from "../utilities";
  *     displayName: _var.connection_display_name,
  *     freeformTags: {
  *         "bar-key": "value",
+ *     },
+ *     tlsVerifyConfig: {
+ *         caCertificateBundleId: oci_devops_ca_certificate_bundle.test_ca_certificate_bundle.id,
+ *         tlsVerifyMode: _var.connection_tls_verify_config_tls_verify_mode,
  *     },
  *     username: _var.connection_username,
  * });
@@ -77,6 +83,10 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly appPassword!: pulumi.Output<string>;
     /**
+     * (Updatable) The Base URL of the hosted BitbucketServer.
+     */
+    public readonly baseUrl!: pulumi.Output<string>;
+    /**
      * The OCID of the compartment containing the connection.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
@@ -121,6 +131,10 @@ export class Connection extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
+     * (Updatable) TLS configuration used by build service to verify TLS connection.
+     */
+    public readonly tlsVerifyConfig!: pulumi.Output<outputs.DevOps.ConnectionTlsVerifyConfig>;
+    /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      */
     public readonly username!: pulumi.Output<string>;
@@ -140,6 +154,7 @@ export class Connection extends pulumi.CustomResource {
             const state = argsOrState as ConnectionState | undefined;
             resourceInputs["accessToken"] = state ? state.accessToken : undefined;
             resourceInputs["appPassword"] = state ? state.appPassword : undefined;
+            resourceInputs["baseUrl"] = state ? state.baseUrl : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectionType"] = state ? state.connectionType : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -151,6 +166,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["tlsVerifyConfig"] = state ? state.tlsVerifyConfig : undefined;
             resourceInputs["username"] = state ? state.username : undefined;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
@@ -162,12 +178,14 @@ export class Connection extends pulumi.CustomResource {
             }
             resourceInputs["accessToken"] = args ? args.accessToken : undefined;
             resourceInputs["appPassword"] = args ? args.appPassword : undefined;
+            resourceInputs["baseUrl"] = args ? args.baseUrl : undefined;
             resourceInputs["connectionType"] = args ? args.connectionType : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["tlsVerifyConfig"] = args ? args.tlsVerifyConfig : undefined;
             resourceInputs["username"] = args ? args.username : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -192,6 +210,10 @@ export interface ConnectionState {
      * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      */
     appPassword?: pulumi.Input<string>;
+    /**
+     * (Updatable) The Base URL of the hosted BitbucketServer.
+     */
+    baseUrl?: pulumi.Input<string>;
     /**
      * The OCID of the compartment containing the connection.
      */
@@ -237,6 +259,10 @@ export interface ConnectionState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
+     * (Updatable) TLS configuration used by build service to verify TLS connection.
+     */
+    tlsVerifyConfig?: pulumi.Input<inputs.DevOps.ConnectionTlsVerifyConfig>;
+    /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      */
     username?: pulumi.Input<string>;
@@ -254,6 +280,10 @@ export interface ConnectionArgs {
      * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      */
     appPassword?: pulumi.Input<string>;
+    /**
+     * (Updatable) The Base URL of the hosted BitbucketServer.
+     */
+    baseUrl?: pulumi.Input<string>;
     /**
      * (Updatable) The type of connection.
      */
@@ -278,6 +308,10 @@ export interface ConnectionArgs {
      * The OCID of the DevOps project.
      */
     projectId: pulumi.Input<string>;
+    /**
+     * (Updatable) TLS configuration used by build service to verify TLS connection.
+     */
+    tlsVerifyConfig?: pulumi.Input<inputs.DevOps.ConnectionTlsVerifyConfig>;
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      */

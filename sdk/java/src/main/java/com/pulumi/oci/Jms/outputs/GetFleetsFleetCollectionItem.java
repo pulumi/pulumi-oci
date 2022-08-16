@@ -6,6 +6,7 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetsFleetCollectionItemInventoryLog;
 import com.pulumi.oci.Jms.outputs.GetFleetsFleetCollectionItemOperationLog;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -71,6 +72,11 @@ public final class GetFleetsFleetCollectionItem {
      */
     private final List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
     /**
+     * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    private final Boolean isAdvancedFeaturesEnabled;
+    /**
      * @return Custom Log for inventory or operation log.
      * 
      */
@@ -104,6 +110,7 @@ public final class GetFleetsFleetCollectionItem {
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("inventoryLogs") List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs,
+        @CustomType.Parameter("isAdvancedFeaturesEnabled") Boolean isAdvancedFeaturesEnabled,
         @CustomType.Parameter("operationLogs") List<GetFleetsFleetCollectionItemOperationLog> operationLogs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
@@ -119,6 +126,7 @@ public final class GetFleetsFleetCollectionItem {
         this.freeformTags = freeformTags;
         this.id = id;
         this.inventoryLogs = inventoryLogs;
+        this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
         this.operationLogs = operationLogs;
         this.state = state;
         this.systemTags = systemTags;
@@ -203,6 +211,13 @@ public final class GetFleetsFleetCollectionItem {
         return this.inventoryLogs;
     }
     /**
+     * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    public Boolean isAdvancedFeaturesEnabled() {
+        return this.isAdvancedFeaturesEnabled;
+    }
+    /**
      * @return Custom Log for inventory or operation log.
      * 
      */
@@ -251,6 +266,7 @@ public final class GetFleetsFleetCollectionItem {
         private Map<String,Object> freeformTags;
         private String id;
         private List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
+        private Boolean isAdvancedFeaturesEnabled;
         private List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
         private String state;
         private Map<String,Object> systemTags;
@@ -273,6 +289,7 @@ public final class GetFleetsFleetCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.inventoryLogs = defaults.inventoryLogs;
+    	      this.isAdvancedFeaturesEnabled = defaults.isAdvancedFeaturesEnabled;
     	      this.operationLogs = defaults.operationLogs;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -326,6 +343,10 @@ public final class GetFleetsFleetCollectionItem {
         public Builder inventoryLogs(GetFleetsFleetCollectionItemInventoryLog... inventoryLogs) {
             return inventoryLogs(List.of(inventoryLogs));
         }
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = Objects.requireNonNull(isAdvancedFeaturesEnabled);
+            return this;
+        }
         public Builder operationLogs(List<GetFleetsFleetCollectionItemOperationLog> operationLogs) {
             this.operationLogs = Objects.requireNonNull(operationLogs);
             return this;
@@ -345,7 +366,7 @@ public final class GetFleetsFleetCollectionItem {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }        public GetFleetsFleetCollectionItem build() {
-            return new GetFleetsFleetCollectionItem(approximateApplicationCount, approximateInstallationCount, approximateJreCount, approximateManagedInstanceCount, compartmentId, definedTags, description, displayName, freeformTags, id, inventoryLogs, operationLogs, state, systemTags, timeCreated);
+            return new GetFleetsFleetCollectionItem(approximateApplicationCount, approximateInstallationCount, approximateJreCount, approximateManagedInstanceCount, compartmentId, definedTags, description, displayName, freeformTags, id, inventoryLogs, isAdvancedFeaturesEnabled, operationLogs, state, systemTags, timeCreated);
         }
     }
 }

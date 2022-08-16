@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetPluggableDatabases(ctx, &database.GetPluggableDatabasesArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			DatabaseId:    pulumi.StringRef(oci_database_database.Test_database.Id),
-// 			PdbName:       pulumi.StringRef(_var.Pluggable_database_pdb_name),
-// 			State:         pulumi.StringRef(_var.Pluggable_database_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetPluggableDatabases(ctx, &database.GetPluggableDatabasesArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				DatabaseId:    pulumi.StringRef(oci_database_database.Test_database.Id),
+//				PdbName:       pulumi.StringRef(_var.Pluggable_database_pdb_name),
+//				State:         pulumi.StringRef(_var.Pluggable_database_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPluggableDatabases(ctx *pulumi.Context, args *GetPluggableDatabasesArgs, opts ...pulumi.InvokeOption) (*GetPluggableDatabasesResult, error) {
 	var rv GetPluggableDatabasesResult

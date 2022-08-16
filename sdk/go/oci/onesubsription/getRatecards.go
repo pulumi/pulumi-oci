@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetRatecards(ctx, &onesubsription.GetRatecardsArgs{
-// 			CompartmentId:  _var.Compartment_id,
-// 			SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
-// 			PartNumber:     pulumi.StringRef(_var.Ratecard_part_number),
-// 			TimeFrom:       pulumi.StringRef(_var.Ratecard_time_from),
-// 			TimeTo:         pulumi.StringRef(_var.Ratecard_time_to),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetRatecards(ctx, &onesubsription.GetRatecardsArgs{
+//				CompartmentId:  _var.Compartment_id,
+//				SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
+//				PartNumber:     pulumi.StringRef(_var.Ratecard_part_number),
+//				TimeFrom:       pulumi.StringRef(_var.Ratecard_time_from),
+//				TimeTo:         pulumi.StringRef(_var.Ratecard_time_to),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRatecards(ctx *pulumi.Context, args *GetRatecardsArgs, opts ...pulumi.InvokeOption) (*GetRatecardsResult, error) {
 	var rv GetRatecardsResult

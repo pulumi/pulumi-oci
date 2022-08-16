@@ -36,6 +36,9 @@ public final class GetInstallationSiteResult {
      */
     private final @Nullable String managedInstanceId;
     private final @Nullable List<String> osFamilies;
+    private final @Nullable String pathContains;
+    private final @Nullable String timeEnd;
+    private final @Nullable String timeStart;
 
     @CustomType.Constructor
     private GetInstallationSiteResult(
@@ -49,7 +52,10 @@ public final class GetInstallationSiteResult {
         @CustomType.Parameter("jreVendor") @Nullable String jreVendor,
         @CustomType.Parameter("jreVersion") @Nullable String jreVersion,
         @CustomType.Parameter("managedInstanceId") @Nullable String managedInstanceId,
-        @CustomType.Parameter("osFamilies") @Nullable List<String> osFamilies) {
+        @CustomType.Parameter("osFamilies") @Nullable List<String> osFamilies,
+        @CustomType.Parameter("pathContains") @Nullable String pathContains,
+        @CustomType.Parameter("timeEnd") @Nullable String timeEnd,
+        @CustomType.Parameter("timeStart") @Nullable String timeStart) {
         this.applicationId = applicationId;
         this.fleetId = fleetId;
         this.id = id;
@@ -61,6 +67,9 @@ public final class GetInstallationSiteResult {
         this.jreVersion = jreVersion;
         this.managedInstanceId = managedInstanceId;
         this.osFamilies = osFamilies;
+        this.pathContains = pathContains;
+        this.timeEnd = timeEnd;
+        this.timeStart = timeStart;
     }
 
     public Optional<String> applicationId() {
@@ -108,6 +117,15 @@ public final class GetInstallationSiteResult {
     public List<String> osFamilies() {
         return this.osFamilies == null ? List.of() : this.osFamilies;
     }
+    public Optional<String> pathContains() {
+        return Optional.ofNullable(this.pathContains);
+    }
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
+    }
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -129,6 +147,9 @@ public final class GetInstallationSiteResult {
         private @Nullable String jreVersion;
         private @Nullable String managedInstanceId;
         private @Nullable List<String> osFamilies;
+        private @Nullable String pathContains;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
 
         public Builder() {
     	      // Empty
@@ -147,6 +168,9 @@ public final class GetInstallationSiteResult {
     	      this.jreVersion = defaults.jreVersion;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.osFamilies = defaults.osFamilies;
+    	      this.pathContains = defaults.pathContains;
+    	      this.timeEnd = defaults.timeEnd;
+    	      this.timeStart = defaults.timeStart;
         }
 
         public Builder applicationId(@Nullable String applicationId) {
@@ -198,8 +222,20 @@ public final class GetInstallationSiteResult {
         }
         public Builder osFamilies(String... osFamilies) {
             return osFamilies(List.of(osFamilies));
+        }
+        public Builder pathContains(@Nullable String pathContains) {
+            this.pathContains = pathContains;
+            return this;
+        }
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
+            return this;
+        }
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
+            return this;
         }        public GetInstallationSiteResult build() {
-            return new GetInstallationSiteResult(applicationId, fleetId, id, installationPath, items, jreDistribution, jreSecurityStatus, jreVendor, jreVersion, managedInstanceId, osFamilies);
+            return new GetInstallationSiteResult(applicationId, fleetId, id, installationPath, items, jreDistribution, jreSecurityStatus, jreVendor, jreVersion, managedInstanceId, osFamilies, pathContains, timeEnd, timeStart);
         }
     }
 }

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbSystemComputePerformances(ctx, &database.GetDbSystemComputePerformancesArgs{
-// 			DbSystemShape: pulumi.StringRef(_var.Db_system_compute_performance_db_system_shape),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbSystemComputePerformances(ctx, &database.GetDbSystemComputePerformancesArgs{
+//				DbSystemShape: pulumi.StringRef(_var.Db_system_compute_performance_db_system_shape),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbSystemComputePerformances(ctx *pulumi.Context, args *GetDbSystemComputePerformancesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemComputePerformancesResult, error) {
 	var rv GetDbSystemComputePerformancesResult

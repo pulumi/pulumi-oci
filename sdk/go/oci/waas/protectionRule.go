@@ -23,29 +23,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waas.NewProtectionRule(ctx, "testProtectionRule", &Waas.ProtectionRuleArgs{
-// 			WaasPolicyId: pulumi.Any(oci_waas_waas_policy.Test_waas_policy.Id),
-// 			Key:          pulumi.Any(_var.Key),
-// 			Action:       pulumi.String("DETECT"),
-// 			Exclusions: waas.ProtectionRuleExclusionArray{
-// 				Exclusions: waas.ProtectionRuleExclusionArgs{
-// 					"example.com",
-// 				},
-// 				Target: "REQUEST_COOKIES",
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waas.NewProtectionRule(ctx, "testProtectionRule", &Waas.ProtectionRuleArgs{
+//				WaasPolicyId: pulumi.Any(oci_waas_waas_policy.Test_waas_policy.Id),
+//				Key:          pulumi.Any(_var.Key),
+//				Action:       pulumi.String("DETECT"),
+//				Exclusions: waas.ProtectionRuleExclusionArray{
+//					Exclusions: waas.ProtectionRuleExclusionArgs{
+//						"example.com",
+//					},
+//					Target: "REQUEST_COOKIES",
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // ProtectionRules can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
+//
+//	$ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
+//
 // ```
 type ProtectionRule struct {
 	pulumi.CustomResourceState
@@ -201,7 +206,7 @@ func (i *ProtectionRule) ToProtectionRuleOutputWithContext(ctx context.Context) 
 // ProtectionRuleArrayInput is an input type that accepts ProtectionRuleArray and ProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleArrayInput` via:
 //
-//          ProtectionRuleArray{ ProtectionRuleArgs{...} }
+//	ProtectionRuleArray{ ProtectionRuleArgs{...} }
 type ProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -226,7 +231,7 @@ func (i ProtectionRuleArray) ToProtectionRuleArrayOutputWithContext(ctx context.
 // ProtectionRuleMapInput is an input type that accepts ProtectionRuleMap and ProtectionRuleMapOutput values.
 // You can construct a concrete instance of `ProtectionRuleMapInput` via:
 //
-//          ProtectionRuleMap{ "key": ProtectionRuleArgs{...} }
+//	ProtectionRuleMap{ "key": ProtectionRuleArgs{...} }
 type ProtectionRuleMapInput interface {
 	pulumi.Input
 

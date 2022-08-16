@@ -20,30 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetMaskingPolicies(ctx, &datasafe.GetMaskingPoliciesArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			AccessLevel:                     pulumi.StringRef(_var.Masking_policy_access_level),
-// 			CompartmentIdInSubtree:          pulumi.BoolRef(_var.Masking_policy_compartment_id_in_subtree),
-// 			DisplayName:                     pulumi.StringRef(_var.Masking_policy_display_name),
-// 			MaskingPolicyId:                 pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
-// 			SensitiveDataModelId:            pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-// 			State:                           pulumi.StringRef(_var.Masking_policy_state),
-// 			TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Masking_policy_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Masking_policy_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetMaskingPolicies(ctx, &datasafe.GetMaskingPoliciesArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				AccessLevel:                     pulumi.StringRef(_var.Masking_policy_access_level),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Masking_policy_compartment_id_in_subtree),
+//				DisplayName:                     pulumi.StringRef(_var.Masking_policy_display_name),
+//				MaskingPolicyId:                 pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
+//				SensitiveDataModelId:            pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//				State:                           pulumi.StringRef(_var.Masking_policy_state),
+//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Masking_policy_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Masking_policy_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMaskingPolicies(ctx *pulumi.Context, args *GetMaskingPoliciesArgs, opts ...pulumi.InvokeOption) (*GetMaskingPoliciesResult, error) {
 	var rv GetMaskingPoliciesResult

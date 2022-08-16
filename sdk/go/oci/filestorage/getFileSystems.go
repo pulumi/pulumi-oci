@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.GetFileSystems(ctx, &filestorage.GetFileSystemsArgs{
-// 			AvailabilityDomain: _var.File_system_availability_domain,
-// 			CompartmentId:      _var.Compartment_id,
-// 			DisplayName:        pulumi.StringRef(_var.File_system_display_name),
-// 			Id:                 pulumi.StringRef(_var.File_system_id),
-// 			ParentFileSystemId: pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
-// 			SourceSnapshotId:   pulumi.StringRef(oci_file_storage_snapshot.Test_snapshot.Id),
-// 			State:              pulumi.StringRef(_var.File_system_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.GetFileSystems(ctx, &filestorage.GetFileSystemsArgs{
+//				AvailabilityDomain: _var.File_system_availability_domain,
+//				CompartmentId:      _var.Compartment_id,
+//				DisplayName:        pulumi.StringRef(_var.File_system_display_name),
+//				Id:                 pulumi.StringRef(_var.File_system_id),
+//				ParentFileSystemId: pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
+//				SourceSnapshotId:   pulumi.StringRef(oci_file_storage_snapshot.Test_snapshot.Id),
+//				State:              pulumi.StringRef(_var.File_system_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFileSystems(ctx *pulumi.Context, args *GetFileSystemsArgs, opts ...pulumi.InvokeOption) (*GetFileSystemsResult, error) {
 	var rv GetFileSystemsResult

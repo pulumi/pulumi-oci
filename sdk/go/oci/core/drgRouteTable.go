@@ -22,30 +22,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrgRouteTable(ctx, "testDrgRouteTable", &Core.DrgRouteTableArgs{
-// 			DrgId: pulumi.Any(oci_core_drg.Test_drg.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Drg_route_table_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			ImportDrgRouteDistributionId: pulumi.Any(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
-// 			IsEcmpEnabled:                pulumi.Any(_var.Drg_route_table_is_ecmp_enabled),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrgRouteTable(ctx, "testDrgRouteTable", &Core.DrgRouteTableArgs{
+//				DrgId: pulumi.Any(oci_core_drg.Test_drg.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Drg_route_table_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ImportDrgRouteDistributionId: pulumi.Any(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
+//				IsEcmpEnabled:                pulumi.Any(_var.Drg_route_table_is_ecmp_enabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -53,7 +56,9 @@ import (
 // DrgRouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
+//
+//	$ pulumi import oci:Core/drgRouteTable:DrgRouteTable test_drg_route_table "id"
+//
 // ```
 type DrgRouteTable struct {
 	pulumi.CustomResourceState
@@ -222,7 +227,7 @@ func (i *DrgRouteTable) ToDrgRouteTableOutputWithContext(ctx context.Context) Dr
 // DrgRouteTableArrayInput is an input type that accepts DrgRouteTableArray and DrgRouteTableArrayOutput values.
 // You can construct a concrete instance of `DrgRouteTableArrayInput` via:
 //
-//          DrgRouteTableArray{ DrgRouteTableArgs{...} }
+//	DrgRouteTableArray{ DrgRouteTableArgs{...} }
 type DrgRouteTableArrayInput interface {
 	pulumi.Input
 
@@ -247,7 +252,7 @@ func (i DrgRouteTableArray) ToDrgRouteTableArrayOutputWithContext(ctx context.Co
 // DrgRouteTableMapInput is an input type that accepts DrgRouteTableMap and DrgRouteTableMapOutput values.
 // You can construct a concrete instance of `DrgRouteTableMapInput` via:
 //
-//          DrgRouteTableMap{ "key": DrgRouteTableArgs{...} }
+//	DrgRouteTableMap{ "key": DrgRouteTableArgs{...} }
 type DrgRouteTableMapInput interface {
 	pulumi.Input
 

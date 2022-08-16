@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
 //
-// Gets the specified instance configuration
+// # Gets the specified instance configuration
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetInstanceConfiguration(ctx, &core.GetInstanceConfigurationArgs{
-// 			InstanceConfigurationId: oci_core_instance_configuration.Test_instance_configuration.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetInstanceConfiguration(ctx, &core.GetInstanceConfigurationArgs{
+//				InstanceConfigurationId: oci_core_instance_configuration.Test_instance_configuration.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupInstanceConfiguration(ctx *pulumi.Context, args *LookupInstanceConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupInstanceConfigurationResult, error) {
 	var rv LookupInstanceConfigurationResult

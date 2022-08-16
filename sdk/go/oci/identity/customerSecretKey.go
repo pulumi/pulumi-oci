@@ -31,22 +31,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewCustomerSecretKey(ctx, "testCustomerSecretKey", &Identity.CustomerSecretKeyArgs{
-// 			DisplayName: pulumi.Any(_var.Customer_secret_key_display_name),
-// 			UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewCustomerSecretKey(ctx, "testCustomerSecretKey", &Identity.CustomerSecretKeyArgs{
+//				DisplayName: pulumi.Any(_var.Customer_secret_key_display_name),
+//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // CustomerSecretKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+//
+//	$ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
+//
 // ```
 type CustomerSecretKey struct {
 	pulumi.CustomResourceState
@@ -188,7 +193,7 @@ func (i *CustomerSecretKey) ToCustomerSecretKeyOutputWithContext(ctx context.Con
 // CustomerSecretKeyArrayInput is an input type that accepts CustomerSecretKeyArray and CustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `CustomerSecretKeyArrayInput` via:
 //
-//          CustomerSecretKeyArray{ CustomerSecretKeyArgs{...} }
+//	CustomerSecretKeyArray{ CustomerSecretKeyArgs{...} }
 type CustomerSecretKeyArrayInput interface {
 	pulumi.Input
 
@@ -213,7 +218,7 @@ func (i CustomerSecretKeyArray) ToCustomerSecretKeyArrayOutputWithContext(ctx co
 // CustomerSecretKeyMapInput is an input type that accepts CustomerSecretKeyMap and CustomerSecretKeyMapOutput values.
 // You can construct a concrete instance of `CustomerSecretKeyMapInput` via:
 //
-//          CustomerSecretKeyMap{ "key": CustomerSecretKeyArgs{...} }
+//	CustomerSecretKeyMap{ "key": CustomerSecretKeyArgs{...} }
 type CustomerSecretKeyMapInput interface {
 	pulumi.Input
 

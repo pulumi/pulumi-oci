@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.GetCertificates(ctx, &certificatesmanagement.GetCertificatesArgs{
-// 			CertificateId:                pulumi.StringRef(oci_certificates_management_certificate.Test_certificate.Id),
-// 			CompartmentId:                pulumi.StringRef(_var.Compartment_id),
-// 			IssuerCertificateAuthorityId: pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
-// 			Name:                         pulumi.StringRef(_var.Certificate_name),
-// 			State:                        pulumi.StringRef(_var.Certificate_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.GetCertificates(ctx, &certificatesmanagement.GetCertificatesArgs{
+//				CertificateId:                pulumi.StringRef(oci_certificates_management_certificate.Test_certificate.Id),
+//				CompartmentId:                pulumi.StringRef(_var.Compartment_id),
+//				IssuerCertificateAuthorityId: pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
+//				Name:                         pulumi.StringRef(_var.Certificate_name),
+//				State:                        pulumi.StringRef(_var.Certificate_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCertificates(ctx *pulumi.Context, args *GetCertificatesArgs, opts ...pulumi.InvokeOption) (*GetCertificatesResult, error) {
 	var rv GetCertificatesResult

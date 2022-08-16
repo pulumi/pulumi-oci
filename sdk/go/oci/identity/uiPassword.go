@@ -31,21 +31,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewUiPassword(ctx, "testUiPassword", &Identity.UiPasswordArgs{
-// 			UserId: pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewUiPassword(ctx, "testUiPassword", &Identity.UiPasswordArgs{
+//				UserId: pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -164,7 +167,7 @@ func (i *UiPassword) ToUiPasswordOutputWithContext(ctx context.Context) UiPasswo
 // UiPasswordArrayInput is an input type that accepts UiPasswordArray and UiPasswordArrayOutput values.
 // You can construct a concrete instance of `UiPasswordArrayInput` via:
 //
-//          UiPasswordArray{ UiPasswordArgs{...} }
+//	UiPasswordArray{ UiPasswordArgs{...} }
 type UiPasswordArrayInput interface {
 	pulumi.Input
 
@@ -189,7 +192,7 @@ func (i UiPasswordArray) ToUiPasswordArrayOutputWithContext(ctx context.Context)
 // UiPasswordMapInput is an input type that accepts UiPasswordMap and UiPasswordMapOutput values.
 // You can construct a concrete instance of `UiPasswordMapInput` via:
 //
-//          UiPasswordMap{ "key": UiPasswordArgs{...} }
+//	UiPasswordMap{ "key": UiPasswordArgs{...} }
 type UiPasswordMapInput interface {
 	pulumi.Input
 

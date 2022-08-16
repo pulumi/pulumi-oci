@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetVolumeGroupBackups(ctx, &core.GetVolumeGroupBackupsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Volume_group_backup_display_name),
-// 			VolumeGroupId: pulumi.StringRef(oci_core_volume_group.Test_volume_group.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetVolumeGroupBackups(ctx, &core.GetVolumeGroupBackupsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Volume_group_backup_display_name),
+//				VolumeGroupId: pulumi.StringRef(oci_core_volume_group.Test_volume_group.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVolumeGroupBackups(ctx *pulumi.Context, args *GetVolumeGroupBackupsArgs, opts ...pulumi.InvokeOption) (*GetVolumeGroupBackupsResult, error) {
 	var rv GetVolumeGroupBackupsResult

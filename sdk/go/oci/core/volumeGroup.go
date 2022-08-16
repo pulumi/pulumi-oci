@@ -17,42 +17,45 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolumeGroup(ctx, "testVolumeGroup", &Core.VolumeGroupArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.Volume_group_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			SourceDetails: &core.VolumeGroupSourceDetailsArgs{
-// 				Type: pulumi.String("volumeIds"),
-// 				VolumeIds: pulumi.StringArray{
-// 					pulumi.Any(_var.Volume_group_source_id),
-// 				},
-// 			},
-// 			BackupPolicyId: pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Volume_group_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			VolumeGroupReplicas: core.VolumeGroupVolumeGroupReplicaArray{
-// 				&core.VolumeGroupVolumeGroupReplicaArgs{
-// 					AvailabilityDomain: pulumi.Any(_var.Volume_group_volume_group_replicas_availability_domain),
-// 					DisplayName:        pulumi.Any(_var.Volume_group_volume_group_replicas_display_name),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolumeGroup(ctx, "testVolumeGroup", &Core.VolumeGroupArgs{
+//				AvailabilityDomain: pulumi.Any(_var.Volume_group_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				SourceDetails: &core.VolumeGroupSourceDetailsArgs{
+//					Type: pulumi.String("volumeIds"),
+//					VolumeIds: pulumi.StringArray{
+//						pulumi.Any(_var.Volume_group_source_id),
+//					},
+//				},
+//				BackupPolicyId: pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Volume_group_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				VolumeGroupReplicas: core.VolumeGroupVolumeGroupReplicaArray{
+//					&core.VolumeGroupVolumeGroupReplicaArgs{
+//						AvailabilityDomain: pulumi.Any(_var.Volume_group_volume_group_replicas_availability_domain),
+//						DisplayName:        pulumi.Any(_var.Volume_group_volume_group_replicas_display_name),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // VolumeGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
+//
+//	$ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
+//
 // ```
 type VolumeGroup struct {
 	pulumi.CustomResourceState
@@ -273,7 +278,7 @@ func (i *VolumeGroup) ToVolumeGroupOutputWithContext(ctx context.Context) Volume
 // VolumeGroupArrayInput is an input type that accepts VolumeGroupArray and VolumeGroupArrayOutput values.
 // You can construct a concrete instance of `VolumeGroupArrayInput` via:
 //
-//          VolumeGroupArray{ VolumeGroupArgs{...} }
+//	VolumeGroupArray{ VolumeGroupArgs{...} }
 type VolumeGroupArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +303,7 @@ func (i VolumeGroupArray) ToVolumeGroupArrayOutputWithContext(ctx context.Contex
 // VolumeGroupMapInput is an input type that accepts VolumeGroupMap and VolumeGroupMapOutput values.
 // You can construct a concrete instance of `VolumeGroupMapInput` via:
 //
-//          VolumeGroupMap{ "key": VolumeGroupArgs{...} }
+//	VolumeGroupMap{ "key": VolumeGroupArgs{...} }
 type VolumeGroupMapInput interface {
 	pulumi.Input
 

@@ -16,7 +16,9 @@ import (
 // PrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+//
+//	$ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+//
 // ```
 type PrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -229,7 +231,7 @@ func (i *PrivateEndpoint) ToPrivateEndpointOutputWithContext(ctx context.Context
 // PrivateEndpointArrayInput is an input type that accepts PrivateEndpointArray and PrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `PrivateEndpointArrayInput` via:
 //
-//          PrivateEndpointArray{ PrivateEndpointArgs{...} }
+//	PrivateEndpointArray{ PrivateEndpointArgs{...} }
 type PrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +256,7 @@ func (i PrivateEndpointArray) ToPrivateEndpointArrayOutputWithContext(ctx contex
 // PrivateEndpointMapInput is an input type that accepts PrivateEndpointMap and PrivateEndpointMapOutput values.
 // You can construct a concrete instance of `PrivateEndpointMapInput` via:
 //
-//          PrivateEndpointMap{ "key": PrivateEndpointArgs{...} }
+//	PrivateEndpointMap{ "key": PrivateEndpointArgs{...} }
 type PrivateEndpointMapInput interface {
 	pulumi.Input
 

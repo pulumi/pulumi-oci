@@ -16,16 +16,18 @@ import (
 // Updates the resource action that corresponds to the specified OCID.
 // Use this operation to implement the following actions:
 //
-//   * Postpone resource action
-//   * Ignore resource action
-//   * Reactivate resource action
+//   - Postpone resource action
+//   - Ignore resource action
+//   - Reactivate resource action
 //
 // ## Import
 //
 // ResourceActions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
+//
+//	$ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
+//
 // ```
 type ResourceAction struct {
 	pulumi.CustomResourceState
@@ -229,7 +231,7 @@ func (i *ResourceAction) ToResourceActionOutputWithContext(ctx context.Context) 
 // ResourceActionArrayInput is an input type that accepts ResourceActionArray and ResourceActionArrayOutput values.
 // You can construct a concrete instance of `ResourceActionArrayInput` via:
 //
-//          ResourceActionArray{ ResourceActionArgs{...} }
+//	ResourceActionArray{ ResourceActionArgs{...} }
 type ResourceActionArrayInput interface {
 	pulumi.Input
 
@@ -254,7 +256,7 @@ func (i ResourceActionArray) ToResourceActionArrayOutputWithContext(ctx context.
 // ResourceActionMapInput is an input type that accepts ResourceActionMap and ResourceActionMapOutput values.
 // You can construct a concrete instance of `ResourceActionMapInput` via:
 //
-//          ResourceActionMap{ "key": ResourceActionArgs{...} }
+//	ResourceActionMap{ "key": ResourceActionArgs{...} }
 type ResourceActionMapInput interface {
 	pulumi.Input
 

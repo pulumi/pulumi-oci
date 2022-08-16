@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Analytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Analytics.GetAnalyticsInstance(ctx, &analytics.GetAnalyticsInstanceArgs{
-// 			AnalyticsInstanceId: oci_analytics_analytics_instance.Test_analytics_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Analytics.GetAnalyticsInstance(ctx, &analytics.GetAnalyticsInstanceArgs{
+//				AnalyticsInstanceId: oci_analytics_analytics_instance.Test_analytics_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAnalyticsInstance(ctx *pulumi.Context, args *LookupAnalyticsInstanceArgs, opts ...pulumi.InvokeOption) (*LookupAnalyticsInstanceResult, error) {
 	var rv LookupAnalyticsInstanceResult

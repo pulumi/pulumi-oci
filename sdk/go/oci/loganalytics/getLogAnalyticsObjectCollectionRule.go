@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
 //
-// Gets a configured object storage based collection rule by given id
+// # Gets a configured object storage based collection rule by given id
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsObjectCollectionRule(ctx, &loganalytics.GetLogAnalyticsObjectCollectionRuleArgs{
-// 			LogAnalyticsObjectCollectionRuleId: oci_log_analytics_log_analytics_object_collection_rule.Test_log_analytics_object_collection_rule.Id,
-// 			Namespace:                          _var.Log_analytics_object_collection_rule_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsObjectCollectionRule(ctx, &loganalytics.GetLogAnalyticsObjectCollectionRuleArgs{
+//				LogAnalyticsObjectCollectionRuleId: oci_log_analytics_log_analytics_object_collection_rule.Test_log_analytics_object_collection_rule.Id,
+//				Namespace:                          _var.Log_analytics_object_collection_rule_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupLogAnalyticsObjectCollectionRule(ctx *pulumi.Context, args *LookupLogAnalyticsObjectCollectionRuleArgs, opts ...pulumi.InvokeOption) (*LookupLogAnalyticsObjectCollectionRuleResult, error) {
 	var rv LookupLogAnalyticsObjectCollectionRuleResult

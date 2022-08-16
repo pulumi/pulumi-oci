@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
 //
-// Gets a monitored instance by identifier
+// # Gets a monitored instance by identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AppMgmtControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AppMgmtControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AppMgmtControl.GetMonitoredInstance(ctx, &appmgmtcontrol.GetMonitoredInstanceArgs{
-// 			MonitoredInstanceId: oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AppMgmtControl.GetMonitoredInstance(ctx, &appmgmtcontrol.GetMonitoredInstanceArgs{
+//				MonitoredInstanceId: oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMonitoredInstance(ctx *pulumi.Context, args *GetMonitoredInstanceArgs, opts ...pulumi.InvokeOption) (*GetMonitoredInstanceResult, error) {
 	var rv GetMonitoredInstanceResult

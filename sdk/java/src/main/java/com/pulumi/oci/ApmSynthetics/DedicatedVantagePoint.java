@@ -79,14 +79,14 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Details of DVP Stack.
+     * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     @Export(name="dvpStackDetails", type=DedicatedVantagePointDvpStackDetails.class, parameters={})
     private Output<DedicatedVantagePointDvpStackDetails> dvpStackDetails;
 
     /**
-     * @return (Updatable) Details of DVP Stack.
+     * @return (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     public Output<DedicatedVantagePointDvpStackDetails> dvpStackDetails() {

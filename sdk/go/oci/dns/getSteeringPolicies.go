@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetSteeringPolicies(ctx, &dns.GetSteeringPoliciesArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			DisplayName:                     pulumi.StringRef(_var.Steering_policy_display_name),
-// 			DisplayNameContains:             pulumi.StringRef(_var.Steering_policy_display_name_contains),
-// 			HealthCheckMonitorId:            pulumi.StringRef(oci_health_checks_http_monitor.Test_http_monitor.Id),
-// 			Id:                              pulumi.StringRef(_var.Steering_policy_id),
-// 			State:                           pulumi.StringRef(_var.Steering_policy_state),
-// 			Template:                        pulumi.StringRef(_var.Steering_policy_template),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Steering_policy_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Steering_policy_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetSteeringPolicies(ctx, &dns.GetSteeringPoliciesArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				DisplayName:                     pulumi.StringRef(_var.Steering_policy_display_name),
+//				DisplayNameContains:             pulumi.StringRef(_var.Steering_policy_display_name_contains),
+//				HealthCheckMonitorId:            pulumi.StringRef(oci_health_checks_http_monitor.Test_http_monitor.Id),
+//				Id:                              pulumi.StringRef(_var.Steering_policy_id),
+//				State:                           pulumi.StringRef(_var.Steering_policy_state),
+//				Template:                        pulumi.StringRef(_var.Steering_policy_template),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Steering_policy_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Steering_policy_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSteeringPolicies(ctx *pulumi.Context, args *GetSteeringPoliciesArgs, opts ...pulumi.InvokeOption) (*GetSteeringPoliciesResult, error) {
 	var rv GetSteeringPoliciesResult

@@ -20,7 +20,7 @@ type ApplicationDriverShapeConfig struct {
 // ApplicationDriverShapeConfigInput is an input type that accepts ApplicationDriverShapeConfigArgs and ApplicationDriverShapeConfigOutput values.
 // You can construct a concrete instance of `ApplicationDriverShapeConfigInput` via:
 //
-//          ApplicationDriverShapeConfigArgs{...}
+//	ApplicationDriverShapeConfigArgs{...}
 type ApplicationDriverShapeConfigInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigPtrOutpu
 // ApplicationDriverShapeConfigPtrInput is an input type that accepts ApplicationDriverShapeConfigArgs, ApplicationDriverShapeConfigPtr and ApplicationDriverShapeConfigPtrOutput values.
 // You can construct a concrete instance of `ApplicationDriverShapeConfigPtrInput` via:
 //
-//          ApplicationDriverShapeConfigArgs{...}
+//	        ApplicationDriverShapeConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ApplicationDriverShapeConfigPtrInput interface {
 	pulumi.Input
 
@@ -176,7 +176,7 @@ type ApplicationExecutorShapeConfig struct {
 // ApplicationExecutorShapeConfigInput is an input type that accepts ApplicationExecutorShapeConfigArgs and ApplicationExecutorShapeConfigOutput values.
 // You can construct a concrete instance of `ApplicationExecutorShapeConfigInput` via:
 //
-//          ApplicationExecutorShapeConfigArgs{...}
+//	ApplicationExecutorShapeConfigArgs{...}
 type ApplicationExecutorShapeConfigInput interface {
 	pulumi.Input
 
@@ -214,11 +214,11 @@ func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigPtrO
 // ApplicationExecutorShapeConfigPtrInput is an input type that accepts ApplicationExecutorShapeConfigArgs, ApplicationExecutorShapeConfigPtr and ApplicationExecutorShapeConfigPtrOutput values.
 // You can construct a concrete instance of `ApplicationExecutorShapeConfigPtrInput` via:
 //
-//          ApplicationExecutorShapeConfigArgs{...}
+//	        ApplicationExecutorShapeConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ApplicationExecutorShapeConfigPtrInput interface {
 	pulumi.Input
 
@@ -332,7 +332,7 @@ type ApplicationParameter struct {
 // ApplicationParameterInput is an input type that accepts ApplicationParameterArgs and ApplicationParameterOutput values.
 // You can construct a concrete instance of `ApplicationParameterInput` via:
 //
-//          ApplicationParameterArgs{...}
+//	ApplicationParameterArgs{...}
 type ApplicationParameterInput interface {
 	pulumi.Input
 
@@ -362,7 +362,7 @@ func (i ApplicationParameterArgs) ToApplicationParameterOutputWithContext(ctx co
 // ApplicationParameterArrayInput is an input type that accepts ApplicationParameterArray and ApplicationParameterArrayOutput values.
 // You can construct a concrete instance of `ApplicationParameterArrayInput` via:
 //
-//          ApplicationParameterArray{ ApplicationParameterArgs{...} }
+//	ApplicationParameterArray{ ApplicationParameterArgs{...} }
 type ApplicationParameterArrayInput interface {
 	pulumi.Input
 
@@ -438,7 +438,7 @@ type InvokeRunDriverShapeConfig struct {
 // InvokeRunDriverShapeConfigInput is an input type that accepts InvokeRunDriverShapeConfigArgs and InvokeRunDriverShapeConfigOutput values.
 // You can construct a concrete instance of `InvokeRunDriverShapeConfigInput` via:
 //
-//          InvokeRunDriverShapeConfigArgs{...}
+//	InvokeRunDriverShapeConfigArgs{...}
 type InvokeRunDriverShapeConfigInput interface {
 	pulumi.Input
 
@@ -476,11 +476,11 @@ func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigPtrOutputWit
 // InvokeRunDriverShapeConfigPtrInput is an input type that accepts InvokeRunDriverShapeConfigArgs, InvokeRunDriverShapeConfigPtr and InvokeRunDriverShapeConfigPtrOutput values.
 // You can construct a concrete instance of `InvokeRunDriverShapeConfigPtrInput` via:
 //
-//          InvokeRunDriverShapeConfigArgs{...}
+//	        InvokeRunDriverShapeConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InvokeRunDriverShapeConfigPtrInput interface {
 	pulumi.Input
 
@@ -594,7 +594,7 @@ type InvokeRunExecutorShapeConfig struct {
 // InvokeRunExecutorShapeConfigInput is an input type that accepts InvokeRunExecutorShapeConfigArgs and InvokeRunExecutorShapeConfigOutput values.
 // You can construct a concrete instance of `InvokeRunExecutorShapeConfigInput` via:
 //
-//          InvokeRunExecutorShapeConfigArgs{...}
+//	InvokeRunExecutorShapeConfigArgs{...}
 type InvokeRunExecutorShapeConfigInput interface {
 	pulumi.Input
 
@@ -632,11 +632,11 @@ func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigPtrOutpu
 // InvokeRunExecutorShapeConfigPtrInput is an input type that accepts InvokeRunExecutorShapeConfigArgs, InvokeRunExecutorShapeConfigPtr and InvokeRunExecutorShapeConfigPtrOutput values.
 // You can construct a concrete instance of `InvokeRunExecutorShapeConfigPtrInput` via:
 //
-//          InvokeRunExecutorShapeConfigArgs{...}
+//	        InvokeRunExecutorShapeConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InvokeRunExecutorShapeConfigPtrInput interface {
 	pulumi.Input
 
@@ -750,7 +750,7 @@ type InvokeRunParameter struct {
 // InvokeRunParameterInput is an input type that accepts InvokeRunParameterArgs and InvokeRunParameterOutput values.
 // You can construct a concrete instance of `InvokeRunParameterInput` via:
 //
-//          InvokeRunParameterArgs{...}
+//	InvokeRunParameterArgs{...}
 type InvokeRunParameterInput interface {
 	pulumi.Input
 
@@ -780,7 +780,7 @@ func (i InvokeRunParameterArgs) ToInvokeRunParameterOutputWithContext(ctx contex
 // InvokeRunParameterArrayInput is an input type that accepts InvokeRunParameterArray and InvokeRunParameterArrayOutput values.
 // You can construct a concrete instance of `InvokeRunParameterArrayInput` via:
 //
-//          InvokeRunParameterArray{ InvokeRunParameterArgs{...} }
+//	InvokeRunParameterArray{ InvokeRunParameterArgs{...} }
 type InvokeRunParameterArrayInput interface {
 	pulumi.Input
 
@@ -856,7 +856,7 @@ type GetApplicationDriverShapeConfig struct {
 // GetApplicationDriverShapeConfigInput is an input type that accepts GetApplicationDriverShapeConfigArgs and GetApplicationDriverShapeConfigOutput values.
 // You can construct a concrete instance of `GetApplicationDriverShapeConfigInput` via:
 //
-//          GetApplicationDriverShapeConfigArgs{...}
+//	GetApplicationDriverShapeConfigArgs{...}
 type GetApplicationDriverShapeConfigInput interface {
 	pulumi.Input
 
@@ -886,7 +886,7 @@ func (i GetApplicationDriverShapeConfigArgs) ToGetApplicationDriverShapeConfigOu
 // GetApplicationDriverShapeConfigArrayInput is an input type that accepts GetApplicationDriverShapeConfigArray and GetApplicationDriverShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationDriverShapeConfigArrayInput` via:
 //
-//          GetApplicationDriverShapeConfigArray{ GetApplicationDriverShapeConfigArgs{...} }
+//	GetApplicationDriverShapeConfigArray{ GetApplicationDriverShapeConfigArgs{...} }
 type GetApplicationDriverShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -962,7 +962,7 @@ type GetApplicationExecutorShapeConfig struct {
 // GetApplicationExecutorShapeConfigInput is an input type that accepts GetApplicationExecutorShapeConfigArgs and GetApplicationExecutorShapeConfigOutput values.
 // You can construct a concrete instance of `GetApplicationExecutorShapeConfigInput` via:
 //
-//          GetApplicationExecutorShapeConfigArgs{...}
+//	GetApplicationExecutorShapeConfigArgs{...}
 type GetApplicationExecutorShapeConfigInput interface {
 	pulumi.Input
 
@@ -992,7 +992,7 @@ func (i GetApplicationExecutorShapeConfigArgs) ToGetApplicationExecutorShapeConf
 // GetApplicationExecutorShapeConfigArrayInput is an input type that accepts GetApplicationExecutorShapeConfigArray and GetApplicationExecutorShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationExecutorShapeConfigArrayInput` via:
 //
-//          GetApplicationExecutorShapeConfigArray{ GetApplicationExecutorShapeConfigArgs{...} }
+//	GetApplicationExecutorShapeConfigArray{ GetApplicationExecutorShapeConfigArgs{...} }
 type GetApplicationExecutorShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -1068,7 +1068,7 @@ type GetApplicationParameter struct {
 // GetApplicationParameterInput is an input type that accepts GetApplicationParameterArgs and GetApplicationParameterOutput values.
 // You can construct a concrete instance of `GetApplicationParameterInput` via:
 //
-//          GetApplicationParameterArgs{...}
+//	GetApplicationParameterArgs{...}
 type GetApplicationParameterInput interface {
 	pulumi.Input
 
@@ -1098,7 +1098,7 @@ func (i GetApplicationParameterArgs) ToGetApplicationParameterOutputWithContext(
 // GetApplicationParameterArrayInput is an input type that accepts GetApplicationParameterArray and GetApplicationParameterArrayOutput values.
 // You can construct a concrete instance of `GetApplicationParameterArrayInput` via:
 //
-//          GetApplicationParameterArray{ GetApplicationParameterArgs{...} }
+//	GetApplicationParameterArray{ GetApplicationParameterArgs{...} }
 type GetApplicationParameterArrayInput interface {
 	pulumi.Input
 
@@ -1230,7 +1230,7 @@ type GetApplicationsApplication struct {
 // GetApplicationsApplicationInput is an input type that accepts GetApplicationsApplicationArgs and GetApplicationsApplicationOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationInput` via:
 //
-//          GetApplicationsApplicationArgs{...}
+//	GetApplicationsApplicationArgs{...}
 type GetApplicationsApplicationInput interface {
 	pulumi.Input
 
@@ -1316,7 +1316,7 @@ func (i GetApplicationsApplicationArgs) ToGetApplicationsApplicationOutputWithCo
 // GetApplicationsApplicationArrayInput is an input type that accepts GetApplicationsApplicationArray and GetApplicationsApplicationArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationArrayInput` via:
 //
-//          GetApplicationsApplicationArray{ GetApplicationsApplicationArgs{...} }
+//	GetApplicationsApplicationArray{ GetApplicationsApplicationArgs{...} }
 type GetApplicationsApplicationArrayInput interface {
 	pulumi.Input
 
@@ -1404,7 +1404,7 @@ func (o GetApplicationsApplicationOutput) DriverShapeConfigs() GetApplicationsAp
 	}).(GetApplicationsApplicationDriverShapeConfigArrayOutput)
 }
 
-// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include “--class“, “--file“, “--jars“, “--conf“, “--py-files“, and main application file with arguments. Example: “--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10“ Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 func (o GetApplicationsApplicationOutput) Execute() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Execute }).(pulumi.StringOutput)
 }
@@ -1536,7 +1536,7 @@ type GetApplicationsApplicationDriverShapeConfig struct {
 // GetApplicationsApplicationDriverShapeConfigInput is an input type that accepts GetApplicationsApplicationDriverShapeConfigArgs and GetApplicationsApplicationDriverShapeConfigOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationDriverShapeConfigInput` via:
 //
-//          GetApplicationsApplicationDriverShapeConfigArgs{...}
+//	GetApplicationsApplicationDriverShapeConfigArgs{...}
 type GetApplicationsApplicationDriverShapeConfigInput interface {
 	pulumi.Input
 
@@ -1566,7 +1566,7 @@ func (i GetApplicationsApplicationDriverShapeConfigArgs) ToGetApplicationsApplic
 // GetApplicationsApplicationDriverShapeConfigArrayInput is an input type that accepts GetApplicationsApplicationDriverShapeConfigArray and GetApplicationsApplicationDriverShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationDriverShapeConfigArrayInput` via:
 //
-//          GetApplicationsApplicationDriverShapeConfigArray{ GetApplicationsApplicationDriverShapeConfigArgs{...} }
+//	GetApplicationsApplicationDriverShapeConfigArray{ GetApplicationsApplicationDriverShapeConfigArgs{...} }
 type GetApplicationsApplicationDriverShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -1642,7 +1642,7 @@ type GetApplicationsApplicationExecutorShapeConfig struct {
 // GetApplicationsApplicationExecutorShapeConfigInput is an input type that accepts GetApplicationsApplicationExecutorShapeConfigArgs and GetApplicationsApplicationExecutorShapeConfigOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationExecutorShapeConfigInput` via:
 //
-//          GetApplicationsApplicationExecutorShapeConfigArgs{...}
+//	GetApplicationsApplicationExecutorShapeConfigArgs{...}
 type GetApplicationsApplicationExecutorShapeConfigInput interface {
 	pulumi.Input
 
@@ -1672,7 +1672,7 @@ func (i GetApplicationsApplicationExecutorShapeConfigArgs) ToGetApplicationsAppl
 // GetApplicationsApplicationExecutorShapeConfigArrayInput is an input type that accepts GetApplicationsApplicationExecutorShapeConfigArray and GetApplicationsApplicationExecutorShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationExecutorShapeConfigArrayInput` via:
 //
-//          GetApplicationsApplicationExecutorShapeConfigArray{ GetApplicationsApplicationExecutorShapeConfigArgs{...} }
+//	GetApplicationsApplicationExecutorShapeConfigArray{ GetApplicationsApplicationExecutorShapeConfigArgs{...} }
 type GetApplicationsApplicationExecutorShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -1748,7 +1748,7 @@ type GetApplicationsApplicationParameter struct {
 // GetApplicationsApplicationParameterInput is an input type that accepts GetApplicationsApplicationParameterArgs and GetApplicationsApplicationParameterOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationParameterInput` via:
 //
-//          GetApplicationsApplicationParameterArgs{...}
+//	GetApplicationsApplicationParameterArgs{...}
 type GetApplicationsApplicationParameterInput interface {
 	pulumi.Input
 
@@ -1778,7 +1778,7 @@ func (i GetApplicationsApplicationParameterArgs) ToGetApplicationsApplicationPar
 // GetApplicationsApplicationParameterArrayInput is an input type that accepts GetApplicationsApplicationParameterArray and GetApplicationsApplicationParameterArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsApplicationParameterArrayInput` via:
 //
-//          GetApplicationsApplicationParameterArray{ GetApplicationsApplicationParameterArgs{...} }
+//	GetApplicationsApplicationParameterArray{ GetApplicationsApplicationParameterArgs{...} }
 type GetApplicationsApplicationParameterArrayInput interface {
 	pulumi.Input
 
@@ -1854,7 +1854,7 @@ type GetApplicationsFilter struct {
 // GetApplicationsFilterInput is an input type that accepts GetApplicationsFilterArgs and GetApplicationsFilterOutput values.
 // You can construct a concrete instance of `GetApplicationsFilterInput` via:
 //
-//          GetApplicationsFilterArgs{...}
+//	GetApplicationsFilterArgs{...}
 type GetApplicationsFilterInput interface {
 	pulumi.Input
 
@@ -1884,7 +1884,7 @@ func (i GetApplicationsFilterArgs) ToGetApplicationsFilterOutputWithContext(ctx 
 // GetApplicationsFilterArrayInput is an input type that accepts GetApplicationsFilterArray and GetApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsFilterArrayInput` via:
 //
-//          GetApplicationsFilterArray{ GetApplicationsFilterArgs{...} }
+//	GetApplicationsFilterArray{ GetApplicationsFilterArgs{...} }
 type GetApplicationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1963,7 +1963,7 @@ type GetInvokeRunDriverShapeConfig struct {
 // GetInvokeRunDriverShapeConfigInput is an input type that accepts GetInvokeRunDriverShapeConfigArgs and GetInvokeRunDriverShapeConfigOutput values.
 // You can construct a concrete instance of `GetInvokeRunDriverShapeConfigInput` via:
 //
-//          GetInvokeRunDriverShapeConfigArgs{...}
+//	GetInvokeRunDriverShapeConfigArgs{...}
 type GetInvokeRunDriverShapeConfigInput interface {
 	pulumi.Input
 
@@ -1993,7 +1993,7 @@ func (i GetInvokeRunDriverShapeConfigArgs) ToGetInvokeRunDriverShapeConfigOutput
 // GetInvokeRunDriverShapeConfigArrayInput is an input type that accepts GetInvokeRunDriverShapeConfigArray and GetInvokeRunDriverShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunDriverShapeConfigArrayInput` via:
 //
-//          GetInvokeRunDriverShapeConfigArray{ GetInvokeRunDriverShapeConfigArgs{...} }
+//	GetInvokeRunDriverShapeConfigArray{ GetInvokeRunDriverShapeConfigArgs{...} }
 type GetInvokeRunDriverShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -2069,7 +2069,7 @@ type GetInvokeRunExecutorShapeConfig struct {
 // GetInvokeRunExecutorShapeConfigInput is an input type that accepts GetInvokeRunExecutorShapeConfigArgs and GetInvokeRunExecutorShapeConfigOutput values.
 // You can construct a concrete instance of `GetInvokeRunExecutorShapeConfigInput` via:
 //
-//          GetInvokeRunExecutorShapeConfigArgs{...}
+//	GetInvokeRunExecutorShapeConfigArgs{...}
 type GetInvokeRunExecutorShapeConfigInput interface {
 	pulumi.Input
 
@@ -2099,7 +2099,7 @@ func (i GetInvokeRunExecutorShapeConfigArgs) ToGetInvokeRunExecutorShapeConfigOu
 // GetInvokeRunExecutorShapeConfigArrayInput is an input type that accepts GetInvokeRunExecutorShapeConfigArray and GetInvokeRunExecutorShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunExecutorShapeConfigArrayInput` via:
 //
-//          GetInvokeRunExecutorShapeConfigArray{ GetInvokeRunExecutorShapeConfigArgs{...} }
+//	GetInvokeRunExecutorShapeConfigArray{ GetInvokeRunExecutorShapeConfigArgs{...} }
 type GetInvokeRunExecutorShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -2175,7 +2175,7 @@ type GetInvokeRunParameter struct {
 // GetInvokeRunParameterInput is an input type that accepts GetInvokeRunParameterArgs and GetInvokeRunParameterOutput values.
 // You can construct a concrete instance of `GetInvokeRunParameterInput` via:
 //
-//          GetInvokeRunParameterArgs{...}
+//	GetInvokeRunParameterArgs{...}
 type GetInvokeRunParameterInput interface {
 	pulumi.Input
 
@@ -2205,7 +2205,7 @@ func (i GetInvokeRunParameterArgs) ToGetInvokeRunParameterOutputWithContext(ctx 
 // GetInvokeRunParameterArrayInput is an input type that accepts GetInvokeRunParameterArray and GetInvokeRunParameterArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunParameterArrayInput` via:
 //
-//          GetInvokeRunParameterArray{ GetInvokeRunParameterArgs{...} }
+//	GetInvokeRunParameterArray{ GetInvokeRunParameterArgs{...} }
 type GetInvokeRunParameterArrayInput interface {
 	pulumi.Input
 
@@ -2281,7 +2281,7 @@ type GetInvokeRunsFilter struct {
 // GetInvokeRunsFilterInput is an input type that accepts GetInvokeRunsFilterArgs and GetInvokeRunsFilterOutput values.
 // You can construct a concrete instance of `GetInvokeRunsFilterInput` via:
 //
-//          GetInvokeRunsFilterArgs{...}
+//	GetInvokeRunsFilterArgs{...}
 type GetInvokeRunsFilterInput interface {
 	pulumi.Input
 
@@ -2311,7 +2311,7 @@ func (i GetInvokeRunsFilterArgs) ToGetInvokeRunsFilterOutputWithContext(ctx cont
 // GetInvokeRunsFilterArrayInput is an input type that accepts GetInvokeRunsFilterArray and GetInvokeRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunsFilterArrayInput` via:
 //
-//          GetInvokeRunsFilterArray{ GetInvokeRunsFilterArgs{...} }
+//	GetInvokeRunsFilterArray{ GetInvokeRunsFilterArgs{...} }
 type GetInvokeRunsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2467,7 +2467,7 @@ type GetInvokeRunsRun struct {
 // GetInvokeRunsRunInput is an input type that accepts GetInvokeRunsRunArgs and GetInvokeRunsRunOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunInput` via:
 //
-//          GetInvokeRunsRunArgs{...}
+//	GetInvokeRunsRunArgs{...}
 type GetInvokeRunsRunInput interface {
 	pulumi.Input
 
@@ -2574,7 +2574,7 @@ func (i GetInvokeRunsRunArgs) ToGetInvokeRunsRunOutputWithContext(ctx context.Co
 // GetInvokeRunsRunArrayInput is an input type that accepts GetInvokeRunsRunArray and GetInvokeRunsRunArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunArrayInput` via:
 //
-//          GetInvokeRunsRunArray{ GetInvokeRunsRunArgs{...} }
+//	GetInvokeRunsRunArray{ GetInvokeRunsRunArgs{...} }
 type GetInvokeRunsRunArrayInput interface {
 	pulumi.Input
 
@@ -2674,7 +2674,7 @@ func (o GetInvokeRunsRunOutput) DriverShapeConfigs() GetInvokeRunsRunDriverShape
 	return o.ApplyT(func(v GetInvokeRunsRun) []GetInvokeRunsRunDriverShapeConfig { return v.DriverShapeConfigs }).(GetInvokeRunsRunDriverShapeConfigArrayOutput)
 }
 
-// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include “--class“, “--file“, “--jars“, “--conf“, “--py-files“, and main application file with arguments. Example: “--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10“ Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 func (o GetInvokeRunsRunOutput) Execute() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Execute }).(pulumi.StringOutput)
 }
@@ -2844,7 +2844,7 @@ type GetInvokeRunsRunDriverShapeConfig struct {
 // GetInvokeRunsRunDriverShapeConfigInput is an input type that accepts GetInvokeRunsRunDriverShapeConfigArgs and GetInvokeRunsRunDriverShapeConfigOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunDriverShapeConfigInput` via:
 //
-//          GetInvokeRunsRunDriverShapeConfigArgs{...}
+//	GetInvokeRunsRunDriverShapeConfigArgs{...}
 type GetInvokeRunsRunDriverShapeConfigInput interface {
 	pulumi.Input
 
@@ -2874,7 +2874,7 @@ func (i GetInvokeRunsRunDriverShapeConfigArgs) ToGetInvokeRunsRunDriverShapeConf
 // GetInvokeRunsRunDriverShapeConfigArrayInput is an input type that accepts GetInvokeRunsRunDriverShapeConfigArray and GetInvokeRunsRunDriverShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunDriverShapeConfigArrayInput` via:
 //
-//          GetInvokeRunsRunDriverShapeConfigArray{ GetInvokeRunsRunDriverShapeConfigArgs{...} }
+//	GetInvokeRunsRunDriverShapeConfigArray{ GetInvokeRunsRunDriverShapeConfigArgs{...} }
 type GetInvokeRunsRunDriverShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -2950,7 +2950,7 @@ type GetInvokeRunsRunExecutorShapeConfig struct {
 // GetInvokeRunsRunExecutorShapeConfigInput is an input type that accepts GetInvokeRunsRunExecutorShapeConfigArgs and GetInvokeRunsRunExecutorShapeConfigOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunExecutorShapeConfigInput` via:
 //
-//          GetInvokeRunsRunExecutorShapeConfigArgs{...}
+//	GetInvokeRunsRunExecutorShapeConfigArgs{...}
 type GetInvokeRunsRunExecutorShapeConfigInput interface {
 	pulumi.Input
 
@@ -2980,7 +2980,7 @@ func (i GetInvokeRunsRunExecutorShapeConfigArgs) ToGetInvokeRunsRunExecutorShape
 // GetInvokeRunsRunExecutorShapeConfigArrayInput is an input type that accepts GetInvokeRunsRunExecutorShapeConfigArray and GetInvokeRunsRunExecutorShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunExecutorShapeConfigArrayInput` via:
 //
-//          GetInvokeRunsRunExecutorShapeConfigArray{ GetInvokeRunsRunExecutorShapeConfigArgs{...} }
+//	GetInvokeRunsRunExecutorShapeConfigArray{ GetInvokeRunsRunExecutorShapeConfigArgs{...} }
 type GetInvokeRunsRunExecutorShapeConfigArrayInput interface {
 	pulumi.Input
 
@@ -3056,7 +3056,7 @@ type GetInvokeRunsRunParameter struct {
 // GetInvokeRunsRunParameterInput is an input type that accepts GetInvokeRunsRunParameterArgs and GetInvokeRunsRunParameterOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunParameterInput` via:
 //
-//          GetInvokeRunsRunParameterArgs{...}
+//	GetInvokeRunsRunParameterArgs{...}
 type GetInvokeRunsRunParameterInput interface {
 	pulumi.Input
 
@@ -3086,7 +3086,7 @@ func (i GetInvokeRunsRunParameterArgs) ToGetInvokeRunsRunParameterOutputWithCont
 // GetInvokeRunsRunParameterArrayInput is an input type that accepts GetInvokeRunsRunParameterArray and GetInvokeRunsRunParameterArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunsRunParameterArrayInput` via:
 //
-//          GetInvokeRunsRunParameterArray{ GetInvokeRunsRunParameterArgs{...} }
+//	GetInvokeRunsRunParameterArray{ GetInvokeRunsRunParameterArgs{...} }
 type GetInvokeRunsRunParameterArrayInput interface {
 	pulumi.Input
 
@@ -3161,7 +3161,7 @@ type GetPrivateEndpointsFilter struct {
 // GetPrivateEndpointsFilterInput is an input type that accepts GetPrivateEndpointsFilterArgs and GetPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterInput` via:
 //
-//          GetPrivateEndpointsFilterArgs{...}
+//	GetPrivateEndpointsFilterArgs{...}
 type GetPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -3190,7 +3190,7 @@ func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithCont
 // GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
 //
-//          GetPrivateEndpointsFilterArray{ GetPrivateEndpointsFilterArgs{...} }
+//	GetPrivateEndpointsFilterArray{ GetPrivateEndpointsFilterArgs{...} }
 type GetPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3265,7 +3265,7 @@ type GetPrivateEndpointsPrivateEndpointCollection struct {
 // GetPrivateEndpointsPrivateEndpointCollectionInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArgs and GetPrivateEndpointsPrivateEndpointCollectionOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionArgs{...}
+//	GetPrivateEndpointsPrivateEndpointCollectionArgs{...}
 type GetPrivateEndpointsPrivateEndpointCollectionInput interface {
 	pulumi.Input
 
@@ -3292,7 +3292,7 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsP
 // GetPrivateEndpointsPrivateEndpointCollectionArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArray and GetPrivateEndpointsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionArrayInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionArray{ GetPrivateEndpointsPrivateEndpointCollectionArgs{...} }
+//	GetPrivateEndpointsPrivateEndpointCollectionArray{ GetPrivateEndpointsPrivateEndpointCollectionArgs{...} }
 type GetPrivateEndpointsPrivateEndpointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3392,7 +3392,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 // GetPrivateEndpointsPrivateEndpointCollectionItemInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArgs and GetPrivateEndpointsPrivateEndpointCollectionItemOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...}
+//	GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...}
 type GetPrivateEndpointsPrivateEndpointCollectionItemInput interface {
 	pulumi.Input
 
@@ -3450,7 +3450,7 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpoi
 // GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArray and GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput` via:
 //
-//          GetPrivateEndpointsPrivateEndpointCollectionItemArray{ GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...} }
+//	GetPrivateEndpointsPrivateEndpointCollectionItemArray{ GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...} }
 type GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3595,7 +3595,7 @@ type GetRunLogsFilter struct {
 // GetRunLogsFilterInput is an input type that accepts GetRunLogsFilterArgs and GetRunLogsFilterOutput values.
 // You can construct a concrete instance of `GetRunLogsFilterInput` via:
 //
-//          GetRunLogsFilterArgs{...}
+//	GetRunLogsFilterArgs{...}
 type GetRunLogsFilterInput interface {
 	pulumi.Input
 
@@ -3624,7 +3624,7 @@ func (i GetRunLogsFilterArgs) ToGetRunLogsFilterOutputWithContext(ctx context.Co
 // GetRunLogsFilterArrayInput is an input type that accepts GetRunLogsFilterArray and GetRunLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRunLogsFilterArrayInput` via:
 //
-//          GetRunLogsFilterArray{ GetRunLogsFilterArgs{...} }
+//	GetRunLogsFilterArray{ GetRunLogsFilterArgs{...} }
 type GetRunLogsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3705,7 +3705,7 @@ type GetRunLogsRunLog struct {
 // GetRunLogsRunLogInput is an input type that accepts GetRunLogsRunLogArgs and GetRunLogsRunLogOutput values.
 // You can construct a concrete instance of `GetRunLogsRunLogInput` via:
 //
-//          GetRunLogsRunLogArgs{...}
+//	GetRunLogsRunLogArgs{...}
 type GetRunLogsRunLogInput interface {
 	pulumi.Input
 
@@ -3738,7 +3738,7 @@ func (i GetRunLogsRunLogArgs) ToGetRunLogsRunLogOutputWithContext(ctx context.Co
 // GetRunLogsRunLogArrayInput is an input type that accepts GetRunLogsRunLogArray and GetRunLogsRunLogArrayOutput values.
 // You can construct a concrete instance of `GetRunLogsRunLogArrayInput` via:
 //
-//          GetRunLogsRunLogArray{ GetRunLogsRunLogArgs{...} }
+//	GetRunLogsRunLogArray{ GetRunLogsRunLogArgs{...} }
 type GetRunLogsRunLogArrayInput interface {
 	pulumi.Input
 

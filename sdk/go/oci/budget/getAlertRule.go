@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Budget"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Budget"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Budget.GetAlertRule(ctx, &budget.GetAlertRuleArgs{
-// 			AlertRuleId: oci_budget_alert_rule.Test_alert_rule.Id,
-// 			BudgetId:    oci_budget_budget.Test_budget.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Budget.GetAlertRule(ctx, &budget.GetAlertRuleArgs{
+//				AlertRuleId: oci_budget_alert_rule.Test_alert_rule.Id,
+//				BudgetId:    oci_budget_budget.Test_budget.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAlertRule(ctx *pulumi.Context, args *GetAlertRuleArgs, opts ...pulumi.InvokeOption) (*GetAlertRuleResult, error) {
 	var rv GetAlertRuleResult

@@ -32,6 +32,11 @@ public final class GetMaintenanceRunsResult {
      */
     private final List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
     /**
+     * @return Maintenance sub-type.
+     * 
+     */
+    private final @Nullable String maintenanceSubtype;
+    /**
      * @return Maintenance type.
      * 
      */
@@ -59,6 +64,7 @@ public final class GetMaintenanceRunsResult {
         @CustomType.Parameter("filters") @Nullable List<GetMaintenanceRunsFilter> filters,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("maintenanceRuns") List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns,
+        @CustomType.Parameter("maintenanceSubtype") @Nullable String maintenanceSubtype,
         @CustomType.Parameter("maintenanceType") @Nullable String maintenanceType,
         @CustomType.Parameter("state") @Nullable String state,
         @CustomType.Parameter("targetResourceId") @Nullable String targetResourceId,
@@ -68,6 +74,7 @@ public final class GetMaintenanceRunsResult {
         this.filters = filters;
         this.id = id;
         this.maintenanceRuns = maintenanceRuns;
+        this.maintenanceSubtype = maintenanceSubtype;
         this.maintenanceType = maintenanceType;
         this.state = state;
         this.targetResourceId = targetResourceId;
@@ -100,6 +107,13 @@ public final class GetMaintenanceRunsResult {
      */
     public List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns() {
         return this.maintenanceRuns;
+    }
+    /**
+     * @return Maintenance sub-type.
+     * 
+     */
+    public Optional<String> maintenanceSubtype() {
+        return Optional.ofNullable(this.maintenanceSubtype);
     }
     /**
      * @return Maintenance type.
@@ -144,6 +158,7 @@ public final class GetMaintenanceRunsResult {
         private @Nullable List<GetMaintenanceRunsFilter> filters;
         private String id;
         private List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
+        private @Nullable String maintenanceSubtype;
         private @Nullable String maintenanceType;
         private @Nullable String state;
         private @Nullable String targetResourceId;
@@ -160,6 +175,7 @@ public final class GetMaintenanceRunsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.maintenanceRuns = defaults.maintenanceRuns;
+    	      this.maintenanceSubtype = defaults.maintenanceSubtype;
     	      this.maintenanceType = defaults.maintenanceType;
     	      this.state = defaults.state;
     	      this.targetResourceId = defaults.targetResourceId;
@@ -192,6 +208,10 @@ public final class GetMaintenanceRunsResult {
         public Builder maintenanceRuns(GetMaintenanceRunsMaintenanceRun... maintenanceRuns) {
             return maintenanceRuns(List.of(maintenanceRuns));
         }
+        public Builder maintenanceSubtype(@Nullable String maintenanceSubtype) {
+            this.maintenanceSubtype = maintenanceSubtype;
+            return this;
+        }
         public Builder maintenanceType(@Nullable String maintenanceType) {
             this.maintenanceType = maintenanceType;
             return this;
@@ -208,7 +228,7 @@ public final class GetMaintenanceRunsResult {
             this.targetResourceType = targetResourceType;
             return this;
         }        public GetMaintenanceRunsResult build() {
-            return new GetMaintenanceRunsResult(availabilityDomain, compartmentId, filters, id, maintenanceRuns, maintenanceType, state, targetResourceId, targetResourceType);
+            return new GetMaintenanceRunsResult(availabilityDomain, compartmentId, filters, id, maintenanceRuns, maintenanceSubtype, maintenanceType, state, targetResourceId, targetResourceType);
         }
     }
 }

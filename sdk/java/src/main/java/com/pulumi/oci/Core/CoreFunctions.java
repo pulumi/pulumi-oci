@@ -150,6 +150,8 @@ import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceCredentialsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceDevicesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
+import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
 import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInstancePlainArgs;
@@ -354,6 +356,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceConsoleConnectionsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceCredentialsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceDevicesResult;
+import com.pulumi.oci.Core.outputs.GetInstanceMaintenanceRebootResult;
 import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportResult;
 import com.pulumi.oci.Core.outputs.GetInstancePoolInstancesResult;
 import com.pulumi.oci.Core.outputs.GetInstancePoolLoadBalancerAttachmentResult;
@@ -721,6 +724,28 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      */
+    public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas() {
+        return getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Block Volume Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the block volume replicas in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain() {
+        return getBlockVolumeReplicasPlain(GetBlockVolumeReplicasPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Block Volume Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the block volume replicas in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas(GetBlockVolumeReplicasArgs args) {
         return getBlockVolumeReplicas(args, InvokeOptions.Empty);
     }
@@ -953,6 +978,28 @@ public final class CoreFunctions {
      * ## Example Usage
      * 
      */
+    public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas() {
+        return getBootVolumeReplicas(GetBootVolumeReplicasArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume replicas in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain() {
+        return getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volume replicas in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas(GetBootVolumeReplicasArgs args) {
         return getBootVolumeReplicas(args, InvokeOptions.Empty);
     }
@@ -988,6 +1035,28 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", TypeShape.of(GetBootVolumeReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volumes in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetBootVolumesResult> getBootVolumes() {
+        return getBootVolumes(GetBootVolumesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the boot volumes in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain() {
+        return getBootVolumesPlain(GetBootVolumesPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
@@ -3950,6 +4019,50 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInstanceDevices:getInstanceDevices", TypeShape.of(GetInstanceDevicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args) {
+        return getInstanceMaintenanceReboot(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceRebootPlain(GetInstanceMaintenanceRebootPlainArgs args) {
+        return getInstanceMaintenanceRebootPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", TypeShape.of(GetInstanceMaintenanceRebootResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceRebootPlain(GetInstanceMaintenanceRebootPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getInstanceMaintenanceReboot:getInstanceMaintenanceReboot", TypeShape.of(GetInstanceMaintenanceRebootResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
@@ -7330,6 +7443,28 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetVolumeGroupsResult> getVolumeGroupsPlain(GetVolumeGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumeGroups:getVolumeGroups", TypeShape.of(GetVolumeGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volumes in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetVolumesResult> getVolumes() {
+        return getVolumes(GetVolumesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the volumes in the specified compartment and availability domain.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetVolumesResult> getVolumesPlain() {
+        return getVolumesPlain(GetVolumesPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.

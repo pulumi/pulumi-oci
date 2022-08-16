@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetTargetDatabases(ctx, &datasafe.GetTargetDatabasesArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Target_database_access_level),
-// 			AssociatedResourceId:   pulumi.StringRef(oci_data_safe_associated_resource.Test_associated_resource.Id),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Target_database_compartment_id_in_subtree),
-// 			DatabaseType:           pulumi.StringRef(_var.Target_database_database_type),
-// 			DisplayName:            pulumi.StringRef(_var.Target_database_display_name),
-// 			InfrastructureType:     pulumi.StringRef(_var.Target_database_infrastructure_type),
-// 			State:                  pulumi.StringRef(_var.Target_database_state),
-// 			TargetDatabaseId:       pulumi.StringRef(oci_data_safe_target_database.Test_target_database.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetTargetDatabases(ctx, &datasafe.GetTargetDatabasesArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Target_database_access_level),
+//				AssociatedResourceId:   pulumi.StringRef(oci_data_safe_associated_resource.Test_associated_resource.Id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Target_database_compartment_id_in_subtree),
+//				DatabaseType:           pulumi.StringRef(_var.Target_database_database_type),
+//				DisplayName:            pulumi.StringRef(_var.Target_database_display_name),
+//				InfrastructureType:     pulumi.StringRef(_var.Target_database_infrastructure_type),
+//				State:                  pulumi.StringRef(_var.Target_database_state),
+//				TargetDatabaseId:       pulumi.StringRef(oci_data_safe_target_database.Test_target_database.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTargetDatabases(ctx *pulumi.Context, args *GetTargetDatabasesArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabasesResult, error) {
 	var rv GetTargetDatabasesResult

@@ -21,42 +21,45 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/VisualBuilder"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/VisualBuilder"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := VisualBuilder.NewVbInstance(ctx, "testVbInstance", &VisualBuilder.VbInstanceArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Vb_instance_display_name),
-// 			NodeCount:     pulumi.Any(_var.Vb_instance_node_count),
-// 			AlternateCustomEndpoints: visualbuilder.VbInstanceAlternateCustomEndpointArray{
-// 				&visualbuilder.VbInstanceAlternateCustomEndpointArgs{
-// 					Hostname:            pulumi.Any(_var.Vb_instance_alternate_custom_endpoints_hostname),
-// 					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				},
-// 			},
-// 			ConsumptionModel: pulumi.Any(_var.Vb_instance_consumption_model),
-// 			CustomEndpoint: &visualbuilder.VbInstanceCustomEndpointArgs{
-// 				Hostname:            pulumi.Any(_var.Vb_instance_custom_endpoint_hostname),
-// 				CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IdcsOpenId:             pulumi.Any(oci_visual_builder_idcs_open.Test_idcs_open.Id),
-// 			IsVisualBuilderEnabled: pulumi.Any(_var.Vb_instance_is_visual_builder_enabled),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := VisualBuilder.NewVbInstance(ctx, "testVbInstance", &VisualBuilder.VbInstanceArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Vb_instance_display_name),
+//				NodeCount:     pulumi.Any(_var.Vb_instance_node_count),
+//				AlternateCustomEndpoints: visualbuilder.VbInstanceAlternateCustomEndpointArray{
+//					&visualbuilder.VbInstanceAlternateCustomEndpointArgs{
+//						Hostname:            pulumi.Any(_var.Vb_instance_alternate_custom_endpoints_hostname),
+//						CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					},
+//				},
+//				ConsumptionModel: pulumi.Any(_var.Vb_instance_consumption_model),
+//				CustomEndpoint: &visualbuilder.VbInstanceCustomEndpointArgs{
+//					Hostname:            pulumi.Any(_var.Vb_instance_custom_endpoint_hostname),
+//					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IdcsOpenId:             pulumi.Any(oci_visual_builder_idcs_open.Test_idcs_open.Id),
+//				IsVisualBuilderEnabled: pulumi.Any(_var.Vb_instance_is_visual_builder_enabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -64,7 +67,9 @@ import (
 // VbInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
+//
+//	$ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
+//
 // ```
 type VbInstance struct {
 	pulumi.CustomResourceState
@@ -287,7 +292,7 @@ func (i *VbInstance) ToVbInstanceOutputWithContext(ctx context.Context) VbInstan
 // VbInstanceArrayInput is an input type that accepts VbInstanceArray and VbInstanceArrayOutput values.
 // You can construct a concrete instance of `VbInstanceArrayInput` via:
 //
-//          VbInstanceArray{ VbInstanceArgs{...} }
+//	VbInstanceArray{ VbInstanceArgs{...} }
 type VbInstanceArrayInput interface {
 	pulumi.Input
 
@@ -312,7 +317,7 @@ func (i VbInstanceArray) ToVbInstanceArrayOutputWithContext(ctx context.Context)
 // VbInstanceMapInput is an input type that accepts VbInstanceMap and VbInstanceMapOutput values.
 // You can construct a concrete instance of `VbInstanceMapInput` via:
 //
-//          VbInstanceMap{ "key": VbInstanceArgs{...} }
+//	VbInstanceMap{ "key": VbInstanceArgs{...} }
 type VbInstanceMapInput interface {
 	pulumi.Input
 

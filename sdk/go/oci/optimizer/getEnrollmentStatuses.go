@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetEnrollmentStatuses(ctx, &optimizer.GetEnrollmentStatusesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			State:         pulumi.StringRef(_var.Enrollment_status_state),
-// 			Status:        pulumi.StringRef(_var.Enrollment_status_status),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetEnrollmentStatuses(ctx, &optimizer.GetEnrollmentStatusesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				State:         pulumi.StringRef(_var.Enrollment_status_state),
+//				Status:        pulumi.StringRef(_var.Enrollment_status_status),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetEnrollmentStatuses(ctx *pulumi.Context, args *GetEnrollmentStatusesArgs, opts ...pulumi.InvokeOption) (*GetEnrollmentStatusesResult, error) {
 	var rv GetEnrollmentStatusesResult

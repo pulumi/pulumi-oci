@@ -31,9 +31,15 @@ namespace Pulumi.Oci.ApmSynthetics
     ///             MonitorType = @var.Monitor_monitor_type,
     ///             RepeatIntervalInSeconds = @var.Monitor_repeat_interval_in_seconds,
     ///             VantagePoints = {},
+    ///             BatchIntervalInSeconds = @var.Monitor_batch_interval_in_seconds,
     ///             Configuration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationArgs
     ///             {
     ///                 ConfigType = @var.Monitor_configuration_config_type,
+    ///                 DnsConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDnsConfigurationArgs
+    ///                 {
+    ///                     IsOverrideDns = @var.Monitor_configuration_dns_configuration_is_override_dns,
+    ///                     OverrideDnsIp = @var.Monitor_configuration_dns_configuration_override_dns_ip,
+    ///                 },
     ///                 IsCertificateValidationEnabled = @var.Monitor_configuration_is_certificate_validation_enabled,
     ///                 IsFailureRetried = @var.Monitor_configuration_is_failure_retried,
     ///                 IsRedirectionEnabled = @var.Monitor_configuration_is_redirection_enabled,
@@ -100,7 +106,9 @@ namespace Pulumi.Oci.ApmSynthetics
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
+    ///             IsRunNow = @var.Monitor_is_run_now,
     ///             IsRunOnce = @var.Monitor_is_run_once,
+    ///             SchedulingPolicy = @var.Monitor_scheduling_policy,
     ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
     ///             ScriptParameters = 
     ///             {
@@ -131,10 +139,18 @@ namespace Pulumi.Oci.ApmSynthetics
     public partial class Config : Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The APM domain ID the request is intended for.
+        /// (Updatable) The APM domain ID the request is intended for. 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("apmDomainId")]
         public Output<string> ApmDomainId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        /// =======
+        /// </summary>
+        [Output("batchIntervalInSeconds")]
+        public Output<int> BatchIntervalInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of monitor configuration.
@@ -161,6 +177,12 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) If isRunNow is enabled, then the monitor will run now.
+        /// </summary>
+        [Output("isRunNow")]
+        public Output<bool> IsRunNow { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If runOnce is enabled, then the monitor will run once.
         /// </summary>
         [Output("isRunOnce")]
@@ -177,6 +199,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Output("repeatIntervalInSeconds")]
         public Output<int> RepeatIntervalInSeconds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Scheduling policy on Vantage points.
+        /// </summary>
+        [Output("schedulingPolicy")]
+        public Output<string> SchedulingPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
@@ -285,10 +313,18 @@ namespace Pulumi.Oci.ApmSynthetics
     public sealed class ConfigArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The APM domain ID the request is intended for.
+        /// (Updatable) The APM domain ID the request is intended for. 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        /// =======
+        /// </summary>
+        [Input("batchIntervalInSeconds")]
+        public Input<int>? BatchIntervalInSeconds { get; set; }
 
         /// <summary>
         /// (Updatable) Details of monitor configuration.
@@ -327,6 +363,12 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
+        /// (Updatable) If isRunNow is enabled, then the monitor will run now.
+        /// </summary>
+        [Input("isRunNow")]
+        public Input<bool>? IsRunNow { get; set; }
+
+        /// <summary>
         /// (Updatable) If runOnce is enabled, then the monitor will run once.
         /// </summary>
         [Input("isRunOnce")]
@@ -343,6 +385,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("repeatIntervalInSeconds", required: true)]
         public Input<int> RepeatIntervalInSeconds { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Scheduling policy on Vantage points.
+        /// </summary>
+        [Input("schedulingPolicy")]
+        public Input<string>? SchedulingPolicy { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
@@ -406,10 +454,18 @@ namespace Pulumi.Oci.ApmSynthetics
     public sealed class ConfigState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The APM domain ID the request is intended for.
+        /// (Updatable) The APM domain ID the request is intended for. 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("apmDomainId")]
         public Input<string>? ApmDomainId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        /// =======
+        /// </summary>
+        [Input("batchIntervalInSeconds")]
+        public Input<int>? BatchIntervalInSeconds { get; set; }
 
         /// <summary>
         /// (Updatable) Details of monitor configuration.
@@ -448,6 +504,12 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
+        /// (Updatable) If isRunNow is enabled, then the monitor will run now.
+        /// </summary>
+        [Input("isRunNow")]
+        public Input<bool>? IsRunNow { get; set; }
+
+        /// <summary>
         /// (Updatable) If runOnce is enabled, then the monitor will run once.
         /// </summary>
         [Input("isRunOnce")]
@@ -464,6 +526,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("repeatIntervalInSeconds")]
         public Input<int>? RepeatIntervalInSeconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) Scheduling policy on Vantage points.
+        /// </summary>
+        [Input("schedulingPolicy")]
+        public Input<string>? SchedulingPolicy { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.

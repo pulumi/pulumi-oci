@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetVaultUsage(ctx, &kms.GetVaultUsageArgs{
-// 			VaultId: oci_kms_vault.Test_vault.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetVaultUsage(ctx, &kms.GetVaultUsageArgs{
+//				VaultId: oci_kms_vault.Test_vault.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVaultUsage(ctx *pulumi.Context, args *GetVaultUsageArgs, opts ...pulumi.InvokeOption) (*GetVaultUsageResult, error) {
 	var rv GetVaultUsageResult

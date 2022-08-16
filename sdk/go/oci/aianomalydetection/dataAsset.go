@@ -21,59 +21,62 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.NewDataAsset(ctx, "testDataAsset", &AiAnomalyDetection.DataAssetArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DataSourceDetails: &aianomalydetection.DataAssetDataSourceDetailsArgs{
-// 				DataSourceType:         pulumi.Any(_var.Data_asset_data_source_details_data_source_type),
-// 				AtpPasswordSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				AtpUserName:            pulumi.Any(oci_identity_user.Test_user.Name),
-// 				Bucket:                 pulumi.Any(_var.Data_asset_data_source_details_bucket),
-// 				CwalletFileSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				DatabaseName:           pulumi.Any(oci_database_database.Test_database.Name),
-// 				EwalletFileSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				KeyStoreFileSecretId:   pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				MeasurementName:        pulumi.Any(_var.Data_asset_data_source_details_measurement_name),
-// 				Namespace:              pulumi.Any(_var.Data_asset_data_source_details_namespace),
-// 				Object:                 pulumi.Any(_var.Data_asset_data_source_details_object),
-// 				OjdbcFileSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				PasswordSecretId:       pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				TableName:              pulumi.Any(oci_nosql_table.Test_table.Name),
-// 				TnsnamesFileSecretId:   pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				TruststoreFileSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				Url:                    pulumi.Any(_var.Data_asset_data_source_details_url),
-// 				UserName:               pulumi.Any(oci_identity_user.Test_user.Name),
-// 				VersionSpecificDetails: &aianomalydetection.DataAssetDataSourceDetailsVersionSpecificDetailsArgs{
-// 					InfluxVersion:       pulumi.Any(_var.Data_asset_data_source_details_version_specific_details_influx_version),
-// 					Bucket:              pulumi.Any(_var.Data_asset_data_source_details_version_specific_details_bucket),
-// 					DatabaseName:        pulumi.Any(oci_database_database.Test_database.Name),
-// 					OrganizationName:    pulumi.Any(_var.Data_asset_data_source_details_version_specific_details_organization_name),
-// 					RetentionPolicyName: pulumi.Any(oci_identity_policy.Test_policy.Name),
-// 				},
-// 				WalletPasswordSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 			},
-// 			ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Data_asset_description),
-// 			DisplayName: pulumi.Any(_var.Data_asset_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.NewDataAsset(ctx, "testDataAsset", &AiAnomalyDetection.DataAssetArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DataSourceDetails: &aianomalydetection.DataAssetDataSourceDetailsArgs{
+//					DataSourceType:         pulumi.Any(_var.Data_asset_data_source_details_data_source_type),
+//					AtpPasswordSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					AtpUserName:            pulumi.Any(oci_identity_user.Test_user.Name),
+//					Bucket:                 pulumi.Any(_var.Data_asset_data_source_details_bucket),
+//					CwalletFileSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					DatabaseName:           pulumi.Any(oci_database_database.Test_database.Name),
+//					EwalletFileSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					KeyStoreFileSecretId:   pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					MeasurementName:        pulumi.Any(_var.Data_asset_data_source_details_measurement_name),
+//					Namespace:              pulumi.Any(_var.Data_asset_data_source_details_namespace),
+//					Object:                 pulumi.Any(_var.Data_asset_data_source_details_object),
+//					OjdbcFileSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					PasswordSecretId:       pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					TableName:              pulumi.Any(oci_nosql_table.Test_table.Name),
+//					TnsnamesFileSecretId:   pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					TruststoreFileSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Url:                    pulumi.Any(_var.Data_asset_data_source_details_url),
+//					UserName:               pulumi.Any(oci_identity_user.Test_user.Name),
+//					VersionSpecificDetails: &aianomalydetection.DataAssetDataSourceDetailsVersionSpecificDetailsArgs{
+//						InfluxVersion:       pulumi.Any(_var.Data_asset_data_source_details_version_specific_details_influx_version),
+//						Bucket:              pulumi.Any(_var.Data_asset_data_source_details_version_specific_details_bucket),
+//						DatabaseName:        pulumi.Any(oci_database_database.Test_database.Name),
+//						OrganizationName:    pulumi.Any(_var.Data_asset_data_source_details_version_specific_details_organization_name),
+//						RetentionPolicyName: pulumi.Any(oci_identity_policy.Test_policy.Name),
+//					},
+//					WalletPasswordSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//				},
+//				ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Data_asset_description),
+//				DisplayName: pulumi.Any(_var.Data_asset_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -81,7 +84,9 @@ import (
 // DataAssets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
+//
+//	$ pulumi import oci:AiAnomalyDetection/dataAsset:DataAsset test_data_asset "id"
+//
 // ```
 type DataAsset struct {
 	pulumi.CustomResourceState
@@ -272,7 +277,7 @@ func (i *DataAsset) ToDataAssetOutputWithContext(ctx context.Context) DataAssetO
 // DataAssetArrayInput is an input type that accepts DataAssetArray and DataAssetArrayOutput values.
 // You can construct a concrete instance of `DataAssetArrayInput` via:
 //
-//          DataAssetArray{ DataAssetArgs{...} }
+//	DataAssetArray{ DataAssetArgs{...} }
 type DataAssetArrayInput interface {
 	pulumi.Input
 
@@ -297,7 +302,7 @@ func (i DataAssetArray) ToDataAssetArrayOutputWithContext(ctx context.Context) D
 // DataAssetMapInput is an input type that accepts DataAssetMap and DataAssetMapOutput values.
 // You can construct a concrete instance of `DataAssetMapInput` via:
 //
-//          DataAssetMap{ "key": DataAssetArgs{...} }
+//	DataAssetMap{ "key": DataAssetArgs{...} }
 type DataAssetMapInput interface {
 	pulumi.Input
 

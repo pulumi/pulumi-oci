@@ -21,54 +21,57 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.NewDatabaseToolsConnection(ctx, "testDatabaseToolsConnection", &DatabaseTools.DatabaseToolsConnectionArgs{
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			DisplayName:        pulumi.Any(_var.Database_tools_connection_display_name),
-// 			Type:               pulumi.Any(_var.Database_tools_connection_type),
-// 			AdvancedProperties: pulumi.Any(_var.Database_tools_connection_advanced_properties),
-// 			ConnectionString:   pulumi.Any(_var.Database_tools_connection_connection_string),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			KeyStores: databasetools.DatabaseToolsConnectionKeyStoreArray{
-// 				&databasetools.DatabaseToolsConnectionKeyStoreArgs{
-// 					KeyStoreContent: &databasetools.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{
-// 						ValueType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_content_value_type),
-// 						SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 					},
-// 					KeyStorePassword: &databasetools.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{
-// 						ValueType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_password_value_type),
-// 						SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 					},
-// 					KeyStoreType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_type),
-// 				},
-// 			},
-// 			PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-// 			RelatedResource: &databasetools.DatabaseToolsConnectionRelatedResourceArgs{
-// 				EntityType: pulumi.Any(_var.Database_tools_connection_related_resource_entity_type),
-// 				Identifier: pulumi.Any(_var.Database_tools_connection_related_resource_identifier),
-// 			},
-// 			UserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 			UserPassword: &databasetools.DatabaseToolsConnectionUserPasswordArgs{
-// 				SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				ValueType: pulumi.Any(_var.Database_tools_connection_user_password_value_type),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.NewDatabaseToolsConnection(ctx, "testDatabaseToolsConnection", &DatabaseTools.DatabaseToolsConnectionArgs{
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				DisplayName:        pulumi.Any(_var.Database_tools_connection_display_name),
+//				Type:               pulumi.Any(_var.Database_tools_connection_type),
+//				AdvancedProperties: pulumi.Any(_var.Database_tools_connection_advanced_properties),
+//				ConnectionString:   pulumi.Any(_var.Database_tools_connection_connection_string),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				KeyStores: databasetools.DatabaseToolsConnectionKeyStoreArray{
+//					&databasetools.DatabaseToolsConnectionKeyStoreArgs{
+//						KeyStoreContent: &databasetools.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{
+//							ValueType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_content_value_type),
+//							SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						},
+//						KeyStorePassword: &databasetools.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{
+//							ValueType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_password_value_type),
+//							SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						},
+//						KeyStoreType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_type),
+//					},
+//				},
+//				PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//				RelatedResource: &databasetools.DatabaseToolsConnectionRelatedResourceArgs{
+//					EntityType: pulumi.Any(_var.Database_tools_connection_related_resource_entity_type),
+//					Identifier: pulumi.Any(_var.Database_tools_connection_related_resource_identifier),
+//				},
+//				UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//				UserPassword: &databasetools.DatabaseToolsConnectionUserPasswordArgs{
+//					SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					ValueType: pulumi.Any(_var.Database_tools_connection_user_password_value_type),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -76,7 +79,9 @@ import (
 // DatabaseToolsConnections can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
+//
+//	$ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
+//
 // ```
 type DatabaseToolsConnection struct {
 	pulumi.CustomResourceState
@@ -313,7 +318,7 @@ func (i *DatabaseToolsConnection) ToDatabaseToolsConnectionOutputWithContext(ctx
 // DatabaseToolsConnectionArrayInput is an input type that accepts DatabaseToolsConnectionArray and DatabaseToolsConnectionArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionArrayInput` via:
 //
-//          DatabaseToolsConnectionArray{ DatabaseToolsConnectionArgs{...} }
+//	DatabaseToolsConnectionArray{ DatabaseToolsConnectionArgs{...} }
 type DatabaseToolsConnectionArrayInput interface {
 	pulumi.Input
 
@@ -338,7 +343,7 @@ func (i DatabaseToolsConnectionArray) ToDatabaseToolsConnectionArrayOutputWithCo
 // DatabaseToolsConnectionMapInput is an input type that accepts DatabaseToolsConnectionMap and DatabaseToolsConnectionMapOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionMapInput` via:
 //
-//          DatabaseToolsConnectionMap{ "key": DatabaseToolsConnectionArgs{...} }
+//	DatabaseToolsConnectionMap{ "key": DatabaseToolsConnectionArgs{...} }
 type DatabaseToolsConnectionMapInput interface {
 	pulumi.Input
 

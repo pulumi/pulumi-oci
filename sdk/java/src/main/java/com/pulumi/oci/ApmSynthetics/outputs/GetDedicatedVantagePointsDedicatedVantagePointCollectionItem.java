@@ -30,7 +30,7 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItem 
      */
     private final String displayName;
     /**
-     * @return Details of DVP Stack.
+     * @return Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     private final List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails;
@@ -125,7 +125,7 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItem 
         return this.displayName;
     }
     /**
-     * @return Details of DVP Stack.
+     * @return Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
     public List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail> dvpStackDetails() {

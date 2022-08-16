@@ -21,55 +21,58 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiVision"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiVision"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiVision.NewModel(ctx, "testModel", &AiVision.ModelArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			ModelType:     pulumi.Any(_var.Model_model_type),
-// 			ProjectId:     pulumi.Any(oci_ai_vision_project.Test_project.Id),
-// 			TrainingDataset: &aivision.ModelTrainingDatasetArgs{
-// 				DatasetType:   pulumi.Any(_var.Model_training_dataset_dataset_type),
-// 				Bucket:        pulumi.Any(_var.Model_training_dataset_bucket),
-// 				DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-// 				NamespaceName: pulumi.Any(_var.Model_training_dataset_namespace),
-// 				Object:        pulumi.Any(_var.Model_training_dataset_object),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Model_description),
-// 			DisplayName: pulumi.Any(_var.Model_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsQuickMode:                pulumi.Any(_var.Model_is_quick_mode),
-// 			MaxTrainingDurationInHours: pulumi.Any(_var.Model_max_training_duration_in_hours),
-// 			ModelVersion:               pulumi.Any(_var.Model_model_version),
-// 			TestingDataset: &aivision.ModelTestingDatasetArgs{
-// 				DatasetType:   pulumi.Any(_var.Model_testing_dataset_dataset_type),
-// 				Bucket:        pulumi.Any(_var.Model_testing_dataset_bucket),
-// 				DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-// 				NamespaceName: pulumi.Any(_var.Model_testing_dataset_namespace),
-// 				Object:        pulumi.Any(_var.Model_testing_dataset_object),
-// 			},
-// 			ValidationDataset: &aivision.ModelValidationDatasetArgs{
-// 				DatasetType:   pulumi.Any(_var.Model_validation_dataset_dataset_type),
-// 				Bucket:        pulumi.Any(_var.Model_validation_dataset_bucket),
-// 				DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-// 				NamespaceName: pulumi.Any(_var.Model_validation_dataset_namespace),
-// 				Object:        pulumi.Any(_var.Model_validation_dataset_object),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiVision.NewModel(ctx, "testModel", &AiVision.ModelArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				ModelType:     pulumi.Any(_var.Model_model_type),
+//				ProjectId:     pulumi.Any(oci_ai_vision_project.Test_project.Id),
+//				TrainingDataset: &aivision.ModelTrainingDatasetArgs{
+//					DatasetType:   pulumi.Any(_var.Model_training_dataset_dataset_type),
+//					Bucket:        pulumi.Any(_var.Model_training_dataset_bucket),
+//					DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
+//					NamespaceName: pulumi.Any(_var.Model_training_dataset_namespace),
+//					Object:        pulumi.Any(_var.Model_training_dataset_object),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Model_description),
+//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsQuickMode:                pulumi.Any(_var.Model_is_quick_mode),
+//				MaxTrainingDurationInHours: pulumi.Any(_var.Model_max_training_duration_in_hours),
+//				ModelVersion:               pulumi.Any(_var.Model_model_version),
+//				TestingDataset: &aivision.ModelTestingDatasetArgs{
+//					DatasetType:   pulumi.Any(_var.Model_testing_dataset_dataset_type),
+//					Bucket:        pulumi.Any(_var.Model_testing_dataset_bucket),
+//					DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
+//					NamespaceName: pulumi.Any(_var.Model_testing_dataset_namespace),
+//					Object:        pulumi.Any(_var.Model_testing_dataset_object),
+//				},
+//				ValidationDataset: &aivision.ModelValidationDatasetArgs{
+//					DatasetType:   pulumi.Any(_var.Model_validation_dataset_dataset_type),
+//					Bucket:        pulumi.Any(_var.Model_validation_dataset_bucket),
+//					DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
+//					NamespaceName: pulumi.Any(_var.Model_validation_dataset_namespace),
+//					Object:        pulumi.Any(_var.Model_validation_dataset_object),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -77,7 +80,9 @@ import (
 // Models can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:AiVision/model:Model test_model "id"
+//
+//	$ pulumi import oci:AiVision/model:Model test_model "id"
+//
 // ```
 type Model struct {
 	pulumi.CustomResourceState
@@ -375,7 +380,7 @@ func (i *Model) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 // ModelArrayInput is an input type that accepts ModelArray and ModelArrayOutput values.
 // You can construct a concrete instance of `ModelArrayInput` via:
 //
-//          ModelArray{ ModelArgs{...} }
+//	ModelArray{ ModelArgs{...} }
 type ModelArrayInput interface {
 	pulumi.Input
 
@@ -400,7 +405,7 @@ func (i ModelArray) ToModelArrayOutputWithContext(ctx context.Context) ModelArra
 // ModelMapInput is an input type that accepts ModelMap and ModelMapOutput values.
 // You can construct a concrete instance of `ModelMapInput` via:
 //
-//          ModelMap{ "key": ModelArgs{...} }
+//	ModelMap{ "key": ModelArgs{...} }
 type ModelMapInput interface {
 	pulumi.Input
 

@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetAuthenticationPolicy(ctx, &identity.GetAuthenticationPolicyArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetAuthenticationPolicy(ctx, &identity.GetAuthenticationPolicyArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAuthenticationPolicy(ctx *pulumi.Context, args *LookupAuthenticationPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAuthenticationPolicyResult, error) {
 	var rv LookupAuthenticationPolicyResult

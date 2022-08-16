@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewExadataInsight(ctx, "testExadataInsight", &Opsi.ExadataInsightArgs{
-// 			CompartmentId:                     pulumi.Any(_var.Compartment_id),
-// 			EnterpriseManagerBridgeId:         pulumi.Any(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-// 			EnterpriseManagerEntityIdentifier: pulumi.Any(_var.Exadata_insight_enterprise_manager_entity_identifier),
-// 			EnterpriseManagerIdentifier:       pulumi.Any(_var.Exadata_insight_enterprise_manager_identifier),
-// 			EntitySource:                      pulumi.Any(_var.Exadata_insight_entity_source),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsAutoSyncEnabled: pulumi.Any(_var.Exadata_insight_is_auto_sync_enabled),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewExadataInsight(ctx, "testExadataInsight", &Opsi.ExadataInsightArgs{
+//				CompartmentId:                     pulumi.Any(_var.Compartment_id),
+//				EnterpriseManagerBridgeId:         pulumi.Any(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
+//				EnterpriseManagerEntityIdentifier: pulumi.Any(_var.Exadata_insight_enterprise_manager_entity_identifier),
+//				EnterpriseManagerIdentifier:       pulumi.Any(_var.Exadata_insight_enterprise_manager_identifier),
+//				EntitySource:                      pulumi.Any(_var.Exadata_insight_entity_source),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsAutoSyncEnabled: pulumi.Any(_var.Exadata_insight_is_auto_sync_enabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // ExadataInsights can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
+//
+//	$ pulumi import oci:Opsi/exadataInsight:ExadataInsight test_exadata_insight "id"
+//
 // ```
 type ExadataInsight struct {
 	pulumi.CustomResourceState
@@ -315,7 +320,7 @@ func (i *ExadataInsight) ToExadataInsightOutputWithContext(ctx context.Context) 
 // ExadataInsightArrayInput is an input type that accepts ExadataInsightArray and ExadataInsightArrayOutput values.
 // You can construct a concrete instance of `ExadataInsightArrayInput` via:
 //
-//          ExadataInsightArray{ ExadataInsightArgs{...} }
+//	ExadataInsightArray{ ExadataInsightArgs{...} }
 type ExadataInsightArrayInput interface {
 	pulumi.Input
 
@@ -340,7 +345,7 @@ func (i ExadataInsightArray) ToExadataInsightArrayOutputWithContext(ctx context.
 // ExadataInsightMapInput is an input type that accepts ExadataInsightMap and ExadataInsightMapOutput values.
 // You can construct a concrete instance of `ExadataInsightMapInput` via:
 //
-//          ExadataInsightMap{ "key": ExadataInsightArgs{...} }
+//	ExadataInsightMap{ "key": ExadataInsightArgs{...} }
 type ExadataInsightMapInput interface {
 	pulumi.Input
 

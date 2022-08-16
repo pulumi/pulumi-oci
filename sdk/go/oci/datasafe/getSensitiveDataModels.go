@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSensitiveDataModels(ctx, &datasafe.GetSensitiveDataModelsArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			AccessLevel:                     pulumi.StringRef(_var.Sensitive_data_model_access_level),
-// 			CompartmentIdInSubtree:          pulumi.BoolRef(_var.Sensitive_data_model_compartment_id_in_subtree),
-// 			DisplayName:                     pulumi.StringRef(_var.Sensitive_data_model_display_name),
-// 			SensitiveDataModelId:            pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-// 			State:                           pulumi.StringRef(_var.Sensitive_data_model_state),
-// 			TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_model_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_data_model_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSensitiveDataModels(ctx, &datasafe.GetSensitiveDataModelsArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				AccessLevel:                     pulumi.StringRef(_var.Sensitive_data_model_access_level),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Sensitive_data_model_compartment_id_in_subtree),
+//				DisplayName:                     pulumi.StringRef(_var.Sensitive_data_model_display_name),
+//				SensitiveDataModelId:            pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//				State:                           pulumi.StringRef(_var.Sensitive_data_model_state),
+//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_model_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_data_model_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSensitiveDataModels(ctx *pulumi.Context, args *GetSensitiveDataModelsArgs, opts ...pulumi.InvokeOption) (*GetSensitiveDataModelsResult, error) {
 	var rv GetSensitiveDataModelsResult

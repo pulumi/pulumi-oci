@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetPublishers(ctx, &marketplace.GetPublishersArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			PublisherId:   pulumi.StringRef(oci_marketplace_publisher.Test_publisher.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetPublishers(ctx, &marketplace.GetPublishersArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				PublisherId:   pulumi.StringRef(oci_marketplace_publisher.Test_publisher.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPublishers(ctx *pulumi.Context, args *GetPublishersArgs, opts ...pulumi.InvokeOption) (*GetPublishersResult, error) {
 	var rv GetPublishersResult

@@ -94,6 +94,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly alternateCustomEndpoints!: pulumi.Output<outputs.Integration.IntegrationInstanceAlternateCustomEndpoint[]>;
     /**
+     * A list of associated attachments to other services
+     */
+    public /*out*/ readonly attachments!: pulumi.Output<outputs.Integration.IntegrationInstanceAttachment[]>;
+    /**
      * (Updatable) Compartment Identifier.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -121,6 +125,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      */
     public readonly idcsAt!: pulumi.Output<string | undefined>;
+    /**
+     * Information for IDCS access
+     */
+    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.Integration.IntegrationInstanceIdcsInfo[]>;
     /**
      * The Integration Instance URL.
      */
@@ -180,6 +188,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IntegrationInstanceState | undefined;
             resourceInputs["alternateCustomEndpoints"] = state ? state.alternateCustomEndpoints : undefined;
+            resourceInputs["attachments"] = state ? state.attachments : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
@@ -187,6 +196,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
+            resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
             resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
             resourceInputs["integrationInstanceType"] = state ? state.integrationInstanceType : undefined;
             resourceInputs["isByol"] = state ? state.isByol : undefined;
@@ -230,6 +240,8 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["messagePacks"] = args ? args.messagePacks : undefined;
             resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["attachments"] = undefined /*out*/;
+            resourceInputs["idcsInfos"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -248,6 +260,10 @@ export interface IntegrationInstanceState {
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
     alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[]>;
+    /**
+     * A list of associated attachments to other services
+     */
+    attachments?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAttachment>[]>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -276,6 +292,10 @@ export interface IntegrationInstanceState {
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      */
     idcsAt?: pulumi.Input<string>;
+    /**
+     * Information for IDCS access
+     */
+    idcsInfos?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceIdcsInfo>[]>;
     /**
      * The Integration Instance URL.
      */

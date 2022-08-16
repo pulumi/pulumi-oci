@@ -17,26 +17,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LoadBalancer.NewCertificate(ctx, "testCertificate", &LoadBalancer.CertificateArgs{
-// 			CertificateName:   pulumi.Any(_var.Certificate_certificate_name),
-// 			LoadBalancerId:    pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			CaCertificate:     pulumi.Any(_var.Certificate_ca_certificate),
-// 			Passphrase:        pulumi.Any(_var.Certificate_passphrase),
-// 			PrivateKey:        pulumi.Any(_var.Certificate_private_key),
-// 			PublicCertificate: pulumi.Any(_var.Certificate_public_certificate),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LoadBalancer.NewCertificate(ctx, "testCertificate", &LoadBalancer.CertificateArgs{
+//				CertificateName:   pulumi.Any(_var.Certificate_certificate_name),
+//				LoadBalancerId:    pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				CaCertificate:     pulumi.Any(_var.Certificate_ca_certificate),
+//				Passphrase:        pulumi.Any(_var.Certificate_passphrase),
+//				PrivateKey:        pulumi.Any(_var.Certificate_private_key),
+//				PublicCertificate: pulumi.Any(_var.Certificate_public_certificate),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // Certificates can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
+//
+//	$ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
+//
 // ```
 type Certificate struct {
 	pulumi.CustomResourceState
@@ -191,7 +196,7 @@ func (i *Certificate) ToCertificateOutputWithContext(ctx context.Context) Certif
 // CertificateArrayInput is an input type that accepts CertificateArray and CertificateArrayOutput values.
 // You can construct a concrete instance of `CertificateArrayInput` via:
 //
-//          CertificateArray{ CertificateArgs{...} }
+//	CertificateArray{ CertificateArgs{...} }
 type CertificateArrayInput interface {
 	pulumi.Input
 
@@ -216,7 +221,7 @@ func (i CertificateArray) ToCertificateArrayOutputWithContext(ctx context.Contex
 // CertificateMapInput is an input type that accepts CertificateMap and CertificateMapOutput values.
 // You can construct a concrete instance of `CertificateMapInput` via:
 //
-//          CertificateMap{ "key": CertificateArgs{...} }
+//	CertificateMap{ "key": CertificateArgs{...} }
 type CertificateMapInput interface {
 	pulumi.Input
 

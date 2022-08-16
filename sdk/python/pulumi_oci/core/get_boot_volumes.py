@@ -44,7 +44,7 @@ class GetBootVolumesResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
+    def availability_domain(self) -> Optional[str]:
         """
         The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         """
@@ -60,7 +60,7 @@ class GetBootVolumesResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
+    def compartment_id(self) -> Optional[str]:
         """
         The OCID of the compartment that contains the boot volume.
         """
@@ -149,8 +149,8 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_boot_volumes)
-def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[str]] = None,
-                            compartment_id: Optional[pulumi.Input[str]] = None,
+def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
+                            compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBootVolumesFilterArgs']]]]] = None,
                             volume_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumesResult]:

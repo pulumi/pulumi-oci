@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewNetworkSecurityGroup(ctx, "testNetworkSecurityGroup", &Core.NetworkSecurityGroupArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Network_security_group_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewNetworkSecurityGroup(ctx, "testNetworkSecurityGroup", &Core.NetworkSecurityGroupArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Network_security_group_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // NetworkSecurityGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
+//
+//	$ pulumi import oci:Core/networkSecurityGroup:NetworkSecurityGroup test_network_security_group "id"
+//
 // ```
 type NetworkSecurityGroup struct {
 	pulumi.CustomResourceState
@@ -197,7 +202,7 @@ func (i *NetworkSecurityGroup) ToNetworkSecurityGroupOutputWithContext(ctx conte
 // NetworkSecurityGroupArrayInput is an input type that accepts NetworkSecurityGroupArray and NetworkSecurityGroupArrayOutput values.
 // You can construct a concrete instance of `NetworkSecurityGroupArrayInput` via:
 //
-//          NetworkSecurityGroupArray{ NetworkSecurityGroupArgs{...} }
+//	NetworkSecurityGroupArray{ NetworkSecurityGroupArgs{...} }
 type NetworkSecurityGroupArrayInput interface {
 	pulumi.Input
 
@@ -222,7 +227,7 @@ func (i NetworkSecurityGroupArray) ToNetworkSecurityGroupArrayOutputWithContext(
 // NetworkSecurityGroupMapInput is an input type that accepts NetworkSecurityGroupMap and NetworkSecurityGroupMapOutput values.
 // You can construct a concrete instance of `NetworkSecurityGroupMapInput` via:
 //
-//          NetworkSecurityGroupMap{ "key": NetworkSecurityGroupArgs{...} }
+//	NetworkSecurityGroupMap{ "key": NetworkSecurityGroupArgs{...} }
 type NetworkSecurityGroupMapInput interface {
 	pulumi.Input
 

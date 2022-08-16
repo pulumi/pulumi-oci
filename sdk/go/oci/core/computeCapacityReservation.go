@@ -25,41 +25,44 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewComputeCapacityReservation(ctx, "testComputeCapacityReservation", &Core.ComputeCapacityReservationArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.Compute_capacity_reservation_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Compute_capacity_reservation_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			InstanceReservationConfigs: core.ComputeCapacityReservationInstanceReservationConfigArray{
-// 				&core.ComputeCapacityReservationInstanceReservationConfigArgs{
-// 					InstanceShape: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape),
-// 					ReservedCount: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_reserved_count),
-// 					FaultDomain:   pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_fault_domain),
-// 					InstanceShapeConfig: &core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs{
-// 						MemoryInGbs: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs),
-// 						Ocpus:       pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus),
-// 					},
-// 				},
-// 			},
-// 			IsDefaultReservation: pulumi.Any(_var.Compute_capacity_reservation_is_default_reservation),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewComputeCapacityReservation(ctx, "testComputeCapacityReservation", &Core.ComputeCapacityReservationArgs{
+//				AvailabilityDomain: pulumi.Any(_var.Compute_capacity_reservation_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Compute_capacity_reservation_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				InstanceReservationConfigs: core.ComputeCapacityReservationInstanceReservationConfigArray{
+//					&core.ComputeCapacityReservationInstanceReservationConfigArgs{
+//						InstanceShape: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape),
+//						ReservedCount: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_reserved_count),
+//						FaultDomain:   pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_fault_domain),
+//						InstanceShapeConfig: &core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs{
+//							MemoryInGbs: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs),
+//							Ocpus:       pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus),
+//						},
+//					},
+//				},
+//				IsDefaultReservation: pulumi.Any(_var.Compute_capacity_reservation_is_default_reservation),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -67,7 +70,9 @@ import (
 // ComputeCapacityReservations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
+//
+//	$ pulumi import oci:Core/computeCapacityReservation:ComputeCapacityReservation test_compute_capacity_reservation "id"
+//
 // ```
 type ComputeCapacityReservation struct {
 	pulumi.CustomResourceState
@@ -254,7 +259,7 @@ func (i *ComputeCapacityReservation) ToComputeCapacityReservationOutputWithConte
 // ComputeCapacityReservationArrayInput is an input type that accepts ComputeCapacityReservationArray and ComputeCapacityReservationArrayOutput values.
 // You can construct a concrete instance of `ComputeCapacityReservationArrayInput` via:
 //
-//          ComputeCapacityReservationArray{ ComputeCapacityReservationArgs{...} }
+//	ComputeCapacityReservationArray{ ComputeCapacityReservationArgs{...} }
 type ComputeCapacityReservationArrayInput interface {
 	pulumi.Input
 
@@ -279,7 +284,7 @@ func (i ComputeCapacityReservationArray) ToComputeCapacityReservationArrayOutput
 // ComputeCapacityReservationMapInput is an input type that accepts ComputeCapacityReservationMap and ComputeCapacityReservationMapOutput values.
 // You can construct a concrete instance of `ComputeCapacityReservationMapInput` via:
 //
-//          ComputeCapacityReservationMap{ "key": ComputeCapacityReservationArgs{...} }
+//	ComputeCapacityReservationMap{ "key": ComputeCapacityReservationArgs{...} }
 type ComputeCapacityReservationMapInput interface {
 	pulumi.Input
 

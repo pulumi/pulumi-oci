@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.NewRegistry(ctx, "testRegistry", &DataConnectivity.RegistryArgs{
-// 			DisplayName:   pulumi.Any(_var.Registry_display_name),
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Registry_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.NewRegistry(ctx, "testRegistry", &DataConnectivity.RegistryArgs{
+//				DisplayName:   pulumi.Any(_var.Registry_display_name),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Registry_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // Registries can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataConnectivity/registry:Registry test_registry "id"
+//
+//	$ pulumi import oci:DataConnectivity/registry:Registry test_registry "id"
+//
 // ```
 type Registry struct {
 	pulumi.CustomResourceState
@@ -212,7 +217,7 @@ func (i *Registry) ToRegistryOutputWithContext(ctx context.Context) RegistryOutp
 // RegistryArrayInput is an input type that accepts RegistryArray and RegistryArrayOutput values.
 // You can construct a concrete instance of `RegistryArrayInput` via:
 //
-//          RegistryArray{ RegistryArgs{...} }
+//	RegistryArray{ RegistryArgs{...} }
 type RegistryArrayInput interface {
 	pulumi.Input
 
@@ -237,7 +242,7 @@ func (i RegistryArray) ToRegistryArrayOutputWithContext(ctx context.Context) Reg
 // RegistryMapInput is an input type that accepts RegistryMap and RegistryMapOutput values.
 // You can construct a concrete instance of `RegistryMapInput` via:
 //
-//          RegistryMap{ "key": RegistryArgs{...} }
+//	RegistryMap{ "key": RegistryArgs{...} }
 type RegistryMapInput interface {
 	pulumi.Input
 

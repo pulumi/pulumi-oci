@@ -20,10 +20,13 @@ class GetHostInsightResult:
     """
     A collection of values returned by getHostInsight.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, host_display_name=None, host_insight_id=None, host_name=None, host_type=None, id=None, lifecycle_details=None, management_agent_id=None, platform_name=None, platform_type=None, platform_version=None, processor_count=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, compute_id=None, defined_tags=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, host_display_name=None, host_insight_id=None, host_name=None, host_type=None, id=None, lifecycle_details=None, management_agent_id=None, platform_name=None, platform_type=None, platform_version=None, processor_count=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_id and not isinstance(compute_id, str):
+            raise TypeError("Expected argument 'compute_id' to be a str")
+        pulumi.set(__self__, "compute_id", compute_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -108,8 +111,17 @@ class GetHostInsightResult:
     def compartment_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        <<<<<<< ours
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -324,6 +336,7 @@ class AwaitableGetHostInsightResult(GetHostInsightResult):
             yield self
         return GetHostInsightResult(
             compartment_id=self.compartment_id,
+            compute_id=self.compute_id,
             defined_tags=self.defined_tags,
             enterprise_manager_bridge_id=self.enterprise_manager_bridge_id,
             enterprise_manager_entity_display_name=self.enterprise_manager_entity_display_name,
@@ -381,6 +394,7 @@ def get_host_insight(host_insight_id: Optional[str] = None,
 
     return AwaitableGetHostInsightResult(
         compartment_id=__ret__.compartment_id,
+        compute_id=__ret__.compute_id,
         defined_tags=__ret__.defined_tags,
         enterprise_manager_bridge_id=__ret__.enterprise_manager_bridge_id,
         enterprise_manager_entity_display_name=__ret__.enterprise_manager_entity_display_name,

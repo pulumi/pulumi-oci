@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryDataAsset(ctx, &dataconnectivity.GetRegistryDataAssetArgs{
-// 			DataAssetKey: _var.Registry_data_asset_data_asset_key,
-// 			RegistryId:   oci_data_connectivity_registry.Test_registry.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryDataAsset(ctx, &dataconnectivity.GetRegistryDataAssetArgs{
+//				DataAssetKey: _var.Registry_data_asset_data_asset_key,
+//				RegistryId:   oci_data_connectivity_registry.Test_registry.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupRegistryDataAsset(ctx *pulumi.Context, args *LookupRegistryDataAssetArgs, opts ...pulumi.InvokeOption) (*LookupRegistryDataAssetResult, error) {
 	var rv LookupRegistryDataAssetResult

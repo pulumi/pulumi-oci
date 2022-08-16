@@ -20,7 +20,9 @@ import (
 // Channels can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Mysql/channel:Channel test_channel "id"
+//
+//	$ pulumi import oci:Mysql/channel:Channel test_channel "id"
+//
 // ```
 type Channel struct {
 	pulumi.CustomResourceState
@@ -208,7 +210,7 @@ func (i *Channel) ToChannelOutputWithContext(ctx context.Context) ChannelOutput 
 // ChannelArrayInput is an input type that accepts ChannelArray and ChannelArrayOutput values.
 // You can construct a concrete instance of `ChannelArrayInput` via:
 //
-//          ChannelArray{ ChannelArgs{...} }
+//	ChannelArray{ ChannelArgs{...} }
 type ChannelArrayInput interface {
 	pulumi.Input
 
@@ -233,7 +235,7 @@ func (i ChannelArray) ToChannelArrayOutputWithContext(ctx context.Context) Chann
 // ChannelMapInput is an input type that accepts ChannelMap and ChannelMapOutput values.
 // You can construct a concrete instance of `ChannelMapInput` via:
 //
-//          ChannelMap{ "key": ChannelArgs{...} }
+//	ChannelMap{ "key": ChannelArgs{...} }
 type ChannelMapInput interface {
 	pulumi.Input
 

@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseAlertLogCount(ctx, &databasemanagement.GetManagedDatabaseAlertLogCountArgs{
-// 			ManagedDatabaseId:        oci_database_management_managed_database.Test_managed_database.Id,
-// 			GroupBy:                  pulumi.StringRef(_var.Managed_database_alert_log_count_group_by),
-// 			IsRegularExpression:      pulumi.BoolRef(_var.Managed_database_alert_log_count_is_regular_expression),
-// 			LevelFilter:              pulumi.StringRef(_var.Managed_database_alert_log_count_level_filter),
-// 			LogSearchText:            pulumi.StringRef(_var.Managed_database_alert_log_count_log_search_text),
-// 			TimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_alert_log_count_time_greater_than_or_equal_to),
-// 			TimeLessThanOrEqualTo:    pulumi.StringRef(_var.Managed_database_alert_log_count_time_less_than_or_equal_to),
-// 			TypeFilter:               pulumi.StringRef(_var.Managed_database_alert_log_count_type_filter),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseAlertLogCount(ctx, &databasemanagement.GetManagedDatabaseAlertLogCountArgs{
+//				ManagedDatabaseId:        oci_database_management_managed_database.Test_managed_database.Id,
+//				GroupBy:                  pulumi.StringRef(_var.Managed_database_alert_log_count_group_by),
+//				IsRegularExpression:      pulumi.BoolRef(_var.Managed_database_alert_log_count_is_regular_expression),
+//				LevelFilter:              pulumi.StringRef(_var.Managed_database_alert_log_count_level_filter),
+//				LogSearchText:            pulumi.StringRef(_var.Managed_database_alert_log_count_log_search_text),
+//				TimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_alert_log_count_time_greater_than_or_equal_to),
+//				TimeLessThanOrEqualTo:    pulumi.StringRef(_var.Managed_database_alert_log_count_time_less_than_or_equal_to),
+//				TypeFilter:               pulumi.StringRef(_var.Managed_database_alert_log_count_type_filter),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseAlertLogCount(ctx *pulumi.Context, args *GetManagedDatabaseAlertLogCountArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseAlertLogCountResult, error) {
 	var rv GetManagedDatabaseAlertLogCountResult

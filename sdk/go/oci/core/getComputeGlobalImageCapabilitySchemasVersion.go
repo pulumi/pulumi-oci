@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
 //
-// Gets the specified Compute Global Image Capability Schema Version
+// # Gets the specified Compute Global Image Capability Schema Version
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeGlobalImageCapabilitySchemasVersion(ctx, &core.GetComputeGlobalImageCapabilitySchemasVersionArgs{
-// 			ComputeGlobalImageCapabilitySchemaId:          oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-// 			ComputeGlobalImageCapabilitySchemaVersionName: _var.Compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeGlobalImageCapabilitySchemasVersion(ctx, &core.GetComputeGlobalImageCapabilitySchemasVersionArgs{
+//				ComputeGlobalImageCapabilitySchemaId:          oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+//				ComputeGlobalImageCapabilitySchemaVersionName: _var.Compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetComputeGlobalImageCapabilitySchemasVersion(ctx *pulumi.Context, args *GetComputeGlobalImageCapabilitySchemasVersionArgs, opts ...pulumi.InvokeOption) (*GetComputeGlobalImageCapabilitySchemasVersionResult, error) {
 	var rv GetComputeGlobalImageCapabilitySchemasVersionResult

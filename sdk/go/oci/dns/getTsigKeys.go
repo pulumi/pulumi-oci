@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetTsigKeys(ctx, &dns.GetTsigKeysArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Tsig_key_id),
-// 			Name:          pulumi.StringRef(_var.Tsig_key_name),
-// 			State:         pulumi.StringRef(_var.Tsig_key_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetTsigKeys(ctx, &dns.GetTsigKeysArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Tsig_key_id),
+//				Name:          pulumi.StringRef(_var.Tsig_key_name),
+//				State:         pulumi.StringRef(_var.Tsig_key_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTsigKeys(ctx *pulumi.Context, args *GetTsigKeysArgs, opts ...pulumi.InvokeOption) (*GetTsigKeysResult, error) {
 	var rv GetTsigKeysResult

@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
 //
-// List the Job Outputs
+// # List the Job Outputs
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseMigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseMigration.GetJobOutput(ctx, databasemigration.GetJobOutputArgs{
-// 			JobId: oci_database_migration_job.Test_job.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseMigration.GetJobOutput(ctx, databasemigration.GetJobOutputArgs{
+//				JobId: oci_database_migration_job.Test_job.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetJobOutput(ctx *pulumi.Context, args *GetJobOutputArgs, opts ...pulumi.InvokeOption) (*GetJobOutputResult, error) {
 	var rv GetJobOutputResult

@@ -20,7 +20,9 @@ import (
 // Agents can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseMigration/agent:Agent test_agent "id"
+//
+//	$ pulumi import oci:DatabaseMigration/agent:Agent test_agent "id"
+//
 // ```
 type Agent struct {
 	pulumi.CustomResourceState
@@ -211,7 +213,7 @@ func (i *Agent) ToAgentOutputWithContext(ctx context.Context) AgentOutput {
 // AgentArrayInput is an input type that accepts AgentArray and AgentArrayOutput values.
 // You can construct a concrete instance of `AgentArrayInput` via:
 //
-//          AgentArray{ AgentArgs{...} }
+//	AgentArray{ AgentArgs{...} }
 type AgentArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +238,7 @@ func (i AgentArray) ToAgentArrayOutputWithContext(ctx context.Context) AgentArra
 // AgentMapInput is an input type that accepts AgentMap and AgentMapOutput values.
 // You can construct a concrete instance of `AgentMapInput` via:
 //
-//          AgentMap{ "key": AgentArgs{...} }
+//	AgentMap{ "key": AgentArgs{...} }
 type AgentMapInput interface {
 	pulumi.Input
 

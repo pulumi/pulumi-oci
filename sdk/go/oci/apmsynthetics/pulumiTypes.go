@@ -13,6 +13,8 @@ import (
 type ConfigConfiguration struct {
 	// (Updatable) Type of configuration.
 	ConfigType *string `pulumi:"configType"`
+	// (Updatable) Dns settings.
+	DnsConfiguration *ConfigConfigurationDnsConfiguration `pulumi:"dnsConfiguration"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
@@ -44,7 +46,7 @@ type ConfigConfiguration struct {
 // ConfigConfigurationInput is an input type that accepts ConfigConfigurationArgs and ConfigConfigurationOutput values.
 // You can construct a concrete instance of `ConfigConfigurationInput` via:
 //
-//          ConfigConfigurationArgs{...}
+//	ConfigConfigurationArgs{...}
 type ConfigConfigurationInput interface {
 	pulumi.Input
 
@@ -55,6 +57,8 @@ type ConfigConfigurationInput interface {
 type ConfigConfigurationArgs struct {
 	// (Updatable) Type of configuration.
 	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
+	// (Updatable) Dns settings.
+	DnsConfiguration ConfigConfigurationDnsConfigurationPtrInput `pulumi:"dnsConfiguration"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
 	// (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
@@ -106,11 +110,11 @@ func (i ConfigConfigurationArgs) ToConfigConfigurationPtrOutputWithContext(ctx c
 // ConfigConfigurationPtrInput is an input type that accepts ConfigConfigurationArgs, ConfigConfigurationPtr and ConfigConfigurationPtrOutput values.
 // You can construct a concrete instance of `ConfigConfigurationPtrInput` via:
 //
-//          ConfigConfigurationArgs{...}
+//	        ConfigConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConfigConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -163,6 +167,11 @@ func (o ConfigConfigurationOutput) ToConfigConfigurationPtrOutputWithContext(ctx
 // (Updatable) Type of configuration.
 func (o ConfigConfigurationOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Dns settings.
+func (o ConfigConfigurationOutput) DnsConfiguration() ConfigConfigurationDnsConfigurationPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationDnsConfiguration { return v.DnsConfiguration }).(ConfigConfigurationDnsConfigurationPtrOutput)
 }
 
 // (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -264,6 +273,16 @@ func (o ConfigConfigurationPtrOutput) ConfigType() pulumi.StringPtrOutput {
 		}
 		return v.ConfigType
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Dns settings.
+func (o ConfigConfigurationPtrOutput) DnsConfiguration() ConfigConfigurationDnsConfigurationPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationDnsConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.DnsConfiguration
+	}).(ConfigConfigurationDnsConfigurationPtrOutput)
 }
 
 // (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -396,6 +415,162 @@ func (o ConfigConfigurationPtrOutput) VerifyTexts() ConfigConfigurationVerifyTex
 	}).(ConfigConfigurationVerifyTextArrayOutput)
 }
 
+type ConfigConfigurationDnsConfiguration struct {
+	// (Updatable) If isOverrideDns is true, then dns will be overridden.
+	IsOverrideDns *bool `pulumi:"isOverrideDns"`
+	// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	OverrideDnsIp *string `pulumi:"overrideDnsIp"`
+}
+
+// ConfigConfigurationDnsConfigurationInput is an input type that accepts ConfigConfigurationDnsConfigurationArgs and ConfigConfigurationDnsConfigurationOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDnsConfigurationInput` via:
+//
+//	ConfigConfigurationDnsConfigurationArgs{...}
+type ConfigConfigurationDnsConfigurationInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDnsConfigurationOutput() ConfigConfigurationDnsConfigurationOutput
+	ToConfigConfigurationDnsConfigurationOutputWithContext(context.Context) ConfigConfigurationDnsConfigurationOutput
+}
+
+type ConfigConfigurationDnsConfigurationArgs struct {
+	// (Updatable) If isOverrideDns is true, then dns will be overridden.
+	IsOverrideDns pulumi.BoolPtrInput `pulumi:"isOverrideDns"`
+	// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	OverrideDnsIp pulumi.StringPtrInput `pulumi:"overrideDnsIp"`
+}
+
+func (ConfigConfigurationDnsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (i ConfigConfigurationDnsConfigurationArgs) ToConfigConfigurationDnsConfigurationOutput() ConfigConfigurationDnsConfigurationOutput {
+	return i.ToConfigConfigurationDnsConfigurationOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDnsConfigurationArgs) ToConfigConfigurationDnsConfigurationOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDnsConfigurationOutput)
+}
+
+func (i ConfigConfigurationDnsConfigurationArgs) ToConfigConfigurationDnsConfigurationPtrOutput() ConfigConfigurationDnsConfigurationPtrOutput {
+	return i.ToConfigConfigurationDnsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDnsConfigurationArgs) ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDnsConfigurationOutput).ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationDnsConfigurationPtrInput is an input type that accepts ConfigConfigurationDnsConfigurationArgs, ConfigConfigurationDnsConfigurationPtr and ConfigConfigurationDnsConfigurationPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDnsConfigurationPtrInput` via:
+//
+//	        ConfigConfigurationDnsConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationDnsConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDnsConfigurationPtrOutput() ConfigConfigurationDnsConfigurationPtrOutput
+	ToConfigConfigurationDnsConfigurationPtrOutputWithContext(context.Context) ConfigConfigurationDnsConfigurationPtrOutput
+}
+
+type configConfigurationDnsConfigurationPtrType ConfigConfigurationDnsConfigurationArgs
+
+func ConfigConfigurationDnsConfigurationPtr(v *ConfigConfigurationDnsConfigurationArgs) ConfigConfigurationDnsConfigurationPtrInput {
+	return (*configConfigurationDnsConfigurationPtrType)(v)
+}
+
+func (*configConfigurationDnsConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (i *configConfigurationDnsConfigurationPtrType) ToConfigConfigurationDnsConfigurationPtrOutput() ConfigConfigurationDnsConfigurationPtrOutput {
+	return i.ToConfigConfigurationDnsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationDnsConfigurationPtrType) ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDnsConfigurationPtrOutput)
+}
+
+type ConfigConfigurationDnsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDnsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDnsConfigurationOutput) ToConfigConfigurationDnsConfigurationOutput() ConfigConfigurationDnsConfigurationOutput {
+	return o
+}
+
+func (o ConfigConfigurationDnsConfigurationOutput) ToConfigConfigurationDnsConfigurationOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationOutput {
+	return o
+}
+
+func (o ConfigConfigurationDnsConfigurationOutput) ToConfigConfigurationDnsConfigurationPtrOutput() ConfigConfigurationDnsConfigurationPtrOutput {
+	return o.ToConfigConfigurationDnsConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationDnsConfigurationOutput) ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationDnsConfiguration) *ConfigConfigurationDnsConfiguration {
+		return &v
+	}).(ConfigConfigurationDnsConfigurationPtrOutput)
+}
+
+// (Updatable) If isOverrideDns is true, then dns will be overridden.
+func (o ConfigConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *bool { return v.IsOverrideDns }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+func (o ConfigConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDnsConfiguration) *string { return v.OverrideDnsIp }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationDnsConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDnsConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDnsConfigurationPtrOutput) ToConfigConfigurationDnsConfigurationPtrOutput() ConfigConfigurationDnsConfigurationPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDnsConfigurationPtrOutput) ToConfigConfigurationDnsConfigurationPtrOutputWithContext(ctx context.Context) ConfigConfigurationDnsConfigurationPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDnsConfigurationPtrOutput) Elem() ConfigConfigurationDnsConfigurationOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDnsConfiguration) ConfigConfigurationDnsConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationDnsConfiguration
+		return ret
+	}).(ConfigConfigurationDnsConfigurationOutput)
+}
+
+// (Updatable) If isOverrideDns is true, then dns will be overridden.
+func (o ConfigConfigurationDnsConfigurationPtrOutput) IsOverrideDns() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDnsConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsOverrideDns
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+func (o ConfigConfigurationDnsConfigurationPtrOutput) OverrideDnsIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDnsConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverrideDnsIp
+	}).(pulumi.StringPtrOutput)
+}
+
 type ConfigConfigurationNetworkConfiguration struct {
 	// (Updatable) Number of hops.
 	NumberOfHops *int `pulumi:"numberOfHops"`
@@ -412,7 +587,7 @@ type ConfigConfigurationNetworkConfiguration struct {
 // ConfigConfigurationNetworkConfigurationInput is an input type that accepts ConfigConfigurationNetworkConfigurationArgs and ConfigConfigurationNetworkConfigurationOutput values.
 // You can construct a concrete instance of `ConfigConfigurationNetworkConfigurationInput` via:
 //
-//          ConfigConfigurationNetworkConfigurationArgs{...}
+//	ConfigConfigurationNetworkConfigurationArgs{...}
 type ConfigConfigurationNetworkConfigurationInput interface {
 	pulumi.Input
 
@@ -456,11 +631,11 @@ func (i ConfigConfigurationNetworkConfigurationArgs) ToConfigConfigurationNetwor
 // ConfigConfigurationNetworkConfigurationPtrInput is an input type that accepts ConfigConfigurationNetworkConfigurationArgs, ConfigConfigurationNetworkConfigurationPtr and ConfigConfigurationNetworkConfigurationPtrOutput values.
 // You can construct a concrete instance of `ConfigConfigurationNetworkConfigurationPtrInput` via:
 //
-//          ConfigConfigurationNetworkConfigurationArgs{...}
+//	        ConfigConfigurationNetworkConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConfigConfigurationNetworkConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -631,7 +806,7 @@ type ConfigConfigurationReqAuthenticationDetails struct {
 // ConfigConfigurationReqAuthenticationDetailsInput is an input type that accepts ConfigConfigurationReqAuthenticationDetailsArgs and ConfigConfigurationReqAuthenticationDetailsOutput values.
 // You can construct a concrete instance of `ConfigConfigurationReqAuthenticationDetailsInput` via:
 //
-//          ConfigConfigurationReqAuthenticationDetailsArgs{...}
+//	ConfigConfigurationReqAuthenticationDetailsArgs{...}
 type ConfigConfigurationReqAuthenticationDetailsInput interface {
 	pulumi.Input
 
@@ -681,11 +856,11 @@ func (i ConfigConfigurationReqAuthenticationDetailsArgs) ToConfigConfigurationRe
 // ConfigConfigurationReqAuthenticationDetailsPtrInput is an input type that accepts ConfigConfigurationReqAuthenticationDetailsArgs, ConfigConfigurationReqAuthenticationDetailsPtr and ConfigConfigurationReqAuthenticationDetailsPtrOutput values.
 // You can construct a concrete instance of `ConfigConfigurationReqAuthenticationDetailsPtrInput` via:
 //
-//          ConfigConfigurationReqAuthenticationDetailsArgs{...}
+//	        ConfigConfigurationReqAuthenticationDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConfigConfigurationReqAuthenticationDetailsPtrInput interface {
 	pulumi.Input
 
@@ -891,7 +1066,7 @@ type ConfigConfigurationReqAuthenticationDetailsAuthHeader struct {
 // ConfigConfigurationReqAuthenticationDetailsAuthHeaderInput is an input type that accepts ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs and ConfigConfigurationReqAuthenticationDetailsAuthHeaderOutput values.
 // You can construct a concrete instance of `ConfigConfigurationReqAuthenticationDetailsAuthHeaderInput` via:
 //
-//          ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs{...}
+//	ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs{...}
 type ConfigConfigurationReqAuthenticationDetailsAuthHeaderInput interface {
 	pulumi.Input
 
@@ -921,7 +1096,7 @@ func (i ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs) ToConfigConfi
 // ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayInput is an input type that accepts ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray and ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayInput` via:
 //
-//          ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray{ ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs{...} }
+//	ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray{ ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs{...} }
 type ConfigConfigurationReqAuthenticationDetailsAuthHeaderArrayInput interface {
 	pulumi.Input
 
@@ -997,7 +1172,7 @@ type ConfigConfigurationRequestHeader struct {
 // ConfigConfigurationRequestHeaderInput is an input type that accepts ConfigConfigurationRequestHeaderArgs and ConfigConfigurationRequestHeaderOutput values.
 // You can construct a concrete instance of `ConfigConfigurationRequestHeaderInput` via:
 //
-//          ConfigConfigurationRequestHeaderArgs{...}
+//	ConfigConfigurationRequestHeaderArgs{...}
 type ConfigConfigurationRequestHeaderInput interface {
 	pulumi.Input
 
@@ -1027,7 +1202,7 @@ func (i ConfigConfigurationRequestHeaderArgs) ToConfigConfigurationRequestHeader
 // ConfigConfigurationRequestHeaderArrayInput is an input type that accepts ConfigConfigurationRequestHeaderArray and ConfigConfigurationRequestHeaderArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationRequestHeaderArrayInput` via:
 //
-//          ConfigConfigurationRequestHeaderArray{ ConfigConfigurationRequestHeaderArgs{...} }
+//	ConfigConfigurationRequestHeaderArray{ ConfigConfigurationRequestHeaderArgs{...} }
 type ConfigConfigurationRequestHeaderArrayInput interface {
 	pulumi.Input
 
@@ -1103,7 +1278,7 @@ type ConfigConfigurationRequestQueryParam struct {
 // ConfigConfigurationRequestQueryParamInput is an input type that accepts ConfigConfigurationRequestQueryParamArgs and ConfigConfigurationRequestQueryParamOutput values.
 // You can construct a concrete instance of `ConfigConfigurationRequestQueryParamInput` via:
 //
-//          ConfigConfigurationRequestQueryParamArgs{...}
+//	ConfigConfigurationRequestQueryParamArgs{...}
 type ConfigConfigurationRequestQueryParamInput interface {
 	pulumi.Input
 
@@ -1133,7 +1308,7 @@ func (i ConfigConfigurationRequestQueryParamArgs) ToConfigConfigurationRequestQu
 // ConfigConfigurationRequestQueryParamArrayInput is an input type that accepts ConfigConfigurationRequestQueryParamArray and ConfigConfigurationRequestQueryParamArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationRequestQueryParamArrayInput` via:
 //
-//          ConfigConfigurationRequestQueryParamArray{ ConfigConfigurationRequestQueryParamArgs{...} }
+//	ConfigConfigurationRequestQueryParamArray{ ConfigConfigurationRequestQueryParamArgs{...} }
 type ConfigConfigurationRequestQueryParamArrayInput interface {
 	pulumi.Input
 
@@ -1207,7 +1382,7 @@ type ConfigConfigurationVerifyText struct {
 // ConfigConfigurationVerifyTextInput is an input type that accepts ConfigConfigurationVerifyTextArgs and ConfigConfigurationVerifyTextOutput values.
 // You can construct a concrete instance of `ConfigConfigurationVerifyTextInput` via:
 //
-//          ConfigConfigurationVerifyTextArgs{...}
+//	ConfigConfigurationVerifyTextArgs{...}
 type ConfigConfigurationVerifyTextInput interface {
 	pulumi.Input
 
@@ -1235,7 +1410,7 @@ func (i ConfigConfigurationVerifyTextArgs) ToConfigConfigurationVerifyTextOutput
 // ConfigConfigurationVerifyTextArrayInput is an input type that accepts ConfigConfigurationVerifyTextArray and ConfigConfigurationVerifyTextArrayOutput values.
 // You can construct a concrete instance of `ConfigConfigurationVerifyTextArrayInput` via:
 //
-//          ConfigConfigurationVerifyTextArray{ ConfigConfigurationVerifyTextArgs{...} }
+//	ConfigConfigurationVerifyTextArray{ ConfigConfigurationVerifyTextArgs{...} }
 type ConfigConfigurationVerifyTextArrayInput interface {
 	pulumi.Input
 
@@ -1312,7 +1487,7 @@ type ConfigScriptParameter struct {
 // ConfigScriptParameterInput is an input type that accepts ConfigScriptParameterArgs and ConfigScriptParameterOutput values.
 // You can construct a concrete instance of `ConfigScriptParameterInput` via:
 //
-//          ConfigScriptParameterArgs{...}
+//	ConfigScriptParameterArgs{...}
 type ConfigScriptParameterInput interface {
 	pulumi.Input
 
@@ -1348,7 +1523,7 @@ func (i ConfigScriptParameterArgs) ToConfigScriptParameterOutputWithContext(ctx 
 // ConfigScriptParameterArrayInput is an input type that accepts ConfigScriptParameterArray and ConfigScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ConfigScriptParameterArrayInput` via:
 //
-//          ConfigScriptParameterArray{ ConfigScriptParameterArgs{...} }
+//	ConfigScriptParameterArray{ ConfigScriptParameterArgs{...} }
 type ConfigScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -1441,7 +1616,7 @@ type ConfigScriptParameterMonitorScriptParameter struct {
 // ConfigScriptParameterMonitorScriptParameterInput is an input type that accepts ConfigScriptParameterMonitorScriptParameterArgs and ConfigScriptParameterMonitorScriptParameterOutput values.
 // You can construct a concrete instance of `ConfigScriptParameterMonitorScriptParameterInput` via:
 //
-//          ConfigScriptParameterMonitorScriptParameterArgs{...}
+//	ConfigScriptParameterMonitorScriptParameterArgs{...}
 type ConfigScriptParameterMonitorScriptParameterInput interface {
 	pulumi.Input
 
@@ -1471,7 +1646,7 @@ func (i ConfigScriptParameterMonitorScriptParameterArgs) ToConfigScriptParameter
 // ConfigScriptParameterMonitorScriptParameterArrayInput is an input type that accepts ConfigScriptParameterMonitorScriptParameterArray and ConfigScriptParameterMonitorScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ConfigScriptParameterMonitorScriptParameterArrayInput` via:
 //
-//          ConfigScriptParameterMonitorScriptParameterArray{ ConfigScriptParameterMonitorScriptParameterArgs{...} }
+//	ConfigScriptParameterMonitorScriptParameterArray{ ConfigScriptParameterMonitorScriptParameterArgs{...} }
 type ConfigScriptParameterMonitorScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -1538,20 +1713,20 @@ func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) Index(i pulumi.I
 }
 
 type DedicatedVantagePointDvpStackDetails struct {
-	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId string `pulumi:"dvpStackId"`
 	// (Updatable) Type of stack.
 	DvpStackType string `pulumi:"dvpStackType"`
-	// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStreamId string `pulumi:"dvpStreamId"`
-	// (Updatable) Version of DVP.
+	// (Updatable) Version of the dedicated vantage point.
 	DvpVersion string `pulumi:"dvpVersion"`
 }
 
 // DedicatedVantagePointDvpStackDetailsInput is an input type that accepts DedicatedVantagePointDvpStackDetailsArgs and DedicatedVantagePointDvpStackDetailsOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointDvpStackDetailsInput` via:
 //
-//          DedicatedVantagePointDvpStackDetailsArgs{...}
+//	DedicatedVantagePointDvpStackDetailsArgs{...}
 type DedicatedVantagePointDvpStackDetailsInput interface {
 	pulumi.Input
 
@@ -1560,13 +1735,13 @@ type DedicatedVantagePointDvpStackDetailsInput interface {
 }
 
 type DedicatedVantagePointDvpStackDetailsArgs struct {
-	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
 	// (Updatable) Type of stack.
 	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
-	// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
-	// (Updatable) Version of DVP.
+	// (Updatable) Version of the dedicated vantage point.
 	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
 }
 
@@ -1593,11 +1768,11 @@ func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStac
 // DedicatedVantagePointDvpStackDetailsPtrInput is an input type that accepts DedicatedVantagePointDvpStackDetailsArgs, DedicatedVantagePointDvpStackDetailsPtr and DedicatedVantagePointDvpStackDetailsPtrOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointDvpStackDetailsPtrInput` via:
 //
-//          DedicatedVantagePointDvpStackDetailsArgs{...}
+//	        DedicatedVantagePointDvpStackDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DedicatedVantagePointDvpStackDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1647,7 +1822,7 @@ func (o DedicatedVantagePointDvpStackDetailsOutput) ToDedicatedVantagePointDvpSt
 	}).(DedicatedVantagePointDvpStackDetailsPtrOutput)
 }
 
-// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o DedicatedVantagePointDvpStackDetailsOutput) DvpStackId() pulumi.StringOutput {
 	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpStackId }).(pulumi.StringOutput)
 }
@@ -1657,12 +1832,12 @@ func (o DedicatedVantagePointDvpStackDetailsOutput) DvpStackType() pulumi.String
 	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpStackType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o DedicatedVantagePointDvpStackDetailsOutput) DvpStreamId() pulumi.StringOutput {
 	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpStreamId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Version of DVP.
+// (Updatable) Version of the dedicated vantage point.
 func (o DedicatedVantagePointDvpStackDetailsOutput) DvpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpVersion }).(pulumi.StringOutput)
 }
@@ -1691,7 +1866,7 @@ func (o DedicatedVantagePointDvpStackDetailsPtrOutput) Elem() DedicatedVantagePo
 	}).(DedicatedVantagePointDvpStackDetailsOutput)
 }
 
-// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStackId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
 		if v == nil {
@@ -1711,7 +1886,7 @@ func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStackType() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStreamId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
 		if v == nil {
@@ -1721,7 +1896,7 @@ func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStreamId() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Version of DVP.
+// (Updatable) Version of the dedicated vantage point.
 func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
 		if v == nil {
@@ -1745,7 +1920,7 @@ type DedicatedVantagePointMonitorStatusCountMap struct {
 // DedicatedVantagePointMonitorStatusCountMapInput is an input type that accepts DedicatedVantagePointMonitorStatusCountMap and DedicatedVantagePointMonitorStatusCountMapOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointMonitorStatusCountMapInput` via:
 //
-//          DedicatedVantagePointMonitorStatusCountMap{ "key": DedicatedVantagePointMonitorStatusCountArgs{...} }
+//	DedicatedVantagePointMonitorStatusCountMap{ "key": DedicatedVantagePointMonitorStatusCountArgs{...} }
 type DedicatedVantagePointMonitorStatusCountMapInput interface {
 	pulumi.Input
 
@@ -1779,7 +1954,7 @@ func (i DedicatedVantagePointMonitorStatusCountMapArgs) ToDedicatedVantagePointM
 // DedicatedVantagePointMonitorStatusCountMapArrayInput is an input type that accepts DedicatedVantagePointMonitorStatusCountMapArray and DedicatedVantagePointMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointMonitorStatusCountMapArrayInput` via:
 //
-//          DedicatedVantagePointMonitorStatusCountMapArray{ DedicatedVantagePointMonitorStatusCountMapArgs{...} }
+//	DedicatedVantagePointMonitorStatusCountMapArray{ DedicatedVantagePointMonitorStatusCountMapArgs{...} }
 type DedicatedVantagePointMonitorStatusCountMapArrayInput interface {
 	pulumi.Input
 
@@ -1869,7 +2044,7 @@ type ScriptMonitorStatusCountMap struct {
 // ScriptMonitorStatusCountMapInput is an input type that accepts ScriptMonitorStatusCountMap and ScriptMonitorStatusCountMapOutput values.
 // You can construct a concrete instance of `ScriptMonitorStatusCountMapInput` via:
 //
-//          ScriptMonitorStatusCountMap{ "key": ScriptMonitorStatusCountArgs{...} }
+//	ScriptMonitorStatusCountMap{ "key": ScriptMonitorStatusCountArgs{...} }
 type ScriptMonitorStatusCountMapInput interface {
 	pulumi.Input
 
@@ -1903,7 +2078,7 @@ func (i ScriptMonitorStatusCountMapArgs) ToScriptMonitorStatusCountMapOutputWith
 // ScriptMonitorStatusCountMapArrayInput is an input type that accepts ScriptMonitorStatusCountMapArray and ScriptMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `ScriptMonitorStatusCountMapArrayInput` via:
 //
-//          ScriptMonitorStatusCountMapArray{ ScriptMonitorStatusCountMapArgs{...} }
+//	ScriptMonitorStatusCountMapArray{ ScriptMonitorStatusCountMapArgs{...} }
 type ScriptMonitorStatusCountMapArrayInput interface {
 	pulumi.Input
 
@@ -1995,7 +2170,7 @@ type ScriptParameter struct {
 // ScriptParameterInput is an input type that accepts ScriptParameterArgs and ScriptParameterOutput values.
 // You can construct a concrete instance of `ScriptParameterInput` via:
 //
-//          ScriptParameterArgs{...}
+//	ScriptParameterArgs{...}
 type ScriptParameterInput interface {
 	pulumi.Input
 
@@ -2031,7 +2206,7 @@ func (i ScriptParameterArgs) ToScriptParameterOutputWithContext(ctx context.Cont
 // ScriptParameterArrayInput is an input type that accepts ScriptParameterArray and ScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ScriptParameterArrayInput` via:
 //
-//          ScriptParameterArray{ ScriptParameterArgs{...} }
+//	ScriptParameterArray{ ScriptParameterArgs{...} }
 type ScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -2124,7 +2299,7 @@ type ScriptParameterScriptParameter struct {
 // ScriptParameterScriptParameterInput is an input type that accepts ScriptParameterScriptParameterArgs and ScriptParameterScriptParameterOutput values.
 // You can construct a concrete instance of `ScriptParameterScriptParameterInput` via:
 //
-//          ScriptParameterScriptParameterArgs{...}
+//	ScriptParameterScriptParameterArgs{...}
 type ScriptParameterScriptParameterInput interface {
 	pulumi.Input
 
@@ -2156,7 +2331,7 @@ func (i ScriptParameterScriptParameterArgs) ToScriptParameterScriptParameterOutp
 // ScriptParameterScriptParameterArrayInput is an input type that accepts ScriptParameterScriptParameterArray and ScriptParameterScriptParameterArrayOutput values.
 // You can construct a concrete instance of `ScriptParameterScriptParameterArrayInput` via:
 //
-//          ScriptParameterScriptParameterArray{ ScriptParameterScriptParameterArgs{...} }
+//	ScriptParameterScriptParameterArray{ ScriptParameterScriptParameterArgs{...} }
 type ScriptParameterScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -2228,20 +2403,20 @@ func (o ScriptParameterScriptParameterArrayOutput) Index(i pulumi.IntInput) Scri
 }
 
 type GetDedicatedVantagePointDvpStackDetail struct {
-	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId string `pulumi:"dvpStackId"`
 	// Type of stack.
 	DvpStackType string `pulumi:"dvpStackType"`
-	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStreamId string `pulumi:"dvpStreamId"`
-	// Version of DVP.
+	// Version of the dedicated vantage point.
 	DvpVersion string `pulumi:"dvpVersion"`
 }
 
 // GetDedicatedVantagePointDvpStackDetailInput is an input type that accepts GetDedicatedVantagePointDvpStackDetailArgs and GetDedicatedVantagePointDvpStackDetailOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointDvpStackDetailInput` via:
 //
-//          GetDedicatedVantagePointDvpStackDetailArgs{...}
+//	GetDedicatedVantagePointDvpStackDetailArgs{...}
 type GetDedicatedVantagePointDvpStackDetailInput interface {
 	pulumi.Input
 
@@ -2250,13 +2425,13 @@ type GetDedicatedVantagePointDvpStackDetailInput interface {
 }
 
 type GetDedicatedVantagePointDvpStackDetailArgs struct {
-	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
 	// Type of stack.
 	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
-	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
-	// Version of DVP.
+	// Version of the dedicated vantage point.
 	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
 }
 
@@ -2275,7 +2450,7 @@ func (i GetDedicatedVantagePointDvpStackDetailArgs) ToGetDedicatedVantagePointDv
 // GetDedicatedVantagePointDvpStackDetailArrayInput is an input type that accepts GetDedicatedVantagePointDvpStackDetailArray and GetDedicatedVantagePointDvpStackDetailArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointDvpStackDetailArrayInput` via:
 //
-//          GetDedicatedVantagePointDvpStackDetailArray{ GetDedicatedVantagePointDvpStackDetailArgs{...} }
+//	GetDedicatedVantagePointDvpStackDetailArray{ GetDedicatedVantagePointDvpStackDetailArgs{...} }
 type GetDedicatedVantagePointDvpStackDetailArrayInput interface {
 	pulumi.Input
 
@@ -2311,7 +2486,7 @@ func (o GetDedicatedVantagePointDvpStackDetailOutput) ToGetDedicatedVantagePoint
 	return o
 }
 
-// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStackId }).(pulumi.StringOutput)
 }
@@ -2321,12 +2496,12 @@ func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackType() pulumi.Stri
 	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStackType }).(pulumi.StringOutput)
 }
 
-// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStreamId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStreamId }).(pulumi.StringOutput)
 }
 
-// Version of DVP.
+// Version of the dedicated vantage point.
 func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpVersion }).(pulumi.StringOutput)
 }
@@ -2365,7 +2540,7 @@ type GetDedicatedVantagePointMonitorStatusCountMap struct {
 // GetDedicatedVantagePointMonitorStatusCountMapInput is an input type that accepts GetDedicatedVantagePointMonitorStatusCountMap and GetDedicatedVantagePointMonitorStatusCountMapOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointMonitorStatusCountMapInput` via:
 //
-//          GetDedicatedVantagePointMonitorStatusCountMap{ "key": GetDedicatedVantagePointMonitorStatusCountArgs{...} }
+//	GetDedicatedVantagePointMonitorStatusCountMap{ "key": GetDedicatedVantagePointMonitorStatusCountArgs{...} }
 type GetDedicatedVantagePointMonitorStatusCountMapInput interface {
 	pulumi.Input
 
@@ -2399,7 +2574,7 @@ func (i GetDedicatedVantagePointMonitorStatusCountMapArgs) ToGetDedicatedVantage
 // GetDedicatedVantagePointMonitorStatusCountMapArrayInput is an input type that accepts GetDedicatedVantagePointMonitorStatusCountMapArray and GetDedicatedVantagePointMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointMonitorStatusCountMapArrayInput` via:
 //
-//          GetDedicatedVantagePointMonitorStatusCountMapArray{ GetDedicatedVantagePointMonitorStatusCountMapArgs{...} }
+//	GetDedicatedVantagePointMonitorStatusCountMapArray{ GetDedicatedVantagePointMonitorStatusCountMapArgs{...} }
 type GetDedicatedVantagePointMonitorStatusCountMapArrayInput interface {
 	pulumi.Input
 
@@ -2482,7 +2657,7 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollection struct {
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{...}
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{...}
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionInput interface {
 	pulumi.Input
 
@@ -2509,7 +2684,7 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs) ToGetDedic
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{...} }
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{...} }
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2578,7 +2753,7 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
-	// Details of DVP Stack.
+	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -2601,7 +2776,7 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItem struct {
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{...}
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{...}
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput interface {
 	pulumi.Input
 
@@ -2616,7 +2791,7 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Details of DVP Stack.
+	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -2651,7 +2826,7 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ToGetD
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{...} }
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{...} }
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2704,7 +2879,7 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Disp
 	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Details of DVP Stack.
+// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DvpStackDetails() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail {
 		return v.DvpStackDetails
@@ -2776,20 +2951,20 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput)
 }
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail struct {
-	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId string `pulumi:"dvpStackId"`
 	// Type of stack.
 	DvpStackType string `pulumi:"dvpStackType"`
-	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStreamId string `pulumi:"dvpStreamId"`
-	// Version of DVP.
+	// Version of the dedicated vantage point.
 	DvpVersion string `pulumi:"dvpVersion"`
 }
 
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{...}
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{...}
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput interface {
 	pulumi.Input
 
@@ -2798,13 +2973,13 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailI
 }
 
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs struct {
-	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
 	// Type of stack.
 	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
-	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
-	// Version of DVP.
+	// Version of the dedicated vantage point.
 	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
 }
 
@@ -2823,7 +2998,7 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{...} }
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{...} }
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput interface {
 	pulumi.Input
 
@@ -2859,7 +3034,7 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 	return o
 }
 
-// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
 		return v.DvpStackId
@@ -2873,14 +3048,14 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDeta
 	}).(pulumi.StringOutput)
 }
 
-// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStreamId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
 		return v.DvpStreamId
 	}).(pulumi.StringOutput)
 }
 
-// Version of DVP.
+// Version of the dedicated vantage point.
 func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
 		return v.DvpVersion
@@ -2921,7 +3096,7 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCo
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap{ "key": GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountArgs{...} }
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap{ "key": GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountArgs{...} }
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput interface {
 	pulumi.Input
 
@@ -2955,7 +3130,7 @@ func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatu
 // GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput` via:
 //
-//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs{...} }
+//	GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs{...} }
 type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput interface {
 	pulumi.Input
 
@@ -3049,7 +3224,7 @@ type GetDedicatedVantagePointsFilter struct {
 // GetDedicatedVantagePointsFilterInput is an input type that accepts GetDedicatedVantagePointsFilterArgs and GetDedicatedVantagePointsFilterOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsFilterInput` via:
 //
-//          GetDedicatedVantagePointsFilterArgs{...}
+//	GetDedicatedVantagePointsFilterArgs{...}
 type GetDedicatedVantagePointsFilterInput interface {
 	pulumi.Input
 
@@ -3079,7 +3254,7 @@ func (i GetDedicatedVantagePointsFilterArgs) ToGetDedicatedVantagePointsFilterOu
 // GetDedicatedVantagePointsFilterArrayInput is an input type that accepts GetDedicatedVantagePointsFilterArray and GetDedicatedVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDedicatedVantagePointsFilterArrayInput` via:
 //
-//          GetDedicatedVantagePointsFilterArray{ GetDedicatedVantagePointsFilterArgs{...} }
+//	GetDedicatedVantagePointsFilterArray{ GetDedicatedVantagePointsFilterArgs{...} }
 type GetDedicatedVantagePointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3151,6 +3326,8 @@ func (o GetDedicatedVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) Get
 type GetMonitorConfiguration struct {
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
+	// Dns settings.
+	DnsConfigurations []GetMonitorConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
@@ -3182,7 +3359,7 @@ type GetMonitorConfiguration struct {
 // GetMonitorConfigurationInput is an input type that accepts GetMonitorConfigurationArgs and GetMonitorConfigurationOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationInput` via:
 //
-//          GetMonitorConfigurationArgs{...}
+//	GetMonitorConfigurationArgs{...}
 type GetMonitorConfigurationInput interface {
 	pulumi.Input
 
@@ -3193,6 +3370,8 @@ type GetMonitorConfigurationInput interface {
 type GetMonitorConfigurationArgs struct {
 	// Type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// Dns settings.
+	DnsConfigurations GetMonitorConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
@@ -3236,7 +3415,7 @@ func (i GetMonitorConfigurationArgs) ToGetMonitorConfigurationOutputWithContext(
 // GetMonitorConfigurationArrayInput is an input type that accepts GetMonitorConfigurationArray and GetMonitorConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationArrayInput` via:
 //
-//          GetMonitorConfigurationArray{ GetMonitorConfigurationArgs{...} }
+//	GetMonitorConfigurationArray{ GetMonitorConfigurationArgs{...} }
 type GetMonitorConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3275,6 +3454,11 @@ func (o GetMonitorConfigurationOutput) ToGetMonitorConfigurationOutputWithContex
 // Type of configuration.
 func (o GetMonitorConfigurationOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// Dns settings.
+func (o GetMonitorConfigurationOutput) DnsConfigurations() GetMonitorConfigurationDnsConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationDnsConfiguration { return v.DnsConfigurations }).(GetMonitorConfigurationDnsConfigurationArrayOutput)
 }
 
 // If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -3368,6 +3552,112 @@ func (o GetMonitorConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorC
 	}).(GetMonitorConfigurationOutput)
 }
 
+type GetMonitorConfigurationDnsConfiguration struct {
+	// If isOverrideDns is true, then dns will be overridden.
+	IsOverrideDns bool `pulumi:"isOverrideDns"`
+	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	OverrideDnsIp string `pulumi:"overrideDnsIp"`
+}
+
+// GetMonitorConfigurationDnsConfigurationInput is an input type that accepts GetMonitorConfigurationDnsConfigurationArgs and GetMonitorConfigurationDnsConfigurationOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDnsConfigurationInput` via:
+//
+//	GetMonitorConfigurationDnsConfigurationArgs{...}
+type GetMonitorConfigurationDnsConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDnsConfigurationOutput() GetMonitorConfigurationDnsConfigurationOutput
+	ToGetMonitorConfigurationDnsConfigurationOutputWithContext(context.Context) GetMonitorConfigurationDnsConfigurationOutput
+}
+
+type GetMonitorConfigurationDnsConfigurationArgs struct {
+	// If isOverrideDns is true, then dns will be overridden.
+	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
+	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
+}
+
+func (GetMonitorConfigurationDnsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDnsConfigurationArgs) ToGetMonitorConfigurationDnsConfigurationOutput() GetMonitorConfigurationDnsConfigurationOutput {
+	return i.ToGetMonitorConfigurationDnsConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDnsConfigurationArgs) ToGetMonitorConfigurationDnsConfigurationOutputWithContext(ctx context.Context) GetMonitorConfigurationDnsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDnsConfigurationOutput)
+}
+
+// GetMonitorConfigurationDnsConfigurationArrayInput is an input type that accepts GetMonitorConfigurationDnsConfigurationArray and GetMonitorConfigurationDnsConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDnsConfigurationArrayInput` via:
+//
+//	GetMonitorConfigurationDnsConfigurationArray{ GetMonitorConfigurationDnsConfigurationArgs{...} }
+type GetMonitorConfigurationDnsConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDnsConfigurationArrayOutput() GetMonitorConfigurationDnsConfigurationArrayOutput
+	ToGetMonitorConfigurationDnsConfigurationArrayOutputWithContext(context.Context) GetMonitorConfigurationDnsConfigurationArrayOutput
+}
+
+type GetMonitorConfigurationDnsConfigurationArray []GetMonitorConfigurationDnsConfigurationInput
+
+func (GetMonitorConfigurationDnsConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDnsConfigurationArray) ToGetMonitorConfigurationDnsConfigurationArrayOutput() GetMonitorConfigurationDnsConfigurationArrayOutput {
+	return i.ToGetMonitorConfigurationDnsConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDnsConfigurationArray) ToGetMonitorConfigurationDnsConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDnsConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDnsConfigurationArrayOutput)
+}
+
+type GetMonitorConfigurationDnsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDnsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDnsConfigurationOutput) ToGetMonitorConfigurationDnsConfigurationOutput() GetMonitorConfigurationDnsConfigurationOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDnsConfigurationOutput) ToGetMonitorConfigurationDnsConfigurationOutputWithContext(ctx context.Context) GetMonitorConfigurationDnsConfigurationOutput {
+	return o
+}
+
+// If isOverrideDns is true, then dns will be overridden.
+func (o GetMonitorConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
+}
+
+// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+func (o GetMonitorConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationDnsConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDnsConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDnsConfigurationArrayOutput) ToGetMonitorConfigurationDnsConfigurationArrayOutput() GetMonitorConfigurationDnsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDnsConfigurationArrayOutput) ToGetMonitorConfigurationDnsConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDnsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDnsConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationDnsConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationDnsConfiguration {
+		return vs[0].([]GetMonitorConfigurationDnsConfiguration)[vs[1].(int)]
+	}).(GetMonitorConfigurationDnsConfigurationOutput)
+}
+
 type GetMonitorConfigurationNetworkConfiguration struct {
 	// Number of hops.
 	NumberOfHops int `pulumi:"numberOfHops"`
@@ -3384,7 +3674,7 @@ type GetMonitorConfigurationNetworkConfiguration struct {
 // GetMonitorConfigurationNetworkConfigurationInput is an input type that accepts GetMonitorConfigurationNetworkConfigurationArgs and GetMonitorConfigurationNetworkConfigurationOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationNetworkConfigurationInput` via:
 //
-//          GetMonitorConfigurationNetworkConfigurationArgs{...}
+//	GetMonitorConfigurationNetworkConfigurationArgs{...}
 type GetMonitorConfigurationNetworkConfigurationInput interface {
 	pulumi.Input
 
@@ -3420,7 +3710,7 @@ func (i GetMonitorConfigurationNetworkConfigurationArgs) ToGetMonitorConfigurati
 // GetMonitorConfigurationNetworkConfigurationArrayInput is an input type that accepts GetMonitorConfigurationNetworkConfigurationArray and GetMonitorConfigurationNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationNetworkConfigurationArrayInput` via:
 //
-//          GetMonitorConfigurationNetworkConfigurationArray{ GetMonitorConfigurationNetworkConfigurationArgs{...} }
+//	GetMonitorConfigurationNetworkConfigurationArray{ GetMonitorConfigurationNetworkConfigurationArgs{...} }
 type GetMonitorConfigurationNetworkConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -3523,7 +3813,7 @@ type GetMonitorConfigurationReqAuthenticationDetail struct {
 // GetMonitorConfigurationReqAuthenticationDetailInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailArgs and GetMonitorConfigurationReqAuthenticationDetailOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationReqAuthenticationDetailInput` via:
 //
-//          GetMonitorConfigurationReqAuthenticationDetailArgs{...}
+//	GetMonitorConfigurationReqAuthenticationDetailArgs{...}
 type GetMonitorConfigurationReqAuthenticationDetailInput interface {
 	pulumi.Input
 
@@ -3565,7 +3855,7 @@ func (i GetMonitorConfigurationReqAuthenticationDetailArgs) ToGetMonitorConfigur
 // GetMonitorConfigurationReqAuthenticationDetailArrayInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailArray and GetMonitorConfigurationReqAuthenticationDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationReqAuthenticationDetailArrayInput` via:
 //
-//          GetMonitorConfigurationReqAuthenticationDetailArray{ GetMonitorConfigurationReqAuthenticationDetailArgs{...} }
+//	GetMonitorConfigurationReqAuthenticationDetailArray{ GetMonitorConfigurationReqAuthenticationDetailArgs{...} }
 type GetMonitorConfigurationReqAuthenticationDetailArrayInput interface {
 	pulumi.Input
 
@@ -3673,7 +3963,7 @@ type GetMonitorConfigurationReqAuthenticationDetailAuthHeader struct {
 // GetMonitorConfigurationReqAuthenticationDetailAuthHeaderInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs and GetMonitorConfigurationReqAuthenticationDetailAuthHeaderOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationReqAuthenticationDetailAuthHeaderInput` via:
 //
-//          GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs{...}
+//	GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs{...}
 type GetMonitorConfigurationReqAuthenticationDetailAuthHeaderInput interface {
 	pulumi.Input
 
@@ -3703,7 +3993,7 @@ func (i GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs) ToGetMonit
 // GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayInput is an input type that accepts GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArray and GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayInput` via:
 //
-//          GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArray{ GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs{...} }
+//	GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArray{ GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs{...} }
 type GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArrayInput interface {
 	pulumi.Input
 
@@ -3779,7 +4069,7 @@ type GetMonitorConfigurationRequestHeader struct {
 // GetMonitorConfigurationRequestHeaderInput is an input type that accepts GetMonitorConfigurationRequestHeaderArgs and GetMonitorConfigurationRequestHeaderOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationRequestHeaderInput` via:
 //
-//          GetMonitorConfigurationRequestHeaderArgs{...}
+//	GetMonitorConfigurationRequestHeaderArgs{...}
 type GetMonitorConfigurationRequestHeaderInput interface {
 	pulumi.Input
 
@@ -3809,7 +4099,7 @@ func (i GetMonitorConfigurationRequestHeaderArgs) ToGetMonitorConfigurationReque
 // GetMonitorConfigurationRequestHeaderArrayInput is an input type that accepts GetMonitorConfigurationRequestHeaderArray and GetMonitorConfigurationRequestHeaderArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationRequestHeaderArrayInput` via:
 //
-//          GetMonitorConfigurationRequestHeaderArray{ GetMonitorConfigurationRequestHeaderArgs{...} }
+//	GetMonitorConfigurationRequestHeaderArray{ GetMonitorConfigurationRequestHeaderArgs{...} }
 type GetMonitorConfigurationRequestHeaderArrayInput interface {
 	pulumi.Input
 
@@ -3885,7 +4175,7 @@ type GetMonitorConfigurationRequestQueryParam struct {
 // GetMonitorConfigurationRequestQueryParamInput is an input type that accepts GetMonitorConfigurationRequestQueryParamArgs and GetMonitorConfigurationRequestQueryParamOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationRequestQueryParamInput` via:
 //
-//          GetMonitorConfigurationRequestQueryParamArgs{...}
+//	GetMonitorConfigurationRequestQueryParamArgs{...}
 type GetMonitorConfigurationRequestQueryParamInput interface {
 	pulumi.Input
 
@@ -3915,7 +4205,7 @@ func (i GetMonitorConfigurationRequestQueryParamArgs) ToGetMonitorConfigurationR
 // GetMonitorConfigurationRequestQueryParamArrayInput is an input type that accepts GetMonitorConfigurationRequestQueryParamArray and GetMonitorConfigurationRequestQueryParamArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationRequestQueryParamArrayInput` via:
 //
-//          GetMonitorConfigurationRequestQueryParamArray{ GetMonitorConfigurationRequestQueryParamArgs{...} }
+//	GetMonitorConfigurationRequestQueryParamArray{ GetMonitorConfigurationRequestQueryParamArgs{...} }
 type GetMonitorConfigurationRequestQueryParamArrayInput interface {
 	pulumi.Input
 
@@ -3989,7 +4279,7 @@ type GetMonitorConfigurationVerifyText struct {
 // GetMonitorConfigurationVerifyTextInput is an input type that accepts GetMonitorConfigurationVerifyTextArgs and GetMonitorConfigurationVerifyTextOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationVerifyTextInput` via:
 //
-//          GetMonitorConfigurationVerifyTextArgs{...}
+//	GetMonitorConfigurationVerifyTextArgs{...}
 type GetMonitorConfigurationVerifyTextInput interface {
 	pulumi.Input
 
@@ -4017,7 +4307,7 @@ func (i GetMonitorConfigurationVerifyTextArgs) ToGetMonitorConfigurationVerifyTe
 // GetMonitorConfigurationVerifyTextArrayInput is an input type that accepts GetMonitorConfigurationVerifyTextArray and GetMonitorConfigurationVerifyTextArrayOutput values.
 // You can construct a concrete instance of `GetMonitorConfigurationVerifyTextArrayInput` via:
 //
-//          GetMonitorConfigurationVerifyTextArray{ GetMonitorConfigurationVerifyTextArgs{...} }
+//	GetMonitorConfigurationVerifyTextArray{ GetMonitorConfigurationVerifyTextArgs{...} }
 type GetMonitorConfigurationVerifyTextArrayInput interface {
 	pulumi.Input
 
@@ -4094,7 +4384,7 @@ type GetMonitorScriptParameter struct {
 // GetMonitorScriptParameterInput is an input type that accepts GetMonitorScriptParameterArgs and GetMonitorScriptParameterOutput values.
 // You can construct a concrete instance of `GetMonitorScriptParameterInput` via:
 //
-//          GetMonitorScriptParameterArgs{...}
+//	GetMonitorScriptParameterArgs{...}
 type GetMonitorScriptParameterInput interface {
 	pulumi.Input
 
@@ -4130,7 +4420,7 @@ func (i GetMonitorScriptParameterArgs) ToGetMonitorScriptParameterOutputWithCont
 // GetMonitorScriptParameterArrayInput is an input type that accepts GetMonitorScriptParameterArray and GetMonitorScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetMonitorScriptParameterArrayInput` via:
 //
-//          GetMonitorScriptParameterArray{ GetMonitorScriptParameterArgs{...} }
+//	GetMonitorScriptParameterArray{ GetMonitorScriptParameterArgs{...} }
 type GetMonitorScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -4223,7 +4513,7 @@ type GetMonitorScriptParameterMonitorScriptParameter struct {
 // GetMonitorScriptParameterMonitorScriptParameterInput is an input type that accepts GetMonitorScriptParameterMonitorScriptParameterArgs and GetMonitorScriptParameterMonitorScriptParameterOutput values.
 // You can construct a concrete instance of `GetMonitorScriptParameterMonitorScriptParameterInput` via:
 //
-//          GetMonitorScriptParameterMonitorScriptParameterArgs{...}
+//	GetMonitorScriptParameterMonitorScriptParameterArgs{...}
 type GetMonitorScriptParameterMonitorScriptParameterInput interface {
 	pulumi.Input
 
@@ -4253,7 +4543,7 @@ func (i GetMonitorScriptParameterMonitorScriptParameterArgs) ToGetMonitorScriptP
 // GetMonitorScriptParameterMonitorScriptParameterArrayInput is an input type that accepts GetMonitorScriptParameterMonitorScriptParameterArray and GetMonitorScriptParameterMonitorScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetMonitorScriptParameterMonitorScriptParameterArrayInput` via:
 //
-//          GetMonitorScriptParameterMonitorScriptParameterArray{ GetMonitorScriptParameterMonitorScriptParameterArgs{...} }
+//	GetMonitorScriptParameterMonitorScriptParameterArray{ GetMonitorScriptParameterMonitorScriptParameterArgs{...} }
 type GetMonitorScriptParameterMonitorScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -4329,7 +4619,7 @@ type GetMonitorsFilter struct {
 // GetMonitorsFilterInput is an input type that accepts GetMonitorsFilterArgs and GetMonitorsFilterOutput values.
 // You can construct a concrete instance of `GetMonitorsFilterInput` via:
 //
-//          GetMonitorsFilterArgs{...}
+//	GetMonitorsFilterArgs{...}
 type GetMonitorsFilterInput interface {
 	pulumi.Input
 
@@ -4359,7 +4649,7 @@ func (i GetMonitorsFilterArgs) ToGetMonitorsFilterOutputWithContext(ctx context.
 // GetMonitorsFilterArrayInput is an input type that accepts GetMonitorsFilterArray and GetMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsFilterArrayInput` via:
 //
-//          GetMonitorsFilterArray{ GetMonitorsFilterArgs{...} }
+//	GetMonitorsFilterArray{ GetMonitorsFilterArgs{...} }
 type GetMonitorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4435,7 +4725,7 @@ type GetMonitorsMonitorCollection struct {
 // GetMonitorsMonitorCollectionInput is an input type that accepts GetMonitorsMonitorCollectionArgs and GetMonitorsMonitorCollectionOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionInput` via:
 //
-//          GetMonitorsMonitorCollectionArgs{...}
+//	GetMonitorsMonitorCollectionArgs{...}
 type GetMonitorsMonitorCollectionInput interface {
 	pulumi.Input
 
@@ -4462,7 +4752,7 @@ func (i GetMonitorsMonitorCollectionArgs) ToGetMonitorsMonitorCollectionOutputWi
 // GetMonitorsMonitorCollectionArrayInput is an input type that accepts GetMonitorsMonitorCollectionArray and GetMonitorsMonitorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionArray{ GetMonitorsMonitorCollectionArgs{...} }
+//	GetMonitorsMonitorCollectionArray{ GetMonitorsMonitorCollectionArgs{...} }
 type GetMonitorsMonitorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4525,6 +4815,8 @@ func (o GetMonitorsMonitorCollectionArrayOutput) Index(i pulumi.IntInput) GetMon
 type GetMonitorsMonitorCollectionItem struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorsMonitorCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4535,12 +4827,16 @@ type GetMonitorsMonitorCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run now.
+	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool `pulumi:"isRunOnce"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
+	// Scheduling policy on Vantage points.
+	SchedulingPolicy string `pulumi:"schedulingPolicy"`
 	// A filter to return only monitors using scriptId.
 	ScriptId string `pulumi:"scriptId"`
 	// Name of the script.
@@ -4566,7 +4862,7 @@ type GetMonitorsMonitorCollectionItem struct {
 // GetMonitorsMonitorCollectionItemInput is an input type that accepts GetMonitorsMonitorCollectionItemArgs and GetMonitorsMonitorCollectionItemOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemInput` via:
 //
-//          GetMonitorsMonitorCollectionItemArgs{...}
+//	GetMonitorsMonitorCollectionItemArgs{...}
 type GetMonitorsMonitorCollectionItemInput interface {
 	pulumi.Input
 
@@ -4577,6 +4873,8 @@ type GetMonitorsMonitorCollectionItemInput interface {
 type GetMonitorsMonitorCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	BatchIntervalInSeconds pulumi.IntInput `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations GetMonitorsMonitorCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4587,12 +4885,16 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id pulumi.StringInput `pulumi:"id"`
+	// If isRunNow is enabled, then the monitor will run now.
+	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType pulumi.StringInput `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput `pulumi:"repeatIntervalInSeconds"`
+	// Scheduling policy on Vantage points.
+	SchedulingPolicy pulumi.StringInput `pulumi:"schedulingPolicy"`
 	// A filter to return only monitors using scriptId.
 	ScriptId pulumi.StringInput `pulumi:"scriptId"`
 	// Name of the script.
@@ -4630,7 +4932,7 @@ func (i GetMonitorsMonitorCollectionItemArgs) ToGetMonitorsMonitorCollectionItem
 // GetMonitorsMonitorCollectionItemArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemArray and GetMonitorsMonitorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemArray{ GetMonitorsMonitorCollectionItemArgs{...} }
+//	GetMonitorsMonitorCollectionItemArray{ GetMonitorsMonitorCollectionItemArgs{...} }
 type GetMonitorsMonitorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4671,6 +4973,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) ApmDomainId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
+// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+func (o GetMonitorsMonitorCollectionItemOutput) BatchIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
+}
+
 // Details of monitor configuration.
 func (o GetMonitorsMonitorCollectionItemOutput) Configurations() GetMonitorsMonitorCollectionItemConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemConfiguration {
@@ -4698,6 +5005,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// If isRunNow is enabled, then the monitor will run now.
+func (o GetMonitorsMonitorCollectionItemOutput) IsRunNow() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunNow }).(pulumi.BoolOutput)
+}
+
 // If runOnce is enabled, then the monitor will run once.
 func (o GetMonitorsMonitorCollectionItemOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
@@ -4711,6 +5023,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) MonitorType() pulumi.StringOutpu
 // Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 func (o GetMonitorsMonitorCollectionItemOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
+}
+
+// Scheduling policy on Vantage points.
+func (o GetMonitorsMonitorCollectionItemOutput) SchedulingPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.SchedulingPolicy }).(pulumi.StringOutput)
 }
 
 // A filter to return only monitors using scriptId.
@@ -4788,6 +5105,8 @@ func (o GetMonitorsMonitorCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 type GetMonitorsMonitorCollectionItemConfiguration struct {
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
+	// Dns settings.
+	DnsConfigurations []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
@@ -4819,7 +5138,7 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 // GetMonitorsMonitorCollectionItemConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationArgs and GetMonitorsMonitorCollectionItemConfigurationOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationInput interface {
 	pulumi.Input
 
@@ -4830,6 +5149,8 @@ type GetMonitorsMonitorCollectionItemConfigurationInput interface {
 type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	// Type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// Dns settings.
+	DnsConfigurations GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
 	// If isFailureRetried is enabled, then a failed call will be retried.
@@ -4873,7 +5194,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationArgs) ToGetMonitorsMonitorC
 // GetMonitorsMonitorCollectionItemConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationArray and GetMonitorsMonitorCollectionItemConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationArray{ GetMonitorsMonitorCollectionItemConfigurationArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationArray{ GetMonitorsMonitorCollectionItemConfigurationArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -4912,6 +5233,13 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ToGetMonitorsMonito
 // Type of configuration.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// Dns settings.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DnsConfigurations() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
+		return v.DnsConfigurations
+	}).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput)
 }
 
 // If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -5009,6 +5337,112 @@ func (o GetMonitorsMonitorCollectionItemConfigurationArrayOutput) Index(i pulumi
 	}).(GetMonitorsMonitorCollectionItemConfigurationOutput)
 }
 
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration struct {
+	// If isOverrideDns is true, then dns will be overridden.
+	IsOverrideDns bool `pulumi:"isOverrideDns"`
+	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	OverrideDnsIp string `pulumi:"overrideDnsIp"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs and GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs struct {
+	// If isOverrideDns is true, then dns will be overridden.
+	IsOverrideDns pulumi.BoolInput `pulumi:"isOverrideDns"`
+	// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+	OverrideDnsIp pulumi.StringInput `pulumi:"overrideDnsIp"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray and GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray{ GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray []GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
+	return o
+}
+
+// If isOverrideDns is true, then dns will be overridden.
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) IsOverrideDns() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) bool { return v.IsOverrideDns }).(pulumi.BoolOutput)
+}
+
+// Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput) OverrideDnsIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration) string { return v.OverrideDnsIp }).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput)
+}
+
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration struct {
 	// Number of hops.
 	NumberOfHops int `pulumi:"numberOfHops"`
@@ -5025,7 +5459,7 @@ type GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration struct {
 // GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs and GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput interface {
 	pulumi.Input
 
@@ -5061,7 +5495,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs) T
 // GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray and GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray{ GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray{ GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -5166,7 +5600,7 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail struct
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailInput interface {
 	pulumi.Input
 
@@ -5208,7 +5642,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArray and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArray{ GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArray{ GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArrayInput interface {
 	pulumi.Input
 
@@ -5328,7 +5762,7 @@ type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHea
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderInput interface {
 	pulumi.Input
 
@@ -5358,7 +5792,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuth
 // GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArray and GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArray{ GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArray{ GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArrayInput interface {
 	pulumi.Input
 
@@ -5438,7 +5872,7 @@ type GetMonitorsMonitorCollectionItemConfigurationRequestHeader struct {
 // GetMonitorsMonitorCollectionItemConfigurationRequestHeaderInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs and GetMonitorsMonitorCollectionItemConfigurationRequestHeaderOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationRequestHeaderInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationRequestHeaderInput interface {
 	pulumi.Input
 
@@ -5468,7 +5902,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs) ToGetMon
 // GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArray and GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArray{ GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArray{ GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArrayInput interface {
 	pulumi.Input
 
@@ -5544,7 +5978,7 @@ type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam struct {
 // GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs and GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamInput interface {
 	pulumi.Input
 
@@ -5574,7 +6008,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs) ToGe
 // GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray and GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray{ GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArray{ GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput interface {
 	pulumi.Input
 
@@ -5648,7 +6082,7 @@ type GetMonitorsMonitorCollectionItemConfigurationVerifyText struct {
 // GetMonitorsMonitorCollectionItemConfigurationVerifyTextInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs and GetMonitorsMonitorCollectionItemConfigurationVerifyTextOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationVerifyTextInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs{...}
+//	GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs{...}
 type GetMonitorsMonitorCollectionItemConfigurationVerifyTextInput interface {
 	pulumi.Input
 
@@ -5676,7 +6110,7 @@ func (i GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs) ToGetMonito
 // GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray and GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray{ GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs{...} }
+//	GetMonitorsMonitorCollectionItemConfigurationVerifyTextArray{ GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs{...} }
 type GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput interface {
 	pulumi.Input
 
@@ -5753,7 +6187,7 @@ type GetMonitorsMonitorCollectionItemScriptParameter struct {
 // GetMonitorsMonitorCollectionItemScriptParameterInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterArgs and GetMonitorsMonitorCollectionItemScriptParameterOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemScriptParameterInput` via:
 //
-//          GetMonitorsMonitorCollectionItemScriptParameterArgs{...}
+//	GetMonitorsMonitorCollectionItemScriptParameterArgs{...}
 type GetMonitorsMonitorCollectionItemScriptParameterInput interface {
 	pulumi.Input
 
@@ -5789,7 +6223,7 @@ func (i GetMonitorsMonitorCollectionItemScriptParameterArgs) ToGetMonitorsMonito
 // GetMonitorsMonitorCollectionItemScriptParameterArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterArray and GetMonitorsMonitorCollectionItemScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemScriptParameterArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemScriptParameterArray{ GetMonitorsMonitorCollectionItemScriptParameterArgs{...} }
+//	GetMonitorsMonitorCollectionItemScriptParameterArray{ GetMonitorsMonitorCollectionItemScriptParameterArgs{...} }
 type GetMonitorsMonitorCollectionItemScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -5882,7 +6316,7 @@ type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter struc
 // GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs and GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput` via:
 //
-//          GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs{...}
+//	GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs{...}
 type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterInput interface {
 	pulumi.Input
 
@@ -5912,7 +6346,7 @@ func (i GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArg
 // GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray and GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput` via:
 //
-//          GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray{ GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs{...} }
+//	GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArray{ GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs{...} }
 type GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -5996,7 +6430,7 @@ type GetResultResultDataSet struct {
 // GetResultResultDataSetInput is an input type that accepts GetResultResultDataSetArgs and GetResultResultDataSetOutput values.
 // You can construct a concrete instance of `GetResultResultDataSetInput` via:
 //
-//          GetResultResultDataSetArgs{...}
+//	GetResultResultDataSetArgs{...}
 type GetResultResultDataSetInput interface {
 	pulumi.Input
 
@@ -6030,7 +6464,7 @@ func (i GetResultResultDataSetArgs) ToGetResultResultDataSetOutputWithContext(ct
 // GetResultResultDataSetArrayInput is an input type that accepts GetResultResultDataSetArray and GetResultResultDataSetArrayOutput values.
 // You can construct a concrete instance of `GetResultResultDataSetArrayInput` via:
 //
-//          GetResultResultDataSetArray{ GetResultResultDataSetArgs{...} }
+//	GetResultResultDataSetArray{ GetResultResultDataSetArgs{...} }
 type GetResultResultDataSetArrayInput interface {
 	pulumi.Input
 
@@ -6120,7 +6554,7 @@ type GetScriptMonitorStatusCountMap struct {
 // GetScriptMonitorStatusCountMapInput is an input type that accepts GetScriptMonitorStatusCountMap and GetScriptMonitorStatusCountMapOutput values.
 // You can construct a concrete instance of `GetScriptMonitorStatusCountMapInput` via:
 //
-//          GetScriptMonitorStatusCountMap{ "key": GetScriptMonitorStatusCountArgs{...} }
+//	GetScriptMonitorStatusCountMap{ "key": GetScriptMonitorStatusCountArgs{...} }
 type GetScriptMonitorStatusCountMapInput interface {
 	pulumi.Input
 
@@ -6154,7 +6588,7 @@ func (i GetScriptMonitorStatusCountMapArgs) ToGetScriptMonitorStatusCountMapOutp
 // GetScriptMonitorStatusCountMapArrayInput is an input type that accepts GetScriptMonitorStatusCountMapArray and GetScriptMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `GetScriptMonitorStatusCountMapArrayInput` via:
 //
-//          GetScriptMonitorStatusCountMapArray{ GetScriptMonitorStatusCountMapArgs{...} }
+//	GetScriptMonitorStatusCountMapArray{ GetScriptMonitorStatusCountMapArgs{...} }
 type GetScriptMonitorStatusCountMapArrayInput interface {
 	pulumi.Input
 
@@ -6246,7 +6680,7 @@ type GetScriptParameter struct {
 // GetScriptParameterInput is an input type that accepts GetScriptParameterArgs and GetScriptParameterOutput values.
 // You can construct a concrete instance of `GetScriptParameterInput` via:
 //
-//          GetScriptParameterArgs{...}
+//	GetScriptParameterArgs{...}
 type GetScriptParameterInput interface {
 	pulumi.Input
 
@@ -6282,7 +6716,7 @@ func (i GetScriptParameterArgs) ToGetScriptParameterOutputWithContext(ctx contex
 // GetScriptParameterArrayInput is an input type that accepts GetScriptParameterArray and GetScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetScriptParameterArrayInput` via:
 //
-//          GetScriptParameterArray{ GetScriptParameterArgs{...} }
+//	GetScriptParameterArray{ GetScriptParameterArgs{...} }
 type GetScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -6375,7 +6809,7 @@ type GetScriptParameterScriptParameter struct {
 // GetScriptParameterScriptParameterInput is an input type that accepts GetScriptParameterScriptParameterArgs and GetScriptParameterScriptParameterOutput values.
 // You can construct a concrete instance of `GetScriptParameterScriptParameterInput` via:
 //
-//          GetScriptParameterScriptParameterArgs{...}
+//	GetScriptParameterScriptParameterArgs{...}
 type GetScriptParameterScriptParameterInput interface {
 	pulumi.Input
 
@@ -6407,7 +6841,7 @@ func (i GetScriptParameterScriptParameterArgs) ToGetScriptParameterScriptParamet
 // GetScriptParameterScriptParameterArrayInput is an input type that accepts GetScriptParameterScriptParameterArray and GetScriptParameterScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetScriptParameterScriptParameterArrayInput` via:
 //
-//          GetScriptParameterScriptParameterArray{ GetScriptParameterScriptParameterArgs{...} }
+//	GetScriptParameterScriptParameterArray{ GetScriptParameterScriptParameterArgs{...} }
 type GetScriptParameterScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -6487,7 +6921,7 @@ type GetScriptsFilter struct {
 // GetScriptsFilterInput is an input type that accepts GetScriptsFilterArgs and GetScriptsFilterOutput values.
 // You can construct a concrete instance of `GetScriptsFilterInput` via:
 //
-//          GetScriptsFilterArgs{...}
+//	GetScriptsFilterArgs{...}
 type GetScriptsFilterInput interface {
 	pulumi.Input
 
@@ -6516,7 +6950,7 @@ func (i GetScriptsFilterArgs) ToGetScriptsFilterOutputWithContext(ctx context.Co
 // GetScriptsFilterArrayInput is an input type that accepts GetScriptsFilterArray and GetScriptsFilterArrayOutput values.
 // You can construct a concrete instance of `GetScriptsFilterArrayInput` via:
 //
-//          GetScriptsFilterArray{ GetScriptsFilterArgs{...} }
+//	GetScriptsFilterArray{ GetScriptsFilterArgs{...} }
 type GetScriptsFilterArrayInput interface {
 	pulumi.Input
 
@@ -6591,7 +7025,7 @@ type GetScriptsScriptCollection struct {
 // GetScriptsScriptCollectionInput is an input type that accepts GetScriptsScriptCollectionArgs and GetScriptsScriptCollectionOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionInput` via:
 //
-//          GetScriptsScriptCollectionArgs{...}
+//	GetScriptsScriptCollectionArgs{...}
 type GetScriptsScriptCollectionInput interface {
 	pulumi.Input
 
@@ -6618,7 +7052,7 @@ func (i GetScriptsScriptCollectionArgs) ToGetScriptsScriptCollectionOutputWithCo
 // GetScriptsScriptCollectionArrayInput is an input type that accepts GetScriptsScriptCollectionArray and GetScriptsScriptCollectionArrayOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionArrayInput` via:
 //
-//          GetScriptsScriptCollectionArray{ GetScriptsScriptCollectionArgs{...} }
+//	GetScriptsScriptCollectionArray{ GetScriptsScriptCollectionArgs{...} }
 type GetScriptsScriptCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6712,7 +7146,7 @@ type GetScriptsScriptCollectionItem struct {
 // GetScriptsScriptCollectionItemInput is an input type that accepts GetScriptsScriptCollectionItemArgs and GetScriptsScriptCollectionItemOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemInput` via:
 //
-//          GetScriptsScriptCollectionItemArgs{...}
+//	GetScriptsScriptCollectionItemArgs{...}
 type GetScriptsScriptCollectionItemInput interface {
 	pulumi.Input
 
@@ -6766,7 +7200,7 @@ func (i GetScriptsScriptCollectionItemArgs) ToGetScriptsScriptCollectionItemOutp
 // GetScriptsScriptCollectionItemArrayInput is an input type that accepts GetScriptsScriptCollectionItemArray and GetScriptsScriptCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemArrayInput` via:
 //
-//          GetScriptsScriptCollectionItemArray{ GetScriptsScriptCollectionItemArgs{...} }
+//	GetScriptsScriptCollectionItemArray{ GetScriptsScriptCollectionItemArgs{...} }
 type GetScriptsScriptCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6908,7 +7342,7 @@ type GetScriptsScriptCollectionItemMonitorStatusCountMap struct {
 // GetScriptsScriptCollectionItemMonitorStatusCountMapInput is an input type that accepts GetScriptsScriptCollectionItemMonitorStatusCountMap and GetScriptsScriptCollectionItemMonitorStatusCountMapOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemMonitorStatusCountMapInput` via:
 //
-//          GetScriptsScriptCollectionItemMonitorStatusCountMap{ "key": GetScriptsScriptCollectionItemMonitorStatusCountArgs{...} }
+//	GetScriptsScriptCollectionItemMonitorStatusCountMap{ "key": GetScriptsScriptCollectionItemMonitorStatusCountArgs{...} }
 type GetScriptsScriptCollectionItemMonitorStatusCountMapInput interface {
 	pulumi.Input
 
@@ -6942,7 +7376,7 @@ func (i GetScriptsScriptCollectionItemMonitorStatusCountMapArgs) ToGetScriptsScr
 // GetScriptsScriptCollectionItemMonitorStatusCountMapArrayInput is an input type that accepts GetScriptsScriptCollectionItemMonitorStatusCountMapArray and GetScriptsScriptCollectionItemMonitorStatusCountMapArrayOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemMonitorStatusCountMapArrayInput` via:
 //
-//          GetScriptsScriptCollectionItemMonitorStatusCountMapArray{ GetScriptsScriptCollectionItemMonitorStatusCountMapArgs{...} }
+//	GetScriptsScriptCollectionItemMonitorStatusCountMapArray{ GetScriptsScriptCollectionItemMonitorStatusCountMapArgs{...} }
 type GetScriptsScriptCollectionItemMonitorStatusCountMapArrayInput interface {
 	pulumi.Input
 
@@ -7034,7 +7468,7 @@ type GetScriptsScriptCollectionItemParameter struct {
 // GetScriptsScriptCollectionItemParameterInput is an input type that accepts GetScriptsScriptCollectionItemParameterArgs and GetScriptsScriptCollectionItemParameterOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemParameterInput` via:
 //
-//          GetScriptsScriptCollectionItemParameterArgs{...}
+//	GetScriptsScriptCollectionItemParameterArgs{...}
 type GetScriptsScriptCollectionItemParameterInput interface {
 	pulumi.Input
 
@@ -7070,7 +7504,7 @@ func (i GetScriptsScriptCollectionItemParameterArgs) ToGetScriptsScriptCollectio
 // GetScriptsScriptCollectionItemParameterArrayInput is an input type that accepts GetScriptsScriptCollectionItemParameterArray and GetScriptsScriptCollectionItemParameterArrayOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemParameterArrayInput` via:
 //
-//          GetScriptsScriptCollectionItemParameterArray{ GetScriptsScriptCollectionItemParameterArgs{...} }
+//	GetScriptsScriptCollectionItemParameterArray{ GetScriptsScriptCollectionItemParameterArgs{...} }
 type GetScriptsScriptCollectionItemParameterArrayInput interface {
 	pulumi.Input
 
@@ -7165,7 +7599,7 @@ type GetScriptsScriptCollectionItemParameterScriptParameter struct {
 // GetScriptsScriptCollectionItemParameterScriptParameterInput is an input type that accepts GetScriptsScriptCollectionItemParameterScriptParameterArgs and GetScriptsScriptCollectionItemParameterScriptParameterOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemParameterScriptParameterInput` via:
 //
-//          GetScriptsScriptCollectionItemParameterScriptParameterArgs{...}
+//	GetScriptsScriptCollectionItemParameterScriptParameterArgs{...}
 type GetScriptsScriptCollectionItemParameterScriptParameterInput interface {
 	pulumi.Input
 
@@ -7197,7 +7631,7 @@ func (i GetScriptsScriptCollectionItemParameterScriptParameterArgs) ToGetScripts
 // GetScriptsScriptCollectionItemParameterScriptParameterArrayInput is an input type that accepts GetScriptsScriptCollectionItemParameterScriptParameterArray and GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput values.
 // You can construct a concrete instance of `GetScriptsScriptCollectionItemParameterScriptParameterArrayInput` via:
 //
-//          GetScriptsScriptCollectionItemParameterScriptParameterArray{ GetScriptsScriptCollectionItemParameterScriptParameterArgs{...} }
+//	GetScriptsScriptCollectionItemParameterScriptParameterArray{ GetScriptsScriptCollectionItemParameterScriptParameterArgs{...} }
 type GetScriptsScriptCollectionItemParameterScriptParameterArrayInput interface {
 	pulumi.Input
 
@@ -7280,7 +7714,7 @@ type GetVantagePointItem struct {
 // GetVantagePointItemInput is an input type that accepts GetVantagePointItemArgs and GetVantagePointItemOutput values.
 // You can construct a concrete instance of `GetVantagePointItemInput` via:
 //
-//          GetVantagePointItemArgs{...}
+//	GetVantagePointItemArgs{...}
 type GetVantagePointItemInput interface {
 	pulumi.Input
 
@@ -7312,7 +7746,7 @@ func (i GetVantagePointItemArgs) ToGetVantagePointItemOutputWithContext(ctx cont
 // GetVantagePointItemArrayInput is an input type that accepts GetVantagePointItemArray and GetVantagePointItemArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointItemArrayInput` via:
 //
-//          GetVantagePointItemArray{ GetVantagePointItemArgs{...} }
+//	GetVantagePointItemArray{ GetVantagePointItemArgs{...} }
 type GetVantagePointItemArrayInput interface {
 	pulumi.Input
 
@@ -7401,7 +7835,7 @@ type GetVantagePointItemGeo struct {
 // GetVantagePointItemGeoInput is an input type that accepts GetVantagePointItemGeoArgs and GetVantagePointItemGeoOutput values.
 // You can construct a concrete instance of `GetVantagePointItemGeoInput` via:
 //
-//          GetVantagePointItemGeoArgs{...}
+//	GetVantagePointItemGeoArgs{...}
 type GetVantagePointItemGeoInput interface {
 	pulumi.Input
 
@@ -7439,7 +7873,7 @@ func (i GetVantagePointItemGeoArgs) ToGetVantagePointItemGeoOutputWithContext(ct
 // GetVantagePointItemGeoArrayInput is an input type that accepts GetVantagePointItemGeoArray and GetVantagePointItemGeoArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointItemGeoArrayInput` via:
 //
-//          GetVantagePointItemGeoArray{ GetVantagePointItemGeoArgs{...} }
+//	GetVantagePointItemGeoArray{ GetVantagePointItemGeoArgs{...} }
 type GetVantagePointItemGeoArrayInput interface {
 	pulumi.Input
 
@@ -7535,7 +7969,7 @@ type GetVantagePointsFilter struct {
 // GetVantagePointsFilterInput is an input type that accepts GetVantagePointsFilterArgs and GetVantagePointsFilterOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterInput` via:
 //
-//          GetVantagePointsFilterArgs{...}
+//	GetVantagePointsFilterArgs{...}
 type GetVantagePointsFilterInput interface {
 	pulumi.Input
 
@@ -7565,7 +7999,7 @@ func (i GetVantagePointsFilterArgs) ToGetVantagePointsFilterOutputWithContext(ct
 // GetVantagePointsFilterArrayInput is an input type that accepts GetVantagePointsFilterArray and GetVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterArrayInput` via:
 //
-//          GetVantagePointsFilterArray{ GetVantagePointsFilterArgs{...} }
+//	GetVantagePointsFilterArray{ GetVantagePointsFilterArgs{...} }
 type GetVantagePointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7642,7 +8076,7 @@ type GetVantagePointsPublicVantagePointCollection struct {
 // GetVantagePointsPublicVantagePointCollectionInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionArgs and GetVantagePointsPublicVantagePointCollectionOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionInput` via:
 //
-//          GetVantagePointsPublicVantagePointCollectionArgs{...}
+//	GetVantagePointsPublicVantagePointCollectionArgs{...}
 type GetVantagePointsPublicVantagePointCollectionInput interface {
 	pulumi.Input
 
@@ -7670,7 +8104,7 @@ func (i GetVantagePointsPublicVantagePointCollectionArgs) ToGetVantagePointsPubl
 // GetVantagePointsPublicVantagePointCollectionArrayInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionArray and GetVantagePointsPublicVantagePointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionArrayInput` via:
 //
-//          GetVantagePointsPublicVantagePointCollectionArray{ GetVantagePointsPublicVantagePointCollectionArgs{...} }
+//	GetVantagePointsPublicVantagePointCollectionArray{ GetVantagePointsPublicVantagePointCollectionArgs{...} }
 type GetVantagePointsPublicVantagePointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -7745,7 +8179,7 @@ type GetVantagePointsPublicVantagePointCollectionItem struct {
 // GetVantagePointsPublicVantagePointCollectionItemInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemArgs and GetVantagePointsPublicVantagePointCollectionItemOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionItemInput` via:
 //
-//          GetVantagePointsPublicVantagePointCollectionItemArgs{...}
+//	GetVantagePointsPublicVantagePointCollectionItemArgs{...}
 type GetVantagePointsPublicVantagePointCollectionItemInput interface {
 	pulumi.Input
 
@@ -7777,7 +8211,7 @@ func (i GetVantagePointsPublicVantagePointCollectionItemArgs) ToGetVantagePoints
 // GetVantagePointsPublicVantagePointCollectionItemArrayInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemArray and GetVantagePointsPublicVantagePointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionItemArrayInput` via:
 //
-//          GetVantagePointsPublicVantagePointCollectionItemArray{ GetVantagePointsPublicVantagePointCollectionItemArgs{...} }
+//	GetVantagePointsPublicVantagePointCollectionItemArray{ GetVantagePointsPublicVantagePointCollectionItemArgs{...} }
 type GetVantagePointsPublicVantagePointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -7868,7 +8302,7 @@ type GetVantagePointsPublicVantagePointCollectionItemGeo struct {
 // GetVantagePointsPublicVantagePointCollectionItemGeoInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemGeoArgs and GetVantagePointsPublicVantagePointCollectionItemGeoOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionItemGeoInput` via:
 //
-//          GetVantagePointsPublicVantagePointCollectionItemGeoArgs{...}
+//	GetVantagePointsPublicVantagePointCollectionItemGeoArgs{...}
 type GetVantagePointsPublicVantagePointCollectionItemGeoInput interface {
 	pulumi.Input
 
@@ -7906,7 +8340,7 @@ func (i GetVantagePointsPublicVantagePointCollectionItemGeoArgs) ToGetVantagePoi
 // GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput is an input type that accepts GetVantagePointsPublicVantagePointCollectionItemGeoArray and GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput` via:
 //
-//          GetVantagePointsPublicVantagePointCollectionItemGeoArray{ GetVantagePointsPublicVantagePointCollectionItemGeoArgs{...} }
+//	GetVantagePointsPublicVantagePointCollectionItemGeoArray{ GetVantagePointsPublicVantagePointCollectionItemGeoArgs{...} }
 type GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput interface {
 	pulumi.Input
 
@@ -7995,6 +8429,8 @@ func (o GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput) Index(i 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationInput)(nil)).Elem(), ConfigConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationNetworkConfigurationInput)(nil)).Elem(), ConfigConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationNetworkConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationReqAuthenticationDetailsInput)(nil)).Elem(), ConfigConfigurationReqAuthenticationDetailsArgs{})
@@ -8037,6 +8473,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsFilterArrayInput)(nil)).Elem(), GetDedicatedVantagePointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationInput)(nil)).Elem(), GetMonitorConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationReqAuthenticationDetailInput)(nil)).Elem(), GetMonitorConfigurationReqAuthenticationDetailArgs{})
@@ -8061,6 +8499,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs{})
@@ -8111,6 +8551,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput)(nil)).Elem(), GetVantagePointsPublicVantagePointCollectionItemGeoArray{})
 	pulumi.RegisterOutputType(ConfigConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationReqAuthenticationDetailsOutput{})
@@ -8153,6 +8595,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDedicatedVantagePointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationReqAuthenticationDetailOutput{})
@@ -8177,6 +8621,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput{})

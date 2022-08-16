@@ -19,19 +19,22 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewDiscoveryJobsResult(ctx, "testDiscoveryJobsResult", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewDiscoveryJobsResult(ctx, "testDiscoveryJobsResult", nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -39,7 +42,9 @@ import (
 // DiscoveryJobsResults can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
+//
+//	$ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
+//
 // ```
 type DiscoveryJobsResult struct {
 	pulumi.CustomResourceState
@@ -239,7 +244,7 @@ func (i *DiscoveryJobsResult) ToDiscoveryJobsResultOutputWithContext(ctx context
 // DiscoveryJobsResultArrayInput is an input type that accepts DiscoveryJobsResultArray and DiscoveryJobsResultArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobsResultArrayInput` via:
 //
-//          DiscoveryJobsResultArray{ DiscoveryJobsResultArgs{...} }
+//	DiscoveryJobsResultArray{ DiscoveryJobsResultArgs{...} }
 type DiscoveryJobsResultArrayInput interface {
 	pulumi.Input
 
@@ -264,7 +269,7 @@ func (i DiscoveryJobsResultArray) ToDiscoveryJobsResultArrayOutputWithContext(ct
 // DiscoveryJobsResultMapInput is an input type that accepts DiscoveryJobsResultMap and DiscoveryJobsResultMapOutput values.
 // You can construct a concrete instance of `DiscoveryJobsResultMapInput` via:
 //
-//          DiscoveryJobsResultMap{ "key": DiscoveryJobsResultArgs{...} }
+//	DiscoveryJobsResultMap{ "key": DiscoveryJobsResultArgs{...} }
 type DiscoveryJobsResultMapInput interface {
 	pulumi.Input
 

@@ -21,48 +21,51 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewCloudVmCluster(ctx, "testCloudVmCluster", &Database.CloudVmClusterArgs{
-// 			BackupSubnetId:               pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			CloudExadataInfrastructureId: pulumi.Any(oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id),
-// 			CompartmentId:                pulumi.Any(_var.Compartment_id),
-// 			CpuCoreCount:                 pulumi.Any(_var.Cloud_vm_cluster_cpu_core_count),
-// 			DisplayName:                  pulumi.Any(_var.Cloud_vm_cluster_display_name),
-// 			GiVersion:                    pulumi.Any(_var.Cloud_vm_cluster_gi_version),
-// 			Hostname:                     pulumi.Any(_var.Cloud_vm_cluster_hostname),
-// 			SshPublicKeys:                pulumi.Any(_var.Cloud_vm_cluster_ssh_public_keys),
-// 			SubnetId:                     pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			BackupNetworkNsgIds:          pulumi.Any(_var.Cloud_vm_cluster_backup_network_nsg_ids),
-// 			ClusterName:                  pulumi.Any(_var.Cloud_vm_cluster_cluster_name),
-// 			DataCollectionOptions: &database.CloudVmClusterDataCollectionOptionsArgs{
-// 				IsDiagnosticsEventsEnabled: pulumi.Any(_var.Cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled),
-// 			},
-// 			DataStoragePercentage: pulumi.Any(_var.Cloud_vm_cluster_data_storage_percentage),
-// 			DefinedTags:           pulumi.Any(_var.Cloud_vm_cluster_defined_tags),
-// 			Domain:                pulumi.Any(_var.Cloud_vm_cluster_domain),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsLocalBackupEnabled:     pulumi.Any(_var.Cloud_vm_cluster_is_local_backup_enabled),
-// 			IsSparseDiskgroupEnabled: pulumi.Any(_var.Cloud_vm_cluster_is_sparse_diskgroup_enabled),
-// 			LicenseModel:             pulumi.Any(_var.Cloud_vm_cluster_license_model),
-// 			NsgIds:                   pulumi.Any(_var.Cloud_vm_cluster_nsg_ids),
-// 			OcpuCount:                pulumi.Any(_var.Cloud_vm_cluster_ocpu_count),
-// 			ScanListenerPortTcp:      pulumi.Any(_var.Cloud_vm_cluster_scan_listener_port_tcp),
-// 			ScanListenerPortTcpSsl:   pulumi.Any(_var.Cloud_vm_cluster_scan_listener_port_tcp_ssl),
-// 			TimeZone:                 pulumi.Any(_var.Cloud_vm_cluster_time_zone),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewCloudVmCluster(ctx, "testCloudVmCluster", &Database.CloudVmClusterArgs{
+//				BackupSubnetId:               pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				CloudExadataInfrastructureId: pulumi.Any(oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id),
+//				CompartmentId:                pulumi.Any(_var.Compartment_id),
+//				CpuCoreCount:                 pulumi.Any(_var.Cloud_vm_cluster_cpu_core_count),
+//				DisplayName:                  pulumi.Any(_var.Cloud_vm_cluster_display_name),
+//				GiVersion:                    pulumi.Any(_var.Cloud_vm_cluster_gi_version),
+//				Hostname:                     pulumi.Any(_var.Cloud_vm_cluster_hostname),
+//				SshPublicKeys:                pulumi.Any(_var.Cloud_vm_cluster_ssh_public_keys),
+//				SubnetId:                     pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				BackupNetworkNsgIds:          pulumi.Any(_var.Cloud_vm_cluster_backup_network_nsg_ids),
+//				ClusterName:                  pulumi.Any(_var.Cloud_vm_cluster_cluster_name),
+//				DataCollectionOptions: &database.CloudVmClusterDataCollectionOptionsArgs{
+//					IsDiagnosticsEventsEnabled: pulumi.Any(_var.Cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled),
+//				},
+//				DataStoragePercentage: pulumi.Any(_var.Cloud_vm_cluster_data_storage_percentage),
+//				DefinedTags:           pulumi.Any(_var.Cloud_vm_cluster_defined_tags),
+//				Domain:                pulumi.Any(_var.Cloud_vm_cluster_domain),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsLocalBackupEnabled:     pulumi.Any(_var.Cloud_vm_cluster_is_local_backup_enabled),
+//				IsSparseDiskgroupEnabled: pulumi.Any(_var.Cloud_vm_cluster_is_sparse_diskgroup_enabled),
+//				LicenseModel:             pulumi.Any(_var.Cloud_vm_cluster_license_model),
+//				NsgIds:                   pulumi.Any(_var.Cloud_vm_cluster_nsg_ids),
+//				OcpuCount:                pulumi.Any(_var.Cloud_vm_cluster_ocpu_count),
+//				ScanListenerPortTcp:      pulumi.Any(_var.Cloud_vm_cluster_scan_listener_port_tcp),
+//				ScanListenerPortTcpSsl:   pulumi.Any(_var.Cloud_vm_cluster_scan_listener_port_tcp_ssl),
+//				TimeZone:                 pulumi.Any(_var.Cloud_vm_cluster_time_zone),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -70,7 +73,9 @@ import (
 // CloudVmClusters can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
+//
+//	$ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
+//
 // ```
 type CloudVmCluster struct {
 	pulumi.CustomResourceState
@@ -562,7 +567,7 @@ func (i *CloudVmCluster) ToCloudVmClusterOutputWithContext(ctx context.Context) 
 // CloudVmClusterArrayInput is an input type that accepts CloudVmClusterArray and CloudVmClusterArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterArrayInput` via:
 //
-//          CloudVmClusterArray{ CloudVmClusterArgs{...} }
+//	CloudVmClusterArray{ CloudVmClusterArgs{...} }
 type CloudVmClusterArrayInput interface {
 	pulumi.Input
 
@@ -587,7 +592,7 @@ func (i CloudVmClusterArray) ToCloudVmClusterArrayOutputWithContext(ctx context.
 // CloudVmClusterMapInput is an input type that accepts CloudVmClusterMap and CloudVmClusterMapOutput values.
 // You can construct a concrete instance of `CloudVmClusterMapInput` via:
 //
-//          CloudVmClusterMap{ "key": CloudVmClusterArgs{...} }
+//	CloudVmClusterMap{ "key": CloudVmClusterArgs{...} }
 type CloudVmClusterMapInput interface {
 	pulumi.Input
 

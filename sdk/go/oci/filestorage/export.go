@@ -22,33 +22,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.NewExport(ctx, "testExport", &FileStorage.ExportArgs{
-// 			ExportSetId:  pulumi.Any(oci_file_storage_export_set.Test_export_set.Id),
-// 			FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
-// 			Path:         pulumi.Any(_var.Export_path),
-// 			ExportOptions: filestorage.ExportExportOptionArray{
-// 				&filestorage.ExportExportOptionArgs{
-// 					Source:                      pulumi.Any(_var.Export_export_options_source),
-// 					Access:                      pulumi.Any(_var.Export_export_options_access),
-// 					AnonymousGid:                pulumi.Any(_var.Export_export_options_anonymous_gid),
-// 					AnonymousUid:                pulumi.Any(_var.Export_export_options_anonymous_uid),
-// 					IdentitySquash:              pulumi.Any(_var.Export_export_options_identity_squash),
-// 					RequirePrivilegedSourcePort: pulumi.Any(_var.Export_export_options_require_privileged_source_port),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.NewExport(ctx, "testExport", &FileStorage.ExportArgs{
+//				ExportSetId:  pulumi.Any(oci_file_storage_export_set.Test_export_set.Id),
+//				FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
+//				Path:         pulumi.Any(_var.Export_path),
+//				ExportOptions: filestorage.ExportExportOptionArray{
+//					&filestorage.ExportExportOptionArgs{
+//						Source:                      pulumi.Any(_var.Export_export_options_source),
+//						Access:                      pulumi.Any(_var.Export_export_options_access),
+//						AnonymousGid:                pulumi.Any(_var.Export_export_options_anonymous_gid),
+//						AnonymousUid:                pulumi.Any(_var.Export_export_options_anonymous_uid),
+//						IdentitySquash:              pulumi.Any(_var.Export_export_options_identity_squash),
+//						RequirePrivilegedSourcePort: pulumi.Any(_var.Export_export_options_require_privileged_source_port),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // Exports can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:FileStorage/export:Export test_export "id"
+//
+//	$ pulumi import oci:FileStorage/export:Export test_export "id"
+//
 // ```
 type Export struct {
 	pulumi.CustomResourceState
@@ -195,7 +200,7 @@ func (i *Export) ToExportOutputWithContext(ctx context.Context) ExportOutput {
 // ExportArrayInput is an input type that accepts ExportArray and ExportArrayOutput values.
 // You can construct a concrete instance of `ExportArrayInput` via:
 //
-//          ExportArray{ ExportArgs{...} }
+//	ExportArray{ ExportArgs{...} }
 type ExportArrayInput interface {
 	pulumi.Input
 
@@ -220,7 +225,7 @@ func (i ExportArray) ToExportArrayOutputWithContext(ctx context.Context) ExportA
 // ExportMapInput is an input type that accepts ExportMap and ExportMapOutput values.
 // You can construct a concrete instance of `ExportMapInput` via:
 //
-//          ExportMap{ "key": ExportArgs{...} }
+//	ExportMap{ "key": ExportArgs{...} }
 type ExportMapInput interface {
 	pulumi.Input
 

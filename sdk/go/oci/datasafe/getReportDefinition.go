@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Gets the details of report definition specified by the identifier
+// # Gets the details of report definition specified by the identifier
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetReportDefinition(ctx, &datasafe.GetReportDefinitionArgs{
-// 			ReportDefinitionId: oci_data_safe_report_definition.Test_report_definition.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetReportDefinition(ctx, &datasafe.GetReportDefinitionArgs{
+//				ReportDefinitionId: oci_data_safe_report_definition.Test_report_definition.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupReportDefinition(ctx *pulumi.Context, args *LookupReportDefinitionArgs, opts ...pulumi.InvokeOption) (*LookupReportDefinitionResult, error) {
 	var rv LookupReportDefinitionResult

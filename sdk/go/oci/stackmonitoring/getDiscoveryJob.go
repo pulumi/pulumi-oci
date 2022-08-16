@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.GetDiscoveryJob(ctx, &stackmonitoring.GetDiscoveryJobArgs{
-// 			DiscoveryJobId: oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.GetDiscoveryJob(ctx, &stackmonitoring.GetDiscoveryJobArgs{
+//				DiscoveryJobId: oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDiscoveryJob(ctx *pulumi.Context, args *LookupDiscoveryJobArgs, opts ...pulumi.InvokeOption) (*LookupDiscoveryJobResult, error) {
 	var rv LookupDiscoveryJobResult

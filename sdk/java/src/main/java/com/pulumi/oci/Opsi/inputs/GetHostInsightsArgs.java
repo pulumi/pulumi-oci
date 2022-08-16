@@ -65,6 +65,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="exadataInsightId")
@@ -72,6 +73,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<String>> exadataInsightId() {
@@ -87,6 +89,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * Filter by one or more host types. Possible value is EXTERNAL-HOST.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="hostTypes")
@@ -94,6 +97,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @return Filter by one or more host types. Possible value is EXTERNAL-HOST.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<Output<List<String>>> hostTypes() {
@@ -242,6 +246,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param exadataInsightId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -253,6 +258,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param exadataInsightId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -276,6 +282,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param hostTypes Filter by one or more host types. Possible value is EXTERNAL-HOST.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -287,6 +294,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param hostTypes Filter by one or more host types. Possible value is EXTERNAL-HOST.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -297,6 +305,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param hostTypes Filter by one or more host types. Possible value is EXTERNAL-HOST.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 

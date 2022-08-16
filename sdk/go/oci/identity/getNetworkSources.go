@@ -22,23 +22,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetNetworkSources(ctx, &identity.GetNetworkSourcesArgs{
-// 			CompartmentId: _var.Tenancy_ocid,
-// 			Name:          pulumi.StringRef(_var.Network_source_name),
-// 			State:         pulumi.StringRef(_var.Network_source_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetNetworkSources(ctx, &identity.GetNetworkSourcesArgs{
+//				CompartmentId: _var.Tenancy_ocid,
+//				Name:          pulumi.StringRef(_var.Network_source_name),
+//				State:         pulumi.StringRef(_var.Network_source_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkSources(ctx *pulumi.Context, args *GetNetworkSourcesArgs, opts ...pulumi.InvokeOption) (*GetNetworkSourcesResult, error) {
 	var rv GetNetworkSourcesResult

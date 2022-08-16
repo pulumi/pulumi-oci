@@ -21,32 +21,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waa"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waa.NewAppAcceleration(ctx, "testWebAppAcceleration", &Waa.AppAccelerationArgs{
-// 			BackendType:                pulumi.Any(_var.Web_app_acceleration_backend_type),
-// 			CompartmentId:              pulumi.Any(_var.Compartment_id),
-// 			LoadBalancerId:             pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-// 			WebAppAccelerationPolicyId: pulumi.Any(oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Web_app_acceleration_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			SystemTags: pulumi.Any(_var.Web_app_acceleration_system_tags),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waa.NewAppAcceleration(ctx, "testWebAppAcceleration", &Waa.AppAccelerationArgs{
+//				BackendType:                pulumi.Any(_var.Web_app_acceleration_backend_type),
+//				CompartmentId:              pulumi.Any(_var.Compartment_id),
+//				LoadBalancerId:             pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				WebAppAccelerationPolicyId: pulumi.Any(oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Web_app_acceleration_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				SystemTags: pulumi.Any(_var.Web_app_acceleration_system_tags),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // WebAppAccelerations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
+//
+//	$ pulumi import oci:Waa/appAcceleration:AppAcceleration test_web_app_acceleration "id"
+//
 // ```
 type AppAcceleration struct {
 	pulumi.CustomResourceState
@@ -248,7 +253,7 @@ func (i *AppAcceleration) ToAppAccelerationOutputWithContext(ctx context.Context
 // AppAccelerationArrayInput is an input type that accepts AppAccelerationArray and AppAccelerationArrayOutput values.
 // You can construct a concrete instance of `AppAccelerationArrayInput` via:
 //
-//          AppAccelerationArray{ AppAccelerationArgs{...} }
+//	AppAccelerationArray{ AppAccelerationArgs{...} }
 type AppAccelerationArrayInput interface {
 	pulumi.Input
 
@@ -273,7 +278,7 @@ func (i AppAccelerationArray) ToAppAccelerationArrayOutputWithContext(ctx contex
 // AppAccelerationMapInput is an input type that accepts AppAccelerationMap and AppAccelerationMapOutput values.
 // You can construct a concrete instance of `AppAccelerationMapInput` via:
 //
-//          AppAccelerationMap{ "key": AppAccelerationArgs{...} }
+//	AppAccelerationMap{ "key": AppAccelerationArgs{...} }
 type AppAccelerationMapInput interface {
 	pulumi.Input
 

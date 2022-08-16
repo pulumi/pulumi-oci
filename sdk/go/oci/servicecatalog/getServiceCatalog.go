@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
 //
-// Gets detailed information about the service catalog including name, compartmentId
+// # Gets detailed information about the service catalog including name, compartmentId
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceCatalog.GetServiceCatalog(ctx, &servicecatalog.GetServiceCatalogArgs{
-// 			ServiceCatalogId: oci_service_catalog_service_catalog.Test_service_catalog.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceCatalog.GetServiceCatalog(ctx, &servicecatalog.GetServiceCatalogArgs{
+//				ServiceCatalogId: oci_service_catalog_service_catalog.Test_service_catalog.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetServiceCatalog(ctx *pulumi.Context, args *GetServiceCatalogArgs, opts ...pulumi.InvokeOption) (*GetServiceCatalogResult, error) {
 	var rv GetServiceCatalogResult

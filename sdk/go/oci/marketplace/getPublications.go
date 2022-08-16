@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetPublications(ctx, &marketplace.GetPublicationsArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			ListingType:      _var.Publication_listing_type,
-// 			Names:            _var.Publication_name,
-// 			OperatingSystems: _var.Publication_operating_systems,
-// 			PublicationId:    pulumi.StringRef(oci_marketplace_publication.Test_publication.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetPublications(ctx, &marketplace.GetPublicationsArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				ListingType:      _var.Publication_listing_type,
+//				Names:            _var.Publication_name,
+//				OperatingSystems: _var.Publication_operating_systems,
+//				PublicationId:    pulumi.StringRef(oci_marketplace_publication.Test_publication.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPublications(ctx *pulumi.Context, args *GetPublicationsArgs, opts ...pulumi.InvokeOption) (*GetPublicationsResult, error) {
 	var rv GetPublicationsResult

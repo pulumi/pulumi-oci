@@ -40,94 +40,97 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Sch"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Sch"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Sch.NewConnector(ctx, "testServiceConnector", &Sch.ConnectorArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Service_connector_display_name),
-// 			Source: &sch.ConnectorSourceArgs{
-// 				Kind: pulumi.Any(_var.Service_connector_source_kind),
-// 				Cursor: &sch.ConnectorSourceCursorArgs{
-// 					Kind: pulumi.Any(_var.Service_connector_source_cursor_kind),
-// 				},
-// 				LogSources: sch.ConnectorSourceLogSourceArray{
-// 					&sch.ConnectorSourceLogSourceArgs{
-// 						CompartmentId: pulumi.Any(_var.Compartment_id),
-// 						LogGroupId:    pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 						LogId:         pulumi.Any(oci_logging_log.Test_log.Id),
-// 					},
-// 				},
-// 				MonitoringSources: sch.ConnectorSourceMonitoringSourceArray{
-// 					&sch.ConnectorSourceMonitoringSourceArgs{
-// 						CompartmentId: pulumi.Any(_var.Compartment_id),
-// 						NamespaceDetails: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs{
-// 							Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_kind),
-// 							Namespaces: sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{
-// 								&sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{
-// 									Metrics: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{
-// 										Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind),
-// 									},
-// 									Namespace: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_namespace),
-// 								},
-// 							},
-// 						},
-// 					},
-// 				},
-// 				StreamId: pulumi.Any(oci_streaming_stream.Test_stream.Id),
-// 			},
-// 			Target: &sch.ConnectorTargetArgs{
-// 				Kind:                   pulumi.Any(_var.Service_connector_target_kind),
-// 				BatchRolloverSizeInMbs: pulumi.Any(_var.Service_connector_target_batch_rollover_size_in_mbs),
-// 				BatchRolloverTimeInMs:  pulumi.Any(_var.Service_connector_target_batch_rollover_time_in_ms),
-// 				Bucket:                 pulumi.Any(_var.Service_connector_target_bucket),
-// 				CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 				Dimensions: sch.ConnectorTargetDimensionArray{
-// 					&sch.ConnectorTargetDimensionArgs{
-// 						DimensionValue: &sch.ConnectorTargetDimensionDimensionValueArgs{
-// 							Kind:  pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_kind),
-// 							Path:  pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_path),
-// 							Value: pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_value),
-// 						},
-// 						Name: pulumi.Any(_var.Service_connector_target_dimensions_name),
-// 					},
-// 				},
-// 				EnableFormattedMessaging: pulumi.Any(_var.Service_connector_target_enable_formatted_messaging),
-// 				FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
-// 				LogGroupId:               pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-// 				Metric:                   pulumi.Any(_var.Service_connector_target_metric),
-// 				MetricNamespace:          pulumi.Any(_var.Service_connector_target_metric_namespace),
-// 				Namespace:                pulumi.Any(_var.Service_connector_target_namespace),
-// 				ObjectNamePrefix:         pulumi.Any(_var.Service_connector_target_object_name_prefix),
-// 				StreamId:                 pulumi.Any(oci_streaming_stream.Test_stream.Id),
-// 				TopicId:                  pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Service_connector_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Tasks: sch.ConnectorTaskArray{
-// 				&sch.ConnectorTaskArgs{
-// 					Kind:           pulumi.Any(_var.Service_connector_tasks_kind),
-// 					BatchSizeInKbs: pulumi.Any(_var.Service_connector_tasks_batch_size_in_kbs),
-// 					BatchTimeInSec: pulumi.Any(_var.Service_connector_tasks_batch_time_in_sec),
-// 					Condition:      pulumi.Any(_var.Service_connector_tasks_condition),
-// 					FunctionId:     pulumi.Any(oci_functions_function.Test_function.Id),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Sch.NewConnector(ctx, "testServiceConnector", &Sch.ConnectorArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Service_connector_display_name),
+//				Source: &sch.ConnectorSourceArgs{
+//					Kind: pulumi.Any(_var.Service_connector_source_kind),
+//					Cursor: &sch.ConnectorSourceCursorArgs{
+//						Kind: pulumi.Any(_var.Service_connector_source_cursor_kind),
+//					},
+//					LogSources: sch.ConnectorSourceLogSourceArray{
+//						&sch.ConnectorSourceLogSourceArgs{
+//							CompartmentId: pulumi.Any(_var.Compartment_id),
+//							LogGroupId:    pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//							LogId:         pulumi.Any(oci_logging_log.Test_log.Id),
+//						},
+//					},
+//					MonitoringSources: sch.ConnectorSourceMonitoringSourceArray{
+//						&sch.ConnectorSourceMonitoringSourceArgs{
+//							CompartmentId: pulumi.Any(_var.Compartment_id),
+//							NamespaceDetails: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs{
+//								Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_kind),
+//								Namespaces: sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{
+//									&sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{
+//										Metrics: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{
+//											Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind),
+//										},
+//										Namespace: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_namespace),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					StreamId: pulumi.Any(oci_streaming_stream.Test_stream.Id),
+//				},
+//				Target: &sch.ConnectorTargetArgs{
+//					Kind:                   pulumi.Any(_var.Service_connector_target_kind),
+//					BatchRolloverSizeInMbs: pulumi.Any(_var.Service_connector_target_batch_rollover_size_in_mbs),
+//					BatchRolloverTimeInMs:  pulumi.Any(_var.Service_connector_target_batch_rollover_time_in_ms),
+//					Bucket:                 pulumi.Any(_var.Service_connector_target_bucket),
+//					CompartmentId:          pulumi.Any(_var.Compartment_id),
+//					Dimensions: sch.ConnectorTargetDimensionArray{
+//						&sch.ConnectorTargetDimensionArgs{
+//							DimensionValue: &sch.ConnectorTargetDimensionDimensionValueArgs{
+//								Kind:  pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_kind),
+//								Path:  pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_path),
+//								Value: pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_value),
+//							},
+//							Name: pulumi.Any(_var.Service_connector_target_dimensions_name),
+//						},
+//					},
+//					EnableFormattedMessaging: pulumi.Any(_var.Service_connector_target_enable_formatted_messaging),
+//					FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
+//					LogGroupId:               pulumi.Any(oci_logging_log_group.Test_log_group.Id),
+//					Metric:                   pulumi.Any(_var.Service_connector_target_metric),
+//					MetricNamespace:          pulumi.Any(_var.Service_connector_target_metric_namespace),
+//					Namespace:                pulumi.Any(_var.Service_connector_target_namespace),
+//					ObjectNamePrefix:         pulumi.Any(_var.Service_connector_target_object_name_prefix),
+//					StreamId:                 pulumi.Any(oci_streaming_stream.Test_stream.Id),
+//					TopicId:                  pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Service_connector_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Tasks: sch.ConnectorTaskArray{
+//					&sch.ConnectorTaskArgs{
+//						Kind:           pulumi.Any(_var.Service_connector_tasks_kind),
+//						BatchSizeInKbs: pulumi.Any(_var.Service_connector_tasks_batch_size_in_kbs),
+//						BatchTimeInSec: pulumi.Any(_var.Service_connector_tasks_batch_time_in_sec),
+//						Condition:      pulumi.Any(_var.Service_connector_tasks_condition),
+//						FunctionId:     pulumi.Any(oci_functions_function.Test_function.Id),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -135,7 +138,9 @@ import (
 // ServiceConnectors can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Sch/connector:Connector test_service_connector "id"
+//
+//	$ pulumi import oci:Sch/connector:Connector test_service_connector "id"
+//
 // ```
 type Connector struct {
 	pulumi.CustomResourceState
@@ -339,7 +344,7 @@ func (i *Connector) ToConnectorOutputWithContext(ctx context.Context) ConnectorO
 // ConnectorArrayInput is an input type that accepts ConnectorArray and ConnectorArrayOutput values.
 // You can construct a concrete instance of `ConnectorArrayInput` via:
 //
-//          ConnectorArray{ ConnectorArgs{...} }
+//	ConnectorArray{ ConnectorArgs{...} }
 type ConnectorArrayInput interface {
 	pulumi.Input
 
@@ -364,7 +369,7 @@ func (i ConnectorArray) ToConnectorArrayOutputWithContext(ctx context.Context) C
 // ConnectorMapInput is an input type that accepts ConnectorMap and ConnectorMapOutput values.
 // You can construct a concrete instance of `ConnectorMapInput` via:
 //
-//          ConnectorMap{ "key": ConnectorArgs{...} }
+//	ConnectorMap{ "key": ConnectorArgs{...} }
 type ConnectorMapInput interface {
 	pulumi.Input
 

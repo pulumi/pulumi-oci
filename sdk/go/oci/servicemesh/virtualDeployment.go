@@ -21,42 +21,45 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewVirtualDeployment(ctx, "testVirtualDeployment", &ServiceMesh.VirtualDeploymentArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Listeners: servicemesh.VirtualDeploymentListenerArray{
-// 				&servicemesh.VirtualDeploymentListenerArgs{
-// 					Port:     pulumi.Any(_var.Virtual_deployment_listeners_port),
-// 					Protocol: pulumi.Any(_var.Virtual_deployment_listeners_protocol),
-// 				},
-// 			},
-// 			ServiceDiscovery: &servicemesh.VirtualDeploymentServiceDiscoveryArgs{
-// 				Hostname: pulumi.Any(_var.Virtual_deployment_service_discovery_hostname),
-// 				Type:     pulumi.Any(_var.Virtual_deployment_service_discovery_type),
-// 			},
-// 			VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-// 			AccessLogging: &servicemesh.VirtualDeploymentAccessLoggingArgs{
-// 				IsEnabled: pulumi.Any(_var.Virtual_deployment_access_logging_is_enabled),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Virtual_deployment_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewVirtualDeployment(ctx, "testVirtualDeployment", &ServiceMesh.VirtualDeploymentArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Listeners: servicemesh.VirtualDeploymentListenerArray{
+//					&servicemesh.VirtualDeploymentListenerArgs{
+//						Port:     pulumi.Any(_var.Virtual_deployment_listeners_port),
+//						Protocol: pulumi.Any(_var.Virtual_deployment_listeners_protocol),
+//					},
+//				},
+//				ServiceDiscovery: &servicemesh.VirtualDeploymentServiceDiscoveryArgs{
+//					Hostname: pulumi.Any(_var.Virtual_deployment_service_discovery_hostname),
+//					Type:     pulumi.Any(_var.Virtual_deployment_service_discovery_type),
+//				},
+//				VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//				AccessLogging: &servicemesh.VirtualDeploymentAccessLoggingArgs{
+//					IsEnabled: pulumi.Any(_var.Virtual_deployment_access_logging_is_enabled),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Virtual_deployment_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -64,7 +67,9 @@ import (
 // VirtualDeployments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
+//
+//	$ pulumi import oci:ServiceMesh/virtualDeployment:VirtualDeployment test_virtual_deployment "id"
+//
 // ```
 type VirtualDeployment struct {
 	pulumi.CustomResourceState
@@ -274,7 +279,7 @@ func (i *VirtualDeployment) ToVirtualDeploymentOutputWithContext(ctx context.Con
 // VirtualDeploymentArrayInput is an input type that accepts VirtualDeploymentArray and VirtualDeploymentArrayOutput values.
 // You can construct a concrete instance of `VirtualDeploymentArrayInput` via:
 //
-//          VirtualDeploymentArray{ VirtualDeploymentArgs{...} }
+//	VirtualDeploymentArray{ VirtualDeploymentArgs{...} }
 type VirtualDeploymentArrayInput interface {
 	pulumi.Input
 
@@ -299,7 +304,7 @@ func (i VirtualDeploymentArray) ToVirtualDeploymentArrayOutputWithContext(ctx co
 // VirtualDeploymentMapInput is an input type that accepts VirtualDeploymentMap and VirtualDeploymentMapOutput values.
 // You can construct a concrete instance of `VirtualDeploymentMapInput` via:
 //
-//          VirtualDeploymentMap{ "key": VirtualDeploymentArgs{...} }
+//	VirtualDeploymentMap{ "key": VirtualDeploymentArgs{...} }
 type VirtualDeploymentMapInput interface {
 	pulumi.Input
 

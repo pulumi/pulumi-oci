@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataCatalog.GetConnection(ctx, &datacatalog.GetConnectionArgs{
-// 			CatalogId:     oci_datacatalog_catalog.Test_catalog.Id,
-// 			ConnectionKey: _var.Connection_connection_key,
-// 			DataAssetKey:  _var.Connection_data_asset_key,
-// 			Fields:        _var.Connection_fields,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataCatalog.GetConnection(ctx, &datacatalog.GetConnectionArgs{
+//				CatalogId:     oci_datacatalog_catalog.Test_catalog.Id,
+//				ConnectionKey: _var.Connection_connection_key,
+//				DataAssetKey:  _var.Connection_data_asset_key,
+//				Fields:        _var.Connection_fields,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupConnection(ctx *pulumi.Context, args *LookupConnectionArgs, opts ...pulumi.InvokeOption) (*LookupConnectionResult, error) {
 	var rv LookupConnectionResult

@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmTraces.GetQueryQuickPicks(ctx, &apmtraces.GetQueryQuickPicksArgs{
-// 			ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmTraces.GetQueryQuickPicks(ctx, &apmtraces.GetQueryQuickPicksArgs{
+//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetQueryQuickPicks(ctx *pulumi.Context, args *GetQueryQuickPicksArgs, opts ...pulumi.InvokeOption) (*GetQueryQuickPicksResult, error) {
 	var rv GetQueryQuickPicksResult

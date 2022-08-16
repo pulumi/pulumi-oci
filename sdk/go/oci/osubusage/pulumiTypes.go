@@ -36,7 +36,7 @@ type GetCommitmentAggregatedsComputedUsageAggregated struct {
 // GetCommitmentAggregatedsComputedUsageAggregatedInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedArgs and GetCommitmentAggregatedsComputedUsageAggregatedOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedArgs{...}
+//	GetCommitmentAggregatedsComputedUsageAggregatedArgs{...}
 type GetCommitmentAggregatedsComputedUsageAggregatedInput interface {
 	pulumi.Input
 
@@ -82,7 +82,7 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedArgs) ToGetCommitmentAggr
 // GetCommitmentAggregatedsComputedUsageAggregatedArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedArray and GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedArrayInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedArray{ GetCommitmentAggregatedsComputedUsageAggregatedArgs{...} }
+//	GetCommitmentAggregatedsComputedUsageAggregatedArray{ GetCommitmentAggregatedsComputedUsageAggregatedArgs{...} }
 type GetCommitmentAggregatedsComputedUsageAggregatedArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +214,7 @@ type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage stru
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs{...}
+//	GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs{...}
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageInput interface {
 	pulumi.Input
 
@@ -256,7 +256,7 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray{ GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs{...} }
+//	GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray{ GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs{...} }
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput interface {
 	pulumi.Input
 
@@ -384,7 +384,7 @@ type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProdu
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs{...}
+//	GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs{...}
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductInput interface {
 	pulumi.Input
 
@@ -424,7 +424,7 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray{ GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs{...} }
+//	GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray{ GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs{...} }
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput interface {
 	pulumi.Input
 
@@ -549,7 +549,7 @@ type GetCommitmentAggregatedsComputedUsageAggregatedParentProduct struct {
 // GetCommitmentAggregatedsComputedUsageAggregatedParentProductInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs and GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedParentProductInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs{...}
+//	GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs{...}
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProductInput interface {
 	pulumi.Input
 
@@ -589,7 +589,7 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ToGetC
 // GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray and GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput` via:
 //
-//          GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray{ GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs{...} }
+//	GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray{ GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs{...} }
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput interface {
 	pulumi.Input
 
@@ -694,7 +694,7 @@ type GetCommitmentAggregatedsFilter struct {
 // GetCommitmentAggregatedsFilterInput is an input type that accepts GetCommitmentAggregatedsFilterArgs and GetCommitmentAggregatedsFilterOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsFilterInput` via:
 //
-//          GetCommitmentAggregatedsFilterArgs{...}
+//	GetCommitmentAggregatedsFilterArgs{...}
 type GetCommitmentAggregatedsFilterInput interface {
 	pulumi.Input
 
@@ -724,7 +724,7 @@ func (i GetCommitmentAggregatedsFilterArgs) ToGetCommitmentAggregatedsFilterOutp
 // GetCommitmentAggregatedsFilterArrayInput is an input type that accepts GetCommitmentAggregatedsFilterArray and GetCommitmentAggregatedsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsFilterArrayInput` via:
 //
-//          GetCommitmentAggregatedsFilterArray{ GetCommitmentAggregatedsFilterArgs{...} }
+//	GetCommitmentAggregatedsFilterArray{ GetCommitmentAggregatedsFilterArgs{...} }
 type GetCommitmentAggregatedsFilterArrayInput interface {
 	pulumi.Input
 
@@ -813,7 +813,7 @@ type GetComputedUsageParentProduct struct {
 // GetComputedUsageParentProductInput is an input type that accepts GetComputedUsageParentProductArgs and GetComputedUsageParentProductOutput values.
 // You can construct a concrete instance of `GetComputedUsageParentProductInput` via:
 //
-//          GetComputedUsageParentProductArgs{...}
+//	GetComputedUsageParentProductArgs{...}
 type GetComputedUsageParentProductInput interface {
 	pulumi.Input
 
@@ -853,7 +853,7 @@ func (i GetComputedUsageParentProductArgs) ToGetComputedUsageParentProductOutput
 // GetComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsageParentProductArray and GetComputedUsageParentProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsageParentProductArrayInput` via:
 //
-//          GetComputedUsageParentProductArray{ GetComputedUsageParentProductArgs{...} }
+//	GetComputedUsageParentProductArray{ GetComputedUsageParentProductArgs{...} }
 type GetComputedUsageParentProductArrayInput interface {
 	pulumi.Input
 
@@ -964,7 +964,7 @@ type GetComputedUsageProduct struct {
 // GetComputedUsageProductInput is an input type that accepts GetComputedUsageProductArgs and GetComputedUsageProductOutput values.
 // You can construct a concrete instance of `GetComputedUsageProductInput` via:
 //
-//          GetComputedUsageProductArgs{...}
+//	GetComputedUsageProductArgs{...}
 type GetComputedUsageProductInput interface {
 	pulumi.Input
 
@@ -1004,7 +1004,7 @@ func (i GetComputedUsageProductArgs) ToGetComputedUsageProductOutputWithContext(
 // GetComputedUsageProductArrayInput is an input type that accepts GetComputedUsageProductArray and GetComputedUsageProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsageProductArrayInput` via:
 //
-//          GetComputedUsageProductArray{ GetComputedUsageProductArgs{...} }
+//	GetComputedUsageProductArray{ GetComputedUsageProductArgs{...} }
 type GetComputedUsageProductArrayInput interface {
 	pulumi.Input
 
@@ -1152,7 +1152,7 @@ type GetComputedUsagesComputedUsage struct {
 // GetComputedUsagesComputedUsageInput is an input type that accepts GetComputedUsagesComputedUsageArgs and GetComputedUsagesComputedUsageOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageInput` via:
 //
-//          GetComputedUsagesComputedUsageArgs{...}
+//	GetComputedUsagesComputedUsageArgs{...}
 type GetComputedUsagesComputedUsageInput interface {
 	pulumi.Input
 
@@ -1229,7 +1229,7 @@ func (i GetComputedUsagesComputedUsageArgs) ToGetComputedUsagesComputedUsageOutp
 // GetComputedUsagesComputedUsageArrayInput is an input type that accepts GetComputedUsagesComputedUsageArray and GetComputedUsagesComputedUsageArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageArrayInput` via:
 //
-//          GetComputedUsagesComputedUsageArray{ GetComputedUsagesComputedUsageArgs{...} }
+//	GetComputedUsagesComputedUsageArray{ GetComputedUsagesComputedUsageArgs{...} }
 type GetComputedUsagesComputedUsageArrayInput interface {
 	pulumi.Input
 
@@ -1436,7 +1436,7 @@ type GetComputedUsagesComputedUsageParentProduct struct {
 // GetComputedUsagesComputedUsageParentProductInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArgs and GetComputedUsagesComputedUsageParentProductOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageParentProductInput` via:
 //
-//          GetComputedUsagesComputedUsageParentProductArgs{...}
+//	GetComputedUsagesComputedUsageParentProductArgs{...}
 type GetComputedUsagesComputedUsageParentProductInput interface {
 	pulumi.Input
 
@@ -1476,7 +1476,7 @@ func (i GetComputedUsagesComputedUsageParentProductArgs) ToGetComputedUsagesComp
 // GetComputedUsagesComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArray and GetComputedUsagesComputedUsageParentProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageParentProductArrayInput` via:
 //
-//          GetComputedUsagesComputedUsageParentProductArray{ GetComputedUsagesComputedUsageParentProductArgs{...} }
+//	GetComputedUsagesComputedUsageParentProductArray{ GetComputedUsagesComputedUsageParentProductArgs{...} }
 type GetComputedUsagesComputedUsageParentProductArrayInput interface {
 	pulumi.Input
 
@@ -1587,7 +1587,7 @@ type GetComputedUsagesComputedUsageProduct struct {
 // GetComputedUsagesComputedUsageProductInput is an input type that accepts GetComputedUsagesComputedUsageProductArgs and GetComputedUsagesComputedUsageProductOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageProductInput` via:
 //
-//          GetComputedUsagesComputedUsageProductArgs{...}
+//	GetComputedUsagesComputedUsageProductArgs{...}
 type GetComputedUsagesComputedUsageProductInput interface {
 	pulumi.Input
 
@@ -1627,7 +1627,7 @@ func (i GetComputedUsagesComputedUsageProductArgs) ToGetComputedUsagesComputedUs
 // GetComputedUsagesComputedUsageProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageProductArray and GetComputedUsagesComputedUsageProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageProductArrayInput` via:
 //
-//          GetComputedUsagesComputedUsageProductArray{ GetComputedUsagesComputedUsageProductArgs{...} }
+//	GetComputedUsagesComputedUsageProductArray{ GetComputedUsagesComputedUsageProductArgs{...} }
 type GetComputedUsagesComputedUsageProductArrayInput interface {
 	pulumi.Input
 
@@ -1728,7 +1728,7 @@ type GetComputedUsagesFilter struct {
 // GetComputedUsagesFilterInput is an input type that accepts GetComputedUsagesFilterArgs and GetComputedUsagesFilterOutput values.
 // You can construct a concrete instance of `GetComputedUsagesFilterInput` via:
 //
-//          GetComputedUsagesFilterArgs{...}
+//	GetComputedUsagesFilterArgs{...}
 type GetComputedUsagesFilterInput interface {
 	pulumi.Input
 
@@ -1758,7 +1758,7 @@ func (i GetComputedUsagesFilterArgs) ToGetComputedUsagesFilterOutputWithContext(
 // GetComputedUsagesFilterArrayInput is an input type that accepts GetComputedUsagesFilterArray and GetComputedUsagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesFilterArrayInput` via:
 //
-//          GetComputedUsagesFilterArray{ GetComputedUsagesFilterArgs{...} }
+//	GetComputedUsagesFilterArray{ GetComputedUsagesFilterArgs{...} }
 type GetComputedUsagesFilterArrayInput interface {
 	pulumi.Input
 

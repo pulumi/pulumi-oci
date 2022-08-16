@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewSetUserAssessmentBaseline(ctx, "testSetUserAssessmentBaseline", &DataSafe.SetUserAssessmentBaselineArgs{
-// 			UserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
-// 			AssessmentIds:    pulumi.Any(_var.Set_user_assessment_baseline_assessment_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewSetUserAssessmentBaseline(ctx, "testSetUserAssessmentBaseline", &DataSafe.SetUserAssessmentBaselineArgs{
+//				UserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
+//				AssessmentIds:    pulumi.Any(_var.Set_user_assessment_baseline_assessment_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // SetUserAssessmentBaseline can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
+//
+//	$ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
+//
 // ```
 type SetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState
@@ -145,7 +150,7 @@ func (i *SetUserAssessmentBaseline) ToSetUserAssessmentBaselineOutputWithContext
 // SetUserAssessmentBaselineArrayInput is an input type that accepts SetUserAssessmentBaselineArray and SetUserAssessmentBaselineArrayOutput values.
 // You can construct a concrete instance of `SetUserAssessmentBaselineArrayInput` via:
 //
-//          SetUserAssessmentBaselineArray{ SetUserAssessmentBaselineArgs{...} }
+//	SetUserAssessmentBaselineArray{ SetUserAssessmentBaselineArgs{...} }
 type SetUserAssessmentBaselineArrayInput interface {
 	pulumi.Input
 
@@ -170,7 +175,7 @@ func (i SetUserAssessmentBaselineArray) ToSetUserAssessmentBaselineArrayOutputWi
 // SetUserAssessmentBaselineMapInput is an input type that accepts SetUserAssessmentBaselineMap and SetUserAssessmentBaselineMapOutput values.
 // You can construct a concrete instance of `SetUserAssessmentBaselineMapInput` via:
 //
-//          SetUserAssessmentBaselineMap{ "key": SetUserAssessmentBaselineArgs{...} }
+//	SetUserAssessmentBaselineMap{ "key": SetUserAssessmentBaselineArgs{...} }
 type SetUserAssessmentBaselineMapInput interface {
 	pulumi.Input
 

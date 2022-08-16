@@ -18,6 +18,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string ApmDomainId;
         /// <summary>
+        /// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        /// </summary>
+        public readonly int BatchIntervalInSeconds;
+        /// <summary>
         /// Details of monitor configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationResult> Configurations;
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// If isRunNow is enabled, then the monitor will run now.
+        /// </summary>
+        public readonly bool IsRunNow;
+        /// <summary>
         /// If runOnce is enabled, then the monitor will run once.
         /// </summary>
         public readonly bool IsRunOnce;
@@ -49,6 +57,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         /// </summary>
         public readonly int RepeatIntervalInSeconds;
+        /// <summary>
+        /// Scheduling policy on Vantage points.
+        /// </summary>
+        public readonly string SchedulingPolicy;
         /// <summary>
         /// A filter to return only monitors using scriptId.
         /// </summary>
@@ -94,6 +106,8 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         private GetMonitorsMonitorCollectionItemResult(
             string apmDomainId,
 
+            int batchIntervalInSeconds,
+
             ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemConfigurationResult> configurations,
 
             ImmutableDictionary<string, object> definedTags,
@@ -104,11 +118,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             string id,
 
+            bool isRunNow,
+
             bool isRunOnce,
 
             string monitorType,
 
             int repeatIntervalInSeconds,
+
+            string schedulingPolicy,
 
             string scriptId,
 
@@ -131,14 +149,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             ImmutableArray<string> vantagePoints)
         {
             ApmDomainId = apmDomainId;
+            BatchIntervalInSeconds = batchIntervalInSeconds;
             Configurations = configurations;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsRunNow = isRunNow;
             IsRunOnce = isRunOnce;
             MonitorType = monitorType;
             RepeatIntervalInSeconds = repeatIntervalInSeconds;
+            SchedulingPolicy = schedulingPolicy;
             ScriptId = scriptId;
             ScriptName = scriptName;
             ScriptParameters = scriptParameters;

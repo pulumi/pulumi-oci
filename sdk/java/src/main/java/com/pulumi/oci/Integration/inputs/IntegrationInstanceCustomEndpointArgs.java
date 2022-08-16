@@ -17,6 +17,21 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
     public static final IntegrationInstanceCustomEndpointArgs Empty = new IntegrationInstanceCustomEndpointArgs();
 
     /**
+     * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     * 
+     */
+    @Import(name="alias")
+    private @Nullable Output<String> alias;
+
+    /**
+     * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     * 
+     */
+    public Optional<Output<String>> alias() {
+        return Optional.ofNullable(this.alias);
+    }
+
+    /**
      * (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
      * 
      */
@@ -64,6 +79,7 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
     private IntegrationInstanceCustomEndpointArgs() {}
 
     private IntegrationInstanceCustomEndpointArgs(IntegrationInstanceCustomEndpointArgs $) {
+        this.alias = $.alias;
         this.certificateSecretId = $.certificateSecretId;
         this.certificateSecretVersion = $.certificateSecretVersion;
         this.hostname = $.hostname;
@@ -85,6 +101,27 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
 
         public Builder(IntegrationInstanceCustomEndpointArgs defaults) {
             $ = new IntegrationInstanceCustomEndpointArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param alias When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alias(@Nullable Output<String> alias) {
+            $.alias = alias;
+            return this;
+        }
+
+        /**
+         * @param alias When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alias(String alias) {
+            return alias(Output.of(alias));
         }
 
         /**

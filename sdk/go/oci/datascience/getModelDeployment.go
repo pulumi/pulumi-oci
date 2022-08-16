@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetModelDeployment(ctx, &datascience.GetModelDeploymentArgs{
-// 			ModelDeploymentId: oci_datascience_model_deployment.Test_model_deployment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetModelDeployment(ctx, &datascience.GetModelDeploymentArgs{
+//				ModelDeploymentId: oci_datascience_model_deployment.Test_model_deployment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupModelDeployment(ctx *pulumi.Context, args *LookupModelDeploymentArgs, opts ...pulumi.InvokeOption) (*LookupModelDeploymentResult, error) {
 	var rv LookupModelDeploymentResult

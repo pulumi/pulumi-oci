@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryMirrorRecord(ctx, &devops.GetRepositoryMirrorRecordArgs{
-// 			MirrorRecordType: _var.Repository_mirror_record_mirror_record_type,
-// 			RepositoryId:     oci_devops_repository.Test_repository.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryMirrorRecord(ctx, &devops.GetRepositoryMirrorRecordArgs{
+//				MirrorRecordType: _var.Repository_mirror_record_mirror_record_type,
+//				RepositoryId:     oci_devops_repository.Test_repository.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryMirrorRecord(ctx *pulumi.Context, args *GetRepositoryMirrorRecordArgs, opts ...pulumi.InvokeOption) (*GetRepositoryMirrorRecordResult, error) {
 	var rv GetRepositoryMirrorRecordResult

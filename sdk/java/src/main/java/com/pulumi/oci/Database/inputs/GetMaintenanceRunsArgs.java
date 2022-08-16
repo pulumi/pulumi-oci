@@ -55,6 +55,21 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * The sub-type of the maintenance run.
+     * 
+     */
+    @Import(name="maintenanceSubtype")
+    private @Nullable Output<String> maintenanceSubtype;
+
+    /**
+     * @return The sub-type of the maintenance run.
+     * 
+     */
+    public Optional<Output<String>> maintenanceSubtype() {
+        return Optional.ofNullable(this.maintenanceSubtype);
+    }
+
+    /**
      * The maintenance type.
      * 
      */
@@ -120,6 +135,7 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.maintenanceSubtype = $.maintenanceSubtype;
         this.maintenanceType = $.maintenanceType;
         this.state = $.state;
         this.targetResourceId = $.targetResourceId;
@@ -197,6 +213,27 @@ public final class GetMaintenanceRunsArgs extends com.pulumi.resources.InvokeArg
 
         public Builder filters(GetMaintenanceRunsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param maintenanceSubtype The sub-type of the maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceSubtype(@Nullable Output<String> maintenanceSubtype) {
+            $.maintenanceSubtype = maintenanceSubtype;
+            return this;
+        }
+
+        /**
+         * @param maintenanceSubtype The sub-type of the maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceSubtype(String maintenanceSubtype) {
+            return maintenanceSubtype(Output.of(maintenanceSubtype));
         }
 
         /**

@@ -21,77 +21,80 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CertificatesManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CertificatesManagement.NewCertificate(ctx, "testCertificate", &CertificatesManagement.CertificateArgs{
-// 			CertificateConfig: &certificatesmanagement.CertificateCertificateConfigArgs{
-// 				ConfigType:                   pulumi.Any(_var.Certificate_certificate_config_config_type),
-// 				CertChainPem:                 _var.Certificate_certificate_config_cert_chain_pem,
-// 				CertificatePem:               _var.Certificate_certificate_config_certificate_pem,
-// 				CertificateProfileType:       pulumi.Any(_var.Certificate_certificate_config_certificate_profile_type),
-// 				CsrPem:                       pulumi.Any(_var.Certificate_certificate_config_csr_pem),
-// 				IssuerCertificateAuthorityId: pulumi.Any(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
-// 				KeyAlgorithm:                 pulumi.Any(_var.Certificate_certificate_config_key_algorithm),
-// 				PrivateKeyPem:                _var.Certificate_certificate_config_private_key_pem,
-// 				PrivateKeyPemPassphrase:      _var.Certificate_certificate_config_private_key_pem_passphrase,
-// 				SignatureAlgorithm:           pulumi.Any(_var.Certificate_certificate_config_signature_algorithm),
-// 				Subject: &certificatesmanagement.CertificateCertificateConfigSubjectArgs{
-// 					CommonName:                 pulumi.Any(_var.Certificate_certificate_config_subject_common_name),
-// 					Country:                    pulumi.Any(_var.Certificate_certificate_config_subject_country),
-// 					DistinguishedNameQualifier: pulumi.Any(_var.Certificate_certificate_config_subject_distinguished_name_qualifier),
-// 					DomainComponent:            pulumi.Any(_var.Certificate_certificate_config_subject_domain_component),
-// 					GenerationQualifier:        pulumi.Any(_var.Certificate_certificate_config_subject_generation_qualifier),
-// 					GivenName:                  pulumi.Any(_var.Certificate_certificate_config_subject_given_name),
-// 					Initials:                   pulumi.Any(_var.Certificate_certificate_config_subject_initials),
-// 					LocalityName:               pulumi.Any(_var.Certificate_certificate_config_subject_locality_name),
-// 					Organization:               pulumi.Any(_var.Certificate_certificate_config_subject_organization),
-// 					OrganizationalUnit:         pulumi.Any(_var.Certificate_certificate_config_subject_organizational_unit),
-// 					Pseudonym:                  pulumi.Any(_var.Certificate_certificate_config_subject_pseudonym),
-// 					SerialNumber:               pulumi.Any(_var.Certificate_certificate_config_subject_serial_number),
-// 					StateOrProvinceName:        pulumi.Any(_var.Certificate_certificate_config_subject_state_or_province_name),
-// 					Street:                     pulumi.Any(_var.Certificate_certificate_config_subject_street),
-// 					Surname:                    pulumi.Any(_var.Certificate_certificate_config_subject_surname),
-// 					Title:                      pulumi.Any(_var.Certificate_certificate_config_subject_title),
-// 					UserId:                     pulumi.Any(oci_identity_user.Test_user.Id),
-// 				},
-// 				SubjectAlternativeNames: certificatesmanagement.CertificateCertificateConfigSubjectAlternativeNameArray{
-// 					&certificatesmanagement.CertificateCertificateConfigSubjectAlternativeNameArgs{
-// 						Type:  pulumi.Any(_var.Certificate_certificate_config_subject_alternative_names_type),
-// 						Value: pulumi.Any(_var.Certificate_certificate_config_subject_alternative_names_value),
-// 					},
-// 				},
-// 				Validity: &certificatesmanagement.CertificateCertificateConfigValidityArgs{
-// 					TimeOfValidityNotAfter:  pulumi.Any(_var.Certificate_certificate_config_validity_time_of_validity_not_after),
-// 					TimeOfValidityNotBefore: pulumi.Any(_var.Certificate_certificate_config_validity_time_of_validity_not_before),
-// 				},
-// 				VersionName: pulumi.Any(_var.Certificate_certificate_config_version_name),
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			CertificateRules: certificatesmanagement.CertificateCertificateRuleArray{
-// 				&certificatesmanagement.CertificateCertificateRuleArgs{
-// 					AdvanceRenewalPeriod: pulumi.Any(_var.Certificate_certificate_rules_advance_renewal_period),
-// 					RenewalInterval:      pulumi.Any(_var.Certificate_certificate_rules_renewal_interval),
-// 					RuleType:             pulumi.Any(_var.Certificate_certificate_rules_rule_type),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Certificate_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CertificatesManagement.NewCertificate(ctx, "testCertificate", &CertificatesManagement.CertificateArgs{
+//				CertificateConfig: &certificatesmanagement.CertificateCertificateConfigArgs{
+//					ConfigType:                   pulumi.Any(_var.Certificate_certificate_config_config_type),
+//					CertChainPem:                 _var.Certificate_certificate_config_cert_chain_pem,
+//					CertificatePem:               _var.Certificate_certificate_config_certificate_pem,
+//					CertificateProfileType:       pulumi.Any(_var.Certificate_certificate_config_certificate_profile_type),
+//					CsrPem:                       pulumi.Any(_var.Certificate_certificate_config_csr_pem),
+//					IssuerCertificateAuthorityId: pulumi.Any(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
+//					KeyAlgorithm:                 pulumi.Any(_var.Certificate_certificate_config_key_algorithm),
+//					PrivateKeyPem:                _var.Certificate_certificate_config_private_key_pem,
+//					PrivateKeyPemPassphrase:      _var.Certificate_certificate_config_private_key_pem_passphrase,
+//					SignatureAlgorithm:           pulumi.Any(_var.Certificate_certificate_config_signature_algorithm),
+//					Subject: &certificatesmanagement.CertificateCertificateConfigSubjectArgs{
+//						CommonName:                 pulumi.Any(_var.Certificate_certificate_config_subject_common_name),
+//						Country:                    pulumi.Any(_var.Certificate_certificate_config_subject_country),
+//						DistinguishedNameQualifier: pulumi.Any(_var.Certificate_certificate_config_subject_distinguished_name_qualifier),
+//						DomainComponent:            pulumi.Any(_var.Certificate_certificate_config_subject_domain_component),
+//						GenerationQualifier:        pulumi.Any(_var.Certificate_certificate_config_subject_generation_qualifier),
+//						GivenName:                  pulumi.Any(_var.Certificate_certificate_config_subject_given_name),
+//						Initials:                   pulumi.Any(_var.Certificate_certificate_config_subject_initials),
+//						LocalityName:               pulumi.Any(_var.Certificate_certificate_config_subject_locality_name),
+//						Organization:               pulumi.Any(_var.Certificate_certificate_config_subject_organization),
+//						OrganizationalUnit:         pulumi.Any(_var.Certificate_certificate_config_subject_organizational_unit),
+//						Pseudonym:                  pulumi.Any(_var.Certificate_certificate_config_subject_pseudonym),
+//						SerialNumber:               pulumi.Any(_var.Certificate_certificate_config_subject_serial_number),
+//						StateOrProvinceName:        pulumi.Any(_var.Certificate_certificate_config_subject_state_or_province_name),
+//						Street:                     pulumi.Any(_var.Certificate_certificate_config_subject_street),
+//						Surname:                    pulumi.Any(_var.Certificate_certificate_config_subject_surname),
+//						Title:                      pulumi.Any(_var.Certificate_certificate_config_subject_title),
+//						UserId:                     pulumi.Any(oci_identity_user.Test_user.Id),
+//					},
+//					SubjectAlternativeNames: certificatesmanagement.CertificateCertificateConfigSubjectAlternativeNameArray{
+//						&certificatesmanagement.CertificateCertificateConfigSubjectAlternativeNameArgs{
+//							Type:  pulumi.Any(_var.Certificate_certificate_config_subject_alternative_names_type),
+//							Value: pulumi.Any(_var.Certificate_certificate_config_subject_alternative_names_value),
+//						},
+//					},
+//					Validity: &certificatesmanagement.CertificateCertificateConfigValidityArgs{
+//						TimeOfValidityNotAfter:  pulumi.Any(_var.Certificate_certificate_config_validity_time_of_validity_not_after),
+//						TimeOfValidityNotBefore: pulumi.Any(_var.Certificate_certificate_config_validity_time_of_validity_not_before),
+//					},
+//					VersionName: pulumi.Any(_var.Certificate_certificate_config_version_name),
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				CertificateRules: certificatesmanagement.CertificateCertificateRuleArray{
+//					&certificatesmanagement.CertificateCertificateRuleArgs{
+//						AdvanceRenewalPeriod: pulumi.Any(_var.Certificate_certificate_rules_advance_renewal_period),
+//						RenewalInterval:      pulumi.Any(_var.Certificate_certificate_rules_renewal_interval),
+//						RuleType:             pulumi.Any(_var.Certificate_certificate_rules_rule_type),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Certificate_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -99,7 +102,9 @@ import (
 // Certificates can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
+//
+//	$ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
+//
 // ```
 type Certificate struct {
 	pulumi.CustomResourceState
@@ -325,7 +330,7 @@ func (i *Certificate) ToCertificateOutputWithContext(ctx context.Context) Certif
 // CertificateArrayInput is an input type that accepts CertificateArray and CertificateArrayOutput values.
 // You can construct a concrete instance of `CertificateArrayInput` via:
 //
-//          CertificateArray{ CertificateArgs{...} }
+//	CertificateArray{ CertificateArgs{...} }
 type CertificateArrayInput interface {
 	pulumi.Input
 
@@ -350,7 +355,7 @@ func (i CertificateArray) ToCertificateArrayOutputWithContext(ctx context.Contex
 // CertificateMapInput is an input type that accepts CertificateMap and CertificateMapOutput values.
 // You can construct a concrete instance of `CertificateMapInput` via:
 //
-//          CertificateMap{ "key": CertificateArgs{...} }
+//	CertificateMap{ "key": CertificateArgs{...} }
 type CertificateMapInput interface {
 	pulumi.Input
 

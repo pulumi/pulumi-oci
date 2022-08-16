@@ -18,6 +18,7 @@ __all__ = [
     'BuildPipelineStageBuildSourceCollectionItem',
     'BuildPipelineStageDeliverArtifactCollection',
     'BuildPipelineStageDeliverArtifactCollectionItem',
+    'BuildPipelineStagePrivateAccessConfig',
     'BuildPipelineStageWaitCriteria',
     'BuildRunBuildOutput',
     'BuildRunBuildOutputArtifactOverrideParameter',
@@ -37,6 +38,7 @@ __all__ = [
     'BuildRunBuildRunSourceTriggerInfoActionFilter',
     'BuildRunBuildRunSourceTriggerInfoActionFilterInclude',
     'BuildRunCommitInfo',
+    'ConnectionTlsVerifyConfig',
     'DeployArtifactDeployArtifactSource',
     'DeployEnvironmentComputeInstanceGroupSelectors',
     'DeployEnvironmentComputeInstanceGroupSelectorsItem',
@@ -92,6 +94,7 @@ __all__ = [
     'GetBuildPipelineStageBuildSourceCollectionItemResult',
     'GetBuildPipelineStageDeliverArtifactCollectionResult',
     'GetBuildPipelineStageDeliverArtifactCollectionItemResult',
+    'GetBuildPipelineStagePrivateAccessConfigResult',
     'GetBuildPipelineStageWaitCriteriaResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemResult',
@@ -101,6 +104,7 @@ __all__ = [
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemResult',
+    'GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult',
     'GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult',
     'GetBuildPipelineStagesFilterResult',
     'GetBuildPipelinesBuildPipelineCollectionResult',
@@ -138,8 +142,10 @@ __all__ = [
     'GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult',
     'GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult',
     'GetBuildRunsFilterResult',
+    'GetConnectionTlsVerifyConfigResult',
     'GetConnectionsConnectionCollectionResult',
     'GetConnectionsConnectionCollectionItemResult',
+    'GetConnectionsConnectionCollectionItemTlsVerifyConfigResult',
     'GetConnectionsFilterResult',
     'GetDeployArtifactDeployArtifactSourceResult',
     'GetDeployArtifactsDeployArtifactCollectionResult',
@@ -459,7 +465,7 @@ class BuildPipelineStageBuildSourceCollectionItem(dict):
         """
         :param str connection_type: (Updatable) The type of source provider.
         :param str branch: (Updatable) Branch name.
-        :param str connection_id: (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+        :param str connection_id: (Updatable) Connection identifier pertinent to Bitbucket Server source provider
         :param str name: (Updatable) Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param str repository_id: (Updatable) The DevOps code repository ID.
         :param str repository_url: (Updatable) URL for the repository.
@@ -496,7 +502,7 @@ class BuildPipelineStageBuildSourceCollectionItem(dict):
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[str]:
         """
-        (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+        (Updatable) Connection identifier pertinent to Bitbucket Server source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -592,6 +598,68 @@ class BuildPipelineStageDeliverArtifactCollectionItem(dict):
         (Updatable) Name of the artifact specified in the build_spec.yaml file.
         """
         return pulumi.get(self, "artifact_name")
+
+
+@pulumi.output_type
+class BuildPipelineStagePrivateAccessConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkChannelType":
+            suggest = "network_channel_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BuildPipelineStagePrivateAccessConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BuildPipelineStagePrivateAccessConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BuildPipelineStagePrivateAccessConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_channel_type: str,
+                 subnet_id: str,
+                 nsg_ids: Optional[Sequence[str]] = None):
+        """
+        :param str network_channel_type: (Updatable) Network channel type.
+        :param str subnet_id: (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        :param Sequence[str] nsg_ids: (Updatable) An array of network security group OCIDs.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> str:
+        """
+        (Updatable) Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
 
 
 @pulumi.output_type
@@ -1417,7 +1485,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
                  trigger_source: Optional[str] = None):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param Sequence['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
+        :param Sequence['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs'] includes: Attributes to filter GitLab self-hosted server events.
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         if events is not None:
@@ -1439,7 +1507,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
     @pulumi.getter
     def includes(self) -> Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterInclude']]:
         """
-        Attributes to filter DevOps code repository events.
+        Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "includes")
 
@@ -1561,6 +1629,54 @@ class BuildRunCommitInfo(dict):
         Repository URL.
         """
         return pulumi.get(self, "repository_url")
+
+
+@pulumi.output_type
+class ConnectionTlsVerifyConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caCertificateBundleId":
+            suggest = "ca_certificate_bundle_id"
+        elif key == "tlsVerifyMode":
+            suggest = "tls_verify_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionTlsVerifyConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionTlsVerifyConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionTlsVerifyConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ca_certificate_bundle_id: str,
+                 tls_verify_mode: str):
+        """
+        :param str ca_certificate_bundle_id: (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        :param str tls_verify_mode: (Updatable) The type of TLS verification.
+        """
+        pulumi.set(__self__, "ca_certificate_bundle_id", ca_certificate_bundle_id)
+        pulumi.set(__self__, "tls_verify_mode", tls_verify_mode)
+
+    @property
+    @pulumi.getter(name="caCertificateBundleId")
+    def ca_certificate_bundle_id(self) -> str:
+        """
+        (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        """
+        return pulumi.get(self, "ca_certificate_bundle_id")
+
+    @property
+    @pulumi.getter(name="tlsVerifyMode")
+    def tls_verify_mode(self) -> str:
+        """
+        (Updatable) The type of TLS verification.
+        """
+        return pulumi.get(self, "tls_verify_mode")
 
 
 @pulumi.output_type
@@ -3575,7 +3691,7 @@ class RepositoryMirrorRepositoryConfigTriggerSchedule(dict):
                  custom_schedule: Optional[str] = None):
         """
         :param str schedule_type: (Updatable) Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
-        :param str custom_schedule: (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        :param str custom_schedule: (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
         """
         pulumi.set(__self__, "schedule_type", schedule_type)
         if custom_schedule is not None:
@@ -3593,7 +3709,7 @@ class RepositoryMirrorRepositoryConfigTriggerSchedule(dict):
     @pulumi.getter(name="customSchedule")
     def custom_schedule(self) -> Optional[str]:
         """
-        (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
         """
         return pulumi.get(self, "custom_schedule")
 
@@ -3682,7 +3798,7 @@ class TriggerActionFilter(dict):
         """
         :param str trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         :param Sequence[str] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param 'TriggerActionFilterIncludeArgs' include: (Updatable) Attributes to filter DevOps code repository events.
+        :param 'TriggerActionFilterIncludeArgs' include: (Updatable) Attributes to filter GitLab self-hosted server events.
         """
         pulumi.set(__self__, "trigger_source", trigger_source)
         if events is not None:
@@ -3710,7 +3826,7 @@ class TriggerActionFilter(dict):
     @pulumi.getter
     def include(self) -> Optional['outputs.TriggerActionFilterInclude']:
         """
-        (Updatable) Attributes to filter DevOps code repository events.
+        (Updatable) Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "include")
 
@@ -3888,7 +4004,7 @@ class GetBuildPipelineStageBuildSourceCollectionItemResult(dict):
                  repository_url: str):
         """
         :param str branch: Branch name.
-        :param str connection_id: Connection identifier pertinent to Bitbucket Cloud source provider
+        :param str connection_id: Connection identifier pertinent to Bitbucket Server source provider
         :param str connection_type: The type of source provider.
         :param str name: Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param str repository_id: The DevOps code repository ID.
@@ -3913,7 +4029,7 @@ class GetBuildPipelineStageBuildSourceCollectionItemResult(dict):
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> str:
         """
-        Connection identifier pertinent to Bitbucket Cloud source provider
+        Connection identifier pertinent to Bitbucket Server source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -3998,6 +4114,46 @@ class GetBuildPipelineStageDeliverArtifactCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetBuildPipelineStagePrivateAccessConfigResult(dict):
+    def __init__(__self__, *,
+                 network_channel_type: str,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str network_channel_type: Network channel type.
+        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
+        :param str subnet_id: The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> str:
+        """
+        Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
 class GetBuildPipelineStageWaitCriteriaResult(dict):
     def __init__(__self__, *,
                  wait_duration: str,
@@ -4065,6 +4221,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
                  is_pass_all_parameters_enabled: bool,
                  lifecycle_details: str,
                  primary_build_source: str,
+                 private_access_config: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult',
                  project_id: str,
                  stage_execution_timeout_in_seconds: int,
                  state: str,
@@ -4091,6 +4248,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         :param bool is_pass_all_parameters_enabled: A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str primary_build_source: Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
+        :param 'GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs' private_access_config: Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param str project_id: The OCID of the DevOps project.
         :param int stage_execution_timeout_in_seconds: Timeout for the build stage execution. Specify value in seconds.
         :param str state: A filter to return the stages that matches the given lifecycle state.
@@ -4117,6 +4275,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         pulumi.set(__self__, "is_pass_all_parameters_enabled", is_pass_all_parameters_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "primary_build_source", primary_build_source)
+        pulumi.set(__self__, "private_access_config", private_access_config)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "stage_execution_timeout_in_seconds", stage_execution_timeout_in_seconds)
         pulumi.set(__self__, "state", state)
@@ -4270,6 +4429,14 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         return pulumi.get(self, "primary_build_source")
 
     @property
+    @pulumi.getter(name="privateAccessConfig")
+    def private_access_config(self) -> 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult':
+        """
+        Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        return pulumi.get(self, "private_access_config")
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
@@ -4391,7 +4558,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
                  repository_url: str):
         """
         :param str branch: Branch name.
-        :param str connection_id: Connection identifier pertinent to Bitbucket Cloud source provider
+        :param str connection_id: Connection identifier pertinent to Bitbucket Server source provider
         :param str connection_type: The type of source provider.
         :param str name: Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param str repository_id: The DevOps code repository ID.
@@ -4416,7 +4583,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> str:
         """
-        Connection identifier pertinent to Bitbucket Cloud source provider
+        Connection identifier pertinent to Bitbucket Server source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -4498,6 +4665,46 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactColle
         Name of the artifact specified in the build_spec.yaml file.
         """
         return pulumi.get(self, "artifact_name")
+
+
+@pulumi.output_type
+class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult(dict):
+    def __init__(__self__, *,
+                 network_channel_type: str,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param str network_channel_type: Network channel type.
+        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
+        :param str subnet_id: The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        pulumi.set(__self__, "network_channel_type", network_channel_type)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="networkChannelType")
+    def network_channel_type(self) -> str:
+        """
+        Network channel type.
+        """
+        return pulumi.get(self, "network_channel_type")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -5374,7 +5581,7 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
                  trigger_source: str):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param Sequence['GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
+        :param Sequence['GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs'] includes: Attributes to filter GitLab self-hosted server events.
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
@@ -5393,7 +5600,7 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
     @pulumi.getter
     def includes(self) -> Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult']:
         """
-        Attributes to filter DevOps code repository events.
+        Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "includes")
 
@@ -5876,7 +6083,7 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFi
                  trigger_source: str):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param Sequence['GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
+        :param Sequence['GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs'] includes: Attributes to filter GitLab self-hosted server events.
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
@@ -5895,7 +6102,7 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFi
     @pulumi.getter
     def includes(self) -> Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult']:
         """
-        Attributes to filter DevOps code repository events.
+        Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "includes")
 
@@ -6011,6 +6218,35 @@ class GetBuildRunsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionTlsVerifyConfigResult(dict):
+    def __init__(__self__, *,
+                 ca_certificate_bundle_id: str,
+                 tls_verify_mode: str):
+        """
+        :param str ca_certificate_bundle_id: The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        :param str tls_verify_mode: The type of TLS verification.
+        """
+        pulumi.set(__self__, "ca_certificate_bundle_id", ca_certificate_bundle_id)
+        pulumi.set(__self__, "tls_verify_mode", tls_verify_mode)
+
+    @property
+    @pulumi.getter(name="caCertificateBundleId")
+    def ca_certificate_bundle_id(self) -> str:
+        """
+        The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        """
+        return pulumi.get(self, "ca_certificate_bundle_id")
+
+    @property
+    @pulumi.getter(name="tlsVerifyMode")
+    def tls_verify_mode(self) -> str:
+        """
+        The type of TLS verification.
+        """
+        return pulumi.get(self, "tls_verify_mode")
+
+
+@pulumi.output_type
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
@@ -6027,6 +6263,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
                  access_token: str,
                  app_password: str,
+                 base_url: str,
                  compartment_id: str,
                  connection_type: str,
                  defined_tags: Mapping[str, Any],
@@ -6039,10 +6276,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
+                 tls_verify_configs: Sequence['outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult'],
                  username: str):
         """
         :param str access_token: The OCID of personal access token saved in secret store.
         :param str app_password: OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        :param str base_url: The Base URL of the hosted BitbucketServer.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str connection_type: A filter to return only resources that match the given connection type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -6055,10 +6294,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param Sequence['GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs'] tls_verify_configs: TLS configuration used by build service to verify TLS connection.
         :param str username: Public Bitbucket Cloud Username in plain text
         """
         pulumi.set(__self__, "access_token", access_token)
         pulumi.set(__self__, "app_password", app_password)
+        pulumi.set(__self__, "base_url", base_url)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_type", connection_type)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -6071,6 +6312,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "tls_verify_configs", tls_verify_configs)
         pulumi.set(__self__, "username", username)
 
     @property
@@ -6088,6 +6330,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         OCID of personal Bitbucket Cloud AppPassword saved in secret store
         """
         return pulumi.get(self, "app_password")
+
+    @property
+    @pulumi.getter(name="baseUrl")
+    def base_url(self) -> str:
+        """
+        The Base URL of the hosted BitbucketServer.
+        """
+        return pulumi.get(self, "base_url")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6186,12 +6436,49 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="tlsVerifyConfigs")
+    def tls_verify_configs(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult']:
+        """
+        TLS configuration used by build service to verify TLS connection.
+        """
+        return pulumi.get(self, "tls_verify_configs")
+
+    @property
     @pulumi.getter
     def username(self) -> str:
         """
         Public Bitbucket Cloud Username in plain text
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemTlsVerifyConfigResult(dict):
+    def __init__(__self__, *,
+                 ca_certificate_bundle_id: str,
+                 tls_verify_mode: str):
+        """
+        :param str ca_certificate_bundle_id: The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        :param str tls_verify_mode: The type of TLS verification.
+        """
+        pulumi.set(__self__, "ca_certificate_bundle_id", ca_certificate_bundle_id)
+        pulumi.set(__self__, "tls_verify_mode", tls_verify_mode)
+
+    @property
+    @pulumi.getter(name="caCertificateBundleId")
+    def ca_certificate_bundle_id(self) -> str:
+        """
+        The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        """
+        return pulumi.get(self, "ca_certificate_bundle_id")
+
+    @property
+    @pulumi.getter(name="tlsVerifyMode")
+    def tls_verify_mode(self) -> str:
+        """
+        The type of TLS verification.
+        """
+        return pulumi.get(self, "tls_verify_mode")
 
 
 @pulumi.output_type
@@ -8419,7 +8706,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str compute_instance_group_deploy_environment_id: A compute instance group environment OCID for rolling deployment.
         :param Mapping[str, Any] config: User provided key and value pair configuration, which is assigned through constants or parameter.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deploy_artifact_id: Optional binary artifact OCID user may provide to this stage.
+        :param str deploy_artifact_id: Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param Sequence[str] deploy_artifact_ids: The list of file artifact OCIDs to deploy.
         :param str deploy_environment_id_a: First compute instance group environment OCID for deployment.
         :param str deploy_environment_id_b: Second compute instance group environment OCID for deployment.
@@ -8610,7 +8897,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> str:
         """
-        Optional binary artifact OCID user may provide to this stage.
+        Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         """
         return pulumi.get(self, "deploy_artifact_id")
 
@@ -11071,7 +11358,7 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedu
                  custom_schedule: str,
                  schedule_type: str):
         """
-        :param str custom_schedule: Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        :param str custom_schedule: Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
         :param str schedule_type: Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
         """
         pulumi.set(__self__, "custom_schedule", custom_schedule)
@@ -11081,7 +11368,7 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedu
     @pulumi.getter(name="customSchedule")
     def custom_schedule(self) -> str:
         """
-        Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
         """
         return pulumi.get(self, "custom_schedule")
 
@@ -12124,7 +12411,7 @@ class GetRepositoryMirrorRepositoryConfigTriggerScheduleResult(dict):
                  custom_schedule: str,
                  schedule_type: str):
         """
-        :param str custom_schedule: Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        :param str custom_schedule: Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
         :param str schedule_type: Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
         """
         pulumi.set(__self__, "custom_schedule", custom_schedule)
@@ -12134,7 +12421,7 @@ class GetRepositoryMirrorRepositoryConfigTriggerScheduleResult(dict):
     @pulumi.getter(name="customSchedule")
     def custom_schedule(self) -> str:
         """
-        Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
         """
         return pulumi.get(self, "custom_schedule")
 
@@ -12577,7 +12864,7 @@ class GetTriggerActionFilterResult(dict):
                  trigger_source: str):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param Sequence['GetTriggerActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
+        :param Sequence['GetTriggerActionFilterIncludeArgs'] includes: Attributes to filter GitLab self-hosted server events.
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
@@ -12596,7 +12883,7 @@ class GetTriggerActionFilterResult(dict):
     @pulumi.getter
     def includes(self) -> Sequence['outputs.GetTriggerActionFilterIncludeResult']:
         """
-        Attributes to filter DevOps code repository events.
+        Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "includes")
 
@@ -12908,7 +13195,7 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
                  trigger_source: str):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
-        :param Sequence['GetTriggersTriggerCollectionItemActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
+        :param Sequence['GetTriggersTriggerCollectionItemActionFilterIncludeArgs'] includes: Attributes to filter GitLab self-hosted server events.
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
@@ -12927,7 +13214,7 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
     @pulumi.getter
     def includes(self) -> Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeResult']:
         """
-        Attributes to filter DevOps code repository events.
+        Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "includes")
 

@@ -22,7 +22,7 @@ type VulnerabilityAuditApplicationDependency struct {
 // VulnerabilityAuditApplicationDependencyInput is an input type that accepts VulnerabilityAuditApplicationDependencyArgs and VulnerabilityAuditApplicationDependencyOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditApplicationDependencyInput` via:
 //
-//          VulnerabilityAuditApplicationDependencyArgs{...}
+//	VulnerabilityAuditApplicationDependencyArgs{...}
 type VulnerabilityAuditApplicationDependencyInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i VulnerabilityAuditApplicationDependencyArgs) ToVulnerabilityAuditApplica
 // VulnerabilityAuditApplicationDependencyArrayInput is an input type that accepts VulnerabilityAuditApplicationDependencyArray and VulnerabilityAuditApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditApplicationDependencyArrayInput` via:
 //
-//          VulnerabilityAuditApplicationDependencyArray{ VulnerabilityAuditApplicationDependencyArgs{...} }
+//	VulnerabilityAuditApplicationDependencyArray{ VulnerabilityAuditApplicationDependencyArgs{...} }
 type VulnerabilityAuditApplicationDependencyArrayInput interface {
 	pulumi.Input
 
@@ -137,7 +137,7 @@ type VulnerabilityAuditConfiguration struct {
 // VulnerabilityAuditConfigurationInput is an input type that accepts VulnerabilityAuditConfigurationArgs and VulnerabilityAuditConfigurationOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditConfigurationInput` via:
 //
-//          VulnerabilityAuditConfigurationArgs{...}
+//	VulnerabilityAuditConfigurationArgs{...}
 type VulnerabilityAuditConfigurationInput interface {
 	pulumi.Input
 
@@ -177,11 +177,11 @@ func (i VulnerabilityAuditConfigurationArgs) ToVulnerabilityAuditConfigurationPt
 // VulnerabilityAuditConfigurationPtrInput is an input type that accepts VulnerabilityAuditConfigurationArgs, VulnerabilityAuditConfigurationPtr and VulnerabilityAuditConfigurationPtrOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditConfigurationPtrInput` via:
 //
-//          VulnerabilityAuditConfigurationArgs{...}
+//	        VulnerabilityAuditConfigurationArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type VulnerabilityAuditConfigurationPtrInput interface {
 	pulumi.Input
 
@@ -314,7 +314,7 @@ type VulnerabilityAuditVulnerability struct {
 // VulnerabilityAuditVulnerabilityInput is an input type that accepts VulnerabilityAuditVulnerabilityArgs and VulnerabilityAuditVulnerabilityOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditVulnerabilityInput` via:
 //
-//          VulnerabilityAuditVulnerabilityArgs{...}
+//	VulnerabilityAuditVulnerabilityArgs{...}
 type VulnerabilityAuditVulnerabilityInput interface {
 	pulumi.Input
 
@@ -348,7 +348,7 @@ func (i VulnerabilityAuditVulnerabilityArgs) ToVulnerabilityAuditVulnerabilityOu
 // VulnerabilityAuditVulnerabilityArrayInput is an input type that accepts VulnerabilityAuditVulnerabilityArray and VulnerabilityAuditVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditVulnerabilityArrayInput` via:
 //
-//          VulnerabilityAuditVulnerabilityArray{ VulnerabilityAuditVulnerabilityArgs{...} }
+//	VulnerabilityAuditVulnerabilityArray{ VulnerabilityAuditVulnerabilityArgs{...} }
 type VulnerabilityAuditVulnerabilityArrayInput interface {
 	pulumi.Input
 
@@ -433,7 +433,7 @@ type GetKnowledgebasesFilter struct {
 // GetKnowledgebasesFilterInput is an input type that accepts GetKnowledgebasesFilterArgs and GetKnowledgebasesFilterOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesFilterInput` via:
 //
-//          GetKnowledgebasesFilterArgs{...}
+//	GetKnowledgebasesFilterArgs{...}
 type GetKnowledgebasesFilterInput interface {
 	pulumi.Input
 
@@ -462,7 +462,7 @@ func (i GetKnowledgebasesFilterArgs) ToGetKnowledgebasesFilterOutputWithContext(
 // GetKnowledgebasesFilterArrayInput is an input type that accepts GetKnowledgebasesFilterArray and GetKnowledgebasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesFilterArrayInput` via:
 //
-//          GetKnowledgebasesFilterArray{ GetKnowledgebasesFilterArgs{...} }
+//	GetKnowledgebasesFilterArray{ GetKnowledgebasesFilterArgs{...} }
 type GetKnowledgebasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -537,7 +537,7 @@ type GetKnowledgebasesKnowledgeBaseCollection struct {
 // GetKnowledgebasesKnowledgeBaseCollectionInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionArgs and GetKnowledgebasesKnowledgeBaseCollectionOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionInput` via:
 //
-//          GetKnowledgebasesKnowledgeBaseCollectionArgs{...}
+//	GetKnowledgebasesKnowledgeBaseCollectionArgs{...}
 type GetKnowledgebasesKnowledgeBaseCollectionInput interface {
 	pulumi.Input
 
@@ -564,7 +564,7 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionArgs) ToGetKnowledgebasesKnowled
 // GetKnowledgebasesKnowledgeBaseCollectionArrayInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionArray and GetKnowledgebasesKnowledgeBaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionArrayInput` via:
 //
-//          GetKnowledgebasesKnowledgeBaseCollectionArray{ GetKnowledgebasesKnowledgeBaseCollectionArgs{...} }
+//	GetKnowledgebasesKnowledgeBaseCollectionArray{ GetKnowledgebasesKnowledgeBaseCollectionArgs{...} }
 type GetKnowledgebasesKnowledgeBaseCollectionArrayInput interface {
 	pulumi.Input
 
@@ -650,7 +650,7 @@ type GetKnowledgebasesKnowledgeBaseCollectionItem struct {
 // GetKnowledgebasesKnowledgeBaseCollectionItemInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionItemArgs and GetKnowledgebasesKnowledgeBaseCollectionItemOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionItemInput` via:
 //
-//          GetKnowledgebasesKnowledgeBaseCollectionItemArgs{...}
+//	GetKnowledgebasesKnowledgeBaseCollectionItemArgs{...}
 type GetKnowledgebasesKnowledgeBaseCollectionItemInput interface {
 	pulumi.Input
 
@@ -694,7 +694,7 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionItemArgs) ToGetKnowledgebasesKno
 // GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionItemArray and GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput` via:
 //
-//          GetKnowledgebasesKnowledgeBaseCollectionItemArray{ GetKnowledgebasesKnowledgeBaseCollectionItemArgs{...} }
+//	GetKnowledgebasesKnowledgeBaseCollectionItemArray{ GetKnowledgebasesKnowledgeBaseCollectionItemArgs{...} }
 type GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -804,7 +804,7 @@ type GetVulnerabilityAuditApplicationDependency struct {
 // GetVulnerabilityAuditApplicationDependencyInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyArgs and GetVulnerabilityAuditApplicationDependencyOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyArgs{...}
 type GetVulnerabilityAuditApplicationDependencyInput interface {
 	pulumi.Input
 
@@ -833,7 +833,7 @@ func (i GetVulnerabilityAuditApplicationDependencyArgs) ToGetVulnerabilityAuditA
 // GetVulnerabilityAuditApplicationDependencyArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyArray and GetVulnerabilityAuditApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyArray{ GetVulnerabilityAuditApplicationDependencyArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyArray{ GetVulnerabilityAuditApplicationDependencyArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyArrayInput interface {
 	pulumi.Input
 
@@ -909,7 +909,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionInput interface {
 	pulumi.Input
 
@@ -937,7 +937,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1008,7 +1008,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemInput interface {
 	pulumi.Input
 
@@ -1036,7 +1036,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1115,7 +1115,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -1151,7 +1151,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -1256,7 +1256,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityInput interface {
 	pulumi.Input
 
@@ -1290,7 +1290,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerabilityArrayInput interface {
 	pulumi.Input
 
@@ -1383,7 +1383,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter struct {
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterInput interface {
 	pulumi.Input
 
@@ -1412,7 +1412,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs) ToG
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1496,7 +1496,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilityItem struct {
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemInput interface {
 	pulumi.Input
 
@@ -1532,7 +1532,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs) ToGetVu
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput interface {
 	pulumi.Input
 
@@ -1633,7 +1633,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability st
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs{...}
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs{...}
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityInput interface {
 	pulumi.Input
 
@@ -1667,7 +1667,7 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput` via:
 //
-//          GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs{...} }
+//	GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray{ GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs{...} }
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput interface {
 	pulumi.Input
 
@@ -1761,7 +1761,7 @@ type GetVulnerabilityAuditConfiguration struct {
 // GetVulnerabilityAuditConfigurationInput is an input type that accepts GetVulnerabilityAuditConfigurationArgs and GetVulnerabilityAuditConfigurationOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditConfigurationInput` via:
 //
-//          GetVulnerabilityAuditConfigurationArgs{...}
+//	GetVulnerabilityAuditConfigurationArgs{...}
 type GetVulnerabilityAuditConfigurationInput interface {
 	pulumi.Input
 
@@ -1793,7 +1793,7 @@ func (i GetVulnerabilityAuditConfigurationArgs) ToGetVulnerabilityAuditConfigura
 // GetVulnerabilityAuditConfigurationArrayInput is an input type that accepts GetVulnerabilityAuditConfigurationArray and GetVulnerabilityAuditConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditConfigurationArrayInput` via:
 //
-//          GetVulnerabilityAuditConfigurationArray{ GetVulnerabilityAuditConfigurationArgs{...} }
+//	GetVulnerabilityAuditConfigurationArray{ GetVulnerabilityAuditConfigurationArgs{...} }
 type GetVulnerabilityAuditConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -1878,7 +1878,7 @@ type GetVulnerabilityAuditVulnerability struct {
 // GetVulnerabilityAuditVulnerabilityInput is an input type that accepts GetVulnerabilityAuditVulnerabilityArgs and GetVulnerabilityAuditVulnerabilityOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityInput` via:
 //
-//          GetVulnerabilityAuditVulnerabilityArgs{...}
+//	GetVulnerabilityAuditVulnerabilityArgs{...}
 type GetVulnerabilityAuditVulnerabilityInput interface {
 	pulumi.Input
 
@@ -1912,7 +1912,7 @@ func (i GetVulnerabilityAuditVulnerabilityArgs) ToGetVulnerabilityAuditVulnerabi
 // GetVulnerabilityAuditVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityArray and GetVulnerabilityAuditVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityArrayInput` via:
 //
-//          GetVulnerabilityAuditVulnerabilityArray{ GetVulnerabilityAuditVulnerabilityArgs{...} }
+//	GetVulnerabilityAuditVulnerabilityArray{ GetVulnerabilityAuditVulnerabilityArgs{...} }
 type GetVulnerabilityAuditVulnerabilityArrayInput interface {
 	pulumi.Input
 
@@ -1997,7 +1997,7 @@ type GetVulnerabilityAuditsFilter struct {
 // GetVulnerabilityAuditsFilterInput is an input type that accepts GetVulnerabilityAuditsFilterArgs and GetVulnerabilityAuditsFilterOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsFilterInput` via:
 //
-//          GetVulnerabilityAuditsFilterArgs{...}
+//	GetVulnerabilityAuditsFilterArgs{...}
 type GetVulnerabilityAuditsFilterInput interface {
 	pulumi.Input
 
@@ -2026,7 +2026,7 @@ func (i GetVulnerabilityAuditsFilterArgs) ToGetVulnerabilityAuditsFilterOutputWi
 // GetVulnerabilityAuditsFilterArrayInput is an input type that accepts GetVulnerabilityAuditsFilterArray and GetVulnerabilityAuditsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsFilterArrayInput` via:
 //
-//          GetVulnerabilityAuditsFilterArray{ GetVulnerabilityAuditsFilterArgs{...} }
+//	GetVulnerabilityAuditsFilterArray{ GetVulnerabilityAuditsFilterArgs{...} }
 type GetVulnerabilityAuditsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2101,7 +2101,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollection struct {
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs{...}
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs{...}
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionInput interface {
 	pulumi.Input
 
@@ -2128,7 +2128,7 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs) ToGetVulnerabili
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs{...} }
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs{...} }
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2231,7 +2231,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs{...}
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs{...}
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemInput interface {
 	pulumi.Input
 
@@ -2292,7 +2292,7 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs) ToGetVulnera
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs{...} }
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs{...} }
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2462,7 +2462,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs{...}
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs{...}
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyInput interface {
 	pulumi.Input
 
@@ -2491,7 +2491,7 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs{...} }
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs{...} }
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput interface {
 	pulumi.Input
 
@@ -2577,7 +2577,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration struct 
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs{...}
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs{...}
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationInput interface {
 	pulumi.Input
 
@@ -2609,7 +2609,7 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs)
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs{...} }
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs{...} }
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -2700,7 +2700,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability struct 
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{...}
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{...}
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput interface {
 	pulumi.Input
 
@@ -2734,7 +2734,7 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs)
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput` via:
 //
-//          GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{...} }
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{...} }
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput interface {
 	pulumi.Input
 

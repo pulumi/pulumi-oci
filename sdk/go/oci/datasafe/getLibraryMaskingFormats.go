@@ -20,29 +20,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetLibraryMaskingFormats(ctx, &datasafe.GetLibraryMaskingFormatsArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			AccessLevel:                     pulumi.StringRef(_var.Library_masking_format_access_level),
-// 			CompartmentIdInSubtree:          pulumi.BoolRef(_var.Library_masking_format_compartment_id_in_subtree),
-// 			DisplayName:                     pulumi.StringRef(_var.Library_masking_format_display_name),
-// 			LibraryMaskingFormatId:          pulumi.StringRef(oci_data_safe_library_masking_format.Test_library_masking_format.Id),
-// 			LibraryMaskingFormatSource:      pulumi.StringRef(_var.Library_masking_format_library_masking_format_source),
-// 			State:                           pulumi.StringRef(_var.Library_masking_format_state),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Library_masking_format_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Library_masking_format_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetLibraryMaskingFormats(ctx, &datasafe.GetLibraryMaskingFormatsArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				AccessLevel:                     pulumi.StringRef(_var.Library_masking_format_access_level),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Library_masking_format_compartment_id_in_subtree),
+//				DisplayName:                     pulumi.StringRef(_var.Library_masking_format_display_name),
+//				LibraryMaskingFormatId:          pulumi.StringRef(oci_data_safe_library_masking_format.Test_library_masking_format.Id),
+//				LibraryMaskingFormatSource:      pulumi.StringRef(_var.Library_masking_format_library_masking_format_source),
+//				State:                           pulumi.StringRef(_var.Library_masking_format_state),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Library_masking_format_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Library_masking_format_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLibraryMaskingFormats(ctx *pulumi.Context, args *GetLibraryMaskingFormatsArgs, opts ...pulumi.InvokeOption) (*GetLibraryMaskingFormatsResult, error) {
 	var rv GetLibraryMaskingFormatsResult

@@ -19,7 +19,9 @@ import (
 // page_title: "Oracle Cloud Infrastructure: Core.BootVolume"
 // sidebar_current: "docs-oci-resource-core-boot_volume"
 // description: |-
-//   Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
+//
+//	Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
+//
 // ---
 //
 // # Core.BootVolume
@@ -36,45 +38,48 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewBootVolume(ctx, "testBootVolume", &Core.BootVolumeArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			SourceDetails: &core.BootVolumeSourceDetailsArgs{
-// 				Id:   pulumi.Any(_var.Boot_volume_source_details_id),
-// 				Type: pulumi.Any(_var.Boot_volume_source_details_type),
-// 			},
-// 			AvailabilityDomain: pulumi.Any(_var.Boot_volume_availability_domain),
-// 			BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
-// 			BootVolumeReplicas: core.BootVolumeBootVolumeReplicaArray{
-// 				&core.BootVolumeBootVolumeReplicaArgs{
-// 					AvailabilityDomain: pulumi.Any(_var.Boot_volume_boot_volume_replicas_availability_domain),
-// 					DisplayName:        pulumi.Any(_var.Boot_volume_boot_volume_replicas_display_name),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Boot_volume_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsAutoTuneEnabled:          pulumi.Any(_var.Boot_volume_is_auto_tune_enabled),
-// 			KmsKeyId:                   pulumi.Any(oci_kms_key.Test_key.Id),
-// 			SizeInGbs:                  pulumi.Any(_var.Boot_volume_size_in_gbs),
-// 			VpusPerGb:                  pulumi.Any(_var.Boot_volume_vpus_per_gb),
-// 			BootVolumeReplicasDeletion: pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewBootVolume(ctx, "testBootVolume", &Core.BootVolumeArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				SourceDetails: &core.BootVolumeSourceDetailsArgs{
+//					Id:   pulumi.Any(_var.Boot_volume_source_details_id),
+//					Type: pulumi.Any(_var.Boot_volume_source_details_type),
+//				},
+//				AvailabilityDomain: pulumi.Any(_var.Boot_volume_availability_domain),
+//				BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//				BootVolumeReplicas: core.BootVolumeBootVolumeReplicaArray{
+//					&core.BootVolumeBootVolumeReplicaArgs{
+//						AvailabilityDomain: pulumi.Any(_var.Boot_volume_boot_volume_replicas_availability_domain),
+//						DisplayName:        pulumi.Any(_var.Boot_volume_boot_volume_replicas_display_name),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Boot_volume_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsAutoTuneEnabled:          pulumi.Any(_var.Boot_volume_is_auto_tune_enabled),
+//				KmsKeyId:                   pulumi.Any(oci_kms_key.Test_key.Id),
+//				SizeInGbs:                  pulumi.Any(_var.Boot_volume_size_in_gbs),
+//				VpusPerGb:                  pulumi.Any(_var.Boot_volume_vpus_per_gb),
+//				BootVolumeReplicasDeletion: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -82,7 +87,9 @@ import (
 // BootVolumes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
+//
+//	$ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
+//
 // ```
 type BootVolume struct {
 	pulumi.CustomResourceState
@@ -347,7 +354,7 @@ func (i *BootVolume) ToBootVolumeOutputWithContext(ctx context.Context) BootVolu
 // BootVolumeArrayInput is an input type that accepts BootVolumeArray and BootVolumeArrayOutput values.
 // You can construct a concrete instance of `BootVolumeArrayInput` via:
 //
-//          BootVolumeArray{ BootVolumeArgs{...} }
+//	BootVolumeArray{ BootVolumeArgs{...} }
 type BootVolumeArrayInput interface {
 	pulumi.Input
 
@@ -372,7 +379,7 @@ func (i BootVolumeArray) ToBootVolumeArrayOutputWithContext(ctx context.Context)
 // BootVolumeMapInput is an input type that accepts BootVolumeMap and BootVolumeMapOutput values.
 // You can construct a concrete instance of `BootVolumeMapInput` via:
 //
-//          BootVolumeMap{ "key": BootVolumeArgs{...} }
+//	BootVolumeMap{ "key": BootVolumeArgs{...} }
 type BootVolumeMapInput interface {
 	pulumi.Input
 

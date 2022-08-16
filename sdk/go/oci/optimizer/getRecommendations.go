@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetRecommendations(ctx, &optimizer.GetRecommendationsArgs{
-// 			CategoryId:             oci_optimizer_category.Test_category.Id,
-// 			CompartmentId:          _var.Compartment_id,
-// 			CompartmentIdInSubtree: _var.Recommendation_compartment_id_in_subtree,
-// 			Name:                   pulumi.StringRef(_var.Recommendation_name),
-// 			State:                  pulumi.StringRef(_var.Recommendation_state),
-// 			Status:                 pulumi.StringRef(_var.Recommendation_status),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetRecommendations(ctx, &optimizer.GetRecommendationsArgs{
+//				CategoryId:             oci_optimizer_category.Test_category.Id,
+//				CompartmentId:          _var.Compartment_id,
+//				CompartmentIdInSubtree: _var.Recommendation_compartment_id_in_subtree,
+//				Name:                   pulumi.StringRef(_var.Recommendation_name),
+//				State:                  pulumi.StringRef(_var.Recommendation_state),
+//				Status:                 pulumi.StringRef(_var.Recommendation_status),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRecommendations(ctx *pulumi.Context, args *GetRecommendationsArgs, opts ...pulumi.InvokeOption) (*GetRecommendationsResult, error) {
 	var rv GetRecommendationsResult

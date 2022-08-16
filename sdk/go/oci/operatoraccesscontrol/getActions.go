@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OperatorAccessControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OperatorAccessControl.GetActions(ctx, &operatoraccesscontrol.GetActionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Name:          pulumi.StringRef(_var.Operator_action_name),
-// 			ResourceType:  pulumi.StringRef(_var.Operator_action_resource_type),
-// 			State:         pulumi.StringRef(_var.Operator_action_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OperatorAccessControl.GetActions(ctx, &operatoraccesscontrol.GetActionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Name:          pulumi.StringRef(_var.Operator_action_name),
+//				ResourceType:  pulumi.StringRef(_var.Operator_action_resource_type),
+//				State:         pulumi.StringRef(_var.Operator_action_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetActions(ctx *pulumi.Context, args *GetActionsArgs, opts ...pulumi.InvokeOption) (*GetActionsResult, error) {
 	var rv GetActionsResult

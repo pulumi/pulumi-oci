@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Autonomous Container Database Dataguard Association Operation resource in Oracle Cloud Infrastructure Database service.
 //
-// Perform a new Autonomous Container Database Dataguard Association Operation on an Autonomous Container Database that has Dataguard enabled
+// # Perform a new Autonomous Container Database Dataguard Association Operation on an Autonomous Container Database that has Dataguard enabled
 //
 // ## Example Usage
 //
@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousContainerDatabaseDataguardAssociationOperation(ctx, "switchover", &Database.AutonomousContainerDatabaseDataguardAssociationOperationArgs{
-// 			Operation:                     pulumi.String("switchover"),
-// 			AutonomousContainerDatabaseId: pulumi.Any(data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Autonomous_container_database_id),
-// 			AutonomousContainerDatabaseDataguardAssociationId: pulumi.Any(data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousContainerDatabaseDataguardAssociationOperation(ctx, "switchover", &Database.AutonomousContainerDatabaseDataguardAssociationOperationArgs{
+//				Operation:                     pulumi.String("switchover"),
+//				AutonomousContainerDatabaseId: pulumi.Any(data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Autonomous_container_database_id),
+//				AutonomousContainerDatabaseDataguardAssociationId: pulumi.Any(data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -158,7 +161,7 @@ func (i *AutonomousContainerDatabaseDataguardAssociationOperation) ToAutonomousC
 // AutonomousContainerDatabaseDataguardAssociationOperationArrayInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationOperationArray and AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardAssociationOperationArrayInput` via:
 //
-//          AutonomousContainerDatabaseDataguardAssociationOperationArray{ AutonomousContainerDatabaseDataguardAssociationOperationArgs{...} }
+//	AutonomousContainerDatabaseDataguardAssociationOperationArray{ AutonomousContainerDatabaseDataguardAssociationOperationArgs{...} }
 type AutonomousContainerDatabaseDataguardAssociationOperationArrayInput interface {
 	pulumi.Input
 
@@ -183,7 +186,7 @@ func (i AutonomousContainerDatabaseDataguardAssociationOperationArray) ToAutonom
 // AutonomousContainerDatabaseDataguardAssociationOperationMapInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationOperationMap and AutonomousContainerDatabaseDataguardAssociationOperationMapOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardAssociationOperationMapInput` via:
 //
-//          AutonomousContainerDatabaseDataguardAssociationOperationMap{ "key": AutonomousContainerDatabaseDataguardAssociationOperationArgs{...} }
+//	AutonomousContainerDatabaseDataguardAssociationOperationMap{ "key": AutonomousContainerDatabaseDataguardAssociationOperationArgs{...} }
 type AutonomousContainerDatabaseDataguardAssociationOperationMapInput interface {
 	pulumi.Input
 

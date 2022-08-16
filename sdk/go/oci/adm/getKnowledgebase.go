@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Adm"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Adm"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Adm.GetKnowledgebase(ctx, &adm.GetKnowledgebaseArgs{
-// 			KnowledgeBaseId: oci_adm_knowledge_base.Test_knowledge_base.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Adm.GetKnowledgebase(ctx, &adm.GetKnowledgebaseArgs{
+//				KnowledgeBaseId: oci_adm_knowledge_base.Test_knowledge_base.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKnowledgebase(ctx *pulumi.Context, args *GetKnowledgebaseArgs, opts ...pulumi.InvokeOption) (*GetKnowledgebaseResult, error) {
 	var rv GetKnowledgebaseResult

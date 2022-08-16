@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.GetNetworkAddressLists(ctx, &waf.GetNetworkAddressListsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Network_address_list_display_name),
-// 			Id:            pulumi.StringRef(_var.Network_address_list_id),
-// 			States:        _var.Network_address_list_state,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.GetNetworkAddressLists(ctx, &waf.GetNetworkAddressListsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Network_address_list_display_name),
+//				Id:            pulumi.StringRef(_var.Network_address_list_id),
+//				States:        _var.Network_address_list_state,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNetworkAddressLists(ctx *pulumi.Context, args *GetNetworkAddressListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkAddressListsResult, error) {
 	var rv GetNetworkAddressListsResult

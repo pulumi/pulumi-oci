@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := MeteringComputation.GetCustomTable(ctx, &meteringcomputation.GetCustomTableArgs{
-// 			CustomTableId: oci_metering_computation_custom_table.Test_custom_table.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := MeteringComputation.GetCustomTable(ctx, &meteringcomputation.GetCustomTableArgs{
+//				CustomTableId: oci_metering_computation_custom_table.Test_custom_table.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupCustomTable(ctx *pulumi.Context, args *LookupCustomTableArgs, opts ...pulumi.InvokeOption) (*LookupCustomTableResult, error) {
 	var rv LookupCustomTableResult

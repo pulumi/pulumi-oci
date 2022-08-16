@@ -171,6 +171,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly memorySizeInGbs: number;
     /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     */
+    readonly monthlyDbServerVersion: string;
+    /**
      * The netmask for the control plane network.
      */
     readonly netmask: string;

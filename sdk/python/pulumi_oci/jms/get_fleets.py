@@ -22,13 +22,16 @@ class GetFleetsResult:
     """
     A collection of values returned by getFleets.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, fleet_collections=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, display_name_contains=None, filters=None, fleet_collections=None, id=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if display_name_contains and not isinstance(display_name_contains, str):
+            raise TypeError("Expected argument 'display_name_contains' to be a str")
+        pulumi.set(__self__, "display_name_contains", display_name_contains)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -57,6 +60,11 @@ class GetFleetsResult:
         The name of the Fleet.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="displayNameContains")
+    def display_name_contains(self) -> Optional[str]:
+        return pulumi.get(self, "display_name_contains")
 
     @property
     @pulumi.getter
@@ -96,6 +104,7 @@ class AwaitableGetFleetsResult(GetFleetsResult):
         return GetFleetsResult(
             compartment_id=self.compartment_id,
             display_name=self.display_name,
+            display_name_contains=self.display_name_contains,
             filters=self.filters,
             fleet_collections=self.fleet_collections,
             id=self.id,
@@ -104,6 +113,7 @@ class AwaitableGetFleetsResult(GetFleetsResult):
 
 def get_fleets(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
+               display_name_contains: Optional[str] = None,
                filters: Optional[Sequence[pulumi.InputType['GetFleetsFilterArgs']]] = None,
                id: Optional[str] = None,
                state: Optional[str] = None,
@@ -122,6 +132,7 @@ def get_fleets(compartment_id: Optional[str] = None,
 
     test_fleets = oci.Jms.get_fleets(compartment_id=var["compartment_id"],
         display_name=var["fleet_display_name"],
+        display_name_contains=var["fleet_display_name_contains"],
         id=var["fleet_id"],
         state=var["fleet_state"])
     ```
@@ -129,12 +140,14 @@ def get_fleets(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: The display name.
+    :param str display_name_contains: Filter the list with displayName contains the given value.
     :param str id: The ID of the Fleet.
     :param str state: The state of the lifecycle.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
@@ -147,6 +160,7 @@ def get_fleets(compartment_id: Optional[str] = None,
     return AwaitableGetFleetsResult(
         compartment_id=__ret__.compartment_id,
         display_name=__ret__.display_name,
+        display_name_contains=__ret__.display_name_contains,
         filters=__ret__.filters,
         fleet_collections=__ret__.fleet_collections,
         id=__ret__.id,
@@ -156,6 +170,7 @@ def get_fleets(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_fleets)
 def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
+                      display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFleetsFilterArgs']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -174,6 +189,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
 
     test_fleets = oci.Jms.get_fleets(compartment_id=var["compartment_id"],
         display_name=var["fleet_display_name"],
+        display_name_contains=var["fleet_display_name_contains"],
         id=var["fleet_id"],
         state=var["fleet_state"])
     ```
@@ -181,6 +197,7 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: The display name.
+    :param str display_name_contains: Filter the list with displayName contains the given value.
     :param str id: The ID of the Fleet.
     :param str state: The state of the lifecycle.
     """

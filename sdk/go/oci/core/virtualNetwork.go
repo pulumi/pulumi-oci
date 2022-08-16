@@ -169,7 +169,7 @@ func (i *VirtualNetwork) ToVirtualNetworkOutputWithContext(ctx context.Context) 
 // VirtualNetworkArrayInput is an input type that accepts VirtualNetworkArray and VirtualNetworkArrayOutput values.
 // You can construct a concrete instance of `VirtualNetworkArrayInput` via:
 //
-//          VirtualNetworkArray{ VirtualNetworkArgs{...} }
+//	VirtualNetworkArray{ VirtualNetworkArgs{...} }
 type VirtualNetworkArrayInput interface {
 	pulumi.Input
 
@@ -194,7 +194,7 @@ func (i VirtualNetworkArray) ToVirtualNetworkArrayOutputWithContext(ctx context.
 // VirtualNetworkMapInput is an input type that accepts VirtualNetworkMap and VirtualNetworkMapOutput values.
 // You can construct a concrete instance of `VirtualNetworkMapInput` via:
 //
-//          VirtualNetworkMap{ "key": VirtualNetworkArgs{...} }
+//	VirtualNetworkMap{ "key": VirtualNetworkArgs{...} }
 type VirtualNetworkMapInput interface {
 	pulumi.Input
 

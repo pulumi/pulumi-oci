@@ -83,6 +83,8 @@ export * from "./getCloudVmClusters";
 export * from "./getDataGuardAssociation";
 export * from "./getDataGuardAssociations";
 export * from "./getDatabase";
+export * from "./getDatabaseMaintenanceRunHistories";
+export * from "./getDatabaseMaintenanceRunHistory";
 export * from "./getDatabasePdbConversionHistoryEntries";
 export * from "./getDatabasePdbConversionHistoryEntry";
 export * from "./getDatabaseSoftwareImage";

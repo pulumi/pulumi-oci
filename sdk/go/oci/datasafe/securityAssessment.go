@@ -23,31 +23,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewSecurityAssessment(ctx, "testSecurityAssessment", &DataSafe.SecurityAssessmentArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Security_assessment_description),
-// 			DisplayName: pulumi.Any(_var.Security_assessment_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Schedule: pulumi.Any(_var.Security_assessment_schedule),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewSecurityAssessment(ctx, "testSecurityAssessment", &DataSafe.SecurityAssessmentArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Security_assessment_description),
+//				DisplayName: pulumi.Any(_var.Security_assessment_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Schedule: pulumi.Any(_var.Security_assessment_schedule),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // SecurityAssessments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
+//
+//	$ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
+//
 // ```
 type SecurityAssessment struct {
 	pulumi.CustomResourceState
@@ -311,7 +316,7 @@ func (i *SecurityAssessment) ToSecurityAssessmentOutputWithContext(ctx context.C
 // SecurityAssessmentArrayInput is an input type that accepts SecurityAssessmentArray and SecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentArrayInput` via:
 //
-//          SecurityAssessmentArray{ SecurityAssessmentArgs{...} }
+//	SecurityAssessmentArray{ SecurityAssessmentArgs{...} }
 type SecurityAssessmentArrayInput interface {
 	pulumi.Input
 
@@ -336,7 +341,7 @@ func (i SecurityAssessmentArray) ToSecurityAssessmentArrayOutputWithContext(ctx 
 // SecurityAssessmentMapInput is an input type that accepts SecurityAssessmentMap and SecurityAssessmentMapOutput values.
 // You can construct a concrete instance of `SecurityAssessmentMapInput` via:
 //
-//          SecurityAssessmentMap{ "key": SecurityAssessmentArgs{...} }
+//	SecurityAssessmentMap{ "key": SecurityAssessmentArgs{...} }
 type SecurityAssessmentMapInput interface {
 	pulumi.Input
 

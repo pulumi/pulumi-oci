@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.GetExportSets(ctx, &filestorage.GetExportSetsArgs{
-// 			AvailabilityDomain: _var.Export_set_availability_domain,
-// 			CompartmentId:      _var.Compartment_id,
-// 			DisplayName:        pulumi.StringRef(_var.Export_set_display_name),
-// 			Id:                 pulumi.StringRef(_var.Export_set_id),
-// 			State:              pulumi.StringRef(_var.Export_set_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.GetExportSets(ctx, &filestorage.GetExportSetsArgs{
+//				AvailabilityDomain: _var.Export_set_availability_domain,
+//				CompartmentId:      _var.Compartment_id,
+//				DisplayName:        pulumi.StringRef(_var.Export_set_display_name),
+//				Id:                 pulumi.StringRef(_var.Export_set_id),
+//				State:              pulumi.StringRef(_var.Export_set_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExportSets(ctx *pulumi.Context, args *GetExportSetsArgs, opts ...pulumi.InvokeOption) (*GetExportSetsResult, error) {
 	var rv GetExportSetsResult

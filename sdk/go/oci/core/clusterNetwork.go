@@ -22,51 +22,54 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewClusterNetwork(ctx, "testClusterNetwork", &Core.ClusterNetworkArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			InstancePools: core.ClusterNetworkInstancePoolArray{
-// 				&core.ClusterNetworkInstancePoolArgs{
-// 					InstanceConfigurationId: pulumi.Any(oci_core_instance_configuration.Test_instance_configuration.Id),
-// 					Size:                    pulumi.Any(_var.Cluster_network_instance_pools_size),
-// 					DefinedTags: pulumi.AnyMap{
-// 						"Operations.CostCenter": pulumi.Any("42"),
-// 					},
-// 					DisplayName: pulumi.Any(_var.Cluster_network_instance_pools_display_name),
-// 					FreeformTags: pulumi.AnyMap{
-// 						"Department": pulumi.Any("Finance"),
-// 					},
-// 				},
-// 			},
-// 			PlacementConfiguration: &core.ClusterNetworkPlacementConfigurationArgs{
-// 				AvailabilityDomain: pulumi.Any(_var.Cluster_network_placement_configuration_availability_domain),
-// 				PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 				SecondaryVnicSubnets: core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArray{
-// 					&core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs{
-// 						SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 						DisplayName: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name),
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Cluster_network_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewClusterNetwork(ctx, "testClusterNetwork", &Core.ClusterNetworkArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				InstancePools: core.ClusterNetworkInstancePoolArray{
+//					&core.ClusterNetworkInstancePoolArgs{
+//						InstanceConfigurationId: pulumi.Any(oci_core_instance_configuration.Test_instance_configuration.Id),
+//						Size:                    pulumi.Any(_var.Cluster_network_instance_pools_size),
+//						DefinedTags: pulumi.AnyMap{
+//							"Operations.CostCenter": pulumi.Any("42"),
+//						},
+//						DisplayName: pulumi.Any(_var.Cluster_network_instance_pools_display_name),
+//						FreeformTags: pulumi.AnyMap{
+//							"Department": pulumi.Any("Finance"),
+//						},
+//					},
+//				},
+//				PlacementConfiguration: &core.ClusterNetworkPlacementConfigurationArgs{
+//					AvailabilityDomain: pulumi.Any(_var.Cluster_network_placement_configuration_availability_domain),
+//					PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					SecondaryVnicSubnets: core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArray{
+//						&core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs{
+//							SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//							DisplayName: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name),
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Cluster_network_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -74,7 +77,9 @@ import (
 // ClusterNetworks can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
+//
+//	$ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
+//
 // ```
 type ClusterNetwork struct {
 	pulumi.CustomResourceState
@@ -239,7 +244,7 @@ func (i *ClusterNetwork) ToClusterNetworkOutputWithContext(ctx context.Context) 
 // ClusterNetworkArrayInput is an input type that accepts ClusterNetworkArray and ClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `ClusterNetworkArrayInput` via:
 //
-//          ClusterNetworkArray{ ClusterNetworkArgs{...} }
+//	ClusterNetworkArray{ ClusterNetworkArgs{...} }
 type ClusterNetworkArrayInput interface {
 	pulumi.Input
 
@@ -264,7 +269,7 @@ func (i ClusterNetworkArray) ToClusterNetworkArrayOutputWithContext(ctx context.
 // ClusterNetworkMapInput is an input type that accepts ClusterNetworkMap and ClusterNetworkMapOutput values.
 // You can construct a concrete instance of `ClusterNetworkMapInput` via:
 //
-//          ClusterNetworkMap{ "key": ClusterNetworkArgs{...} }
+//	ClusterNetworkMap{ "key": ClusterNetworkArgs{...} }
 type ClusterNetworkMapInput interface {
 	pulumi.Input
 

@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Adm"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Adm"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Adm.NewKnowledgeBase(ctx, "testKnowledgeBase", &Adm.KnowledgeBaseArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Knowledge_base_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Adm.NewKnowledgeBase(ctx, "testKnowledgeBase", &Adm.KnowledgeBaseArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Knowledge_base_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // KnowledgeBases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
+//
+//	$ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"
+//
 // ```
 type KnowledgeBase struct {
 	pulumi.CustomResourceState
@@ -195,7 +200,7 @@ func (i *KnowledgeBase) ToKnowledgeBaseOutputWithContext(ctx context.Context) Kn
 // KnowledgeBaseArrayInput is an input type that accepts KnowledgeBaseArray and KnowledgeBaseArrayOutput values.
 // You can construct a concrete instance of `KnowledgeBaseArrayInput` via:
 //
-//          KnowledgeBaseArray{ KnowledgeBaseArgs{...} }
+//	KnowledgeBaseArray{ KnowledgeBaseArgs{...} }
 type KnowledgeBaseArrayInput interface {
 	pulumi.Input
 
@@ -220,7 +225,7 @@ func (i KnowledgeBaseArray) ToKnowledgeBaseArrayOutputWithContext(ctx context.Co
 // KnowledgeBaseMapInput is an input type that accepts KnowledgeBaseMap and KnowledgeBaseMapOutput values.
 // You can construct a concrete instance of `KnowledgeBaseMapInput` via:
 //
-//          KnowledgeBaseMap{ "key": KnowledgeBaseArgs{...} }
+//	KnowledgeBaseMap{ "key": KnowledgeBaseArgs{...} }
 type KnowledgeBaseMapInput interface {
 	pulumi.Input
 

@@ -31,26 +31,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrgAttachmentManagement(ctx, "testDrgRpcAttachment", &Core.DrgAttachmentManagementArgs{
-// 			AttachmentType:  pulumi.String("REMOTE_PEERING_CONNECTION"),
-// 			CompartmentId:   pulumi.Any(_var.Compartment_ocid),
-// 			NetworkId:       pulumi.Any(oci_core_remote_peering_connection.Test_rpc.Id),
-// 			DrgId:           pulumi.Any(oci_core_drg.Test_drg.Id),
-// 			DisplayName:     pulumi.String("MyTestDrgAttachmentForRpc"),
-// 			DrgRouteTableId: pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrgAttachmentManagement(ctx, "testDrgRpcAttachment", &Core.DrgAttachmentManagementArgs{
+//				AttachmentType:  pulumi.String("REMOTE_PEERING_CONNECTION"),
+//				CompartmentId:   pulumi.Any(_var.Compartment_ocid),
+//				NetworkId:       pulumi.Any(oci_core_remote_peering_connection.Test_rpc.Id),
+//				DrgId:           pulumi.Any(oci_core_drg.Test_drg.Id),
+//				DisplayName:     pulumi.String("MyTestDrgAttachmentForRpc"),
+//				DrgRouteTableId: pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type DrgAttachmentManagement struct {
 	pulumi.CustomResourceState
@@ -285,7 +288,7 @@ func (i *DrgAttachmentManagement) ToDrgAttachmentManagementOutputWithContext(ctx
 // DrgAttachmentManagementArrayInput is an input type that accepts DrgAttachmentManagementArray and DrgAttachmentManagementArrayOutput values.
 // You can construct a concrete instance of `DrgAttachmentManagementArrayInput` via:
 //
-//          DrgAttachmentManagementArray{ DrgAttachmentManagementArgs{...} }
+//	DrgAttachmentManagementArray{ DrgAttachmentManagementArgs{...} }
 type DrgAttachmentManagementArrayInput interface {
 	pulumi.Input
 
@@ -310,7 +313,7 @@ func (i DrgAttachmentManagementArray) ToDrgAttachmentManagementArrayOutputWithCo
 // DrgAttachmentManagementMapInput is an input type that accepts DrgAttachmentManagementMap and DrgAttachmentManagementMapOutput values.
 // You can construct a concrete instance of `DrgAttachmentManagementMapInput` via:
 //
-//          DrgAttachmentManagementMap{ "key": DrgAttachmentManagementArgs{...} }
+//	DrgAttachmentManagementMap{ "key": DrgAttachmentManagementArgs{...} }
 type DrgAttachmentManagementMapInput interface {
 	pulumi.Input
 

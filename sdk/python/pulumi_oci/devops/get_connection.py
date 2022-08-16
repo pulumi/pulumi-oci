@@ -7,6 +7,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetConnectionResult',
@@ -20,13 +21,16 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_token=None, app_password=None, compartment_id=None, connection_id=None, connection_type=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None, username=None):
+    def __init__(__self__, access_token=None, app_password=None, base_url=None, compartment_id=None, connection_id=None, connection_type=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None, tls_verify_configs=None, username=None):
         if access_token and not isinstance(access_token, str):
             raise TypeError("Expected argument 'access_token' to be a str")
         pulumi.set(__self__, "access_token", access_token)
         if app_password and not isinstance(app_password, str):
             raise TypeError("Expected argument 'app_password' to be a str")
         pulumi.set(__self__, "app_password", app_password)
+        if base_url and not isinstance(base_url, str):
+            raise TypeError("Expected argument 'base_url' to be a str")
+        pulumi.set(__self__, "base_url", base_url)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,6 +70,9 @@ class GetConnectionResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if tls_verify_configs and not isinstance(tls_verify_configs, list):
+            raise TypeError("Expected argument 'tls_verify_configs' to be a list")
+        pulumi.set(__self__, "tls_verify_configs", tls_verify_configs)
         if username and not isinstance(username, str):
             raise TypeError("Expected argument 'username' to be a str")
         pulumi.set(__self__, "username", username)
@@ -85,6 +92,14 @@ class GetConnectionResult:
         OCID of personal Bitbucket Cloud AppPassword saved in secret store
         """
         return pulumi.get(self, "app_password")
+
+    @property
+    @pulumi.getter(name="baseUrl")
+    def base_url(self) -> str:
+        """
+        The Base URL of the hosted BitbucketServer.
+        """
+        return pulumi.get(self, "base_url")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -188,6 +203,14 @@ class GetConnectionResult:
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="tlsVerifyConfigs")
+    def tls_verify_configs(self) -> Sequence['outputs.GetConnectionTlsVerifyConfigResult']:
+        """
+        TLS configuration used by build service to verify TLS connection.
+        """
+        return pulumi.get(self, "tls_verify_configs")
+
+    @property
     @pulumi.getter
     def username(self) -> str:
         """
@@ -204,6 +227,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
         return GetConnectionResult(
             access_token=self.access_token,
             app_password=self.app_password,
+            base_url=self.base_url,
             compartment_id=self.compartment_id,
             connection_id=self.connection_id,
             connection_type=self.connection_type,
@@ -217,6 +241,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            tls_verify_configs=self.tls_verify_configs,
             username=self.username)
 
 
@@ -250,6 +275,7 @@ def get_connection(connection_id: Optional[str] = None,
     return AwaitableGetConnectionResult(
         access_token=__ret__.access_token,
         app_password=__ret__.app_password,
+        base_url=__ret__.base_url,
         compartment_id=__ret__.compartment_id,
         connection_id=__ret__.connection_id,
         connection_type=__ret__.connection_type,
@@ -263,6 +289,7 @@ def get_connection(connection_id: Optional[str] = None,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated,
+        tls_verify_configs=__ret__.tls_verify_configs,
         username=__ret__.username)
 
 

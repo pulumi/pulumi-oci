@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbServers(ctx, &database.GetDbServersArgs{
-// 			CompartmentId:           _var.Compartment_id,
-// 			ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-// 			DisplayName:             pulumi.StringRef(_var.Db_server_display_name),
-// 			State:                   pulumi.StringRef(_var.Db_server_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbServers(ctx, &database.GetDbServersArgs{
+//				CompartmentId:           _var.Compartment_id,
+//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//				DisplayName:             pulumi.StringRef(_var.Db_server_display_name),
+//				State:                   pulumi.StringRef(_var.Db_server_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbServers(ctx *pulumi.Context, args *GetDbServersArgs, opts ...pulumi.InvokeOption) (*GetDbServersResult, error) {
 	var rv GetDbServersResult

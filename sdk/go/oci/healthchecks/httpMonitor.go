@@ -23,38 +23,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.NewHttpMonitor(ctx, "testHttpMonitor", &HealthChecks.HttpMonitorArgs{
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			DisplayName:       pulumi.Any(_var.Http_monitor_display_name),
-// 			IntervalInSeconds: pulumi.Any(_var.Http_monitor_interval_in_seconds),
-// 			Protocol:          pulumi.Any(_var.Http_monitor_protocol),
-// 			Targets:           pulumi.Any(_var.Http_monitor_targets),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Headers:           pulumi.Any(_var.Http_monitor_headers),
-// 			IsEnabled:         pulumi.Any(_var.Http_monitor_is_enabled),
-// 			Method:            pulumi.Any(_var.Http_monitor_method),
-// 			Path:              pulumi.Any(_var.Http_monitor_path),
-// 			Port:              pulumi.Any(_var.Http_monitor_port),
-// 			TimeoutInSeconds:  pulumi.Any(_var.Http_monitor_timeout_in_seconds),
-// 			VantagePointNames: pulumi.Any(_var.Http_monitor_vantage_point_names),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.NewHttpMonitor(ctx, "testHttpMonitor", &HealthChecks.HttpMonitorArgs{
+//				CompartmentId:     pulumi.Any(_var.Compartment_id),
+//				DisplayName:       pulumi.Any(_var.Http_monitor_display_name),
+//				IntervalInSeconds: pulumi.Any(_var.Http_monitor_interval_in_seconds),
+//				Protocol:          pulumi.Any(_var.Http_monitor_protocol),
+//				Targets:           pulumi.Any(_var.Http_monitor_targets),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Headers:           pulumi.Any(_var.Http_monitor_headers),
+//				IsEnabled:         pulumi.Any(_var.Http_monitor_is_enabled),
+//				Method:            pulumi.Any(_var.Http_monitor_method),
+//				Path:              pulumi.Any(_var.Http_monitor_path),
+//				Port:              pulumi.Any(_var.Http_monitor_port),
+//				TimeoutInSeconds:  pulumi.Any(_var.Http_monitor_timeout_in_seconds),
+//				VantagePointNames: pulumi.Any(_var.Http_monitor_vantage_point_names),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // HttpMonitors can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
+//
+//	$ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
+//
 // ```
 type HttpMonitor struct {
 	pulumi.CustomResourceState
@@ -313,7 +318,7 @@ func (i *HttpMonitor) ToHttpMonitorOutputWithContext(ctx context.Context) HttpMo
 // HttpMonitorArrayInput is an input type that accepts HttpMonitorArray and HttpMonitorArrayOutput values.
 // You can construct a concrete instance of `HttpMonitorArrayInput` via:
 //
-//          HttpMonitorArray{ HttpMonitorArgs{...} }
+//	HttpMonitorArray{ HttpMonitorArgs{...} }
 type HttpMonitorArrayInput interface {
 	pulumi.Input
 
@@ -338,7 +343,7 @@ func (i HttpMonitorArray) ToHttpMonitorArrayOutputWithContext(ctx context.Contex
 // HttpMonitorMapInput is an input type that accepts HttpMonitorMap and HttpMonitorMapOutput values.
 // You can construct a concrete instance of `HttpMonitorMapInput` via:
 //
-//          HttpMonitorMap{ "key": HttpMonitorArgs{...} }
+//	HttpMonitorMap{ "key": HttpMonitorArgs{...} }
 type HttpMonitorMapInput interface {
 	pulumi.Input
 

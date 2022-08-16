@@ -22,7 +22,7 @@ type IndexKey struct {
 // IndexKeyInput is an input type that accepts IndexKeyArgs and IndexKeyOutput values.
 // You can construct a concrete instance of `IndexKeyInput` via:
 //
-//          IndexKeyArgs{...}
+//	IndexKeyArgs{...}
 type IndexKeyInput interface {
 	pulumi.Input
 
@@ -54,7 +54,7 @@ func (i IndexKeyArgs) ToIndexKeyOutputWithContext(ctx context.Context) IndexKeyO
 // IndexKeyArrayInput is an input type that accepts IndexKeyArray and IndexKeyArrayOutput values.
 // You can construct a concrete instance of `IndexKeyArrayInput` via:
 //
-//          IndexKeyArray{ IndexKeyArgs{...} }
+//	IndexKeyArray{ IndexKeyArgs{...} }
 type IndexKeyArrayInput interface {
 	pulumi.Input
 
@@ -139,7 +139,7 @@ type TableSchema struct {
 // TableSchemaInput is an input type that accepts TableSchemaArgs and TableSchemaOutput values.
 // You can construct a concrete instance of `TableSchemaInput` via:
 //
-//          TableSchemaArgs{...}
+//	TableSchemaArgs{...}
 type TableSchemaInput interface {
 	pulumi.Input
 
@@ -173,7 +173,7 @@ func (i TableSchemaArgs) ToTableSchemaOutputWithContext(ctx context.Context) Tab
 // TableSchemaArrayInput is an input type that accepts TableSchemaArray and TableSchemaArrayOutput values.
 // You can construct a concrete instance of `TableSchemaArrayInput` via:
 //
-//          TableSchemaArray{ TableSchemaArgs{...} }
+//	TableSchemaArray{ TableSchemaArgs{...} }
 type TableSchemaArrayInput interface {
 	pulumi.Input
 
@@ -263,7 +263,7 @@ type TableSchemaColumn struct {
 // TableSchemaColumnInput is an input type that accepts TableSchemaColumnArgs and TableSchemaColumnOutput values.
 // You can construct a concrete instance of `TableSchemaColumnInput` via:
 //
-//          TableSchemaColumnArgs{...}
+//	TableSchemaColumnArgs{...}
 type TableSchemaColumnInput interface {
 	pulumi.Input
 
@@ -297,7 +297,7 @@ func (i TableSchemaColumnArgs) ToTableSchemaColumnOutputWithContext(ctx context.
 // TableSchemaColumnArrayInput is an input type that accepts TableSchemaColumnArray and TableSchemaColumnArrayOutput values.
 // You can construct a concrete instance of `TableSchemaColumnArrayInput` via:
 //
-//          TableSchemaColumnArray{ TableSchemaColumnArgs{...} }
+//	TableSchemaColumnArray{ TableSchemaColumnArgs{...} }
 type TableSchemaColumnArrayInput interface {
 	pulumi.Input
 
@@ -387,7 +387,7 @@ type TableTableLimits struct {
 // TableTableLimitsInput is an input type that accepts TableTableLimitsArgs and TableTableLimitsOutput values.
 // You can construct a concrete instance of `TableTableLimitsInput` via:
 //
-//          TableTableLimitsArgs{...}
+//	TableTableLimitsArgs{...}
 type TableTableLimitsInput interface {
 	pulumi.Input
 
@@ -429,11 +429,11 @@ func (i TableTableLimitsArgs) ToTableTableLimitsPtrOutputWithContext(ctx context
 // TableTableLimitsPtrInput is an input type that accepts TableTableLimitsArgs, TableTableLimitsPtr and TableTableLimitsPtrOutput values.
 // You can construct a concrete instance of `TableTableLimitsPtrInput` via:
 //
-//          TableTableLimitsArgs{...}
+//	        TableTableLimitsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TableTableLimitsPtrInput interface {
 	pulumi.Input
 
@@ -579,7 +579,7 @@ type GetIndexKey struct {
 // GetIndexKeyInput is an input type that accepts GetIndexKeyArgs and GetIndexKeyOutput values.
 // You can construct a concrete instance of `GetIndexKeyInput` via:
 //
-//          GetIndexKeyArgs{...}
+//	GetIndexKeyArgs{...}
 type GetIndexKeyInput interface {
 	pulumi.Input
 
@@ -611,7 +611,7 @@ func (i GetIndexKeyArgs) ToGetIndexKeyOutputWithContext(ctx context.Context) Get
 // GetIndexKeyArrayInput is an input type that accepts GetIndexKeyArray and GetIndexKeyArrayOutput values.
 // You can construct a concrete instance of `GetIndexKeyArrayInput` via:
 //
-//          GetIndexKeyArray{ GetIndexKeyArgs{...} }
+//	GetIndexKeyArray{ GetIndexKeyArgs{...} }
 type GetIndexKeyArrayInput interface {
 	pulumi.Input
 
@@ -692,7 +692,7 @@ type GetIndexesFilter struct {
 // GetIndexesFilterInput is an input type that accepts GetIndexesFilterArgs and GetIndexesFilterOutput values.
 // You can construct a concrete instance of `GetIndexesFilterInput` via:
 //
-//          GetIndexesFilterArgs{...}
+//	GetIndexesFilterArgs{...}
 type GetIndexesFilterInput interface {
 	pulumi.Input
 
@@ -722,7 +722,7 @@ func (i GetIndexesFilterArgs) ToGetIndexesFilterOutputWithContext(ctx context.Co
 // GetIndexesFilterArrayInput is an input type that accepts GetIndexesFilterArray and GetIndexesFilterArrayOutput values.
 // You can construct a concrete instance of `GetIndexesFilterArrayInput` via:
 //
-//          GetIndexesFilterArray{ GetIndexesFilterArgs{...} }
+//	GetIndexesFilterArray{ GetIndexesFilterArgs{...} }
 type GetIndexesFilterArrayInput interface {
 	pulumi.Input
 
@@ -815,7 +815,7 @@ type GetIndexesIndexCollection struct {
 // GetIndexesIndexCollectionInput is an input type that accepts GetIndexesIndexCollectionArgs and GetIndexesIndexCollectionOutput values.
 // You can construct a concrete instance of `GetIndexesIndexCollectionInput` via:
 //
-//          GetIndexesIndexCollectionArgs{...}
+//	GetIndexesIndexCollectionArgs{...}
 type GetIndexesIndexCollectionInput interface {
 	pulumi.Input
 
@@ -859,7 +859,7 @@ func (i GetIndexesIndexCollectionArgs) ToGetIndexesIndexCollectionOutputWithCont
 // GetIndexesIndexCollectionArrayInput is an input type that accepts GetIndexesIndexCollectionArray and GetIndexesIndexCollectionArrayOutput values.
 // You can construct a concrete instance of `GetIndexesIndexCollectionArrayInput` via:
 //
-//          GetIndexesIndexCollectionArray{ GetIndexesIndexCollectionArgs{...} }
+//	GetIndexesIndexCollectionArray{ GetIndexesIndexCollectionArgs{...} }
 type GetIndexesIndexCollectionArrayInput interface {
 	pulumi.Input
 
@@ -975,7 +975,7 @@ type GetIndexesIndexCollectionKey struct {
 // GetIndexesIndexCollectionKeyInput is an input type that accepts GetIndexesIndexCollectionKeyArgs and GetIndexesIndexCollectionKeyOutput values.
 // You can construct a concrete instance of `GetIndexesIndexCollectionKeyInput` via:
 //
-//          GetIndexesIndexCollectionKeyArgs{...}
+//	GetIndexesIndexCollectionKeyArgs{...}
 type GetIndexesIndexCollectionKeyInput interface {
 	pulumi.Input
 
@@ -1007,7 +1007,7 @@ func (i GetIndexesIndexCollectionKeyArgs) ToGetIndexesIndexCollectionKeyOutputWi
 // GetIndexesIndexCollectionKeyArrayInput is an input type that accepts GetIndexesIndexCollectionKeyArray and GetIndexesIndexCollectionKeyArrayOutput values.
 // You can construct a concrete instance of `GetIndexesIndexCollectionKeyArrayInput` via:
 //
-//          GetIndexesIndexCollectionKeyArray{ GetIndexesIndexCollectionKeyArgs{...} }
+//	GetIndexesIndexCollectionKeyArray{ GetIndexesIndexCollectionKeyArgs{...} }
 type GetIndexesIndexCollectionKeyArrayInput interface {
 	pulumi.Input
 
@@ -1092,7 +1092,7 @@ type GetTableSchema struct {
 // GetTableSchemaInput is an input type that accepts GetTableSchemaArgs and GetTableSchemaOutput values.
 // You can construct a concrete instance of `GetTableSchemaInput` via:
 //
-//          GetTableSchemaArgs{...}
+//	GetTableSchemaArgs{...}
 type GetTableSchemaInput interface {
 	pulumi.Input
 
@@ -1126,7 +1126,7 @@ func (i GetTableSchemaArgs) ToGetTableSchemaOutputWithContext(ctx context.Contex
 // GetTableSchemaArrayInput is an input type that accepts GetTableSchemaArray and GetTableSchemaArrayOutput values.
 // You can construct a concrete instance of `GetTableSchemaArrayInput` via:
 //
-//          GetTableSchemaArray{ GetTableSchemaArgs{...} }
+//	GetTableSchemaArray{ GetTableSchemaArgs{...} }
 type GetTableSchemaArrayInput interface {
 	pulumi.Input
 
@@ -1216,7 +1216,7 @@ type GetTableSchemaColumn struct {
 // GetTableSchemaColumnInput is an input type that accepts GetTableSchemaColumnArgs and GetTableSchemaColumnOutput values.
 // You can construct a concrete instance of `GetTableSchemaColumnInput` via:
 //
-//          GetTableSchemaColumnArgs{...}
+//	GetTableSchemaColumnArgs{...}
 type GetTableSchemaColumnInput interface {
 	pulumi.Input
 
@@ -1250,7 +1250,7 @@ func (i GetTableSchemaColumnArgs) ToGetTableSchemaColumnOutputWithContext(ctx co
 // GetTableSchemaColumnArrayInput is an input type that accepts GetTableSchemaColumnArray and GetTableSchemaColumnArrayOutput values.
 // You can construct a concrete instance of `GetTableSchemaColumnArrayInput` via:
 //
-//          GetTableSchemaColumnArray{ GetTableSchemaColumnArgs{...} }
+//	GetTableSchemaColumnArray{ GetTableSchemaColumnArgs{...} }
 type GetTableSchemaColumnArrayInput interface {
 	pulumi.Input
 
@@ -1340,7 +1340,7 @@ type GetTableTableLimit struct {
 // GetTableTableLimitInput is an input type that accepts GetTableTableLimitArgs and GetTableTableLimitOutput values.
 // You can construct a concrete instance of `GetTableTableLimitInput` via:
 //
-//          GetTableTableLimitArgs{...}
+//	GetTableTableLimitArgs{...}
 type GetTableTableLimitInput interface {
 	pulumi.Input
 
@@ -1374,7 +1374,7 @@ func (i GetTableTableLimitArgs) ToGetTableTableLimitOutputWithContext(ctx contex
 // GetTableTableLimitArrayInput is an input type that accepts GetTableTableLimitArray and GetTableTableLimitArrayOutput values.
 // You can construct a concrete instance of `GetTableTableLimitArrayInput` via:
 //
-//          GetTableTableLimitArray{ GetTableTableLimitArgs{...} }
+//	GetTableTableLimitArray{ GetTableTableLimitArgs{...} }
 type GetTableTableLimitArrayInput interface {
 	pulumi.Input
 
@@ -1460,7 +1460,7 @@ type GetTablesFilter struct {
 // GetTablesFilterInput is an input type that accepts GetTablesFilterArgs and GetTablesFilterOutput values.
 // You can construct a concrete instance of `GetTablesFilterInput` via:
 //
-//          GetTablesFilterArgs{...}
+//	GetTablesFilterArgs{...}
 type GetTablesFilterInput interface {
 	pulumi.Input
 
@@ -1490,7 +1490,7 @@ func (i GetTablesFilterArgs) ToGetTablesFilterOutputWithContext(ctx context.Cont
 // GetTablesFilterArrayInput is an input type that accepts GetTablesFilterArray and GetTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTablesFilterArrayInput` via:
 //
-//          GetTablesFilterArray{ GetTablesFilterArgs{...} }
+//	GetTablesFilterArray{ GetTablesFilterArgs{...} }
 type GetTablesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1595,7 +1595,7 @@ type GetTablesTableCollection struct {
 // GetTablesTableCollectionInput is an input type that accepts GetTablesTableCollectionArgs and GetTablesTableCollectionOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionInput` via:
 //
-//          GetTablesTableCollectionArgs{...}
+//	GetTablesTableCollectionArgs{...}
 type GetTablesTableCollectionInput interface {
 	pulumi.Input
 
@@ -1651,7 +1651,7 @@ func (i GetTablesTableCollectionArgs) ToGetTablesTableCollectionOutputWithContex
 // GetTablesTableCollectionArrayInput is an input type that accepts GetTablesTableCollectionArray and GetTablesTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionArrayInput` via:
 //
-//          GetTablesTableCollectionArray{ GetTablesTableCollectionArgs{...} }
+//	GetTablesTableCollectionArray{ GetTablesTableCollectionArgs{...} }
 type GetTablesTableCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1796,7 +1796,7 @@ type GetTablesTableCollectionSchema struct {
 // GetTablesTableCollectionSchemaInput is an input type that accepts GetTablesTableCollectionSchemaArgs and GetTablesTableCollectionSchemaOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionSchemaInput` via:
 //
-//          GetTablesTableCollectionSchemaArgs{...}
+//	GetTablesTableCollectionSchemaArgs{...}
 type GetTablesTableCollectionSchemaInput interface {
 	pulumi.Input
 
@@ -1830,7 +1830,7 @@ func (i GetTablesTableCollectionSchemaArgs) ToGetTablesTableCollectionSchemaOutp
 // GetTablesTableCollectionSchemaArrayInput is an input type that accepts GetTablesTableCollectionSchemaArray and GetTablesTableCollectionSchemaArrayOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionSchemaArrayInput` via:
 //
-//          GetTablesTableCollectionSchemaArray{ GetTablesTableCollectionSchemaArgs{...} }
+//	GetTablesTableCollectionSchemaArray{ GetTablesTableCollectionSchemaArgs{...} }
 type GetTablesTableCollectionSchemaArrayInput interface {
 	pulumi.Input
 
@@ -1920,7 +1920,7 @@ type GetTablesTableCollectionSchemaColumn struct {
 // GetTablesTableCollectionSchemaColumnInput is an input type that accepts GetTablesTableCollectionSchemaColumnArgs and GetTablesTableCollectionSchemaColumnOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionSchemaColumnInput` via:
 //
-//          GetTablesTableCollectionSchemaColumnArgs{...}
+//	GetTablesTableCollectionSchemaColumnArgs{...}
 type GetTablesTableCollectionSchemaColumnInput interface {
 	pulumi.Input
 
@@ -1954,7 +1954,7 @@ func (i GetTablesTableCollectionSchemaColumnArgs) ToGetTablesTableCollectionSche
 // GetTablesTableCollectionSchemaColumnArrayInput is an input type that accepts GetTablesTableCollectionSchemaColumnArray and GetTablesTableCollectionSchemaColumnArrayOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionSchemaColumnArrayInput` via:
 //
-//          GetTablesTableCollectionSchemaColumnArray{ GetTablesTableCollectionSchemaColumnArgs{...} }
+//	GetTablesTableCollectionSchemaColumnArray{ GetTablesTableCollectionSchemaColumnArgs{...} }
 type GetTablesTableCollectionSchemaColumnArrayInput interface {
 	pulumi.Input
 
@@ -2044,7 +2044,7 @@ type GetTablesTableCollectionTableLimit struct {
 // GetTablesTableCollectionTableLimitInput is an input type that accepts GetTablesTableCollectionTableLimitArgs and GetTablesTableCollectionTableLimitOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionTableLimitInput` via:
 //
-//          GetTablesTableCollectionTableLimitArgs{...}
+//	GetTablesTableCollectionTableLimitArgs{...}
 type GetTablesTableCollectionTableLimitInput interface {
 	pulumi.Input
 
@@ -2078,7 +2078,7 @@ func (i GetTablesTableCollectionTableLimitArgs) ToGetTablesTableCollectionTableL
 // GetTablesTableCollectionTableLimitArrayInput is an input type that accepts GetTablesTableCollectionTableLimitArray and GetTablesTableCollectionTableLimitArrayOutput values.
 // You can construct a concrete instance of `GetTablesTableCollectionTableLimitArrayInput` via:
 //
-//          GetTablesTableCollectionTableLimitArray{ GetTablesTableCollectionTableLimitArgs{...} }
+//	GetTablesTableCollectionTableLimitArray{ GetTablesTableCollectionTableLimitArgs{...} }
 type GetTablesTableCollectionTableLimitArrayInput interface {
 	pulumi.Input
 

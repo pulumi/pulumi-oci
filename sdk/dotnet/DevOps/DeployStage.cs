@@ -92,7 +92,7 @@ namespace Pulumi.Oci.DevOps
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Optional binary artifact OCID user may provide to this stage.
+        /// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         /// </summary>
         [Output("deployArtifactId")]
         public Output<string?> DeployArtifactId { get; private set; } = null!;
@@ -462,7 +462,7 @@ namespace Pulumi.Oci.DevOps
         }
 
         /// <summary>
-        /// (Updatable) Optional binary artifact OCID user may provide to this stage.
+        /// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         /// </summary>
         [Input("deployArtifactId")]
         public Input<string>? DeployArtifactId { get; set; }
@@ -787,7 +787,7 @@ namespace Pulumi.Oci.DevOps
         }
 
         /// <summary>
-        /// (Updatable) Optional binary artifact OCID user may provide to this stage.
+        /// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         /// </summary>
         [Input("deployArtifactId")]
         public Input<string>? DeployArtifactId { get; set; }

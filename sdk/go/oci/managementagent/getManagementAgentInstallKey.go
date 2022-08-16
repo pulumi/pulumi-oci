@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
 //
-// Gets complete details of the Agent install Key for a given key id
+// # Gets complete details of the Agent install Key for a given key id
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgentInstallKey(ctx, &managementagent.GetManagementAgentInstallKeyArgs{
-// 			ManagementAgentInstallKeyId: oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgentInstallKey(ctx, &managementagent.GetManagementAgentInstallKeyArgs{
+//				ManagementAgentInstallKeyId: oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupManagementAgentInstallKey(ctx *pulumi.Context, args *LookupManagementAgentInstallKeyArgs, opts ...pulumi.InvokeOption) (*LookupManagementAgentInstallKeyResult, error) {
 	var rv LookupManagementAgentInstallKeyResult

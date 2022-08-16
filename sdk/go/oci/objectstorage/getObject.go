@@ -20,30 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetObject(ctx, &objectstorage.GetObjectArgs{
-// 			Bucket:                         _var.Object_bucket,
-// 			Namespace:                      _var.Object_namespace,
-// 			Object:                         _var.Object_object,
-// 			HttpResponseCacheControl:       pulumi.StringRef(_var.Object_http_response_cache_control),
-// 			HttpResponseContentDisposition: pulumi.StringRef(_var.Object_http_response_content_disposition),
-// 			HttpResponseContentEncoding:    pulumi.StringRef(_var.Object_http_response_content_encoding),
-// 			HttpResponseContentLanguage:    pulumi.StringRef(_var.Object_http_response_content_language),
-// 			HttpResponseContentType:        pulumi.StringRef(_var.Object_http_response_content_type),
-// 			HttpResponseExpires:            pulumi.StringRef(_var.Object_http_response_expires),
-// 			VersionId:                      pulumi.StringRef(oci_objectstorage_version.Test_version.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetObject(ctx, &objectstorage.GetObjectArgs{
+//				Bucket:                         _var.Object_bucket,
+//				Namespace:                      _var.Object_namespace,
+//				Object:                         _var.Object_object,
+//				HttpResponseCacheControl:       pulumi.StringRef(_var.Object_http_response_cache_control),
+//				HttpResponseContentDisposition: pulumi.StringRef(_var.Object_http_response_content_disposition),
+//				HttpResponseContentEncoding:    pulumi.StringRef(_var.Object_http_response_content_encoding),
+//				HttpResponseContentLanguage:    pulumi.StringRef(_var.Object_http_response_content_language),
+//				HttpResponseContentType:        pulumi.StringRef(_var.Object_http_response_content_type),
+//				HttpResponseExpires:            pulumi.StringRef(_var.Object_http_response_expires),
+//				VersionId:                      pulumi.StringRef(oci_objectstorage_version.Test_version.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetObject(ctx *pulumi.Context, args *GetObjectArgs, opts ...pulumi.InvokeOption) (*GetObjectResult, error) {
 	var rv GetObjectResult

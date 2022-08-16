@@ -17,24 +17,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/FileStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := FileStorage.NewExportSet(ctx, "testExportSet", &FileStorage.ExportSetArgs{
-// 			MountTargetId:  pulumi.Any(oci_file_storage_mount_target.Test_mount_target.Id),
-// 			DisplayName:    pulumi.Any(_var.Export_set_name),
-// 			MaxFsStatBytes: pulumi.String("23843202333"),
-// 			MaxFsStatFiles: pulumi.String("223442"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := FileStorage.NewExportSet(ctx, "testExportSet", &FileStorage.ExportSetArgs{
+//				MountTargetId:  pulumi.Any(oci_file_storage_mount_target.Test_mount_target.Id),
+//				DisplayName:    pulumi.Any(_var.Export_set_name),
+//				MaxFsStatBytes: pulumi.String("23843202333"),
+//				MaxFsStatFiles: pulumi.String("223442"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -42,7 +45,9 @@ import (
 // ExportSets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
+//
+//	$ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
+//
 // ```
 type ExportSet struct {
 	pulumi.CustomResourceState
@@ -193,7 +198,7 @@ func (i *ExportSet) ToExportSetOutputWithContext(ctx context.Context) ExportSetO
 // ExportSetArrayInput is an input type that accepts ExportSetArray and ExportSetArrayOutput values.
 // You can construct a concrete instance of `ExportSetArrayInput` via:
 //
-//          ExportSetArray{ ExportSetArgs{...} }
+//	ExportSetArray{ ExportSetArgs{...} }
 type ExportSetArrayInput interface {
 	pulumi.Input
 
@@ -218,7 +223,7 @@ func (i ExportSetArray) ToExportSetArrayOutputWithContext(ctx context.Context) E
 // ExportSetMapInput is an input type that accepts ExportSetMap and ExportSetMapOutput values.
 // You can construct a concrete instance of `ExportSetMapInput` via:
 //
-//          ExportSetMap{ "key": ExportSetArgs{...} }
+//	ExportSetMap{ "key": ExportSetArgs{...} }
 type ExportSetMapInput interface {
 	pulumi.Input
 

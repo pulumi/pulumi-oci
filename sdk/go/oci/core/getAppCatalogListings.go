@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetAppCatalogListings(ctx, &core.GetAppCatalogListingsArgs{
-// 			DisplayName:   pulumi.StringRef(_var.App_catalog_listing_display_name),
-// 			PublisherName: pulumi.StringRef(_var.App_catalog_listing_publisher_name),
-// 			PublisherType: pulumi.StringRef(_var.App_catalog_listing_publisher_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetAppCatalogListings(ctx, &core.GetAppCatalogListingsArgs{
+//				DisplayName:   pulumi.StringRef(_var.App_catalog_listing_display_name),
+//				PublisherName: pulumi.StringRef(_var.App_catalog_listing_publisher_name),
+//				PublisherType: pulumi.StringRef(_var.App_catalog_listing_publisher_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAppCatalogListings(ctx *pulumi.Context, args *GetAppCatalogListingsArgs, opts ...pulumi.InvokeOption) (*GetAppCatalogListingsResult, error) {
 	var rv GetAppCatalogListingsResult

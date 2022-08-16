@@ -37,25 +37,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetCompartments(ctx, &identity.GetCompartmentsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Compartment_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Compartment_compartment_id_in_subtree),
-// 			Name:                   pulumi.StringRef(_var.Compartment_name),
-// 			State:                  pulumi.StringRef(_var.Compartment_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetCompartments(ctx, &identity.GetCompartmentsArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				AccessLevel:            pulumi.StringRef(_var.Compartment_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Compartment_compartment_id_in_subtree),
+//				Name:                   pulumi.StringRef(_var.Compartment_name),
+//				State:                  pulumi.StringRef(_var.Compartment_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCompartments(ctx *pulumi.Context, args *GetCompartmentsArgs, opts ...pulumi.InvokeOption) (*GetCompartmentsResult, error) {
 	var rv GetCompartmentsResult

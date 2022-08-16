@@ -43,92 +43,101 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			InstanceId:    pulumi.Any(oci_core_instance.Test_instance.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Image_display_name),
-// 			LaunchMode:  pulumi.Any(_var.Image_launch_mode),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				InstanceId:    pulumi.Any(oci_core_instance.Test_instance.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Image_display_name),
+//				LaunchMode:  pulumi.Any(_var.Image_launch_mode),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Create image from exported image via direct access to object store
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Image_display_name),
-// 			LaunchMode:    pulumi.Any(_var.Image_launch_mode),
-// 			ImageSourceDetails: &core.ImageImageSourceDetailsArgs{
-// 				SourceType:             pulumi.String("objectStorageTuple"),
-// 				BucketName:             pulumi.Any(_var.Bucket_name),
-// 				NamespaceName:          pulumi.Any(_var.Namespace),
-// 				ObjectName:             pulumi.Any(_var.Object_name),
-// 				OperatingSystem:        pulumi.Any(_var.Image_image_source_details_operating_system),
-// 				OperatingSystemVersion: pulumi.Any(_var.Image_image_source_details_operating_system_version),
-// 				SourceImageType:        pulumi.Any(_var.Source_image_type),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Image_display_name),
+//				LaunchMode:    pulumi.Any(_var.Image_launch_mode),
+//				ImageSourceDetails: &core.ImageImageSourceDetailsArgs{
+//					SourceType:             pulumi.String("objectStorageTuple"),
+//					BucketName:             pulumi.Any(_var.Bucket_name),
+//					NamespaceName:          pulumi.Any(_var.Namespace),
+//					ObjectName:             pulumi.Any(_var.Object_name),
+//					OperatingSystem:        pulumi.Any(_var.Image_image_source_details_operating_system),
+//					OperatingSystemVersion: pulumi.Any(_var.Image_image_source_details_operating_system_version),
+//					SourceImageType:        pulumi.Any(_var.Source_image_type),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Create image from exported image at publicly accessible uri
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Image_display_name),
-// 			LaunchMode:    pulumi.Any(_var.Image_launch_mode),
-// 			ImageSourceDetails: &core.ImageImageSourceDetailsArgs{
-// 				SourceType:             pulumi.String("objectStorageUri"),
-// 				SourceUri:              pulumi.Any(_var.Source_uri),
-// 				OperatingSystem:        pulumi.Any(_var.Image_image_source_details_operating_system),
-// 				OperatingSystemVersion: pulumi.Any(_var.Image_image_source_details_operating_system_version),
-// 				SourceImageType:        pulumi.Any(_var.Source_image_type),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewImage(ctx, "testImage", &Core.ImageArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Image_display_name),
+//				LaunchMode:    pulumi.Any(_var.Image_launch_mode),
+//				ImageSourceDetails: &core.ImageImageSourceDetailsArgs{
+//					SourceType:             pulumi.String("objectStorageUri"),
+//					SourceUri:              pulumi.Any(_var.Source_uri),
+//					OperatingSystem:        pulumi.Any(_var.Image_image_source_details_operating_system),
+//					OperatingSystemVersion: pulumi.Any(_var.Image_image_source_details_operating_system_version),
+//					SourceImageType:        pulumi.Any(_var.Source_image_type),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -136,7 +145,9 @@ import (
 // Images can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/image:Image test_image "id"
+//
+//	$ pulumi import oci:Core/image:Image test_image "id"
+//
 // ```
 type Image struct {
 	pulumi.CustomResourceState
@@ -348,7 +359,7 @@ func (i *Image) ToImageOutputWithContext(ctx context.Context) ImageOutput {
 // ImageArrayInput is an input type that accepts ImageArray and ImageArrayOutput values.
 // You can construct a concrete instance of `ImageArrayInput` via:
 //
-//          ImageArray{ ImageArgs{...} }
+//	ImageArray{ ImageArgs{...} }
 type ImageArrayInput interface {
 	pulumi.Input
 
@@ -373,7 +384,7 @@ func (i ImageArray) ToImageArrayOutputWithContext(ctx context.Context) ImageArra
 // ImageMapInput is an input type that accepts ImageMap and ImageMapOutput values.
 // You can construct a concrete instance of `ImageMapInput` via:
 //
-//          ImageMap{ "key": ImageArgs{...} }
+//	ImageMap{ "key": ImageArgs{...} }
 type ImageMapInput interface {
 	pulumi.Input
 

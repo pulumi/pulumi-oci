@@ -5,16 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
 export namespace Adm {
-    export interface GetKnowledgebasesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetKnowledgebasesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetKnowledgebasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter {
@@ -199,16 +199,16 @@ export namespace AiAnomalyDetection {
         retentionPolicyName?: pulumi.Input<string>;
     }
 
-    export interface GetAiPrivateEndpointsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetAiPrivateEndpointsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAiPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDetectionDataAssetsFilterArgs {
@@ -350,16 +350,16 @@ export namespace AiAnomalyDetection {
 }
 
 export namespace AiVision {
-    export interface GetModelsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetModelsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetProjectsFilter {
@@ -442,7 +442,6 @@ export namespace AiVision {
          */
         object?: pulumi.Input<string>;
     }
-
 }
 
 export namespace Analytics {
@@ -514,6 +513,59 @@ export namespace Analytics {
     export interface GetAnalyticsInstancesFilterArgs {
         /**
          * A filter to return only resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+}
+
+export namespace AnnouncementsService {
+    export interface AnnouncementSubscriptionFilterGroups {
+        /**
+         * A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
+         */
+        filters: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.AnnouncementSubscriptionFilterGroupsFilter>[]>;
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface AnnouncementSubscriptionFilterGroupsFilter {
+        /**
+         * The type of filter.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * The value of the filter.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface AnnouncementSubscriptionsFilterGroupFilter {
+        /**
+         * (Updatable) The type of filter.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the filter.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface GetAnnouncementSubscriptionsFilter {
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnnouncementSubscriptionsFilterArgs {
+        /**
+         * The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -1399,18 +1451,6 @@ export namespace ApiGateway {
         values: string[];
     }
 
-    export interface GetDeploymentsFilterArgs {
-        /**
-         * The case-insensitive name of the header.  This name must be unique across transformation policies.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        /**
-         * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-         */
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDeploymentsFilter {
         /**
          * The case-insensitive name of the header.  This name must be unique across transformation policies.
@@ -1421,6 +1461,18 @@ export namespace ApiGateway {
          * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
          */
         values: string[];
+    }
+
+    export interface GetDeploymentsFilterArgs {
+        /**
+         * The case-insensitive name of the header.  This name must be unique across transformation policies.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetGatewaysFilterArgs {
@@ -1663,6 +1715,10 @@ export namespace ApmSynthetics {
          */
         configType?: pulumi.Input<string>;
         /**
+         * (Updatable) Dns settings.
+         */
+        dnsConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationDnsConfiguration>;
+        /**
          * (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
          */
         isCertificateValidationEnabled?: pulumi.Input<boolean>;
@@ -1714,6 +1770,17 @@ export namespace ApmSynthetics {
          * (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationVerifyText>[]>;
+    }
+
+    export interface ConfigConfigurationDnsConfiguration {
+        /**
+         * (Updatable) If isOverrideDns is true, then dns will be overridden.
+         */
+        isOverrideDns?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         */
+        overrideDnsIp?: pulumi.Input<string>;
     }
 
     export interface ConfigConfigurationNetworkConfiguration {
@@ -1850,7 +1917,7 @@ export namespace ApmSynthetics {
 
     export interface DedicatedVantagePointDvpStackDetails {
         /**
-         * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStackId: pulumi.Input<string>;
         /**
@@ -1858,11 +1925,11 @@ export namespace ApmSynthetics {
          */
         dvpStackType: pulumi.Input<string>;
         /**
-         * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          */
         dvpStreamId: pulumi.Input<string>;
         /**
-         * (Updatable) Version of DVP.
+         * (Updatable) Version of the dedicated vantage point.
          */
         dvpVersion: pulumi.Input<string>;
     }
@@ -1904,15 +1971,6 @@ export namespace ApmSynthetics {
         values: string[];
     }
 
-    export interface GetMonitorsFilter {
-        /**
-         * Name of the vantage point.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetMonitorsFilterArgs {
         /**
          * Name of the vantage point.
@@ -1920,6 +1978,15 @@ export namespace ApmSynthetics {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMonitorsFilter {
+        /**
+         * Name of the vantage point.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetScriptsFilter {
@@ -2008,6 +2075,7 @@ export namespace ApmSynthetics {
          */
         paramValue?: pulumi.Input<string>;
     }
+
 }
 
 export namespace ApmTraces {
@@ -2064,16 +2132,16 @@ export namespace Artifacts {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetContainerRepositoriesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetContainerRepositoriesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetContainerRepositoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetContainerSignaturesFilter {
@@ -2100,16 +2168,16 @@ export namespace Artifacts {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRepositoriesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetRepositoriesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetRepositoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
 }
@@ -2257,16 +2325,16 @@ export namespace Autoscaling {
         value?: pulumi.Input<number>;
     }
 
-    export interface GetAutoScalingConfigurationsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAutoScalingConfigurationsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAutoScalingConfigurationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 }
 
@@ -2289,16 +2357,16 @@ export namespace Bastion {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSessionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetSessionsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSessionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface SessionKeyDetails {
@@ -2336,7 +2404,6 @@ export namespace Bastion {
          */
         targetResourcePrivateIpAddress?: pulumi.Input<string>;
     }
-
 }
 
 export namespace BigDataService {
@@ -2687,6 +2754,9 @@ export namespace BigDataService {
     }
 
     export interface BdsInstanceClusterDetail {
+        /**
+         * The URL of Ambari
+         */
         ambariUrl?: pulumi.Input<string>;
         /**
          * Cloud SQL cell version
@@ -2728,6 +2798,10 @@ export namespace BigDataService {
          * The URL of the Jupyterhub.
          */
         jupyterHubUrl?: pulumi.Input<string>;
+        /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+         */
+        odhVersion?: pulumi.Input<string>;
         /**
          * Oracle Linux version installed in the cluster
          */
@@ -3003,6 +3077,30 @@ export namespace BigDataService {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetBdsInstancePatchHistoriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstancePatchHistoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstancePatchesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstancePatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetBdsInstancesFilter {
         name: string;
         regex?: boolean;
@@ -3122,16 +3220,16 @@ export namespace Blockchain {
         proxyCount?: pulumi.Input<number>;
     }
 
-    export interface GetBlockchainPlatformPatchesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBlockchainPlatformPatchesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetBlockchainPlatformPatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetBlockchainPlatformsFilter {
@@ -3826,15 +3924,6 @@ export namespace CertificatesManagement {
         userId?: pulumi.Input<string>;
     }
 
-    export interface GetAssociationsFilterArgs {
-        /**
-         * A filter that returns only resources that match the specified name.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAssociationsFilter {
         /**
          * A filter that returns only resources that match the specified name.
@@ -3842,6 +3931,15 @@ export namespace CertificatesManagement {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAssociationsFilterArgs {
+        /**
+         * A filter that returns only resources that match the specified name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetCaBundlesFilter {
@@ -3904,15 +4002,6 @@ export namespace CertificatesManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCertificatesFilterArgs {
-        /**
-         * A filter that returns only resources that match the specified name.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCertificatesFilter {
         /**
          * A filter that returns only resources that match the specified name.
@@ -3920,6 +4009,15 @@ export namespace CertificatesManagement {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetCertificatesFilterArgs {
+        /**
+         * A filter that returns only resources that match the specified name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 }
 
@@ -4213,15 +4311,6 @@ export namespace CloudGuard {
         value?: pulumi.Input<string>;
     }
 
-    export interface GetDataMaskRulesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        /**
-         * Types of Targets
-         */
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDataMaskRulesFilter {
         name: string;
         regex?: boolean;
@@ -4229,6 +4318,15 @@ export namespace CloudGuard {
          * Types of Targets
          */
         values: string[];
+    }
+
+    export interface GetDataMaskRulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * Types of Targets
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDetectorRecipesFilter {
@@ -4255,18 +4353,6 @@ export namespace CloudGuard {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetGuardTargetsFilter {
-        /**
-         * configuration name
-         */
-        name: string;
-        regex?: boolean;
-        /**
-         * List of configuration values
-         */
-        values: string[];
-    }
-
     export interface GetGuardTargetsFilterArgs {
         /**
          * configuration name
@@ -4277,6 +4363,18 @@ export namespace CloudGuard {
          * List of configuration values
          */
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetGuardTargetsFilter {
+        /**
+         * configuration name
+         */
+        name: string;
+        regex?: boolean;
+        /**
+         * List of configuration values
+         */
+        values: string[];
     }
 
     export interface GetManagedListsFilter {
@@ -4291,15 +4389,6 @@ export namespace CloudGuard {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetResponderRecipesFilterArgs {
-        /**
-         * configuration name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetResponderRecipesFilter {
         /**
          * configuration name
@@ -4307,6 +4396,15 @@ export namespace CloudGuard {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetResponderRecipesFilterArgs {
+        /**
+         * configuration name
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSecurityPoliciesFilter {
@@ -5332,15 +5430,6 @@ export namespace ContainerEngine {
         freeformTags?: pulumi.Input<{[key: string]: any}>;
     }
 
-    export interface GetClustersFilterArgs {
-        /**
-         * The name to filter on.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetClustersFilter {
         /**
          * The name to filter on.
@@ -5348,6 +5437,15 @@ export namespace ContainerEngine {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetClustersFilterArgs {
+        /**
+         * The name to filter on.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetNodePoolsFilter {
@@ -5368,19 +5466,13 @@ export namespace ContainerEngine {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetWorkRequestErrorsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetWorkRequestErrorsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetWorkRequestLogEntriesFilter {
+    export interface GetWorkRequestErrorsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -5392,7 +5484,7 @@ export namespace ContainerEngine {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetWorkRequestsFilter {
+    export interface GetWorkRequestLogEntriesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -5402,6 +5494,12 @@ export namespace ContainerEngine {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetWorkRequestsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface NodePoolInitialNodeLabel {
@@ -5613,6 +5711,7 @@ export namespace ContainerEngine {
          */
         sourceType: pulumi.Input<string>;
     }
+
 }
 
 export namespace Core {
@@ -6208,16 +6307,16 @@ export namespace Core {
         matchType?: pulumi.Input<string>;
     }
 
-    export interface GetAppCatalogListingResourceVersionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAppCatalogListingResourceVersionsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAppCatalogListingResourceVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAppCatalogListingsFilter {
@@ -6232,16 +6331,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAppCatalogSubscriptionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAppCatalogSubscriptionsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAppCatalogSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetBlockVolumeReplicasFilter {
@@ -6292,16 +6391,16 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetBootVolumesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBootVolumesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetBootVolumesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetByoipAllocatedRangesFilter {
@@ -6328,22 +6427,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCaptureFiltersFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCaptureFiltersFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetClusterNetworkInstancesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetCaptureFiltersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetClusterNetworkInstancesFilterArgs {
@@ -6352,7 +6445,7 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetClusterNetworksFilter {
+    export interface GetClusterNetworkInstancesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -6362,6 +6455,12 @@ export namespace Core {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetClusterNetworksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetComputeCapacityReservationInstanceShapesFilter {
@@ -6388,16 +6487,16 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetComputeCapacityReservationsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetComputeCapacityReservationsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetComputeCapacityReservationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetComputeGlobalImageCapabilitySchemasFilter {
@@ -6412,18 +6511,6 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs {
-        /**
-         * The name of the compute global image capability schema version
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        /**
-         * the list of values for the enum
-         */
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetComputeGlobalImageCapabilitySchemasVersionsFilter {
         /**
          * The name of the compute global image capability schema version
@@ -6434,6 +6521,18 @@ export namespace Core {
          * the list of values for the enum
          */
         values: string[];
+    }
+
+    export interface GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs {
+        /**
+         * The name of the compute global image capability schema version
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * the list of values for the enum
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetComputeImageCapabilitySchemasFilter {
@@ -6466,16 +6565,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCpeDeviceShapesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCpeDeviceShapesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetCpeDeviceShapesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetCpesFilter {
@@ -6502,15 +6601,6 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCrossConnectLocationsFilterArgs {
-        /**
-         * The name of the location.  Example: `CyrusOne, Chandler, AZ`
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCrossConnectLocationsFilter {
         /**
          * The name of the location.  Example: `CyrusOne, Chandler, AZ`
@@ -6520,9 +6610,9 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetCrossConnectPortSpeedShapeFilterArgs {
+    export interface GetCrossConnectLocationsFilterArgs {
         /**
-         * The name of the port speed shape.  Example: `10 Gbps`
+         * The name of the location.  Example: `CyrusOne, Chandler, AZ`
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -6538,6 +6628,15 @@ export namespace Core {
         values: string[];
     }
 
+    export interface GetCrossConnectPortSpeedShapeFilterArgs {
+        /**
+         * The name of the port speed shape.  Example: `10 Gbps`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetCrossConnectsFilter {
         name: string;
         regex?: boolean;
@@ -6550,16 +6649,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDedicatedVmHostInstanceShapesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDedicatedVmHostInstanceShapesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDedicatedVmHostInstanceShapesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDedicatedVmHostInstancesFilter {
@@ -6598,16 +6697,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDhcpOptionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDhcpOptionsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDhcpOptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDrgAttachmentsFilter {
@@ -6622,16 +6721,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDrgRouteDistributionStatementsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDrgRouteDistributionStatementsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDrgRouteDistributionStatementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDrgRouteDistributionsFilter {
@@ -6646,16 +6745,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDrgRouteTableRouteRulesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDrgRouteTableRouteRulesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDrgRouteTableRouteRulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDrgRouteTablesFilter {
@@ -6670,19 +6769,13 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDrgsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDrgsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetFastConnectProviderServicesFilterArgs {
+    export interface GetDrgsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -6692,6 +6785,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetFastConnectProviderServicesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetImageShapesFilter {
@@ -6706,16 +6805,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetImagesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetImagesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetImagesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetInstanceConfigurationsFilter {
@@ -6790,15 +6889,6 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetInstancesFilterArgs {
-        /**
-         * The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetInstancesFilter {
         /**
          * The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
@@ -6806,6 +6896,15 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetInstancesFilterArgs {
+        /**
+         * The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetInternetGatewaysFilter {
@@ -6820,19 +6919,13 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetIpsecConfigFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetIpsecConfigFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetIpsecConnectionTunnelRoutesFilterArgs {
+    export interface GetIpsecConfigFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -6842,6 +6935,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetIpsecConnectionTunnelRoutesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetIpsecConnectionTunnelsFilter {
@@ -6856,22 +6955,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetIpsecConnectionsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetIpsecConnectionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetIpsecStatusFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetIpsecConnectionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetIpsecStatusFilter {
@@ -6880,10 +6973,10 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetIpv6sFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetIpsecStatusFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetIpv6sFilterArgs {
@@ -6892,10 +6985,10 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetListingResourceVersionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetIpv6sFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetListingResourceVersionsFilter {
@@ -6904,7 +6997,7 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetLocalPeeringGatewaysFilterArgs {
+    export interface GetListingResourceVersionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -6914,6 +7007,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetLocalPeeringGatewaysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetNatGatewaysFilter {
@@ -6940,16 +7039,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetNetworkSecurityGroupVnicsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetNetworkSecurityGroupVnicsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetNetworkSecurityGroupVnicsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetNetworkSecurityGroupsFilter {
@@ -6964,15 +7063,6 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPeerRegionForRemotePeeringsFilterArgs {
-        /**
-         * The region's name.  Example: `us-phoenix-1`
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetPeerRegionForRemotePeeringsFilter {
         /**
          * The region's name.  Example: `us-phoenix-1`
@@ -6980,6 +7070,15 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetPeerRegionForRemotePeeringsFilterArgs {
+        /**
+         * The region's name.  Example: `us-phoenix-1`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetPrivateIpsFilterArgs {
@@ -7030,22 +7129,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRouteTablesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetRouteTablesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSecurityListsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetRouteTablesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetSecurityListsFilter {
@@ -7054,7 +7147,7 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetServiceGatewaysFilterArgs {
+    export interface GetSecurityListsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7066,10 +7159,7 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetServicesFilterArgs {
-        /**
-         * Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
-         */
+    export interface GetServiceGatewaysFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7084,7 +7174,10 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetShapeFilterArgs {
+    export interface GetServicesFilterArgs {
+        /**
+         * Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7094,6 +7187,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetShapeFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetShapesFilter {
@@ -7126,16 +7225,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetTunnelSecurityAssociationsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetTunnelSecurityAssociationsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetTunnelSecurityAssociationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVcnsFilter {
@@ -7150,15 +7249,6 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVirtualCircuitBandwidthShapesFilterArgs {
-        /**
-         * The name of the bandwidth shape.  Example: `10 Gbps`
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetVirtualCircuitBandwidthShapesFilter {
         /**
          * The name of the bandwidth shape.  Example: `10 Gbps`
@@ -7166,6 +7256,15 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVirtualCircuitBandwidthShapesFilterArgs {
+        /**
+         * The name of the bandwidth shape.  Example: `10 Gbps`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVirtualCircuitPublicPrefixesFilter {
@@ -7180,19 +7279,13 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVirtualCircuitsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetVirtualCircuitsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetVirtualNetworksFilterArgs {
+    export interface GetVirtualCircuitsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7202,6 +7295,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVirtualNetworksFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVlansFilter {
@@ -7216,16 +7315,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVnicAttachmentsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetVnicAttachmentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVnicAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetVolumeAttachmentsFilterArgs {
@@ -7252,19 +7351,13 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVolumeBackupPolicyAssignmentsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetVolumeBackupPolicyAssignmentsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetVolumeBackupsFilterArgs {
+    export interface GetVolumeBackupPolicyAssignmentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7274,6 +7367,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVolumeBackupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVolumeGroupBackupsFilter {
@@ -7312,19 +7411,13 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetVolumesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetVolumesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVtapsFilter {
+    export interface GetVolumesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -7334,6 +7427,12 @@ export namespace Core {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVtapsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface ImageAgentFeature {
@@ -8965,15 +9064,6 @@ export namespace DataConnectivity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRegistryConnectionsFilterArgs {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetRegistryConnectionsFilter {
         /**
          * Used to filter by the name of the object.
@@ -8981,6 +9071,15 @@ export namespace DataConnectivity {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetRegistryConnectionsFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetRegistryDataAssetsFilter {
@@ -9001,15 +9100,6 @@ export namespace DataConnectivity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRegistryFoldersFilter {
-        /**
-         * Used to filter by the name of the object.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetRegistryFoldersFilterArgs {
         /**
          * Used to filter by the name of the object.
@@ -9017,6 +9107,15 @@ export namespace DataConnectivity {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRegistryFoldersFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetRegistryTypesFilter {
@@ -10626,6 +10725,7 @@ export namespace DataConnectivity {
          */
         parent?: pulumi.Input<string>;
     }
+
 }
 
 export namespace DataFlow {
@@ -11088,22 +11188,16 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAlertPolicyRulesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAlertPolicyRulesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetAlertsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetAlertPolicyRulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAlertsFilterArgs {
@@ -11112,7 +11206,7 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAuditArchiveRetrievalsFilter {
+    export interface GetAlertsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -11122,6 +11216,12 @@ export namespace DataSafe {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAuditArchiveRetrievalsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetAuditEventsFilter {
@@ -11136,16 +11236,16 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAuditPoliciesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAuditPoliciesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAuditPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAuditProfileAvailableAuditVolumesFilterArgs {
@@ -11172,16 +11272,16 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAuditProfilesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAuditProfilesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAuditProfilesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAuditTrailsFilterArgs {
@@ -11196,16 +11296,16 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetDataSafePrivateEndpointsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDataSafePrivateEndpointsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDataSafePrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDiscoveryAnalyticsFilter {
@@ -11232,28 +11332,28 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetLibraryMaskingFormatsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetLibraryMaskingFormatsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetListUserGrantsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetLibraryMaskingFormatsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetListUserGrantsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetListUserGrantsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetMaskingAnalyticsFilter {
@@ -11316,25 +11416,16 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetOnpremConnectorsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetOnpremConnectorsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetReportDefinitionsFilterArgs {
-        /**
-         * Name of the report summary.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetOnpremConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetReportDefinitionsFilter {
@@ -11346,7 +11437,10 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetReportsFilterArgs {
+    export interface GetReportDefinitionsFilterArgs {
+        /**
+         * Name of the report summary.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -11358,10 +11452,10 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetSecurityAssessmentFindingFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetReportsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSecurityAssessmentFindingFilterArgs {
@@ -11370,7 +11464,7 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSecurityAssessmentFindingsFilter {
+    export interface GetSecurityAssessmentFindingFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -11380,6 +11474,12 @@ export namespace DataSafe {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSecurityAssessmentFindingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetSecurityAssessmentsFilter {
@@ -11394,16 +11494,16 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSensitiveDataModelsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetSensitiveDataModelsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSensitiveDataModelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSensitiveDataModelsSensitiveColumnsFilter {
@@ -11418,22 +11518,16 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSensitiveTypesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetSensitiveTypesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetTargetAlertPolicyAssociationsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetSensitiveTypesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetTargetAlertPolicyAssociationsFilterArgs {
@@ -11442,10 +11536,10 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetTargetDatabaseRoleFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetTargetAlertPolicyAssociationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetTargetDatabaseRoleFilter {
@@ -11454,10 +11548,10 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetTargetDatabaseRolesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetTargetDatabaseRoleFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetTargetDatabaseRolesFilterArgs {
@@ -11466,10 +11560,10 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetTargetDatabasesColumnsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetTargetDatabaseRolesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetTargetDatabasesColumnsFilter {
@@ -11478,7 +11572,7 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetTargetDatabasesFilterArgs {
+    export interface GetTargetDatabasesColumnsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -11490,7 +11584,7 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetTargetDatabasesSchemasFilterArgs {
+    export interface GetTargetDatabasesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -11502,7 +11596,7 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetTargetDatabasesTablesFilterArgs {
+    export interface GetTargetDatabasesSchemasFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -11514,10 +11608,10 @@ export namespace DataSafe {
         values: string[];
     }
 
-    export interface GetUserAssessmentUserAnalyticsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetTargetDatabasesTablesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetUserAssessmentUserAnalyticsFilterArgs {
@@ -11526,7 +11620,7 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetUserAssessmentUsersFilter {
+    export interface GetUserAssessmentUserAnalyticsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -11538,7 +11632,7 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetUserAssessmentsFilter {
+    export interface GetUserAssessmentUsersFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -11548,6 +11642,12 @@ export namespace DataSafe {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUserAssessmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface LibraryMasingFormatFormatEntry {
@@ -12200,15 +12300,6 @@ export namespace DataSafe {
 }
 
 export namespace DataScience {
-    export interface GetFastLaunchJobConfigsFilterArgs {
-        /**
-         * The name of the fast launch job config
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetFastLaunchJobConfigsFilter {
         /**
          * The name of the fast launch job config
@@ -12216,6 +12307,15 @@ export namespace DataScience {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetFastLaunchJobConfigsFilterArgs {
+        /**
+         * The name of the fast launch job config
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetJobRunsFilterArgs {
@@ -12278,16 +12378,16 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetModelDeploymentsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetModelDeploymentsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetModelDeploymentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetModelsFilter {
@@ -12320,16 +12420,16 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetNotebookSessionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetNotebookSessionsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetNotebookSessionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetProjectsFilter {
@@ -12673,6 +12773,31 @@ export namespace DataScience {
          * (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus?: pulumi.Input<number>;
+    }
+
+    export interface NotebookSessionNotebookSessionRuntimeConfigDetails {
+        /**
+         * (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+         */
+        customEnvironmentVariables?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Git configuration Details.
+         */
+        notebookSessionGitConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails>;
+    }
+
+    export interface NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails {
+        /**
+         * (Updatable) A collection of Git repository configurations.
+         */
+        notebookSessionGitRepoConfigCollections?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection>[]>;
+    }
+
+    export interface NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection {
+        /**
+         * (Updatable) The repository URL
+         */
+        url: pulumi.Input<string>;
     }
 
 }
@@ -14504,15 +14629,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAutonomousContainerDatabasesFilterArgs {
-        /**
-         * Name of the month of the year.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAutonomousContainerDatabasesFilter {
         /**
          * Name of the month of the year.
@@ -14522,7 +14638,10 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetAutonomousContainerPatchesFilterArgs {
+    export interface GetAutonomousContainerDatabasesFilterArgs {
+        /**
+         * Name of the month of the year.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -14534,7 +14653,7 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetAutonomousDatabaseBackupsFilterArgs {
+    export interface GetAutonomousContainerPatchesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -14544,6 +14663,12 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAutonomousDatabaseBackupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAutonomousDatabaseDataguardAssociationsFilter {
@@ -14576,15 +14701,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAutonomousDatabasesFilterArgs {
-        /**
-         * Name of the day of the week.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAutonomousDatabasesFilter {
         /**
          * Name of the day of the week.
@@ -14592,6 +14708,15 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAutonomousDatabasesFilterArgs {
+        /**
+         * Name of the day of the week.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAutonomousDbPreviewVersionsFilter {
@@ -14636,15 +14761,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAutonomousExadataInfrastructuresFilterArgs {
-        /**
-         * Name of the month of the year.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAutonomousExadataInfrastructuresFilter {
         /**
          * Name of the month of the year.
@@ -14652,6 +14768,15 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAutonomousExadataInfrastructuresFilterArgs {
+        /**
+         * Name of the month of the year.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAutonomousVmClustersFilterArgs {
@@ -14726,16 +14851,16 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCloudVmClustersFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCloudVmClustersFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetCloudVmClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDataGuardAssociationsFilterArgs {
@@ -14745,6 +14870,18 @@ export namespace Database {
     }
 
     export interface GetDataGuardAssociationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -14762,16 +14899,16 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDatabaseSoftwareImagesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetDatabaseSoftwareImagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatabaseSoftwareImagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDatabaseUpgradeHistoryEntriesFilterArgs {
@@ -14786,19 +14923,13 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetDatabasesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDatabasesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetDbHomePatchHistoryEntriesFilterArgs {
+    export interface GetDatabasesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -14810,7 +14941,7 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetDbHomePatchesFilterArgs {
+    export interface GetDbHomePatchHistoryEntriesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -14820,6 +14951,12 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDbHomePatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDbHomesFilterArgs {
@@ -14882,19 +15019,13 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDbSystemHistoryEntriesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDbSystemHistoryEntriesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetDbSystemPatchesFilterArgs {
+    export interface GetDbSystemHistoryEntriesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -14904,6 +15035,12 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDbSystemPatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDbSystemShapesFilterArgs {
@@ -14936,15 +15073,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDbSystemsFilter {
-        /**
-         * Name of the month of the year.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetDbSystemsFilterArgs {
         /**
          * Name of the month of the year.
@@ -14952,6 +15080,15 @@ export namespace Database {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbSystemsFilter {
+        /**
+         * Name of the month of the year.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDbSystemsUpgradeHistoryEntriesFilter {
@@ -14978,15 +15115,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetExadataInfrastructuresFilter {
-        /**
-         * Name of the month of the year.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetExadataInfrastructuresFilterArgs {
         /**
          * Name of the month of the year.
@@ -14996,16 +15124,25 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetExternalContainerDatabasesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetExadataInfrastructuresFilter {
+        /**
+         * Name of the month of the year.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetExternalContainerDatabasesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetExternalContainerDatabasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetExternalDatabaseConnectorsFilter {
@@ -15044,15 +15181,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetFlexComponentsFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given. The match is not case sensitive.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetFlexComponentsFilter {
         /**
          * A filter to return only resources that match the entire name given. The match is not case sensitive.
@@ -15060,6 +15188,15 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetFlexComponentsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetGiVersionsFilter {
@@ -15074,22 +15211,16 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetKeyStoresFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetKeyStoresFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetMaintenanceRunsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetKeyStoresFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetMaintenanceRunsFilterArgs {
@@ -15098,16 +15229,22 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPluggableDatabasesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetMaintenanceRunsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetPluggableDatabasesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetPluggableDatabasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVmClusterNetworksFilterArgs {
@@ -15122,22 +15259,16 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetVmClusterPatchHistoryEntriesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetVmClusterPatchHistoryEntriesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVmClusterPatchesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetVmClusterPatchHistoryEntriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetVmClusterPatchesFilter {
@@ -15146,35 +15277,10 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetVmClusterRecommendedNetworkNetworkArgs {
-        /**
-         * The cidr for the network.
-         */
-        cidr: pulumi.Input<string>;
-        /**
-         * The network domain name.
-         */
-        domain: pulumi.Input<string>;
-        /**
-         * The network gateway.
-         */
-        gateway: pulumi.Input<string>;
-        /**
-         * The network netmask.
-         */
-        netmask: pulumi.Input<string>;
-        /**
-         * The network type.
-         */
-        networkType: pulumi.Input<string>;
-        /**
-         * The network domain name.
-         */
-        prefix: pulumi.Input<string>;
-        /**
-         * The network VLAN ID.
-         */
-        vlanId: pulumi.Input<string>;
+    export interface GetVmClusterPatchesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVmClusterRecommendedNetworkNetwork {
@@ -15208,10 +15314,35 @@ export namespace Database {
         vlanId: string;
     }
 
-    export interface GetVmClusterUpdateHistoryEntriesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetVmClusterRecommendedNetworkNetworkArgs {
+        /**
+         * The cidr for the network.
+         */
+        cidr: pulumi.Input<string>;
+        /**
+         * The network domain name.
+         */
+        domain: pulumi.Input<string>;
+        /**
+         * The network gateway.
+         */
+        gateway: pulumi.Input<string>;
+        /**
+         * The network netmask.
+         */
+        netmask: pulumi.Input<string>;
+        /**
+         * The network type.
+         */
+        networkType: pulumi.Input<string>;
+        /**
+         * The network domain name.
+         */
+        prefix: pulumi.Input<string>;
+        /**
+         * The network VLAN ID.
+         */
+        vlanId: pulumi.Input<string>;
     }
 
     export interface GetVmClusterUpdateHistoryEntriesFilter {
@@ -15220,10 +15351,10 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetVmClusterUpdatesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetVmClusterUpdateHistoryEntriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVmClusterUpdatesFilterArgs {
@@ -15232,16 +15363,22 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVmClustersFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetVmClusterUpdatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetVmClustersFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVmClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface KeyStoreAssociatedDatabase {
@@ -15445,6 +15582,7 @@ export namespace Database {
          */
         dbServerId: pulumi.Input<string>;
     }
+
 }
 
 export namespace DatabaseManagement {
@@ -15466,15 +15604,6 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDbManagementPrivateEndpointsFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDbManagementPrivateEndpointsFilter {
         /**
          * A filter to return only resources that match the entire name.
@@ -15482,6 +15611,15 @@ export namespace DatabaseManagement {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDbManagementPrivateEndpointsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetJobExecutionsStatusesFilter {
@@ -15526,13 +15664,22 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedDatabaseAttentionLogCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetManagedDatabaseAttentionLogCountsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabaseAttentionLogCountsFilter {
+    export interface GetManagedDatabaseGroupsFilter {
+        /**
+         * A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -15547,13 +15694,52 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabaseGroupsFilter {
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter {
         /**
-         * A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
+         * The name of the rule.
          */
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs {
+        /**
+         * The name of the rule.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter {
+        /**
+         * The name of the Managed Database.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs {
+        /**
+         * The name of the Managed Database.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetManagedDatabaseSqlTuningAdvisorTasksFilter {
@@ -15586,13 +15772,22 @@ export namespace DatabaseManagement {
         values: string[];
     }
 
+    export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter {
+    export interface GetManagedDatabaseSqlTuningSetsFilter {
+        /**
+         * The name of the SQL tuning set.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -15607,13 +15802,16 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabaseSqlTuningSetsFilter {
-        /**
-         * The name of the SQL tuning set.
-         */
+    export interface GetManagedDatabaseTableStatisticsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetManagedDatabaseTableStatisticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetManagedDatabaseUserConsumerGroupPrivilegesFilter {
@@ -15634,15 +15832,6 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabaseUserDataAccessContainersFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetManagedDatabaseUserDataAccessContainersFilter {
         /**
          * A filter to return only resources that match the entire name.
@@ -15652,13 +15841,13 @@ export namespace DatabaseManagement {
         values: string[];
     }
 
-    export interface GetManagedDatabaseUserObjectPrivilegesFilter {
+    export interface GetManagedDatabaseUserDataAccessContainersFilterArgs {
         /**
          * A filter to return only resources that match the entire name.
          */
-        name: string;
-        regex?: boolean;
-        values: string[];
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetManagedDatabaseUserObjectPrivilegesFilterArgs {
@@ -15668,6 +15857,15 @@ export namespace DatabaseManagement {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedDatabaseUserObjectPrivilegesFilter {
+        /**
+         * A filter to return only resources that match the entire name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetManagedDatabaseUserProxiedForUsersFilter {
@@ -15706,15 +15904,6 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabaseUsersFilter {
-        /**
-         * A filter to return only resources that match the entire name.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetManagedDatabaseUsersFilterArgs {
         /**
          * A filter to return only resources that match the entire name.
@@ -15724,13 +15913,13 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabasesAsmPropertiesFilterArgs {
+    export interface GetManagedDatabaseUsersFilter {
         /**
          * A filter to return only resources that match the entire name.
          */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetManagedDatabasesAsmPropertiesFilter {
@@ -15740,6 +15929,15 @@ export namespace DatabaseManagement {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetManagedDatabasesAsmPropertiesFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetManagedDatabasesDatabaseParametersFilter {
@@ -15760,15 +15958,6 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedDatabasesFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetManagedDatabasesFilter {
         /**
          * A filter to return only resources that match the entire name.
@@ -15778,7 +15967,7 @@ export namespace DatabaseManagement {
         values: string[];
     }
 
-    export interface GetManagedDatabasesUserProxyUsersFilterArgs {
+    export interface GetManagedDatabasesFilterArgs {
         /**
          * A filter to return only resources that match the entire name.
          */
@@ -15796,13 +15985,13 @@ export namespace DatabaseManagement {
         values: string[];
     }
 
-    export interface GetManagedDatabasesUserSystemPrivilegesFilter {
+    export interface GetManagedDatabasesUserProxyUsersFilterArgs {
         /**
          * A filter to return only resources that match the entire name.
          */
-        name: string;
-        regex?: boolean;
-        values: string[];
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetManagedDatabasesUserSystemPrivilegesFilterArgs {
@@ -15812,6 +16001,15 @@ export namespace DatabaseManagement {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedDatabasesUserSystemPrivilegesFilter {
+        /**
+         * A filter to return only resources that match the entire name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface ManagedDatabaseGroupManagedDatabase {
@@ -15901,7 +16099,6 @@ export namespace DatabaseManagement {
          */
         userName?: pulumi.Input<string>;
     }
-
 }
 
 export namespace DatabaseMigration {
@@ -15988,22 +16185,16 @@ export namespace DatabaseMigration {
         vaultId: pulumi.Input<string>;
     }
 
-    export interface GetAgentImagesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetAgentImagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAgentsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetAgentImagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetAgentsFilter {
@@ -16012,16 +16203,22 @@ export namespace DatabaseMigration {
         values: string[];
     }
 
-    export interface GetConnectionsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetAgentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetConnectionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetConnectionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetMigrationObjectTypesFilter {
@@ -16042,15 +16239,6 @@ export namespace DatabaseMigration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetMigrationsFilterArgs {
-        /**
-         * Name of directory object in database
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetMigrationsFilter {
         /**
          * Name of directory object in database
@@ -16058,6 +16246,15 @@ export namespace DatabaseMigration {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetMigrationsFilterArgs {
+        /**
+         * Name of directory object in database
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface JobProgress {
@@ -16604,16 +16801,16 @@ export namespace DatabaseTools {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDatabaseToolsPrivateEndpointsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDatabaseToolsPrivateEndpointsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDatabaseToolsPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 }
 
@@ -16667,7 +16864,7 @@ export namespace DevOps {
          */
         branch?: pulumi.Input<string>;
         /**
-         * (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+         * (Updatable) Connection identifier pertinent to Bitbucket Server source provider
          */
         connectionId?: pulumi.Input<string>;
         /**
@@ -16704,6 +16901,21 @@ export namespace DevOps {
          * (Updatable) Name of the artifact specified in the build_spec.yaml file.
          */
         artifactName?: pulumi.Input<string>;
+    }
+
+    export interface BuildPipelineStagePrivateAccessConfig {
+        /**
+         * (Updatable) Network channel type.
+         */
+        networkChannelType: pulumi.Input<string>;
+        /**
+         * (Updatable) An array of network security group OCIDs.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+         */
+        subnetId: pulumi.Input<string>;
     }
 
     export interface BuildPipelineStageWaitCriteria {
@@ -16928,7 +17140,7 @@ export namespace DevOps {
          */
         events?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Attributes to filter DevOps code repository events.
+         * Attributes to filter GitLab self-hosted server events.
          */
         includes?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterInclude>[]>;
         /**
@@ -16961,6 +17173,17 @@ export namespace DevOps {
          * Repository URL.
          */
         repositoryUrl: pulumi.Input<string>;
+    }
+
+    export interface ConnectionTlsVerifyConfig {
+        /**
+         * (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+         */
+        caCertificateBundleId: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of TLS verification.
+         */
+        tlsVerifyMode: pulumi.Input<string>;
     }
 
     export interface DeployArtifactDeployArtifactSource {
@@ -17480,15 +17703,6 @@ export namespace DevOps {
         values: string[];
     }
 
-    export interface GetBuildPipelinesFilterArgs {
-        /**
-         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBuildPipelinesFilter {
         /**
          * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
@@ -17498,9 +17712,9 @@ export namespace DevOps {
         values: string[];
     }
 
-    export interface GetBuildRunsFilterArgs {
+    export interface GetBuildPipelinesFilterArgs {
         /**
-         * Name of the step.
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -17516,16 +17730,25 @@ export namespace DevOps {
         values: string[];
     }
 
-    export interface GetConnectionsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetBuildRunsFilterArgs {
+        /**
+         * Name of the step.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetConnectionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetConnectionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDeployArtifactsFilterArgs {
@@ -17570,22 +17793,13 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDeployStagesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDeployStagesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetDeploymentsFilterArgs {
-        /**
-         * Name of the step.
-         */
+    export interface GetDeployStagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -17598,6 +17812,15 @@ export namespace DevOps {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDeploymentsFilterArgs {
+        /**
+         * Name of the step.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetProjectsFilter {
@@ -17648,16 +17871,16 @@ export namespace DevOps {
         values: string[];
     }
 
-    export interface GetRepositoryCommitsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetRepositoryCommitsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetRepositoryCommitsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetRepositoryDiffsFilter {
@@ -17672,22 +17895,13 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRepositoryMirrorRecordsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetRepositoryMirrorRecordsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetRepositoryPathsFilterArgs {
-        /**
-         * Name of file or directory.
-         */
+    export interface GetRepositoryMirrorRecordsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -17700,6 +17914,15 @@ export namespace DevOps {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetRepositoryPathsFilterArgs {
+        /**
+         * Name of file or directory.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetRepositoryRefsFilter {
@@ -17750,7 +17973,7 @@ export namespace DevOps {
 
     export interface RepositoryMirrorRepositoryConfigTriggerSchedule {
         /**
-         * (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+         * (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
          */
         customSchedule?: pulumi.Input<string>;
         /**
@@ -17780,7 +18003,7 @@ export namespace DevOps {
          */
         events?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Attributes to filter DevOps code repository events.
+         * (Updatable) Attributes to filter GitLab self-hosted server events.
          */
         include?: pulumi.Input<inputs.DevOps.TriggerActionFilterInclude>;
         /**
@@ -17803,25 +18026,16 @@ export namespace DevOps {
 }
 
 export namespace Dns {
-    export interface GetRecordsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetRecordsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetResolverEndpointsFilterArgs {
-        /**
-         * The name of a resource.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetRecordsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetResolverEndpointsFilter {
@@ -17831,6 +18045,15 @@ export namespace Dns {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetResolverEndpointsFilterArgs {
+        /**
+         * The name of a resource.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetResolversFilterArgs {
@@ -17863,25 +18086,16 @@ export namespace Dns {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSteeringPolicyAttachmentsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetSteeringPolicyAttachmentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetTsigKeysFilterArgs {
-        /**
-         * The name of a resource.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetSteeringPolicyAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetTsigKeysFilter {
@@ -17891,6 +18105,15 @@ export namespace Dns {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetTsigKeysFilterArgs {
+        /**
+         * The name of a resource.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetViewsFilterArgs {
@@ -18177,15 +18400,6 @@ export namespace EmWarehouse {
 }
 
 export namespace Email {
-    export interface GetDkimsFilterArgs {
-        /**
-         * A filter to only return resources that match the given name exactly.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDkimsFilter {
         /**
          * A filter to only return resources that match the given name exactly.
@@ -18195,7 +18409,7 @@ export namespace Email {
         values: string[];
     }
 
-    export interface GetEmailDomainsFilterArgs {
+    export interface GetDkimsFilterArgs {
         /**
          * A filter to only return resources that match the given name exactly.
          */
@@ -18211,6 +18425,15 @@ export namespace Email {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetEmailDomainsFilterArgs {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSendersFilter {
@@ -18562,16 +18785,16 @@ export namespace GoldenGate {
 }
 
 export namespace HealthChecks {
-    export interface GetHttpMonitorsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetHttpMonitorsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetHttpMonitorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetHttpProbeResultsFilter {
@@ -18598,16 +18821,16 @@ export namespace HealthChecks {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPingProbeResultsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetPingProbeResultsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetPingProbeResultsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVantagePointsFilter {
@@ -18680,15 +18903,6 @@ export namespace Identity {
         url?: pulumi.Input<string>;
     }
 
-    export interface GetAllowedDomainLicenseTypesFilterArgs {
-        /**
-         * The license type name.  Example: "Oracle Apps Premium"
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAllowedDomainLicenseTypesFilter {
         /**
          * The license type name.  Example: "Oracle Apps Premium"
@@ -18696,6 +18910,15 @@ export namespace Identity {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAllowedDomainLicenseTypesFilterArgs {
+        /**
+         * The license type name.  Example: "Oracle Apps Premium"
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetApiKeysFilter {
@@ -18740,15 +18963,6 @@ export namespace Identity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCompartmentsFilterArgs {
-        /**
-         * A filter to only return resources that match the given name exactly.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCompartmentsFilter {
         /**
          * A filter to only return resources that match the given name exactly.
@@ -18756,6 +18970,15 @@ export namespace Identity {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetCompartmentsFilterArgs {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetCostTrackingTagsFilter {
@@ -18884,16 +19107,16 @@ export namespace Identity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetIamWorkRequestErrorsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetIamWorkRequestErrorsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetIamWorkRequestErrorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetIamWorkRequestLogsFilter {
@@ -18908,22 +19131,13 @@ export namespace Identity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetIamWorkRequestsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetIamWorkRequestsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetIdentityProviderGroupsFilterArgs {
-        /**
-         * A filter to only return resources that match the given name exactly.
-         */
+    export interface GetIamWorkRequestsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -18938,13 +19152,13 @@ export namespace Identity {
         values: string[];
     }
 
-    export interface GetIdentityProvidersFilter {
+    export interface GetIdentityProviderGroupsFilterArgs {
         /**
          * A filter to only return resources that match the given name exactly.
          */
-        name: string;
-        regex?: boolean;
-        values: string[];
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetIdentityProvidersFilterArgs {
@@ -18954,6 +19168,15 @@ export namespace Identity {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIdentityProvidersFilter {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetIdpGroupMappingsFilter {
@@ -18986,15 +19209,6 @@ export namespace Identity {
         values: string[];
     }
 
-    export interface GetPoliciesFilterArgs {
-        /**
-         * A filter to only return resources that match the given name exactly.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetPoliciesFilter {
         /**
          * A filter to only return resources that match the given name exactly.
@@ -19004,10 +19218,13 @@ export namespace Identity {
         values: string[];
     }
 
-    export interface GetRegionSubscriptionsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetPoliciesFilterArgs {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetRegionSubscriptionsFilterArgs {
@@ -19016,13 +19233,10 @@ export namespace Identity {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRegionsFilterArgs {
-        /**
-         * The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetRegionSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetRegionsFilter {
@@ -19034,7 +19248,10 @@ export namespace Identity {
         values: string[];
     }
 
-    export interface GetSmtpCredentialsFilterArgs {
+    export interface GetRegionsFilterArgs {
+        /**
+         * The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -19044,6 +19261,12 @@ export namespace Identity {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSmtpCredentialsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSwiftPasswordsFilterArgs {
@@ -19088,16 +19311,16 @@ export namespace Identity {
         values: string[];
     }
 
-    export interface GetTagStandardTagNamespaceTemplatesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetTagStandardTagNamespaceTemplatesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetTagStandardTagNamespaceTemplatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetTagsFilterArgs {
@@ -19124,22 +19347,13 @@ export namespace Identity {
         values: string[];
     }
 
-    export interface GetUserGroupMembershipsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetUserGroupMembershipsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetUsersFilterArgs {
-        /**
-         * A filter to only return resources that match the given name exactly.
-         */
+    export interface GetUserGroupMembershipsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -19152,6 +19366,15 @@ export namespace Identity {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetUsersFilterArgs {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface NetworkSourceVirtualSourceList {
@@ -19203,19 +19426,23 @@ export namespace Identity {
 }
 
 export namespace Integration {
-    export interface GetIntegrationInstancesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetIntegrationInstancesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
+    export interface GetIntegrationInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface IntegrationInstanceAlternateCustomEndpoint {
+        /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias?: pulumi.Input<string>;
         /**
          * (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
          */
@@ -19228,10 +19455,38 @@ export namespace Integration {
          * (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
          */
         hostname: pulumi.Input<string>;
+    }
+
+    export interface IntegrationInstanceAttachment {
+        /**
+         * * If role == `PARENT`, the attached instance was created by this service instance
+         * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+         */
+        isImplicit?: pulumi.Input<boolean>;
+        /**
+         * The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+         */
+        targetId?: pulumi.Input<string>;
+        /**
+         * The dataplane instance URL of the attached instance
+         */
+        targetInstanceUrl?: pulumi.Input<string>;
+        /**
+         * The role of the target attachment.
+         */
+        targetRole?: pulumi.Input<string>;
+        /**
+         * The type of the target instance, such as "FUSION".
+         */
+        targetServiceType?: pulumi.Input<string>;
     }
 
     export interface IntegrationInstanceCustomEndpoint {
         /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         */
+        alias?: pulumi.Input<string>;
+        /**
          * (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
          */
         certificateSecretId?: pulumi.Input<string>;
@@ -19245,9 +19500,32 @@ export namespace Integration {
         hostname: pulumi.Input<string>;
     }
 
+    export interface IntegrationInstanceIdcsInfo {
+        /**
+         * The IDCS application display name associated with the instance
+         */
+        idcsAppDisplayName?: pulumi.Input<string>;
+        /**
+         * The IDCS application ID associated with the instance
+         */
+        idcsAppId?: pulumi.Input<string>;
+        /**
+         * URL for the location of the IDCS Application (used by IDCS APIs)
+         */
+        idcsAppLocationUrl?: pulumi.Input<string>;
+        /**
+         * The IDCS application name associated with the instance
+         */
+        idcsAppName?: pulumi.Input<string>;
+        /**
+         * The URL used as the primary audience for integration flows in this instance type: string
+         */
+        instancePrimaryAudienceUrl?: pulumi.Input<string>;
+    }
+
     export interface IntegrationInstanceNetworkEndpointDetails {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedHttpIps?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -19266,7 +19544,7 @@ export namespace Integration {
 
     export interface IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          */
         allowlistedIps?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -19324,6 +19602,15 @@ export namespace Jms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetInstallationSitesFilter {
+        /**
+         * The name of the operating system as provided by the Java system property os.name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetInstallationSitesFilterArgs {
         /**
          * The name of the operating system as provided by the Java system property os.name.
@@ -19333,13 +19620,28 @@ export namespace Jms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetInstallationSitesFilter {
-        /**
-         * The name of the operating system as provided by the Java system property os.name.
-         */
+    export interface GetJavaFamiliesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetJavaFamiliesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetJavaReleasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJavaReleasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
 }
@@ -19399,16 +19701,16 @@ export namespace Kms {
         values: string[];
     }
 
-    export interface GetVaultsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetVaultsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVaultsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface KeyKeyShape {
@@ -19525,6 +19827,7 @@ export namespace Kms {
          */
         uri?: pulumi.Input<string>;
     }
+
 }
 
 export namespace LicenseManager {
@@ -19540,16 +19843,16 @@ export namespace LicenseManager {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetProductLicensesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetProductLicensesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetProductLicensesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ProductLicenseImage {
@@ -19574,7 +19877,6 @@ export namespace LicenseManager {
          */
         publisher?: pulumi.Input<string>;
     }
-
 }
 
 export namespace Limits {
@@ -19614,15 +19916,6 @@ export namespace Limits {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetQuotasFilterArgs {
-        /**
-         * name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetQuotasFilter {
         /**
          * name
@@ -19632,9 +19925,9 @@ export namespace Limits {
         values: string[];
     }
 
-    export interface GetServicesFilterArgs {
+    export interface GetQuotasFilterArgs {
         /**
-         * The service name. Use this when calling other APIs.
+         * name
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -19648,6 +19941,15 @@ export namespace Limits {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetServicesFilterArgs {
+        /**
+         * The service name. Use this when calling other APIs.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface QuotaLock {
@@ -19668,7 +19970,6 @@ export namespace Limits {
          */
         type: pulumi.Input<string>;
     }
-
 }
 
 export namespace LoadBalancer {
@@ -19815,15 +20116,6 @@ export namespace LoadBalancer {
         verifyPeerCertificate?: pulumi.Input<boolean>;
     }
 
-    export interface GetBackendSetsFilterArgs {
-        /**
-         * A friendly name for the backend set. It must be unique and it cannot be changed.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBackendSetsFilter {
         /**
          * A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -19833,9 +20125,9 @@ export namespace LoadBalancer {
         values: string[];
     }
 
-    export interface GetBackendsFilterArgs {
+    export interface GetBackendSetsFilterArgs {
         /**
-         * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
+         * A friendly name for the backend set. It must be unique and it cannot be changed.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -19849,6 +20141,15 @@ export namespace LoadBalancer {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetBackendsFilterArgs {
+        /**
+         * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetCertificatesFilterArgs {
@@ -19935,15 +20236,6 @@ export namespace LoadBalancer {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPathRouteSetsFilterArgs {
-        /**
-         * The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetPathRouteSetsFilter {
         /**
          * The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
@@ -19951,6 +20243,15 @@ export namespace LoadBalancer {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetPathRouteSetsFilterArgs {
+        /**
+         * The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetPoliciesFilter {
@@ -19989,15 +20290,6 @@ export namespace LoadBalancer {
         values: string[];
     }
 
-    export interface GetRuleSetsFilterArgs {
-        /**
-         * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetRuleSetsFilter {
         /**
          * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
@@ -20007,9 +20299,9 @@ export namespace LoadBalancer {
         values: string[];
     }
 
-    export interface GetShapesFilterArgs {
+    export interface GetRuleSetsFilterArgs {
         /**
-         * The name of the shape.  Example: `100Mbps`
+         * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -20025,13 +20317,13 @@ export namespace LoadBalancer {
         values: string[];
     }
 
-    export interface GetSslCipherSuitesFilter {
+    export interface GetShapesFilterArgs {
         /**
-         * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+         * The name of the shape.  Example: `100Mbps`
          */
-        name: string;
-        regex?: boolean;
-        values: string[];
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSslCipherSuitesFilterArgs {
@@ -20041,6 +20333,15 @@ export namespace LoadBalancer {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSslCipherSuitesFilter {
+        /**
+         * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface ListenerConnectionConfiguration {
@@ -20289,18 +20590,10 @@ export namespace LoadBalancer {
          */
         query?: pulumi.Input<string>;
     }
+
 }
 
 export namespace LogAnalytics {
-    export interface GetLogAnalyticsEntitiesFilterArgs {
-        /**
-         * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetLogAnalyticsEntitiesFilter {
         /**
          * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -20310,16 +20603,25 @@ export namespace LogAnalytics {
         values: string[];
     }
 
-    export interface GetLogAnalyticsLogGroupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetLogAnalyticsEntitiesFilterArgs {
+        /**
+         * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetLogAnalyticsLogGroupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetLogAnalyticsLogGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetLogAnalyticsObjectCollectionRulesFilterArgs {
@@ -20352,16 +20654,16 @@ export namespace LogAnalytics {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetNamespacesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetNamespacesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNamespacesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface LogAnalyticsImportCustomContentChangeList {
@@ -20497,15 +20799,6 @@ export namespace Logging {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetLogSavedSearchesFilterArgs {
-        /**
-         * Resource name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetLogSavedSearchesFilter {
         /**
          * Resource name
@@ -20515,7 +20808,10 @@ export namespace Logging {
         values: string[];
     }
 
-    export interface GetLogsFilterArgs {
+    export interface GetLogSavedSearchesFilterArgs {
+        /**
+         * Resource name
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -20527,10 +20823,7 @@ export namespace Logging {
         values: string[];
     }
 
-    export interface GetUnifiedAgentConfigurationsFilterArgs {
-        /**
-         * The name key to tag this grok pattern.
-         */
+    export interface GetLogsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -20543,6 +20836,15 @@ export namespace Logging {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetUnifiedAgentConfigurationsFilterArgs {
+        /**
+         * The name key to tag this grok pattern.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface LogConfiguration {
@@ -20753,6 +21055,7 @@ export namespace Logging {
          */
         pattern?: pulumi.Input<string>;
     }
+
 }
 
 export namespace ManagementAgent {
@@ -20798,15 +21101,6 @@ export namespace ManagementAgent {
         values: string[];
     }
 
-    export interface GetManagementAgentPluginsFilterArgs {
-        /**
-         * Management Agent Plugin Name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetManagementAgentPluginsFilter {
         /**
          * Management Agent Plugin Name
@@ -20816,7 +21110,10 @@ export namespace ManagementAgent {
         values: string[];
     }
 
-    export interface GetManagementAgentsFilterArgs {
+    export interface GetManagementAgentPluginsFilterArgs {
+        /**
+         * Management Agent Plugin Name
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -20826,6 +21123,12 @@ export namespace ManagementAgent {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetManagementAgentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ManagementAgentPluginList {
@@ -20862,16 +21165,16 @@ export namespace ManagementAgent {
 }
 
 export namespace Marketplace {
-    export interface GetAcceptedAgreementsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetAcceptedAgreementsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetAcceptedAgreementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetCategoriesFilter {
@@ -20892,16 +21195,16 @@ export namespace Marketplace {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetListingPackageAgreementsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetListingPackageAgreementsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetListingPackageAgreementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetListingPackagesFilter {
@@ -20922,15 +21225,6 @@ export namespace Marketplace {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetListingTaxesFilterArgs {
-        /**
-         * Name of the tax code.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetListingTaxesFilter {
         /**
          * Name of the tax code.
@@ -20938,6 +21232,15 @@ export namespace Marketplace {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetListingTaxesFilterArgs {
+        /**
+         * Name of the tax code.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetListingsFilterArgs {
@@ -20994,15 +21297,6 @@ export namespace Marketplace {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPublishersFilter {
-        /**
-         * The name of the publisher.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetPublishersFilterArgs {
         /**
          * The name of the publisher.
@@ -21010,6 +21304,15 @@ export namespace Marketplace {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPublishersFilter {
+        /**
+         * The name of the publisher.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface PublicationIcon {
@@ -21142,19 +21445,13 @@ export namespace MeteringComputation {
         value?: pulumi.Input<string>;
     }
 
-    export interface GetCustomTablesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetCustomTablesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetQueriesFilterArgs {
+    export interface GetCustomTablesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -21164,6 +21461,12 @@ export namespace MeteringComputation {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetQueriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetScheduledRunsFilterArgs {
@@ -21178,15 +21481,6 @@ export namespace MeteringComputation {
         values: string[];
     }
 
-    export interface GetSchedulesFilter {
-        /**
-         * Query parameter for filtering by name
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetSchedulesFilterArgs {
         /**
          * Query parameter for filtering by name
@@ -21194,6 +21488,15 @@ export namespace MeteringComputation {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulesFilter {
+        /**
+         * Query parameter for filtering by name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface QueryQueryDefinition {
@@ -21555,6 +21858,7 @@ export namespace MeteringComputation {
          */
         value?: pulumi.Input<string>;
     }
+
 }
 
 export namespace Monitoring {
@@ -21728,28 +22032,28 @@ export namespace Mysql {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetMysqlBackupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetMysqlBackupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetMysqlConfigurationsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetMysqlBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetMysqlConfigurationsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetMysqlConfigurationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetMysqlDbSystemsFilterArgs {
@@ -21764,25 +22068,16 @@ export namespace Mysql {
         values: string[];
     }
 
-    export interface GetMysqlVersionFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetMysqlVersionFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetShapesFilterArgs {
-        /**
-         * Name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetMysqlVersionFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetShapesFilter {
@@ -21792,6 +22087,15 @@ export namespace Mysql {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetShapesFilterArgs {
+        /**
+         * Name
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface HeatWaveClusterClusterNode {
@@ -22285,15 +22589,6 @@ export namespace Mysql {
 }
 
 export namespace NetworkFirewall {
-    export interface GetNetworkFirewallPoliciesFilterArgs {
-        /**
-         * Name for the Security rule, must be unique within the policy.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetNetworkFirewallPoliciesFilter {
         /**
          * Name for the Security rule, must be unique within the policy.
@@ -22303,7 +22598,10 @@ export namespace NetworkFirewall {
         values: string[];
     }
 
-    export interface GetNetworkFirewallsFilterArgs {
+    export interface GetNetworkFirewallPoliciesFilterArgs {
+        /**
+         * Name for the Security rule, must be unique within the policy.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -22313,6 +22611,12 @@ export namespace NetworkFirewall {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetNetworkFirewallsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface NetworkFirewallPolicyApplicationList {
@@ -22490,6 +22794,7 @@ export namespace NetworkFirewall {
          */
         type: pulumi.Input<string>;
     }
+
 }
 
 export namespace NetworkLoadBalancer {
@@ -22571,15 +22876,6 @@ export namespace NetworkLoadBalancer {
         urlPath?: pulumi.Input<string>;
     }
 
-    export interface GetBackendSetsFilterArgs {
-        /**
-         * A user-friendly name for the backend set that must be unique and cannot be changed.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBackendSetsFilter {
         /**
          * A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -22589,9 +22885,9 @@ export namespace NetworkLoadBalancer {
         values: string[];
     }
 
-    export interface GetBackendsFilterArgs {
+    export interface GetBackendSetsFilterArgs {
         /**
-         * A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
+         * A user-friendly name for the backend set that must be unique and cannot be changed.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -22605,6 +22901,15 @@ export namespace NetworkLoadBalancer {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetBackendsFilterArgs {
+        /**
+         * A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetListenersFilter {
@@ -22649,16 +22954,16 @@ export namespace NetworkLoadBalancer {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetNetworkLoadBalancersProtocolsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetNetworkLoadBalancersProtocolsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNetworkLoadBalancersProtocolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface NetworkLoadBalancerIpAddress {
@@ -22771,7 +23076,6 @@ export namespace NetworkLoadBalancer {
          */
         urlPath?: pulumi.Input<string>;
     }
-
 }
 
 export namespace Nosql {
@@ -22924,15 +23228,6 @@ export namespace ObjectStorage {
         timeUnit: pulumi.Input<string>;
     }
 
-    export interface GetBucketSummariesFilterArgs {
-        /**
-         * The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBucketSummariesFilter {
         /**
          * The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
@@ -22942,13 +23237,13 @@ export namespace ObjectStorage {
         values: string[];
     }
 
-    export interface GetObjectVersionsFilter {
+    export interface GetBucketSummariesFilterArgs {
         /**
-         * The name of the object. Avoid entering confidential information. Example: test/object1.log
+         * The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
          */
-        name: string;
-        regex?: boolean;
-        values: string[];
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetObjectVersionsFilterArgs {
@@ -22960,9 +23255,9 @@ export namespace ObjectStorage {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetObjectsFilter {
+    export interface GetObjectVersionsFilter {
         /**
-         * The name of the object.
+         * The name of the object. Avoid entering confidential information. Example: test/object1.log
          */
         name: string;
         regex?: boolean;
@@ -22976,6 +23271,15 @@ export namespace ObjectStorage {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetObjectsFilter {
+        /**
+         * The name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetPreauthrequestsFilterArgs {
@@ -22996,15 +23300,6 @@ export namespace ObjectStorage {
         values: string[];
     }
 
-    export interface GetReplicationPoliciesFilter {
-        /**
-         * The name of the policy.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetReplicationPoliciesFilterArgs {
         /**
          * The name of the policy.
@@ -23012,6 +23307,15 @@ export namespace ObjectStorage {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetReplicationPoliciesFilter {
+        /**
+         * The name of the policy.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetReplicationSourcesFilter {
@@ -23106,6 +23410,7 @@ export namespace ObjectStorage {
          */
         sourceVersionId?: pulumi.Input<string>;
     }
+
 }
 
 export namespace Oce {
@@ -23154,15 +23459,6 @@ export namespace Ocvp {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSupportedHostShapesFilterArgs {
-        /**
-         * A filter to return only resources that match the given name exactly.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetSupportedHostShapesFilter {
         /**
          * A filter to return only resources that match the given name exactly.
@@ -23172,9 +23468,9 @@ export namespace Ocvp {
         values: string[];
     }
 
-    export interface GetSupportedSkusFilterArgs {
+    export interface GetSupportedHostShapesFilterArgs {
         /**
-         * name of SKU
+         * A filter to return only resources that match the given name exactly.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -23190,7 +23486,10 @@ export namespace Ocvp {
         values: string[];
     }
 
-    export interface GetSupportedVmwareSoftwareVersionsFilterArgs {
+    export interface GetSupportedSkusFilterArgs {
+        /**
+         * name of SKU
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -23200,6 +23499,12 @@ export namespace Ocvp {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSupportedVmwareSoftwareVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface SddcHcxOnPremLicense {
@@ -23216,7 +23521,6 @@ export namespace Ocvp {
          */
         systemName?: pulumi.Input<string>;
     }
-
 }
 
 export namespace Oda {
@@ -23447,6 +23751,33 @@ export namespace Ons {
     }
 
     export interface GetSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+}
+
+export namespace Opensearch {
+    export interface GetOpensearchClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOpensearchClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOpensearchVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOpensearchVersionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -23727,16 +24058,16 @@ export namespace Optimizer {
         values: string[];
     }
 
-    export interface GetEnrollmentStatusesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetEnrollmentStatusesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetEnrollmentStatusesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetHistoriesFilter {
@@ -23937,7 +24268,6 @@ export namespace Optimizer {
          */
         url?: pulumi.Input<string>;
     }
-
 }
 
 export namespace OsManagement {
@@ -23965,16 +24295,16 @@ export namespace OsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetManagedInstanceStreamProfileFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetManagedInstanceStreamProfileFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetManagedInstanceStreamProfileFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetManagedInstancesFilter {
@@ -23995,28 +24325,28 @@ export namespace OsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSoftwareSourceStreamProfileFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetSoftwareSourceStreamProfileFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSoftwareSourcesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface GetSoftwareSourceStreamProfileFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetSoftwareSourcesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSoftwareSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ManagedInstanceAutonomouse {
@@ -24113,18 +24443,10 @@ export namespace OsManagement {
          */
         id?: pulumi.Input<string>;
     }
+
 }
 
 export namespace OspGateway {
-    export interface GetInvoicesFilterArgs {
-        /**
-         * Name of the currency
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetInvoicesFilter {
         /**
          * Name of the currency
@@ -24134,7 +24456,7 @@ export namespace OspGateway {
         values: string[];
     }
 
-    export interface GetInvoicesInvoiceLinesFilterArgs {
+    export interface GetInvoicesFilterArgs {
         /**
          * Name of the currency
          */
@@ -24152,7 +24474,10 @@ export namespace OspGateway {
         values: string[];
     }
 
-    export interface GetSubscriptionsFilterArgs {
+    export interface GetInvoicesInvoiceLinesFilterArgs {
+        /**
+         * Name of the currency
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -24162,6 +24487,12 @@ export namespace OspGateway {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface SubscriptionBillingAddress {
@@ -24905,16 +25236,16 @@ export namespace Secrets {
 }
 
 export namespace ServiceCatalog {
-    export interface GetPrivateApplicationPackagesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetPrivateApplicationPackagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPrivateApplicationPackagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetPrivateApplicationsFilterArgs {
@@ -24941,16 +25272,16 @@ export namespace ServiceCatalog {
         values: string[];
     }
 
-    export interface GetServiceCatalogsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetServiceCatalogsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetServiceCatalogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface PrivateApplicationLogo {
@@ -25093,15 +25424,6 @@ export namespace ServiceMesh {
         values: string[];
     }
 
-    export interface GetIngressGatewayRouteTablesFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetIngressGatewayRouteTablesFilterArgs {
         /**
          * A filter to return only resources that match the entire name given.
@@ -25109,6 +25431,15 @@ export namespace ServiceMesh {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIngressGatewayRouteTablesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetIngressGatewaysFilter {
@@ -25129,16 +25460,16 @@ export namespace ServiceMesh {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetMeshesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetMeshesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMeshesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetVirtualDeploymentsFilterArgs {
@@ -25462,7 +25793,6 @@ export namespace ServiceMesh {
          */
         weight: pulumi.Input<number>;
     }
-
 }
 
 export namespace StackMonitoring {
@@ -25536,16 +25866,16 @@ export namespace StackMonitoring {
         propertiesMap?: pulumi.Input<{[key: string]: any}>;
     }
 
-    export interface GetDiscoveryJobLogsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDiscoveryJobLogsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDiscoveryJobLogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDiscoveryJobsFilter {
@@ -25862,15 +26192,6 @@ export namespace Streaming {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetStreamPoolsFilterArgs {
-        /**
-         * A filter to return only resources that match the given name exactly.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetStreamPoolsFilter {
         /**
          * A filter to return only resources that match the given name exactly.
@@ -25878,6 +26199,15 @@ export namespace Streaming {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetStreamPoolsFilterArgs {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetStreamsFilter {
@@ -25942,7 +26272,6 @@ export namespace Streaming {
          */
         subnetId?: pulumi.Input<string>;
     }
-
 }
 
 export namespace UsageProxy {
@@ -25958,19 +26287,13 @@ export namespace UsageProxy {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSubscriptionRedeemableUsersFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetSubscriptionRedeemableUsersFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetSubscriptionRewardsFilterArgs {
+    export interface GetSubscriptionRedeemableUsersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -25980,6 +26303,12 @@ export namespace UsageProxy {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSubscriptionRewardsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface SubscriptionRedeemableUserItem {
@@ -26055,16 +26384,16 @@ export namespace Vault {
 }
 
 export namespace VisualBuilder {
-    export interface GetVbInstancesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetVbInstancesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVbInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface VbInstanceAlternateCustomEndpoint {
@@ -26096,7 +26425,6 @@ export namespace VisualBuilder {
          */
         hostname: pulumi.Input<string>;
     }
-
 }
 
 export namespace VnMonitoring {
@@ -26390,28 +26718,28 @@ export namespace VulnerabilityScanning {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetHostScanRecipesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetHostScanRecipesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetHostScanTargetsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetHostScanRecipesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetHostScanTargetsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetHostScanTargetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface HostScanRecipeAgentSettings {
@@ -26497,7 +26825,6 @@ export namespace VulnerabilityScanning {
          */
         type: pulumi.Input<string>;
     }
-
 }
 
 export namespace Waa {
@@ -26641,22 +26968,13 @@ export namespace Waas {
         stateProvince?: pulumi.Input<string>;
     }
 
-    export interface GetAddressListsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetAddressListsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCertificatesFilter {
-        /**
-         * The certificate extension name.
-         */
+    export interface GetAddressListsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -26671,7 +26989,10 @@ export namespace Waas {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCustomProtectionRulesFilter {
+    export interface GetCertificatesFilter {
+        /**
+         * The certificate extension name.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -26681,6 +27002,12 @@ export namespace Waas {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCustomProtectionRulesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetEdgeSubnetsFilter {
@@ -26707,15 +27034,6 @@ export namespace Waas {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetProtectionRulesFilterArgs {
-        /**
-         * The name of the protection rule.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetProtectionRulesFilter {
         /**
          * The name of the protection rule.
@@ -26725,9 +27043,9 @@ export namespace Waas {
         values: string[];
     }
 
-    export interface GetWaasPoliciesFilterArgs {
+    export interface GetProtectionRulesFilterArgs {
         /**
-         * The unique name of the whitelist.
+         * The name of the protection rule.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -26741,6 +27059,15 @@ export namespace Waas {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetWaasPoliciesFilterArgs {
+        /**
+         * The unique name of the whitelist.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface HttpRedirectTarget {
@@ -28034,16 +28361,16 @@ export namespace Waf {
         maxTotalArgumentLength?: pulumi.Input<number>;
     }
 
-    export interface GetFirewallsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetFirewallsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetFirewallsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetNetworkAddressListsFilter {
@@ -28058,16 +28385,16 @@ export namespace Waf {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetProtectionCapabilitiesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetProtectionCapabilitiesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetProtectionCapabilitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetProtectionCapabilityGroupTagsFilter {
@@ -28088,15 +28415,6 @@ export namespace Waf {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetWebAppFirewallPoliciesFilterArgs {
-        /**
-         * Rule name. Must be unique within the module.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetWebAppFirewallPoliciesFilter {
         /**
          * Rule name. Must be unique within the module.
@@ -28104,6 +28422,15 @@ export namespace Waf {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetWebAppFirewallPoliciesFilterArgs {
+        /**
+         * Rule name. Must be unique within the module.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface NetworkAddressListVcnAddress {

@@ -203,14 +203,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
     @Export(name="deployArtifactId", type=String.class, parameters={})
     private Output</* @Nullable */ String> deployArtifactId;
 
     /**
-     * @return (Updatable) Optional binary artifact OCID user may provide to this stage.
+     * @return (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
     public Output<Optional<String>> deployArtifactId() {

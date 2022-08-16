@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Nosql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Nosql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Nosql.NewTable(ctx, "testTable", &Nosql.TableArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DdlStatement:  pulumi.Any(_var.Table_ddl_statement),
-// 			TableLimits: &nosql.TableTableLimitsArgs{
-// 				MaxReadUnits:    pulumi.Any(_var.Table_table_limits_max_read_units),
-// 				MaxStorageInGbs: pulumi.Any(_var.Table_table_limits_max_storage_in_gbs),
-// 				MaxWriteUnits:   pulumi.Any(_var.Table_table_limits_max_write_units),
-// 				CapacityMode:    pulumi.Any(_var.Table_table_limits_capacity_mode),
-// 			},
-// 			DefinedTags: pulumi.Any(_var.Table_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsAutoReclaimable: pulumi.Any(_var.Table_is_auto_reclaimable),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Nosql.NewTable(ctx, "testTable", &Nosql.TableArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DdlStatement:  pulumi.Any(_var.Table_ddl_statement),
+//				DefinedTags:   pulumi.Any(_var.Table_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsAutoReclaimable: pulumi.Any(_var.Table_is_auto_reclaimable),
+//				TableLimits: &nosql.TableTableLimitsArgs{
+//					MaxReadUnits:    pulumi.Any(_var.Table_table_limits_max_read_units),
+//					MaxStorageInGbs: pulumi.Any(_var.Table_table_limits_max_storage_in_gbs),
+//					MaxWriteUnits:   pulumi.Any(_var.Table_table_limits_max_write_units),
+//					CapacityMode:    pulumi.Any(_var.Table_table_limits_capacity_mode),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // Tables can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Nosql/table:Table test_table "id"
+//
+//	$ pulumi import oci:Nosql/table:Table test_table "id"
+//
 // ```
 type Table struct {
 	pulumi.CustomResourceState
@@ -80,7 +85,7 @@ type Table struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// (Updatable) Throughput and storage limits configuration of a table.
+	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits TableTableLimitsOutput `pulumi:"tableLimits"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -102,9 +107,6 @@ func NewTable(ctx *pulumi.Context,
 	}
 	if args.DdlStatement == nil {
 		return nil, errors.New("invalid value for required argument 'DdlStatement'")
-	}
-	if args.TableLimits == nil {
-		return nil, errors.New("invalid value for required argument 'TableLimits'")
 	}
 	var resource Table
 	err := ctx.RegisterResource("oci:Nosql/table:Table", name, args, &resource, opts...)
@@ -148,7 +150,7 @@ type tableState struct {
 	State *string `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// (Updatable) Throughput and storage limits configuration of a table.
+	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits *TableTableLimits `pulumi:"tableLimits"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -179,7 +181,7 @@ type TableState struct {
 	State pulumi.StringPtrInput
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.MapInput
-	// (Updatable) Throughput and storage limits configuration of a table.
+	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits TableTableLimitsPtrInput
 	// The time the the table was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -206,8 +208,8 @@ type tableArgs struct {
 	IsAutoReclaimable *bool `pulumi:"isAutoReclaimable"`
 	// Table name.
 	Name *string `pulumi:"name"`
-	// (Updatable) Throughput and storage limits configuration of a table.
-	TableLimits TableTableLimits `pulumi:"tableLimits"`
+	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+	TableLimits *TableTableLimits `pulumi:"tableLimits"`
 }
 
 // The set of arguments for constructing a Table resource.
@@ -224,8 +226,8 @@ type TableArgs struct {
 	IsAutoReclaimable pulumi.BoolPtrInput
 	// Table name.
 	Name pulumi.StringPtrInput
-	// (Updatable) Throughput and storage limits configuration of a table.
-	TableLimits TableTableLimitsInput
+	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
+	TableLimits TableTableLimitsPtrInput
 }
 
 func (TableArgs) ElementType() reflect.Type {
@@ -254,7 +256,7 @@ func (i *Table) ToTableOutputWithContext(ctx context.Context) TableOutput {
 // TableArrayInput is an input type that accepts TableArray and TableArrayOutput values.
 // You can construct a concrete instance of `TableArrayInput` via:
 //
-//          TableArray{ TableArgs{...} }
+//	TableArray{ TableArgs{...} }
 type TableArrayInput interface {
 	pulumi.Input
 
@@ -279,7 +281,7 @@ func (i TableArray) ToTableArrayOutputWithContext(ctx context.Context) TableArra
 // TableMapInput is an input type that accepts TableMap and TableMapOutput values.
 // You can construct a concrete instance of `TableMapInput` via:
 //
-//          TableMap{ "key": TableArgs{...} }
+//	TableMap{ "key": TableArgs{...} }
 type TableMapInput interface {
 	pulumi.Input
 

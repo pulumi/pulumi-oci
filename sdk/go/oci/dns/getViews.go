@@ -25,25 +25,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetViews(ctx, &dns.GetViewsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Scope:         "PRIVATE",
-// 			DisplayName:   pulumi.StringRef(_var.View_display_name),
-// 			Id:            pulumi.StringRef(_var.View_id),
-// 			State:         pulumi.StringRef(_var.View_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetViews(ctx, &dns.GetViewsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Scope:         "PRIVATE",
+//				DisplayName:   pulumi.StringRef(_var.View_display_name),
+//				Id:            pulumi.StringRef(_var.View_id),
+//				State:         pulumi.StringRef(_var.View_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetViews(ctx *pulumi.Context, args *GetViewsArgs, opts ...pulumi.InvokeOption) (*GetViewsResult, error) {
 	var rv GetViewsResult

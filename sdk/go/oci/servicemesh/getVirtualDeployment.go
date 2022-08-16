@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.GetVirtualDeployment(ctx, &servicemesh.GetVirtualDeploymentArgs{
-// 			VirtualDeploymentId: oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.GetVirtualDeployment(ctx, &servicemesh.GetVirtualDeploymentArgs{
+//				VirtualDeploymentId: oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupVirtualDeployment(ctx *pulumi.Context, args *LookupVirtualDeploymentArgs, opts ...pulumi.InvokeOption) (*LookupVirtualDeploymentResult, error) {
 	var rv LookupVirtualDeploymentResult

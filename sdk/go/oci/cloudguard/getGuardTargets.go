@@ -33,26 +33,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetGuardTargets(ctx, &cloudguard.GetGuardTargetsArgs{
-// 			CompartmentId:                     _var.Compartment_id,
-// 			AccessLevel:                       pulumi.StringRef(_var.Target_access_level),
-// 			CompartmentIdInSubtree:            pulumi.BoolRef(_var.Target_compartment_id_in_subtree),
-// 			DisplayName:                       pulumi.StringRef(_var.Target_display_name),
-// 			IsNonSecurityZoneTargetsOnlyQuery: pulumi.BoolRef(_var.Target_is_non_security_zone_targets_only_query),
-// 			State:                             pulumi.StringRef(_var.Target_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetGuardTargets(ctx, &cloudguard.GetGuardTargetsArgs{
+//				CompartmentId:                     _var.Compartment_id,
+//				AccessLevel:                       pulumi.StringRef(_var.Target_access_level),
+//				CompartmentIdInSubtree:            pulumi.BoolRef(_var.Target_compartment_id_in_subtree),
+//				DisplayName:                       pulumi.StringRef(_var.Target_display_name),
+//				IsNonSecurityZoneTargetsOnlyQuery: pulumi.BoolRef(_var.Target_is_non_security_zone_targets_only_query),
+//				State:                             pulumi.StringRef(_var.Target_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetGuardTargets(ctx *pulumi.Context, args *GetGuardTargetsArgs, opts ...pulumi.InvokeOption) (*GetGuardTargetsResult, error) {
 	var rv GetGuardTargetsResult

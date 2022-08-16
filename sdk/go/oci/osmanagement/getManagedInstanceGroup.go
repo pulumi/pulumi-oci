@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.GetManagedInstanceGroup(ctx, &osmanagement.GetManagedInstanceGroupArgs{
-// 			ManagedInstanceGroupId: oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.GetManagedInstanceGroup(ctx, &osmanagement.GetManagedInstanceGroupArgs{
+//				ManagedInstanceGroupId: oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupManagedInstanceGroup(ctx *pulumi.Context, args *LookupManagedInstanceGroupArgs, opts ...pulumi.InvokeOption) (*LookupManagedInstanceGroupResult, error) {
 	var rv LookupManagedInstanceGroupResult

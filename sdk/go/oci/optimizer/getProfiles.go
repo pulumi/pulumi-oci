@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Optimizer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Optimizer.GetProfiles(ctx, &optimizer.GetProfilesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Name:          pulumi.StringRef(_var.Profile_name),
-// 			State:         pulumi.StringRef(_var.Profile_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Optimizer.GetProfiles(ctx, &optimizer.GetProfilesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Name:          pulumi.StringRef(_var.Profile_name),
+//				State:         pulumi.StringRef(_var.Profile_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProfiles(ctx *pulumi.Context, args *GetProfilesArgs, opts ...pulumi.InvokeOption) (*GetProfilesResult, error) {
 	var rv GetProfilesResult

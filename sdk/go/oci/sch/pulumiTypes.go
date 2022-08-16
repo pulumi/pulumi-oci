@@ -26,7 +26,7 @@ type ConnectorSource struct {
 // ConnectorSourceInput is an input type that accepts ConnectorSourceArgs and ConnectorSourceOutput values.
 // You can construct a concrete instance of `ConnectorSourceInput` via:
 //
-//          ConnectorSourceArgs{...}
+//	ConnectorSourceArgs{...}
 type ConnectorSourceInput interface {
 	pulumi.Input
 
@@ -70,11 +70,11 @@ func (i ConnectorSourceArgs) ToConnectorSourcePtrOutputWithContext(ctx context.C
 // ConnectorSourcePtrInput is an input type that accepts ConnectorSourceArgs, ConnectorSourcePtr and ConnectorSourcePtrOutput values.
 // You can construct a concrete instance of `ConnectorSourcePtrInput` via:
 //
-//          ConnectorSourceArgs{...}
+//	        ConnectorSourceArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectorSourcePtrInput interface {
 	pulumi.Input
 
@@ -231,7 +231,7 @@ type ConnectorSourceCursor struct {
 // ConnectorSourceCursorInput is an input type that accepts ConnectorSourceCursorArgs and ConnectorSourceCursorOutput values.
 // You can construct a concrete instance of `ConnectorSourceCursorInput` via:
 //
-//          ConnectorSourceCursorArgs{...}
+//	ConnectorSourceCursorArgs{...}
 type ConnectorSourceCursorInput interface {
 	pulumi.Input
 
@@ -267,11 +267,11 @@ func (i ConnectorSourceCursorArgs) ToConnectorSourceCursorPtrOutputWithContext(c
 // ConnectorSourceCursorPtrInput is an input type that accepts ConnectorSourceCursorArgs, ConnectorSourceCursorPtr and ConnectorSourceCursorPtrOutput values.
 // You can construct a concrete instance of `ConnectorSourceCursorPtrInput` via:
 //
-//          ConnectorSourceCursorArgs{...}
+//	        ConnectorSourceCursorArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectorSourceCursorPtrInput interface {
 	pulumi.Input
 
@@ -372,7 +372,7 @@ type ConnectorSourceLogSource struct {
 // ConnectorSourceLogSourceInput is an input type that accepts ConnectorSourceLogSourceArgs and ConnectorSourceLogSourceOutput values.
 // You can construct a concrete instance of `ConnectorSourceLogSourceInput` via:
 //
-//          ConnectorSourceLogSourceArgs{...}
+//	ConnectorSourceLogSourceArgs{...}
 type ConnectorSourceLogSourceInput interface {
 	pulumi.Input
 
@@ -404,7 +404,7 @@ func (i ConnectorSourceLogSourceArgs) ToConnectorSourceLogSourceOutputWithContex
 // ConnectorSourceLogSourceArrayInput is an input type that accepts ConnectorSourceLogSourceArray and ConnectorSourceLogSourceArrayOutput values.
 // You can construct a concrete instance of `ConnectorSourceLogSourceArrayInput` via:
 //
-//          ConnectorSourceLogSourceArray{ ConnectorSourceLogSourceArgs{...} }
+//	ConnectorSourceLogSourceArray{ ConnectorSourceLogSourceArgs{...} }
 type ConnectorSourceLogSourceArrayInput interface {
 	pulumi.Input
 
@@ -485,7 +485,7 @@ type ConnectorSourceMonitoringSource struct {
 // ConnectorSourceMonitoringSourceInput is an input type that accepts ConnectorSourceMonitoringSourceArgs and ConnectorSourceMonitoringSourceOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceInput` via:
 //
-//          ConnectorSourceMonitoringSourceArgs{...}
+//	ConnectorSourceMonitoringSourceArgs{...}
 type ConnectorSourceMonitoringSourceInput interface {
 	pulumi.Input
 
@@ -515,7 +515,7 @@ func (i ConnectorSourceMonitoringSourceArgs) ToConnectorSourceMonitoringSourceOu
 // ConnectorSourceMonitoringSourceArrayInput is an input type that accepts ConnectorSourceMonitoringSourceArray and ConnectorSourceMonitoringSourceArrayOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceArrayInput` via:
 //
-//          ConnectorSourceMonitoringSourceArray{ ConnectorSourceMonitoringSourceArgs{...} }
+//	ConnectorSourceMonitoringSourceArray{ ConnectorSourceMonitoringSourceArgs{...} }
 type ConnectorSourceMonitoringSourceArrayInput interface {
 	pulumi.Input
 
@@ -593,7 +593,7 @@ type ConnectorSourceMonitoringSourceNamespaceDetails struct {
 // ConnectorSourceMonitoringSourceNamespaceDetailsInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsArgs and ConnectorSourceMonitoringSourceNamespaceDetailsOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsInput` via:
 //
-//          ConnectorSourceMonitoringSourceNamespaceDetailsArgs{...}
+//	ConnectorSourceMonitoringSourceNamespaceDetailsArgs{...}
 type ConnectorSourceMonitoringSourceNamespaceDetailsInput interface {
 	pulumi.Input
 
@@ -631,11 +631,11 @@ func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMo
 // ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsArgs, ConnectorSourceMonitoringSourceNamespaceDetailsPtr and ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput` via:
 //
-//          ConnectorSourceMonitoringSourceNamespaceDetailsArgs{...}
+//	        ConnectorSourceMonitoringSourceNamespaceDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput interface {
 	pulumi.Input
 
@@ -751,7 +751,7 @@ type ConnectorSourceMonitoringSourceNamespaceDetailsNamespace struct {
 // ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput` via:
 //
-//          ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{...}
+//	ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{...}
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput interface {
 	pulumi.Input
 
@@ -781,7 +781,7 @@ func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs) ToConnecto
 // ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput` via:
 //
-//          ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{ ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{...} }
+//	ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{ ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{...} }
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput interface {
 	pulumi.Input
 
@@ -857,7 +857,7 @@ type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics struct {
 // ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput` via:
 //
-//          ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{...}
+//	ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{...}
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput interface {
 	pulumi.Input
 
@@ -937,7 +937,7 @@ type ConnectorTarget struct {
 // ConnectorTargetInput is an input type that accepts ConnectorTargetArgs and ConnectorTargetOutput values.
 // You can construct a concrete instance of `ConnectorTargetInput` via:
 //
-//          ConnectorTargetArgs{...}
+//	ConnectorTargetArgs{...}
 type ConnectorTargetInput interface {
 	pulumi.Input
 
@@ -1001,11 +1001,11 @@ func (i ConnectorTargetArgs) ToConnectorTargetPtrOutputWithContext(ctx context.C
 // ConnectorTargetPtrInput is an input type that accepts ConnectorTargetArgs, ConnectorTargetPtr and ConnectorTargetPtrOutput values.
 // You can construct a concrete instance of `ConnectorTargetPtrInput` via:
 //
-//          ConnectorTargetArgs{...}
+//	        ConnectorTargetArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectorTargetPtrInput interface {
 	pulumi.Input
 
@@ -1314,7 +1314,7 @@ type ConnectorTargetDimension struct {
 // ConnectorTargetDimensionInput is an input type that accepts ConnectorTargetDimensionArgs and ConnectorTargetDimensionOutput values.
 // You can construct a concrete instance of `ConnectorTargetDimensionInput` via:
 //
-//          ConnectorTargetDimensionArgs{...}
+//	ConnectorTargetDimensionArgs{...}
 type ConnectorTargetDimensionInput interface {
 	pulumi.Input
 
@@ -1344,7 +1344,7 @@ func (i ConnectorTargetDimensionArgs) ToConnectorTargetDimensionOutputWithContex
 // ConnectorTargetDimensionArrayInput is an input type that accepts ConnectorTargetDimensionArray and ConnectorTargetDimensionArrayOutput values.
 // You can construct a concrete instance of `ConnectorTargetDimensionArrayInput` via:
 //
-//          ConnectorTargetDimensionArray{ ConnectorTargetDimensionArgs{...} }
+//	ConnectorTargetDimensionArray{ ConnectorTargetDimensionArgs{...} }
 type ConnectorTargetDimensionArrayInput interface {
 	pulumi.Input
 
@@ -1422,7 +1422,7 @@ type ConnectorTargetDimensionDimensionValue struct {
 // ConnectorTargetDimensionDimensionValueInput is an input type that accepts ConnectorTargetDimensionDimensionValueArgs and ConnectorTargetDimensionDimensionValueOutput values.
 // You can construct a concrete instance of `ConnectorTargetDimensionDimensionValueInput` via:
 //
-//          ConnectorTargetDimensionDimensionValueArgs{...}
+//	ConnectorTargetDimensionDimensionValueArgs{...}
 type ConnectorTargetDimensionDimensionValueInput interface {
 	pulumi.Input
 
@@ -1462,11 +1462,11 @@ func (i ConnectorTargetDimensionDimensionValueArgs) ToConnectorTargetDimensionDi
 // ConnectorTargetDimensionDimensionValuePtrInput is an input type that accepts ConnectorTargetDimensionDimensionValueArgs, ConnectorTargetDimensionDimensionValuePtr and ConnectorTargetDimensionDimensionValuePtrOutput values.
 // You can construct a concrete instance of `ConnectorTargetDimensionDimensionValuePtrInput` via:
 //
-//          ConnectorTargetDimensionDimensionValueArgs{...}
+//	        ConnectorTargetDimensionDimensionValueArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConnectorTargetDimensionDimensionValuePtrInput interface {
 	pulumi.Input
 
@@ -1601,7 +1601,7 @@ type ConnectorTask struct {
 // ConnectorTaskInput is an input type that accepts ConnectorTaskArgs and ConnectorTaskOutput values.
 // You can construct a concrete instance of `ConnectorTaskInput` via:
 //
-//          ConnectorTaskArgs{...}
+//	ConnectorTaskArgs{...}
 type ConnectorTaskInput interface {
 	pulumi.Input
 
@@ -1637,7 +1637,7 @@ func (i ConnectorTaskArgs) ToConnectorTaskOutputWithContext(ctx context.Context)
 // ConnectorTaskArrayInput is an input type that accepts ConnectorTaskArray and ConnectorTaskArrayOutput values.
 // You can construct a concrete instance of `ConnectorTaskArrayInput` via:
 //
-//          ConnectorTaskArray{ ConnectorTaskArgs{...} }
+//	ConnectorTaskArray{ ConnectorTaskArgs{...} }
 type ConnectorTaskArrayInput interface {
 	pulumi.Input
 
@@ -1734,7 +1734,7 @@ type GetServiceConnectorSource struct {
 // GetServiceConnectorSourceInput is an input type that accepts GetServiceConnectorSourceArgs and GetServiceConnectorSourceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceInput` via:
 //
-//          GetServiceConnectorSourceArgs{...}
+//	GetServiceConnectorSourceArgs{...}
 type GetServiceConnectorSourceInput interface {
 	pulumi.Input
 
@@ -1770,7 +1770,7 @@ func (i GetServiceConnectorSourceArgs) ToGetServiceConnectorSourceOutputWithCont
 // GetServiceConnectorSourceArrayInput is an input type that accepts GetServiceConnectorSourceArray and GetServiceConnectorSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceArrayInput` via:
 //
-//          GetServiceConnectorSourceArray{ GetServiceConnectorSourceArgs{...} }
+//	GetServiceConnectorSourceArray{ GetServiceConnectorSourceArgs{...} }
 type GetServiceConnectorSourceArrayInput interface {
 	pulumi.Input
 
@@ -1861,7 +1861,7 @@ type GetServiceConnectorSourceCursor struct {
 // GetServiceConnectorSourceCursorInput is an input type that accepts GetServiceConnectorSourceCursorArgs and GetServiceConnectorSourceCursorOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceCursorInput` via:
 //
-//          GetServiceConnectorSourceCursorArgs{...}
+//	GetServiceConnectorSourceCursorArgs{...}
 type GetServiceConnectorSourceCursorInput interface {
 	pulumi.Input
 
@@ -1889,7 +1889,7 @@ func (i GetServiceConnectorSourceCursorArgs) ToGetServiceConnectorSourceCursorOu
 // GetServiceConnectorSourceCursorArrayInput is an input type that accepts GetServiceConnectorSourceCursorArray and GetServiceConnectorSourceCursorArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceCursorArrayInput` via:
 //
-//          GetServiceConnectorSourceCursorArray{ GetServiceConnectorSourceCursorArgs{...} }
+//	GetServiceConnectorSourceCursorArray{ GetServiceConnectorSourceCursorArgs{...} }
 type GetServiceConnectorSourceCursorArrayInput interface {
 	pulumi.Input
 
@@ -1962,7 +1962,7 @@ type GetServiceConnectorSourceLogSource struct {
 // GetServiceConnectorSourceLogSourceInput is an input type that accepts GetServiceConnectorSourceLogSourceArgs and GetServiceConnectorSourceLogSourceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceLogSourceInput` via:
 //
-//          GetServiceConnectorSourceLogSourceArgs{...}
+//	GetServiceConnectorSourceLogSourceArgs{...}
 type GetServiceConnectorSourceLogSourceInput interface {
 	pulumi.Input
 
@@ -1994,7 +1994,7 @@ func (i GetServiceConnectorSourceLogSourceArgs) ToGetServiceConnectorSourceLogSo
 // GetServiceConnectorSourceLogSourceArrayInput is an input type that accepts GetServiceConnectorSourceLogSourceArray and GetServiceConnectorSourceLogSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceLogSourceArrayInput` via:
 //
-//          GetServiceConnectorSourceLogSourceArray{ GetServiceConnectorSourceLogSourceArgs{...} }
+//	GetServiceConnectorSourceLogSourceArray{ GetServiceConnectorSourceLogSourceArgs{...} }
 type GetServiceConnectorSourceLogSourceArrayInput interface {
 	pulumi.Input
 
@@ -2075,7 +2075,7 @@ type GetServiceConnectorSourceMonitoringSource struct {
 // GetServiceConnectorSourceMonitoringSourceInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceArgs and GetServiceConnectorSourceMonitoringSourceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceArgs{...}
+//	GetServiceConnectorSourceMonitoringSourceArgs{...}
 type GetServiceConnectorSourceMonitoringSourceInput interface {
 	pulumi.Input
 
@@ -2105,7 +2105,7 @@ func (i GetServiceConnectorSourceMonitoringSourceArgs) ToGetServiceConnectorSour
 // GetServiceConnectorSourceMonitoringSourceArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceArray and GetServiceConnectorSourceMonitoringSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceArrayInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceArray{ GetServiceConnectorSourceMonitoringSourceArgs{...} }
+//	GetServiceConnectorSourceMonitoringSourceArray{ GetServiceConnectorSourceMonitoringSourceArgs{...} }
 type GetServiceConnectorSourceMonitoringSourceArrayInput interface {
 	pulumi.Input
 
@@ -2183,7 +2183,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetail struct {
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs and GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{...}
+//	GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{...}
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput interface {
 	pulumi.Input
 
@@ -2213,7 +2213,7 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs) ToGetServi
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{...} }
+//	GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{...} }
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2291,7 +2291,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace struct {
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{...}
+//	GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{...}
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput interface {
 	pulumi.Input
 
@@ -2321,7 +2321,7 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs) T
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{...} }
+//	GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{...} }
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput interface {
 	pulumi.Input
 
@@ -2397,7 +2397,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric str
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...}
+//	GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...}
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput interface {
 	pulumi.Input
 
@@ -2425,7 +2425,7 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricA
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput` via:
 //
-//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...} }
+//	GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...} }
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput interface {
 	pulumi.Input
 
@@ -2522,7 +2522,7 @@ type GetServiceConnectorTarget struct {
 // GetServiceConnectorTargetInput is an input type that accepts GetServiceConnectorTargetArgs and GetServiceConnectorTargetOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetInput` via:
 //
-//          GetServiceConnectorTargetArgs{...}
+//	GetServiceConnectorTargetArgs{...}
 type GetServiceConnectorTargetInput interface {
 	pulumi.Input
 
@@ -2578,7 +2578,7 @@ func (i GetServiceConnectorTargetArgs) ToGetServiceConnectorTargetOutputWithCont
 // GetServiceConnectorTargetArrayInput is an input type that accepts GetServiceConnectorTargetArray and GetServiceConnectorTargetArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetArrayInput` via:
 //
-//          GetServiceConnectorTargetArray{ GetServiceConnectorTargetArgs{...} }
+//	GetServiceConnectorTargetArray{ GetServiceConnectorTargetArgs{...} }
 type GetServiceConnectorTargetArrayInput interface {
 	pulumi.Input
 
@@ -2719,7 +2719,7 @@ type GetServiceConnectorTargetDimension struct {
 // GetServiceConnectorTargetDimensionInput is an input type that accepts GetServiceConnectorTargetDimensionArgs and GetServiceConnectorTargetDimensionOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetDimensionInput` via:
 //
-//          GetServiceConnectorTargetDimensionArgs{...}
+//	GetServiceConnectorTargetDimensionArgs{...}
 type GetServiceConnectorTargetDimensionInput interface {
 	pulumi.Input
 
@@ -2749,7 +2749,7 @@ func (i GetServiceConnectorTargetDimensionArgs) ToGetServiceConnectorTargetDimen
 // GetServiceConnectorTargetDimensionArrayInput is an input type that accepts GetServiceConnectorTargetDimensionArray and GetServiceConnectorTargetDimensionArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetDimensionArrayInput` via:
 //
-//          GetServiceConnectorTargetDimensionArray{ GetServiceConnectorTargetDimensionArgs{...} }
+//	GetServiceConnectorTargetDimensionArray{ GetServiceConnectorTargetDimensionArgs{...} }
 type GetServiceConnectorTargetDimensionArrayInput interface {
 	pulumi.Input
 
@@ -2829,7 +2829,7 @@ type GetServiceConnectorTargetDimensionDimensionValue struct {
 // GetServiceConnectorTargetDimensionDimensionValueInput is an input type that accepts GetServiceConnectorTargetDimensionDimensionValueArgs and GetServiceConnectorTargetDimensionDimensionValueOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetDimensionDimensionValueInput` via:
 //
-//          GetServiceConnectorTargetDimensionDimensionValueArgs{...}
+//	GetServiceConnectorTargetDimensionDimensionValueArgs{...}
 type GetServiceConnectorTargetDimensionDimensionValueInput interface {
 	pulumi.Input
 
@@ -2861,7 +2861,7 @@ func (i GetServiceConnectorTargetDimensionDimensionValueArgs) ToGetServiceConnec
 // GetServiceConnectorTargetDimensionDimensionValueArrayInput is an input type that accepts GetServiceConnectorTargetDimensionDimensionValueArray and GetServiceConnectorTargetDimensionDimensionValueArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetDimensionDimensionValueArrayInput` via:
 //
-//          GetServiceConnectorTargetDimensionDimensionValueArray{ GetServiceConnectorTargetDimensionDimensionValueArgs{...} }
+//	GetServiceConnectorTargetDimensionDimensionValueArray{ GetServiceConnectorTargetDimensionDimensionValueArgs{...} }
 type GetServiceConnectorTargetDimensionDimensionValueArrayInput interface {
 	pulumi.Input
 
@@ -2948,7 +2948,7 @@ type GetServiceConnectorTask struct {
 // GetServiceConnectorTaskInput is an input type that accepts GetServiceConnectorTaskArgs and GetServiceConnectorTaskOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTaskInput` via:
 //
-//          GetServiceConnectorTaskArgs{...}
+//	GetServiceConnectorTaskArgs{...}
 type GetServiceConnectorTaskInput interface {
 	pulumi.Input
 
@@ -2984,7 +2984,7 @@ func (i GetServiceConnectorTaskArgs) ToGetServiceConnectorTaskOutputWithContext(
 // GetServiceConnectorTaskArrayInput is an input type that accepts GetServiceConnectorTaskArray and GetServiceConnectorTaskArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTaskArrayInput` via:
 //
-//          GetServiceConnectorTaskArray{ GetServiceConnectorTaskArgs{...} }
+//	GetServiceConnectorTaskArray{ GetServiceConnectorTaskArgs{...} }
 type GetServiceConnectorTaskArrayInput interface {
 	pulumi.Input
 
@@ -3075,7 +3075,7 @@ type GetServiceConnectorsFilter struct {
 // GetServiceConnectorsFilterInput is an input type that accepts GetServiceConnectorsFilterArgs and GetServiceConnectorsFilterOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsFilterInput` via:
 //
-//          GetServiceConnectorsFilterArgs{...}
+//	GetServiceConnectorsFilterArgs{...}
 type GetServiceConnectorsFilterInput interface {
 	pulumi.Input
 
@@ -3105,7 +3105,7 @@ func (i GetServiceConnectorsFilterArgs) ToGetServiceConnectorsFilterOutputWithCo
 // GetServiceConnectorsFilterArrayInput is an input type that accepts GetServiceConnectorsFilterArray and GetServiceConnectorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsFilterArrayInput` via:
 //
-//          GetServiceConnectorsFilterArray{ GetServiceConnectorsFilterArgs{...} }
+//	GetServiceConnectorsFilterArray{ GetServiceConnectorsFilterArgs{...} }
 type GetServiceConnectorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3181,7 +3181,7 @@ type GetServiceConnectorsServiceConnectorCollection struct {
 // GetServiceConnectorsServiceConnectorCollectionInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionArgs and GetServiceConnectorsServiceConnectorCollectionOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionInput interface {
 	pulumi.Input
 
@@ -3208,7 +3208,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionArgs) ToGetServiceConnecto
 // GetServiceConnectorsServiceConnectorCollectionArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionArray and GetServiceConnectorsServiceConnectorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionArray{ GetServiceConnectorsServiceConnectorCollectionArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionArray{ GetServiceConnectorsServiceConnectorCollectionArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3304,7 +3304,7 @@ type GetServiceConnectorsServiceConnectorCollectionItem struct {
 // GetServiceConnectorsServiceConnectorCollectionItemInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemArgs and GetServiceConnectorsServiceConnectorCollectionItemOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemInput interface {
 	pulumi.Input
 
@@ -3358,7 +3358,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemArgs) ToGetServiceConn
 // GetServiceConnectorsServiceConnectorCollectionItemArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemArray and GetServiceConnectorsServiceConnectorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemArray{ GetServiceConnectorsServiceConnectorCollectionItemArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemArray{ GetServiceConnectorsServiceConnectorCollectionItemArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3510,7 +3510,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
 // GetServiceConnectorsServiceConnectorCollectionItemSourceInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceInput interface {
 	pulumi.Input
 
@@ -3546,7 +3546,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceArgs) ToGetServi
 // GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput interface {
 	pulumi.Input
 
@@ -3641,7 +3641,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceCursor struct {
 // GetServiceConnectorsServiceConnectorCollectionItemSourceCursorInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceCursorInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorInput interface {
 	pulumi.Input
 
@@ -3669,7 +3669,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs) ToGe
 // GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray and GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput interface {
 	pulumi.Input
 
@@ -3742,7 +3742,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource struct {
 // GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceInput interface {
 	pulumi.Input
 
@@ -3774,7 +3774,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs) T
 // GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput interface {
 	pulumi.Input
 
@@ -3857,7 +3857,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource st
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput interface {
 	pulumi.Input
 
@@ -3887,7 +3887,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput interface {
 	pulumi.Input
 
@@ -3967,7 +3967,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput interface {
 	pulumi.Input
 
@@ -3997,7 +3997,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput interface {
 	pulumi.Input
 
@@ -4077,7 +4077,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput interface {
 	pulumi.Input
 
@@ -4107,7 +4107,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput interface {
 	pulumi.Input
 
@@ -4185,7 +4185,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput interface {
 	pulumi.Input
 
@@ -4213,7 +4213,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput interface {
 	pulumi.Input
 
@@ -4312,7 +4312,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 // GetServiceConnectorsServiceConnectorCollectionItemTargetInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetArgs and GetServiceConnectorsServiceConnectorCollectionItemTargetOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTargetArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemTargetInput interface {
 	pulumi.Input
 
@@ -4368,7 +4368,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetArgs) ToGetServi
 // GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetArray and GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTargetArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput interface {
 	pulumi.Input
 
@@ -4513,7 +4513,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetDimension struct {
 // GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs and GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionInput interface {
 	pulumi.Input
 
@@ -4543,7 +4543,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs) T
 // GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray and GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput interface {
 	pulumi.Input
 
@@ -4623,7 +4623,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionV
 // GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs and GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueInput interface {
 	pulumi.Input
 
@@ -4655,7 +4655,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 // GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArray and GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput interface {
 	pulumi.Input
 
@@ -4748,7 +4748,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTask struct {
 // GetServiceConnectorsServiceConnectorCollectionItemTaskInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTaskArgs and GetServiceConnectorsServiceConnectorCollectionItemTaskOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTaskInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTaskArgs{...}
+//	GetServiceConnectorsServiceConnectorCollectionItemTaskArgs{...}
 type GetServiceConnectorsServiceConnectorCollectionItemTaskInput interface {
 	pulumi.Input
 
@@ -4784,7 +4784,7 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTaskArgs) ToGetService
 // GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTaskArray and GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput` via:
 //
-//          GetServiceConnectorsServiceConnectorCollectionItemTaskArray{ GetServiceConnectorsServiceConnectorCollectionItemTaskArgs{...} }
+//	GetServiceConnectorsServiceConnectorCollectionItemTaskArray{ GetServiceConnectorsServiceConnectorCollectionItemTaskArgs{...} }
 type GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput interface {
 	pulumi.Input
 

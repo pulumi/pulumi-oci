@@ -37,38 +37,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewRouteTable(ctx, "testRouteTable", &Core.RouteTableArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Route_table_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			RouteRules: core.RouteTableRouteRuleArray{
-// 				&core.RouteTableRouteRuleArgs{
-// 					NetworkEntityId: pulumi.Any(oci_core_internet_gateway.Test_internet_gateway.Id),
-// 					CidrBlock:       pulumi.Any(_var.Route_table_route_rules_cidr_block),
-// 					Description:     pulumi.Any(_var.Route_table_route_rules_description),
-// 					Destination:     pulumi.Any(_var.Route_table_route_rules_destination),
-// 					DestinationType: pulumi.Any(_var.Route_table_route_rules_destination_type),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewRouteTable(ctx, "testRouteTable", &Core.RouteTableArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Route_table_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				RouteRules: core.RouteTableRouteRuleArray{
+//					&core.RouteTableRouteRuleArgs{
+//						NetworkEntityId: pulumi.Any(oci_core_internet_gateway.Test_internet_gateway.Id),
+//						CidrBlock:       pulumi.Any(_var.Route_table_route_rules_cidr_block),
+//						Description:     pulumi.Any(_var.Route_table_route_rules_description),
+//						Destination:     pulumi.Any(_var.Route_table_route_rules_destination),
+//						DestinationType: pulumi.Any(_var.Route_table_route_rules_destination_type),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -76,7 +79,9 @@ import (
 // RouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
+//
+//	$ pulumi import oci:Core/routeTable:RouteTable test_route_table "id"
+//
 // ```
 type RouteTable struct {
 	pulumi.CustomResourceState
@@ -232,7 +237,7 @@ func (i *RouteTable) ToRouteTableOutputWithContext(ctx context.Context) RouteTab
 // RouteTableArrayInput is an input type that accepts RouteTableArray and RouteTableArrayOutput values.
 // You can construct a concrete instance of `RouteTableArrayInput` via:
 //
-//          RouteTableArray{ RouteTableArgs{...} }
+//	RouteTableArray{ RouteTableArgs{...} }
 type RouteTableArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +262,7 @@ func (i RouteTableArray) ToRouteTableArrayOutputWithContext(ctx context.Context)
 // RouteTableMapInput is an input type that accepts RouteTableMap and RouteTableMapOutput values.
 // You can construct a concrete instance of `RouteTableMapInput` via:
 //
-//          RouteTableMap{ "key": RouteTableArgs{...} }
+//	RouteTableMap{ "key": RouteTableArgs{...} }
 type RouteTableMapInput interface {
 	pulumi.Input
 

@@ -95,6 +95,10 @@ export interface GetAccessRequestResult {
      */
     readonly isAutoApproved: boolean;
     /**
+     * more in detail about the lifeCycleState.
+     */
+    readonly lifecycleDetails: string;
+    /**
      * Additional message specific to the access request that can be specified by the approver at the time of approval.
      */
     readonly opctlAdditionalMessage: string;

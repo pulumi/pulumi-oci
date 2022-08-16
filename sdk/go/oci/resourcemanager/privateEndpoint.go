@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ResourceManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ResourceManager.NewPrivateEndpoint(ctx, "testPrivateEndpoint", &ResourceManager.PrivateEndpointArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Private_endpoint_display_name),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Private_endpoint_description),
-// 			DnsZones:    pulumi.Any(_var.Private_endpoint_dns_zones),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsUsedWithConfigurationSourceProvider: pulumi.Any(_var.Private_endpoint_is_used_with_configuration_source_provider),
-// 			NsgIdLists:                            pulumi.Any(_var.Private_endpoint_nsg_id_list),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ResourceManager.NewPrivateEndpoint(ctx, "testPrivateEndpoint", &ResourceManager.PrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Private_endpoint_display_name),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Private_endpoint_description),
+//				DnsZones:    pulumi.Any(_var.Private_endpoint_dns_zones),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsUsedWithConfigurationSourceProvider: pulumi.Any(_var.Private_endpoint_is_used_with_configuration_source_provider),
+//				NsgIdLists:                            pulumi.Any(_var.Private_endpoint_nsg_id_list),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // PrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+//
+//	$ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
+//
 // ```
 type PrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -264,7 +269,7 @@ func (i *PrivateEndpoint) ToPrivateEndpointOutputWithContext(ctx context.Context
 // PrivateEndpointArrayInput is an input type that accepts PrivateEndpointArray and PrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `PrivateEndpointArrayInput` via:
 //
-//          PrivateEndpointArray{ PrivateEndpointArgs{...} }
+//	PrivateEndpointArray{ PrivateEndpointArgs{...} }
 type PrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -289,7 +294,7 @@ func (i PrivateEndpointArray) ToPrivateEndpointArrayOutputWithContext(ctx contex
 // PrivateEndpointMapInput is an input type that accepts PrivateEndpointMap and PrivateEndpointMapOutput values.
 // You can construct a concrete instance of `PrivateEndpointMapInput` via:
 //
-//          PrivateEndpointMap{ "key": PrivateEndpointArgs{...} }
+//	PrivateEndpointMap{ "key": PrivateEndpointArgs{...} }
 type PrivateEndpointMapInput interface {
 	pulumi.Input
 

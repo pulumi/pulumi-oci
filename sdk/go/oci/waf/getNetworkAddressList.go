@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Waf"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Waf.GetNetworkAddressList(ctx, &waf.GetNetworkAddressListArgs{
-// 			NetworkAddressListId: oci_waf_network_address_list.Test_network_address_list.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Waf.GetNetworkAddressList(ctx, &waf.GetNetworkAddressListArgs{
+//				NetworkAddressListId: oci_waf_network_address_list.Test_network_address_list.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNetworkAddressList(ctx *pulumi.Context, args *LookupNetworkAddressListArgs, opts ...pulumi.InvokeOption) (*LookupNetworkAddressListResult, error) {
 	var rv LookupNetworkAddressListResult

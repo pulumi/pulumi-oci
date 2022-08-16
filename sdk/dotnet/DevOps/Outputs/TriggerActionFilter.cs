@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Events;
         /// <summary>
-        /// (Updatable) Attributes to filter DevOps code repository events.
+        /// (Updatable) Attributes to filter GitLab self-hosted server events.
         /// </summary>
         public readonly Outputs.TriggerActionFilterInclude? Include;
         /// <summary>

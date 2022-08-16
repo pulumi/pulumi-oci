@@ -19,17 +19,17 @@ import * as utilities from "../utilities";
  * const testTable = new oci.nosql.Table("testTable", {
  *     compartmentId: _var.compartment_id,
  *     ddlStatement: _var.table_ddl_statement,
+ *     definedTags: _var.table_defined_tags,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     isAutoReclaimable: _var.table_is_auto_reclaimable,
  *     tableLimits: {
  *         maxReadUnits: _var.table_table_limits_max_read_units,
  *         maxStorageInGbs: _var.table_table_limits_max_storage_in_gbs,
  *         maxWriteUnits: _var.table_table_limits_max_write_units,
  *         capacityMode: _var.table_table_limits_capacity_mode,
  *     },
- *     definedTags: _var.table_defined_tags,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     isAutoReclaimable: _var.table_is_auto_reclaimable,
  * });
  * ```
  *
@@ -110,7 +110,7 @@ export class Table extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Throughput and storage limits configuration of a table.
+     * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
     public readonly tableLimits!: pulumi.Output<outputs.Nosql.TableTableLimits>;
     /**
@@ -160,9 +160,6 @@ export class Table extends pulumi.CustomResource {
             }
             if ((!args || args.ddlStatement === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ddlStatement'");
-            }
-            if ((!args || args.tableLimits === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'tableLimits'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["ddlStatement"] = args ? args.ddlStatement : undefined;
@@ -229,7 +226,7 @@ export interface TableState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Throughput and storage limits configuration of a table.
+     * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
     tableLimits?: pulumi.Input<inputs.Nosql.TableTableLimits>;
     /**
@@ -275,7 +272,7 @@ export interface TableArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * (Updatable) Throughput and storage limits configuration of a table.
+     * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
-    tableLimits: pulumi.Input<inputs.Nosql.TableTableLimits>;
+    tableLimits?: pulumi.Input<inputs.Nosql.TableTableLimits>;
 }

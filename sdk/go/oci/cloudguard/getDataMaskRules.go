@@ -20,28 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetDataMaskRules(ctx, &cloudguard.GetDataMaskRulesArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AccessLevel:        pulumi.StringRef(_var.Data_mask_rule_access_level),
-// 			DataMaskRuleStatus: pulumi.StringRef(_var.Data_mask_rule_data_mask_rule_status),
-// 			DisplayName:        pulumi.StringRef(_var.Data_mask_rule_display_name),
-// 			IamGroupId:         pulumi.StringRef(oci_identity_group.Test_group.Id),
-// 			State:              pulumi.StringRef(_var.Data_mask_rule_state),
-// 			TargetId:           pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-// 			TargetType:         pulumi.StringRef(_var.Data_mask_rule_target_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetDataMaskRules(ctx, &cloudguard.GetDataMaskRulesArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AccessLevel:        pulumi.StringRef(_var.Data_mask_rule_access_level),
+//				DataMaskRuleStatus: pulumi.StringRef(_var.Data_mask_rule_data_mask_rule_status),
+//				DisplayName:        pulumi.StringRef(_var.Data_mask_rule_display_name),
+//				IamGroupId:         pulumi.StringRef(oci_identity_group.Test_group.Id),
+//				State:              pulumi.StringRef(_var.Data_mask_rule_state),
+//				TargetId:           pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				TargetType:         pulumi.StringRef(_var.Data_mask_rule_target_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDataMaskRules(ctx *pulumi.Context, args *GetDataMaskRulesArgs, opts ...pulumi.InvokeOption) (*GetDataMaskRulesResult, error) {
 	var rv GetDataMaskRulesResult

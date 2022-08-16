@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.NewBackendSet(ctx, "testBackendSet", &NetworkLoadBalancer.BackendSetArgs{
-// 			HealthChecker: &networkloadbalancer.BackendSetHealthCheckerArgs{
-// 				Protocol:          pulumi.Any(_var.Backend_set_health_checker_protocol),
-// 				IntervalInMillis:  pulumi.Any(_var.Backend_set_health_checker_interval_in_millis),
-// 				Port:              pulumi.Any(_var.Backend_set_health_checker_port),
-// 				RequestData:       pulumi.Any(_var.Backend_set_health_checker_request_data),
-// 				ResponseBodyRegex: pulumi.Any(_var.Backend_set_health_checker_response_body_regex),
-// 				ResponseData:      pulumi.Any(_var.Backend_set_health_checker_response_data),
-// 				Retries:           pulumi.Any(_var.Backend_set_health_checker_retries),
-// 				ReturnCode:        pulumi.Any(_var.Backend_set_health_checker_return_code),
-// 				TimeoutInMillis:   pulumi.Any(_var.Backend_set_health_checker_timeout_in_millis),
-// 				UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
-// 			},
-// 			NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-// 			Policy:                pulumi.Any(_var.Backend_set_policy),
-// 			IpVersion:             pulumi.Any(_var.Backend_set_ip_version),
-// 			IsPreserveSource:      pulumi.Any(_var.Backend_set_is_preserve_source),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.NewBackendSet(ctx, "testBackendSet", &NetworkLoadBalancer.BackendSetArgs{
+//				HealthChecker: &networkloadbalancer.BackendSetHealthCheckerArgs{
+//					Protocol:          pulumi.Any(_var.Backend_set_health_checker_protocol),
+//					IntervalInMillis:  pulumi.Any(_var.Backend_set_health_checker_interval_in_millis),
+//					Port:              pulumi.Any(_var.Backend_set_health_checker_port),
+//					RequestData:       pulumi.Any(_var.Backend_set_health_checker_request_data),
+//					ResponseBodyRegex: pulumi.Any(_var.Backend_set_health_checker_response_body_regex),
+//					ResponseData:      pulumi.Any(_var.Backend_set_health_checker_response_data),
+//					Retries:           pulumi.Any(_var.Backend_set_health_checker_retries),
+//					ReturnCode:        pulumi.Any(_var.Backend_set_health_checker_return_code),
+//					TimeoutInMillis:   pulumi.Any(_var.Backend_set_health_checker_timeout_in_millis),
+//					UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
+//				},
+//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
+//				Policy:                pulumi.Any(_var.Backend_set_policy),
+//				IpVersion:             pulumi.Any(_var.Backend_set_ip_version),
+//				IsPreserveSource:      pulumi.Any(_var.Backend_set_is_preserve_source),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // BackendSets can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+//
+//	$ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+//
 // ```
 type BackendSet struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *BackendSet) ToBackendSetOutputWithContext(ctx context.Context) BackendS
 // BackendSetArrayInput is an input type that accepts BackendSetArray and BackendSetArrayOutput values.
 // You can construct a concrete instance of `BackendSetArrayInput` via:
 //
-//          BackendSetArray{ BackendSetArgs{...} }
+//	BackendSetArray{ BackendSetArgs{...} }
 type BackendSetArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i BackendSetArray) ToBackendSetArrayOutputWithContext(ctx context.Context)
 // BackendSetMapInput is an input type that accepts BackendSetMap and BackendSetMapOutput values.
 // You can construct a concrete instance of `BackendSetMapInput` via:
 //
-//          BackendSetMap{ "key": BackendSetArgs{...} }
+//	BackendSetMap{ "key": BackendSetArgs{...} }
 type BackendSetMapInput interface {
 	pulumi.Input
 

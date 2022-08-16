@@ -50,6 +50,10 @@ export class HostInsight extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     */
+    public readonly computeId!: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -160,6 +164,7 @@ export class HostInsight extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as HostInsightState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeId"] = state ? state.computeId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["enterpriseManagerBridgeId"] = state ? state.enterpriseManagerBridgeId : undefined;
             resourceInputs["enterpriseManagerEntityDisplayName"] = state ? state.enterpriseManagerEntityDisplayName : undefined;
@@ -193,6 +198,7 @@ export class HostInsight extends pulumi.CustomResource {
                 throw new Error("Missing required property 'entitySource'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["computeId"] = args ? args.computeId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["enterpriseManagerBridgeId"] = args ? args.enterpriseManagerBridgeId : undefined;
             resourceInputs["enterpriseManagerEntityIdentifier"] = args ? args.enterpriseManagerEntityIdentifier : undefined;
@@ -231,6 +237,10 @@ export interface HostInsightState {
      * (Updatable) Compartment Identifier of host
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     */
+    computeId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -337,6 +347,10 @@ export interface HostInsightArgs {
      * (Updatable) Compartment Identifier of host
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     */
+    computeId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */

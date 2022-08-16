@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.
 //
-// Get the subscription data for the compartment
+// # Get the subscription data for the compartment
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OspGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OspGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OspGateway.GetSubscriptions(ctx, &ospgateway.GetSubscriptionsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			OspHomeRegion: _var.Subscription_osp_home_region,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OspGateway.GetSubscriptions(ctx, &ospgateway.GetSubscriptionsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				OspHomeRegion: _var.Subscription_osp_home_region,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubscriptions(ctx *pulumi.Context, args *GetSubscriptionsArgs, opts ...pulumi.InvokeOption) (*GetSubscriptionsResult, error) {
 	var rv GetSubscriptionsResult

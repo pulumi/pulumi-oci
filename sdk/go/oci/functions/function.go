@@ -21,40 +21,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Functions.NewFunction(ctx, "testFunction", &Functions.FunctionArgs{
-// 			ApplicationId: pulumi.Any(oci_functions_application.Test_application.Id),
-// 			DisplayName:   pulumi.Any(_var.Function_display_name),
-// 			Image:         pulumi.Any(_var.Function_image),
-// 			MemoryInMbs:   pulumi.Any(_var.Function_memory_in_mbs),
-// 			Config:        pulumi.Any(_var.Function_config),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			ImageDigest: pulumi.Any(_var.Function_image_digest),
-// 			ProvisionedConcurrencyConfig: &functions.FunctionProvisionedConcurrencyConfigArgs{
-// 				Strategy: pulumi.Any(_var.Function_provisioned_concurrency_config_strategy),
-// 				Count:    pulumi.Any(_var.Function_provisioned_concurrency_config_count),
-// 			},
-// 			TimeoutInSeconds: pulumi.Any(_var.Function_timeout_in_seconds),
-// 			TraceConfig: &functions.FunctionTraceConfigArgs{
-// 				IsEnabled: pulumi.Any(_var.Function_trace_config_is_enabled),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Functions.NewFunction(ctx, "testFunction", &Functions.FunctionArgs{
+//				ApplicationId: pulumi.Any(oci_functions_application.Test_application.Id),
+//				DisplayName:   pulumi.Any(_var.Function_display_name),
+//				Image:         pulumi.Any(_var.Function_image),
+//				MemoryInMbs:   pulumi.Any(_var.Function_memory_in_mbs),
+//				Config:        pulumi.Any(_var.Function_config),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ImageDigest: pulumi.Any(_var.Function_image_digest),
+//				ProvisionedConcurrencyConfig: &functions.FunctionProvisionedConcurrencyConfigArgs{
+//					Strategy: pulumi.Any(_var.Function_provisioned_concurrency_config_strategy),
+//					Count:    pulumi.Any(_var.Function_provisioned_concurrency_config_count),
+//				},
+//				TimeoutInSeconds: pulumi.Any(_var.Function_timeout_in_seconds),
+//				TraceConfig: &functions.FunctionTraceConfigArgs{
+//					IsEnabled: pulumi.Any(_var.Function_trace_config_is_enabled),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // Functions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Functions/function:Function test_function "id"
+//
+//	$ pulumi import oci:Functions/function:Function test_function "id"
+//
 // ```
 type Function struct {
 	pulumi.CustomResourceState
@@ -292,7 +297,7 @@ func (i *Function) ToFunctionOutputWithContext(ctx context.Context) FunctionOutp
 // FunctionArrayInput is an input type that accepts FunctionArray and FunctionArrayOutput values.
 // You can construct a concrete instance of `FunctionArrayInput` via:
 //
-//          FunctionArray{ FunctionArgs{...} }
+//	FunctionArray{ FunctionArgs{...} }
 type FunctionArrayInput interface {
 	pulumi.Input
 
@@ -317,7 +322,7 @@ func (i FunctionArray) ToFunctionArrayOutputWithContext(ctx context.Context) Fun
 // FunctionMapInput is an input type that accepts FunctionMap and FunctionMapOutput values.
 // You can construct a concrete instance of `FunctionMapInput` via:
 //
-//          FunctionMap{ "key": FunctionArgs{...} }
+//	FunctionMap{ "key": FunctionArgs{...} }
 type FunctionMapInput interface {
 	pulumi.Input
 

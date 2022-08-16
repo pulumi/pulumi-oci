@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.GetLogAnalyticsEntitiesSummary(ctx, &loganalytics.GetLogAnalyticsEntitiesSummaryArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Namespace:     _var.Log_analytics_entities_summary_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.GetLogAnalyticsEntitiesSummary(ctx, &loganalytics.GetLogAnalyticsEntitiesSummaryArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Namespace:     _var.Log_analytics_entities_summary_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetLogAnalyticsEntitiesSummary(ctx *pulumi.Context, args *GetLogAnalyticsEntitiesSummaryArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsEntitiesSummaryResult, error) {
 	var rv GetLogAnalyticsEntitiesSummaryResult

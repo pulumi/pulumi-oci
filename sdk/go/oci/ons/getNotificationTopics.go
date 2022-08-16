@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ons"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ons.GetNotificationTopics(ctx, &ons.GetNotificationTopicsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			Id:            pulumi.StringRef(_var.Notification_topic_id),
-// 			Name:          pulumi.StringRef(_var.Notification_topic_name),
-// 			State:         pulumi.StringRef(_var.Notification_topic_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ons.GetNotificationTopics(ctx, &ons.GetNotificationTopicsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				Id:            pulumi.StringRef(_var.Notification_topic_id),
+//				Name:          pulumi.StringRef(_var.Notification_topic_name),
+//				State:         pulumi.StringRef(_var.Notification_topic_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetNotificationTopics(ctx *pulumi.Context, args *GetNotificationTopicsArgs, opts ...pulumi.InvokeOption) (*GetNotificationTopicsResult, error) {
 	var rv GetNotificationTopicsResult

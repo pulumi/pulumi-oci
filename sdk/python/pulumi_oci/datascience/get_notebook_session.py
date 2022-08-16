@@ -21,7 +21,7 @@ class GetNotebookSessionResult:
     """
     A collection of values returned by getNotebookSession.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, notebook_session_config_details=None, notebook_session_configuration_details=None, notebook_session_id=None, notebook_session_url=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, notebook_session_config_details=None, notebook_session_configuration_details=None, notebook_session_id=None, notebook_session_runtime_config_details=None, notebook_session_url=None, project_id=None, state=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +52,9 @@ class GetNotebookSessionResult:
         if notebook_session_id and not isinstance(notebook_session_id, str):
             raise TypeError("Expected argument 'notebook_session_id' to be a str")
         pulumi.set(__self__, "notebook_session_id", notebook_session_id)
+        if notebook_session_runtime_config_details and not isinstance(notebook_session_runtime_config_details, list):
+            raise TypeError("Expected argument 'notebook_session_runtime_config_details' to be a list")
+        pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
         if notebook_session_url and not isinstance(notebook_session_url, str):
             raise TypeError("Expected argument 'notebook_session_url' to be a str")
         pulumi.set(__self__, "notebook_session_url", notebook_session_url)
@@ -143,6 +146,14 @@ class GetNotebookSessionResult:
         return pulumi.get(self, "notebook_session_id")
 
     @property
+    @pulumi.getter(name="notebookSessionRuntimeConfigDetails")
+    def notebook_session_runtime_config_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailResult']:
+        """
+        Notebook Session runtime configuration details.
+        """
+        return pulumi.get(self, "notebook_session_runtime_config_details")
+
+    @property
     @pulumi.getter(name="notebookSessionUrl")
     def notebook_session_url(self) -> str:
         """
@@ -191,6 +202,7 @@ class AwaitableGetNotebookSessionResult(GetNotebookSessionResult):
             notebook_session_config_details=self.notebook_session_config_details,
             notebook_session_configuration_details=self.notebook_session_configuration_details,
             notebook_session_id=self.notebook_session_id,
+            notebook_session_runtime_config_details=self.notebook_session_runtime_config_details,
             notebook_session_url=self.notebook_session_url,
             project_id=self.project_id,
             state=self.state,
@@ -235,6 +247,7 @@ def get_notebook_session(notebook_session_id: Optional[str] = None,
         notebook_session_config_details=__ret__.notebook_session_config_details,
         notebook_session_configuration_details=__ret__.notebook_session_configuration_details,
         notebook_session_id=__ret__.notebook_session_id,
+        notebook_session_runtime_config_details=__ret__.notebook_session_runtime_config_details,
         notebook_session_url=__ret__.notebook_session_url,
         project_id=__ret__.project_id,
         state=__ret__.state,

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmConfig"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmConfig"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmConfig.GetConfig(ctx, &apmconfig.GetConfigArgs{
-// 			ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-// 			ConfigId:    oci_apm_config_config.Test_config.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmConfig.GetConfig(ctx, &apmconfig.GetConfigArgs{
+//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//				ConfigId:    oci_apm_config_config.Test_config.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupConfig(ctx *pulumi.Context, args *LookupConfigArgs, opts ...pulumi.InvokeOption) (*LookupConfigResult, error) {
 	var rv LookupConfigResult

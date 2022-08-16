@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
 //
-// This API returns the commitment details corresponding to the id provided
+// # This API returns the commitment details corresponding to the id provided
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetCommitment(ctx, &onesubsription.GetCommitmentArgs{
-// 			CommitmentId: oci_onesubscription_commitment.Test_commitment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetCommitment(ctx, &onesubsription.GetCommitmentArgs{
+//				CommitmentId: oci_onesubscription_commitment.Test_commitment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetCommitment(ctx *pulumi.Context, args *GetCommitmentArgs, opts ...pulumi.InvokeOption) (*GetCommitmentResult, error) {
 	var rv GetCommitmentResult

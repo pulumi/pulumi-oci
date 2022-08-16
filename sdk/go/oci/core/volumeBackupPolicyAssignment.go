@@ -23,22 +23,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVolumeBackupPolicyAssignment(ctx, "testVolumeBackupPolicyAssignment", &Core.VolumeBackupPolicyAssignmentArgs{
-// 			AssetId:  pulumi.Any(oci_core_volume.Test_volume.Id),
-// 			PolicyId: pulumi.Any(oci_core_volume_backup_policy.Test_volume_backup_policy.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVolumeBackupPolicyAssignment(ctx, "testVolumeBackupPolicyAssignment", &Core.VolumeBackupPolicyAssignmentArgs{
+//				AssetId:  pulumi.Any(oci_core_volume.Test_volume.Id),
+//				PolicyId: pulumi.Any(oci_core_volume_backup_policy.Test_volume_backup_policy.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // VolumeBackupPolicyAssignments can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
+//
+//	$ pulumi import oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment test_volume_backup_policy_assignment "id"
+//
 // ```
 type VolumeBackupPolicyAssignment struct {
 	pulumi.CustomResourceState
@@ -156,7 +161,7 @@ func (i *VolumeBackupPolicyAssignment) ToVolumeBackupPolicyAssignmentOutputWithC
 // VolumeBackupPolicyAssignmentArrayInput is an input type that accepts VolumeBackupPolicyAssignmentArray and VolumeBackupPolicyAssignmentArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupPolicyAssignmentArrayInput` via:
 //
-//          VolumeBackupPolicyAssignmentArray{ VolumeBackupPolicyAssignmentArgs{...} }
+//	VolumeBackupPolicyAssignmentArray{ VolumeBackupPolicyAssignmentArgs{...} }
 type VolumeBackupPolicyAssignmentArrayInput interface {
 	pulumi.Input
 
@@ -181,7 +186,7 @@ func (i VolumeBackupPolicyAssignmentArray) ToVolumeBackupPolicyAssignmentArrayOu
 // VolumeBackupPolicyAssignmentMapInput is an input type that accepts VolumeBackupPolicyAssignmentMap and VolumeBackupPolicyAssignmentMapOutput values.
 // You can construct a concrete instance of `VolumeBackupPolicyAssignmentMapInput` via:
 //
-//          VolumeBackupPolicyAssignmentMap{ "key": VolumeBackupPolicyAssignmentArgs{...} }
+//	VolumeBackupPolicyAssignmentMap{ "key": VolumeBackupPolicyAssignmentArgs{...} }
 type VolumeBackupPolicyAssignmentMapInput interface {
 	pulumi.Input
 

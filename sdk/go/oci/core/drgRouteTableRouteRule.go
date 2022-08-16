@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrgRouteTableRouteRule(ctx, "testDrgRouteTableRouteRule", &Core.DrgRouteTableRouteRuleArgs{
-// 			DrgRouteTableId:        pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
-// 			Destination:            pulumi.Any(_var.Drg_route_table_route_rule_route_rules_destination),
-// 			DestinationType:        pulumi.Any(_var.Drg_route_table_route_rule_route_rules_destination_type),
-// 			NextHopDrgAttachmentId: pulumi.Any(oci_core_drg_attachment.Test_drg_attachment.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrgRouteTableRouteRule(ctx, "testDrgRouteTableRouteRule", &Core.DrgRouteTableRouteRuleArgs{
+//				DrgRouteTableId:        pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
+//				Destination:            pulumi.Any(_var.Drg_route_table_route_rule_route_rules_destination),
+//				DestinationType:        pulumi.Any(_var.Drg_route_table_route_rule_route_rules_destination_type),
+//				NextHopDrgAttachmentId: pulumi.Any(oci_core_drg_attachment.Test_drg_attachment.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // DrgRouteTableRouteRule can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
+//
+//	$ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
+//
 // ```
 type DrgRouteTableRouteRule struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *DrgRouteTableRouteRule) ToDrgRouteTableRouteRuleOutputWithContext(ctx c
 // DrgRouteTableRouteRuleArrayInput is an input type that accepts DrgRouteTableRouteRuleArray and DrgRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `DrgRouteTableRouteRuleArrayInput` via:
 //
-//          DrgRouteTableRouteRuleArray{ DrgRouteTableRouteRuleArgs{...} }
+//	DrgRouteTableRouteRuleArray{ DrgRouteTableRouteRuleArgs{...} }
 type DrgRouteTableRouteRuleArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i DrgRouteTableRouteRuleArray) ToDrgRouteTableRouteRuleArrayOutputWithCont
 // DrgRouteTableRouteRuleMapInput is an input type that accepts DrgRouteTableRouteRuleMap and DrgRouteTableRouteRuleMapOutput values.
 // You can construct a concrete instance of `DrgRouteTableRouteRuleMapInput` via:
 //
-//          DrgRouteTableRouteRuleMap{ "key": DrgRouteTableRouteRuleArgs{...} }
+//	DrgRouteTableRouteRuleMap{ "key": DrgRouteTableRouteRuleArgs{...} }
 type DrgRouteTableRouteRuleMapInput interface {
 	pulumi.Input
 

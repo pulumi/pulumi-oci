@@ -21,30 +21,30 @@ public final class GetBootVolumeReplicasArgs extends com.pulumi.resources.Invoke
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Import(name="availabilityDomain", required=true)
-    private Output<String> availabilityDomain;
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
 
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private Output<String> compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -84,6 +84,21 @@ public final class GetBootVolumeReplicasArgs extends com.pulumi.resources.Invoke
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     * 
+     */
+    @Import(name="volumeGroupReplicaId")
+    private @Nullable Output<String> volumeGroupReplicaId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     * 
+     */
+    public Optional<Output<String>> volumeGroupReplicaId() {
+        return Optional.ofNullable(this.volumeGroupReplicaId);
+    }
+
     private GetBootVolumeReplicasArgs() {}
 
     private GetBootVolumeReplicasArgs(GetBootVolumeReplicasArgs $) {
@@ -92,6 +107,7 @@ public final class GetBootVolumeReplicasArgs extends com.pulumi.resources.Invoke
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
+        this.volumeGroupReplicaId = $.volumeGroupReplicaId;
     }
 
     public static Builder builder() {
@@ -118,7 +134,7 @@ public final class GetBootVolumeReplicasArgs extends com.pulumi.resources.Invoke
          * @return builder
          * 
          */
-        public Builder availabilityDomain(Output<String> availabilityDomain) {
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
             $.availabilityDomain = availabilityDomain;
             return this;
         }
@@ -139,7 +155,7 @@ public final class GetBootVolumeReplicasArgs extends com.pulumi.resources.Invoke
          * @return builder
          * 
          */
-        public Builder compartmentId(Output<String> compartmentId) {
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -209,9 +225,28 @@ public final class GetBootVolumeReplicasArgs extends com.pulumi.resources.Invoke
             return state(Output.of(state));
         }
 
+        /**
+         * @param volumeGroupReplicaId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeGroupReplicaId(@Nullable Output<String> volumeGroupReplicaId) {
+            $.volumeGroupReplicaId = volumeGroupReplicaId;
+            return this;
+        }
+
+        /**
+         * @param volumeGroupReplicaId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
+            return volumeGroupReplicaId(Output.of(volumeGroupReplicaId));
+        }
+
         public GetBootVolumeReplicasArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             return $;
         }
     }

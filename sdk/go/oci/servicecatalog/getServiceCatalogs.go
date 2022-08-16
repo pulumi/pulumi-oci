@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceCatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceCatalog.GetServiceCatalogs(ctx, &servicecatalog.GetServiceCatalogsArgs{
-// 			CompartmentId:    _var.Compartment_id,
-// 			DisplayName:      pulumi.StringRef(_var.Service_catalog_display_name),
-// 			ServiceCatalogId: pulumi.StringRef(oci_service_catalog_service_catalog.Test_service_catalog.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceCatalog.GetServiceCatalogs(ctx, &servicecatalog.GetServiceCatalogsArgs{
+//				CompartmentId:    _var.Compartment_id,
+//				DisplayName:      pulumi.StringRef(_var.Service_catalog_display_name),
+//				ServiceCatalogId: pulumi.StringRef(oci_service_catalog_service_catalog.Test_service_catalog.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetServiceCatalogs(ctx *pulumi.Context, args *GetServiceCatalogsArgs, opts ...pulumi.InvokeOption) (*GetServiceCatalogsResult, error) {
 	var rv GetServiceCatalogsResult

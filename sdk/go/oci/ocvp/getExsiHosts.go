@@ -28,24 +28,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Ocvp"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Ocvp.GetExsiHosts(ctx, &ocvp.GetExsiHostsArgs{
-// 			ComputeInstanceId: pulumi.StringRef(oci_core_instance.Test_instance.Id),
-// 			DisplayName:       pulumi.StringRef(_var.Esxi_host_display_name),
-// 			SddcId:            pulumi.StringRef(oci_ocvp_sddc.Test_sddc.Id),
-// 			State:             pulumi.StringRef(_var.Esxi_host_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Ocvp.GetExsiHosts(ctx, &ocvp.GetExsiHostsArgs{
+//				ComputeInstanceId: pulumi.StringRef(oci_core_instance.Test_instance.Id),
+//				DisplayName:       pulumi.StringRef(_var.Esxi_host_display_name),
+//				SddcId:            pulumi.StringRef(oci_ocvp_sddc.Test_sddc.Id),
+//				State:             pulumi.StringRef(_var.Esxi_host_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExsiHosts(ctx *pulumi.Context, args *GetExsiHostsArgs, opts ...pulumi.InvokeOption) (*GetExsiHostsResult, error) {
 	var rv GetExsiHostsResult

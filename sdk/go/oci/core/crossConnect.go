@@ -39,34 +39,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewCrossConnect(ctx, "testCrossConnect", &Core.CrossConnectArgs{
-// 			CompartmentId:         pulumi.Any(_var.Compartment_id),
-// 			LocationName:          pulumi.Any(_var.Cross_connect_location_name),
-// 			PortSpeedShapeName:    pulumi.Any(_var.Cross_connect_port_speed_shape_name),
-// 			CrossConnectGroupId:   pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
-// 			CustomerReferenceName: pulumi.Any(_var.Cross_connect_customer_reference_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName:                          pulumi.Any(_var.Cross_connect_display_name),
-// 			FarCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NearCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewCrossConnect(ctx, "testCrossConnect", &Core.CrossConnectArgs{
+//				CompartmentId:         pulumi.Any(_var.Compartment_id),
+//				LocationName:          pulumi.Any(_var.Cross_connect_location_name),
+//				PortSpeedShapeName:    pulumi.Any(_var.Cross_connect_port_speed_shape_name),
+//				CrossConnectGroupId:   pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
+//				CustomerReferenceName: pulumi.Any(_var.Cross_connect_customer_reference_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName:                          pulumi.Any(_var.Cross_connect_display_name),
+//				FarCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NearCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -74,7 +77,9 @@ import (
 // CrossConnects can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
+//
+//	$ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
+//
 // ```
 type CrossConnect struct {
 	pulumi.CustomResourceState
@@ -311,7 +316,7 @@ func (i *CrossConnect) ToCrossConnectOutputWithContext(ctx context.Context) Cros
 // CrossConnectArrayInput is an input type that accepts CrossConnectArray and CrossConnectArrayOutput values.
 // You can construct a concrete instance of `CrossConnectArrayInput` via:
 //
-//          CrossConnectArray{ CrossConnectArgs{...} }
+//	CrossConnectArray{ CrossConnectArgs{...} }
 type CrossConnectArrayInput interface {
 	pulumi.Input
 
@@ -336,7 +341,7 @@ func (i CrossConnectArray) ToCrossConnectArrayOutputWithContext(ctx context.Cont
 // CrossConnectMapInput is an input type that accepts CrossConnectMap and CrossConnectMapOutput values.
 // You can construct a concrete instance of `CrossConnectMapInput` via:
 //
-//          CrossConnectMap{ "key": CrossConnectArgs{...} }
+//	CrossConnectMap{ "key": CrossConnectArgs{...} }
 type CrossConnectMapInput interface {
 	pulumi.Input
 

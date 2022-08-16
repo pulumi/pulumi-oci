@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetReplicationSources(ctx, &objectstorage.GetReplicationSourcesArgs{
-// 			Bucket:    _var.Replication_source_bucket,
-// 			Namespace: _var.Replication_source_namespace,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetReplicationSources(ctx, &objectstorage.GetReplicationSourcesArgs{
+//				Bucket:    _var.Replication_source_bucket,
+//				Namespace: _var.Replication_source_namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetReplicationSources(ctx *pulumi.Context, args *GetReplicationSourcesArgs, opts ...pulumi.InvokeOption) (*GetReplicationSourcesResult, error) {
 	var rv GetReplicationSourcesResult

@@ -43,6 +43,10 @@ __all__ = [
     'GetHostInsightsFilterResult',
     'GetHostInsightsHostInsightSummaryCollectionResult',
     'GetHostInsightsHostInsightSummaryCollectionItemResult',
+    'GetImportableAgentEntitiesItemResult',
+    'GetImportableAgentEntityItemResult',
+    'GetImportableComputeEntitiesItemResult',
+    'GetImportableComputeEntityItemResult',
     'GetOperationsInsightsPrivateEndpointsFilterResult',
     'GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult',
     'GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult',
@@ -2262,6 +2266,7 @@ class GetHostInsightsHostInsightSummaryCollectionResult(dict):
 class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 compute_id: str,
                  defined_tags: Mapping[str, Any],
                  enterprise_manager_bridge_id: str,
                  enterprise_manager_entity_display_name: str,
@@ -2289,6 +2294,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
         :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
@@ -2297,11 +2303,13 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param str enterprise_manager_entity_type: Enterprise Manager Entity Type
         :param str enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param str entity_source: Source of the host entity.
-        :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+        :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+               <<<<<<< ours
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_display_name: The user-friendly name for the host. The name does not have to be unique.
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
         :param str host_type: Filter by one or more host types. Possible value is EXTERNAL-HOST.
+               >>>>>>> theirs
         :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
@@ -2316,6 +2324,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param str time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_id", compute_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
@@ -2349,6 +2358,14 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2418,7 +2435,8 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> str:
         """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+        <<<<<<< ours
         """
         return pulumi.get(self, "exadata_insight_id")
 
@@ -2451,6 +2469,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     def host_type(self) -> str:
         """
         Filter by one or more host types. Possible value is EXTERNAL-HOST.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "host_type")
 
@@ -2549,6 +2568,276 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         The time the host insight was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetImportableAgentEntitiesItemResult(dict):
+    def __init__(__self__, *,
+                 entity_source: str,
+                 host_name: str,
+                 management_agent_display_name: str,
+                 management_agent_id: str,
+                 platform_type: str):
+        """
+        :param str entity_source: Source of the importable agent entity.
+        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
+        :param str management_agent_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        pulumi.set(__self__, "entity_source", entity_source)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "platform_type", platform_type)
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> str:
+        """
+        Source of the importable agent entity.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The host name. The host name is unique amongst the hosts managed by the same management agent.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="managementAgentDisplayName")
+    def management_agent_display_name(self) -> str:
+        """
+        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+        """
+        return pulumi.get(self, "management_agent_display_name")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="platformType")
+    def platform_type(self) -> str:
+        """
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        return pulumi.get(self, "platform_type")
+
+
+@pulumi.output_type
+class GetImportableAgentEntityItemResult(dict):
+    def __init__(__self__, *,
+                 entity_source: str,
+                 host_name: str,
+                 management_agent_display_name: str,
+                 management_agent_id: str,
+                 platform_type: str):
+        """
+        :param str entity_source: Source of the importable agent entity.
+        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
+        :param str management_agent_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        pulumi.set(__self__, "entity_source", entity_source)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "platform_type", platform_type)
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> str:
+        """
+        Source of the importable agent entity.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The host name. The host name is unique amongst the hosts managed by the same management agent.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="managementAgentDisplayName")
+    def management_agent_display_name(self) -> str:
+        """
+        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+        """
+        return pulumi.get(self, "management_agent_display_name")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="platformType")
+    def platform_type(self) -> str:
+        """
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        return pulumi.get(self, "platform_type")
+
+
+@pulumi.output_type
+class GetImportableComputeEntitiesItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 compute_display_name: str,
+                 compute_id: str,
+                 entity_source: str,
+                 host_name: str,
+                 platform_type: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compute_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+        :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        :param str entity_source: Source of the importable agent entity.
+        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
+        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_display_name", compute_display_name)
+        pulumi.set(__self__, "compute_id", compute_id)
+        pulumi.set(__self__, "entity_source", entity_source)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "platform_type", platform_type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeDisplayName")
+    def compute_display_name(self) -> str:
+        """
+        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_display_name")
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> str:
+        """
+        Source of the importable agent entity.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The host name. The host name is unique amongst the hosts managed by the same management agent.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="platformType")
+    def platform_type(self) -> str:
+        """
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        return pulumi.get(self, "platform_type")
+
+
+@pulumi.output_type
+class GetImportableComputeEntityItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 compute_display_name: str,
+                 compute_id: str,
+                 entity_source: str,
+                 host_name: str,
+                 platform_type: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compute_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+        :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        :param str entity_source: Source of the importable agent entity.
+        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
+        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_display_name", compute_display_name)
+        pulumi.set(__self__, "compute_id", compute_id)
+        pulumi.set(__self__, "entity_source", entity_source)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "platform_type", platform_type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeDisplayName")
+    def compute_display_name(self) -> str:
+        """
+        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_display_name")
+
+    @property
+    @pulumi.getter(name="computeId")
+    def compute_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        """
+        return pulumi.get(self, "compute_id")
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> str:
+        """
+        Source of the importable agent entity.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The host name. The host name is unique amongst the hosts managed by the same management agent.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="platformType")
+    def platform_type(self) -> str:
+        """
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        """
+        return pulumi.get(self, "platform_type")
 
 
 @pulumi.output_type

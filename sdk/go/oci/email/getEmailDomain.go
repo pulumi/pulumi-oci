@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.GetEmailDomain(ctx, &email.GetEmailDomainArgs{
-// 			EmailDomainId: oci_email_email_domain.Test_email_domain.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.GetEmailDomain(ctx, &email.GetEmailDomainArgs{
+//				EmailDomainId: oci_email_email_domain.Test_email_domain.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupEmailDomain(ctx *pulumi.Context, args *LookupEmailDomainArgs, opts ...pulumi.InvokeOption) (*LookupEmailDomainResult, error) {
 	var rv LookupEmailDomainResult

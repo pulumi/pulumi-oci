@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Sch"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Sch"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Sch.GetServiceConnector(ctx, &sch.GetServiceConnectorArgs{
-// 			ServiceConnectorId: oci_sch_service_connector.Test_service_connector.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Sch.GetServiceConnector(ctx, &sch.GetServiceConnectorArgs{
+//				ServiceConnectorId: oci_sch_service_connector.Test_service_connector.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetServiceConnector(ctx *pulumi.Context, args *GetServiceConnectorArgs, opts ...pulumi.InvokeOption) (*GetServiceConnectorResult, error) {
 	var rv GetServiceConnectorResult

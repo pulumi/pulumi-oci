@@ -27,28 +27,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.GetObjectVersions(ctx, &objectstorage.GetObjectVersionsArgs{
-// 			Bucket:     _var.Object_version_bucket,
-// 			Namespace:  _var.Object_version_namespace,
-// 			Delimiter:  pulumi.StringRef(_var.Object_version_delimiter),
-// 			End:        pulumi.StringRef(_var.Object_version_end),
-// 			Fields:     pulumi.StringRef(_var.Object_version_fields),
-// 			Prefix:     pulumi.StringRef(_var.Object_version_prefix),
-// 			Start:      pulumi.StringRef(_var.Object_version_start),
-// 			StartAfter: pulumi.StringRef(_var.Object_version_start_after),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.GetObjectVersions(ctx, &objectstorage.GetObjectVersionsArgs{
+//				Bucket:     _var.Object_version_bucket,
+//				Namespace:  _var.Object_version_namespace,
+//				Delimiter:  pulumi.StringRef(_var.Object_version_delimiter),
+//				End:        pulumi.StringRef(_var.Object_version_end),
+//				Fields:     pulumi.StringRef(_var.Object_version_fields),
+//				Prefix:     pulumi.StringRef(_var.Object_version_prefix),
+//				Start:      pulumi.StringRef(_var.Object_version_start),
+//				StartAfter: pulumi.StringRef(_var.Object_version_start_after),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetObjectVersions(ctx *pulumi.Context, args *GetObjectVersionsArgs, opts ...pulumi.InvokeOption) (*GetObjectVersionsResult, error) {
 	var rv GetObjectVersionsResult

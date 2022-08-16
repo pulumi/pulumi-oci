@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataScience.GetNotebookSession(ctx, &datascience.GetNotebookSessionArgs{
-// 			NotebookSessionId: oci_datascience_notebook_session.Test_notebook_session.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.GetNotebookSession(ctx, &datascience.GetNotebookSessionArgs{
+//				NotebookSessionId: oci_datascience_notebook_session.Test_notebook_session.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupNotebookSession(ctx *pulumi.Context, args *LookupNotebookSessionArgs, opts ...pulumi.InvokeOption) (*LookupNotebookSessionResult, error) {
 	var rv LookupNotebookSessionResult
@@ -72,6 +75,8 @@ type LookupNotebookSessionResult struct {
 	// Details for the notebook session configuration.
 	NotebookSessionConfigurationDetails []GetNotebookSessionNotebookSessionConfigurationDetail `pulumi:"notebookSessionConfigurationDetails"`
 	NotebookSessionId                   string                                                 `pulumi:"notebookSessionId"`
+	// Notebook Session runtime configuration details.
+	NotebookSessionRuntimeConfigDetails []GetNotebookSessionNotebookSessionRuntimeConfigDetail `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl string `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
@@ -171,6 +176,13 @@ func (o LookupNotebookSessionResultOutput) NotebookSessionConfigurationDetails()
 
 func (o LookupNotebookSessionResultOutput) NotebookSessionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.NotebookSessionId }).(pulumi.StringOutput)
+}
+
+// Notebook Session runtime configuration details.
+func (o LookupNotebookSessionResultOutput) NotebookSessionRuntimeConfigDetails() GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) []GetNotebookSessionNotebookSessionRuntimeConfigDetail {
+		return v.NotebookSessionRuntimeConfigDetails
+	}).(GetNotebookSessionNotebookSessionRuntimeConfigDetailArrayOutput)
 }
 
 // The URL to interact with the notebook session.

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetBuildRun(ctx, &devops.GetBuildRunArgs{
-// 			BuildRunId: oci_devops_build_run.Test_build_run.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetBuildRun(ctx, &devops.GetBuildRunArgs{
+//				BuildRunId: oci_devops_build_run.Test_build_run.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBuildRun(ctx *pulumi.Context, args *LookupBuildRunArgs, opts ...pulumi.InvokeOption) (*LookupBuildRunResult, error) {
 	var rv LookupBuildRunResult

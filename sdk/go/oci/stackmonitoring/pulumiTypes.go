@@ -28,7 +28,7 @@ type DiscoveryJobDiscoveryDetails struct {
 // DiscoveryJobDiscoveryDetailsInput is an input type that accepts DiscoveryJobDiscoveryDetailsArgs and DiscoveryJobDiscoveryDetailsOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsArgs{...}
+//	DiscoveryJobDiscoveryDetailsArgs{...}
 type DiscoveryJobDiscoveryDetailsInput interface {
 	pulumi.Input
 
@@ -74,11 +74,11 @@ func (i DiscoveryJobDiscoveryDetailsArgs) ToDiscoveryJobDiscoveryDetailsPtrOutpu
 // DiscoveryJobDiscoveryDetailsPtrInput is an input type that accepts DiscoveryJobDiscoveryDetailsArgs, DiscoveryJobDiscoveryDetailsPtr and DiscoveryJobDiscoveryDetailsPtrOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsPtrInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsArgs{...}
+//	        DiscoveryJobDiscoveryDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DiscoveryJobDiscoveryDetailsPtrInput interface {
 	pulumi.Input
 
@@ -250,7 +250,7 @@ type DiscoveryJobDiscoveryDetailsCredentials struct {
 // DiscoveryJobDiscoveryDetailsCredentialsInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsArgs and DiscoveryJobDiscoveryDetailsCredentialsOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsCredentialsArgs{...}
+//	DiscoveryJobDiscoveryDetailsCredentialsArgs{...}
 type DiscoveryJobDiscoveryDetailsCredentialsInput interface {
 	pulumi.Input
 
@@ -286,11 +286,11 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToDiscoveryJobDiscoveryDeta
 // DiscoveryJobDiscoveryDetailsCredentialsPtrInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsArgs, DiscoveryJobDiscoveryDetailsCredentialsPtr and DiscoveryJobDiscoveryDetailsCredentialsPtrOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsPtrInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsCredentialsArgs{...}
+//	        DiscoveryJobDiscoveryDetailsCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DiscoveryJobDiscoveryDetailsCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -393,7 +393,7 @@ type DiscoveryJobDiscoveryDetailsCredentialsItem struct {
 // DiscoveryJobDiscoveryDetailsCredentialsItemInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsItemArgs and DiscoveryJobDiscoveryDetailsCredentialsItemOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsItemInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsCredentialsItemArgs{...}
+//	DiscoveryJobDiscoveryDetailsCredentialsItemArgs{...}
 type DiscoveryJobDiscoveryDetailsCredentialsItemInput interface {
 	pulumi.Input
 
@@ -425,7 +425,7 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemArgs) ToDiscoveryJobDiscovery
 // DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsItemArray and DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsCredentialsItemArray{ DiscoveryJobDiscoveryDetailsCredentialsItemArgs{...} }
+//	DiscoveryJobDiscoveryDetailsCredentialsItemArray{ DiscoveryJobDiscoveryDetailsCredentialsItemArgs{...} }
 type DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput interface {
 	pulumi.Input
 
@@ -506,7 +506,7 @@ type DiscoveryJobDiscoveryDetailsCredentialsItemProperties struct {
 // DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs and DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs{...}
+//	DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs{...}
 type DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesInput interface {
 	pulumi.Input
 
@@ -560,7 +560,7 @@ type DiscoveryJobDiscoveryDetailsProperties struct {
 // DiscoveryJobDiscoveryDetailsPropertiesInput is an input type that accepts DiscoveryJobDiscoveryDetailsPropertiesArgs and DiscoveryJobDiscoveryDetailsPropertiesOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsPropertiesInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsPropertiesArgs{...}
+//	DiscoveryJobDiscoveryDetailsPropertiesArgs{...}
 type DiscoveryJobDiscoveryDetailsPropertiesInput interface {
 	pulumi.Input
 
@@ -596,11 +596,11 @@ func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetai
 // DiscoveryJobDiscoveryDetailsPropertiesPtrInput is an input type that accepts DiscoveryJobDiscoveryDetailsPropertiesArgs, DiscoveryJobDiscoveryDetailsPropertiesPtr and DiscoveryJobDiscoveryDetailsPropertiesPtrOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsPropertiesPtrInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsPropertiesArgs{...}
+//	        DiscoveryJobDiscoveryDetailsPropertiesArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DiscoveryJobDiscoveryDetailsPropertiesPtrInput interface {
 	pulumi.Input
 
@@ -697,7 +697,7 @@ type DiscoveryJobDiscoveryDetailsTags struct {
 // DiscoveryJobDiscoveryDetailsTagsInput is an input type that accepts DiscoveryJobDiscoveryDetailsTagsArgs and DiscoveryJobDiscoveryDetailsTagsOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsTagsInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsTagsArgs{...}
+//	DiscoveryJobDiscoveryDetailsTagsArgs{...}
 type DiscoveryJobDiscoveryDetailsTagsInput interface {
 	pulumi.Input
 
@@ -733,11 +733,11 @@ func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToDiscoveryJobDiscoveryDetailsTags
 // DiscoveryJobDiscoveryDetailsTagsPtrInput is an input type that accepts DiscoveryJobDiscoveryDetailsTagsArgs, DiscoveryJobDiscoveryDetailsTagsPtr and DiscoveryJobDiscoveryDetailsTagsPtrOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsTagsPtrInput` via:
 //
-//          DiscoveryJobDiscoveryDetailsTagsArgs{...}
+//	        DiscoveryJobDiscoveryDetailsTagsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DiscoveryJobDiscoveryDetailsTagsPtrInput interface {
 	pulumi.Input
 
@@ -838,7 +838,7 @@ type MonitoredResourceAliases struct {
 // MonitoredResourceAliasesInput is an input type that accepts MonitoredResourceAliasesArgs and MonitoredResourceAliasesOutput values.
 // You can construct a concrete instance of `MonitoredResourceAliasesInput` via:
 //
-//          MonitoredResourceAliasesArgs{...}
+//	MonitoredResourceAliasesArgs{...}
 type MonitoredResourceAliasesInput interface {
 	pulumi.Input
 
@@ -878,11 +878,11 @@ func (i MonitoredResourceAliasesArgs) ToMonitoredResourceAliasesPtrOutputWithCon
 // MonitoredResourceAliasesPtrInput is an input type that accepts MonitoredResourceAliasesArgs, MonitoredResourceAliasesPtr and MonitoredResourceAliasesPtrOutput values.
 // You can construct a concrete instance of `MonitoredResourceAliasesPtrInput` via:
 //
-//          MonitoredResourceAliasesArgs{...}
+//	        MonitoredResourceAliasesArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MonitoredResourceAliasesPtrInput interface {
 	pulumi.Input
 
@@ -1013,7 +1013,7 @@ type MonitoredResourceAliasesCredential struct {
 // MonitoredResourceAliasesCredentialInput is an input type that accepts MonitoredResourceAliasesCredentialArgs and MonitoredResourceAliasesCredentialOutput values.
 // You can construct a concrete instance of `MonitoredResourceAliasesCredentialInput` via:
 //
-//          MonitoredResourceAliasesCredentialArgs{...}
+//	MonitoredResourceAliasesCredentialArgs{...}
 type MonitoredResourceAliasesCredentialInput interface {
 	pulumi.Input
 
@@ -1053,11 +1053,11 @@ func (i MonitoredResourceAliasesCredentialArgs) ToMonitoredResourceAliasesCreden
 // MonitoredResourceAliasesCredentialPtrInput is an input type that accepts MonitoredResourceAliasesCredentialArgs, MonitoredResourceAliasesCredentialPtr and MonitoredResourceAliasesCredentialPtrOutput values.
 // You can construct a concrete instance of `MonitoredResourceAliasesCredentialPtrInput` via:
 //
-//          MonitoredResourceAliasesCredentialArgs{...}
+//	        MonitoredResourceAliasesCredentialArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MonitoredResourceAliasesCredentialPtrInput interface {
 	pulumi.Input
 
@@ -1196,7 +1196,7 @@ type MonitoredResourceCredentials struct {
 // MonitoredResourceCredentialsInput is an input type that accepts MonitoredResourceCredentialsArgs and MonitoredResourceCredentialsOutput values.
 // You can construct a concrete instance of `MonitoredResourceCredentialsInput` via:
 //
-//          MonitoredResourceCredentialsArgs{...}
+//	MonitoredResourceCredentialsArgs{...}
 type MonitoredResourceCredentialsInput interface {
 	pulumi.Input
 
@@ -1244,11 +1244,11 @@ func (i MonitoredResourceCredentialsArgs) ToMonitoredResourceCredentialsPtrOutpu
 // MonitoredResourceCredentialsPtrInput is an input type that accepts MonitoredResourceCredentialsArgs, MonitoredResourceCredentialsPtr and MonitoredResourceCredentialsPtrOutput values.
 // You can construct a concrete instance of `MonitoredResourceCredentialsPtrInput` via:
 //
-//          MonitoredResourceCredentialsArgs{...}
+//	        MonitoredResourceCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MonitoredResourceCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -1437,7 +1437,7 @@ type MonitoredResourceCredentialsProperty struct {
 // MonitoredResourceCredentialsPropertyInput is an input type that accepts MonitoredResourceCredentialsPropertyArgs and MonitoredResourceCredentialsPropertyOutput values.
 // You can construct a concrete instance of `MonitoredResourceCredentialsPropertyInput` via:
 //
-//          MonitoredResourceCredentialsPropertyArgs{...}
+//	MonitoredResourceCredentialsPropertyArgs{...}
 type MonitoredResourceCredentialsPropertyInput interface {
 	pulumi.Input
 
@@ -1467,7 +1467,7 @@ func (i MonitoredResourceCredentialsPropertyArgs) ToMonitoredResourceCredentials
 // MonitoredResourceCredentialsPropertyArrayInput is an input type that accepts MonitoredResourceCredentialsPropertyArray and MonitoredResourceCredentialsPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceCredentialsPropertyArrayInput` via:
 //
-//          MonitoredResourceCredentialsPropertyArray{ MonitoredResourceCredentialsPropertyArgs{...} }
+//	MonitoredResourceCredentialsPropertyArray{ MonitoredResourceCredentialsPropertyArgs{...} }
 type MonitoredResourceCredentialsPropertyArrayInput interface {
 	pulumi.Input
 
@@ -1551,7 +1551,7 @@ type MonitoredResourceDatabaseConnectionDetails struct {
 // MonitoredResourceDatabaseConnectionDetailsInput is an input type that accepts MonitoredResourceDatabaseConnectionDetailsArgs and MonitoredResourceDatabaseConnectionDetailsOutput values.
 // You can construct a concrete instance of `MonitoredResourceDatabaseConnectionDetailsInput` via:
 //
-//          MonitoredResourceDatabaseConnectionDetailsArgs{...}
+//	MonitoredResourceDatabaseConnectionDetailsArgs{...}
 type MonitoredResourceDatabaseConnectionDetailsInput interface {
 	pulumi.Input
 
@@ -1597,11 +1597,11 @@ func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToMonitoredResourceDatab
 // MonitoredResourceDatabaseConnectionDetailsPtrInput is an input type that accepts MonitoredResourceDatabaseConnectionDetailsArgs, MonitoredResourceDatabaseConnectionDetailsPtr and MonitoredResourceDatabaseConnectionDetailsPtrOutput values.
 // You can construct a concrete instance of `MonitoredResourceDatabaseConnectionDetailsPtrInput` via:
 //
-//          MonitoredResourceDatabaseConnectionDetailsArgs{...}
+//	        MonitoredResourceDatabaseConnectionDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type MonitoredResourceDatabaseConnectionDetailsPtrInput interface {
 	pulumi.Input
 
@@ -1775,7 +1775,7 @@ type MonitoredResourceProperty struct {
 // MonitoredResourcePropertyInput is an input type that accepts MonitoredResourcePropertyArgs and MonitoredResourcePropertyOutput values.
 // You can construct a concrete instance of `MonitoredResourcePropertyInput` via:
 //
-//          MonitoredResourcePropertyArgs{...}
+//	MonitoredResourcePropertyArgs{...}
 type MonitoredResourcePropertyInput interface {
 	pulumi.Input
 
@@ -1805,7 +1805,7 @@ func (i MonitoredResourcePropertyArgs) ToMonitoredResourcePropertyOutputWithCont
 // MonitoredResourcePropertyArrayInput is an input type that accepts MonitoredResourcePropertyArray and MonitoredResourcePropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcePropertyArrayInput` via:
 //
-//          MonitoredResourcePropertyArray{ MonitoredResourcePropertyArgs{...} }
+//	MonitoredResourcePropertyArray{ MonitoredResourcePropertyArgs{...} }
 type MonitoredResourcePropertyArrayInput interface {
 	pulumi.Input
 
@@ -1881,7 +1881,7 @@ type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail struc
 // MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs and MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailInput` via:
 //
-//          MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs{...}
+//	MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs{...}
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailInput interface {
 	pulumi.Input
 
@@ -1911,7 +1911,7 @@ func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArg
 // MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray and MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput` via:
 //
-//          MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray{ MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs{...} }
+//	MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray{ MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs{...} }
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -1987,7 +1987,7 @@ type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail struct {
 // MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs and MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailInput` via:
 //
-//          MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs{...}
+//	MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs{...}
 type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailInput interface {
 	pulumi.Input
 
@@ -2017,7 +2017,7 @@ func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs) To
 // MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray and MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput` via:
 //
-//          MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray{ MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs{...} }
+//	MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray{ MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs{...} }
 type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2109,7 +2109,7 @@ type MonitoredResourcesListMemberItem struct {
 // MonitoredResourcesListMemberItemInput is an input type that accepts MonitoredResourcesListMemberItemArgs and MonitoredResourcesListMemberItemOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberItemInput` via:
 //
-//          MonitoredResourcesListMemberItemArgs{...}
+//	MonitoredResourcesListMemberItemArgs{...}
 type MonitoredResourcesListMemberItemInput interface {
 	pulumi.Input
 
@@ -2155,7 +2155,7 @@ func (i MonitoredResourcesListMemberItemArgs) ToMonitoredResourcesListMemberItem
 // MonitoredResourcesListMemberItemArrayInput is an input type that accepts MonitoredResourcesListMemberItemArray and MonitoredResourcesListMemberItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberItemArrayInput` via:
 //
-//          MonitoredResourcesListMemberItemArray{ MonitoredResourcesListMemberItemArgs{...} }
+//	MonitoredResourcesListMemberItemArray{ MonitoredResourcesListMemberItemArgs{...} }
 type MonitoredResourcesListMemberItemArrayInput interface {
 	pulumi.Input
 
@@ -2279,7 +2279,7 @@ type MonitoredResourcesSearchAssociationItem struct {
 // MonitoredResourcesSearchAssociationItemInput is an input type that accepts MonitoredResourcesSearchAssociationItemArgs and MonitoredResourcesSearchAssociationItemOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemInput` via:
 //
-//          MonitoredResourcesSearchAssociationItemArgs{...}
+//	MonitoredResourcesSearchAssociationItemArgs{...}
 type MonitoredResourcesSearchAssociationItemInput interface {
 	pulumi.Input
 
@@ -2317,7 +2317,7 @@ func (i MonitoredResourcesSearchAssociationItemArgs) ToMonitoredResourcesSearchA
 // MonitoredResourcesSearchAssociationItemArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemArray and MonitoredResourcesSearchAssociationItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemArrayInput` via:
 //
-//          MonitoredResourcesSearchAssociationItemArray{ MonitoredResourcesSearchAssociationItemArgs{...} }
+//	MonitoredResourcesSearchAssociationItemArray{ MonitoredResourcesSearchAssociationItemArgs{...} }
 type MonitoredResourcesSearchAssociationItemArrayInput interface {
 	pulumi.Input
 
@@ -2417,7 +2417,7 @@ type MonitoredResourcesSearchAssociationItemDestinationResourceDetail struct {
 // MonitoredResourcesSearchAssociationItemDestinationResourceDetailInput is an input type that accepts MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs and MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemDestinationResourceDetailInput` via:
 //
-//          MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs{...}
+//	MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs{...}
 type MonitoredResourcesSearchAssociationItemDestinationResourceDetailInput interface {
 	pulumi.Input
 
@@ -2447,7 +2447,7 @@ func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs) To
 // MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray and MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput` via:
 //
-//          MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray{ MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs{...} }
+//	MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray{ MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs{...} }
 type MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2523,7 +2523,7 @@ type MonitoredResourcesSearchAssociationItemSourceResourceDetail struct {
 // MonitoredResourcesSearchAssociationItemSourceResourceDetailInput is an input type that accepts MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs and MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemSourceResourceDetailInput` via:
 //
-//          MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs{...}
+//	MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs{...}
 type MonitoredResourcesSearchAssociationItemSourceResourceDetailInput interface {
 	pulumi.Input
 
@@ -2553,7 +2553,7 @@ func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs) ToMonit
 // MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemSourceResourceDetailArray and MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput` via:
 //
-//          MonitoredResourcesSearchAssociationItemSourceResourceDetailArray{ MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs{...} }
+//	MonitoredResourcesSearchAssociationItemSourceResourceDetailArray{ MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs{...} }
 type MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput interface {
 	pulumi.Input
 
@@ -2649,7 +2649,7 @@ type MonitoredResourcesSearchItem struct {
 // MonitoredResourcesSearchItemInput is an input type that accepts MonitoredResourcesSearchItemArgs and MonitoredResourcesSearchItemOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchItemInput` via:
 //
-//          MonitoredResourcesSearchItemArgs{...}
+//	MonitoredResourcesSearchItemArgs{...}
 type MonitoredResourcesSearchItemInput interface {
 	pulumi.Input
 
@@ -2699,7 +2699,7 @@ func (i MonitoredResourcesSearchItemArgs) ToMonitoredResourcesSearchItemOutputWi
 // MonitoredResourcesSearchItemArrayInput is an input type that accepts MonitoredResourcesSearchItemArray and MonitoredResourcesSearchItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchItemArrayInput` via:
 //
-//          MonitoredResourcesSearchItemArray{ MonitoredResourcesSearchItemArgs{...} }
+//	MonitoredResourcesSearchItemArray{ MonitoredResourcesSearchItemArgs{...} }
 type MonitoredResourcesSearchItemArrayInput interface {
 	pulumi.Input
 
@@ -2833,7 +2833,7 @@ type GetDiscoveryJobDiscoveryDetail struct {
 // GetDiscoveryJobDiscoveryDetailInput is an input type that accepts GetDiscoveryJobDiscoveryDetailArgs and GetDiscoveryJobDiscoveryDetailOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailArgs{...}
+//	GetDiscoveryJobDiscoveryDetailArgs{...}
 type GetDiscoveryJobDiscoveryDetailInput interface {
 	pulumi.Input
 
@@ -2871,7 +2871,7 @@ func (i GetDiscoveryJobDiscoveryDetailArgs) ToGetDiscoveryJobDiscoveryDetailOutp
 // GetDiscoveryJobDiscoveryDetailArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailArray and GetDiscoveryJobDiscoveryDetailArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailArrayInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailArray{ GetDiscoveryJobDiscoveryDetailArgs{...} }
+//	GetDiscoveryJobDiscoveryDetailArray{ GetDiscoveryJobDiscoveryDetailArgs{...} }
 type GetDiscoveryJobDiscoveryDetailArrayInput interface {
 	pulumi.Input
 
@@ -2967,7 +2967,7 @@ type GetDiscoveryJobDiscoveryDetailCredential struct {
 // GetDiscoveryJobDiscoveryDetailCredentialInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialArgs and GetDiscoveryJobDiscoveryDetailCredentialOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailCredentialArgs{...}
+//	GetDiscoveryJobDiscoveryDetailCredentialArgs{...}
 type GetDiscoveryJobDiscoveryDetailCredentialInput interface {
 	pulumi.Input
 
@@ -2995,7 +2995,7 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialArgs) ToGetDiscoveryJobDiscovery
 // GetDiscoveryJobDiscoveryDetailCredentialArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialArray and GetDiscoveryJobDiscoveryDetailCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialArrayInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailCredentialArray{ GetDiscoveryJobDiscoveryDetailCredentialArgs{...} }
+//	GetDiscoveryJobDiscoveryDetailCredentialArray{ GetDiscoveryJobDiscoveryDetailCredentialArgs{...} }
 type GetDiscoveryJobDiscoveryDetailCredentialArrayInput interface {
 	pulumi.Input
 
@@ -3070,7 +3070,7 @@ type GetDiscoveryJobDiscoveryDetailCredentialItem struct {
 // GetDiscoveryJobDiscoveryDetailCredentialItemInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemArgs and GetDiscoveryJobDiscoveryDetailCredentialItemOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailCredentialItemArgs{...}
+//	GetDiscoveryJobDiscoveryDetailCredentialItemArgs{...}
 type GetDiscoveryJobDiscoveryDetailCredentialItemInput interface {
 	pulumi.Input
 
@@ -3102,7 +3102,7 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemArgs) ToGetDiscoveryJobDisco
 // GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemArray and GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailCredentialItemArray{ GetDiscoveryJobDiscoveryDetailCredentialItemArgs{...} }
+//	GetDiscoveryJobDiscoveryDetailCredentialItemArray{ GetDiscoveryJobDiscoveryDetailCredentialItemArgs{...} }
 type GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput interface {
 	pulumi.Input
 
@@ -3183,7 +3183,7 @@ type GetDiscoveryJobDiscoveryDetailCredentialItemProperty struct {
 // GetDiscoveryJobDiscoveryDetailCredentialItemPropertyInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs and GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemPropertyInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs{...}
+//	GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs{...}
 type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyInput interface {
 	pulumi.Input
 
@@ -3211,7 +3211,7 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs) ToGetDiscovery
 // GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray and GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray{ GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs{...} }
+//	GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray{ GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs{...} }
 type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput interface {
 	pulumi.Input
 
@@ -3282,7 +3282,7 @@ type GetDiscoveryJobDiscoveryDetailProperty struct {
 // GetDiscoveryJobDiscoveryDetailPropertyInput is an input type that accepts GetDiscoveryJobDiscoveryDetailPropertyArgs and GetDiscoveryJobDiscoveryDetailPropertyOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailPropertyInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailPropertyArgs{...}
+//	GetDiscoveryJobDiscoveryDetailPropertyArgs{...}
 type GetDiscoveryJobDiscoveryDetailPropertyInput interface {
 	pulumi.Input
 
@@ -3310,7 +3310,7 @@ func (i GetDiscoveryJobDiscoveryDetailPropertyArgs) ToGetDiscoveryJobDiscoveryDe
 // GetDiscoveryJobDiscoveryDetailPropertyArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailPropertyArray and GetDiscoveryJobDiscoveryDetailPropertyArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailPropertyArrayInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailPropertyArray{ GetDiscoveryJobDiscoveryDetailPropertyArgs{...} }
+//	GetDiscoveryJobDiscoveryDetailPropertyArray{ GetDiscoveryJobDiscoveryDetailPropertyArgs{...} }
 type GetDiscoveryJobDiscoveryDetailPropertyArrayInput interface {
 	pulumi.Input
 
@@ -3379,7 +3379,7 @@ type GetDiscoveryJobDiscoveryDetailTag struct {
 // GetDiscoveryJobDiscoveryDetailTagInput is an input type that accepts GetDiscoveryJobDiscoveryDetailTagArgs and GetDiscoveryJobDiscoveryDetailTagOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailTagInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailTagArgs{...}
+//	GetDiscoveryJobDiscoveryDetailTagArgs{...}
 type GetDiscoveryJobDiscoveryDetailTagInput interface {
 	pulumi.Input
 
@@ -3407,7 +3407,7 @@ func (i GetDiscoveryJobDiscoveryDetailTagArgs) ToGetDiscoveryJobDiscoveryDetailT
 // GetDiscoveryJobDiscoveryDetailTagArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailTagArray and GetDiscoveryJobDiscoveryDetailTagArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailTagArrayInput` via:
 //
-//          GetDiscoveryJobDiscoveryDetailTagArray{ GetDiscoveryJobDiscoveryDetailTagArgs{...} }
+//	GetDiscoveryJobDiscoveryDetailTagArray{ GetDiscoveryJobDiscoveryDetailTagArgs{...} }
 type GetDiscoveryJobDiscoveryDetailTagArrayInput interface {
 	pulumi.Input
 
@@ -3476,7 +3476,7 @@ type GetDiscoveryJobLogsDiscoveryJobLogCollection struct {
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs and GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionInput` via:
 //
-//          GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs{...}
+//	GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs{...}
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionInput interface {
 	pulumi.Input
 
@@ -3504,7 +3504,7 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs) ToGetDiscoveryJobLogsD
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionArray and GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput` via:
 //
-//          GetDiscoveryJobLogsDiscoveryJobLogCollectionArray{ GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs{...} }
+//	GetDiscoveryJobLogsDiscoveryJobLogCollectionArray{ GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs{...} }
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3581,7 +3581,7 @@ type GetDiscoveryJobLogsDiscoveryJobLogCollectionItem struct {
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionItemInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs and GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionItemInput` via:
 //
-//          GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs{...}
+//	GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs{...}
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionItemInput interface {
 	pulumi.Input
 
@@ -3615,7 +3615,7 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs) ToGetDiscoveryJobL
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray and GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput` via:
 //
-//          GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray{ GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs{...} }
+//	GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray{ GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs{...} }
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3700,7 +3700,7 @@ type GetDiscoveryJobLogsFilter struct {
 // GetDiscoveryJobLogsFilterInput is an input type that accepts GetDiscoveryJobLogsFilterArgs and GetDiscoveryJobLogsFilterOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsFilterInput` via:
 //
-//          GetDiscoveryJobLogsFilterArgs{...}
+//	GetDiscoveryJobLogsFilterArgs{...}
 type GetDiscoveryJobLogsFilterInput interface {
 	pulumi.Input
 
@@ -3729,7 +3729,7 @@ func (i GetDiscoveryJobLogsFilterArgs) ToGetDiscoveryJobLogsFilterOutputWithCont
 // GetDiscoveryJobLogsFilterArrayInput is an input type that accepts GetDiscoveryJobLogsFilterArray and GetDiscoveryJobLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsFilterArrayInput` via:
 //
-//          GetDiscoveryJobLogsFilterArray{ GetDiscoveryJobLogsFilterArgs{...} }
+//	GetDiscoveryJobLogsFilterArray{ GetDiscoveryJobLogsFilterArgs{...} }
 type GetDiscoveryJobLogsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3805,7 +3805,7 @@ type GetDiscoveryJobsDiscoveryJobCollection struct {
 // GetDiscoveryJobsDiscoveryJobCollectionInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionArgs and GetDiscoveryJobsDiscoveryJobCollectionOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionInput` via:
 //
-//          GetDiscoveryJobsDiscoveryJobCollectionArgs{...}
+//	GetDiscoveryJobsDiscoveryJobCollectionArgs{...}
 type GetDiscoveryJobsDiscoveryJobCollectionInput interface {
 	pulumi.Input
 
@@ -3833,7 +3833,7 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionArgs) ToGetDiscoveryJobsDiscoveryJ
 // GetDiscoveryJobsDiscoveryJobCollectionArrayInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionArray and GetDiscoveryJobsDiscoveryJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionArrayInput` via:
 //
-//          GetDiscoveryJobsDiscoveryJobCollectionArray{ GetDiscoveryJobsDiscoveryJobCollectionArgs{...} }
+//	GetDiscoveryJobsDiscoveryJobCollectionArray{ GetDiscoveryJobsDiscoveryJobCollectionArgs{...} }
 type GetDiscoveryJobsDiscoveryJobCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3930,7 +3930,7 @@ type GetDiscoveryJobsDiscoveryJobCollectionItem struct {
 // GetDiscoveryJobsDiscoveryJobCollectionItemInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionItemArgs and GetDiscoveryJobsDiscoveryJobCollectionItemOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionItemInput` via:
 //
-//          GetDiscoveryJobsDiscoveryJobCollectionItemArgs{...}
+//	GetDiscoveryJobsDiscoveryJobCollectionItemArgs{...}
 type GetDiscoveryJobsDiscoveryJobCollectionItemInput interface {
 	pulumi.Input
 
@@ -3984,7 +3984,7 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionItemArgs) ToGetDiscoveryJobsDiscov
 // GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionItemArray and GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput` via:
 //
-//          GetDiscoveryJobsDiscoveryJobCollectionItemArray{ GetDiscoveryJobsDiscoveryJobCollectionItemArgs{...} }
+//	GetDiscoveryJobsDiscoveryJobCollectionItemArray{ GetDiscoveryJobsDiscoveryJobCollectionItemArgs{...} }
 type GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4120,7 +4120,7 @@ type GetDiscoveryJobsFilter struct {
 // GetDiscoveryJobsFilterInput is an input type that accepts GetDiscoveryJobsFilterArgs and GetDiscoveryJobsFilterOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsFilterInput` via:
 //
-//          GetDiscoveryJobsFilterArgs{...}
+//	GetDiscoveryJobsFilterArgs{...}
 type GetDiscoveryJobsFilterInput interface {
 	pulumi.Input
 
@@ -4150,7 +4150,7 @@ func (i GetDiscoveryJobsFilterArgs) ToGetDiscoveryJobsFilterOutputWithContext(ct
 // GetDiscoveryJobsFilterArrayInput is an input type that accepts GetDiscoveryJobsFilterArray and GetDiscoveryJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsFilterArrayInput` via:
 //
-//          GetDiscoveryJobsFilterArray{ GetDiscoveryJobsFilterArgs{...} }
+//	GetDiscoveryJobsFilterArray{ GetDiscoveryJobsFilterArgs{...} }
 type GetDiscoveryJobsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4231,7 +4231,7 @@ type GetMonitoredResourceAlias struct {
 // GetMonitoredResourceAliasInput is an input type that accepts GetMonitoredResourceAliasArgs and GetMonitoredResourceAliasOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasInput` via:
 //
-//          GetMonitoredResourceAliasArgs{...}
+//	GetMonitoredResourceAliasArgs{...}
 type GetMonitoredResourceAliasInput interface {
 	pulumi.Input
 
@@ -4263,7 +4263,7 @@ func (i GetMonitoredResourceAliasArgs) ToGetMonitoredResourceAliasOutputWithCont
 // GetMonitoredResourceAliasArrayInput is an input type that accepts GetMonitoredResourceAliasArray and GetMonitoredResourceAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasArrayInput` via:
 //
-//          GetMonitoredResourceAliasArray{ GetMonitoredResourceAliasArgs{...} }
+//	GetMonitoredResourceAliasArray{ GetMonitoredResourceAliasArgs{...} }
 type GetMonitoredResourceAliasArrayInput interface {
 	pulumi.Input
 
@@ -4346,7 +4346,7 @@ type GetMonitoredResourceAliasCredential struct {
 // GetMonitoredResourceAliasCredentialInput is an input type that accepts GetMonitoredResourceAliasCredentialArgs and GetMonitoredResourceAliasCredentialOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasCredentialInput` via:
 //
-//          GetMonitoredResourceAliasCredentialArgs{...}
+//	GetMonitoredResourceAliasCredentialArgs{...}
 type GetMonitoredResourceAliasCredentialInput interface {
 	pulumi.Input
 
@@ -4378,7 +4378,7 @@ func (i GetMonitoredResourceAliasCredentialArgs) ToGetMonitoredResourceAliasCred
 // GetMonitoredResourceAliasCredentialArrayInput is an input type that accepts GetMonitoredResourceAliasCredentialArray and GetMonitoredResourceAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasCredentialArrayInput` via:
 //
-//          GetMonitoredResourceAliasCredentialArray{ GetMonitoredResourceAliasCredentialArgs{...} }
+//	GetMonitoredResourceAliasCredentialArray{ GetMonitoredResourceAliasCredentialArgs{...} }
 type GetMonitoredResourceAliasCredentialArrayInput interface {
 	pulumi.Input
 
@@ -4469,7 +4469,7 @@ type GetMonitoredResourceCredential struct {
 // GetMonitoredResourceCredentialInput is an input type that accepts GetMonitoredResourceCredentialArgs and GetMonitoredResourceCredentialOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialInput` via:
 //
-//          GetMonitoredResourceCredentialArgs{...}
+//	GetMonitoredResourceCredentialArgs{...}
 type GetMonitoredResourceCredentialInput interface {
 	pulumi.Input
 
@@ -4509,7 +4509,7 @@ func (i GetMonitoredResourceCredentialArgs) ToGetMonitoredResourceCredentialOutp
 // GetMonitoredResourceCredentialArrayInput is an input type that accepts GetMonitoredResourceCredentialArray and GetMonitoredResourceCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialArrayInput` via:
 //
-//          GetMonitoredResourceCredentialArray{ GetMonitoredResourceCredentialArgs{...} }
+//	GetMonitoredResourceCredentialArray{ GetMonitoredResourceCredentialArgs{...} }
 type GetMonitoredResourceCredentialArrayInput interface {
 	pulumi.Input
 
@@ -4610,7 +4610,7 @@ type GetMonitoredResourceCredentialProperty struct {
 // GetMonitoredResourceCredentialPropertyInput is an input type that accepts GetMonitoredResourceCredentialPropertyArgs and GetMonitoredResourceCredentialPropertyOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialPropertyInput` via:
 //
-//          GetMonitoredResourceCredentialPropertyArgs{...}
+//	GetMonitoredResourceCredentialPropertyArgs{...}
 type GetMonitoredResourceCredentialPropertyInput interface {
 	pulumi.Input
 
@@ -4640,7 +4640,7 @@ func (i GetMonitoredResourceCredentialPropertyArgs) ToGetMonitoredResourceCreden
 // GetMonitoredResourceCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourceCredentialPropertyArray and GetMonitoredResourceCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialPropertyArrayInput` via:
 //
-//          GetMonitoredResourceCredentialPropertyArray{ GetMonitoredResourceCredentialPropertyArgs{...} }
+//	GetMonitoredResourceCredentialPropertyArray{ GetMonitoredResourceCredentialPropertyArgs{...} }
 type GetMonitoredResourceCredentialPropertyArrayInput interface {
 	pulumi.Input
 
@@ -4724,7 +4724,7 @@ type GetMonitoredResourceDatabaseConnectionDetail struct {
 // GetMonitoredResourceDatabaseConnectionDetailInput is an input type that accepts GetMonitoredResourceDatabaseConnectionDetailArgs and GetMonitoredResourceDatabaseConnectionDetailOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceDatabaseConnectionDetailInput` via:
 //
-//          GetMonitoredResourceDatabaseConnectionDetailArgs{...}
+//	GetMonitoredResourceDatabaseConnectionDetailArgs{...}
 type GetMonitoredResourceDatabaseConnectionDetailInput interface {
 	pulumi.Input
 
@@ -4762,7 +4762,7 @@ func (i GetMonitoredResourceDatabaseConnectionDetailArgs) ToGetMonitoredResource
 // GetMonitoredResourceDatabaseConnectionDetailArrayInput is an input type that accepts GetMonitoredResourceDatabaseConnectionDetailArray and GetMonitoredResourceDatabaseConnectionDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceDatabaseConnectionDetailArrayInput` via:
 //
-//          GetMonitoredResourceDatabaseConnectionDetailArray{ GetMonitoredResourceDatabaseConnectionDetailArgs{...} }
+//	GetMonitoredResourceDatabaseConnectionDetailArray{ GetMonitoredResourceDatabaseConnectionDetailArgs{...} }
 type GetMonitoredResourceDatabaseConnectionDetailArrayInput interface {
 	pulumi.Input
 
@@ -4858,7 +4858,7 @@ type GetMonitoredResourceProperty struct {
 // GetMonitoredResourcePropertyInput is an input type that accepts GetMonitoredResourcePropertyArgs and GetMonitoredResourcePropertyOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcePropertyInput` via:
 //
-//          GetMonitoredResourcePropertyArgs{...}
+//	GetMonitoredResourcePropertyArgs{...}
 type GetMonitoredResourcePropertyInput interface {
 	pulumi.Input
 
@@ -4888,7 +4888,7 @@ func (i GetMonitoredResourcePropertyArgs) ToGetMonitoredResourcePropertyOutputWi
 // GetMonitoredResourcePropertyArrayInput is an input type that accepts GetMonitoredResourcePropertyArray and GetMonitoredResourcePropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcePropertyArrayInput` via:
 //
-//          GetMonitoredResourcePropertyArray{ GetMonitoredResourcePropertyArgs{...} }
+//	GetMonitoredResourcePropertyArray{ GetMonitoredResourcePropertyArgs{...} }
 type GetMonitoredResourcePropertyArrayInput interface {
 	pulumi.Input
 

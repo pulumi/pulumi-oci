@@ -12,6 +12,7 @@ import * as adm from "./adm";
 import * as aianomalydetection from "./aianomalydetection";
 import * as aivision from "./aivision";
 import * as analytics from "./analytics";
+import * as announcementsservice from "./announcementsservice";
 import * as apigateway from "./apigateway";
 import * as apm from "./apm";
 import * as apmconfig from "./apmconfig";
@@ -77,6 +78,7 @@ import * as ocvp from "./ocvp";
 import * as oda from "./oda";
 import * as onesubsription from "./onesubsription";
 import * as ons from "./ons";
+import * as opensearch from "./opensearch";
 import * as operatoraccesscontrol from "./operatoraccesscontrol";
 import * as opsi from "./opsi";
 import * as optimizer from "./optimizer";
@@ -109,6 +111,7 @@ export {
     aianomalydetection,
     aivision,
     analytics,
+    announcementsservice,
     apigateway,
     apm,
     apmconfig,
@@ -174,6 +177,7 @@ export {
     oda,
     onesubsription,
     ons,
+    opensearch,
     operatoraccesscontrol,
     opsi,
     optimizer,

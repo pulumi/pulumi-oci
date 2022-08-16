@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OneSubsription"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OneSubsription.GetBillingSchedules(ctx, &onesubsription.GetBillingSchedulesArgs{
-// 			CompartmentId:       _var.Compartment_id,
-// 			SubscriptionId:      oci_onesubscription_subscription.Test_subscription.Id,
-// 			SubscribedServiceId: pulumi.StringRef(oci_onesubscription_subscribed_service.Test_subscribed_service.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OneSubsription.GetBillingSchedules(ctx, &onesubsription.GetBillingSchedulesArgs{
+//				CompartmentId:       _var.Compartment_id,
+//				SubscriptionId:      oci_onesubscription_subscription.Test_subscription.Id,
+//				SubscribedServiceId: pulumi.StringRef(oci_onesubscription_subscribed_service.Test_subscribed_service.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBillingSchedules(ctx *pulumi.Context, args *GetBillingSchedulesArgs, opts ...pulumi.InvokeOption) (*GetBillingSchedulesResult, error) {
 	var rv GetBillingSchedulesResult

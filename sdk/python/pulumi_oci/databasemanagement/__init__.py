@@ -21,6 +21,12 @@ from .get_managed_database_attention_log_count import *
 from .get_managed_database_attention_log_counts import *
 from .get_managed_database_group import *
 from .get_managed_database_groups import *
+from .get_managed_database_optimizer_statistics_advisor_execution import *
+from .get_managed_database_optimizer_statistics_advisor_execution_script import *
+from .get_managed_database_optimizer_statistics_advisor_executions import *
+from .get_managed_database_optimizer_statistics_collection_aggregations import *
+from .get_managed_database_optimizer_statistics_collection_operation import *
+from .get_managed_database_optimizer_statistics_collection_operations import *
 from .get_managed_database_sql_tuning_advisor_task import *
 from .get_managed_database_sql_tuning_advisor_tasks import *
 from .get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison import *
@@ -32,6 +38,7 @@ from .get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan import *
 from .get_managed_database_sql_tuning_advisor_tasks_summary_report import *
 from .get_managed_database_sql_tuning_set import *
 from .get_managed_database_sql_tuning_sets import *
+from .get_managed_database_table_statistics import *
 from .get_managed_database_user import *
 from .get_managed_database_user_consumer_group_privilege import *
 from .get_managed_database_user_consumer_group_privileges import *

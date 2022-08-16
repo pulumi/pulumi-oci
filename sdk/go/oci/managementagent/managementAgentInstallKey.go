@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.NewManagementAgentInstallKey(ctx, "testManagementAgentInstallKey", &ManagementAgent.ManagementAgentInstallKeyArgs{
-// 			CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 			DisplayName:            pulumi.Any(_var.Management_agent_install_key_display_name),
-// 			AllowedKeyInstallCount: pulumi.Any(_var.Management_agent_install_key_allowed_key_install_count),
-// 			IsUnlimited:            pulumi.Any(_var.Management_agent_install_key_is_unlimited),
-// 			TimeExpires:            pulumi.Any(_var.Management_agent_install_key_time_expires),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.NewManagementAgentInstallKey(ctx, "testManagementAgentInstallKey", &ManagementAgent.ManagementAgentInstallKeyArgs{
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				DisplayName:            pulumi.Any(_var.Management_agent_install_key_display_name),
+//				AllowedKeyInstallCount: pulumi.Any(_var.Management_agent_install_key_allowed_key_install_count),
+//				IsUnlimited:            pulumi.Any(_var.Management_agent_install_key_is_unlimited),
+//				TimeExpires:            pulumi.Any(_var.Management_agent_install_key_time_expires),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // ManagementAgentInstallKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
+//
+//	$ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
+//
 // ```
 type ManagementAgentInstallKey struct {
 	pulumi.CustomResourceState
@@ -223,7 +228,7 @@ func (i *ManagementAgentInstallKey) ToManagementAgentInstallKeyOutputWithContext
 // ManagementAgentInstallKeyArrayInput is an input type that accepts ManagementAgentInstallKeyArray and ManagementAgentInstallKeyArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentInstallKeyArrayInput` via:
 //
-//          ManagementAgentInstallKeyArray{ ManagementAgentInstallKeyArgs{...} }
+//	ManagementAgentInstallKeyArray{ ManagementAgentInstallKeyArgs{...} }
 type ManagementAgentInstallKeyArrayInput interface {
 	pulumi.Input
 
@@ -248,7 +253,7 @@ func (i ManagementAgentInstallKeyArray) ToManagementAgentInstallKeyArrayOutputWi
 // ManagementAgentInstallKeyMapInput is an input type that accepts ManagementAgentInstallKeyMap and ManagementAgentInstallKeyMapOutput values.
 // You can construct a concrete instance of `ManagementAgentInstallKeyMapInput` via:
 //
-//          ManagementAgentInstallKeyMap{ "key": ManagementAgentInstallKeyArgs{...} }
+//	ManagementAgentInstallKeyMap{ "key": ManagementAgentInstallKeyArgs{...} }
 type ManagementAgentInstallKeyMapInput interface {
 	pulumi.Input
 

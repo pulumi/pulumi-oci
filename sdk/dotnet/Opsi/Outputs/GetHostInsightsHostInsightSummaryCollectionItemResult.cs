@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+        /// </summary>
+        public readonly string ComputeId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -50,7 +54,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string EntitySource;
         /// <summary>
-        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         public readonly string ExadataInsightId;
         /// <summary>
@@ -67,6 +72,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         public readonly string HostName;
         /// <summary>
         /// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public readonly string HostType;
         /// <summary>
@@ -122,6 +128,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         private GetHostInsightsHostInsightSummaryCollectionItemResult(
             string compartmentId,
 
+            string computeId,
+
             ImmutableDictionary<string, object> definedTags,
 
             string enterpriseManagerBridgeId,
@@ -173,6 +181,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             string timeUpdated)
         {
             CompartmentId = compartmentId;
+            ComputeId = computeId;
             DefinedTags = definedTags;
             EnterpriseManagerBridgeId = enterpriseManagerBridgeId;
             EnterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;

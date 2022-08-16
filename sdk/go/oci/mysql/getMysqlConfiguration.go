@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.GetMysqlConfiguration(ctx, &mysql.GetMysqlConfigurationArgs{
-// 			ConfigurationId: _var.Mysql_configuration_id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.GetMysqlConfiguration(ctx, &mysql.GetMysqlConfigurationArgs{
+//				ConfigurationId: _var.Mysql_configuration_id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetMysqlConfiguration(ctx *pulumi.Context, args *GetMysqlConfigurationArgs, opts ...pulumi.InvokeOption) (*GetMysqlConfigurationResult, error) {
 	var rv GetMysqlConfigurationResult

@@ -481,6 +481,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * 
+     */
+    @Import(name="monthlyDbServerVersion")
+    private @Nullable Output<String> monthlyDbServerVersion;
+
+    /**
+     * @return The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<String>> monthlyDbServerVersion() {
+        return Optional.ofNullable(this.monthlyDbServerVersion);
+    }
+
+    /**
      * (Updatable) The netmask for the control plane network.
      * 
      */
@@ -634,6 +649,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.maxDbNodeStorageInGbs = $.maxDbNodeStorageInGbs;
         this.maxMemoryInGbs = $.maxMemoryInGbs;
         this.memorySizeInGbs = $.memorySizeInGbs;
+        this.monthlyDbServerVersion = $.monthlyDbServerVersion;
         this.netmask = $.netmask;
         this.ntpServers = $.ntpServers;
         this.shape = $.shape;
@@ -1319,6 +1335,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             return memorySizeInGbs(Output.of(memorySizeInGbs));
+        }
+
+        /**
+         * @param monthlyDbServerVersion The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monthlyDbServerVersion(@Nullable Output<String> monthlyDbServerVersion) {
+            $.monthlyDbServerVersion = monthlyDbServerVersion;
+            return this;
+        }
+
+        /**
+         * @param monthlyDbServerVersion The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
+            return monthlyDbServerVersion(Output.of(monthlyDbServerVersion));
         }
 
         /**

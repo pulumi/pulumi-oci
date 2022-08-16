@@ -95,6 +95,12 @@ namespace Pulumi.Oci.Integration
         public Output<ImmutableArray<Outputs.IntegrationInstanceAlternateCustomEndpoint>> AlternateCustomEndpoints { get; private set; } = null!;
 
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        [Output("attachments")]
+        public Output<ImmutableArray<Outputs.IntegrationInstanceAttachment>> Attachments { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Compartment Identifier.
         /// </summary>
         [Output("compartmentId")]
@@ -135,6 +141,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("idcsAt")]
         public Output<string?> IdcsAt { get; private set; } = null!;
+
+        /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        [Output("idcsInfos")]
+        public Output<ImmutableArray<Outputs.IntegrationInstanceIdcsInfo>> IdcsInfos { get; private set; } = null!;
 
         /// <summary>
         /// The Integration Instance URL.
@@ -375,6 +387,18 @@ namespace Pulumi.Oci.Integration
             set => _alternateCustomEndpoints = value;
         }
 
+        [Input("attachments")]
+        private InputList<Inputs.IntegrationInstanceAttachmentGetArgs>? _attachments;
+
+        /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public InputList<Inputs.IntegrationInstanceAttachmentGetArgs> Attachments
+        {
+            get => _attachments ?? (_attachments = new InputList<Inputs.IntegrationInstanceAttachmentGetArgs>());
+            set => _attachments = value;
+        }
+
         /// <summary>
         /// (Updatable) Compartment Identifier.
         /// </summary>
@@ -428,6 +452,18 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("idcsAt")]
         public Input<string>? IdcsAt { get; set; }
+
+        [Input("idcsInfos")]
+        private InputList<Inputs.IntegrationInstanceIdcsInfoGetArgs>? _idcsInfos;
+
+        /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        public InputList<Inputs.IntegrationInstanceIdcsInfoGetArgs> IdcsInfos
+        {
+            get => _idcsInfos ?? (_idcsInfos = new InputList<Inputs.IntegrationInstanceIdcsInfoGetArgs>());
+            set => _idcsInfos = value;
+        }
 
         /// <summary>
         /// The Integration Instance URL.

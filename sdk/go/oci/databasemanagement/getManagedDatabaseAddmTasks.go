@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseAddmTasks(ctx, &databasemanagement.GetManagedDatabaseAddmTasksArgs{
-// 			ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-// 			TimeEnd:           _var.Managed_database_addm_task_time_end,
-// 			TimeStart:         _var.Managed_database_addm_task_time_start,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseAddmTasks(ctx, &databasemanagement.GetManagedDatabaseAddmTasksArgs{
+//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				TimeEnd:           _var.Managed_database_addm_task_time_end,
+//				TimeStart:         _var.Managed_database_addm_task_time_start,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagedDatabaseAddmTasks(ctx *pulumi.Context, args *GetManagedDatabaseAddmTasksArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseAddmTasksResult, error) {
 	var rv GetManagedDatabaseAddmTasksResult

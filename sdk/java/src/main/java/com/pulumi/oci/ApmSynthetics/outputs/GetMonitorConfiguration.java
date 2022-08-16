@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationReqAuthenticationDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationRequestHeader;
@@ -21,6 +22,11 @@ public final class GetMonitorConfiguration {
      * 
      */
     private final String configType;
+    /**
+     * @return Dns settings.
+     * 
+     */
+    private final List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
@@ -90,6 +96,7 @@ public final class GetMonitorConfiguration {
     @CustomType.Constructor
     private GetMonitorConfiguration(
         @CustomType.Parameter("configType") String configType,
+        @CustomType.Parameter("dnsConfigurations") List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations,
         @CustomType.Parameter("isCertificateValidationEnabled") Boolean isCertificateValidationEnabled,
         @CustomType.Parameter("isFailureRetried") Boolean isFailureRetried,
         @CustomType.Parameter("isRedirectionEnabled") Boolean isRedirectionEnabled,
@@ -104,6 +111,7 @@ public final class GetMonitorConfiguration {
         @CustomType.Parameter("verifyResponseContent") String verifyResponseContent,
         @CustomType.Parameter("verifyTexts") List<GetMonitorConfigurationVerifyText> verifyTexts) {
         this.configType = configType;
+        this.dnsConfigurations = dnsConfigurations;
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
         this.isFailureRetried = isFailureRetried;
         this.isRedirectionEnabled = isRedirectionEnabled;
@@ -125,6 +133,13 @@ public final class GetMonitorConfiguration {
      */
     public String configType() {
         return this.configType;
+    }
+    /**
+     * @return Dns settings.
+     * 
+     */
+    public List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations() {
+        return this.dnsConfigurations;
     }
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -228,6 +243,7 @@ public final class GetMonitorConfiguration {
 
     public static final class Builder {
         private String configType;
+        private List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
         private Boolean isCertificateValidationEnabled;
         private Boolean isFailureRetried;
         private Boolean isRedirectionEnabled;
@@ -249,6 +265,7 @@ public final class GetMonitorConfiguration {
         public Builder(GetMonitorConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configType = defaults.configType;
+    	      this.dnsConfigurations = defaults.dnsConfigurations;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
     	      this.isRedirectionEnabled = defaults.isRedirectionEnabled;
@@ -267,6 +284,13 @@ public final class GetMonitorConfiguration {
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
             return this;
+        }
+        public Builder dnsConfigurations(List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations) {
+            this.dnsConfigurations = Objects.requireNonNull(dnsConfigurations);
+            return this;
+        }
+        public Builder dnsConfigurations(GetMonitorConfigurationDnsConfiguration... dnsConfigurations) {
+            return dnsConfigurations(List.of(dnsConfigurations));
         }
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
             this.isCertificateValidationEnabled = Objects.requireNonNull(isCertificateValidationEnabled);
@@ -338,7 +362,7 @@ public final class GetMonitorConfiguration {
         public Builder verifyTexts(GetMonitorConfigurationVerifyText... verifyTexts) {
             return verifyTexts(List.of(verifyTexts));
         }        public GetMonitorConfiguration build() {
-            return new GetMonitorConfiguration(configType, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfigurations, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
+            return new GetMonitorConfiguration(configType, dnsConfigurations, isCertificateValidationEnabled, isFailureRetried, isRedirectionEnabled, networkConfigurations, reqAuthenticationDetails, reqAuthenticationScheme, requestHeaders, requestMethod, requestPostBody, requestQueryParams, verifyResponseCodes, verifyResponseContent, verifyTexts);
         }
     }
 }

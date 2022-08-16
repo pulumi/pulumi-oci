@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.GetAcceptedAgreement(ctx, &marketplace.GetAcceptedAgreementArgs{
-// 			AcceptedAgreementId: oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.GetAcceptedAgreement(ctx, &marketplace.GetAcceptedAgreementArgs{
+//				AcceptedAgreementId: oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAcceptedAgreement(ctx *pulumi.Context, args *LookupAcceptedAgreementArgs, opts ...pulumi.InvokeOption) (*LookupAcceptedAgreementResult, error) {
 	var rv LookupAcceptedAgreementResult

@@ -32,22 +32,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewSwiftPassword(ctx, "testSwiftPassword", &Identity.SwiftPasswordArgs{
-// 			Description: pulumi.Any(_var.Swift_password_description),
-// 			UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewSwiftPassword(ctx, "testSwiftPassword", &Identity.SwiftPasswordArgs{
+//				Description: pulumi.Any(_var.Swift_password_description),
+//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // SwiftPasswords can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/swiftPassword:SwiftPassword test_swift_password "users/{userId}/swiftPasswords/{swiftPasswordId}"
+//
+//	$ pulumi import oci:Identity/swiftPassword:SwiftPassword test_swift_password "users/{userId}/swiftPasswords/{swiftPasswordId}"
+//
 // ```
 type SwiftPassword struct {
 	pulumi.CustomResourceState
@@ -189,7 +194,7 @@ func (i *SwiftPassword) ToSwiftPasswordOutputWithContext(ctx context.Context) Sw
 // SwiftPasswordArrayInput is an input type that accepts SwiftPasswordArray and SwiftPasswordArrayOutput values.
 // You can construct a concrete instance of `SwiftPasswordArrayInput` via:
 //
-//          SwiftPasswordArray{ SwiftPasswordArgs{...} }
+//	SwiftPasswordArray{ SwiftPasswordArgs{...} }
 type SwiftPasswordArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +219,7 @@ func (i SwiftPasswordArray) ToSwiftPasswordArrayOutputWithContext(ctx context.Co
 // SwiftPasswordMapInput is an input type that accepts SwiftPasswordMap and SwiftPasswordMapOutput values.
 // You can construct a concrete instance of `SwiftPasswordMapInput` via:
 //
-//          SwiftPasswordMap{ "key": SwiftPasswordArgs{...} }
+//	SwiftPasswordMap{ "key": SwiftPasswordArgs{...} }
 type SwiftPasswordMapInput interface {
 	pulumi.Input
 

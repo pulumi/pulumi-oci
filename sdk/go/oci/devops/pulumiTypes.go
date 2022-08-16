@@ -18,7 +18,7 @@ type BuildPipelineBuildPipelineParameters struct {
 // BuildPipelineBuildPipelineParametersInput is an input type that accepts BuildPipelineBuildPipelineParametersArgs and BuildPipelineBuildPipelineParametersOutput values.
 // You can construct a concrete instance of `BuildPipelineBuildPipelineParametersInput` via:
 //
-//          BuildPipelineBuildPipelineParametersArgs{...}
+//	BuildPipelineBuildPipelineParametersArgs{...}
 type BuildPipelineBuildPipelineParametersInput interface {
 	pulumi.Input
 
@@ -54,11 +54,11 @@ func (i BuildPipelineBuildPipelineParametersArgs) ToBuildPipelineBuildPipelinePa
 // BuildPipelineBuildPipelineParametersPtrInput is an input type that accepts BuildPipelineBuildPipelineParametersArgs, BuildPipelineBuildPipelineParametersPtr and BuildPipelineBuildPipelineParametersPtrOutput values.
 // You can construct a concrete instance of `BuildPipelineBuildPipelineParametersPtrInput` via:
 //
-//          BuildPipelineBuildPipelineParametersArgs{...}
+//	        BuildPipelineBuildPipelineParametersArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildPipelineBuildPipelineParametersPtrInput interface {
 	pulumi.Input
 
@@ -161,7 +161,7 @@ type BuildPipelineBuildPipelineParametersItem struct {
 // BuildPipelineBuildPipelineParametersItemInput is an input type that accepts BuildPipelineBuildPipelineParametersItemArgs and BuildPipelineBuildPipelineParametersItemOutput values.
 // You can construct a concrete instance of `BuildPipelineBuildPipelineParametersItemInput` via:
 //
-//          BuildPipelineBuildPipelineParametersItemArgs{...}
+//	BuildPipelineBuildPipelineParametersItemArgs{...}
 type BuildPipelineBuildPipelineParametersItemInput interface {
 	pulumi.Input
 
@@ -193,7 +193,7 @@ func (i BuildPipelineBuildPipelineParametersItemArgs) ToBuildPipelineBuildPipeli
 // BuildPipelineBuildPipelineParametersItemArrayInput is an input type that accepts BuildPipelineBuildPipelineParametersItemArray and BuildPipelineBuildPipelineParametersItemArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineBuildPipelineParametersItemArrayInput` via:
 //
-//          BuildPipelineBuildPipelineParametersItemArray{ BuildPipelineBuildPipelineParametersItemArgs{...} }
+//	BuildPipelineBuildPipelineParametersItemArray{ BuildPipelineBuildPipelineParametersItemArgs{...} }
 type BuildPipelineBuildPipelineParametersItemArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +272,7 @@ type BuildPipelineStageBuildPipelineStagePredecessorCollection struct {
 // BuildPipelineStageBuildPipelineStagePredecessorCollectionInput is an input type that accepts BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs and BuildPipelineStageBuildPipelineStagePredecessorCollectionOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildPipelineStagePredecessorCollectionInput` via:
 //
-//          BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...}
+//	BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...}
 type BuildPipelineStageBuildPipelineStagePredecessorCollectionInput interface {
 	pulumi.Input
 
@@ -308,11 +308,11 @@ func (i BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs) ToBuildPi
 // BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrInput is an input type that accepts BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs, BuildPipelineStageBuildPipelineStagePredecessorCollectionPtr and BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrInput` via:
 //
-//          BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...}
+//	        BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrInput interface {
 	pulumi.Input
 
@@ -411,7 +411,7 @@ type BuildPipelineStageBuildPipelineStagePredecessorCollectionItem struct {
 // BuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput is an input type that accepts BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs and BuildPipelineStageBuildPipelineStagePredecessorCollectionItemOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput` via:
 //
-//          BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...}
+//	BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...}
 type BuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput interface {
 	pulumi.Input
 
@@ -439,7 +439,7 @@ func (i BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs) ToBui
 // BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput is an input type that accepts BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray and BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput` via:
 //
-//          BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{ BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...} }
+//	BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{ BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...} }
 type BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -508,7 +508,7 @@ type BuildPipelineStageBuildSourceCollection struct {
 // BuildPipelineStageBuildSourceCollectionInput is an input type that accepts BuildPipelineStageBuildSourceCollectionArgs and BuildPipelineStageBuildSourceCollectionOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildSourceCollectionInput` via:
 //
-//          BuildPipelineStageBuildSourceCollectionArgs{...}
+//	BuildPipelineStageBuildSourceCollectionArgs{...}
 type BuildPipelineStageBuildSourceCollectionInput interface {
 	pulumi.Input
 
@@ -544,11 +544,11 @@ func (i BuildPipelineStageBuildSourceCollectionArgs) ToBuildPipelineStageBuildSo
 // BuildPipelineStageBuildSourceCollectionPtrInput is an input type that accepts BuildPipelineStageBuildSourceCollectionArgs, BuildPipelineStageBuildSourceCollectionPtr and BuildPipelineStageBuildSourceCollectionPtrOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildSourceCollectionPtrInput` via:
 //
-//          BuildPipelineStageBuildSourceCollectionArgs{...}
+//	        BuildPipelineStageBuildSourceCollectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildPipelineStageBuildSourceCollectionPtrInput interface {
 	pulumi.Input
 
@@ -642,7 +642,7 @@ func (o BuildPipelineStageBuildSourceCollectionPtrOutput) Items() BuildPipelineS
 type BuildPipelineStageBuildSourceCollectionItem struct {
 	// (Updatable) Branch name.
 	Branch *string `pulumi:"branch"`
-	// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+	// (Updatable) Connection identifier pertinent to Bitbucket Server source provider
 	ConnectionId *string `pulumi:"connectionId"`
 	// (Updatable) The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
@@ -657,7 +657,7 @@ type BuildPipelineStageBuildSourceCollectionItem struct {
 // BuildPipelineStageBuildSourceCollectionItemInput is an input type that accepts BuildPipelineStageBuildSourceCollectionItemArgs and BuildPipelineStageBuildSourceCollectionItemOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildSourceCollectionItemInput` via:
 //
-//          BuildPipelineStageBuildSourceCollectionItemArgs{...}
+//	BuildPipelineStageBuildSourceCollectionItemArgs{...}
 type BuildPipelineStageBuildSourceCollectionItemInput interface {
 	pulumi.Input
 
@@ -668,7 +668,7 @@ type BuildPipelineStageBuildSourceCollectionItemInput interface {
 type BuildPipelineStageBuildSourceCollectionItemArgs struct {
 	// (Updatable) Branch name.
 	Branch pulumi.StringPtrInput `pulumi:"branch"`
-	// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+	// (Updatable) Connection identifier pertinent to Bitbucket Server source provider
 	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
 	// (Updatable) The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
@@ -695,7 +695,7 @@ func (i BuildPipelineStageBuildSourceCollectionItemArgs) ToBuildPipelineStageBui
 // BuildPipelineStageBuildSourceCollectionItemArrayInput is an input type that accepts BuildPipelineStageBuildSourceCollectionItemArray and BuildPipelineStageBuildSourceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineStageBuildSourceCollectionItemArrayInput` via:
 //
-//          BuildPipelineStageBuildSourceCollectionItemArray{ BuildPipelineStageBuildSourceCollectionItemArgs{...} }
+//	BuildPipelineStageBuildSourceCollectionItemArray{ BuildPipelineStageBuildSourceCollectionItemArgs{...} }
 type BuildPipelineStageBuildSourceCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -736,7 +736,7 @@ func (o BuildPipelineStageBuildSourceCollectionItemOutput) Branch() pulumi.Strin
 	return o.ApplyT(func(v BuildPipelineStageBuildSourceCollectionItem) *string { return v.Branch }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
+// (Updatable) Connection identifier pertinent to Bitbucket Server source provider
 func (o BuildPipelineStageBuildSourceCollectionItemOutput) ConnectionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildPipelineStageBuildSourceCollectionItem) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
 }
@@ -789,7 +789,7 @@ type BuildPipelineStageDeliverArtifactCollection struct {
 // BuildPipelineStageDeliverArtifactCollectionInput is an input type that accepts BuildPipelineStageDeliverArtifactCollectionArgs and BuildPipelineStageDeliverArtifactCollectionOutput values.
 // You can construct a concrete instance of `BuildPipelineStageDeliverArtifactCollectionInput` via:
 //
-//          BuildPipelineStageDeliverArtifactCollectionArgs{...}
+//	BuildPipelineStageDeliverArtifactCollectionArgs{...}
 type BuildPipelineStageDeliverArtifactCollectionInput interface {
 	pulumi.Input
 
@@ -825,11 +825,11 @@ func (i BuildPipelineStageDeliverArtifactCollectionArgs) ToBuildPipelineStageDel
 // BuildPipelineStageDeliverArtifactCollectionPtrInput is an input type that accepts BuildPipelineStageDeliverArtifactCollectionArgs, BuildPipelineStageDeliverArtifactCollectionPtr and BuildPipelineStageDeliverArtifactCollectionPtrOutput values.
 // You can construct a concrete instance of `BuildPipelineStageDeliverArtifactCollectionPtrInput` via:
 //
-//          BuildPipelineStageDeliverArtifactCollectionArgs{...}
+//	        BuildPipelineStageDeliverArtifactCollectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildPipelineStageDeliverArtifactCollectionPtrInput interface {
 	pulumi.Input
 
@@ -930,7 +930,7 @@ type BuildPipelineStageDeliverArtifactCollectionItem struct {
 // BuildPipelineStageDeliverArtifactCollectionItemInput is an input type that accepts BuildPipelineStageDeliverArtifactCollectionItemArgs and BuildPipelineStageDeliverArtifactCollectionItemOutput values.
 // You can construct a concrete instance of `BuildPipelineStageDeliverArtifactCollectionItemInput` via:
 //
-//          BuildPipelineStageDeliverArtifactCollectionItemArgs{...}
+//	BuildPipelineStageDeliverArtifactCollectionItemArgs{...}
 type BuildPipelineStageDeliverArtifactCollectionItemInput interface {
 	pulumi.Input
 
@@ -960,7 +960,7 @@ func (i BuildPipelineStageDeliverArtifactCollectionItemArgs) ToBuildPipelineStag
 // BuildPipelineStageDeliverArtifactCollectionItemArrayInput is an input type that accepts BuildPipelineStageDeliverArtifactCollectionItemArray and BuildPipelineStageDeliverArtifactCollectionItemArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineStageDeliverArtifactCollectionItemArrayInput` via:
 //
-//          BuildPipelineStageDeliverArtifactCollectionItemArray{ BuildPipelineStageDeliverArtifactCollectionItemArgs{...} }
+//	BuildPipelineStageDeliverArtifactCollectionItemArray{ BuildPipelineStageDeliverArtifactCollectionItemArgs{...} }
 type BuildPipelineStageDeliverArtifactCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1026,6 +1026,181 @@ func (o BuildPipelineStageDeliverArtifactCollectionItemArrayOutput) Index(i pulu
 	}).(BuildPipelineStageDeliverArtifactCollectionItemOutput)
 }
 
+type BuildPipelineStagePrivateAccessConfig struct {
+	// (Updatable) Network channel type.
+	NetworkChannelType string `pulumi:"networkChannelType"`
+	// (Updatable) An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// BuildPipelineStagePrivateAccessConfigInput is an input type that accepts BuildPipelineStagePrivateAccessConfigArgs and BuildPipelineStagePrivateAccessConfigOutput values.
+// You can construct a concrete instance of `BuildPipelineStagePrivateAccessConfigInput` via:
+//
+//	BuildPipelineStagePrivateAccessConfigArgs{...}
+type BuildPipelineStagePrivateAccessConfigInput interface {
+	pulumi.Input
+
+	ToBuildPipelineStagePrivateAccessConfigOutput() BuildPipelineStagePrivateAccessConfigOutput
+	ToBuildPipelineStagePrivateAccessConfigOutputWithContext(context.Context) BuildPipelineStagePrivateAccessConfigOutput
+}
+
+type BuildPipelineStagePrivateAccessConfigArgs struct {
+	// (Updatable) Network channel type.
+	NetworkChannelType pulumi.StringInput `pulumi:"networkChannelType"`
+	// (Updatable) An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (BuildPipelineStagePrivateAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (i BuildPipelineStagePrivateAccessConfigArgs) ToBuildPipelineStagePrivateAccessConfigOutput() BuildPipelineStagePrivateAccessConfigOutput {
+	return i.ToBuildPipelineStagePrivateAccessConfigOutputWithContext(context.Background())
+}
+
+func (i BuildPipelineStagePrivateAccessConfigArgs) ToBuildPipelineStagePrivateAccessConfigOutputWithContext(ctx context.Context) BuildPipelineStagePrivateAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStagePrivateAccessConfigOutput)
+}
+
+func (i BuildPipelineStagePrivateAccessConfigArgs) ToBuildPipelineStagePrivateAccessConfigPtrOutput() BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return i.ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BuildPipelineStagePrivateAccessConfigArgs) ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStagePrivateAccessConfigOutput).ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(ctx)
+}
+
+// BuildPipelineStagePrivateAccessConfigPtrInput is an input type that accepts BuildPipelineStagePrivateAccessConfigArgs, BuildPipelineStagePrivateAccessConfigPtr and BuildPipelineStagePrivateAccessConfigPtrOutput values.
+// You can construct a concrete instance of `BuildPipelineStagePrivateAccessConfigPtrInput` via:
+//
+//	        BuildPipelineStagePrivateAccessConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type BuildPipelineStagePrivateAccessConfigPtrInput interface {
+	pulumi.Input
+
+	ToBuildPipelineStagePrivateAccessConfigPtrOutput() BuildPipelineStagePrivateAccessConfigPtrOutput
+	ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(context.Context) BuildPipelineStagePrivateAccessConfigPtrOutput
+}
+
+type buildPipelineStagePrivateAccessConfigPtrType BuildPipelineStagePrivateAccessConfigArgs
+
+func BuildPipelineStagePrivateAccessConfigPtr(v *BuildPipelineStagePrivateAccessConfigArgs) BuildPipelineStagePrivateAccessConfigPtrInput {
+	return (*buildPipelineStagePrivateAccessConfigPtrType)(v)
+}
+
+func (*buildPipelineStagePrivateAccessConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (i *buildPipelineStagePrivateAccessConfigPtrType) ToBuildPipelineStagePrivateAccessConfigPtrOutput() BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return i.ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *buildPipelineStagePrivateAccessConfigPtrType) ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStagePrivateAccessConfigPtrOutput)
+}
+
+type BuildPipelineStagePrivateAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (BuildPipelineStagePrivateAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (o BuildPipelineStagePrivateAccessConfigOutput) ToBuildPipelineStagePrivateAccessConfigOutput() BuildPipelineStagePrivateAccessConfigOutput {
+	return o
+}
+
+func (o BuildPipelineStagePrivateAccessConfigOutput) ToBuildPipelineStagePrivateAccessConfigOutputWithContext(ctx context.Context) BuildPipelineStagePrivateAccessConfigOutput {
+	return o
+}
+
+func (o BuildPipelineStagePrivateAccessConfigOutput) ToBuildPipelineStagePrivateAccessConfigPtrOutput() BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return o.ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BuildPipelineStagePrivateAccessConfigOutput) ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BuildPipelineStagePrivateAccessConfig) *BuildPipelineStagePrivateAccessConfig {
+		return &v
+	}).(BuildPipelineStagePrivateAccessConfigPtrOutput)
+}
+
+// (Updatable) Network channel type.
+func (o BuildPipelineStagePrivateAccessConfigOutput) NetworkChannelType() pulumi.StringOutput {
+	return o.ApplyT(func(v BuildPipelineStagePrivateAccessConfig) string { return v.NetworkChannelType }).(pulumi.StringOutput)
+}
+
+// (Updatable) An array of network security group OCIDs.
+func (o BuildPipelineStagePrivateAccessConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BuildPipelineStagePrivateAccessConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o BuildPipelineStagePrivateAccessConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v BuildPipelineStagePrivateAccessConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type BuildPipelineStagePrivateAccessConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BuildPipelineStagePrivateAccessConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (o BuildPipelineStagePrivateAccessConfigPtrOutput) ToBuildPipelineStagePrivateAccessConfigPtrOutput() BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return o
+}
+
+func (o BuildPipelineStagePrivateAccessConfigPtrOutput) ToBuildPipelineStagePrivateAccessConfigPtrOutputWithContext(ctx context.Context) BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return o
+}
+
+func (o BuildPipelineStagePrivateAccessConfigPtrOutput) Elem() BuildPipelineStagePrivateAccessConfigOutput {
+	return o.ApplyT(func(v *BuildPipelineStagePrivateAccessConfig) BuildPipelineStagePrivateAccessConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BuildPipelineStagePrivateAccessConfig
+		return ret
+	}).(BuildPipelineStagePrivateAccessConfigOutput)
+}
+
+// (Updatable) Network channel type.
+func (o BuildPipelineStagePrivateAccessConfigPtrOutput) NetworkChannelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStagePrivateAccessConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkChannelType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array of network security group OCIDs.
+func (o BuildPipelineStagePrivateAccessConfigPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *BuildPipelineStagePrivateAccessConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o BuildPipelineStagePrivateAccessConfigPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStagePrivateAccessConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
 type BuildPipelineStageWaitCriteria struct {
 	// (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
 	WaitDuration string `pulumi:"waitDuration"`
@@ -1036,7 +1211,7 @@ type BuildPipelineStageWaitCriteria struct {
 // BuildPipelineStageWaitCriteriaInput is an input type that accepts BuildPipelineStageWaitCriteriaArgs and BuildPipelineStageWaitCriteriaOutput values.
 // You can construct a concrete instance of `BuildPipelineStageWaitCriteriaInput` via:
 //
-//          BuildPipelineStageWaitCriteriaArgs{...}
+//	BuildPipelineStageWaitCriteriaArgs{...}
 type BuildPipelineStageWaitCriteriaInput interface {
 	pulumi.Input
 
@@ -1074,11 +1249,11 @@ func (i BuildPipelineStageWaitCriteriaArgs) ToBuildPipelineStageWaitCriteriaPtrO
 // BuildPipelineStageWaitCriteriaPtrInput is an input type that accepts BuildPipelineStageWaitCriteriaArgs, BuildPipelineStageWaitCriteriaPtr and BuildPipelineStageWaitCriteriaPtrOutput values.
 // You can construct a concrete instance of `BuildPipelineStageWaitCriteriaPtrInput` via:
 //
-//          BuildPipelineStageWaitCriteriaArgs{...}
+//	        BuildPipelineStageWaitCriteriaArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildPipelineStageWaitCriteriaPtrInput interface {
 	pulumi.Input
 
@@ -1196,7 +1371,7 @@ type BuildRunBuildOutput struct {
 // BuildRunBuildOutputInput is an input type that accepts BuildRunBuildOutputArgs and BuildRunBuildOutputOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputInput` via:
 //
-//          BuildRunBuildOutputArgs{...}
+//	BuildRunBuildOutputArgs{...}
 type BuildRunBuildOutputInput interface {
 	pulumi.Input
 
@@ -1230,7 +1405,7 @@ func (i BuildRunBuildOutputArgs) ToBuildRunBuildOutputOutputWithContext(ctx cont
 // BuildRunBuildOutputArrayInput is an input type that accepts BuildRunBuildOutputArray and BuildRunBuildOutputArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputArrayInput` via:
 //
-//          BuildRunBuildOutputArray{ BuildRunBuildOutputArgs{...} }
+//	BuildRunBuildOutputArray{ BuildRunBuildOutputArgs{...} }
 type BuildRunBuildOutputArrayInput interface {
 	pulumi.Input
 
@@ -1318,7 +1493,7 @@ type BuildRunBuildOutputArtifactOverrideParameter struct {
 // BuildRunBuildOutputArtifactOverrideParameterInput is an input type that accepts BuildRunBuildOutputArtifactOverrideParameterArgs and BuildRunBuildOutputArtifactOverrideParameterOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputArtifactOverrideParameterInput` via:
 //
-//          BuildRunBuildOutputArtifactOverrideParameterArgs{...}
+//	BuildRunBuildOutputArtifactOverrideParameterArgs{...}
 type BuildRunBuildOutputArtifactOverrideParameterInput interface {
 	pulumi.Input
 
@@ -1346,7 +1521,7 @@ func (i BuildRunBuildOutputArtifactOverrideParameterArgs) ToBuildRunBuildOutputA
 // BuildRunBuildOutputArtifactOverrideParameterArrayInput is an input type that accepts BuildRunBuildOutputArtifactOverrideParameterArray and BuildRunBuildOutputArtifactOverrideParameterArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputArtifactOverrideParameterArrayInput` via:
 //
-//          BuildRunBuildOutputArtifactOverrideParameterArray{ BuildRunBuildOutputArtifactOverrideParameterArgs{...} }
+//	BuildRunBuildOutputArtifactOverrideParameterArray{ BuildRunBuildOutputArtifactOverrideParameterArgs{...} }
 type BuildRunBuildOutputArtifactOverrideParameterArrayInput interface {
 	pulumi.Input
 
@@ -1421,7 +1596,7 @@ type BuildRunBuildOutputArtifactOverrideParameterItem struct {
 // BuildRunBuildOutputArtifactOverrideParameterItemInput is an input type that accepts BuildRunBuildOutputArtifactOverrideParameterItemArgs and BuildRunBuildOutputArtifactOverrideParameterItemOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputArtifactOverrideParameterItemInput` via:
 //
-//          BuildRunBuildOutputArtifactOverrideParameterItemArgs{...}
+//	BuildRunBuildOutputArtifactOverrideParameterItemArgs{...}
 type BuildRunBuildOutputArtifactOverrideParameterItemInput interface {
 	pulumi.Input
 
@@ -1453,7 +1628,7 @@ func (i BuildRunBuildOutputArtifactOverrideParameterItemArgs) ToBuildRunBuildOut
 // BuildRunBuildOutputArtifactOverrideParameterItemArrayInput is an input type that accepts BuildRunBuildOutputArtifactOverrideParameterItemArray and BuildRunBuildOutputArtifactOverrideParameterItemArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputArtifactOverrideParameterItemArrayInput` via:
 //
-//          BuildRunBuildOutputArtifactOverrideParameterItemArray{ BuildRunBuildOutputArtifactOverrideParameterItemArgs{...} }
+//	BuildRunBuildOutputArtifactOverrideParameterItemArray{ BuildRunBuildOutputArtifactOverrideParameterItemArgs{...} }
 type BuildRunBuildOutputArtifactOverrideParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -1532,7 +1707,7 @@ type BuildRunBuildOutputDeliveredArtifact struct {
 // BuildRunBuildOutputDeliveredArtifactInput is an input type that accepts BuildRunBuildOutputDeliveredArtifactArgs and BuildRunBuildOutputDeliveredArtifactOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputDeliveredArtifactInput` via:
 //
-//          BuildRunBuildOutputDeliveredArtifactArgs{...}
+//	BuildRunBuildOutputDeliveredArtifactArgs{...}
 type BuildRunBuildOutputDeliveredArtifactInput interface {
 	pulumi.Input
 
@@ -1560,7 +1735,7 @@ func (i BuildRunBuildOutputDeliveredArtifactArgs) ToBuildRunBuildOutputDelivered
 // BuildRunBuildOutputDeliveredArtifactArrayInput is an input type that accepts BuildRunBuildOutputDeliveredArtifactArray and BuildRunBuildOutputDeliveredArtifactArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputDeliveredArtifactArrayInput` via:
 //
-//          BuildRunBuildOutputDeliveredArtifactArray{ BuildRunBuildOutputDeliveredArtifactArgs{...} }
+//	BuildRunBuildOutputDeliveredArtifactArray{ BuildRunBuildOutputDeliveredArtifactArgs{...} }
 type BuildRunBuildOutputDeliveredArtifactArrayInput interface {
 	pulumi.Input
 
@@ -1647,7 +1822,7 @@ type BuildRunBuildOutputDeliveredArtifactItem struct {
 // BuildRunBuildOutputDeliveredArtifactItemInput is an input type that accepts BuildRunBuildOutputDeliveredArtifactItemArgs and BuildRunBuildOutputDeliveredArtifactItemOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputDeliveredArtifactItemInput` via:
 //
-//          BuildRunBuildOutputDeliveredArtifactItemArgs{...}
+//	BuildRunBuildOutputDeliveredArtifactItemArgs{...}
 type BuildRunBuildOutputDeliveredArtifactItemInput interface {
 	pulumi.Input
 
@@ -1691,7 +1866,7 @@ func (i BuildRunBuildOutputDeliveredArtifactItemArgs) ToBuildRunBuildOutputDeliv
 // BuildRunBuildOutputDeliveredArtifactItemArrayInput is an input type that accepts BuildRunBuildOutputDeliveredArtifactItemArray and BuildRunBuildOutputDeliveredArtifactItemArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputDeliveredArtifactItemArrayInput` via:
 //
-//          BuildRunBuildOutputDeliveredArtifactItemArray{ BuildRunBuildOutputDeliveredArtifactItemArgs{...} }
+//	BuildRunBuildOutputDeliveredArtifactItemArray{ BuildRunBuildOutputDeliveredArtifactItemArgs{...} }
 type BuildRunBuildOutputDeliveredArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -1800,7 +1975,7 @@ type BuildRunBuildOutputExportedVariable struct {
 // BuildRunBuildOutputExportedVariableInput is an input type that accepts BuildRunBuildOutputExportedVariableArgs and BuildRunBuildOutputExportedVariableOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputExportedVariableInput` via:
 //
-//          BuildRunBuildOutputExportedVariableArgs{...}
+//	BuildRunBuildOutputExportedVariableArgs{...}
 type BuildRunBuildOutputExportedVariableInput interface {
 	pulumi.Input
 
@@ -1828,7 +2003,7 @@ func (i BuildRunBuildOutputExportedVariableArgs) ToBuildRunBuildOutputExportedVa
 // BuildRunBuildOutputExportedVariableArrayInput is an input type that accepts BuildRunBuildOutputExportedVariableArray and BuildRunBuildOutputExportedVariableArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputExportedVariableArrayInput` via:
 //
-//          BuildRunBuildOutputExportedVariableArray{ BuildRunBuildOutputExportedVariableArgs{...} }
+//	BuildRunBuildOutputExportedVariableArray{ BuildRunBuildOutputExportedVariableArgs{...} }
 type BuildRunBuildOutputExportedVariableArrayInput interface {
 	pulumi.Input
 
@@ -1899,7 +2074,7 @@ type BuildRunBuildOutputExportedVariableItem struct {
 // BuildRunBuildOutputExportedVariableItemInput is an input type that accepts BuildRunBuildOutputExportedVariableItemArgs and BuildRunBuildOutputExportedVariableItemOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputExportedVariableItemInput` via:
 //
-//          BuildRunBuildOutputExportedVariableItemArgs{...}
+//	BuildRunBuildOutputExportedVariableItemArgs{...}
 type BuildRunBuildOutputExportedVariableItemInput interface {
 	pulumi.Input
 
@@ -1929,7 +2104,7 @@ func (i BuildRunBuildOutputExportedVariableItemArgs) ToBuildRunBuildOutputExport
 // BuildRunBuildOutputExportedVariableItemArrayInput is an input type that accepts BuildRunBuildOutputExportedVariableItemArray and BuildRunBuildOutputExportedVariableItemArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputExportedVariableItemArrayInput` via:
 //
-//          BuildRunBuildOutputExportedVariableItemArray{ BuildRunBuildOutputExportedVariableItemArgs{...} }
+//	BuildRunBuildOutputExportedVariableItemArray{ BuildRunBuildOutputExportedVariableItemArgs{...} }
 type BuildRunBuildOutputExportedVariableItemArrayInput interface {
 	pulumi.Input
 
@@ -2003,7 +2178,7 @@ type BuildRunBuildOutputVulnerabilityAuditSummaryCollection struct {
 // BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput` via:
 //
-//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...}
+//	BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...}
 type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -2031,7 +2206,7 @@ func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ToBuildRunBu
 // BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput` via:
 //
-//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{ BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...} }
+//	BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{ BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...} }
 type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2106,7 +2281,7 @@ type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem struct {
 // BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput` via:
 //
-//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...}
+//	BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...}
 type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -2138,7 +2313,7 @@ func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ToBuildR
 // BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput` via:
 //
-//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{ BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...} }
+//	BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{ BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...} }
 type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2219,7 +2394,7 @@ type BuildRunBuildRunArguments struct {
 // BuildRunBuildRunArgumentsInput is an input type that accepts BuildRunBuildRunArgumentsArgs and BuildRunBuildRunArgumentsOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunArgumentsInput` via:
 //
-//          BuildRunBuildRunArgumentsArgs{...}
+//	BuildRunBuildRunArgumentsArgs{...}
 type BuildRunBuildRunArgumentsInput interface {
 	pulumi.Input
 
@@ -2255,11 +2430,11 @@ func (i BuildRunBuildRunArgumentsArgs) ToBuildRunBuildRunArgumentsPtrOutputWithC
 // BuildRunBuildRunArgumentsPtrInput is an input type that accepts BuildRunBuildRunArgumentsArgs, BuildRunBuildRunArgumentsPtr and BuildRunBuildRunArgumentsPtrOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunArgumentsPtrInput` via:
 //
-//          BuildRunBuildRunArgumentsArgs{...}
+//	        BuildRunBuildRunArgumentsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildRunBuildRunArgumentsPtrInput interface {
 	pulumi.Input
 
@@ -2358,7 +2533,7 @@ type BuildRunBuildRunArgumentsItem struct {
 // BuildRunBuildRunArgumentsItemInput is an input type that accepts BuildRunBuildRunArgumentsItemArgs and BuildRunBuildRunArgumentsItemOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunArgumentsItemInput` via:
 //
-//          BuildRunBuildRunArgumentsItemArgs{...}
+//	BuildRunBuildRunArgumentsItemArgs{...}
 type BuildRunBuildRunArgumentsItemInput interface {
 	pulumi.Input
 
@@ -2388,7 +2563,7 @@ func (i BuildRunBuildRunArgumentsItemArgs) ToBuildRunBuildRunArgumentsItemOutput
 // BuildRunBuildRunArgumentsItemArrayInput is an input type that accepts BuildRunBuildRunArgumentsItemArray and BuildRunBuildRunArgumentsItemArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunArgumentsItemArrayInput` via:
 //
-//          BuildRunBuildRunArgumentsItemArray{ BuildRunBuildRunArgumentsItemArgs{...} }
+//	BuildRunBuildRunArgumentsItemArray{ BuildRunBuildRunArgumentsItemArgs{...} }
 type BuildRunBuildRunArgumentsItemArrayInput interface {
 	pulumi.Input
 
@@ -2466,7 +2641,7 @@ type BuildRunBuildRunProgress struct {
 // BuildRunBuildRunProgressInput is an input type that accepts BuildRunBuildRunProgressArgs and BuildRunBuildRunProgressOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunProgressInput` via:
 //
-//          BuildRunBuildRunProgressArgs{...}
+//	BuildRunBuildRunProgressArgs{...}
 type BuildRunBuildRunProgressInput interface {
 	pulumi.Input
 
@@ -2498,7 +2673,7 @@ func (i BuildRunBuildRunProgressArgs) ToBuildRunBuildRunProgressOutputWithContex
 // BuildRunBuildRunProgressArrayInput is an input type that accepts BuildRunBuildRunProgressArray and BuildRunBuildRunProgressArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunProgressArrayInput` via:
 //
-//          BuildRunBuildRunProgressArray{ BuildRunBuildRunProgressArgs{...} }
+//	BuildRunBuildRunProgressArray{ BuildRunBuildRunProgressArgs{...} }
 type BuildRunBuildRunProgressArrayInput interface {
 	pulumi.Input
 
@@ -2583,7 +2758,7 @@ type BuildRunBuildRunSource struct {
 // BuildRunBuildRunSourceInput is an input type that accepts BuildRunBuildRunSourceArgs and BuildRunBuildRunSourceOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceInput` via:
 //
-//          BuildRunBuildRunSourceArgs{...}
+//	BuildRunBuildRunSourceArgs{...}
 type BuildRunBuildRunSourceInput interface {
 	pulumi.Input
 
@@ -2617,7 +2792,7 @@ func (i BuildRunBuildRunSourceArgs) ToBuildRunBuildRunSourceOutputWithContext(ct
 // BuildRunBuildRunSourceArrayInput is an input type that accepts BuildRunBuildRunSourceArray and BuildRunBuildRunSourceArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceArrayInput` via:
 //
-//          BuildRunBuildRunSourceArray{ BuildRunBuildRunSourceArgs{...} }
+//	BuildRunBuildRunSourceArray{ BuildRunBuildRunSourceArgs{...} }
 type BuildRunBuildRunSourceArrayInput interface {
 	pulumi.Input
 
@@ -2703,7 +2878,7 @@ type BuildRunBuildRunSourceTriggerInfo struct {
 // BuildRunBuildRunSourceTriggerInfoInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoArgs and BuildRunBuildRunSourceTriggerInfoOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoArgs{...}
+//	BuildRunBuildRunSourceTriggerInfoArgs{...}
 type BuildRunBuildRunSourceTriggerInfoInput interface {
 	pulumi.Input
 
@@ -2733,7 +2908,7 @@ func (i BuildRunBuildRunSourceTriggerInfoArgs) ToBuildRunBuildRunSourceTriggerIn
 // BuildRunBuildRunSourceTriggerInfoArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoArray and BuildRunBuildRunSourceTriggerInfoArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoArrayInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoArray{ BuildRunBuildRunSourceTriggerInfoArgs{...} }
+//	BuildRunBuildRunSourceTriggerInfoArray{ BuildRunBuildRunSourceTriggerInfoArgs{...} }
 type BuildRunBuildRunSourceTriggerInfoArrayInput interface {
 	pulumi.Input
 
@@ -2811,7 +2986,7 @@ type BuildRunBuildRunSourceTriggerInfoAction struct {
 // BuildRunBuildRunSourceTriggerInfoActionInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionArgs and BuildRunBuildRunSourceTriggerInfoActionOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoActionArgs{...}
+//	BuildRunBuildRunSourceTriggerInfoActionArgs{...}
 type BuildRunBuildRunSourceTriggerInfoActionInput interface {
 	pulumi.Input
 
@@ -2843,7 +3018,7 @@ func (i BuildRunBuildRunSourceTriggerInfoActionArgs) ToBuildRunBuildRunSourceTri
 // BuildRunBuildRunSourceTriggerInfoActionArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionArray and BuildRunBuildRunSourceTriggerInfoActionArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionArrayInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoActionArray{ BuildRunBuildRunSourceTriggerInfoActionArgs{...} }
+//	BuildRunBuildRunSourceTriggerInfoActionArray{ BuildRunBuildRunSourceTriggerInfoActionArgs{...} }
 type BuildRunBuildRunSourceTriggerInfoActionArrayInput interface {
 	pulumi.Input
 
@@ -2919,7 +3094,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionArrayOutput) Index(i pulumi.IntIn
 type BuildRunBuildRunSourceTriggerInfoActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events []string `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes []BuildRunBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource *string `pulumi:"triggerSource"`
@@ -2928,7 +3103,7 @@ type BuildRunBuildRunSourceTriggerInfoActionFilter struct {
 // BuildRunBuildRunSourceTriggerInfoActionFilterInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterArgs and BuildRunBuildRunSourceTriggerInfoActionFilterOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoActionFilterArgs{...}
+//	BuildRunBuildRunSourceTriggerInfoActionFilterArgs{...}
 type BuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 	pulumi.Input
 
@@ -2939,7 +3114,7 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 type BuildRunBuildRunSourceTriggerInfoActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringPtrInput `pulumi:"triggerSource"`
@@ -2960,7 +3135,7 @@ func (i BuildRunBuildRunSourceTriggerInfoActionFilterArgs) ToBuildRunBuildRunSou
 // BuildRunBuildRunSourceTriggerInfoActionFilterArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterArray and BuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterArrayInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoActionFilterArray{ BuildRunBuildRunSourceTriggerInfoActionFilterArgs{...} }
+//	BuildRunBuildRunSourceTriggerInfoActionFilterArray{ BuildRunBuildRunSourceTriggerInfoActionFilterArgs{...} }
 type BuildRunBuildRunSourceTriggerInfoActionFilterArrayInput interface {
 	pulumi.Input
 
@@ -3001,7 +3176,7 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.Str
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
-// Attributes to filter DevOps code repository events.
+// Attributes to filter GitLab self-hosted server events.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Includes() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
 		return v.Includes
@@ -3043,7 +3218,7 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 // BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs and BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...}
+//	BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...}
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 	pulumi.Input
 
@@ -3073,7 +3248,7 @@ func (i BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs) ToBuildRunBuil
 // BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray and BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput values.
 // You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput` via:
 //
-//          BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{ BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...} }
+//	BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{ BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...} }
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput interface {
 	pulumi.Input
 
@@ -3151,7 +3326,7 @@ type BuildRunCommitInfo struct {
 // BuildRunCommitInfoInput is an input type that accepts BuildRunCommitInfoArgs and BuildRunCommitInfoOutput values.
 // You can construct a concrete instance of `BuildRunCommitInfoInput` via:
 //
-//          BuildRunCommitInfoArgs{...}
+//	BuildRunCommitInfoArgs{...}
 type BuildRunCommitInfoInput interface {
 	pulumi.Input
 
@@ -3191,11 +3366,11 @@ func (i BuildRunCommitInfoArgs) ToBuildRunCommitInfoPtrOutputWithContext(ctx con
 // BuildRunCommitInfoPtrInput is an input type that accepts BuildRunCommitInfoArgs, BuildRunCommitInfoPtr and BuildRunCommitInfoPtrOutput values.
 // You can construct a concrete instance of `BuildRunCommitInfoPtrInput` via:
 //
-//          BuildRunCommitInfoArgs{...}
+//	        BuildRunCommitInfoArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type BuildRunCommitInfoPtrInput interface {
 	pulumi.Input
 
@@ -3314,6 +3489,162 @@ func (o BuildRunCommitInfoPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ConnectionTlsVerifyConfig struct {
+	// (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+	CaCertificateBundleId string `pulumi:"caCertificateBundleId"`
+	// (Updatable) The type of TLS verification.
+	TlsVerifyMode string `pulumi:"tlsVerifyMode"`
+}
+
+// ConnectionTlsVerifyConfigInput is an input type that accepts ConnectionTlsVerifyConfigArgs and ConnectionTlsVerifyConfigOutput values.
+// You can construct a concrete instance of `ConnectionTlsVerifyConfigInput` via:
+//
+//	ConnectionTlsVerifyConfigArgs{...}
+type ConnectionTlsVerifyConfigInput interface {
+	pulumi.Input
+
+	ToConnectionTlsVerifyConfigOutput() ConnectionTlsVerifyConfigOutput
+	ToConnectionTlsVerifyConfigOutputWithContext(context.Context) ConnectionTlsVerifyConfigOutput
+}
+
+type ConnectionTlsVerifyConfigArgs struct {
+	// (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+	CaCertificateBundleId pulumi.StringInput `pulumi:"caCertificateBundleId"`
+	// (Updatable) The type of TLS verification.
+	TlsVerifyMode pulumi.StringInput `pulumi:"tlsVerifyMode"`
+}
+
+func (ConnectionTlsVerifyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (i ConnectionTlsVerifyConfigArgs) ToConnectionTlsVerifyConfigOutput() ConnectionTlsVerifyConfigOutput {
+	return i.ToConnectionTlsVerifyConfigOutputWithContext(context.Background())
+}
+
+func (i ConnectionTlsVerifyConfigArgs) ToConnectionTlsVerifyConfigOutputWithContext(ctx context.Context) ConnectionTlsVerifyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionTlsVerifyConfigOutput)
+}
+
+func (i ConnectionTlsVerifyConfigArgs) ToConnectionTlsVerifyConfigPtrOutput() ConnectionTlsVerifyConfigPtrOutput {
+	return i.ToConnectionTlsVerifyConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ConnectionTlsVerifyConfigArgs) ToConnectionTlsVerifyConfigPtrOutputWithContext(ctx context.Context) ConnectionTlsVerifyConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionTlsVerifyConfigOutput).ToConnectionTlsVerifyConfigPtrOutputWithContext(ctx)
+}
+
+// ConnectionTlsVerifyConfigPtrInput is an input type that accepts ConnectionTlsVerifyConfigArgs, ConnectionTlsVerifyConfigPtr and ConnectionTlsVerifyConfigPtrOutput values.
+// You can construct a concrete instance of `ConnectionTlsVerifyConfigPtrInput` via:
+//
+//	        ConnectionTlsVerifyConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConnectionTlsVerifyConfigPtrInput interface {
+	pulumi.Input
+
+	ToConnectionTlsVerifyConfigPtrOutput() ConnectionTlsVerifyConfigPtrOutput
+	ToConnectionTlsVerifyConfigPtrOutputWithContext(context.Context) ConnectionTlsVerifyConfigPtrOutput
+}
+
+type connectionTlsVerifyConfigPtrType ConnectionTlsVerifyConfigArgs
+
+func ConnectionTlsVerifyConfigPtr(v *ConnectionTlsVerifyConfigArgs) ConnectionTlsVerifyConfigPtrInput {
+	return (*connectionTlsVerifyConfigPtrType)(v)
+}
+
+func (*connectionTlsVerifyConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (i *connectionTlsVerifyConfigPtrType) ToConnectionTlsVerifyConfigPtrOutput() ConnectionTlsVerifyConfigPtrOutput {
+	return i.ToConnectionTlsVerifyConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *connectionTlsVerifyConfigPtrType) ToConnectionTlsVerifyConfigPtrOutputWithContext(ctx context.Context) ConnectionTlsVerifyConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionTlsVerifyConfigPtrOutput)
+}
+
+type ConnectionTlsVerifyConfigOutput struct{ *pulumi.OutputState }
+
+func (ConnectionTlsVerifyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (o ConnectionTlsVerifyConfigOutput) ToConnectionTlsVerifyConfigOutput() ConnectionTlsVerifyConfigOutput {
+	return o
+}
+
+func (o ConnectionTlsVerifyConfigOutput) ToConnectionTlsVerifyConfigOutputWithContext(ctx context.Context) ConnectionTlsVerifyConfigOutput {
+	return o
+}
+
+func (o ConnectionTlsVerifyConfigOutput) ToConnectionTlsVerifyConfigPtrOutput() ConnectionTlsVerifyConfigPtrOutput {
+	return o.ToConnectionTlsVerifyConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ConnectionTlsVerifyConfigOutput) ToConnectionTlsVerifyConfigPtrOutputWithContext(ctx context.Context) ConnectionTlsVerifyConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionTlsVerifyConfig) *ConnectionTlsVerifyConfig {
+		return &v
+	}).(ConnectionTlsVerifyConfigPtrOutput)
+}
+
+// (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+func (o ConnectionTlsVerifyConfigOutput) CaCertificateBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectionTlsVerifyConfig) string { return v.CaCertificateBundleId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The type of TLS verification.
+func (o ConnectionTlsVerifyConfigOutput) TlsVerifyMode() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectionTlsVerifyConfig) string { return v.TlsVerifyMode }).(pulumi.StringOutput)
+}
+
+type ConnectionTlsVerifyConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ConnectionTlsVerifyConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (o ConnectionTlsVerifyConfigPtrOutput) ToConnectionTlsVerifyConfigPtrOutput() ConnectionTlsVerifyConfigPtrOutput {
+	return o
+}
+
+func (o ConnectionTlsVerifyConfigPtrOutput) ToConnectionTlsVerifyConfigPtrOutputWithContext(ctx context.Context) ConnectionTlsVerifyConfigPtrOutput {
+	return o
+}
+
+func (o ConnectionTlsVerifyConfigPtrOutput) Elem() ConnectionTlsVerifyConfigOutput {
+	return o.ApplyT(func(v *ConnectionTlsVerifyConfig) ConnectionTlsVerifyConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ConnectionTlsVerifyConfig
+		return ret
+	}).(ConnectionTlsVerifyConfigOutput)
+}
+
+// (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+func (o ConnectionTlsVerifyConfigPtrOutput) CaCertificateBundleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionTlsVerifyConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CaCertificateBundleId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of TLS verification.
+func (o ConnectionTlsVerifyConfigPtrOutput) TlsVerifyMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionTlsVerifyConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TlsVerifyMode
+	}).(pulumi.StringPtrOutput)
+}
+
 type DeployArtifactDeployArtifactSource struct {
 	// (Updatable) Specifies content for the inline artifact.
 	Base64encodedContent *string `pulumi:"base64encodedContent"`
@@ -3336,7 +3667,7 @@ type DeployArtifactDeployArtifactSource struct {
 // DeployArtifactDeployArtifactSourceInput is an input type that accepts DeployArtifactDeployArtifactSourceArgs and DeployArtifactDeployArtifactSourceOutput values.
 // You can construct a concrete instance of `DeployArtifactDeployArtifactSourceInput` via:
 //
-//          DeployArtifactDeployArtifactSourceArgs{...}
+//	DeployArtifactDeployArtifactSourceArgs{...}
 type DeployArtifactDeployArtifactSourceInput interface {
 	pulumi.Input
 
@@ -3386,11 +3717,11 @@ func (i DeployArtifactDeployArtifactSourceArgs) ToDeployArtifactDeployArtifactSo
 // DeployArtifactDeployArtifactSourcePtrInput is an input type that accepts DeployArtifactDeployArtifactSourceArgs, DeployArtifactDeployArtifactSourcePtr and DeployArtifactDeployArtifactSourcePtrOutput values.
 // You can construct a concrete instance of `DeployArtifactDeployArtifactSourcePtrInput` via:
 //
-//          DeployArtifactDeployArtifactSourceArgs{...}
+//	        DeployArtifactDeployArtifactSourceArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployArtifactDeployArtifactSourcePtrInput interface {
 	pulumi.Input
 
@@ -3592,7 +3923,7 @@ type DeployEnvironmentComputeInstanceGroupSelectors struct {
 // DeployEnvironmentComputeInstanceGroupSelectorsInput is an input type that accepts DeployEnvironmentComputeInstanceGroupSelectorsArgs and DeployEnvironmentComputeInstanceGroupSelectorsOutput values.
 // You can construct a concrete instance of `DeployEnvironmentComputeInstanceGroupSelectorsInput` via:
 //
-//          DeployEnvironmentComputeInstanceGroupSelectorsArgs{...}
+//	DeployEnvironmentComputeInstanceGroupSelectorsArgs{...}
 type DeployEnvironmentComputeInstanceGroupSelectorsInput interface {
 	pulumi.Input
 
@@ -3628,11 +3959,11 @@ func (i DeployEnvironmentComputeInstanceGroupSelectorsArgs) ToDeployEnvironmentC
 // DeployEnvironmentComputeInstanceGroupSelectorsPtrInput is an input type that accepts DeployEnvironmentComputeInstanceGroupSelectorsArgs, DeployEnvironmentComputeInstanceGroupSelectorsPtr and DeployEnvironmentComputeInstanceGroupSelectorsPtrOutput values.
 // You can construct a concrete instance of `DeployEnvironmentComputeInstanceGroupSelectorsPtrInput` via:
 //
-//          DeployEnvironmentComputeInstanceGroupSelectorsArgs{...}
+//	        DeployEnvironmentComputeInstanceGroupSelectorsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployEnvironmentComputeInstanceGroupSelectorsPtrInput interface {
 	pulumi.Input
 
@@ -3737,7 +4068,7 @@ type DeployEnvironmentComputeInstanceGroupSelectorsItem struct {
 // DeployEnvironmentComputeInstanceGroupSelectorsItemInput is an input type that accepts DeployEnvironmentComputeInstanceGroupSelectorsItemArgs and DeployEnvironmentComputeInstanceGroupSelectorsItemOutput values.
 // You can construct a concrete instance of `DeployEnvironmentComputeInstanceGroupSelectorsItemInput` via:
 //
-//          DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{...}
+//	DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{...}
 type DeployEnvironmentComputeInstanceGroupSelectorsItemInput interface {
 	pulumi.Input
 
@@ -3771,7 +4102,7 @@ func (i DeployEnvironmentComputeInstanceGroupSelectorsItemArgs) ToDeployEnvironm
 // DeployEnvironmentComputeInstanceGroupSelectorsItemArrayInput is an input type that accepts DeployEnvironmentComputeInstanceGroupSelectorsItemArray and DeployEnvironmentComputeInstanceGroupSelectorsItemArrayOutput values.
 // You can construct a concrete instance of `DeployEnvironmentComputeInstanceGroupSelectorsItemArrayInput` via:
 //
-//          DeployEnvironmentComputeInstanceGroupSelectorsItemArray{ DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{...} }
+//	DeployEnvironmentComputeInstanceGroupSelectorsItemArray{ DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{...} }
 type DeployEnvironmentComputeInstanceGroupSelectorsItemArrayInput interface {
 	pulumi.Input
 
@@ -3859,7 +4190,7 @@ type DeployEnvironmentNetworkChannel struct {
 // DeployEnvironmentNetworkChannelInput is an input type that accepts DeployEnvironmentNetworkChannelArgs and DeployEnvironmentNetworkChannelOutput values.
 // You can construct a concrete instance of `DeployEnvironmentNetworkChannelInput` via:
 //
-//          DeployEnvironmentNetworkChannelArgs{...}
+//	DeployEnvironmentNetworkChannelArgs{...}
 type DeployEnvironmentNetworkChannelInput interface {
 	pulumi.Input
 
@@ -3899,11 +4230,11 @@ func (i DeployEnvironmentNetworkChannelArgs) ToDeployEnvironmentNetworkChannelPt
 // DeployEnvironmentNetworkChannelPtrInput is an input type that accepts DeployEnvironmentNetworkChannelArgs, DeployEnvironmentNetworkChannelPtr and DeployEnvironmentNetworkChannelPtrOutput values.
 // You can construct a concrete instance of `DeployEnvironmentNetworkChannelPtrInput` via:
 //
-//          DeployEnvironmentNetworkChannelArgs{...}
+//	        DeployEnvironmentNetworkChannelArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployEnvironmentNetworkChannelPtrInput interface {
 	pulumi.Input
 
@@ -4030,7 +4361,7 @@ type DeployPipelineDeployPipelineArtifact struct {
 // DeployPipelineDeployPipelineArtifactInput is an input type that accepts DeployPipelineDeployPipelineArtifactArgs and DeployPipelineDeployPipelineArtifactOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactArgs{...}
+//	DeployPipelineDeployPipelineArtifactArgs{...}
 type DeployPipelineDeployPipelineArtifactInput interface {
 	pulumi.Input
 
@@ -4058,7 +4389,7 @@ func (i DeployPipelineDeployPipelineArtifactArgs) ToDeployPipelineDeployPipeline
 // DeployPipelineDeployPipelineArtifactArrayInput is an input type that accepts DeployPipelineDeployPipelineArtifactArray and DeployPipelineDeployPipelineArtifactArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactArrayInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactArray{ DeployPipelineDeployPipelineArtifactArgs{...} }
+//	DeployPipelineDeployPipelineArtifactArray{ DeployPipelineDeployPipelineArtifactArgs{...} }
 type DeployPipelineDeployPipelineArtifactArrayInput interface {
 	pulumi.Input
 
@@ -4133,7 +4464,7 @@ type DeployPipelineDeployPipelineArtifactItem struct {
 // DeployPipelineDeployPipelineArtifactItemInput is an input type that accepts DeployPipelineDeployPipelineArtifactItemArgs and DeployPipelineDeployPipelineArtifactItemOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactItemInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactItemArgs{...}
+//	DeployPipelineDeployPipelineArtifactItemArgs{...}
 type DeployPipelineDeployPipelineArtifactItemInput interface {
 	pulumi.Input
 
@@ -4165,7 +4496,7 @@ func (i DeployPipelineDeployPipelineArtifactItemArgs) ToDeployPipelineDeployPipe
 // DeployPipelineDeployPipelineArtifactItemArrayInput is an input type that accepts DeployPipelineDeployPipelineArtifactItemArray and DeployPipelineDeployPipelineArtifactItemArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactItemArrayInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactItemArray{ DeployPipelineDeployPipelineArtifactItemArgs{...} }
+//	DeployPipelineDeployPipelineArtifactItemArray{ DeployPipelineDeployPipelineArtifactItemArgs{...} }
 type DeployPipelineDeployPipelineArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -4246,7 +4577,7 @@ type DeployPipelineDeployPipelineArtifactItemDeployPipelineStage struct {
 // DeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput is an input type that accepts DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs and DeployPipelineDeployPipelineArtifactItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...}
+//	DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...}
 type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -4274,7 +4605,7 @@ func (i DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs) ToDeplo
 // DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayInput is an input type that accepts DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArray and DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArray{ DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
+//	DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArray{ DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
 type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -4347,7 +4678,7 @@ type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem struct {
 // DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemInput is an input type that accepts DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs and DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
+//	DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
 type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -4377,7 +4708,7 @@ func (i DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs) ToD
 // DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput is an input type that accepts DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArray and DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput` via:
 //
-//          DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArray{ DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
+//	DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArray{ DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
 type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -4453,7 +4784,7 @@ type DeployPipelineDeployPipelineEnvironment struct {
 // DeployPipelineDeployPipelineEnvironmentInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentArgs and DeployPipelineDeployPipelineEnvironmentOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentArgs{...}
+//	DeployPipelineDeployPipelineEnvironmentArgs{...}
 type DeployPipelineDeployPipelineEnvironmentInput interface {
 	pulumi.Input
 
@@ -4481,7 +4812,7 @@ func (i DeployPipelineDeployPipelineEnvironmentArgs) ToDeployPipelineDeployPipel
 // DeployPipelineDeployPipelineEnvironmentArrayInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentArray and DeployPipelineDeployPipelineEnvironmentArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentArrayInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentArray{ DeployPipelineDeployPipelineEnvironmentArgs{...} }
+//	DeployPipelineDeployPipelineEnvironmentArray{ DeployPipelineDeployPipelineEnvironmentArgs{...} }
 type DeployPipelineDeployPipelineEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -4556,7 +4887,7 @@ type DeployPipelineDeployPipelineEnvironmentItem struct {
 // DeployPipelineDeployPipelineEnvironmentItemInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentItemArgs and DeployPipelineDeployPipelineEnvironmentItemOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentItemInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentItemArgs{...}
+//	DeployPipelineDeployPipelineEnvironmentItemArgs{...}
 type DeployPipelineDeployPipelineEnvironmentItemInput interface {
 	pulumi.Input
 
@@ -4588,7 +4919,7 @@ func (i DeployPipelineDeployPipelineEnvironmentItemArgs) ToDeployPipelineDeployP
 // DeployPipelineDeployPipelineEnvironmentItemArrayInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentItemArray and DeployPipelineDeployPipelineEnvironmentItemArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentItemArrayInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentItemArray{ DeployPipelineDeployPipelineEnvironmentItemArgs{...} }
+//	DeployPipelineDeployPipelineEnvironmentItemArray{ DeployPipelineDeployPipelineEnvironmentItemArgs{...} }
 type DeployPipelineDeployPipelineEnvironmentItemArrayInput interface {
 	pulumi.Input
 
@@ -4669,7 +5000,7 @@ type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage struct {
 // DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs and DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
+//	DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
 type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -4697,7 +5028,7 @@ func (i DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs) ToDe
 // DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArray and DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArray{ DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
+//	DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArray{ DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
 type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -4770,7 +5101,7 @@ type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem struct {
 // DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs and DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
+//	DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
 type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -4800,7 +5131,7 @@ func (i DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs) 
 // DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput is an input type that accepts DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArray and DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput` via:
 //
-//          DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
+//	DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
 type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -4878,7 +5209,7 @@ type DeployPipelineDeployPipelineParameters struct {
 // DeployPipelineDeployPipelineParametersInput is an input type that accepts DeployPipelineDeployPipelineParametersArgs and DeployPipelineDeployPipelineParametersOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineParametersInput` via:
 //
-//          DeployPipelineDeployPipelineParametersArgs{...}
+//	DeployPipelineDeployPipelineParametersArgs{...}
 type DeployPipelineDeployPipelineParametersInput interface {
 	pulumi.Input
 
@@ -4914,11 +5245,11 @@ func (i DeployPipelineDeployPipelineParametersArgs) ToDeployPipelineDeployPipeli
 // DeployPipelineDeployPipelineParametersPtrInput is an input type that accepts DeployPipelineDeployPipelineParametersArgs, DeployPipelineDeployPipelineParametersPtr and DeployPipelineDeployPipelineParametersPtrOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineParametersPtrInput` via:
 //
-//          DeployPipelineDeployPipelineParametersArgs{...}
+//	        DeployPipelineDeployPipelineParametersArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployPipelineDeployPipelineParametersPtrInput interface {
 	pulumi.Input
 
@@ -5021,7 +5352,7 @@ type DeployPipelineDeployPipelineParametersItem struct {
 // DeployPipelineDeployPipelineParametersItemInput is an input type that accepts DeployPipelineDeployPipelineParametersItemArgs and DeployPipelineDeployPipelineParametersItemOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineParametersItemInput` via:
 //
-//          DeployPipelineDeployPipelineParametersItemArgs{...}
+//	DeployPipelineDeployPipelineParametersItemArgs{...}
 type DeployPipelineDeployPipelineParametersItemInput interface {
 	pulumi.Input
 
@@ -5053,7 +5384,7 @@ func (i DeployPipelineDeployPipelineParametersItemArgs) ToDeployPipelineDeployPi
 // DeployPipelineDeployPipelineParametersItemArrayInput is an input type that accepts DeployPipelineDeployPipelineParametersItemArray and DeployPipelineDeployPipelineParametersItemArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineDeployPipelineParametersItemArrayInput` via:
 //
-//          DeployPipelineDeployPipelineParametersItemArray{ DeployPipelineDeployPipelineParametersItemArgs{...} }
+//	DeployPipelineDeployPipelineParametersItemArray{ DeployPipelineDeployPipelineParametersItemArgs{...} }
 type DeployPipelineDeployPipelineParametersItemArrayInput interface {
 	pulumi.Input
 
@@ -5134,7 +5465,7 @@ type DeployStageApprovalPolicy struct {
 // DeployStageApprovalPolicyInput is an input type that accepts DeployStageApprovalPolicyArgs and DeployStageApprovalPolicyOutput values.
 // You can construct a concrete instance of `DeployStageApprovalPolicyInput` via:
 //
-//          DeployStageApprovalPolicyArgs{...}
+//	DeployStageApprovalPolicyArgs{...}
 type DeployStageApprovalPolicyInput interface {
 	pulumi.Input
 
@@ -5172,11 +5503,11 @@ func (i DeployStageApprovalPolicyArgs) ToDeployStageApprovalPolicyPtrOutputWithC
 // DeployStageApprovalPolicyPtrInput is an input type that accepts DeployStageApprovalPolicyArgs, DeployStageApprovalPolicyPtr and DeployStageApprovalPolicyPtrOutput values.
 // You can construct a concrete instance of `DeployStageApprovalPolicyPtrInput` via:
 //
-//          DeployStageApprovalPolicyArgs{...}
+//	        DeployStageApprovalPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageApprovalPolicyPtrInput interface {
 	pulumi.Input
 
@@ -5288,7 +5619,7 @@ type DeployStageBlueBackendIps struct {
 // DeployStageBlueBackendIpsInput is an input type that accepts DeployStageBlueBackendIpsArgs and DeployStageBlueBackendIpsOutput values.
 // You can construct a concrete instance of `DeployStageBlueBackendIpsInput` via:
 //
-//          DeployStageBlueBackendIpsArgs{...}
+//	DeployStageBlueBackendIpsArgs{...}
 type DeployStageBlueBackendIpsInput interface {
 	pulumi.Input
 
@@ -5324,11 +5655,11 @@ func (i DeployStageBlueBackendIpsArgs) ToDeployStageBlueBackendIpsPtrOutputWithC
 // DeployStageBlueBackendIpsPtrInput is an input type that accepts DeployStageBlueBackendIpsArgs, DeployStageBlueBackendIpsPtr and DeployStageBlueBackendIpsPtrOutput values.
 // You can construct a concrete instance of `DeployStageBlueBackendIpsPtrInput` via:
 //
-//          DeployStageBlueBackendIpsArgs{...}
+//	        DeployStageBlueBackendIpsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageBlueBackendIpsPtrInput interface {
 	pulumi.Input
 
@@ -5431,7 +5762,7 @@ type DeployStageBlueGreenStrategy struct {
 // DeployStageBlueGreenStrategyInput is an input type that accepts DeployStageBlueGreenStrategyArgs and DeployStageBlueGreenStrategyOutput values.
 // You can construct a concrete instance of `DeployStageBlueGreenStrategyInput` via:
 //
-//          DeployStageBlueGreenStrategyArgs{...}
+//	DeployStageBlueGreenStrategyArgs{...}
 type DeployStageBlueGreenStrategyInput interface {
 	pulumi.Input
 
@@ -5473,11 +5804,11 @@ func (i DeployStageBlueGreenStrategyArgs) ToDeployStageBlueGreenStrategyPtrOutpu
 // DeployStageBlueGreenStrategyPtrInput is an input type that accepts DeployStageBlueGreenStrategyArgs, DeployStageBlueGreenStrategyPtr and DeployStageBlueGreenStrategyPtrOutput values.
 // You can construct a concrete instance of `DeployStageBlueGreenStrategyPtrInput` via:
 //
-//          DeployStageBlueGreenStrategyArgs{...}
+//	        DeployStageBlueGreenStrategyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageBlueGreenStrategyPtrInput interface {
 	pulumi.Input
 
@@ -5623,7 +5954,7 @@ type DeployStageCanaryStrategy struct {
 // DeployStageCanaryStrategyInput is an input type that accepts DeployStageCanaryStrategyArgs and DeployStageCanaryStrategyOutput values.
 // You can construct a concrete instance of `DeployStageCanaryStrategyInput` via:
 //
-//          DeployStageCanaryStrategyArgs{...}
+//	DeployStageCanaryStrategyArgs{...}
 type DeployStageCanaryStrategyInput interface {
 	pulumi.Input
 
@@ -5663,11 +5994,11 @@ func (i DeployStageCanaryStrategyArgs) ToDeployStageCanaryStrategyPtrOutputWithC
 // DeployStageCanaryStrategyPtrInput is an input type that accepts DeployStageCanaryStrategyArgs, DeployStageCanaryStrategyPtr and DeployStageCanaryStrategyPtrOutput values.
 // You can construct a concrete instance of `DeployStageCanaryStrategyPtrInput` via:
 //
-//          DeployStageCanaryStrategyArgs{...}
+//	        DeployStageCanaryStrategyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageCanaryStrategyPtrInput interface {
 	pulumi.Input
 
@@ -5794,7 +6125,7 @@ type DeployStageDeployStagePredecessorCollection struct {
 // DeployStageDeployStagePredecessorCollectionInput is an input type that accepts DeployStageDeployStagePredecessorCollectionArgs and DeployStageDeployStagePredecessorCollectionOutput values.
 // You can construct a concrete instance of `DeployStageDeployStagePredecessorCollectionInput` via:
 //
-//          DeployStageDeployStagePredecessorCollectionArgs{...}
+//	DeployStageDeployStagePredecessorCollectionArgs{...}
 type DeployStageDeployStagePredecessorCollectionInput interface {
 	pulumi.Input
 
@@ -5830,11 +6161,11 @@ func (i DeployStageDeployStagePredecessorCollectionArgs) ToDeployStageDeployStag
 // DeployStageDeployStagePredecessorCollectionPtrInput is an input type that accepts DeployStageDeployStagePredecessorCollectionArgs, DeployStageDeployStagePredecessorCollectionPtr and DeployStageDeployStagePredecessorCollectionPtrOutput values.
 // You can construct a concrete instance of `DeployStageDeployStagePredecessorCollectionPtrInput` via:
 //
-//          DeployStageDeployStagePredecessorCollectionArgs{...}
+//	        DeployStageDeployStagePredecessorCollectionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageDeployStagePredecessorCollectionPtrInput interface {
 	pulumi.Input
 
@@ -5933,7 +6264,7 @@ type DeployStageDeployStagePredecessorCollectionItem struct {
 // DeployStageDeployStagePredecessorCollectionItemInput is an input type that accepts DeployStageDeployStagePredecessorCollectionItemArgs and DeployStageDeployStagePredecessorCollectionItemOutput values.
 // You can construct a concrete instance of `DeployStageDeployStagePredecessorCollectionItemInput` via:
 //
-//          DeployStageDeployStagePredecessorCollectionItemArgs{...}
+//	DeployStageDeployStagePredecessorCollectionItemArgs{...}
 type DeployStageDeployStagePredecessorCollectionItemInput interface {
 	pulumi.Input
 
@@ -5961,7 +6292,7 @@ func (i DeployStageDeployStagePredecessorCollectionItemArgs) ToDeployStageDeploy
 // DeployStageDeployStagePredecessorCollectionItemArrayInput is an input type that accepts DeployStageDeployStagePredecessorCollectionItemArray and DeployStageDeployStagePredecessorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `DeployStageDeployStagePredecessorCollectionItemArrayInput` via:
 //
-//          DeployStageDeployStagePredecessorCollectionItemArray{ DeployStageDeployStagePredecessorCollectionItemArgs{...} }
+//	DeployStageDeployStagePredecessorCollectionItemArray{ DeployStageDeployStagePredecessorCollectionItemArgs{...} }
 type DeployStageDeployStagePredecessorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6034,7 +6365,7 @@ type DeployStageFailurePolicy struct {
 // DeployStageFailurePolicyInput is an input type that accepts DeployStageFailurePolicyArgs and DeployStageFailurePolicyOutput values.
 // You can construct a concrete instance of `DeployStageFailurePolicyInput` via:
 //
-//          DeployStageFailurePolicyArgs{...}
+//	DeployStageFailurePolicyArgs{...}
 type DeployStageFailurePolicyInput interface {
 	pulumi.Input
 
@@ -6074,11 +6405,11 @@ func (i DeployStageFailurePolicyArgs) ToDeployStageFailurePolicyPtrOutputWithCon
 // DeployStageFailurePolicyPtrInput is an input type that accepts DeployStageFailurePolicyArgs, DeployStageFailurePolicyPtr and DeployStageFailurePolicyPtrOutput values.
 // You can construct a concrete instance of `DeployStageFailurePolicyPtrInput` via:
 //
-//          DeployStageFailurePolicyArgs{...}
+//	        DeployStageFailurePolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageFailurePolicyPtrInput interface {
 	pulumi.Input
 
@@ -6205,7 +6536,7 @@ type DeployStageGreenBackendIps struct {
 // DeployStageGreenBackendIpsInput is an input type that accepts DeployStageGreenBackendIpsArgs and DeployStageGreenBackendIpsOutput values.
 // You can construct a concrete instance of `DeployStageGreenBackendIpsInput` via:
 //
-//          DeployStageGreenBackendIpsArgs{...}
+//	DeployStageGreenBackendIpsArgs{...}
 type DeployStageGreenBackendIpsInput interface {
 	pulumi.Input
 
@@ -6241,11 +6572,11 @@ func (i DeployStageGreenBackendIpsArgs) ToDeployStageGreenBackendIpsPtrOutputWit
 // DeployStageGreenBackendIpsPtrInput is an input type that accepts DeployStageGreenBackendIpsArgs, DeployStageGreenBackendIpsPtr and DeployStageGreenBackendIpsPtrOutput values.
 // You can construct a concrete instance of `DeployStageGreenBackendIpsPtrInput` via:
 //
-//          DeployStageGreenBackendIpsArgs{...}
+//	        DeployStageGreenBackendIpsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageGreenBackendIpsPtrInput interface {
 	pulumi.Input
 
@@ -6348,7 +6679,7 @@ type DeployStageLoadBalancerConfig struct {
 // DeployStageLoadBalancerConfigInput is an input type that accepts DeployStageLoadBalancerConfigArgs and DeployStageLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `DeployStageLoadBalancerConfigInput` via:
 //
-//          DeployStageLoadBalancerConfigArgs{...}
+//	DeployStageLoadBalancerConfigArgs{...}
 type DeployStageLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -6390,11 +6721,11 @@ func (i DeployStageLoadBalancerConfigArgs) ToDeployStageLoadBalancerConfigPtrOut
 // DeployStageLoadBalancerConfigPtrInput is an input type that accepts DeployStageLoadBalancerConfigArgs, DeployStageLoadBalancerConfigPtr and DeployStageLoadBalancerConfigPtrOutput values.
 // You can construct a concrete instance of `DeployStageLoadBalancerConfigPtrInput` via:
 //
-//          DeployStageLoadBalancerConfigArgs{...}
+//	        DeployStageLoadBalancerConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageLoadBalancerConfigPtrInput interface {
 	pulumi.Input
 
@@ -6542,7 +6873,7 @@ type DeployStageProductionLoadBalancerConfig struct {
 // DeployStageProductionLoadBalancerConfigInput is an input type that accepts DeployStageProductionLoadBalancerConfigArgs and DeployStageProductionLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `DeployStageProductionLoadBalancerConfigInput` via:
 //
-//          DeployStageProductionLoadBalancerConfigArgs{...}
+//	DeployStageProductionLoadBalancerConfigArgs{...}
 type DeployStageProductionLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -6584,11 +6915,11 @@ func (i DeployStageProductionLoadBalancerConfigArgs) ToDeployStageProductionLoad
 // DeployStageProductionLoadBalancerConfigPtrInput is an input type that accepts DeployStageProductionLoadBalancerConfigArgs, DeployStageProductionLoadBalancerConfigPtr and DeployStageProductionLoadBalancerConfigPtrOutput values.
 // You can construct a concrete instance of `DeployStageProductionLoadBalancerConfigPtrInput` via:
 //
-//          DeployStageProductionLoadBalancerConfigArgs{...}
+//	        DeployStageProductionLoadBalancerConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageProductionLoadBalancerConfigPtrInput interface {
 	pulumi.Input
 
@@ -6730,7 +7061,7 @@ type DeployStageRollbackPolicy struct {
 // DeployStageRollbackPolicyInput is an input type that accepts DeployStageRollbackPolicyArgs and DeployStageRollbackPolicyOutput values.
 // You can construct a concrete instance of `DeployStageRollbackPolicyInput` via:
 //
-//          DeployStageRollbackPolicyArgs{...}
+//	DeployStageRollbackPolicyArgs{...}
 type DeployStageRollbackPolicyInput interface {
 	pulumi.Input
 
@@ -6766,11 +7097,11 @@ func (i DeployStageRollbackPolicyArgs) ToDeployStageRollbackPolicyPtrOutputWithC
 // DeployStageRollbackPolicyPtrInput is an input type that accepts DeployStageRollbackPolicyArgs, DeployStageRollbackPolicyPtr and DeployStageRollbackPolicyPtrOutput values.
 // You can construct a concrete instance of `DeployStageRollbackPolicyPtrInput` via:
 //
-//          DeployStageRollbackPolicyArgs{...}
+//	        DeployStageRollbackPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageRollbackPolicyPtrInput interface {
 	pulumi.Input
 
@@ -6875,7 +7206,7 @@ type DeployStageRolloutPolicy struct {
 // DeployStageRolloutPolicyInput is an input type that accepts DeployStageRolloutPolicyArgs and DeployStageRolloutPolicyOutput values.
 // You can construct a concrete instance of `DeployStageRolloutPolicyInput` via:
 //
-//          DeployStageRolloutPolicyArgs{...}
+//	DeployStageRolloutPolicyArgs{...}
 type DeployStageRolloutPolicyInput interface {
 	pulumi.Input
 
@@ -6919,11 +7250,11 @@ func (i DeployStageRolloutPolicyArgs) ToDeployStageRolloutPolicyPtrOutputWithCon
 // DeployStageRolloutPolicyPtrInput is an input type that accepts DeployStageRolloutPolicyArgs, DeployStageRolloutPolicyPtr and DeployStageRolloutPolicyPtrOutput values.
 // You can construct a concrete instance of `DeployStageRolloutPolicyPtrInput` via:
 //
-//          DeployStageRolloutPolicyArgs{...}
+//	        DeployStageRolloutPolicyArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageRolloutPolicyPtrInput interface {
 	pulumi.Input
 
@@ -7086,7 +7417,7 @@ type DeployStageTestLoadBalancerConfig struct {
 // DeployStageTestLoadBalancerConfigInput is an input type that accepts DeployStageTestLoadBalancerConfigArgs and DeployStageTestLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `DeployStageTestLoadBalancerConfigInput` via:
 //
-//          DeployStageTestLoadBalancerConfigArgs{...}
+//	DeployStageTestLoadBalancerConfigArgs{...}
 type DeployStageTestLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -7128,11 +7459,11 @@ func (i DeployStageTestLoadBalancerConfigArgs) ToDeployStageTestLoadBalancerConf
 // DeployStageTestLoadBalancerConfigPtrInput is an input type that accepts DeployStageTestLoadBalancerConfigArgs, DeployStageTestLoadBalancerConfigPtr and DeployStageTestLoadBalancerConfigPtrOutput values.
 // You can construct a concrete instance of `DeployStageTestLoadBalancerConfigPtrInput` via:
 //
-//          DeployStageTestLoadBalancerConfigArgs{...}
+//	        DeployStageTestLoadBalancerConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageTestLoadBalancerConfigPtrInput interface {
 	pulumi.Input
 
@@ -7276,7 +7607,7 @@ type DeployStageWaitCriteria struct {
 // DeployStageWaitCriteriaInput is an input type that accepts DeployStageWaitCriteriaArgs and DeployStageWaitCriteriaOutput values.
 // You can construct a concrete instance of `DeployStageWaitCriteriaInput` via:
 //
-//          DeployStageWaitCriteriaArgs{...}
+//	DeployStageWaitCriteriaArgs{...}
 type DeployStageWaitCriteriaInput interface {
 	pulumi.Input
 
@@ -7314,11 +7645,11 @@ func (i DeployStageWaitCriteriaArgs) ToDeployStageWaitCriteriaPtrOutputWithConte
 // DeployStageWaitCriteriaPtrInput is an input type that accepts DeployStageWaitCriteriaArgs, DeployStageWaitCriteriaPtr and DeployStageWaitCriteriaPtrOutput values.
 // You can construct a concrete instance of `DeployStageWaitCriteriaPtrInput` via:
 //
-//          DeployStageWaitCriteriaArgs{...}
+//	        DeployStageWaitCriteriaArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeployStageWaitCriteriaPtrInput interface {
 	pulumi.Input
 
@@ -7430,7 +7761,7 @@ type DeploymentDeployArtifactOverrideArguments struct {
 // DeploymentDeployArtifactOverrideArgumentsInput is an input type that accepts DeploymentDeployArtifactOverrideArgumentsArgs and DeploymentDeployArtifactOverrideArgumentsOutput values.
 // You can construct a concrete instance of `DeploymentDeployArtifactOverrideArgumentsInput` via:
 //
-//          DeploymentDeployArtifactOverrideArgumentsArgs{...}
+//	DeploymentDeployArtifactOverrideArgumentsArgs{...}
 type DeploymentDeployArtifactOverrideArgumentsInput interface {
 	pulumi.Input
 
@@ -7466,11 +7797,11 @@ func (i DeploymentDeployArtifactOverrideArgumentsArgs) ToDeploymentDeployArtifac
 // DeploymentDeployArtifactOverrideArgumentsPtrInput is an input type that accepts DeploymentDeployArtifactOverrideArgumentsArgs, DeploymentDeployArtifactOverrideArgumentsPtr and DeploymentDeployArtifactOverrideArgumentsPtrOutput values.
 // You can construct a concrete instance of `DeploymentDeployArtifactOverrideArgumentsPtrInput` via:
 //
-//          DeploymentDeployArtifactOverrideArgumentsArgs{...}
+//	        DeploymentDeployArtifactOverrideArgumentsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeploymentDeployArtifactOverrideArgumentsPtrInput interface {
 	pulumi.Input
 
@@ -7573,7 +7904,7 @@ type DeploymentDeployArtifactOverrideArgumentsItem struct {
 // DeploymentDeployArtifactOverrideArgumentsItemInput is an input type that accepts DeploymentDeployArtifactOverrideArgumentsItemArgs and DeploymentDeployArtifactOverrideArgumentsItemOutput values.
 // You can construct a concrete instance of `DeploymentDeployArtifactOverrideArgumentsItemInput` via:
 //
-//          DeploymentDeployArtifactOverrideArgumentsItemArgs{...}
+//	DeploymentDeployArtifactOverrideArgumentsItemArgs{...}
 type DeploymentDeployArtifactOverrideArgumentsItemInput interface {
 	pulumi.Input
 
@@ -7605,7 +7936,7 @@ func (i DeploymentDeployArtifactOverrideArgumentsItemArgs) ToDeploymentDeployArt
 // DeploymentDeployArtifactOverrideArgumentsItemArrayInput is an input type that accepts DeploymentDeployArtifactOverrideArgumentsItemArray and DeploymentDeployArtifactOverrideArgumentsItemArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployArtifactOverrideArgumentsItemArrayInput` via:
 //
-//          DeploymentDeployArtifactOverrideArgumentsItemArray{ DeploymentDeployArtifactOverrideArgumentsItemArgs{...} }
+//	DeploymentDeployArtifactOverrideArgumentsItemArray{ DeploymentDeployArtifactOverrideArgumentsItemArgs{...} }
 type DeploymentDeployArtifactOverrideArgumentsItemArrayInput interface {
 	pulumi.Input
 
@@ -7684,7 +8015,7 @@ type DeploymentDeployPipelineArtifact struct {
 // DeploymentDeployPipelineArtifactInput is an input type that accepts DeploymentDeployPipelineArtifactArgs and DeploymentDeployPipelineArtifactOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactInput` via:
 //
-//          DeploymentDeployPipelineArtifactArgs{...}
+//	DeploymentDeployPipelineArtifactArgs{...}
 type DeploymentDeployPipelineArtifactInput interface {
 	pulumi.Input
 
@@ -7712,7 +8043,7 @@ func (i DeploymentDeployPipelineArtifactArgs) ToDeploymentDeployPipelineArtifact
 // DeploymentDeployPipelineArtifactArrayInput is an input type that accepts DeploymentDeployPipelineArtifactArray and DeploymentDeployPipelineArtifactArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactArrayInput` via:
 //
-//          DeploymentDeployPipelineArtifactArray{ DeploymentDeployPipelineArtifactArgs{...} }
+//	DeploymentDeployPipelineArtifactArray{ DeploymentDeployPipelineArtifactArgs{...} }
 type DeploymentDeployPipelineArtifactArrayInput interface {
 	pulumi.Input
 
@@ -7785,7 +8116,7 @@ type DeploymentDeployPipelineArtifactItem struct {
 // DeploymentDeployPipelineArtifactItemInput is an input type that accepts DeploymentDeployPipelineArtifactItemArgs and DeploymentDeployPipelineArtifactItemOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactItemInput` via:
 //
-//          DeploymentDeployPipelineArtifactItemArgs{...}
+//	DeploymentDeployPipelineArtifactItemArgs{...}
 type DeploymentDeployPipelineArtifactItemInput interface {
 	pulumi.Input
 
@@ -7817,7 +8148,7 @@ func (i DeploymentDeployPipelineArtifactItemArgs) ToDeploymentDeployPipelineArti
 // DeploymentDeployPipelineArtifactItemArrayInput is an input type that accepts DeploymentDeployPipelineArtifactItemArray and DeploymentDeployPipelineArtifactItemArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactItemArrayInput` via:
 //
-//          DeploymentDeployPipelineArtifactItemArray{ DeploymentDeployPipelineArtifactItemArgs{...} }
+//	DeploymentDeployPipelineArtifactItemArray{ DeploymentDeployPipelineArtifactItemArgs{...} }
 type DeploymentDeployPipelineArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -7898,7 +8229,7 @@ type DeploymentDeployPipelineArtifactItemDeployPipelineStage struct {
 // DeploymentDeployPipelineArtifactItemDeployPipelineStageInput is an input type that accepts DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs and DeploymentDeployPipelineArtifactItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactItemDeployPipelineStageInput` via:
 //
-//          DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...}
+//	DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...}
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -7926,7 +8257,7 @@ func (i DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs) ToDeploymen
 // DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput is an input type that accepts DeploymentDeployPipelineArtifactItemDeployPipelineStageArray and DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput` via:
 //
-//          DeploymentDeployPipelineArtifactItemDeployPipelineStageArray{ DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
+//	DeploymentDeployPipelineArtifactItemDeployPipelineStageArray{ DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -7999,7 +8330,7 @@ type DeploymentDeployPipelineArtifactItemDeployPipelineStageItem struct {
 // DeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput is an input type that accepts DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs and DeploymentDeployPipelineArtifactItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput` via:
 //
-//          DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
+//	DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -8029,7 +8360,7 @@ func (i DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs) ToDeplo
 // DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput is an input type that accepts DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArray and DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput` via:
 //
-//          DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArray{ DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
+//	DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArray{ DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -8103,7 +8434,7 @@ type DeploymentDeployPipelineEnvironment struct {
 // DeploymentDeployPipelineEnvironmentInput is an input type that accepts DeploymentDeployPipelineEnvironmentArgs and DeploymentDeployPipelineEnvironmentOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentArgs{...}
+//	DeploymentDeployPipelineEnvironmentArgs{...}
 type DeploymentDeployPipelineEnvironmentInput interface {
 	pulumi.Input
 
@@ -8131,7 +8462,7 @@ func (i DeploymentDeployPipelineEnvironmentArgs) ToDeploymentDeployPipelineEnvir
 // DeploymentDeployPipelineEnvironmentArrayInput is an input type that accepts DeploymentDeployPipelineEnvironmentArray and DeploymentDeployPipelineEnvironmentArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentArrayInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentArray{ DeploymentDeployPipelineEnvironmentArgs{...} }
+//	DeploymentDeployPipelineEnvironmentArray{ DeploymentDeployPipelineEnvironmentArgs{...} }
 type DeploymentDeployPipelineEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -8204,7 +8535,7 @@ type DeploymentDeployPipelineEnvironmentItem struct {
 // DeploymentDeployPipelineEnvironmentItemInput is an input type that accepts DeploymentDeployPipelineEnvironmentItemArgs and DeploymentDeployPipelineEnvironmentItemOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentItemInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentItemArgs{...}
+//	DeploymentDeployPipelineEnvironmentItemArgs{...}
 type DeploymentDeployPipelineEnvironmentItemInput interface {
 	pulumi.Input
 
@@ -8236,7 +8567,7 @@ func (i DeploymentDeployPipelineEnvironmentItemArgs) ToDeploymentDeployPipelineE
 // DeploymentDeployPipelineEnvironmentItemArrayInput is an input type that accepts DeploymentDeployPipelineEnvironmentItemArray and DeploymentDeployPipelineEnvironmentItemArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentItemArrayInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentItemArray{ DeploymentDeployPipelineEnvironmentItemArgs{...} }
+//	DeploymentDeployPipelineEnvironmentItemArray{ DeploymentDeployPipelineEnvironmentItemArgs{...} }
 type DeploymentDeployPipelineEnvironmentItemArrayInput interface {
 	pulumi.Input
 
@@ -8317,7 +8648,7 @@ type DeploymentDeployPipelineEnvironmentItemDeployPipelineStage struct {
 // DeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput is an input type that accepts DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs and DeploymentDeployPipelineEnvironmentItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
+//	DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -8345,7 +8676,7 @@ func (i DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs) ToDeploy
 // DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput is an input type that accepts DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray and DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray{ DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
+//	DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray{ DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -8418,7 +8749,7 @@ type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem struct {
 // DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput is an input type that accepts DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs and DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
+//	DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -8448,7 +8779,7 @@ func (i DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs) ToDe
 // DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput is an input type that accepts DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray and DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput` via:
 //
-//          DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
+//	DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -8522,7 +8853,7 @@ type DeploymentDeploymentArguments struct {
 // DeploymentDeploymentArgumentsInput is an input type that accepts DeploymentDeploymentArgumentsArgs and DeploymentDeploymentArgumentsOutput values.
 // You can construct a concrete instance of `DeploymentDeploymentArgumentsInput` via:
 //
-//          DeploymentDeploymentArgumentsArgs{...}
+//	DeploymentDeploymentArgumentsArgs{...}
 type DeploymentDeploymentArgumentsInput interface {
 	pulumi.Input
 
@@ -8558,11 +8889,11 @@ func (i DeploymentDeploymentArgumentsArgs) ToDeploymentDeploymentArgumentsPtrOut
 // DeploymentDeploymentArgumentsPtrInput is an input type that accepts DeploymentDeploymentArgumentsArgs, DeploymentDeploymentArgumentsPtr and DeploymentDeploymentArgumentsPtrOutput values.
 // You can construct a concrete instance of `DeploymentDeploymentArgumentsPtrInput` via:
 //
-//          DeploymentDeploymentArgumentsArgs{...}
+//	        DeploymentDeploymentArgumentsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeploymentDeploymentArgumentsPtrInput interface {
 	pulumi.Input
 
@@ -8661,7 +8992,7 @@ type DeploymentDeploymentArgumentsItem struct {
 // DeploymentDeploymentArgumentsItemInput is an input type that accepts DeploymentDeploymentArgumentsItemArgs and DeploymentDeploymentArgumentsItemOutput values.
 // You can construct a concrete instance of `DeploymentDeploymentArgumentsItemInput` via:
 //
-//          DeploymentDeploymentArgumentsItemArgs{...}
+//	DeploymentDeploymentArgumentsItemArgs{...}
 type DeploymentDeploymentArgumentsItemInput interface {
 	pulumi.Input
 
@@ -8691,7 +9022,7 @@ func (i DeploymentDeploymentArgumentsItemArgs) ToDeploymentDeploymentArgumentsIt
 // DeploymentDeploymentArgumentsItemArrayInput is an input type that accepts DeploymentDeploymentArgumentsItemArray and DeploymentDeploymentArgumentsItemArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeploymentArgumentsItemArrayInput` via:
 //
-//          DeploymentDeploymentArgumentsItemArray{ DeploymentDeploymentArgumentsItemArgs{...} }
+//	DeploymentDeploymentArgumentsItemArray{ DeploymentDeploymentArgumentsItemArgs{...} }
 type DeploymentDeploymentArgumentsItemArrayInput interface {
 	pulumi.Input
 
@@ -8769,7 +9100,7 @@ type DeploymentDeploymentExecutionProgress struct {
 // DeploymentDeploymentExecutionProgressInput is an input type that accepts DeploymentDeploymentExecutionProgressArgs and DeploymentDeploymentExecutionProgressOutput values.
 // You can construct a concrete instance of `DeploymentDeploymentExecutionProgressInput` via:
 //
-//          DeploymentDeploymentExecutionProgressArgs{...}
+//	DeploymentDeploymentExecutionProgressArgs{...}
 type DeploymentDeploymentExecutionProgressInput interface {
 	pulumi.Input
 
@@ -8801,7 +9132,7 @@ func (i DeploymentDeploymentExecutionProgressArgs) ToDeploymentDeploymentExecuti
 // DeploymentDeploymentExecutionProgressArrayInput is an input type that accepts DeploymentDeploymentExecutionProgressArray and DeploymentDeploymentExecutionProgressArrayOutput values.
 // You can construct a concrete instance of `DeploymentDeploymentExecutionProgressArrayInput` via:
 //
-//          DeploymentDeploymentExecutionProgressArray{ DeploymentDeploymentExecutionProgressArgs{...} }
+//	DeploymentDeploymentExecutionProgressArray{ DeploymentDeploymentExecutionProgressArgs{...} }
 type DeploymentDeploymentExecutionProgressArrayInput interface {
 	pulumi.Input
 
@@ -8882,7 +9213,7 @@ type ProjectNotificationConfig struct {
 // ProjectNotificationConfigInput is an input type that accepts ProjectNotificationConfigArgs and ProjectNotificationConfigOutput values.
 // You can construct a concrete instance of `ProjectNotificationConfigInput` via:
 //
-//          ProjectNotificationConfigArgs{...}
+//	ProjectNotificationConfigArgs{...}
 type ProjectNotificationConfigInput interface {
 	pulumi.Input
 
@@ -8918,11 +9249,11 @@ func (i ProjectNotificationConfigArgs) ToProjectNotificationConfigPtrOutputWithC
 // ProjectNotificationConfigPtrInput is an input type that accepts ProjectNotificationConfigArgs, ProjectNotificationConfigPtr and ProjectNotificationConfigPtrOutput values.
 // You can construct a concrete instance of `ProjectNotificationConfigPtrInput` via:
 //
-//          ProjectNotificationConfigArgs{...}
+//	        ProjectNotificationConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ProjectNotificationConfigPtrInput interface {
 	pulumi.Input
 
@@ -9023,7 +9354,7 @@ type RepositoryMirrorRepositoryConfig struct {
 // RepositoryMirrorRepositoryConfigInput is an input type that accepts RepositoryMirrorRepositoryConfigArgs and RepositoryMirrorRepositoryConfigOutput values.
 // You can construct a concrete instance of `RepositoryMirrorRepositoryConfigInput` via:
 //
-//          RepositoryMirrorRepositoryConfigArgs{...}
+//	RepositoryMirrorRepositoryConfigArgs{...}
 type RepositoryMirrorRepositoryConfigInput interface {
 	pulumi.Input
 
@@ -9063,11 +9394,11 @@ func (i RepositoryMirrorRepositoryConfigArgs) ToRepositoryMirrorRepositoryConfig
 // RepositoryMirrorRepositoryConfigPtrInput is an input type that accepts RepositoryMirrorRepositoryConfigArgs, RepositoryMirrorRepositoryConfigPtr and RepositoryMirrorRepositoryConfigPtrOutput values.
 // You can construct a concrete instance of `RepositoryMirrorRepositoryConfigPtrInput` via:
 //
-//          RepositoryMirrorRepositoryConfigArgs{...}
+//	        RepositoryMirrorRepositoryConfigArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RepositoryMirrorRepositoryConfigPtrInput interface {
 	pulumi.Input
 
@@ -9189,7 +9520,7 @@ func (o RepositoryMirrorRepositoryConfigPtrOutput) TriggerSchedule() RepositoryM
 }
 
 type RepositoryMirrorRepositoryConfigTriggerSchedule struct {
-	// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+	// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 	CustomSchedule *string `pulumi:"customSchedule"`
 	// (Updatable) Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
 	ScheduleType string `pulumi:"scheduleType"`
@@ -9198,7 +9529,7 @@ type RepositoryMirrorRepositoryConfigTriggerSchedule struct {
 // RepositoryMirrorRepositoryConfigTriggerScheduleInput is an input type that accepts RepositoryMirrorRepositoryConfigTriggerScheduleArgs and RepositoryMirrorRepositoryConfigTriggerScheduleOutput values.
 // You can construct a concrete instance of `RepositoryMirrorRepositoryConfigTriggerScheduleInput` via:
 //
-//          RepositoryMirrorRepositoryConfigTriggerScheduleArgs{...}
+//	RepositoryMirrorRepositoryConfigTriggerScheduleArgs{...}
 type RepositoryMirrorRepositoryConfigTriggerScheduleInput interface {
 	pulumi.Input
 
@@ -9207,7 +9538,7 @@ type RepositoryMirrorRepositoryConfigTriggerScheduleInput interface {
 }
 
 type RepositoryMirrorRepositoryConfigTriggerScheduleArgs struct {
-	// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+	// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 	CustomSchedule pulumi.StringPtrInput `pulumi:"customSchedule"`
 	// (Updatable) Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
 	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
@@ -9236,11 +9567,11 @@ func (i RepositoryMirrorRepositoryConfigTriggerScheduleArgs) ToRepositoryMirrorR
 // RepositoryMirrorRepositoryConfigTriggerSchedulePtrInput is an input type that accepts RepositoryMirrorRepositoryConfigTriggerScheduleArgs, RepositoryMirrorRepositoryConfigTriggerSchedulePtr and RepositoryMirrorRepositoryConfigTriggerSchedulePtrOutput values.
 // You can construct a concrete instance of `RepositoryMirrorRepositoryConfigTriggerSchedulePtrInput` via:
 //
-//          RepositoryMirrorRepositoryConfigTriggerScheduleArgs{...}
+//	        RepositoryMirrorRepositoryConfigTriggerScheduleArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type RepositoryMirrorRepositoryConfigTriggerSchedulePtrInput interface {
 	pulumi.Input
 
@@ -9290,7 +9621,7 @@ func (o RepositoryMirrorRepositoryConfigTriggerScheduleOutput) ToRepositoryMirro
 	}).(RepositoryMirrorRepositoryConfigTriggerSchedulePtrOutput)
 }
 
-// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 func (o RepositoryMirrorRepositoryConfigTriggerScheduleOutput) CustomSchedule() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RepositoryMirrorRepositoryConfigTriggerSchedule) *string { return v.CustomSchedule }).(pulumi.StringPtrOutput)
 }
@@ -9324,7 +9655,7 @@ func (o RepositoryMirrorRepositoryConfigTriggerSchedulePtrOutput) Elem() Reposit
 	}).(RepositoryMirrorRepositoryConfigTriggerScheduleOutput)
 }
 
-// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+// (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 func (o RepositoryMirrorRepositoryConfigTriggerSchedulePtrOutput) CustomSchedule() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RepositoryMirrorRepositoryConfigTriggerSchedule) *string {
 		if v == nil {
@@ -9356,7 +9687,7 @@ type TriggerAction struct {
 // TriggerActionInput is an input type that accepts TriggerActionArgs and TriggerActionOutput values.
 // You can construct a concrete instance of `TriggerActionInput` via:
 //
-//          TriggerActionArgs{...}
+//	TriggerActionArgs{...}
 type TriggerActionInput interface {
 	pulumi.Input
 
@@ -9388,7 +9719,7 @@ func (i TriggerActionArgs) ToTriggerActionOutputWithContext(ctx context.Context)
 // TriggerActionArrayInput is an input type that accepts TriggerActionArray and TriggerActionArrayOutput values.
 // You can construct a concrete instance of `TriggerActionArrayInput` via:
 //
-//          TriggerActionArray{ TriggerActionArgs{...} }
+//	TriggerActionArray{ TriggerActionArgs{...} }
 type TriggerActionArrayInput interface {
 	pulumi.Input
 
@@ -9462,7 +9793,7 @@ func (o TriggerActionArrayOutput) Index(i pulumi.IntInput) TriggerActionOutput {
 type TriggerActionFilter struct {
 	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events []string `pulumi:"events"`
-	// (Updatable) Attributes to filter DevOps code repository events.
+	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource string `pulumi:"triggerSource"`
@@ -9471,7 +9802,7 @@ type TriggerActionFilter struct {
 // TriggerActionFilterInput is an input type that accepts TriggerActionFilterArgs and TriggerActionFilterOutput values.
 // You can construct a concrete instance of `TriggerActionFilterInput` via:
 //
-//          TriggerActionFilterArgs{...}
+//	TriggerActionFilterArgs{...}
 type TriggerActionFilterInput interface {
 	pulumi.Input
 
@@ -9482,7 +9813,7 @@ type TriggerActionFilterInput interface {
 type TriggerActionFilterArgs struct {
 	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// (Updatable) Attributes to filter DevOps code repository events.
+	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
@@ -9511,11 +9842,11 @@ func (i TriggerActionFilterArgs) ToTriggerActionFilterPtrOutputWithContext(ctx c
 // TriggerActionFilterPtrInput is an input type that accepts TriggerActionFilterArgs, TriggerActionFilterPtr and TriggerActionFilterPtrOutput values.
 // You can construct a concrete instance of `TriggerActionFilterPtrInput` via:
 //
-//          TriggerActionFilterArgs{...}
+//	        TriggerActionFilterArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TriggerActionFilterPtrInput interface {
 	pulumi.Input
 
@@ -9570,7 +9901,7 @@ func (o TriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Attributes to filter DevOps code repository events.
+// (Updatable) Attributes to filter GitLab self-hosted server events.
 func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput {
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterInclude { return v.Include }).(TriggerActionFilterIncludePtrOutput)
 }
@@ -9614,7 +9945,7 @@ func (o TriggerActionFilterPtrOutput) Events() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Attributes to filter DevOps code repository events.
+// (Updatable) Attributes to filter GitLab self-hosted server events.
 func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *TriggerActionFilterInclude {
 		if v == nil {
@@ -9644,7 +9975,7 @@ type TriggerActionFilterInclude struct {
 // TriggerActionFilterIncludeInput is an input type that accepts TriggerActionFilterIncludeArgs and TriggerActionFilterIncludeOutput values.
 // You can construct a concrete instance of `TriggerActionFilterIncludeInput` via:
 //
-//          TriggerActionFilterIncludeArgs{...}
+//	TriggerActionFilterIncludeArgs{...}
 type TriggerActionFilterIncludeInput interface {
 	pulumi.Input
 
@@ -9682,11 +10013,11 @@ func (i TriggerActionFilterIncludeArgs) ToTriggerActionFilterIncludePtrOutputWit
 // TriggerActionFilterIncludePtrInput is an input type that accepts TriggerActionFilterIncludeArgs, TriggerActionFilterIncludePtr and TriggerActionFilterIncludePtrOutput values.
 // You can construct a concrete instance of `TriggerActionFilterIncludePtrInput` via:
 //
-//          TriggerActionFilterIncludeArgs{...}
+//	        TriggerActionFilterIncludeArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type TriggerActionFilterIncludePtrInput interface {
 	pulumi.Input
 
@@ -9798,7 +10129,7 @@ type GetBuildPipelineBuildPipelineParameter struct {
 // GetBuildPipelineBuildPipelineParameterInput is an input type that accepts GetBuildPipelineBuildPipelineParameterArgs and GetBuildPipelineBuildPipelineParameterOutput values.
 // You can construct a concrete instance of `GetBuildPipelineBuildPipelineParameterInput` via:
 //
-//          GetBuildPipelineBuildPipelineParameterArgs{...}
+//	GetBuildPipelineBuildPipelineParameterArgs{...}
 type GetBuildPipelineBuildPipelineParameterInput interface {
 	pulumi.Input
 
@@ -9826,7 +10157,7 @@ func (i GetBuildPipelineBuildPipelineParameterArgs) ToGetBuildPipelineBuildPipel
 // GetBuildPipelineBuildPipelineParameterArrayInput is an input type that accepts GetBuildPipelineBuildPipelineParameterArray and GetBuildPipelineBuildPipelineParameterArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineBuildPipelineParameterArrayInput` via:
 //
-//          GetBuildPipelineBuildPipelineParameterArray{ GetBuildPipelineBuildPipelineParameterArgs{...} }
+//	GetBuildPipelineBuildPipelineParameterArray{ GetBuildPipelineBuildPipelineParameterArgs{...} }
 type GetBuildPipelineBuildPipelineParameterArrayInput interface {
 	pulumi.Input
 
@@ -9901,7 +10232,7 @@ type GetBuildPipelineBuildPipelineParameterItem struct {
 // GetBuildPipelineBuildPipelineParameterItemInput is an input type that accepts GetBuildPipelineBuildPipelineParameterItemArgs and GetBuildPipelineBuildPipelineParameterItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineBuildPipelineParameterItemInput` via:
 //
-//          GetBuildPipelineBuildPipelineParameterItemArgs{...}
+//	GetBuildPipelineBuildPipelineParameterItemArgs{...}
 type GetBuildPipelineBuildPipelineParameterItemInput interface {
 	pulumi.Input
 
@@ -9933,7 +10264,7 @@ func (i GetBuildPipelineBuildPipelineParameterItemArgs) ToGetBuildPipelineBuildP
 // GetBuildPipelineBuildPipelineParameterItemArrayInput is an input type that accepts GetBuildPipelineBuildPipelineParameterItemArray and GetBuildPipelineBuildPipelineParameterItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineBuildPipelineParameterItemArrayInput` via:
 //
-//          GetBuildPipelineBuildPipelineParameterItemArray{ GetBuildPipelineBuildPipelineParameterItemArgs{...} }
+//	GetBuildPipelineBuildPipelineParameterItemArray{ GetBuildPipelineBuildPipelineParameterItemArgs{...} }
 type GetBuildPipelineBuildPipelineParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -10012,7 +10343,7 @@ type GetBuildPipelineStageBuildPipelineStagePredecessorCollection struct {
 // GetBuildPipelineStageBuildPipelineStagePredecessorCollectionInput is an input type that accepts GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArgs and GetBuildPipelineStageBuildPipelineStagePredecessorCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildPipelineStagePredecessorCollectionInput` via:
 //
-//          GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...}
+//	GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...}
 type GetBuildPipelineStageBuildPipelineStagePredecessorCollectionInput interface {
 	pulumi.Input
 
@@ -10040,7 +10371,7 @@ func (i GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArgs) ToGetB
 // GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArrayInput is an input type that accepts GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArray and GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArrayInput` via:
 //
-//          GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArray{ GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...} }
+//	GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArray{ GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{...} }
 type GetBuildPipelineStageBuildPipelineStagePredecessorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10111,7 +10442,7 @@ type GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItem struct {
 // GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput is an input type that accepts GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs and GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput` via:
 //
-//          GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...}
+//	GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...}
 type GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemInput interface {
 	pulumi.Input
 
@@ -10139,7 +10470,7 @@ func (i GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs) To
 // GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput is an input type that accepts GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray and GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{ GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...} }
+//	GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{ GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{...} }
 type GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10208,7 +10539,7 @@ type GetBuildPipelineStageBuildSourceCollection struct {
 // GetBuildPipelineStageBuildSourceCollectionInput is an input type that accepts GetBuildPipelineStageBuildSourceCollectionArgs and GetBuildPipelineStageBuildSourceCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildSourceCollectionInput` via:
 //
-//          GetBuildPipelineStageBuildSourceCollectionArgs{...}
+//	GetBuildPipelineStageBuildSourceCollectionArgs{...}
 type GetBuildPipelineStageBuildSourceCollectionInput interface {
 	pulumi.Input
 
@@ -10236,7 +10567,7 @@ func (i GetBuildPipelineStageBuildSourceCollectionArgs) ToGetBuildPipelineStageB
 // GetBuildPipelineStageBuildSourceCollectionArrayInput is an input type that accepts GetBuildPipelineStageBuildSourceCollectionArray and GetBuildPipelineStageBuildSourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildSourceCollectionArrayInput` via:
 //
-//          GetBuildPipelineStageBuildSourceCollectionArray{ GetBuildPipelineStageBuildSourceCollectionArgs{...} }
+//	GetBuildPipelineStageBuildSourceCollectionArray{ GetBuildPipelineStageBuildSourceCollectionArgs{...} }
 type GetBuildPipelineStageBuildSourceCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10302,7 +10633,7 @@ func (o GetBuildPipelineStageBuildSourceCollectionArrayOutput) Index(i pulumi.In
 type GetBuildPipelineStageBuildSourceCollectionItem struct {
 	// Branch name.
 	Branch string `pulumi:"branch"`
-	// Connection identifier pertinent to Bitbucket Cloud source provider
+	// Connection identifier pertinent to Bitbucket Server source provider
 	ConnectionId string `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
@@ -10317,7 +10648,7 @@ type GetBuildPipelineStageBuildSourceCollectionItem struct {
 // GetBuildPipelineStageBuildSourceCollectionItemInput is an input type that accepts GetBuildPipelineStageBuildSourceCollectionItemArgs and GetBuildPipelineStageBuildSourceCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildSourceCollectionItemInput` via:
 //
-//          GetBuildPipelineStageBuildSourceCollectionItemArgs{...}
+//	GetBuildPipelineStageBuildSourceCollectionItemArgs{...}
 type GetBuildPipelineStageBuildSourceCollectionItemInput interface {
 	pulumi.Input
 
@@ -10328,7 +10659,7 @@ type GetBuildPipelineStageBuildSourceCollectionItemInput interface {
 type GetBuildPipelineStageBuildSourceCollectionItemArgs struct {
 	// Branch name.
 	Branch pulumi.StringInput `pulumi:"branch"`
-	// Connection identifier pertinent to Bitbucket Cloud source provider
+	// Connection identifier pertinent to Bitbucket Server source provider
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
@@ -10355,7 +10686,7 @@ func (i GetBuildPipelineStageBuildSourceCollectionItemArgs) ToGetBuildPipelineSt
 // GetBuildPipelineStageBuildSourceCollectionItemArrayInput is an input type that accepts GetBuildPipelineStageBuildSourceCollectionItemArray and GetBuildPipelineStageBuildSourceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageBuildSourceCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStageBuildSourceCollectionItemArray{ GetBuildPipelineStageBuildSourceCollectionItemArgs{...} }
+//	GetBuildPipelineStageBuildSourceCollectionItemArray{ GetBuildPipelineStageBuildSourceCollectionItemArgs{...} }
 type GetBuildPipelineStageBuildSourceCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10396,7 +10727,7 @@ func (o GetBuildPipelineStageBuildSourceCollectionItemOutput) Branch() pulumi.St
 	return o.ApplyT(func(v GetBuildPipelineStageBuildSourceCollectionItem) string { return v.Branch }).(pulumi.StringOutput)
 }
 
-// Connection identifier pertinent to Bitbucket Cloud source provider
+// Connection identifier pertinent to Bitbucket Server source provider
 func (o GetBuildPipelineStageBuildSourceCollectionItemOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildPipelineStageBuildSourceCollectionItem) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
@@ -10449,7 +10780,7 @@ type GetBuildPipelineStageDeliverArtifactCollection struct {
 // GetBuildPipelineStageDeliverArtifactCollectionInput is an input type that accepts GetBuildPipelineStageDeliverArtifactCollectionArgs and GetBuildPipelineStageDeliverArtifactCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageDeliverArtifactCollectionInput` via:
 //
-//          GetBuildPipelineStageDeliverArtifactCollectionArgs{...}
+//	GetBuildPipelineStageDeliverArtifactCollectionArgs{...}
 type GetBuildPipelineStageDeliverArtifactCollectionInput interface {
 	pulumi.Input
 
@@ -10477,7 +10808,7 @@ func (i GetBuildPipelineStageDeliverArtifactCollectionArgs) ToGetBuildPipelineSt
 // GetBuildPipelineStageDeliverArtifactCollectionArrayInput is an input type that accepts GetBuildPipelineStageDeliverArtifactCollectionArray and GetBuildPipelineStageDeliverArtifactCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageDeliverArtifactCollectionArrayInput` via:
 //
-//          GetBuildPipelineStageDeliverArtifactCollectionArray{ GetBuildPipelineStageDeliverArtifactCollectionArgs{...} }
+//	GetBuildPipelineStageDeliverArtifactCollectionArray{ GetBuildPipelineStageDeliverArtifactCollectionArgs{...} }
 type GetBuildPipelineStageDeliverArtifactCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10550,7 +10881,7 @@ type GetBuildPipelineStageDeliverArtifactCollectionItem struct {
 // GetBuildPipelineStageDeliverArtifactCollectionItemInput is an input type that accepts GetBuildPipelineStageDeliverArtifactCollectionItemArgs and GetBuildPipelineStageDeliverArtifactCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageDeliverArtifactCollectionItemInput` via:
 //
-//          GetBuildPipelineStageDeliverArtifactCollectionItemArgs{...}
+//	GetBuildPipelineStageDeliverArtifactCollectionItemArgs{...}
 type GetBuildPipelineStageDeliverArtifactCollectionItemInput interface {
 	pulumi.Input
 
@@ -10580,7 +10911,7 @@ func (i GetBuildPipelineStageDeliverArtifactCollectionItemArgs) ToGetBuildPipeli
 // GetBuildPipelineStageDeliverArtifactCollectionItemArrayInput is an input type that accepts GetBuildPipelineStageDeliverArtifactCollectionItemArray and GetBuildPipelineStageDeliverArtifactCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageDeliverArtifactCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStageDeliverArtifactCollectionItemArray{ GetBuildPipelineStageDeliverArtifactCollectionItemArgs{...} }
+//	GetBuildPipelineStageDeliverArtifactCollectionItemArray{ GetBuildPipelineStageDeliverArtifactCollectionItemArgs{...} }
 type GetBuildPipelineStageDeliverArtifactCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10646,6 +10977,121 @@ func (o GetBuildPipelineStageDeliverArtifactCollectionItemArrayOutput) Index(i p
 	}).(GetBuildPipelineStageDeliverArtifactCollectionItemOutput)
 }
 
+type GetBuildPipelineStagePrivateAccessConfig struct {
+	// Network channel type.
+	NetworkChannelType string `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBuildPipelineStagePrivateAccessConfigInput is an input type that accepts GetBuildPipelineStagePrivateAccessConfigArgs and GetBuildPipelineStagePrivateAccessConfigOutput values.
+// You can construct a concrete instance of `GetBuildPipelineStagePrivateAccessConfigInput` via:
+//
+//	GetBuildPipelineStagePrivateAccessConfigArgs{...}
+type GetBuildPipelineStagePrivateAccessConfigInput interface {
+	pulumi.Input
+
+	ToGetBuildPipelineStagePrivateAccessConfigOutput() GetBuildPipelineStagePrivateAccessConfigOutput
+	ToGetBuildPipelineStagePrivateAccessConfigOutputWithContext(context.Context) GetBuildPipelineStagePrivateAccessConfigOutput
+}
+
+type GetBuildPipelineStagePrivateAccessConfigArgs struct {
+	// Network channel type.
+	NetworkChannelType pulumi.StringInput `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBuildPipelineStagePrivateAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (i GetBuildPipelineStagePrivateAccessConfigArgs) ToGetBuildPipelineStagePrivateAccessConfigOutput() GetBuildPipelineStagePrivateAccessConfigOutput {
+	return i.ToGetBuildPipelineStagePrivateAccessConfigOutputWithContext(context.Background())
+}
+
+func (i GetBuildPipelineStagePrivateAccessConfigArgs) ToGetBuildPipelineStagePrivateAccessConfigOutputWithContext(ctx context.Context) GetBuildPipelineStagePrivateAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildPipelineStagePrivateAccessConfigOutput)
+}
+
+// GetBuildPipelineStagePrivateAccessConfigArrayInput is an input type that accepts GetBuildPipelineStagePrivateAccessConfigArray and GetBuildPipelineStagePrivateAccessConfigArrayOutput values.
+// You can construct a concrete instance of `GetBuildPipelineStagePrivateAccessConfigArrayInput` via:
+//
+//	GetBuildPipelineStagePrivateAccessConfigArray{ GetBuildPipelineStagePrivateAccessConfigArgs{...} }
+type GetBuildPipelineStagePrivateAccessConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildPipelineStagePrivateAccessConfigArrayOutput() GetBuildPipelineStagePrivateAccessConfigArrayOutput
+	ToGetBuildPipelineStagePrivateAccessConfigArrayOutputWithContext(context.Context) GetBuildPipelineStagePrivateAccessConfigArrayOutput
+}
+
+type GetBuildPipelineStagePrivateAccessConfigArray []GetBuildPipelineStagePrivateAccessConfigInput
+
+func (GetBuildPipelineStagePrivateAccessConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (i GetBuildPipelineStagePrivateAccessConfigArray) ToGetBuildPipelineStagePrivateAccessConfigArrayOutput() GetBuildPipelineStagePrivateAccessConfigArrayOutput {
+	return i.ToGetBuildPipelineStagePrivateAccessConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildPipelineStagePrivateAccessConfigArray) ToGetBuildPipelineStagePrivateAccessConfigArrayOutputWithContext(ctx context.Context) GetBuildPipelineStagePrivateAccessConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildPipelineStagePrivateAccessConfigArrayOutput)
+}
+
+type GetBuildPipelineStagePrivateAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBuildPipelineStagePrivateAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (o GetBuildPipelineStagePrivateAccessConfigOutput) ToGetBuildPipelineStagePrivateAccessConfigOutput() GetBuildPipelineStagePrivateAccessConfigOutput {
+	return o
+}
+
+func (o GetBuildPipelineStagePrivateAccessConfigOutput) ToGetBuildPipelineStagePrivateAccessConfigOutputWithContext(ctx context.Context) GetBuildPipelineStagePrivateAccessConfigOutput {
+	return o
+}
+
+// Network channel type.
+func (o GetBuildPipelineStagePrivateAccessConfigOutput) NetworkChannelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagePrivateAccessConfig) string { return v.NetworkChannelType }).(pulumi.StringOutput)
+}
+
+// An array of network security group OCIDs.
+func (o GetBuildPipelineStagePrivateAccessConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagePrivateAccessConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o GetBuildPipelineStagePrivateAccessConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagePrivateAccessConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBuildPipelineStagePrivateAccessConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildPipelineStagePrivateAccessConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildPipelineStagePrivateAccessConfig)(nil)).Elem()
+}
+
+func (o GetBuildPipelineStagePrivateAccessConfigArrayOutput) ToGetBuildPipelineStagePrivateAccessConfigArrayOutput() GetBuildPipelineStagePrivateAccessConfigArrayOutput {
+	return o
+}
+
+func (o GetBuildPipelineStagePrivateAccessConfigArrayOutput) ToGetBuildPipelineStagePrivateAccessConfigArrayOutputWithContext(ctx context.Context) GetBuildPipelineStagePrivateAccessConfigArrayOutput {
+	return o
+}
+
+func (o GetBuildPipelineStagePrivateAccessConfigArrayOutput) Index(i pulumi.IntInput) GetBuildPipelineStagePrivateAccessConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildPipelineStagePrivateAccessConfig {
+		return vs[0].([]GetBuildPipelineStagePrivateAccessConfig)[vs[1].(int)]
+	}).(GetBuildPipelineStagePrivateAccessConfigOutput)
+}
+
 type GetBuildPipelineStageWaitCriteria struct {
 	// The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
 	WaitDuration string `pulumi:"waitDuration"`
@@ -10656,7 +11102,7 @@ type GetBuildPipelineStageWaitCriteria struct {
 // GetBuildPipelineStageWaitCriteriaInput is an input type that accepts GetBuildPipelineStageWaitCriteriaArgs and GetBuildPipelineStageWaitCriteriaOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageWaitCriteriaInput` via:
 //
-//          GetBuildPipelineStageWaitCriteriaArgs{...}
+//	GetBuildPipelineStageWaitCriteriaArgs{...}
 type GetBuildPipelineStageWaitCriteriaInput interface {
 	pulumi.Input
 
@@ -10686,7 +11132,7 @@ func (i GetBuildPipelineStageWaitCriteriaArgs) ToGetBuildPipelineStageWaitCriter
 // GetBuildPipelineStageWaitCriteriaArrayInput is an input type that accepts GetBuildPipelineStageWaitCriteriaArray and GetBuildPipelineStageWaitCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStageWaitCriteriaArrayInput` via:
 //
-//          GetBuildPipelineStageWaitCriteriaArray{ GetBuildPipelineStageWaitCriteriaArgs{...} }
+//	GetBuildPipelineStageWaitCriteriaArray{ GetBuildPipelineStageWaitCriteriaArgs{...} }
 type GetBuildPipelineStageWaitCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -10760,7 +11206,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollection struct {
 // GetBuildPipelineStagesBuildPipelineStageCollectionInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionArgs and GetBuildPipelineStagesBuildPipelineStageCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionInput interface {
 	pulumi.Input
 
@@ -10788,7 +11234,7 @@ func (i GetBuildPipelineStagesBuildPipelineStageCollectionArgs) ToGetBuildPipeli
 // GetBuildPipelineStagesBuildPipelineStageCollectionArrayInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionArray and GetBuildPipelineStagesBuildPipelineStageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionArrayInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionArray{ GetBuildPipelineStagesBuildPipelineStageCollectionArgs{...} }
+//	GetBuildPipelineStagesBuildPipelineStageCollectionArray{ GetBuildPipelineStagesBuildPipelineStageCollectionArgs{...} }
 type GetBuildPipelineStagesBuildPipelineStageCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10888,6 +11334,8 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource string `pulumi:"primaryBuildSource"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig `pulumi:"privateAccessConfig"`
 	// The OCID of the DevOps project.
 	ProjectId string `pulumi:"projectId"`
 	// Timeout for the build stage execution. Specify value in seconds.
@@ -10907,7 +11355,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItem struct {
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemInput interface {
 	pulumi.Input
 
@@ -10952,6 +11400,8 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
 	PrimaryBuildSource pulumi.StringInput `pulumi:"primaryBuildSource"`
+	// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+	PrivateAccessConfig GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigInput `pulumi:"privateAccessConfig"`
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// Timeout for the build stage execution. Specify value in seconds.
@@ -10983,7 +11433,7 @@ func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs) ToGetBuildPi
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemArrayInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemArray and GetBuildPipelineStagesBuildPipelineStageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs{...} }
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs{...} }
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11121,6 +11571,13 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) PrimaryBui
 	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) string { return v.PrimaryBuildSource }).(pulumi.StringOutput)
 }
 
+// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) PrivateAccessConfig() GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig {
+		return v.PrivateAccessConfig
+	}).(GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput)
+}
+
 // The OCID of the DevOps project.
 func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
@@ -11190,7 +11647,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePre
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionInput interface {
 	pulumi.Input
 
@@ -11218,7 +11675,7 @@ func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStage
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArray and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArgs{...} }
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArgs{...} }
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11289,7 +11746,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePre
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemInput interface {
 	pulumi.Input
 
@@ -11317,7 +11774,7 @@ func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStage
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArrayInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArray and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArgs{...} }
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArgs{...} }
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11388,7 +11845,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionInput interface {
 	pulumi.Input
 
@@ -11437,7 +11894,7 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollect
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem struct {
 	// Branch name.
 	Branch string `pulumi:"branch"`
-	// Connection identifier pertinent to Bitbucket Cloud source provider
+	// Connection identifier pertinent to Bitbucket Server source provider
 	ConnectionId string `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
@@ -11452,7 +11909,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemInput interface {
 	pulumi.Input
 
@@ -11463,7 +11920,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs struct {
 	// Branch name.
 	Branch pulumi.StringInput `pulumi:"branch"`
-	// Connection identifier pertinent to Bitbucket Cloud source provider
+	// Connection identifier pertinent to Bitbucket Server source provider
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
@@ -11490,7 +11947,7 @@ func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollect
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArrayInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArray and GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs{...} }
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs{...} }
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11533,7 +11990,7 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollect
 	}).(pulumi.StringOutput)
 }
 
-// Connection identifier pertinent to Bitbucket Cloud source provider
+// Connection identifier pertinent to Bitbucket Server source provider
 func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem) string {
 		return v.ConnectionId
@@ -11596,7 +12053,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollec
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionInput interface {
 	pulumi.Input
 
@@ -11652,7 +12109,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollec
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemInput interface {
 	pulumi.Input
 
@@ -11682,7 +12139,7 @@ func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCol
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArrayInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArray and GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArrayInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArgs{...} }
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArray{ GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArgs{...} }
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11752,6 +12209,82 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCol
 	}).(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemOutput)
 }
 
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig struct {
+	// Network channel type.
+	NetworkChannelType string `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput values.
+// You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigInput` via:
+//
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs{...}
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigInput interface {
+	pulumi.Input
+
+	ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput() GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput
+	ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutputWithContext(context.Context) GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput
+}
+
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs struct {
+	// Network channel type.
+	NetworkChannelType pulumi.StringInput `pulumi:"networkChannelType"`
+	// An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The OCID of the subnet where VNIC resources will be created for private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig)(nil)).Elem()
+}
+
+func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput() GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput {
+	return i.ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutputWithContext(context.Background())
+}
+
+func (i GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutputWithContext(ctx context.Context) GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput)
+}
+
+type GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig)(nil)).Elem()
+}
+
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput() GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput {
+	return o
+}
+
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput) ToGetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutputWithContext(ctx context.Context) GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput {
+	return o
+}
+
+// Network channel type.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput) NetworkChannelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig) string {
+		return v.NetworkChannelType
+	}).(pulumi.StringOutput)
+}
+
+// An array of network security group OCIDs.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the subnet where VNIC resources will be created for private endpoint.
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria struct {
 	// The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
 	WaitDuration string `pulumi:"waitDuration"`
@@ -11762,7 +12295,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria struct {
 // GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaInput is an input type that accepts GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaArgs and GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaInput` via:
 //
-//          GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaArgs{...}
+//	GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaArgs{...}
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaInput interface {
 	pulumi.Input
 
@@ -11825,7 +12358,7 @@ type GetBuildPipelineStagesFilter struct {
 // GetBuildPipelineStagesFilterInput is an input type that accepts GetBuildPipelineStagesFilterArgs and GetBuildPipelineStagesFilterOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesFilterInput` via:
 //
-//          GetBuildPipelineStagesFilterArgs{...}
+//	GetBuildPipelineStagesFilterArgs{...}
 type GetBuildPipelineStagesFilterInput interface {
 	pulumi.Input
 
@@ -11855,7 +12388,7 @@ func (i GetBuildPipelineStagesFilterArgs) ToGetBuildPipelineStagesFilterOutputWi
 // GetBuildPipelineStagesFilterArrayInput is an input type that accepts GetBuildPipelineStagesFilterArray and GetBuildPipelineStagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelineStagesFilterArrayInput` via:
 //
-//          GetBuildPipelineStagesFilterArray{ GetBuildPipelineStagesFilterArgs{...} }
+//	GetBuildPipelineStagesFilterArray{ GetBuildPipelineStagesFilterArgs{...} }
 type GetBuildPipelineStagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -11932,7 +12465,7 @@ type GetBuildPipelinesBuildPipelineCollection struct {
 // GetBuildPipelinesBuildPipelineCollectionInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionArgs and GetBuildPipelinesBuildPipelineCollectionOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionArgs{...}
+//	GetBuildPipelinesBuildPipelineCollectionArgs{...}
 type GetBuildPipelinesBuildPipelineCollectionInput interface {
 	pulumi.Input
 
@@ -11960,7 +12493,7 @@ func (i GetBuildPipelinesBuildPipelineCollectionArgs) ToGetBuildPipelinesBuildPi
 // GetBuildPipelinesBuildPipelineCollectionArrayInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionArray and GetBuildPipelinesBuildPipelineCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionArrayInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionArray{ GetBuildPipelinesBuildPipelineCollectionArgs{...} }
+//	GetBuildPipelinesBuildPipelineCollectionArray{ GetBuildPipelinesBuildPipelineCollectionArgs{...} }
 type GetBuildPipelinesBuildPipelineCollectionArrayInput interface {
 	pulumi.Input
 
@@ -12055,7 +12588,7 @@ type GetBuildPipelinesBuildPipelineCollectionItem struct {
 // GetBuildPipelinesBuildPipelineCollectionItemInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionItemArgs and GetBuildPipelinesBuildPipelineCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionItemInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionItemArgs{...}
+//	GetBuildPipelinesBuildPipelineCollectionItemArgs{...}
 type GetBuildPipelinesBuildPipelineCollectionItemInput interface {
 	pulumi.Input
 
@@ -12107,7 +12640,7 @@ func (i GetBuildPipelinesBuildPipelineCollectionItemArgs) ToGetBuildPipelinesBui
 // GetBuildPipelinesBuildPipelineCollectionItemArrayInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionItemArray and GetBuildPipelinesBuildPipelineCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionItemArrayInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionItemArray{ GetBuildPipelinesBuildPipelineCollectionItemArgs{...} }
+//	GetBuildPipelinesBuildPipelineCollectionItemArray{ GetBuildPipelinesBuildPipelineCollectionItemArgs{...} }
 type GetBuildPipelinesBuildPipelineCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -12238,7 +12771,7 @@ type GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter struct {
 // GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs and GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs{...}
+//	GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs{...}
 type GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterInput interface {
 	pulumi.Input
 
@@ -12266,7 +12799,7 @@ func (i GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs) 
 // GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArrayInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArray and GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArrayInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArray{ GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs{...} }
+//	GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArray{ GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs{...} }
 type GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArrayInput interface {
 	pulumi.Input
 
@@ -12341,7 +12874,7 @@ type GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem stru
 // GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArgs and GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArgs{...}
+//	GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArgs{...}
 type GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemInput interface {
 	pulumi.Input
 
@@ -12373,7 +12906,7 @@ func (i GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemAr
 // GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArrayInput is an input type that accepts GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArray and GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArrayInput` via:
 //
-//          GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArray{ GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArgs{...} }
+//	GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArray{ GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArgs{...} }
 type GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -12458,7 +12991,7 @@ type GetBuildPipelinesFilter struct {
 // GetBuildPipelinesFilterInput is an input type that accepts GetBuildPipelinesFilterArgs and GetBuildPipelinesFilterOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesFilterInput` via:
 //
-//          GetBuildPipelinesFilterArgs{...}
+//	GetBuildPipelinesFilterArgs{...}
 type GetBuildPipelinesFilterInput interface {
 	pulumi.Input
 
@@ -12488,7 +13021,7 @@ func (i GetBuildPipelinesFilterArgs) ToGetBuildPipelinesFilterOutputWithContext(
 // GetBuildPipelinesFilterArrayInput is an input type that accepts GetBuildPipelinesFilterArray and GetBuildPipelinesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBuildPipelinesFilterArrayInput` via:
 //
-//          GetBuildPipelinesFilterArray{ GetBuildPipelinesFilterArgs{...} }
+//	GetBuildPipelinesFilterArray{ GetBuildPipelinesFilterArgs{...} }
 type GetBuildPipelinesFilterArrayInput interface {
 	pulumi.Input
 
@@ -12571,7 +13104,7 @@ type GetBuildRunBuildOutput struct {
 // GetBuildRunBuildOutputInput is an input type that accepts GetBuildRunBuildOutputArgs and GetBuildRunBuildOutputOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputInput` via:
 //
-//          GetBuildRunBuildOutputArgs{...}
+//	GetBuildRunBuildOutputArgs{...}
 type GetBuildRunBuildOutputInput interface {
 	pulumi.Input
 
@@ -12605,7 +13138,7 @@ func (i GetBuildRunBuildOutputArgs) ToGetBuildRunBuildOutputOutputWithContext(ct
 // GetBuildRunBuildOutputArrayInput is an input type that accepts GetBuildRunBuildOutputArray and GetBuildRunBuildOutputArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputArrayInput` via:
 //
-//          GetBuildRunBuildOutputArray{ GetBuildRunBuildOutputArgs{...} }
+//	GetBuildRunBuildOutputArray{ GetBuildRunBuildOutputArgs{...} }
 type GetBuildRunBuildOutputArrayInput interface {
 	pulumi.Input
 
@@ -12693,7 +13226,7 @@ type GetBuildRunBuildOutputArtifactOverrideParameter struct {
 // GetBuildRunBuildOutputArtifactOverrideParameterInput is an input type that accepts GetBuildRunBuildOutputArtifactOverrideParameterArgs and GetBuildRunBuildOutputArtifactOverrideParameterOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputArtifactOverrideParameterInput` via:
 //
-//          GetBuildRunBuildOutputArtifactOverrideParameterArgs{...}
+//	GetBuildRunBuildOutputArtifactOverrideParameterArgs{...}
 type GetBuildRunBuildOutputArtifactOverrideParameterInput interface {
 	pulumi.Input
 
@@ -12721,7 +13254,7 @@ func (i GetBuildRunBuildOutputArtifactOverrideParameterArgs) ToGetBuildRunBuildO
 // GetBuildRunBuildOutputArtifactOverrideParameterArrayInput is an input type that accepts GetBuildRunBuildOutputArtifactOverrideParameterArray and GetBuildRunBuildOutputArtifactOverrideParameterArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputArtifactOverrideParameterArrayInput` via:
 //
-//          GetBuildRunBuildOutputArtifactOverrideParameterArray{ GetBuildRunBuildOutputArtifactOverrideParameterArgs{...} }
+//	GetBuildRunBuildOutputArtifactOverrideParameterArray{ GetBuildRunBuildOutputArtifactOverrideParameterArgs{...} }
 type GetBuildRunBuildOutputArtifactOverrideParameterArrayInput interface {
 	pulumi.Input
 
@@ -12796,7 +13329,7 @@ type GetBuildRunBuildOutputArtifactOverrideParameterItem struct {
 // GetBuildRunBuildOutputArtifactOverrideParameterItemInput is an input type that accepts GetBuildRunBuildOutputArtifactOverrideParameterItemArgs and GetBuildRunBuildOutputArtifactOverrideParameterItemOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputArtifactOverrideParameterItemInput` via:
 //
-//          GetBuildRunBuildOutputArtifactOverrideParameterItemArgs{...}
+//	GetBuildRunBuildOutputArtifactOverrideParameterItemArgs{...}
 type GetBuildRunBuildOutputArtifactOverrideParameterItemInput interface {
 	pulumi.Input
 
@@ -12828,7 +13361,7 @@ func (i GetBuildRunBuildOutputArtifactOverrideParameterItemArgs) ToGetBuildRunBu
 // GetBuildRunBuildOutputArtifactOverrideParameterItemArrayInput is an input type that accepts GetBuildRunBuildOutputArtifactOverrideParameterItemArray and GetBuildRunBuildOutputArtifactOverrideParameterItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputArtifactOverrideParameterItemArrayInput` via:
 //
-//          GetBuildRunBuildOutputArtifactOverrideParameterItemArray{ GetBuildRunBuildOutputArtifactOverrideParameterItemArgs{...} }
+//	GetBuildRunBuildOutputArtifactOverrideParameterItemArray{ GetBuildRunBuildOutputArtifactOverrideParameterItemArgs{...} }
 type GetBuildRunBuildOutputArtifactOverrideParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -12907,7 +13440,7 @@ type GetBuildRunBuildOutputDeliveredArtifact struct {
 // GetBuildRunBuildOutputDeliveredArtifactInput is an input type that accepts GetBuildRunBuildOutputDeliveredArtifactArgs and GetBuildRunBuildOutputDeliveredArtifactOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputDeliveredArtifactInput` via:
 //
-//          GetBuildRunBuildOutputDeliveredArtifactArgs{...}
+//	GetBuildRunBuildOutputDeliveredArtifactArgs{...}
 type GetBuildRunBuildOutputDeliveredArtifactInput interface {
 	pulumi.Input
 
@@ -12935,7 +13468,7 @@ func (i GetBuildRunBuildOutputDeliveredArtifactArgs) ToGetBuildRunBuildOutputDel
 // GetBuildRunBuildOutputDeliveredArtifactArrayInput is an input type that accepts GetBuildRunBuildOutputDeliveredArtifactArray and GetBuildRunBuildOutputDeliveredArtifactArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputDeliveredArtifactArrayInput` via:
 //
-//          GetBuildRunBuildOutputDeliveredArtifactArray{ GetBuildRunBuildOutputDeliveredArtifactArgs{...} }
+//	GetBuildRunBuildOutputDeliveredArtifactArray{ GetBuildRunBuildOutputDeliveredArtifactArgs{...} }
 type GetBuildRunBuildOutputDeliveredArtifactArrayInput interface {
 	pulumi.Input
 
@@ -13022,7 +13555,7 @@ type GetBuildRunBuildOutputDeliveredArtifactItem struct {
 // GetBuildRunBuildOutputDeliveredArtifactItemInput is an input type that accepts GetBuildRunBuildOutputDeliveredArtifactItemArgs and GetBuildRunBuildOutputDeliveredArtifactItemOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputDeliveredArtifactItemInput` via:
 //
-//          GetBuildRunBuildOutputDeliveredArtifactItemArgs{...}
+//	GetBuildRunBuildOutputDeliveredArtifactItemArgs{...}
 type GetBuildRunBuildOutputDeliveredArtifactItemInput interface {
 	pulumi.Input
 
@@ -13066,7 +13599,7 @@ func (i GetBuildRunBuildOutputDeliveredArtifactItemArgs) ToGetBuildRunBuildOutpu
 // GetBuildRunBuildOutputDeliveredArtifactItemArrayInput is an input type that accepts GetBuildRunBuildOutputDeliveredArtifactItemArray and GetBuildRunBuildOutputDeliveredArtifactItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputDeliveredArtifactItemArrayInput` via:
 //
-//          GetBuildRunBuildOutputDeliveredArtifactItemArray{ GetBuildRunBuildOutputDeliveredArtifactItemArgs{...} }
+//	GetBuildRunBuildOutputDeliveredArtifactItemArray{ GetBuildRunBuildOutputDeliveredArtifactItemArgs{...} }
 type GetBuildRunBuildOutputDeliveredArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -13175,7 +13708,7 @@ type GetBuildRunBuildOutputExportedVariable struct {
 // GetBuildRunBuildOutputExportedVariableInput is an input type that accepts GetBuildRunBuildOutputExportedVariableArgs and GetBuildRunBuildOutputExportedVariableOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputExportedVariableInput` via:
 //
-//          GetBuildRunBuildOutputExportedVariableArgs{...}
+//	GetBuildRunBuildOutputExportedVariableArgs{...}
 type GetBuildRunBuildOutputExportedVariableInput interface {
 	pulumi.Input
 
@@ -13203,7 +13736,7 @@ func (i GetBuildRunBuildOutputExportedVariableArgs) ToGetBuildRunBuildOutputExpo
 // GetBuildRunBuildOutputExportedVariableArrayInput is an input type that accepts GetBuildRunBuildOutputExportedVariableArray and GetBuildRunBuildOutputExportedVariableArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputExportedVariableArrayInput` via:
 //
-//          GetBuildRunBuildOutputExportedVariableArray{ GetBuildRunBuildOutputExportedVariableArgs{...} }
+//	GetBuildRunBuildOutputExportedVariableArray{ GetBuildRunBuildOutputExportedVariableArgs{...} }
 type GetBuildRunBuildOutputExportedVariableArrayInput interface {
 	pulumi.Input
 
@@ -13276,7 +13809,7 @@ type GetBuildRunBuildOutputExportedVariableItem struct {
 // GetBuildRunBuildOutputExportedVariableItemInput is an input type that accepts GetBuildRunBuildOutputExportedVariableItemArgs and GetBuildRunBuildOutputExportedVariableItemOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputExportedVariableItemInput` via:
 //
-//          GetBuildRunBuildOutputExportedVariableItemArgs{...}
+//	GetBuildRunBuildOutputExportedVariableItemArgs{...}
 type GetBuildRunBuildOutputExportedVariableItemInput interface {
 	pulumi.Input
 
@@ -13306,7 +13839,7 @@ func (i GetBuildRunBuildOutputExportedVariableItemArgs) ToGetBuildRunBuildOutput
 // GetBuildRunBuildOutputExportedVariableItemArrayInput is an input type that accepts GetBuildRunBuildOutputExportedVariableItemArray and GetBuildRunBuildOutputExportedVariableItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputExportedVariableItemArrayInput` via:
 //
-//          GetBuildRunBuildOutputExportedVariableItemArray{ GetBuildRunBuildOutputExportedVariableItemArgs{...} }
+//	GetBuildRunBuildOutputExportedVariableItemArray{ GetBuildRunBuildOutputExportedVariableItemArgs{...} }
 type GetBuildRunBuildOutputExportedVariableItemArrayInput interface {
 	pulumi.Input
 
@@ -13380,7 +13913,7 @@ type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection struct {
 // GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput` via:
 //
-//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...}
+//	GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...}
 type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -13408,7 +13941,7 @@ func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ToGetBuil
 // GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput` via:
 //
-//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{ GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...} }
+//	GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{ GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...} }
 type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -13483,7 +14016,7 @@ type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem struct {
 // GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput` via:
 //
-//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...}
+//	GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...}
 type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -13515,7 +14048,7 @@ func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ToGet
 // GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput` via:
 //
-//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{ GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...} }
+//	GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{ GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...} }
 type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -13596,7 +14129,7 @@ type GetBuildRunBuildRunArgument struct {
 // GetBuildRunBuildRunArgumentInput is an input type that accepts GetBuildRunBuildRunArgumentArgs and GetBuildRunBuildRunArgumentOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunArgumentInput` via:
 //
-//          GetBuildRunBuildRunArgumentArgs{...}
+//	GetBuildRunBuildRunArgumentArgs{...}
 type GetBuildRunBuildRunArgumentInput interface {
 	pulumi.Input
 
@@ -13624,7 +14157,7 @@ func (i GetBuildRunBuildRunArgumentArgs) ToGetBuildRunBuildRunArgumentOutputWith
 // GetBuildRunBuildRunArgumentArrayInput is an input type that accepts GetBuildRunBuildRunArgumentArray and GetBuildRunBuildRunArgumentArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunArgumentArrayInput` via:
 //
-//          GetBuildRunBuildRunArgumentArray{ GetBuildRunBuildRunArgumentArgs{...} }
+//	GetBuildRunBuildRunArgumentArray{ GetBuildRunBuildRunArgumentArgs{...} }
 type GetBuildRunBuildRunArgumentArrayInput interface {
 	pulumi.Input
 
@@ -13695,7 +14228,7 @@ type GetBuildRunBuildRunArgumentItem struct {
 // GetBuildRunBuildRunArgumentItemInput is an input type that accepts GetBuildRunBuildRunArgumentItemArgs and GetBuildRunBuildRunArgumentItemOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunArgumentItemInput` via:
 //
-//          GetBuildRunBuildRunArgumentItemArgs{...}
+//	GetBuildRunBuildRunArgumentItemArgs{...}
 type GetBuildRunBuildRunArgumentItemInput interface {
 	pulumi.Input
 
@@ -13725,7 +14258,7 @@ func (i GetBuildRunBuildRunArgumentItemArgs) ToGetBuildRunBuildRunArgumentItemOu
 // GetBuildRunBuildRunArgumentItemArrayInput is an input type that accepts GetBuildRunBuildRunArgumentItemArray and GetBuildRunBuildRunArgumentItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunArgumentItemArrayInput` via:
 //
-//          GetBuildRunBuildRunArgumentItemArray{ GetBuildRunBuildRunArgumentItemArgs{...} }
+//	GetBuildRunBuildRunArgumentItemArray{ GetBuildRunBuildRunArgumentItemArgs{...} }
 type GetBuildRunBuildRunArgumentItemArrayInput interface {
 	pulumi.Input
 
@@ -13803,7 +14336,7 @@ type GetBuildRunBuildRunProgress struct {
 // GetBuildRunBuildRunProgressInput is an input type that accepts GetBuildRunBuildRunProgressArgs and GetBuildRunBuildRunProgressOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunProgressInput` via:
 //
-//          GetBuildRunBuildRunProgressArgs{...}
+//	GetBuildRunBuildRunProgressArgs{...}
 type GetBuildRunBuildRunProgressInput interface {
 	pulumi.Input
 
@@ -13835,7 +14368,7 @@ func (i GetBuildRunBuildRunProgressArgs) ToGetBuildRunBuildRunProgressOutputWith
 // GetBuildRunBuildRunProgressArrayInput is an input type that accepts GetBuildRunBuildRunProgressArray and GetBuildRunBuildRunProgressArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunProgressArrayInput` via:
 //
-//          GetBuildRunBuildRunProgressArray{ GetBuildRunBuildRunProgressArgs{...} }
+//	GetBuildRunBuildRunProgressArray{ GetBuildRunBuildRunProgressArgs{...} }
 type GetBuildRunBuildRunProgressArrayInput interface {
 	pulumi.Input
 
@@ -13920,7 +14453,7 @@ type GetBuildRunBuildRunSource struct {
 // GetBuildRunBuildRunSourceInput is an input type that accepts GetBuildRunBuildRunSourceArgs and GetBuildRunBuildRunSourceOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceInput` via:
 //
-//          GetBuildRunBuildRunSourceArgs{...}
+//	GetBuildRunBuildRunSourceArgs{...}
 type GetBuildRunBuildRunSourceInput interface {
 	pulumi.Input
 
@@ -13954,7 +14487,7 @@ func (i GetBuildRunBuildRunSourceArgs) ToGetBuildRunBuildRunSourceOutputWithCont
 // GetBuildRunBuildRunSourceArrayInput is an input type that accepts GetBuildRunBuildRunSourceArray and GetBuildRunBuildRunSourceArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceArrayInput` via:
 //
-//          GetBuildRunBuildRunSourceArray{ GetBuildRunBuildRunSourceArgs{...} }
+//	GetBuildRunBuildRunSourceArray{ GetBuildRunBuildRunSourceArgs{...} }
 type GetBuildRunBuildRunSourceArrayInput interface {
 	pulumi.Input
 
@@ -14040,7 +14573,7 @@ type GetBuildRunBuildRunSourceTriggerInfo struct {
 // GetBuildRunBuildRunSourceTriggerInfoInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoArgs and GetBuildRunBuildRunSourceTriggerInfoOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoArgs{...}
+//	GetBuildRunBuildRunSourceTriggerInfoArgs{...}
 type GetBuildRunBuildRunSourceTriggerInfoInput interface {
 	pulumi.Input
 
@@ -14070,7 +14603,7 @@ func (i GetBuildRunBuildRunSourceTriggerInfoArgs) ToGetBuildRunBuildRunSourceTri
 // GetBuildRunBuildRunSourceTriggerInfoArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoArray and GetBuildRunBuildRunSourceTriggerInfoArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoArrayInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoArray{ GetBuildRunBuildRunSourceTriggerInfoArgs{...} }
+//	GetBuildRunBuildRunSourceTriggerInfoArray{ GetBuildRunBuildRunSourceTriggerInfoArgs{...} }
 type GetBuildRunBuildRunSourceTriggerInfoArrayInput interface {
 	pulumi.Input
 
@@ -14150,7 +14683,7 @@ type GetBuildRunBuildRunSourceTriggerInfoAction struct {
 // GetBuildRunBuildRunSourceTriggerInfoActionInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionArgs and GetBuildRunBuildRunSourceTriggerInfoActionOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoActionArgs{...}
+//	GetBuildRunBuildRunSourceTriggerInfoActionArgs{...}
 type GetBuildRunBuildRunSourceTriggerInfoActionInput interface {
 	pulumi.Input
 
@@ -14182,7 +14715,7 @@ func (i GetBuildRunBuildRunSourceTriggerInfoActionArgs) ToGetBuildRunBuildRunSou
 // GetBuildRunBuildRunSourceTriggerInfoActionArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionArray and GetBuildRunBuildRunSourceTriggerInfoActionArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionArrayInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoActionArray{ GetBuildRunBuildRunSourceTriggerInfoActionArgs{...} }
+//	GetBuildRunBuildRunSourceTriggerInfoActionArray{ GetBuildRunBuildRunSourceTriggerInfoActionArgs{...} }
 type GetBuildRunBuildRunSourceTriggerInfoActionArrayInput interface {
 	pulumi.Input
 
@@ -14258,7 +14791,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionArrayOutput) Index(i pulumi.In
 type GetBuildRunBuildRunSourceTriggerInfoActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events []string `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
@@ -14267,7 +14800,7 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilter struct {
 // GetBuildRunBuildRunSourceTriggerInfoActionFilterInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs and GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs{...}
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs{...}
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 	pulumi.Input
 
@@ -14278,7 +14811,7 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
@@ -14299,7 +14832,7 @@ func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs) ToGetBuildRunBuild
 // GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterArray and GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoActionFilterArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs{...} }
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs{...} }
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayInput interface {
 	pulumi.Input
 
@@ -14340,7 +14873,7 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
-// Attributes to filter DevOps code repository events.
+// Attributes to filter GitLab self-hosted server events.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Includes() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude {
 		return v.Includes
@@ -14382,7 +14915,7 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 // GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs and GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...}
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...}
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 	pulumi.Input
 
@@ -14412,7 +14945,7 @@ func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs) ToGetBuildR
 // GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray and GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput` via:
 //
-//          GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...} }
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{...} }
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput interface {
 	pulumi.Input
 
@@ -14490,7 +15023,7 @@ type GetBuildRunCommitInfo struct {
 // GetBuildRunCommitInfoInput is an input type that accepts GetBuildRunCommitInfoArgs and GetBuildRunCommitInfoOutput values.
 // You can construct a concrete instance of `GetBuildRunCommitInfoInput` via:
 //
-//          GetBuildRunCommitInfoArgs{...}
+//	GetBuildRunCommitInfoArgs{...}
 type GetBuildRunCommitInfoInput interface {
 	pulumi.Input
 
@@ -14522,7 +15055,7 @@ func (i GetBuildRunCommitInfoArgs) ToGetBuildRunCommitInfoOutputWithContext(ctx 
 // GetBuildRunCommitInfoArrayInput is an input type that accepts GetBuildRunCommitInfoArray and GetBuildRunCommitInfoArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunCommitInfoArrayInput` via:
 //
-//          GetBuildRunCommitInfoArray{ GetBuildRunCommitInfoArgs{...} }
+//	GetBuildRunCommitInfoArray{ GetBuildRunCommitInfoArgs{...} }
 type GetBuildRunCommitInfoArrayInput interface {
 	pulumi.Input
 
@@ -14601,7 +15134,7 @@ type GetBuildRunsBuildRunSummaryCollection struct {
 // GetBuildRunsBuildRunSummaryCollectionInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionArgs and GetBuildRunsBuildRunSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -14629,7 +15162,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionArgs) ToGetBuildRunsBuildRunSummary
 // GetBuildRunsBuildRunSummaryCollectionArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionArray and GetBuildRunsBuildRunSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionArray{ GetBuildRunsBuildRunSummaryCollectionArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionArray{ GetBuildRunsBuildRunSummaryCollectionArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -14729,7 +15262,7 @@ type GetBuildRunsBuildRunSummaryCollectionItem struct {
 // GetBuildRunsBuildRunSummaryCollectionItemInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemArgs and GetBuildRunsBuildRunSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -14786,7 +15319,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemArgs) ToGetBuildRunsBuildRunSum
 // GetBuildRunsBuildRunSummaryCollectionItemArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemArray and GetBuildRunsBuildRunSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemArray{ GetBuildRunsBuildRunSummaryCollectionItemArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemArray{ GetBuildRunsBuildRunSummaryCollectionItemArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -14937,7 +15470,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments struct {
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsInput interface {
 	pulumi.Input
 
@@ -14993,7 +15526,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem struct {
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemInput interface {
 	pulumi.Input
 
@@ -15023,7 +15556,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArgs) ToGe
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemArrayInput interface {
 	pulumi.Input
 
@@ -15099,7 +15632,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary struct {
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryInput interface {
 	pulumi.Input
 
@@ -15129,7 +15662,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArgs) To
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryArrayInput interface {
 	pulumi.Input
 
@@ -15207,7 +15740,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource struct {
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceInput interface {
 	pulumi.Input
 
@@ -15239,7 +15772,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs) ToGetBuildR
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArrayInput interface {
 	pulumi.Input
 
@@ -15324,7 +15857,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo struct {
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoInput interface {
 	pulumi.Input
 
@@ -15356,7 +15889,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArgs) 
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoArrayInput interface {
 	pulumi.Input
 
@@ -15443,7 +15976,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction st
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionInput interface {
 	pulumi.Input
 
@@ -15475,7 +16008,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionArrayInput interface {
 	pulumi.Input
 
@@ -15553,7 +16086,7 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events []string `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
@@ -15562,7 +16095,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFil
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInput interface {
 	pulumi.Input
 
@@ -15573,7 +16106,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFil
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
@@ -15594,7 +16127,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterArrayInput interface {
 	pulumi.Input
 
@@ -15637,7 +16170,7 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 	}).(pulumi.StringArrayOutput)
 }
 
-// Attributes to filter DevOps code repository events.
+// Attributes to filter GitLab self-hosted server events.
 func (o GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterOutput) Includes() GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter) []GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude {
 		return v.Includes
@@ -15681,7 +16214,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFil
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 	pulumi.Input
 
@@ -15711,7 +16244,7 @@ func (i GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction
 // GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArray and GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs{...} }
+//	GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArray{ GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArgs{...} }
 type GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeArrayInput interface {
 	pulumi.Input
 
@@ -15793,7 +16326,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemCommitInfo struct {
 // GetBuildRunsBuildRunSummaryCollectionItemCommitInfoInput is an input type that accepts GetBuildRunsBuildRunSummaryCollectionItemCommitInfoArgs and GetBuildRunsBuildRunSummaryCollectionItemCommitInfoOutput values.
 // You can construct a concrete instance of `GetBuildRunsBuildRunSummaryCollectionItemCommitInfoInput` via:
 //
-//          GetBuildRunsBuildRunSummaryCollectionItemCommitInfoArgs{...}
+//	GetBuildRunsBuildRunSummaryCollectionItemCommitInfoArgs{...}
 type GetBuildRunsBuildRunSummaryCollectionItemCommitInfoInput interface {
 	pulumi.Input
 
@@ -15861,7 +16394,7 @@ type GetBuildRunsFilter struct {
 // GetBuildRunsFilterInput is an input type that accepts GetBuildRunsFilterArgs and GetBuildRunsFilterOutput values.
 // You can construct a concrete instance of `GetBuildRunsFilterInput` via:
 //
-//          GetBuildRunsFilterArgs{...}
+//	GetBuildRunsFilterArgs{...}
 type GetBuildRunsFilterInput interface {
 	pulumi.Input
 
@@ -15891,7 +16424,7 @@ func (i GetBuildRunsFilterArgs) ToGetBuildRunsFilterOutputWithContext(ctx contex
 // GetBuildRunsFilterArrayInput is an input type that accepts GetBuildRunsFilterArray and GetBuildRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBuildRunsFilterArrayInput` via:
 //
-//          GetBuildRunsFilterArray{ GetBuildRunsFilterArgs{...} }
+//	GetBuildRunsFilterArray{ GetBuildRunsFilterArgs{...} }
 type GetBuildRunsFilterArrayInput interface {
 	pulumi.Input
 
@@ -15960,6 +16493,112 @@ func (o GetBuildRunsFilterArrayOutput) Index(i pulumi.IntInput) GetBuildRunsFilt
 	}).(GetBuildRunsFilterOutput)
 }
 
+type GetConnectionTlsVerifyConfig struct {
+	// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+	CaCertificateBundleId string `pulumi:"caCertificateBundleId"`
+	// The type of TLS verification.
+	TlsVerifyMode string `pulumi:"tlsVerifyMode"`
+}
+
+// GetConnectionTlsVerifyConfigInput is an input type that accepts GetConnectionTlsVerifyConfigArgs and GetConnectionTlsVerifyConfigOutput values.
+// You can construct a concrete instance of `GetConnectionTlsVerifyConfigInput` via:
+//
+//	GetConnectionTlsVerifyConfigArgs{...}
+type GetConnectionTlsVerifyConfigInput interface {
+	pulumi.Input
+
+	ToGetConnectionTlsVerifyConfigOutput() GetConnectionTlsVerifyConfigOutput
+	ToGetConnectionTlsVerifyConfigOutputWithContext(context.Context) GetConnectionTlsVerifyConfigOutput
+}
+
+type GetConnectionTlsVerifyConfigArgs struct {
+	// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+	CaCertificateBundleId pulumi.StringInput `pulumi:"caCertificateBundleId"`
+	// The type of TLS verification.
+	TlsVerifyMode pulumi.StringInput `pulumi:"tlsVerifyMode"`
+}
+
+func (GetConnectionTlsVerifyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (i GetConnectionTlsVerifyConfigArgs) ToGetConnectionTlsVerifyConfigOutput() GetConnectionTlsVerifyConfigOutput {
+	return i.ToGetConnectionTlsVerifyConfigOutputWithContext(context.Background())
+}
+
+func (i GetConnectionTlsVerifyConfigArgs) ToGetConnectionTlsVerifyConfigOutputWithContext(ctx context.Context) GetConnectionTlsVerifyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionTlsVerifyConfigOutput)
+}
+
+// GetConnectionTlsVerifyConfigArrayInput is an input type that accepts GetConnectionTlsVerifyConfigArray and GetConnectionTlsVerifyConfigArrayOutput values.
+// You can construct a concrete instance of `GetConnectionTlsVerifyConfigArrayInput` via:
+//
+//	GetConnectionTlsVerifyConfigArray{ GetConnectionTlsVerifyConfigArgs{...} }
+type GetConnectionTlsVerifyConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionTlsVerifyConfigArrayOutput() GetConnectionTlsVerifyConfigArrayOutput
+	ToGetConnectionTlsVerifyConfigArrayOutputWithContext(context.Context) GetConnectionTlsVerifyConfigArrayOutput
+}
+
+type GetConnectionTlsVerifyConfigArray []GetConnectionTlsVerifyConfigInput
+
+func (GetConnectionTlsVerifyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (i GetConnectionTlsVerifyConfigArray) ToGetConnectionTlsVerifyConfigArrayOutput() GetConnectionTlsVerifyConfigArrayOutput {
+	return i.ToGetConnectionTlsVerifyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionTlsVerifyConfigArray) ToGetConnectionTlsVerifyConfigArrayOutputWithContext(ctx context.Context) GetConnectionTlsVerifyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionTlsVerifyConfigArrayOutput)
+}
+
+type GetConnectionTlsVerifyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionTlsVerifyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (o GetConnectionTlsVerifyConfigOutput) ToGetConnectionTlsVerifyConfigOutput() GetConnectionTlsVerifyConfigOutput {
+	return o
+}
+
+func (o GetConnectionTlsVerifyConfigOutput) ToGetConnectionTlsVerifyConfigOutputWithContext(ctx context.Context) GetConnectionTlsVerifyConfigOutput {
+	return o
+}
+
+// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+func (o GetConnectionTlsVerifyConfigOutput) CaCertificateBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionTlsVerifyConfig) string { return v.CaCertificateBundleId }).(pulumi.StringOutput)
+}
+
+// The type of TLS verification.
+func (o GetConnectionTlsVerifyConfigOutput) TlsVerifyMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionTlsVerifyConfig) string { return v.TlsVerifyMode }).(pulumi.StringOutput)
+}
+
+type GetConnectionTlsVerifyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionTlsVerifyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionTlsVerifyConfig)(nil)).Elem()
+}
+
+func (o GetConnectionTlsVerifyConfigArrayOutput) ToGetConnectionTlsVerifyConfigArrayOutput() GetConnectionTlsVerifyConfigArrayOutput {
+	return o
+}
+
+func (o GetConnectionTlsVerifyConfigArrayOutput) ToGetConnectionTlsVerifyConfigArrayOutputWithContext(ctx context.Context) GetConnectionTlsVerifyConfigArrayOutput {
+	return o
+}
+
+func (o GetConnectionTlsVerifyConfigArrayOutput) Index(i pulumi.IntInput) GetConnectionTlsVerifyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionTlsVerifyConfig {
+		return vs[0].([]GetConnectionTlsVerifyConfig)[vs[1].(int)]
+	}).(GetConnectionTlsVerifyConfigOutput)
+}
+
 type GetConnectionsConnectionCollection struct {
 	Items []GetConnectionsConnectionCollectionItem `pulumi:"items"`
 }
@@ -15967,7 +16606,7 @@ type GetConnectionsConnectionCollection struct {
 // GetConnectionsConnectionCollectionInput is an input type that accepts GetConnectionsConnectionCollectionArgs and GetConnectionsConnectionCollectionOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionInput` via:
 //
-//          GetConnectionsConnectionCollectionArgs{...}
+//	GetConnectionsConnectionCollectionArgs{...}
 type GetConnectionsConnectionCollectionInput interface {
 	pulumi.Input
 
@@ -15994,7 +16633,7 @@ func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollec
 // GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
+//	GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
 type GetConnectionsConnectionCollectionArrayInput interface {
 	pulumi.Input
 
@@ -16059,6 +16698,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	AccessToken string `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword string `pulumi:"appPassword"`
+	// The Base URL of the hosted BitbucketServer.
+	BaseUrl string `pulumi:"baseUrl"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given connection type.
@@ -16083,6 +16724,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfigs []GetConnectionsConnectionCollectionItemTlsVerifyConfig `pulumi:"tlsVerifyConfigs"`
 	// Public Bitbucket Cloud Username in plain text
 	Username string `pulumi:"username"`
 }
@@ -16090,7 +16733,7 @@ type GetConnectionsConnectionCollectionItem struct {
 // GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemInput` via:
 //
-//          GetConnectionsConnectionCollectionItemArgs{...}
+//	GetConnectionsConnectionCollectionItemArgs{...}
 type GetConnectionsConnectionCollectionItemInput interface {
 	pulumi.Input
 
@@ -16103,6 +16746,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	AccessToken pulumi.StringInput `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword pulumi.StringInput `pulumi:"appPassword"`
+	// The Base URL of the hosted BitbucketServer.
+	BaseUrl pulumi.StringInput `pulumi:"baseUrl"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given connection type.
@@ -16127,6 +16772,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// TLS configuration used by build service to verify TLS connection.
+	TlsVerifyConfigs GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayInput `pulumi:"tlsVerifyConfigs"`
 	// Public Bitbucket Cloud Username in plain text
 	Username pulumi.StringInput `pulumi:"username"`
 }
@@ -16146,7 +16793,7 @@ func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCo
 // GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemArrayInput` via:
 //
-//          GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
+//	GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
 type GetConnectionsConnectionCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -16190,6 +16837,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) AccessToken() pulumi.Strin
 // OCID of personal Bitbucket Cloud AppPassword saved in secret store
 func (o GetConnectionsConnectionCollectionItemOutput) AppPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AppPassword }).(pulumi.StringOutput)
+}
+
+// The Base URL of the hosted BitbucketServer.
+func (o GetConnectionsConnectionCollectionItemOutput) BaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.BaseUrl }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment in which to list resources.
@@ -16252,6 +16904,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) TimeUpdated() pulumi.Strin
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// TLS configuration used by build service to verify TLS connection.
+func (o GetConnectionsConnectionCollectionItemOutput) TlsVerifyConfigs() GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemTlsVerifyConfig {
+		return v.TlsVerifyConfigs
+	}).(GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput)
+}
+
 // Public Bitbucket Cloud Username in plain text
 func (o GetConnectionsConnectionCollectionItemOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Username }).(pulumi.StringOutput)
@@ -16277,6 +16936,112 @@ func (o GetConnectionsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInp
 	}).(GetConnectionsConnectionCollectionItemOutput)
 }
 
+type GetConnectionsConnectionCollectionItemTlsVerifyConfig struct {
+	// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+	CaCertificateBundleId string `pulumi:"caCertificateBundleId"`
+	// The type of TLS verification.
+	TlsVerifyMode string `pulumi:"tlsVerifyMode"`
+}
+
+// GetConnectionsConnectionCollectionItemTlsVerifyConfigInput is an input type that accepts GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs and GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemTlsVerifyConfigInput` via:
+//
+//	GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs{...}
+type GetConnectionsConnectionCollectionItemTlsVerifyConfigInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutput() GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput
+	ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput
+}
+
+type GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs struct {
+	// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+	CaCertificateBundleId pulumi.StringInput `pulumi:"caCertificateBundleId"`
+	// The type of TLS verification.
+	TlsVerifyMode pulumi.StringInput `pulumi:"tlsVerifyMode"`
+}
+
+func (GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemTlsVerifyConfig)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutput() GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput {
+	return i.ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput)
+}
+
+// GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemTlsVerifyConfigArray and GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemTlsVerifyConfigArray{ GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs{...} }
+type GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput() GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput
+	ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemTlsVerifyConfigArray []GetConnectionsConnectionCollectionItemTlsVerifyConfigInput
+
+func (GetConnectionsConnectionCollectionItemTlsVerifyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemTlsVerifyConfig)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemTlsVerifyConfigArray) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput() GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemTlsVerifyConfigArray) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemTlsVerifyConfig)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutput() GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput {
+	return o
+}
+
+// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput) CaCertificateBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemTlsVerifyConfig) string { return v.CaCertificateBundleId }).(pulumi.StringOutput)
+}
+
+// The type of TLS verification.
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput) TlsVerifyMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemTlsVerifyConfig) string { return v.TlsVerifyMode }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemTlsVerifyConfig)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput() GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput) ToGetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemTlsVerifyConfig {
+		return vs[0].([]GetConnectionsConnectionCollectionItemTlsVerifyConfig)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput)
+}
+
 type GetConnectionsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -16286,7 +17051,7 @@ type GetConnectionsFilter struct {
 // GetConnectionsFilterInput is an input type that accepts GetConnectionsFilterArgs and GetConnectionsFilterOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterInput` via:
 //
-//          GetConnectionsFilterArgs{...}
+//	GetConnectionsFilterArgs{...}
 type GetConnectionsFilterInput interface {
 	pulumi.Input
 
@@ -16315,7 +17080,7 @@ func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx co
 // GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
 //
-//          GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
+//	GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
 type GetConnectionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -16405,7 +17170,7 @@ type GetDeployArtifactDeployArtifactSource struct {
 // GetDeployArtifactDeployArtifactSourceInput is an input type that accepts GetDeployArtifactDeployArtifactSourceArgs and GetDeployArtifactDeployArtifactSourceOutput values.
 // You can construct a concrete instance of `GetDeployArtifactDeployArtifactSourceInput` via:
 //
-//          GetDeployArtifactDeployArtifactSourceArgs{...}
+//	GetDeployArtifactDeployArtifactSourceArgs{...}
 type GetDeployArtifactDeployArtifactSourceInput interface {
 	pulumi.Input
 
@@ -16447,7 +17212,7 @@ func (i GetDeployArtifactDeployArtifactSourceArgs) ToGetDeployArtifactDeployArti
 // GetDeployArtifactDeployArtifactSourceArrayInput is an input type that accepts GetDeployArtifactDeployArtifactSourceArray and GetDeployArtifactDeployArtifactSourceArrayOutput values.
 // You can construct a concrete instance of `GetDeployArtifactDeployArtifactSourceArrayInput` via:
 //
-//          GetDeployArtifactDeployArtifactSourceArray{ GetDeployArtifactDeployArtifactSourceArgs{...} }
+//	GetDeployArtifactDeployArtifactSourceArray{ GetDeployArtifactDeployArtifactSourceArgs{...} }
 type GetDeployArtifactDeployArtifactSourceArrayInput interface {
 	pulumi.Input
 
@@ -16550,7 +17315,7 @@ type GetDeployArtifactsDeployArtifactCollection struct {
 // GetDeployArtifactsDeployArtifactCollectionInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionArgs and GetDeployArtifactsDeployArtifactCollectionOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionInput` via:
 //
-//          GetDeployArtifactsDeployArtifactCollectionArgs{...}
+//	GetDeployArtifactsDeployArtifactCollectionArgs{...}
 type GetDeployArtifactsDeployArtifactCollectionInput interface {
 	pulumi.Input
 
@@ -16577,7 +17342,7 @@ func (i GetDeployArtifactsDeployArtifactCollectionArgs) ToGetDeployArtifactsDepl
 // GetDeployArtifactsDeployArtifactCollectionArrayInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionArray and GetDeployArtifactsDeployArtifactCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionArrayInput` via:
 //
-//          GetDeployArtifactsDeployArtifactCollectionArray{ GetDeployArtifactsDeployArtifactCollectionArgs{...} }
+//	GetDeployArtifactsDeployArtifactCollectionArray{ GetDeployArtifactsDeployArtifactCollectionArgs{...} }
 type GetDeployArtifactsDeployArtifactCollectionArrayInput interface {
 	pulumi.Input
 
@@ -16675,7 +17440,7 @@ type GetDeployArtifactsDeployArtifactCollectionItem struct {
 // GetDeployArtifactsDeployArtifactCollectionItemInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionItemArgs and GetDeployArtifactsDeployArtifactCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionItemInput` via:
 //
-//          GetDeployArtifactsDeployArtifactCollectionItemArgs{...}
+//	GetDeployArtifactsDeployArtifactCollectionItemArgs{...}
 type GetDeployArtifactsDeployArtifactCollectionItemInput interface {
 	pulumi.Input
 
@@ -16731,7 +17496,7 @@ func (i GetDeployArtifactsDeployArtifactCollectionItemArgs) ToGetDeployArtifacts
 // GetDeployArtifactsDeployArtifactCollectionItemArrayInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionItemArray and GetDeployArtifactsDeployArtifactCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionItemArrayInput` via:
 //
-//          GetDeployArtifactsDeployArtifactCollectionItemArray{ GetDeployArtifactsDeployArtifactCollectionItemArgs{...} }
+//	GetDeployArtifactsDeployArtifactCollectionItemArray{ GetDeployArtifactsDeployArtifactCollectionItemArgs{...} }
 type GetDeployArtifactsDeployArtifactCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -16886,7 +17651,7 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource struct {
 // GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs and GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceInput` via:
 //
-//          GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs{...}
+//	GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs{...}
 type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceInput interface {
 	pulumi.Input
 
@@ -16928,7 +17693,7 @@ func (i GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs) 
 // GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayInput is an input type that accepts GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArray and GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayInput` via:
 //
-//          GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArray{ GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs{...} }
+//	GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArray{ GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs{...} }
 type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayInput interface {
 	pulumi.Input
 
@@ -17045,7 +17810,7 @@ type GetDeployArtifactsFilter struct {
 // GetDeployArtifactsFilterInput is an input type that accepts GetDeployArtifactsFilterArgs and GetDeployArtifactsFilterOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsFilterInput` via:
 //
-//          GetDeployArtifactsFilterArgs{...}
+//	GetDeployArtifactsFilterArgs{...}
 type GetDeployArtifactsFilterInput interface {
 	pulumi.Input
 
@@ -17074,7 +17839,7 @@ func (i GetDeployArtifactsFilterArgs) ToGetDeployArtifactsFilterOutputWithContex
 // GetDeployArtifactsFilterArrayInput is an input type that accepts GetDeployArtifactsFilterArray and GetDeployArtifactsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeployArtifactsFilterArrayInput` via:
 //
-//          GetDeployArtifactsFilterArray{ GetDeployArtifactsFilterArgs{...} }
+//	GetDeployArtifactsFilterArray{ GetDeployArtifactsFilterArgs{...} }
 type GetDeployArtifactsFilterArrayInput interface {
 	pulumi.Input
 
@@ -17150,7 +17915,7 @@ type GetDeployEnvironmentComputeInstanceGroupSelector struct {
 // GetDeployEnvironmentComputeInstanceGroupSelectorInput is an input type that accepts GetDeployEnvironmentComputeInstanceGroupSelectorArgs and GetDeployEnvironmentComputeInstanceGroupSelectorOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentComputeInstanceGroupSelectorInput` via:
 //
-//          GetDeployEnvironmentComputeInstanceGroupSelectorArgs{...}
+//	GetDeployEnvironmentComputeInstanceGroupSelectorArgs{...}
 type GetDeployEnvironmentComputeInstanceGroupSelectorInput interface {
 	pulumi.Input
 
@@ -17178,7 +17943,7 @@ func (i GetDeployEnvironmentComputeInstanceGroupSelectorArgs) ToGetDeployEnviron
 // GetDeployEnvironmentComputeInstanceGroupSelectorArrayInput is an input type that accepts GetDeployEnvironmentComputeInstanceGroupSelectorArray and GetDeployEnvironmentComputeInstanceGroupSelectorArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentComputeInstanceGroupSelectorArrayInput` via:
 //
-//          GetDeployEnvironmentComputeInstanceGroupSelectorArray{ GetDeployEnvironmentComputeInstanceGroupSelectorArgs{...} }
+//	GetDeployEnvironmentComputeInstanceGroupSelectorArray{ GetDeployEnvironmentComputeInstanceGroupSelectorArgs{...} }
 type GetDeployEnvironmentComputeInstanceGroupSelectorArrayInput interface {
 	pulumi.Input
 
@@ -17255,7 +18020,7 @@ type GetDeployEnvironmentComputeInstanceGroupSelectorItem struct {
 // GetDeployEnvironmentComputeInstanceGroupSelectorItemInput is an input type that accepts GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs and GetDeployEnvironmentComputeInstanceGroupSelectorItemOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentComputeInstanceGroupSelectorItemInput` via:
 //
-//          GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs{...}
+//	GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs{...}
 type GetDeployEnvironmentComputeInstanceGroupSelectorItemInput interface {
 	pulumi.Input
 
@@ -17289,7 +18054,7 @@ func (i GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs) ToGetDeployEnv
 // GetDeployEnvironmentComputeInstanceGroupSelectorItemArrayInput is an input type that accepts GetDeployEnvironmentComputeInstanceGroupSelectorItemArray and GetDeployEnvironmentComputeInstanceGroupSelectorItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentComputeInstanceGroupSelectorItemArrayInput` via:
 //
-//          GetDeployEnvironmentComputeInstanceGroupSelectorItemArray{ GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs{...} }
+//	GetDeployEnvironmentComputeInstanceGroupSelectorItemArray{ GetDeployEnvironmentComputeInstanceGroupSelectorItemArgs{...} }
 type GetDeployEnvironmentComputeInstanceGroupSelectorItemArrayInput interface {
 	pulumi.Input
 
@@ -17377,7 +18142,7 @@ type GetDeployEnvironmentNetworkChannel struct {
 // GetDeployEnvironmentNetworkChannelInput is an input type that accepts GetDeployEnvironmentNetworkChannelArgs and GetDeployEnvironmentNetworkChannelOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentNetworkChannelInput` via:
 //
-//          GetDeployEnvironmentNetworkChannelArgs{...}
+//	GetDeployEnvironmentNetworkChannelArgs{...}
 type GetDeployEnvironmentNetworkChannelInput interface {
 	pulumi.Input
 
@@ -17409,7 +18174,7 @@ func (i GetDeployEnvironmentNetworkChannelArgs) ToGetDeployEnvironmentNetworkCha
 // GetDeployEnvironmentNetworkChannelArrayInput is an input type that accepts GetDeployEnvironmentNetworkChannelArray and GetDeployEnvironmentNetworkChannelArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentNetworkChannelArrayInput` via:
 //
-//          GetDeployEnvironmentNetworkChannelArray{ GetDeployEnvironmentNetworkChannelArgs{...} }
+//	GetDeployEnvironmentNetworkChannelArray{ GetDeployEnvironmentNetworkChannelArgs{...} }
 type GetDeployEnvironmentNetworkChannelArrayInput interface {
 	pulumi.Input
 
@@ -17488,7 +18253,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollection struct {
 // GetDeployEnvironmentsDeployEnvironmentCollectionInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionArgs and GetDeployEnvironmentsDeployEnvironmentCollectionOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionArgs{...}
+//	GetDeployEnvironmentsDeployEnvironmentCollectionArgs{...}
 type GetDeployEnvironmentsDeployEnvironmentCollectionInput interface {
 	pulumi.Input
 
@@ -17516,7 +18281,7 @@ func (i GetDeployEnvironmentsDeployEnvironmentCollectionArgs) ToGetDeployEnviron
 // GetDeployEnvironmentsDeployEnvironmentCollectionArrayInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionArray and GetDeployEnvironmentsDeployEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionArrayInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionArray{ GetDeployEnvironmentsDeployEnvironmentCollectionArgs{...} }
+//	GetDeployEnvironmentsDeployEnvironmentCollectionArray{ GetDeployEnvironmentsDeployEnvironmentCollectionArgs{...} }
 type GetDeployEnvironmentsDeployEnvironmentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -17619,7 +18384,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItem struct {
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs and GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs{...}
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs{...}
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemInput interface {
 	pulumi.Input
 
@@ -17679,7 +18444,7 @@ func (i GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs) ToGetDeployEnv
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemArrayInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemArray and GetDeployEnvironmentsDeployEnvironmentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemArrayInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs{...} }
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs{...} }
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -17838,7 +18603,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSel
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArgs and GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArgs{...}
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArgs{...}
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorInput interface {
 	pulumi.Input
 
@@ -17866,7 +18631,7 @@ func (i GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroup
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArrayInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArray and GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArrayInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArgs{...} }
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArgs{...} }
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArrayInput interface {
 	pulumi.Input
 
@@ -17943,7 +18708,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSel
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArgs and GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArgs{...}
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArgs{...}
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemInput interface {
 	pulumi.Input
 
@@ -17977,7 +18742,7 @@ func (i GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroup
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArrayInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArray and GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArrayInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArgs{...} }
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArgs{...} }
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemArrayInput interface {
 	pulumi.Input
 
@@ -18073,7 +18838,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannel struct {
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs and GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs{...}
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs{...}
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelInput interface {
 	pulumi.Input
 
@@ -18105,7 +18870,7 @@ func (i GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs) 
 // GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArrayInput is an input type that accepts GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArray and GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArrayInput` via:
 //
-//          GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs{...} }
+//	GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArray{ GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs{...} }
 type GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArrayInput interface {
 	pulumi.Input
 
@@ -18187,7 +18952,7 @@ type GetDeployEnvironmentsFilter struct {
 // GetDeployEnvironmentsFilterInput is an input type that accepts GetDeployEnvironmentsFilterArgs and GetDeployEnvironmentsFilterOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsFilterInput` via:
 //
-//          GetDeployEnvironmentsFilterArgs{...}
+//	GetDeployEnvironmentsFilterArgs{...}
 type GetDeployEnvironmentsFilterInput interface {
 	pulumi.Input
 
@@ -18216,7 +18981,7 @@ func (i GetDeployEnvironmentsFilterArgs) ToGetDeployEnvironmentsFilterOutputWith
 // GetDeployEnvironmentsFilterArrayInput is an input type that accepts GetDeployEnvironmentsFilterArray and GetDeployEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeployEnvironmentsFilterArrayInput` via:
 //
-//          GetDeployEnvironmentsFilterArray{ GetDeployEnvironmentsFilterArgs{...} }
+//	GetDeployEnvironmentsFilterArray{ GetDeployEnvironmentsFilterArgs{...} }
 type GetDeployEnvironmentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -18292,7 +19057,7 @@ type GetDeployPipelineDeployPipelineArtifact struct {
 // GetDeployPipelineDeployPipelineArtifactInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactArgs and GetDeployPipelineDeployPipelineArtifactOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactArgs{...}
+//	GetDeployPipelineDeployPipelineArtifactArgs{...}
 type GetDeployPipelineDeployPipelineArtifactInput interface {
 	pulumi.Input
 
@@ -18320,7 +19085,7 @@ func (i GetDeployPipelineDeployPipelineArtifactArgs) ToGetDeployPipelineDeployPi
 // GetDeployPipelineDeployPipelineArtifactArrayInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactArray and GetDeployPipelineDeployPipelineArtifactArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactArray{ GetDeployPipelineDeployPipelineArtifactArgs{...} }
+//	GetDeployPipelineDeployPipelineArtifactArray{ GetDeployPipelineDeployPipelineArtifactArgs{...} }
 type GetDeployPipelineDeployPipelineArtifactArrayInput interface {
 	pulumi.Input
 
@@ -18395,7 +19160,7 @@ type GetDeployPipelineDeployPipelineArtifactItem struct {
 // GetDeployPipelineDeployPipelineArtifactItemInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactItemArgs and GetDeployPipelineDeployPipelineArtifactItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactItemInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactItemArgs{...}
+//	GetDeployPipelineDeployPipelineArtifactItemArgs{...}
 type GetDeployPipelineDeployPipelineArtifactItemInput interface {
 	pulumi.Input
 
@@ -18427,7 +19192,7 @@ func (i GetDeployPipelineDeployPipelineArtifactItemArgs) ToGetDeployPipelineDepl
 // GetDeployPipelineDeployPipelineArtifactItemArrayInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactItemArray and GetDeployPipelineDeployPipelineArtifactItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactItemArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactItemArray{ GetDeployPipelineDeployPipelineArtifactItemArgs{...} }
+//	GetDeployPipelineDeployPipelineArtifactItemArray{ GetDeployPipelineDeployPipelineArtifactItemArgs{...} }
 type GetDeployPipelineDeployPipelineArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -18508,7 +19273,7 @@ type GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage struct {
 // GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs and GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...}
+//	GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...}
 type GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -18536,7 +19301,7 @@ func (i GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs) ToGe
 // GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArray and GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
+//	GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
 type GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -18609,7 +19374,7 @@ type GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem struct {
 // GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs and GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
+//	GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
 type GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -18639,7 +19404,7 @@ func (i GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs) 
 // GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArray and GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
+//	GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
 type GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -18717,7 +19482,7 @@ type GetDeployPipelineDeployPipelineEnvironment struct {
 // GetDeployPipelineDeployPipelineEnvironmentInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentArgs and GetDeployPipelineDeployPipelineEnvironmentOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentArgs{...}
+//	GetDeployPipelineDeployPipelineEnvironmentArgs{...}
 type GetDeployPipelineDeployPipelineEnvironmentInput interface {
 	pulumi.Input
 
@@ -18745,7 +19510,7 @@ func (i GetDeployPipelineDeployPipelineEnvironmentArgs) ToGetDeployPipelineDeplo
 // GetDeployPipelineDeployPipelineEnvironmentArrayInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentArray and GetDeployPipelineDeployPipelineEnvironmentArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentArray{ GetDeployPipelineDeployPipelineEnvironmentArgs{...} }
+//	GetDeployPipelineDeployPipelineEnvironmentArray{ GetDeployPipelineDeployPipelineEnvironmentArgs{...} }
 type GetDeployPipelineDeployPipelineEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -18820,7 +19585,7 @@ type GetDeployPipelineDeployPipelineEnvironmentItem struct {
 // GetDeployPipelineDeployPipelineEnvironmentItemInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentItemArgs and GetDeployPipelineDeployPipelineEnvironmentItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentItemInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentItemArgs{...}
+//	GetDeployPipelineDeployPipelineEnvironmentItemArgs{...}
 type GetDeployPipelineDeployPipelineEnvironmentItemInput interface {
 	pulumi.Input
 
@@ -18852,7 +19617,7 @@ func (i GetDeployPipelineDeployPipelineEnvironmentItemArgs) ToGetDeployPipelineD
 // GetDeployPipelineDeployPipelineEnvironmentItemArrayInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentItemArray and GetDeployPipelineDeployPipelineEnvironmentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentItemArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentItemArray{ GetDeployPipelineDeployPipelineEnvironmentItemArgs{...} }
+//	GetDeployPipelineDeployPipelineEnvironmentItemArray{ GetDeployPipelineDeployPipelineEnvironmentItemArgs{...} }
 type GetDeployPipelineDeployPipelineEnvironmentItemArrayInput interface {
 	pulumi.Input
 
@@ -18933,7 +19698,7 @@ type GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage struct {
 // GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs and GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
+//	GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
 type GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -18961,7 +19726,7 @@ func (i GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs) T
 // GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArray and GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
+//	GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
 type GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -19034,7 +19799,7 @@ type GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem struc
 // GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs and GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
+//	GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
 type GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -19064,7 +19829,7 @@ func (i GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArg
 // GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArray and GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
+//	GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
 type GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -19142,7 +19907,7 @@ type GetDeployPipelineDeployPipelineParameter struct {
 // GetDeployPipelineDeployPipelineParameterInput is an input type that accepts GetDeployPipelineDeployPipelineParameterArgs and GetDeployPipelineDeployPipelineParameterOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineParameterInput` via:
 //
-//          GetDeployPipelineDeployPipelineParameterArgs{...}
+//	GetDeployPipelineDeployPipelineParameterArgs{...}
 type GetDeployPipelineDeployPipelineParameterInput interface {
 	pulumi.Input
 
@@ -19170,7 +19935,7 @@ func (i GetDeployPipelineDeployPipelineParameterArgs) ToGetDeployPipelineDeployP
 // GetDeployPipelineDeployPipelineParameterArrayInput is an input type that accepts GetDeployPipelineDeployPipelineParameterArray and GetDeployPipelineDeployPipelineParameterArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineParameterArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineParameterArray{ GetDeployPipelineDeployPipelineParameterArgs{...} }
+//	GetDeployPipelineDeployPipelineParameterArray{ GetDeployPipelineDeployPipelineParameterArgs{...} }
 type GetDeployPipelineDeployPipelineParameterArrayInput interface {
 	pulumi.Input
 
@@ -19245,7 +20010,7 @@ type GetDeployPipelineDeployPipelineParameterItem struct {
 // GetDeployPipelineDeployPipelineParameterItemInput is an input type that accepts GetDeployPipelineDeployPipelineParameterItemArgs and GetDeployPipelineDeployPipelineParameterItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineParameterItemInput` via:
 //
-//          GetDeployPipelineDeployPipelineParameterItemArgs{...}
+//	GetDeployPipelineDeployPipelineParameterItemArgs{...}
 type GetDeployPipelineDeployPipelineParameterItemInput interface {
 	pulumi.Input
 
@@ -19277,7 +20042,7 @@ func (i GetDeployPipelineDeployPipelineParameterItemArgs) ToGetDeployPipelineDep
 // GetDeployPipelineDeployPipelineParameterItemArrayInput is an input type that accepts GetDeployPipelineDeployPipelineParameterItemArray and GetDeployPipelineDeployPipelineParameterItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelineDeployPipelineParameterItemArrayInput` via:
 //
-//          GetDeployPipelineDeployPipelineParameterItemArray{ GetDeployPipelineDeployPipelineParameterItemArgs{...} }
+//	GetDeployPipelineDeployPipelineParameterItemArray{ GetDeployPipelineDeployPipelineParameterItemArgs{...} }
 type GetDeployPipelineDeployPipelineParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -19356,7 +20121,7 @@ type GetDeployPipelinesDeployPipelineCollection struct {
 // GetDeployPipelinesDeployPipelineCollectionInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionArgs and GetDeployPipelinesDeployPipelineCollectionOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionInput interface {
 	pulumi.Input
 
@@ -19384,7 +20149,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionArgs) ToGetDeployPipelinesDepl
 // GetDeployPipelinesDeployPipelineCollectionArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionArray and GetDeployPipelinesDeployPipelineCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionArray{ GetDeployPipelinesDeployPipelineCollectionArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionArray{ GetDeployPipelinesDeployPipelineCollectionArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionArrayInput interface {
 	pulumi.Input
 
@@ -19483,7 +20248,7 @@ type GetDeployPipelinesDeployPipelineCollectionItem struct {
 // GetDeployPipelinesDeployPipelineCollectionItemInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemArgs and GetDeployPipelinesDeployPipelineCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemInput interface {
 	pulumi.Input
 
@@ -19539,7 +20304,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemArgs) ToGetDeployPipelines
 // GetDeployPipelinesDeployPipelineCollectionItemArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemArray and GetDeployPipelinesDeployPipelineCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemArray{ GetDeployPipelinesDeployPipelineCollectionItemArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemArray{ GetDeployPipelinesDeployPipelineCollectionItemArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -19684,7 +20449,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifact struct
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactInput interface {
 	pulumi.Input
 
@@ -19712,7 +20477,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArrayInput interface {
 	pulumi.Input
 
@@ -19787,7 +20552,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem st
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemInput interface {
 	pulumi.Input
 
@@ -19819,7 +20584,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -19904,7 +20669,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDep
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -19932,7 +20697,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -20005,7 +20770,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDep
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -20035,7 +20800,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItem
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -20113,7 +20878,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironment str
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentInput interface {
 	pulumi.Input
 
@@ -20141,7 +20906,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentA
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -20216,7 +20981,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItem
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemInput interface {
 	pulumi.Input
 
@@ -20248,7 +21013,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentI
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemArrayInput interface {
 	pulumi.Input
 
@@ -20333,7 +21098,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItem
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -20361,7 +21126,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentI
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -20434,7 +21199,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItem
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -20464,7 +21229,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentI
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -20542,7 +21307,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameter struc
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterInput interface {
 	pulumi.Input
 
@@ -20570,7 +21335,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArg
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArrayInput interface {
 	pulumi.Input
 
@@ -20645,7 +21410,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItem s
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArgs and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArgs{...}
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArgs{...}
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemInput interface {
 	pulumi.Input
 
@@ -20677,7 +21442,7 @@ func (i GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterIte
 // GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArrayInput is an input type that accepts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArray and GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArrayInput` via:
 //
-//          GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArgs{...} }
+//	GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArray{ GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArgs{...} }
 type GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -20764,7 +21529,7 @@ type GetDeployPipelinesFilter struct {
 // GetDeployPipelinesFilterInput is an input type that accepts GetDeployPipelinesFilterArgs and GetDeployPipelinesFilterOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesFilterInput` via:
 //
-//          GetDeployPipelinesFilterArgs{...}
+//	GetDeployPipelinesFilterArgs{...}
 type GetDeployPipelinesFilterInput interface {
 	pulumi.Input
 
@@ -20794,7 +21559,7 @@ func (i GetDeployPipelinesFilterArgs) ToGetDeployPipelinesFilterOutputWithContex
 // GetDeployPipelinesFilterArrayInput is an input type that accepts GetDeployPipelinesFilterArray and GetDeployPipelinesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeployPipelinesFilterArrayInput` via:
 //
-//          GetDeployPipelinesFilterArray{ GetDeployPipelinesFilterArgs{...} }
+//	GetDeployPipelinesFilterArray{ GetDeployPipelinesFilterArgs{...} }
 type GetDeployPipelinesFilterArrayInput interface {
 	pulumi.Input
 
@@ -20873,7 +21638,7 @@ type GetDeployStageApprovalPolicy struct {
 // GetDeployStageApprovalPolicyInput is an input type that accepts GetDeployStageApprovalPolicyArgs and GetDeployStageApprovalPolicyOutput values.
 // You can construct a concrete instance of `GetDeployStageApprovalPolicyInput` via:
 //
-//          GetDeployStageApprovalPolicyArgs{...}
+//	GetDeployStageApprovalPolicyArgs{...}
 type GetDeployStageApprovalPolicyInput interface {
 	pulumi.Input
 
@@ -20903,7 +21668,7 @@ func (i GetDeployStageApprovalPolicyArgs) ToGetDeployStageApprovalPolicyOutputWi
 // GetDeployStageApprovalPolicyArrayInput is an input type that accepts GetDeployStageApprovalPolicyArray and GetDeployStageApprovalPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageApprovalPolicyArrayInput` via:
 //
-//          GetDeployStageApprovalPolicyArray{ GetDeployStageApprovalPolicyArgs{...} }
+//	GetDeployStageApprovalPolicyArray{ GetDeployStageApprovalPolicyArgs{...} }
 type GetDeployStageApprovalPolicyArrayInput interface {
 	pulumi.Input
 
@@ -20977,7 +21742,7 @@ type GetDeployStageBlueBackendIp struct {
 // GetDeployStageBlueBackendIpInput is an input type that accepts GetDeployStageBlueBackendIpArgs and GetDeployStageBlueBackendIpOutput values.
 // You can construct a concrete instance of `GetDeployStageBlueBackendIpInput` via:
 //
-//          GetDeployStageBlueBackendIpArgs{...}
+//	GetDeployStageBlueBackendIpArgs{...}
 type GetDeployStageBlueBackendIpInput interface {
 	pulumi.Input
 
@@ -21005,7 +21770,7 @@ func (i GetDeployStageBlueBackendIpArgs) ToGetDeployStageBlueBackendIpOutputWith
 // GetDeployStageBlueBackendIpArrayInput is an input type that accepts GetDeployStageBlueBackendIpArray and GetDeployStageBlueBackendIpArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageBlueBackendIpArrayInput` via:
 //
-//          GetDeployStageBlueBackendIpArray{ GetDeployStageBlueBackendIpArgs{...} }
+//	GetDeployStageBlueBackendIpArray{ GetDeployStageBlueBackendIpArgs{...} }
 type GetDeployStageBlueBackendIpArrayInput interface {
 	pulumi.Input
 
@@ -21080,7 +21845,7 @@ type GetDeployStageBlueGreenStrategy struct {
 // GetDeployStageBlueGreenStrategyInput is an input type that accepts GetDeployStageBlueGreenStrategyArgs and GetDeployStageBlueGreenStrategyOutput values.
 // You can construct a concrete instance of `GetDeployStageBlueGreenStrategyInput` via:
 //
-//          GetDeployStageBlueGreenStrategyArgs{...}
+//	GetDeployStageBlueGreenStrategyArgs{...}
 type GetDeployStageBlueGreenStrategyInput interface {
 	pulumi.Input
 
@@ -21114,7 +21879,7 @@ func (i GetDeployStageBlueGreenStrategyArgs) ToGetDeployStageBlueGreenStrategyOu
 // GetDeployStageBlueGreenStrategyArrayInput is an input type that accepts GetDeployStageBlueGreenStrategyArray and GetDeployStageBlueGreenStrategyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageBlueGreenStrategyArrayInput` via:
 //
-//          GetDeployStageBlueGreenStrategyArray{ GetDeployStageBlueGreenStrategyArgs{...} }
+//	GetDeployStageBlueGreenStrategyArray{ GetDeployStageBlueGreenStrategyArgs{...} }
 type GetDeployStageBlueGreenStrategyArrayInput interface {
 	pulumi.Input
 
@@ -21202,7 +21967,7 @@ type GetDeployStageCanaryStrategy struct {
 // GetDeployStageCanaryStrategyInput is an input type that accepts GetDeployStageCanaryStrategyArgs and GetDeployStageCanaryStrategyOutput values.
 // You can construct a concrete instance of `GetDeployStageCanaryStrategyInput` via:
 //
-//          GetDeployStageCanaryStrategyArgs{...}
+//	GetDeployStageCanaryStrategyArgs{...}
 type GetDeployStageCanaryStrategyInput interface {
 	pulumi.Input
 
@@ -21234,7 +21999,7 @@ func (i GetDeployStageCanaryStrategyArgs) ToGetDeployStageCanaryStrategyOutputWi
 // GetDeployStageCanaryStrategyArrayInput is an input type that accepts GetDeployStageCanaryStrategyArray and GetDeployStageCanaryStrategyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageCanaryStrategyArrayInput` via:
 //
-//          GetDeployStageCanaryStrategyArray{ GetDeployStageCanaryStrategyArgs{...} }
+//	GetDeployStageCanaryStrategyArray{ GetDeployStageCanaryStrategyArgs{...} }
 type GetDeployStageCanaryStrategyArrayInput interface {
 	pulumi.Input
 
@@ -21313,7 +22078,7 @@ type GetDeployStageDeployStagePredecessorCollection struct {
 // GetDeployStageDeployStagePredecessorCollectionInput is an input type that accepts GetDeployStageDeployStagePredecessorCollectionArgs and GetDeployStageDeployStagePredecessorCollectionOutput values.
 // You can construct a concrete instance of `GetDeployStageDeployStagePredecessorCollectionInput` via:
 //
-//          GetDeployStageDeployStagePredecessorCollectionArgs{...}
+//	GetDeployStageDeployStagePredecessorCollectionArgs{...}
 type GetDeployStageDeployStagePredecessorCollectionInput interface {
 	pulumi.Input
 
@@ -21341,7 +22106,7 @@ func (i GetDeployStageDeployStagePredecessorCollectionArgs) ToGetDeployStageDepl
 // GetDeployStageDeployStagePredecessorCollectionArrayInput is an input type that accepts GetDeployStageDeployStagePredecessorCollectionArray and GetDeployStageDeployStagePredecessorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageDeployStagePredecessorCollectionArrayInput` via:
 //
-//          GetDeployStageDeployStagePredecessorCollectionArray{ GetDeployStageDeployStagePredecessorCollectionArgs{...} }
+//	GetDeployStageDeployStagePredecessorCollectionArray{ GetDeployStageDeployStagePredecessorCollectionArgs{...} }
 type GetDeployStageDeployStagePredecessorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -21412,7 +22177,7 @@ type GetDeployStageDeployStagePredecessorCollectionItem struct {
 // GetDeployStageDeployStagePredecessorCollectionItemInput is an input type that accepts GetDeployStageDeployStagePredecessorCollectionItemArgs and GetDeployStageDeployStagePredecessorCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeployStageDeployStagePredecessorCollectionItemInput` via:
 //
-//          GetDeployStageDeployStagePredecessorCollectionItemArgs{...}
+//	GetDeployStageDeployStagePredecessorCollectionItemArgs{...}
 type GetDeployStageDeployStagePredecessorCollectionItemInput interface {
 	pulumi.Input
 
@@ -21440,7 +22205,7 @@ func (i GetDeployStageDeployStagePredecessorCollectionItemArgs) ToGetDeployStage
 // GetDeployStageDeployStagePredecessorCollectionItemArrayInput is an input type that accepts GetDeployStageDeployStagePredecessorCollectionItemArray and GetDeployStageDeployStagePredecessorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageDeployStagePredecessorCollectionItemArrayInput` via:
 //
-//          GetDeployStageDeployStagePredecessorCollectionItemArray{ GetDeployStageDeployStagePredecessorCollectionItemArgs{...} }
+//	GetDeployStageDeployStagePredecessorCollectionItemArray{ GetDeployStageDeployStagePredecessorCollectionItemArgs{...} }
 type GetDeployStageDeployStagePredecessorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -21513,7 +22278,7 @@ type GetDeployStageFailurePolicy struct {
 // GetDeployStageFailurePolicyInput is an input type that accepts GetDeployStageFailurePolicyArgs and GetDeployStageFailurePolicyOutput values.
 // You can construct a concrete instance of `GetDeployStageFailurePolicyInput` via:
 //
-//          GetDeployStageFailurePolicyArgs{...}
+//	GetDeployStageFailurePolicyArgs{...}
 type GetDeployStageFailurePolicyInput interface {
 	pulumi.Input
 
@@ -21545,7 +22310,7 @@ func (i GetDeployStageFailurePolicyArgs) ToGetDeployStageFailurePolicyOutputWith
 // GetDeployStageFailurePolicyArrayInput is an input type that accepts GetDeployStageFailurePolicyArray and GetDeployStageFailurePolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageFailurePolicyArrayInput` via:
 //
-//          GetDeployStageFailurePolicyArray{ GetDeployStageFailurePolicyArgs{...} }
+//	GetDeployStageFailurePolicyArray{ GetDeployStageFailurePolicyArgs{...} }
 type GetDeployStageFailurePolicyArrayInput interface {
 	pulumi.Input
 
@@ -21624,7 +22389,7 @@ type GetDeployStageGreenBackendIp struct {
 // GetDeployStageGreenBackendIpInput is an input type that accepts GetDeployStageGreenBackendIpArgs and GetDeployStageGreenBackendIpOutput values.
 // You can construct a concrete instance of `GetDeployStageGreenBackendIpInput` via:
 //
-//          GetDeployStageGreenBackendIpArgs{...}
+//	GetDeployStageGreenBackendIpArgs{...}
 type GetDeployStageGreenBackendIpInput interface {
 	pulumi.Input
 
@@ -21652,7 +22417,7 @@ func (i GetDeployStageGreenBackendIpArgs) ToGetDeployStageGreenBackendIpOutputWi
 // GetDeployStageGreenBackendIpArrayInput is an input type that accepts GetDeployStageGreenBackendIpArray and GetDeployStageGreenBackendIpArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageGreenBackendIpArrayInput` via:
 //
-//          GetDeployStageGreenBackendIpArray{ GetDeployStageGreenBackendIpArgs{...} }
+//	GetDeployStageGreenBackendIpArray{ GetDeployStageGreenBackendIpArgs{...} }
 type GetDeployStageGreenBackendIpArrayInput interface {
 	pulumi.Input
 
@@ -21727,7 +22492,7 @@ type GetDeployStageLoadBalancerConfig struct {
 // GetDeployStageLoadBalancerConfigInput is an input type that accepts GetDeployStageLoadBalancerConfigArgs and GetDeployStageLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `GetDeployStageLoadBalancerConfigInput` via:
 //
-//          GetDeployStageLoadBalancerConfigArgs{...}
+//	GetDeployStageLoadBalancerConfigArgs{...}
 type GetDeployStageLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -21761,7 +22526,7 @@ func (i GetDeployStageLoadBalancerConfigArgs) ToGetDeployStageLoadBalancerConfig
 // GetDeployStageLoadBalancerConfigArrayInput is an input type that accepts GetDeployStageLoadBalancerConfigArray and GetDeployStageLoadBalancerConfigArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageLoadBalancerConfigArrayInput` via:
 //
-//          GetDeployStageLoadBalancerConfigArray{ GetDeployStageLoadBalancerConfigArgs{...} }
+//	GetDeployStageLoadBalancerConfigArray{ GetDeployStageLoadBalancerConfigArgs{...} }
 type GetDeployStageLoadBalancerConfigArrayInput interface {
 	pulumi.Input
 
@@ -21851,7 +22616,7 @@ type GetDeployStageProductionLoadBalancerConfig struct {
 // GetDeployStageProductionLoadBalancerConfigInput is an input type that accepts GetDeployStageProductionLoadBalancerConfigArgs and GetDeployStageProductionLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `GetDeployStageProductionLoadBalancerConfigInput` via:
 //
-//          GetDeployStageProductionLoadBalancerConfigArgs{...}
+//	GetDeployStageProductionLoadBalancerConfigArgs{...}
 type GetDeployStageProductionLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -21885,7 +22650,7 @@ func (i GetDeployStageProductionLoadBalancerConfigArgs) ToGetDeployStageProducti
 // GetDeployStageProductionLoadBalancerConfigArrayInput is an input type that accepts GetDeployStageProductionLoadBalancerConfigArray and GetDeployStageProductionLoadBalancerConfigArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageProductionLoadBalancerConfigArrayInput` via:
 //
-//          GetDeployStageProductionLoadBalancerConfigArray{ GetDeployStageProductionLoadBalancerConfigArgs{...} }
+//	GetDeployStageProductionLoadBalancerConfigArray{ GetDeployStageProductionLoadBalancerConfigArgs{...} }
 type GetDeployStageProductionLoadBalancerConfigArrayInput interface {
 	pulumi.Input
 
@@ -21969,7 +22734,7 @@ type GetDeployStageRollbackPolicy struct {
 // GetDeployStageRollbackPolicyInput is an input type that accepts GetDeployStageRollbackPolicyArgs and GetDeployStageRollbackPolicyOutput values.
 // You can construct a concrete instance of `GetDeployStageRollbackPolicyInput` via:
 //
-//          GetDeployStageRollbackPolicyArgs{...}
+//	GetDeployStageRollbackPolicyArgs{...}
 type GetDeployStageRollbackPolicyInput interface {
 	pulumi.Input
 
@@ -21997,7 +22762,7 @@ func (i GetDeployStageRollbackPolicyArgs) ToGetDeployStageRollbackPolicyOutputWi
 // GetDeployStageRollbackPolicyArrayInput is an input type that accepts GetDeployStageRollbackPolicyArray and GetDeployStageRollbackPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageRollbackPolicyArrayInput` via:
 //
-//          GetDeployStageRollbackPolicyArray{ GetDeployStageRollbackPolicyArgs{...} }
+//	GetDeployStageRollbackPolicyArray{ GetDeployStageRollbackPolicyArgs{...} }
 type GetDeployStageRollbackPolicyArrayInput interface {
 	pulumi.Input
 
@@ -22074,7 +22839,7 @@ type GetDeployStageRolloutPolicy struct {
 // GetDeployStageRolloutPolicyInput is an input type that accepts GetDeployStageRolloutPolicyArgs and GetDeployStageRolloutPolicyOutput values.
 // You can construct a concrete instance of `GetDeployStageRolloutPolicyInput` via:
 //
-//          GetDeployStageRolloutPolicyArgs{...}
+//	GetDeployStageRolloutPolicyArgs{...}
 type GetDeployStageRolloutPolicyInput interface {
 	pulumi.Input
 
@@ -22110,7 +22875,7 @@ func (i GetDeployStageRolloutPolicyArgs) ToGetDeployStageRolloutPolicyOutputWith
 // GetDeployStageRolloutPolicyArrayInput is an input type that accepts GetDeployStageRolloutPolicyArray and GetDeployStageRolloutPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageRolloutPolicyArrayInput` via:
 //
-//          GetDeployStageRolloutPolicyArray{ GetDeployStageRolloutPolicyArgs{...} }
+//	GetDeployStageRolloutPolicyArray{ GetDeployStageRolloutPolicyArgs{...} }
 type GetDeployStageRolloutPolicyArrayInput interface {
 	pulumi.Input
 
@@ -22205,7 +22970,7 @@ type GetDeployStageTestLoadBalancerConfig struct {
 // GetDeployStageTestLoadBalancerConfigInput is an input type that accepts GetDeployStageTestLoadBalancerConfigArgs and GetDeployStageTestLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `GetDeployStageTestLoadBalancerConfigInput` via:
 //
-//          GetDeployStageTestLoadBalancerConfigArgs{...}
+//	GetDeployStageTestLoadBalancerConfigArgs{...}
 type GetDeployStageTestLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -22239,7 +23004,7 @@ func (i GetDeployStageTestLoadBalancerConfigArgs) ToGetDeployStageTestLoadBalanc
 // GetDeployStageTestLoadBalancerConfigArrayInput is an input type that accepts GetDeployStageTestLoadBalancerConfigArray and GetDeployStageTestLoadBalancerConfigArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageTestLoadBalancerConfigArrayInput` via:
 //
-//          GetDeployStageTestLoadBalancerConfigArray{ GetDeployStageTestLoadBalancerConfigArgs{...} }
+//	GetDeployStageTestLoadBalancerConfigArray{ GetDeployStageTestLoadBalancerConfigArgs{...} }
 type GetDeployStageTestLoadBalancerConfigArrayInput interface {
 	pulumi.Input
 
@@ -22325,7 +23090,7 @@ type GetDeployStageWaitCriteria struct {
 // GetDeployStageWaitCriteriaInput is an input type that accepts GetDeployStageWaitCriteriaArgs and GetDeployStageWaitCriteriaOutput values.
 // You can construct a concrete instance of `GetDeployStageWaitCriteriaInput` via:
 //
-//          GetDeployStageWaitCriteriaArgs{...}
+//	GetDeployStageWaitCriteriaArgs{...}
 type GetDeployStageWaitCriteriaInput interface {
 	pulumi.Input
 
@@ -22355,7 +23120,7 @@ func (i GetDeployStageWaitCriteriaArgs) ToGetDeployStageWaitCriteriaOutputWithCo
 // GetDeployStageWaitCriteriaArrayInput is an input type that accepts GetDeployStageWaitCriteriaArray and GetDeployStageWaitCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetDeployStageWaitCriteriaArrayInput` via:
 //
-//          GetDeployStageWaitCriteriaArray{ GetDeployStageWaitCriteriaArgs{...} }
+//	GetDeployStageWaitCriteriaArray{ GetDeployStageWaitCriteriaArgs{...} }
 type GetDeployStageWaitCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -22429,7 +23194,7 @@ type GetDeployStagesDeployStageCollection struct {
 // GetDeployStagesDeployStageCollectionInput is an input type that accepts GetDeployStagesDeployStageCollectionArgs and GetDeployStagesDeployStageCollectionOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionInput` via:
 //
-//          GetDeployStagesDeployStageCollectionArgs{...}
+//	GetDeployStagesDeployStageCollectionArgs{...}
 type GetDeployStagesDeployStageCollectionInput interface {
 	pulumi.Input
 
@@ -22457,7 +23222,7 @@ func (i GetDeployStagesDeployStageCollectionArgs) ToGetDeployStagesDeployStageCo
 // GetDeployStagesDeployStageCollectionArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionArray and GetDeployStagesDeployStageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionArray{ GetDeployStagesDeployStageCollectionArgs{...} }
+//	GetDeployStagesDeployStageCollectionArray{ GetDeployStagesDeployStageCollectionArgs{...} }
 type GetDeployStagesDeployStageCollectionArrayInput interface {
 	pulumi.Input
 
@@ -22543,7 +23308,7 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	Config map[string]interface{} `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Optional binary artifact OCID user may provide to this stage.
+	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId string `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
 	DeployArtifactIds []string `pulumi:"deployArtifactIds"`
@@ -22634,7 +23399,7 @@ type GetDeployStagesDeployStageCollectionItem struct {
 // GetDeployStagesDeployStageCollectionItemInput is an input type that accepts GetDeployStagesDeployStageCollectionItemArgs and GetDeployStagesDeployStageCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemArgs{...}
+//	GetDeployStagesDeployStageCollectionItemArgs{...}
 type GetDeployStagesDeployStageCollectionItemInput interface {
 	pulumi.Input
 
@@ -22665,7 +23430,7 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	Config pulumi.MapInput `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Optional binary artifact OCID user may provide to this stage.
+	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringInput `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
 	DeployArtifactIds pulumi.StringArrayInput `pulumi:"deployArtifactIds"`
@@ -22768,7 +23533,7 @@ func (i GetDeployStagesDeployStageCollectionItemArgs) ToGetDeployStagesDeploySta
 // GetDeployStagesDeployStageCollectionItemArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemArray and GetDeployStagesDeployStageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemArray{ GetDeployStagesDeployStageCollectionItemArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemArray{ GetDeployStagesDeployStageCollectionItemArgs{...} }
 type GetDeployStagesDeployStageCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -22875,7 +23640,7 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) DefinedTags() pulumi.Map
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Optional binary artifact OCID user may provide to this stage.
+// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 func (o GetDeployStagesDeployStageCollectionItemOutput) DeployArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.DeployArtifactId }).(pulumi.StringOutput)
 }
@@ -23140,7 +23905,7 @@ type GetDeployStagesDeployStageCollectionItemApprovalPolicy struct {
 // GetDeployStagesDeployStageCollectionItemApprovalPolicyInput is an input type that accepts GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs and GetDeployStagesDeployStageCollectionItemApprovalPolicyOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemApprovalPolicyInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs{...}
+//	GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs{...}
 type GetDeployStagesDeployStageCollectionItemApprovalPolicyInput interface {
 	pulumi.Input
 
@@ -23170,7 +23935,7 @@ func (i GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs) ToGetDeployS
 // GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemApprovalPolicyArray and GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemApprovalPolicyArray{ GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemApprovalPolicyArray{ GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs{...} }
 type GetDeployStagesDeployStageCollectionItemApprovalPolicyArrayInput interface {
 	pulumi.Input
 
@@ -23244,7 +24009,7 @@ type GetDeployStagesDeployStageCollectionItemBlueBackendIp struct {
 // GetDeployStagesDeployStageCollectionItemBlueBackendIpInput is an input type that accepts GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs and GetDeployStagesDeployStageCollectionItemBlueBackendIpOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemBlueBackendIpInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs{...}
+//	GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs{...}
 type GetDeployStagesDeployStageCollectionItemBlueBackendIpInput interface {
 	pulumi.Input
 
@@ -23272,7 +24037,7 @@ func (i GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs) ToGetDeploySt
 // GetDeployStagesDeployStageCollectionItemBlueBackendIpArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemBlueBackendIpArray and GetDeployStagesDeployStageCollectionItemBlueBackendIpArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemBlueBackendIpArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemBlueBackendIpArray{ GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemBlueBackendIpArray{ GetDeployStagesDeployStageCollectionItemBlueBackendIpArgs{...} }
 type GetDeployStagesDeployStageCollectionItemBlueBackendIpArrayInput interface {
 	pulumi.Input
 
@@ -23347,7 +24112,7 @@ type GetDeployStagesDeployStageCollectionItemBlueGreenStrategy struct {
 // GetDeployStagesDeployStageCollectionItemBlueGreenStrategyInput is an input type that accepts GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs and GetDeployStagesDeployStageCollectionItemBlueGreenStrategyOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemBlueGreenStrategyInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs{...}
+//	GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs{...}
 type GetDeployStagesDeployStageCollectionItemBlueGreenStrategyInput interface {
 	pulumi.Input
 
@@ -23381,7 +24146,7 @@ func (i GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs) ToGetDepl
 // GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArray and GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArray{ GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArray{ GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArgs{...} }
 type GetDeployStagesDeployStageCollectionItemBlueGreenStrategyArrayInput interface {
 	pulumi.Input
 
@@ -23469,7 +24234,7 @@ type GetDeployStagesDeployStageCollectionItemCanaryStrategy struct {
 // GetDeployStagesDeployStageCollectionItemCanaryStrategyInput is an input type that accepts GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs and GetDeployStagesDeployStageCollectionItemCanaryStrategyOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemCanaryStrategyInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs{...}
+//	GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs{...}
 type GetDeployStagesDeployStageCollectionItemCanaryStrategyInput interface {
 	pulumi.Input
 
@@ -23501,7 +24266,7 @@ func (i GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs) ToGetDeployS
 // GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemCanaryStrategyArray and GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemCanaryStrategyArray{ GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemCanaryStrategyArray{ GetDeployStagesDeployStageCollectionItemCanaryStrategyArgs{...} }
 type GetDeployStagesDeployStageCollectionItemCanaryStrategyArrayInput interface {
 	pulumi.Input
 
@@ -23580,7 +24345,7 @@ type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection st
 // GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionInput is an input type that accepts GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs and GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs{...}
+//	GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs{...}
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionInput interface {
 	pulumi.Input
 
@@ -23608,7 +24373,7 @@ func (i GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection
 // GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArray and GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArray{ GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArray{ GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArgs{...} }
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -23679,7 +24444,7 @@ type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionIte
 // GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemInput is an input type that accepts GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs and GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs{...}
+//	GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs{...}
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemInput interface {
 	pulumi.Input
 
@@ -23707,7 +24472,7 @@ func (i GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollection
 // GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArray and GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArray{ GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArray{ GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArgs{...} }
 type GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -23782,7 +24547,7 @@ type GetDeployStagesDeployStageCollectionItemFailurePolicy struct {
 // GetDeployStagesDeployStageCollectionItemFailurePolicyInput is an input type that accepts GetDeployStagesDeployStageCollectionItemFailurePolicyArgs and GetDeployStagesDeployStageCollectionItemFailurePolicyOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemFailurePolicyInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemFailurePolicyArgs{...}
+//	GetDeployStagesDeployStageCollectionItemFailurePolicyArgs{...}
 type GetDeployStagesDeployStageCollectionItemFailurePolicyInput interface {
 	pulumi.Input
 
@@ -23814,7 +24579,7 @@ func (i GetDeployStagesDeployStageCollectionItemFailurePolicyArgs) ToGetDeploySt
 // GetDeployStagesDeployStageCollectionItemFailurePolicyArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemFailurePolicyArray and GetDeployStagesDeployStageCollectionItemFailurePolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemFailurePolicyArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemFailurePolicyArray{ GetDeployStagesDeployStageCollectionItemFailurePolicyArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemFailurePolicyArray{ GetDeployStagesDeployStageCollectionItemFailurePolicyArgs{...} }
 type GetDeployStagesDeployStageCollectionItemFailurePolicyArrayInput interface {
 	pulumi.Input
 
@@ -23893,7 +24658,7 @@ type GetDeployStagesDeployStageCollectionItemGreenBackendIp struct {
 // GetDeployStagesDeployStageCollectionItemGreenBackendIpInput is an input type that accepts GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs and GetDeployStagesDeployStageCollectionItemGreenBackendIpOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemGreenBackendIpInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs{...}
+//	GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs{...}
 type GetDeployStagesDeployStageCollectionItemGreenBackendIpInput interface {
 	pulumi.Input
 
@@ -23921,7 +24686,7 @@ func (i GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs) ToGetDeployS
 // GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemGreenBackendIpArray and GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemGreenBackendIpArray{ GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemGreenBackendIpArray{ GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs{...} }
 type GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayInput interface {
 	pulumi.Input
 
@@ -23996,7 +24761,7 @@ type GetDeployStagesDeployStageCollectionItemLoadBalancerConfig struct {
 // GetDeployStagesDeployStageCollectionItemLoadBalancerConfigInput is an input type that accepts GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs and GetDeployStagesDeployStageCollectionItemLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemLoadBalancerConfigInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs{...}
+//	GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs{...}
 type GetDeployStagesDeployStageCollectionItemLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -24030,7 +24795,7 @@ func (i GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs) ToGetDep
 // GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArray and GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArray{ GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArray{ GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArgs{...} }
 type GetDeployStagesDeployStageCollectionItemLoadBalancerConfigArrayInput interface {
 	pulumi.Input
 
@@ -24120,7 +24885,7 @@ type GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig struct
 // GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigInput is an input type that accepts GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs and GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs{...}
+//	GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs{...}
 type GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -24154,7 +24919,7 @@ func (i GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs
 // GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArray and GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArray{ GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArray{ GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs{...} }
 type GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArrayInput interface {
 	pulumi.Input
 
@@ -24242,7 +25007,7 @@ type GetDeployStagesDeployStageCollectionItemRollbackPolicy struct {
 // GetDeployStagesDeployStageCollectionItemRollbackPolicyInput is an input type that accepts GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs and GetDeployStagesDeployStageCollectionItemRollbackPolicyOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemRollbackPolicyInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs{...}
+//	GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs{...}
 type GetDeployStagesDeployStageCollectionItemRollbackPolicyInput interface {
 	pulumi.Input
 
@@ -24270,7 +25035,7 @@ func (i GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs) ToGetDeployS
 // GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemRollbackPolicyArray and GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemRollbackPolicyArray{ GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemRollbackPolicyArray{ GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs{...} }
 type GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayInput interface {
 	pulumi.Input
 
@@ -24347,7 +25112,7 @@ type GetDeployStagesDeployStageCollectionItemRolloutPolicy struct {
 // GetDeployStagesDeployStageCollectionItemRolloutPolicyInput is an input type that accepts GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs and GetDeployStagesDeployStageCollectionItemRolloutPolicyOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemRolloutPolicyInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs{...}
+//	GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs{...}
 type GetDeployStagesDeployStageCollectionItemRolloutPolicyInput interface {
 	pulumi.Input
 
@@ -24383,7 +25148,7 @@ func (i GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs) ToGetDeploySt
 // GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemRolloutPolicyArray and GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemRolloutPolicyArray{ GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemRolloutPolicyArray{ GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs{...} }
 type GetDeployStagesDeployStageCollectionItemRolloutPolicyArrayInput interface {
 	pulumi.Input
 
@@ -24478,7 +25243,7 @@ type GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig struct {
 // GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigInput is an input type that accepts GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs and GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs{...}
+//	GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs{...}
 type GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigInput interface {
 	pulumi.Input
 
@@ -24512,7 +25277,7 @@ func (i GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs) ToGe
 // GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArray and GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArray{ GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArray{ GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs{...} }
 type GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayInput interface {
 	pulumi.Input
 
@@ -24598,7 +25363,7 @@ type GetDeployStagesDeployStageCollectionItemWaitCriteria struct {
 // GetDeployStagesDeployStageCollectionItemWaitCriteriaInput is an input type that accepts GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs and GetDeployStagesDeployStageCollectionItemWaitCriteriaOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemWaitCriteriaInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs{...}
+//	GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs{...}
 type GetDeployStagesDeployStageCollectionItemWaitCriteriaInput interface {
 	pulumi.Input
 
@@ -24628,7 +25393,7 @@ func (i GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs) ToGetDeploySta
 // GetDeployStagesDeployStageCollectionItemWaitCriteriaArrayInput is an input type that accepts GetDeployStagesDeployStageCollectionItemWaitCriteriaArray and GetDeployStagesDeployStageCollectionItemWaitCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesDeployStageCollectionItemWaitCriteriaArrayInput` via:
 //
-//          GetDeployStagesDeployStageCollectionItemWaitCriteriaArray{ GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs{...} }
+//	GetDeployStagesDeployStageCollectionItemWaitCriteriaArray{ GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs{...} }
 type GetDeployStagesDeployStageCollectionItemWaitCriteriaArrayInput interface {
 	pulumi.Input
 
@@ -24703,7 +25468,7 @@ type GetDeployStagesFilter struct {
 // GetDeployStagesFilterInput is an input type that accepts GetDeployStagesFilterArgs and GetDeployStagesFilterOutput values.
 // You can construct a concrete instance of `GetDeployStagesFilterInput` via:
 //
-//          GetDeployStagesFilterArgs{...}
+//	GetDeployStagesFilterArgs{...}
 type GetDeployStagesFilterInput interface {
 	pulumi.Input
 
@@ -24732,7 +25497,7 @@ func (i GetDeployStagesFilterArgs) ToGetDeployStagesFilterOutputWithContext(ctx 
 // GetDeployStagesFilterArrayInput is an input type that accepts GetDeployStagesFilterArray and GetDeployStagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeployStagesFilterArrayInput` via:
 //
-//          GetDeployStagesFilterArray{ GetDeployStagesFilterArgs{...} }
+//	GetDeployStagesFilterArray{ GetDeployStagesFilterArgs{...} }
 type GetDeployStagesFilterArrayInput interface {
 	pulumi.Input
 
@@ -24808,7 +25573,7 @@ type GetDeploymentDeployArtifactOverrideArgument struct {
 // GetDeploymentDeployArtifactOverrideArgumentInput is an input type that accepts GetDeploymentDeployArtifactOverrideArgumentArgs and GetDeploymentDeployArtifactOverrideArgumentOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployArtifactOverrideArgumentInput` via:
 //
-//          GetDeploymentDeployArtifactOverrideArgumentArgs{...}
+//	GetDeploymentDeployArtifactOverrideArgumentArgs{...}
 type GetDeploymentDeployArtifactOverrideArgumentInput interface {
 	pulumi.Input
 
@@ -24836,7 +25601,7 @@ func (i GetDeploymentDeployArtifactOverrideArgumentArgs) ToGetDeploymentDeployAr
 // GetDeploymentDeployArtifactOverrideArgumentArrayInput is an input type that accepts GetDeploymentDeployArtifactOverrideArgumentArray and GetDeploymentDeployArtifactOverrideArgumentArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployArtifactOverrideArgumentArrayInput` via:
 //
-//          GetDeploymentDeployArtifactOverrideArgumentArray{ GetDeploymentDeployArtifactOverrideArgumentArgs{...} }
+//	GetDeploymentDeployArtifactOverrideArgumentArray{ GetDeploymentDeployArtifactOverrideArgumentArgs{...} }
 type GetDeploymentDeployArtifactOverrideArgumentArrayInput interface {
 	pulumi.Input
 
@@ -24911,7 +25676,7 @@ type GetDeploymentDeployArtifactOverrideArgumentItem struct {
 // GetDeploymentDeployArtifactOverrideArgumentItemInput is an input type that accepts GetDeploymentDeployArtifactOverrideArgumentItemArgs and GetDeploymentDeployArtifactOverrideArgumentItemOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployArtifactOverrideArgumentItemInput` via:
 //
-//          GetDeploymentDeployArtifactOverrideArgumentItemArgs{...}
+//	GetDeploymentDeployArtifactOverrideArgumentItemArgs{...}
 type GetDeploymentDeployArtifactOverrideArgumentItemInput interface {
 	pulumi.Input
 
@@ -24943,7 +25708,7 @@ func (i GetDeploymentDeployArtifactOverrideArgumentItemArgs) ToGetDeploymentDepl
 // GetDeploymentDeployArtifactOverrideArgumentItemArrayInput is an input type that accepts GetDeploymentDeployArtifactOverrideArgumentItemArray and GetDeploymentDeployArtifactOverrideArgumentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployArtifactOverrideArgumentItemArrayInput` via:
 //
-//          GetDeploymentDeployArtifactOverrideArgumentItemArray{ GetDeploymentDeployArtifactOverrideArgumentItemArgs{...} }
+//	GetDeploymentDeployArtifactOverrideArgumentItemArray{ GetDeploymentDeployArtifactOverrideArgumentItemArgs{...} }
 type GetDeploymentDeployArtifactOverrideArgumentItemArrayInput interface {
 	pulumi.Input
 
@@ -25022,7 +25787,7 @@ type GetDeploymentDeployPipelineArtifact struct {
 // GetDeploymentDeployPipelineArtifactInput is an input type that accepts GetDeploymentDeployPipelineArtifactArgs and GetDeploymentDeployPipelineArtifactOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactArgs{...}
+//	GetDeploymentDeployPipelineArtifactArgs{...}
 type GetDeploymentDeployPipelineArtifactInput interface {
 	pulumi.Input
 
@@ -25050,7 +25815,7 @@ func (i GetDeploymentDeployPipelineArtifactArgs) ToGetDeploymentDeployPipelineAr
 // GetDeploymentDeployPipelineArtifactArrayInput is an input type that accepts GetDeploymentDeployPipelineArtifactArray and GetDeploymentDeployPipelineArtifactArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactArrayInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactArray{ GetDeploymentDeployPipelineArtifactArgs{...} }
+//	GetDeploymentDeployPipelineArtifactArray{ GetDeploymentDeployPipelineArtifactArgs{...} }
 type GetDeploymentDeployPipelineArtifactArrayInput interface {
 	pulumi.Input
 
@@ -25123,7 +25888,7 @@ type GetDeploymentDeployPipelineArtifactItem struct {
 // GetDeploymentDeployPipelineArtifactItemInput is an input type that accepts GetDeploymentDeployPipelineArtifactItemArgs and GetDeploymentDeployPipelineArtifactItemOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactItemInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactItemArgs{...}
+//	GetDeploymentDeployPipelineArtifactItemArgs{...}
 type GetDeploymentDeployPipelineArtifactItemInput interface {
 	pulumi.Input
 
@@ -25155,7 +25920,7 @@ func (i GetDeploymentDeployPipelineArtifactItemArgs) ToGetDeploymentDeployPipeli
 // GetDeploymentDeployPipelineArtifactItemArrayInput is an input type that accepts GetDeploymentDeployPipelineArtifactItemArray and GetDeploymentDeployPipelineArtifactItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactItemArrayInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactItemArray{ GetDeploymentDeployPipelineArtifactItemArgs{...} }
+//	GetDeploymentDeployPipelineArtifactItemArray{ GetDeploymentDeployPipelineArtifactItemArgs{...} }
 type GetDeploymentDeployPipelineArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -25236,7 +26001,7 @@ type GetDeploymentDeployPipelineArtifactItemDeployPipelineStage struct {
 // GetDeploymentDeployPipelineArtifactItemDeployPipelineStageInput is an input type that accepts GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArgs and GetDeploymentDeployPipelineArtifactItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactItemDeployPipelineStageInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...}
+//	GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...}
 type GetDeploymentDeployPipelineArtifactItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -25264,7 +26029,7 @@ func (i GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArgs) ToGetDep
 // GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput is an input type that accepts GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArray and GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
+//	GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
 type GetDeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -25337,7 +26102,7 @@ type GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem struct {
 // GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput is an input type that accepts GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs and GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
+//	GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
 type GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -25367,7 +26132,7 @@ func (i GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs) ToGe
 // GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArray and GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
+//	GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
 type GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -25441,7 +26206,7 @@ type GetDeploymentDeployPipelineEnvironment struct {
 // GetDeploymentDeployPipelineEnvironmentInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentArgs and GetDeploymentDeployPipelineEnvironmentOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentArgs{...}
+//	GetDeploymentDeployPipelineEnvironmentArgs{...}
 type GetDeploymentDeployPipelineEnvironmentInput interface {
 	pulumi.Input
 
@@ -25469,7 +26234,7 @@ func (i GetDeploymentDeployPipelineEnvironmentArgs) ToGetDeploymentDeployPipelin
 // GetDeploymentDeployPipelineEnvironmentArrayInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentArray and GetDeploymentDeployPipelineEnvironmentArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentArrayInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentArray{ GetDeploymentDeployPipelineEnvironmentArgs{...} }
+//	GetDeploymentDeployPipelineEnvironmentArray{ GetDeploymentDeployPipelineEnvironmentArgs{...} }
 type GetDeploymentDeployPipelineEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -25544,7 +26309,7 @@ type GetDeploymentDeployPipelineEnvironmentItem struct {
 // GetDeploymentDeployPipelineEnvironmentItemInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentItemArgs and GetDeploymentDeployPipelineEnvironmentItemOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentItemInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentItemArgs{...}
+//	GetDeploymentDeployPipelineEnvironmentItemArgs{...}
 type GetDeploymentDeployPipelineEnvironmentItemInput interface {
 	pulumi.Input
 
@@ -25576,7 +26341,7 @@ func (i GetDeploymentDeployPipelineEnvironmentItemArgs) ToGetDeploymentDeployPip
 // GetDeploymentDeployPipelineEnvironmentItemArrayInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentItemArray and GetDeploymentDeployPipelineEnvironmentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentItemArrayInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentItemArray{ GetDeploymentDeployPipelineEnvironmentItemArgs{...} }
+//	GetDeploymentDeployPipelineEnvironmentItemArray{ GetDeploymentDeployPipelineEnvironmentItemArgs{...} }
 type GetDeploymentDeployPipelineEnvironmentItemArrayInput interface {
 	pulumi.Input
 
@@ -25657,7 +26422,7 @@ type GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage struct {
 // GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs and GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
+//	GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
 type GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -25685,7 +26450,7 @@ func (i GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs) ToGet
 // GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray and GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
+//	GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
 type GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -25758,7 +26523,7 @@ type GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem struct {
 // GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs and GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
+//	GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
 type GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -25788,7 +26553,7 @@ func (i GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs) T
 // GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray and GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
+//	GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
 type GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -25864,7 +26629,7 @@ type GetDeploymentDeploymentArgument struct {
 // GetDeploymentDeploymentArgumentInput is an input type that accepts GetDeploymentDeploymentArgumentArgs and GetDeploymentDeploymentArgumentOutput values.
 // You can construct a concrete instance of `GetDeploymentDeploymentArgumentInput` via:
 //
-//          GetDeploymentDeploymentArgumentArgs{...}
+//	GetDeploymentDeploymentArgumentArgs{...}
 type GetDeploymentDeploymentArgumentInput interface {
 	pulumi.Input
 
@@ -25892,7 +26657,7 @@ func (i GetDeploymentDeploymentArgumentArgs) ToGetDeploymentDeploymentArgumentOu
 // GetDeploymentDeploymentArgumentArrayInput is an input type that accepts GetDeploymentDeploymentArgumentArray and GetDeploymentDeploymentArgumentArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeploymentArgumentArrayInput` via:
 //
-//          GetDeploymentDeploymentArgumentArray{ GetDeploymentDeploymentArgumentArgs{...} }
+//	GetDeploymentDeploymentArgumentArray{ GetDeploymentDeploymentArgumentArgs{...} }
 type GetDeploymentDeploymentArgumentArrayInput interface {
 	pulumi.Input
 
@@ -25963,7 +26728,7 @@ type GetDeploymentDeploymentArgumentItem struct {
 // GetDeploymentDeploymentArgumentItemInput is an input type that accepts GetDeploymentDeploymentArgumentItemArgs and GetDeploymentDeploymentArgumentItemOutput values.
 // You can construct a concrete instance of `GetDeploymentDeploymentArgumentItemInput` via:
 //
-//          GetDeploymentDeploymentArgumentItemArgs{...}
+//	GetDeploymentDeploymentArgumentItemArgs{...}
 type GetDeploymentDeploymentArgumentItemInput interface {
 	pulumi.Input
 
@@ -25993,7 +26758,7 @@ func (i GetDeploymentDeploymentArgumentItemArgs) ToGetDeploymentDeploymentArgume
 // GetDeploymentDeploymentArgumentItemArrayInput is an input type that accepts GetDeploymentDeploymentArgumentItemArray and GetDeploymentDeploymentArgumentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeploymentArgumentItemArrayInput` via:
 //
-//          GetDeploymentDeploymentArgumentItemArray{ GetDeploymentDeploymentArgumentItemArgs{...} }
+//	GetDeploymentDeploymentArgumentItemArray{ GetDeploymentDeploymentArgumentItemArgs{...} }
 type GetDeploymentDeploymentArgumentItemArrayInput interface {
 	pulumi.Input
 
@@ -26071,7 +26836,7 @@ type GetDeploymentDeploymentExecutionProgress struct {
 // GetDeploymentDeploymentExecutionProgressInput is an input type that accepts GetDeploymentDeploymentExecutionProgressArgs and GetDeploymentDeploymentExecutionProgressOutput values.
 // You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressInput` via:
 //
-//          GetDeploymentDeploymentExecutionProgressArgs{...}
+//	GetDeploymentDeploymentExecutionProgressArgs{...}
 type GetDeploymentDeploymentExecutionProgressInput interface {
 	pulumi.Input
 
@@ -26103,7 +26868,7 @@ func (i GetDeploymentDeploymentExecutionProgressArgs) ToGetDeploymentDeploymentE
 // GetDeploymentDeploymentExecutionProgressArrayInput is an input type that accepts GetDeploymentDeploymentExecutionProgressArray and GetDeploymentDeploymentExecutionProgressArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressArrayInput` via:
 //
-//          GetDeploymentDeploymentExecutionProgressArray{ GetDeploymentDeploymentExecutionProgressArgs{...} }
+//	GetDeploymentDeploymentExecutionProgressArray{ GetDeploymentDeploymentExecutionProgressArgs{...} }
 type GetDeploymentDeploymentExecutionProgressArrayInput interface {
 	pulumi.Input
 
@@ -26184,7 +26949,7 @@ type GetDeploymentsDeploymentCollection struct {
 // GetDeploymentsDeploymentCollectionInput is an input type that accepts GetDeploymentsDeploymentCollectionArgs and GetDeploymentsDeploymentCollectionOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionInput` via:
 //
-//          GetDeploymentsDeploymentCollectionArgs{...}
+//	GetDeploymentsDeploymentCollectionArgs{...}
 type GetDeploymentsDeploymentCollectionInput interface {
 	pulumi.Input
 
@@ -26212,7 +26977,7 @@ func (i GetDeploymentsDeploymentCollectionArgs) ToGetDeploymentsDeploymentCollec
 // GetDeploymentsDeploymentCollectionArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionArray and GetDeploymentsDeploymentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionArray{ GetDeploymentsDeploymentCollectionArgs{...} }
+//	GetDeploymentsDeploymentCollectionArray{ GetDeploymentsDeploymentCollectionArgs{...} }
 type GetDeploymentsDeploymentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -26319,7 +27084,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 // GetDeploymentsDeploymentCollectionItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemArgs and GetDeploymentsDeploymentCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemInput interface {
 	pulumi.Input
 
@@ -26385,7 +27150,7 @@ func (i GetDeploymentsDeploymentCollectionItemArgs) ToGetDeploymentsDeploymentCo
 // GetDeploymentsDeploymentCollectionItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemArray and GetDeploymentsDeploymentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemArray{ GetDeploymentsDeploymentCollectionItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemArray{ GetDeploymentsDeploymentCollectionItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -26559,7 +27324,7 @@ type GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument struct
 // GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs and GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentInput interface {
 	pulumi.Input
 
@@ -26587,7 +27352,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs
 // GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArray and GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArray{ GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArray{ GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArrayInput interface {
 	pulumi.Input
 
@@ -26662,7 +27427,7 @@ type GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem st
 // GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArgs and GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemInput interface {
 	pulumi.Input
 
@@ -26694,7 +27459,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem
 // GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArray and GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArray{ GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArray{ GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemArrayInput interface {
 	pulumi.Input
 
@@ -26777,7 +27542,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact struct {
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactInput interface {
 	pulumi.Input
 
@@ -26805,7 +27570,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs) ToGetD
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArray and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArrayInput interface {
 	pulumi.Input
 
@@ -26880,7 +27645,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem struct {
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemInput interface {
 	pulumi.Input
 
@@ -26912,7 +27677,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArgs) To
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArray and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemArrayInput interface {
 	pulumi.Input
 
@@ -26995,7 +27760,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipel
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -27023,7 +27788,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPi
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArray and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -27096,7 +27861,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipel
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -27126,7 +27891,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPi
 // GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArray and GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -27204,7 +27969,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironment struct {
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentInput interface {
 	pulumi.Input
 
@@ -27232,7 +27997,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs) ToG
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArray and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArrayInput interface {
 	pulumi.Input
 
@@ -27307,7 +28072,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItem struct 
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemInput interface {
 	pulumi.Input
 
@@ -27339,7 +28104,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArgs)
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArray and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemArrayInput interface {
 	pulumi.Input
 
@@ -27424,7 +28189,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPi
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 	pulumi.Input
 
@@ -27452,7 +28217,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeplo
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput interface {
 	pulumi.Input
 
@@ -27525,7 +28290,7 @@ type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPi
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput interface {
 	pulumi.Input
 
@@ -27555,7 +28320,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeplo
 // GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray and GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray{ GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput interface {
 	pulumi.Input
 
@@ -27633,7 +28398,7 @@ type GetDeploymentsDeploymentCollectionItemDeploymentArgument struct {
 // GetDeploymentsDeploymentCollectionItemDeploymentArgumentInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs and GetDeploymentsDeploymentCollectionItemDeploymentArgumentOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentArgumentInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeploymentArgumentInput interface {
 	pulumi.Input
 
@@ -27661,7 +28426,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs) ToGetDeplo
 // GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentArgumentArray and GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeploymentArgumentArray{ GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeploymentArgumentArray{ GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayInput interface {
 	pulumi.Input
 
@@ -27734,7 +28499,7 @@ type GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem struct {
 // GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs and GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemInput interface {
 	pulumi.Input
 
@@ -27764,7 +28529,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs) ToGetD
 // GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArray and GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArray{ GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArray{ GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayInput interface {
 	pulumi.Input
 
@@ -27842,7 +28607,7 @@ type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress struct {
 // GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs{...}
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs{...}
 type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressInput interface {
 	pulumi.Input
 
@@ -27874,7 +28639,7 @@ func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs) T
 // GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArray and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs{...} }
 type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayInput interface {
 	pulumi.Input
 
@@ -27959,7 +28724,7 @@ type GetDeploymentsFilter struct {
 // GetDeploymentsFilterInput is an input type that accepts GetDeploymentsFilterArgs and GetDeploymentsFilterOutput values.
 // You can construct a concrete instance of `GetDeploymentsFilterInput` via:
 //
-//          GetDeploymentsFilterArgs{...}
+//	GetDeploymentsFilterArgs{...}
 type GetDeploymentsFilterInput interface {
 	pulumi.Input
 
@@ -27989,7 +28754,7 @@ func (i GetDeploymentsFilterArgs) ToGetDeploymentsFilterOutputWithContext(ctx co
 // GetDeploymentsFilterArrayInput is an input type that accepts GetDeploymentsFilterArray and GetDeploymentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsFilterArrayInput` via:
 //
-//          GetDeploymentsFilterArray{ GetDeploymentsFilterArgs{...} }
+//	GetDeploymentsFilterArray{ GetDeploymentsFilterArgs{...} }
 type GetDeploymentsFilterArrayInput interface {
 	pulumi.Input
 
@@ -28066,7 +28831,7 @@ type GetProjectNotificationConfig struct {
 // GetProjectNotificationConfigInput is an input type that accepts GetProjectNotificationConfigArgs and GetProjectNotificationConfigOutput values.
 // You can construct a concrete instance of `GetProjectNotificationConfigInput` via:
 //
-//          GetProjectNotificationConfigArgs{...}
+//	GetProjectNotificationConfigArgs{...}
 type GetProjectNotificationConfigInput interface {
 	pulumi.Input
 
@@ -28094,7 +28859,7 @@ func (i GetProjectNotificationConfigArgs) ToGetProjectNotificationConfigOutputWi
 // GetProjectNotificationConfigArrayInput is an input type that accepts GetProjectNotificationConfigArray and GetProjectNotificationConfigArrayOutput values.
 // You can construct a concrete instance of `GetProjectNotificationConfigArrayInput` via:
 //
-//          GetProjectNotificationConfigArray{ GetProjectNotificationConfigArgs{...} }
+//	GetProjectNotificationConfigArray{ GetProjectNotificationConfigArgs{...} }
 type GetProjectNotificationConfigArrayInput interface {
 	pulumi.Input
 
@@ -28165,7 +28930,7 @@ type GetProjectsFilter struct {
 // GetProjectsFilterInput is an input type that accepts GetProjectsFilterArgs and GetProjectsFilterOutput values.
 // You can construct a concrete instance of `GetProjectsFilterInput` via:
 //
-//          GetProjectsFilterArgs{...}
+//	GetProjectsFilterArgs{...}
 type GetProjectsFilterInput interface {
 	pulumi.Input
 
@@ -28195,7 +28960,7 @@ func (i GetProjectsFilterArgs) ToGetProjectsFilterOutputWithContext(ctx context.
 // GetProjectsFilterArrayInput is an input type that accepts GetProjectsFilterArray and GetProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProjectsFilterArrayInput` via:
 //
-//          GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
+//	GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
 type GetProjectsFilterArrayInput interface {
 	pulumi.Input
 
@@ -28271,7 +29036,7 @@ type GetProjectsProjectCollection struct {
 // GetProjectsProjectCollectionInput is an input type that accepts GetProjectsProjectCollectionArgs and GetProjectsProjectCollectionOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionInput` via:
 //
-//          GetProjectsProjectCollectionArgs{...}
+//	GetProjectsProjectCollectionArgs{...}
 type GetProjectsProjectCollectionInput interface {
 	pulumi.Input
 
@@ -28298,7 +29063,7 @@ func (i GetProjectsProjectCollectionArgs) ToGetProjectsProjectCollectionOutputWi
 // GetProjectsProjectCollectionArrayInput is an input type that accepts GetProjectsProjectCollectionArray and GetProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionArrayInput` via:
 //
-//          GetProjectsProjectCollectionArray{ GetProjectsProjectCollectionArgs{...} }
+//	GetProjectsProjectCollectionArray{ GetProjectsProjectCollectionArgs{...} }
 type GetProjectsProjectCollectionArrayInput interface {
 	pulumi.Input
 
@@ -28390,7 +29155,7 @@ type GetProjectsProjectCollectionItem struct {
 // GetProjectsProjectCollectionItemInput is an input type that accepts GetProjectsProjectCollectionItemArgs and GetProjectsProjectCollectionItemOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemInput` via:
 //
-//          GetProjectsProjectCollectionItemArgs{...}
+//	GetProjectsProjectCollectionItemArgs{...}
 type GetProjectsProjectCollectionItemInput interface {
 	pulumi.Input
 
@@ -28442,7 +29207,7 @@ func (i GetProjectsProjectCollectionItemArgs) ToGetProjectsProjectCollectionItem
 // GetProjectsProjectCollectionItemArrayInput is an input type that accepts GetProjectsProjectCollectionItemArray and GetProjectsProjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemArrayInput` via:
 //
-//          GetProjectsProjectCollectionItemArray{ GetProjectsProjectCollectionItemArgs{...} }
+//	GetProjectsProjectCollectionItemArray{ GetProjectsProjectCollectionItemArgs{...} }
 type GetProjectsProjectCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -28573,7 +29338,7 @@ type GetProjectsProjectCollectionItemNotificationConfig struct {
 // GetProjectsProjectCollectionItemNotificationConfigInput is an input type that accepts GetProjectsProjectCollectionItemNotificationConfigArgs and GetProjectsProjectCollectionItemNotificationConfigOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemNotificationConfigInput` via:
 //
-//          GetProjectsProjectCollectionItemNotificationConfigArgs{...}
+//	GetProjectsProjectCollectionItemNotificationConfigArgs{...}
 type GetProjectsProjectCollectionItemNotificationConfigInput interface {
 	pulumi.Input
 
@@ -28601,7 +29366,7 @@ func (i GetProjectsProjectCollectionItemNotificationConfigArgs) ToGetProjectsPro
 // GetProjectsProjectCollectionItemNotificationConfigArrayInput is an input type that accepts GetProjectsProjectCollectionItemNotificationConfigArray and GetProjectsProjectCollectionItemNotificationConfigArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemNotificationConfigArrayInput` via:
 //
-//          GetProjectsProjectCollectionItemNotificationConfigArray{ GetProjectsProjectCollectionItemNotificationConfigArgs{...} }
+//	GetProjectsProjectCollectionItemNotificationConfigArray{ GetProjectsProjectCollectionItemNotificationConfigArgs{...} }
 type GetProjectsProjectCollectionItemNotificationConfigArrayInput interface {
 	pulumi.Input
 
@@ -28672,7 +29437,7 @@ type GetRepoFileLineLine struct {
 // GetRepoFileLineLineInput is an input type that accepts GetRepoFileLineLineArgs and GetRepoFileLineLineOutput values.
 // You can construct a concrete instance of `GetRepoFileLineLineInput` via:
 //
-//          GetRepoFileLineLineArgs{...}
+//	GetRepoFileLineLineArgs{...}
 type GetRepoFileLineLineInput interface {
 	pulumi.Input
 
@@ -28702,7 +29467,7 @@ func (i GetRepoFileLineLineArgs) ToGetRepoFileLineLineOutputWithContext(ctx cont
 // GetRepoFileLineLineArrayInput is an input type that accepts GetRepoFileLineLineArray and GetRepoFileLineLineArrayOutput values.
 // You can construct a concrete instance of `GetRepoFileLineLineArrayInput` via:
 //
-//          GetRepoFileLineLineArray{ GetRepoFileLineLineArgs{...} }
+//	GetRepoFileLineLineArray{ GetRepoFileLineLineArgs{...} }
 type GetRepoFileLineLineArrayInput interface {
 	pulumi.Input
 
@@ -28778,7 +29543,7 @@ type GetRepositoriesFilter struct {
 // GetRepositoriesFilterInput is an input type that accepts GetRepositoriesFilterArgs and GetRepositoriesFilterOutput values.
 // You can construct a concrete instance of `GetRepositoriesFilterInput` via:
 //
-//          GetRepositoriesFilterArgs{...}
+//	GetRepositoriesFilterArgs{...}
 type GetRepositoriesFilterInput interface {
 	pulumi.Input
 
@@ -28808,7 +29573,7 @@ func (i GetRepositoriesFilterArgs) ToGetRepositoriesFilterOutputWithContext(ctx 
 // GetRepositoriesFilterArrayInput is an input type that accepts GetRepositoriesFilterArray and GetRepositoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesFilterArrayInput` via:
 //
-//          GetRepositoriesFilterArray{ GetRepositoriesFilterArgs{...} }
+//	GetRepositoriesFilterArray{ GetRepositoriesFilterArgs{...} }
 type GetRepositoriesFilterArrayInput interface {
 	pulumi.Input
 
@@ -28884,7 +29649,7 @@ type GetRepositoriesRepositoryCollection struct {
 // GetRepositoriesRepositoryCollectionInput is an input type that accepts GetRepositoriesRepositoryCollectionArgs and GetRepositoriesRepositoryCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionInput` via:
 //
-//          GetRepositoriesRepositoryCollectionArgs{...}
+//	GetRepositoriesRepositoryCollectionArgs{...}
 type GetRepositoriesRepositoryCollectionInput interface {
 	pulumi.Input
 
@@ -28911,7 +29676,7 @@ func (i GetRepositoriesRepositoryCollectionArgs) ToGetRepositoriesRepositoryColl
 // GetRepositoriesRepositoryCollectionArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionArray and GetRepositoriesRepositoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionArrayInput` via:
 //
-//          GetRepositoriesRepositoryCollectionArray{ GetRepositoriesRepositoryCollectionArgs{...} }
+//	GetRepositoriesRepositoryCollectionArray{ GetRepositoriesRepositoryCollectionArgs{...} }
 type GetRepositoriesRepositoryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -29023,7 +29788,7 @@ type GetRepositoriesRepositoryCollectionItem struct {
 // GetRepositoriesRepositoryCollectionItemInput is an input type that accepts GetRepositoriesRepositoryCollectionItemArgs and GetRepositoriesRepositoryCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemArgs{...}
+//	GetRepositoriesRepositoryCollectionItemArgs{...}
 type GetRepositoriesRepositoryCollectionItemInput interface {
 	pulumi.Input
 
@@ -29095,7 +29860,7 @@ func (i GetRepositoriesRepositoryCollectionItemArgs) ToGetRepositoriesRepository
 // GetRepositoriesRepositoryCollectionItemArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemArray and GetRepositoriesRepositoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemArrayInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemArray{ GetRepositoriesRepositoryCollectionItemArgs{...} }
+//	GetRepositoriesRepositoryCollectionItemArray{ GetRepositoriesRepositoryCollectionItemArgs{...} }
 type GetRepositoriesRepositoryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -29280,7 +30045,7 @@ type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig struct {
 // GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs{...}
+//	GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs{...}
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigInput interface {
 	pulumi.Input
 
@@ -29312,7 +30077,7 @@ func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs) ToGet
 // GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray{ GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs{...} }
+//	GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArray{ GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs{...} }
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayInput interface {
 	pulumi.Input
 
@@ -29386,7 +30151,7 @@ func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArrayOutput
 }
 
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule struct {
-	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 	CustomSchedule string `pulumi:"customSchedule"`
 	// Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
 	ScheduleType string `pulumi:"scheduleType"`
@@ -29395,7 +30160,7 @@ type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedul
 // GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs{...}
+//	GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs{...}
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleInput interface {
 	pulumi.Input
 
@@ -29404,7 +30169,7 @@ type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedul
 }
 
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs struct {
-	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 	CustomSchedule pulumi.StringInput `pulumi:"customSchedule"`
 	// Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
 	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
@@ -29425,7 +30190,7 @@ func (i GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSche
 // GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray and GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput` via:
 //
-//          GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray{ GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs{...} }
+//	GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArray{ GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArgs{...} }
 type GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleArrayInput interface {
 	pulumi.Input
 
@@ -29461,7 +30226,7 @@ func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSche
 	return o
 }
 
-// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 func (o GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleOutput) CustomSchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule) string {
 		return v.CustomSchedule
@@ -29507,7 +30272,7 @@ type GetRepositoryAuthorItem struct {
 // GetRepositoryAuthorItemInput is an input type that accepts GetRepositoryAuthorItemArgs and GetRepositoryAuthorItemOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorItemInput` via:
 //
-//          GetRepositoryAuthorItemArgs{...}
+//	GetRepositoryAuthorItemArgs{...}
 type GetRepositoryAuthorItemInput interface {
 	pulumi.Input
 
@@ -29539,7 +30304,7 @@ func (i GetRepositoryAuthorItemArgs) ToGetRepositoryAuthorItemOutputWithContext(
 // GetRepositoryAuthorItemArrayInput is an input type that accepts GetRepositoryAuthorItemArray and GetRepositoryAuthorItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorItemArrayInput` via:
 //
-//          GetRepositoryAuthorItemArray{ GetRepositoryAuthorItemArgs{...} }
+//	GetRepositoryAuthorItemArray{ GetRepositoryAuthorItemArgs{...} }
 type GetRepositoryAuthorItemArrayInput interface {
 	pulumi.Input
 
@@ -29619,7 +30384,7 @@ type GetRepositoryAuthorsFilter struct {
 // GetRepositoryAuthorsFilterInput is an input type that accepts GetRepositoryAuthorsFilterArgs and GetRepositoryAuthorsFilterOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorsFilterInput` via:
 //
-//          GetRepositoryAuthorsFilterArgs{...}
+//	GetRepositoryAuthorsFilterArgs{...}
 type GetRepositoryAuthorsFilterInput interface {
 	pulumi.Input
 
@@ -29648,7 +30413,7 @@ func (i GetRepositoryAuthorsFilterArgs) ToGetRepositoryAuthorsFilterOutputWithCo
 // GetRepositoryAuthorsFilterArrayInput is an input type that accepts GetRepositoryAuthorsFilterArray and GetRepositoryAuthorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorsFilterArrayInput` via:
 //
-//          GetRepositoryAuthorsFilterArray{ GetRepositoryAuthorsFilterArgs{...} }
+//	GetRepositoryAuthorsFilterArray{ GetRepositoryAuthorsFilterArgs{...} }
 type GetRepositoryAuthorsFilterArrayInput interface {
 	pulumi.Input
 
@@ -29724,7 +30489,7 @@ type GetRepositoryAuthorsRepositoryAuthorCollection struct {
 // GetRepositoryAuthorsRepositoryAuthorCollectionInput is an input type that accepts GetRepositoryAuthorsRepositoryAuthorCollectionArgs and GetRepositoryAuthorsRepositoryAuthorCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorsRepositoryAuthorCollectionInput` via:
 //
-//          GetRepositoryAuthorsRepositoryAuthorCollectionArgs{...}
+//	GetRepositoryAuthorsRepositoryAuthorCollectionArgs{...}
 type GetRepositoryAuthorsRepositoryAuthorCollectionInput interface {
 	pulumi.Input
 
@@ -29752,7 +30517,7 @@ func (i GetRepositoryAuthorsRepositoryAuthorCollectionArgs) ToGetRepositoryAutho
 // GetRepositoryAuthorsRepositoryAuthorCollectionArrayInput is an input type that accepts GetRepositoryAuthorsRepositoryAuthorCollectionArray and GetRepositoryAuthorsRepositoryAuthorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorsRepositoryAuthorCollectionArrayInput` via:
 //
-//          GetRepositoryAuthorsRepositoryAuthorCollectionArray{ GetRepositoryAuthorsRepositoryAuthorCollectionArgs{...} }
+//	GetRepositoryAuthorsRepositoryAuthorCollectionArray{ GetRepositoryAuthorsRepositoryAuthorCollectionArgs{...} }
 type GetRepositoryAuthorsRepositoryAuthorCollectionArrayInput interface {
 	pulumi.Input
 
@@ -29827,7 +30592,7 @@ type GetRepositoryAuthorsRepositoryAuthorCollectionItem struct {
 // GetRepositoryAuthorsRepositoryAuthorCollectionItemInput is an input type that accepts GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs and GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorsRepositoryAuthorCollectionItemInput` via:
 //
-//          GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs{...}
+//	GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs{...}
 type GetRepositoryAuthorsRepositoryAuthorCollectionItemInput interface {
 	pulumi.Input
 
@@ -29859,7 +30624,7 @@ func (i GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs) ToGetRepositoryA
 // GetRepositoryAuthorsRepositoryAuthorCollectionItemArrayInput is an input type that accepts GetRepositoryAuthorsRepositoryAuthorCollectionItemArray and GetRepositoryAuthorsRepositoryAuthorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryAuthorsRepositoryAuthorCollectionItemArrayInput` via:
 //
-//          GetRepositoryAuthorsRepositoryAuthorCollectionItemArray{ GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs{...} }
+//	GetRepositoryAuthorsRepositoryAuthorCollectionItemArray{ GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs{...} }
 type GetRepositoryAuthorsRepositoryAuthorCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -29943,7 +30708,7 @@ type GetRepositoryCommitsFilter struct {
 // GetRepositoryCommitsFilterInput is an input type that accepts GetRepositoryCommitsFilterArgs and GetRepositoryCommitsFilterOutput values.
 // You can construct a concrete instance of `GetRepositoryCommitsFilterInput` via:
 //
-//          GetRepositoryCommitsFilterArgs{...}
+//	GetRepositoryCommitsFilterArgs{...}
 type GetRepositoryCommitsFilterInput interface {
 	pulumi.Input
 
@@ -29972,7 +30737,7 @@ func (i GetRepositoryCommitsFilterArgs) ToGetRepositoryCommitsFilterOutputWithCo
 // GetRepositoryCommitsFilterArrayInput is an input type that accepts GetRepositoryCommitsFilterArray and GetRepositoryCommitsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryCommitsFilterArrayInput` via:
 //
-//          GetRepositoryCommitsFilterArray{ GetRepositoryCommitsFilterArgs{...} }
+//	GetRepositoryCommitsFilterArray{ GetRepositoryCommitsFilterArgs{...} }
 type GetRepositoryCommitsFilterArrayInput interface {
 	pulumi.Input
 
@@ -30047,7 +30812,7 @@ type GetRepositoryCommitsRepositoryCommitCollection struct {
 // GetRepositoryCommitsRepositoryCommitCollectionInput is an input type that accepts GetRepositoryCommitsRepositoryCommitCollectionArgs and GetRepositoryCommitsRepositoryCommitCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoryCommitsRepositoryCommitCollectionInput` via:
 //
-//          GetRepositoryCommitsRepositoryCommitCollectionArgs{...}
+//	GetRepositoryCommitsRepositoryCommitCollectionArgs{...}
 type GetRepositoryCommitsRepositoryCommitCollectionInput interface {
 	pulumi.Input
 
@@ -30074,7 +30839,7 @@ func (i GetRepositoryCommitsRepositoryCommitCollectionArgs) ToGetRepositoryCommi
 // GetRepositoryCommitsRepositoryCommitCollectionArrayInput is an input type that accepts GetRepositoryCommitsRepositoryCommitCollectionArray and GetRepositoryCommitsRepositoryCommitCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryCommitsRepositoryCommitCollectionArrayInput` via:
 //
-//          GetRepositoryCommitsRepositoryCommitCollectionArray{ GetRepositoryCommitsRepositoryCommitCollectionArgs{...} }
+//	GetRepositoryCommitsRepositoryCommitCollectionArray{ GetRepositoryCommitsRepositoryCommitCollectionArgs{...} }
 type GetRepositoryCommitsRepositoryCommitCollectionArrayInput interface {
 	pulumi.Input
 
@@ -30162,7 +30927,7 @@ type GetRepositoryCommitsRepositoryCommitCollectionItem struct {
 // GetRepositoryCommitsRepositoryCommitCollectionItemInput is an input type that accepts GetRepositoryCommitsRepositoryCommitCollectionItemArgs and GetRepositoryCommitsRepositoryCommitCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoryCommitsRepositoryCommitCollectionItemInput` via:
 //
-//          GetRepositoryCommitsRepositoryCommitCollectionItemArgs{...}
+//	GetRepositoryCommitsRepositoryCommitCollectionItemArgs{...}
 type GetRepositoryCommitsRepositoryCommitCollectionItemInput interface {
 	pulumi.Input
 
@@ -30208,7 +30973,7 @@ func (i GetRepositoryCommitsRepositoryCommitCollectionItemArgs) ToGetRepositoryC
 // GetRepositoryCommitsRepositoryCommitCollectionItemArrayInput is an input type that accepts GetRepositoryCommitsRepositoryCommitCollectionItemArray and GetRepositoryCommitsRepositoryCommitCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryCommitsRepositoryCommitCollectionItemArrayInput` via:
 //
-//          GetRepositoryCommitsRepositoryCommitCollectionItemArray{ GetRepositoryCommitsRepositoryCommitCollectionItemArgs{...} }
+//	GetRepositoryCommitsRepositoryCommitCollectionItemArray{ GetRepositoryCommitsRepositoryCommitCollectionItemArgs{...} }
 type GetRepositoryCommitsRepositoryCommitCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -30337,7 +31102,7 @@ type GetRepositoryDiffChange struct {
 // GetRepositoryDiffChangeInput is an input type that accepts GetRepositoryDiffChangeArgs and GetRepositoryDiffChangeOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffChangeInput` via:
 //
-//          GetRepositoryDiffChangeArgs{...}
+//	GetRepositoryDiffChangeArgs{...}
 type GetRepositoryDiffChangeInput interface {
 	pulumi.Input
 
@@ -30373,7 +31138,7 @@ func (i GetRepositoryDiffChangeArgs) ToGetRepositoryDiffChangeOutputWithContext(
 // GetRepositoryDiffChangeArrayInput is an input type that accepts GetRepositoryDiffChangeArray and GetRepositoryDiffChangeArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffChangeArrayInput` via:
 //
-//          GetRepositoryDiffChangeArray{ GetRepositoryDiffChangeArgs{...} }
+//	GetRepositoryDiffChangeArray{ GetRepositoryDiffChangeArgs{...} }
 type GetRepositoryDiffChangeArrayInput interface {
 	pulumi.Input
 
@@ -30464,7 +31229,7 @@ type GetRepositoryDiffChangeDiffSection struct {
 // GetRepositoryDiffChangeDiffSectionInput is an input type that accepts GetRepositoryDiffChangeDiffSectionArgs and GetRepositoryDiffChangeDiffSectionOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffChangeDiffSectionInput` via:
 //
-//          GetRepositoryDiffChangeDiffSectionArgs{...}
+//	GetRepositoryDiffChangeDiffSectionArgs{...}
 type GetRepositoryDiffChangeDiffSectionInput interface {
 	pulumi.Input
 
@@ -30494,7 +31259,7 @@ func (i GetRepositoryDiffChangeDiffSectionArgs) ToGetRepositoryDiffChangeDiffSec
 // GetRepositoryDiffChangeDiffSectionArrayInput is an input type that accepts GetRepositoryDiffChangeDiffSectionArray and GetRepositoryDiffChangeDiffSectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffChangeDiffSectionArrayInput` via:
 //
-//          GetRepositoryDiffChangeDiffSectionArray{ GetRepositoryDiffChangeDiffSectionArgs{...} }
+//	GetRepositoryDiffChangeDiffSectionArray{ GetRepositoryDiffChangeDiffSectionArgs{...} }
 type GetRepositoryDiffChangeDiffSectionArrayInput interface {
 	pulumi.Input
 
@@ -30574,7 +31339,7 @@ type GetRepositoryDiffChangeDiffSectionLine struct {
 // GetRepositoryDiffChangeDiffSectionLineInput is an input type that accepts GetRepositoryDiffChangeDiffSectionLineArgs and GetRepositoryDiffChangeDiffSectionLineOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffChangeDiffSectionLineInput` via:
 //
-//          GetRepositoryDiffChangeDiffSectionLineArgs{...}
+//	GetRepositoryDiffChangeDiffSectionLineArgs{...}
 type GetRepositoryDiffChangeDiffSectionLineInput interface {
 	pulumi.Input
 
@@ -30608,7 +31373,7 @@ func (i GetRepositoryDiffChangeDiffSectionLineArgs) ToGetRepositoryDiffChangeDif
 // GetRepositoryDiffChangeDiffSectionLineArrayInput is an input type that accepts GetRepositoryDiffChangeDiffSectionLineArray and GetRepositoryDiffChangeDiffSectionLineArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffChangeDiffSectionLineArrayInput` via:
 //
-//          GetRepositoryDiffChangeDiffSectionLineArray{ GetRepositoryDiffChangeDiffSectionLineArgs{...} }
+//	GetRepositoryDiffChangeDiffSectionLineArray{ GetRepositoryDiffChangeDiffSectionLineArgs{...} }
 type GetRepositoryDiffChangeDiffSectionLineArrayInput interface {
 	pulumi.Input
 
@@ -30691,7 +31456,7 @@ type GetRepositoryDiffsDiffCollection struct {
 // GetRepositoryDiffsDiffCollectionInput is an input type that accepts GetRepositoryDiffsDiffCollectionArgs and GetRepositoryDiffsDiffCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionArgs{...}
+//	GetRepositoryDiffsDiffCollectionArgs{...}
 type GetRepositoryDiffsDiffCollectionInput interface {
 	pulumi.Input
 
@@ -30718,7 +31483,7 @@ func (i GetRepositoryDiffsDiffCollectionArgs) ToGetRepositoryDiffsDiffCollection
 // GetRepositoryDiffsDiffCollectionArrayInput is an input type that accepts GetRepositoryDiffsDiffCollectionArray and GetRepositoryDiffsDiffCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionArrayInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionArray{ GetRepositoryDiffsDiffCollectionArgs{...} }
+//	GetRepositoryDiffsDiffCollectionArray{ GetRepositoryDiffsDiffCollectionArgs{...} }
 type GetRepositoryDiffsDiffCollectionArrayInput interface {
 	pulumi.Input
 
@@ -30801,7 +31566,7 @@ type GetRepositoryDiffsDiffCollectionItem struct {
 // GetRepositoryDiffsDiffCollectionItemInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemArgs and GetRepositoryDiffsDiffCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemArgs{...}
+//	GetRepositoryDiffsDiffCollectionItemArgs{...}
 type GetRepositoryDiffsDiffCollectionItemInput interface {
 	pulumi.Input
 
@@ -30844,7 +31609,7 @@ func (i GetRepositoryDiffsDiffCollectionItemArgs) ToGetRepositoryDiffsDiffCollec
 // GetRepositoryDiffsDiffCollectionItemArrayInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemArray and GetRepositoryDiffsDiffCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemArrayInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemArray{ GetRepositoryDiffsDiffCollectionItemArgs{...} }
+//	GetRepositoryDiffsDiffCollectionItemArray{ GetRepositoryDiffsDiffCollectionItemArgs{...} }
 type GetRepositoryDiffsDiffCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -30962,7 +31727,7 @@ type GetRepositoryDiffsDiffCollectionItemChange struct {
 // GetRepositoryDiffsDiffCollectionItemChangeInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemChangeArgs and GetRepositoryDiffsDiffCollectionItemChangeOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemChangeInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemChangeArgs{...}
+//	GetRepositoryDiffsDiffCollectionItemChangeArgs{...}
 type GetRepositoryDiffsDiffCollectionItemChangeInput interface {
 	pulumi.Input
 
@@ -30998,7 +31763,7 @@ func (i GetRepositoryDiffsDiffCollectionItemChangeArgs) ToGetRepositoryDiffsDiff
 // GetRepositoryDiffsDiffCollectionItemChangeArrayInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemChangeArray and GetRepositoryDiffsDiffCollectionItemChangeArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemChangeArrayInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemChangeArray{ GetRepositoryDiffsDiffCollectionItemChangeArgs{...} }
+//	GetRepositoryDiffsDiffCollectionItemChangeArray{ GetRepositoryDiffsDiffCollectionItemChangeArgs{...} }
 type GetRepositoryDiffsDiffCollectionItemChangeArrayInput interface {
 	pulumi.Input
 
@@ -31091,7 +31856,7 @@ type GetRepositoryDiffsDiffCollectionItemChangeDiffSection struct {
 // GetRepositoryDiffsDiffCollectionItemChangeDiffSectionInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArgs and GetRepositoryDiffsDiffCollectionItemChangeDiffSectionOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemChangeDiffSectionInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArgs{...}
+//	GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArgs{...}
 type GetRepositoryDiffsDiffCollectionItemChangeDiffSectionInput interface {
 	pulumi.Input
 
@@ -31121,7 +31886,7 @@ func (i GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArgs) ToGetReposito
 // GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArrayInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArray and GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArrayInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArray{ GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArgs{...} }
+//	GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArray{ GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArgs{...} }
 type GetRepositoryDiffsDiffCollectionItemChangeDiffSectionArrayInput interface {
 	pulumi.Input
 
@@ -31203,7 +31968,7 @@ type GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine struct {
 // GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArgs and GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArgs{...}
+//	GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArgs{...}
 type GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineInput interface {
 	pulumi.Input
 
@@ -31237,7 +32002,7 @@ func (i GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArgs) ToGetRepo
 // GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArrayInput is an input type that accepts GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArray and GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArrayInput` via:
 //
-//          GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArray{ GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArgs{...} }
+//	GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArray{ GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArgs{...} }
 type GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineArrayInput interface {
 	pulumi.Input
 
@@ -31322,7 +32087,7 @@ type GetRepositoryDiffsFilter struct {
 // GetRepositoryDiffsFilterInput is an input type that accepts GetRepositoryDiffsFilterArgs and GetRepositoryDiffsFilterOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsFilterInput` via:
 //
-//          GetRepositoryDiffsFilterArgs{...}
+//	GetRepositoryDiffsFilterArgs{...}
 type GetRepositoryDiffsFilterInput interface {
 	pulumi.Input
 
@@ -31351,7 +32116,7 @@ func (i GetRepositoryDiffsFilterArgs) ToGetRepositoryDiffsFilterOutputWithContex
 // GetRepositoryDiffsFilterArrayInput is an input type that accepts GetRepositoryDiffsFilterArray and GetRepositoryDiffsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryDiffsFilterArrayInput` via:
 //
-//          GetRepositoryDiffsFilterArray{ GetRepositoryDiffsFilterArgs{...} }
+//	GetRepositoryDiffsFilterArray{ GetRepositoryDiffsFilterArgs{...} }
 type GetRepositoryDiffsFilterArrayInput interface {
 	pulumi.Input
 
@@ -31435,7 +32200,7 @@ type GetRepositoryFileDiffChange struct {
 // GetRepositoryFileDiffChangeInput is an input type that accepts GetRepositoryFileDiffChangeArgs and GetRepositoryFileDiffChangeOutput values.
 // You can construct a concrete instance of `GetRepositoryFileDiffChangeInput` via:
 //
-//          GetRepositoryFileDiffChangeArgs{...}
+//	GetRepositoryFileDiffChangeArgs{...}
 type GetRepositoryFileDiffChangeInput interface {
 	pulumi.Input
 
@@ -31471,7 +32236,7 @@ func (i GetRepositoryFileDiffChangeArgs) ToGetRepositoryFileDiffChangeOutputWith
 // GetRepositoryFileDiffChangeArrayInput is an input type that accepts GetRepositoryFileDiffChangeArray and GetRepositoryFileDiffChangeArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryFileDiffChangeArrayInput` via:
 //
-//          GetRepositoryFileDiffChangeArray{ GetRepositoryFileDiffChangeArgs{...} }
+//	GetRepositoryFileDiffChangeArray{ GetRepositoryFileDiffChangeArgs{...} }
 type GetRepositoryFileDiffChangeArrayInput interface {
 	pulumi.Input
 
@@ -31562,7 +32327,7 @@ type GetRepositoryFileDiffChangeDiffSection struct {
 // GetRepositoryFileDiffChangeDiffSectionInput is an input type that accepts GetRepositoryFileDiffChangeDiffSectionArgs and GetRepositoryFileDiffChangeDiffSectionOutput values.
 // You can construct a concrete instance of `GetRepositoryFileDiffChangeDiffSectionInput` via:
 //
-//          GetRepositoryFileDiffChangeDiffSectionArgs{...}
+//	GetRepositoryFileDiffChangeDiffSectionArgs{...}
 type GetRepositoryFileDiffChangeDiffSectionInput interface {
 	pulumi.Input
 
@@ -31592,7 +32357,7 @@ func (i GetRepositoryFileDiffChangeDiffSectionArgs) ToGetRepositoryFileDiffChang
 // GetRepositoryFileDiffChangeDiffSectionArrayInput is an input type that accepts GetRepositoryFileDiffChangeDiffSectionArray and GetRepositoryFileDiffChangeDiffSectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryFileDiffChangeDiffSectionArrayInput` via:
 //
-//          GetRepositoryFileDiffChangeDiffSectionArray{ GetRepositoryFileDiffChangeDiffSectionArgs{...} }
+//	GetRepositoryFileDiffChangeDiffSectionArray{ GetRepositoryFileDiffChangeDiffSectionArgs{...} }
 type GetRepositoryFileDiffChangeDiffSectionArrayInput interface {
 	pulumi.Input
 
@@ -31674,7 +32439,7 @@ type GetRepositoryFileDiffChangeDiffSectionLine struct {
 // GetRepositoryFileDiffChangeDiffSectionLineInput is an input type that accepts GetRepositoryFileDiffChangeDiffSectionLineArgs and GetRepositoryFileDiffChangeDiffSectionLineOutput values.
 // You can construct a concrete instance of `GetRepositoryFileDiffChangeDiffSectionLineInput` via:
 //
-//          GetRepositoryFileDiffChangeDiffSectionLineArgs{...}
+//	GetRepositoryFileDiffChangeDiffSectionLineArgs{...}
 type GetRepositoryFileDiffChangeDiffSectionLineInput interface {
 	pulumi.Input
 
@@ -31708,7 +32473,7 @@ func (i GetRepositoryFileDiffChangeDiffSectionLineArgs) ToGetRepositoryFileDiffC
 // GetRepositoryFileDiffChangeDiffSectionLineArrayInput is an input type that accepts GetRepositoryFileDiffChangeDiffSectionLineArray and GetRepositoryFileDiffChangeDiffSectionLineArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryFileDiffChangeDiffSectionLineArrayInput` via:
 //
-//          GetRepositoryFileDiffChangeDiffSectionLineArray{ GetRepositoryFileDiffChangeDiffSectionLineArgs{...} }
+//	GetRepositoryFileDiffChangeDiffSectionLineArray{ GetRepositoryFileDiffChangeDiffSectionLineArgs{...} }
 type GetRepositoryFileDiffChangeDiffSectionLineArrayInput interface {
 	pulumi.Input
 
@@ -31794,7 +32559,7 @@ type GetRepositoryFileLineLine struct {
 // GetRepositoryFileLineLineInput is an input type that accepts GetRepositoryFileLineLineArgs and GetRepositoryFileLineLineOutput values.
 // You can construct a concrete instance of `GetRepositoryFileLineLineInput` via:
 //
-//          GetRepositoryFileLineLineArgs{...}
+//	GetRepositoryFileLineLineArgs{...}
 type GetRepositoryFileLineLineInput interface {
 	pulumi.Input
 
@@ -31824,7 +32589,7 @@ func (i GetRepositoryFileLineLineArgs) ToGetRepositoryFileLineLineOutputWithCont
 // GetRepositoryFileLineLineArrayInput is an input type that accepts GetRepositoryFileLineLineArray and GetRepositoryFileLineLineArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryFileLineLineArrayInput` via:
 //
-//          GetRepositoryFileLineLineArray{ GetRepositoryFileLineLineArgs{...} }
+//	GetRepositoryFileLineLineArray{ GetRepositoryFileLineLineArgs{...} }
 type GetRepositoryFileLineLineArrayInput interface {
 	pulumi.Input
 
@@ -31899,7 +32664,7 @@ type GetRepositoryMirrorRecordsFilter struct {
 // GetRepositoryMirrorRecordsFilterInput is an input type that accepts GetRepositoryMirrorRecordsFilterArgs and GetRepositoryMirrorRecordsFilterOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRecordsFilterInput` via:
 //
-//          GetRepositoryMirrorRecordsFilterArgs{...}
+//	GetRepositoryMirrorRecordsFilterArgs{...}
 type GetRepositoryMirrorRecordsFilterInput interface {
 	pulumi.Input
 
@@ -31928,7 +32693,7 @@ func (i GetRepositoryMirrorRecordsFilterArgs) ToGetRepositoryMirrorRecordsFilter
 // GetRepositoryMirrorRecordsFilterArrayInput is an input type that accepts GetRepositoryMirrorRecordsFilterArray and GetRepositoryMirrorRecordsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRecordsFilterArrayInput` via:
 //
-//          GetRepositoryMirrorRecordsFilterArray{ GetRepositoryMirrorRecordsFilterArgs{...} }
+//	GetRepositoryMirrorRecordsFilterArray{ GetRepositoryMirrorRecordsFilterArgs{...} }
 type GetRepositoryMirrorRecordsFilterArrayInput interface {
 	pulumi.Input
 
@@ -32003,7 +32768,7 @@ type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection struct {
 // GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionInput is an input type that accepts GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArgs and GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionInput` via:
 //
-//          GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArgs{...}
+//	GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArgs{...}
 type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionInput interface {
 	pulumi.Input
 
@@ -32030,7 +32795,7 @@ func (i GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArgs) ToGetRep
 // GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArrayInput is an input type that accepts GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArray and GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArrayInput` via:
 //
-//          GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArray{ GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArgs{...} }
+//	GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArray{ GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArgs{...} }
 type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArrayInput interface {
 	pulumi.Input
 
@@ -32108,7 +32873,7 @@ type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem struct {
 // GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemInput is an input type that accepts GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs and GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemInput` via:
 //
-//          GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs{...}
+//	GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs{...}
 type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemInput interface {
 	pulumi.Input
 
@@ -32144,7 +32909,7 @@ func (i GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs) ToGe
 // GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArrayInput is an input type that accepts GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArray and GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArrayInput` via:
 //
-//          GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArray{ GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs{...} }
+//	GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArray{ GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs{...} }
 type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -32242,7 +33007,7 @@ type GetRepositoryMirrorRepositoryConfig struct {
 // GetRepositoryMirrorRepositoryConfigInput is an input type that accepts GetRepositoryMirrorRepositoryConfigArgs and GetRepositoryMirrorRepositoryConfigOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRepositoryConfigInput` via:
 //
-//          GetRepositoryMirrorRepositoryConfigArgs{...}
+//	GetRepositoryMirrorRepositoryConfigArgs{...}
 type GetRepositoryMirrorRepositoryConfigInput interface {
 	pulumi.Input
 
@@ -32274,7 +33039,7 @@ func (i GetRepositoryMirrorRepositoryConfigArgs) ToGetRepositoryMirrorRepository
 // GetRepositoryMirrorRepositoryConfigArrayInput is an input type that accepts GetRepositoryMirrorRepositoryConfigArray and GetRepositoryMirrorRepositoryConfigArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRepositoryConfigArrayInput` via:
 //
-//          GetRepositoryMirrorRepositoryConfigArray{ GetRepositoryMirrorRepositoryConfigArgs{...} }
+//	GetRepositoryMirrorRepositoryConfigArray{ GetRepositoryMirrorRepositoryConfigArgs{...} }
 type GetRepositoryMirrorRepositoryConfigArrayInput interface {
 	pulumi.Input
 
@@ -32348,7 +33113,7 @@ func (o GetRepositoryMirrorRepositoryConfigArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetRepositoryMirrorRepositoryConfigTriggerSchedule struct {
-	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 	CustomSchedule string `pulumi:"customSchedule"`
 	// Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
 	ScheduleType string `pulumi:"scheduleType"`
@@ -32357,7 +33122,7 @@ type GetRepositoryMirrorRepositoryConfigTriggerSchedule struct {
 // GetRepositoryMirrorRepositoryConfigTriggerScheduleInput is an input type that accepts GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs and GetRepositoryMirrorRepositoryConfigTriggerScheduleOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRepositoryConfigTriggerScheduleInput` via:
 //
-//          GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs{...}
+//	GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs{...}
 type GetRepositoryMirrorRepositoryConfigTriggerScheduleInput interface {
 	pulumi.Input
 
@@ -32366,7 +33131,7 @@ type GetRepositoryMirrorRepositoryConfigTriggerScheduleInput interface {
 }
 
 type GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs struct {
-	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+	// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 	CustomSchedule pulumi.StringInput `pulumi:"customSchedule"`
 	// Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
 	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
@@ -32387,7 +33152,7 @@ func (i GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs) ToGetRepositoryM
 // GetRepositoryMirrorRepositoryConfigTriggerScheduleArrayInput is an input type that accepts GetRepositoryMirrorRepositoryConfigTriggerScheduleArray and GetRepositoryMirrorRepositoryConfigTriggerScheduleArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryMirrorRepositoryConfigTriggerScheduleArrayInput` via:
 //
-//          GetRepositoryMirrorRepositoryConfigTriggerScheduleArray{ GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs{...} }
+//	GetRepositoryMirrorRepositoryConfigTriggerScheduleArray{ GetRepositoryMirrorRepositoryConfigTriggerScheduleArgs{...} }
 type GetRepositoryMirrorRepositoryConfigTriggerScheduleArrayInput interface {
 	pulumi.Input
 
@@ -32423,7 +33188,7 @@ func (o GetRepositoryMirrorRepositoryConfigTriggerScheduleOutput) ToGetRepositor
 	return o
 }
 
-// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.  You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+// Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 func (o GetRepositoryMirrorRepositoryConfigTriggerScheduleOutput) CustomSchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRepositoryMirrorRepositoryConfigTriggerSchedule) string { return v.CustomSchedule }).(pulumi.StringOutput)
 }
@@ -32475,7 +33240,7 @@ type GetRepositoryPathItem struct {
 // GetRepositoryPathItemInput is an input type that accepts GetRepositoryPathItemArgs and GetRepositoryPathItemOutput values.
 // You can construct a concrete instance of `GetRepositoryPathItemInput` via:
 //
-//          GetRepositoryPathItemArgs{...}
+//	GetRepositoryPathItemArgs{...}
 type GetRepositoryPathItemInput interface {
 	pulumi.Input
 
@@ -32517,7 +33282,7 @@ func (i GetRepositoryPathItemArgs) ToGetRepositoryPathItemOutputWithContext(ctx 
 // GetRepositoryPathItemArrayInput is an input type that accepts GetRepositoryPathItemArray and GetRepositoryPathItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryPathItemArrayInput` via:
 //
-//          GetRepositoryPathItemArray{ GetRepositoryPathItemArgs{...} }
+//	GetRepositoryPathItemArray{ GetRepositoryPathItemArgs{...} }
 type GetRepositoryPathItemArrayInput interface {
 	pulumi.Input
 
@@ -32623,7 +33388,7 @@ type GetRepositoryPathsFilter struct {
 // GetRepositoryPathsFilterInput is an input type that accepts GetRepositoryPathsFilterArgs and GetRepositoryPathsFilterOutput values.
 // You can construct a concrete instance of `GetRepositoryPathsFilterInput` via:
 //
-//          GetRepositoryPathsFilterArgs{...}
+//	GetRepositoryPathsFilterArgs{...}
 type GetRepositoryPathsFilterInput interface {
 	pulumi.Input
 
@@ -32653,7 +33418,7 @@ func (i GetRepositoryPathsFilterArgs) ToGetRepositoryPathsFilterOutputWithContex
 // GetRepositoryPathsFilterArrayInput is an input type that accepts GetRepositoryPathsFilterArray and GetRepositoryPathsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryPathsFilterArrayInput` via:
 //
-//          GetRepositoryPathsFilterArray{ GetRepositoryPathsFilterArgs{...} }
+//	GetRepositoryPathsFilterArray{ GetRepositoryPathsFilterArgs{...} }
 type GetRepositoryPathsFilterArrayInput interface {
 	pulumi.Input
 
@@ -32730,7 +33495,7 @@ type GetRepositoryPathsRepositoryPathCollection struct {
 // GetRepositoryPathsRepositoryPathCollectionInput is an input type that accepts GetRepositoryPathsRepositoryPathCollectionArgs and GetRepositoryPathsRepositoryPathCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoryPathsRepositoryPathCollectionInput` via:
 //
-//          GetRepositoryPathsRepositoryPathCollectionArgs{...}
+//	GetRepositoryPathsRepositoryPathCollectionArgs{...}
 type GetRepositoryPathsRepositoryPathCollectionInput interface {
 	pulumi.Input
 
@@ -32758,7 +33523,7 @@ func (i GetRepositoryPathsRepositoryPathCollectionArgs) ToGetRepositoryPathsRepo
 // GetRepositoryPathsRepositoryPathCollectionArrayInput is an input type that accepts GetRepositoryPathsRepositoryPathCollectionArray and GetRepositoryPathsRepositoryPathCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryPathsRepositoryPathCollectionArrayInput` via:
 //
-//          GetRepositoryPathsRepositoryPathCollectionArray{ GetRepositoryPathsRepositoryPathCollectionArgs{...} }
+//	GetRepositoryPathsRepositoryPathCollectionArray{ GetRepositoryPathsRepositoryPathCollectionArgs{...} }
 type GetRepositoryPathsRepositoryPathCollectionArrayInput interface {
 	pulumi.Input
 
@@ -32843,7 +33608,7 @@ type GetRepositoryPathsRepositoryPathCollectionItem struct {
 // GetRepositoryPathsRepositoryPathCollectionItemInput is an input type that accepts GetRepositoryPathsRepositoryPathCollectionItemArgs and GetRepositoryPathsRepositoryPathCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoryPathsRepositoryPathCollectionItemInput` via:
 //
-//          GetRepositoryPathsRepositoryPathCollectionItemArgs{...}
+//	GetRepositoryPathsRepositoryPathCollectionItemArgs{...}
 type GetRepositoryPathsRepositoryPathCollectionItemInput interface {
 	pulumi.Input
 
@@ -32885,7 +33650,7 @@ func (i GetRepositoryPathsRepositoryPathCollectionItemArgs) ToGetRepositoryPaths
 // GetRepositoryPathsRepositoryPathCollectionItemArrayInput is an input type that accepts GetRepositoryPathsRepositoryPathCollectionItemArray and GetRepositoryPathsRepositoryPathCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryPathsRepositoryPathCollectionItemArrayInput` via:
 //
-//          GetRepositoryPathsRepositoryPathCollectionItemArray{ GetRepositoryPathsRepositoryPathCollectionItemArgs{...} }
+//	GetRepositoryPathsRepositoryPathCollectionItemArray{ GetRepositoryPathsRepositoryPathCollectionItemArgs{...} }
 type GetRepositoryPathsRepositoryPathCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -32990,7 +33755,7 @@ type GetRepositoryRefsFilter struct {
 // GetRepositoryRefsFilterInput is an input type that accepts GetRepositoryRefsFilterArgs and GetRepositoryRefsFilterOutput values.
 // You can construct a concrete instance of `GetRepositoryRefsFilterInput` via:
 //
-//          GetRepositoryRefsFilterArgs{...}
+//	GetRepositoryRefsFilterArgs{...}
 type GetRepositoryRefsFilterInput interface {
 	pulumi.Input
 
@@ -33019,7 +33784,7 @@ func (i GetRepositoryRefsFilterArgs) ToGetRepositoryRefsFilterOutputWithContext(
 // GetRepositoryRefsFilterArrayInput is an input type that accepts GetRepositoryRefsFilterArray and GetRepositoryRefsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryRefsFilterArrayInput` via:
 //
-//          GetRepositoryRefsFilterArray{ GetRepositoryRefsFilterArgs{...} }
+//	GetRepositoryRefsFilterArray{ GetRepositoryRefsFilterArgs{...} }
 type GetRepositoryRefsFilterArrayInput interface {
 	pulumi.Input
 
@@ -33094,7 +33859,7 @@ type GetRepositoryRefsRepositoryRefCollection struct {
 // GetRepositoryRefsRepositoryRefCollectionInput is an input type that accepts GetRepositoryRefsRepositoryRefCollectionArgs and GetRepositoryRefsRepositoryRefCollectionOutput values.
 // You can construct a concrete instance of `GetRepositoryRefsRepositoryRefCollectionInput` via:
 //
-//          GetRepositoryRefsRepositoryRefCollectionArgs{...}
+//	GetRepositoryRefsRepositoryRefCollectionArgs{...}
 type GetRepositoryRefsRepositoryRefCollectionInput interface {
 	pulumi.Input
 
@@ -33121,7 +33886,7 @@ func (i GetRepositoryRefsRepositoryRefCollectionArgs) ToGetRepositoryRefsReposit
 // GetRepositoryRefsRepositoryRefCollectionArrayInput is an input type that accepts GetRepositoryRefsRepositoryRefCollectionArray and GetRepositoryRefsRepositoryRefCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryRefsRepositoryRefCollectionArrayInput` via:
 //
-//          GetRepositoryRefsRepositoryRefCollectionArray{ GetRepositoryRefsRepositoryRefCollectionArgs{...} }
+//	GetRepositoryRefsRepositoryRefCollectionArray{ GetRepositoryRefsRepositoryRefCollectionArgs{...} }
 type GetRepositoryRefsRepositoryRefCollectionArrayInput interface {
 	pulumi.Input
 
@@ -33206,7 +33971,7 @@ type GetRepositoryRefsRepositoryRefCollectionItem struct {
 // GetRepositoryRefsRepositoryRefCollectionItemInput is an input type that accepts GetRepositoryRefsRepositoryRefCollectionItemArgs and GetRepositoryRefsRepositoryRefCollectionItemOutput values.
 // You can construct a concrete instance of `GetRepositoryRefsRepositoryRefCollectionItemInput` via:
 //
-//          GetRepositoryRefsRepositoryRefCollectionItemArgs{...}
+//	GetRepositoryRefsRepositoryRefCollectionItemArgs{...}
 type GetRepositoryRefsRepositoryRefCollectionItemInput interface {
 	pulumi.Input
 
@@ -33249,7 +34014,7 @@ func (i GetRepositoryRefsRepositoryRefCollectionItemArgs) ToGetRepositoryRefsRep
 // GetRepositoryRefsRepositoryRefCollectionItemArrayInput is an input type that accepts GetRepositoryRefsRepositoryRefCollectionItemArray and GetRepositoryRefsRepositoryRefCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRepositoryRefsRepositoryRefCollectionItemArrayInput` via:
 //
-//          GetRepositoryRefsRepositoryRefCollectionItemArray{ GetRepositoryRefsRepositoryRefCollectionItemArgs{...} }
+//	GetRepositoryRefsRepositoryRefCollectionItemArray{ GetRepositoryRefsRepositoryRefCollectionItemArgs{...} }
 type GetRepositoryRefsRepositoryRefCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -33361,7 +34126,7 @@ type GetTriggerAction struct {
 // GetTriggerActionInput is an input type that accepts GetTriggerActionArgs and GetTriggerActionOutput values.
 // You can construct a concrete instance of `GetTriggerActionInput` via:
 //
-//          GetTriggerActionArgs{...}
+//	GetTriggerActionArgs{...}
 type GetTriggerActionInput interface {
 	pulumi.Input
 
@@ -33393,7 +34158,7 @@ func (i GetTriggerActionArgs) ToGetTriggerActionOutputWithContext(ctx context.Co
 // GetTriggerActionArrayInput is an input type that accepts GetTriggerActionArray and GetTriggerActionArrayOutput values.
 // You can construct a concrete instance of `GetTriggerActionArrayInput` via:
 //
-//          GetTriggerActionArray{ GetTriggerActionArgs{...} }
+//	GetTriggerActionArray{ GetTriggerActionArgs{...} }
 type GetTriggerActionArrayInput interface {
 	pulumi.Input
 
@@ -33467,7 +34232,7 @@ func (o GetTriggerActionArrayOutput) Index(i pulumi.IntInput) GetTriggerActionOu
 type GetTriggerActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events []string `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetTriggerActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
@@ -33476,7 +34241,7 @@ type GetTriggerActionFilter struct {
 // GetTriggerActionFilterInput is an input type that accepts GetTriggerActionFilterArgs and GetTriggerActionFilterOutput values.
 // You can construct a concrete instance of `GetTriggerActionFilterInput` via:
 //
-//          GetTriggerActionFilterArgs{...}
+//	GetTriggerActionFilterArgs{...}
 type GetTriggerActionFilterInput interface {
 	pulumi.Input
 
@@ -33487,7 +34252,7 @@ type GetTriggerActionFilterInput interface {
 type GetTriggerActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes GetTriggerActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
@@ -33508,7 +34273,7 @@ func (i GetTriggerActionFilterArgs) ToGetTriggerActionFilterOutputWithContext(ct
 // GetTriggerActionFilterArrayInput is an input type that accepts GetTriggerActionFilterArray and GetTriggerActionFilterArrayOutput values.
 // You can construct a concrete instance of `GetTriggerActionFilterArrayInput` via:
 //
-//          GetTriggerActionFilterArray{ GetTriggerActionFilterArgs{...} }
+//	GetTriggerActionFilterArray{ GetTriggerActionFilterArgs{...} }
 type GetTriggerActionFilterArrayInput interface {
 	pulumi.Input
 
@@ -33549,7 +34314,7 @@ func (o GetTriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
-// Attributes to filter DevOps code repository events.
+// Attributes to filter GitLab self-hosted server events.
 func (o GetTriggerActionFilterOutput) Includes() GetTriggerActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) []GetTriggerActionFilterInclude { return v.Includes }).(GetTriggerActionFilterIncludeArrayOutput)
 }
@@ -33589,7 +34354,7 @@ type GetTriggerActionFilterInclude struct {
 // GetTriggerActionFilterIncludeInput is an input type that accepts GetTriggerActionFilterIncludeArgs and GetTriggerActionFilterIncludeOutput values.
 // You can construct a concrete instance of `GetTriggerActionFilterIncludeInput` via:
 //
-//          GetTriggerActionFilterIncludeArgs{...}
+//	GetTriggerActionFilterIncludeArgs{...}
 type GetTriggerActionFilterIncludeInput interface {
 	pulumi.Input
 
@@ -33619,7 +34384,7 @@ func (i GetTriggerActionFilterIncludeArgs) ToGetTriggerActionFilterIncludeOutput
 // GetTriggerActionFilterIncludeArrayInput is an input type that accepts GetTriggerActionFilterIncludeArray and GetTriggerActionFilterIncludeArrayOutput values.
 // You can construct a concrete instance of `GetTriggerActionFilterIncludeArrayInput` via:
 //
-//          GetTriggerActionFilterIncludeArray{ GetTriggerActionFilterIncludeArgs{...} }
+//	GetTriggerActionFilterIncludeArray{ GetTriggerActionFilterIncludeArgs{...} }
 type GetTriggerActionFilterIncludeArrayInput interface {
 	pulumi.Input
 
@@ -33694,7 +34459,7 @@ type GetTriggersFilter struct {
 // GetTriggersFilterInput is an input type that accepts GetTriggersFilterArgs and GetTriggersFilterOutput values.
 // You can construct a concrete instance of `GetTriggersFilterInput` via:
 //
-//          GetTriggersFilterArgs{...}
+//	GetTriggersFilterArgs{...}
 type GetTriggersFilterInput interface {
 	pulumi.Input
 
@@ -33723,7 +34488,7 @@ func (i GetTriggersFilterArgs) ToGetTriggersFilterOutputWithContext(ctx context.
 // GetTriggersFilterArrayInput is an input type that accepts GetTriggersFilterArray and GetTriggersFilterArrayOutput values.
 // You can construct a concrete instance of `GetTriggersFilterArrayInput` via:
 //
-//          GetTriggersFilterArray{ GetTriggersFilterArgs{...} }
+//	GetTriggersFilterArray{ GetTriggersFilterArgs{...} }
 type GetTriggersFilterArrayInput interface {
 	pulumi.Input
 
@@ -33798,7 +34563,7 @@ type GetTriggersTriggerCollection struct {
 // GetTriggersTriggerCollectionInput is an input type that accepts GetTriggersTriggerCollectionArgs and GetTriggersTriggerCollectionOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionInput` via:
 //
-//          GetTriggersTriggerCollectionArgs{...}
+//	GetTriggersTriggerCollectionArgs{...}
 type GetTriggersTriggerCollectionInput interface {
 	pulumi.Input
 
@@ -33825,7 +34590,7 @@ func (i GetTriggersTriggerCollectionArgs) ToGetTriggersTriggerCollectionOutputWi
 // GetTriggersTriggerCollectionArrayInput is an input type that accepts GetTriggersTriggerCollectionArray and GetTriggersTriggerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionArrayInput` via:
 //
-//          GetTriggersTriggerCollectionArray{ GetTriggersTriggerCollectionArgs{...} }
+//	GetTriggersTriggerCollectionArray{ GetTriggersTriggerCollectionArgs{...} }
 type GetTriggersTriggerCollectionArrayInput interface {
 	pulumi.Input
 
@@ -33923,7 +34688,7 @@ type GetTriggersTriggerCollectionItem struct {
 // GetTriggersTriggerCollectionItemInput is an input type that accepts GetTriggersTriggerCollectionItemArgs and GetTriggersTriggerCollectionItemOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemInput` via:
 //
-//          GetTriggersTriggerCollectionItemArgs{...}
+//	GetTriggersTriggerCollectionItemArgs{...}
 type GetTriggersTriggerCollectionItemInput interface {
 	pulumi.Input
 
@@ -33981,7 +34746,7 @@ func (i GetTriggersTriggerCollectionItemArgs) ToGetTriggersTriggerCollectionItem
 // GetTriggersTriggerCollectionItemArrayInput is an input type that accepts GetTriggersTriggerCollectionItemArray and GetTriggersTriggerCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemArrayInput` via:
 //
-//          GetTriggersTriggerCollectionItemArray{ GetTriggersTriggerCollectionItemArgs{...} }
+//	GetTriggersTriggerCollectionItemArray{ GetTriggersTriggerCollectionItemArgs{...} }
 type GetTriggersTriggerCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -34129,7 +34894,7 @@ type GetTriggersTriggerCollectionItemAction struct {
 // GetTriggersTriggerCollectionItemActionInput is an input type that accepts GetTriggersTriggerCollectionItemActionArgs and GetTriggersTriggerCollectionItemActionOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionInput` via:
 //
-//          GetTriggersTriggerCollectionItemActionArgs{...}
+//	GetTriggersTriggerCollectionItemActionArgs{...}
 type GetTriggersTriggerCollectionItemActionInput interface {
 	pulumi.Input
 
@@ -34161,7 +34926,7 @@ func (i GetTriggersTriggerCollectionItemActionArgs) ToGetTriggersTriggerCollecti
 // GetTriggersTriggerCollectionItemActionArrayInput is an input type that accepts GetTriggersTriggerCollectionItemActionArray and GetTriggersTriggerCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionArrayInput` via:
 //
-//          GetTriggersTriggerCollectionItemActionArray{ GetTriggersTriggerCollectionItemActionArgs{...} }
+//	GetTriggersTriggerCollectionItemActionArray{ GetTriggersTriggerCollectionItemActionArgs{...} }
 type GetTriggersTriggerCollectionItemActionArrayInput interface {
 	pulumi.Input
 
@@ -34237,7 +35002,7 @@ func (o GetTriggersTriggerCollectionItemActionArrayOutput) Index(i pulumi.IntInp
 type GetTriggersTriggerCollectionItemActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events []string `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetTriggersTriggerCollectionItemActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
@@ -34246,7 +35011,7 @@ type GetTriggersTriggerCollectionItemActionFilter struct {
 // GetTriggersTriggerCollectionItemActionFilterInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterArgs and GetTriggersTriggerCollectionItemActionFilterOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterInput` via:
 //
-//          GetTriggersTriggerCollectionItemActionFilterArgs{...}
+//	GetTriggersTriggerCollectionItemActionFilterArgs{...}
 type GetTriggersTriggerCollectionItemActionFilterInput interface {
 	pulumi.Input
 
@@ -34257,7 +35022,7 @@ type GetTriggersTriggerCollectionItemActionFilterInput interface {
 type GetTriggersTriggerCollectionItemActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
 	Events pulumi.StringArrayInput `pulumi:"events"`
-	// Attributes to filter DevOps code repository events.
+	// Attributes to filter GitLab self-hosted server events.
 	Includes GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
@@ -34278,7 +35043,7 @@ func (i GetTriggersTriggerCollectionItemActionFilterArgs) ToGetTriggersTriggerCo
 // GetTriggersTriggerCollectionItemActionFilterArrayInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterArray and GetTriggersTriggerCollectionItemActionFilterArrayOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterArrayInput` via:
 //
-//          GetTriggersTriggerCollectionItemActionFilterArray{ GetTriggersTriggerCollectionItemActionFilterArgs{...} }
+//	GetTriggersTriggerCollectionItemActionFilterArray{ GetTriggersTriggerCollectionItemActionFilterArgs{...} }
 type GetTriggersTriggerCollectionItemActionFilterArrayInput interface {
 	pulumi.Input
 
@@ -34319,7 +35084,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterOutput) Events() pulumi.Stri
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
-// Attributes to filter DevOps code repository events.
+// Attributes to filter GitLab self-hosted server events.
 func (o GetTriggersTriggerCollectionItemActionFilterOutput) Includes() GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []GetTriggersTriggerCollectionItemActionFilterInclude {
 		return v.Includes
@@ -34361,7 +35126,7 @@ type GetTriggersTriggerCollectionItemActionFilterInclude struct {
 // GetTriggersTriggerCollectionItemActionFilterIncludeInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterIncludeArgs and GetTriggersTriggerCollectionItemActionFilterIncludeOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterIncludeInput` via:
 //
-//          GetTriggersTriggerCollectionItemActionFilterIncludeArgs{...}
+//	GetTriggersTriggerCollectionItemActionFilterIncludeArgs{...}
 type GetTriggersTriggerCollectionItemActionFilterIncludeInput interface {
 	pulumi.Input
 
@@ -34391,7 +35156,7 @@ func (i GetTriggersTriggerCollectionItemActionFilterIncludeArgs) ToGetTriggersTr
 // GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterIncludeArray and GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput values.
 // You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput` via:
 //
-//          GetTriggersTriggerCollectionItemActionFilterIncludeArray{ GetTriggersTriggerCollectionItemActionFilterIncludeArgs{...} }
+//	GetTriggersTriggerCollectionItemActionFilterIncludeArray{ GetTriggersTriggerCollectionItemActionFilterIncludeArgs{...} }
 type GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput interface {
 	pulumi.Input
 
@@ -34474,6 +35239,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageDeliverArtifactCollectionPtrInput)(nil)).Elem(), BuildPipelineStageDeliverArtifactCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageDeliverArtifactCollectionItemInput)(nil)).Elem(), BuildPipelineStageDeliverArtifactCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageDeliverArtifactCollectionItemArrayInput)(nil)).Elem(), BuildPipelineStageDeliverArtifactCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStagePrivateAccessConfigInput)(nil)).Elem(), BuildPipelineStagePrivateAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStagePrivateAccessConfigPtrInput)(nil)).Elem(), BuildPipelineStagePrivateAccessConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageWaitCriteriaInput)(nil)).Elem(), BuildPipelineStageWaitCriteriaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildPipelineStageWaitCriteriaPtrInput)(nil)).Elem(), BuildPipelineStageWaitCriteriaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputInput)(nil)).Elem(), BuildRunBuildOutputArgs{})
@@ -34512,6 +35279,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunCommitInfoInput)(nil)).Elem(), BuildRunCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunCommitInfoPtrInput)(nil)).Elem(), BuildRunCommitInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTlsVerifyConfigInput)(nil)).Elem(), ConnectionTlsVerifyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTlsVerifyConfigPtrInput)(nil)).Elem(), ConnectionTlsVerifyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourceInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployArtifactDeployArtifactSourcePtrInput)(nil)).Elem(), DeployArtifactDeployArtifactSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeployEnvironmentComputeInstanceGroupSelectorsInput)(nil)).Elem(), DeployEnvironmentComputeInstanceGroupSelectorsArgs{})
@@ -34622,6 +35391,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageDeliverArtifactCollectionArrayInput)(nil)).Elem(), GetBuildPipelineStageDeliverArtifactCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageDeliverArtifactCollectionItemInput)(nil)).Elem(), GetBuildPipelineStageDeliverArtifactCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageDeliverArtifactCollectionItemArrayInput)(nil)).Elem(), GetBuildPipelineStageDeliverArtifactCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagePrivateAccessConfigInput)(nil)).Elem(), GetBuildPipelineStagePrivateAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagePrivateAccessConfigArrayInput)(nil)).Elem(), GetBuildPipelineStagePrivateAccessConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageWaitCriteriaInput)(nil)).Elem(), GetBuildPipelineStageWaitCriteriaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStageWaitCriteriaArrayInput)(nil)).Elem(), GetBuildPipelineStageWaitCriteriaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionArgs{})
@@ -34638,6 +35409,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArrayInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaInput)(nil)).Elem(), GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesFilterInput)(nil)).Elem(), GetBuildPipelineStagesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineStagesFilterArrayInput)(nil)).Elem(), GetBuildPipelineStagesFilterArray{})
@@ -34709,10 +35481,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsBuildRunSummaryCollectionItemCommitInfoInput)(nil)).Elem(), GetBuildRunsBuildRunSummaryCollectionItemCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsFilterInput)(nil)).Elem(), GetBuildRunsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsFilterArrayInput)(nil)).Elem(), GetBuildRunsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionTlsVerifyConfigInput)(nil)).Elem(), GetConnectionTlsVerifyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionTlsVerifyConfigArrayInput)(nil)).Elem(), GetConnectionTlsVerifyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemTlsVerifyConfigInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemTlsVerifyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterInput)(nil)).Elem(), GetConnectionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterArrayInput)(nil)).Elem(), GetConnectionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeployArtifactDeployArtifactSourceInput)(nil)).Elem(), GetDeployArtifactDeployArtifactSourceArgs{})
@@ -35029,6 +35805,8 @@ func init() {
 	pulumi.RegisterOutputType(BuildPipelineStageDeliverArtifactCollectionPtrOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageDeliverArtifactCollectionItemOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageDeliverArtifactCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(BuildPipelineStagePrivateAccessConfigOutput{})
+	pulumi.RegisterOutputType(BuildPipelineStagePrivateAccessConfigPtrOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageWaitCriteriaOutput{})
 	pulumi.RegisterOutputType(BuildPipelineStageWaitCriteriaPtrOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildOutputOutput{})
@@ -35067,6 +35845,8 @@ func init() {
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunCommitInfoOutput{})
 	pulumi.RegisterOutputType(BuildRunCommitInfoPtrOutput{})
+	pulumi.RegisterOutputType(ConnectionTlsVerifyConfigOutput{})
+	pulumi.RegisterOutputType(ConnectionTlsVerifyConfigPtrOutput{})
 	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourceOutput{})
 	pulumi.RegisterOutputType(DeployArtifactDeployArtifactSourcePtrOutput{})
 	pulumi.RegisterOutputType(DeployEnvironmentComputeInstanceGroupSelectorsOutput{})
@@ -35177,6 +35957,8 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildPipelineStageDeliverArtifactCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageDeliverArtifactCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageDeliverArtifactCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildPipelineStagePrivateAccessConfigOutput{})
+	pulumi.RegisterOutputType(GetBuildPipelineStagePrivateAccessConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageWaitCriteriaOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStageWaitCriteriaArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionOutput{})
@@ -35193,6 +35975,7 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesFilterOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineStagesFilterArrayOutput{})
@@ -35264,10 +36047,14 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildRunsBuildRunSummaryCollectionItemCommitInfoOutput{})
 	pulumi.RegisterOutputType(GetBuildRunsFilterOutput{})
 	pulumi.RegisterOutputType(GetBuildRunsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionTlsVerifyConfigOutput{})
+	pulumi.RegisterOutputType(GetConnectionTlsVerifyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemTlsVerifyConfigOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemTlsVerifyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeployArtifactDeployArtifactSourceOutput{})

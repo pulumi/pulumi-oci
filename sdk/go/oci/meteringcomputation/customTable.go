@@ -21,36 +21,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := MeteringComputation.NewCustomTable(ctx, "testCustomTable", &MeteringComputation.CustomTableArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			SavedCustomTable: &meteringcomputation.CustomTableSavedCustomTableArgs{
-// 				DisplayName:      pulumi.Any(_var.Custom_table_saved_custom_table_display_name),
-// 				ColumnGroupBies:  pulumi.Any(_var.Custom_table_saved_custom_table_column_group_by),
-// 				CompartmentDepth: pulumi.Any(_var.Custom_table_saved_custom_table_compartment_depth),
-// 				GroupByTags: meteringcomputation.CustomTableSavedCustomTableGroupByTagArray{
-// 					&meteringcomputation.CustomTableSavedCustomTableGroupByTagArgs{
-// 						Key:       pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_key),
-// 						Namespace: pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_namespace),
-// 						Value:     pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_value),
-// 					},
-// 				},
-// 				RowGroupBies: pulumi.Any(_var.Custom_table_saved_custom_table_row_group_by),
-// 				Version:      pulumi.Any(_var.Custom_table_saved_custom_table_version),
-// 			},
-// 			SavedReportId: pulumi.Any(oci_metering_computation_saved_report.Test_saved_report.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := MeteringComputation.NewCustomTable(ctx, "testCustomTable", &MeteringComputation.CustomTableArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				SavedCustomTable: &meteringcomputation.CustomTableSavedCustomTableArgs{
+//					DisplayName:      pulumi.Any(_var.Custom_table_saved_custom_table_display_name),
+//					ColumnGroupBies:  pulumi.Any(_var.Custom_table_saved_custom_table_column_group_by),
+//					CompartmentDepth: pulumi.Any(_var.Custom_table_saved_custom_table_compartment_depth),
+//					GroupByTags: meteringcomputation.CustomTableSavedCustomTableGroupByTagArray{
+//						&meteringcomputation.CustomTableSavedCustomTableGroupByTagArgs{
+//							Key:       pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_key),
+//							Namespace: pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_namespace),
+//							Value:     pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_value),
+//						},
+//					},
+//					RowGroupBies: pulumi.Any(_var.Custom_table_saved_custom_table_row_group_by),
+//					Version:      pulumi.Any(_var.Custom_table_saved_custom_table_version),
+//				},
+//				SavedReportId: pulumi.Any(oci_metering_computation_saved_report.Test_saved_report.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -58,7 +61,9 @@ import (
 // CustomTables can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
+//
+//	$ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
+//
 // ```
 type CustomTable struct {
 	pulumi.CustomResourceState
@@ -175,7 +180,7 @@ func (i *CustomTable) ToCustomTableOutputWithContext(ctx context.Context) Custom
 // CustomTableArrayInput is an input type that accepts CustomTableArray and CustomTableArrayOutput values.
 // You can construct a concrete instance of `CustomTableArrayInput` via:
 //
-//          CustomTableArray{ CustomTableArgs{...} }
+//	CustomTableArray{ CustomTableArgs{...} }
 type CustomTableArrayInput interface {
 	pulumi.Input
 
@@ -200,7 +205,7 @@ func (i CustomTableArray) ToCustomTableArrayOutputWithContext(ctx context.Contex
 // CustomTableMapInput is an input type that accepts CustomTableMap and CustomTableMapOutput values.
 // You can construct a concrete instance of `CustomTableMapInput` via:
 //
-//          CustomTableMap{ "key": CustomTableArgs{...} }
+//	CustomTableMap{ "key": CustomTableArgs{...} }
 type CustomTableMapInput interface {
 	pulumi.Input
 

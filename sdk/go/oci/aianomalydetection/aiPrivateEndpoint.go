@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.NewAiPrivateEndpoint(ctx, "testAiPrivateEndpoint", &AiAnomalyDetection.AiPrivateEndpointArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DnsZones:      pulumi.Any(_var.Ai_private_endpoint_dns_zones),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Ai_private_endpoint_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.NewAiPrivateEndpoint(ctx, "testAiPrivateEndpoint", &AiAnomalyDetection.AiPrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DnsZones:      pulumi.Any(_var.Ai_private_endpoint_dns_zones),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Ai_private_endpoint_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // AiPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
+//
+//	$ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
+//
 // ```
 type AiPrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -235,7 +240,7 @@ func (i *AiPrivateEndpoint) ToAiPrivateEndpointOutputWithContext(ctx context.Con
 // AiPrivateEndpointArrayInput is an input type that accepts AiPrivateEndpointArray and AiPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `AiPrivateEndpointArrayInput` via:
 //
-//          AiPrivateEndpointArray{ AiPrivateEndpointArgs{...} }
+//	AiPrivateEndpointArray{ AiPrivateEndpointArgs{...} }
 type AiPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -260,7 +265,7 @@ func (i AiPrivateEndpointArray) ToAiPrivateEndpointArrayOutputWithContext(ctx co
 // AiPrivateEndpointMapInput is an input type that accepts AiPrivateEndpointMap and AiPrivateEndpointMapOutput values.
 // You can construct a concrete instance of `AiPrivateEndpointMapInput` via:
 //
-//          AiPrivateEndpointMap{ "key": AiPrivateEndpointArgs{...} }
+//	AiPrivateEndpointMap{ "key": AiPrivateEndpointArgs{...} }
 type AiPrivateEndpointMapInput interface {
 	pulumi.Input
 

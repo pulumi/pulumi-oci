@@ -21,92 +21,102 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.NewConfig(ctx, "testMonitor", &ApmSynthetics.ConfigArgs{
-// 			ApmDomainId:             pulumi.Any(oci_apm_synthetics_apm_domain.Test_apm_domain.Id),
-// 			DisplayName:             pulumi.Any(_var.Monitor_display_name),
-// 			MonitorType:             pulumi.Any(_var.Monitor_monitor_type),
-// 			RepeatIntervalInSeconds: pulumi.Any(_var.Monitor_repeat_interval_in_seconds),
-// 			VantagePoints:           pulumi.StringArray{},
-// 			Configuration: &apmsynthetics.ConfigConfigurationArgs{
-// 				ConfigType:                     pulumi.Any(_var.Monitor_configuration_config_type),
-// 				IsCertificateValidationEnabled: pulumi.Any(_var.Monitor_configuration_is_certificate_validation_enabled),
-// 				IsFailureRetried:               pulumi.Any(_var.Monitor_configuration_is_failure_retried),
-// 				IsRedirectionEnabled:           pulumi.Any(_var.Monitor_configuration_is_redirection_enabled),
-// 				NetworkConfiguration: &apmsynthetics.ConfigConfigurationNetworkConfigurationArgs{
-// 					NumberOfHops:     pulumi.Any(_var.Monitor_configuration_network_configuration_number_of_hops),
-// 					ProbeMode:        pulumi.Any(_var.Monitor_configuration_network_configuration_probe_mode),
-// 					ProbePerHop:      pulumi.Any(_var.Monitor_configuration_network_configuration_probe_per_hop),
-// 					Protocol:         pulumi.Any(_var.Monitor_configuration_network_configuration_protocol),
-// 					TransmissionRate: pulumi.Any(_var.Monitor_configuration_network_configuration_transmission_rate),
-// 				},
-// 				ReqAuthenticationDetails: &apmsynthetics.ConfigConfigurationReqAuthenticationDetailsArgs{
-// 					AuthHeaders: apmsynthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray{
-// 						&apmsynthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs{
-// 							HeaderName:  pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_headers_header_name),
-// 							HeaderValue: pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_headers_header_value),
-// 						},
-// 					},
-// 					AuthRequestMethod:   pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_request_method),
-// 					AuthRequestPostBody: pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_request_post_body),
-// 					AuthToken:           pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_token),
-// 					AuthUrl:             pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_url),
-// 					AuthUserName:        pulumi.Any(oci_identity_user.Test_user.Name),
-// 					AuthUserPassword:    pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_user_password),
-// 					OauthScheme:         pulumi.Any(_var.Monitor_configuration_req_authentication_details_oauth_scheme),
-// 				},
-// 				ReqAuthenticationScheme: pulumi.Any(_var.Monitor_configuration_req_authentication_scheme),
-// 				RequestHeaders: apmsynthetics.ConfigConfigurationRequestHeaderArray{
-// 					&apmsynthetics.ConfigConfigurationRequestHeaderArgs{
-// 						HeaderName:  pulumi.Any(_var.Monitor_configuration_request_headers_header_name),
-// 						HeaderValue: pulumi.Any(_var.Monitor_configuration_request_headers_header_value),
-// 					},
-// 				},
-// 				RequestMethod:   pulumi.Any(_var.Monitor_configuration_request_method),
-// 				RequestPostBody: pulumi.Any(_var.Monitor_configuration_request_post_body),
-// 				RequestQueryParams: apmsynthetics.ConfigConfigurationRequestQueryParamArray{
-// 					&apmsynthetics.ConfigConfigurationRequestQueryParamArgs{
-// 						ParamName:  pulumi.Any(_var.Monitor_configuration_request_query_params_param_name),
-// 						ParamValue: pulumi.Any(_var.Monitor_configuration_request_query_params_param_value),
-// 					},
-// 				},
-// 				VerifyResponseCodes:   pulumi.Any(_var.Monitor_configuration_verify_response_codes),
-// 				VerifyResponseContent: pulumi.Any(_var.Monitor_configuration_verify_response_content),
-// 				VerifyTexts: apmsynthetics.ConfigConfigurationVerifyTextArray{
-// 					&apmsynthetics.ConfigConfigurationVerifyTextArgs{
-// 						Text: pulumi.Any(_var.Monitor_configuration_verify_texts_text),
-// 					},
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsRunOnce: pulumi.Any(_var.Monitor_is_run_once),
-// 			ScriptId:  pulumi.Any(oci_apm_synthetics_script.Test_script.Id),
-// 			ScriptParameters: apmsynthetics.ConfigScriptParameterArray{
-// 				&apmsynthetics.ConfigScriptParameterArgs{
-// 					ParamName:  pulumi.Any(_var.Monitor_script_parameters_param_name),
-// 					ParamValue: pulumi.Any(_var.Monitor_script_parameters_param_value),
-// 				},
-// 			},
-// 			Status:           pulumi.Any(_var.Monitor_status),
-// 			Target:           pulumi.Any(_var.Monitor_target),
-// 			TimeoutInSeconds: pulumi.Any(_var.Monitor_timeout_in_seconds),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.NewConfig(ctx, "testMonitor", &ApmSynthetics.ConfigArgs{
+//				ApmDomainId:             pulumi.Any(oci_apm_synthetics_apm_domain.Test_apm_domain.Id),
+//				DisplayName:             pulumi.Any(_var.Monitor_display_name),
+//				MonitorType:             pulumi.Any(_var.Monitor_monitor_type),
+//				RepeatIntervalInSeconds: pulumi.Any(_var.Monitor_repeat_interval_in_seconds),
+//				VantagePoints:           pulumi.StringArray{},
+//				BatchIntervalInSeconds:  pulumi.Any(_var.Monitor_batch_interval_in_seconds),
+//				Configuration: &apmsynthetics.ConfigConfigurationArgs{
+//					ConfigType: pulumi.Any(_var.Monitor_configuration_config_type),
+//					DnsConfiguration: &apmsynthetics.ConfigConfigurationDnsConfigurationArgs{
+//						IsOverrideDns: pulumi.Any(_var.Monitor_configuration_dns_configuration_is_override_dns),
+//						OverrideDnsIp: pulumi.Any(_var.Monitor_configuration_dns_configuration_override_dns_ip),
+//					},
+//					IsCertificateValidationEnabled: pulumi.Any(_var.Monitor_configuration_is_certificate_validation_enabled),
+//					IsFailureRetried:               pulumi.Any(_var.Monitor_configuration_is_failure_retried),
+//					IsRedirectionEnabled:           pulumi.Any(_var.Monitor_configuration_is_redirection_enabled),
+//					NetworkConfiguration: &apmsynthetics.ConfigConfigurationNetworkConfigurationArgs{
+//						NumberOfHops:     pulumi.Any(_var.Monitor_configuration_network_configuration_number_of_hops),
+//						ProbeMode:        pulumi.Any(_var.Monitor_configuration_network_configuration_probe_mode),
+//						ProbePerHop:      pulumi.Any(_var.Monitor_configuration_network_configuration_probe_per_hop),
+//						Protocol:         pulumi.Any(_var.Monitor_configuration_network_configuration_protocol),
+//						TransmissionRate: pulumi.Any(_var.Monitor_configuration_network_configuration_transmission_rate),
+//					},
+//					ReqAuthenticationDetails: &apmsynthetics.ConfigConfigurationReqAuthenticationDetailsArgs{
+//						AuthHeaders: apmsynthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray{
+//							&apmsynthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs{
+//								HeaderName:  pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_headers_header_name),
+//								HeaderValue: pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_headers_header_value),
+//							},
+//						},
+//						AuthRequestMethod:   pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_request_method),
+//						AuthRequestPostBody: pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_request_post_body),
+//						AuthToken:           pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_token),
+//						AuthUrl:             pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_url),
+//						AuthUserName:        pulumi.Any(oci_identity_user.Test_user.Name),
+//						AuthUserPassword:    pulumi.Any(_var.Monitor_configuration_req_authentication_details_auth_user_password),
+//						OauthScheme:         pulumi.Any(_var.Monitor_configuration_req_authentication_details_oauth_scheme),
+//					},
+//					ReqAuthenticationScheme: pulumi.Any(_var.Monitor_configuration_req_authentication_scheme),
+//					RequestHeaders: apmsynthetics.ConfigConfigurationRequestHeaderArray{
+//						&apmsynthetics.ConfigConfigurationRequestHeaderArgs{
+//							HeaderName:  pulumi.Any(_var.Monitor_configuration_request_headers_header_name),
+//							HeaderValue: pulumi.Any(_var.Monitor_configuration_request_headers_header_value),
+//						},
+//					},
+//					RequestMethod:   pulumi.Any(_var.Monitor_configuration_request_method),
+//					RequestPostBody: pulumi.Any(_var.Monitor_configuration_request_post_body),
+//					RequestQueryParams: apmsynthetics.ConfigConfigurationRequestQueryParamArray{
+//						&apmsynthetics.ConfigConfigurationRequestQueryParamArgs{
+//							ParamName:  pulumi.Any(_var.Monitor_configuration_request_query_params_param_name),
+//							ParamValue: pulumi.Any(_var.Monitor_configuration_request_query_params_param_value),
+//						},
+//					},
+//					VerifyResponseCodes:   pulumi.Any(_var.Monitor_configuration_verify_response_codes),
+//					VerifyResponseContent: pulumi.Any(_var.Monitor_configuration_verify_response_content),
+//					VerifyTexts: apmsynthetics.ConfigConfigurationVerifyTextArray{
+//						&apmsynthetics.ConfigConfigurationVerifyTextArgs{
+//							Text: pulumi.Any(_var.Monitor_configuration_verify_texts_text),
+//						},
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsRunNow:         pulumi.Any(_var.Monitor_is_run_now),
+//				IsRunOnce:        pulumi.Any(_var.Monitor_is_run_once),
+//				SchedulingPolicy: pulumi.Any(_var.Monitor_scheduling_policy),
+//				ScriptId:         pulumi.Any(oci_apm_synthetics_script.Test_script.Id),
+//				ScriptParameters: apmsynthetics.ConfigScriptParameterArray{
+//					&apmsynthetics.ConfigScriptParameterArgs{
+//						ParamName:  pulumi.Any(_var.Monitor_script_parameters_param_name),
+//						ParamValue: pulumi.Any(_var.Monitor_script_parameters_param_value),
+//					},
+//				},
+//				Status:           pulumi.Any(_var.Monitor_status),
+//				Target:           pulumi.Any(_var.Monitor_target),
+//				TimeoutInSeconds: pulumi.Any(_var.Monitor_timeout_in_seconds),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -114,13 +124,19 @@ import (
 // Monitors can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
+//
+//	$ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
+//
 // ```
 type Config struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The APM domain ID the request is intended for.
+	// <<<<<<< ours
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
+	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// ===
+	BatchIntervalInSeconds pulumi.IntOutput `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationOutput `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -129,12 +145,16 @@ type Config struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	IsRunNow pulumi.BoolOutput `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolOutput `pulumi:"isRunOnce"`
 	// Type of monitor.
 	MonitorType pulumi.StringOutput `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntOutput `pulumi:"repeatIntervalInSeconds"`
+	// (Updatable) Scheduling policy on Vantage points.
+	SchedulingPolicy pulumi.StringOutput `pulumi:"schedulingPolicy"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId pulumi.StringOutput `pulumi:"scriptId"`
 	// Name of the script.
@@ -202,7 +222,11 @@ func GetConfig(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Config resources.
 type configState struct {
 	// (Updatable) The APM domain ID the request is intended for.
+	// <<<<<<< ours
 	ApmDomainId *string `pulumi:"apmDomainId"`
+	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// ===
+	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -211,12 +235,16 @@ type configState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
 	// Type of monitor.
 	MonitorType *string `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds *int `pulumi:"repeatIntervalInSeconds"`
+	// (Updatable) Scheduling policy on Vantage points.
+	SchedulingPolicy *string `pulumi:"schedulingPolicy"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId *string `pulumi:"scriptId"`
 	// Name of the script.
@@ -241,7 +269,11 @@ type configState struct {
 
 type ConfigState struct {
 	// (Updatable) The APM domain ID the request is intended for.
+	// <<<<<<< ours
 	ApmDomainId pulumi.StringPtrInput
+	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// ===
+	BatchIntervalInSeconds pulumi.IntPtrInput
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -250,12 +282,16 @@ type ConfigState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
 	// Type of monitor.
 	MonitorType pulumi.StringPtrInput
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntPtrInput
+	// (Updatable) Scheduling policy on Vantage points.
+	SchedulingPolicy pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId pulumi.StringPtrInput
 	// Name of the script.
@@ -284,7 +320,11 @@ func (ConfigState) ElementType() reflect.Type {
 
 type configArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
+	// <<<<<<< ours
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// ===
+	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -293,12 +333,16 @@ type configArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
 	// Type of monitor.
 	MonitorType string `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
+	// (Updatable) Scheduling policy on Vantage points.
+	SchedulingPolicy *string `pulumi:"schedulingPolicy"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId *string `pulumi:"scriptId"`
 	// Name of the script.
@@ -318,7 +362,11 @@ type configArgs struct {
 // The set of arguments for constructing a Config resource.
 type ConfigArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
+	// <<<<<<< ours
 	ApmDomainId pulumi.StringInput
+	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+	// ===
+	BatchIntervalInSeconds pulumi.IntPtrInput
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -327,12 +375,16 @@ type ConfigArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) If isRunNow is enabled, then the monitor will run now.
+	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
 	// Type of monitor.
 	MonitorType pulumi.StringInput
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput
+	// (Updatable) Scheduling policy on Vantage points.
+	SchedulingPolicy pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId pulumi.StringPtrInput
 	// Name of the script.
@@ -375,7 +427,7 @@ func (i *Config) ToConfigOutputWithContext(ctx context.Context) ConfigOutput {
 // ConfigArrayInput is an input type that accepts ConfigArray and ConfigArrayOutput values.
 // You can construct a concrete instance of `ConfigArrayInput` via:
 //
-//          ConfigArray{ ConfigArgs{...} }
+//	ConfigArray{ ConfigArgs{...} }
 type ConfigArrayInput interface {
 	pulumi.Input
 
@@ -400,7 +452,7 @@ func (i ConfigArray) ToConfigArrayOutputWithContext(ctx context.Context) ConfigA
 // ConfigMapInput is an input type that accepts ConfigMap and ConfigMapOutput values.
 // You can construct a concrete instance of `ConfigMapInput` via:
 //
-//          ConfigMap{ "key": ConfigArgs{...} }
+//	ConfigMap{ "key": ConfigArgs{...} }
 type ConfigMapInput interface {
 	pulumi.Input
 

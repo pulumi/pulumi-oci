@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetExadataInfrastructureDownloadConfigFile(ctx, &database.GetExadataInfrastructureDownloadConfigFileArgs{
-// 			ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-// 			Base64EncodeContent:     pulumi.BoolRef(false),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetExadataInfrastructureDownloadConfigFile(ctx, &database.GetExadataInfrastructureDownloadConfigFileArgs{
+//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//				Base64EncodeContent:     pulumi.BoolRef(false),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExadataInfrastructureDownloadConfigFile(ctx *pulumi.Context, args *GetExadataInfrastructureDownloadConfigFileArgs, opts ...pulumi.InvokeOption) (*GetExadataInfrastructureDownloadConfigFileResult, error) {
 	var rv GetExadataInfrastructureDownloadConfigFileResult

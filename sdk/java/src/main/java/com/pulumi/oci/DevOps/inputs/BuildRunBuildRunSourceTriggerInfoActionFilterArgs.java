@@ -33,14 +33,14 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
     }
 
     /**
-     * Attributes to filter DevOps code repository events.
+     * Attributes to filter GitLab self-hosted server events.
      * 
      */
     @Import(name="includes")
     private @Nullable Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs>> includes;
 
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public Optional<Output<List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs>>> includes() {
@@ -120,7 +120,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
         }
 
         /**
-         * @param includes Attributes to filter DevOps code repository events.
+         * @param includes Attributes to filter GitLab self-hosted server events.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
         }
 
         /**
-         * @param includes Attributes to filter DevOps code repository events.
+         * @param includes Attributes to filter GitLab self-hosted server events.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterArgs extends com
         }
 
         /**
-         * @param includes Attributes to filter DevOps code repository events.
+         * @param includes Attributes to filter GitLab self-hosted server events.
          * 
          * @return builder
          * 

@@ -151,6 +151,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetInventoryLogResult> InventoryLogs;
         /// <summary>
+        /// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// </summary>
+        public readonly bool IsAdvancedFeaturesEnabled;
+        /// <summary>
         /// Custom Log for inventory or operation log.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetOperationLogResult> OperationLogs;
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetFleetInventoryLogResult> inventoryLogs,
 
+            bool isAdvancedFeaturesEnabled,
+
             ImmutableArray<Outputs.GetFleetOperationLogResult> operationLogs,
 
             string state,
@@ -213,6 +219,7 @@ namespace Pulumi.Oci.Jms
             FreeformTags = freeformTags;
             Id = id;
             InventoryLogs = inventoryLogs;
+            IsAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             OperationLogs = operationLogs;
             State = state;
             SystemTags = systemTags;

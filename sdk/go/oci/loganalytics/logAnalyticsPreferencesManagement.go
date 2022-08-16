@@ -21,27 +21,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsPreferencesManagement(ctx, "testLogAnalyticsPreferencesManagement", &LogAnalytics.LogAnalyticsPreferencesManagementArgs{
-// 			Namespace: pulumi.Any(_var.Log_analytics_preferences_management_namespace),
-// 			Items: loganalytics.LogAnalyticsPreferencesManagementItemArray{
-// 				&loganalytics.LogAnalyticsPreferencesManagementItemArgs{
-// 					Name:  pulumi.Any(_var.Log_analytics_preferences_management_items_name),
-// 					Value: pulumi.Any(_var.Log_analytics_preferences_management_items_value),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsPreferencesManagement(ctx, "testLogAnalyticsPreferencesManagement", &LogAnalytics.LogAnalyticsPreferencesManagementArgs{
+//				Namespace: pulumi.Any(_var.Log_analytics_preferences_management_namespace),
+//				Items: loganalytics.LogAnalyticsPreferencesManagementItemArray{
+//					&loganalytics.LogAnalyticsPreferencesManagementItemArgs{
+//						Name:  pulumi.Any(_var.Log_analytics_preferences_management_items_name),
+//						Value: pulumi.Any(_var.Log_analytics_preferences_management_items_value),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -146,7 +149,7 @@ func (i *LogAnalyticsPreferencesManagement) ToLogAnalyticsPreferencesManagementO
 // LogAnalyticsPreferencesManagementArrayInput is an input type that accepts LogAnalyticsPreferencesManagementArray and LogAnalyticsPreferencesManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementArrayInput` via:
 //
-//          LogAnalyticsPreferencesManagementArray{ LogAnalyticsPreferencesManagementArgs{...} }
+//	LogAnalyticsPreferencesManagementArray{ LogAnalyticsPreferencesManagementArgs{...} }
 type LogAnalyticsPreferencesManagementArrayInput interface {
 	pulumi.Input
 
@@ -171,7 +174,7 @@ func (i LogAnalyticsPreferencesManagementArray) ToLogAnalyticsPreferencesManagem
 // LogAnalyticsPreferencesManagementMapInput is an input type that accepts LogAnalyticsPreferencesManagementMap and LogAnalyticsPreferencesManagementMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementMapInput` via:
 //
-//          LogAnalyticsPreferencesManagementMap{ "key": LogAnalyticsPreferencesManagementArgs{...} }
+//	LogAnalyticsPreferencesManagementMap{ "key": LogAnalyticsPreferencesManagementArgs{...} }
 type LogAnalyticsPreferencesManagementMapInput interface {
 	pulumi.Input
 

@@ -22,27 +22,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.NewEncryptedData(ctx, "testEncryptedData", &Kms.EncryptedDataArgs{
-// 			CryptoEndpoint:      pulumi.Any(_var.Encrypted_data_crypto_endpoint),
-// 			KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
-// 			Plaintext:           pulumi.Any(_var.Encrypted_data_plaintext),
-// 			AssociatedData:      pulumi.Any(_var.Encrypted_data_associated_data),
-// 			EncryptionAlgorithm: pulumi.Any(_var.Encrypted_data_encryption_algorithm),
-// 			KeyVersionId:        pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-// 			LoggingContext:      pulumi.Any(_var.Encrypted_data_logging_context),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.NewEncryptedData(ctx, "testEncryptedData", &Kms.EncryptedDataArgs{
+//				CryptoEndpoint:      pulumi.Any(_var.Encrypted_data_crypto_endpoint),
+//				KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
+//				Plaintext:           pulumi.Any(_var.Encrypted_data_plaintext),
+//				AssociatedData:      pulumi.Any(_var.Encrypted_data_associated_data),
+//				EncryptionAlgorithm: pulumi.Any(_var.Encrypted_data_encryption_algorithm),
+//				KeyVersionId:        pulumi.Any(oci_kms_key_version.Test_key_version.Id),
+//				LoggingContext:      pulumi.Any(_var.Encrypted_data_logging_context),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -209,7 +212,7 @@ func (i *EncryptedData) ToEncryptedDataOutputWithContext(ctx context.Context) En
 // EncryptedDataArrayInput is an input type that accepts EncryptedDataArray and EncryptedDataArrayOutput values.
 // You can construct a concrete instance of `EncryptedDataArrayInput` via:
 //
-//          EncryptedDataArray{ EncryptedDataArgs{...} }
+//	EncryptedDataArray{ EncryptedDataArgs{...} }
 type EncryptedDataArrayInput interface {
 	pulumi.Input
 
@@ -234,7 +237,7 @@ func (i EncryptedDataArray) ToEncryptedDataArrayOutputWithContext(ctx context.Co
 // EncryptedDataMapInput is an input type that accepts EncryptedDataMap and EncryptedDataMapOutput values.
 // You can construct a concrete instance of `EncryptedDataMapInput` via:
 //
-//          EncryptedDataMap{ "key": EncryptedDataArgs{...} }
+//	EncryptedDataMap{ "key": EncryptedDataArgs{...} }
 type EncryptedDataMapInput interface {
 	pulumi.Input
 

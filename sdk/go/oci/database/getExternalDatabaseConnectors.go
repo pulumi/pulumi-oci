@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetExternalDatabaseConnectors(ctx, &database.GetExternalDatabaseConnectorsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			ExternalDatabaseId: oci_database_database.Test_database.Id,
-// 			DisplayName:        pulumi.StringRef(_var.External_database_connector_display_name),
-// 			State:              pulumi.StringRef(_var.External_database_connector_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetExternalDatabaseConnectors(ctx, &database.GetExternalDatabaseConnectorsArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				ExternalDatabaseId: oci_database_database.Test_database.Id,
+//				DisplayName:        pulumi.StringRef(_var.External_database_connector_display_name),
+//				State:              pulumi.StringRef(_var.External_database_connector_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetExternalDatabaseConnectors(ctx *pulumi.Context, args *GetExternalDatabaseConnectorsArgs, opts ...pulumi.InvokeOption) (*GetExternalDatabaseConnectorsResult, error) {
 	var rv GetExternalDatabaseConnectorsResult

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryConnection(ctx, &dataconnectivity.GetRegistryConnectionArgs{
-// 			ConnectionKey: _var.Registry_connection_connection_key,
-// 			RegistryId:    oci_data_connectivity_registry.Test_registry.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryConnection(ctx, &dataconnectivity.GetRegistryConnectionArgs{
+//				ConnectionKey: _var.Registry_connection_connection_key,
+//				RegistryId:    oci_data_connectivity_registry.Test_registry.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupRegistryConnection(ctx *pulumi.Context, args *LookupRegistryConnectionArgs, opts ...pulumi.InvokeOption) (*LookupRegistryConnectionResult, error) {
 	var rv LookupRegistryConnectionResult

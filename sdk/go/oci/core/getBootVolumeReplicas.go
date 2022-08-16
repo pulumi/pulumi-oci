@@ -20,24 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetBootVolumeReplicas(ctx, &core.GetBootVolumeReplicasArgs{
-// 			AvailabilityDomain: _var.Boot_volume_replica_availability_domain,
-// 			CompartmentId:      _var.Compartment_id,
-// 			DisplayName:        pulumi.StringRef(_var.Boot_volume_replica_display_name),
-// 			State:              pulumi.StringRef(_var.Boot_volume_replica_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetBootVolumeReplicas(ctx, &core.GetBootVolumeReplicasArgs{
+//				AvailabilityDomain:   pulumi.StringRef(_var.Boot_volume_replica_availability_domain),
+//				CompartmentId:        pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:          pulumi.StringRef(_var.Boot_volume_replica_display_name),
+//				State:                pulumi.StringRef(_var.Boot_volume_replica_state),
+//				VolumeGroupReplicaId: pulumi.StringRef(oci_core_volume_group_replica.Test_volume_group_replica.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBootVolumeReplicas(ctx *pulumi.Context, args *GetBootVolumeReplicasArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeReplicasResult, error) {
 	var rv GetBootVolumeReplicasResult
@@ -51,31 +55,34 @@ func GetBootVolumeReplicas(ctx *pulumi.Context, args *GetBootVolumeReplicasArgs,
 // A collection of arguments for invoking getBootVolumeReplicas.
 type GetBootVolumeReplicasArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetBootVolumeReplicasFilter `pulumi:"filters"`
 	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
 	State *string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+	VolumeGroupReplicaId *string `pulumi:"volumeGroupReplicaId"`
 }
 
 // A collection of values returned by getBootVolumeReplicas.
 type GetBootVolumeReplicasResult struct {
 	// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The list of boot_volume_replicas.
 	BootVolumeReplicas []GetBootVolumeReplicasBootVolumeReplica `pulumi:"bootVolumeReplicas"`
 	// The OCID of the compartment that contains the boot volume replica.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetBootVolumeReplicasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The current state of a boot volume replica.
-	State *string `pulumi:"state"`
+	State                *string `pulumi:"state"`
+	VolumeGroupReplicaId *string `pulumi:"volumeGroupReplicaId"`
 }
 
 func GetBootVolumeReplicasOutput(ctx *pulumi.Context, args GetBootVolumeReplicasOutputArgs, opts ...pulumi.InvokeOption) GetBootVolumeReplicasResultOutput {
@@ -94,14 +101,16 @@ func GetBootVolumeReplicasOutput(ctx *pulumi.Context, args GetBootVolumeReplicas
 // A collection of arguments for invoking getBootVolumeReplicas.
 type GetBootVolumeReplicasOutputArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetBootVolumeReplicasFilterArrayInput `pulumi:"filters"`
 	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+	VolumeGroupReplicaId pulumi.StringPtrInput `pulumi:"volumeGroupReplicaId"`
 }
 
 func (GetBootVolumeReplicasOutputArgs) ElementType() reflect.Type {
@@ -124,8 +133,8 @@ func (o GetBootVolumeReplicasResultOutput) ToGetBootVolumeReplicasResultOutputWi
 }
 
 // The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-func (o GetBootVolumeReplicasResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumeReplicasResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetBootVolumeReplicasResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumeReplicasResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The list of boot_volume_replicas.
@@ -136,8 +145,8 @@ func (o GetBootVolumeReplicasResultOutput) BootVolumeReplicas() GetBootVolumeRep
 }
 
 // The OCID of the compartment that contains the boot volume replica.
-func (o GetBootVolumeReplicasResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumeReplicasResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetBootVolumeReplicasResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumeReplicasResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -157,6 +166,10 @@ func (o GetBootVolumeReplicasResultOutput) Id() pulumi.StringOutput {
 // The current state of a boot volume replica.
 func (o GetBootVolumeReplicasResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBootVolumeReplicasResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetBootVolumeReplicasResultOutput) VolumeGroupReplicaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumeReplicasResult) *string { return v.VolumeGroupReplicaId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

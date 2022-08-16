@@ -21,71 +21,74 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Mysql.NewMysqlDbSystem(ctx, "testMysqlDbSystem", &Mysql.MysqlDbSystemArgs{
-// 			AvailabilityDomain: pulumi.Any(_var.Mysql_db_system_availability_domain),
-// 			CompartmentId:      pulumi.Any(_var.Compartment_id),
-// 			ShapeName:          pulumi.Any(_var.Mysql_shape_name),
-// 			SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			AdminPassword:      pulumi.Any(_var.Mysql_db_system_admin_password),
-// 			AdminUsername:      pulumi.Any(_var.Mysql_db_system_admin_username),
-// 			BackupPolicy: &mysql.MysqlDbSystemBackupPolicyArgs{
-// 				DefinedTags: pulumi.AnyMap{
-// 					"foo-namespace.bar-key": pulumi.Any("value"),
-// 				},
-// 				FreeformTags: pulumi.AnyMap{
-// 					"bar-key": pulumi.Any("value"),
-// 				},
-// 				IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_is_enabled),
-// 				PitrPolicy: &mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs{
-// 					IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_pitr_policy_is_enabled),
-// 				},
-// 				RetentionInDays: pulumi.Any(_var.Mysql_db_system_backup_policy_retention_in_days),
-// 				WindowStartTime: pulumi.Any(_var.Mysql_db_system_backup_policy_window_start_time),
-// 			},
-// 			ConfigurationId:     pulumi.Any(oci_audit_configuration.Test_configuration.Id),
-// 			CrashRecovery:       pulumi.Any(_var.Mysql_db_system_crash_recovery),
-// 			DataStorageSizeInGb: pulumi.Any(_var.Mysql_db_system_data_storage_size_in_gb),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DeletionPolicies: mysql.MysqlDbSystemDeletionPolicyArray{
-// 				&mysql.MysqlDbSystemDeletionPolicyArgs{
-// 					AutomaticBackupRetention: pulumi.Any(_var.Mysql_db_system_deletion_policy_automatic_backup_retention),
-// 					FinalBackup:              pulumi.Any(_var.Mysql_db_system_deletion_policy_final_backup),
-// 					IsDeleteProtected:        pulumi.Any(_var.Mysql_db_system_deletion_policy_is_delete_protected),
-// 				},
-// 			},
-// 			Description: pulumi.Any(_var.Mysql_db_system_description),
-// 			DisplayName: pulumi.Any(_var.Mysql_db_system_display_name),
-// 			FaultDomain: pulumi.Any(_var.Mysql_db_system_fault_domain),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			HostnameLabel:     pulumi.Any(_var.Mysql_db_system_hostname_label),
-// 			IpAddress:         pulumi.Any(_var.Mysql_db_system_ip_address),
-// 			IsHighlyAvailable: pulumi.Any(_var.Mysql_db_system_is_highly_available),
-// 			Maintenance: &mysql.MysqlDbSystemMaintenanceArgs{
-// 				WindowStartTime: pulumi.Any(_var.Mysql_db_system_maintenance_window_start_time),
-// 			},
-// 			Port:  pulumi.Any(_var.Mysql_db_system_port),
-// 			PortX: pulumi.Any(_var.Mysql_db_system_port_x),
-// 			Source: &mysql.MysqlDbSystemSourceArgs{
-// 				SourceType: pulumi.Any(_var.Mysql_db_system_source_source_type),
-// 				BackupId:   pulumi.Any(oci_mysql_mysql_backup.Test_backup.Id),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Mysql.NewMysqlDbSystem(ctx, "testMysqlDbSystem", &Mysql.MysqlDbSystemArgs{
+//				AvailabilityDomain: pulumi.Any(_var.Mysql_db_system_availability_domain),
+//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				ShapeName:          pulumi.Any(_var.Mysql_shape_name),
+//				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				AdminPassword:      pulumi.Any(_var.Mysql_db_system_admin_password),
+//				AdminUsername:      pulumi.Any(_var.Mysql_db_system_admin_username),
+//				BackupPolicy: &mysql.MysqlDbSystemBackupPolicyArgs{
+//					DefinedTags: pulumi.AnyMap{
+//						"foo-namespace.bar-key": pulumi.Any("value"),
+//					},
+//					FreeformTags: pulumi.AnyMap{
+//						"bar-key": pulumi.Any("value"),
+//					},
+//					IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_is_enabled),
+//					PitrPolicy: &mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs{
+//						IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_pitr_policy_is_enabled),
+//					},
+//					RetentionInDays: pulumi.Any(_var.Mysql_db_system_backup_policy_retention_in_days),
+//					WindowStartTime: pulumi.Any(_var.Mysql_db_system_backup_policy_window_start_time),
+//				},
+//				ConfigurationId:     pulumi.Any(oci_audit_configuration.Test_configuration.Id),
+//				CrashRecovery:       pulumi.Any(_var.Mysql_db_system_crash_recovery),
+//				DataStorageSizeInGb: pulumi.Any(_var.Mysql_db_system_data_storage_size_in_gb),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DeletionPolicies: mysql.MysqlDbSystemDeletionPolicyArray{
+//					&mysql.MysqlDbSystemDeletionPolicyArgs{
+//						AutomaticBackupRetention: pulumi.Any(_var.Mysql_db_system_deletion_policy_automatic_backup_retention),
+//						FinalBackup:              pulumi.Any(_var.Mysql_db_system_deletion_policy_final_backup),
+//						IsDeleteProtected:        pulumi.Any(_var.Mysql_db_system_deletion_policy_is_delete_protected),
+//					},
+//				},
+//				Description: pulumi.Any(_var.Mysql_db_system_description),
+//				DisplayName: pulumi.Any(_var.Mysql_db_system_display_name),
+//				FaultDomain: pulumi.Any(_var.Mysql_db_system_fault_domain),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				HostnameLabel:     pulumi.Any(_var.Mysql_db_system_hostname_label),
+//				IpAddress:         pulumi.Any(_var.Mysql_db_system_ip_address),
+//				IsHighlyAvailable: pulumi.Any(_var.Mysql_db_system_is_highly_available),
+//				Maintenance: &mysql.MysqlDbSystemMaintenanceArgs{
+//					WindowStartTime: pulumi.Any(_var.Mysql_db_system_maintenance_window_start_time),
+//				},
+//				Port:  pulumi.Any(_var.Mysql_db_system_port),
+//				PortX: pulumi.Any(_var.Mysql_db_system_port_x),
+//				Source: &mysql.MysqlDbSystemSourceArgs{
+//					SourceType: pulumi.Any(_var.Mysql_db_system_source_source_type),
+//					BackupId:   pulumi.Any(oci_mysql_mysql_backup.Test_backup.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -93,7 +96,9 @@ import (
 // MysqlDbSystems can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
+//
+//	$ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
+//
 // ```
 type MysqlDbSystem struct {
 	pulumi.CustomResourceState
@@ -514,7 +519,7 @@ func (i *MysqlDbSystem) ToMysqlDbSystemOutputWithContext(ctx context.Context) My
 // MysqlDbSystemArrayInput is an input type that accepts MysqlDbSystemArray and MysqlDbSystemArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemArrayInput` via:
 //
-//          MysqlDbSystemArray{ MysqlDbSystemArgs{...} }
+//	MysqlDbSystemArray{ MysqlDbSystemArgs{...} }
 type MysqlDbSystemArrayInput interface {
 	pulumi.Input
 
@@ -539,7 +544,7 @@ func (i MysqlDbSystemArray) ToMysqlDbSystemArrayOutputWithContext(ctx context.Co
 // MysqlDbSystemMapInput is an input type that accepts MysqlDbSystemMap and MysqlDbSystemMapOutput values.
 // You can construct a concrete instance of `MysqlDbSystemMapInput` via:
 //
-//          MysqlDbSystemMap{ "key": MysqlDbSystemArgs{...} }
+//	MysqlDbSystemMap{ "key": MysqlDbSystemArgs{...} }
 type MysqlDbSystemMapInput interface {
 	pulumi.Input
 

@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDrgAttachmentsList(ctx, "testDrgAttachmentsList", &Core.DrgAttachmentsListArgs{
-// 			DrgId:          pulumi.Any(oci_core_drg.Test_drg.Id),
-// 			AttachmentType: pulumi.Any(_var.Drg_attachments_list_attachment_type),
-// 			IsCrossTenancy: pulumi.Any(_var.Drg_attachments_list_is_cross_tenancy),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDrgAttachmentsList(ctx, "testDrgAttachmentsList", &Core.DrgAttachmentsListArgs{
+//				DrgId:          pulumi.Any(oci_core_drg.Test_drg.Id),
+//				AttachmentType: pulumi.Any(_var.Drg_attachments_list_attachment_type),
+//				IsCrossTenancy: pulumi.Any(_var.Drg_attachments_list_is_cross_tenancy),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -158,7 +161,7 @@ func (i *DrgAttachmentsList) ToDrgAttachmentsListOutputWithContext(ctx context.C
 // DrgAttachmentsListArrayInput is an input type that accepts DrgAttachmentsListArray and DrgAttachmentsListArrayOutput values.
 // You can construct a concrete instance of `DrgAttachmentsListArrayInput` via:
 //
-//          DrgAttachmentsListArray{ DrgAttachmentsListArgs{...} }
+//	DrgAttachmentsListArray{ DrgAttachmentsListArgs{...} }
 type DrgAttachmentsListArrayInput interface {
 	pulumi.Input
 
@@ -183,7 +186,7 @@ func (i DrgAttachmentsListArray) ToDrgAttachmentsListArrayOutputWithContext(ctx 
 // DrgAttachmentsListMapInput is an input type that accepts DrgAttachmentsListMap and DrgAttachmentsListMapOutput values.
 // You can construct a concrete instance of `DrgAttachmentsListMapInput` via:
 //
-//          DrgAttachmentsListMap{ "key": DrgAttachmentsListArgs{...} }
+//	DrgAttachmentsListMap{ "key": DrgAttachmentsListArgs{...} }
 type DrgAttachmentsListMapInput interface {
 	pulumi.Input
 

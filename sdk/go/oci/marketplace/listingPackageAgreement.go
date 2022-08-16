@@ -22,24 +22,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Marketplace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Marketplace.NewListingPackageAgreement(ctx, "testListingPackageAgreement", &Marketplace.ListingPackageAgreementArgs{
-// 			AgreementId:    pulumi.Any(oci_marketplace_agreement.Test_agreement.Id),
-// 			ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
-// 			PackageVersion: pulumi.Any(_var.Listing_package_agreement_package_version),
-// 			CompartmentId:  pulumi.Any(_var.Compartment_id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Marketplace.NewListingPackageAgreement(ctx, "testListingPackageAgreement", &Marketplace.ListingPackageAgreementArgs{
+//				AgreementId:    pulumi.Any(oci_marketplace_agreement.Test_agreement.Id),
+//				ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
+//				PackageVersion: pulumi.Any(_var.Listing_package_agreement_package_version),
+//				CompartmentId:  pulumi.Any(_var.Compartment_id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -194,7 +197,7 @@ func (i *ListingPackageAgreement) ToListingPackageAgreementOutputWithContext(ctx
 // ListingPackageAgreementArrayInput is an input type that accepts ListingPackageAgreementArray and ListingPackageAgreementArrayOutput values.
 // You can construct a concrete instance of `ListingPackageAgreementArrayInput` via:
 //
-//          ListingPackageAgreementArray{ ListingPackageAgreementArgs{...} }
+//	ListingPackageAgreementArray{ ListingPackageAgreementArgs{...} }
 type ListingPackageAgreementArrayInput interface {
 	pulumi.Input
 
@@ -219,7 +222,7 @@ func (i ListingPackageAgreementArray) ToListingPackageAgreementArrayOutputWithCo
 // ListingPackageAgreementMapInput is an input type that accepts ListingPackageAgreementMap and ListingPackageAgreementMapOutput values.
 // You can construct a concrete instance of `ListingPackageAgreementMapInput` via:
 //
-//          ListingPackageAgreementMap{ "key": ListingPackageAgreementArgs{...} }
+//	ListingPackageAgreementMap{ "key": ListingPackageAgreementArgs{...} }
 type ListingPackageAgreementMapInput interface {
 	pulumi.Input
 

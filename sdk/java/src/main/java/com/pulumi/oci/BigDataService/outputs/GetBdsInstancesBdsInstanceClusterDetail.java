@@ -65,6 +65,11 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
      */
     private final String jupyterHubUrl;
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * 
+     */
+    private final String odhVersion;
+    /**
      * @return Oracle Linux version installed in the cluster.
      * 
      */
@@ -93,6 +98,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
         @CustomType.Parameter("dbVersion") String dbVersion,
         @CustomType.Parameter("hueServerUrl") String hueServerUrl,
         @CustomType.Parameter("jupyterHubUrl") String jupyterHubUrl,
+        @CustomType.Parameter("odhVersion") String odhVersion,
         @CustomType.Parameter("osVersion") String osVersion,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeRefreshed") String timeRefreshed) {
@@ -107,6 +113,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
         this.dbVersion = dbVersion;
         this.hueServerUrl = hueServerUrl;
         this.jupyterHubUrl = jupyterHubUrl;
+        this.odhVersion = odhVersion;
         this.osVersion = osVersion;
         this.timeCreated = timeCreated;
         this.timeRefreshed = timeRefreshed;
@@ -190,6 +197,13 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
         return this.jupyterHubUrl;
     }
     /**
+     * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     * 
+     */
+    public String odhVersion() {
+        return this.odhVersion;
+    }
+    /**
      * @return Oracle Linux version installed in the cluster.
      * 
      */
@@ -231,6 +245,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
         private String dbVersion;
         private String hueServerUrl;
         private String jupyterHubUrl;
+        private String odhVersion;
         private String osVersion;
         private String timeCreated;
         private String timeRefreshed;
@@ -252,6 +267,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
     	      this.dbVersion = defaults.dbVersion;
     	      this.hueServerUrl = defaults.hueServerUrl;
     	      this.jupyterHubUrl = defaults.jupyterHubUrl;
+    	      this.odhVersion = defaults.odhVersion;
     	      this.osVersion = defaults.osVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeRefreshed = defaults.timeRefreshed;
@@ -301,6 +317,10 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
             this.jupyterHubUrl = Objects.requireNonNull(jupyterHubUrl);
             return this;
         }
+        public Builder odhVersion(String odhVersion) {
+            this.odhVersion = Objects.requireNonNull(odhVersion);
+            return this;
+        }
         public Builder osVersion(String osVersion) {
             this.osVersion = Objects.requireNonNull(osVersion);
             return this;
@@ -313,7 +333,7 @@ public final class GetBdsInstancesBdsInstanceClusterDetail {
             this.timeRefreshed = Objects.requireNonNull(timeRefreshed);
             return this;
         }        public GetBdsInstancesBdsInstanceClusterDetail build() {
-            return new GetBdsInstancesBdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, jupyterHubUrl, osVersion, timeCreated, timeRefreshed);
+            return new GetBdsInstancesBdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, jupyterHubUrl, odhVersion, osVersion, timeCreated, timeRefreshed);
         }
     }
 }

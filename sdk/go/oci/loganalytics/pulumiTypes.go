@@ -34,7 +34,7 @@ type LogAnalyticsImportCustomContentChangeList struct {
 // LogAnalyticsImportCustomContentChangeListInput is an input type that accepts LogAnalyticsImportCustomContentChangeListArgs and LogAnalyticsImportCustomContentChangeListOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentChangeListInput` via:
 //
-//          LogAnalyticsImportCustomContentChangeListArgs{...}
+//	LogAnalyticsImportCustomContentChangeListArgs{...}
 type LogAnalyticsImportCustomContentChangeListInput interface {
 	pulumi.Input
 
@@ -78,7 +78,7 @@ func (i LogAnalyticsImportCustomContentChangeListArgs) ToLogAnalyticsImportCusto
 // LogAnalyticsImportCustomContentChangeListArrayInput is an input type that accepts LogAnalyticsImportCustomContentChangeListArray and LogAnalyticsImportCustomContentChangeListArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentChangeListArrayInput` via:
 //
-//          LogAnalyticsImportCustomContentChangeListArray{ LogAnalyticsImportCustomContentChangeListArgs{...} }
+//	LogAnalyticsImportCustomContentChangeListArray{ LogAnalyticsImportCustomContentChangeListArgs{...} }
 type LogAnalyticsImportCustomContentChangeListArrayInput interface {
 	pulumi.Input
 
@@ -189,7 +189,7 @@ type LogAnalyticsObjectCollectionRuleOverride struct {
 // LogAnalyticsObjectCollectionRuleOverrideInput is an input type that accepts LogAnalyticsObjectCollectionRuleOverrideArgs and LogAnalyticsObjectCollectionRuleOverrideOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleOverrideInput` via:
 //
-//          LogAnalyticsObjectCollectionRuleOverrideArgs{...}
+//	LogAnalyticsObjectCollectionRuleOverrideArgs{...}
 type LogAnalyticsObjectCollectionRuleOverrideInput interface {
 	pulumi.Input
 
@@ -219,7 +219,7 @@ func (i LogAnalyticsObjectCollectionRuleOverrideArgs) ToLogAnalyticsObjectCollec
 // LogAnalyticsObjectCollectionRuleOverrideArrayInput is an input type that accepts LogAnalyticsObjectCollectionRuleOverrideArray and LogAnalyticsObjectCollectionRuleOverrideArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleOverrideArrayInput` via:
 //
-//          LogAnalyticsObjectCollectionRuleOverrideArray{ LogAnalyticsObjectCollectionRuleOverrideArgs{...} }
+//	LogAnalyticsObjectCollectionRuleOverrideArray{ LogAnalyticsObjectCollectionRuleOverrideArgs{...} }
 type LogAnalyticsObjectCollectionRuleOverrideArrayInput interface {
 	pulumi.Input
 
@@ -301,7 +301,7 @@ type LogAnalyticsPreferencesManagementItem struct {
 // LogAnalyticsPreferencesManagementItemInput is an input type that accepts LogAnalyticsPreferencesManagementItemArgs and LogAnalyticsPreferencesManagementItemOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementItemInput` via:
 //
-//          LogAnalyticsPreferencesManagementItemArgs{...}
+//	LogAnalyticsPreferencesManagementItemArgs{...}
 type LogAnalyticsPreferencesManagementItemInput interface {
 	pulumi.Input
 
@@ -331,7 +331,7 @@ func (i LogAnalyticsPreferencesManagementItemArgs) ToLogAnalyticsPreferencesMana
 // LogAnalyticsPreferencesManagementItemArrayInput is an input type that accepts LogAnalyticsPreferencesManagementItemArray and LogAnalyticsPreferencesManagementItemArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementItemArrayInput` via:
 //
-//          LogAnalyticsPreferencesManagementItemArray{ LogAnalyticsPreferencesManagementItemArgs{...} }
+//	LogAnalyticsPreferencesManagementItemArray{ LogAnalyticsPreferencesManagementItemArgs{...} }
 type LogAnalyticsPreferencesManagementItemArrayInput interface {
 	pulumi.Input
 
@@ -417,7 +417,7 @@ type NamespaceScheduledTaskAction struct {
 // NamespaceScheduledTaskActionInput is an input type that accepts NamespaceScheduledTaskActionArgs and NamespaceScheduledTaskActionOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskActionInput` via:
 //
-//          NamespaceScheduledTaskActionArgs{...}
+//	NamespaceScheduledTaskActionArgs{...}
 type NamespaceScheduledTaskActionInput interface {
 	pulumi.Input
 
@@ -465,11 +465,11 @@ func (i NamespaceScheduledTaskActionArgs) ToNamespaceScheduledTaskActionPtrOutpu
 // NamespaceScheduledTaskActionPtrInput is an input type that accepts NamespaceScheduledTaskActionArgs, NamespaceScheduledTaskActionPtr and NamespaceScheduledTaskActionPtrOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskActionPtrInput` via:
 //
-//          NamespaceScheduledTaskActionArgs{...}
+//	        NamespaceScheduledTaskActionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NamespaceScheduledTaskActionPtrInput interface {
 	pulumi.Input
 
@@ -655,7 +655,7 @@ type NamespaceScheduledTaskSchedules struct {
 // NamespaceScheduledTaskSchedulesInput is an input type that accepts NamespaceScheduledTaskSchedulesArgs and NamespaceScheduledTaskSchedulesOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskSchedulesInput` via:
 //
-//          NamespaceScheduledTaskSchedulesArgs{...}
+//	NamespaceScheduledTaskSchedulesArgs{...}
 type NamespaceScheduledTaskSchedulesInput interface {
 	pulumi.Input
 
@@ -690,11 +690,11 @@ func (i NamespaceScheduledTaskSchedulesArgs) ToNamespaceScheduledTaskSchedulesPt
 // NamespaceScheduledTaskSchedulesPtrInput is an input type that accepts NamespaceScheduledTaskSchedulesArgs, NamespaceScheduledTaskSchedulesPtr and NamespaceScheduledTaskSchedulesPtrOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskSchedulesPtrInput` via:
 //
-//          NamespaceScheduledTaskSchedulesArgs{...}
+//	        NamespaceScheduledTaskSchedulesArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type NamespaceScheduledTaskSchedulesPtrInput interface {
 	pulumi.Input
 
@@ -799,7 +799,7 @@ type NamespaceScheduledTaskSchedulesSchedule struct {
 // NamespaceScheduledTaskSchedulesScheduleInput is an input type that accepts NamespaceScheduledTaskSchedulesScheduleArgs and NamespaceScheduledTaskSchedulesScheduleOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskSchedulesScheduleInput` via:
 //
-//          NamespaceScheduledTaskSchedulesScheduleArgs{...}
+//	NamespaceScheduledTaskSchedulesScheduleArgs{...}
 type NamespaceScheduledTaskSchedulesScheduleInput interface {
 	pulumi.Input
 
@@ -837,7 +837,7 @@ func (i NamespaceScheduledTaskSchedulesScheduleArgs) ToNamespaceScheduledTaskSch
 // NamespaceScheduledTaskSchedulesScheduleArrayInput is an input type that accepts NamespaceScheduledTaskSchedulesScheduleArray and NamespaceScheduledTaskSchedulesScheduleArrayOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskSchedulesScheduleArrayInput` via:
 //
-//          NamespaceScheduledTaskSchedulesScheduleArray{ NamespaceScheduledTaskSchedulesScheduleArgs{...} }
+//	NamespaceScheduledTaskSchedulesScheduleArray{ NamespaceScheduledTaskSchedulesScheduleArgs{...} }
 type NamespaceScheduledTaskSchedulesScheduleArrayInput interface {
 	pulumi.Input
 
@@ -939,7 +939,7 @@ type GetLogAnalyticsCategoriesListItem struct {
 // GetLogAnalyticsCategoriesListItemInput is an input type that accepts GetLogAnalyticsCategoriesListItemArgs and GetLogAnalyticsCategoriesListItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsCategoriesListItemInput` via:
 //
-//          GetLogAnalyticsCategoriesListItemArgs{...}
+//	GetLogAnalyticsCategoriesListItemArgs{...}
 type GetLogAnalyticsCategoriesListItemInput interface {
 	pulumi.Input
 
@@ -975,7 +975,7 @@ func (i GetLogAnalyticsCategoriesListItemArgs) ToGetLogAnalyticsCategoriesListIt
 // GetLogAnalyticsCategoriesListItemArrayInput is an input type that accepts GetLogAnalyticsCategoriesListItemArray and GetLogAnalyticsCategoriesListItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsCategoriesListItemArrayInput` via:
 //
-//          GetLogAnalyticsCategoriesListItemArray{ GetLogAnalyticsCategoriesListItemArgs{...} }
+//	GetLogAnalyticsCategoriesListItemArray{ GetLogAnalyticsCategoriesListItemArgs{...} }
 type GetLogAnalyticsCategoriesListItemArrayInput interface {
 	pulumi.Input
 
@@ -1066,7 +1066,7 @@ type GetLogAnalyticsEntitiesFilter struct {
 // GetLogAnalyticsEntitiesFilterInput is an input type that accepts GetLogAnalyticsEntitiesFilterArgs and GetLogAnalyticsEntitiesFilterOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesFilterInput` via:
 //
-//          GetLogAnalyticsEntitiesFilterArgs{...}
+//	GetLogAnalyticsEntitiesFilterArgs{...}
 type GetLogAnalyticsEntitiesFilterInput interface {
 	pulumi.Input
 
@@ -1096,7 +1096,7 @@ func (i GetLogAnalyticsEntitiesFilterArgs) ToGetLogAnalyticsEntitiesFilterOutput
 // GetLogAnalyticsEntitiesFilterArrayInput is an input type that accepts GetLogAnalyticsEntitiesFilterArray and GetLogAnalyticsEntitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesFilterArrayInput` via:
 //
-//          GetLogAnalyticsEntitiesFilterArray{ GetLogAnalyticsEntitiesFilterArgs{...} }
+//	GetLogAnalyticsEntitiesFilterArray{ GetLogAnalyticsEntitiesFilterArgs{...} }
 type GetLogAnalyticsEntitiesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1172,7 +1172,7 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollection struct {
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionInput` via:
 //
-//          GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs{...}
+//	GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs{...}
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionInput interface {
 	pulumi.Input
 
@@ -1199,7 +1199,7 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs) ToGetLogAnalyti
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput` via:
 //
-//          GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray{ GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs{...} }
+//	GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray{ GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs{...} }
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1309,7 +1309,7 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem struct {
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemInput` via:
 //
-//          GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs{...}
+//	GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs{...}
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemInput interface {
 	pulumi.Input
 
@@ -1377,7 +1377,7 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ToGetLogAna
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayInput` via:
 //
-//          GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray{ GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs{...} }
+//	GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray{ GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs{...} }
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1560,7 +1560,7 @@ type GetLogAnalyticsEntityTopologyItem struct {
 // GetLogAnalyticsEntityTopologyItemInput is an input type that accepts GetLogAnalyticsEntityTopologyItemArgs and GetLogAnalyticsEntityTopologyItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemArgs{...}
+//	GetLogAnalyticsEntityTopologyItemArgs{...}
 type GetLogAnalyticsEntityTopologyItemInput interface {
 	pulumi.Input
 
@@ -1590,7 +1590,7 @@ func (i GetLogAnalyticsEntityTopologyItemArgs) ToGetLogAnalyticsEntityTopologyIt
 // GetLogAnalyticsEntityTopologyItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemArray and GetLogAnalyticsEntityTopologyItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemArrayInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemArray{ GetLogAnalyticsEntityTopologyItemArgs{...} }
+//	GetLogAnalyticsEntityTopologyItemArray{ GetLogAnalyticsEntityTopologyItemArgs{...} }
 type GetLogAnalyticsEntityTopologyItemArrayInput interface {
 	pulumi.Input
 
@@ -1664,7 +1664,7 @@ type GetLogAnalyticsEntityTopologyItemLink struct {
 // GetLogAnalyticsEntityTopologyItemLinkInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkArgs and GetLogAnalyticsEntityTopologyItemLinkOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemLinkArgs{...}
+//	GetLogAnalyticsEntityTopologyItemLinkArgs{...}
 type GetLogAnalyticsEntityTopologyItemLinkInput interface {
 	pulumi.Input
 
@@ -1692,7 +1692,7 @@ func (i GetLogAnalyticsEntityTopologyItemLinkArgs) ToGetLogAnalyticsEntityTopolo
 // GetLogAnalyticsEntityTopologyItemLinkArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkArray and GetLogAnalyticsEntityTopologyItemLinkArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkArrayInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemLinkArray{ GetLogAnalyticsEntityTopologyItemLinkArgs{...} }
+//	GetLogAnalyticsEntityTopologyItemLinkArray{ GetLogAnalyticsEntityTopologyItemLinkArgs{...} }
 type GetLogAnalyticsEntityTopologyItemLinkArrayInput interface {
 	pulumi.Input
 
@@ -1765,7 +1765,7 @@ type GetLogAnalyticsEntityTopologyItemLinkItem struct {
 // GetLogAnalyticsEntityTopologyItemLinkItemInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkItemArgs and GetLogAnalyticsEntityTopologyItemLinkItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkItemInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemLinkItemArgs{...}
+//	GetLogAnalyticsEntityTopologyItemLinkItemArgs{...}
 type GetLogAnalyticsEntityTopologyItemLinkItemInput interface {
 	pulumi.Input
 
@@ -1795,7 +1795,7 @@ func (i GetLogAnalyticsEntityTopologyItemLinkItemArgs) ToGetLogAnalyticsEntityTo
 // GetLogAnalyticsEntityTopologyItemLinkItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkItemArray and GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkItemArrayInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemLinkItemArray{ GetLogAnalyticsEntityTopologyItemLinkItemArgs{...} }
+//	GetLogAnalyticsEntityTopologyItemLinkItemArray{ GetLogAnalyticsEntityTopologyItemLinkItemArgs{...} }
 type GetLogAnalyticsEntityTopologyItemLinkItemArrayInput interface {
 	pulumi.Input
 
@@ -1869,7 +1869,7 @@ type GetLogAnalyticsEntityTopologyItemNode struct {
 // GetLogAnalyticsEntityTopologyItemNodeInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeArgs and GetLogAnalyticsEntityTopologyItemNodeOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemNodeArgs{...}
+//	GetLogAnalyticsEntityTopologyItemNodeArgs{...}
 type GetLogAnalyticsEntityTopologyItemNodeInput interface {
 	pulumi.Input
 
@@ -1897,7 +1897,7 @@ func (i GetLogAnalyticsEntityTopologyItemNodeArgs) ToGetLogAnalyticsEntityTopolo
 // GetLogAnalyticsEntityTopologyItemNodeArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeArray and GetLogAnalyticsEntityTopologyItemNodeArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeArrayInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemNodeArray{ GetLogAnalyticsEntityTopologyItemNodeArgs{...} }
+//	GetLogAnalyticsEntityTopologyItemNodeArray{ GetLogAnalyticsEntityTopologyItemNodeArgs{...} }
 type GetLogAnalyticsEntityTopologyItemNodeArrayInput interface {
 	pulumi.Input
 
@@ -1998,7 +1998,7 @@ type GetLogAnalyticsEntityTopologyItemNodeItem struct {
 // GetLogAnalyticsEntityTopologyItemNodeItemInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeItemArgs and GetLogAnalyticsEntityTopologyItemNodeItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeItemInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemNodeItemArgs{...}
+//	GetLogAnalyticsEntityTopologyItemNodeItemArgs{...}
 type GetLogAnalyticsEntityTopologyItemNodeItemInput interface {
 	pulumi.Input
 
@@ -2056,7 +2056,7 @@ func (i GetLogAnalyticsEntityTopologyItemNodeItemArgs) ToGetLogAnalyticsEntityTo
 // GetLogAnalyticsEntityTopologyItemNodeItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeItemArray and GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeItemArrayInput` via:
 //
-//          GetLogAnalyticsEntityTopologyItemNodeItemArray{ GetLogAnalyticsEntityTopologyItemNodeItemArgs{...} }
+//	GetLogAnalyticsEntityTopologyItemNodeItemArray{ GetLogAnalyticsEntityTopologyItemNodeItemArgs{...} }
 type GetLogAnalyticsEntityTopologyItemNodeItemArrayInput interface {
 	pulumi.Input
 
@@ -2201,7 +2201,7 @@ type GetLogAnalyticsLogGroupsFilter struct {
 // GetLogAnalyticsLogGroupsFilterInput is an input type that accepts GetLogAnalyticsLogGroupsFilterArgs and GetLogAnalyticsLogGroupsFilterOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsFilterInput` via:
 //
-//          GetLogAnalyticsLogGroupsFilterArgs{...}
+//	GetLogAnalyticsLogGroupsFilterArgs{...}
 type GetLogAnalyticsLogGroupsFilterInput interface {
 	pulumi.Input
 
@@ -2230,7 +2230,7 @@ func (i GetLogAnalyticsLogGroupsFilterArgs) ToGetLogAnalyticsLogGroupsFilterOutp
 // GetLogAnalyticsLogGroupsFilterArrayInput is an input type that accepts GetLogAnalyticsLogGroupsFilterArray and GetLogAnalyticsLogGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsFilterArrayInput` via:
 //
-//          GetLogAnalyticsLogGroupsFilterArray{ GetLogAnalyticsLogGroupsFilterArgs{...} }
+//	GetLogAnalyticsLogGroupsFilterArray{ GetLogAnalyticsLogGroupsFilterArgs{...} }
 type GetLogAnalyticsLogGroupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2305,7 +2305,7 @@ type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection struct {
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionInput` via:
 //
-//          GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs{...}
+//	GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs{...}
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -2332,7 +2332,7 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs) ToGet
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput` via:
 //
-//          GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray{ GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs{...} }
+//	GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray{ GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs{...} }
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2418,7 +2418,7 @@ type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem struct {
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemInput` via:
 //
-//          GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs{...}
+//	GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs{...}
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -2462,7 +2462,7 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) T
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayInput` via:
 //
-//          GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray{ GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs{...} }
+//	GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray{ GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs{...} }
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2579,7 +2579,7 @@ type GetLogAnalyticsObjectCollectionRuleOverride struct {
 // GetLogAnalyticsObjectCollectionRuleOverrideInput is an input type that accepts GetLogAnalyticsObjectCollectionRuleOverrideArgs and GetLogAnalyticsObjectCollectionRuleOverrideOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRuleOverrideInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRuleOverrideArgs{...}
+//	GetLogAnalyticsObjectCollectionRuleOverrideArgs{...}
 type GetLogAnalyticsObjectCollectionRuleOverrideInput interface {
 	pulumi.Input
 
@@ -2609,7 +2609,7 @@ func (i GetLogAnalyticsObjectCollectionRuleOverrideArgs) ToGetLogAnalyticsObject
 // GetLogAnalyticsObjectCollectionRuleOverrideArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRuleOverrideArray and GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRuleOverrideArrayInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRuleOverrideArray{ GetLogAnalyticsObjectCollectionRuleOverrideArgs{...} }
+//	GetLogAnalyticsObjectCollectionRuleOverrideArray{ GetLogAnalyticsObjectCollectionRuleOverrideArgs{...} }
 type GetLogAnalyticsObjectCollectionRuleOverrideArrayInput interface {
 	pulumi.Input
 
@@ -2691,7 +2691,7 @@ type GetLogAnalyticsObjectCollectionRulesFilter struct {
 // GetLogAnalyticsObjectCollectionRulesFilterInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesFilterArgs and GetLogAnalyticsObjectCollectionRulesFilterOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesFilterInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesFilterArgs{...}
+//	GetLogAnalyticsObjectCollectionRulesFilterArgs{...}
 type GetLogAnalyticsObjectCollectionRulesFilterInput interface {
 	pulumi.Input
 
@@ -2721,7 +2721,7 @@ func (i GetLogAnalyticsObjectCollectionRulesFilterArgs) ToGetLogAnalyticsObjectC
 // GetLogAnalyticsObjectCollectionRulesFilterArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesFilterArray and GetLogAnalyticsObjectCollectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesFilterArrayInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesFilterArray{ GetLogAnalyticsObjectCollectionRulesFilterArgs{...} }
+//	GetLogAnalyticsObjectCollectionRulesFilterArray{ GetLogAnalyticsObjectCollectionRulesFilterArgs{...} }
 type GetLogAnalyticsObjectCollectionRulesFilterArrayInput interface {
 	pulumi.Input
 
@@ -2797,7 +2797,7 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs{...}
+//	GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs{...}
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionInput interface {
 	pulumi.Input
 
@@ -2824,7 +2824,7 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray{ GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs{...} }
+//	GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray{ GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs{...} }
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2936,7 +2936,7 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs{...}
+//	GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs{...}
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemInput interface {
 	pulumi.Input
 
@@ -3006,7 +3006,7 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray{ GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs{...} }
+//	GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray{ GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs{...} }
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3226,7 +3226,7 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs{...}
+//	GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs{...}
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideInput interface {
 	pulumi.Input
 
@@ -3256,7 +3256,7 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput` via:
 //
-//          GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray{ GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs{...} }
+//	GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray{ GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs{...} }
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput interface {
 	pulumi.Input
 
@@ -3346,7 +3346,7 @@ type GetLogAnalyticsPreferenceItem struct {
 // GetLogAnalyticsPreferenceItemInput is an input type that accepts GetLogAnalyticsPreferenceItemArgs and GetLogAnalyticsPreferenceItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsPreferenceItemInput` via:
 //
-//          GetLogAnalyticsPreferenceItemArgs{...}
+//	GetLogAnalyticsPreferenceItemArgs{...}
 type GetLogAnalyticsPreferenceItemInput interface {
 	pulumi.Input
 
@@ -3376,7 +3376,7 @@ func (i GetLogAnalyticsPreferenceItemArgs) ToGetLogAnalyticsPreferenceItemOutput
 // GetLogAnalyticsPreferenceItemArrayInput is an input type that accepts GetLogAnalyticsPreferenceItemArray and GetLogAnalyticsPreferenceItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsPreferenceItemArrayInput` via:
 //
-//          GetLogAnalyticsPreferenceItemArray{ GetLogAnalyticsPreferenceItemArgs{...} }
+//	GetLogAnalyticsPreferenceItemArray{ GetLogAnalyticsPreferenceItemArgs{...} }
 type GetLogAnalyticsPreferenceItemArrayInput interface {
 	pulumi.Input
 
@@ -3458,7 +3458,7 @@ type GetLogAnalyticsResourceCategoriesListCategory struct {
 // GetLogAnalyticsResourceCategoriesListCategoryInput is an input type that accepts GetLogAnalyticsResourceCategoriesListCategoryArgs and GetLogAnalyticsResourceCategoriesListCategoryOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsResourceCategoriesListCategoryInput` via:
 //
-//          GetLogAnalyticsResourceCategoriesListCategoryArgs{...}
+//	GetLogAnalyticsResourceCategoriesListCategoryArgs{...}
 type GetLogAnalyticsResourceCategoriesListCategoryInput interface {
 	pulumi.Input
 
@@ -3494,7 +3494,7 @@ func (i GetLogAnalyticsResourceCategoriesListCategoryArgs) ToGetLogAnalyticsReso
 // GetLogAnalyticsResourceCategoriesListCategoryArrayInput is an input type that accepts GetLogAnalyticsResourceCategoriesListCategoryArray and GetLogAnalyticsResourceCategoriesListCategoryArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsResourceCategoriesListCategoryArrayInput` via:
 //
-//          GetLogAnalyticsResourceCategoriesListCategoryArray{ GetLogAnalyticsResourceCategoriesListCategoryArgs{...} }
+//	GetLogAnalyticsResourceCategoriesListCategoryArray{ GetLogAnalyticsResourceCategoriesListCategoryArgs{...} }
 type GetLogAnalyticsResourceCategoriesListCategoryArrayInput interface {
 	pulumi.Input
 
@@ -3589,7 +3589,7 @@ type GetLogAnalyticsResourceCategoriesListItem struct {
 // GetLogAnalyticsResourceCategoriesListItemInput is an input type that accepts GetLogAnalyticsResourceCategoriesListItemArgs and GetLogAnalyticsResourceCategoriesListItemOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsResourceCategoriesListItemInput` via:
 //
-//          GetLogAnalyticsResourceCategoriesListItemArgs{...}
+//	GetLogAnalyticsResourceCategoriesListItemArgs{...}
 type GetLogAnalyticsResourceCategoriesListItemInput interface {
 	pulumi.Input
 
@@ -3623,7 +3623,7 @@ func (i GetLogAnalyticsResourceCategoriesListItemArgs) ToGetLogAnalyticsResource
 // GetLogAnalyticsResourceCategoriesListItemArrayInput is an input type that accepts GetLogAnalyticsResourceCategoriesListItemArray and GetLogAnalyticsResourceCategoriesListItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsResourceCategoriesListItemArrayInput` via:
 //
-//          GetLogAnalyticsResourceCategoriesListItemArray{ GetLogAnalyticsResourceCategoriesListItemArgs{...} }
+//	GetLogAnalyticsResourceCategoriesListItemArray{ GetLogAnalyticsResourceCategoriesListItemArgs{...} }
 type GetLogAnalyticsResourceCategoriesListItemArrayInput interface {
 	pulumi.Input
 
@@ -3719,7 +3719,7 @@ type GetNamespaceScheduledTaskAction struct {
 // GetNamespaceScheduledTaskActionInput is an input type that accepts GetNamespaceScheduledTaskActionArgs and GetNamespaceScheduledTaskActionOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskActionInput` via:
 //
-//          GetNamespaceScheduledTaskActionArgs{...}
+//	GetNamespaceScheduledTaskActionArgs{...}
 type GetNamespaceScheduledTaskActionInput interface {
 	pulumi.Input
 
@@ -3759,7 +3759,7 @@ func (i GetNamespaceScheduledTaskActionArgs) ToGetNamespaceScheduledTaskActionOu
 // GetNamespaceScheduledTaskActionArrayInput is an input type that accepts GetNamespaceScheduledTaskActionArray and GetNamespaceScheduledTaskActionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskActionArrayInput` via:
 //
-//          GetNamespaceScheduledTaskActionArray{ GetNamespaceScheduledTaskActionArgs{...} }
+//	GetNamespaceScheduledTaskActionArray{ GetNamespaceScheduledTaskActionArgs{...} }
 type GetNamespaceScheduledTaskActionArrayInput interface {
 	pulumi.Input
 
@@ -3857,7 +3857,7 @@ type GetNamespaceScheduledTaskSchedule struct {
 // GetNamespaceScheduledTaskScheduleInput is an input type that accepts GetNamespaceScheduledTaskScheduleArgs and GetNamespaceScheduledTaskScheduleOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleInput` via:
 //
-//          GetNamespaceScheduledTaskScheduleArgs{...}
+//	GetNamespaceScheduledTaskScheduleArgs{...}
 type GetNamespaceScheduledTaskScheduleInput interface {
 	pulumi.Input
 
@@ -3884,7 +3884,7 @@ func (i GetNamespaceScheduledTaskScheduleArgs) ToGetNamespaceScheduledTaskSchedu
 // GetNamespaceScheduledTaskScheduleArrayInput is an input type that accepts GetNamespaceScheduledTaskScheduleArray and GetNamespaceScheduledTaskScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleArrayInput` via:
 //
-//          GetNamespaceScheduledTaskScheduleArray{ GetNamespaceScheduledTaskScheduleArgs{...} }
+//	GetNamespaceScheduledTaskScheduleArray{ GetNamespaceScheduledTaskScheduleArgs{...} }
 type GetNamespaceScheduledTaskScheduleArrayInput interface {
 	pulumi.Input
 
@@ -3964,7 +3964,7 @@ type GetNamespaceScheduledTaskScheduleSchedule struct {
 // GetNamespaceScheduledTaskScheduleScheduleInput is an input type that accepts GetNamespaceScheduledTaskScheduleScheduleArgs and GetNamespaceScheduledTaskScheduleScheduleOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleScheduleInput` via:
 //
-//          GetNamespaceScheduledTaskScheduleScheduleArgs{...}
+//	GetNamespaceScheduledTaskScheduleScheduleArgs{...}
 type GetNamespaceScheduledTaskScheduleScheduleInput interface {
 	pulumi.Input
 
@@ -4002,7 +4002,7 @@ func (i GetNamespaceScheduledTaskScheduleScheduleArgs) ToGetNamespaceScheduledTa
 // GetNamespaceScheduledTaskScheduleScheduleArrayInput is an input type that accepts GetNamespaceScheduledTaskScheduleScheduleArray and GetNamespaceScheduledTaskScheduleScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleScheduleArrayInput` via:
 //
-//          GetNamespaceScheduledTaskScheduleScheduleArray{ GetNamespaceScheduledTaskScheduleScheduleArgs{...} }
+//	GetNamespaceScheduledTaskScheduleScheduleArray{ GetNamespaceScheduledTaskScheduleScheduleArgs{...} }
 type GetNamespaceScheduledTaskScheduleScheduleArrayInput interface {
 	pulumi.Input
 
@@ -4097,7 +4097,7 @@ type GetNamespaceScheduledTasksFilter struct {
 // GetNamespaceScheduledTasksFilterInput is an input type that accepts GetNamespaceScheduledTasksFilterArgs and GetNamespaceScheduledTasksFilterOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksFilterInput` via:
 //
-//          GetNamespaceScheduledTasksFilterArgs{...}
+//	GetNamespaceScheduledTasksFilterArgs{...}
 type GetNamespaceScheduledTasksFilterInput interface {
 	pulumi.Input
 
@@ -4126,7 +4126,7 @@ func (i GetNamespaceScheduledTasksFilterArgs) ToGetNamespaceScheduledTasksFilter
 // GetNamespaceScheduledTasksFilterArrayInput is an input type that accepts GetNamespaceScheduledTasksFilterArray and GetNamespaceScheduledTasksFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksFilterArrayInput` via:
 //
-//          GetNamespaceScheduledTasksFilterArray{ GetNamespaceScheduledTasksFilterArgs{...} }
+//	GetNamespaceScheduledTasksFilterArray{ GetNamespaceScheduledTasksFilterArgs{...} }
 type GetNamespaceScheduledTasksFilterArrayInput interface {
 	pulumi.Input
 
@@ -4201,7 +4201,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollection struct {
 // GetNamespaceScheduledTasksScheduledTaskCollectionInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionArgs and GetNamespaceScheduledTasksScheduledTaskCollectionOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionArgs{...}
+//	GetNamespaceScheduledTasksScheduledTaskCollectionArgs{...}
 type GetNamespaceScheduledTasksScheduledTaskCollectionInput interface {
 	pulumi.Input
 
@@ -4228,7 +4228,7 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionArgs) ToGetNamespaceSch
 // GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionArray and GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionArray{ GetNamespaceScheduledTasksScheduledTaskCollectionArgs{...} }
+//	GetNamespaceScheduledTasksScheduledTaskCollectionArray{ GetNamespaceScheduledTasksScheduledTaskCollectionArgs{...} }
 type GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4330,7 +4330,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItem struct {
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs{...}
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs{...}
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemInput interface {
 	pulumi.Input
 
@@ -4390,7 +4390,7 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ToGetNamespac
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs{...} }
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs{...} }
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4562,7 +4562,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemAction struct {
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs{...}
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs{...}
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionInput interface {
 	pulumi.Input
 
@@ -4602,7 +4602,7 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ToGetNa
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs{...} }
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs{...} }
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput interface {
 	pulumi.Input
 
@@ -4704,7 +4704,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule struct {
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs{...}
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs{...}
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleInput interface {
 	pulumi.Input
 
@@ -4731,7 +4731,7 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs) ToGet
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs{...} }
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs{...} }
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput interface {
 	pulumi.Input
 
@@ -4811,7 +4811,7 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule struc
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{...}
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{...}
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput interface {
 	pulumi.Input
 
@@ -4849,7 +4849,7 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArg
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput` via:
 //
-//          GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{...} }
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{...} }
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput interface {
 	pulumi.Input
 
@@ -4954,7 +4954,7 @@ type GetNamespacesFilter struct {
 // GetNamespacesFilterInput is an input type that accepts GetNamespacesFilterArgs and GetNamespacesFilterOutput values.
 // You can construct a concrete instance of `GetNamespacesFilterInput` via:
 //
-//          GetNamespacesFilterArgs{...}
+//	GetNamespacesFilterArgs{...}
 type GetNamespacesFilterInput interface {
 	pulumi.Input
 
@@ -4983,7 +4983,7 @@ func (i GetNamespacesFilterArgs) ToGetNamespacesFilterOutputWithContext(ctx cont
 // GetNamespacesFilterArrayInput is an input type that accepts GetNamespacesFilterArray and GetNamespacesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesFilterArrayInput` via:
 //
-//          GetNamespacesFilterArray{ GetNamespacesFilterArgs{...} }
+//	GetNamespacesFilterArray{ GetNamespacesFilterArgs{...} }
 type GetNamespacesFilterArrayInput interface {
 	pulumi.Input
 
@@ -5058,7 +5058,7 @@ type GetNamespacesNamespaceCollection struct {
 // GetNamespacesNamespaceCollectionInput is an input type that accepts GetNamespacesNamespaceCollectionArgs and GetNamespacesNamespaceCollectionOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionInput` via:
 //
-//          GetNamespacesNamespaceCollectionArgs{...}
+//	GetNamespacesNamespaceCollectionArgs{...}
 type GetNamespacesNamespaceCollectionInput interface {
 	pulumi.Input
 
@@ -5085,7 +5085,7 @@ func (i GetNamespacesNamespaceCollectionArgs) ToGetNamespacesNamespaceCollection
 // GetNamespacesNamespaceCollectionArrayInput is an input type that accepts GetNamespacesNamespaceCollectionArray and GetNamespacesNamespaceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionArrayInput` via:
 //
-//          GetNamespacesNamespaceCollectionArray{ GetNamespacesNamespaceCollectionArgs{...} }
+//	GetNamespacesNamespaceCollectionArray{ GetNamespacesNamespaceCollectionArgs{...} }
 type GetNamespacesNamespaceCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5157,7 +5157,7 @@ type GetNamespacesNamespaceCollectionItem struct {
 // GetNamespacesNamespaceCollectionItemInput is an input type that accepts GetNamespacesNamespaceCollectionItemArgs and GetNamespacesNamespaceCollectionItemOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionItemInput` via:
 //
-//          GetNamespacesNamespaceCollectionItemArgs{...}
+//	GetNamespacesNamespaceCollectionItemArgs{...}
 type GetNamespacesNamespaceCollectionItemInput interface {
 	pulumi.Input
 
@@ -5189,7 +5189,7 @@ func (i GetNamespacesNamespaceCollectionItemArgs) ToGetNamespacesNamespaceCollec
 // GetNamespacesNamespaceCollectionItemArrayInput is an input type that accepts GetNamespacesNamespaceCollectionItemArray and GetNamespacesNamespaceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionItemArrayInput` via:
 //
-//          GetNamespacesNamespaceCollectionItemArray{ GetNamespacesNamespaceCollectionItemArgs{...} }
+//	GetNamespacesNamespaceCollectionItemArray{ GetNamespacesNamespaceCollectionItemArgs{...} }
 type GetNamespacesNamespaceCollectionItemArrayInput interface {
 	pulumi.Input
 

@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmSynthetics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmSynthetics.GetVantagePoint(ctx, &apmsynthetics.GetVantagePointArgs{
-// 			ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-// 			DisplayName: pulumi.StringRef(_var.Public_vantage_point_display_name),
-// 			Name:        pulumi.StringRef(_var.Public_vantage_point_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmSynthetics.GetVantagePoint(ctx, &apmsynthetics.GetVantagePointArgs{
+//				ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+//				DisplayName: pulumi.StringRef(_var.Public_vantage_point_display_name),
+//				Name:        pulumi.StringRef(_var.Public_vantage_point_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVantagePoint(ctx *pulumi.Context, args *GetVantagePointArgs, opts ...pulumi.InvokeOption) (*GetVantagePointResult, error) {
 	var rv GetVantagePointResult

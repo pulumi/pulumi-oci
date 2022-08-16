@@ -25,24 +25,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Monitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Monitoring.GetAlarmHistoryCollection(ctx, &monitoring.GetAlarmHistoryCollectionArgs{
-// 			AlarmId:                       oci_monitoring_alarm.Test_alarm.Id,
-// 			AlarmHistorytype:              pulumi.StringRef(_var.Alarm_history_collection_alarm_historytype),
-// 			TimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Alarm_history_collection_timestamp_greater_than_or_equal_to),
-// 			TimestampLessThan:             pulumi.StringRef(_var.Alarm_history_collection_timestamp_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Monitoring.GetAlarmHistoryCollection(ctx, &monitoring.GetAlarmHistoryCollectionArgs{
+//				AlarmId:                       oci_monitoring_alarm.Test_alarm.Id,
+//				AlarmHistorytype:              pulumi.StringRef(_var.Alarm_history_collection_alarm_historytype),
+//				TimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Alarm_history_collection_timestamp_greater_than_or_equal_to),
+//				TimestampLessThan:             pulumi.StringRef(_var.Alarm_history_collection_timestamp_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAlarmHistoryCollection(ctx *pulumi.Context, args *GetAlarmHistoryCollectionArgs, opts ...pulumi.InvokeOption) (*GetAlarmHistoryCollectionResult, error) {
 	var rv GetAlarmHistoryCollectionResult

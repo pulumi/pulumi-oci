@@ -60,40 +60,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewVcn(ctx, "testVcn", &Core.VcnArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Byoipv6cidrDetails: core.VcnByoipv6cidrDetailArray{
-// 				&core.VcnByoipv6cidrDetailArgs{
-// 					Byoipv6rangeId: pulumi.Any(oci_core_byoipv6range.Test_byoipv6range.Id),
-// 					Ipv6cidrBlock:  pulumi.Any(_var.Vcn_byoipv6cidr_details_ipv6cidr_block),
-// 				},
-// 			},
-// 			CidrBlock:  pulumi.Any(_var.Vcn_cidr_block),
-// 			CidrBlocks: pulumi.Any(_var.Vcn_cidr_blocks),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Vcn_display_name),
-// 			DnsLabel:    pulumi.Any(_var.Vcn_dns_label),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Ipv6privateCidrBlocks:        pulumi.Any(_var.Vcn_ipv6private_cidr_blocks),
-// 			IsIpv6enabled:                pulumi.Any(_var.Vcn_is_ipv6enabled),
-// 			IsOracleGuaAllocationEnabled: pulumi.Any(_var.Vcn_is_oracle_gua_allocation_enabled),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewVcn(ctx, "testVcn", &Core.VcnArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Byoipv6cidrDetails: core.VcnByoipv6cidrDetailArray{
+//					&core.VcnByoipv6cidrDetailArgs{
+//						Byoipv6rangeId: pulumi.Any(oci_core_byoipv6range.Test_byoipv6range.Id),
+//						Ipv6cidrBlock:  pulumi.Any(_var.Vcn_byoipv6cidr_details_ipv6cidr_block),
+//					},
+//				},
+//				CidrBlock:  pulumi.Any(_var.Vcn_cidr_block),
+//				CidrBlocks: pulumi.Any(_var.Vcn_cidr_blocks),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Vcn_display_name),
+//				DnsLabel:    pulumi.Any(_var.Vcn_dns_label),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Ipv6privateCidrBlocks:        pulumi.Any(_var.Vcn_ipv6private_cidr_blocks),
+//				IsIpv6enabled:                pulumi.Any(_var.Vcn_is_ipv6enabled),
+//				IsOracleGuaAllocationEnabled: pulumi.Any(_var.Vcn_is_oracle_gua_allocation_enabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -101,7 +104,9 @@ import (
 // Vcns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
+//
+//	$ pulumi import oci:Core/vcn:Vcn test_vcn "id"
+//
 // ```
 type Vcn struct {
 	pulumi.CustomResourceState
@@ -375,7 +380,7 @@ func (i *Vcn) ToVcnOutputWithContext(ctx context.Context) VcnOutput {
 // VcnArrayInput is an input type that accepts VcnArray and VcnArrayOutput values.
 // You can construct a concrete instance of `VcnArrayInput` via:
 //
-//          VcnArray{ VcnArgs{...} }
+//	VcnArray{ VcnArgs{...} }
 type VcnArrayInput interface {
 	pulumi.Input
 
@@ -400,7 +405,7 @@ func (i VcnArray) ToVcnArrayOutputWithContext(ctx context.Context) VcnArrayOutpu
 // VcnMapInput is an input type that accepts VcnMap and VcnMapOutput values.
 // You can construct a concrete instance of `VcnMapInput` via:
 //
-//          VcnMap{ "key": VcnArgs{...} }
+//	VcnMap{ "key": VcnArgs{...} }
 type VcnMapInput interface {
 	pulumi.Input
 

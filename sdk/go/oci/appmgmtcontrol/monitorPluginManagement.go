@@ -23,21 +23,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AppMgmtControl"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AppMgmtControl"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AppMgmtControl.NewMonitorPluginManagement(ctx, "testMonitorPluginManagement", &AppMgmtControl.MonitorPluginManagementArgs{
-// 			MonitoredInstanceId: pulumi.Any(oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AppMgmtControl.NewMonitorPluginManagement(ctx, "testMonitorPluginManagement", &AppMgmtControl.MonitorPluginManagementArgs{
+//				MonitoredInstanceId: pulumi.Any(oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -147,7 +150,7 @@ func (i *MonitorPluginManagement) ToMonitorPluginManagementOutputWithContext(ctx
 // MonitorPluginManagementArrayInput is an input type that accepts MonitorPluginManagementArray and MonitorPluginManagementArrayOutput values.
 // You can construct a concrete instance of `MonitorPluginManagementArrayInput` via:
 //
-//          MonitorPluginManagementArray{ MonitorPluginManagementArgs{...} }
+//	MonitorPluginManagementArray{ MonitorPluginManagementArgs{...} }
 type MonitorPluginManagementArrayInput interface {
 	pulumi.Input
 
@@ -172,7 +175,7 @@ func (i MonitorPluginManagementArray) ToMonitorPluginManagementArrayOutputWithCo
 // MonitorPluginManagementMapInput is an input type that accepts MonitorPluginManagementMap and MonitorPluginManagementMapOutput values.
 // You can construct a concrete instance of `MonitorPluginManagementMapInput` via:
 //
-//          MonitorPluginManagementMap{ "key": MonitorPluginManagementArgs{...} }
+//	MonitorPluginManagementMap{ "key": MonitorPluginManagementArgs{...} }
 type MonitorPluginManagementMapInput interface {
 	pulumi.Input
 

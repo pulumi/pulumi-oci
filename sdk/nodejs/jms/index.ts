@@ -11,6 +11,10 @@ export * from "./getFleetBlocklists";
 export * from "./getFleets";
 export * from "./getInstallationSite";
 export * from "./getInstallationSites";
+export * from "./getJavaFamilies";
+export * from "./getJavaFamily";
+export * from "./getJavaRelease";
+export * from "./getJavaReleases";
 export * from "./getListJreUsage";
 export * from "./getSummarizeResourceInventory";
 

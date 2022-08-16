@@ -110,18 +110,18 @@ public final class TableArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Throughput and storage limits configuration of a table.
+     * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
-    @Import(name="tableLimits", required=true)
-    private Output<TableTableLimitsArgs> tableLimits;
+    @Import(name="tableLimits")
+    private @Nullable Output<TableTableLimitsArgs> tableLimits;
 
     /**
-     * @return (Updatable) Throughput and storage limits configuration of a table.
+     * @return (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
-    public Output<TableTableLimitsArgs> tableLimits() {
-        return this.tableLimits;
+    public Optional<Output<TableTableLimitsArgs>> tableLimits() {
+        return Optional.ofNullable(this.tableLimits);
     }
 
     private TableArgs() {}
@@ -281,18 +281,18 @@ public final class TableArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table.
+         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
          * 
          * @return builder
          * 
          */
-        public Builder tableLimits(Output<TableTableLimitsArgs> tableLimits) {
+        public Builder tableLimits(@Nullable Output<TableTableLimitsArgs> tableLimits) {
             $.tableLimits = tableLimits;
             return this;
         }
 
         /**
-         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table.
+         * @param tableLimits (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
          * 
          * @return builder
          * 
@@ -304,7 +304,6 @@ public final class TableArgs extends com.pulumi.resources.ResourceArgs {
         public TableArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.ddlStatement = Objects.requireNonNull($.ddlStatement, "expected parameter 'ddlStatement' to be non-null");
-            $.tableLimits = Objects.requireNonNull($.tableLimits, "expected parameter 'tableLimits' to be non-null");
             return $;
         }
     }

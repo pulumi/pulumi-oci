@@ -17,44 +17,47 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Functions"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Functions.NewApplication(ctx, "testApplication", &Functions.ApplicationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Application_display_name),
-// 			SubnetIds:     pulumi.Any(_var.Application_subnet_ids),
-// 			Config:        pulumi.Any(_var.Application_config),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NetworkSecurityGroupIds: pulumi.Any(_var.Application_network_security_group_ids),
-// 			ImagePolicyConfig: &functions.ApplicationImagePolicyConfigArgs{
-// 				IsPolicyEnabled: pulumi.Any(_var.Application_image_policy_config_is_policy_enabled),
-// 				KeyDetails: functions.ApplicationImagePolicyConfigKeyDetailArray{
-// 					&functions.ApplicationImagePolicyConfigKeyDetailArgs{
-// 						KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
-// 					},
-// 				},
-// 			},
-// 			SyslogUrl: pulumi.Any(_var.Application_syslog_url),
-// 			TraceConfig: &functions.ApplicationTraceConfigArgs{
-// 				DomainId:  pulumi.Any(oci_functions_domain.Test_domain.Id),
-// 				IsEnabled: pulumi.Any(_var.Application_trace_config_is_enabled),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Functions.NewApplication(ctx, "testApplication", &Functions.ApplicationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Application_display_name),
+//				SubnetIds:     pulumi.Any(_var.Application_subnet_ids),
+//				Config:        pulumi.Any(_var.Application_config),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NetworkSecurityGroupIds: pulumi.Any(_var.Application_network_security_group_ids),
+//				ImagePolicyConfig: &functions.ApplicationImagePolicyConfigArgs{
+//					IsPolicyEnabled: pulumi.Any(_var.Application_image_policy_config_is_policy_enabled),
+//					KeyDetails: functions.ApplicationImagePolicyConfigKeyDetailArray{
+//						&functions.ApplicationImagePolicyConfigKeyDetailArgs{
+//							KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//						},
+//					},
+//				},
+//				SyslogUrl: pulumi.Any(_var.Application_syslog_url),
+//				TraceConfig: &functions.ApplicationTraceConfigArgs{
+//					DomainId:  pulumi.Any(oci_functions_domain.Test_domain.Id),
+//					IsEnabled: pulumi.Any(_var.Application_trace_config_is_enabled),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -62,7 +65,9 @@ import (
 // Applications can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Functions/application:Application test_application "id"
+//
+//	$ pulumi import oci:Functions/application:Application test_application "id"
+//
 // ```
 type Application struct {
 	pulumi.CustomResourceState
@@ -267,7 +272,7 @@ func (i *Application) ToApplicationOutputWithContext(ctx context.Context) Applic
 // ApplicationArrayInput is an input type that accepts ApplicationArray and ApplicationArrayOutput values.
 // You can construct a concrete instance of `ApplicationArrayInput` via:
 //
-//          ApplicationArray{ ApplicationArgs{...} }
+//	ApplicationArray{ ApplicationArgs{...} }
 type ApplicationArrayInput interface {
 	pulumi.Input
 
@@ -292,7 +297,7 @@ func (i ApplicationArray) ToApplicationArrayOutputWithContext(ctx context.Contex
 // ApplicationMapInput is an input type that accepts ApplicationMap and ApplicationMapOutput values.
 // You can construct a concrete instance of `ApplicationMapInput` via:
 //
-//          ApplicationMap{ "key": ApplicationArgs{...} }
+//	ApplicationMap{ "key": ApplicationArgs{...} }
 type ApplicationMapInput interface {
 	pulumi.Input
 

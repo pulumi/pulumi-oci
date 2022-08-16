@@ -21,41 +21,44 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewBuildRun(ctx, "testBuildRun", &DevOps.BuildRunArgs{
-// 			BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
-// 			BuildRunArguments: &devops.BuildRunBuildRunArgumentsArgs{
-// 				Items: devops.BuildRunBuildRunArgumentsItemArray{
-// 					&devops.BuildRunBuildRunArgumentsItemArgs{
-// 						Name:  pulumi.Any(_var.Build_run_build_run_arguments_items_name),
-// 						Value: pulumi.Any(_var.Build_run_build_run_arguments_items_value),
-// 					},
-// 				},
-// 			},
-// 			CommitInfo: &devops.BuildRunCommitInfoArgs{
-// 				CommitHash:       pulumi.Any(_var.Build_run_commit_info_commit_hash),
-// 				RepositoryBranch: pulumi.Any(_var.Build_run_commit_info_repository_branch),
-// 				RepositoryUrl:    pulumi.Any(_var.Build_run_commit_info_repository_url),
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Build_run_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewBuildRun(ctx, "testBuildRun", &DevOps.BuildRunArgs{
+//				BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
+//				BuildRunArguments: &devops.BuildRunBuildRunArgumentsArgs{
+//					Items: devops.BuildRunBuildRunArgumentsItemArray{
+//						&devops.BuildRunBuildRunArgumentsItemArgs{
+//							Name:  pulumi.Any(_var.Build_run_build_run_arguments_items_name),
+//							Value: pulumi.Any(_var.Build_run_build_run_arguments_items_value),
+//						},
+//					},
+//				},
+//				CommitInfo: &devops.BuildRunCommitInfoArgs{
+//					CommitHash:       pulumi.Any(_var.Build_run_commit_info_commit_hash),
+//					RepositoryBranch: pulumi.Any(_var.Build_run_commit_info_repository_branch),
+//					RepositoryUrl:    pulumi.Any(_var.Build_run_commit_info_repository_url),
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Build_run_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -63,7 +66,9 @@ import (
 // BuildRuns can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/buildRun:BuildRun test_build_run "id"
+//
+//	$ pulumi import oci:DevOps/buildRun:BuildRun test_build_run "id"
+//
 // ```
 type BuildRun struct {
 	pulumi.CustomResourceState
@@ -264,7 +269,7 @@ func (i *BuildRun) ToBuildRunOutputWithContext(ctx context.Context) BuildRunOutp
 // BuildRunArrayInput is an input type that accepts BuildRunArray and BuildRunArrayOutput values.
 // You can construct a concrete instance of `BuildRunArrayInput` via:
 //
-//          BuildRunArray{ BuildRunArgs{...} }
+//	BuildRunArray{ BuildRunArgs{...} }
 type BuildRunArrayInput interface {
 	pulumi.Input
 
@@ -289,7 +294,7 @@ func (i BuildRunArray) ToBuildRunArrayOutputWithContext(ctx context.Context) Bui
 // BuildRunMapInput is an input type that accepts BuildRunMap and BuildRunMapOutput values.
 // You can construct a concrete instance of `BuildRunMapInput` via:
 //
-//          BuildRunMap{ "key": BuildRunArgs{...} }
+//	BuildRunMap{ "key": BuildRunArgs{...} }
 type BuildRunMapInput interface {
 	pulumi.Input
 

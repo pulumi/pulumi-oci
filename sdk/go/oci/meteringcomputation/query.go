@@ -21,53 +21,56 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/MeteringComputation"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := MeteringComputation.NewQuery(ctx, "testQuery", &MeteringComputation.QueryArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			QueryDefinition: &meteringcomputation.QueryQueryDefinitionArgs{
-// 				CostAnalysisUi: &meteringcomputation.QueryQueryDefinitionCostAnalysisUiArgs{
-// 					Graph:             pulumi.Any(_var.Query_query_definition_cost_analysis_ui_graph),
-// 					IsCumulativeGraph: pulumi.Any(_var.Query_query_definition_cost_analysis_ui_is_cumulative_graph),
-// 				},
-// 				DisplayName: pulumi.Any(_var.Query_query_definition_display_name),
-// 				ReportQuery: &meteringcomputation.QueryQueryDefinitionReportQueryArgs{
-// 					Granularity:      pulumi.Any(_var.Query_query_definition_report_query_granularity),
-// 					TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
-// 					CompartmentDepth: pulumi.Any(_var.Query_query_definition_report_query_compartment_depth),
-// 					DateRangeName:    pulumi.Any(_var.Query_query_definition_report_query_date_range_name),
-// 					Filter:           pulumi.Any(_var.Query_query_definition_report_query_filter),
-// 					Forecast: &meteringcomputation.QueryQueryDefinitionReportQueryForecastArgs{
-// 						TimeForecastEnded:   pulumi.Any(_var.Query_query_definition_report_query_forecast_time_forecast_ended),
-// 						ForecastType:        pulumi.Any(_var.Query_query_definition_report_query_forecast_forecast_type),
-// 						TimeForecastStarted: pulumi.Any(_var.Query_query_definition_report_query_forecast_time_forecast_started),
-// 					},
-// 					GroupBies: pulumi.Any(_var.Query_query_definition_report_query_group_by),
-// 					GroupByTags: meteringcomputation.QueryQueryDefinitionReportQueryGroupByTagArray{
-// 						&meteringcomputation.QueryQueryDefinitionReportQueryGroupByTagArgs{
-// 							Key:       pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_key),
-// 							Namespace: pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_namespace),
-// 							Value:     pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_value),
-// 						},
-// 					},
-// 					IsAggregateByTime: pulumi.Any(_var.Query_query_definition_report_query_is_aggregate_by_time),
-// 					QueryType:         pulumi.Any(_var.Query_query_definition_report_query_query_type),
-// 					TimeUsageEnded:    pulumi.Any(_var.Query_query_definition_report_query_time_usage_ended),
-// 					TimeUsageStarted:  pulumi.Any(_var.Query_query_definition_report_query_time_usage_started),
-// 				},
-// 				Version: pulumi.Any(_var.Query_query_definition_version),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := MeteringComputation.NewQuery(ctx, "testQuery", &MeteringComputation.QueryArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				QueryDefinition: &meteringcomputation.QueryQueryDefinitionArgs{
+//					CostAnalysisUi: &meteringcomputation.QueryQueryDefinitionCostAnalysisUiArgs{
+//						Graph:             pulumi.Any(_var.Query_query_definition_cost_analysis_ui_graph),
+//						IsCumulativeGraph: pulumi.Any(_var.Query_query_definition_cost_analysis_ui_is_cumulative_graph),
+//					},
+//					DisplayName: pulumi.Any(_var.Query_query_definition_display_name),
+//					ReportQuery: &meteringcomputation.QueryQueryDefinitionReportQueryArgs{
+//						Granularity:      pulumi.Any(_var.Query_query_definition_report_query_granularity),
+//						TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
+//						CompartmentDepth: pulumi.Any(_var.Query_query_definition_report_query_compartment_depth),
+//						DateRangeName:    pulumi.Any(_var.Query_query_definition_report_query_date_range_name),
+//						Filter:           pulumi.Any(_var.Query_query_definition_report_query_filter),
+//						Forecast: &meteringcomputation.QueryQueryDefinitionReportQueryForecastArgs{
+//							TimeForecastEnded:   pulumi.Any(_var.Query_query_definition_report_query_forecast_time_forecast_ended),
+//							ForecastType:        pulumi.Any(_var.Query_query_definition_report_query_forecast_forecast_type),
+//							TimeForecastStarted: pulumi.Any(_var.Query_query_definition_report_query_forecast_time_forecast_started),
+//						},
+//						GroupBies: pulumi.Any(_var.Query_query_definition_report_query_group_by),
+//						GroupByTags: meteringcomputation.QueryQueryDefinitionReportQueryGroupByTagArray{
+//							&meteringcomputation.QueryQueryDefinitionReportQueryGroupByTagArgs{
+//								Key:       pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_key),
+//								Namespace: pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_namespace),
+//								Value:     pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_value),
+//							},
+//						},
+//						IsAggregateByTime: pulumi.Any(_var.Query_query_definition_report_query_is_aggregate_by_time),
+//						QueryType:         pulumi.Any(_var.Query_query_definition_report_query_query_type),
+//						TimeUsageEnded:    pulumi.Any(_var.Query_query_definition_report_query_time_usage_ended),
+//						TimeUsageStarted:  pulumi.Any(_var.Query_query_definition_report_query_time_usage_started),
+//					},
+//					Version: pulumi.Any(_var.Query_query_definition_version),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -75,7 +78,9 @@ import (
 // Queries can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:MeteringComputation/query:Query test_query "id"
+//
+//	$ pulumi import oci:MeteringComputation/query:Query test_query "id"
+//
 // ```
 type Query struct {
 	pulumi.CustomResourceState
@@ -179,7 +184,7 @@ func (i *Query) ToQueryOutputWithContext(ctx context.Context) QueryOutput {
 // QueryArrayInput is an input type that accepts QueryArray and QueryArrayOutput values.
 // You can construct a concrete instance of `QueryArrayInput` via:
 //
-//          QueryArray{ QueryArgs{...} }
+//	QueryArray{ QueryArgs{...} }
 type QueryArrayInput interface {
 	pulumi.Input
 
@@ -204,7 +209,7 @@ func (i QueryArray) ToQueryArrayOutputWithContext(ctx context.Context) QueryArra
 // QueryMapInput is an input type that accepts QueryMap and QueryMapOutput values.
 // You can construct a concrete instance of `QueryMapInput` via:
 //
-//          QueryMap{ "key": QueryArgs{...} }
+//	QueryMap{ "key": QueryArgs{...} }
 type QueryMapInput interface {
 	pulumi.Input
 

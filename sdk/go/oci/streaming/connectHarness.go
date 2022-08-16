@@ -23,25 +23,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Streaming"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Streaming.NewConnectHarness(ctx, "testConnectHarness", &Streaming.ConnectHarnessArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags:   pulumi.Any(_var.Connect_harness_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Streaming.NewConnectHarness(ctx, "testConnectHarness", &Streaming.ConnectHarnessArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags:   pulumi.Any(_var.Connect_harness_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -49,7 +52,9 @@ import (
 // ConnectHarnesses can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
+//
+//	$ pulumi import oci:Streaming/connectHarness:ConnectHarness test_connect_harness "id"
+//
 // ```
 type ConnectHarness struct {
 	pulumi.CustomResourceState
@@ -188,7 +193,7 @@ func (i *ConnectHarness) ToConnectHarnessOutputWithContext(ctx context.Context) 
 // ConnectHarnessArrayInput is an input type that accepts ConnectHarnessArray and ConnectHarnessArrayOutput values.
 // You can construct a concrete instance of `ConnectHarnessArrayInput` via:
 //
-//          ConnectHarnessArray{ ConnectHarnessArgs{...} }
+//	ConnectHarnessArray{ ConnectHarnessArgs{...} }
 type ConnectHarnessArrayInput interface {
 	pulumi.Input
 
@@ -213,7 +218,7 @@ func (i ConnectHarnessArray) ToConnectHarnessArrayOutputWithContext(ctx context.
 // ConnectHarnessMapInput is an input type that accepts ConnectHarnessMap and ConnectHarnessMapOutput values.
 // You can construct a concrete instance of `ConnectHarnessMapInput` via:
 //
-//          ConnectHarnessMap{ "key": ConnectHarnessArgs{...} }
+//	ConnectHarnessMap{ "key": ConnectHarnessArgs{...} }
 type ConnectHarnessMapInput interface {
 	pulumi.Input
 

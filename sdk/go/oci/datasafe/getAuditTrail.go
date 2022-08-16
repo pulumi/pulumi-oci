@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetAuditTrail(ctx, &datasafe.GetAuditTrailArgs{
-// 			AuditTrailId: oci_data_safe_audit_trail.Test_audit_trail.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetAuditTrail(ctx, &datasafe.GetAuditTrailArgs{
+//				AuditTrailId: oci_data_safe_audit_trail.Test_audit_trail.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAuditTrail(ctx *pulumi.Context, args *LookupAuditTrailArgs, opts ...pulumi.InvokeOption) (*LookupAuditTrailResult, error) {
 	var rv LookupAuditTrailResult

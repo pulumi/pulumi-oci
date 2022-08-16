@@ -26,7 +26,7 @@ type DatabaseInsightConnectionCredentialDetails struct {
 // DatabaseInsightConnectionCredentialDetailsInput is an input type that accepts DatabaseInsightConnectionCredentialDetailsArgs and DatabaseInsightConnectionCredentialDetailsOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionCredentialDetailsInput` via:
 //
-//          DatabaseInsightConnectionCredentialDetailsArgs{...}
+//	DatabaseInsightConnectionCredentialDetailsArgs{...}
 type DatabaseInsightConnectionCredentialDetailsInput interface {
 	pulumi.Input
 
@@ -70,11 +70,11 @@ func (i DatabaseInsightConnectionCredentialDetailsArgs) ToDatabaseInsightConnect
 // DatabaseInsightConnectionCredentialDetailsPtrInput is an input type that accepts DatabaseInsightConnectionCredentialDetailsArgs, DatabaseInsightConnectionCredentialDetailsPtr and DatabaseInsightConnectionCredentialDetailsPtrOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionCredentialDetailsPtrInput` via:
 //
-//          DatabaseInsightConnectionCredentialDetailsArgs{...}
+//	        DatabaseInsightConnectionCredentialDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseInsightConnectionCredentialDetailsPtrInput interface {
 	pulumi.Input
 
@@ -239,7 +239,7 @@ type DatabaseInsightConnectionDetails struct {
 // DatabaseInsightConnectionDetailsInput is an input type that accepts DatabaseInsightConnectionDetailsArgs and DatabaseInsightConnectionDetailsOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionDetailsInput` via:
 //
-//          DatabaseInsightConnectionDetailsArgs{...}
+//	DatabaseInsightConnectionDetailsArgs{...}
 type DatabaseInsightConnectionDetailsInput interface {
 	pulumi.Input
 
@@ -283,11 +283,11 @@ func (i DatabaseInsightConnectionDetailsArgs) ToDatabaseInsightConnectionDetails
 // DatabaseInsightConnectionDetailsPtrInput is an input type that accepts DatabaseInsightConnectionDetailsArgs, DatabaseInsightConnectionDetailsPtr and DatabaseInsightConnectionDetailsPtrOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionDetailsPtrInput` via:
 //
-//          DatabaseInsightConnectionDetailsArgs{...}
+//	        DatabaseInsightConnectionDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseInsightConnectionDetailsPtrInput interface {
 	pulumi.Input
 
@@ -446,7 +446,7 @@ type DatabaseInsightConnectionDetailsHost struct {
 // DatabaseInsightConnectionDetailsHostInput is an input type that accepts DatabaseInsightConnectionDetailsHostArgs and DatabaseInsightConnectionDetailsHostOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionDetailsHostInput` via:
 //
-//          DatabaseInsightConnectionDetailsHostArgs{...}
+//	DatabaseInsightConnectionDetailsHostArgs{...}
 type DatabaseInsightConnectionDetailsHostInput interface {
 	pulumi.Input
 
@@ -476,7 +476,7 @@ func (i DatabaseInsightConnectionDetailsHostArgs) ToDatabaseInsightConnectionDet
 // DatabaseInsightConnectionDetailsHostArrayInput is an input type that accepts DatabaseInsightConnectionDetailsHostArray and DatabaseInsightConnectionDetailsHostArrayOutput values.
 // You can construct a concrete instance of `DatabaseInsightConnectionDetailsHostArrayInput` via:
 //
-//          DatabaseInsightConnectionDetailsHostArray{ DatabaseInsightConnectionDetailsHostArgs{...} }
+//	DatabaseInsightConnectionDetailsHostArray{ DatabaseInsightConnectionDetailsHostArgs{...} }
 type DatabaseInsightConnectionDetailsHostArrayInput interface {
 	pulumi.Input
 
@@ -558,7 +558,7 @@ type DatabaseInsightCredentialDetails struct {
 // DatabaseInsightCredentialDetailsInput is an input type that accepts DatabaseInsightCredentialDetailsArgs and DatabaseInsightCredentialDetailsOutput values.
 // You can construct a concrete instance of `DatabaseInsightCredentialDetailsInput` via:
 //
-//          DatabaseInsightCredentialDetailsArgs{...}
+//	DatabaseInsightCredentialDetailsArgs{...}
 type DatabaseInsightCredentialDetailsInput interface {
 	pulumi.Input
 
@@ -602,11 +602,11 @@ func (i DatabaseInsightCredentialDetailsArgs) ToDatabaseInsightCredentialDetails
 // DatabaseInsightCredentialDetailsPtrInput is an input type that accepts DatabaseInsightCredentialDetailsArgs, DatabaseInsightCredentialDetailsPtr and DatabaseInsightCredentialDetailsPtrOutput values.
 // You can construct a concrete instance of `DatabaseInsightCredentialDetailsPtrInput` via:
 //
-//          DatabaseInsightCredentialDetailsArgs{...}
+//	        DatabaseInsightCredentialDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DatabaseInsightCredentialDetailsPtrInput interface {
 	pulumi.Input
 
@@ -775,7 +775,7 @@ type GetAwrHubAwrSnapshotItem struct {
 // GetAwrHubAwrSnapshotItemInput is an input type that accepts GetAwrHubAwrSnapshotItemArgs and GetAwrHubAwrSnapshotItemOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotItemInput` via:
 //
-//          GetAwrHubAwrSnapshotItemArgs{...}
+//	GetAwrHubAwrSnapshotItemArgs{...}
 type GetAwrHubAwrSnapshotItemInput interface {
 	pulumi.Input
 
@@ -815,7 +815,7 @@ func (i GetAwrHubAwrSnapshotItemArgs) ToGetAwrHubAwrSnapshotItemOutputWithContex
 // GetAwrHubAwrSnapshotItemArrayInput is an input type that accepts GetAwrHubAwrSnapshotItemArray and GetAwrHubAwrSnapshotItemArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotItemArrayInput` via:
 //
-//          GetAwrHubAwrSnapshotItemArray{ GetAwrHubAwrSnapshotItemArgs{...} }
+//	GetAwrHubAwrSnapshotItemArray{ GetAwrHubAwrSnapshotItemArgs{...} }
 type GetAwrHubAwrSnapshotItemArrayInput interface {
 	pulumi.Input
 
@@ -914,7 +914,7 @@ type GetAwrHubAwrSnapshotsAwrSnapshotCollection struct {
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs and GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionInput` via:
 //
-//          GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs{...}
+//	GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs{...}
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionInput interface {
 	pulumi.Input
 
@@ -942,7 +942,7 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs) ToGetAwrHubAwrSnapshotsA
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionArray and GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayInput` via:
 //
-//          GetAwrHubAwrSnapshotsAwrSnapshotCollectionArray{ GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs{...} }
+//	GetAwrHubAwrSnapshotsAwrSnapshotCollectionArray{ GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs{...} }
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1013,7 +1013,7 @@ type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem struct {
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemInput` via:
 //
-//          GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs{...}
+//	GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs{...}
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemInput interface {
 	pulumi.Input
 
@@ -1041,7 +1041,7 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs) ToGetAwrHubAwrSnapsh
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArray and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayInput` via:
 //
-//          GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArray{ GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs{...} }
+//	GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArray{ GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs{...} }
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1124,7 +1124,7 @@ type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem struct {
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemInput` via:
 //
-//          GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs{...}
+//	GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs{...}
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemInput interface {
 	pulumi.Input
 
@@ -1164,7 +1164,7 @@ func (i GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs) ToGetAwrHubAwrSn
 // GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayInput is an input type that accepts GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArray and GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayInput` via:
 //
-//          GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArray{ GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs{...} }
+//	GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArray{ GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs{...} }
 type GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArrayInput interface {
 	pulumi.Input
 
@@ -1264,7 +1264,7 @@ type GetAwrHubAwrSnapshotsFilter struct {
 // GetAwrHubAwrSnapshotsFilterInput is an input type that accepts GetAwrHubAwrSnapshotsFilterArgs and GetAwrHubAwrSnapshotsFilterOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsFilterInput` via:
 //
-//          GetAwrHubAwrSnapshotsFilterArgs{...}
+//	GetAwrHubAwrSnapshotsFilterArgs{...}
 type GetAwrHubAwrSnapshotsFilterInput interface {
 	pulumi.Input
 
@@ -1293,7 +1293,7 @@ func (i GetAwrHubAwrSnapshotsFilterArgs) ToGetAwrHubAwrSnapshotsFilterOutputWith
 // GetAwrHubAwrSnapshotsFilterArrayInput is an input type that accepts GetAwrHubAwrSnapshotsFilterArray and GetAwrHubAwrSnapshotsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSnapshotsFilterArrayInput` via:
 //
-//          GetAwrHubAwrSnapshotsFilterArray{ GetAwrHubAwrSnapshotsFilterArgs{...} }
+//	GetAwrHubAwrSnapshotsFilterArray{ GetAwrHubAwrSnapshotsFilterArgs{...} }
 type GetAwrHubAwrSnapshotsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1385,7 +1385,7 @@ type GetAwrHubAwrSourcesSummaryItem struct {
 // GetAwrHubAwrSourcesSummaryItemInput is an input type that accepts GetAwrHubAwrSourcesSummaryItemArgs and GetAwrHubAwrSourcesSummaryItemOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSourcesSummaryItemInput` via:
 //
-//          GetAwrHubAwrSourcesSummaryItemArgs{...}
+//	GetAwrHubAwrSourcesSummaryItemArgs{...}
 type GetAwrHubAwrSourcesSummaryItemInput interface {
 	pulumi.Input
 
@@ -1429,7 +1429,7 @@ func (i GetAwrHubAwrSourcesSummaryItemArgs) ToGetAwrHubAwrSourcesSummaryItemOutp
 // GetAwrHubAwrSourcesSummaryItemArrayInput is an input type that accepts GetAwrHubAwrSourcesSummaryItemArray and GetAwrHubAwrSourcesSummaryItemArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubAwrSourcesSummaryItemArrayInput` via:
 //
-//          GetAwrHubAwrSourcesSummaryItemArray{ GetAwrHubAwrSourcesSummaryItemArgs{...} }
+//	GetAwrHubAwrSourcesSummaryItemArray{ GetAwrHubAwrSourcesSummaryItemArgs{...} }
 type GetAwrHubAwrSourcesSummaryItemArrayInput interface {
 	pulumi.Input
 
@@ -1537,7 +1537,7 @@ type GetAwrHubsAwrHubSummaryCollection struct {
 // GetAwrHubsAwrHubSummaryCollectionInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionArgs and GetAwrHubsAwrHubSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetAwrHubsAwrHubSummaryCollectionInput` via:
 //
-//          GetAwrHubsAwrHubSummaryCollectionArgs{...}
+//	GetAwrHubsAwrHubSummaryCollectionArgs{...}
 type GetAwrHubsAwrHubSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -1564,7 +1564,7 @@ func (i GetAwrHubsAwrHubSummaryCollectionArgs) ToGetAwrHubsAwrHubSummaryCollecti
 // GetAwrHubsAwrHubSummaryCollectionArrayInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionArray and GetAwrHubsAwrHubSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubsAwrHubSummaryCollectionArrayInput` via:
 //
-//          GetAwrHubsAwrHubSummaryCollectionArray{ GetAwrHubsAwrHubSummaryCollectionArgs{...} }
+//	GetAwrHubsAwrHubSummaryCollectionArray{ GetAwrHubsAwrHubSummaryCollectionArgs{...} }
 type GetAwrHubsAwrHubSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1656,7 +1656,7 @@ type GetAwrHubsAwrHubSummaryCollectionItem struct {
 // GetAwrHubsAwrHubSummaryCollectionItemInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionItemArgs and GetAwrHubsAwrHubSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetAwrHubsAwrHubSummaryCollectionItemInput` via:
 //
-//          GetAwrHubsAwrHubSummaryCollectionItemArgs{...}
+//	GetAwrHubsAwrHubSummaryCollectionItemArgs{...}
 type GetAwrHubsAwrHubSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -1708,7 +1708,7 @@ func (i GetAwrHubsAwrHubSummaryCollectionItemArgs) ToGetAwrHubsAwrHubSummaryColl
 // GetAwrHubsAwrHubSummaryCollectionItemArrayInput is an input type that accepts GetAwrHubsAwrHubSummaryCollectionItemArray and GetAwrHubsAwrHubSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubsAwrHubSummaryCollectionItemArrayInput` via:
 //
-//          GetAwrHubsAwrHubSummaryCollectionItemArray{ GetAwrHubsAwrHubSummaryCollectionItemArgs{...} }
+//	GetAwrHubsAwrHubSummaryCollectionItemArray{ GetAwrHubsAwrHubSummaryCollectionItemArgs{...} }
 type GetAwrHubsAwrHubSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1838,7 +1838,7 @@ type GetAwrHubsFilter struct {
 // GetAwrHubsFilterInput is an input type that accepts GetAwrHubsFilterArgs and GetAwrHubsFilterOutput values.
 // You can construct a concrete instance of `GetAwrHubsFilterInput` via:
 //
-//          GetAwrHubsFilterArgs{...}
+//	GetAwrHubsFilterArgs{...}
 type GetAwrHubsFilterInput interface {
 	pulumi.Input
 
@@ -1867,7 +1867,7 @@ func (i GetAwrHubsFilterArgs) ToGetAwrHubsFilterOutputWithContext(ctx context.Co
 // GetAwrHubsFilterArrayInput is an input type that accepts GetAwrHubsFilterArray and GetAwrHubsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAwrHubsFilterArrayInput` via:
 //
-//          GetAwrHubsFilterArray{ GetAwrHubsFilterArgs{...} }
+//	GetAwrHubsFilterArray{ GetAwrHubsFilterArgs{...} }
 type GetAwrHubsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1951,7 +1951,7 @@ type GetDatabaseInsightConnectionCredentialDetail struct {
 // GetDatabaseInsightConnectionCredentialDetailInput is an input type that accepts GetDatabaseInsightConnectionCredentialDetailArgs and GetDatabaseInsightConnectionCredentialDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightConnectionCredentialDetailInput` via:
 //
-//          GetDatabaseInsightConnectionCredentialDetailArgs{...}
+//	GetDatabaseInsightConnectionCredentialDetailArgs{...}
 type GetDatabaseInsightConnectionCredentialDetailInput interface {
 	pulumi.Input
 
@@ -1987,7 +1987,7 @@ func (i GetDatabaseInsightConnectionCredentialDetailArgs) ToGetDatabaseInsightCo
 // GetDatabaseInsightConnectionCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightConnectionCredentialDetailArray and GetDatabaseInsightConnectionCredentialDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightConnectionCredentialDetailArrayInput` via:
 //
-//          GetDatabaseInsightConnectionCredentialDetailArray{ GetDatabaseInsightConnectionCredentialDetailArgs{...} }
+//	GetDatabaseInsightConnectionCredentialDetailArray{ GetDatabaseInsightConnectionCredentialDetailArgs{...} }
 type GetDatabaseInsightConnectionCredentialDetailArrayInput interface {
 	pulumi.Input
 
@@ -2084,7 +2084,7 @@ type GetDatabaseInsightConnectionDetail struct {
 // GetDatabaseInsightConnectionDetailInput is an input type that accepts GetDatabaseInsightConnectionDetailArgs and GetDatabaseInsightConnectionDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightConnectionDetailInput` via:
 //
-//          GetDatabaseInsightConnectionDetailArgs{...}
+//	GetDatabaseInsightConnectionDetailArgs{...}
 type GetDatabaseInsightConnectionDetailInput interface {
 	pulumi.Input
 
@@ -2120,7 +2120,7 @@ func (i GetDatabaseInsightConnectionDetailArgs) ToGetDatabaseInsightConnectionDe
 // GetDatabaseInsightConnectionDetailArrayInput is an input type that accepts GetDatabaseInsightConnectionDetailArray and GetDatabaseInsightConnectionDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightConnectionDetailArrayInput` via:
 //
-//          GetDatabaseInsightConnectionDetailArray{ GetDatabaseInsightConnectionDetailArgs{...} }
+//	GetDatabaseInsightConnectionDetailArray{ GetDatabaseInsightConnectionDetailArgs{...} }
 type GetDatabaseInsightConnectionDetailArrayInput interface {
 	pulumi.Input
 
@@ -2211,7 +2211,7 @@ type GetDatabaseInsightConnectionDetailHost struct {
 // GetDatabaseInsightConnectionDetailHostInput is an input type that accepts GetDatabaseInsightConnectionDetailHostArgs and GetDatabaseInsightConnectionDetailHostOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightConnectionDetailHostInput` via:
 //
-//          GetDatabaseInsightConnectionDetailHostArgs{...}
+//	GetDatabaseInsightConnectionDetailHostArgs{...}
 type GetDatabaseInsightConnectionDetailHostInput interface {
 	pulumi.Input
 
@@ -2241,7 +2241,7 @@ func (i GetDatabaseInsightConnectionDetailHostArgs) ToGetDatabaseInsightConnecti
 // GetDatabaseInsightConnectionDetailHostArrayInput is an input type that accepts GetDatabaseInsightConnectionDetailHostArray and GetDatabaseInsightConnectionDetailHostArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightConnectionDetailHostArrayInput` via:
 //
-//          GetDatabaseInsightConnectionDetailHostArray{ GetDatabaseInsightConnectionDetailHostArgs{...} }
+//	GetDatabaseInsightConnectionDetailHostArray{ GetDatabaseInsightConnectionDetailHostArgs{...} }
 type GetDatabaseInsightConnectionDetailHostArrayInput interface {
 	pulumi.Input
 
@@ -2323,7 +2323,7 @@ type GetDatabaseInsightCredentialDetail struct {
 // GetDatabaseInsightCredentialDetailInput is an input type that accepts GetDatabaseInsightCredentialDetailArgs and GetDatabaseInsightCredentialDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightCredentialDetailInput` via:
 //
-//          GetDatabaseInsightCredentialDetailArgs{...}
+//	GetDatabaseInsightCredentialDetailArgs{...}
 type GetDatabaseInsightCredentialDetailInput interface {
 	pulumi.Input
 
@@ -2359,7 +2359,7 @@ func (i GetDatabaseInsightCredentialDetailArgs) ToGetDatabaseInsightCredentialDe
 // GetDatabaseInsightCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightCredentialDetailArray and GetDatabaseInsightCredentialDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightCredentialDetailArrayInput` via:
 //
-//          GetDatabaseInsightCredentialDetailArray{ GetDatabaseInsightCredentialDetailArgs{...} }
+//	GetDatabaseInsightCredentialDetailArray{ GetDatabaseInsightCredentialDetailArgs{...} }
 type GetDatabaseInsightCredentialDetailArrayInput interface {
 	pulumi.Input
 
@@ -2447,7 +2447,7 @@ type GetDatabaseInsightsDatabaseInsightsCollection struct {
 // GetDatabaseInsightsDatabaseInsightsCollectionInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionArgs and GetDatabaseInsightsDatabaseInsightsCollectionOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionArgs{...}
+//	GetDatabaseInsightsDatabaseInsightsCollectionArgs{...}
 type GetDatabaseInsightsDatabaseInsightsCollectionInput interface {
 	pulumi.Input
 
@@ -2474,7 +2474,7 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionArgs) ToGetDatabaseInsights
 // GetDatabaseInsightsDatabaseInsightsCollectionArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionArray and GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionArrayInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionArray{ GetDatabaseInsightsDatabaseInsightsCollectionArgs{...} }
+//	GetDatabaseInsightsDatabaseInsightsCollectionArray{ GetDatabaseInsightsDatabaseInsightsCollectionArgs{...} }
 type GetDatabaseInsightsDatabaseInsightsCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2606,7 +2606,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 // GetDatabaseInsightsDatabaseInsightsCollectionItemInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemArgs{...}
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemArgs{...}
 type GetDatabaseInsightsDatabaseInsightsCollectionItemInput interface {
 	pulumi.Input
 
@@ -2696,7 +2696,7 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemArgs) ToGetDatabaseInsi
 // GetDatabaseInsightsDatabaseInsightsCollectionItemArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemArray and GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemArrayInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemArgs{...} }
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemArgs{...} }
 type GetDatabaseInsightsDatabaseInsightsCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2945,7 +2945,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs{...}
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs{...}
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailInput interface {
 	pulumi.Input
 
@@ -2981,7 +2981,7 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArray and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs{...} }
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs{...} }
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput interface {
 	pulumi.Input
 
@@ -3088,7 +3088,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail struct {
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs{...}
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs{...}
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailInput interface {
 	pulumi.Input
 
@@ -3124,7 +3124,7 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs) T
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArray and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs{...} }
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs{...} }
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayInput interface {
 	pulumi.Input
 
@@ -3217,7 +3217,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost struc
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs{...}
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs{...}
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostInput interface {
 	pulumi.Input
 
@@ -3247,7 +3247,7 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArg
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArray and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs{...} }
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs{...} }
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArrayInput interface {
 	pulumi.Input
 
@@ -3329,7 +3329,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail struct {
 // GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs{...}
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs{...}
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailInput interface {
 	pulumi.Input
 
@@ -3365,7 +3365,7 @@ func (i GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs) T
 // GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArray and GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput` via:
 //
-//          GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs{...} }
+//	GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArray{ GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs{...} }
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput interface {
 	pulumi.Input
 
@@ -3461,7 +3461,7 @@ type GetDatabaseInsightsFilter struct {
 // GetDatabaseInsightsFilterInput is an input type that accepts GetDatabaseInsightsFilterArgs and GetDatabaseInsightsFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsFilterInput` via:
 //
-//          GetDatabaseInsightsFilterArgs{...}
+//	GetDatabaseInsightsFilterArgs{...}
 type GetDatabaseInsightsFilterInput interface {
 	pulumi.Input
 
@@ -3490,7 +3490,7 @@ func (i GetDatabaseInsightsFilterArgs) ToGetDatabaseInsightsFilterOutputWithCont
 // GetDatabaseInsightsFilterArrayInput is an input type that accepts GetDatabaseInsightsFilterArray and GetDatabaseInsightsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseInsightsFilterArrayInput` via:
 //
-//          GetDatabaseInsightsFilterArray{ GetDatabaseInsightsFilterArgs{...} }
+//	GetDatabaseInsightsFilterArray{ GetDatabaseInsightsFilterArgs{...} }
 type GetDatabaseInsightsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3565,7 +3565,7 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection struct {
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionInput` via:
 //
-//          GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs{...}
+//	GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs{...}
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionInput interface {
 	pulumi.Input
 
@@ -3592,7 +3592,7 @@ func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs) ToGetE
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArray and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayInput` via:
 //
-//          GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArray{ GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs{...} }
+//	GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArray{ GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArgs{...} }
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3688,7 +3688,7 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem struct {
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemInput` via:
 //
-//          GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs{...}
+//	GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs{...}
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemInput interface {
 	pulumi.Input
 
@@ -3742,7 +3742,7 @@ func (i GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs) To
 // GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayInput is an input type that accepts GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray and GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayInput` via:
 //
-//          GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray{ GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs{...} }
+//	GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray{ GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs{...} }
 type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3893,7 +3893,7 @@ type GetEnterpriseManagerBridgesFilter struct {
 // GetEnterpriseManagerBridgesFilterInput is an input type that accepts GetEnterpriseManagerBridgesFilterArgs and GetEnterpriseManagerBridgesFilterOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesFilterInput` via:
 //
-//          GetEnterpriseManagerBridgesFilterArgs{...}
+//	GetEnterpriseManagerBridgesFilterArgs{...}
 type GetEnterpriseManagerBridgesFilterInput interface {
 	pulumi.Input
 
@@ -3922,7 +3922,7 @@ func (i GetEnterpriseManagerBridgesFilterArgs) ToGetEnterpriseManagerBridgesFilt
 // GetEnterpriseManagerBridgesFilterArrayInput is an input type that accepts GetEnterpriseManagerBridgesFilterArray and GetEnterpriseManagerBridgesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnterpriseManagerBridgesFilterArrayInput` via:
 //
-//          GetEnterpriseManagerBridgesFilterArray{ GetEnterpriseManagerBridgesFilterArgs{...} }
+//	GetEnterpriseManagerBridgesFilterArray{ GetEnterpriseManagerBridgesFilterArgs{...} }
 type GetEnterpriseManagerBridgesFilterArrayInput interface {
 	pulumi.Input
 
@@ -3997,7 +3997,7 @@ type GetExadataInsightsExadataInsightSummaryCollection struct {
 // GetExadataInsightsExadataInsightSummaryCollectionInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionArgs and GetExadataInsightsExadataInsightSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionInput` via:
 //
-//          GetExadataInsightsExadataInsightSummaryCollectionArgs{...}
+//	GetExadataInsightsExadataInsightSummaryCollectionArgs{...}
 type GetExadataInsightsExadataInsightSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -4024,7 +4024,7 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionArgs) ToGetExadataInsig
 // GetExadataInsightsExadataInsightSummaryCollectionArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionArray and GetExadataInsightsExadataInsightSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionArrayInput` via:
 //
-//          GetExadataInsightsExadataInsightSummaryCollectionArray{ GetExadataInsightsExadataInsightSummaryCollectionArgs{...} }
+//	GetExadataInsightsExadataInsightSummaryCollectionArray{ GetExadataInsightsExadataInsightSummaryCollectionArgs{...} }
 type GetExadataInsightsExadataInsightSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4137,7 +4137,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 // GetExadataInsightsExadataInsightSummaryCollectionItemInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemArgs and GetExadataInsightsExadataInsightSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemInput` via:
 //
-//          GetExadataInsightsExadataInsightSummaryCollectionItemArgs{...}
+//	GetExadataInsightsExadataInsightSummaryCollectionItemArgs{...}
 type GetExadataInsightsExadataInsightSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -4208,7 +4208,7 @@ func (i GetExadataInsightsExadataInsightSummaryCollectionItemArgs) ToGetExadataI
 // GetExadataInsightsExadataInsightSummaryCollectionItemArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemArray and GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemArrayInput` via:
 //
-//          GetExadataInsightsExadataInsightSummaryCollectionItemArray{ GetExadataInsightsExadataInsightSummaryCollectionItemArgs{...} }
+//	GetExadataInsightsExadataInsightSummaryCollectionItemArray{ GetExadataInsightsExadataInsightSummaryCollectionItemArgs{...} }
 type GetExadataInsightsExadataInsightSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4405,7 +4405,7 @@ type GetExadataInsightsFilter struct {
 // GetExadataInsightsFilterInput is an input type that accepts GetExadataInsightsFilterArgs and GetExadataInsightsFilterOutput values.
 // You can construct a concrete instance of `GetExadataInsightsFilterInput` via:
 //
-//          GetExadataInsightsFilterArgs{...}
+//	GetExadataInsightsFilterArgs{...}
 type GetExadataInsightsFilterInput interface {
 	pulumi.Input
 
@@ -4434,7 +4434,7 @@ func (i GetExadataInsightsFilterArgs) ToGetExadataInsightsFilterOutputWithContex
 // GetExadataInsightsFilterArrayInput is an input type that accepts GetExadataInsightsFilterArray and GetExadataInsightsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExadataInsightsFilterArrayInput` via:
 //
-//          GetExadataInsightsFilterArray{ GetExadataInsightsFilterArgs{...} }
+//	GetExadataInsightsFilterArray{ GetExadataInsightsFilterArgs{...} }
 type GetExadataInsightsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4511,7 +4511,7 @@ type GetHostInsightsFilter struct {
 // GetHostInsightsFilterInput is an input type that accepts GetHostInsightsFilterArgs and GetHostInsightsFilterOutput values.
 // You can construct a concrete instance of `GetHostInsightsFilterInput` via:
 //
-//          GetHostInsightsFilterArgs{...}
+//	GetHostInsightsFilterArgs{...}
 type GetHostInsightsFilterInput interface {
 	pulumi.Input
 
@@ -4540,7 +4540,7 @@ func (i GetHostInsightsFilterArgs) ToGetHostInsightsFilterOutputWithContext(ctx 
 // GetHostInsightsFilterArrayInput is an input type that accepts GetHostInsightsFilterArray and GetHostInsightsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHostInsightsFilterArrayInput` via:
 //
-//          GetHostInsightsFilterArray{ GetHostInsightsFilterArgs{...} }
+//	GetHostInsightsFilterArray{ GetHostInsightsFilterArgs{...} }
 type GetHostInsightsFilterArrayInput interface {
 	pulumi.Input
 
@@ -4615,7 +4615,7 @@ type GetHostInsightsHostInsightSummaryCollection struct {
 // GetHostInsightsHostInsightSummaryCollectionInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionArgs and GetHostInsightsHostInsightSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetHostInsightsHostInsightSummaryCollectionInput` via:
 //
-//          GetHostInsightsHostInsightSummaryCollectionArgs{...}
+//	GetHostInsightsHostInsightSummaryCollectionArgs{...}
 type GetHostInsightsHostInsightSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -4642,7 +4642,7 @@ func (i GetHostInsightsHostInsightSummaryCollectionArgs) ToGetHostInsightsHostIn
 // GetHostInsightsHostInsightSummaryCollectionArrayInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionArray and GetHostInsightsHostInsightSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetHostInsightsHostInsightSummaryCollectionArrayInput` via:
 //
-//          GetHostInsightsHostInsightSummaryCollectionArray{ GetHostInsightsHostInsightSummaryCollectionArgs{...} }
+//	GetHostInsightsHostInsightSummaryCollectionArray{ GetHostInsightsHostInsightSummaryCollectionArgs{...} }
 type GetHostInsightsHostInsightSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -4707,6 +4707,8 @@ func (o GetHostInsightsHostInsightSummaryCollectionArrayOutput) Index(i pulumi.I
 type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId string `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
@@ -4724,6 +4726,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// Source of the host entity.
 	EntitySource string `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+	// <<<<<<< ours
 	ExadataInsightId string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -4732,6 +4735,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
 	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+	// > > > > > > > theirs
 	HostType string `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
@@ -4762,7 +4766,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 // GetHostInsightsHostInsightSummaryCollectionItemInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionItemArgs and GetHostInsightsHostInsightSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetHostInsightsHostInsightSummaryCollectionItemInput` via:
 //
-//          GetHostInsightsHostInsightSummaryCollectionItemArgs{...}
+//	GetHostInsightsHostInsightSummaryCollectionItemArgs{...}
 type GetHostInsightsHostInsightSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -4773,6 +4777,8 @@ type GetHostInsightsHostInsightSummaryCollectionItemInput interface {
 type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId pulumi.StringInput `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
@@ -4790,6 +4796,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// Source of the host entity.
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+	// <<<<<<< ours
 	ExadataInsightId pulumi.StringInput `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -4798,6 +4805,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
+	// > > > > > > > theirs
 	HostType pulumi.StringInput `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
@@ -4840,7 +4848,7 @@ func (i GetHostInsightsHostInsightSummaryCollectionItemArgs) ToGetHostInsightsHo
 // GetHostInsightsHostInsightSummaryCollectionItemArrayInput is an input type that accepts GetHostInsightsHostInsightSummaryCollectionItemArray and GetHostInsightsHostInsightSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetHostInsightsHostInsightSummaryCollectionItemArrayInput` via:
 //
-//          GetHostInsightsHostInsightSummaryCollectionItemArray{ GetHostInsightsHostInsightSummaryCollectionItemArgs{...} }
+//	GetHostInsightsHostInsightSummaryCollectionItemArray{ GetHostInsightsHostInsightSummaryCollectionItemArgs{...} }
 type GetHostInsightsHostInsightSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -4879,6 +4887,11 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ToGetHostInsights
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ComputeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.ComputeId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4926,6 +4939,7 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EntitySource() pu
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+// <<<<<<< ours
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ExadataInsightId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.ExadataInsightId }).(pulumi.StringOutput)
 }
@@ -4946,6 +4960,7 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostName() pulumi
 }
 
 // Filter by one or more host types. Possible value is EXTERNAL-HOST.
+// > > > > > > > theirs
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostType }).(pulumi.StringOutput)
 }
@@ -5030,6 +5045,556 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemArrayOutput) Index(i pulu
 	}).(GetHostInsightsHostInsightSummaryCollectionItemOutput)
 }
 
+type GetImportableAgentEntitiesItem struct {
+	// Source of the importable agent entity.
+	EntitySource string `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName string `pulumi:"hostName"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType string `pulumi:"platformType"`
+}
+
+// GetImportableAgentEntitiesItemInput is an input type that accepts GetImportableAgentEntitiesItemArgs and GetImportableAgentEntitiesItemOutput values.
+// You can construct a concrete instance of `GetImportableAgentEntitiesItemInput` via:
+//
+//	GetImportableAgentEntitiesItemArgs{...}
+type GetImportableAgentEntitiesItemInput interface {
+	pulumi.Input
+
+	ToGetImportableAgentEntitiesItemOutput() GetImportableAgentEntitiesItemOutput
+	ToGetImportableAgentEntitiesItemOutputWithContext(context.Context) GetImportableAgentEntitiesItemOutput
+}
+
+type GetImportableAgentEntitiesItemArgs struct {
+	// Source of the importable agent entity.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+	ManagementAgentDisplayName pulumi.StringInput `pulumi:"managementAgentDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType pulumi.StringInput `pulumi:"platformType"`
+}
+
+func (GetImportableAgentEntitiesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableAgentEntitiesItem)(nil)).Elem()
+}
+
+func (i GetImportableAgentEntitiesItemArgs) ToGetImportableAgentEntitiesItemOutput() GetImportableAgentEntitiesItemOutput {
+	return i.ToGetImportableAgentEntitiesItemOutputWithContext(context.Background())
+}
+
+func (i GetImportableAgentEntitiesItemArgs) ToGetImportableAgentEntitiesItemOutputWithContext(ctx context.Context) GetImportableAgentEntitiesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntitiesItemOutput)
+}
+
+// GetImportableAgentEntitiesItemArrayInput is an input type that accepts GetImportableAgentEntitiesItemArray and GetImportableAgentEntitiesItemArrayOutput values.
+// You can construct a concrete instance of `GetImportableAgentEntitiesItemArrayInput` via:
+//
+//	GetImportableAgentEntitiesItemArray{ GetImportableAgentEntitiesItemArgs{...} }
+type GetImportableAgentEntitiesItemArrayInput interface {
+	pulumi.Input
+
+	ToGetImportableAgentEntitiesItemArrayOutput() GetImportableAgentEntitiesItemArrayOutput
+	ToGetImportableAgentEntitiesItemArrayOutputWithContext(context.Context) GetImportableAgentEntitiesItemArrayOutput
+}
+
+type GetImportableAgentEntitiesItemArray []GetImportableAgentEntitiesItemInput
+
+func (GetImportableAgentEntitiesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableAgentEntitiesItem)(nil)).Elem()
+}
+
+func (i GetImportableAgentEntitiesItemArray) ToGetImportableAgentEntitiesItemArrayOutput() GetImportableAgentEntitiesItemArrayOutput {
+	return i.ToGetImportableAgentEntitiesItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetImportableAgentEntitiesItemArray) ToGetImportableAgentEntitiesItemArrayOutputWithContext(ctx context.Context) GetImportableAgentEntitiesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntitiesItemArrayOutput)
+}
+
+type GetImportableAgentEntitiesItemOutput struct{ *pulumi.OutputState }
+
+func (GetImportableAgentEntitiesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableAgentEntitiesItem)(nil)).Elem()
+}
+
+func (o GetImportableAgentEntitiesItemOutput) ToGetImportableAgentEntitiesItemOutput() GetImportableAgentEntitiesItemOutput {
+	return o
+}
+
+func (o GetImportableAgentEntitiesItemOutput) ToGetImportableAgentEntitiesItemOutputWithContext(ctx context.Context) GetImportableAgentEntitiesItemOutput {
+	return o
+}
+
+// Source of the importable agent entity.
+func (o GetImportableAgentEntitiesItemOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.EntitySource }).(pulumi.StringOutput)
+}
+
+// The host name. The host name is unique amongst the hosts managed by the same management agent.
+func (o GetImportableAgentEntitiesItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+func (o GetImportableAgentEntitiesItemOutput) ManagementAgentDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.ManagementAgentDisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+func (o GetImportableAgentEntitiesItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+func (o GetImportableAgentEntitiesItemOutput) PlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesItem) string { return v.PlatformType }).(pulumi.StringOutput)
+}
+
+type GetImportableAgentEntitiesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetImportableAgentEntitiesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableAgentEntitiesItem)(nil)).Elem()
+}
+
+func (o GetImportableAgentEntitiesItemArrayOutput) ToGetImportableAgentEntitiesItemArrayOutput() GetImportableAgentEntitiesItemArrayOutput {
+	return o
+}
+
+func (o GetImportableAgentEntitiesItemArrayOutput) ToGetImportableAgentEntitiesItemArrayOutputWithContext(ctx context.Context) GetImportableAgentEntitiesItemArrayOutput {
+	return o
+}
+
+func (o GetImportableAgentEntitiesItemArrayOutput) Index(i pulumi.IntInput) GetImportableAgentEntitiesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableAgentEntitiesItem {
+		return vs[0].([]GetImportableAgentEntitiesItem)[vs[1].(int)]
+	}).(GetImportableAgentEntitiesItemOutput)
+}
+
+type GetImportableAgentEntityItem struct {
+	// Source of the importable agent entity.
+	EntitySource string `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName string `pulumi:"hostName"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType string `pulumi:"platformType"`
+}
+
+// GetImportableAgentEntityItemInput is an input type that accepts GetImportableAgentEntityItemArgs and GetImportableAgentEntityItemOutput values.
+// You can construct a concrete instance of `GetImportableAgentEntityItemInput` via:
+//
+//	GetImportableAgentEntityItemArgs{...}
+type GetImportableAgentEntityItemInput interface {
+	pulumi.Input
+
+	ToGetImportableAgentEntityItemOutput() GetImportableAgentEntityItemOutput
+	ToGetImportableAgentEntityItemOutputWithContext(context.Context) GetImportableAgentEntityItemOutput
+}
+
+type GetImportableAgentEntityItemArgs struct {
+	// Source of the importable agent entity.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+	ManagementAgentDisplayName pulumi.StringInput `pulumi:"managementAgentDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType pulumi.StringInput `pulumi:"platformType"`
+}
+
+func (GetImportableAgentEntityItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableAgentEntityItem)(nil)).Elem()
+}
+
+func (i GetImportableAgentEntityItemArgs) ToGetImportableAgentEntityItemOutput() GetImportableAgentEntityItemOutput {
+	return i.ToGetImportableAgentEntityItemOutputWithContext(context.Background())
+}
+
+func (i GetImportableAgentEntityItemArgs) ToGetImportableAgentEntityItemOutputWithContext(ctx context.Context) GetImportableAgentEntityItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntityItemOutput)
+}
+
+// GetImportableAgentEntityItemArrayInput is an input type that accepts GetImportableAgentEntityItemArray and GetImportableAgentEntityItemArrayOutput values.
+// You can construct a concrete instance of `GetImportableAgentEntityItemArrayInput` via:
+//
+//	GetImportableAgentEntityItemArray{ GetImportableAgentEntityItemArgs{...} }
+type GetImportableAgentEntityItemArrayInput interface {
+	pulumi.Input
+
+	ToGetImportableAgentEntityItemArrayOutput() GetImportableAgentEntityItemArrayOutput
+	ToGetImportableAgentEntityItemArrayOutputWithContext(context.Context) GetImportableAgentEntityItemArrayOutput
+}
+
+type GetImportableAgentEntityItemArray []GetImportableAgentEntityItemInput
+
+func (GetImportableAgentEntityItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableAgentEntityItem)(nil)).Elem()
+}
+
+func (i GetImportableAgentEntityItemArray) ToGetImportableAgentEntityItemArrayOutput() GetImportableAgentEntityItemArrayOutput {
+	return i.ToGetImportableAgentEntityItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetImportableAgentEntityItemArray) ToGetImportableAgentEntityItemArrayOutputWithContext(ctx context.Context) GetImportableAgentEntityItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableAgentEntityItemArrayOutput)
+}
+
+type GetImportableAgentEntityItemOutput struct{ *pulumi.OutputState }
+
+func (GetImportableAgentEntityItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableAgentEntityItem)(nil)).Elem()
+}
+
+func (o GetImportableAgentEntityItemOutput) ToGetImportableAgentEntityItemOutput() GetImportableAgentEntityItemOutput {
+	return o
+}
+
+func (o GetImportableAgentEntityItemOutput) ToGetImportableAgentEntityItemOutputWithContext(ctx context.Context) GetImportableAgentEntityItemOutput {
+	return o
+}
+
+// Source of the importable agent entity.
+func (o GetImportableAgentEntityItemOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.EntitySource }).(pulumi.StringOutput)
+}
+
+// The host name. The host name is unique amongst the hosts managed by the same management agent.
+func (o GetImportableAgentEntityItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
+func (o GetImportableAgentEntityItemOutput) ManagementAgentDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.ManagementAgentDisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+func (o GetImportableAgentEntityItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+func (o GetImportableAgentEntityItemOutput) PlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableAgentEntityItem) string { return v.PlatformType }).(pulumi.StringOutput)
+}
+
+type GetImportableAgentEntityItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetImportableAgentEntityItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableAgentEntityItem)(nil)).Elem()
+}
+
+func (o GetImportableAgentEntityItemArrayOutput) ToGetImportableAgentEntityItemArrayOutput() GetImportableAgentEntityItemArrayOutput {
+	return o
+}
+
+func (o GetImportableAgentEntityItemArrayOutput) ToGetImportableAgentEntityItemArrayOutputWithContext(ctx context.Context) GetImportableAgentEntityItemArrayOutput {
+	return o
+}
+
+func (o GetImportableAgentEntityItemArrayOutput) Index(i pulumi.IntInput) GetImportableAgentEntityItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableAgentEntityItem {
+		return vs[0].([]GetImportableAgentEntityItem)[vs[1].(int)]
+	}).(GetImportableAgentEntityItemOutput)
+}
+
+type GetImportableComputeEntitiesItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+	ComputeDisplayName string `pulumi:"computeDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId string `pulumi:"computeId"`
+	// Source of the importable agent entity.
+	EntitySource string `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName string `pulumi:"hostName"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType string `pulumi:"platformType"`
+}
+
+// GetImportableComputeEntitiesItemInput is an input type that accepts GetImportableComputeEntitiesItemArgs and GetImportableComputeEntitiesItemOutput values.
+// You can construct a concrete instance of `GetImportableComputeEntitiesItemInput` via:
+//
+//	GetImportableComputeEntitiesItemArgs{...}
+type GetImportableComputeEntitiesItemInput interface {
+	pulumi.Input
+
+	ToGetImportableComputeEntitiesItemOutput() GetImportableComputeEntitiesItemOutput
+	ToGetImportableComputeEntitiesItemOutputWithContext(context.Context) GetImportableComputeEntitiesItemOutput
+}
+
+type GetImportableComputeEntitiesItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+	ComputeDisplayName pulumi.StringInput `pulumi:"computeDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	// Source of the importable agent entity.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType pulumi.StringInput `pulumi:"platformType"`
+}
+
+func (GetImportableComputeEntitiesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableComputeEntitiesItem)(nil)).Elem()
+}
+
+func (i GetImportableComputeEntitiesItemArgs) ToGetImportableComputeEntitiesItemOutput() GetImportableComputeEntitiesItemOutput {
+	return i.ToGetImportableComputeEntitiesItemOutputWithContext(context.Background())
+}
+
+func (i GetImportableComputeEntitiesItemArgs) ToGetImportableComputeEntitiesItemOutputWithContext(ctx context.Context) GetImportableComputeEntitiesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntitiesItemOutput)
+}
+
+// GetImportableComputeEntitiesItemArrayInput is an input type that accepts GetImportableComputeEntitiesItemArray and GetImportableComputeEntitiesItemArrayOutput values.
+// You can construct a concrete instance of `GetImportableComputeEntitiesItemArrayInput` via:
+//
+//	GetImportableComputeEntitiesItemArray{ GetImportableComputeEntitiesItemArgs{...} }
+type GetImportableComputeEntitiesItemArrayInput interface {
+	pulumi.Input
+
+	ToGetImportableComputeEntitiesItemArrayOutput() GetImportableComputeEntitiesItemArrayOutput
+	ToGetImportableComputeEntitiesItemArrayOutputWithContext(context.Context) GetImportableComputeEntitiesItemArrayOutput
+}
+
+type GetImportableComputeEntitiesItemArray []GetImportableComputeEntitiesItemInput
+
+func (GetImportableComputeEntitiesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableComputeEntitiesItem)(nil)).Elem()
+}
+
+func (i GetImportableComputeEntitiesItemArray) ToGetImportableComputeEntitiesItemArrayOutput() GetImportableComputeEntitiesItemArrayOutput {
+	return i.ToGetImportableComputeEntitiesItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetImportableComputeEntitiesItemArray) ToGetImportableComputeEntitiesItemArrayOutputWithContext(ctx context.Context) GetImportableComputeEntitiesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntitiesItemArrayOutput)
+}
+
+type GetImportableComputeEntitiesItemOutput struct{ *pulumi.OutputState }
+
+func (GetImportableComputeEntitiesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableComputeEntitiesItem)(nil)).Elem()
+}
+
+func (o GetImportableComputeEntitiesItemOutput) ToGetImportableComputeEntitiesItemOutput() GetImportableComputeEntitiesItemOutput {
+	return o
+}
+
+func (o GetImportableComputeEntitiesItemOutput) ToGetImportableComputeEntitiesItemOutputWithContext(ctx context.Context) GetImportableComputeEntitiesItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetImportableComputeEntitiesItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+func (o GetImportableComputeEntitiesItemOutput) ComputeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.ComputeDisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+func (o GetImportableComputeEntitiesItemOutput) ComputeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.ComputeId }).(pulumi.StringOutput)
+}
+
+// Source of the importable agent entity.
+func (o GetImportableComputeEntitiesItemOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.EntitySource }).(pulumi.StringOutput)
+}
+
+// The host name. The host name is unique amongst the hosts managed by the same management agent.
+func (o GetImportableComputeEntitiesItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+func (o GetImportableComputeEntitiesItemOutput) PlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.PlatformType }).(pulumi.StringOutput)
+}
+
+type GetImportableComputeEntitiesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetImportableComputeEntitiesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableComputeEntitiesItem)(nil)).Elem()
+}
+
+func (o GetImportableComputeEntitiesItemArrayOutput) ToGetImportableComputeEntitiesItemArrayOutput() GetImportableComputeEntitiesItemArrayOutput {
+	return o
+}
+
+func (o GetImportableComputeEntitiesItemArrayOutput) ToGetImportableComputeEntitiesItemArrayOutputWithContext(ctx context.Context) GetImportableComputeEntitiesItemArrayOutput {
+	return o
+}
+
+func (o GetImportableComputeEntitiesItemArrayOutput) Index(i pulumi.IntInput) GetImportableComputeEntitiesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableComputeEntitiesItem {
+		return vs[0].([]GetImportableComputeEntitiesItem)[vs[1].(int)]
+	}).(GetImportableComputeEntitiesItemOutput)
+}
+
+type GetImportableComputeEntityItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+	ComputeDisplayName string `pulumi:"computeDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId string `pulumi:"computeId"`
+	// Source of the importable agent entity.
+	EntitySource string `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName string `pulumi:"hostName"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType string `pulumi:"platformType"`
+}
+
+// GetImportableComputeEntityItemInput is an input type that accepts GetImportableComputeEntityItemArgs and GetImportableComputeEntityItemOutput values.
+// You can construct a concrete instance of `GetImportableComputeEntityItemInput` via:
+//
+//	GetImportableComputeEntityItemArgs{...}
+type GetImportableComputeEntityItemInput interface {
+	pulumi.Input
+
+	ToGetImportableComputeEntityItemOutput() GetImportableComputeEntityItemOutput
+	ToGetImportableComputeEntityItemOutputWithContext(context.Context) GetImportableComputeEntityItemOutput
+}
+
+type GetImportableComputeEntityItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+	ComputeDisplayName pulumi.StringInput `pulumi:"computeDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	// Source of the importable agent entity.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// The host name. The host name is unique amongst the hosts managed by the same management agent.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	PlatformType pulumi.StringInput `pulumi:"platformType"`
+}
+
+func (GetImportableComputeEntityItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableComputeEntityItem)(nil)).Elem()
+}
+
+func (i GetImportableComputeEntityItemArgs) ToGetImportableComputeEntityItemOutput() GetImportableComputeEntityItemOutput {
+	return i.ToGetImportableComputeEntityItemOutputWithContext(context.Background())
+}
+
+func (i GetImportableComputeEntityItemArgs) ToGetImportableComputeEntityItemOutputWithContext(ctx context.Context) GetImportableComputeEntityItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntityItemOutput)
+}
+
+// GetImportableComputeEntityItemArrayInput is an input type that accepts GetImportableComputeEntityItemArray and GetImportableComputeEntityItemArrayOutput values.
+// You can construct a concrete instance of `GetImportableComputeEntityItemArrayInput` via:
+//
+//	GetImportableComputeEntityItemArray{ GetImportableComputeEntityItemArgs{...} }
+type GetImportableComputeEntityItemArrayInput interface {
+	pulumi.Input
+
+	ToGetImportableComputeEntityItemArrayOutput() GetImportableComputeEntityItemArrayOutput
+	ToGetImportableComputeEntityItemArrayOutputWithContext(context.Context) GetImportableComputeEntityItemArrayOutput
+}
+
+type GetImportableComputeEntityItemArray []GetImportableComputeEntityItemInput
+
+func (GetImportableComputeEntityItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableComputeEntityItem)(nil)).Elem()
+}
+
+func (i GetImportableComputeEntityItemArray) ToGetImportableComputeEntityItemArrayOutput() GetImportableComputeEntityItemArrayOutput {
+	return i.ToGetImportableComputeEntityItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetImportableComputeEntityItemArray) ToGetImportableComputeEntityItemArrayOutputWithContext(ctx context.Context) GetImportableComputeEntityItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImportableComputeEntityItemArrayOutput)
+}
+
+type GetImportableComputeEntityItemOutput struct{ *pulumi.OutputState }
+
+func (GetImportableComputeEntityItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImportableComputeEntityItem)(nil)).Elem()
+}
+
+func (o GetImportableComputeEntityItemOutput) ToGetImportableComputeEntityItemOutput() GetImportableComputeEntityItemOutput {
+	return o
+}
+
+func (o GetImportableComputeEntityItemOutput) ToGetImportableComputeEntityItemOutputWithContext(ctx context.Context) GetImportableComputeEntityItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetImportableComputeEntityItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
+func (o GetImportableComputeEntityItemOutput) ComputeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.ComputeDisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+func (o GetImportableComputeEntityItemOutput) ComputeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.ComputeId }).(pulumi.StringOutput)
+}
+
+// Source of the importable agent entity.
+func (o GetImportableComputeEntityItemOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.EntitySource }).(pulumi.StringOutput)
+}
+
+// The host name. The host name is unique amongst the hosts managed by the same management agent.
+func (o GetImportableComputeEntityItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+func (o GetImportableComputeEntityItemOutput) PlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.PlatformType }).(pulumi.StringOutput)
+}
+
+type GetImportableComputeEntityItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetImportableComputeEntityItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImportableComputeEntityItem)(nil)).Elem()
+}
+
+func (o GetImportableComputeEntityItemArrayOutput) ToGetImportableComputeEntityItemArrayOutput() GetImportableComputeEntityItemArrayOutput {
+	return o
+}
+
+func (o GetImportableComputeEntityItemArrayOutput) ToGetImportableComputeEntityItemArrayOutputWithContext(ctx context.Context) GetImportableComputeEntityItemArrayOutput {
+	return o
+}
+
+func (o GetImportableComputeEntityItemArrayOutput) Index(i pulumi.IntInput) GetImportableComputeEntityItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImportableComputeEntityItem {
+		return vs[0].([]GetImportableComputeEntityItem)[vs[1].(int)]
+	}).(GetImportableComputeEntityItemOutput)
+}
+
 type GetOperationsInsightsPrivateEndpointsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -5039,7 +5604,7 @@ type GetOperationsInsightsPrivateEndpointsFilter struct {
 // GetOperationsInsightsPrivateEndpointsFilterInput is an input type that accepts GetOperationsInsightsPrivateEndpointsFilterArgs and GetOperationsInsightsPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsFilterInput` via:
 //
-//          GetOperationsInsightsPrivateEndpointsFilterArgs{...}
+//	GetOperationsInsightsPrivateEndpointsFilterArgs{...}
 type GetOperationsInsightsPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -5068,7 +5633,7 @@ func (i GetOperationsInsightsPrivateEndpointsFilterArgs) ToGetOperationsInsights
 // GetOperationsInsightsPrivateEndpointsFilterArrayInput is an input type that accepts GetOperationsInsightsPrivateEndpointsFilterArray and GetOperationsInsightsPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsFilterArrayInput` via:
 //
-//          GetOperationsInsightsPrivateEndpointsFilterArray{ GetOperationsInsightsPrivateEndpointsFilterArgs{...} }
+//	GetOperationsInsightsPrivateEndpointsFilterArray{ GetOperationsInsightsPrivateEndpointsFilterArgs{...} }
 type GetOperationsInsightsPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5143,7 +5708,7 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionInput` via:
 //
-//          GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs{...}
+//	GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs{...}
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionInput interface {
 	pulumi.Input
 
@@ -5170,7 +5735,7 @@ func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArray and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayInput` via:
 //
-//          GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArray{ GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs{...} }
+//	GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArray{ GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs{...} }
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5270,7 +5835,7 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemInput` via:
 //
-//          GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs{...}
+//	GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs{...}
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemInput interface {
 	pulumi.Input
 
@@ -5328,7 +5893,7 @@ func (i GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 // GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArray and GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayInput` via:
 //
-//          GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArray{ GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs{...} }
+//	GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArray{ GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArgs{...} }
 type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5506,7 +6071,7 @@ type GetOperationsInsightsWarehouseUsersFilter struct {
 // GetOperationsInsightsWarehouseUsersFilterInput is an input type that accepts GetOperationsInsightsWarehouseUsersFilterArgs and GetOperationsInsightsWarehouseUsersFilterOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersFilterInput` via:
 //
-//          GetOperationsInsightsWarehouseUsersFilterArgs{...}
+//	GetOperationsInsightsWarehouseUsersFilterArgs{...}
 type GetOperationsInsightsWarehouseUsersFilterInput interface {
 	pulumi.Input
 
@@ -5536,7 +6101,7 @@ func (i GetOperationsInsightsWarehouseUsersFilterArgs) ToGetOperationsInsightsWa
 // GetOperationsInsightsWarehouseUsersFilterArrayInput is an input type that accepts GetOperationsInsightsWarehouseUsersFilterArray and GetOperationsInsightsWarehouseUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersFilterArrayInput` via:
 //
-//          GetOperationsInsightsWarehouseUsersFilterArray{ GetOperationsInsightsWarehouseUsersFilterArgs{...} }
+//	GetOperationsInsightsWarehouseUsersFilterArray{ GetOperationsInsightsWarehouseUsersFilterArgs{...} }
 type GetOperationsInsightsWarehouseUsersFilterArrayInput interface {
 	pulumi.Input
 
@@ -5612,7 +6177,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArgs and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionInput` via:
 //
-//          GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArgs{...}
+//	GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArgs{...}
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -5639,7 +6204,7 @@ func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArray and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayInput` via:
 //
-//          GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArray{ GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArgs{...} }
+//	GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArray{ GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArgs{...} }
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5737,7 +6302,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemInput` via:
 //
-//          GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs{...}
+//	GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs{...}
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -5793,7 +6358,7 @@ func (i GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 // GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayInput is an input type that accepts GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArray and GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayInput` via:
 //
-//          GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArray{ GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs{...} }
+//	GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArray{ GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs{...} }
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5963,7 +6528,7 @@ type GetOperationsInsightsWarehousesFilter struct {
 // GetOperationsInsightsWarehousesFilterInput is an input type that accepts GetOperationsInsightsWarehousesFilterArgs and GetOperationsInsightsWarehousesFilterOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesFilterInput` via:
 //
-//          GetOperationsInsightsWarehousesFilterArgs{...}
+//	GetOperationsInsightsWarehousesFilterArgs{...}
 type GetOperationsInsightsWarehousesFilterInput interface {
 	pulumi.Input
 
@@ -5992,7 +6557,7 @@ func (i GetOperationsInsightsWarehousesFilterArgs) ToGetOperationsInsightsWareho
 // GetOperationsInsightsWarehousesFilterArrayInput is an input type that accepts GetOperationsInsightsWarehousesFilterArray and GetOperationsInsightsWarehousesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesFilterArrayInput` via:
 //
-//          GetOperationsInsightsWarehousesFilterArray{ GetOperationsInsightsWarehousesFilterArgs{...} }
+//	GetOperationsInsightsWarehousesFilterArray{ GetOperationsInsightsWarehousesFilterArgs{...} }
 type GetOperationsInsightsWarehousesFilterArrayInput interface {
 	pulumi.Input
 
@@ -6067,7 +6632,7 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArgs and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionInput` via:
 //
-//          GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArgs{...}
+//	GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArgs{...}
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -6094,7 +6659,7 @@ func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArray and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayInput` via:
 //
-//          GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArray{ GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArgs{...} }
+//	GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArray{ GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArgs{...} }
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6196,7 +6761,7 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemInput` via:
 //
-//          GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs{...}
+//	GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs{...}
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -6256,7 +6821,7 @@ func (i GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 // GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayInput is an input type that accepts GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArray and GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayInput` via:
 //
-//          GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArray{ GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs{...} }
+//	GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArray{ GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArgs{...} }
 type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6498,6 +7063,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostInsightsHostInsightSummaryCollectionArrayInput)(nil)).Elem(), GetHostInsightsHostInsightSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostInsightsHostInsightSummaryCollectionItemInput)(nil)).Elem(), GetHostInsightsHostInsightSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostInsightsHostInsightSummaryCollectionItemArrayInput)(nil)).Elem(), GetHostInsightsHostInsightSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableAgentEntitiesItemInput)(nil)).Elem(), GetImportableAgentEntitiesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableAgentEntitiesItemArrayInput)(nil)).Elem(), GetImportableAgentEntitiesItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableAgentEntityItemInput)(nil)).Elem(), GetImportableAgentEntityItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableAgentEntityItemArrayInput)(nil)).Elem(), GetImportableAgentEntityItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntitiesItemInput)(nil)).Elem(), GetImportableComputeEntitiesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntitiesItemArrayInput)(nil)).Elem(), GetImportableComputeEntitiesItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntityItemInput)(nil)).Elem(), GetImportableComputeEntityItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImportableComputeEntityItemArrayInput)(nil)).Elem(), GetImportableComputeEntityItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsPrivateEndpointsFilterInput)(nil)).Elem(), GetOperationsInsightsPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetOperationsInsightsPrivateEndpointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionInput)(nil)).Elem(), GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionArgs{})
@@ -6582,6 +7155,14 @@ func init() {
 	pulumi.RegisterOutputType(GetHostInsightsHostInsightSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetHostInsightsHostInsightSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetHostInsightsHostInsightSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetImportableAgentEntitiesItemOutput{})
+	pulumi.RegisterOutputType(GetImportableAgentEntitiesItemArrayOutput{})
+	pulumi.RegisterOutputType(GetImportableAgentEntityItemOutput{})
+	pulumi.RegisterOutputType(GetImportableAgentEntityItemArrayOutput{})
+	pulumi.RegisterOutputType(GetImportableComputeEntitiesItemOutput{})
+	pulumi.RegisterOutputType(GetImportableComputeEntitiesItemArrayOutput{})
+	pulumi.RegisterOutputType(GetImportableComputeEntityItemOutput{})
+	pulumi.RegisterOutputType(GetImportableComputeEntityItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsPrivateEndpointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionOutput{})

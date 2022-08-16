@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSecurityAssessmentFindings(ctx, &datasafe.GetSecurityAssessmentFindingsArgs{
-// 			SecurityAssessmentId:   oci_data_safe_security_assessment.Test_security_assessment.Id,
-// 			AccessLevel:            pulumi.StringRef(_var.Security_assessment_finding_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_assessment_finding_compartment_id_in_subtree),
-// 			FindingKey:             pulumi.StringRef(_var.Security_assessment_finding_finding_key),
-// 			Severity:               pulumi.StringRef(_var.Security_assessment_finding_severity),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSecurityAssessmentFindings(ctx, &datasafe.GetSecurityAssessmentFindingsArgs{
+//				SecurityAssessmentId:   oci_data_safe_security_assessment.Test_security_assessment.Id,
+//				AccessLevel:            pulumi.StringRef(_var.Security_assessment_finding_access_level),
+//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_assessment_finding_compartment_id_in_subtree),
+//				FindingKey:             pulumi.StringRef(_var.Security_assessment_finding_finding_key),
+//				Severity:               pulumi.StringRef(_var.Security_assessment_finding_severity),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessmentFindingsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingsResult, error) {
 	var rv GetSecurityAssessmentFindingsResult

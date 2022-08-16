@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
 //
-// Gets complete details of the inventory of a given agent id
+// # Gets complete details of the inventory of a given agent id
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgent(ctx, &managementagent.GetManagementAgentArgs{
-// 			ManagementAgentId: oci_management_agent_management_agent.Test_management_agent.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgent(ctx, &managementagent.GetManagementAgentArgs{
+//				ManagementAgentId: oci_management_agent_management_agent.Test_management_agent.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupManagementAgent(ctx *pulumi.Context, args *LookupManagementAgentArgs, opts ...pulumi.InvokeOption) (*LookupManagementAgentResult, error) {
 	var rv LookupManagementAgentResult

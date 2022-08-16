@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a managed list identified by managedListId
+// # Returns a managed list identified by managedListId
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetManagedList(ctx, &cloudguard.GetManagedListArgs{
-// 			ManagedListId: oci_cloud_guard_managed_list.Test_managed_list.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetManagedList(ctx, &cloudguard.GetManagedListArgs{
+//				ManagedListId: oci_cloud_guard_managed_list.Test_managed_list.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupManagedList(ctx *pulumi.Context, args *LookupManagedListArgs, opts ...pulumi.InvokeOption) (*LookupManagedListResult, error) {
 	var rv LookupManagedListResult

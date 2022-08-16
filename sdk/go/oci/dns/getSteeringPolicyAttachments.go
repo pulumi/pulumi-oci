@@ -20,30 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetSteeringPolicyAttachments(ctx, &dns.GetSteeringPolicyAttachmentsArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			DisplayName:                     pulumi.StringRef(_var.Steering_policy_attachment_display_name),
-// 			Domain:                          pulumi.StringRef(_var.Steering_policy_attachment_domain),
-// 			DomainContains:                  pulumi.StringRef(_var.Steering_policy_attachment_domain_contains),
-// 			Id:                              pulumi.StringRef(_var.Steering_policy_attachment_id),
-// 			State:                           pulumi.StringRef(_var.Steering_policy_attachment_state),
-// 			SteeringPolicyId:                pulumi.StringRef(oci_dns_steering_policy.Test_steering_policy.Id),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Steering_policy_attachment_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Steering_policy_attachment_time_created_less_than),
-// 			ZoneId:                          pulumi.StringRef(oci_dns_zone.Test_zone.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetSteeringPolicyAttachments(ctx, &dns.GetSteeringPolicyAttachmentsArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				DisplayName:                     pulumi.StringRef(_var.Steering_policy_attachment_display_name),
+//				Domain:                          pulumi.StringRef(_var.Steering_policy_attachment_domain),
+//				DomainContains:                  pulumi.StringRef(_var.Steering_policy_attachment_domain_contains),
+//				Id:                              pulumi.StringRef(_var.Steering_policy_attachment_id),
+//				State:                           pulumi.StringRef(_var.Steering_policy_attachment_state),
+//				SteeringPolicyId:                pulumi.StringRef(oci_dns_steering_policy.Test_steering_policy.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Steering_policy_attachment_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Steering_policy_attachment_time_created_less_than),
+//				ZoneId:                          pulumi.StringRef(oci_dns_zone.Test_zone.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSteeringPolicyAttachments(ctx *pulumi.Context, args *GetSteeringPolicyAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetSteeringPolicyAttachmentsResult, error) {
 	var rv GetSteeringPolicyAttachmentsResult

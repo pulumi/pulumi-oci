@@ -23,32 +23,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewAuditArchiveRetrieval(ctx, "testAuditArchiveRetrieval", &DataSafe.AuditArchiveRetrievalArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			EndDate:       pulumi.Any(_var.Audit_archive_retrieval_end_date),
-// 			StartDate:     pulumi.Any(_var.Audit_archive_retrieval_start_date),
-// 			TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Audit_archive_retrieval_description),
-// 			DisplayName: pulumi.Any(_var.Audit_archive_retrieval_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewAuditArchiveRetrieval(ctx, "testAuditArchiveRetrieval", &DataSafe.AuditArchiveRetrievalArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				EndDate:       pulumi.Any(_var.Audit_archive_retrieval_end_date),
+//				StartDate:     pulumi.Any(_var.Audit_archive_retrieval_start_date),
+//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Audit_archive_retrieval_description),
+//				DisplayName: pulumi.Any(_var.Audit_archive_retrieval_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // AuditArchiveRetrievals can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
+//
+//	$ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
+//
 // ```
 type AuditArchiveRetrieval struct {
 	pulumi.CustomResourceState
@@ -274,7 +279,7 @@ func (i *AuditArchiveRetrieval) ToAuditArchiveRetrievalOutputWithContext(ctx con
 // AuditArchiveRetrievalArrayInput is an input type that accepts AuditArchiveRetrievalArray and AuditArchiveRetrievalArrayOutput values.
 // You can construct a concrete instance of `AuditArchiveRetrievalArrayInput` via:
 //
-//          AuditArchiveRetrievalArray{ AuditArchiveRetrievalArgs{...} }
+//	AuditArchiveRetrievalArray{ AuditArchiveRetrievalArgs{...} }
 type AuditArchiveRetrievalArrayInput interface {
 	pulumi.Input
 
@@ -299,7 +304,7 @@ func (i AuditArchiveRetrievalArray) ToAuditArchiveRetrievalArrayOutputWithContex
 // AuditArchiveRetrievalMapInput is an input type that accepts AuditArchiveRetrievalMap and AuditArchiveRetrievalMapOutput values.
 // You can construct a concrete instance of `AuditArchiveRetrievalMapInput` via:
 //
-//          AuditArchiveRetrievalMap{ "key": AuditArchiveRetrievalArgs{...} }
+//	AuditArchiveRetrievalMap{ "key": AuditArchiveRetrievalArgs{...} }
 type AuditArchiveRetrievalMapInput interface {
 	pulumi.Input
 

@@ -102,6 +102,7 @@ from .get_instance_configurations import *
 from .get_instance_console_connections import *
 from .get_instance_credentials import *
 from .get_instance_devices import *
+from .get_instance_maintenance_reboot import *
 from .get_instance_measured_boot_report import *
 from .get_instance_pool import *
 from .get_instance_pool_instances import *

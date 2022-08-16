@@ -21,23 +21,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Audit"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Audit"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Audit.GetEvents(ctx, &audit.GetEventsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			EndTime:       _var.Audit_event_end_time,
-// 			StartTime:     _var.Audit_event_start_time,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Audit.GetEvents(ctx, &audit.GetEventsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				EndTime:       _var.Audit_event_end_time,
+//				StartTime:     _var.Audit_event_start_time,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetEvents(ctx *pulumi.Context, args *GetEventsArgs, opts ...pulumi.InvokeOption) (*GetEventsResult, error) {
 	var rv GetEventsResult

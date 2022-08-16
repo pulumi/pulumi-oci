@@ -21,37 +21,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.NewObjectLifecyclePolicy(ctx, "testObjectLifecyclePolicy", &ObjectStorage.ObjectLifecyclePolicyArgs{
-// 			Bucket:    pulumi.Any(_var.Object_lifecycle_policy_bucket),
-// 			Namespace: pulumi.Any(_var.Object_lifecycle_policy_namespace),
-// 			Rules: objectstorage.ObjectLifecyclePolicyRuleArray{
-// 				&objectstorage.ObjectLifecyclePolicyRuleArgs{
-// 					Action:     pulumi.Any(_var.Object_lifecycle_policy_rules_action),
-// 					IsEnabled:  pulumi.Any(_var.Object_lifecycle_policy_rules_is_enabled),
-// 					Name:       pulumi.Any(_var.Object_lifecycle_policy_rules_name),
-// 					TimeAmount: pulumi.Any(_var.Object_lifecycle_policy_rules_time_amount),
-// 					TimeUnit:   pulumi.Any(_var.Object_lifecycle_policy_rules_time_unit),
-// 					ObjectNameFilter: &objectstorage.ObjectLifecyclePolicyRuleObjectNameFilterArgs{
-// 						ExclusionPatterns: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_exclusion_patterns),
-// 						InclusionPatterns: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_inclusion_patterns),
-// 						InclusionPrefixes: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes),
-// 					},
-// 					Target: pulumi.Any(_var.Object_lifecycle_policy_rules_target),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.NewObjectLifecyclePolicy(ctx, "testObjectLifecyclePolicy", &ObjectStorage.ObjectLifecyclePolicyArgs{
+//				Bucket:    pulumi.Any(_var.Object_lifecycle_policy_bucket),
+//				Namespace: pulumi.Any(_var.Object_lifecycle_policy_namespace),
+//				Rules: objectstorage.ObjectLifecyclePolicyRuleArray{
+//					&objectstorage.ObjectLifecyclePolicyRuleArgs{
+//						Action:     pulumi.Any(_var.Object_lifecycle_policy_rules_action),
+//						IsEnabled:  pulumi.Any(_var.Object_lifecycle_policy_rules_is_enabled),
+//						Name:       pulumi.Any(_var.Object_lifecycle_policy_rules_name),
+//						TimeAmount: pulumi.Any(_var.Object_lifecycle_policy_rules_time_amount),
+//						TimeUnit:   pulumi.Any(_var.Object_lifecycle_policy_rules_time_unit),
+//						ObjectNameFilter: &objectstorage.ObjectLifecyclePolicyRuleObjectNameFilterArgs{
+//							ExclusionPatterns: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_exclusion_patterns),
+//							InclusionPatterns: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_inclusion_patterns),
+//							InclusionPrefixes: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes),
+//						},
+//						Target: pulumi.Any(_var.Object_lifecycle_policy_rules_target),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -59,7 +62,9 @@ import (
 // ObjectLifecyclePolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
+//
+//	$ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
+//
 // ```
 type ObjectLifecyclePolicy struct {
 	pulumi.CustomResourceState
@@ -179,7 +184,7 @@ func (i *ObjectLifecyclePolicy) ToObjectLifecyclePolicyOutputWithContext(ctx con
 // ObjectLifecyclePolicyArrayInput is an input type that accepts ObjectLifecyclePolicyArray and ObjectLifecyclePolicyArrayOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyArrayInput` via:
 //
-//          ObjectLifecyclePolicyArray{ ObjectLifecyclePolicyArgs{...} }
+//	ObjectLifecyclePolicyArray{ ObjectLifecyclePolicyArgs{...} }
 type ObjectLifecyclePolicyArrayInput interface {
 	pulumi.Input
 
@@ -204,7 +209,7 @@ func (i ObjectLifecyclePolicyArray) ToObjectLifecyclePolicyArrayOutputWithContex
 // ObjectLifecyclePolicyMapInput is an input type that accepts ObjectLifecyclePolicyMap and ObjectLifecyclePolicyMapOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyMapInput` via:
 //
-//          ObjectLifecyclePolicyMap{ "key": ObjectLifecyclePolicyArgs{...} }
+//	ObjectLifecyclePolicyMap{ "key": ObjectLifecyclePolicyArgs{...} }
 type ObjectLifecyclePolicyMapInput interface {
 	pulumi.Input
 

@@ -21,24 +21,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ObjectStorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ObjectStorage.NewReplicationPolicy(ctx, "testReplicationPolicy", &ObjectStorage.ReplicationPolicyArgs{
-// 			Bucket:                pulumi.Any(_var.Replication_policy_bucket),
-// 			DestinationBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-// 			DestinationRegionName: pulumi.Any(oci_identity_region.Test_region.Name),
-// 			Namespace:             pulumi.Any(_var.Replication_policy_namespace),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ObjectStorage.NewReplicationPolicy(ctx, "testReplicationPolicy", &ObjectStorage.ReplicationPolicyArgs{
+//				Bucket:                pulumi.Any(_var.Replication_policy_bucket),
+//				DestinationBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
+//				DestinationRegionName: pulumi.Any(oci_identity_region.Test_region.Name),
+//				Namespace:             pulumi.Any(_var.Replication_policy_namespace),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -46,7 +49,9 @@ import (
 // ReplicationPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+//
+//	$ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+//
 // ```
 type ReplicationPolicy struct {
 	pulumi.CustomResourceState
@@ -220,7 +225,7 @@ func (i *ReplicationPolicy) ToReplicationPolicyOutputWithContext(ctx context.Con
 // ReplicationPolicyArrayInput is an input type that accepts ReplicationPolicyArray and ReplicationPolicyArrayOutput values.
 // You can construct a concrete instance of `ReplicationPolicyArrayInput` via:
 //
-//          ReplicationPolicyArray{ ReplicationPolicyArgs{...} }
+//	ReplicationPolicyArray{ ReplicationPolicyArgs{...} }
 type ReplicationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -245,7 +250,7 @@ func (i ReplicationPolicyArray) ToReplicationPolicyArrayOutputWithContext(ctx co
 // ReplicationPolicyMapInput is an input type that accepts ReplicationPolicyMap and ReplicationPolicyMapOutput values.
 // You can construct a concrete instance of `ReplicationPolicyMapInput` via:
 //
-//          ReplicationPolicyMap{ "key": ReplicationPolicyArgs{...} }
+//	ReplicationPolicyMap{ "key": ReplicationPolicyArgs{...} }
 type ReplicationPolicyMapInput interface {
 	pulumi.Input
 

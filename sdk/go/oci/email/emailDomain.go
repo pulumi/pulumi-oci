@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Email"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Email.NewEmailDomain(ctx, "testEmailDomain", &Email.EmailDomainArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Email_domain_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Email.NewEmailDomain(ctx, "testEmailDomain", &Email.EmailDomainArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Email_domain_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -50,7 +53,9 @@ import (
 // EmailDomains can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
+//
+//	$ pulumi import oci:Email/emailDomain:EmailDomain test_email_domain "id"
+//
 // ```
 type EmailDomain struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *EmailDomain) ToEmailDomainOutputWithContext(ctx context.Context) EmailD
 // EmailDomainArrayInput is an input type that accepts EmailDomainArray and EmailDomainArrayOutput values.
 // You can construct a concrete instance of `EmailDomainArrayInput` via:
 //
-//          EmailDomainArray{ EmailDomainArgs{...} }
+//	EmailDomainArray{ EmailDomainArgs{...} }
 type EmailDomainArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i EmailDomainArray) ToEmailDomainArrayOutputWithContext(ctx context.Contex
 // EmailDomainMapInput is an input type that accepts EmailDomainMap and EmailDomainMapOutput values.
 // You can construct a concrete instance of `EmailDomainMapInput` via:
 //
-//          EmailDomainMap{ "key": EmailDomainArgs{...} }
+//	EmailDomainMap{ "key": EmailDomainArgs{...} }
 type EmailDomainMapInput interface {
 	pulumi.Input
 

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Limits.GetQuota(ctx, &limits.GetQuotaArgs{
-// 			QuotaId: oci_limits_quota.Test_quota.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Limits.GetQuota(ctx, &limits.GetQuotaArgs{
+//				QuotaId: oci_limits_quota.Test_quota.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupQuota(ctx *pulumi.Context, args *LookupQuotaArgs, opts ...pulumi.InvokeOption) (*LookupQuotaResult, error) {
 	var rv LookupQuotaResult

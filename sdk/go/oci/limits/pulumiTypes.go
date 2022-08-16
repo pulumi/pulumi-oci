@@ -24,7 +24,7 @@ type QuotaLock struct {
 // QuotaLockInput is an input type that accepts QuotaLockArgs and QuotaLockOutput values.
 // You can construct a concrete instance of `QuotaLockInput` via:
 //
-//          QuotaLockArgs{...}
+//	QuotaLockArgs{...}
 type QuotaLockInput interface {
 	pulumi.Input
 
@@ -58,7 +58,7 @@ func (i QuotaLockArgs) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLo
 // QuotaLockArrayInput is an input type that accepts QuotaLockArray and QuotaLockArrayOutput values.
 // You can construct a concrete instance of `QuotaLockArrayInput` via:
 //
-//          QuotaLockArray{ QuotaLockArgs{...} }
+//	QuotaLockArray{ QuotaLockArgs{...} }
 type QuotaLockArrayInput interface {
 	pulumi.Input
 
@@ -144,7 +144,7 @@ type GetLimitDefinitionsFilter struct {
 // GetLimitDefinitionsFilterInput is an input type that accepts GetLimitDefinitionsFilterArgs and GetLimitDefinitionsFilterOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsFilterInput` via:
 //
-//          GetLimitDefinitionsFilterArgs{...}
+//	GetLimitDefinitionsFilterArgs{...}
 type GetLimitDefinitionsFilterInput interface {
 	pulumi.Input
 
@@ -174,7 +174,7 @@ func (i GetLimitDefinitionsFilterArgs) ToGetLimitDefinitionsFilterOutputWithCont
 // GetLimitDefinitionsFilterArrayInput is an input type that accepts GetLimitDefinitionsFilterArray and GetLimitDefinitionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsFilterArrayInput` via:
 //
-//          GetLimitDefinitionsFilterArray{ GetLimitDefinitionsFilterArgs{...} }
+//	GetLimitDefinitionsFilterArray{ GetLimitDefinitionsFilterArgs{...} }
 type GetLimitDefinitionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -267,7 +267,7 @@ type GetLimitDefinitionsLimitDefinition struct {
 // GetLimitDefinitionsLimitDefinitionInput is an input type that accepts GetLimitDefinitionsLimitDefinitionArgs and GetLimitDefinitionsLimitDefinitionOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsLimitDefinitionInput` via:
 //
-//          GetLimitDefinitionsLimitDefinitionArgs{...}
+//	GetLimitDefinitionsLimitDefinitionArgs{...}
 type GetLimitDefinitionsLimitDefinitionInput interface {
 	pulumi.Input
 
@@ -311,7 +311,7 @@ func (i GetLimitDefinitionsLimitDefinitionArgs) ToGetLimitDefinitionsLimitDefini
 // GetLimitDefinitionsLimitDefinitionArrayInput is an input type that accepts GetLimitDefinitionsLimitDefinitionArray and GetLimitDefinitionsLimitDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsLimitDefinitionArrayInput` via:
 //
-//          GetLimitDefinitionsLimitDefinitionArray{ GetLimitDefinitionsLimitDefinitionArgs{...} }
+//	GetLimitDefinitionsLimitDefinitionArray{ GetLimitDefinitionsLimitDefinitionArgs{...} }
 type GetLimitDefinitionsLimitDefinitionArrayInput interface {
 	pulumi.Input
 
@@ -422,7 +422,7 @@ type GetLimitValuesFilter struct {
 // GetLimitValuesFilterInput is an input type that accepts GetLimitValuesFilterArgs and GetLimitValuesFilterOutput values.
 // You can construct a concrete instance of `GetLimitValuesFilterInput` via:
 //
-//          GetLimitValuesFilterArgs{...}
+//	GetLimitValuesFilterArgs{...}
 type GetLimitValuesFilterInput interface {
 	pulumi.Input
 
@@ -452,7 +452,7 @@ func (i GetLimitValuesFilterArgs) ToGetLimitValuesFilterOutputWithContext(ctx co
 // GetLimitValuesFilterArrayInput is an input type that accepts GetLimitValuesFilterArray and GetLimitValuesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLimitValuesFilterArrayInput` via:
 //
-//          GetLimitValuesFilterArray{ GetLimitValuesFilterArgs{...} }
+//	GetLimitValuesFilterArray{ GetLimitValuesFilterArgs{...} }
 type GetLimitValuesFilterArrayInput interface {
 	pulumi.Input
 
@@ -535,7 +535,7 @@ type GetLimitValuesLimitValue struct {
 // GetLimitValuesLimitValueInput is an input type that accepts GetLimitValuesLimitValueArgs and GetLimitValuesLimitValueOutput values.
 // You can construct a concrete instance of `GetLimitValuesLimitValueInput` via:
 //
-//          GetLimitValuesLimitValueArgs{...}
+//	GetLimitValuesLimitValueArgs{...}
 type GetLimitValuesLimitValueInput interface {
 	pulumi.Input
 
@@ -569,7 +569,7 @@ func (i GetLimitValuesLimitValueArgs) ToGetLimitValuesLimitValueOutputWithContex
 // GetLimitValuesLimitValueArrayInput is an input type that accepts GetLimitValuesLimitValueArray and GetLimitValuesLimitValueArrayOutput values.
 // You can construct a concrete instance of `GetLimitValuesLimitValueArrayInput` via:
 //
-//          GetLimitValuesLimitValueArray{ GetLimitValuesLimitValueArgs{...} }
+//	GetLimitValuesLimitValueArray{ GetLimitValuesLimitValueArgs{...} }
 type GetLimitValuesLimitValueArrayInput interface {
 	pulumi.Input
 
@@ -659,7 +659,7 @@ type GetQuotaLock struct {
 // GetQuotaLockInput is an input type that accepts GetQuotaLockArgs and GetQuotaLockOutput values.
 // You can construct a concrete instance of `GetQuotaLockInput` via:
 //
-//          GetQuotaLockArgs{...}
+//	GetQuotaLockArgs{...}
 type GetQuotaLockInput interface {
 	pulumi.Input
 
@@ -693,7 +693,7 @@ func (i GetQuotaLockArgs) ToGetQuotaLockOutputWithContext(ctx context.Context) G
 // GetQuotaLockArrayInput is an input type that accepts GetQuotaLockArray and GetQuotaLockArrayOutput values.
 // You can construct a concrete instance of `GetQuotaLockArrayInput` via:
 //
-//          GetQuotaLockArray{ GetQuotaLockArgs{...} }
+//	GetQuotaLockArray{ GetQuotaLockArgs{...} }
 type GetQuotaLockArrayInput interface {
 	pulumi.Input
 
@@ -779,7 +779,7 @@ type GetQuotasFilter struct {
 // GetQuotasFilterInput is an input type that accepts GetQuotasFilterArgs and GetQuotasFilterOutput values.
 // You can construct a concrete instance of `GetQuotasFilterInput` via:
 //
-//          GetQuotasFilterArgs{...}
+//	GetQuotasFilterArgs{...}
 type GetQuotasFilterInput interface {
 	pulumi.Input
 
@@ -809,7 +809,7 @@ func (i GetQuotasFilterArgs) ToGetQuotasFilterOutputWithContext(ctx context.Cont
 // GetQuotasFilterArrayInput is an input type that accepts GetQuotasFilterArray and GetQuotasFilterArrayOutput values.
 // You can construct a concrete instance of `GetQuotasFilterArrayInput` via:
 //
-//          GetQuotasFilterArray{ GetQuotasFilterArgs{...} }
+//	GetQuotasFilterArray{ GetQuotasFilterArgs{...} }
 type GetQuotasFilterArrayInput interface {
 	pulumi.Input
 
@@ -905,7 +905,7 @@ type GetQuotasQuota struct {
 // GetQuotasQuotaInput is an input type that accepts GetQuotasQuotaArgs and GetQuotasQuotaOutput values.
 // You can construct a concrete instance of `GetQuotasQuotaInput` via:
 //
-//          GetQuotasQuotaArgs{...}
+//	GetQuotasQuotaArgs{...}
 type GetQuotasQuotaInput interface {
 	pulumi.Input
 
@@ -952,7 +952,7 @@ func (i GetQuotasQuotaArgs) ToGetQuotasQuotaOutputWithContext(ctx context.Contex
 // GetQuotasQuotaArrayInput is an input type that accepts GetQuotasQuotaArray and GetQuotasQuotaArrayOutput values.
 // You can construct a concrete instance of `GetQuotasQuotaArrayInput` via:
 //
-//          GetQuotasQuotaArray{ GetQuotasQuotaArgs{...} }
+//	GetQuotasQuotaArray{ GetQuotasQuotaArgs{...} }
 type GetQuotasQuotaArrayInput interface {
 	pulumi.Input
 
@@ -1076,7 +1076,7 @@ type GetQuotasQuotaLock struct {
 // GetQuotasQuotaLockInput is an input type that accepts GetQuotasQuotaLockArgs and GetQuotasQuotaLockOutput values.
 // You can construct a concrete instance of `GetQuotasQuotaLockInput` via:
 //
-//          GetQuotasQuotaLockArgs{...}
+//	GetQuotasQuotaLockArgs{...}
 type GetQuotasQuotaLockInput interface {
 	pulumi.Input
 
@@ -1110,7 +1110,7 @@ func (i GetQuotasQuotaLockArgs) ToGetQuotasQuotaLockOutputWithContext(ctx contex
 // GetQuotasQuotaLockArrayInput is an input type that accepts GetQuotasQuotaLockArray and GetQuotasQuotaLockArrayOutput values.
 // You can construct a concrete instance of `GetQuotasQuotaLockArrayInput` via:
 //
-//          GetQuotasQuotaLockArray{ GetQuotasQuotaLockArgs{...} }
+//	GetQuotasQuotaLockArray{ GetQuotasQuotaLockArgs{...} }
 type GetQuotasQuotaLockArrayInput interface {
 	pulumi.Input
 
@@ -1196,7 +1196,7 @@ type GetServicesFilter struct {
 // GetServicesFilterInput is an input type that accepts GetServicesFilterArgs and GetServicesFilterOutput values.
 // You can construct a concrete instance of `GetServicesFilterInput` via:
 //
-//          GetServicesFilterArgs{...}
+//	GetServicesFilterArgs{...}
 type GetServicesFilterInput interface {
 	pulumi.Input
 
@@ -1226,7 +1226,7 @@ func (i GetServicesFilterArgs) ToGetServicesFilterOutputWithContext(ctx context.
 // GetServicesFilterArrayInput is an input type that accepts GetServicesFilterArray and GetServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetServicesFilterArrayInput` via:
 //
-//          GetServicesFilterArray{ GetServicesFilterArgs{...} }
+//	GetServicesFilterArray{ GetServicesFilterArgs{...} }
 type GetServicesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1305,7 +1305,7 @@ type GetServicesService struct {
 // GetServicesServiceInput is an input type that accepts GetServicesServiceArgs and GetServicesServiceOutput values.
 // You can construct a concrete instance of `GetServicesServiceInput` via:
 //
-//          GetServicesServiceArgs{...}
+//	GetServicesServiceArgs{...}
 type GetServicesServiceInput interface {
 	pulumi.Input
 
@@ -1335,7 +1335,7 @@ func (i GetServicesServiceArgs) ToGetServicesServiceOutputWithContext(ctx contex
 // GetServicesServiceArrayInput is an input type that accepts GetServicesServiceArray and GetServicesServiceArrayOutput values.
 // You can construct a concrete instance of `GetServicesServiceArrayInput` via:
 //
-//          GetServicesServiceArray{ GetServicesServiceArgs{...} }
+//	GetServicesServiceArray{ GetServicesServiceArgs{...} }
 type GetServicesServiceArrayInput interface {
 	pulumi.Input
 

@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataConnectivity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataConnectivity.GetRegistryFolders(ctx, &dataconnectivity.GetRegistryFoldersArgs{
-// 			RegistryId:          oci_data_connectivity_registry.Test_registry.Id,
-// 			FavoritesQueryParam: pulumi.StringRef(_var.Registry_folder_favorites_query_param),
-// 			Fields:              _var.Registry_folder_fields,
-// 			Name:                pulumi.StringRef(_var.Registry_folder_name),
-// 			Type:                pulumi.StringRef(_var.Registry_folder_type),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataConnectivity.GetRegistryFolders(ctx, &dataconnectivity.GetRegistryFoldersArgs{
+//				RegistryId:          oci_data_connectivity_registry.Test_registry.Id,
+//				FavoritesQueryParam: pulumi.StringRef(_var.Registry_folder_favorites_query_param),
+//				Fields:              _var.Registry_folder_fields,
+//				Name:                pulumi.StringRef(_var.Registry_folder_name),
+//				Type:                pulumi.StringRef(_var.Registry_folder_type),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRegistryFolders(ctx *pulumi.Context, args *GetRegistryFoldersArgs, opts ...pulumi.InvokeOption) (*GetRegistryFoldersResult, error) {
 	var rv GetRegistryFoldersResult

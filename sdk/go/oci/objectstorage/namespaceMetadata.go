@@ -105,7 +105,7 @@ func (i *NamespaceMetadata) ToNamespaceMetadataOutputWithContext(ctx context.Con
 // NamespaceMetadataArrayInput is an input type that accepts NamespaceMetadataArray and NamespaceMetadataArrayOutput values.
 // You can construct a concrete instance of `NamespaceMetadataArrayInput` via:
 //
-//          NamespaceMetadataArray{ NamespaceMetadataArgs{...} }
+//	NamespaceMetadataArray{ NamespaceMetadataArgs{...} }
 type NamespaceMetadataArrayInput interface {
 	pulumi.Input
 
@@ -130,7 +130,7 @@ func (i NamespaceMetadataArray) ToNamespaceMetadataArrayOutputWithContext(ctx co
 // NamespaceMetadataMapInput is an input type that accepts NamespaceMetadataMap and NamespaceMetadataMapOutput values.
 // You can construct a concrete instance of `NamespaceMetadataMapInput` via:
 //
-//          NamespaceMetadataMap{ "key": NamespaceMetadataArgs{...} }
+//	NamespaceMetadataMap{ "key": NamespaceMetadataArgs{...} }
 type NamespaceMetadataMapInput interface {
 	pulumi.Input
 

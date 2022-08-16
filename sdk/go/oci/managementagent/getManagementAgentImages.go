@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
 //
-// Get supported agent image information
+// # Get supported agent image information
 //
 // ## Example Usage
 //
@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.GetManagementAgentImages(ctx, &managementagent.GetManagementAgentImagesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			InstallType:   pulumi.StringRef(_var.Management_agent_image_install_type),
-// 			Name:          pulumi.StringRef(_var.Management_agent_image_name),
-// 			State:         pulumi.StringRef(_var.Management_agent_image_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.GetManagementAgentImages(ctx, &managementagent.GetManagementAgentImagesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				InstallType:   pulumi.StringRef(_var.Management_agent_image_install_type),
+//				Name:          pulumi.StringRef(_var.Management_agent_image_name),
+//				State:         pulumi.StringRef(_var.Management_agent_image_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetManagementAgentImages(ctx *pulumi.Context, args *GetManagementAgentImagesArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentImagesResult, error) {
 	var rv GetManagementAgentImagesResult

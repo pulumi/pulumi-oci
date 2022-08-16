@@ -24,25 +24,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetDbSystems(ctx, &database.GetDbSystemsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Db_system_availability_domain),
-// 			BackupId:           pulumi.StringRef(oci_database_backup.Test_backup.Id),
-// 			DisplayName:        pulumi.StringRef(_var.Db_system_display_name),
-// 			State:              pulumi.StringRef(_var.Db_system_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetDbSystems(ctx, &database.GetDbSystemsArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: pulumi.StringRef(_var.Db_system_availability_domain),
+//				BackupId:           pulumi.StringRef(oci_database_backup.Test_backup.Id),
+//				DisplayName:        pulumi.StringRef(_var.Db_system_display_name),
+//				State:              pulumi.StringRef(_var.Db_system_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbSystems(ctx *pulumi.Context, args *GetDbSystemsArgs, opts ...pulumi.InvokeOption) (*GetDbSystemsResult, error) {
 	var rv GetDbSystemsResult

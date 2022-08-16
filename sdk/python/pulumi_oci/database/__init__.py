@@ -83,6 +83,8 @@ from .get_cloud_vm_clusters import *
 from .get_data_guard_association import *
 from .get_data_guard_associations import *
 from .get_database import *
+from .get_database_maintenance_run_histories import *
+from .get_database_maintenance_run_history import *
 from .get_database_pdb_conversion_history_entries import *
 from .get_database_pdb_conversion_history_entry import *
 from .get_database_software_image import *

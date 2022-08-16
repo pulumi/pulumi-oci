@@ -21,71 +21,74 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Autoscaling"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Autoscaling"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Autoscaling.NewAutoScalingConfiguration(ctx, "testAutoScalingConfiguration", &Autoscaling.AutoScalingConfigurationArgs{
-// 			AutoScalingResources: &autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs{
-// 				Id:   pulumi.Any(_var.Auto_scaling_configuration_auto_scaling_resources_id),
-// 				Type: pulumi.Any(_var.Auto_scaling_configuration_auto_scaling_resources_type),
-// 			},
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Policies: autoscaling.AutoScalingConfigurationPolicyArray{
-// 				&autoscaling.AutoScalingConfigurationPolicyArgs{
-// 					PolicyType: pulumi.Any(_var.Auto_scaling_configuration_policies_policy_type),
-// 					Capacity: &autoscaling.AutoScalingConfigurationPolicyCapacityArgs{
-// 						Initial: pulumi.Any(_var.Auto_scaling_configuration_policies_capacity_initial),
-// 						Max:     pulumi.Any(_var.Auto_scaling_configuration_policies_capacity_max),
-// 						Min:     pulumi.Any(_var.Auto_scaling_configuration_policies_capacity_min),
-// 					},
-// 					DisplayName: pulumi.Any(_var.Auto_scaling_configuration_policies_display_name),
-// 					ExecutionSchedule: &autoscaling.AutoScalingConfigurationPolicyExecutionScheduleArgs{
-// 						Expression: pulumi.Any(_var.Auto_scaling_configuration_policies_execution_schedule_expression),
-// 						Timezone:   pulumi.Any(_var.Auto_scaling_configuration_policies_execution_schedule_timezone),
-// 						Type:       pulumi.Any(_var.Auto_scaling_configuration_policies_execution_schedule_type),
-// 					},
-// 					IsEnabled: pulumi.Any(_var.Auto_scaling_configuration_policies_is_enabled),
-// 					ResourceAction: &autoscaling.AutoScalingConfigurationPolicyResourceActionArgs{
-// 						Action:     pulumi.Any(_var.Auto_scaling_configuration_policies_resource_action_action),
-// 						ActionType: pulumi.Any(_var.Auto_scaling_configuration_policies_resource_action_action_type),
-// 					},
-// 					Rules: autoscaling.AutoScalingConfigurationPolicyRuleArray{
-// 						&autoscaling.AutoScalingConfigurationPolicyRuleArgs{
-// 							Action: &autoscaling.AutoScalingConfigurationPolicyRuleActionArgs{
-// 								Type:  pulumi.Any(_var.Auto_scaling_configuration_policies_rules_action_type),
-// 								Value: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_action_value),
-// 							},
-// 							DisplayName: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_display_name),
-// 							Metric: &autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs{
-// 								MetricType: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_metric_metric_type),
-// 								Threshold: &autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs{
-// 									Operator: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_metric_threshold_operator),
-// 									Value:    pulumi.Any(_var.Auto_scaling_configuration_policies_rules_metric_threshold_value),
-// 								},
-// 							},
-// 						},
-// 					},
-// 				},
-// 			},
-// 			CoolDownInSeconds: pulumi.Any(_var.Auto_scaling_configuration_cool_down_in_seconds),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Auto_scaling_configuration_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsEnabled: pulumi.Any(_var.Auto_scaling_configuration_is_enabled),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Autoscaling.NewAutoScalingConfiguration(ctx, "testAutoScalingConfiguration", &Autoscaling.AutoScalingConfigurationArgs{
+//				AutoScalingResources: &autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs{
+//					Id:   pulumi.Any(_var.Auto_scaling_configuration_auto_scaling_resources_id),
+//					Type: pulumi.Any(_var.Auto_scaling_configuration_auto_scaling_resources_type),
+//				},
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Policies: autoscaling.AutoScalingConfigurationPolicyArray{
+//					&autoscaling.AutoScalingConfigurationPolicyArgs{
+//						PolicyType: pulumi.Any(_var.Auto_scaling_configuration_policies_policy_type),
+//						Capacity: &autoscaling.AutoScalingConfigurationPolicyCapacityArgs{
+//							Initial: pulumi.Any(_var.Auto_scaling_configuration_policies_capacity_initial),
+//							Max:     pulumi.Any(_var.Auto_scaling_configuration_policies_capacity_max),
+//							Min:     pulumi.Any(_var.Auto_scaling_configuration_policies_capacity_min),
+//						},
+//						DisplayName: pulumi.Any(_var.Auto_scaling_configuration_policies_display_name),
+//						ExecutionSchedule: &autoscaling.AutoScalingConfigurationPolicyExecutionScheduleArgs{
+//							Expression: pulumi.Any(_var.Auto_scaling_configuration_policies_execution_schedule_expression),
+//							Timezone:   pulumi.Any(_var.Auto_scaling_configuration_policies_execution_schedule_timezone),
+//							Type:       pulumi.Any(_var.Auto_scaling_configuration_policies_execution_schedule_type),
+//						},
+//						IsEnabled: pulumi.Any(_var.Auto_scaling_configuration_policies_is_enabled),
+//						ResourceAction: &autoscaling.AutoScalingConfigurationPolicyResourceActionArgs{
+//							Action:     pulumi.Any(_var.Auto_scaling_configuration_policies_resource_action_action),
+//							ActionType: pulumi.Any(_var.Auto_scaling_configuration_policies_resource_action_action_type),
+//						},
+//						Rules: autoscaling.AutoScalingConfigurationPolicyRuleArray{
+//							&autoscaling.AutoScalingConfigurationPolicyRuleArgs{
+//								Action: &autoscaling.AutoScalingConfigurationPolicyRuleActionArgs{
+//									Type:  pulumi.Any(_var.Auto_scaling_configuration_policies_rules_action_type),
+//									Value: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_action_value),
+//								},
+//								DisplayName: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_display_name),
+//								Metric: &autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs{
+//									MetricType: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_metric_metric_type),
+//									Threshold: &autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs{
+//										Operator: pulumi.Any(_var.Auto_scaling_configuration_policies_rules_metric_threshold_operator),
+//										Value:    pulumi.Any(_var.Auto_scaling_configuration_policies_rules_metric_threshold_value),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				CoolDownInSeconds: pulumi.Any(_var.Auto_scaling_configuration_cool_down_in_seconds),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Auto_scaling_configuration_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsEnabled: pulumi.Any(_var.Auto_scaling_configuration_is_enabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -93,7 +96,9 @@ import (
 // AutoScalingConfigurations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
+//
+//	$ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
+//
 // ```
 type AutoScalingConfiguration struct {
 	pulumi.CustomResourceState
@@ -278,7 +283,7 @@ func (i *AutoScalingConfiguration) ToAutoScalingConfigurationOutputWithContext(c
 // AutoScalingConfigurationArrayInput is an input type that accepts AutoScalingConfigurationArray and AutoScalingConfigurationArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationArrayInput` via:
 //
-//          AutoScalingConfigurationArray{ AutoScalingConfigurationArgs{...} }
+//	AutoScalingConfigurationArray{ AutoScalingConfigurationArgs{...} }
 type AutoScalingConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -303,7 +308,7 @@ func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutputWith
 // AutoScalingConfigurationMapInput is an input type that accepts AutoScalingConfigurationMap and AutoScalingConfigurationMapOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationMapInput` via:
 //
-//          AutoScalingConfigurationMap{ "key": AutoScalingConfigurationArgs{...} }
+//	AutoScalingConfigurationMap{ "key": AutoScalingConfigurationArgs{...} }
 type AutoScalingConfigurationMapInput interface {
 	pulumi.Input
 

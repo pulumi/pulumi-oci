@@ -26,7 +26,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Details of DVP Stack.
+        /// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult> DvpStackDetails;
         /// <summary>

@@ -39,7 +39,9 @@ import (
 // InternetGateways can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway "id"
+//
+//	$ pulumi import oci:Core/internetGateway:InternetGateway test_internet_gateway "id"
+//
 // ```
 type InternetGateway struct {
 	pulumi.CustomResourceState
@@ -205,7 +207,7 @@ func (i *InternetGateway) ToInternetGatewayOutputWithContext(ctx context.Context
 // InternetGatewayArrayInput is an input type that accepts InternetGatewayArray and InternetGatewayArrayOutput values.
 // You can construct a concrete instance of `InternetGatewayArrayInput` via:
 //
-//          InternetGatewayArray{ InternetGatewayArgs{...} }
+//	InternetGatewayArray{ InternetGatewayArgs{...} }
 type InternetGatewayArrayInput interface {
 	pulumi.Input
 
@@ -230,7 +232,7 @@ func (i InternetGatewayArray) ToInternetGatewayArrayOutputWithContext(ctx contex
 // InternetGatewayMapInput is an input type that accepts InternetGatewayMap and InternetGatewayMapOutput values.
 // You can construct a concrete instance of `InternetGatewayMapInput` via:
 //
-//          InternetGatewayMap{ "key": InternetGatewayArgs{...} }
+//	InternetGatewayMap{ "key": InternetGatewayArgs{...} }
 type InternetGatewayMapInput interface {
 	pulumi.Input
 

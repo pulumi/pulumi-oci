@@ -32,37 +32,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := OsManagement.NewManagedInstanceManagement(ctx, "testManagedInstanceManagement", &OsManagement.ManagedInstanceManagementArgs{
-// 			ManagedInstanceId: pulumi.Any(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-// 			ParentSoftwareSource: &osmanagement.ManagedInstanceManagementParentSoftwareSourceArgs{
-// 				Id:   pulumi.Any(oci_osmanagement_software_source.Test_parent_software_source.Id),
-// 				Name: pulumi.Any(oci_osmanagement_software_source.Test_parent_software_source.Display_name),
-// 			},
-// 			ManagedInstanceGroups: osmanagement.ManagedInstanceManagementManagedInstanceGroupArray{
-// 				&osmanagement.ManagedInstanceManagementManagedInstanceGroupArgs{
-// 					Id:          pulumi.Any(oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id),
-// 					DisplayName: pulumi.Any(_var.Managed_instance_group_display_name),
-// 				},
-// 			},
-// 			ChildSoftwareSources: osmanagement.ManagedInstanceManagementChildSoftwareSourceArray{
-// 				&osmanagement.ManagedInstanceManagementChildSoftwareSourceArgs{
-// 					Id:   pulumi.Any(oci_osmanagement_software_source.Test_software_source_child.Id),
-// 					Name: pulumi.Any(oci_osmanagement_software_source.Test_software_source_child.Display_name),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagement.NewManagedInstanceManagement(ctx, "testManagedInstanceManagement", &OsManagement.ManagedInstanceManagementArgs{
+//				ManagedInstanceId: pulumi.Any(oci_osmanagement_managed_instance.Test_managed_instance.Id),
+//				ParentSoftwareSource: &osmanagement.ManagedInstanceManagementParentSoftwareSourceArgs{
+//					Id:   pulumi.Any(oci_osmanagement_software_source.Test_parent_software_source.Id),
+//					Name: pulumi.Any(oci_osmanagement_software_source.Test_parent_software_source.Display_name),
+//				},
+//				ManagedInstanceGroups: osmanagement.ManagedInstanceManagementManagedInstanceGroupArray{
+//					&osmanagement.ManagedInstanceManagementManagedInstanceGroupArgs{
+//						Id:          pulumi.Any(oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id),
+//						DisplayName: pulumi.Any(_var.Managed_instance_group_display_name),
+//					},
+//				},
+//				ChildSoftwareSources: osmanagement.ManagedInstanceManagementChildSoftwareSourceArray{
+//					&osmanagement.ManagedInstanceManagementChildSoftwareSourceArgs{
+//						Id:   pulumi.Any(oci_osmanagement_software_source.Test_software_source_child.Id),
+//						Name: pulumi.Any(oci_osmanagement_software_source.Test_software_source_child.Display_name),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -247,7 +250,7 @@ func (i *ManagedInstanceManagement) ToManagedInstanceManagementOutputWithContext
 // ManagedInstanceManagementArrayInput is an input type that accepts ManagedInstanceManagementArray and ManagedInstanceManagementArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementArrayInput` via:
 //
-//          ManagedInstanceManagementArray{ ManagedInstanceManagementArgs{...} }
+//	ManagedInstanceManagementArray{ ManagedInstanceManagementArgs{...} }
 type ManagedInstanceManagementArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +275,7 @@ func (i ManagedInstanceManagementArray) ToManagedInstanceManagementArrayOutputWi
 // ManagedInstanceManagementMapInput is an input type that accepts ManagedInstanceManagementMap and ManagedInstanceManagementMapOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementMapInput` via:
 //
-//          ManagedInstanceManagementMap{ "key": ManagedInstanceManagementArgs{...} }
+//	ManagedInstanceManagementMap{ "key": ManagedInstanceManagementArgs{...} }
 type ManagedInstanceManagementMapInput interface {
 	pulumi.Input
 

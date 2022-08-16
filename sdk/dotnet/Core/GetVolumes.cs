@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         var testVolumes = Output.Create(Oci.Core.GetVolumes.InvokeAsync(new Oci.Core.GetVolumesArgs
         ///         {
-        ///             CompartmentId = @var.Compartment_id,
         ///             AvailabilityDomain = @var.Volume_availability_domain,
+        ///             CompartmentId = @var.Compartment_id,
         ///             DisplayName = @var.Volume_display_name,
         ///             State = @var.Volume_state,
         ///             VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Core
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetVolumesResult> InvokeAsync(GetVolumesArgs args, InvokeOptions? options = null)
+        public static Task<GetVolumesResult> InvokeAsync(GetVolumesArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetVolumesResult>("oci:Core/getVolumes:getVolumes", args ?? new GetVolumesArgs(), options.WithDefaults());
 
         /// <summary>
@@ -67,8 +67,8 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         var testVolumes = Output.Create(Oci.Core.GetVolumes.InvokeAsync(new Oci.Core.GetVolumesArgs
         ///         {
-        ///             CompartmentId = @var.Compartment_id,
         ///             AvailabilityDomain = @var.Volume_availability_domain,
+        ///             CompartmentId = @var.Compartment_id,
         ///             DisplayName = @var.Volume_display_name,
         ///             State = @var.Volume_state,
         ///             VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Core
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetVolumesResult> Invoke(GetVolumesInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetVolumesResult> Invoke(GetVolumesInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetVolumesResult>("oci:Core/getVolumes:getVolumes", args ?? new GetVolumesInvokeArgs(), options.WithDefaults());
     }
 
@@ -96,8 +96,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -141,8 +141,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -186,7 +186,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The OCID of the compartment that contains the volume.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.Core
         private GetVolumesResult(
             string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
             string? displayName,
 

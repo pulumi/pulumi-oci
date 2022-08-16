@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceManagerProxy"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceManagerProxy"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceManagerProxy.GetServiceEnvironment(ctx, &servicemanagerproxy.GetServiceEnvironmentArgs{
-// 			CompartmentId:        _var.Compartment_id,
-// 			ServiceEnvironmentId: oci_service_manager_proxy_service_environment.Test_service_environment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceManagerProxy.GetServiceEnvironment(ctx, &servicemanagerproxy.GetServiceEnvironmentArgs{
+//				CompartmentId:        _var.Compartment_id,
+//				ServiceEnvironmentId: oci_service_manager_proxy_service_environment.Test_service_environment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetServiceEnvironment(ctx *pulumi.Context, args *GetServiceEnvironmentArgs, opts ...pulumi.InvokeOption) (*GetServiceEnvironmentResult, error) {
 	var rv GetServiceEnvironmentResult

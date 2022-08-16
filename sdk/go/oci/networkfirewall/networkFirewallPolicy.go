@@ -21,78 +21,81 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkFirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkFirewall.NewNetworkFirewallPolicy(ctx, "testNetworkFirewallPolicy", &NetworkFirewall.NetworkFirewallPolicyArgs{
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			ApplicationLists: pulumi.Any(_var.Network_firewall_policy_application_lists),
-// 			DecryptionProfiles: networkfirewall.NetworkFirewallPolicyDecryptionProfileArray{
-// 				&networkfirewall.NetworkFirewallPolicyDecryptionProfileArgs{
-// 					IsOutOfCapacityBlocked:             pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked),
-// 					IsUnsupportedCipherBlocked:         pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked),
-// 					IsUnsupportedVersionBlocked:        pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_unsupported_version_blocked),
-// 					Type:                               pulumi.Any(_var.Network_firewall_policy_decryption_profiles_type),
-// 					AreCertificateExtensionsRestricted: pulumi.Any(_var.Network_firewall_policy_decryption_profiles_are_certificate_extensions_restricted),
-// 					IsAutoIncludeAltName:               pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_auto_include_alt_name),
-// 					IsExpiredCertificateBlocked:        pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_expired_certificate_blocked),
-// 					IsRevocationStatusTimeoutBlocked:   pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_revocation_status_timeout_blocked),
-// 					IsUnknownRevocationStatusBlocked:   pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_unknown_revocation_status_blocked),
-// 					IsUntrustedIssuerBlocked:           pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_untrusted_issuer_blocked),
-// 				},
-// 			},
-// 			DecryptionRules: networkfirewall.NetworkFirewallPolicyDecryptionRuleArray{
-// 				&networkfirewall.NetworkFirewallPolicyDecryptionRuleArgs{
-// 					Action: pulumi.Any(_var.Network_firewall_policy_decryption_rules_action),
-// 					Condition: &networkfirewall.NetworkFirewallPolicyDecryptionRuleConditionArgs{
-// 						Destinations: pulumi.Any(_var.Network_firewall_policy_decryption_rules_condition_destinations),
-// 						Sources:      pulumi.Any(_var.Network_firewall_policy_decryption_rules_condition_sources),
-// 					},
-// 					Name:              pulumi.Any(_var.Network_firewall_policy_decryption_rules_name),
-// 					DecryptionProfile: pulumi.Any(_var.Network_firewall_policy_decryption_rules_decryption_profile),
-// 					Secret:            pulumi.Any(_var.Network_firewall_policy_decryption_rules_secret),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Network_firewall_policy_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IpAddressLists: pulumi.Any(_var.Network_firewall_policy_ip_address_lists),
-// 			MappedSecrets: networkfirewall.NetworkFirewallPolicyMappedSecretArray{
-// 				&networkfirewall.NetworkFirewallPolicyMappedSecretArgs{
-// 					Source:        _var.Network_firewall_policy_mapped_secrets_source,
-// 					Type:          pulumi.Any(_var.Network_firewall_policy_mapped_secrets_type),
-// 					VaultSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 					VersionNumber: pulumi.Any(_var.Network_firewall_policy_mapped_secrets_version_number),
-// 				},
-// 			},
-// 			SecurityRules: networkfirewall.NetworkFirewallPolicySecurityRuleArray{
-// 				&networkfirewall.NetworkFirewallPolicySecurityRuleArgs{
-// 					Action: pulumi.Any(_var.Network_firewall_policy_security_rules_action),
-// 					Condition: &networkfirewall.NetworkFirewallPolicySecurityRuleConditionArgs{
-// 						Applications: pulumi.Any(_var.Network_firewall_policy_security_rules_condition_applications),
-// 						Destinations: pulumi.Any(_var.Network_firewall_policy_security_rules_condition_destinations),
-// 						Sources:      pulumi.Any(_var.Network_firewall_policy_security_rules_condition_sources),
-// 						Urls:         pulumi.Any(_var.Network_firewall_policy_security_rules_condition_urls),
-// 					},
-// 					Name:       pulumi.Any(_var.Network_firewall_policy_security_rules_name),
-// 					Inspection: pulumi.Any(_var.Network_firewall_policy_security_rules_inspection),
-// 				},
-// 			},
-// 			UrlLists: pulumi.Any(_var.Network_firewall_policy_url_lists),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicy(ctx, "testNetworkFirewallPolicy", &NetworkFirewall.NetworkFirewallPolicyArgs{
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				ApplicationLists: pulumi.Any(_var.Network_firewall_policy_application_lists),
+//				DecryptionProfiles: networkfirewall.NetworkFirewallPolicyDecryptionProfileArray{
+//					&networkfirewall.NetworkFirewallPolicyDecryptionProfileArgs{
+//						IsOutOfCapacityBlocked:             pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked),
+//						IsUnsupportedCipherBlocked:         pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked),
+//						IsUnsupportedVersionBlocked:        pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_unsupported_version_blocked),
+//						Type:                               pulumi.Any(_var.Network_firewall_policy_decryption_profiles_type),
+//						AreCertificateExtensionsRestricted: pulumi.Any(_var.Network_firewall_policy_decryption_profiles_are_certificate_extensions_restricted),
+//						IsAutoIncludeAltName:               pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_auto_include_alt_name),
+//						IsExpiredCertificateBlocked:        pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_expired_certificate_blocked),
+//						IsRevocationStatusTimeoutBlocked:   pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_revocation_status_timeout_blocked),
+//						IsUnknownRevocationStatusBlocked:   pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_unknown_revocation_status_blocked),
+//						IsUntrustedIssuerBlocked:           pulumi.Any(_var.Network_firewall_policy_decryption_profiles_is_untrusted_issuer_blocked),
+//					},
+//				},
+//				DecryptionRules: networkfirewall.NetworkFirewallPolicyDecryptionRuleArray{
+//					&networkfirewall.NetworkFirewallPolicyDecryptionRuleArgs{
+//						Action: pulumi.Any(_var.Network_firewall_policy_decryption_rules_action),
+//						Condition: &networkfirewall.NetworkFirewallPolicyDecryptionRuleConditionArgs{
+//							Destinations: pulumi.Any(_var.Network_firewall_policy_decryption_rules_condition_destinations),
+//							Sources:      pulumi.Any(_var.Network_firewall_policy_decryption_rules_condition_sources),
+//						},
+//						Name:              pulumi.Any(_var.Network_firewall_policy_decryption_rules_name),
+//						DecryptionProfile: pulumi.Any(_var.Network_firewall_policy_decryption_rules_decryption_profile),
+//						Secret:            pulumi.Any(_var.Network_firewall_policy_decryption_rules_secret),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DisplayName: pulumi.Any(_var.Network_firewall_policy_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IpAddressLists: pulumi.Any(_var.Network_firewall_policy_ip_address_lists),
+//				MappedSecrets: networkfirewall.NetworkFirewallPolicyMappedSecretArray{
+//					&networkfirewall.NetworkFirewallPolicyMappedSecretArgs{
+//						Source:        _var.Network_firewall_policy_mapped_secrets_source,
+//						Type:          pulumi.Any(_var.Network_firewall_policy_mapped_secrets_type),
+//						VaultSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						VersionNumber: pulumi.Any(_var.Network_firewall_policy_mapped_secrets_version_number),
+//					},
+//				},
+//				SecurityRules: networkfirewall.NetworkFirewallPolicySecurityRuleArray{
+//					&networkfirewall.NetworkFirewallPolicySecurityRuleArgs{
+//						Action: pulumi.Any(_var.Network_firewall_policy_security_rules_action),
+//						Condition: &networkfirewall.NetworkFirewallPolicySecurityRuleConditionArgs{
+//							Applications: pulumi.Any(_var.Network_firewall_policy_security_rules_condition_applications),
+//							Destinations: pulumi.Any(_var.Network_firewall_policy_security_rules_condition_destinations),
+//							Sources:      pulumi.Any(_var.Network_firewall_policy_security_rules_condition_sources),
+//							Urls:         pulumi.Any(_var.Network_firewall_policy_security_rules_condition_urls),
+//						},
+//						Name:       pulumi.Any(_var.Network_firewall_policy_security_rules_name),
+//						Inspection: pulumi.Any(_var.Network_firewall_policy_security_rules_inspection),
+//					},
+//				},
+//				UrlLists: pulumi.Any(_var.Network_firewall_policy_url_lists),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -100,7 +103,9 @@ import (
 // NetworkFirewallPolicies can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
+//
+//	$ pulumi import oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy test_network_firewall_policy "id"
+//
 // ```
 type NetworkFirewallPolicy struct {
 	pulumi.CustomResourceState
@@ -327,7 +332,7 @@ func (i *NetworkFirewallPolicy) ToNetworkFirewallPolicyOutputWithContext(ctx con
 // NetworkFirewallPolicyArrayInput is an input type that accepts NetworkFirewallPolicyArray and NetworkFirewallPolicyArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyArrayInput` via:
 //
-//          NetworkFirewallPolicyArray{ NetworkFirewallPolicyArgs{...} }
+//	NetworkFirewallPolicyArray{ NetworkFirewallPolicyArgs{...} }
 type NetworkFirewallPolicyArrayInput interface {
 	pulumi.Input
 
@@ -352,7 +357,7 @@ func (i NetworkFirewallPolicyArray) ToNetworkFirewallPolicyArrayOutputWithContex
 // NetworkFirewallPolicyMapInput is an input type that accepts NetworkFirewallPolicyMap and NetworkFirewallPolicyMapOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyMapInput` via:
 //
-//          NetworkFirewallPolicyMap{ "key": NetworkFirewallPolicyArgs{...} }
+//	NetworkFirewallPolicyMap{ "key": NetworkFirewallPolicyArgs{...} }
 type NetworkFirewallPolicyMapInput interface {
 	pulumi.Input
 

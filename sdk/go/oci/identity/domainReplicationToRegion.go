@@ -33,22 +33,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewDomainReplicationToRegion(ctx, "testDomainReplicationToRegion", &Identity.DomainReplicationToRegionArgs{
-// 			DomainId:      pulumi.Any(oci_identity_domain.Test_domain.Id),
-// 			ReplicaRegion: pulumi.Any(_var.Domain_replication_to_region_replica_region),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewDomainReplicationToRegion(ctx, "testDomainReplicationToRegion", &Identity.DomainReplicationToRegionArgs{
+//				DomainId:      pulumi.Any(oci_identity_domain.Test_domain.Id),
+//				ReplicaRegion: pulumi.Any(_var.Domain_replication_to_region_replica_region),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -153,7 +156,7 @@ func (i *DomainReplicationToRegion) ToDomainReplicationToRegionOutputWithContext
 // DomainReplicationToRegionArrayInput is an input type that accepts DomainReplicationToRegionArray and DomainReplicationToRegionArrayOutput values.
 // You can construct a concrete instance of `DomainReplicationToRegionArrayInput` via:
 //
-//          DomainReplicationToRegionArray{ DomainReplicationToRegionArgs{...} }
+//	DomainReplicationToRegionArray{ DomainReplicationToRegionArgs{...} }
 type DomainReplicationToRegionArrayInput interface {
 	pulumi.Input
 
@@ -178,7 +181,7 @@ func (i DomainReplicationToRegionArray) ToDomainReplicationToRegionArrayOutputWi
 // DomainReplicationToRegionMapInput is an input type that accepts DomainReplicationToRegionMap and DomainReplicationToRegionMapOutput values.
 // You can construct a concrete instance of `DomainReplicationToRegionMapInput` via:
 //
-//          DomainReplicationToRegionMap{ "key": DomainReplicationToRegionArgs{...} }
+//	DomainReplicationToRegionMap{ "key": DomainReplicationToRegionArgs{...} }
 type DomainReplicationToRegionMapInput interface {
 	pulumi.Input
 

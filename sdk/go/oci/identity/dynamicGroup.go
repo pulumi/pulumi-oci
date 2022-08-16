@@ -35,29 +35,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.NewDynamicGroup(ctx, "testDynamicGroup", &Identity.DynamicGroupArgs{
-// 			CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-// 			Description:   pulumi.Any(_var.Dynamic_group_description),
-// 			MatchingRule:  pulumi.Any(_var.Dynamic_group_matching_rule),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewDynamicGroup(ctx, "testDynamicGroup", &Identity.DynamicGroupArgs{
+//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//				Description:   pulumi.Any(_var.Dynamic_group_description),
+//				MatchingRule:  pulumi.Any(_var.Dynamic_group_matching_rule),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -65,7 +68,9 @@ import (
 // DynamicGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
+//
+//	$ pulumi import oci:Identity/dynamicGroup:DynamicGroup test_dynamic_group "id"
+//
 // ```
 type DynamicGroup struct {
 	pulumi.CustomResourceState
@@ -230,7 +235,7 @@ func (i *DynamicGroup) ToDynamicGroupOutputWithContext(ctx context.Context) Dyna
 // DynamicGroupArrayInput is an input type that accepts DynamicGroupArray and DynamicGroupArrayOutput values.
 // You can construct a concrete instance of `DynamicGroupArrayInput` via:
 //
-//          DynamicGroupArray{ DynamicGroupArgs{...} }
+//	DynamicGroupArray{ DynamicGroupArgs{...} }
 type DynamicGroupArrayInput interface {
 	pulumi.Input
 
@@ -255,7 +260,7 @@ func (i DynamicGroupArray) ToDynamicGroupArrayOutputWithContext(ctx context.Cont
 // DynamicGroupMapInput is an input type that accepts DynamicGroupMap and DynamicGroupMapOutput values.
 // You can construct a concrete instance of `DynamicGroupMapInput` via:
 //
-//          DynamicGroupMap{ "key": DynamicGroupArgs{...} }
+//	DynamicGroupMap{ "key": DynamicGroupArgs{...} }
 type DynamicGroupMapInput interface {
 	pulumi.Input
 

@@ -21,33 +21,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.NewDatabaseToolsPrivateEndpoint(ctx, "testDatabaseToolsPrivateEndpoint", &DatabaseTools.DatabaseToolsPrivateEndpointArgs{
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			DisplayName:       pulumi.Any(_var.Database_tools_private_endpoint_display_name),
-// 			EndpointServiceId: pulumi.Any(oci_core_service.Test_service.Id),
-// 			SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Database_tools_private_endpoint_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			NsgIds:            pulumi.Any(_var.Database_tools_private_endpoint_nsg_ids),
-// 			PrivateEndpointIp: pulumi.Any(_var.Database_tools_private_endpoint_private_endpoint_ip),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.NewDatabaseToolsPrivateEndpoint(ctx, "testDatabaseToolsPrivateEndpoint", &DatabaseTools.DatabaseToolsPrivateEndpointArgs{
+//				CompartmentId:     pulumi.Any(_var.Compartment_id),
+//				DisplayName:       pulumi.Any(_var.Database_tools_private_endpoint_display_name),
+//				EndpointServiceId: pulumi.Any(oci_core_service.Test_service.Id),
+//				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Database_tools_private_endpoint_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				NsgIds:            pulumi.Any(_var.Database_tools_private_endpoint_nsg_ids),
+//				PrivateEndpointIp: pulumi.Any(_var.Database_tools_private_endpoint_private_endpoint_ip),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -55,7 +58,9 @@ import (
 // DatabaseToolsPrivateEndpoints can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"
+//
+//	$ pulumi import oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint test_database_tools_private_endpoint "id"
+//
 // ```
 type DatabaseToolsPrivateEndpoint struct {
 	pulumi.CustomResourceState
@@ -295,7 +300,7 @@ func (i *DatabaseToolsPrivateEndpoint) ToDatabaseToolsPrivateEndpointOutputWithC
 // DatabaseToolsPrivateEndpointArrayInput is an input type that accepts DatabaseToolsPrivateEndpointArray and DatabaseToolsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointArrayInput` via:
 //
-//          DatabaseToolsPrivateEndpointArray{ DatabaseToolsPrivateEndpointArgs{...} }
+//	DatabaseToolsPrivateEndpointArray{ DatabaseToolsPrivateEndpointArgs{...} }
 type DatabaseToolsPrivateEndpointArrayInput interface {
 	pulumi.Input
 
@@ -320,7 +325,7 @@ func (i DatabaseToolsPrivateEndpointArray) ToDatabaseToolsPrivateEndpointArrayOu
 // DatabaseToolsPrivateEndpointMapInput is an input type that accepts DatabaseToolsPrivateEndpointMap and DatabaseToolsPrivateEndpointMapOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointMapInput` via:
 //
-//          DatabaseToolsPrivateEndpointMap{ "key": DatabaseToolsPrivateEndpointArgs{...} }
+//	DatabaseToolsPrivateEndpointMap{ "key": DatabaseToolsPrivateEndpointArgs{...} }
 type DatabaseToolsPrivateEndpointMapInput interface {
 	pulumi.Input
 

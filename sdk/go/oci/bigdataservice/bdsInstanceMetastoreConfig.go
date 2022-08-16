@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.NewBdsInstanceMetastoreConfig(ctx, "testBdsInstanceMetastoreConfig", &BigDataService.BdsInstanceMetastoreConfigArgs{
-// 			BdsApiKeyId:          pulumi.Any(oci_identity_api_key.Test_api_key.Id),
-// 			BdsApiKeyPassphrase:  pulumi.Any(_var.Bds_instance_metastore_config_bds_api_key_passphrase),
-// 			BdsInstanceId:        pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-// 			ClusterAdminPassword: pulumi.Any(_var.Bds_instance_metastore_config_cluster_admin_password),
-// 			MetastoreId:          pulumi.Any(oci_datacatalog_metastore.Test_metastore.Id),
-// 			DisplayName:          pulumi.Any(_var.Bds_instance_metastore_config_display_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.NewBdsInstanceMetastoreConfig(ctx, "testBdsInstanceMetastoreConfig", &BigDataService.BdsInstanceMetastoreConfigArgs{
+//				BdsApiKeyId:          pulumi.Any(oci_identity_api_key.Test_api_key.Id),
+//				BdsApiKeyPassphrase:  pulumi.Any(_var.Bds_instance_metastore_config_bds_api_key_passphrase),
+//				BdsInstanceId:        pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
+//				ClusterAdminPassword: pulumi.Any(_var.Bds_instance_metastore_config_cluster_admin_password),
+//				MetastoreId:          pulumi.Any(oci_datacatalog_metastore.Test_metastore.Id),
+//				DisplayName:          pulumi.Any(_var.Bds_instance_metastore_config_display_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // BdsInstanceMetastoreConfigs can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
+//
+//	$ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
+//
 // ```
 type BdsInstanceMetastoreConfig struct {
 	pulumi.CustomResourceState
@@ -235,7 +240,7 @@ func (i *BdsInstanceMetastoreConfig) ToBdsInstanceMetastoreConfigOutputWithConte
 // BdsInstanceMetastoreConfigArrayInput is an input type that accepts BdsInstanceMetastoreConfigArray and BdsInstanceMetastoreConfigArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceMetastoreConfigArrayInput` via:
 //
-//          BdsInstanceMetastoreConfigArray{ BdsInstanceMetastoreConfigArgs{...} }
+//	BdsInstanceMetastoreConfigArray{ BdsInstanceMetastoreConfigArgs{...} }
 type BdsInstanceMetastoreConfigArrayInput interface {
 	pulumi.Input
 
@@ -260,7 +265,7 @@ func (i BdsInstanceMetastoreConfigArray) ToBdsInstanceMetastoreConfigArrayOutput
 // BdsInstanceMetastoreConfigMapInput is an input type that accepts BdsInstanceMetastoreConfigMap and BdsInstanceMetastoreConfigMapOutput values.
 // You can construct a concrete instance of `BdsInstanceMetastoreConfigMapInput` via:
 //
-//          BdsInstanceMetastoreConfigMap{ "key": BdsInstanceMetastoreConfigArgs{...} }
+//	BdsInstanceMetastoreConfigMap{ "key": BdsInstanceMetastoreConfigArgs{...} }
 type BdsInstanceMetastoreConfigMapInput interface {
 	pulumi.Input
 

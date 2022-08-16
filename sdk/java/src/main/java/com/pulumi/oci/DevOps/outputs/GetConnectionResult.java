@@ -4,8 +4,10 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.GetConnectionTlsVerifyConfig;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -21,6 +23,11 @@ public final class GetConnectionResult {
      * 
      */
     private final String appPassword;
+    /**
+     * @return The Base URL of the hosted BitbucketServer.
+     * 
+     */
+    private final String baseUrl;
     /**
      * @return The OCID of the compartment containing the connection.
      * 
@@ -83,6 +90,11 @@ public final class GetConnectionResult {
      */
     private final String timeUpdated;
     /**
+     * @return TLS configuration used by build service to verify TLS connection.
+     * 
+     */
+    private final List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs;
+    /**
      * @return Public Bitbucket Cloud Username in plain text
      * 
      */
@@ -92,6 +104,7 @@ public final class GetConnectionResult {
     private GetConnectionResult(
         @CustomType.Parameter("accessToken") String accessToken,
         @CustomType.Parameter("appPassword") String appPassword,
+        @CustomType.Parameter("baseUrl") String baseUrl,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("connectionId") String connectionId,
         @CustomType.Parameter("connectionType") String connectionType,
@@ -105,9 +118,11 @@ public final class GetConnectionResult {
         @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated,
+        @CustomType.Parameter("tlsVerifyConfigs") List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs,
         @CustomType.Parameter("username") String username) {
         this.accessToken = accessToken;
         this.appPassword = appPassword;
+        this.baseUrl = baseUrl;
         this.compartmentId = compartmentId;
         this.connectionId = connectionId;
         this.connectionType = connectionType;
@@ -121,6 +136,7 @@ public final class GetConnectionResult {
         this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.tlsVerifyConfigs = tlsVerifyConfigs;
         this.username = username;
     }
 
@@ -137,6 +153,13 @@ public final class GetConnectionResult {
      */
     public String appPassword() {
         return this.appPassword;
+    }
+    /**
+     * @return The Base URL of the hosted BitbucketServer.
+     * 
+     */
+    public String baseUrl() {
+        return this.baseUrl;
     }
     /**
      * @return The OCID of the compartment containing the connection.
@@ -226,6 +249,13 @@ public final class GetConnectionResult {
         return this.timeUpdated;
     }
     /**
+     * @return TLS configuration used by build service to verify TLS connection.
+     * 
+     */
+    public List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs() {
+        return this.tlsVerifyConfigs;
+    }
+    /**
      * @return Public Bitbucket Cloud Username in plain text
      * 
      */
@@ -244,6 +274,7 @@ public final class GetConnectionResult {
     public static final class Builder {
         private String accessToken;
         private String appPassword;
+        private String baseUrl;
         private String compartmentId;
         private String connectionId;
         private String connectionType;
@@ -257,6 +288,7 @@ public final class GetConnectionResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs;
         private String username;
 
         public Builder() {
@@ -267,6 +299,7 @@ public final class GetConnectionResult {
     	      Objects.requireNonNull(defaults);
     	      this.accessToken = defaults.accessToken;
     	      this.appPassword = defaults.appPassword;
+    	      this.baseUrl = defaults.baseUrl;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionId = defaults.connectionId;
     	      this.connectionType = defaults.connectionType;
@@ -280,6 +313,7 @@ public final class GetConnectionResult {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.tlsVerifyConfigs = defaults.tlsVerifyConfigs;
     	      this.username = defaults.username;
         }
 
@@ -289,6 +323,10 @@ public final class GetConnectionResult {
         }
         public Builder appPassword(String appPassword) {
             this.appPassword = Objects.requireNonNull(appPassword);
+            return this;
+        }
+        public Builder baseUrl(String baseUrl) {
+            this.baseUrl = Objects.requireNonNull(baseUrl);
             return this;
         }
         public Builder compartmentId(String compartmentId) {
@@ -343,11 +381,18 @@ public final class GetConnectionResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        public Builder tlsVerifyConfigs(List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs) {
+            this.tlsVerifyConfigs = Objects.requireNonNull(tlsVerifyConfigs);
+            return this;
+        }
+        public Builder tlsVerifyConfigs(GetConnectionTlsVerifyConfig... tlsVerifyConfigs) {
+            return tlsVerifyConfigs(List.of(tlsVerifyConfigs));
+        }
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
         }        public GetConnectionResult build() {
-            return new GetConnectionResult(accessToken, appPassword, compartmentId, connectionId, connectionType, definedTags, description, displayName, freeformTags, id, projectId, state, systemTags, timeCreated, timeUpdated, username);
+            return new GetConnectionResult(accessToken, appPassword, baseUrl, compartmentId, connectionId, connectionType, definedTags, description, displayName, freeformTags, id, projectId, state, systemTags, timeCreated, timeUpdated, tlsVerifyConfigs, username);
         }
     }
 }

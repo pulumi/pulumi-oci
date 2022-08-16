@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.NewManagedDatabasesResetDatabaseParameter(ctx, "testManagedDatabasesResetDatabaseParameter", &DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs{
-// 			Credentials: &databasemanagement.ManagedDatabasesResetDatabaseParameterCredentialsArgs{
-// 				Password: pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_password),
-// 				Role:     pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_role),
-// 				SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				UserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 			},
-// 			ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
-// 			Parameters:        pulumi.Any(_var.Managed_databases_reset_database_parameter_parameters),
-// 			Scope:             pulumi.Any(_var.Managed_databases_reset_database_parameter_scope),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.NewManagedDatabasesResetDatabaseParameter(ctx, "testManagedDatabasesResetDatabaseParameter", &DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs{
+//				Credentials: &databasemanagement.ManagedDatabasesResetDatabaseParameterCredentialsArgs{
+//					Password: pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_password),
+//					Role:     pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_role),
+//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//				},
+//				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
+//				Parameters:        pulumi.Any(_var.Managed_databases_reset_database_parameter_parameters),
+//				Scope:             pulumi.Any(_var.Managed_databases_reset_database_parameter_scope),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -177,7 +180,7 @@ func (i *ManagedDatabasesResetDatabaseParameter) ToManagedDatabasesResetDatabase
 // ManagedDatabasesResetDatabaseParameterArrayInput is an input type that accepts ManagedDatabasesResetDatabaseParameterArray and ManagedDatabasesResetDatabaseParameterArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterArrayInput` via:
 //
-//          ManagedDatabasesResetDatabaseParameterArray{ ManagedDatabasesResetDatabaseParameterArgs{...} }
+//	ManagedDatabasesResetDatabaseParameterArray{ ManagedDatabasesResetDatabaseParameterArgs{...} }
 type ManagedDatabasesResetDatabaseParameterArrayInput interface {
 	pulumi.Input
 
@@ -202,7 +205,7 @@ func (i ManagedDatabasesResetDatabaseParameterArray) ToManagedDatabasesResetData
 // ManagedDatabasesResetDatabaseParameterMapInput is an input type that accepts ManagedDatabasesResetDatabaseParameterMap and ManagedDatabasesResetDatabaseParameterMapOutput values.
 // You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterMapInput` via:
 //
-//          ManagedDatabasesResetDatabaseParameterMap{ "key": ManagedDatabasesResetDatabaseParameterArgs{...} }
+//	ManagedDatabasesResetDatabaseParameterMap{ "key": ManagedDatabasesResetDatabaseParameterArgs{...} }
 type ManagedDatabasesResetDatabaseParameterMapInput interface {
 	pulumi.Input
 

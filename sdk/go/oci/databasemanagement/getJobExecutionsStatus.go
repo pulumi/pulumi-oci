@@ -20,27 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetJobExecutionsStatus(ctx, &databasemanagement.GetJobExecutionsStatusArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			EndTime:                _var.Job_executions_status_end_time,
-// 			StartTime:              _var.Job_executions_status_start_time,
-// 			Id:                     pulumi.StringRef(_var.Job_executions_status_id),
-// 			ManagedDatabaseGroupId: pulumi.StringRef(oci_database_management_managed_database_group.Test_managed_database_group.Id),
-// 			ManagedDatabaseId:      pulumi.StringRef(oci_database_management_managed_database.Test_managed_database.Id),
-// 			Name:                   pulumi.StringRef(_var.Job_executions_status_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetJobExecutionsStatus(ctx, &databasemanagement.GetJobExecutionsStatusArgs{
+//				CompartmentId:          _var.Compartment_id,
+//				EndTime:                _var.Job_executions_status_end_time,
+//				StartTime:              _var.Job_executions_status_start_time,
+//				Id:                     pulumi.StringRef(_var.Job_executions_status_id),
+//				ManagedDatabaseGroupId: pulumi.StringRef(oci_database_management_managed_database_group.Test_managed_database_group.Id),
+//				ManagedDatabaseId:      pulumi.StringRef(oci_database_management_managed_database.Test_managed_database.Id),
+//				Name:                   pulumi.StringRef(_var.Job_executions_status_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetJobExecutionsStatus(ctx *pulumi.Context, args *GetJobExecutionsStatusArgs, opts ...pulumi.InvokeOption) (*GetJobExecutionsStatusResult, error) {
 	var rv GetJobExecutionsStatusResult

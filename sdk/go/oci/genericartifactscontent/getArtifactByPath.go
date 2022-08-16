@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/GenericArtifactsContent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/GenericArtifactsContent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := GenericArtifactsContent.GetArtifactByPath(ctx, &genericartifactscontent.GetArtifactByPathArgs{
-// 			ArtifactPath: _var.Artifact_by_path_artifact_path,
-// 			RepositoryId: oci_artifacts_repository.Test_repository.Id,
-// 			Version:      _var.Artifact_by_path_version,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := GenericArtifactsContent.GetArtifactByPath(ctx, &genericartifactscontent.GetArtifactByPathArgs{
+//				ArtifactPath: _var.Artifact_by_path_artifact_path,
+//				RepositoryId: oci_artifacts_repository.Test_repository.Id,
+//				Version:      _var.Artifact_by_path_version,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupArtifactByPath(ctx *pulumi.Context, args *LookupArtifactByPathArgs, opts ...pulumi.InvokeOption) (*LookupArtifactByPathResult, error) {
 	var rv LookupArtifactByPathResult

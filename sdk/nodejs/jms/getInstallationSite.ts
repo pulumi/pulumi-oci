@@ -26,6 +26,9 @@ import * as utilities from "../utilities";
  *     jreVersion: _var.fleet_installation_site_jre_version,
  *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
  *     osFamilies: _var.fleet_installation_site_os_family,
+ *     pathContains: _var.fleet_installation_site_path_contains,
+ *     timeEnd: _var.fleet_installation_site_time_end,
+ *     timeStart: _var.fleet_installation_site_time_start,
  * });
  * ```
  */
@@ -45,6 +48,9 @@ export function getInstallationSite(args: GetInstallationSiteArgs, opts?: pulumi
         "jreVersion": args.jreVersion,
         "managedInstanceId": args.managedInstanceId,
         "osFamilies": args.osFamilies,
+        "pathContains": args.pathContains,
+        "timeEnd": args.timeEnd,
+        "timeStart": args.timeStart,
     }, opts);
 }
 
@@ -88,6 +94,18 @@ export interface GetInstallationSiteArgs {
      * The operating system type.
      */
     osFamilies?: string[];
+    /**
+     * Filter the list with path contains the given value.
+     */
+    pathContains?: string;
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    timeEnd?: string;
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    timeStart?: string;
 }
 
 /**
@@ -114,6 +132,9 @@ export interface GetInstallationSiteResult {
      */
     readonly managedInstanceId?: string;
     readonly osFamilies?: string[];
+    readonly pathContains?: string;
+    readonly timeEnd?: string;
+    readonly timeStart?: string;
 }
 
 export function getInstallationSiteOutput(args: GetInstallationSiteOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstallationSiteResult> {
@@ -160,4 +181,16 @@ export interface GetInstallationSiteOutputArgs {
      * The operating system type.
      */
     osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Filter the list with path contains the given value.
+     */
+    pathContains?: pulumi.Input<string>;
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    timeEnd?: pulumi.Input<string>;
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    timeStart?: pulumi.Input<string>;
 }

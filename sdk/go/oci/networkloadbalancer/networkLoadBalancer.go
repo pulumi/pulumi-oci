@@ -21,38 +21,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.NewNetworkLoadBalancer(ctx, "testNetworkLoadBalancer", &NetworkLoadBalancer.NetworkLoadBalancerArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Network_load_balancer_display_name),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			IsPreserveSourceDestination: pulumi.Any(_var.Network_load_balancer_is_preserve_source_destination),
-// 			IsPrivate:                   pulumi.Any(_var.Network_load_balancer_is_private),
-// 			NetworkSecurityGroupIds:     pulumi.Any(_var.Network_load_balancer_network_security_group_ids),
-// 			NlbIpVersion:                pulumi.Any(_var.Network_load_balancer_nlb_ip_version),
-// 			ReservedIps: networkloadbalancer.NetworkLoadBalancerReservedIpArray{
-// 				&networkloadbalancer.NetworkLoadBalancerReservedIpArgs{
-// 					Id: pulumi.Any(_var.Network_load_balancer_reserved_ips_id),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.NewNetworkLoadBalancer(ctx, "testNetworkLoadBalancer", &NetworkLoadBalancer.NetworkLoadBalancerArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Network_load_balancer_display_name),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				IsPreserveSourceDestination: pulumi.Any(_var.Network_load_balancer_is_preserve_source_destination),
+//				IsPrivate:                   pulumi.Any(_var.Network_load_balancer_is_private),
+//				NetworkSecurityGroupIds:     pulumi.Any(_var.Network_load_balancer_network_security_group_ids),
+//				NlbIpVersion:                pulumi.Any(_var.Network_load_balancer_nlb_ip_version),
+//				ReservedIps: networkloadbalancer.NetworkLoadBalancerReservedIpArray{
+//					&networkloadbalancer.NetworkLoadBalancerReservedIpArgs{
+//						Id: pulumi.Any(_var.Network_load_balancer_reserved_ips_id),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // NetworkLoadBalancers can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
+//
+//	$ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
+//
 // ```
 type NetworkLoadBalancer struct {
 	pulumi.CustomResourceState
@@ -283,7 +288,7 @@ func (i *NetworkLoadBalancer) ToNetworkLoadBalancerOutputWithContext(ctx context
 // NetworkLoadBalancerArrayInput is an input type that accepts NetworkLoadBalancerArray and NetworkLoadBalancerArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerArrayInput` via:
 //
-//          NetworkLoadBalancerArray{ NetworkLoadBalancerArgs{...} }
+//	NetworkLoadBalancerArray{ NetworkLoadBalancerArgs{...} }
 type NetworkLoadBalancerArrayInput interface {
 	pulumi.Input
 
@@ -308,7 +313,7 @@ func (i NetworkLoadBalancerArray) ToNetworkLoadBalancerArrayOutputWithContext(ct
 // NetworkLoadBalancerMapInput is an input type that accepts NetworkLoadBalancerMap and NetworkLoadBalancerMapOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerMapInput` via:
 //
-//          NetworkLoadBalancerMap{ "key": NetworkLoadBalancerArgs{...} }
+//	NetworkLoadBalancerMap{ "key": NetworkLoadBalancerArgs{...} }
 type NetworkLoadBalancerMapInput interface {
 	pulumi.Input
 

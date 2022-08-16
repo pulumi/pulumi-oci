@@ -17,7 +17,7 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      */
     private final List<String> events;
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     private final List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
@@ -45,7 +45,7 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         return this.events;
     }
     /**
-     * @return Attributes to filter DevOps code repository events.
+     * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes() {

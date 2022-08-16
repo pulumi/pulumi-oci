@@ -25,26 +25,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Kms.GetKeys(ctx, &kms.GetKeysArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			ManagementEndpoint: _var.Key_management_endpoint,
-// 			Algorithm:          pulumi.StringRef(_var.Key_algorithm),
-// 			Length:             pulumi.IntRef(_var.Key_length),
-// 			CurveId:            pulumi.StringRef(oci_kms_curve.Test_curve.Id),
-// 			ProtectionMode:     pulumi.StringRef(_var.Key_protection_mode),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Kms.GetKeys(ctx, &kms.GetKeysArgs{
+//				CompartmentId:      _var.Compartment_id,
+//				ManagementEndpoint: _var.Key_management_endpoint,
+//				Algorithm:          pulumi.StringRef(_var.Key_algorithm),
+//				Length:             pulumi.IntRef(_var.Key_length),
+//				CurveId:            pulumi.StringRef(oci_kms_curve.Test_curve.Id),
+//				ProtectionMode:     pulumi.StringRef(_var.Key_protection_mode),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKeys(ctx *pulumi.Context, args *GetKeysArgs, opts ...pulumi.InvokeOption) (*GetKeysResult, error) {
 	var rv GetKeysResult

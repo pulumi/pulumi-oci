@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Jms.inputs.FleetInventoryLogArgs;
 import com.pulumi.oci.Jms.inputs.FleetOperationLogArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -171,6 +172,21 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    @Import(name="isAdvancedFeaturesEnabled")
+    private @Nullable Output<Boolean> isAdvancedFeaturesEnabled;
+
+    /**
+     * @return (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * 
+     */
+    public Optional<Output<Boolean>> isAdvancedFeaturesEnabled() {
+        return Optional.ofNullable(this.isAdvancedFeaturesEnabled);
+    }
+
+    /**
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */
@@ -243,6 +259,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.inventoryLog = $.inventoryLog;
+        this.isAdvancedFeaturesEnabled = $.isAdvancedFeaturesEnabled;
         this.operationLog = $.operationLog;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -475,6 +492,27 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder inventoryLog(FleetInventoryLogArgs inventoryLog) {
             return inventoryLog(Output.of(inventoryLog));
+        }
+
+        /**
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAdvancedFeaturesEnabled(@Nullable Output<Boolean> isAdvancedFeaturesEnabled) {
+            $.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            return isAdvancedFeaturesEnabled(Output.of(isAdvancedFeaturesEnabled));
         }
 
         /**

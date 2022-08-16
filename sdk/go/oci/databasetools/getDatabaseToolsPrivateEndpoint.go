@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.GetDatabaseToolsPrivateEndpoint(ctx, &databasetools.GetDatabaseToolsPrivateEndpointArgs{
-// 			DatabaseToolsPrivateEndpointId: oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.GetDatabaseToolsPrivateEndpoint(ctx, &databasetools.GetDatabaseToolsPrivateEndpointArgs{
+//				DatabaseToolsPrivateEndpointId: oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDatabaseToolsPrivateEndpoint(ctx *pulumi.Context, args *LookupDatabaseToolsPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupDatabaseToolsPrivateEndpointResult, error) {
 	var rv LookupDatabaseToolsPrivateEndpointResult

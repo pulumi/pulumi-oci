@@ -21,21 +21,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.NewOperationsInsightsWarehouseRotateWarehouseWallet(ctx, "testOperationsInsightsWarehouseRotateWarehouseWallet", &Opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs{
-// 			OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.NewOperationsInsightsWarehouseRotateWarehouseWallet(ctx, "testOperationsInsightsWarehouseRotateWarehouseWallet", &Opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs{
+//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -43,7 +46,9 @@ import (
 // OperationsInsightsWarehouseRotateWarehouseWallet can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
+//
+//	$ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
+//
 // ```
 type OperationsInsightsWarehouseRotateWarehouseWallet struct {
 	pulumi.CustomResourceState
@@ -134,7 +139,7 @@ func (i *OperationsInsightsWarehouseRotateWarehouseWallet) ToOperationsInsightsW
 // OperationsInsightsWarehouseRotateWarehouseWalletArrayInput is an input type that accepts OperationsInsightsWarehouseRotateWarehouseWalletArray and OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseRotateWarehouseWalletArrayInput` via:
 //
-//          OperationsInsightsWarehouseRotateWarehouseWalletArray{ OperationsInsightsWarehouseRotateWarehouseWalletArgs{...} }
+//	OperationsInsightsWarehouseRotateWarehouseWalletArray{ OperationsInsightsWarehouseRotateWarehouseWalletArgs{...} }
 type OperationsInsightsWarehouseRotateWarehouseWalletArrayInput interface {
 	pulumi.Input
 
@@ -159,7 +164,7 @@ func (i OperationsInsightsWarehouseRotateWarehouseWalletArray) ToOperationsInsig
 // OperationsInsightsWarehouseRotateWarehouseWalletMapInput is an input type that accepts OperationsInsightsWarehouseRotateWarehouseWalletMap and OperationsInsightsWarehouseRotateWarehouseWalletMapOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseRotateWarehouseWalletMapInput` via:
 //
-//          OperationsInsightsWarehouseRotateWarehouseWalletMap{ "key": OperationsInsightsWarehouseRotateWarehouseWalletArgs{...} }
+//	OperationsInsightsWarehouseRotateWarehouseWalletMap{ "key": OperationsInsightsWarehouseRotateWarehouseWalletArgs{...} }
 type OperationsInsightsWarehouseRotateWarehouseWalletMapInput interface {
 	pulumi.Input
 

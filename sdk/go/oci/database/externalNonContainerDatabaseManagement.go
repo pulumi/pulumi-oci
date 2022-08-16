@@ -140,7 +140,7 @@ func (i *ExternalNonContainerDatabaseManagement) ToExternalNonContainerDatabaseM
 // ExternalNonContainerDatabaseManagementArrayInput is an input type that accepts ExternalNonContainerDatabaseManagementArray and ExternalNonContainerDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseManagementArrayInput` via:
 //
-//          ExternalNonContainerDatabaseManagementArray{ ExternalNonContainerDatabaseManagementArgs{...} }
+//	ExternalNonContainerDatabaseManagementArray{ ExternalNonContainerDatabaseManagementArgs{...} }
 type ExternalNonContainerDatabaseManagementArrayInput interface {
 	pulumi.Input
 
@@ -165,7 +165,7 @@ func (i ExternalNonContainerDatabaseManagementArray) ToExternalNonContainerDatab
 // ExternalNonContainerDatabaseManagementMapInput is an input type that accepts ExternalNonContainerDatabaseManagementMap and ExternalNonContainerDatabaseManagementMapOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseManagementMapInput` via:
 //
-//          ExternalNonContainerDatabaseManagementMap{ "key": ExternalNonContainerDatabaseManagementArgs{...} }
+//	ExternalNonContainerDatabaseManagementMap{ "key": ExternalNonContainerDatabaseManagementArgs{...} }
 type ExternalNonContainerDatabaseManagementMapInput interface {
 	pulumi.Input
 

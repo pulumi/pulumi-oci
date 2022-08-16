@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
 //
-// Gets the specified Compute Global Image Capability Schema
+// # Gets the specified Compute Global Image Capability Schema
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetComputeGlobalImageCapabilitySchema(ctx, &core.GetComputeGlobalImageCapabilitySchemaArgs{
-// 			ComputeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetComputeGlobalImageCapabilitySchema(ctx, &core.GetComputeGlobalImageCapabilitySchemaArgs{
+//				ComputeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetComputeGlobalImageCapabilitySchema(ctx *pulumi.Context, args *GetComputeGlobalImageCapabilitySchemaArgs, opts ...pulumi.InvokeOption) (*GetComputeGlobalImageCapabilitySchemaResult, error) {
 	var rv GetComputeGlobalImageCapabilitySchemaResult

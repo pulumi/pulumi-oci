@@ -20,7 +20,9 @@ import (
 // DeployStages can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
+//
+//	$ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
+//
 // ```
 type DeployStage struct {
 	pulumi.CustomResourceState
@@ -47,7 +49,7 @@ type DeployStage struct {
 	Config pulumi.MapOutput `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Optional binary artifact OCID user may provide to this stage.
+	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringPtrOutput `pulumi:"deployArtifactId"`
 	// (Updatable) The list of file artifact OCIDs to deploy.
 	DeployArtifactIds pulumi.StringArrayOutput `pulumi:"deployArtifactIds"`
@@ -193,7 +195,7 @@ type deployStageState struct {
 	Config map[string]interface{} `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Optional binary artifact OCID user may provide to this stage.
+	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// (Updatable) The list of file artifact OCIDs to deploy.
 	DeployArtifactIds []string `pulumi:"deployArtifactIds"`
@@ -302,7 +304,7 @@ type DeployStageState struct {
 	Config pulumi.MapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Optional binary artifact OCID user may provide to this stage.
+	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringPtrInput
 	// (Updatable) The list of file artifact OCIDs to deploy.
 	DeployArtifactIds pulumi.StringArrayInput
@@ -413,7 +415,7 @@ type deployStageArgs struct {
 	Config map[string]interface{} `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Optional binary artifact OCID user may provide to this stage.
+	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// (Updatable) The list of file artifact OCIDs to deploy.
 	DeployArtifactIds []string `pulumi:"deployArtifactIds"`
@@ -509,7 +511,7 @@ type DeployStageArgs struct {
 	Config pulumi.MapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Optional binary artifact OCID user may provide to this stage.
+	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringPtrInput
 	// (Updatable) The list of file artifact OCIDs to deploy.
 	DeployArtifactIds pulumi.StringArrayInput
@@ -609,7 +611,7 @@ func (i *DeployStage) ToDeployStageOutputWithContext(ctx context.Context) Deploy
 // DeployStageArrayInput is an input type that accepts DeployStageArray and DeployStageArrayOutput values.
 // You can construct a concrete instance of `DeployStageArrayInput` via:
 //
-//          DeployStageArray{ DeployStageArgs{...} }
+//	DeployStageArray{ DeployStageArgs{...} }
 type DeployStageArrayInput interface {
 	pulumi.Input
 
@@ -634,7 +636,7 @@ func (i DeployStageArray) ToDeployStageArrayOutputWithContext(ctx context.Contex
 // DeployStageMapInput is an input type that accepts DeployStageMap and DeployStageMapOutput values.
 // You can construct a concrete instance of `DeployStageMapInput` via:
 //
-//          DeployStageMap{ "key": DeployStageArgs{...} }
+//	DeployStageMap{ "key": DeployStageArgs{...} }
 type DeployStageMapInput interface {
 	pulumi.Input
 

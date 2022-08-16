@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.GetContainerRepository(ctx, &artifacts.GetContainerRepositoryArgs{
-// 			RepositoryId: oci_artifacts_repository.Test_repository.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.GetContainerRepository(ctx, &artifacts.GetContainerRepositoryArgs{
+//				RepositoryId: oci_artifacts_repository.Test_repository.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupContainerRepository(ctx *pulumi.Context, args *LookupContainerRepositoryArgs, opts ...pulumi.InvokeOption) (*LookupContainerRepositoryResult, error) {
 	var rv LookupContainerRepositoryResult

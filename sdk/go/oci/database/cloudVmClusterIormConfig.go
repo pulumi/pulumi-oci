@@ -23,28 +23,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewCloudVmClusterIormConfig(ctx, "testCloudVmClusterIormConfig", &Database.CloudVmClusterIormConfigArgs{
-// 			DbPlans: database.CloudVmClusterIormConfigDbPlanArray{
-// 				&database.CloudVmClusterIormConfigDbPlanArgs{
-// 					DbName: pulumi.Any(_var.Cloud_vm_cluster_iorm_config_db_plans_db_name),
-// 					Share:  pulumi.Any(_var.Cloud_vm_cluster_iorm_config_db_plans_share),
-// 				},
-// 			},
-// 			CloudVmClusterId: pulumi.Any(oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id),
-// 			Objective:        pulumi.String("AUTO"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewCloudVmClusterIormConfig(ctx, "testCloudVmClusterIormConfig", &Database.CloudVmClusterIormConfigArgs{
+//				DbPlans: database.CloudVmClusterIormConfigDbPlanArray{
+//					&database.CloudVmClusterIormConfigDbPlanArgs{
+//						DbName: pulumi.Any(_var.Cloud_vm_cluster_iorm_config_db_plans_db_name),
+//						Share:  pulumi.Any(_var.Cloud_vm_cluster_iorm_config_db_plans_share),
+//					},
+//				},
+//				CloudVmClusterId: pulumi.Any(oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id),
+//				Objective:        pulumi.String("AUTO"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type CloudVmClusterIormConfig struct {
 	pulumi.CustomResourceState
@@ -170,7 +173,7 @@ func (i *CloudVmClusterIormConfig) ToCloudVmClusterIormConfigOutputWithContext(c
 // CloudVmClusterIormConfigArrayInput is an input type that accepts CloudVmClusterIormConfigArray and CloudVmClusterIormConfigArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigArrayInput` via:
 //
-//          CloudVmClusterIormConfigArray{ CloudVmClusterIormConfigArgs{...} }
+//	CloudVmClusterIormConfigArray{ CloudVmClusterIormConfigArgs{...} }
 type CloudVmClusterIormConfigArrayInput interface {
 	pulumi.Input
 
@@ -195,7 +198,7 @@ func (i CloudVmClusterIormConfigArray) ToCloudVmClusterIormConfigArrayOutputWith
 // CloudVmClusterIormConfigMapInput is an input type that accepts CloudVmClusterIormConfigMap and CloudVmClusterIormConfigMapOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigMapInput` via:
 //
-//          CloudVmClusterIormConfigMap{ "key": CloudVmClusterIormConfigArgs{...} }
+//	CloudVmClusterIormConfigMap{ "key": CloudVmClusterIormConfigArgs{...} }
 type CloudVmClusterIormConfigMapInput interface {
 	pulumi.Input
 

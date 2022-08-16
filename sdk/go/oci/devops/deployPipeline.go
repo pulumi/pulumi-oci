@@ -21,38 +21,41 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.NewDeployPipeline(ctx, "testDeployPipeline", &DevOps.DeployPipelineArgs{
-// 			ProjectId: pulumi.Any(oci_devops_project.Test_project.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			DeployPipelineParameters: &devops.DeployPipelineDeployPipelineParametersArgs{
-// 				Items: devops.DeployPipelineDeployPipelineParametersItemArray{
-// 					&devops.DeployPipelineDeployPipelineParametersItemArgs{
-// 						Name:         pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_name),
-// 						DefaultValue: pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_default_value),
-// 						Description:  pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_description),
-// 					},
-// 				},
-// 			},
-// 			Description: pulumi.Any(_var.Deploy_pipeline_description),
-// 			DisplayName: pulumi.Any(_var.Deploy_pipeline_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.NewDeployPipeline(ctx, "testDeployPipeline", &DevOps.DeployPipelineArgs{
+//				ProjectId: pulumi.Any(oci_devops_project.Test_project.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				DeployPipelineParameters: &devops.DeployPipelineDeployPipelineParametersArgs{
+//					Items: devops.DeployPipelineDeployPipelineParametersItemArray{
+//						&devops.DeployPipelineDeployPipelineParametersItemArgs{
+//							Name:         pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_name),
+//							DefaultValue: pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_default_value),
+//							Description:  pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_description),
+//						},
+//					},
+//				},
+//				Description: pulumi.Any(_var.Deploy_pipeline_description),
+//				DisplayName: pulumi.Any(_var.Deploy_pipeline_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -60,7 +63,9 @@ import (
 // DeployPipelines can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DevOps/deployPipeline:DeployPipeline test_deploy_pipeline "id"
+//
+//	$ pulumi import oci:DevOps/deployPipeline:DeployPipeline test_deploy_pipeline "id"
+//
 // ```
 type DeployPipeline struct {
 	pulumi.CustomResourceState
@@ -249,7 +254,7 @@ func (i *DeployPipeline) ToDeployPipelineOutputWithContext(ctx context.Context) 
 // DeployPipelineArrayInput is an input type that accepts DeployPipelineArray and DeployPipelineArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineArrayInput` via:
 //
-//          DeployPipelineArray{ DeployPipelineArgs{...} }
+//	DeployPipelineArray{ DeployPipelineArgs{...} }
 type DeployPipelineArrayInput interface {
 	pulumi.Input
 
@@ -274,7 +279,7 @@ func (i DeployPipelineArray) ToDeployPipelineArrayOutputWithContext(ctx context.
 // DeployPipelineMapInput is an input type that accepts DeployPipelineMap and DeployPipelineMapOutput values.
 // You can construct a concrete instance of `DeployPipelineMapInput` via:
 //
-//          DeployPipelineMap{ "key": DeployPipelineArgs{...} }
+//	DeployPipelineMap{ "key": DeployPipelineArgs{...} }
 type DeployPipelineMapInput interface {
 	pulumi.Input
 

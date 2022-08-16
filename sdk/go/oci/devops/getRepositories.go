@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositories(ctx, &devops.GetRepositoriesArgs{
-// 			CompartmentId: pulumi.StringRef(_var.Compartment_id),
-// 			Name:          pulumi.StringRef(_var.Repository_name),
-// 			ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
-// 			RepositoryId:  pulumi.StringRef(oci_devops_repository.Test_repository.Id),
-// 			State:         pulumi.StringRef(_var.Repository_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositories(ctx, &devops.GetRepositoriesArgs{
+//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				Name:          pulumi.StringRef(_var.Repository_name),
+//				ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
+//				RepositoryId:  pulumi.StringRef(oci_devops_repository.Test_repository.Id),
+//				State:         pulumi.StringRef(_var.Repository_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositories(ctx *pulumi.Context, args *GetRepositoriesArgs, opts ...pulumi.InvokeOption) (*GetRepositoriesResult, error) {
 	var rv GetRepositoriesResult

@@ -21,39 +21,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oce"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Oce"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Oce.NewInstance(ctx, "testOceInstance", &Oce.InstanceArgs{
-// 			AdminEmail:             pulumi.Any(_var.Oce_instance_admin_email),
-// 			CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 			IdcsAccessToken:        pulumi.Any(_var.Oce_instance_idcs_access_token),
-// 			ObjectStorageNamespace: pulumi.Any(_var.Oce_instance_object_storage_namespace),
-// 			TenancyId:              pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
-// 			TenancyName:            pulumi.Any(oci_identity_tenancy.Test_tenancy.Name),
-// 			AddOnFeatures:          pulumi.Any(_var.Oce_instance_add_on_features),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Oce_instance_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			InstanceAccessType:  pulumi.Any(_var.Oce_instance_instance_access_type),
-// 			InstanceLicenseType: pulumi.Any(_var.Oce_instance_instance_license_type),
-// 			InstanceUsageType:   pulumi.Any(_var.Oce_instance_instance_usage_type),
-// 			UpgradeSchedule:     pulumi.Any(_var.Oce_instance_upgrade_schedule),
-// 			WafPrimaryDomain:    pulumi.Any(_var.Oce_instance_waf_primary_domain),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Oce.NewInstance(ctx, "testOceInstance", &Oce.InstanceArgs{
+//				AdminEmail:             pulumi.Any(_var.Oce_instance_admin_email),
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				IdcsAccessToken:        pulumi.Any(_var.Oce_instance_idcs_access_token),
+//				ObjectStorageNamespace: pulumi.Any(_var.Oce_instance_object_storage_namespace),
+//				TenancyId:              pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
+//				TenancyName:            pulumi.Any(oci_identity_tenancy.Test_tenancy.Name),
+//				AddOnFeatures:          pulumi.Any(_var.Oce_instance_add_on_features),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Oce_instance_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				InstanceAccessType:  pulumi.Any(_var.Oce_instance_instance_access_type),
+//				InstanceLicenseType: pulumi.Any(_var.Oce_instance_instance_license_type),
+//				InstanceUsageType:   pulumi.Any(_var.Oce_instance_instance_usage_type),
+//				UpgradeSchedule:     pulumi.Any(_var.Oce_instance_upgrade_schedule),
+//				WafPrimaryDomain:    pulumi.Any(_var.Oce_instance_waf_primary_domain),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -61,7 +64,9 @@ import (
 // OceInstances can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
+//
+//	$ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
+//
 // ```
 type Instance struct {
 	pulumi.CustomResourceState
@@ -371,7 +376,7 @@ func (i *Instance) ToInstanceOutputWithContext(ctx context.Context) InstanceOutp
 // InstanceArrayInput is an input type that accepts InstanceArray and InstanceArrayOutput values.
 // You can construct a concrete instance of `InstanceArrayInput` via:
 //
-//          InstanceArray{ InstanceArgs{...} }
+//	InstanceArray{ InstanceArgs{...} }
 type InstanceArrayInput interface {
 	pulumi.Input
 
@@ -396,7 +401,7 @@ func (i InstanceArray) ToInstanceArrayOutputWithContext(ctx context.Context) Ins
 // InstanceMapInput is an input type that accepts InstanceMap and InstanceMapOutput values.
 // You can construct a concrete instance of `InstanceMapInput` via:
 //
-//          InstanceMap{ "key": InstanceArgs{...} }
+//	InstanceMap{ "key": InstanceArgs{...} }
 type InstanceMapInput interface {
 	pulumi.Input
 

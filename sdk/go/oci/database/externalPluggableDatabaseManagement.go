@@ -23,22 +23,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalPluggableDatabaseManagement(ctx, "testExternalPluggableDatabaseManagement", &Database.ExternalPluggableDatabaseManagementArgs{
-// 			ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-// 			ExternalPluggableDatabaseId: pulumi.Any(oci_database_external_pluggable_database.Test_external_pluggable_database.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalPluggableDatabaseManagement(ctx, "testExternalPluggableDatabaseManagement", &Database.ExternalPluggableDatabaseManagementArgs{
+//				ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
+//				ExternalPluggableDatabaseId: pulumi.Any(oci_database_external_pluggable_database.Test_external_pluggable_database.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -154,7 +157,7 @@ func (i *ExternalPluggableDatabaseManagement) ToExternalPluggableDatabaseManagem
 // ExternalPluggableDatabaseManagementArrayInput is an input type that accepts ExternalPluggableDatabaseManagementArray and ExternalPluggableDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseManagementArrayInput` via:
 //
-//          ExternalPluggableDatabaseManagementArray{ ExternalPluggableDatabaseManagementArgs{...} }
+//	ExternalPluggableDatabaseManagementArray{ ExternalPluggableDatabaseManagementArgs{...} }
 type ExternalPluggableDatabaseManagementArrayInput interface {
 	pulumi.Input
 
@@ -179,7 +182,7 @@ func (i ExternalPluggableDatabaseManagementArray) ToExternalPluggableDatabaseMan
 // ExternalPluggableDatabaseManagementMapInput is an input type that accepts ExternalPluggableDatabaseManagementMap and ExternalPluggableDatabaseManagementMapOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseManagementMapInput` via:
 //
-//          ExternalPluggableDatabaseManagementMap{ "key": ExternalPluggableDatabaseManagementArgs{...} }
+//	ExternalPluggableDatabaseManagementMap{ "key": ExternalPluggableDatabaseManagementArgs{...} }
 type ExternalPluggableDatabaseManagementMapInput interface {
 	pulumi.Input
 

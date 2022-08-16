@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.GetApiValidation(ctx, &apigateway.GetApiValidationArgs{
-// 			ApiId: oci_apigateway_api.Test_api.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.GetApiValidation(ctx, &apigateway.GetApiValidationArgs{
+//				ApiId: oci_apigateway_api.Test_api.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupApiValidation(ctx *pulumi.Context, args *LookupApiValidationArgs, opts ...pulumi.InvokeOption) (*LookupApiValidationResult, error) {
 	var rv LookupApiValidationResult

@@ -22,23 +22,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalPluggableDatabaseOperationsInsightsManagement(ctx, "testExternalPluggableDatabaseOperationsInsightsManagement", &Database.ExternalPluggableDatabaseOperationsInsightsManagementArgs{
-// 			ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-// 			ExternalPluggableDatabaseId: pulumi.Any(oci_database_external_pluggable_database.Test_external_pluggable_database.Id),
-// 			EnableOperationsInsights:    pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalPluggableDatabaseOperationsInsightsManagement(ctx, "testExternalPluggableDatabaseOperationsInsightsManagement", &Database.ExternalPluggableDatabaseOperationsInsightsManagementArgs{
+//				ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
+//				ExternalPluggableDatabaseId: pulumi.Any(oci_database_external_pluggable_database.Test_external_pluggable_database.Id),
+//				EnableOperationsInsights:    pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -159,7 +162,7 @@ func (i *ExternalPluggableDatabaseOperationsInsightsManagement) ToExternalPlugga
 // ExternalPluggableDatabaseOperationsInsightsManagementArrayInput is an input type that accepts ExternalPluggableDatabaseOperationsInsightsManagementArray and ExternalPluggableDatabaseOperationsInsightsManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseOperationsInsightsManagementArrayInput` via:
 //
-//          ExternalPluggableDatabaseOperationsInsightsManagementArray{ ExternalPluggableDatabaseOperationsInsightsManagementArgs{...} }
+//	ExternalPluggableDatabaseOperationsInsightsManagementArray{ ExternalPluggableDatabaseOperationsInsightsManagementArgs{...} }
 type ExternalPluggableDatabaseOperationsInsightsManagementArrayInput interface {
 	pulumi.Input
 
@@ -184,7 +187,7 @@ func (i ExternalPluggableDatabaseOperationsInsightsManagementArray) ToExternalPl
 // ExternalPluggableDatabaseOperationsInsightsManagementMapInput is an input type that accepts ExternalPluggableDatabaseOperationsInsightsManagementMap and ExternalPluggableDatabaseOperationsInsightsManagementMapOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseOperationsInsightsManagementMapInput` via:
 //
-//          ExternalPluggableDatabaseOperationsInsightsManagementMap{ "key": ExternalPluggableDatabaseOperationsInsightsManagementArgs{...} }
+//	ExternalPluggableDatabaseOperationsInsightsManagementMap{ "key": ExternalPluggableDatabaseOperationsInsightsManagementArgs{...} }
 type ExternalPluggableDatabaseOperationsInsightsManagementMapInput interface {
 	pulumi.Input
 

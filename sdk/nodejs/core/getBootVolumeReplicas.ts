@@ -21,10 +21,12 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.boot_volume_replica_display_name,
  *     state: _var.boot_volume_replica_state,
+ *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
  * });
  * ```
  */
-export function getBootVolumeReplicas(args: GetBootVolumeReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicasResult> {
+export function getBootVolumeReplicas(args?: GetBootVolumeReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicasResult> {
+    args = args || {};
     if (!opts) {
         opts = {}
     }
@@ -36,6 +38,7 @@ export function getBootVolumeReplicas(args: GetBootVolumeReplicasArgs, opts?: pu
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "volumeGroupReplicaId": args.volumeGroupReplicaId,
     }, opts);
 }
 
@@ -46,11 +49,11 @@ export interface GetBootVolumeReplicasArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain: string;
+    availabilityDomain?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId: string;
+    compartmentId?: string;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
@@ -60,6 +63,10 @@ export interface GetBootVolumeReplicasArgs {
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
     state?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     */
+    volumeGroupReplicaId?: string;
 }
 
 /**
@@ -69,7 +76,7 @@ export interface GetBootVolumeReplicasResult {
     /**
      * The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The list of boot_volume_replicas.
      */
@@ -77,7 +84,7 @@ export interface GetBootVolumeReplicasResult {
     /**
      * The OCID of the compartment that contains the boot volume replica.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -91,9 +98,10 @@ export interface GetBootVolumeReplicasResult {
      * The current state of a boot volume replica.
      */
     readonly state?: string;
+    readonly volumeGroupReplicaId?: string;
 }
 
-export function getBootVolumeReplicasOutput(args: GetBootVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicasResult> {
+export function getBootVolumeReplicasOutput(args?: GetBootVolumeReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicasResult> {
     return pulumi.output(args).apply(a => getBootVolumeReplicas(a, opts))
 }
 
@@ -104,11 +112,11 @@ export interface GetBootVolumeReplicasOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
@@ -118,4 +126,8 @@ export interface GetBootVolumeReplicasOutputArgs {
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     */
+    volumeGroupReplicaId?: pulumi.Input<string>;
 }

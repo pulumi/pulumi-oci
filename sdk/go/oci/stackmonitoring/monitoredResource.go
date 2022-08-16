@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
 //
-// Creates a new monitored resource for the given resource type
+// # Creates a new monitored resource for the given resource type
 //
 // ## Example Usage
 //
@@ -21,64 +21,67 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/StackMonitoring"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := StackMonitoring.NewMonitoredResource(ctx, "testMonitoredResource", &StackMonitoring.MonitoredResourceArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			Type:          pulumi.Any(_var.Monitored_resource_type),
-// 			Aliases: &stackmonitoring.MonitoredResourceAliasesArgs{
-// 				Credential: &stackmonitoring.MonitoredResourceAliasesCredentialArgs{
-// 					Name:    pulumi.Any(_var.Monitored_resource_aliases_credential_name),
-// 					Service: pulumi.Any(_var.Monitored_resource_aliases_credential_service),
-// 					Source:  pulumi.Any(_var.Monitored_resource_aliases_credential_source),
-// 				},
-// 				Name:   pulumi.Any(_var.Monitored_resource_aliases_name),
-// 				Source: pulumi.Any(_var.Monitored_resource_aliases_source),
-// 			},
-// 			Credentials: &stackmonitoring.MonitoredResourceCredentialsArgs{
-// 				CredentialType: pulumi.Any(_var.Monitored_resource_credentials_credential_type),
-// 				Description:    pulumi.Any(_var.Monitored_resource_credentials_description),
-// 				KeyId:          pulumi.Any(_var.Monitored_resource_credentials_key_id),
-// 				Name:           pulumi.Any(_var.Monitored_resource_credentials_name),
-// 				Properties: stackmonitoring.MonitoredResourceCredentialsPropertyArray{
-// 					&stackmonitoring.MonitoredResourceCredentialsPropertyArgs{
-// 						Name:  pulumi.Any(_var.Monitored_resource_credentials_properties_name),
-// 						Value: pulumi.Any(_var.Monitored_resource_credentials_properties_value),
-// 					},
-// 				},
-// 				Source: pulumi.Any(_var.Monitored_resource_credentials_source),
-// 				Type:   pulumi.Any(_var.Monitored_resource_credentials_type),
-// 			},
-// 			DatabaseConnectionDetails: &stackmonitoring.MonitoredResourceDatabaseConnectionDetailsArgs{
-// 				Port:         pulumi.Any(_var.Monitored_resource_database_connection_details_port),
-// 				Protocol:     pulumi.Any(_var.Monitored_resource_database_connection_details_protocol),
-// 				ServiceName:  pulumi.Any(_var.Monitored_resource_database_service_name),
-// 				ConnectorId:  pulumi.Any(_var.Monitored_resource_database_connector_id),
-// 				DbId:         pulumi.Any(_var.Monitored_resource_database_id),
-// 				DbUniqueName: pulumi.Any(_var.Monitored_resource_database_connection_details_db_unique_name),
-// 			},
-// 			DisplayName:        pulumi.Any(_var.Monitored_resource_display_name),
-// 			ExternalResourceId: pulumi.Any(_var.Monitored_resource_external_resource_id),
-// 			HostName:           pulumi.Any(_var.Monitored_resource_host_name),
-// 			ManagementAgentId:  pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
-// 			Properties: stackmonitoring.MonitoredResourcePropertyArray{
-// 				&stackmonitoring.MonitoredResourcePropertyArgs{
-// 					Name:  pulumi.Any(_var.Monitored_resource_properties_name),
-// 					Value: pulumi.Any(_var.Monitored_resource_properties_value),
-// 				},
-// 			},
-// 			ResourceTimeZone: pulumi.Any(_var.Monitored_resource_resource_time_zone),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := StackMonitoring.NewMonitoredResource(ctx, "testMonitoredResource", &StackMonitoring.MonitoredResourceArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				Type:          pulumi.Any(_var.Monitored_resource_type),
+//				Aliases: &stackmonitoring.MonitoredResourceAliasesArgs{
+//					Credential: &stackmonitoring.MonitoredResourceAliasesCredentialArgs{
+//						Name:    pulumi.Any(_var.Monitored_resource_aliases_credential_name),
+//						Service: pulumi.Any(_var.Monitored_resource_aliases_credential_service),
+//						Source:  pulumi.Any(_var.Monitored_resource_aliases_credential_source),
+//					},
+//					Name:   pulumi.Any(_var.Monitored_resource_aliases_name),
+//					Source: pulumi.Any(_var.Monitored_resource_aliases_source),
+//				},
+//				Credentials: &stackmonitoring.MonitoredResourceCredentialsArgs{
+//					CredentialType: pulumi.Any(_var.Monitored_resource_credentials_credential_type),
+//					Description:    pulumi.Any(_var.Monitored_resource_credentials_description),
+//					KeyId:          pulumi.Any(_var.Monitored_resource_credentials_key_id),
+//					Name:           pulumi.Any(_var.Monitored_resource_credentials_name),
+//					Properties: stackmonitoring.MonitoredResourceCredentialsPropertyArray{
+//						&stackmonitoring.MonitoredResourceCredentialsPropertyArgs{
+//							Name:  pulumi.Any(_var.Monitored_resource_credentials_properties_name),
+//							Value: pulumi.Any(_var.Monitored_resource_credentials_properties_value),
+//						},
+//					},
+//					Source: pulumi.Any(_var.Monitored_resource_credentials_source),
+//					Type:   pulumi.Any(_var.Monitored_resource_credentials_type),
+//				},
+//				DatabaseConnectionDetails: &stackmonitoring.MonitoredResourceDatabaseConnectionDetailsArgs{
+//					Port:         pulumi.Any(_var.Monitored_resource_database_connection_details_port),
+//					Protocol:     pulumi.Any(_var.Monitored_resource_database_connection_details_protocol),
+//					ServiceName:  pulumi.Any(_var.Monitored_resource_database_service_name),
+//					ConnectorId:  pulumi.Any(_var.Monitored_resource_database_connector_id),
+//					DbId:         pulumi.Any(_var.Monitored_resource_database_id),
+//					DbUniqueName: pulumi.Any(_var.Monitored_resource_database_connection_details_db_unique_name),
+//				},
+//				DisplayName:        pulumi.Any(_var.Monitored_resource_display_name),
+//				ExternalResourceId: pulumi.Any(_var.Monitored_resource_external_resource_id),
+//				HostName:           pulumi.Any(_var.Monitored_resource_host_name),
+//				ManagementAgentId:  pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				Properties: stackmonitoring.MonitoredResourcePropertyArray{
+//					&stackmonitoring.MonitoredResourcePropertyArgs{
+//						Name:  pulumi.Any(_var.Monitored_resource_properties_name),
+//						Value: pulumi.Any(_var.Monitored_resource_properties_value),
+//					},
+//				},
+//				ResourceTimeZone: pulumi.Any(_var.Monitored_resource_resource_time_zone),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -86,7 +89,9 @@ import (
 // MonitoredResources can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
+//
+//	$ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
+//
 // ```
 type MonitoredResource struct {
 	pulumi.CustomResourceState
@@ -332,7 +337,7 @@ func (i *MonitoredResource) ToMonitoredResourceOutputWithContext(ctx context.Con
 // MonitoredResourceArrayInput is an input type that accepts MonitoredResourceArray and MonitoredResourceArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceArrayInput` via:
 //
-//          MonitoredResourceArray{ MonitoredResourceArgs{...} }
+//	MonitoredResourceArray{ MonitoredResourceArgs{...} }
 type MonitoredResourceArrayInput interface {
 	pulumi.Input
 
@@ -357,7 +362,7 @@ func (i MonitoredResourceArray) ToMonitoredResourceArrayOutputWithContext(ctx co
 // MonitoredResourceMapInput is an input type that accepts MonitoredResourceMap and MonitoredResourceMapOutput values.
 // You can construct a concrete instance of `MonitoredResourceMapInput` via:
 //
-//          MonitoredResourceMap{ "key": MonitoredResourceArgs{...} }
+//	MonitoredResourceMap{ "key": MonitoredResourceArgs{...} }
 type MonitoredResourceMapInput interface {
 	pulumi.Input
 

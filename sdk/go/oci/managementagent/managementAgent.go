@@ -19,21 +19,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ManagementAgent"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ManagementAgent.NewManagementAgent(ctx, "testManagementAgent", &ManagementAgent.ManagementAgentArgs{
-// 			ManagedAgentId: pulumi.Any(oci_management_agent_managed_agent.Test_managed_agent.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ManagementAgent.NewManagementAgent(ctx, "testManagementAgent", &ManagementAgent.ManagementAgentArgs{
+//				ManagedAgentId: pulumi.Any(oci_management_agent_managed_agent.Test_managed_agent.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -41,7 +44,9 @@ import (
 // ManagementAgents can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
+//
+//	$ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
+//
 // ```
 type ManagementAgent struct {
 	pulumi.CustomResourceState
@@ -292,7 +297,7 @@ func (i *ManagementAgent) ToManagementAgentOutputWithContext(ctx context.Context
 // ManagementAgentArrayInput is an input type that accepts ManagementAgentArray and ManagementAgentArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentArrayInput` via:
 //
-//          ManagementAgentArray{ ManagementAgentArgs{...} }
+//	ManagementAgentArray{ ManagementAgentArgs{...} }
 type ManagementAgentArrayInput interface {
 	pulumi.Input
 
@@ -317,7 +322,7 @@ func (i ManagementAgentArray) ToManagementAgentArrayOutputWithContext(ctx contex
 // ManagementAgentMapInput is an input type that accepts ManagementAgentMap and ManagementAgentMapOutput values.
 // You can construct a concrete instance of `ManagementAgentMapInput` via:
 //
-//          ManagementAgentMap{ "key": ManagementAgentArgs{...} }
+//	ManagementAgentMap{ "key": ManagementAgentArgs{...} }
 type ManagementAgentMapInput interface {
 	pulumi.Input
 

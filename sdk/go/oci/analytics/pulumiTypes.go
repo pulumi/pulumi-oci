@@ -20,7 +20,7 @@ type AnalyticsInstanceCapacity struct {
 // AnalyticsInstanceCapacityInput is an input type that accepts AnalyticsInstanceCapacityArgs and AnalyticsInstanceCapacityOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceCapacityInput` via:
 //
-//          AnalyticsInstanceCapacityArgs{...}
+//	AnalyticsInstanceCapacityArgs{...}
 type AnalyticsInstanceCapacityInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i AnalyticsInstanceCapacityArgs) ToAnalyticsInstanceCapacityPtrOutputWithC
 // AnalyticsInstanceCapacityPtrInput is an input type that accepts AnalyticsInstanceCapacityArgs, AnalyticsInstanceCapacityPtr and AnalyticsInstanceCapacityPtrOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceCapacityPtrInput` via:
 //
-//          AnalyticsInstanceCapacityArgs{...}
+//	        AnalyticsInstanceCapacityArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AnalyticsInstanceCapacityPtrInput interface {
 	pulumi.Input
 
@@ -182,7 +182,7 @@ type AnalyticsInstanceNetworkEndpointDetails struct {
 // AnalyticsInstanceNetworkEndpointDetailsInput is an input type that accepts AnalyticsInstanceNetworkEndpointDetailsArgs and AnalyticsInstanceNetworkEndpointDetailsOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceNetworkEndpointDetailsInput` via:
 //
-//          AnalyticsInstanceNetworkEndpointDetailsArgs{...}
+//	AnalyticsInstanceNetworkEndpointDetailsArgs{...}
 type AnalyticsInstanceNetworkEndpointDetailsInput interface {
 	pulumi.Input
 
@@ -226,11 +226,11 @@ func (i AnalyticsInstanceNetworkEndpointDetailsArgs) ToAnalyticsInstanceNetworkE
 // AnalyticsInstanceNetworkEndpointDetailsPtrInput is an input type that accepts AnalyticsInstanceNetworkEndpointDetailsArgs, AnalyticsInstanceNetworkEndpointDetailsPtr and AnalyticsInstanceNetworkEndpointDetailsPtrOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceNetworkEndpointDetailsPtrInput` via:
 //
-//          AnalyticsInstanceNetworkEndpointDetailsArgs{...}
+//	        AnalyticsInstanceNetworkEndpointDetailsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AnalyticsInstanceNetworkEndpointDetailsPtrInput interface {
 	pulumi.Input
 
@@ -391,7 +391,7 @@ type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn struct {
 // AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnInput is an input type that accepts AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs and AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnInput` via:
 //
-//          AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{...}
+//	AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{...}
 type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnInput interface {
 	pulumi.Input
 
@@ -421,7 +421,7 @@ func (i AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs) ToAnalyticsIn
 // AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput is an input type that accepts AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray and AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput` via:
 //
-//          AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{ AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{...} }
+//	AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{ AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{...} }
 type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput interface {
 	pulumi.Input
 
@@ -497,7 +497,7 @@ type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
 // AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput is an input type that accepts AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs and AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput` via:
 //
-//          AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...}
+//	AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...}
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface {
 	pulumi.Input
 
@@ -527,7 +527,7 @@ func (i AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToAnalyti
 // AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput is an input type that accepts AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray and AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput` via:
 //
-//          AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{ AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...} }
+//	AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{ AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...} }
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput interface {
 	pulumi.Input
 
@@ -603,7 +603,7 @@ type GetAnalyticsInstanceCapacity struct {
 // GetAnalyticsInstanceCapacityInput is an input type that accepts GetAnalyticsInstanceCapacityArgs and GetAnalyticsInstanceCapacityOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstanceCapacityInput` via:
 //
-//          GetAnalyticsInstanceCapacityArgs{...}
+//	GetAnalyticsInstanceCapacityArgs{...}
 type GetAnalyticsInstanceCapacityInput interface {
 	pulumi.Input
 
@@ -633,7 +633,7 @@ func (i GetAnalyticsInstanceCapacityArgs) ToGetAnalyticsInstanceCapacityOutputWi
 // GetAnalyticsInstanceCapacityArrayInput is an input type that accepts GetAnalyticsInstanceCapacityArray and GetAnalyticsInstanceCapacityArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstanceCapacityArrayInput` via:
 //
-//          GetAnalyticsInstanceCapacityArray{ GetAnalyticsInstanceCapacityArgs{...} }
+//	GetAnalyticsInstanceCapacityArray{ GetAnalyticsInstanceCapacityArgs{...} }
 type GetAnalyticsInstanceCapacityArrayInput interface {
 	pulumi.Input
 
@@ -715,7 +715,7 @@ type GetAnalyticsInstanceNetworkEndpointDetail struct {
 // GetAnalyticsInstanceNetworkEndpointDetailInput is an input type that accepts GetAnalyticsInstanceNetworkEndpointDetailArgs and GetAnalyticsInstanceNetworkEndpointDetailOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstanceNetworkEndpointDetailInput` via:
 //
-//          GetAnalyticsInstanceNetworkEndpointDetailArgs{...}
+//	GetAnalyticsInstanceNetworkEndpointDetailArgs{...}
 type GetAnalyticsInstanceNetworkEndpointDetailInput interface {
 	pulumi.Input
 
@@ -751,7 +751,7 @@ func (i GetAnalyticsInstanceNetworkEndpointDetailArgs) ToGetAnalyticsInstanceNet
 // GetAnalyticsInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetAnalyticsInstanceNetworkEndpointDetailArray and GetAnalyticsInstanceNetworkEndpointDetailArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstanceNetworkEndpointDetailArrayInput` via:
 //
-//          GetAnalyticsInstanceNetworkEndpointDetailArray{ GetAnalyticsInstanceNetworkEndpointDetailArgs{...} }
+//	GetAnalyticsInstanceNetworkEndpointDetailArray{ GetAnalyticsInstanceNetworkEndpointDetailArgs{...} }
 type GetAnalyticsInstanceNetworkEndpointDetailArrayInput interface {
 	pulumi.Input
 
@@ -844,7 +844,7 @@ type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
 // GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput is an input type that accepts GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs and GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput` via:
 //
-//          GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...}
+//	GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...}
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput interface {
 	pulumi.Input
 
@@ -874,7 +874,7 @@ func (i GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs) ToGetAnalyt
 // GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput is an input type that accepts GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray and GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput` via:
 //
-//          GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray{ GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...} }
+//	GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray{ GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...} }
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput interface {
 	pulumi.Input
 
@@ -950,7 +950,7 @@ type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
 // GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs and GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput` via:
 //
-//          GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...}
+//	GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...}
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface {
 	pulumi.Input
 
@@ -980,7 +980,7 @@ func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToGetA
 // GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray and GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput` via:
 //
-//          GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{ GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...} }
+//	GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{ GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{...} }
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput interface {
 	pulumi.Input
 
@@ -1085,7 +1085,7 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 // GetAnalyticsInstancesAnalyticsInstanceInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceArgs and GetAnalyticsInstancesAnalyticsInstanceOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceArgs{...}
+//	GetAnalyticsInstancesAnalyticsInstanceArgs{...}
 type GetAnalyticsInstancesAnalyticsInstanceInput interface {
 	pulumi.Input
 
@@ -1144,7 +1144,7 @@ func (i GetAnalyticsInstancesAnalyticsInstanceArgs) ToGetAnalyticsInstancesAnaly
 // GetAnalyticsInstancesAnalyticsInstanceArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceArray and GetAnalyticsInstancesAnalyticsInstanceArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceArrayInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceArray{ GetAnalyticsInstancesAnalyticsInstanceArgs{...} }
+//	GetAnalyticsInstancesAnalyticsInstanceArray{ GetAnalyticsInstancesAnalyticsInstanceArgs{...} }
 type GetAnalyticsInstancesAnalyticsInstanceArrayInput interface {
 	pulumi.Input
 
@@ -1298,7 +1298,7 @@ type GetAnalyticsInstancesAnalyticsInstanceCapacity struct {
 // GetAnalyticsInstancesAnalyticsInstanceCapacityInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceCapacityArgs and GetAnalyticsInstancesAnalyticsInstanceCapacityOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceCapacityInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceCapacityArgs{...}
+//	GetAnalyticsInstancesAnalyticsInstanceCapacityArgs{...}
 type GetAnalyticsInstancesAnalyticsInstanceCapacityInput interface {
 	pulumi.Input
 
@@ -1328,7 +1328,7 @@ func (i GetAnalyticsInstancesAnalyticsInstanceCapacityArgs) ToGetAnalyticsInstan
 // GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceCapacityArray and GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceCapacityArray{ GetAnalyticsInstancesAnalyticsInstanceCapacityArgs{...} }
+//	GetAnalyticsInstancesAnalyticsInstanceCapacityArray{ GetAnalyticsInstancesAnalyticsInstanceCapacityArgs{...} }
 type GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput interface {
 	pulumi.Input
 
@@ -1410,7 +1410,7 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail struct {
 // GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs and GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs{...}
+//	GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs{...}
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailInput interface {
 	pulumi.Input
 
@@ -1446,7 +1446,7 @@ func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs) ToGetAn
 // GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray and GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray{ GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs{...} }
+//	GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray{ GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs{...} }
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput interface {
 	pulumi.Input
 
@@ -1541,7 +1541,7 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn s
 // GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs and GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...}
+//	GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...}
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput interface {
 	pulumi.Input
 
@@ -1571,7 +1571,7 @@ func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 // GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray and GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput` via:
 //
-//          GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray{ GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...} }
+//	GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray{ GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{...} }
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput interface {
 	pulumi.Input
 
@@ -1649,7 +1649,7 @@ type GetAnalyticsInstancesFilter struct {
 // GetAnalyticsInstancesFilterInput is an input type that accepts GetAnalyticsInstancesFilterArgs and GetAnalyticsInstancesFilterOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesFilterInput` via:
 //
-//          GetAnalyticsInstancesFilterArgs{...}
+//	GetAnalyticsInstancesFilterArgs{...}
 type GetAnalyticsInstancesFilterInput interface {
 	pulumi.Input
 
@@ -1679,7 +1679,7 @@ func (i GetAnalyticsInstancesFilterArgs) ToGetAnalyticsInstancesFilterOutputWith
 // GetAnalyticsInstancesFilterArrayInput is an input type that accepts GetAnalyticsInstancesFilterArray and GetAnalyticsInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesFilterArrayInput` via:
 //
-//          GetAnalyticsInstancesFilterArray{ GetAnalyticsInstancesFilterArgs{...} }
+//	GetAnalyticsInstancesFilterArray{ GetAnalyticsInstancesFilterArgs{...} }
 type GetAnalyticsInstancesFilterArrayInput interface {
 	pulumi.Input
 

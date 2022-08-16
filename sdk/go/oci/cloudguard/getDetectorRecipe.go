@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a DetectorRecipe identified by detectorRecipeId
+// # Returns a DetectorRecipe identified by detectorRecipeId
 //
 // ## Example Usage
 //
@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetDetectorRecipe(ctx, &cloudguard.GetDetectorRecipeArgs{
-// 			DetectorRecipeId: oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetDetectorRecipe(ctx, &cloudguard.GetDetectorRecipeArgs{
+//				DetectorRecipeId: oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupDetectorRecipe(ctx *pulumi.Context, args *LookupDetectorRecipeArgs, opts ...pulumi.InvokeOption) (*LookupDetectorRecipeResult, error) {
 	var rv LookupDetectorRecipeResult

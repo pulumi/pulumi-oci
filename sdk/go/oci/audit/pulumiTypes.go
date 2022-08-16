@@ -32,7 +32,7 @@ type GetEventsAuditEvent struct {
 // GetEventsAuditEventInput is an input type that accepts GetEventsAuditEventArgs and GetEventsAuditEventOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventInput` via:
 //
-//          GetEventsAuditEventArgs{...}
+//	GetEventsAuditEventArgs{...}
 type GetEventsAuditEventInput interface {
 	pulumi.Input
 
@@ -74,7 +74,7 @@ func (i GetEventsAuditEventArgs) ToGetEventsAuditEventOutputWithContext(ctx cont
 // GetEventsAuditEventArrayInput is an input type that accepts GetEventsAuditEventArray and GetEventsAuditEventArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventArrayInput` via:
 //
-//          GetEventsAuditEventArray{ GetEventsAuditEventArgs{...} }
+//	GetEventsAuditEventArray{ GetEventsAuditEventArgs{...} }
 type GetEventsAuditEventArrayInput interface {
 	pulumi.Input
 
@@ -204,7 +204,7 @@ type GetEventsAuditEventData struct {
 // GetEventsAuditEventDataInput is an input type that accepts GetEventsAuditEventDataArgs and GetEventsAuditEventDataOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataInput` via:
 //
-//          GetEventsAuditEventDataArgs{...}
+//	GetEventsAuditEventDataArgs{...}
 type GetEventsAuditEventDataInput interface {
 	pulumi.Input
 
@@ -258,7 +258,7 @@ func (i GetEventsAuditEventDataArgs) ToGetEventsAuditEventDataOutputWithContext(
 // GetEventsAuditEventDataArrayInput is an input type that accepts GetEventsAuditEventDataArray and GetEventsAuditEventDataArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataArrayInput` via:
 //
-//          GetEventsAuditEventDataArray{ GetEventsAuditEventDataArgs{...} }
+//	GetEventsAuditEventDataArray{ GetEventsAuditEventDataArgs{...} }
 type GetEventsAuditEventDataArrayInput interface {
 	pulumi.Input
 
@@ -410,7 +410,7 @@ type GetEventsAuditEventDataIdentity struct {
 // GetEventsAuditEventDataIdentityInput is an input type that accepts GetEventsAuditEventDataIdentityArgs and GetEventsAuditEventDataIdentityOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataIdentityInput` via:
 //
-//          GetEventsAuditEventDataIdentityArgs{...}
+//	GetEventsAuditEventDataIdentityArgs{...}
 type GetEventsAuditEventDataIdentityInput interface {
 	pulumi.Input
 
@@ -456,7 +456,7 @@ func (i GetEventsAuditEventDataIdentityArgs) ToGetEventsAuditEventDataIdentityOu
 // GetEventsAuditEventDataIdentityArrayInput is an input type that accepts GetEventsAuditEventDataIdentityArray and GetEventsAuditEventDataIdentityArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataIdentityArrayInput` via:
 //
-//          GetEventsAuditEventDataIdentityArray{ GetEventsAuditEventDataIdentityArgs{...} }
+//	GetEventsAuditEventDataIdentityArray{ GetEventsAuditEventDataIdentityArgs{...} }
 type GetEventsAuditEventDataIdentityArrayInput interface {
 	pulumi.Input
 
@@ -578,7 +578,7 @@ type GetEventsAuditEventDataRequest struct {
 // GetEventsAuditEventDataRequestInput is an input type that accepts GetEventsAuditEventDataRequestArgs and GetEventsAuditEventDataRequestOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataRequestInput` via:
 //
-//          GetEventsAuditEventDataRequestArgs{...}
+//	GetEventsAuditEventDataRequestArgs{...}
 type GetEventsAuditEventDataRequestInput interface {
 	pulumi.Input
 
@@ -614,7 +614,7 @@ func (i GetEventsAuditEventDataRequestArgs) ToGetEventsAuditEventDataRequestOutp
 // GetEventsAuditEventDataRequestArrayInput is an input type that accepts GetEventsAuditEventDataRequestArray and GetEventsAuditEventDataRequestArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataRequestArrayInput` via:
 //
-//          GetEventsAuditEventDataRequestArray{ GetEventsAuditEventDataRequestArgs{...} }
+//	GetEventsAuditEventDataRequestArray{ GetEventsAuditEventDataRequestArgs{...} }
 type GetEventsAuditEventDataRequestArrayInput interface {
 	pulumi.Input
 
@@ -711,7 +711,7 @@ type GetEventsAuditEventDataResponse struct {
 // GetEventsAuditEventDataResponseInput is an input type that accepts GetEventsAuditEventDataResponseArgs and GetEventsAuditEventDataResponseOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataResponseInput` via:
 //
-//          GetEventsAuditEventDataResponseArgs{...}
+//	GetEventsAuditEventDataResponseArgs{...}
 type GetEventsAuditEventDataResponseInput interface {
 	pulumi.Input
 
@@ -747,7 +747,7 @@ func (i GetEventsAuditEventDataResponseArgs) ToGetEventsAuditEventDataResponseOu
 // GetEventsAuditEventDataResponseArrayInput is an input type that accepts GetEventsAuditEventDataResponseArray and GetEventsAuditEventDataResponseArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataResponseArrayInput` via:
 //
-//          GetEventsAuditEventDataResponseArray{ GetEventsAuditEventDataResponseArgs{...} }
+//	GetEventsAuditEventDataResponseArray{ GetEventsAuditEventDataResponseArgs{...} }
 type GetEventsAuditEventDataResponseArrayInput interface {
 	pulumi.Input
 
@@ -838,7 +838,7 @@ type GetEventsAuditEventDataStateChange struct {
 // GetEventsAuditEventDataStateChangeInput is an input type that accepts GetEventsAuditEventDataStateChangeArgs and GetEventsAuditEventDataStateChangeOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataStateChangeInput` via:
 //
-//          GetEventsAuditEventDataStateChangeArgs{...}
+//	GetEventsAuditEventDataStateChangeArgs{...}
 type GetEventsAuditEventDataStateChangeInput interface {
 	pulumi.Input
 
@@ -868,7 +868,7 @@ func (i GetEventsAuditEventDataStateChangeArgs) ToGetEventsAuditEventDataStateCh
 // GetEventsAuditEventDataStateChangeArrayInput is an input type that accepts GetEventsAuditEventDataStateChangeArray and GetEventsAuditEventDataStateChangeArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataStateChangeArrayInput` via:
 //
-//          GetEventsAuditEventDataStateChangeArray{ GetEventsAuditEventDataStateChangeArgs{...} }
+//	GetEventsAuditEventDataStateChangeArray{ GetEventsAuditEventDataStateChangeArgs{...} }
 type GetEventsAuditEventDataStateChangeArrayInput interface {
 	pulumi.Input
 
@@ -943,7 +943,7 @@ type GetEventsFilter struct {
 // GetEventsFilterInput is an input type that accepts GetEventsFilterArgs and GetEventsFilterOutput values.
 // You can construct a concrete instance of `GetEventsFilterInput` via:
 //
-//          GetEventsFilterArgs{...}
+//	GetEventsFilterArgs{...}
 type GetEventsFilterInput interface {
 	pulumi.Input
 
@@ -972,7 +972,7 @@ func (i GetEventsFilterArgs) ToGetEventsFilterOutputWithContext(ctx context.Cont
 // GetEventsFilterArrayInput is an input type that accepts GetEventsFilterArray and GetEventsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEventsFilterArrayInput` via:
 //
-//          GetEventsFilterArray{ GetEventsFilterArgs{...} }
+//	GetEventsFilterArray{ GetEventsFilterArgs{...} }
 type GetEventsFilterArrayInput interface {
 	pulumi.Input
 

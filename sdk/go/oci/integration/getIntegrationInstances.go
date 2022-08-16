@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Integration"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Integration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Integration.GetIntegrationInstances(ctx, &integration.GetIntegrationInstancesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Integration_instance_display_name),
-// 			State:         pulumi.StringRef(_var.Integration_instance_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Integration.GetIntegrationInstances(ctx, &integration.GetIntegrationInstancesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Integration_instance_display_name),
+//				State:         pulumi.StringRef(_var.Integration_instance_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetIntegrationInstances(ctx *pulumi.Context, args *GetIntegrationInstancesArgs, opts ...pulumi.InvokeOption) (*GetIntegrationInstancesResult, error) {
 	var rv GetIntegrationInstancesResult

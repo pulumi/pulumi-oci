@@ -21,55 +21,58 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.NewGateway(ctx, "testGateway", &ApiGateway.GatewayArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			EndpointType:  pulumi.Any(_var.Gateway_endpoint_type),
-// 			SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-// 			CertificateId: pulumi.Any(oci_apigateway_certificate.Test_certificate.Id),
-// 			CaBundles: apigateway.GatewayCaBundleArray{
-// 				&apigateway.GatewayCaBundleArgs{
-// 					Type:                   pulumi.Any(_var.Gateway_ca_bundles_type),
-// 					CaBundleId:             pulumi.Any(oci_apigateway_ca_bundle.Test_ca_bundle.Id),
-// 					CertificateAuthorityId: pulumi.Any(oci_apigateway_certificate_authority.Test_certificate_authority.Id),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Gateway_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NetworkSecurityGroupIds: pulumi.Any(_var.Gateway_network_security_group_ids),
-// 			ResponseCacheDetails: &apigateway.GatewayResponseCacheDetailsArgs{
-// 				Type:                              pulumi.Any(_var.Gateway_response_cache_details_type),
-// 				AuthenticationSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				AuthenticationSecretVersionNumber: pulumi.Any(_var.Gateway_response_cache_details_authentication_secret_version_number),
-// 				ConnectTimeoutInMs:                pulumi.Any(_var.Gateway_response_cache_details_connect_timeout_in_ms),
-// 				IsSslEnabled:                      pulumi.Any(_var.Gateway_response_cache_details_is_ssl_enabled),
-// 				IsSslVerifyDisabled:               pulumi.Any(_var.Gateway_response_cache_details_is_ssl_verify_disabled),
-// 				ReadTimeoutInMs:                   pulumi.Any(_var.Gateway_response_cache_details_read_timeout_in_ms),
-// 				SendTimeoutInMs:                   pulumi.Any(_var.Gateway_response_cache_details_send_timeout_in_ms),
-// 				Servers: apigateway.GatewayResponseCacheDetailsServerArray{
-// 					&apigateway.GatewayResponseCacheDetailsServerArgs{
-// 						Host: pulumi.Any(_var.Gateway_response_cache_details_servers_host),
-// 						Port: pulumi.Any(_var.Gateway_response_cache_details_servers_port),
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.NewGateway(ctx, "testGateway", &ApiGateway.GatewayArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				EndpointType:  pulumi.Any(_var.Gateway_endpoint_type),
+//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				CertificateId: pulumi.Any(oci_apigateway_certificate.Test_certificate.Id),
+//				CaBundles: apigateway.GatewayCaBundleArray{
+//					&apigateway.GatewayCaBundleArgs{
+//						Type:                   pulumi.Any(_var.Gateway_ca_bundles_type),
+//						CaBundleId:             pulumi.Any(oci_apigateway_ca_bundle.Test_ca_bundle.Id),
+//						CertificateAuthorityId: pulumi.Any(oci_apigateway_certificate_authority.Test_certificate_authority.Id),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Gateway_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NetworkSecurityGroupIds: pulumi.Any(_var.Gateway_network_security_group_ids),
+//				ResponseCacheDetails: &apigateway.GatewayResponseCacheDetailsArgs{
+//					Type:                              pulumi.Any(_var.Gateway_response_cache_details_type),
+//					AuthenticationSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					AuthenticationSecretVersionNumber: pulumi.Any(_var.Gateway_response_cache_details_authentication_secret_version_number),
+//					ConnectTimeoutInMs:                pulumi.Any(_var.Gateway_response_cache_details_connect_timeout_in_ms),
+//					IsSslEnabled:                      pulumi.Any(_var.Gateway_response_cache_details_is_ssl_enabled),
+//					IsSslVerifyDisabled:               pulumi.Any(_var.Gateway_response_cache_details_is_ssl_verify_disabled),
+//					ReadTimeoutInMs:                   pulumi.Any(_var.Gateway_response_cache_details_read_timeout_in_ms),
+//					SendTimeoutInMs:                   pulumi.Any(_var.Gateway_response_cache_details_send_timeout_in_ms),
+//					Servers: apigateway.GatewayResponseCacheDetailsServerArray{
+//						&apigateway.GatewayResponseCacheDetailsServerArgs{
+//							Host: pulumi.Any(_var.Gateway_response_cache_details_servers_host),
+//							Port: pulumi.Any(_var.Gateway_response_cache_details_servers_port),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -77,7 +80,9 @@ import (
 // Gateways can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
+//
+//	$ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
+//
 // ```
 type Gateway struct {
 	pulumi.CustomResourceState
@@ -300,7 +305,7 @@ func (i *Gateway) ToGatewayOutputWithContext(ctx context.Context) GatewayOutput 
 // GatewayArrayInput is an input type that accepts GatewayArray and GatewayArrayOutput values.
 // You can construct a concrete instance of `GatewayArrayInput` via:
 //
-//          GatewayArray{ GatewayArgs{...} }
+//	GatewayArray{ GatewayArgs{...} }
 type GatewayArrayInput interface {
 	pulumi.Input
 
@@ -325,7 +330,7 @@ func (i GatewayArray) ToGatewayArrayOutputWithContext(ctx context.Context) Gatew
 // GatewayMapInput is an input type that accepts GatewayMap and GatewayMapOutput values.
 // You can construct a concrete instance of `GatewayMapInput` via:
 //
-//          GatewayMap{ "key": GatewayArgs{...} }
+//	GatewayMap{ "key": GatewayArgs{...} }
 type GatewayMapInput interface {
 	pulumi.Input
 

@@ -20,7 +20,9 @@ import (
 // AuditTrails can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
+//
+//	$ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
+//
 // ```
 type AuditTrail struct {
 	pulumi.CustomResourceState
@@ -247,7 +249,7 @@ func (i *AuditTrail) ToAuditTrailOutputWithContext(ctx context.Context) AuditTra
 // AuditTrailArrayInput is an input type that accepts AuditTrailArray and AuditTrailArrayOutput values.
 // You can construct a concrete instance of `AuditTrailArrayInput` via:
 //
-//          AuditTrailArray{ AuditTrailArgs{...} }
+//	AuditTrailArray{ AuditTrailArgs{...} }
 type AuditTrailArrayInput interface {
 	pulumi.Input
 
@@ -272,7 +274,7 @@ func (i AuditTrailArray) ToAuditTrailArrayOutputWithContext(ctx context.Context)
 // AuditTrailMapInput is an input type that accepts AuditTrailMap and AuditTrailMapOutput values.
 // You can construct a concrete instance of `AuditTrailMapInput` via:
 //
-//          AuditTrailMap{ "key": AuditTrailArgs{...} }
+//	AuditTrailMap{ "key": AuditTrailArgs{...} }
 type AuditTrailMapInput interface {
 	pulumi.Input
 

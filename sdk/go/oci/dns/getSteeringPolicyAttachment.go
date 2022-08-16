@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Dns.GetSteeringPolicyAttachment(ctx, &dns.GetSteeringPolicyAttachmentArgs{
-// 			SteeringPolicyAttachmentId: oci_dns_steering_policy_attachment.Test_steering_policy_attachment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetSteeringPolicyAttachment(ctx, &dns.GetSteeringPolicyAttachmentArgs{
+//				SteeringPolicyAttachmentId: oci_dns_steering_policy_attachment.Test_steering_policy_attachment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupSteeringPolicyAttachment(ctx *pulumi.Context, args *LookupSteeringPolicyAttachmentArgs, opts ...pulumi.InvokeOption) (*LookupSteeringPolicyAttachmentResult, error) {
 	var rv LookupSteeringPolicyAttachmentResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Opsi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Opsi.GetHostInsight(ctx, &opsi.GetHostInsightArgs{
-// 			HostInsightId: oci_opsi_host_insight.Test_host_insight.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Opsi.GetHostInsight(ctx, &opsi.GetHostInsightArgs{
+//				HostInsightId: oci_opsi_host_insight.Test_host_insight.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupHostInsight(ctx *pulumi.Context, args *LookupHostInsightArgs, opts ...pulumi.InvokeOption) (*LookupHostInsightResult, error) {
 	var rv LookupHostInsightResult
@@ -54,7 +57,10 @@ type LookupHostInsightArgs struct {
 // A collection of values returned by getHostInsight.
 type LookupHostInsightResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// <<<<<<< ours
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+	ComputeId string `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -147,8 +153,14 @@ func (o LookupHostInsightResultOutput) ToLookupHostInsightResultOutputWithContex
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+// <<<<<<< ours
 func (o LookupHostInsightResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+func (o LookupHostInsightResultOutput) ComputeId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupHostInsightResult) string { return v.ComputeId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

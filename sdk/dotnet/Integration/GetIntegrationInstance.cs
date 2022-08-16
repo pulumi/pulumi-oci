@@ -110,6 +110,10 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstanceAlternateCustomEndpointResult> AlternateCustomEndpoints;
         /// <summary>
+        /// A list of associated attachments to other services
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstanceAttachmentResult> Attachments;
+        /// <summary>
         /// Compartment Identifier.
         /// </summary>
         public readonly string CompartmentId;
@@ -138,6 +142,10 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public readonly string Id;
         public readonly string IdcsAt;
+        /// <summary>
+        /// Information for IDCS access
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstanceIdcsInfoResult> IdcsInfos;
         /// <summary>
         /// The Integration Instance URL.
         /// </summary>
@@ -188,6 +196,8 @@ namespace Pulumi.Oci.Integration
         private GetIntegrationInstanceResult(
             ImmutableArray<Outputs.GetIntegrationInstanceAlternateCustomEndpointResult> alternateCustomEndpoints,
 
+            ImmutableArray<Outputs.GetIntegrationInstanceAttachmentResult> attachments,
+
             string compartmentId,
 
             string consumptionModel,
@@ -203,6 +213,8 @@ namespace Pulumi.Oci.Integration
             string id,
 
             string idcsAt,
+
+            ImmutableArray<Outputs.GetIntegrationInstanceIdcsInfoResult> idcsInfos,
 
             string instanceUrl,
 
@@ -229,6 +241,7 @@ namespace Pulumi.Oci.Integration
             string timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
+            Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
             CustomEndpoints = customEndpoints;
@@ -237,6 +250,7 @@ namespace Pulumi.Oci.Integration
             FreeformTags = freeformTags;
             Id = id;
             IdcsAt = idcsAt;
+            IdcsInfos = idcsInfos;
             InstanceUrl = instanceUrl;
             IntegrationInstanceId = integrationInstanceId;
             IntegrationInstanceType = integrationInstanceType;

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Autoscaling"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Autoscaling"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Autoscaling.GetAutoScalingConfigurations(ctx, &autoscaling.GetAutoScalingConfigurationsArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Auto_scaling_configuration_display_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Autoscaling.GetAutoScalingConfigurations(ctx, &autoscaling.GetAutoScalingConfigurationsArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Auto_scaling_configuration_display_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutoScalingConfigurations(ctx *pulumi.Context, args *GetAutoScalingConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetAutoScalingConfigurationsResult, error) {
 	var rv GetAutoScalingConfigurationsResult

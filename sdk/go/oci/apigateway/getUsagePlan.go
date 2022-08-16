@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApiGateway"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApiGateway.GetUsagePlan(ctx, &apigateway.GetUsagePlanArgs{
-// 			UsagePlanId: oci_apigateway_usage_plan.Test_usage_plan.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApiGateway.GetUsagePlan(ctx, &apigateway.GetUsagePlanArgs{
+//				UsagePlanId: oci_apigateway_usage_plan.Test_usage_plan.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupUsagePlan(ctx *pulumi.Context, args *LookupUsagePlanArgs, opts ...pulumi.InvokeOption) (*LookupUsagePlanResult, error) {
 	var rv LookupUsagePlanResult

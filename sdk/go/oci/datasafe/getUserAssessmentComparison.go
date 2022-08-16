@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetUserAssessmentComparison(ctx, &datasafe.GetUserAssessmentComparisonArgs{
-// 			ComparisonUserAssessmentId: oci_data_safe_user_assessment.Test_user_assessment.Id,
-// 			UserAssessmentId:           oci_data_safe_user_assessment.Test_user_assessment.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetUserAssessmentComparison(ctx, &datasafe.GetUserAssessmentComparisonArgs{
+//				ComparisonUserAssessmentId: oci_data_safe_user_assessment.Test_user_assessment.Id,
+//				UserAssessmentId:           oci_data_safe_user_assessment.Test_user_assessment.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUserAssessmentComparison(ctx *pulumi.Context, args *GetUserAssessmentComparisonArgs, opts ...pulumi.InvokeOption) (*GetUserAssessmentComparisonResult, error) {
 	var rv GetUserAssessmentComparisonResult

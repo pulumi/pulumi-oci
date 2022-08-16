@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetBackupDestination(ctx, &database.GetBackupDestinationArgs{
-// 			BackupDestinationId: oci_database_backup_destination.Test_backup_destination.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetBackupDestination(ctx, &database.GetBackupDestinationArgs{
+//				BackupDestinationId: oci_database_backup_destination.Test_backup_destination.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBackupDestination(ctx *pulumi.Context, args *LookupBackupDestinationArgs, opts ...pulumi.InvokeOption) (*LookupBackupDestinationResult, error) {
 	var rv LookupBackupDestinationResult

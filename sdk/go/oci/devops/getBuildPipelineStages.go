@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetBuildPipelineStages(ctx, &devops.GetBuildPipelineStagesArgs{
-// 			BuildPipelineId: pulumi.StringRef(oci_devops_build_pipeline.Test_build_pipeline.Id),
-// 			CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-// 			DisplayName:     pulumi.StringRef(_var.Build_pipeline_stage_display_name),
-// 			Id:              pulumi.StringRef(_var.Build_pipeline_stage_id),
-// 			State:           pulumi.StringRef(_var.Build_pipeline_stage_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetBuildPipelineStages(ctx, &devops.GetBuildPipelineStagesArgs{
+//				BuildPipelineId: pulumi.StringRef(oci_devops_build_pipeline.Test_build_pipeline.Id),
+//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
+//				DisplayName:     pulumi.StringRef(_var.Build_pipeline_stage_display_name),
+//				Id:              pulumi.StringRef(_var.Build_pipeline_stage_id),
+//				State:           pulumi.StringRef(_var.Build_pipeline_stage_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetBuildPipelineStages(ctx *pulumi.Context, args *GetBuildPipelineStagesArgs, opts ...pulumi.InvokeOption) (*GetBuildPipelineStagesResult, error) {
 	var rv GetBuildPipelineStagesResult

@@ -21,26 +21,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewExternalContainerDatabase(ctx, "testExternalContainerDatabase", &Database.ExternalContainerDatabaseArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.External_container_database_display_name),
-// 			DefinedTags:   pulumi.Any(_var.External_container_database_defined_tags),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewExternalContainerDatabase(ctx, "testExternalContainerDatabase", &Database.ExternalContainerDatabaseArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.External_container_database_display_name),
+//				DefinedTags:   pulumi.Any(_var.External_container_database_defined_tags),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -48,7 +51,9 @@ import (
 // ExternalContainerDatabases can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/externalContainerDatabase:ExternalContainerDatabase test_external_container_database "id"
+//
+//	$ pulumi import oci:Database/externalContainerDatabase:ExternalContainerDatabase test_external_container_database "id"
+//
 // ```
 type ExternalContainerDatabase struct {
 	pulumi.CustomResourceState
@@ -256,7 +261,7 @@ func (i *ExternalContainerDatabase) ToExternalContainerDatabaseOutputWithContext
 // ExternalContainerDatabaseArrayInput is an input type that accepts ExternalContainerDatabaseArray and ExternalContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseArrayInput` via:
 //
-//          ExternalContainerDatabaseArray{ ExternalContainerDatabaseArgs{...} }
+//	ExternalContainerDatabaseArray{ ExternalContainerDatabaseArgs{...} }
 type ExternalContainerDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -281,7 +286,7 @@ func (i ExternalContainerDatabaseArray) ToExternalContainerDatabaseArrayOutputWi
 // ExternalContainerDatabaseMapInput is an input type that accepts ExternalContainerDatabaseMap and ExternalContainerDatabaseMapOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseMapInput` via:
 //
-//          ExternalContainerDatabaseMap{ "key": ExternalContainerDatabaseArgs{...} }
+//	ExternalContainerDatabaseMap{ "key": ExternalContainerDatabaseArgs{...} }
 type ExternalContainerDatabaseMapInput interface {
 	pulumi.Input
 

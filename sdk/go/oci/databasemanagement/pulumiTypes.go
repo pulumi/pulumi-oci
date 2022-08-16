@@ -32,7 +32,7 @@ type ManagedDatabaseGroupManagedDatabase struct {
 // ManagedDatabaseGroupManagedDatabaseInput is an input type that accepts ManagedDatabaseGroupManagedDatabaseArgs and ManagedDatabaseGroupManagedDatabaseOutput values.
 // You can construct a concrete instance of `ManagedDatabaseGroupManagedDatabaseInput` via:
 //
-//          ManagedDatabaseGroupManagedDatabaseArgs{...}
+//	ManagedDatabaseGroupManagedDatabaseArgs{...}
 type ManagedDatabaseGroupManagedDatabaseInput interface {
 	pulumi.Input
 
@@ -74,7 +74,7 @@ func (i ManagedDatabaseGroupManagedDatabaseArgs) ToManagedDatabaseGroupManagedDa
 // ManagedDatabaseGroupManagedDatabaseArrayInput is an input type that accepts ManagedDatabaseGroupManagedDatabaseArray and ManagedDatabaseGroupManagedDatabaseArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabaseGroupManagedDatabaseArrayInput` via:
 //
-//          ManagedDatabaseGroupManagedDatabaseArray{ ManagedDatabaseGroupManagedDatabaseArgs{...} }
+//	ManagedDatabaseGroupManagedDatabaseArray{ ManagedDatabaseGroupManagedDatabaseArgs{...} }
 type ManagedDatabaseGroupManagedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -184,7 +184,7 @@ type ManagedDatabasesChangeDatabaseParameterCredentials struct {
 // ManagedDatabasesChangeDatabaseParameterCredentialsInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterCredentialsArgs and ManagedDatabasesChangeDatabaseParameterCredentialsOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterCredentialsInput` via:
 //
-//          ManagedDatabasesChangeDatabaseParameterCredentialsArgs{...}
+//	ManagedDatabasesChangeDatabaseParameterCredentialsArgs{...}
 type ManagedDatabasesChangeDatabaseParameterCredentialsInput interface {
 	pulumi.Input
 
@@ -226,11 +226,11 @@ func (i ManagedDatabasesChangeDatabaseParameterCredentialsArgs) ToManagedDatabas
 // ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterCredentialsArgs, ManagedDatabasesChangeDatabaseParameterCredentialsPtr and ManagedDatabasesChangeDatabaseParameterCredentialsPtrOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput` via:
 //
-//          ManagedDatabasesChangeDatabaseParameterCredentialsArgs{...}
+//	        ManagedDatabasesChangeDatabaseParameterCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ManagedDatabasesChangeDatabaseParameterCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -376,7 +376,7 @@ type ManagedDatabasesChangeDatabaseParameterParameter struct {
 // ManagedDatabasesChangeDatabaseParameterParameterInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterParameterArgs and ManagedDatabasesChangeDatabaseParameterParameterOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterParameterInput` via:
 //
-//          ManagedDatabasesChangeDatabaseParameterParameterArgs{...}
+//	ManagedDatabasesChangeDatabaseParameterParameterArgs{...}
 type ManagedDatabasesChangeDatabaseParameterParameterInput interface {
 	pulumi.Input
 
@@ -408,7 +408,7 @@ func (i ManagedDatabasesChangeDatabaseParameterParameterArgs) ToManagedDatabases
 // ManagedDatabasesChangeDatabaseParameterParameterArrayInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterParameterArray and ManagedDatabasesChangeDatabaseParameterParameterArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterParameterArrayInput` via:
 //
-//          ManagedDatabasesChangeDatabaseParameterParameterArray{ ManagedDatabasesChangeDatabaseParameterParameterArgs{...} }
+//	ManagedDatabasesChangeDatabaseParameterParameterArray{ ManagedDatabasesChangeDatabaseParameterParameterArgs{...} }
 type ManagedDatabasesChangeDatabaseParameterParameterArrayInput interface {
 	pulumi.Input
 
@@ -493,7 +493,7 @@ type ManagedDatabasesResetDatabaseParameterCredentials struct {
 // ManagedDatabasesResetDatabaseParameterCredentialsInput is an input type that accepts ManagedDatabasesResetDatabaseParameterCredentialsArgs and ManagedDatabasesResetDatabaseParameterCredentialsOutput values.
 // You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterCredentialsInput` via:
 //
-//          ManagedDatabasesResetDatabaseParameterCredentialsArgs{...}
+//	ManagedDatabasesResetDatabaseParameterCredentialsArgs{...}
 type ManagedDatabasesResetDatabaseParameterCredentialsInput interface {
 	pulumi.Input
 
@@ -535,11 +535,11 @@ func (i ManagedDatabasesResetDatabaseParameterCredentialsArgs) ToManagedDatabase
 // ManagedDatabasesResetDatabaseParameterCredentialsPtrInput is an input type that accepts ManagedDatabasesResetDatabaseParameterCredentialsArgs, ManagedDatabasesResetDatabaseParameterCredentialsPtr and ManagedDatabasesResetDatabaseParameterCredentialsPtrOutput values.
 // You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterCredentialsPtrInput` via:
 //
-//          ManagedDatabasesResetDatabaseParameterCredentialsArgs{...}
+//	        ManagedDatabasesResetDatabaseParameterCredentialsArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ManagedDatabasesResetDatabaseParameterCredentialsPtrInput interface {
 	pulumi.Input
 
@@ -687,7 +687,7 @@ type GetDbManagementPrivateEndpointAssociatedDatabaseItem struct {
 // GetDbManagementPrivateEndpointAssociatedDatabaseItemInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs and GetDbManagementPrivateEndpointAssociatedDatabaseItemOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabaseItemInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs{...}
+//	GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs{...}
 type GetDbManagementPrivateEndpointAssociatedDatabaseItemInput interface {
 	pulumi.Input
 
@@ -721,7 +721,7 @@ func (i GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs) ToGetDbManagem
 // GetDbManagementPrivateEndpointAssociatedDatabaseItemArrayInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabaseItemArray and GetDbManagementPrivateEndpointAssociatedDatabaseItemArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabaseItemArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabaseItemArray{ GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs{...} }
+//	GetDbManagementPrivateEndpointAssociatedDatabaseItemArray{ GetDbManagementPrivateEndpointAssociatedDatabaseItemArgs{...} }
 type GetDbManagementPrivateEndpointAssociatedDatabaseItemArrayInput interface {
 	pulumi.Input
 
@@ -805,7 +805,7 @@ type GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollecti
 // GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArgs and GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArgs{...}
+//	GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArgs{...}
 type GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionInput interface {
 	pulumi.Input
 
@@ -833,7 +833,7 @@ func (i GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseColle
 // GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArrayInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArray and GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArray{ GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArgs{...} }
+//	GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArray{ GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArgs{...} }
 type GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArrayInput interface {
 	pulumi.Input
 
@@ -910,7 +910,7 @@ type GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollecti
 // GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArgs and GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArgs{...}
+//	GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArgs{...}
 type GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemInput interface {
 	pulumi.Input
 
@@ -944,7 +944,7 @@ func (i GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseColle
 // GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArrayInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArray and GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArray{ GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArgs{...} }
+//	GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArray{ GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArgs{...} }
 type GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1038,7 +1038,7 @@ type GetDbManagementPrivateEndpointAssociatedDatabasesFilter struct {
 // GetDbManagementPrivateEndpointAssociatedDatabasesFilterInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs and GetDbManagementPrivateEndpointAssociatedDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabasesFilterInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs{...}
+//	GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs{...}
 type GetDbManagementPrivateEndpointAssociatedDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -1068,7 +1068,7 @@ func (i GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs) ToGetDbMana
 // GetDbManagementPrivateEndpointAssociatedDatabasesFilterArrayInput is an input type that accepts GetDbManagementPrivateEndpointAssociatedDatabasesFilterArray and GetDbManagementPrivateEndpointAssociatedDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointAssociatedDatabasesFilterArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointAssociatedDatabasesFilterArray{ GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs{...} }
+//	GetDbManagementPrivateEndpointAssociatedDatabasesFilterArray{ GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs{...} }
 type GetDbManagementPrivateEndpointAssociatedDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1144,7 +1144,7 @@ type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection struct
 // GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionInput is an input type that accepts GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArgs and GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionInput` via:
 //
-//          GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArgs{...}
+//	GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArgs{...}
 type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionInput interface {
 	pulumi.Input
 
@@ -1171,7 +1171,7 @@ func (i GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArgs
 // GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArrayInput is an input type that accepts GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArray and GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArray{ GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArgs{...} }
+//	GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArray{ GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArgs{...} }
 type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1261,7 +1261,7 @@ type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem st
 // GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemInput is an input type that accepts GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArgs and GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemInput` via:
 //
-//          GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArgs{...}
+//	GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArgs{...}
 type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemInput interface {
 	pulumi.Input
 
@@ -1309,7 +1309,7 @@ func (i GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem
 // GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArrayInput is an input type that accepts GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArray and GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArray{ GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArgs{...} }
+//	GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArray{ GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArgs{...} }
 type GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1448,7 +1448,7 @@ type GetDbManagementPrivateEndpointsFilter struct {
 // GetDbManagementPrivateEndpointsFilterInput is an input type that accepts GetDbManagementPrivateEndpointsFilterArgs and GetDbManagementPrivateEndpointsFilterOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointsFilterInput` via:
 //
-//          GetDbManagementPrivateEndpointsFilterArgs{...}
+//	GetDbManagementPrivateEndpointsFilterArgs{...}
 type GetDbManagementPrivateEndpointsFilterInput interface {
 	pulumi.Input
 
@@ -1478,7 +1478,7 @@ func (i GetDbManagementPrivateEndpointsFilterArgs) ToGetDbManagementPrivateEndpo
 // GetDbManagementPrivateEndpointsFilterArrayInput is an input type that accepts GetDbManagementPrivateEndpointsFilterArray and GetDbManagementPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDbManagementPrivateEndpointsFilterArrayInput` via:
 //
-//          GetDbManagementPrivateEndpointsFilterArray{ GetDbManagementPrivateEndpointsFilterArgs{...} }
+//	GetDbManagementPrivateEndpointsFilterArray{ GetDbManagementPrivateEndpointsFilterArgs{...} }
 type GetDbManagementPrivateEndpointsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1557,7 +1557,7 @@ type GetJobExecutionsStatusItem struct {
 // GetJobExecutionsStatusItemInput is an input type that accepts GetJobExecutionsStatusItemArgs and GetJobExecutionsStatusItemOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusItemInput` via:
 //
-//          GetJobExecutionsStatusItemArgs{...}
+//	GetJobExecutionsStatusItemArgs{...}
 type GetJobExecutionsStatusItemInput interface {
 	pulumi.Input
 
@@ -1587,7 +1587,7 @@ func (i GetJobExecutionsStatusItemArgs) ToGetJobExecutionsStatusItemOutputWithCo
 // GetJobExecutionsStatusItemArrayInput is an input type that accepts GetJobExecutionsStatusItemArray and GetJobExecutionsStatusItemArrayOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusItemArrayInput` via:
 //
-//          GetJobExecutionsStatusItemArray{ GetJobExecutionsStatusItemArgs{...} }
+//	GetJobExecutionsStatusItemArray{ GetJobExecutionsStatusItemArgs{...} }
 type GetJobExecutionsStatusItemArrayInput interface {
 	pulumi.Input
 
@@ -1663,7 +1663,7 @@ type GetJobExecutionsStatusesFilter struct {
 // GetJobExecutionsStatusesFilterInput is an input type that accepts GetJobExecutionsStatusesFilterArgs and GetJobExecutionsStatusesFilterOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusesFilterInput` via:
 //
-//          GetJobExecutionsStatusesFilterArgs{...}
+//	GetJobExecutionsStatusesFilterArgs{...}
 type GetJobExecutionsStatusesFilterInput interface {
 	pulumi.Input
 
@@ -1693,7 +1693,7 @@ func (i GetJobExecutionsStatusesFilterArgs) ToGetJobExecutionsStatusesFilterOutp
 // GetJobExecutionsStatusesFilterArrayInput is an input type that accepts GetJobExecutionsStatusesFilterArray and GetJobExecutionsStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusesFilterArrayInput` via:
 //
-//          GetJobExecutionsStatusesFilterArray{ GetJobExecutionsStatusesFilterArgs{...} }
+//	GetJobExecutionsStatusesFilterArray{ GetJobExecutionsStatusesFilterArgs{...} }
 type GetJobExecutionsStatusesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1770,7 +1770,7 @@ type GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection struct {
 // GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionInput is an input type that accepts GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArgs and GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionInput` via:
 //
-//          GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArgs{...}
+//	GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArgs{...}
 type GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionInput interface {
 	pulumi.Input
 
@@ -1798,7 +1798,7 @@ func (i GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArgs) ToGetJ
 // GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArrayInput is an input type that accepts GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArray and GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArrayInput` via:
 //
-//          GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArray{ GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArgs{...} }
+//	GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArray{ GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArgs{...} }
 type GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1871,7 +1871,7 @@ type GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem struct {
 // GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemInput is an input type that accepts GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs and GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemInput` via:
 //
-//          GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs{...}
+//	GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs{...}
 type GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemInput interface {
 	pulumi.Input
 
@@ -1901,7 +1901,7 @@ func (i GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs) To
 // GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayInput is an input type that accepts GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArray and GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayInput` via:
 //
-//          GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArray{ GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs{...} }
+//	GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArray{ GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs{...} }
 type GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1997,7 +1997,7 @@ type GetManagedDatabaseAddmTaskItem struct {
 // GetManagedDatabaseAddmTaskItemInput is an input type that accepts GetManagedDatabaseAddmTaskItemArgs and GetManagedDatabaseAddmTaskItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTaskItemInput` via:
 //
-//          GetManagedDatabaseAddmTaskItemArgs{...}
+//	GetManagedDatabaseAddmTaskItemArgs{...}
 type GetManagedDatabaseAddmTaskItemInput interface {
 	pulumi.Input
 
@@ -2047,7 +2047,7 @@ func (i GetManagedDatabaseAddmTaskItemArgs) ToGetManagedDatabaseAddmTaskItemOutp
 // GetManagedDatabaseAddmTaskItemArrayInput is an input type that accepts GetManagedDatabaseAddmTaskItemArray and GetManagedDatabaseAddmTaskItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTaskItemArrayInput` via:
 //
-//          GetManagedDatabaseAddmTaskItemArray{ GetManagedDatabaseAddmTaskItemArgs{...} }
+//	GetManagedDatabaseAddmTaskItemArray{ GetManagedDatabaseAddmTaskItemArgs{...} }
 type GetManagedDatabaseAddmTaskItemArrayInput interface {
 	pulumi.Input
 
@@ -2171,7 +2171,7 @@ type GetManagedDatabaseAddmTasksAddmTasksCollection struct {
 // GetManagedDatabaseAddmTasksAddmTasksCollectionInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionArgs and GetManagedDatabaseAddmTasksAddmTasksCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionInput` via:
 //
-//          GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{...}
+//	GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{...}
 type GetManagedDatabaseAddmTasksAddmTasksCollectionInput interface {
 	pulumi.Input
 
@@ -2199,7 +2199,7 @@ func (i GetManagedDatabaseAddmTasksAddmTasksCollectionArgs) ToGetManagedDatabase
 // GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionArray and GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput` via:
 //
-//          GetManagedDatabaseAddmTasksAddmTasksCollectionArray{ GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{...} }
+//	GetManagedDatabaseAddmTasksAddmTasksCollectionArray{ GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{...} }
 type GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2292,7 +2292,7 @@ type GetManagedDatabaseAddmTasksAddmTasksCollectionItem struct {
 // GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs and GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput` via:
 //
-//          GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{...}
+//	GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{...}
 type GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput interface {
 	pulumi.Input
 
@@ -2342,7 +2342,7 @@ func (i GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs) ToGetManagedData
 // GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray and GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray{ GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{...} }
+//	GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray{ GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{...} }
 type GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2467,7 +2467,7 @@ type GetManagedDatabaseAddmTasksFilter struct {
 // GetManagedDatabaseAddmTasksFilterInput is an input type that accepts GetManagedDatabaseAddmTasksFilterArgs and GetManagedDatabaseAddmTasksFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTasksFilterInput` via:
 //
-//          GetManagedDatabaseAddmTasksFilterArgs{...}
+//	GetManagedDatabaseAddmTasksFilterArgs{...}
 type GetManagedDatabaseAddmTasksFilterInput interface {
 	pulumi.Input
 
@@ -2496,7 +2496,7 @@ func (i GetManagedDatabaseAddmTasksFilterArgs) ToGetManagedDatabaseAddmTasksFilt
 // GetManagedDatabaseAddmTasksFilterArrayInput is an input type that accepts GetManagedDatabaseAddmTasksFilterArray and GetManagedDatabaseAddmTasksFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAddmTasksFilterArrayInput` via:
 //
-//          GetManagedDatabaseAddmTasksFilterArray{ GetManagedDatabaseAddmTasksFilterArgs{...} }
+//	GetManagedDatabaseAddmTasksFilterArray{ GetManagedDatabaseAddmTasksFilterArgs{...} }
 type GetManagedDatabaseAddmTasksFilterArrayInput interface {
 	pulumi.Input
 
@@ -2574,7 +2574,7 @@ type GetManagedDatabaseAlertLogCountItem struct {
 // GetManagedDatabaseAlertLogCountItemInput is an input type that accepts GetManagedDatabaseAlertLogCountItemArgs and GetManagedDatabaseAlertLogCountItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountItemInput` via:
 //
-//          GetManagedDatabaseAlertLogCountItemArgs{...}
+//	GetManagedDatabaseAlertLogCountItemArgs{...}
 type GetManagedDatabaseAlertLogCountItemInput interface {
 	pulumi.Input
 
@@ -2604,7 +2604,7 @@ func (i GetManagedDatabaseAlertLogCountItemArgs) ToGetManagedDatabaseAlertLogCou
 // GetManagedDatabaseAlertLogCountItemArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountItemArray and GetManagedDatabaseAlertLogCountItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountItemArrayInput` via:
 //
-//          GetManagedDatabaseAlertLogCountItemArray{ GetManagedDatabaseAlertLogCountItemArgs{...} }
+//	GetManagedDatabaseAlertLogCountItemArray{ GetManagedDatabaseAlertLogCountItemArgs{...} }
 type GetManagedDatabaseAlertLogCountItemArrayInput interface {
 	pulumi.Input
 
@@ -2678,7 +2678,7 @@ type GetManagedDatabaseAlertLogCountsAlertLogCountsCollection struct {
 // GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput` via:
 //
-//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{...}
+//	GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{...}
 type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput interface {
 	pulumi.Input
 
@@ -2706,7 +2706,7 @@ func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs) ToGetManag
 // GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput` via:
 //
-//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray{ GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{...} }
+//	GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray{ GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{...} }
 type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput interface {
 	pulumi.Input
 
@@ -2779,7 +2779,7 @@ type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem struct {
 // GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput` via:
 //
-//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{...}
+//	GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{...}
 type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput interface {
 	pulumi.Input
 
@@ -2809,7 +2809,7 @@ func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs) ToGetM
 // GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray{ GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{...} }
+//	GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray{ GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{...} }
 type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2884,7 +2884,7 @@ type GetManagedDatabaseAlertLogCountsFilter struct {
 // GetManagedDatabaseAlertLogCountsFilterInput is an input type that accepts GetManagedDatabaseAlertLogCountsFilterArgs and GetManagedDatabaseAlertLogCountsFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsFilterInput` via:
 //
-//          GetManagedDatabaseAlertLogCountsFilterArgs{...}
+//	GetManagedDatabaseAlertLogCountsFilterArgs{...}
 type GetManagedDatabaseAlertLogCountsFilterInput interface {
 	pulumi.Input
 
@@ -2913,7 +2913,7 @@ func (i GetManagedDatabaseAlertLogCountsFilterArgs) ToGetManagedDatabaseAlertLog
 // GetManagedDatabaseAlertLogCountsFilterArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountsFilterArray and GetManagedDatabaseAlertLogCountsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsFilterArrayInput` via:
 //
-//          GetManagedDatabaseAlertLogCountsFilterArray{ GetManagedDatabaseAlertLogCountsFilterArgs{...} }
+//	GetManagedDatabaseAlertLogCountsFilterArray{ GetManagedDatabaseAlertLogCountsFilterArgs{...} }
 type GetManagedDatabaseAlertLogCountsFilterArrayInput interface {
 	pulumi.Input
 
@@ -2991,7 +2991,7 @@ type GetManagedDatabaseAttentionLogCountItem struct {
 // GetManagedDatabaseAttentionLogCountItemInput is an input type that accepts GetManagedDatabaseAttentionLogCountItemArgs and GetManagedDatabaseAttentionLogCountItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountItemInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountItemArgs{...}
+//	GetManagedDatabaseAttentionLogCountItemArgs{...}
 type GetManagedDatabaseAttentionLogCountItemInput interface {
 	pulumi.Input
 
@@ -3021,7 +3021,7 @@ func (i GetManagedDatabaseAttentionLogCountItemArgs) ToGetManagedDatabaseAttenti
 // GetManagedDatabaseAttentionLogCountItemArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountItemArray and GetManagedDatabaseAttentionLogCountItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountItemArrayInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountItemArray{ GetManagedDatabaseAttentionLogCountItemArgs{...} }
+//	GetManagedDatabaseAttentionLogCountItemArray{ GetManagedDatabaseAttentionLogCountItemArgs{...} }
 type GetManagedDatabaseAttentionLogCountItemArrayInput interface {
 	pulumi.Input
 
@@ -3095,7 +3095,7 @@ type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection struct {
 // GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{...}
+//	GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{...}
 type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput interface {
 	pulumi.Input
 
@@ -3123,7 +3123,7 @@ func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs) To
 // GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray{ GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{...} }
+//	GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray{ GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{...} }
 type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3196,7 +3196,7 @@ type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem struct
 // GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{...}
+//	GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{...}
 type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput interface {
 	pulumi.Input
 
@@ -3226,7 +3226,7 @@ func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs
 // GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray{ GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{...} }
+//	GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray{ GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{...} }
 type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3301,7 +3301,7 @@ type GetManagedDatabaseAttentionLogCountsFilter struct {
 // GetManagedDatabaseAttentionLogCountsFilterInput is an input type that accepts GetManagedDatabaseAttentionLogCountsFilterArgs and GetManagedDatabaseAttentionLogCountsFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsFilterInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountsFilterArgs{...}
+//	GetManagedDatabaseAttentionLogCountsFilterArgs{...}
 type GetManagedDatabaseAttentionLogCountsFilterInput interface {
 	pulumi.Input
 
@@ -3330,7 +3330,7 @@ func (i GetManagedDatabaseAttentionLogCountsFilterArgs) ToGetManagedDatabaseAtte
 // GetManagedDatabaseAttentionLogCountsFilterArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountsFilterArray and GetManagedDatabaseAttentionLogCountsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsFilterArrayInput` via:
 //
-//          GetManagedDatabaseAttentionLogCountsFilterArray{ GetManagedDatabaseAttentionLogCountsFilterArgs{...} }
+//	GetManagedDatabaseAttentionLogCountsFilterArray{ GetManagedDatabaseAttentionLogCountsFilterArgs{...} }
 type GetManagedDatabaseAttentionLogCountsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3420,7 +3420,7 @@ type GetManagedDatabaseGroupManagedDatabase struct {
 // GetManagedDatabaseGroupManagedDatabaseInput is an input type that accepts GetManagedDatabaseGroupManagedDatabaseArgs and GetManagedDatabaseGroupManagedDatabaseOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupManagedDatabaseInput` via:
 //
-//          GetManagedDatabaseGroupManagedDatabaseArgs{...}
+//	GetManagedDatabaseGroupManagedDatabaseArgs{...}
 type GetManagedDatabaseGroupManagedDatabaseInput interface {
 	pulumi.Input
 
@@ -3462,7 +3462,7 @@ func (i GetManagedDatabaseGroupManagedDatabaseArgs) ToGetManagedDatabaseGroupMan
 // GetManagedDatabaseGroupManagedDatabaseArrayInput is an input type that accepts GetManagedDatabaseGroupManagedDatabaseArray and GetManagedDatabaseGroupManagedDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupManagedDatabaseArrayInput` via:
 //
-//          GetManagedDatabaseGroupManagedDatabaseArray{ GetManagedDatabaseGroupManagedDatabaseArgs{...} }
+//	GetManagedDatabaseGroupManagedDatabaseArray{ GetManagedDatabaseGroupManagedDatabaseArgs{...} }
 type GetManagedDatabaseGroupManagedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -3568,7 +3568,7 @@ type GetManagedDatabaseGroupsFilter struct {
 // GetManagedDatabaseGroupsFilterInput is an input type that accepts GetManagedDatabaseGroupsFilterArgs and GetManagedDatabaseGroupsFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsFilterInput` via:
 //
-//          GetManagedDatabaseGroupsFilterArgs{...}
+//	GetManagedDatabaseGroupsFilterArgs{...}
 type GetManagedDatabaseGroupsFilterInput interface {
 	pulumi.Input
 
@@ -3598,7 +3598,7 @@ func (i GetManagedDatabaseGroupsFilterArgs) ToGetManagedDatabaseGroupsFilterOutp
 // GetManagedDatabaseGroupsFilterArrayInput is an input type that accepts GetManagedDatabaseGroupsFilterArray and GetManagedDatabaseGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsFilterArrayInput` via:
 //
-//          GetManagedDatabaseGroupsFilterArray{ GetManagedDatabaseGroupsFilterArgs{...} }
+//	GetManagedDatabaseGroupsFilterArray{ GetManagedDatabaseGroupsFilterArgs{...} }
 type GetManagedDatabaseGroupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -3674,7 +3674,7 @@ type GetManagedDatabaseGroupsManagedDatabaseGroupCollection struct {
 // GetManagedDatabaseGroupsManagedDatabaseGroupCollectionInput is an input type that accepts GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArgs and GetManagedDatabaseGroupsManagedDatabaseGroupCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsManagedDatabaseGroupCollectionInput` via:
 //
-//          GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArgs{...}
+//	GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArgs{...}
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionInput interface {
 	pulumi.Input
 
@@ -3701,7 +3701,7 @@ func (i GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArgs) ToGetManaged
 // GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArrayInput is an input type that accepts GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArray and GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArrayInput` via:
 //
-//          GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArray{ GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArgs{...} }
+//	GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArray{ GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArgs{...} }
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionArrayInput interface {
 	pulumi.Input
 
@@ -3785,7 +3785,7 @@ type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem struct {
 // GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemInput is an input type that accepts GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs and GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemInput` via:
 //
-//          GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs{...}
+//	GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs{...}
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemInput interface {
 	pulumi.Input
 
@@ -3827,7 +3827,7 @@ func (i GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs) ToGetMan
 // GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArrayInput is an input type that accepts GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArray and GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArray{ GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs{...} }
+//	GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArray{ GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArgs{...} }
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -3947,7 +3947,7 @@ type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase s
 // GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseInput is an input type that accepts GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs and GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseInput` via:
 //
-//          GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs{...}
+//	GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs{...}
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseInput interface {
 	pulumi.Input
 
@@ -3989,7 +3989,7 @@ func (i GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabas
 // GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArrayInput is an input type that accepts GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArray and GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArrayInput` via:
 //
-//          GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArray{ GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs{...} }
+//	GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArray{ GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs{...} }
 type GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArrayInput interface {
 	pulumi.Input
 
@@ -4111,7 +4111,7 @@ type GetManagedDatabaseManagedDatabaseGroup struct {
 // GetManagedDatabaseManagedDatabaseGroupInput is an input type that accepts GetManagedDatabaseManagedDatabaseGroupArgs and GetManagedDatabaseManagedDatabaseGroupOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseManagedDatabaseGroupInput` via:
 //
-//          GetManagedDatabaseManagedDatabaseGroupArgs{...}
+//	GetManagedDatabaseManagedDatabaseGroupArgs{...}
 type GetManagedDatabaseManagedDatabaseGroupInput interface {
 	pulumi.Input
 
@@ -4143,7 +4143,7 @@ func (i GetManagedDatabaseManagedDatabaseGroupArgs) ToGetManagedDatabaseManagedD
 // GetManagedDatabaseManagedDatabaseGroupArrayInput is an input type that accepts GetManagedDatabaseManagedDatabaseGroupArray and GetManagedDatabaseManagedDatabaseGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseManagedDatabaseGroupArrayInput` via:
 //
-//          GetManagedDatabaseManagedDatabaseGroupArray{ GetManagedDatabaseManagedDatabaseGroupArgs{...} }
+//	GetManagedDatabaseManagedDatabaseGroupArray{ GetManagedDatabaseManagedDatabaseGroupArgs{...} }
 type GetManagedDatabaseManagedDatabaseGroupArrayInput interface {
 	pulumi.Input
 
@@ -4214,6 +4214,4191 @@ func (o GetManagedDatabaseManagedDatabaseGroupArrayOutput) Index(i pulumi.IntInp
 	}).(GetManagedDatabaseManagedDatabaseGroupOutput)
 }
 
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType string `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType string `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType string `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+	Id string `pulumi:"id"`
+	// The name of the rule.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType pulumi.StringInput `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType pulumi.StringInput `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType pulumi.StringInput `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The infrastructure used to deploy the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) DbDeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string {
+		return v.DbDeploymentType
+	}).(pulumi.StringOutput)
+}
+
+// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) DbSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string { return v.DbSubType }).(pulumi.StringOutput)
+}
+
+// The type of Oracle Database installation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) DbType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string { return v.DbType }).(pulumi.StringOutput)
+}
+
+// The version of the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport struct {
+	// The list of rules that were not adhered to by the Optimizer Statistics Collection.
+	Rules []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule `pulumi:"rules"`
+	// A summary of the Optimizer Statistics Advisor execution.
+	Summary string `pulumi:"summary"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs struct {
+	// The list of rules that were not adhered to by the Optimizer Statistics Collection.
+	Rules GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayInput `pulumi:"rules"`
+	// A summary of the Optimizer Statistics Advisor execution.
+	Summary pulumi.StringInput `pulumi:"summary"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput {
+	return o
+}
+
+// The list of rules that were not adhered to by the Optimizer Statistics Collection.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput) Rules() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule {
+		return v.Rules
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput)
+}
+
+// A summary of the Optimizer Statistics Advisor execution.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput) Summary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule struct {
+	// The description of the rule.
+	Description string `pulumi:"description"`
+	// The list of findings for the rule.
+	Findings []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding `pulumi:"findings"`
+	// The name of the rule.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs struct {
+	// The description of the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The list of findings for the rule.
+	Findings GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayInput `pulumi:"findings"`
+	// The name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput {
+	return o
+}
+
+// The description of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The list of findings for the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput) Findings() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding {
+		return v.Findings
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput)
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding struct {
+	// The details of the schema or operation.
+	Details []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail `pulumi:"details"`
+	// The message of the rationale.
+	Message string `pulumi:"message"`
+	// The list of recommendations.
+	Recommendations []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation `pulumi:"recommendations"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs struct {
+	// The details of the schema or operation.
+	Details GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayInput `pulumi:"details"`
+	// The message of the rationale.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The list of recommendations.
+	Recommendations GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayInput `pulumi:"recommendations"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput {
+	return o
+}
+
+// The details of the schema or operation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput) Details() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail {
+		return v.Details
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput)
+}
+
+// The message of the rationale.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The list of recommendations.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput) Recommendations() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation {
+		return v.Recommendations
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail struct {
+	// The list of operation details.
+	Operations []string `pulumi:"operations"`
+	// The names of the impacted database schemas and their objects.
+	Schemas []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema `pulumi:"schemas"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs struct {
+	// The list of operation details.
+	Operations pulumi.StringArrayInput `pulumi:"operations"`
+	// The names of the impacted database schemas and their objects.
+	Schemas GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput {
+	return o
+}
+
+// The list of operation details.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput) Operations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail) []string {
+		return v.Operations
+	}).(pulumi.StringArrayOutput)
+}
+
+// The names of the impacted database schemas and their objects.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput) Schemas() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema {
+		return v.Schemas
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema struct {
+	// The name of the rule.
+	Name string `pulumi:"name"`
+	// The names of schema objects.
+	Objects []string `pulumi:"objects"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs struct {
+	// The name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The names of schema objects.
+	Objects pulumi.StringArrayInput `pulumi:"objects"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput {
+	return o
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The names of schema objects.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput) Objects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema) []string {
+		return v.Objects
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation struct {
+	// An example of the recommendation.
+	Examples []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample `pulumi:"examples"`
+	// The message of the rationale.
+	Message string `pulumi:"message"`
+	// The rationale of the recommendation.
+	Rationales []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale `pulumi:"rationales"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs struct {
+	// An example of the recommendation.
+	Examples GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayInput `pulumi:"examples"`
+	// The message of the rationale.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The rationale of the recommendation.
+	Rationales GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayInput `pulumi:"rationales"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput {
+	return o
+}
+
+// An example of the recommendation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput) Examples() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample {
+		return v.Examples
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput)
+}
+
+// The message of the rationale.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The rationale of the recommendation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput) Rationales() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale {
+		return v.Rationales
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample struct {
+	// The list of examples for the recommendation.
+	Lines []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine `pulumi:"lines"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs struct {
+	// The list of examples for the recommendation.
+	Lines GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayInput `pulumi:"lines"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput {
+	return o
+}
+
+// The list of examples for the recommendation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput) Lines() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine {
+		return v.Lines
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine struct {
+	// The comments about the operation.
+	Comment string `pulumi:"comment"`
+	// The details of the example operation.
+	Operation string `pulumi:"operation"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs struct {
+	// The comments about the operation.
+	Comment pulumi.StringInput `pulumi:"comment"`
+	// The details of the example operation.
+	Operation pulumi.StringInput `pulumi:"operation"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput {
+	return o
+}
+
+// The comments about the operation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine) string {
+		return v.Comment
+	}).(pulumi.StringOutput)
+}
+
+// The details of the example operation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine) string {
+		return v.Operation
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale struct {
+	// The message of the rationale.
+	Message string `pulumi:"message"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs struct {
+	// The message of the rationale.
+	Message pulumi.StringInput `pulumi:"message"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput {
+	return o
+}
+
+// The message of the rationale.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter struct {
+	// The name of the rule.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs struct {
+	// The name of the rule.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput {
+	return o
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection struct {
+	Items []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs struct {
+	Items GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput) Items() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem struct {
+	// The summary of the Managed Database resource.
+	Databases []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase `pulumi:"databases"`
+	// The errors in the Optimizer Statistics Advisor execution, if any.
+	ErrorMessage string `pulumi:"errorMessage"`
+	// The name of the Optimizer Statistics Advisor execution.
+	ExecutionName string `pulumi:"executionName"`
+	// The list of findings for the rule.
+	Findings int `pulumi:"findings"`
+	// A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
+	Reports []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport `pulumi:"reports"`
+	// The status of the Optimizer Statistics Advisor execution.
+	Status string `pulumi:"status"`
+	// The Optimizer Statistics Advisor execution status message, if any.
+	StatusMessage string `pulumi:"statusMessage"`
+	// The name of the Optimizer Statistics Advisor task.
+	TaskName string `pulumi:"taskName"`
+	// The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+	TimeEnd string `pulumi:"timeEnd"`
+	// The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs struct {
+	// The summary of the Managed Database resource.
+	Databases GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayInput `pulumi:"databases"`
+	// The errors in the Optimizer Statistics Advisor execution, if any.
+	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	// The name of the Optimizer Statistics Advisor execution.
+	ExecutionName pulumi.StringInput `pulumi:"executionName"`
+	// The list of findings for the rule.
+	Findings pulumi.IntInput `pulumi:"findings"`
+	// A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
+	Reports GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayInput `pulumi:"reports"`
+	// The status of the Optimizer Statistics Advisor execution.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The Optimizer Statistics Advisor execution status message, if any.
+	StatusMessage pulumi.StringInput `pulumi:"statusMessage"`
+	// The name of the Optimizer Statistics Advisor task.
+	TaskName pulumi.StringInput `pulumi:"taskName"`
+	// The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput {
+	return o
+}
+
+// The summary of the Managed Database resource.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) Databases() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase {
+		return v.Databases
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput)
+}
+
+// The errors in the Optimizer Statistics Advisor execution, if any.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) ErrorMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.ErrorMessage
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Optimizer Statistics Advisor execution.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) ExecutionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.ExecutionName
+	}).(pulumi.StringOutput)
+}
+
+// The list of findings for the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) Findings() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) int {
+		return v.Findings
+	}).(pulumi.IntOutput)
+}
+
+// A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) Reports() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport {
+		return v.Reports
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput)
+}
+
+// The status of the Optimizer Statistics Advisor execution.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The Optimizer Statistics Advisor execution status message, if any.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) StatusMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.StatusMessage
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Optimizer Statistics Advisor task.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) TaskName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.TaskName
+	}).(pulumi.StringOutput)
+}
+
+// The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.TimeEnd
+	}).(pulumi.StringOutput)
+}
+
+// The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem) string {
+		return v.TimeStart
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType string `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType string `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType string `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+	Id string `pulumi:"id"`
+	// The name of the rule.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType pulumi.StringInput `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType pulumi.StringInput `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType pulumi.StringInput `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The infrastructure used to deploy the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) DbDeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.DbDeploymentType
+	}).(pulumi.StringOutput)
+}
+
+// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) DbSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.DbSubType
+	}).(pulumi.StringOutput)
+}
+
+// The type of Oracle Database installation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) DbType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.DbType
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.DbVersion
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport struct {
+	// The list of rules that were not adhered to by the Optimizer Statistics Collection.
+	Rules []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule `pulumi:"rules"`
+	// A summary of the Optimizer Statistics Advisor execution.
+	Summary string `pulumi:"summary"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs struct {
+	// The list of rules that were not adhered to by the Optimizer Statistics Collection.
+	Rules GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayInput `pulumi:"rules"`
+	// A summary of the Optimizer Statistics Advisor execution.
+	Summary pulumi.StringInput `pulumi:"summary"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput {
+	return o
+}
+
+// The list of rules that were not adhered to by the Optimizer Statistics Collection.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput) Rules() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule {
+		return v.Rules
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput)
+}
+
+// A summary of the Optimizer Statistics Advisor execution.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput) Summary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport) string {
+		return v.Summary
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReport)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule struct {
+	// The description of the rule.
+	Description string `pulumi:"description"`
+	// The list of findings for the rule.
+	Findings []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding `pulumi:"findings"`
+	// The name of the rule.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs struct {
+	// The description of the rule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The list of findings for the rule.
+	Findings GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayInput `pulumi:"findings"`
+	// The name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput {
+	return o
+}
+
+// The description of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The list of findings for the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput) Findings() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding {
+		return v.Findings
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput)
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding struct {
+	// The details of the schema or operation.
+	Details []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail `pulumi:"details"`
+	// The message of the rationale.
+	Message string `pulumi:"message"`
+	// The list of recommendations.
+	Recommendations []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation `pulumi:"recommendations"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs struct {
+	// The details of the schema or operation.
+	Details GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayInput `pulumi:"details"`
+	// The message of the rationale.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The list of recommendations.
+	Recommendations GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayInput `pulumi:"recommendations"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput {
+	return o
+}
+
+// The details of the schema or operation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput) Details() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail {
+		return v.Details
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput)
+}
+
+// The message of the rationale.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The list of recommendations.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput) Recommendations() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation {
+		return v.Recommendations
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail struct {
+	// The list of operation details.
+	Operations []string `pulumi:"operations"`
+	// The names of the impacted database schemas and their objects.
+	Schemas []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema `pulumi:"schemas"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs struct {
+	// The list of operation details.
+	Operations pulumi.StringArrayInput `pulumi:"operations"`
+	// The names of the impacted database schemas and their objects.
+	Schemas GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput {
+	return o
+}
+
+// The list of operation details.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput) Operations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail) []string {
+		return v.Operations
+	}).(pulumi.StringArrayOutput)
+}
+
+// The names of the impacted database schemas and their objects.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput) Schemas() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema {
+		return v.Schemas
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema struct {
+	// The name of the rule.
+	Name string `pulumi:"name"`
+	// The names of schema objects.
+	Objects []string `pulumi:"objects"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs struct {
+	// The name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The names of schema objects.
+	Objects pulumi.StringArrayInput `pulumi:"objects"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput {
+	return o
+}
+
+// The name of the rule.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The names of schema objects.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput) Objects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema) []string {
+		return v.Objects
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation struct {
+	// An example of the recommendation.
+	Examples []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample `pulumi:"examples"`
+	// The message of the rationale.
+	Message string `pulumi:"message"`
+	// The rationale of the recommendation.
+	Rationales []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale `pulumi:"rationales"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs struct {
+	// An example of the recommendation.
+	Examples GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayInput `pulumi:"examples"`
+	// The message of the rationale.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The rationale of the recommendation.
+	Rationales GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayInput `pulumi:"rationales"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput {
+	return o
+}
+
+// An example of the recommendation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput) Examples() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample {
+		return v.Examples
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput)
+}
+
+// The message of the rationale.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The rationale of the recommendation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput) Rationales() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale {
+		return v.Rationales
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample struct {
+	// The list of examples for the recommendation.
+	Lines []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine `pulumi:"lines"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs struct {
+	// The list of examples for the recommendation.
+	Lines GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayInput `pulumi:"lines"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput {
+	return o
+}
+
+// The list of examples for the recommendation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput) Lines() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine {
+		return v.Lines
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExample)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine struct {
+	// The comments about the operation.
+	Comment string `pulumi:"comment"`
+	// The details of the example operation.
+	Operation string `pulumi:"operation"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs struct {
+	// The comments about the operation.
+	Comment pulumi.StringInput `pulumi:"comment"`
+	// The details of the example operation.
+	Operation pulumi.StringInput `pulumi:"operation"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput {
+	return o
+}
+
+// The comments about the operation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine) string {
+		return v.Comment
+	}).(pulumi.StringOutput)
+}
+
+// The details of the example operation.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine) string {
+		return v.Operation
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLine)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale struct {
+	// The message of the rationale.
+	Message string `pulumi:"message"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs{...}
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs struct {
+	// The message of the rationale.
+	Message pulumi.StringInput `pulumi:"message"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray and GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray{ GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleInput
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput {
+	return o
+}
+
+// The message of the rationale.
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs and GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray and GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray{ GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection struct {
+	// The list of Optimizer Statistics Collection details.
+	Items []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs and GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs struct {
+	// The list of Optimizer Statistics Collection details.
+	Items GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray and GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray{ GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput {
+	return o
+}
+
+// The list of Optimizer Statistics Collection details.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput) Items() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection) []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem struct {
+	// The number of tasks or objects for which statistics gathering is completed.
+	Completed int `pulumi:"completed"`
+	// The number of tasks or objects for which statistics gathering failed.
+	Failed int `pulumi:"failed"`
+	// The optimizer statistics tasks grouped by type.
+	GroupBy string `pulumi:"groupBy"`
+	// The number of tasks or objects for which statistics gathering is in progress.
+	InProgress int `pulumi:"inProgress"`
+	// The number of tasks or objects for which statistics are yet to be gathered.
+	Pending int `pulumi:"pending"`
+	// The number of tasks or objects for which statistics gathering was skipped.
+	Skipped int `pulumi:"skipped"`
+	// Indicates the end of the hour as the statistics are aggregated per hour.
+	TimeEnd string `pulumi:"timeEnd"`
+	// Indicates the start of the hour as the statistics are aggregated per hour.
+	TimeStart string `pulumi:"timeStart"`
+	// The number of tasks or objects for which statistics gathering timed out.
+	TimedOut int `pulumi:"timedOut"`
+	// The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
+	Total int `pulumi:"total"`
+	// The number of tasks or objects for which the status of statistics gathering is unknown.
+	Unknown int `pulumi:"unknown"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs and GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs struct {
+	// The number of tasks or objects for which statistics gathering is completed.
+	Completed pulumi.IntInput `pulumi:"completed"`
+	// The number of tasks or objects for which statistics gathering failed.
+	Failed pulumi.IntInput `pulumi:"failed"`
+	// The optimizer statistics tasks grouped by type.
+	GroupBy pulumi.StringInput `pulumi:"groupBy"`
+	// The number of tasks or objects for which statistics gathering is in progress.
+	InProgress pulumi.IntInput `pulumi:"inProgress"`
+	// The number of tasks or objects for which statistics are yet to be gathered.
+	Pending pulumi.IntInput `pulumi:"pending"`
+	// The number of tasks or objects for which statistics gathering was skipped.
+	Skipped pulumi.IntInput `pulumi:"skipped"`
+	// Indicates the end of the hour as the statistics are aggregated per hour.
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// Indicates the start of the hour as the statistics are aggregated per hour.
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	// The number of tasks or objects for which statistics gathering timed out.
+	TimedOut pulumi.IntInput `pulumi:"timedOut"`
+	// The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
+	Total pulumi.IntInput `pulumi:"total"`
+	// The number of tasks or objects for which the status of statistics gathering is unknown.
+	Unknown pulumi.IntInput `pulumi:"unknown"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray and GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray{ GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput {
+	return o
+}
+
+// The number of tasks or objects for which statistics gathering is completed.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) Completed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.Completed
+	}).(pulumi.IntOutput)
+}
+
+// The number of tasks or objects for which statistics gathering failed.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) Failed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.Failed
+	}).(pulumi.IntOutput)
+}
+
+// The optimizer statistics tasks grouped by type.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) GroupBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) string {
+		return v.GroupBy
+	}).(pulumi.StringOutput)
+}
+
+// The number of tasks or objects for which statistics gathering is in progress.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) InProgress() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.InProgress
+	}).(pulumi.IntOutput)
+}
+
+// The number of tasks or objects for which statistics are yet to be gathered.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) Pending() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.Pending
+	}).(pulumi.IntOutput)
+}
+
+// The number of tasks or objects for which statistics gathering was skipped.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) Skipped() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.Skipped
+	}).(pulumi.IntOutput)
+}
+
+// Indicates the end of the hour as the statistics are aggregated per hour.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) string {
+		return v.TimeEnd
+	}).(pulumi.StringOutput)
+}
+
+// Indicates the start of the hour as the statistics are aggregated per hour.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) string {
+		return v.TimeStart
+	}).(pulumi.StringOutput)
+}
+
+// The number of tasks or objects for which statistics gathering timed out.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) TimedOut() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.TimedOut
+	}).(pulumi.IntOutput)
+}
+
+// The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.Total
+	}).(pulumi.IntOutput)
+}
+
+// The number of tasks or objects for which the status of statistics gathering is unknown.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput) Unknown() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem) int {
+		return v.Unknown
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType string `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType string `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType string `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// The ID of the operation.
+	Id string `pulumi:"id"`
+	// The name of the Managed Database.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType pulumi.StringInput `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType pulumi.StringInput `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType pulumi.StringInput `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The ID of the operation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the Managed Database.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The infrastructure used to deploy the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) DbDeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string {
+		return v.DbDeploymentType
+	}).(pulumi.StringOutput)
+}
+
+// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) DbSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string { return v.DbSubType }).(pulumi.StringOutput)
+}
+
+// The type of Oracle Database installation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) DbType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string { return v.DbType }).(pulumi.StringOutput)
+}
+
+// The version of the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The ID of the operation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the Managed Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTask struct {
+	// The status of the Optimizer Statistics Collection task.
+	Status string `pulumi:"status"`
+	// The name of the target object for which statistics are gathered.
+	Target string `pulumi:"target"`
+	// The type of target object.
+	TargetType string `pulumi:"targetType"`
+	// The end time of the Optimizer Statistics Collection task.
+	TimeEnd string `pulumi:"timeEnd"`
+	// The start time of the Optimizer Statistics Collection task.
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs struct {
+	// The status of the Optimizer Statistics Collection task.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The name of the target object for which statistics are gathered.
+	Target pulumi.StringInput `pulumi:"target"`
+	// The type of target object.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+	// The end time of the Optimizer Statistics Collection task.
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The start time of the Optimizer Statistics Collection task.
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationTask)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationTask)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationTask)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput {
+	return o
+}
+
+// The status of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationTask) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The name of the target object for which statistics are gathered.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationTask) string { return v.Target }).(pulumi.StringOutput)
+}
+
+// The type of target object.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationTask) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
+// The end time of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationTask) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+// The start time of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationTask) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationTask)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationTask {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationTask)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter struct {
+	// The name of the Managed Database.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs struct {
+	// The name of the Managed Database.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput {
+	return o
+}
+
+// The name of the Managed Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection struct {
+	Items []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs struct {
+	Items GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput) Items() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection) []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem struct {
+	// The number of objects for which statistics collection is completed.
+	CompletedCount int `pulumi:"completedCount"`
+	// The summary of the Managed Database resource.
+	Databases []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase `pulumi:"databases"`
+	// The time it takes to complete the operation (in seconds).
+	DurationInSeconds float64 `pulumi:"durationInSeconds"`
+	// The end time of the operation.
+	EndTime string `pulumi:"endTime"`
+	// The number of objects for which statistics collection failed.
+	FailedCount int `pulumi:"failedCount"`
+	// The ID of the operation.
+	Id int `pulumi:"id"`
+	// The number of objects for which statistics collection is in progress.
+	InProgressCount int `pulumi:"inProgressCount"`
+	// The name of the job.
+	JobName string `pulumi:"jobName"`
+	// The name of the operation.
+	OperationName string `pulumi:"operationName"`
+	// The start time of the operation.
+	StartTime string `pulumi:"startTime"`
+	// The status of the Optimizer Statistics Collection task.
+	Status string `pulumi:"status"`
+	// The name of the target object for which statistics are gathered.
+	Target string `pulumi:"target"`
+	// An array of Optimizer Statistics Collection task details.
+	Tasks []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask `pulumi:"tasks"`
+	// The number of objects for which statistics collection timed out.
+	TimedOutCount int `pulumi:"timedOutCount"`
+	// The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
+	TotalObjectsCount int `pulumi:"totalObjectsCount"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs struct {
+	// The number of objects for which statistics collection is completed.
+	CompletedCount pulumi.IntInput `pulumi:"completedCount"`
+	// The summary of the Managed Database resource.
+	Databases GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayInput `pulumi:"databases"`
+	// The time it takes to complete the operation (in seconds).
+	DurationInSeconds pulumi.Float64Input `pulumi:"durationInSeconds"`
+	// The end time of the operation.
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// The number of objects for which statistics collection failed.
+	FailedCount pulumi.IntInput `pulumi:"failedCount"`
+	// The ID of the operation.
+	Id pulumi.IntInput `pulumi:"id"`
+	// The number of objects for which statistics collection is in progress.
+	InProgressCount pulumi.IntInput `pulumi:"inProgressCount"`
+	// The name of the job.
+	JobName pulumi.StringInput `pulumi:"jobName"`
+	// The name of the operation.
+	OperationName pulumi.StringInput `pulumi:"operationName"`
+	// The start time of the operation.
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// The status of the Optimizer Statistics Collection task.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The name of the target object for which statistics are gathered.
+	Target pulumi.StringInput `pulumi:"target"`
+	// An array of Optimizer Statistics Collection task details.
+	Tasks GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayInput `pulumi:"tasks"`
+	// The number of objects for which statistics collection timed out.
+	TimedOutCount pulumi.IntInput `pulumi:"timedOutCount"`
+	// The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
+	TotalObjectsCount pulumi.IntInput `pulumi:"totalObjectsCount"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput {
+	return o
+}
+
+// The number of objects for which statistics collection is completed.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) CompletedCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) int {
+		return v.CompletedCount
+	}).(pulumi.IntOutput)
+}
+
+// The summary of the Managed Database resource.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) Databases() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase {
+		return v.Databases
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput)
+}
+
+// The time it takes to complete the operation (in seconds).
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) DurationInSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) float64 {
+		return v.DurationInSeconds
+	}).(pulumi.Float64Output)
+}
+
+// The end time of the operation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) string {
+		return v.EndTime
+	}).(pulumi.StringOutput)
+}
+
+// The number of objects for which statistics collection failed.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) FailedCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) int {
+		return v.FailedCount
+	}).(pulumi.IntOutput)
+}
+
+// The ID of the operation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) int {
+		return v.Id
+	}).(pulumi.IntOutput)
+}
+
+// The number of objects for which statistics collection is in progress.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) InProgressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) int {
+		return v.InProgressCount
+	}).(pulumi.IntOutput)
+}
+
+// The name of the job.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) JobName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) string {
+		return v.JobName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the operation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) OperationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) string {
+		return v.OperationName
+	}).(pulumi.StringOutput)
+}
+
+// The start time of the operation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) string {
+		return v.StartTime
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The name of the target object for which statistics are gathered.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
+// An array of Optimizer Statistics Collection task details.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) Tasks() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask {
+		return v.Tasks
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput)
+}
+
+// The number of objects for which statistics collection timed out.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) TimedOutCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) int {
+		return v.TimedOutCount
+	}).(pulumi.IntOutput)
+}
+
+// The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput) TotalObjectsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem) int {
+		return v.TotalObjectsCount
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType string `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType string `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType string `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion string `pulumi:"dbVersion"`
+	// The ID of the operation.
+	Id string `pulumi:"id"`
+	// The name of the Managed Database.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The infrastructure used to deploy the Oracle Database.
+	DbDeploymentType pulumi.StringInput `pulumi:"dbDeploymentType"`
+	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+	DbSubType pulumi.StringInput `pulumi:"dbSubType"`
+	// The type of Oracle Database installation.
+	DbType pulumi.StringInput `pulumi:"dbType"`
+	// The version of the Oracle Database.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The ID of the operation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the Managed Database.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The infrastructure used to deploy the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) DbDeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.DbDeploymentType
+	}).(pulumi.StringOutput)
+}
+
+// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) DbSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.DbSubType
+	}).(pulumi.StringOutput)
+}
+
+// The type of Oracle Database installation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) DbType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.DbType
+	}).(pulumi.StringOutput)
+}
+
+// The version of the Oracle Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.DbVersion
+	}).(pulumi.StringOutput)
+}
+
+// The ID of the operation.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Managed Database.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabase)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask struct {
+	// The status of the Optimizer Statistics Collection task.
+	Status string `pulumi:"status"`
+	// The name of the target object for which statistics are gathered.
+	Target string `pulumi:"target"`
+	// The type of target object.
+	TargetType string `pulumi:"targetType"`
+	// The end time of the Optimizer Statistics Collection task.
+	TimeEnd string `pulumi:"timeEnd"`
+	// The start time of the Optimizer Statistics Collection task.
+	TimeStart string `pulumi:"timeStart"`
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs{...}
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs struct {
+	// The status of the Optimizer Statistics Collection task.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The name of the target object for which statistics are gathered.
+	Target pulumi.StringInput `pulumi:"target"`
+	// The type of target object.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+	// The end time of the Optimizer Statistics Collection task.
+	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	// The start time of the Optimizer Statistics Collection task.
+	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput)
+}
+
+// GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayInput is an input type that accepts GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray and GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayInput` via:
+//
+//	GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray{ GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs{...} }
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput
+	ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutputWithContext(context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray []GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskInput
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput {
+	return i.ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput {
+	return o
+}
+
+// The status of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The name of the target object for which statistics are gathered.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask) string {
+		return v.Target
+	}).(pulumi.StringOutput)
+}
+
+// The type of target object.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask) string {
+		return v.TargetType
+	}).(pulumi.StringOutput)
+}
+
+// The end time of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask) string {
+		return v.TimeEnd
+	}).(pulumi.StringOutput)
+}
+
+// The start time of the Optimizer Statistics Collection task.
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask) string {
+		return v.TimeStart
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput() GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask {
+		return vs[0].([]GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask)[vs[1].(int)]
+	}).(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput)
+}
+
 type GetManagedDatabaseSqlTuningAdvisorTaskItem struct {
 	// The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
 	DaysToExpire int `pulumi:"daysToExpire"`
@@ -4244,7 +8429,7 @@ type GetManagedDatabaseSqlTuningAdvisorTaskItem struct {
 // GetManagedDatabaseSqlTuningAdvisorTaskItemInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTaskItemArgs and GetManagedDatabaseSqlTuningAdvisorTaskItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTaskItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTaskItemArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTaskItemArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTaskItemInput interface {
 	pulumi.Input
 
@@ -4294,7 +8479,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTaskItemArgs) ToGetManagedDatabaseSqlT
 // GetManagedDatabaseSqlTuningAdvisorTaskItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTaskItemArray and GetManagedDatabaseSqlTuningAdvisorTaskItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTaskItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTaskItemArray{ GetManagedDatabaseSqlTuningAdvisorTaskItemArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTaskItemArray{ GetManagedDatabaseSqlTuningAdvisorTaskItemArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTaskItemArrayInput interface {
 	pulumi.Input
 
@@ -4422,7 +8607,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified
 // GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs and GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedInput interface {
 	pulumi.Input
 
@@ -4454,7 +8639,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModif
 // GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArray and GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArray{ GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArray{ GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArrayInput interface {
 	pulumi.Input
 
@@ -4543,7 +8728,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal
 // GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArgs and GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalInput interface {
 	pulumi.Input
 
@@ -4575,7 +8760,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOrigi
 // GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArray and GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArray{ GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArray{ GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginalArrayInput interface {
 	pulumi.Input
 
@@ -4662,7 +8847,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFilter struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksFilterInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs and GetManagedDatabaseSqlTuningAdvisorTasksFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFilterInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksFilterInput interface {
 	pulumi.Input
 
@@ -4692,7 +8877,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs) ToGetManagedDatabaseS
 // GetManagedDatabaseSqlTuningAdvisorTasksFilterArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFilterArray and GetManagedDatabaseSqlTuningAdvisorTasksFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFilterArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFilterArray{ GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksFilterArray{ GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksFilterArrayInput interface {
 	pulumi.Input
 
@@ -4801,7 +8986,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingItem struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingItemInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArgs and GetManagedDatabaseSqlTuningAdvisorTasksFindingItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingItemInput interface {
 	pulumi.Input
 
@@ -4861,7 +9046,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArgs) ToGetManagedData
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArray and GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingItemArrayInput interface {
 	pulumi.Input
 
@@ -5023,7 +9208,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs and GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterInput interface {
 	pulumi.Input
 
@@ -5052,7 +9237,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs) ToGetManagedD
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArray and GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5128,7 +9313,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingC
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArgs and GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionInput interface {
 	pulumi.Input
 
@@ -5156,7 +9341,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindi
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArray and GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5259,7 +9444,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingC
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArgs and GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemInput interface {
 	pulumi.Input
 
@@ -5319,7 +9504,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindi
 // GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArray and GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -5520,7 +9705,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemInput interface {
 	pulumi.Input
 
@@ -5566,7 +9751,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs) ToGetMana
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArray and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArrayInput interface {
 	pulumi.Input
 
@@ -5685,7 +9870,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterInput interface {
 	pulumi.Input
 
@@ -5714,7 +9899,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs) ToGetM
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArray and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -5790,7 +9975,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskR
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArgs and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionInput interface {
 	pulumi.Input
 
@@ -5818,7 +10003,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTa
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArray and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -5907,7 +10092,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskR
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArgs and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemInput interface {
 	pulumi.Input
 
@@ -5953,7 +10138,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTa
 // GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArray and GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6143,7 +10328,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArgs and GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanInput interface {
 	pulumi.Input
 
@@ -6227,7 +10412,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArgs) ToGetMa
 // GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArray and GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArray{ GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArray{ GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanArrayInput interface {
 	pulumi.Input
 
@@ -6436,7 +10621,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection struc
 // GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArgs and GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionInput interface {
 	pulumi.Input
 
@@ -6464,7 +10649,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArg
 // GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArray and GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArray{ GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArray{ GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionArrayInput interface {
 	pulumi.Input
 
@@ -6557,7 +10742,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem s
 // GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArgs and GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemInput interface {
 	pulumi.Input
 
@@ -6607,7 +10792,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionIte
 // GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArray and GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArray{ GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -6765,7 +10950,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingInput interface {
 	pulumi.Input
 
@@ -6803,7 +10988,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArgs) To
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingArrayInput interface {
 	pulumi.Input
 
@@ -6911,7 +11096,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding struc
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingInput interface {
 	pulumi.Input
 
@@ -6949,7 +11134,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArg
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingArrayInput interface {
 	pulumi.Input
 
@@ -7055,7 +11240,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticInput interface {
 	pulumi.Input
 
@@ -7087,7 +11272,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArgs) ToGet
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticArrayInput interface {
 	pulumi.Input
 
@@ -7178,7 +11363,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitInput interface {
 	pulumi.Input
 
@@ -7212,7 +11397,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBene
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitArrayInput interface {
 	pulumi.Input
 
@@ -7314,7 +11499,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount s
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountInput interface {
 	pulumi.Input
 
@@ -7352,7 +11537,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCoun
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountArrayInput interface {
 	pulumi.Input
 
@@ -7462,7 +11647,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountInput interface {
 	pulumi.Input
 
@@ -7496,7 +11681,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCo
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArrayInput interface {
 	pulumi.Input
 
@@ -7602,7 +11787,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo struct {
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs{...}
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs{...}
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoInput interface {
 	pulumi.Input
 
@@ -7644,7 +11829,7 @@ func (i GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs) ToGetM
 // GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayInput is an input type that accepts GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArray and GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs{...} }
+//	GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArray{ GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs{...} }
 type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayInput interface {
 	pulumi.Input
 
@@ -7754,7 +11939,7 @@ type GetManagedDatabaseSqlTuningSetItem struct {
 // GetManagedDatabaseSqlTuningSetItemInput is an input type that accepts GetManagedDatabaseSqlTuningSetItemArgs and GetManagedDatabaseSqlTuningSetItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetItemArgs{...}
+//	GetManagedDatabaseSqlTuningSetItemArgs{...}
 type GetManagedDatabaseSqlTuningSetItemInput interface {
 	pulumi.Input
 
@@ -7788,7 +11973,7 @@ func (i GetManagedDatabaseSqlTuningSetItemArgs) ToGetManagedDatabaseSqlTuningSet
 // GetManagedDatabaseSqlTuningSetItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetItemArray and GetManagedDatabaseSqlTuningSetItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetItemArray{ GetManagedDatabaseSqlTuningSetItemArgs{...} }
+//	GetManagedDatabaseSqlTuningSetItemArray{ GetManagedDatabaseSqlTuningSetItemArgs{...} }
 type GetManagedDatabaseSqlTuningSetItemArrayInput interface {
 	pulumi.Input
 
@@ -7874,7 +12059,7 @@ type GetManagedDatabaseSqlTuningSetsFilter struct {
 // GetManagedDatabaseSqlTuningSetsFilterInput is an input type that accepts GetManagedDatabaseSqlTuningSetsFilterArgs and GetManagedDatabaseSqlTuningSetsFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsFilterInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetsFilterArgs{...}
+//	GetManagedDatabaseSqlTuningSetsFilterArgs{...}
 type GetManagedDatabaseSqlTuningSetsFilterInput interface {
 	pulumi.Input
 
@@ -7904,7 +12089,7 @@ func (i GetManagedDatabaseSqlTuningSetsFilterArgs) ToGetManagedDatabaseSqlTuning
 // GetManagedDatabaseSqlTuningSetsFilterArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetsFilterArray and GetManagedDatabaseSqlTuningSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsFilterArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetsFilterArray{ GetManagedDatabaseSqlTuningSetsFilterArgs{...} }
+//	GetManagedDatabaseSqlTuningSetsFilterArray{ GetManagedDatabaseSqlTuningSetsFilterArgs{...} }
 type GetManagedDatabaseSqlTuningSetsFilterArrayInput interface {
 	pulumi.Input
 
@@ -7981,7 +12166,7 @@ type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection struct {
 // GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{...}
+//	GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{...}
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput interface {
 	pulumi.Input
 
@@ -8009,7 +12194,7 @@ func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs) ToGetManagedD
 // GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray{ GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{...} }
+//	GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray{ GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{...} }
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput interface {
 	pulumi.Input
 
@@ -8086,7 +12271,7 @@ type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem struct {
 // GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{...}
+//	GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{...}
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput interface {
 	pulumi.Input
 
@@ -8120,7 +12305,7 @@ func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs) ToGetMana
 // GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray{ GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{...} }
+//	GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray{ GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{...} }
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -8196,6 +12381,326 @@ func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput) In
 	}).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput)
 }
 
+type GetManagedDatabaseTableStatisticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseTableStatisticsFilterInput is an input type that accepts GetManagedDatabaseTableStatisticsFilterArgs and GetManagedDatabaseTableStatisticsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseTableStatisticsFilterInput` via:
+//
+//	GetManagedDatabaseTableStatisticsFilterArgs{...}
+type GetManagedDatabaseTableStatisticsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseTableStatisticsFilterOutput() GetManagedDatabaseTableStatisticsFilterOutput
+	ToGetManagedDatabaseTableStatisticsFilterOutputWithContext(context.Context) GetManagedDatabaseTableStatisticsFilterOutput
+}
+
+type GetManagedDatabaseTableStatisticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseTableStatisticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseTableStatisticsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseTableStatisticsFilterArgs) ToGetManagedDatabaseTableStatisticsFilterOutput() GetManagedDatabaseTableStatisticsFilterOutput {
+	return i.ToGetManagedDatabaseTableStatisticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseTableStatisticsFilterArgs) ToGetManagedDatabaseTableStatisticsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseTableStatisticsFilterOutput)
+}
+
+// GetManagedDatabaseTableStatisticsFilterArrayInput is an input type that accepts GetManagedDatabaseTableStatisticsFilterArray and GetManagedDatabaseTableStatisticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseTableStatisticsFilterArrayInput` via:
+//
+//	GetManagedDatabaseTableStatisticsFilterArray{ GetManagedDatabaseTableStatisticsFilterArgs{...} }
+type GetManagedDatabaseTableStatisticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseTableStatisticsFilterArrayOutput() GetManagedDatabaseTableStatisticsFilterArrayOutput
+	ToGetManagedDatabaseTableStatisticsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseTableStatisticsFilterArrayOutput
+}
+
+type GetManagedDatabaseTableStatisticsFilterArray []GetManagedDatabaseTableStatisticsFilterInput
+
+func (GetManagedDatabaseTableStatisticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseTableStatisticsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseTableStatisticsFilterArray) ToGetManagedDatabaseTableStatisticsFilterArrayOutput() GetManagedDatabaseTableStatisticsFilterArrayOutput {
+	return i.ToGetManagedDatabaseTableStatisticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseTableStatisticsFilterArray) ToGetManagedDatabaseTableStatisticsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseTableStatisticsFilterArrayOutput)
+}
+
+type GetManagedDatabaseTableStatisticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseTableStatisticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseTableStatisticsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterOutput) ToGetManagedDatabaseTableStatisticsFilterOutput() GetManagedDatabaseTableStatisticsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterOutput) ToGetManagedDatabaseTableStatisticsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseTableStatisticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseTableStatisticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseTableStatisticsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterArrayOutput) ToGetManagedDatabaseTableStatisticsFilterArrayOutput() GetManagedDatabaseTableStatisticsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterArrayOutput) ToGetManagedDatabaseTableStatisticsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseTableStatisticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseTableStatisticsFilter {
+		return vs[0].([]GetManagedDatabaseTableStatisticsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseTableStatisticsFilterOutput)
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollection struct {
+	// The list of table statistics statuses.
+	Items []GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseTableStatisticsTableStatisticsCollectionInput is an input type that accepts GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs and GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseTableStatisticsTableStatisticsCollectionInput` via:
+//
+//	GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs{...}
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutputWithContext(context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs struct {
+	// The list of table statistics statuses.
+	Items GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput {
+	return i.ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput)
+}
+
+// GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayInput is an input type that accepts GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray and GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayInput` via:
+//
+//	GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray{ GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs{...} }
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray []GetManagedDatabaseTableStatisticsTableStatisticsCollectionInput
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseTableStatisticsTableStatisticsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput {
+	return i.ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput)
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput {
+	return o
+}
+
+// The list of table statistics statuses.
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput) Items() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsTableStatisticsCollection) []GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseTableStatisticsTableStatisticsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseTableStatisticsTableStatisticsCollection {
+		return vs[0].([]GetManagedDatabaseTableStatisticsTableStatisticsCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput)
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem struct {
+	// The number of objects aggregated by status category.
+	Count int `pulumi:"count"`
+	// The percentage of objects with a particular status.
+	Percentage float64 `pulumi:"percentage"`
+	// The valid status categories of table statistics.
+	Type string `pulumi:"type"`
+}
+
+// GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemInput is an input type that accepts GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs and GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemInput` via:
+//
+//	GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs{...}
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutputWithContext(context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs struct {
+	// The number of objects aggregated by status category.
+	Count pulumi.IntInput `pulumi:"count"`
+	// The percentage of objects with a particular status.
+	Percentage pulumi.Float64Input `pulumi:"percentage"`
+	// The valid status categories of table statistics.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput {
+	return i.ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput)
+}
+
+// GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray and GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayInput` via:
+//
+//	GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray{ GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs{...} }
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput
+	ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray []GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemInput
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput {
+	return o
+}
+
+// The number of objects aggregated by status category.
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The percentage of objects with a particular status.
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput) Percentage() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem) float64 { return v.Percentage }).(pulumi.Float64Output)
+}
+
+// The valid status categories of table statistics.
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput() GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput) ToGetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem {
+		return vs[0].([]GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput)
+}
+
 type GetManagedDatabaseUserConsumerGroupPrivilegeItem struct {
 	// Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
 	GrantOption string `pulumi:"grantOption"`
@@ -8208,7 +12713,7 @@ type GetManagedDatabaseUserConsumerGroupPrivilegeItem struct {
 // GetManagedDatabaseUserConsumerGroupPrivilegeItemInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs and GetManagedDatabaseUserConsumerGroupPrivilegeItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegeItemInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs{...}
+//	GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs{...}
 type GetManagedDatabaseUserConsumerGroupPrivilegeItemInput interface {
 	pulumi.Input
 
@@ -8240,7 +12745,7 @@ func (i GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs) ToGetManagedDataba
 // GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegeItemArray and GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegeItemArray{ GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs{...} }
+//	GetManagedDatabaseUserConsumerGroupPrivilegeItemArray{ GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs{...} }
 type GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayInput interface {
 	pulumi.Input
 
@@ -8319,7 +12824,7 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollecti
 // GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs and GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs{...}
+//	GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs{...}
 type GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionInput interface {
 	pulumi.Input
 
@@ -8347,7 +12852,7 @@ func (i GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeColle
 // GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArrayInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArray and GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArrayInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArray{ GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs{...} }
+//	GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArray{ GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs{...} }
 type GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -8422,7 +12927,7 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollecti
 // GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArgs and GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArgs{...}
+//	GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArgs{...}
 type GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemInput interface {
 	pulumi.Input
 
@@ -8454,7 +12959,7 @@ func (i GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeColle
 // GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArrayInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArray and GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArray{ GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArgs{...} }
+//	GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArray{ GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArgs{...} }
 type GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -8541,7 +13046,7 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesFilter struct {
 // GetManagedDatabaseUserConsumerGroupPrivilegesFilterInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs and GetManagedDatabaseUserConsumerGroupPrivilegesFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegesFilterInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs{...}
+//	GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs{...}
 type GetManagedDatabaseUserConsumerGroupPrivilegesFilterInput interface {
 	pulumi.Input
 
@@ -8571,7 +13076,7 @@ func (i GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs) ToGetManagedDat
 // GetManagedDatabaseUserConsumerGroupPrivilegesFilterArrayInput is an input type that accepts GetManagedDatabaseUserConsumerGroupPrivilegesFilterArray and GetManagedDatabaseUserConsumerGroupPrivilegesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserConsumerGroupPrivilegesFilterArrayInput` via:
 //
-//          GetManagedDatabaseUserConsumerGroupPrivilegesFilterArray{ GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs{...} }
+//	GetManagedDatabaseUserConsumerGroupPrivilegesFilterArray{ GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs{...} }
 type GetManagedDatabaseUserConsumerGroupPrivilegesFilterArrayInput interface {
 	pulumi.Input
 
@@ -8648,7 +13153,7 @@ type GetManagedDatabaseUserDataAccessContainerItem struct {
 // GetManagedDatabaseUserDataAccessContainerItemInput is an input type that accepts GetManagedDatabaseUserDataAccessContainerItemArgs and GetManagedDatabaseUserDataAccessContainerItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainerItemInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainerItemArgs{...}
+//	GetManagedDatabaseUserDataAccessContainerItemArgs{...}
 type GetManagedDatabaseUserDataAccessContainerItemInput interface {
 	pulumi.Input
 
@@ -8676,7 +13181,7 @@ func (i GetManagedDatabaseUserDataAccessContainerItemArgs) ToGetManagedDatabaseU
 // GetManagedDatabaseUserDataAccessContainerItemArrayInput is an input type that accepts GetManagedDatabaseUserDataAccessContainerItemArray and GetManagedDatabaseUserDataAccessContainerItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainerItemArrayInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainerItemArray{ GetManagedDatabaseUserDataAccessContainerItemArgs{...} }
+//	GetManagedDatabaseUserDataAccessContainerItemArray{ GetManagedDatabaseUserDataAccessContainerItemArgs{...} }
 type GetManagedDatabaseUserDataAccessContainerItemArrayInput interface {
 	pulumi.Input
 
@@ -8745,7 +13250,7 @@ type GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection str
 // GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionInput is an input type that accepts GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArgs and GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArgs{...}
+//	GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArgs{...}
 type GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionInput interface {
 	pulumi.Input
 
@@ -8773,7 +13278,7 @@ func (i GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionA
 // GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArrayInput is an input type that accepts GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArray and GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArrayInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArray{ GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArgs{...} }
+//	GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArray{ GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArgs{...} }
 type GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionArrayInput interface {
 	pulumi.Input
 
@@ -8844,7 +13349,7 @@ type GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem
 // GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemInput is an input type that accepts GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArgs and GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArgs{...}
+//	GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArgs{...}
 type GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemInput interface {
 	pulumi.Input
 
@@ -8872,7 +13377,7 @@ func (i GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionI
 // GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArrayInput is an input type that accepts GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArray and GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArray{ GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArgs{...} }
+//	GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArray{ GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArgs{...} }
 type GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -8945,7 +13450,7 @@ type GetManagedDatabaseUserDataAccessContainersFilter struct {
 // GetManagedDatabaseUserDataAccessContainersFilterInput is an input type that accepts GetManagedDatabaseUserDataAccessContainersFilterArgs and GetManagedDatabaseUserDataAccessContainersFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainersFilterInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainersFilterArgs{...}
+//	GetManagedDatabaseUserDataAccessContainersFilterArgs{...}
 type GetManagedDatabaseUserDataAccessContainersFilterInput interface {
 	pulumi.Input
 
@@ -8975,7 +13480,7 @@ func (i GetManagedDatabaseUserDataAccessContainersFilterArgs) ToGetManagedDataba
 // GetManagedDatabaseUserDataAccessContainersFilterArrayInput is an input type that accepts GetManagedDatabaseUserDataAccessContainersFilterArray and GetManagedDatabaseUserDataAccessContainersFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserDataAccessContainersFilterArrayInput` via:
 //
-//          GetManagedDatabaseUserDataAccessContainersFilterArray{ GetManagedDatabaseUserDataAccessContainersFilterArgs{...} }
+//	GetManagedDatabaseUserDataAccessContainersFilterArray{ GetManagedDatabaseUserDataAccessContainersFilterArgs{...} }
 type GetManagedDatabaseUserDataAccessContainersFilterArrayInput interface {
 	pulumi.Input
 
@@ -9068,7 +13573,7 @@ type GetManagedDatabaseUserObjectPrivilegeItem struct {
 // GetManagedDatabaseUserObjectPrivilegeItemInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegeItemArgs and GetManagedDatabaseUserObjectPrivilegeItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegeItemInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegeItemArgs{...}
+//	GetManagedDatabaseUserObjectPrivilegeItemArgs{...}
 type GetManagedDatabaseUserObjectPrivilegeItemInput interface {
 	pulumi.Input
 
@@ -9112,7 +13617,7 @@ func (i GetManagedDatabaseUserObjectPrivilegeItemArgs) ToGetManagedDatabaseUserO
 // GetManagedDatabaseUserObjectPrivilegeItemArrayInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegeItemArray and GetManagedDatabaseUserObjectPrivilegeItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegeItemArrayInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegeItemArray{ GetManagedDatabaseUserObjectPrivilegeItemArgs{...} }
+//	GetManagedDatabaseUserObjectPrivilegeItemArray{ GetManagedDatabaseUserObjectPrivilegeItemArgs{...} }
 type GetManagedDatabaseUserObjectPrivilegeItemArrayInput interface {
 	pulumi.Input
 
@@ -9223,7 +13728,7 @@ type GetManagedDatabaseUserObjectPrivilegesFilter struct {
 // GetManagedDatabaseUserObjectPrivilegesFilterInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegesFilterArgs and GetManagedDatabaseUserObjectPrivilegesFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegesFilterInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegesFilterArgs{...}
+//	GetManagedDatabaseUserObjectPrivilegesFilterArgs{...}
 type GetManagedDatabaseUserObjectPrivilegesFilterInput interface {
 	pulumi.Input
 
@@ -9253,7 +13758,7 @@ func (i GetManagedDatabaseUserObjectPrivilegesFilterArgs) ToGetManagedDatabaseUs
 // GetManagedDatabaseUserObjectPrivilegesFilterArrayInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegesFilterArray and GetManagedDatabaseUserObjectPrivilegesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegesFilterArrayInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegesFilterArray{ GetManagedDatabaseUserObjectPrivilegesFilterArgs{...} }
+//	GetManagedDatabaseUserObjectPrivilegesFilterArray{ GetManagedDatabaseUserObjectPrivilegesFilterArgs{...} }
 type GetManagedDatabaseUserObjectPrivilegesFilterArrayInput interface {
 	pulumi.Input
 
@@ -9330,7 +13835,7 @@ type GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection struct {
 // GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArgs and GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArgs{...}
+//	GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArgs{...}
 type GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionInput interface {
 	pulumi.Input
 
@@ -9358,7 +13863,7 @@ func (i GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArgs) ToG
 // GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArrayInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArray and GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArrayInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArray{ GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArgs{...} }
+//	GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArray{ GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArgs{...} }
 type GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -9445,7 +13950,7 @@ type GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem struct 
 // GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArgs and GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArgs{...}
+//	GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArgs{...}
 type GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemInput interface {
 	pulumi.Input
 
@@ -9489,7 +13994,7 @@ func (i GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArgs)
 // GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArrayInput is an input type that accepts GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArray and GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArray{ GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArgs{...} }
+//	GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArray{ GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArgs{...} }
 type GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -9606,7 +14111,7 @@ type GetManagedDatabaseUserProxiedForUserItem struct {
 // GetManagedDatabaseUserProxiedForUserItemInput is an input type that accepts GetManagedDatabaseUserProxiedForUserItemArgs and GetManagedDatabaseUserProxiedForUserItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUserItemInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUserItemArgs{...}
+//	GetManagedDatabaseUserProxiedForUserItemArgs{...}
 type GetManagedDatabaseUserProxiedForUserItemInput interface {
 	pulumi.Input
 
@@ -9638,7 +14143,7 @@ func (i GetManagedDatabaseUserProxiedForUserItemArgs) ToGetManagedDatabaseUserPr
 // GetManagedDatabaseUserProxiedForUserItemArrayInput is an input type that accepts GetManagedDatabaseUserProxiedForUserItemArray and GetManagedDatabaseUserProxiedForUserItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUserItemArrayInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUserItemArray{ GetManagedDatabaseUserProxiedForUserItemArgs{...} }
+//	GetManagedDatabaseUserProxiedForUserItemArray{ GetManagedDatabaseUserProxiedForUserItemArgs{...} }
 type GetManagedDatabaseUserProxiedForUserItemArrayInput interface {
 	pulumi.Input
 
@@ -9719,7 +14224,7 @@ type GetManagedDatabaseUserProxiedForUsersFilter struct {
 // GetManagedDatabaseUserProxiedForUsersFilterInput is an input type that accepts GetManagedDatabaseUserProxiedForUsersFilterArgs and GetManagedDatabaseUserProxiedForUsersFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUsersFilterInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUsersFilterArgs{...}
+//	GetManagedDatabaseUserProxiedForUsersFilterArgs{...}
 type GetManagedDatabaseUserProxiedForUsersFilterInput interface {
 	pulumi.Input
 
@@ -9749,7 +14254,7 @@ func (i GetManagedDatabaseUserProxiedForUsersFilterArgs) ToGetManagedDatabaseUse
 // GetManagedDatabaseUserProxiedForUsersFilterArrayInput is an input type that accepts GetManagedDatabaseUserProxiedForUsersFilterArray and GetManagedDatabaseUserProxiedForUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUsersFilterArrayInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUsersFilterArray{ GetManagedDatabaseUserProxiedForUsersFilterArgs{...} }
+//	GetManagedDatabaseUserProxiedForUsersFilterArray{ GetManagedDatabaseUserProxiedForUsersFilterArgs{...} }
 type GetManagedDatabaseUserProxiedForUsersFilterArrayInput interface {
 	pulumi.Input
 
@@ -9826,7 +14331,7 @@ type GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection struct {
 // GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionInput is an input type that accepts GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArgs and GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArgs{...}
+//	GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArgs{...}
 type GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionInput interface {
 	pulumi.Input
 
@@ -9854,7 +14359,7 @@ func (i GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArgs) ToGet
 // GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArrayInput is an input type that accepts GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArray and GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArrayInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArray{ GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArgs{...} }
+//	GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArray{ GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArgs{...} }
 type GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionArrayInput interface {
 	pulumi.Input
 
@@ -9929,7 +14434,7 @@ type GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem struct {
 // GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemInput is an input type that accepts GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArgs and GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArgs{...}
+//	GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArgs{...}
 type GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemInput interface {
 	pulumi.Input
 
@@ -9961,7 +14466,7 @@ func (i GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArgs) T
 // GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArrayInput is an input type that accepts GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArray and GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArray{ GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArgs{...} }
+//	GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArray{ GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArgs{...} }
 type GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10052,7 +14557,7 @@ type GetManagedDatabaseUserRoleItem struct {
 // GetManagedDatabaseUserRoleItemInput is an input type that accepts GetManagedDatabaseUserRoleItemArgs and GetManagedDatabaseUserRoleItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRoleItemInput` via:
 //
-//          GetManagedDatabaseUserRoleItemArgs{...}
+//	GetManagedDatabaseUserRoleItemArgs{...}
 type GetManagedDatabaseUserRoleItemInput interface {
 	pulumi.Input
 
@@ -10090,7 +14595,7 @@ func (i GetManagedDatabaseUserRoleItemArgs) ToGetManagedDatabaseUserRoleItemOutp
 // GetManagedDatabaseUserRoleItemArrayInput is an input type that accepts GetManagedDatabaseUserRoleItemArray and GetManagedDatabaseUserRoleItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRoleItemArrayInput` via:
 //
-//          GetManagedDatabaseUserRoleItemArray{ GetManagedDatabaseUserRoleItemArgs{...} }
+//	GetManagedDatabaseUserRoleItemArray{ GetManagedDatabaseUserRoleItemArgs{...} }
 type GetManagedDatabaseUserRoleItemArrayInput interface {
 	pulumi.Input
 
@@ -10186,7 +14691,7 @@ type GetManagedDatabaseUserRolesFilter struct {
 // GetManagedDatabaseUserRolesFilterInput is an input type that accepts GetManagedDatabaseUserRolesFilterArgs and GetManagedDatabaseUserRolesFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRolesFilterInput` via:
 //
-//          GetManagedDatabaseUserRolesFilterArgs{...}
+//	GetManagedDatabaseUserRolesFilterArgs{...}
 type GetManagedDatabaseUserRolesFilterInput interface {
 	pulumi.Input
 
@@ -10216,7 +14721,7 @@ func (i GetManagedDatabaseUserRolesFilterArgs) ToGetManagedDatabaseUserRolesFilt
 // GetManagedDatabaseUserRolesFilterArrayInput is an input type that accepts GetManagedDatabaseUserRolesFilterArray and GetManagedDatabaseUserRolesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRolesFilterArrayInput` via:
 //
-//          GetManagedDatabaseUserRolesFilterArray{ GetManagedDatabaseUserRolesFilterArgs{...} }
+//	GetManagedDatabaseUserRolesFilterArray{ GetManagedDatabaseUserRolesFilterArgs{...} }
 type GetManagedDatabaseUserRolesFilterArrayInput interface {
 	pulumi.Input
 
@@ -10293,7 +14798,7 @@ type GetManagedDatabaseUserRolesRoleCollection struct {
 // GetManagedDatabaseUserRolesRoleCollectionInput is an input type that accepts GetManagedDatabaseUserRolesRoleCollectionArgs and GetManagedDatabaseUserRolesRoleCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRolesRoleCollectionInput` via:
 //
-//          GetManagedDatabaseUserRolesRoleCollectionArgs{...}
+//	GetManagedDatabaseUserRolesRoleCollectionArgs{...}
 type GetManagedDatabaseUserRolesRoleCollectionInput interface {
 	pulumi.Input
 
@@ -10321,7 +14826,7 @@ func (i GetManagedDatabaseUserRolesRoleCollectionArgs) ToGetManagedDatabaseUserR
 // GetManagedDatabaseUserRolesRoleCollectionArrayInput is an input type that accepts GetManagedDatabaseUserRolesRoleCollectionArray and GetManagedDatabaseUserRolesRoleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRolesRoleCollectionArrayInput` via:
 //
-//          GetManagedDatabaseUserRolesRoleCollectionArray{ GetManagedDatabaseUserRolesRoleCollectionArgs{...} }
+//	GetManagedDatabaseUserRolesRoleCollectionArray{ GetManagedDatabaseUserRolesRoleCollectionArgs{...} }
 type GetManagedDatabaseUserRolesRoleCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10402,7 +14907,7 @@ type GetManagedDatabaseUserRolesRoleCollectionItem struct {
 // GetManagedDatabaseUserRolesRoleCollectionItemInput is an input type that accepts GetManagedDatabaseUserRolesRoleCollectionItemArgs and GetManagedDatabaseUserRolesRoleCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRolesRoleCollectionItemInput` via:
 //
-//          GetManagedDatabaseUserRolesRoleCollectionItemArgs{...}
+//	GetManagedDatabaseUserRolesRoleCollectionItemArgs{...}
 type GetManagedDatabaseUserRolesRoleCollectionItemInput interface {
 	pulumi.Input
 
@@ -10440,7 +14945,7 @@ func (i GetManagedDatabaseUserRolesRoleCollectionItemArgs) ToGetManagedDatabaseU
 // GetManagedDatabaseUserRolesRoleCollectionItemArrayInput is an input type that accepts GetManagedDatabaseUserRolesRoleCollectionItemArray and GetManagedDatabaseUserRolesRoleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUserRolesRoleCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseUserRolesRoleCollectionItemArray{ GetManagedDatabaseUserRolesRoleCollectionItemArgs{...} }
+//	GetManagedDatabaseUserRolesRoleCollectionItemArray{ GetManagedDatabaseUserRolesRoleCollectionItemArgs{...} }
 type GetManagedDatabaseUserRolesRoleCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -10536,7 +15041,7 @@ type GetManagedDatabaseUsersFilter struct {
 // GetManagedDatabaseUsersFilterInput is an input type that accepts GetManagedDatabaseUsersFilterArgs and GetManagedDatabaseUsersFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUsersFilterInput` via:
 //
-//          GetManagedDatabaseUsersFilterArgs{...}
+//	GetManagedDatabaseUsersFilterArgs{...}
 type GetManagedDatabaseUsersFilterInput interface {
 	pulumi.Input
 
@@ -10566,7 +15071,7 @@ func (i GetManagedDatabaseUsersFilterArgs) ToGetManagedDatabaseUsersFilterOutput
 // GetManagedDatabaseUsersFilterArrayInput is an input type that accepts GetManagedDatabaseUsersFilterArray and GetManagedDatabaseUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUsersFilterArrayInput` via:
 //
-//          GetManagedDatabaseUsersFilterArray{ GetManagedDatabaseUsersFilterArgs{...} }
+//	GetManagedDatabaseUsersFilterArray{ GetManagedDatabaseUsersFilterArgs{...} }
 type GetManagedDatabaseUsersFilterArrayInput interface {
 	pulumi.Input
 
@@ -10642,7 +15147,7 @@ type GetManagedDatabaseUsersUserCollection struct {
 // GetManagedDatabaseUsersUserCollectionInput is an input type that accepts GetManagedDatabaseUsersUserCollectionArgs and GetManagedDatabaseUsersUserCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUsersUserCollectionInput` via:
 //
-//          GetManagedDatabaseUsersUserCollectionArgs{...}
+//	GetManagedDatabaseUsersUserCollectionArgs{...}
 type GetManagedDatabaseUsersUserCollectionInput interface {
 	pulumi.Input
 
@@ -10669,7 +15174,7 @@ func (i GetManagedDatabaseUsersUserCollectionArgs) ToGetManagedDatabaseUsersUser
 // GetManagedDatabaseUsersUserCollectionArrayInput is an input type that accepts GetManagedDatabaseUsersUserCollectionArray and GetManagedDatabaseUsersUserCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUsersUserCollectionArrayInput` via:
 //
-//          GetManagedDatabaseUsersUserCollectionArray{ GetManagedDatabaseUsersUserCollectionArgs{...} }
+//	GetManagedDatabaseUsersUserCollectionArray{ GetManagedDatabaseUsersUserCollectionArgs{...} }
 type GetManagedDatabaseUsersUserCollectionArrayInput interface {
 	pulumi.Input
 
@@ -10785,7 +15290,7 @@ type GetManagedDatabaseUsersUserCollectionItem struct {
 // GetManagedDatabaseUsersUserCollectionItemInput is an input type that accepts GetManagedDatabaseUsersUserCollectionItemArgs and GetManagedDatabaseUsersUserCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUsersUserCollectionItemInput` via:
 //
-//          GetManagedDatabaseUsersUserCollectionItemArgs{...}
+//	GetManagedDatabaseUsersUserCollectionItemArgs{...}
 type GetManagedDatabaseUsersUserCollectionItemInput interface {
 	pulumi.Input
 
@@ -10859,7 +15364,7 @@ func (i GetManagedDatabaseUsersUserCollectionItemArgs) ToGetManagedDatabaseUsers
 // GetManagedDatabaseUsersUserCollectionItemArrayInput is an input type that accepts GetManagedDatabaseUsersUserCollectionItemArray and GetManagedDatabaseUsersUserCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabaseUsersUserCollectionItemArrayInput` via:
 //
-//          GetManagedDatabaseUsersUserCollectionItemArray{ GetManagedDatabaseUsersUserCollectionItemArgs{...} }
+//	GetManagedDatabaseUsersUserCollectionItemArray{ GetManagedDatabaseUsersUserCollectionItemArgs{...} }
 type GetManagedDatabaseUsersUserCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11043,7 +15548,7 @@ type GetManagedDatabasesAsmPropertiesAsmPropertyCollection struct {
 // GetManagedDatabasesAsmPropertiesAsmPropertyCollectionInput is an input type that accepts GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArgs and GetManagedDatabasesAsmPropertiesAsmPropertyCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertiesAsmPropertyCollectionInput` via:
 //
-//          GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArgs{...}
+//	GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArgs{...}
 type GetManagedDatabasesAsmPropertiesAsmPropertyCollectionInput interface {
 	pulumi.Input
 
@@ -11071,7 +15576,7 @@ func (i GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArgs) ToGetManagedD
 // GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArrayInput is an input type that accepts GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArray and GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArrayInput` via:
 //
-//          GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArray{ GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArgs{...} }
+//	GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArray{ GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArgs{...} }
 type GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArrayInput interface {
 	pulumi.Input
 
@@ -11142,7 +15647,7 @@ type GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem struct {
 // GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemInput is an input type that accepts GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArgs and GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemInput` via:
 //
-//          GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArgs{...}
+//	GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArgs{...}
 type GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemInput interface {
 	pulumi.Input
 
@@ -11170,7 +15675,7 @@ func (i GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArgs) ToGetMana
 // GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArrayInput is an input type that accepts GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArray and GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArrayInput` via:
 //
-//          GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArray{ GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArgs{...} }
+//	GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArray{ GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArgs{...} }
 type GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -11241,7 +15746,7 @@ type GetManagedDatabasesAsmPropertiesFilter struct {
 // GetManagedDatabasesAsmPropertiesFilterInput is an input type that accepts GetManagedDatabasesAsmPropertiesFilterArgs and GetManagedDatabasesAsmPropertiesFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertiesFilterInput` via:
 //
-//          GetManagedDatabasesAsmPropertiesFilterArgs{...}
+//	GetManagedDatabasesAsmPropertiesFilterArgs{...}
 type GetManagedDatabasesAsmPropertiesFilterInput interface {
 	pulumi.Input
 
@@ -11271,7 +15776,7 @@ func (i GetManagedDatabasesAsmPropertiesFilterArgs) ToGetManagedDatabasesAsmProp
 // GetManagedDatabasesAsmPropertiesFilterArrayInput is an input type that accepts GetManagedDatabasesAsmPropertiesFilterArray and GetManagedDatabasesAsmPropertiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertiesFilterArrayInput` via:
 //
-//          GetManagedDatabasesAsmPropertiesFilterArray{ GetManagedDatabasesAsmPropertiesFilterArgs{...} }
+//	GetManagedDatabasesAsmPropertiesFilterArray{ GetManagedDatabasesAsmPropertiesFilterArgs{...} }
 type GetManagedDatabasesAsmPropertiesFilterArrayInput interface {
 	pulumi.Input
 
@@ -11348,7 +15853,7 @@ type GetManagedDatabasesAsmPropertyItem struct {
 // GetManagedDatabasesAsmPropertyItemInput is an input type that accepts GetManagedDatabasesAsmPropertyItemArgs and GetManagedDatabasesAsmPropertyItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertyItemInput` via:
 //
-//          GetManagedDatabasesAsmPropertyItemArgs{...}
+//	GetManagedDatabasesAsmPropertyItemArgs{...}
 type GetManagedDatabasesAsmPropertyItemInput interface {
 	pulumi.Input
 
@@ -11376,7 +15881,7 @@ func (i GetManagedDatabasesAsmPropertyItemArgs) ToGetManagedDatabasesAsmProperty
 // GetManagedDatabasesAsmPropertyItemArrayInput is an input type that accepts GetManagedDatabasesAsmPropertyItemArray and GetManagedDatabasesAsmPropertyItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesAsmPropertyItemArrayInput` via:
 //
-//          GetManagedDatabasesAsmPropertyItemArray{ GetManagedDatabasesAsmPropertyItemArgs{...} }
+//	GetManagedDatabasesAsmPropertyItemArray{ GetManagedDatabasesAsmPropertyItemArgs{...} }
 type GetManagedDatabasesAsmPropertyItemArrayInput interface {
 	pulumi.Input
 
@@ -11495,7 +16000,7 @@ type GetManagedDatabasesDatabaseParameterItem struct {
 // GetManagedDatabasesDatabaseParameterItemInput is an input type that accepts GetManagedDatabasesDatabaseParameterItemArgs and GetManagedDatabasesDatabaseParameterItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParameterItemInput` via:
 //
-//          GetManagedDatabasesDatabaseParameterItemArgs{...}
+//	GetManagedDatabasesDatabaseParameterItemArgs{...}
 type GetManagedDatabasesDatabaseParameterItemInput interface {
 	pulumi.Input
 
@@ -11573,7 +16078,7 @@ func (i GetManagedDatabasesDatabaseParameterItemArgs) ToGetManagedDatabasesDatab
 // GetManagedDatabasesDatabaseParameterItemArrayInput is an input type that accepts GetManagedDatabasesDatabaseParameterItemArray and GetManagedDatabasesDatabaseParameterItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParameterItemArrayInput` via:
 //
-//          GetManagedDatabasesDatabaseParameterItemArray{ GetManagedDatabasesDatabaseParameterItemArgs{...} }
+//	GetManagedDatabasesDatabaseParameterItemArray{ GetManagedDatabasesDatabaseParameterItemArgs{...} }
 type GetManagedDatabasesDatabaseParameterItemArrayInput interface {
 	pulumi.Input
 
@@ -11764,7 +16269,7 @@ type GetManagedDatabasesDatabaseParameterItemAllowedValue struct {
 // GetManagedDatabasesDatabaseParameterItemAllowedValueInput is an input type that accepts GetManagedDatabasesDatabaseParameterItemAllowedValueArgs and GetManagedDatabasesDatabaseParameterItemAllowedValueOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParameterItemAllowedValueInput` via:
 //
-//          GetManagedDatabasesDatabaseParameterItemAllowedValueArgs{...}
+//	GetManagedDatabasesDatabaseParameterItemAllowedValueArgs{...}
 type GetManagedDatabasesDatabaseParameterItemAllowedValueInput interface {
 	pulumi.Input
 
@@ -11796,7 +16301,7 @@ func (i GetManagedDatabasesDatabaseParameterItemAllowedValueArgs) ToGetManagedDa
 // GetManagedDatabasesDatabaseParameterItemAllowedValueArrayInput is an input type that accepts GetManagedDatabasesDatabaseParameterItemAllowedValueArray and GetManagedDatabasesDatabaseParameterItemAllowedValueArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParameterItemAllowedValueArrayInput` via:
 //
-//          GetManagedDatabasesDatabaseParameterItemAllowedValueArray{ GetManagedDatabasesDatabaseParameterItemAllowedValueArgs{...} }
+//	GetManagedDatabasesDatabaseParameterItemAllowedValueArray{ GetManagedDatabasesDatabaseParameterItemAllowedValueArgs{...} }
 type GetManagedDatabasesDatabaseParameterItemAllowedValueArrayInput interface {
 	pulumi.Input
 
@@ -11883,7 +16388,7 @@ type GetManagedDatabasesDatabaseParametersDatabaseParametersCollection struct {
 // GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionInput is an input type that accepts GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArgs and GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArgs{...}
+//	GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArgs{...}
 type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionInput interface {
 	pulumi.Input
 
@@ -11919,7 +16424,7 @@ func (i GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArgs) T
 // GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArrayInput is an input type that accepts GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArray and GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArrayInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArray{ GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArgs{...} }
+//	GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArray{ GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArgs{...} }
 type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArrayInput interface {
 	pulumi.Input
 
@@ -12068,7 +16573,7 @@ type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem struc
 // GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemInput is an input type that accepts GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArgs and GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArgs{...}
+//	GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArgs{...}
 type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemInput interface {
 	pulumi.Input
 
@@ -12146,7 +16651,7 @@ func (i GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArg
 // GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArrayInput is an input type that accepts GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArray and GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArrayInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArray{ GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArgs{...} }
+//	GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArray{ GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArgs{...} }
 type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -12367,7 +16872,7 @@ type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowe
 // GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueInput is an input type that accepts GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArgs and GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArgs{...}
+//	GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArgs{...}
 type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueInput interface {
 	pulumi.Input
 
@@ -12399,7 +16904,7 @@ func (i GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAll
 // GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArrayInput is an input type that accepts GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArray and GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArrayInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArray{ GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArgs{...} }
+//	GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArray{ GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArgs{...} }
 type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueArrayInput interface {
 	pulumi.Input
 
@@ -12486,7 +16991,7 @@ type GetManagedDatabasesDatabaseParametersFilter struct {
 // GetManagedDatabasesDatabaseParametersFilterInput is an input type that accepts GetManagedDatabasesDatabaseParametersFilterArgs and GetManagedDatabasesDatabaseParametersFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersFilterInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersFilterArgs{...}
+//	GetManagedDatabasesDatabaseParametersFilterArgs{...}
 type GetManagedDatabasesDatabaseParametersFilterInput interface {
 	pulumi.Input
 
@@ -12516,7 +17021,7 @@ func (i GetManagedDatabasesDatabaseParametersFilterArgs) ToGetManagedDatabasesDa
 // GetManagedDatabasesDatabaseParametersFilterArrayInput is an input type that accepts GetManagedDatabasesDatabaseParametersFilterArray and GetManagedDatabasesDatabaseParametersFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesDatabaseParametersFilterArrayInput` via:
 //
-//          GetManagedDatabasesDatabaseParametersFilterArray{ GetManagedDatabasesDatabaseParametersFilterArgs{...} }
+//	GetManagedDatabasesDatabaseParametersFilterArray{ GetManagedDatabasesDatabaseParametersFilterArgs{...} }
 type GetManagedDatabasesDatabaseParametersFilterArrayInput interface {
 	pulumi.Input
 
@@ -12595,7 +17100,7 @@ type GetManagedDatabasesFilter struct {
 // GetManagedDatabasesFilterInput is an input type that accepts GetManagedDatabasesFilterArgs and GetManagedDatabasesFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesFilterInput` via:
 //
-//          GetManagedDatabasesFilterArgs{...}
+//	GetManagedDatabasesFilterArgs{...}
 type GetManagedDatabasesFilterInput interface {
 	pulumi.Input
 
@@ -12625,7 +17130,7 @@ func (i GetManagedDatabasesFilterArgs) ToGetManagedDatabasesFilterOutputWithCont
 // GetManagedDatabasesFilterArrayInput is an input type that accepts GetManagedDatabasesFilterArray and GetManagedDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesFilterArrayInput` via:
 //
-//          GetManagedDatabasesFilterArray{ GetManagedDatabasesFilterArgs{...} }
+//	GetManagedDatabasesFilterArray{ GetManagedDatabasesFilterArgs{...} }
 type GetManagedDatabasesFilterArrayInput interface {
 	pulumi.Input
 
@@ -12701,7 +17206,7 @@ type GetManagedDatabasesManagedDatabaseCollection struct {
 // GetManagedDatabasesManagedDatabaseCollectionInput is an input type that accepts GetManagedDatabasesManagedDatabaseCollectionArgs and GetManagedDatabasesManagedDatabaseCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesManagedDatabaseCollectionInput` via:
 //
-//          GetManagedDatabasesManagedDatabaseCollectionArgs{...}
+//	GetManagedDatabasesManagedDatabaseCollectionArgs{...}
 type GetManagedDatabasesManagedDatabaseCollectionInput interface {
 	pulumi.Input
 
@@ -12728,7 +17233,7 @@ func (i GetManagedDatabasesManagedDatabaseCollectionArgs) ToGetManagedDatabasesM
 // GetManagedDatabasesManagedDatabaseCollectionArrayInput is an input type that accepts GetManagedDatabasesManagedDatabaseCollectionArray and GetManagedDatabasesManagedDatabaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesManagedDatabaseCollectionArrayInput` via:
 //
-//          GetManagedDatabasesManagedDatabaseCollectionArray{ GetManagedDatabasesManagedDatabaseCollectionArgs{...} }
+//	GetManagedDatabasesManagedDatabaseCollectionArray{ GetManagedDatabasesManagedDatabaseCollectionArgs{...} }
 type GetManagedDatabasesManagedDatabaseCollectionArrayInput interface {
 	pulumi.Input
 
@@ -12824,7 +17329,7 @@ type GetManagedDatabasesManagedDatabaseCollectionItem struct {
 // GetManagedDatabasesManagedDatabaseCollectionItemInput is an input type that accepts GetManagedDatabasesManagedDatabaseCollectionItemArgs and GetManagedDatabasesManagedDatabaseCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesManagedDatabaseCollectionItemInput` via:
 //
-//          GetManagedDatabasesManagedDatabaseCollectionItemArgs{...}
+//	GetManagedDatabasesManagedDatabaseCollectionItemArgs{...}
 type GetManagedDatabasesManagedDatabaseCollectionItemInput interface {
 	pulumi.Input
 
@@ -12878,7 +17383,7 @@ func (i GetManagedDatabasesManagedDatabaseCollectionItemArgs) ToGetManagedDataba
 // GetManagedDatabasesManagedDatabaseCollectionItemArrayInput is an input type that accepts GetManagedDatabasesManagedDatabaseCollectionItemArray and GetManagedDatabasesManagedDatabaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesManagedDatabaseCollectionItemArrayInput` via:
 //
-//          GetManagedDatabasesManagedDatabaseCollectionItemArray{ GetManagedDatabasesManagedDatabaseCollectionItemArgs{...} }
+//	GetManagedDatabasesManagedDatabaseCollectionItemArray{ GetManagedDatabasesManagedDatabaseCollectionItemArgs{...} }
 type GetManagedDatabasesManagedDatabaseCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -13020,7 +17525,7 @@ type GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup struct
 // GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupInput is an input type that accepts GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs and GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupInput` via:
 //
-//          GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs{...}
+//	GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs{...}
 type GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupInput interface {
 	pulumi.Input
 
@@ -13052,7 +17557,7 @@ func (i GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs
 // GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArrayInput is an input type that accepts GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArray and GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArrayInput` via:
 //
-//          GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArray{ GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs{...} }
+//	GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArray{ GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArgs{...} }
 type GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupArrayInput interface {
 	pulumi.Input
 
@@ -13137,7 +17642,7 @@ type GetManagedDatabasesUserProxyUserItem struct {
 // GetManagedDatabasesUserProxyUserItemInput is an input type that accepts GetManagedDatabasesUserProxyUserItemArgs and GetManagedDatabasesUserProxyUserItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUserItemInput` via:
 //
-//          GetManagedDatabasesUserProxyUserItemArgs{...}
+//	GetManagedDatabasesUserProxyUserItemArgs{...}
 type GetManagedDatabasesUserProxyUserItemInput interface {
 	pulumi.Input
 
@@ -13169,7 +17674,7 @@ func (i GetManagedDatabasesUserProxyUserItemArgs) ToGetManagedDatabasesUserProxy
 // GetManagedDatabasesUserProxyUserItemArrayInput is an input type that accepts GetManagedDatabasesUserProxyUserItemArray and GetManagedDatabasesUserProxyUserItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUserItemArrayInput` via:
 //
-//          GetManagedDatabasesUserProxyUserItemArray{ GetManagedDatabasesUserProxyUserItemArgs{...} }
+//	GetManagedDatabasesUserProxyUserItemArray{ GetManagedDatabasesUserProxyUserItemArgs{...} }
 type GetManagedDatabasesUserProxyUserItemArrayInput interface {
 	pulumi.Input
 
@@ -13250,7 +17755,7 @@ type GetManagedDatabasesUserProxyUsersFilter struct {
 // GetManagedDatabasesUserProxyUsersFilterInput is an input type that accepts GetManagedDatabasesUserProxyUsersFilterArgs and GetManagedDatabasesUserProxyUsersFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUsersFilterInput` via:
 //
-//          GetManagedDatabasesUserProxyUsersFilterArgs{...}
+//	GetManagedDatabasesUserProxyUsersFilterArgs{...}
 type GetManagedDatabasesUserProxyUsersFilterInput interface {
 	pulumi.Input
 
@@ -13280,7 +17785,7 @@ func (i GetManagedDatabasesUserProxyUsersFilterArgs) ToGetManagedDatabasesUserPr
 // GetManagedDatabasesUserProxyUsersFilterArrayInput is an input type that accepts GetManagedDatabasesUserProxyUsersFilterArray and GetManagedDatabasesUserProxyUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUsersFilterArrayInput` via:
 //
-//          GetManagedDatabasesUserProxyUsersFilterArray{ GetManagedDatabasesUserProxyUsersFilterArgs{...} }
+//	GetManagedDatabasesUserProxyUsersFilterArray{ GetManagedDatabasesUserProxyUsersFilterArgs{...} }
 type GetManagedDatabasesUserProxyUsersFilterArrayInput interface {
 	pulumi.Input
 
@@ -13357,7 +17862,7 @@ type GetManagedDatabasesUserProxyUsersProxyUserCollection struct {
 // GetManagedDatabasesUserProxyUsersProxyUserCollectionInput is an input type that accepts GetManagedDatabasesUserProxyUsersProxyUserCollectionArgs and GetManagedDatabasesUserProxyUsersProxyUserCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUsersProxyUserCollectionInput` via:
 //
-//          GetManagedDatabasesUserProxyUsersProxyUserCollectionArgs{...}
+//	GetManagedDatabasesUserProxyUsersProxyUserCollectionArgs{...}
 type GetManagedDatabasesUserProxyUsersProxyUserCollectionInput interface {
 	pulumi.Input
 
@@ -13385,7 +17890,7 @@ func (i GetManagedDatabasesUserProxyUsersProxyUserCollectionArgs) ToGetManagedDa
 // GetManagedDatabasesUserProxyUsersProxyUserCollectionArrayInput is an input type that accepts GetManagedDatabasesUserProxyUsersProxyUserCollectionArray and GetManagedDatabasesUserProxyUsersProxyUserCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUsersProxyUserCollectionArrayInput` via:
 //
-//          GetManagedDatabasesUserProxyUsersProxyUserCollectionArray{ GetManagedDatabasesUserProxyUsersProxyUserCollectionArgs{...} }
+//	GetManagedDatabasesUserProxyUsersProxyUserCollectionArray{ GetManagedDatabasesUserProxyUsersProxyUserCollectionArgs{...} }
 type GetManagedDatabasesUserProxyUsersProxyUserCollectionArrayInput interface {
 	pulumi.Input
 
@@ -13460,7 +17965,7 @@ type GetManagedDatabasesUserProxyUsersProxyUserCollectionItem struct {
 // GetManagedDatabasesUserProxyUsersProxyUserCollectionItemInput is an input type that accepts GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArgs and GetManagedDatabasesUserProxyUsersProxyUserCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUsersProxyUserCollectionItemInput` via:
 //
-//          GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArgs{...}
+//	GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArgs{...}
 type GetManagedDatabasesUserProxyUsersProxyUserCollectionItemInput interface {
 	pulumi.Input
 
@@ -13492,7 +17997,7 @@ func (i GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArgs) ToGetManag
 // GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArrayInput is an input type that accepts GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArray and GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArrayInput` via:
 //
-//          GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArray{ GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArgs{...} }
+//	GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArray{ GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArgs{...} }
 type GetManagedDatabasesUserProxyUsersProxyUserCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -13577,7 +18082,7 @@ type GetManagedDatabasesUserSystemPrivilegeItem struct {
 // GetManagedDatabasesUserSystemPrivilegeItemInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegeItemArgs and GetManagedDatabasesUserSystemPrivilegeItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegeItemInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegeItemArgs{...}
+//	GetManagedDatabasesUserSystemPrivilegeItemArgs{...}
 type GetManagedDatabasesUserSystemPrivilegeItemInput interface {
 	pulumi.Input
 
@@ -13611,7 +18116,7 @@ func (i GetManagedDatabasesUserSystemPrivilegeItemArgs) ToGetManagedDatabasesUse
 // GetManagedDatabasesUserSystemPrivilegeItemArrayInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegeItemArray and GetManagedDatabasesUserSystemPrivilegeItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegeItemArrayInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegeItemArray{ GetManagedDatabasesUserSystemPrivilegeItemArgs{...} }
+//	GetManagedDatabasesUserSystemPrivilegeItemArray{ GetManagedDatabasesUserSystemPrivilegeItemArgs{...} }
 type GetManagedDatabasesUserSystemPrivilegeItemArrayInput interface {
 	pulumi.Input
 
@@ -13697,7 +18202,7 @@ type GetManagedDatabasesUserSystemPrivilegesFilter struct {
 // GetManagedDatabasesUserSystemPrivilegesFilterInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegesFilterArgs and GetManagedDatabasesUserSystemPrivilegesFilterOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegesFilterInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegesFilterArgs{...}
+//	GetManagedDatabasesUserSystemPrivilegesFilterArgs{...}
 type GetManagedDatabasesUserSystemPrivilegesFilterInput interface {
 	pulumi.Input
 
@@ -13727,7 +18232,7 @@ func (i GetManagedDatabasesUserSystemPrivilegesFilterArgs) ToGetManagedDatabases
 // GetManagedDatabasesUserSystemPrivilegesFilterArrayInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegesFilterArray and GetManagedDatabasesUserSystemPrivilegesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegesFilterArrayInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegesFilterArray{ GetManagedDatabasesUserSystemPrivilegesFilterArgs{...} }
+//	GetManagedDatabasesUserSystemPrivilegesFilterArray{ GetManagedDatabasesUserSystemPrivilegesFilterArgs{...} }
 type GetManagedDatabasesUserSystemPrivilegesFilterArrayInput interface {
 	pulumi.Input
 
@@ -13804,7 +18309,7 @@ type GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection struct {
 // GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArgs and GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArgs{...}
+//	GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArgs{...}
 type GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionInput interface {
 	pulumi.Input
 
@@ -13832,7 +18337,7 @@ func (i GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArgs) To
 // GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArrayInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArray and GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArrayInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArray{ GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArgs{...} }
+//	GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArray{ GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArgs{...} }
 type GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -13909,7 +18414,7 @@ type GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem struct
 // GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs and GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs{...}
+//	GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs{...}
 type GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemInput interface {
 	pulumi.Input
 
@@ -13943,7 +18448,7 @@ func (i GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs
 // GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArrayInput is an input type that accepts GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArray and GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArrayInput` via:
 //
-//          GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArray{ GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs{...} }
+//	GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArray{ GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs{...} }
 type GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -14090,6 +18595,72 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseManagedDatabaseGroupInput)(nil)).Elem(), GetManagedDatabaseManagedDatabaseGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseManagedDatabaseGroupArrayInput)(nil)).Elem(), GetManagedDatabaseManagedDatabaseGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayInput)(nil)).Elem(), GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTaskItemInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTaskItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTaskItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTaskItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedArgs{})
@@ -14142,6 +18713,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseTableStatisticsFilterInput)(nil)).Elem(), GetManagedDatabaseTableStatisticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseTableStatisticsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseTableStatisticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollectionInput)(nil)).Elem(), GetManagedDatabaseTableStatisticsTableStatisticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseTableStatisticsTableStatisticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemInput)(nil)).Elem(), GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseUserConsumerGroupPrivilegeItemInput)(nil)).Elem(), GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayInput)(nil)).Elem(), GetManagedDatabaseUserConsumerGroupPrivilegeItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionInput)(nil)).Elem(), GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs{})
@@ -14298,6 +18875,72 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseManagedDatabaseGroupOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseManagedDatabaseGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTaskItemOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTaskItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedOutput{})
@@ -14350,6 +18993,12 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseTableStatisticsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseTableStatisticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseTableStatisticsTableStatisticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseTableStatisticsTableStatisticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseUserConsumerGroupPrivilegeItemOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionOutput{})

@@ -20,7 +20,7 @@ type AutoScalingConfigurationAutoScalingResources struct {
 // AutoScalingConfigurationAutoScalingResourcesInput is an input type that accepts AutoScalingConfigurationAutoScalingResourcesArgs and AutoScalingConfigurationAutoScalingResourcesOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationAutoScalingResourcesInput` via:
 //
-//          AutoScalingConfigurationAutoScalingResourcesArgs{...}
+//	AutoScalingConfigurationAutoScalingResourcesArgs{...}
 type AutoScalingConfigurationAutoScalingResourcesInput interface {
 	pulumi.Input
 
@@ -58,11 +58,11 @@ func (i AutoScalingConfigurationAutoScalingResourcesArgs) ToAutoScalingConfigura
 // AutoScalingConfigurationAutoScalingResourcesPtrInput is an input type that accepts AutoScalingConfigurationAutoScalingResourcesArgs, AutoScalingConfigurationAutoScalingResourcesPtr and AutoScalingConfigurationAutoScalingResourcesPtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationAutoScalingResourcesPtrInput` via:
 //
-//          AutoScalingConfigurationAutoScalingResourcesArgs{...}
+//	        AutoScalingConfigurationAutoScalingResourcesArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationAutoScalingResourcesPtrInput interface {
 	pulumi.Input
 
@@ -189,7 +189,7 @@ type AutoScalingConfigurationPolicy struct {
 // AutoScalingConfigurationPolicyInput is an input type that accepts AutoScalingConfigurationPolicyArgs and AutoScalingConfigurationPolicyOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyInput` via:
 //
-//          AutoScalingConfigurationPolicyArgs{...}
+//	AutoScalingConfigurationPolicyArgs{...}
 type AutoScalingConfigurationPolicyInput interface {
 	pulumi.Input
 
@@ -232,7 +232,7 @@ func (i AutoScalingConfigurationPolicyArgs) ToAutoScalingConfigurationPolicyOutp
 // AutoScalingConfigurationPolicyArrayInput is an input type that accepts AutoScalingConfigurationPolicyArray and AutoScalingConfigurationPolicyArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyArrayInput` via:
 //
-//          AutoScalingConfigurationPolicyArray{ AutoScalingConfigurationPolicyArgs{...} }
+//	AutoScalingConfigurationPolicyArray{ AutoScalingConfigurationPolicyArgs{...} }
 type AutoScalingConfigurationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -348,7 +348,7 @@ type AutoScalingConfigurationPolicyCapacity struct {
 // AutoScalingConfigurationPolicyCapacityInput is an input type that accepts AutoScalingConfigurationPolicyCapacityArgs and AutoScalingConfigurationPolicyCapacityOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyCapacityInput` via:
 //
-//          AutoScalingConfigurationPolicyCapacityArgs{...}
+//	AutoScalingConfigurationPolicyCapacityArgs{...}
 type AutoScalingConfigurationPolicyCapacityInput interface {
 	pulumi.Input
 
@@ -388,11 +388,11 @@ func (i AutoScalingConfigurationPolicyCapacityArgs) ToAutoScalingConfigurationPo
 // AutoScalingConfigurationPolicyCapacityPtrInput is an input type that accepts AutoScalingConfigurationPolicyCapacityArgs, AutoScalingConfigurationPolicyCapacityPtr and AutoScalingConfigurationPolicyCapacityPtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyCapacityPtrInput` via:
 //
-//          AutoScalingConfigurationPolicyCapacityArgs{...}
+//	        AutoScalingConfigurationPolicyCapacityArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationPolicyCapacityPtrInput interface {
 	pulumi.Input
 
@@ -523,7 +523,7 @@ type AutoScalingConfigurationPolicyExecutionSchedule struct {
 // AutoScalingConfigurationPolicyExecutionScheduleInput is an input type that accepts AutoScalingConfigurationPolicyExecutionScheduleArgs and AutoScalingConfigurationPolicyExecutionScheduleOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyExecutionScheduleInput` via:
 //
-//          AutoScalingConfigurationPolicyExecutionScheduleArgs{...}
+//	AutoScalingConfigurationPolicyExecutionScheduleArgs{...}
 type AutoScalingConfigurationPolicyExecutionScheduleInput interface {
 	pulumi.Input
 
@@ -563,11 +563,11 @@ func (i AutoScalingConfigurationPolicyExecutionScheduleArgs) ToAutoScalingConfig
 // AutoScalingConfigurationPolicyExecutionSchedulePtrInput is an input type that accepts AutoScalingConfigurationPolicyExecutionScheduleArgs, AutoScalingConfigurationPolicyExecutionSchedulePtr and AutoScalingConfigurationPolicyExecutionSchedulePtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyExecutionSchedulePtrInput` via:
 //
-//          AutoScalingConfigurationPolicyExecutionScheduleArgs{...}
+//	        AutoScalingConfigurationPolicyExecutionScheduleArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationPolicyExecutionSchedulePtrInput interface {
 	pulumi.Input
 
@@ -696,7 +696,7 @@ type AutoScalingConfigurationPolicyResourceAction struct {
 // AutoScalingConfigurationPolicyResourceActionInput is an input type that accepts AutoScalingConfigurationPolicyResourceActionArgs and AutoScalingConfigurationPolicyResourceActionOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyResourceActionInput` via:
 //
-//          AutoScalingConfigurationPolicyResourceActionArgs{...}
+//	AutoScalingConfigurationPolicyResourceActionArgs{...}
 type AutoScalingConfigurationPolicyResourceActionInput interface {
 	pulumi.Input
 
@@ -734,11 +734,11 @@ func (i AutoScalingConfigurationPolicyResourceActionArgs) ToAutoScalingConfigura
 // AutoScalingConfigurationPolicyResourceActionPtrInput is an input type that accepts AutoScalingConfigurationPolicyResourceActionArgs, AutoScalingConfigurationPolicyResourceActionPtr and AutoScalingConfigurationPolicyResourceActionPtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyResourceActionPtrInput` via:
 //
-//          AutoScalingConfigurationPolicyResourceActionArgs{...}
+//	        AutoScalingConfigurationPolicyResourceActionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationPolicyResourceActionPtrInput interface {
 	pulumi.Input
 
@@ -856,7 +856,7 @@ type AutoScalingConfigurationPolicyRule struct {
 // AutoScalingConfigurationPolicyRuleInput is an input type that accepts AutoScalingConfigurationPolicyRuleArgs and AutoScalingConfigurationPolicyRuleOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleArgs{...}
+//	AutoScalingConfigurationPolicyRuleArgs{...}
 type AutoScalingConfigurationPolicyRuleInput interface {
 	pulumi.Input
 
@@ -890,7 +890,7 @@ func (i AutoScalingConfigurationPolicyRuleArgs) ToAutoScalingConfigurationPolicy
 // AutoScalingConfigurationPolicyRuleArrayInput is an input type that accepts AutoScalingConfigurationPolicyRuleArray and AutoScalingConfigurationPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleArrayInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleArray{ AutoScalingConfigurationPolicyRuleArgs{...} }
+//	AutoScalingConfigurationPolicyRuleArray{ AutoScalingConfigurationPolicyRuleArgs{...} }
 type AutoScalingConfigurationPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -975,7 +975,7 @@ type AutoScalingConfigurationPolicyRuleAction struct {
 // AutoScalingConfigurationPolicyRuleActionInput is an input type that accepts AutoScalingConfigurationPolicyRuleActionArgs and AutoScalingConfigurationPolicyRuleActionOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleActionInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleActionArgs{...}
+//	AutoScalingConfigurationPolicyRuleActionArgs{...}
 type AutoScalingConfigurationPolicyRuleActionInput interface {
 	pulumi.Input
 
@@ -1012,11 +1012,11 @@ func (i AutoScalingConfigurationPolicyRuleActionArgs) ToAutoScalingConfiguration
 // AutoScalingConfigurationPolicyRuleActionPtrInput is an input type that accepts AutoScalingConfigurationPolicyRuleActionArgs, AutoScalingConfigurationPolicyRuleActionPtr and AutoScalingConfigurationPolicyRuleActionPtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleActionPtrInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleActionArgs{...}
+//	        AutoScalingConfigurationPolicyRuleActionArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationPolicyRuleActionPtrInput interface {
 	pulumi.Input
 
@@ -1126,7 +1126,7 @@ type AutoScalingConfigurationPolicyRuleMetric struct {
 // AutoScalingConfigurationPolicyRuleMetricInput is an input type that accepts AutoScalingConfigurationPolicyRuleMetricArgs and AutoScalingConfigurationPolicyRuleMetricOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleMetricInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleMetricArgs{...}
+//	AutoScalingConfigurationPolicyRuleMetricArgs{...}
 type AutoScalingConfigurationPolicyRuleMetricInput interface {
 	pulumi.Input
 
@@ -1162,11 +1162,11 @@ func (i AutoScalingConfigurationPolicyRuleMetricArgs) ToAutoScalingConfiguration
 // AutoScalingConfigurationPolicyRuleMetricPtrInput is an input type that accepts AutoScalingConfigurationPolicyRuleMetricArgs, AutoScalingConfigurationPolicyRuleMetricPtr and AutoScalingConfigurationPolicyRuleMetricPtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleMetricPtrInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleMetricArgs{...}
+//	        AutoScalingConfigurationPolicyRuleMetricArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationPolicyRuleMetricPtrInput interface {
 	pulumi.Input
 
@@ -1277,7 +1277,7 @@ type AutoScalingConfigurationPolicyRuleMetricThreshold struct {
 // AutoScalingConfigurationPolicyRuleMetricThresholdInput is an input type that accepts AutoScalingConfigurationPolicyRuleMetricThresholdArgs and AutoScalingConfigurationPolicyRuleMetricThresholdOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleMetricThresholdInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
+//	AutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
 type AutoScalingConfigurationPolicyRuleMetricThresholdInput interface {
 	pulumi.Input
 
@@ -1314,11 +1314,11 @@ func (i AutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToAutoScalingConf
 // AutoScalingConfigurationPolicyRuleMetricThresholdPtrInput is an input type that accepts AutoScalingConfigurationPolicyRuleMetricThresholdArgs, AutoScalingConfigurationPolicyRuleMetricThresholdPtr and AutoScalingConfigurationPolicyRuleMetricThresholdPtrOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleMetricThresholdPtrInput` via:
 //
-//          AutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
+//	        AutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AutoScalingConfigurationPolicyRuleMetricThresholdPtrInput interface {
 	pulumi.Input
 
@@ -1430,7 +1430,7 @@ type GetAutoScalingConfigurationAutoScalingResource struct {
 // GetAutoScalingConfigurationAutoScalingResourceInput is an input type that accepts GetAutoScalingConfigurationAutoScalingResourceArgs and GetAutoScalingConfigurationAutoScalingResourceOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationAutoScalingResourceInput` via:
 //
-//          GetAutoScalingConfigurationAutoScalingResourceArgs{...}
+//	GetAutoScalingConfigurationAutoScalingResourceArgs{...}
 type GetAutoScalingConfigurationAutoScalingResourceInput interface {
 	pulumi.Input
 
@@ -1460,7 +1460,7 @@ func (i GetAutoScalingConfigurationAutoScalingResourceArgs) ToGetAutoScalingConf
 // GetAutoScalingConfigurationAutoScalingResourceArrayInput is an input type that accepts GetAutoScalingConfigurationAutoScalingResourceArray and GetAutoScalingConfigurationAutoScalingResourceArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationAutoScalingResourceArrayInput` via:
 //
-//          GetAutoScalingConfigurationAutoScalingResourceArray{ GetAutoScalingConfigurationAutoScalingResourceArgs{...} }
+//	GetAutoScalingConfigurationAutoScalingResourceArray{ GetAutoScalingConfigurationAutoScalingResourceArgs{...} }
 type GetAutoScalingConfigurationAutoScalingResourceArrayInput interface {
 	pulumi.Input
 
@@ -1549,7 +1549,7 @@ type GetAutoScalingConfigurationPolicy struct {
 // GetAutoScalingConfigurationPolicyInput is an input type that accepts GetAutoScalingConfigurationPolicyArgs and GetAutoScalingConfigurationPolicyOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyInput` via:
 //
-//          GetAutoScalingConfigurationPolicyArgs{...}
+//	GetAutoScalingConfigurationPolicyArgs{...}
 type GetAutoScalingConfigurationPolicyInput interface {
 	pulumi.Input
 
@@ -1592,7 +1592,7 @@ func (i GetAutoScalingConfigurationPolicyArgs) ToGetAutoScalingConfigurationPoli
 // GetAutoScalingConfigurationPolicyArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyArray and GetAutoScalingConfigurationPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyArray{ GetAutoScalingConfigurationPolicyArgs{...} }
+//	GetAutoScalingConfigurationPolicyArray{ GetAutoScalingConfigurationPolicyArgs{...} }
 type GetAutoScalingConfigurationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -1710,7 +1710,7 @@ type GetAutoScalingConfigurationPolicyCapacity struct {
 // GetAutoScalingConfigurationPolicyCapacityInput is an input type that accepts GetAutoScalingConfigurationPolicyCapacityArgs and GetAutoScalingConfigurationPolicyCapacityOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyCapacityInput` via:
 //
-//          GetAutoScalingConfigurationPolicyCapacityArgs{...}
+//	GetAutoScalingConfigurationPolicyCapacityArgs{...}
 type GetAutoScalingConfigurationPolicyCapacityInput interface {
 	pulumi.Input
 
@@ -1742,7 +1742,7 @@ func (i GetAutoScalingConfigurationPolicyCapacityArgs) ToGetAutoScalingConfigura
 // GetAutoScalingConfigurationPolicyCapacityArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyCapacityArray and GetAutoScalingConfigurationPolicyCapacityArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyCapacityArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyCapacityArray{ GetAutoScalingConfigurationPolicyCapacityArgs{...} }
+//	GetAutoScalingConfigurationPolicyCapacityArray{ GetAutoScalingConfigurationPolicyCapacityArgs{...} }
 type GetAutoScalingConfigurationPolicyCapacityArrayInput interface {
 	pulumi.Input
 
@@ -1825,7 +1825,7 @@ type GetAutoScalingConfigurationPolicyExecutionSchedule struct {
 // GetAutoScalingConfigurationPolicyExecutionScheduleInput is an input type that accepts GetAutoScalingConfigurationPolicyExecutionScheduleArgs and GetAutoScalingConfigurationPolicyExecutionScheduleOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyExecutionScheduleInput` via:
 //
-//          GetAutoScalingConfigurationPolicyExecutionScheduleArgs{...}
+//	GetAutoScalingConfigurationPolicyExecutionScheduleArgs{...}
 type GetAutoScalingConfigurationPolicyExecutionScheduleInput interface {
 	pulumi.Input
 
@@ -1857,7 +1857,7 @@ func (i GetAutoScalingConfigurationPolicyExecutionScheduleArgs) ToGetAutoScaling
 // GetAutoScalingConfigurationPolicyExecutionScheduleArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyExecutionScheduleArray and GetAutoScalingConfigurationPolicyExecutionScheduleArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyExecutionScheduleArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyExecutionScheduleArray{ GetAutoScalingConfigurationPolicyExecutionScheduleArgs{...} }
+//	GetAutoScalingConfigurationPolicyExecutionScheduleArray{ GetAutoScalingConfigurationPolicyExecutionScheduleArgs{...} }
 type GetAutoScalingConfigurationPolicyExecutionScheduleArrayInput interface {
 	pulumi.Input
 
@@ -1938,7 +1938,7 @@ type GetAutoScalingConfigurationPolicyResourceAction struct {
 // GetAutoScalingConfigurationPolicyResourceActionInput is an input type that accepts GetAutoScalingConfigurationPolicyResourceActionArgs and GetAutoScalingConfigurationPolicyResourceActionOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyResourceActionInput` via:
 //
-//          GetAutoScalingConfigurationPolicyResourceActionArgs{...}
+//	GetAutoScalingConfigurationPolicyResourceActionArgs{...}
 type GetAutoScalingConfigurationPolicyResourceActionInput interface {
 	pulumi.Input
 
@@ -1968,7 +1968,7 @@ func (i GetAutoScalingConfigurationPolicyResourceActionArgs) ToGetAutoScalingCon
 // GetAutoScalingConfigurationPolicyResourceActionArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyResourceActionArray and GetAutoScalingConfigurationPolicyResourceActionArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyResourceActionArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyResourceActionArray{ GetAutoScalingConfigurationPolicyResourceActionArgs{...} }
+//	GetAutoScalingConfigurationPolicyResourceActionArray{ GetAutoScalingConfigurationPolicyResourceActionArgs{...} }
 type GetAutoScalingConfigurationPolicyResourceActionArrayInput interface {
 	pulumi.Input
 
@@ -2048,7 +2048,7 @@ type GetAutoScalingConfigurationPolicyRule struct {
 // GetAutoScalingConfigurationPolicyRuleInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleArgs and GetAutoScalingConfigurationPolicyRuleOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleArgs{...}
+//	GetAutoScalingConfigurationPolicyRuleArgs{...}
 type GetAutoScalingConfigurationPolicyRuleInput interface {
 	pulumi.Input
 
@@ -2082,7 +2082,7 @@ func (i GetAutoScalingConfigurationPolicyRuleArgs) ToGetAutoScalingConfiguration
 // GetAutoScalingConfigurationPolicyRuleArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleArray and GetAutoScalingConfigurationPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleArray{ GetAutoScalingConfigurationPolicyRuleArgs{...} }
+//	GetAutoScalingConfigurationPolicyRuleArray{ GetAutoScalingConfigurationPolicyRuleArgs{...} }
 type GetAutoScalingConfigurationPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -2171,7 +2171,7 @@ type GetAutoScalingConfigurationPolicyRuleAction struct {
 // GetAutoScalingConfigurationPolicyRuleActionInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleActionArgs and GetAutoScalingConfigurationPolicyRuleActionOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleActionInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleActionArgs{...}
+//	GetAutoScalingConfigurationPolicyRuleActionArgs{...}
 type GetAutoScalingConfigurationPolicyRuleActionInput interface {
 	pulumi.Input
 
@@ -2200,7 +2200,7 @@ func (i GetAutoScalingConfigurationPolicyRuleActionArgs) ToGetAutoScalingConfigu
 // GetAutoScalingConfigurationPolicyRuleActionArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleActionArray and GetAutoScalingConfigurationPolicyRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleActionArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleActionArray{ GetAutoScalingConfigurationPolicyRuleActionArgs{...} }
+//	GetAutoScalingConfigurationPolicyRuleActionArray{ GetAutoScalingConfigurationPolicyRuleActionArgs{...} }
 type GetAutoScalingConfigurationPolicyRuleActionArrayInput interface {
 	pulumi.Input
 
@@ -2273,7 +2273,7 @@ type GetAutoScalingConfigurationPolicyRuleMetric struct {
 // GetAutoScalingConfigurationPolicyRuleMetricInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricArgs and GetAutoScalingConfigurationPolicyRuleMetricOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleMetricInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleMetricArgs{...}
+//	GetAutoScalingConfigurationPolicyRuleMetricArgs{...}
 type GetAutoScalingConfigurationPolicyRuleMetricInput interface {
 	pulumi.Input
 
@@ -2301,7 +2301,7 @@ func (i GetAutoScalingConfigurationPolicyRuleMetricArgs) ToGetAutoScalingConfigu
 // GetAutoScalingConfigurationPolicyRuleMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricArray and GetAutoScalingConfigurationPolicyRuleMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleMetricArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleMetricArray{ GetAutoScalingConfigurationPolicyRuleMetricArgs{...} }
+//	GetAutoScalingConfigurationPolicyRuleMetricArray{ GetAutoScalingConfigurationPolicyRuleMetricArgs{...} }
 type GetAutoScalingConfigurationPolicyRuleMetricArrayInput interface {
 	pulumi.Input
 
@@ -2376,7 +2376,7 @@ type GetAutoScalingConfigurationPolicyRuleMetricThreshold struct {
 // GetAutoScalingConfigurationPolicyRuleMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs and GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleMetricThresholdInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
+//	GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
 type GetAutoScalingConfigurationPolicyRuleMetricThresholdInput interface {
 	pulumi.Input
 
@@ -2405,7 +2405,7 @@ func (i GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToGetAutoScali
 // GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricThresholdArray and GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput` via:
 //
-//          GetAutoScalingConfigurationPolicyRuleMetricThresholdArray{ GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...} }
+//	GetAutoScalingConfigurationPolicyRuleMetricThresholdArray{ GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...} }
 type GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput interface {
 	pulumi.Input
 
@@ -2500,7 +2500,7 @@ type GetAutoScalingConfigurationsAutoScalingConfiguration struct {
 // GetAutoScalingConfigurationsAutoScalingConfigurationInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationArgs and GetAutoScalingConfigurationsAutoScalingConfigurationOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationInput interface {
 	pulumi.Input
 
@@ -2550,7 +2550,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationArgs) ToGetAutoScali
 // GetAutoScalingConfigurationsAutoScalingConfigurationArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationArray and GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationArray{ GetAutoScalingConfigurationsAutoScalingConfigurationArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationArray{ GetAutoScalingConfigurationsAutoScalingConfigurationArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -2684,7 +2684,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource str
 // GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArgs and GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceInput interface {
 	pulumi.Input
 
@@ -2714,7 +2714,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceA
 // GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArray and GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArray{ GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArray{ GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArrayInput interface {
 	pulumi.Input
 
@@ -2803,7 +2803,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicy struct {
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyInput interface {
 	pulumi.Input
 
@@ -2846,7 +2846,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs) ToGetAut
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput interface {
 	pulumi.Input
 
@@ -2966,7 +2966,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity struct {
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityInput interface {
 	pulumi.Input
 
@@ -2998,7 +2998,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs) 
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArrayInput interface {
 	pulumi.Input
 
@@ -3081,7 +3081,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedule
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleInput interface {
 	pulumi.Input
 
@@ -3113,7 +3113,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSched
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArrayInput interface {
 	pulumi.Input
 
@@ -3200,7 +3200,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction st
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionInput interface {
 	pulumi.Input
 
@@ -3230,7 +3230,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArrayInput interface {
 	pulumi.Input
 
@@ -3314,7 +3314,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule struct {
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleInput interface {
 	pulumi.Input
 
@@ -3348,7 +3348,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs) ToGe
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput interface {
 	pulumi.Input
 
@@ -3437,7 +3437,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction struct
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionInput interface {
 	pulumi.Input
 
@@ -3466,7 +3466,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArrayInput interface {
 	pulumi.Input
 
@@ -3539,7 +3539,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric struct
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricInput interface {
 	pulumi.Input
 
@@ -3567,7 +3567,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayInput interface {
 	pulumi.Input
 
@@ -3644,7 +3644,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresho
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...}
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdInput interface {
 	pulumi.Input
 
@@ -3673,7 +3673,7 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThre
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput` via:
 //
-//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...} }
+//	GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArgs{...} }
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput interface {
 	pulumi.Input
 
@@ -3751,7 +3751,7 @@ type GetAutoScalingConfigurationsFilter struct {
 // GetAutoScalingConfigurationsFilterInput is an input type that accepts GetAutoScalingConfigurationsFilterArgs and GetAutoScalingConfigurationsFilterOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsFilterInput` via:
 //
-//          GetAutoScalingConfigurationsFilterArgs{...}
+//	GetAutoScalingConfigurationsFilterArgs{...}
 type GetAutoScalingConfigurationsFilterInput interface {
 	pulumi.Input
 
@@ -3780,7 +3780,7 @@ func (i GetAutoScalingConfigurationsFilterArgs) ToGetAutoScalingConfigurationsFi
 // GetAutoScalingConfigurationsFilterArrayInput is an input type that accepts GetAutoScalingConfigurationsFilterArray and GetAutoScalingConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsFilterArrayInput` via:
 //
-//          GetAutoScalingConfigurationsFilterArray{ GetAutoScalingConfigurationsFilterArgs{...} }
+//	GetAutoScalingConfigurationsFilterArray{ GetAutoScalingConfigurationsFilterArgs{...} }
 type GetAutoScalingConfigurationsFilterArrayInput interface {
 	pulumi.Input
 

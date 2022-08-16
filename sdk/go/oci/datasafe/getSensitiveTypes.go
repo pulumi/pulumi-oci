@@ -20,32 +20,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.GetSensitiveTypes(ctx, &datasafe.GetSensitiveTypesArgs{
-// 			CompartmentId:                   _var.Compartment_id,
-// 			AccessLevel:                     pulumi.StringRef(_var.Sensitive_type_access_level),
-// 			CompartmentIdInSubtree:          pulumi.BoolRef(_var.Sensitive_type_compartment_id_in_subtree),
-// 			DefaultMaskingFormatId:          pulumi.StringRef(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
-// 			DisplayName:                     pulumi.StringRef(_var.Sensitive_type_display_name),
-// 			EntityType:                      pulumi.StringRef(_var.Sensitive_type_entity_type),
-// 			ParentCategoryId:                pulumi.StringRef(oci_marketplace_category.Test_category.Id),
-// 			SensitiveTypeId:                 pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
-// 			SensitiveTypeSource:             pulumi.StringRef(_var.Sensitive_type_sensitive_type_source),
-// 			State:                           pulumi.StringRef(_var.Sensitive_type_state),
-// 			TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_type_time_created_greater_than_or_equal_to),
-// 			TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_type_time_created_less_than),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.GetSensitiveTypes(ctx, &datasafe.GetSensitiveTypesArgs{
+//				CompartmentId:                   _var.Compartment_id,
+//				AccessLevel:                     pulumi.StringRef(_var.Sensitive_type_access_level),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Sensitive_type_compartment_id_in_subtree),
+//				DefaultMaskingFormatId:          pulumi.StringRef(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
+//				DisplayName:                     pulumi.StringRef(_var.Sensitive_type_display_name),
+//				EntityType:                      pulumi.StringRef(_var.Sensitive_type_entity_type),
+//				ParentCategoryId:                pulumi.StringRef(oci_marketplace_category.Test_category.Id),
+//				SensitiveTypeId:                 pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
+//				SensitiveTypeSource:             pulumi.StringRef(_var.Sensitive_type_sensitive_type_source),
+//				State:                           pulumi.StringRef(_var.Sensitive_type_state),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_type_time_created_greater_than_or_equal_to),
+//				TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_type_time_created_less_than),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSensitiveTypes(ctx *pulumi.Context, args *GetSensitiveTypesArgs, opts ...pulumi.InvokeOption) (*GetSensitiveTypesResult, error) {
 	var rv GetSensitiveTypesResult

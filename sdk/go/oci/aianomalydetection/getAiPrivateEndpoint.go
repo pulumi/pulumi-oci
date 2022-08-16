@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiAnomalyDetection"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiAnomalyDetection.GetAiPrivateEndpoint(ctx, &aianomalydetection.GetAiPrivateEndpointArgs{
-// 			AiPrivateEndpointId: oci_ai_anomaly_detection_ai_private_endpoint.Test_ai_private_endpoint.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiAnomalyDetection.GetAiPrivateEndpoint(ctx, &aianomalydetection.GetAiPrivateEndpointArgs{
+//				AiPrivateEndpointId: oci_ai_anomaly_detection_ai_private_endpoint.Test_ai_private_endpoint.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAiPrivateEndpoint(ctx *pulumi.Context, args *LookupAiPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupAiPrivateEndpointResult, error) {
 	var rv LookupAiPrivateEndpointResult

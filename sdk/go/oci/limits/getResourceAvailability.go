@@ -13,9 +13,9 @@ import (
 // This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
 //
 // For a given compartmentId, resource limit name, and scope, returns the following:
-//   * The number of available resources associated with the given limit.
-//   * The usage in the selected compartment for the given limit.
-//       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+//   - The number of available resources associated with the given limit.
+//   - The usage in the selected compartment for the given limit.
+//     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 //
 // ## Example Usage
 //
@@ -23,24 +23,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Limits"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Limits.GetResourceAvailability(ctx, &limits.GetResourceAvailabilityArgs{
-// 			CompartmentId:      _var.Tenancy_ocid,
-// 			LimitName:          _var.Resource_availability_limit_name,
-// 			ServiceName:        oci_limits_service.Test_service.Name,
-// 			AvailabilityDomain: pulumi.StringRef(_var.Resource_availability_availability_domain),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Limits.GetResourceAvailability(ctx, &limits.GetResourceAvailabilityArgs{
+//				CompartmentId:      _var.Tenancy_ocid,
+//				LimitName:          _var.Resource_availability_limit_name,
+//				ServiceName:        oci_limits_service.Test_service.Name,
+//				AvailabilityDomain: pulumi.StringRef(_var.Resource_availability_availability_domain),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetResourceAvailability(ctx *pulumi.Context, args *GetResourceAvailabilityArgs, opts ...pulumi.InvokeOption) (*GetResourceAvailabilityResult, error) {
 	var rv GetResourceAvailabilityResult

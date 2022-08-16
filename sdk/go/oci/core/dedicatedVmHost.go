@@ -24,31 +24,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewDedicatedVmHost(ctx, "testDedicatedVmHost", &Core.DedicatedVmHostArgs{
-// 			AvailabilityDomain:   pulumi.Any(_var.Dedicated_vm_host_availability_domain),
-// 			CompartmentId:        pulumi.Any(_var.Compartment_id),
-// 			DedicatedVmHostShape: pulumi.Any(_var.Dedicated_vm_host_dedicated_vm_host_shape),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Dedicated_vm_host_display_name),
-// 			FaultDomain: pulumi.Any(_var.Dedicated_vm_host_fault_domain),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDedicatedVmHost(ctx, "testDedicatedVmHost", &Core.DedicatedVmHostArgs{
+//				AvailabilityDomain:   pulumi.Any(_var.Dedicated_vm_host_availability_domain),
+//				CompartmentId:        pulumi.Any(_var.Compartment_id),
+//				DedicatedVmHostShape: pulumi.Any(_var.Dedicated_vm_host_dedicated_vm_host_shape),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Dedicated_vm_host_display_name),
+//				FaultDomain: pulumi.Any(_var.Dedicated_vm_host_fault_domain),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // DedicatedVmHosts can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
+//
+//	$ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
+//
 // ```
 type DedicatedVmHost struct {
 	pulumi.CustomResourceState
@@ -249,7 +254,7 @@ func (i *DedicatedVmHost) ToDedicatedVmHostOutputWithContext(ctx context.Context
 // DedicatedVmHostArrayInput is an input type that accepts DedicatedVmHostArray and DedicatedVmHostArrayOutput values.
 // You can construct a concrete instance of `DedicatedVmHostArrayInput` via:
 //
-//          DedicatedVmHostArray{ DedicatedVmHostArgs{...} }
+//	DedicatedVmHostArray{ DedicatedVmHostArgs{...} }
 type DedicatedVmHostArrayInput interface {
 	pulumi.Input
 
@@ -274,7 +279,7 @@ func (i DedicatedVmHostArray) ToDedicatedVmHostArrayOutputWithContext(ctx contex
 // DedicatedVmHostMapInput is an input type that accepts DedicatedVmHostMap and DedicatedVmHostMapOutput values.
 // You can construct a concrete instance of `DedicatedVmHostMapInput` via:
 //
-//          DedicatedVmHostMap{ "key": DedicatedVmHostArgs{...} }
+//	DedicatedVmHostMap{ "key": DedicatedVmHostArgs{...} }
 type DedicatedVmHostMapInput interface {
 	pulumi.Input
 

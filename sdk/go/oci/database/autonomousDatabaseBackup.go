@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.NewAutonomousDatabaseBackup(ctx, "testAutonomousDatabaseBackup", &Database.AutonomousDatabaseBackupArgs{
-// 			AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-// 			DisplayName:          pulumi.Any(_var.Autonomous_database_backup_display_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewAutonomousDatabaseBackup(ctx, "testAutonomousDatabaseBackup", &Database.AutonomousDatabaseBackupArgs{
+//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
+//				DisplayName:          pulumi.Any(_var.Autonomous_database_backup_display_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // AutonomousDatabaseBackups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
+//
+//	$ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
+//
 // ```
 type AutonomousDatabaseBackup struct {
 	pulumi.CustomResourceState
@@ -232,7 +237,7 @@ func (i *AutonomousDatabaseBackup) ToAutonomousDatabaseBackupOutputWithContext(c
 // AutonomousDatabaseBackupArrayInput is an input type that accepts AutonomousDatabaseBackupArray and AutonomousDatabaseBackupArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseBackupArrayInput` via:
 //
-//          AutonomousDatabaseBackupArray{ AutonomousDatabaseBackupArgs{...} }
+//	AutonomousDatabaseBackupArray{ AutonomousDatabaseBackupArgs{...} }
 type AutonomousDatabaseBackupArrayInput interface {
 	pulumi.Input
 
@@ -257,7 +262,7 @@ func (i AutonomousDatabaseBackupArray) ToAutonomousDatabaseBackupArrayOutputWith
 // AutonomousDatabaseBackupMapInput is an input type that accepts AutonomousDatabaseBackupMap and AutonomousDatabaseBackupMapOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseBackupMapInput` via:
 //
-//          AutonomousDatabaseBackupMap{ "key": AutonomousDatabaseBackupArgs{...} }
+//	AutonomousDatabaseBackupMap{ "key": AutonomousDatabaseBackupArgs{...} }
 type AutonomousDatabaseBackupMapInput interface {
 	pulumi.Input
 

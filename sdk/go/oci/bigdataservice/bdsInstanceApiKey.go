@@ -21,25 +21,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.NewBdsInstanceApiKey(ctx, "testBdsInstanceApiKey", &BigDataService.BdsInstanceApiKeyArgs{
-// 			BdsInstanceId: pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-// 			KeyAlias:      pulumi.Any(_var.Bds_instance_api_key_key_alias),
-// 			Passphrase:    pulumi.Any(_var.Bds_instance_api_key_passphrase),
-// 			UserId:        pulumi.Any(oci_identity_user.Test_user.Id),
-// 			DefaultRegion: pulumi.Any(_var.Bds_instance_api_key_default_region),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.NewBdsInstanceApiKey(ctx, "testBdsInstanceApiKey", &BigDataService.BdsInstanceApiKeyArgs{
+//				BdsInstanceId: pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
+//				KeyAlias:      pulumi.Any(_var.Bds_instance_api_key_key_alias),
+//				Passphrase:    pulumi.Any(_var.Bds_instance_api_key_passphrase),
+//				UserId:        pulumi.Any(oci_identity_user.Test_user.Id),
+//				DefaultRegion: pulumi.Any(_var.Bds_instance_api_key_default_region),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -47,7 +50,9 @@ import (
 // BdsInstanceApiKeys can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
+//
+//	$ pulumi import oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey test_bds_instance_api_key "bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
+//
 // ```
 type BdsInstanceApiKey struct {
 	pulumi.CustomResourceState
@@ -217,7 +222,7 @@ func (i *BdsInstanceApiKey) ToBdsInstanceApiKeyOutputWithContext(ctx context.Con
 // BdsInstanceApiKeyArrayInput is an input type that accepts BdsInstanceApiKeyArray and BdsInstanceApiKeyArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceApiKeyArrayInput` via:
 //
-//          BdsInstanceApiKeyArray{ BdsInstanceApiKeyArgs{...} }
+//	BdsInstanceApiKeyArray{ BdsInstanceApiKeyArgs{...} }
 type BdsInstanceApiKeyArrayInput interface {
 	pulumi.Input
 
@@ -242,7 +247,7 @@ func (i BdsInstanceApiKeyArray) ToBdsInstanceApiKeyArrayOutputWithContext(ctx co
 // BdsInstanceApiKeyMapInput is an input type that accepts BdsInstanceApiKeyMap and BdsInstanceApiKeyMapOutput values.
 // You can construct a concrete instance of `BdsInstanceApiKeyMapInput` via:
 //
-//          BdsInstanceApiKeyMap{ "key": BdsInstanceApiKeyArgs{...} }
+//	BdsInstanceApiKeyMap{ "key": BdsInstanceApiKeyArgs{...} }
 type BdsInstanceApiKeyMapInput interface {
 	pulumi.Input
 

@@ -19,27 +19,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Artifacts"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Artifacts.NewGenericArtifact(ctx, "testGenericArtifact", &Artifacts.GenericArtifactArgs{
-// 			ArtifactId: pulumi.Any(oci_artifacts_artifact.Test_artifact.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Artifacts.NewGenericArtifact(ctx, "testGenericArtifact", &Artifacts.GenericArtifactArgs{
+//				ArtifactId: pulumi.Any(oci_artifacts_artifact.Test_artifact.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -208,7 +211,7 @@ func (i *GenericArtifact) ToGenericArtifactOutputWithContext(ctx context.Context
 // GenericArtifactArrayInput is an input type that accepts GenericArtifactArray and GenericArtifactArrayOutput values.
 // You can construct a concrete instance of `GenericArtifactArrayInput` via:
 //
-//          GenericArtifactArray{ GenericArtifactArgs{...} }
+//	GenericArtifactArray{ GenericArtifactArgs{...} }
 type GenericArtifactArrayInput interface {
 	pulumi.Input
 
@@ -233,7 +236,7 @@ func (i GenericArtifactArray) ToGenericArtifactArrayOutputWithContext(ctx contex
 // GenericArtifactMapInput is an input type that accepts GenericArtifactMap and GenericArtifactMapOutput values.
 // You can construct a concrete instance of `GenericArtifactMapInput` via:
 //
-//          GenericArtifactMap{ "key": GenericArtifactArgs{...} }
+//	GenericArtifactMap{ "key": GenericArtifactArgs{...} }
 type GenericArtifactMapInput interface {
 	pulumi.Input
 

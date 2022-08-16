@@ -21,29 +21,32 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiVision"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/AiVision"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := AiVision.NewProject(ctx, "testProject", &AiVision.ProjectArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Project_description),
-// 			DisplayName: pulumi.Any(_var.Project_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := AiVision.NewProject(ctx, "testProject", &AiVision.ProjectArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Project_description),
+//				DisplayName: pulumi.Any(_var.Project_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // Projects can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:AiVision/project:Project test_project "id"
+//
+//	$ pulumi import oci:AiVision/project:Project test_project "id"
+//
 // ```
 type Project struct {
 	pulumi.CustomResourceState
@@ -212,7 +217,7 @@ func (i *Project) ToProjectOutputWithContext(ctx context.Context) ProjectOutput 
 // ProjectArrayInput is an input type that accepts ProjectArray and ProjectArrayOutput values.
 // You can construct a concrete instance of `ProjectArrayInput` via:
 //
-//          ProjectArray{ ProjectArgs{...} }
+//	ProjectArray{ ProjectArgs{...} }
 type ProjectArrayInput interface {
 	pulumi.Input
 
@@ -237,7 +242,7 @@ func (i ProjectArray) ToProjectArrayOutputWithContext(ctx context.Context) Proje
 // ProjectMapInput is an input type that accepts ProjectMap and ProjectMapOutput values.
 // You can construct a concrete instance of `ProjectMapInput` via:
 //
-//          ProjectMap{ "key": ProjectArgs{...} }
+//	ProjectMap{ "key": ProjectArgs{...} }
 type ProjectMapInput interface {
 	pulumi.Input
 

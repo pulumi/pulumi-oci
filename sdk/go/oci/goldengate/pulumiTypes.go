@@ -28,7 +28,7 @@ type DeploymentOggData struct {
 // DeploymentOggDataInput is an input type that accepts DeploymentOggDataArgs and DeploymentOggDataOutput values.
 // You can construct a concrete instance of `DeploymentOggDataInput` via:
 //
-//          DeploymentOggDataArgs{...}
+//	DeploymentOggDataArgs{...}
 type DeploymentOggDataInput interface {
 	pulumi.Input
 
@@ -74,11 +74,11 @@ func (i DeploymentOggDataArgs) ToDeploymentOggDataPtrOutputWithContext(ctx conte
 // DeploymentOggDataPtrInput is an input type that accepts DeploymentOggDataArgs, DeploymentOggDataPtr and DeploymentOggDataPtrOutput values.
 // You can construct a concrete instance of `DeploymentOggDataPtrInput` via:
 //
-//          DeploymentOggDataArgs{...}
+//	        DeploymentOggDataArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DeploymentOggDataPtrInput interface {
 	pulumi.Input
 
@@ -249,7 +249,7 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollection struct {
 // GetDatabaseRegistrationsDatabaseRegistrationCollectionInput is an input type that accepts GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs and GetDatabaseRegistrationsDatabaseRegistrationCollectionOutput values.
 // You can construct a concrete instance of `GetDatabaseRegistrationsDatabaseRegistrationCollectionInput` via:
 //
-//          GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs{...}
+//	GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs{...}
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionInput interface {
 	pulumi.Input
 
@@ -276,7 +276,7 @@ func (i GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs) ToGetDatabas
 // GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayInput is an input type that accepts GetDatabaseRegistrationsDatabaseRegistrationCollectionArray and GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayInput` via:
 //
-//          GetDatabaseRegistrationsDatabaseRegistrationCollectionArray{ GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs{...} }
+//	GetDatabaseRegistrationsDatabaseRegistrationCollectionArray{ GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs{...} }
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayInput interface {
 	pulumi.Input
 
@@ -394,7 +394,7 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 // GetDatabaseRegistrationsDatabaseRegistrationCollectionItemInput is an input type that accepts GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs and GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput values.
 // You can construct a concrete instance of `GetDatabaseRegistrationsDatabaseRegistrationCollectionItemInput` via:
 //
-//          GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs{...}
+//	GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs{...}
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemInput interface {
 	pulumi.Input
 
@@ -470,7 +470,7 @@ func (i GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs) ToGetDat
 // GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArrayInput is an input type that accepts GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArray and GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArrayInput` via:
 //
-//          GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArray{ GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs{...} }
+//	GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArray{ GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs{...} }
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -671,7 +671,7 @@ type GetDatabaseRegistrationsFilter struct {
 // GetDatabaseRegistrationsFilterInput is an input type that accepts GetDatabaseRegistrationsFilterArgs and GetDatabaseRegistrationsFilterOutput values.
 // You can construct a concrete instance of `GetDatabaseRegistrationsFilterInput` via:
 //
-//          GetDatabaseRegistrationsFilterArgs{...}
+//	GetDatabaseRegistrationsFilterArgs{...}
 type GetDatabaseRegistrationsFilterInput interface {
 	pulumi.Input
 
@@ -700,7 +700,7 @@ func (i GetDatabaseRegistrationsFilterArgs) ToGetDatabaseRegistrationsFilterOutp
 // GetDatabaseRegistrationsFilterArrayInput is an input type that accepts GetDatabaseRegistrationsFilterArray and GetDatabaseRegistrationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseRegistrationsFilterArrayInput` via:
 //
-//          GetDatabaseRegistrationsFilterArray{ GetDatabaseRegistrationsFilterArgs{...} }
+//	GetDatabaseRegistrationsFilterArray{ GetDatabaseRegistrationsFilterArgs{...} }
 type GetDatabaseRegistrationsFilterArrayInput interface {
 	pulumi.Input
 
@@ -775,7 +775,7 @@ type GetDeploymentBackupsDeploymentBackupCollection struct {
 // GetDeploymentBackupsDeploymentBackupCollectionInput is an input type that accepts GetDeploymentBackupsDeploymentBackupCollectionArgs and GetDeploymentBackupsDeploymentBackupCollectionOutput values.
 // You can construct a concrete instance of `GetDeploymentBackupsDeploymentBackupCollectionInput` via:
 //
-//          GetDeploymentBackupsDeploymentBackupCollectionArgs{...}
+//	GetDeploymentBackupsDeploymentBackupCollectionArgs{...}
 type GetDeploymentBackupsDeploymentBackupCollectionInput interface {
 	pulumi.Input
 
@@ -802,7 +802,7 @@ func (i GetDeploymentBackupsDeploymentBackupCollectionArgs) ToGetDeploymentBacku
 // GetDeploymentBackupsDeploymentBackupCollectionArrayInput is an input type that accepts GetDeploymentBackupsDeploymentBackupCollectionArray and GetDeploymentBackupsDeploymentBackupCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentBackupsDeploymentBackupCollectionArrayInput` via:
 //
-//          GetDeploymentBackupsDeploymentBackupCollectionArray{ GetDeploymentBackupsDeploymentBackupCollectionArgs{...} }
+//	GetDeploymentBackupsDeploymentBackupCollectionArray{ GetDeploymentBackupsDeploymentBackupCollectionArgs{...} }
 type GetDeploymentBackupsDeploymentBackupCollectionArrayInput interface {
 	pulumi.Input
 
@@ -910,7 +910,7 @@ type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
 // GetDeploymentBackupsDeploymentBackupCollectionItemInput is an input type that accepts GetDeploymentBackupsDeploymentBackupCollectionItemArgs and GetDeploymentBackupsDeploymentBackupCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeploymentBackupsDeploymentBackupCollectionItemInput` via:
 //
-//          GetDeploymentBackupsDeploymentBackupCollectionItemArgs{...}
+//	GetDeploymentBackupsDeploymentBackupCollectionItemArgs{...}
 type GetDeploymentBackupsDeploymentBackupCollectionItemInput interface {
 	pulumi.Input
 
@@ -976,7 +976,7 @@ func (i GetDeploymentBackupsDeploymentBackupCollectionItemArgs) ToGetDeploymentB
 // GetDeploymentBackupsDeploymentBackupCollectionItemArrayInput is an input type that accepts GetDeploymentBackupsDeploymentBackupCollectionItemArray and GetDeploymentBackupsDeploymentBackupCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentBackupsDeploymentBackupCollectionItemArrayInput` via:
 //
-//          GetDeploymentBackupsDeploymentBackupCollectionItemArray{ GetDeploymentBackupsDeploymentBackupCollectionItemArgs{...} }
+//	GetDeploymentBackupsDeploymentBackupCollectionItemArray{ GetDeploymentBackupsDeploymentBackupCollectionItemArgs{...} }
 type GetDeploymentBackupsDeploymentBackupCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1145,7 +1145,7 @@ type GetDeploymentBackupsFilter struct {
 // GetDeploymentBackupsFilterInput is an input type that accepts GetDeploymentBackupsFilterArgs and GetDeploymentBackupsFilterOutput values.
 // You can construct a concrete instance of `GetDeploymentBackupsFilterInput` via:
 //
-//          GetDeploymentBackupsFilterArgs{...}
+//	GetDeploymentBackupsFilterArgs{...}
 type GetDeploymentBackupsFilterInput interface {
 	pulumi.Input
 
@@ -1174,7 +1174,7 @@ func (i GetDeploymentBackupsFilterArgs) ToGetDeploymentBackupsFilterOutputWithCo
 // GetDeploymentBackupsFilterArrayInput is an input type that accepts GetDeploymentBackupsFilterArray and GetDeploymentBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentBackupsFilterArrayInput` via:
 //
-//          GetDeploymentBackupsFilterArray{ GetDeploymentBackupsFilterArgs{...} }
+//	GetDeploymentBackupsFilterArray{ GetDeploymentBackupsFilterArgs{...} }
 type GetDeploymentBackupsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1258,7 +1258,7 @@ type GetDeploymentOggData struct {
 // GetDeploymentOggDataInput is an input type that accepts GetDeploymentOggDataArgs and GetDeploymentOggDataOutput values.
 // You can construct a concrete instance of `GetDeploymentOggDataInput` via:
 //
-//          GetDeploymentOggDataArgs{...}
+//	GetDeploymentOggDataArgs{...}
 type GetDeploymentOggDataInput interface {
 	pulumi.Input
 
@@ -1294,7 +1294,7 @@ func (i GetDeploymentOggDataArgs) ToGetDeploymentOggDataOutputWithContext(ctx co
 // GetDeploymentOggDataArrayInput is an input type that accepts GetDeploymentOggDataArray and GetDeploymentOggDataArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentOggDataArrayInput` via:
 //
-//          GetDeploymentOggDataArray{ GetDeploymentOggDataArgs{...} }
+//	GetDeploymentOggDataArray{ GetDeploymentOggDataArgs{...} }
 type GetDeploymentOggDataArrayInput interface {
 	pulumi.Input
 
@@ -1385,7 +1385,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollection struct {
 // GetDeploymentUpgradesDeploymentUpgradeCollectionInput is an input type that accepts GetDeploymentUpgradesDeploymentUpgradeCollectionArgs and GetDeploymentUpgradesDeploymentUpgradeCollectionOutput values.
 // You can construct a concrete instance of `GetDeploymentUpgradesDeploymentUpgradeCollectionInput` via:
 //
-//          GetDeploymentUpgradesDeploymentUpgradeCollectionArgs{...}
+//	GetDeploymentUpgradesDeploymentUpgradeCollectionArgs{...}
 type GetDeploymentUpgradesDeploymentUpgradeCollectionInput interface {
 	pulumi.Input
 
@@ -1412,7 +1412,7 @@ func (i GetDeploymentUpgradesDeploymentUpgradeCollectionArgs) ToGetDeploymentUpg
 // GetDeploymentUpgradesDeploymentUpgradeCollectionArrayInput is an input type that accepts GetDeploymentUpgradesDeploymentUpgradeCollectionArray and GetDeploymentUpgradesDeploymentUpgradeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentUpgradesDeploymentUpgradeCollectionArrayInput` via:
 //
-//          GetDeploymentUpgradesDeploymentUpgradeCollectionArray{ GetDeploymentUpgradesDeploymentUpgradeCollectionArgs{...} }
+//	GetDeploymentUpgradesDeploymentUpgradeCollectionArray{ GetDeploymentUpgradesDeploymentUpgradeCollectionArgs{...} }
 type GetDeploymentUpgradesDeploymentUpgradeCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1514,7 +1514,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 // GetDeploymentUpgradesDeploymentUpgradeCollectionItemInput is an input type that accepts GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs and GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeploymentUpgradesDeploymentUpgradeCollectionItemInput` via:
 //
-//          GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs{...}
+//	GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs{...}
 type GetDeploymentUpgradesDeploymentUpgradeCollectionItemInput interface {
 	pulumi.Input
 
@@ -1574,7 +1574,7 @@ func (i GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs) ToGetDeploymen
 // GetDeploymentUpgradesDeploymentUpgradeCollectionItemArrayInput is an input type that accepts GetDeploymentUpgradesDeploymentUpgradeCollectionItemArray and GetDeploymentUpgradesDeploymentUpgradeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentUpgradesDeploymentUpgradeCollectionItemArrayInput` via:
 //
-//          GetDeploymentUpgradesDeploymentUpgradeCollectionItemArray{ GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs{...} }
+//	GetDeploymentUpgradesDeploymentUpgradeCollectionItemArray{ GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs{...} }
 type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1730,7 +1730,7 @@ type GetDeploymentUpgradesFilter struct {
 // GetDeploymentUpgradesFilterInput is an input type that accepts GetDeploymentUpgradesFilterArgs and GetDeploymentUpgradesFilterOutput values.
 // You can construct a concrete instance of `GetDeploymentUpgradesFilterInput` via:
 //
-//          GetDeploymentUpgradesFilterArgs{...}
+//	GetDeploymentUpgradesFilterArgs{...}
 type GetDeploymentUpgradesFilterInput interface {
 	pulumi.Input
 
@@ -1759,7 +1759,7 @@ func (i GetDeploymentUpgradesFilterArgs) ToGetDeploymentUpgradesFilterOutputWith
 // GetDeploymentUpgradesFilterArrayInput is an input type that accepts GetDeploymentUpgradesFilterArray and GetDeploymentUpgradesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentUpgradesFilterArrayInput` via:
 //
-//          GetDeploymentUpgradesFilterArray{ GetDeploymentUpgradesFilterArgs{...} }
+//	GetDeploymentUpgradesFilterArray{ GetDeploymentUpgradesFilterArgs{...} }
 type GetDeploymentUpgradesFilterArrayInput interface {
 	pulumi.Input
 
@@ -1834,7 +1834,7 @@ type GetDeploymentsDeploymentCollection struct {
 // GetDeploymentsDeploymentCollectionInput is an input type that accepts GetDeploymentsDeploymentCollectionArgs and GetDeploymentsDeploymentCollectionOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionInput` via:
 //
-//          GetDeploymentsDeploymentCollectionArgs{...}
+//	GetDeploymentsDeploymentCollectionArgs{...}
 type GetDeploymentsDeploymentCollectionInput interface {
 	pulumi.Input
 
@@ -1861,7 +1861,7 @@ func (i GetDeploymentsDeploymentCollectionArgs) ToGetDeploymentsDeploymentCollec
 // GetDeploymentsDeploymentCollectionArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionArray and GetDeploymentsDeploymentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionArray{ GetDeploymentsDeploymentCollectionArgs{...} }
+//	GetDeploymentsDeploymentCollectionArray{ GetDeploymentsDeploymentCollectionArgs{...} }
 type GetDeploymentsDeploymentCollectionArrayInput interface {
 	pulumi.Input
 
@@ -1987,7 +1987,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 // GetDeploymentsDeploymentCollectionItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemArgs and GetDeploymentsDeploymentCollectionItemOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemArgs{...}
+//	GetDeploymentsDeploymentCollectionItemArgs{...}
 type GetDeploymentsDeploymentCollectionItemInput interface {
 	pulumi.Input
 
@@ -2073,7 +2073,7 @@ func (i GetDeploymentsDeploymentCollectionItemArgs) ToGetDeploymentsDeploymentCo
 // GetDeploymentsDeploymentCollectionItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemArray and GetDeploymentsDeploymentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemArray{ GetDeploymentsDeploymentCollectionItemArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemArray{ GetDeploymentsDeploymentCollectionItemArgs{...} }
 type GetDeploymentsDeploymentCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -2297,7 +2297,7 @@ type GetDeploymentsDeploymentCollectionItemOggData struct {
 // GetDeploymentsDeploymentCollectionItemOggDataInput is an input type that accepts GetDeploymentsDeploymentCollectionItemOggDataArgs and GetDeploymentsDeploymentCollectionItemOggDataOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemOggDataInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemOggDataArgs{...}
+//	GetDeploymentsDeploymentCollectionItemOggDataArgs{...}
 type GetDeploymentsDeploymentCollectionItemOggDataInput interface {
 	pulumi.Input
 
@@ -2333,7 +2333,7 @@ func (i GetDeploymentsDeploymentCollectionItemOggDataArgs) ToGetDeploymentsDeplo
 // GetDeploymentsDeploymentCollectionItemOggDataArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemOggDataArray and GetDeploymentsDeploymentCollectionItemOggDataArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemOggDataArrayInput` via:
 //
-//          GetDeploymentsDeploymentCollectionItemOggDataArray{ GetDeploymentsDeploymentCollectionItemOggDataArgs{...} }
+//	GetDeploymentsDeploymentCollectionItemOggDataArray{ GetDeploymentsDeploymentCollectionItemOggDataArgs{...} }
 type GetDeploymentsDeploymentCollectionItemOggDataArrayInput interface {
 	pulumi.Input
 
@@ -2426,7 +2426,7 @@ type GetDeploymentsFilter struct {
 // GetDeploymentsFilterInput is an input type that accepts GetDeploymentsFilterArgs and GetDeploymentsFilterOutput values.
 // You can construct a concrete instance of `GetDeploymentsFilterInput` via:
 //
-//          GetDeploymentsFilterArgs{...}
+//	GetDeploymentsFilterArgs{...}
 type GetDeploymentsFilterInput interface {
 	pulumi.Input
 
@@ -2455,7 +2455,7 @@ func (i GetDeploymentsFilterArgs) ToGetDeploymentsFilterOutputWithContext(ctx co
 // GetDeploymentsFilterArrayInput is an input type that accepts GetDeploymentsFilterArray and GetDeploymentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDeploymentsFilterArrayInput` via:
 //
-//          GetDeploymentsFilterArray{ GetDeploymentsFilterArgs{...} }
+//	GetDeploymentsFilterArray{ GetDeploymentsFilterArgs{...} }
 type GetDeploymentsFilterArrayInput interface {
 	pulumi.Input
 

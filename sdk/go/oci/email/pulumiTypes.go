@@ -17,7 +17,7 @@ type GetDkimsDkimCollection struct {
 // GetDkimsDkimCollectionInput is an input type that accepts GetDkimsDkimCollectionArgs and GetDkimsDkimCollectionOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionInput` via:
 //
-//          GetDkimsDkimCollectionArgs{...}
+//	GetDkimsDkimCollectionArgs{...}
 type GetDkimsDkimCollectionInput interface {
 	pulumi.Input
 
@@ -44,7 +44,7 @@ func (i GetDkimsDkimCollectionArgs) ToGetDkimsDkimCollectionOutputWithContext(ct
 // GetDkimsDkimCollectionArrayInput is an input type that accepts GetDkimsDkimCollectionArray and GetDkimsDkimCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionArrayInput` via:
 //
-//          GetDkimsDkimCollectionArray{ GetDkimsDkimCollectionArgs{...} }
+//	GetDkimsDkimCollectionArray{ GetDkimsDkimCollectionArgs{...} }
 type GetDkimsDkimCollectionArrayInput interface {
 	pulumi.Input
 
@@ -140,7 +140,7 @@ type GetDkimsDkimCollectionItem struct {
 // GetDkimsDkimCollectionItemInput is an input type that accepts GetDkimsDkimCollectionItemArgs and GetDkimsDkimCollectionItemOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionItemInput` via:
 //
-//          GetDkimsDkimCollectionItemArgs{...}
+//	GetDkimsDkimCollectionItemArgs{...}
 type GetDkimsDkimCollectionItemInput interface {
 	pulumi.Input
 
@@ -196,7 +196,7 @@ func (i GetDkimsDkimCollectionItemArgs) ToGetDkimsDkimCollectionItemOutputWithCo
 // GetDkimsDkimCollectionItemArrayInput is an input type that accepts GetDkimsDkimCollectionItemArray and GetDkimsDkimCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionItemArrayInput` via:
 //
-//          GetDkimsDkimCollectionItemArray{ GetDkimsDkimCollectionItemArgs{...} }
+//	GetDkimsDkimCollectionItemArray{ GetDkimsDkimCollectionItemArgs{...} }
 type GetDkimsDkimCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -337,7 +337,7 @@ type GetDkimsFilter struct {
 // GetDkimsFilterInput is an input type that accepts GetDkimsFilterArgs and GetDkimsFilterOutput values.
 // You can construct a concrete instance of `GetDkimsFilterInput` via:
 //
-//          GetDkimsFilterArgs{...}
+//	GetDkimsFilterArgs{...}
 type GetDkimsFilterInput interface {
 	pulumi.Input
 
@@ -367,7 +367,7 @@ func (i GetDkimsFilterArgs) ToGetDkimsFilterOutputWithContext(ctx context.Contex
 // GetDkimsFilterArrayInput is an input type that accepts GetDkimsFilterArray and GetDkimsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDkimsFilterArrayInput` via:
 //
-//          GetDkimsFilterArray{ GetDkimsFilterArgs{...} }
+//	GetDkimsFilterArray{ GetDkimsFilterArgs{...} }
 type GetDkimsFilterArrayInput interface {
 	pulumi.Input
 
@@ -443,7 +443,7 @@ type GetEmailDomainsEmailDomainCollection struct {
 // GetEmailDomainsEmailDomainCollectionInput is an input type that accepts GetEmailDomainsEmailDomainCollectionArgs and GetEmailDomainsEmailDomainCollectionOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionInput` via:
 //
-//          GetEmailDomainsEmailDomainCollectionArgs{...}
+//	GetEmailDomainsEmailDomainCollectionArgs{...}
 type GetEmailDomainsEmailDomainCollectionInput interface {
 	pulumi.Input
 
@@ -470,7 +470,7 @@ func (i GetEmailDomainsEmailDomainCollectionArgs) ToGetEmailDomainsEmailDomainCo
 // GetEmailDomainsEmailDomainCollectionArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionArray and GetEmailDomainsEmailDomainCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionArrayInput` via:
 //
-//          GetEmailDomainsEmailDomainCollectionArray{ GetEmailDomainsEmailDomainCollectionArgs{...} }
+//	GetEmailDomainsEmailDomainCollectionArray{ GetEmailDomainsEmailDomainCollectionArgs{...} }
 type GetEmailDomainsEmailDomainCollectionArrayInput interface {
 	pulumi.Input
 
@@ -560,7 +560,7 @@ type GetEmailDomainsEmailDomainCollectionItem struct {
 // GetEmailDomainsEmailDomainCollectionItemInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemArgs and GetEmailDomainsEmailDomainCollectionItemOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionItemInput` via:
 //
-//          GetEmailDomainsEmailDomainCollectionItemArgs{...}
+//	GetEmailDomainsEmailDomainCollectionItemArgs{...}
 type GetEmailDomainsEmailDomainCollectionItemInput interface {
 	pulumi.Input
 
@@ -608,7 +608,7 @@ func (i GetEmailDomainsEmailDomainCollectionItemArgs) ToGetEmailDomainsEmailDoma
 // GetEmailDomainsEmailDomainCollectionItemArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemArray and GetEmailDomainsEmailDomainCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionItemArrayInput` via:
 //
-//          GetEmailDomainsEmailDomainCollectionItemArray{ GetEmailDomainsEmailDomainCollectionItemArgs{...} }
+//	GetEmailDomainsEmailDomainCollectionItemArray{ GetEmailDomainsEmailDomainCollectionItemArgs{...} }
 type GetEmailDomainsEmailDomainCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -729,7 +729,7 @@ type GetEmailDomainsFilter struct {
 // GetEmailDomainsFilterInput is an input type that accepts GetEmailDomainsFilterArgs and GetEmailDomainsFilterOutput values.
 // You can construct a concrete instance of `GetEmailDomainsFilterInput` via:
 //
-//          GetEmailDomainsFilterArgs{...}
+//	GetEmailDomainsFilterArgs{...}
 type GetEmailDomainsFilterInput interface {
 	pulumi.Input
 
@@ -759,7 +759,7 @@ func (i GetEmailDomainsFilterArgs) ToGetEmailDomainsFilterOutputWithContext(ctx 
 // GetEmailDomainsFilterArrayInput is an input type that accepts GetEmailDomainsFilterArray and GetEmailDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsFilterArrayInput` via:
 //
-//          GetEmailDomainsFilterArray{ GetEmailDomainsFilterArgs{...} }
+//	GetEmailDomainsFilterArray{ GetEmailDomainsFilterArgs{...} }
 type GetEmailDomainsFilterArrayInput interface {
 	pulumi.Input
 
@@ -837,7 +837,7 @@ type GetSendersFilter struct {
 // GetSendersFilterInput is an input type that accepts GetSendersFilterArgs and GetSendersFilterOutput values.
 // You can construct a concrete instance of `GetSendersFilterInput` via:
 //
-//          GetSendersFilterArgs{...}
+//	GetSendersFilterArgs{...}
 type GetSendersFilterInput interface {
 	pulumi.Input
 
@@ -866,7 +866,7 @@ func (i GetSendersFilterArgs) ToGetSendersFilterOutputWithContext(ctx context.Co
 // GetSendersFilterArrayInput is an input type that accepts GetSendersFilterArray and GetSendersFilterArrayOutput values.
 // You can construct a concrete instance of `GetSendersFilterArrayInput` via:
 //
-//          GetSendersFilterArray{ GetSendersFilterArgs{...} }
+//	GetSendersFilterArray{ GetSendersFilterArgs{...} }
 type GetSendersFilterArrayInput interface {
 	pulumi.Input
 
@@ -958,7 +958,7 @@ type GetSendersSender struct {
 // GetSendersSenderInput is an input type that accepts GetSendersSenderArgs and GetSendersSenderOutput values.
 // You can construct a concrete instance of `GetSendersSenderInput` via:
 //
-//          GetSendersSenderArgs{...}
+//	GetSendersSenderArgs{...}
 type GetSendersSenderInput interface {
 	pulumi.Input
 
@@ -1002,7 +1002,7 @@ func (i GetSendersSenderArgs) ToGetSendersSenderOutputWithContext(ctx context.Co
 // GetSendersSenderArrayInput is an input type that accepts GetSendersSenderArray and GetSendersSenderArrayOutput values.
 // You can construct a concrete instance of `GetSendersSenderArrayInput` via:
 //
-//          GetSendersSenderArray{ GetSendersSenderArgs{...} }
+//	GetSendersSenderArray{ GetSendersSenderArgs{...} }
 type GetSendersSenderArrayInput interface {
 	pulumi.Input
 
@@ -1112,7 +1112,7 @@ type GetSuppressionsFilter struct {
 // GetSuppressionsFilterInput is an input type that accepts GetSuppressionsFilterArgs and GetSuppressionsFilterOutput values.
 // You can construct a concrete instance of `GetSuppressionsFilterInput` via:
 //
-//          GetSuppressionsFilterArgs{...}
+//	GetSuppressionsFilterArgs{...}
 type GetSuppressionsFilterInput interface {
 	pulumi.Input
 
@@ -1141,7 +1141,7 @@ func (i GetSuppressionsFilterArgs) ToGetSuppressionsFilterOutputWithContext(ctx 
 // GetSuppressionsFilterArrayInput is an input type that accepts GetSuppressionsFilterArray and GetSuppressionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSuppressionsFilterArrayInput` via:
 //
-//          GetSuppressionsFilterArray{ GetSuppressionsFilterArgs{...} }
+//	GetSuppressionsFilterArray{ GetSuppressionsFilterArgs{...} }
 type GetSuppressionsFilterArrayInput interface {
 	pulumi.Input
 
@@ -1233,7 +1233,7 @@ type GetSuppressionsSuppression struct {
 // GetSuppressionsSuppressionInput is an input type that accepts GetSuppressionsSuppressionArgs and GetSuppressionsSuppressionOutput values.
 // You can construct a concrete instance of `GetSuppressionsSuppressionInput` via:
 //
-//          GetSuppressionsSuppressionArgs{...}
+//	GetSuppressionsSuppressionArgs{...}
 type GetSuppressionsSuppressionInput interface {
 	pulumi.Input
 
@@ -1277,7 +1277,7 @@ func (i GetSuppressionsSuppressionArgs) ToGetSuppressionsSuppressionOutputWithCo
 // GetSuppressionsSuppressionArrayInput is an input type that accepts GetSuppressionsSuppressionArray and GetSuppressionsSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetSuppressionsSuppressionArrayInput` via:
 //
-//          GetSuppressionsSuppressionArray{ GetSuppressionsSuppressionArgs{...} }
+//	GetSuppressionsSuppressionArray{ GetSuppressionsSuppressionArgs{...} }
 type GetSuppressionsSuppressionArrayInput interface {
 	pulumi.Input
 

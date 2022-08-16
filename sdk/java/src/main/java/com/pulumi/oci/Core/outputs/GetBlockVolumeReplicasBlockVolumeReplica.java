@@ -66,6 +66,10 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
      * 
      */
     private final String timeLastSynced;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     * 
+     */
     private final String volumeGroupReplicaId;
 
     @CustomType.Constructor
@@ -173,6 +177,10 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
     public String timeLastSynced() {
         return this.timeLastSynced;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
+     * 
+     */
     public String volumeGroupReplicaId() {
         return this.volumeGroupReplicaId;
     }

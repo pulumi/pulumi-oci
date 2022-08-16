@@ -103,7 +103,7 @@ func (i *SensitiveDataModelsApplyDiscoveryJobResults) ToSensitiveDataModelsApply
 // SensitiveDataModelsApplyDiscoveryJobResultsArrayInput is an input type that accepts SensitiveDataModelsApplyDiscoveryJobResultsArray and SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsApplyDiscoveryJobResultsArrayInput` via:
 //
-//          SensitiveDataModelsApplyDiscoveryJobResultsArray{ SensitiveDataModelsApplyDiscoveryJobResultsArgs{...} }
+//	SensitiveDataModelsApplyDiscoveryJobResultsArray{ SensitiveDataModelsApplyDiscoveryJobResultsArgs{...} }
 type SensitiveDataModelsApplyDiscoveryJobResultsArrayInput interface {
 	pulumi.Input
 
@@ -128,7 +128,7 @@ func (i SensitiveDataModelsApplyDiscoveryJobResultsArray) ToSensitiveDataModelsA
 // SensitiveDataModelsApplyDiscoveryJobResultsMapInput is an input type that accepts SensitiveDataModelsApplyDiscoveryJobResultsMap and SensitiveDataModelsApplyDiscoveryJobResultsMapOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsApplyDiscoveryJobResultsMapInput` via:
 //
-//          SensitiveDataModelsApplyDiscoveryJobResultsMap{ "key": SensitiveDataModelsApplyDiscoveryJobResultsArgs{...} }
+//	SensitiveDataModelsApplyDiscoveryJobResultsMap{ "key": SensitiveDataModelsApplyDiscoveryJobResultsArgs{...} }
 type SensitiveDataModelsApplyDiscoveryJobResultsMapInput interface {
 	pulumi.Input
 

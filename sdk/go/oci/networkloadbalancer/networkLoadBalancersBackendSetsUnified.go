@@ -21,48 +21,51 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := NetworkLoadBalancer.NewNetworkLoadBalancersBackendSetsUnified(ctx, "testNetworkLoadBalancersBackendSetsUnified", &NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnifiedArgs{
-// 			HealthChecker: &networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{
-// 				Protocol:          pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_protocol),
-// 				IntervalInMillis:  pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_interval_in_millis),
-// 				Port:              pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_port),
-// 				RequestData:       pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_request_data),
-// 				ResponseBodyRegex: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_response_body_regex),
-// 				ResponseData:      pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_response_data),
-// 				Retries:           pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_retries),
-// 				ReturnCode:        pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_return_code),
-// 				TimeoutInMillis:   pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis),
-// 				UrlPath:           pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_url_path),
-// 			},
-// 			NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-// 			Policy:                pulumi.Any(_var.Network_load_balancers_backend_sets_unified_policy),
-// 			Backends: networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedBackendArray{
-// 				&networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedBackendArgs{
-// 					Port:      pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_port),
-// 					IpAddress: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_ip_address),
-// 					IsBackup:  pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_is_backup),
-// 					IsDrain:   pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_is_drain),
-// 					IsOffline: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_is_offline),
-// 					Name:      pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_name),
-// 					TargetId:  pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-// 					Weight:    pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_weight),
-// 				},
-// 			},
-// 			IpVersion:        pulumi.Any(_var.Network_load_balancers_backend_sets_unified_ip_version),
-// 			IsPreserveSource: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_is_preserve_source),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := NetworkLoadBalancer.NewNetworkLoadBalancersBackendSetsUnified(ctx, "testNetworkLoadBalancersBackendSetsUnified", &NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnifiedArgs{
+//				HealthChecker: &networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{
+//					Protocol:          pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_protocol),
+//					IntervalInMillis:  pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_interval_in_millis),
+//					Port:              pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_port),
+//					RequestData:       pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_request_data),
+//					ResponseBodyRegex: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_response_body_regex),
+//					ResponseData:      pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_response_data),
+//					Retries:           pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_retries),
+//					ReturnCode:        pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_return_code),
+//					TimeoutInMillis:   pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis),
+//					UrlPath:           pulumi.Any(_var.Network_load_balancers_backend_sets_unified_health_checker_url_path),
+//				},
+//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
+//				Policy:                pulumi.Any(_var.Network_load_balancers_backend_sets_unified_policy),
+//				Backends: networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedBackendArray{
+//					&networkloadbalancer.NetworkLoadBalancersBackendSetsUnifiedBackendArgs{
+//						Port:      pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_port),
+//						IpAddress: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_ip_address),
+//						IsBackup:  pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_is_backup),
+//						IsDrain:   pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_is_drain),
+//						IsOffline: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_is_offline),
+//						Name:      pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_name),
+//						TargetId:  pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//						Weight:    pulumi.Any(_var.Network_load_balancers_backend_sets_unified_backends_weight),
+//					},
+//				},
+//				IpVersion:        pulumi.Any(_var.Network_load_balancers_backend_sets_unified_ip_version),
+//				IsPreserveSource: pulumi.Any(_var.Network_load_balancers_backend_sets_unified_is_preserve_source),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -70,7 +73,9 @@ import (
 // NetworkLoadBalancersBackendSetsUnified can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+//
+//	$ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
+//
 // ```
 type NetworkLoadBalancersBackendSetsUnified struct {
 	pulumi.CustomResourceState
@@ -227,7 +232,7 @@ func (i *NetworkLoadBalancersBackendSetsUnified) ToNetworkLoadBalancersBackendSe
 // NetworkLoadBalancersBackendSetsUnifiedArrayInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedArray and NetworkLoadBalancersBackendSetsUnifiedArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedArrayInput` via:
 //
-//          NetworkLoadBalancersBackendSetsUnifiedArray{ NetworkLoadBalancersBackendSetsUnifiedArgs{...} }
+//	NetworkLoadBalancersBackendSetsUnifiedArray{ NetworkLoadBalancersBackendSetsUnifiedArgs{...} }
 type NetworkLoadBalancersBackendSetsUnifiedArrayInput interface {
 	pulumi.Input
 
@@ -252,7 +257,7 @@ func (i NetworkLoadBalancersBackendSetsUnifiedArray) ToNetworkLoadBalancersBacke
 // NetworkLoadBalancersBackendSetsUnifiedMapInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedMap and NetworkLoadBalancersBackendSetsUnifiedMapOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedMapInput` via:
 //
-//          NetworkLoadBalancersBackendSetsUnifiedMap{ "key": NetworkLoadBalancersBackendSetsUnifiedArgs{...} }
+//	NetworkLoadBalancersBackendSetsUnifiedMap{ "key": NetworkLoadBalancersBackendSetsUnifiedArgs{...} }
 type NetworkLoadBalancersBackendSetsUnifiedMapInput interface {
 	pulumi.Input
 

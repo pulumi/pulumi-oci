@@ -22,23 +22,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.GetConsoleHistoryData(ctx, &core.GetConsoleHistoryDataArgs{
-// 			ConsoleHistoryId: oci_core_console_history.Test_console_history.Id,
-// 			Length:           pulumi.IntRef(_var.Console_history_content_length),
-// 			Offset:           pulumi.IntRef(_var.Console_history_content_offset),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.GetConsoleHistoryData(ctx, &core.GetConsoleHistoryDataArgs{
+//				ConsoleHistoryId: oci_core_console_history.Test_console_history.Id,
+//				Length:           pulumi.IntRef(_var.Console_history_content_length),
+//				Offset:           pulumi.IntRef(_var.Console_history_content_offset),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetConsoleHistoryData(ctx *pulumi.Context, args *GetConsoleHistoryDataArgs, opts ...pulumi.InvokeOption) (*GetConsoleHistoryDataResult, error) {
 	var rv GetConsoleHistoryDataResult

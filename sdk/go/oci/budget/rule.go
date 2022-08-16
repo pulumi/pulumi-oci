@@ -21,34 +21,37 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Budget"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Budget"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Budget.NewRule(ctx, "testAlertRule", &Budget.RuleArgs{
-// 			BudgetId:      pulumi.Any(oci_budget_budget.Test_budget.Id),
-// 			Threshold:     pulumi.Any(_var.Alert_rule_threshold),
-// 			ThresholdType: pulumi.Any(_var.Alert_rule_threshold_type),
-// 			Type:          pulumi.Any(_var.Alert_rule_type),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Alert_rule_description),
-// 			DisplayName: pulumi.Any(_var.Alert_rule_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			Message:    pulumi.Any(_var.Alert_rule_message),
-// 			Recipients: pulumi.Any(_var.Alert_rule_recipients),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Budget.NewRule(ctx, "testAlertRule", &Budget.RuleArgs{
+//				BudgetId:      pulumi.Any(oci_budget_budget.Test_budget.Id),
+//				Threshold:     pulumi.Any(_var.Alert_rule_threshold),
+//				ThresholdType: pulumi.Any(_var.Alert_rule_threshold_type),
+//				Type:          pulumi.Any(_var.Alert_rule_type),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Alert_rule_description),
+//				DisplayName: pulumi.Any(_var.Alert_rule_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				Message:    pulumi.Any(_var.Alert_rule_message),
+//				Recipients: pulumi.Any(_var.Alert_rule_recipients),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -56,7 +59,9 @@ import (
 // AlertRules can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
+//
+//	$ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
+//
 // ```
 type Rule struct {
 	pulumi.CustomResourceState
@@ -270,7 +275,7 @@ func (i *Rule) ToRuleOutputWithContext(ctx context.Context) RuleOutput {
 // RuleArrayInput is an input type that accepts RuleArray and RuleArrayOutput values.
 // You can construct a concrete instance of `RuleArrayInput` via:
 //
-//          RuleArray{ RuleArgs{...} }
+//	RuleArray{ RuleArgs{...} }
 type RuleArrayInput interface {
 	pulumi.Input
 
@@ -295,7 +300,7 @@ func (i RuleArray) ToRuleArrayOutputWithContext(ctx context.Context) RuleArrayOu
 // RuleMapInput is an input type that accepts RuleMap and RuleMapOutput values.
 // You can construct a concrete instance of `RuleMapInput` via:
 //
-//          RuleMap{ "key": RuleArgs{...} }
+//	RuleMap{ "key": RuleArgs{...} }
 type RuleMapInput interface {
 	pulumi.Input
 

@@ -20,7 +20,9 @@ import (
 // OperatorControls can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
+//
+//	$ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
+//
 // ```
 type OperatorControl struct {
 	pulumi.CustomResourceState
@@ -269,7 +271,7 @@ func (i *OperatorControl) ToOperatorControlOutputWithContext(ctx context.Context
 // OperatorControlArrayInput is an input type that accepts OperatorControlArray and OperatorControlArrayOutput values.
 // You can construct a concrete instance of `OperatorControlArrayInput` via:
 //
-//          OperatorControlArray{ OperatorControlArgs{...} }
+//	OperatorControlArray{ OperatorControlArgs{...} }
 type OperatorControlArrayInput interface {
 	pulumi.Input
 
@@ -294,7 +296,7 @@ func (i OperatorControlArray) ToOperatorControlArrayOutputWithContext(ctx contex
 // OperatorControlMapInput is an input type that accepts OperatorControlMap and OperatorControlMapOutput values.
 // You can construct a concrete instance of `OperatorControlMapInput` via:
 //
-//          OperatorControlMap{ "key": OperatorControlArgs{...} }
+//	OperatorControlMap{ "key": OperatorControlArgs{...} }
 type OperatorControlMapInput interface {
 	pulumi.Input
 

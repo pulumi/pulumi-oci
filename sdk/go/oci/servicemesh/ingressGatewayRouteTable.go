@@ -21,51 +21,54 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ServiceMesh"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ServiceMesh.NewIngressGatewayRouteTable(ctx, "testIngressGatewayRouteTable", &ServiceMesh.IngressGatewayRouteTableArgs{
-// 			CompartmentId:    pulumi.Any(_var.Compartment_id),
-// 			IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-// 			RouteRules: servicemesh.IngressGatewayRouteTableRouteRuleArray{
-// 				&servicemesh.IngressGatewayRouteTableRouteRuleArgs{
-// 					Destinations: servicemesh.IngressGatewayRouteTableRouteRuleDestinationArray{
-// 						&servicemesh.IngressGatewayRouteTableRouteRuleDestinationArgs{
-// 							VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-// 							Port:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_destinations_port),
-// 							Weight:           pulumi.Any(_var.Ingress_gateway_route_table_route_rules_destinations_weight),
-// 						},
-// 					},
-// 					Type: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_type),
-// 					IngressGatewayHost: &servicemesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{
-// 						Name: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_name),
-// 						Port: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_port),
-// 					},
-// 					IsGrpc:               pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_grpc),
-// 					IsHostRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_host_rewrite_enabled),
-// 					IsPathRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled),
-// 					Path:                 pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path),
-// 					PathType:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path_type),
-// 				},
-// 			},
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Ingress_gateway_route_table_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			Priority: pulumi.Any(_var.Ingress_gateway_route_table_priority),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ServiceMesh.NewIngressGatewayRouteTable(ctx, "testIngressGatewayRouteTable", &ServiceMesh.IngressGatewayRouteTableArgs{
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//				IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
+//				RouteRules: servicemesh.IngressGatewayRouteTableRouteRuleArray{
+//					&servicemesh.IngressGatewayRouteTableRouteRuleArgs{
+//						Destinations: servicemesh.IngressGatewayRouteTableRouteRuleDestinationArray{
+//							&servicemesh.IngressGatewayRouteTableRouteRuleDestinationArgs{
+//								VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//								Port:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_destinations_port),
+//								Weight:           pulumi.Any(_var.Ingress_gateway_route_table_route_rules_destinations_weight),
+//							},
+//						},
+//						Type: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_type),
+//						IngressGatewayHost: &servicemesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{
+//							Name: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_name),
+//							Port: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_port),
+//						},
+//						IsGrpc:               pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_grpc),
+//						IsHostRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_host_rewrite_enabled),
+//						IsPathRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled),
+//						Path:                 pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path),
+//						PathType:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path_type),
+//					},
+//				},
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Ingress_gateway_route_table_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				Priority: pulumi.Any(_var.Ingress_gateway_route_table_priority),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -73,7 +76,9 @@ import (
 // IngressGatewayRouteTables can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
+//
+//	$ pulumi import oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable test_ingress_gateway_route_table "id"
+//
 // ```
 type IngressGatewayRouteTable struct {
 	pulumi.CustomResourceState
@@ -270,7 +275,7 @@ func (i *IngressGatewayRouteTable) ToIngressGatewayRouteTableOutputWithContext(c
 // IngressGatewayRouteTableArrayInput is an input type that accepts IngressGatewayRouteTableArray and IngressGatewayRouteTableArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableArrayInput` via:
 //
-//          IngressGatewayRouteTableArray{ IngressGatewayRouteTableArgs{...} }
+//	IngressGatewayRouteTableArray{ IngressGatewayRouteTableArgs{...} }
 type IngressGatewayRouteTableArrayInput interface {
 	pulumi.Input
 
@@ -295,7 +300,7 @@ func (i IngressGatewayRouteTableArray) ToIngressGatewayRouteTableArrayOutputWith
 // IngressGatewayRouteTableMapInput is an input type that accepts IngressGatewayRouteTableMap and IngressGatewayRouteTableMapOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableMapInput` via:
 //
-//          IngressGatewayRouteTableMap{ "key": IngressGatewayRouteTableArgs{...} }
+//	IngressGatewayRouteTableMap{ "key": IngressGatewayRouteTableArgs{...} }
 type IngressGatewayRouteTableMapInput interface {
 	pulumi.Input
 

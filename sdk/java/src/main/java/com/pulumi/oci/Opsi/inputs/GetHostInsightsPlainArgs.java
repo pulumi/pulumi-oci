@@ -64,6 +64,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
     /**
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="exadataInsightId")
@@ -71,6 +72,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<String> exadataInsightId() {
@@ -86,6 +88,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
     /**
      * Filter by one or more host types. Possible value is EXTERNAL-HOST.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="hostTypes")
@@ -93,6 +96,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
     /**
      * @return Filter by one or more host types. Possible value is EXTERNAL-HOST.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<List<String>> hostTypes() {
@@ -211,6 +215,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
         /**
          * @param exadataInsightId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -231,6 +236,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
         /**
          * @param hostTypes Filter by one or more host types. Possible value is EXTERNAL-HOST.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -242,6 +248,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
 
         /**
          * @param hostTypes Filter by one or more host types. Possible value is EXTERNAL-HOST.
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 

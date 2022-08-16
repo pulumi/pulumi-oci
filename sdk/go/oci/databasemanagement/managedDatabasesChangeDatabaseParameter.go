@@ -16,11 +16,11 @@ import (
 // Changes database parameter values. There are two kinds of database
 // parameters:
 //
-// - Dynamic parameters: They can be changed for the current Oracle
-//   Database instance. The changes take effect immediately.
-// - Static parameters: They cannot be changed for the current instance.
-//   You must change these parameters and then restart the database before
-//   changes take effect.
+//   - Dynamic parameters: They can be changed for the current Oracle
+//     Database instance. The changes take effect immediately.
+//   - Static parameters: They cannot be changed for the current instance.
+//     You must change these parameters and then restart the database before
+//     changes take effect.
 //
 // **Note:** If the instance is started using a text initialization
 // parameter file, the parameter changes are applicable only for the
@@ -33,35 +33,38 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "testManagedDatabasesChangeDatabaseParameter", &DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs{
-// 			Credentials: &databasemanagement.ManagedDatabasesChangeDatabaseParameterCredentialsArgs{
-// 				Password: pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_password),
-// 				Role:     pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_role),
-// 				SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-// 				UserName: pulumi.Any(oci_identity_user.Test_user.Name),
-// 			},
-// 			ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
-// 			Parameters: databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArray{
-// 				&databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArgs{
-// 					Name:          pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_name),
-// 					Value:         pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_value),
-// 					UpdateComment: pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_update_comment),
-// 				},
-// 			},
-// 			Scope: pulumi.Any(_var.Managed_databases_change_database_parameter_scope),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "testManagedDatabasesChangeDatabaseParameter", &DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs{
+//				Credentials: &databasemanagement.ManagedDatabasesChangeDatabaseParameterCredentialsArgs{
+//					Password: pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_password),
+//					Role:     pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_role),
+//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//				},
+//				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
+//				Parameters: databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArray{
+//					&databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArgs{
+//						Name:          pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_name),
+//						Value:         pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_value),
+//						UpdateComment: pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_update_comment),
+//					},
+//				},
+//				Scope: pulumi.Any(_var.Managed_databases_change_database_parameter_scope),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -195,7 +198,7 @@ func (i *ManagedDatabasesChangeDatabaseParameter) ToManagedDatabasesChangeDataba
 // ManagedDatabasesChangeDatabaseParameterArrayInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterArray and ManagedDatabasesChangeDatabaseParameterArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterArrayInput` via:
 //
-//          ManagedDatabasesChangeDatabaseParameterArray{ ManagedDatabasesChangeDatabaseParameterArgs{...} }
+//	ManagedDatabasesChangeDatabaseParameterArray{ ManagedDatabasesChangeDatabaseParameterArgs{...} }
 type ManagedDatabasesChangeDatabaseParameterArrayInput interface {
 	pulumi.Input
 
@@ -220,7 +223,7 @@ func (i ManagedDatabasesChangeDatabaseParameterArray) ToManagedDatabasesChangeDa
 // ManagedDatabasesChangeDatabaseParameterMapInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterMap and ManagedDatabasesChangeDatabaseParameterMapOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterMapInput` via:
 //
-//          ManagedDatabasesChangeDatabaseParameterMap{ "key": ManagedDatabasesChangeDatabaseParameterArgs{...} }
+//	ManagedDatabasesChangeDatabaseParameterMap{ "key": ManagedDatabasesChangeDatabaseParameterArgs{...} }
 type ManagedDatabasesChangeDatabaseParameterMapInput interface {
 	pulumi.Input
 

@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DevOps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DevOps.GetRepositoryAuthor(ctx, &devops.GetRepositoryAuthorArgs{
-// 			RepositoryId: oci_devops_repository.Test_repository.Id,
-// 			RefName:      pulumi.StringRef(_var.Repository_author_ref_name),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DevOps.GetRepositoryAuthor(ctx, &devops.GetRepositoryAuthorArgs{
+//				RepositoryId: oci_devops_repository.Test_repository.Id,
+//				RefName:      pulumi.StringRef(_var.Repository_author_ref_name),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRepositoryAuthor(ctx *pulumi.Context, args *GetRepositoryAuthorArgs, opts ...pulumi.InvokeOption) (*GetRepositoryAuthorResult, error) {
 	var rv GetRepositoryAuthorResult

@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetVmClusterPatchHistoryEntries(ctx, &database.GetVmClusterPatchHistoryEntriesArgs{
-// 			VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetVmClusterPatchHistoryEntries(ctx, &database.GetVmClusterPatchHistoryEntriesArgs{
+//				VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVmClusterPatchHistoryEntries(ctx *pulumi.Context, args *GetVmClusterPatchHistoryEntriesArgs, opts ...pulumi.InvokeOption) (*GetVmClusterPatchHistoryEntriesResult, error) {
 	var rv GetVmClusterPatchHistoryEntriesResult

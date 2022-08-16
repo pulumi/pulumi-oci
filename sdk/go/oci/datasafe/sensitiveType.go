@@ -23,37 +23,40 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataSafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DataSafe.NewSensitiveType(ctx, "testSensitiveType", &DataSafe.SensitiveTypeArgs{
-// 			CompartmentId:          pulumi.Any(_var.Compartment_id),
-// 			EntityType:             pulumi.Any(_var.Sensitive_type_entity_type),
-// 			CommentPattern:         pulumi.Any(_var.Sensitive_type_comment_pattern),
-// 			DataPattern:            pulumi.Any(_var.Sensitive_type_data_pattern),
-// 			DefaultMaskingFormatId: pulumi.Any(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			Description: pulumi.Any(_var.Sensitive_type_description),
-// 			DisplayName: pulumi.Any(_var.Sensitive_type_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			NamePattern:      pulumi.Any(_var.Sensitive_type_name_pattern),
-// 			ParentCategoryId: pulumi.Any(oci_marketplace_category.Test_category.Id),
-// 			SearchType:       pulumi.Any(_var.Sensitive_type_search_type),
-// 			ShortName:        pulumi.Any(_var.Sensitive_type_short_name),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataSafe.NewSensitiveType(ctx, "testSensitiveType", &DataSafe.SensitiveTypeArgs{
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				EntityType:             pulumi.Any(_var.Sensitive_type_entity_type),
+//				CommentPattern:         pulumi.Any(_var.Sensitive_type_comment_pattern),
+//				DataPattern:            pulumi.Any(_var.Sensitive_type_data_pattern),
+//				DefaultMaskingFormatId: pulumi.Any(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				Description: pulumi.Any(_var.Sensitive_type_description),
+//				DisplayName: pulumi.Any(_var.Sensitive_type_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				NamePattern:      pulumi.Any(_var.Sensitive_type_name_pattern),
+//				ParentCategoryId: pulumi.Any(oci_marketplace_category.Test_category.Id),
+//				SearchType:       pulumi.Any(_var.Sensitive_type_search_type),
+//				ShortName:        pulumi.Any(_var.Sensitive_type_short_name),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -61,7 +64,9 @@ import (
 // SensitiveTypes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
+//
+//	$ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
+//
 // ```
 type SensitiveType struct {
 	pulumi.CustomResourceState
@@ -305,7 +310,7 @@ func (i *SensitiveType) ToSensitiveTypeOutputWithContext(ctx context.Context) Se
 // SensitiveTypeArrayInput is an input type that accepts SensitiveTypeArray and SensitiveTypeArrayOutput values.
 // You can construct a concrete instance of `SensitiveTypeArrayInput` via:
 //
-//          SensitiveTypeArray{ SensitiveTypeArgs{...} }
+//	SensitiveTypeArray{ SensitiveTypeArgs{...} }
 type SensitiveTypeArrayInput interface {
 	pulumi.Input
 
@@ -330,7 +335,7 @@ func (i SensitiveTypeArray) ToSensitiveTypeArrayOutputWithContext(ctx context.Co
 // SensitiveTypeMapInput is an input type that accepts SensitiveTypeMap and SensitiveTypeMapOutput values.
 // You can construct a concrete instance of `SensitiveTypeMapInput` via:
 //
-//          SensitiveTypeMap{ "key": SensitiveTypeArgs{...} }
+//	SensitiveTypeMap{ "key": SensitiveTypeArgs{...} }
 type SensitiveTypeMapInput interface {
 	pulumi.Input
 

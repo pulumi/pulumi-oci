@@ -20,7 +20,9 @@ import (
 // Subscriptions can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
+//
+//	$ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
+//
 // ```
 type Subscription struct {
 	pulumi.CustomResourceState
@@ -271,7 +273,7 @@ func (i *Subscription) ToSubscriptionOutputWithContext(ctx context.Context) Subs
 // SubscriptionArrayInput is an input type that accepts SubscriptionArray and SubscriptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionArrayInput` via:
 //
-//          SubscriptionArray{ SubscriptionArgs{...} }
+//	SubscriptionArray{ SubscriptionArgs{...} }
 type SubscriptionArrayInput interface {
 	pulumi.Input
 
@@ -296,7 +298,7 @@ func (i SubscriptionArray) ToSubscriptionArrayOutputWithContext(ctx context.Cont
 // SubscriptionMapInput is an input type that accepts SubscriptionMap and SubscriptionMapOutput values.
 // You can construct a concrete instance of `SubscriptionMapInput` via:
 //
-//          SubscriptionMap{ "key": SubscriptionArgs{...} }
+//	SubscriptionMap{ "key": SubscriptionArgs{...} }
 type SubscriptionMapInput interface {
 	pulumi.Input
 

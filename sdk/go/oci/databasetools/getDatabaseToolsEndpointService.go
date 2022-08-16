@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseTools.GetDatabaseToolsEndpointService(ctx, &databasetools.GetDatabaseToolsEndpointServiceArgs{
-// 			DatabaseToolsEndpointServiceId: oci_database_tools_database_tools_endpoint_service.Test_database_tools_endpoint_service.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseTools.GetDatabaseToolsEndpointService(ctx, &databasetools.GetDatabaseToolsEndpointServiceArgs{
+//				DatabaseToolsEndpointServiceId: oci_database_tools_database_tools_endpoint_service.Test_database_tools_endpoint_service.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDatabaseToolsEndpointService(ctx *pulumi.Context, args *GetDatabaseToolsEndpointServiceArgs, opts ...pulumi.InvokeOption) (*GetDatabaseToolsEndpointServiceResult, error) {
 	var rv GetDatabaseToolsEndpointServiceResult

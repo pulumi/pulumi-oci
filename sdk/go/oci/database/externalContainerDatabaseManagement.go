@@ -140,7 +140,7 @@ func (i *ExternalContainerDatabaseManagement) ToExternalContainerDatabaseManagem
 // ExternalContainerDatabaseManagementArrayInput is an input type that accepts ExternalContainerDatabaseManagementArray and ExternalContainerDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseManagementArrayInput` via:
 //
-//          ExternalContainerDatabaseManagementArray{ ExternalContainerDatabaseManagementArgs{...} }
+//	ExternalContainerDatabaseManagementArray{ ExternalContainerDatabaseManagementArgs{...} }
 type ExternalContainerDatabaseManagementArrayInput interface {
 	pulumi.Input
 
@@ -165,7 +165,7 @@ func (i ExternalContainerDatabaseManagementArray) ToExternalContainerDatabaseMan
 // ExternalContainerDatabaseManagementMapInput is an input type that accepts ExternalContainerDatabaseManagementMap and ExternalContainerDatabaseManagementMapOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseManagementMapInput` via:
 //
-//          ExternalContainerDatabaseManagementMap{ "key": ExternalContainerDatabaseManagementArgs{...} }
+//	ExternalContainerDatabaseManagementMap{ "key": ExternalContainerDatabaseManagementArgs{...} }
 type ExternalContainerDatabaseManagementMapInput interface {
 	pulumi.Input
 

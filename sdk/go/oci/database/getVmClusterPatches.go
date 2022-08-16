@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetVmClusterPatches(ctx, &database.GetVmClusterPatchesArgs{
-// 			VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetVmClusterPatches(ctx, &database.GetVmClusterPatchesArgs{
+//				VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVmClusterPatches(ctx *pulumi.Context, args *GetVmClusterPatchesArgs, opts ...pulumi.InvokeOption) (*GetVmClusterPatchesResult, error) {
 	var rv GetVmClusterPatchesResult

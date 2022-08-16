@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases(ctx, &databasemanagement.GetDbManagementPrivateEndpointAssociatedDatabasesArgs{
-// 			CompartmentId:                 _var.Compartment_id,
-// 			DbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases(ctx, &databasemanagement.GetDbManagementPrivateEndpointAssociatedDatabasesArgs{
+//				CompartmentId:                 _var.Compartment_id,
+//				DbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetDbManagementPrivateEndpointAssociatedDatabases(ctx *pulumi.Context, args *GetDbManagementPrivateEndpointAssociatedDatabasesArgs, opts ...pulumi.InvokeOption) (*GetDbManagementPrivateEndpointAssociatedDatabasesResult, error) {
 	var rv GetDbManagementPrivateEndpointAssociatedDatabasesResult

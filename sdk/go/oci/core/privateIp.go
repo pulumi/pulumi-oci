@@ -22,31 +22,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Core.NewPrivateIp(ctx, "testPrivateIp", &Core.PrivateIpArgs{
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Private_ip_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
-// 			HostnameLabel: pulumi.Any(_var.Private_ip_hostname_label),
-// 			IpAddress:     pulumi.Any(_var.Private_ip_ip_address),
-// 			VlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
-// 			VnicId:        pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewPrivateIp(ctx, "testPrivateIp", &Core.PrivateIpArgs{
+//				DefinedTags: pulumi.AnyMap{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName: pulumi.Any(_var.Private_ip_display_name),
+//				FreeformTags: pulumi.AnyMap{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				HostnameLabel: pulumi.Any(_var.Private_ip_hostname_label),
+//				IpAddress:     pulumi.Any(_var.Private_ip_ip_address),
+//				VlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//				VnicId:        pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -54,7 +57,9 @@ import (
 // PrivateIps can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
+//
+//	$ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
+//
 // ```
 type PrivateIp struct {
 	pulumi.CustomResourceState
@@ -238,7 +243,7 @@ func (i *PrivateIp) ToPrivateIpOutputWithContext(ctx context.Context) PrivateIpO
 // PrivateIpArrayInput is an input type that accepts PrivateIpArray and PrivateIpArrayOutput values.
 // You can construct a concrete instance of `PrivateIpArrayInput` via:
 //
-//          PrivateIpArray{ PrivateIpArgs{...} }
+//	PrivateIpArray{ PrivateIpArgs{...} }
 type PrivateIpArrayInput interface {
 	pulumi.Input
 
@@ -263,7 +268,7 @@ func (i PrivateIpArray) ToPrivateIpArrayOutputWithContext(ctx context.Context) P
 // PrivateIpMapInput is an input type that accepts PrivateIpMap and PrivateIpMapOutput values.
 // You can construct a concrete instance of `PrivateIpMapInput` via:
 //
-//          PrivateIpMap{ "key": PrivateIpArgs{...} }
+//	PrivateIpMap{ "key": PrivateIpArgs{...} }
 type PrivateIpMapInput interface {
 	pulumi.Input
 

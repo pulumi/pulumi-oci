@@ -22,25 +22,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Identity.GetUsers(ctx, &identity.GetUsersArgs{
-// 			CompartmentId:      _var.Tenancy_ocid,
-// 			ExternalIdentifier: pulumi.StringRef(_var.User_external_identifier),
-// 			IdentityProviderId: pulumi.StringRef(oci_identity_identity_provider.Test_identity_provider.Id),
-// 			Name:               pulumi.StringRef(_var.User_name),
-// 			State:              pulumi.StringRef(_var.User_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.GetUsers(ctx, &identity.GetUsersArgs{
+//				CompartmentId:      _var.Tenancy_ocid,
+//				ExternalIdentifier: pulumi.StringRef(_var.User_external_identifier),
+//				IdentityProviderId: pulumi.StringRef(oci_identity_identity_provider.Test_identity_provider.Id),
+//				Name:               pulumi.StringRef(_var.User_name),
+//				State:              pulumi.StringRef(_var.User_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUsers(ctx *pulumi.Context, args *GetUsersArgs, opts ...pulumi.InvokeOption) (*GetUsersResult, error) {
 	var rv GetUsersResult

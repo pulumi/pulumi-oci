@@ -297,6 +297,7 @@ class _OperatorControlAssignmentState:
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  operator_control_id: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
                  remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
@@ -324,6 +325,7 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
+        :param pulumi.Input[str] lifecycle_details: More in detail about the lifeCycleState.
         :param pulumi.Input[str] operator_control_id: The OCID of the operator control that is being assigned to a target resource.
         :param pulumi.Input[str] remote_syslog_server_address: (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         :param pulumi.Input[str] remote_syslog_server_ca_cert: (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
@@ -361,6 +363,8 @@ class _OperatorControlAssignmentState:
             pulumi.set(__self__, "is_enforced_always", is_enforced_always)
         if is_log_forwarded is not None:
             pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if operator_control_id is not None:
             pulumi.set(__self__, "operator_control_id", operator_control_id)
         if remote_syslog_server_address is not None:
@@ -521,6 +525,18 @@ class _OperatorControlAssignmentState:
     @is_log_forwarded.setter
     def is_log_forwarded(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_log_forwarded", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        More in detail about the lifeCycleState.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter(name="operatorControlId")
@@ -897,6 +913,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             __props__.__dict__["detachment_description"] = None
             __props__.__dict__["error_code"] = None
             __props__.__dict__["error_message"] = None
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_of_assignment"] = None
             __props__.__dict__["time_of_deletion"] = None
@@ -922,6 +939,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
             is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
             is_enforced_always: Optional[pulumi.Input[bool]] = None,
             is_log_forwarded: Optional[pulumi.Input[bool]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             operator_control_id: Optional[pulumi.Input[str]] = None,
             remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
             remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
@@ -954,6 +972,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
+        :param pulumi.Input[str] lifecycle_details: More in detail about the lifeCycleState.
         :param pulumi.Input[str] operator_control_id: The OCID of the operator control that is being assigned to a target resource.
         :param pulumi.Input[str] remote_syslog_server_address: (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         :param pulumi.Input[str] remote_syslog_server_ca_cert: (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
@@ -984,6 +1003,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         __props__.__dict__["is_auto_approve_during_maintenance"] = is_auto_approve_during_maintenance
         __props__.__dict__["is_enforced_always"] = is_enforced_always
         __props__.__dict__["is_log_forwarded"] = is_log_forwarded
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["operator_control_id"] = operator_control_id
         __props__.__dict__["remote_syslog_server_address"] = remote_syslog_server_address
         __props__.__dict__["remote_syslog_server_ca_cert"] = remote_syslog_server_ca_cert
@@ -1087,6 +1107,14 @@ class OperatorControlAssignment(pulumi.CustomResource):
         (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         """
         return pulumi.get(self, "is_log_forwarded")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        More in detail about the lifeCycleState.
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="operatorControlId")

@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ApmTraces"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := ApmTraces.GetTraceSnapshotData(ctx, &apmtraces.GetTraceSnapshotDataArgs{
-// 			ApmDomainId:  oci_apm_apm_domain.Test_apm_domain.Id,
-// 			TraceKey:     _var.Trace_snapshot_data_trace_key,
-// 			IsSummarized: pulumi.BoolRef(_var.Trace_snapshot_data_is_summarized),
-// 			SnapshotTime: pulumi.StringRef(_var.Trace_snapshot_data_snapshot_time),
-// 			ThreadId:     pulumi.StringRef(oci_apm_traces_thread.Test_thread.Id),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ApmTraces.GetTraceSnapshotData(ctx, &apmtraces.GetTraceSnapshotDataArgs{
+//				ApmDomainId:  oci_apm_apm_domain.Test_apm_domain.Id,
+//				TraceKey:     _var.Trace_snapshot_data_trace_key,
+//				IsSummarized: pulumi.BoolRef(_var.Trace_snapshot_data_is_summarized),
+//				SnapshotTime: pulumi.StringRef(_var.Trace_snapshot_data_snapshot_time),
+//				ThreadId:     pulumi.StringRef(oci_apm_traces_thread.Test_thread.Id),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetTraceSnapshotData(ctx *pulumi.Context, args *GetTraceSnapshotDataArgs, opts ...pulumi.InvokeOption) (*GetTraceSnapshotDataResult, error) {
 	var rv GetTraceSnapshotDataResult

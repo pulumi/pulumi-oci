@@ -21,22 +21,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LicenseManager"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LicenseManager.NewConfiguration(ctx, "testConfiguration", &LicenseManager.ConfigurationArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			EmailIds:      pulumi.Any(_var.Configuration_email_ids),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LicenseManager.NewConfiguration(ctx, "testConfiguration", &LicenseManager.ConfigurationArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				EmailIds:      pulumi.Any(_var.Configuration_email_ids),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -44,7 +47,9 @@ import (
 // Configurations can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
+//
+//	$ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
+//
 // ```
 type Configuration struct {
 	pulumi.CustomResourceState
@@ -160,7 +165,7 @@ func (i *Configuration) ToConfigurationOutputWithContext(ctx context.Context) Co
 // ConfigurationArrayInput is an input type that accepts ConfigurationArray and ConfigurationArrayOutput values.
 // You can construct a concrete instance of `ConfigurationArrayInput` via:
 //
-//          ConfigurationArray{ ConfigurationArgs{...} }
+//	ConfigurationArray{ ConfigurationArgs{...} }
 type ConfigurationArrayInput interface {
 	pulumi.Input
 
@@ -185,7 +190,7 @@ func (i ConfigurationArray) ToConfigurationArrayOutputWithContext(ctx context.Co
 // ConfigurationMapInput is an input type that accepts ConfigurationMap and ConfigurationMapOutput values.
 // You can construct a concrete instance of `ConfigurationMapInput` via:
 //
-//          ConfigurationMap{ "key": ConfigurationArgs{...} }
+//	ConfigurationMap{ "key": ConfigurationArgs{...} }
 type ConfigurationMapInput interface {
 	pulumi.Input
 

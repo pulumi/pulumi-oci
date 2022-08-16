@@ -20,30 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Database.GetAutonomousDatabases(ctx, &database.GetAutonomousDatabasesArgs{
-// 			CompartmentId:                 _var.Compartment_id,
-// 			AutonomousContainerDatabaseId: pulumi.StringRef(oci_database_autonomous_container_database.Test_autonomous_container_database.Id),
-// 			DbVersion:                     pulumi.StringRef(_var.Autonomous_database_db_version),
-// 			DbWorkload:                    pulumi.StringRef(_var.Autonomous_database_db_workload),
-// 			DisplayName:                   pulumi.StringRef(_var.Autonomous_database_display_name),
-// 			InfrastructureType:            pulumi.StringRef(_var.Autonomous_database_infrastructure_type),
-// 			IsDataGuardEnabled:            pulumi.BoolRef(_var.Autonomous_database_is_data_guard_enabled),
-// 			IsFreeTier:                    pulumi.BoolRef(_var.Autonomous_database_is_free_tier),
-// 			IsRefreshableClone:            pulumi.BoolRef(_var.Autonomous_database_is_refreshable_clone),
-// 			State:                         pulumi.StringRef(_var.Autonomous_database_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDatabases(ctx, &database.GetAutonomousDatabasesArgs{
+//				CompartmentId:                 _var.Compartment_id,
+//				AutonomousContainerDatabaseId: pulumi.StringRef(oci_database_autonomous_container_database.Test_autonomous_container_database.Id),
+//				DbVersion:                     pulumi.StringRef(_var.Autonomous_database_db_version),
+//				DbWorkload:                    pulumi.StringRef(_var.Autonomous_database_db_workload),
+//				DisplayName:                   pulumi.StringRef(_var.Autonomous_database_display_name),
+//				InfrastructureType:            pulumi.StringRef(_var.Autonomous_database_infrastructure_type),
+//				IsDataGuardEnabled:            pulumi.BoolRef(_var.Autonomous_database_is_data_guard_enabled),
+//				IsFreeTier:                    pulumi.BoolRef(_var.Autonomous_database_is_free_tier),
+//				IsRefreshableClone:            pulumi.BoolRef(_var.Autonomous_database_is_refreshable_clone),
+//				State:                         pulumi.StringRef(_var.Autonomous_database_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAutonomousDatabases(ctx *pulumi.Context, args *GetAutonomousDatabasesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabasesResult, error) {
 	var rv GetAutonomousDatabasesResult

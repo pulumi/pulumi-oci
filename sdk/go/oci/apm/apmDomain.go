@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Apm"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Apm"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := Apm.NewApmDomain(ctx, "testApmDomain", &Apm.ApmDomainArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Apm_domain_display_name),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Apm_domain_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 			IsFreeTier: pulumi.Any(_var.Apm_domain_is_free_tier),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Apm.NewApmDomain(ctx, "testApmDomain", &Apm.ApmDomainArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Apm_domain_display_name),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Apm_domain_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//				IsFreeTier: pulumi.Any(_var.Apm_domain_is_free_tier),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // ApmDomains can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
+//
+//	$ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
+//
 // ```
 type ApmDomain struct {
 	pulumi.CustomResourceState
@@ -220,7 +225,7 @@ func (i *ApmDomain) ToApmDomainOutputWithContext(ctx context.Context) ApmDomainO
 // ApmDomainArrayInput is an input type that accepts ApmDomainArray and ApmDomainArrayOutput values.
 // You can construct a concrete instance of `ApmDomainArrayInput` via:
 //
-//          ApmDomainArray{ ApmDomainArgs{...} }
+//	ApmDomainArray{ ApmDomainArgs{...} }
 type ApmDomainArrayInput interface {
 	pulumi.Input
 
@@ -245,7 +250,7 @@ func (i ApmDomainArray) ToApmDomainArrayOutputWithContext(ctx context.Context) A
 // ApmDomainMapInput is an input type that accepts ApmDomainMap and ApmDomainMapOutput values.
 // You can construct a concrete instance of `ApmDomainMapInput` via:
 //
-//          ApmDomainMap{ "key": ApmDomainArgs{...} }
+//	ApmDomainMap{ "key": ApmDomainArgs{...} }
 type ApmDomainMapInput interface {
 	pulumi.Input
 

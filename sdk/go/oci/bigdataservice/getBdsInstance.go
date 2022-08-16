@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/BigDataService"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := BigDataService.GetBdsInstance(ctx, &bigdataservice.GetBdsInstanceArgs{
-// 			BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := BigDataService.GetBdsInstance(ctx, &bigdataservice.GetBdsInstanceArgs{
+//				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupBdsInstance(ctx *pulumi.Context, args *LookupBdsInstanceArgs, opts ...pulumi.InvokeOption) (*LookupBdsInstanceResult, error) {
 	var rv LookupBdsInstanceResult

@@ -24,26 +24,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/HealthChecks"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := HealthChecks.NewPingProbe(ctx, "testPingProbe", &HealthChecks.PingProbeArgs{
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			Protocol:          pulumi.Any(_var.Ping_probe_protocol),
-// 			Targets:           pulumi.Any(_var.Ping_probe_targets),
-// 			Port:              pulumi.Any(_var.Ping_probe_port),
-// 			TimeoutInSeconds:  pulumi.Any(_var.Ping_probe_timeout_in_seconds),
-// 			VantagePointNames: pulumi.Any(_var.Ping_probe_vantage_point_names),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := HealthChecks.NewPingProbe(ctx, "testPingProbe", &HealthChecks.PingProbeArgs{
+//				CompartmentId:     pulumi.Any(_var.Compartment_id),
+//				Protocol:          pulumi.Any(_var.Ping_probe_protocol),
+//				Targets:           pulumi.Any(_var.Ping_probe_targets),
+//				Port:              pulumi.Any(_var.Ping_probe_port),
+//				TimeoutInSeconds:  pulumi.Any(_var.Ping_probe_timeout_in_seconds),
+//				VantagePointNames: pulumi.Any(_var.Ping_probe_vantage_point_names),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -51,7 +54,9 @@ import (
 // PingProbes can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
+//
+//	$ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
+//
 // ```
 type PingProbe struct {
 	pulumi.CustomResourceState
@@ -216,7 +221,7 @@ func (i *PingProbe) ToPingProbeOutputWithContext(ctx context.Context) PingProbeO
 // PingProbeArrayInput is an input type that accepts PingProbeArray and PingProbeArrayOutput values.
 // You can construct a concrete instance of `PingProbeArrayInput` via:
 //
-//          PingProbeArray{ PingProbeArgs{...} }
+//	PingProbeArray{ PingProbeArgs{...} }
 type PingProbeArrayInput interface {
 	pulumi.Input
 
@@ -241,7 +246,7 @@ func (i PingProbeArray) ToPingProbeArrayOutputWithContext(ctx context.Context) P
 // PingProbeMapInput is an input type that accepts PingProbeMap and PingProbeMapOutput values.
 // You can construct a concrete instance of `PingProbeMapInput` via:
 //
-//          PingProbeMap{ "key": PingProbeArgs{...} }
+//	PingProbeMap{ "key": PingProbeArgs{...} }
 type PingProbeMapInput interface {
 	pulumi.Input
 

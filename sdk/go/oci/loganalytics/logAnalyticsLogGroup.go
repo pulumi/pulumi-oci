@@ -21,30 +21,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LogAnalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := LogAnalytics.NewLogAnalyticsLogGroup(ctx, "testLogAnalyticsLogGroup", &LogAnalytics.LogAnalyticsLogGroupArgs{
-// 			CompartmentId: pulumi.Any(_var.Compartment_id),
-// 			DisplayName:   pulumi.Any(_var.Log_analytics_log_group_display_name),
-// 			Namespace:     pulumi.Any(_var.Log_analytics_log_group_namespace),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"foo-namespace.bar-key": pulumi.Any("value"),
-// 			},
-// 			Description: pulumi.Any(_var.Log_analytics_log_group_description),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"bar-key": pulumi.Any("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := LogAnalytics.NewLogAnalyticsLogGroup(ctx, "testLogAnalyticsLogGroup", &LogAnalytics.LogAnalyticsLogGroupArgs{
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				DisplayName:   pulumi.Any(_var.Log_analytics_log_group_display_name),
+//				Namespace:     pulumi.Any(_var.Log_analytics_log_group_namespace),
+//				DefinedTags: pulumi.AnyMap{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
+//				Description: pulumi.Any(_var.Log_analytics_log_group_description),
+//				FreeformTags: pulumi.AnyMap{
+//					"bar-key": pulumi.Any("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -52,7 +55,9 @@ import (
 // LogAnalyticsLogGroups can be imported using the `id`, e.g.
 //
 // ```sh
-//  $ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
+//
+//	$ pulumi import oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup test_log_analytics_log_group "namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
+//
 // ```
 type LogAnalyticsLogGroup struct {
 	pulumi.CustomResourceState
@@ -211,7 +216,7 @@ func (i *LogAnalyticsLogGroup) ToLogAnalyticsLogGroupOutputWithContext(ctx conte
 // LogAnalyticsLogGroupArrayInput is an input type that accepts LogAnalyticsLogGroupArray and LogAnalyticsLogGroupArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsLogGroupArrayInput` via:
 //
-//          LogAnalyticsLogGroupArray{ LogAnalyticsLogGroupArgs{...} }
+//	LogAnalyticsLogGroupArray{ LogAnalyticsLogGroupArgs{...} }
 type LogAnalyticsLogGroupArrayInput interface {
 	pulumi.Input
 
@@ -236,7 +241,7 @@ func (i LogAnalyticsLogGroupArray) ToLogAnalyticsLogGroupArrayOutputWithContext(
 // LogAnalyticsLogGroupMapInput is an input type that accepts LogAnalyticsLogGroupMap and LogAnalyticsLogGroupMapOutput values.
 // You can construct a concrete instance of `LogAnalyticsLogGroupMapInput` via:
 //
-//          LogAnalyticsLogGroupMap{ "key": LogAnalyticsLogGroupArgs{...} }
+//	LogAnalyticsLogGroupMap{ "key": LogAnalyticsLogGroupArgs{...} }
 type LogAnalyticsLogGroupMapInput interface {
 	pulumi.Input
 

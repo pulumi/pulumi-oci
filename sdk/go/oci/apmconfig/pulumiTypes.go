@@ -20,7 +20,7 @@ type ConfigDimension struct {
 // ConfigDimensionInput is an input type that accepts ConfigDimensionArgs and ConfigDimensionOutput values.
 // You can construct a concrete instance of `ConfigDimensionInput` via:
 //
-//          ConfigDimensionArgs{...}
+//	ConfigDimensionArgs{...}
 type ConfigDimensionInput interface {
 	pulumi.Input
 
@@ -50,7 +50,7 @@ func (i ConfigDimensionArgs) ToConfigDimensionOutputWithContext(ctx context.Cont
 // ConfigDimensionArrayInput is an input type that accepts ConfigDimensionArray and ConfigDimensionArrayOutput values.
 // You can construct a concrete instance of `ConfigDimensionArrayInput` via:
 //
-//          ConfigDimensionArray{ ConfigDimensionArgs{...} }
+//	ConfigDimensionArray{ ConfigDimensionArgs{...} }
 type ConfigDimensionArrayInput interface {
 	pulumi.Input
 
@@ -130,7 +130,7 @@ type ConfigMetric struct {
 // ConfigMetricInput is an input type that accepts ConfigMetricArgs and ConfigMetricOutput values.
 // You can construct a concrete instance of `ConfigMetricInput` via:
 //
-//          ConfigMetricArgs{...}
+//	ConfigMetricArgs{...}
 type ConfigMetricInput interface {
 	pulumi.Input
 
@@ -164,7 +164,7 @@ func (i ConfigMetricArgs) ToConfigMetricOutputWithContext(ctx context.Context) C
 // ConfigMetricArrayInput is an input type that accepts ConfigMetricArray and ConfigMetricArrayOutput values.
 // You can construct a concrete instance of `ConfigMetricArrayInput` via:
 //
-//          ConfigMetricArray{ ConfigMetricArgs{...} }
+//	ConfigMetricArray{ ConfigMetricArgs{...} }
 type ConfigMetricArrayInput interface {
 	pulumi.Input
 
@@ -260,7 +260,7 @@ type ConfigRule struct {
 // ConfigRuleInput is an input type that accepts ConfigRuleArgs and ConfigRuleOutput values.
 // You can construct a concrete instance of `ConfigRuleInput` via:
 //
-//          ConfigRuleArgs{...}
+//	ConfigRuleArgs{...}
 type ConfigRuleInput interface {
 	pulumi.Input
 
@@ -300,7 +300,7 @@ func (i ConfigRuleArgs) ToConfigRuleOutputWithContext(ctx context.Context) Confi
 // ConfigRuleArrayInput is an input type that accepts ConfigRuleArray and ConfigRuleArrayOutput values.
 // You can construct a concrete instance of `ConfigRuleArrayInput` via:
 //
-//          ConfigRuleArray{ ConfigRuleArgs{...} }
+//	ConfigRuleArray{ ConfigRuleArgs{...} }
 type ConfigRuleArrayInput interface {
 	pulumi.Input
 
@@ -401,7 +401,7 @@ type GetConfigDimension struct {
 // GetConfigDimensionInput is an input type that accepts GetConfigDimensionArgs and GetConfigDimensionOutput values.
 // You can construct a concrete instance of `GetConfigDimensionInput` via:
 //
-//          GetConfigDimensionArgs{...}
+//	GetConfigDimensionArgs{...}
 type GetConfigDimensionInput interface {
 	pulumi.Input
 
@@ -431,7 +431,7 @@ func (i GetConfigDimensionArgs) ToGetConfigDimensionOutputWithContext(ctx contex
 // GetConfigDimensionArrayInput is an input type that accepts GetConfigDimensionArray and GetConfigDimensionArrayOutput values.
 // You can construct a concrete instance of `GetConfigDimensionArrayInput` via:
 //
-//          GetConfigDimensionArray{ GetConfigDimensionArgs{...} }
+//	GetConfigDimensionArray{ GetConfigDimensionArgs{...} }
 type GetConfigDimensionArrayInput interface {
 	pulumi.Input
 
@@ -511,7 +511,7 @@ type GetConfigMetric struct {
 // GetConfigMetricInput is an input type that accepts GetConfigMetricArgs and GetConfigMetricOutput values.
 // You can construct a concrete instance of `GetConfigMetricInput` via:
 //
-//          GetConfigMetricArgs{...}
+//	GetConfigMetricArgs{...}
 type GetConfigMetricInput interface {
 	pulumi.Input
 
@@ -545,7 +545,7 @@ func (i GetConfigMetricArgs) ToGetConfigMetricOutputWithContext(ctx context.Cont
 // GetConfigMetricArrayInput is an input type that accepts GetConfigMetricArray and GetConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetConfigMetricArrayInput` via:
 //
-//          GetConfigMetricArray{ GetConfigMetricArgs{...} }
+//	GetConfigMetricArray{ GetConfigMetricArgs{...} }
 type GetConfigMetricArrayInput interface {
 	pulumi.Input
 
@@ -641,7 +641,7 @@ type GetConfigRule struct {
 // GetConfigRuleInput is an input type that accepts GetConfigRuleArgs and GetConfigRuleOutput values.
 // You can construct a concrete instance of `GetConfigRuleInput` via:
 //
-//          GetConfigRuleArgs{...}
+//	GetConfigRuleArgs{...}
 type GetConfigRuleInput interface {
 	pulumi.Input
 
@@ -681,7 +681,7 @@ func (i GetConfigRuleArgs) ToGetConfigRuleOutputWithContext(ctx context.Context)
 // GetConfigRuleArrayInput is an input type that accepts GetConfigRuleArray and GetConfigRuleArrayOutput values.
 // You can construct a concrete instance of `GetConfigRuleArrayInput` via:
 //
-//          GetConfigRuleArray{ GetConfigRuleArgs{...} }
+//	GetConfigRuleArray{ GetConfigRuleArgs{...} }
 type GetConfigRuleArrayInput interface {
 	pulumi.Input
 
@@ -779,7 +779,7 @@ type GetConfigsConfigCollection struct {
 // GetConfigsConfigCollectionInput is an input type that accepts GetConfigsConfigCollectionArgs and GetConfigsConfigCollectionOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionInput` via:
 //
-//          GetConfigsConfigCollectionArgs{...}
+//	GetConfigsConfigCollectionArgs{...}
 type GetConfigsConfigCollectionInput interface {
 	pulumi.Input
 
@@ -806,7 +806,7 @@ func (i GetConfigsConfigCollectionArgs) ToGetConfigsConfigCollectionOutputWithCo
 // GetConfigsConfigCollectionArrayInput is an input type that accepts GetConfigsConfigCollectionArray and GetConfigsConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionArrayInput` via:
 //
-//          GetConfigsConfigCollectionArray{ GetConfigsConfigCollectionArgs{...} }
+//	GetConfigsConfigCollectionArray{ GetConfigsConfigCollectionArgs{...} }
 type GetConfigsConfigCollectionArrayInput interface {
 	pulumi.Input
 
@@ -906,7 +906,7 @@ type GetConfigsConfigCollectionItem struct {
 // GetConfigsConfigCollectionItemInput is an input type that accepts GetConfigsConfigCollectionItemArgs and GetConfigsConfigCollectionItemOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemInput` via:
 //
-//          GetConfigsConfigCollectionItemArgs{...}
+//	GetConfigsConfigCollectionItemArgs{...}
 type GetConfigsConfigCollectionItemInput interface {
 	pulumi.Input
 
@@ -966,7 +966,7 @@ func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutp
 // GetConfigsConfigCollectionItemArrayInput is an input type that accepts GetConfigsConfigCollectionItemArray and GetConfigsConfigCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemArrayInput` via:
 //
-//          GetConfigsConfigCollectionItemArray{ GetConfigsConfigCollectionItemArgs{...} }
+//	GetConfigsConfigCollectionItemArray{ GetConfigsConfigCollectionItemArgs{...} }
 type GetConfigsConfigCollectionItemArrayInput interface {
 	pulumi.Input
 
@@ -1120,7 +1120,7 @@ type GetConfigsConfigCollectionItemDimension struct {
 // GetConfigsConfigCollectionItemDimensionInput is an input type that accepts GetConfigsConfigCollectionItemDimensionArgs and GetConfigsConfigCollectionItemDimensionOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemDimensionInput` via:
 //
-//          GetConfigsConfigCollectionItemDimensionArgs{...}
+//	GetConfigsConfigCollectionItemDimensionArgs{...}
 type GetConfigsConfigCollectionItemDimensionInput interface {
 	pulumi.Input
 
@@ -1150,7 +1150,7 @@ func (i GetConfigsConfigCollectionItemDimensionArgs) ToGetConfigsConfigCollectio
 // GetConfigsConfigCollectionItemDimensionArrayInput is an input type that accepts GetConfigsConfigCollectionItemDimensionArray and GetConfigsConfigCollectionItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemDimensionArrayInput` via:
 //
-//          GetConfigsConfigCollectionItemDimensionArray{ GetConfigsConfigCollectionItemDimensionArgs{...} }
+//	GetConfigsConfigCollectionItemDimensionArray{ GetConfigsConfigCollectionItemDimensionArgs{...} }
 type GetConfigsConfigCollectionItemDimensionArrayInput interface {
 	pulumi.Input
 
@@ -1230,7 +1230,7 @@ type GetConfigsConfigCollectionItemMetric struct {
 // GetConfigsConfigCollectionItemMetricInput is an input type that accepts GetConfigsConfigCollectionItemMetricArgs and GetConfigsConfigCollectionItemMetricOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemMetricInput` via:
 //
-//          GetConfigsConfigCollectionItemMetricArgs{...}
+//	GetConfigsConfigCollectionItemMetricArgs{...}
 type GetConfigsConfigCollectionItemMetricInput interface {
 	pulumi.Input
 
@@ -1264,7 +1264,7 @@ func (i GetConfigsConfigCollectionItemMetricArgs) ToGetConfigsConfigCollectionIt
 // GetConfigsConfigCollectionItemMetricArrayInput is an input type that accepts GetConfigsConfigCollectionItemMetricArray and GetConfigsConfigCollectionItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemMetricArrayInput` via:
 //
-//          GetConfigsConfigCollectionItemMetricArray{ GetConfigsConfigCollectionItemMetricArgs{...} }
+//	GetConfigsConfigCollectionItemMetricArray{ GetConfigsConfigCollectionItemMetricArgs{...} }
 type GetConfigsConfigCollectionItemMetricArrayInput interface {
 	pulumi.Input
 
@@ -1360,7 +1360,7 @@ type GetConfigsConfigCollectionItemRule struct {
 // GetConfigsConfigCollectionItemRuleInput is an input type that accepts GetConfigsConfigCollectionItemRuleArgs and GetConfigsConfigCollectionItemRuleOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemRuleInput` via:
 //
-//          GetConfigsConfigCollectionItemRuleArgs{...}
+//	GetConfigsConfigCollectionItemRuleArgs{...}
 type GetConfigsConfigCollectionItemRuleInput interface {
 	pulumi.Input
 
@@ -1400,7 +1400,7 @@ func (i GetConfigsConfigCollectionItemRuleArgs) ToGetConfigsConfigCollectionItem
 // GetConfigsConfigCollectionItemRuleArrayInput is an input type that accepts GetConfigsConfigCollectionItemRuleArray and GetConfigsConfigCollectionItemRuleArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemRuleArrayInput` via:
 //
-//          GetConfigsConfigCollectionItemRuleArray{ GetConfigsConfigCollectionItemRuleArgs{...} }
+//	GetConfigsConfigCollectionItemRuleArray{ GetConfigsConfigCollectionItemRuleArgs{...} }
 type GetConfigsConfigCollectionItemRuleArrayInput interface {
 	pulumi.Input
 
@@ -1501,7 +1501,7 @@ type GetConfigsFilter struct {
 // GetConfigsFilterInput is an input type that accepts GetConfigsFilterArgs and GetConfigsFilterOutput values.
 // You can construct a concrete instance of `GetConfigsFilterInput` via:
 //
-//          GetConfigsFilterArgs{...}
+//	GetConfigsFilterArgs{...}
 type GetConfigsFilterInput interface {
 	pulumi.Input
 
@@ -1531,7 +1531,7 @@ func (i GetConfigsFilterArgs) ToGetConfigsFilterOutputWithContext(ctx context.Co
 // GetConfigsFilterArrayInput is an input type that accepts GetConfigsFilterArray and GetConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConfigsFilterArrayInput` via:
 //
-//          GetConfigsFilterArray{ GetConfigsFilterArgs{...} }
+//	GetConfigsFilterArray{ GetConfigsFilterArgs{...} }
 type GetConfigsFilterArrayInput interface {
 	pulumi.Input
 

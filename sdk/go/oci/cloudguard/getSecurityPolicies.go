@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := CloudGuard.GetSecurityPolicies(ctx, &cloudguard.GetSecurityPoliciesArgs{
-// 			CompartmentId: _var.Compartment_id,
-// 			DisplayName:   pulumi.StringRef(_var.Security_policy_display_name),
-// 			Id:            pulumi.StringRef(_var.Security_policy_id),
-// 			State:         pulumi.StringRef(_var.Security_policy_state),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := CloudGuard.GetSecurityPolicies(ctx, &cloudguard.GetSecurityPoliciesArgs{
+//				CompartmentId: _var.Compartment_id,
+//				DisplayName:   pulumi.StringRef(_var.Security_policy_display_name),
+//				Id:            pulumi.StringRef(_var.Security_policy_id),
+//				State:         pulumi.StringRef(_var.Security_policy_state),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSecurityPolicies(ctx *pulumi.Context, args *GetSecurityPoliciesArgs, opts ...pulumi.InvokeOption) (*GetSecurityPoliciesResult, error) {
 	var rv GetSecurityPoliciesResult

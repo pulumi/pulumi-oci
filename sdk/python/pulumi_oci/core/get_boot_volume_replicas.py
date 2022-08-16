@@ -22,7 +22,7 @@ class GetBootVolumeReplicasResult:
     """
     A collection of values returned by getBootVolumeReplicas.
     """
-    def __init__(__self__, availability_domain=None, boot_volume_replicas=None, compartment_id=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, availability_domain=None, boot_volume_replicas=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, volume_group_replica_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,10 +44,13 @@ class GetBootVolumeReplicasResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if volume_group_replica_id and not isinstance(volume_group_replica_id, str):
+            raise TypeError("Expected argument 'volume_group_replica_id' to be a str")
+        pulumi.set(__self__, "volume_group_replica_id", volume_group_replica_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
+    def availability_domain(self) -> Optional[str]:
         """
         The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         """
@@ -63,7 +66,7 @@ class GetBootVolumeReplicasResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
+    def compartment_id(self) -> Optional[str]:
         """
         The OCID of the compartment that contains the boot volume replica.
         """
@@ -98,6 +101,11 @@ class GetBootVolumeReplicasResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter(name="volumeGroupReplicaId")
+    def volume_group_replica_id(self) -> Optional[str]:
+        return pulumi.get(self, "volume_group_replica_id")
+
 
 class AwaitableGetBootVolumeReplicasResult(GetBootVolumeReplicasResult):
     # pylint: disable=using-constant-test
@@ -111,7 +119,8 @@ class AwaitableGetBootVolumeReplicasResult(GetBootVolumeReplicasResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
-            state=self.state)
+            state=self.state,
+            volume_group_replica_id=self.volume_group_replica_id)
 
 
 def get_boot_volume_replicas(availability_domain: Optional[str] = None,
@@ -119,6 +128,7 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
                              display_name: Optional[str] = None,
                              filters: Optional[Sequence[pulumi.InputType['GetBootVolumeReplicasFilterArgs']]] = None,
                              state: Optional[str] = None,
+                             volume_group_replica_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeReplicasResult:
     """
     This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
@@ -134,7 +144,8 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
     test_boot_volume_replicas = oci.Core.get_boot_volume_replicas(availability_domain=var["boot_volume_replica_availability_domain"],
         compartment_id=var["compartment_id"],
         display_name=var["boot_volume_replica_display_name"],
-        state=var["boot_volume_replica_state"])
+        state=var["boot_volume_replica_state"],
+        volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
     ```
 
 
@@ -142,6 +153,7 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    :param str volume_group_replica_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -149,6 +161,7 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
+    __args__['volumeGroupReplicaId'] = volume_group_replica_id
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -162,15 +175,17 @@ def get_boot_volume_replicas(availability_domain: Optional[str] = None,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
         id=__ret__.id,
-        state=__ret__.state)
+        state=__ret__.state,
+        volume_group_replica_id=__ret__.volume_group_replica_id)
 
 
 @_utilities.lift_output_func(get_boot_volume_replicas)
-def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[str]] = None,
-                                    compartment_id: Optional[pulumi.Input[str]] = None,
+def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
+                                    compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBootVolumeReplicasFilterArgs']]]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
+                                    volume_group_replica_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeReplicasResult]:
     """
     This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
@@ -186,7 +201,8 @@ def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[s
     test_boot_volume_replicas = oci.Core.get_boot_volume_replicas(availability_domain=var["boot_volume_replica_availability_domain"],
         compartment_id=var["compartment_id"],
         display_name=var["boot_volume_replica_display_name"],
-        state=var["boot_volume_replica_state"])
+        state=var["boot_volume_replica_state"],
+        volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
     ```
 
 
@@ -194,5 +210,6 @@ def get_boot_volume_replicas_output(availability_domain: Optional[pulumi.Input[s
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    :param str volume_group_replica_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
     """
     ...

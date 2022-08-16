@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseManagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := DatabaseManagement.GetManagedDatabaseGroup(ctx, &databasemanagement.GetManagedDatabaseGroupArgs{
-// 			ManagedDatabaseGroupId: oci_database_management_managed_database_group.Test_managed_database_group.Id,
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DatabaseManagement.GetManagedDatabaseGroup(ctx, &databasemanagement.GetManagedDatabaseGroupArgs{
+//				ManagedDatabaseGroupId: oci_database_management_managed_database_group.Test_managed_database_group.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupManagedDatabaseGroup(ctx *pulumi.Context, args *LookupManagedDatabaseGroupArgs, opts ...pulumi.InvokeOption) (*LookupManagedDatabaseGroupResult, error) {
 	var rv LookupManagedDatabaseGroupResult
